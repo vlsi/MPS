@@ -100,7 +100,7 @@ public class DOM_NG extends TreePath<Node> {
 
     public Iterable<Node> sequence() {
       final Node _node = this.thisNode;
-      return Sequence.fromClosure(new ISequenceClosure<Node>() {
+      return Sequence.<Node>fromClosure(new ISequenceClosure<Node>() {
         public Iterable<Node> iterable() {
           return new Iterable<Node>() {
             public Iterator<Node> iterator() {
@@ -185,8 +185,8 @@ __switch__:
     public Iterable<Node> sequence() {
       Node parentNode = this.thisNode.getParentNode();
       return (parentNode != null ?
-        ListSequence.fromListAndArray(new ArrayList<Node>(), parentNode) :
-        ListSequence.fromList(new ArrayList<Node>())
+        ListSequence.<Node>fromListAndArray(new ArrayList<Node>(), parentNode) :
+        ListSequence.<Node>fromList(new ArrayList<Node>())
       );
     }
 

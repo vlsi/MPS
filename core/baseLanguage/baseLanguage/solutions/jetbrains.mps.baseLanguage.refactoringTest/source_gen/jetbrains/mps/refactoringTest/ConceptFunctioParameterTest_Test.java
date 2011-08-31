@@ -8,10 +8,11 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringAnalyzer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter;
 
 @MPSLaunch
 public class ConceptFunctioParameterTest_Test extends BaseTransformationTest {
@@ -25,8 +26,8 @@ public class ConceptFunctioParameterTest_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_ConceptFunctioParameterTest() throws Exception {
       this.addNodeById("1230052406742");
-      ExtractMethodRefactoringAnalyzer analyzer = new ExtractMethodRefactoringAnalyzer(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406746"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), SNodeOperations.cast(this.getNodeById("1230052406751"), "jetbrains.mps.baseLanguage.structure.IfStatement")));
-      Assert.assertEquals(1, ListSequence.fromList(analyzer.getInputVariables()).count());
+      ExtractMethodRefactoringAnalyzer analyzer = new ExtractMethodRefactoringAnalyzer(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406746"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), SNodeOperations.cast(this.getNodeById("1230052406751"), "jetbrains.mps.baseLanguage.structure.IfStatement")));
+      Assert.assertEquals(1, ListSequence.<MethodParameter>fromList(analyzer.getInputVariables()).count());
     }
   }
 }

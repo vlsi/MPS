@@ -35,7 +35,7 @@ public class SetNodePackageDialog extends BaseDialog {
     myMainPanel.add(new JLabel("Enter virtual package name:"), c);
     myCbPackage = new JComboBox();
     myCbPackage.setEditable(true);
-    myCbPackage.setModel(new DefaultComboBoxModel(ListSequence.fromList(existingPackages).toGenericArray(String.class)));
+    myCbPackage.setModel(new DefaultComboBoxModel(ListSequence.<String>fromList(existingPackages).toGenericArray(String.class)));
     myCbPackage.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         myPackage = ((String) myCbPackage.getSelectedItem());

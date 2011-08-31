@@ -53,20 +53,20 @@ public class AddAccessoryModel_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
-    if (MapSequence.fromMap(_params).get("treeNode") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.<String,Object>fromMap(_params).get("treeNode") == null) {
       return false;
     }
     return true;
@@ -74,19 +74,19 @@ public class AddAccessoryModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Language language = ((Language) ((IModule) MapSequence.fromMap(_params).get("module")));
-      final List<SModelReference> models = ListSequence.fromList(new ArrayList<SModelReference>());
+      final Language language = ((Language) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")));
+      final List<SModelReference> models = ListSequence.<SModelReference>fromList(new ArrayList<SModelReference>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           List<SModelDescriptor> descriptors = GlobalScope.getInstance().getModelDescriptors();
-          ListSequence.fromList(models).addSequence(ListSequence.fromList(descriptors).<SModelReference>select(new ISelector<SModelDescriptor, SModelReference>() {
+          ListSequence.<SModelReference>fromList(models).addSequence(ListSequence.<SModelDescriptor>fromList(descriptors).<SModelReference>select(new ISelector<SModelDescriptor, SModelReference>() {
             public SModelReference select(SModelDescriptor it) {
               return it.getSModelReference();
             }
           }));
         }
       });
-      final SModelReference result = CommonChoosers.showDialogModelChooser(((Frame) MapSequence.fromMap(_params).get("frame")), models, null);
+      final SModelReference result = CommonChoosers.showDialogModelChooser(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), models, null);
       if (result == null) {
         return;
       }
@@ -98,7 +98,7 @@ public class AddAccessoryModel_Action extends GeneratedAction {
           language.setLanguageDescriptor(descriptor, true);
           IScope scope = language.getScope();
           if (scope.getModelDescriptor(result) == null) {
-            int res = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "<html>Model <b>" + result.getLongName() + "</b> is added to accessories</html>\n\n" + "Do you want to automatically the module add to dependency?", "Add Dependency", JOptionPane.YES_NO_OPTION);
+            int res = JOptionPane.showConfirmDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "<html>Model <b>" + result.getLongName() + "</b> is added to accessories</html>\n\n" + "Do you want to automatically the module add to dependency?", "Add Dependency", JOptionPane.YES_NO_OPTION);
             if (res == JOptionPane.YES_OPTION) {
               SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(result);
               language.addDependency(md.getModule().getModuleReference(), false);

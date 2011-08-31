@@ -70,8 +70,8 @@ import java.io.IOException;
 
     List<String> lines = StringsIO.readLines(myConfigFile);
     int lineToReplace = -1;
-    for (int i = 0; i < ListSequence.fromList(lines).count(); i++) {
-      String line = ListSequence.fromList(lines).getElement(i);
+    for (int i = 0; i < ListSequence.<String>fromList(lines).count(); i++) {
+      String line = ListSequence.<String>fromList(lines).getElement(i);
       if (line.trim().startsWith("diff3-cmd")) {
         // Some diff3 is already present 
 
@@ -103,34 +103,34 @@ import java.io.IOException;
     }
 
     if (lineToReplace == -1) {
-      String commented = ListSequence.fromList(lines).findFirst(new IWhereFilter<String>() {
+      String commented = ListSequence.<String>fromList(lines).findFirst(new IWhereFilter<String>() {
         public boolean accept(String line) {
           return line.trim().startsWith("# diff3-cmd");
         }
       });
       if (commented != null) {
-        lineToReplace = ListSequence.fromList(lines).indexOf(commented);
+        lineToReplace = ListSequence.<String>fromList(lines).indexOf(commented);
       } else {
-        int helpersStart = ListSequence.fromList(lines).indexOf(ListSequence.fromList(lines).findFirst(new IWhereFilter<String>() {
+        int helpersStart = ListSequence.<String>fromList(lines).indexOf(ListSequence.<String>fromList(lines).findFirst(new IWhereFilter<String>() {
           public boolean accept(String line) {
             return line.trim().equals("[helpers]");
           }
         }));
         if (helpersStart != -1) {
           // [helpers] section is present, finding next section start 
-          int nextStart = ListSequence.fromList(lines).indexOf(ListSequence.fromList(lines).skip(helpersStart + 1).findFirst(new IWhereFilter<String>() {
+          int nextStart = ListSequence.<String>fromList(lines).indexOf(ListSequence.<String>fromList(lines).skip(helpersStart + 1).findFirst(new IWhereFilter<String>() {
             public boolean accept(String line) {
               return line.trim().startsWith("[");
             }
           }));
           if (nextStart == -1) {
             // [helpers] is the last section 
-            ListSequence.fromList(lines).addElement("");
-            lineToReplace = ListSequence.fromList(lines).count() - 1;
+            ListSequence.<String>fromList(lines).addElement("");
+            lineToReplace = ListSequence.<String>fromList(lines).count() - 1;
           } else {
-            Iterable<String> section = ListSequence.fromList(lines).page(helpersStart + 1, nextStart);
+            Iterable<String> section = ListSequence.<String>fromList(lines).page(helpersStart + 1, nextStart);
             // Finding last non-comment line 
-            int nonComment = Sequence.fromIterable(section).indexOf(Sequence.fromIterable(section).findLast(new IWhereFilter<String>() {
+            int nonComment = Sequence.<String>fromIterable(section).indexOf(Sequence.<String>fromIterable(section).findLast(new IWhereFilter<String>() {
               public boolean accept(String line) {
                 return !(line.trim().startsWith("#")) && !(line.trim().isEmpty());
               }
@@ -140,7 +140,7 @@ import java.io.IOException;
             } else {
               lineToReplace = nonComment + helpersStart + 1;
             }
-            ListSequence.fromList(lines).insertElement(lineToReplace, "");
+            ListSequence.<String>fromList(lines).insertElement(lineToReplace, "");
           }
         }
       }
@@ -152,7 +152,7 @@ import java.io.IOException;
     }
 
     if (dryRun) {
-      if (lineToReplace != -1 && eq_k2wvr2_a0a0a81a0(ListSequence.fromList(lines).getElement(lineToReplace), configLine)) {
+      if (lineToReplace != -1 && eq_k2wvr2_a0a0a81a0(ListSequence.<String>fromList(lines).getElement(lineToReplace), configLine)) {
         return AbstractInstaller.State.INSTALLED;
       } else {
         return AbstractInstaller.State.NOT_INSTALLED;
@@ -160,10 +160,10 @@ import java.io.IOException;
     }
 
     if (lineToReplace == -1) {
-      ListSequence.fromList(lines).addElement("[helpers]");
-      ListSequence.fromList(lines).addElement(configLine);
+      ListSequence.<String>fromList(lines).addElement("[helpers]");
+      ListSequence.<String>fromList(lines).addElement(configLine);
     } else {
-      ListSequence.fromList(lines).setElement(lineToReplace, configLine);
+      ListSequence.<String>fromList(lines).setElement(lineToReplace, configLine);
     }
 
     try {

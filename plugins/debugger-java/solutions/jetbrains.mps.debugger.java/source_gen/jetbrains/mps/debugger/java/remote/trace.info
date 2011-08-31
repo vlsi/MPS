@@ -78,16 +78,16 @@
   </root>
   <root nodeId="7806358006983489356">
     <nodeInfo nodeId="4763274727405913089" fileName="Remote_Kind.java" startLine="17" startPosition="55" endLine="18" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="19" startPosition="0" endLine="20" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignFactories" />
-    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="25" startPosition="61" endLine="26" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="26" startPosition="101" endLine="27" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="27" startPosition="85" endLine="28" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="28" startPosition="89" endLine="29" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="19" startPosition="0" endLine="20" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignFactories" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="25" startPosition="61" endLine="26" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="26" startPosition="123" endLine="27" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="27" startPosition="107" endLine="28" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="28" startPosition="133" endLine="29" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="34" startPosition="25" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="38" startPosition="25" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="42" startPosition="51" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="46" startPosition="34" endLine="47" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="54" startPosition="43" endLine="55" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="21" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Remote_Kind#()V" />
     <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
@@ -102,10 +102,10 @@
     <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="38" startPosition="25" endLine="39" endPosition="16" />
     <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="42" startPosition="51" endLine="43" endPosition="16" />
     <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="46" startPosition="34" endLine="47" endPosition="20" />
-    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="66" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="88" />
     <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="54" startPosition="43" endLine="55" endPosition="106" />
     <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="25" startPosition="61" endLine="29" endPosition="84" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="25" startPosition="61" endLine="29" endPosition="106" />
     <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />

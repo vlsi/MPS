@@ -28,9 +28,9 @@ public class MergeDriverInstaller {
     Iterable<AbstractInstaller> installers = Arrays.asList(new GitGlobalInstaller(project), new GitGlobalInstaller(project), new GitRepositoriesInstaller(project), new SvnInstaller(project, false), new SvnInstaller(project, true));
     if (!(allVcses)) {
       final List<VcsDirectoryMapping> directoryMappings = ProjectLevelVcsManager.getInstance(project).getDirectoryMappings();
-      installers = Sequence.fromIterable(installers).where(new IWhereFilter<AbstractInstaller>() {
+      installers = Sequence.<AbstractInstaller>fromIterable(installers).where(new IWhereFilter<AbstractInstaller>() {
         public boolean accept(final AbstractInstaller i) {
-          return ListSequence.fromList(directoryMappings).any(new IWhereFilter<VcsDirectoryMapping>() {
+          return ListSequence.<VcsDirectoryMapping>fromList(directoryMappings).any(new IWhereFilter<VcsDirectoryMapping>() {
             public boolean accept(VcsDirectoryMapping dm) {
               return dm.getVcs().equals(i.getAffectedVcsName());
             }
@@ -38,13 +38,13 @@ public class MergeDriverInstaller {
         }
       });
     }
-    if (Sequence.fromIterable(installers).any(new IWhereFilter<AbstractInstaller>() {
+    if (Sequence.<AbstractInstaller>fromIterable(installers).any(new IWhereFilter<AbstractInstaller>() {
       public boolean accept(AbstractInstaller i) {
         return i.getCurrentState() == AbstractInstaller.State.NOT_INSTALLED;
       }
     })) {
       return AbstractInstaller.State.NOT_INSTALLED;
-    } else if (Sequence.fromIterable(installers).any(new IWhereFilter<AbstractInstaller>() {
+    } else if (Sequence.<AbstractInstaller>fromIterable(installers).any(new IWhereFilter<AbstractInstaller>() {
       public boolean accept(AbstractInstaller i) {
         return i.getCurrentState() == AbstractInstaller.State.OUTDATED;
       }

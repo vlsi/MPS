@@ -30,13 +30,13 @@ public class CloneModel_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (((Integer) MapSequence.fromMap(_params).get("selSize")) != 1) {
+    if (((Integer) MapSequence.<String,Object>fromMap(_params).get("selSize")) != 1) {
       return false;
     }
-    IModule module = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule();
+    IModule module = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getModule();
     if (module instanceof Language) {
       Language language = (Language) module;
-      return language.getAspectForModel(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))) == null;
+      return language.getAspectForModel(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model"))) == null;
     } else {
       return true;
     }
@@ -60,16 +60,16 @@ public class CloneModel_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("selSize", event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE));
-    if (MapSequence.fromMap(_params).get("selSize") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("selSize", event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE));
+    if (MapSequence.<String,Object>fromMap(_params).get("selSize") == null) {
       return false;
     }
     return true;
@@ -80,7 +80,7 @@ public class CloneModel_Action extends GeneratedAction {
       final Wrappers._T<CloneModelDialog> dialog = new Wrappers._T<CloneModelDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          dialog.value = new CloneModelDialog(((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+          dialog.value = new CloneModelDialog(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
         }
       });
       dialog.value.showDialog();

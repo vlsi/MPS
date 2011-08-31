@@ -16,11 +16,11 @@ public class ParameterScope extends AbstractSearchScope {
 
   public ParameterScope(SNode contextNode) {
     List<SNode> methods = SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", true);
-    this.params = ListSequence.fromList(new ArrayList<SNode>());
+    this.params = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     for (SNode bmd : methods) {
       for (SNode child : SNodeOperations.getChildren(bmd)) {
         if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
-          ListSequence.fromList(this.params).addElement(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
+          ListSequence.<SNode>fromList(this.params).addElement(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
         }
       }
     }

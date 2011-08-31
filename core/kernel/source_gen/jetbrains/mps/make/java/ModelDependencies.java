@@ -14,13 +14,13 @@ public class ModelDependencies {
   private static final String DEPENDENCY = "dependency";
   private static final String DEPENDENCIES_ROOT = "dependenciesRoot";
 
-  private Map<String, RootDependencies> myDependencies = MapSequence.fromMap(new HashMap<String, RootDependencies>());
+  private Map<String, RootDependencies> myDependencies = MapSequence.<String,RootDependencies>fromMap(new HashMap<String, RootDependencies>());
 
   public ModelDependencies() {
   }
 
   public void addDependencies(RootDependencies newDependency) {
-    MapSequence.fromMap(myDependencies).put(newDependency.getFileName(), newDependency);
+    MapSequence.<String,RootDependencies>fromMap(myDependencies).put(newDependency.getFileName(), newDependency);
   }
 
   public Iterable<RootDependencies> getDependencies() {
@@ -28,20 +28,20 @@ public class ModelDependencies {
   }
 
   public RootDependencies getDependency(String fileName) {
-    return MapSequence.fromMap(myDependencies).get(fileName);
+    return MapSequence.<String,RootDependencies>fromMap(myDependencies).get(fileName);
   }
 
   public void replaceRoot(RootDependencies rootDependencies) {
-    MapSequence.fromMap(myDependencies).put(rootDependencies.getFileName(), rootDependencies);
+    MapSequence.<String,RootDependencies>fromMap(myDependencies).put(rootDependencies.getFileName(), rootDependencies);
   }
 
   public Element toXml() {
     Element root = new Element(DEPENDENCIES_ROOT);
-    String[] list = SetSequence.fromSet(MapSequence.fromMap(myDependencies).keySet()).toGenericArray(String.class);
+    String[] list = SetSequence.<String>fromSet(MapSequence.fromMap(myDependencies).keySet()).toGenericArray(String.class);
     Arrays.sort(list);
     for (String rootName : list) {
       Element e = new Element(DEPENDENCY);
-      MapSequence.fromMap(myDependencies).get(rootName).saveTo(e);
+      MapSequence.<String,RootDependencies>fromMap(myDependencies).get(rootName).saveTo(e);
       root.addContent(e);
     }
     return root;

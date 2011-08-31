@@ -49,7 +49,7 @@ public class SubtreeChecker {
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty")) {
             SNode type1 = typeCheckingContext.getTypeDontCheck(child);
             SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty"), "type", true);
-            Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), type1), ListSequence.fromListAndArray(new ArrayList<SNode>(), type2)));
+            Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), type1), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), type2)));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeTypeSetProperty")) {
             SNode type1 = typeCheckingContext.getTypeDontCheck(child);
@@ -100,29 +100,29 @@ public class SubtreeChecker {
         for (SNode property : SLinkOperations.getTargets(container, "properties", true)) {
           Instruction instruction;
           List<Instruction> instructions = program.getInstructionsFor(child);
-          if (ListSequence.fromList(instructions).count() > 0) {
+          if (ListSequence.<Instruction>fromList(instructions).count() > 0) {
             instruction = program.getInstructionsFor(child).get(0);
           } else {
             continue;
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeReachable")) {
-            Assert.assertFalse(SetSequence.fromSet(unreachable).contains(instruction));
+            Assert.assertFalse(SetSequence.<Instruction>fromSet(unreachable).contains(instruction));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeUnreachable")) {
-            Assert.assertTrue(SetSequence.fromSet(unreachable).contains(instruction));
+            Assert.assertTrue(SetSequence.<Instruction>fromSet(unreachable).contains(instruction));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeUnreachable")) {
-            Assert.assertTrue(SetSequence.fromSet(unreachable).contains(instruction));
+            Assert.assertTrue(SetSequence.<Instruction>fromSet(unreachable).contains(instruction));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.VariableInialized")) {
             Set<Object> vars = (Set<Object>) initialized.get(instruction);
             SNode var = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.VariableInialized"), "var", true);
-            Assert.assertTrue(SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
+            Assert.assertTrue(SetSequence.<Object>fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.VariableLive")) {
             Set<Object> vars = (Set<Object>) live.get(instruction);
             SNode var = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.VariableInialized"), "var", true);
-            Assert.assertTrue(SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
+            Assert.assertTrue(SetSequence.<Object>fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
           }
         }
       }

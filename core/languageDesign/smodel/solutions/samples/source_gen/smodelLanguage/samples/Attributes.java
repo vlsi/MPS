@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class Attributes {
   public void accessToNodeAttribute_1(SNode node) {
     List<SNode> macros = AttributeOperations.getAttributeList(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro")));
-    SNode firstMacro = ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro")))).first();
+    SNode firstMacro = ListSequence.<SNode>fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro")))).first();
   }
 
   public void accessToPropertyAttribute_1(SNode node) {
@@ -44,6 +44,6 @@ public class Attributes {
   public void other(SNode node) {
     SNodeOperations.isAttribute(node);
     List<SNode> nodes = AttributeOperations.getAttributeList(node, new IAttributeDescriptor.AllAttributes());
-    SNode firstNode = ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.AllAttributes())).first();
+    SNode firstNode = ListSequence.<SNode>fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.AllAttributes())).first();
   }
 }

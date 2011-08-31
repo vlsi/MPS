@@ -47,14 +47,14 @@ public abstract class AbstractMakeService implements IMakeService {
         }
       });
 
-      Iterable<ScriptBuilder> scriptBuilders = Sequence.fromIterable(usedLangs.value).<ScriptBuilder>select(new ISelector<Iterable<String>, ScriptBuilder>() {
+      Iterable<ScriptBuilder> scriptBuilders = Sequence.<Iterable<String>>fromIterable(usedLangs.value).<ScriptBuilder>select(new ISelector<Iterable<String>, ScriptBuilder>() {
         public ScriptBuilder select(Iterable<String> langs) {
           final ScriptBuilder scb = new ScriptBuilder();
-          Sequence.fromIterable(langs).visitAll(new IVisitor<String>() {
+          Sequence.<String>fromIterable(langs).visitAll(new IVisitor<String>() {
             public void visit(String ns) {
               LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(ns);
               Iterable<IFacet> fcts = lr.getFacetProvider().getDescriptor(null).getManifest().facets();
-              scb.withFacetNames(Sequence.fromIterable(fcts).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
+              scb.withFacetNames(Sequence.<IFacet>fromIterable(fcts).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
                 public IFacet.Name select(IFacet fct) {
                   return fct.getName();
                 }
@@ -66,12 +66,12 @@ public abstract class AbstractMakeService implements IMakeService {
       }).toListSequence();
 
       Iterable<IScript> scripts = ((defaultScript != null ?
-        Sequence.fromIterable(scriptBuilders).<IScript>select(new ISelector<ScriptBuilder, IScript>() {
+        Sequence.<ScriptBuilder>fromIterable(scriptBuilders).<IScript>select(new ISelector<ScriptBuilder, IScript>() {
           public IScript select(ScriptBuilder it) {
             return defaultScript;
           }
         }) :
-        Sequence.fromIterable(scriptBuilders).<IScript>select(new ISelector<ScriptBuilder, IScript>() {
+        Sequence.<ScriptBuilder>fromIterable(scriptBuilders).<IScript>select(new ISelector<ScriptBuilder, IScript>() {
           public IScript select(ScriptBuilder scb) {
             return scb.toScript();
           }

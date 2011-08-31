@@ -34,7 +34,7 @@ public class FilesDelta implements IDelta {
   private static final String SLASH = "/";
 
   private IFile rootDir;
-  private Map<IFile, FilesDelta.Status> files = MapSequence.fromMap(new HashMap<IFile, FilesDelta.Status>());
+  private Map<IFile, FilesDelta.Status> files = MapSequence.<IFile,FilesDelta.Status>fromMap(new HashMap<IFile, FilesDelta.Status>());
   private String key;
 
   public FilesDelta(IFile dir) {
@@ -50,17 +50,17 @@ public class FilesDelta implements IDelta {
 
   public void written(IFile file) {
     LOG.debug("Written " + file);
-    MapSequence.fromMap(files).put(file, FilesDelta.Status.WRITTEN);
+    MapSequence.<IFile,FilesDelta.Status>fromMap(files).put(file, FilesDelta.Status.WRITTEN);
   }
 
   public void kept(IFile file) {
     LOG.debug("Kept " + file);
-    MapSequence.fromMap(files).put(file, FilesDelta.Status.KEPT);
+    MapSequence.<IFile,FilesDelta.Status>fromMap(files).put(file, FilesDelta.Status.KEPT);
   }
 
   public void deleted(IFile file) {
     LOG.debug("Deleted " + file);
-    MapSequence.fromMap(files).put(file, FilesDelta.Status.DELETED);
+    MapSequence.<IFile,FilesDelta.Status>fromMap(files).put(file, FilesDelta.Status.DELETED);
   }
 
   public boolean reconcile() {
@@ -91,7 +91,7 @@ public class FilesDelta implements IDelta {
   }
 
   private boolean acceptFilesVisitor(final FilesDelta.Visitor visitor) {
-    MapSequence.fromMap(files).visitAll(new IVisitor<IMapping<IFile, FilesDelta.Status>>() {
+    MapSequence.<IFile,FilesDelta.Status>fromMap(files).visitAll(new IVisitor<IMapping<IFile, FilesDelta.Status>>() {
       public void visit(IMapping<IFile, FilesDelta.Status> m) {
         if (m.value() == FilesDelta.Status.KEPT && !(m.key().isDirectory())) {
           visitor.acceptKept(m.key());
@@ -100,7 +100,7 @@ public class FilesDelta implements IDelta {
         }
       }
     });
-    ListSequence.fromList(this.collectFilesToDelete()).visitAll(new IVisitor<IFile>() {
+    ListSequence.<IFile>fromList(this.collectFilesToDelete()).visitAll(new IVisitor<IFile>() {
       public void visit(IFile f) {
         visitor.acceptDeleted(f);
       }
@@ -109,7 +109,7 @@ public class FilesDelta implements IDelta {
   }
 
   private List<IFile> collectFilesToDelete() {
-    String[] pathsToKeep = MapSequence.fromMap(files).where(new IWhereFilter<IMapping<IFile, FilesDelta.Status>>() {
+    String[] pathsToKeep = MapSequence.<IFile,FilesDelta.Status>fromMap(files).where(new IWhereFilter<IMapping<IFile, FilesDelta.Status>>() {
       public boolean accept(IMapping<IFile, FilesDelta.Status> f) {
         return f.value() != FilesDelta.Status.DELETED;
       }
@@ -127,9 +127,9 @@ public class FilesDelta implements IDelta {
       }
     }, true).toListSequence().toGenericArray(String.class);
 
-    List<IFile> toDelete = ListSequence.fromList(new ArrayList<IFile>());
-    Queue<IFile> dirs = QueueSequence.fromQueueAndArray(new LinkedList<IFile>(), rootDir);
-    while (QueueSequence.fromQueue(dirs).isNotEmpty()) {
+    List<IFile> toDelete = ListSequence.<IFile>fromList(new ArrayList<IFile>());
+    Queue<IFile> dirs = QueueSequence.<IFile>fromQueueAndArray(new LinkedList<IFile>(), rootDir);
+    while (QueueSequence.<IFile>fromQueue(dirs).isNotEmpty()) {
       IFile dir = QueueSequence.fromQueue(dirs).removeFirstElement();
       String dirpath = asDir(straighten(urlToPath(dir.getAbsolutePath())));
       int diridx = Arrays.binarySearch(pathsToKeep, dirpath);
@@ -137,7 +137,7 @@ public class FilesDelta implements IDelta {
         -1 - diridx :
         diridx
       );
-      for (Tuples._2<IFile, String> fp : Sequence.fromIterable(((Iterable<IFile>) dir.getChildren())).<Tuples._2<IFile, String>>select(new ISelector<IFile, Tuples._2<IFile, String>>() {
+      for (Tuples._2<IFile, String> fp : Sequence.<IFile>fromIterable(((Iterable<IFile>) dir.getChildren())).<Tuples._2<IFile, String>>select(new ISelector<IFile, Tuples._2<IFile, String>>() {
         public Tuples._2<IFile, String> select(IFile f) {
           return MultiTuple.<IFile,String>from(f, straighten(urlToPath(f.getAbsolutePath())));
         }
@@ -153,7 +153,7 @@ public class FilesDelta implements IDelta {
             fidx
           );
           if (fidx >= pathsToKeep.length || !(startsWith(pathsToKeep[fidx], fp._1()))) {
-            ListSequence.fromList(toDelete).addElement(fp._0());
+            ListSequence.<IFile>fromList(toDelete).addElement(fp._0());
             if (fidx >= pathsToKeep.length) {
               break;
             }
@@ -163,7 +163,7 @@ public class FilesDelta implements IDelta {
         } else {
           int fidx = Arrays.binarySearch(pathsToKeep, fp._1());
           if (fidx < 0 && (diridx >= pathsToKeep.length || !(same(dirpath, pathsToKeep[diridx])))) {
-            ListSequence.fromList(toDelete).addElement(fp._0());
+            ListSequence.<IFile>fromList(toDelete).addElement(fp._0());
           }
         }
       }

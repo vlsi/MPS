@@ -37,9 +37,9 @@ public class WriteHelper {
   private Set<Integer> myUsedIndexes;
 
   public WriteHelper(SModelReference modelRef) {
-    myModelFqNameToReference = MapSequence.fromMap(new HashMap<String, SModelReference>());
-    myModelIndex = MapSequence.fromMap(new HashMap<SModelReference, String>());
-    myUsedIndexes = SetSequence.fromSet(new HashSet<Integer>());
+    myModelFqNameToReference = MapSequence.<String,SModelReference>fromMap(new HashMap<String, SModelReference>());
+    myModelIndex = MapSequence.<SModelReference,String>fromMap(new HashMap<SModelReference, String>());
+    myUsedIndexes = SetSequence.<Integer>fromSet(new HashSet<Integer>());
     myModelRef = modelRef;
   }
 
@@ -48,16 +48,16 @@ public class WriteHelper {
       return;
     }
     int hash = (model.hashCode() % HASH_SIZE + HASH_SIZE) % HASH_SIZE;
-    while (SetSequence.fromSet(myUsedIndexes).contains(hash)) {
+    while (SetSequence.<Integer>fromSet(myUsedIndexes).contains(hash)) {
       hash = (hash + 1) % HASH_SIZE;
     }
     SetSequence.fromSet(myUsedIndexes).addElement(hash);
-    MapSequence.fromMap(myModelIndex).put(model, Integer.toString(hash, HASH_BASE));
-    MapSequence.fromMap(myModelFqNameToReference).put(model.getLongName(), model);
+    MapSequence.<SModelReference,String>fromMap(myModelIndex).put(model, Integer.toString(hash, HASH_BASE));
+    MapSequence.<String,SModelReference>fromMap(myModelFqNameToReference).put(model.getLongName(), model);
   }
 
   public String getImportIndex(@NotNull SModelReference model) {
-    return MapSequence.fromMap(myModelIndex).get(model);
+    return MapSequence.<SModelReference,String>fromMap(myModelIndex).get(model);
   }
 
   @NotNull
@@ -65,7 +65,7 @@ public class WriteHelper {
     if (ref.equals(myModelRef)) {
       return encode(text);
     }
-    String index = MapSequence.fromMap(myModelIndex).get(ref);
+    String index = MapSequence.<SModelReference,String>fromMap(myModelIndex).get(ref);
     if (index == null) {
       if (log.isErrorEnabled()) {
         log.error("model " + ref + " not found in index");
@@ -82,7 +82,7 @@ public class WriteHelper {
     if (name == null) {
       return MODEL_SEPARATOR_CHAR + fqName;
     }
-    String index = MapSequence.fromMap(myModelIndex).get(SNodeOperations.getModel(concept).getSModelReference());
+    String index = MapSequence.<SModelReference,String>fromMap(myModelIndex).get(SNodeOperations.getModel(concept).getSModelReference());
     if (index == null) {
       return MODEL_SEPARATOR_CHAR + fqName;
     }
@@ -103,7 +103,7 @@ public class WriteHelper {
     if (RoleIdsComponent.isEnabled()) {
       // return fqName prefixed with "." if we can't find model or name of concept 
       String fqName = node.getConceptFqName();
-      String index = MapSequence.fromMap(myModelIndex).get(getModelReferenceForConcept(node));
+      String index = MapSequence.<SModelReference,String>fromMap(myModelIndex).get(getModelReferenceForConcept(node));
       if (index == null) {
         return MODEL_SEPARATOR_CHAR + fqName;
       }
@@ -202,7 +202,7 @@ public class WriteHelper {
   }
 
   private SModelReference getModelReferenceForConcept(SNode node) {
-    return MapSequence.fromMap(myModelFqNameToReference).get(NameUtil.namespaceFromLongName(node.getConceptFqName()));
+    return MapSequence.<String,SModelReference>fromMap(myModelFqNameToReference).get(NameUtil.namespaceFromLongName(node.getConceptFqName()));
   }
 
   public static String encode(String s) {

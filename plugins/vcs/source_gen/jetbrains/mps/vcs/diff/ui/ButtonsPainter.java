@@ -78,19 +78,19 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
   protected void paintInLocalCoordinates(Graphics graphics) {
     ensureButtonsCreated();
 
-    for (FoldingAreaButton b : ListSequence.fromList(myButtons)) {
+    for (FoldingAreaButton b : ListSequence.<FoldingAreaButton>fromList(myButtons)) {
       b.paint(graphics);
     }
   }
 
   private void ensureButtonsCreated() {
     if (myButtons == null) {
-      myButtons = ListSequence.fromList(new ArrayList<FoldingAreaButton>());
+      myButtons = ListSequence.<FoldingAreaButton>fromList(new ArrayList<FoldingAreaButton>());
 
       int previousStart = Integer.MIN_VALUE;
-      for (ChangeGroup cg : ListSequence.fromList(myChangeGroupBuilder.getChangeGroups())) {
+      for (ChangeGroup cg : ListSequence.<ChangeGroup>fromList(myChangeGroupBuilder.getChangeGroups())) {
         int y = Math.max((int) cg.getBounds(myHighlightLeft).start(), previousStart + GAP + ICON_SIZE);
-        ListSequence.fromList(myButtons).addSequence(Sequence.fromIterable(createButtonsForChangeGroup(cg, y)));
+        ListSequence.<FoldingAreaButton>fromList(myButtons).addSequence(Sequence.<FoldingAreaButton>fromIterable(createButtonsForChangeGroup(cg, y)));
         previousStart = y;
       }
     }
@@ -132,7 +132,7 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
     ensureButtonsCreated();
 
     final int x = p.x - getLeftHighlighter().getFoldingLineX();
-    return ListSequence.fromList(myButtons).findFirst(new IWhereFilter<FoldingAreaButton>() {
+    return ListSequence.<FoldingAreaButton>fromList(myButtons).findFirst(new IWhereFilter<FoldingAreaButton>() {
       public boolean accept(FoldingAreaButton b) {
         return b.getX() - GAP / 2 < x && x < b.getX() + ICON_SIZE + GAP / 2 && b.getY() - GAP / 2 < p.y && p.y < b.getY() + ICON_SIZE + GAP / 2;
       }

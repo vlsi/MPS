@@ -43,8 +43,8 @@ public class StepInto_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
     return true;

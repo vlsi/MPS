@@ -47,14 +47,14 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
       SNode variable = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
       SNode nodeType = SLinkOperations.getTarget(variable, "type", true);
       if (nodeType != null) {
-        String name = ListSequence.fromList(((List<String>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(nodeType, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getVariableSuffixes_1213877337304", new Class[]{SNode.class}))).first();
+        String name = ListSequence.<String>fromList(((List<String>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(nodeType, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getVariableSuffixes_1213877337304", new Class[]{SNode.class}))).first();
         if (MapSequence.fromMap(usedNames).containsKey(name)) {
-          int i = MapSequence.fromMap(usedNames).get(name);
+          int i = MapSequence.<String,Integer>fromMap(usedNames).get(name);
           i = i + 1;
-          MapSequence.fromMap(usedNames).put(name, i);
+          MapSequence.<String,Integer>fromMap(usedNames).put(name, i);
           name = name + i;
         } else {
-          MapSequence.fromMap(usedNames).put(name, 0);
+          MapSequence.<String,Integer>fromMap(usedNames).put(name, 0);
         }
         String prefix = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "virtual_getPrefix_3012473318495495520", new Class[]{SNode.class, Project.class}, myProject));
         String suffix = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "virtual_getSuffix_3012473318495499856", new Class[]{SNode.class, Project.class}, myProject));
@@ -105,7 +105,7 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
       SNode addedMethod = added.getResult();
       SNode sourceMethod = added.getSource();
       if (SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(sourceMethod).getStereotype())) {
-        setVariableNames(addedMethod, MapSequence.fromMap(new HashMap<String, Integer>()));
+        setVariableNames(addedMethod, MapSequence.<String,Integer>fromMap(new HashMap<String, Integer>()));
       }
       result.add(addedMethod);
       myAdditionStrategy.updateMethod(sourceMethod, addedMethod);

@@ -29,11 +29,11 @@ import java.util.Map;
       return null;
     }
     if (methods.size() == 1) {
-      return ListSequence.fromList(methods).first();
+      return ListSequence.<SNode>fromList(methods).first();
     }
     methods = MethodResolveUtil.selectByParmCount(methods, this.myActualArguments);
     if (methods.size() == 1) {
-      return ListSequence.fromList(methods).first();
+      return ListSequence.<SNode>fromList(methods).first();
     }
     Map<SNode, SNode> typeByTypeVar = ClassifierAndSuperClassifiersCache.getInstance(this.myClass).getTypeByTypeVariableMap();
     return MethodResolveUtil.chooseByParameterType(methods, this.myActualArguments, typeByTypeVar);

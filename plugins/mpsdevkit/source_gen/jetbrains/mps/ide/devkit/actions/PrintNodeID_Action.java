@@ -38,8 +38,8 @@ public class PrintNodeID_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
@@ -47,7 +47,7 @@ public class PrintNodeID_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      System.out.println("ID = " + ((SNode) MapSequence.fromMap(_params).get("node")).getId());
+      System.out.println("ID = " + ((SNode) MapSequence.<String,Object>fromMap(_params).get("node")).getId());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "PrintNodeID", t);

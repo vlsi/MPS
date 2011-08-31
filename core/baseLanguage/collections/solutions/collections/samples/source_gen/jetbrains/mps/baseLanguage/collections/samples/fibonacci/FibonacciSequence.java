@@ -12,7 +12,7 @@ public class FibonacciSequence {
   }
 
   public Iterable<Integer> numbers(final int max) {
-    return Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    return Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {

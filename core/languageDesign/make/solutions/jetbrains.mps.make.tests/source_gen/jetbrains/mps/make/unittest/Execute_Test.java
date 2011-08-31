@@ -45,7 +45,7 @@ public class Execute_Test extends MockTestCase {
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertNotNull(res.output());
-    Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
+    Assert.assertTrue(Sequence.<IResource>fromIterable(res.output()).isEmpty());
   }
 
   @Test
@@ -68,12 +68,12 @@ public class Execute_Test extends MockTestCase {
           }
         })));
         atLeast(1).of(result).output();
-        will(onConsecutiveCalls(returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)), returnValue(null)));
+        will(onConsecutiveCalls(returnValue(ListSequence.<IResource>fromListAndArray(new ArrayList<IResource>(), resA, resB)), returnValue(null)));
 
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
           public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa) {
-            Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(input)).isEmpty());
+            Assert.assertTrue(ListSequence.<IResource>fromList(ListSequence.<IResource>fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.<IResource>fromIterable(input)).isEmpty());
             return result;
           }
         };
@@ -86,7 +86,7 @@ public class Execute_Test extends MockTestCase {
 
     TargetRange tr = new TargetRange();
     tr.addTarget(make);
-    tr.addRelated(ListSequence.fromListAndArray(new ArrayList<ITarget>(), res));
+    tr.addRelated(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), res));
 
     Script sc = new Script(tr, new ITarget.Name("make"));
     sc.validate();
@@ -95,7 +95,7 @@ public class Execute_Test extends MockTestCase {
     IResult r = sc.execute(null, null);
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
-    Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
+    Assert.assertTrue(Sequence.<IResource>fromIterable(r.output()).isEmpty());
   }
 
   @Test
@@ -109,7 +109,7 @@ public class Execute_Test extends MockTestCase {
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
           public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa) {
-            Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(input)).isEmpty());
+            Assert.assertTrue(ListSequence.<IResource>fromList(ListSequence.<IResource>fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.<IResource>fromIterable(input)).isEmpty());
             return result;
           }
         };
@@ -126,10 +126,10 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(null, ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB));
+    IResult r = sc.execute(null, ListSequence.<IResource>fromListAndArray(new ArrayList<IResource>(), resA, resB));
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
-    Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
+    Assert.assertTrue(Sequence.<IResource>fromIterable(r.output()).isEmpty());
   }
 
   @Test
@@ -153,7 +153,7 @@ public class Execute_Test extends MockTestCase {
         atLeast(1).of(res).producesOutput();
         will(returnValue(true));
         atLeast(1).of(result).output();
-        will(returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)));
+        will(returnValue(ListSequence.<IResource>fromListAndArray(new ArrayList<IResource>(), resA, resB)));
 
         atLeast(1).of(nop).before();
         will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
@@ -163,7 +163,7 @@ public class Execute_Test extends MockTestCase {
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
           public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa) {
-            Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(input)).isEmpty());
+            Assert.assertTrue(ListSequence.<IResource>fromList(ListSequence.<IResource>fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.<IResource>fromIterable(input)).isEmpty());
             return result;
           }
         };
@@ -178,7 +178,7 @@ public class Execute_Test extends MockTestCase {
 
     TargetRange tr = new TargetRange();
     tr.addTarget(make);
-    tr.addRelated(ListSequence.fromListAndArray(new ArrayList<ITarget>(), res, nop));
+    tr.addRelated(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), res, nop));
 
     Script sc = new Script(tr, new ITarget.Name("make"));
     sc.validate();
@@ -187,7 +187,7 @@ public class Execute_Test extends MockTestCase {
     IResult r = sc.execute(null, null);
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
-    Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
+    Assert.assertTrue(Sequence.<IResource>fromIterable(r.output()).isEmpty());
   }
 
   @Test
@@ -213,7 +213,7 @@ public class Execute_Test extends MockTestCase {
         atLeast(1).of(res).producesOutput();
         will(returnValue(true));
         atLeast(1).of(result).output();
-        will(returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)));
+        will(returnValue(ListSequence.<IResource>fromListAndArray(new ArrayList<IResource>(), resA, resB)));
 
         atLeast(1).of(nop).before();
         will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
@@ -241,7 +241,7 @@ public class Execute_Test extends MockTestCase {
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
           public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa) {
-            Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(input)).isEmpty());
+            Assert.assertTrue(ListSequence.<IResource>fromList(ListSequence.<IResource>fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.<IResource>fromIterable(input)).isEmpty());
             return result;
           }
         };
@@ -257,7 +257,7 @@ public class Execute_Test extends MockTestCase {
 
     TargetRange tr = new TargetRange();
     tr.addTarget(make);
-    tr.addRelated(ListSequence.fromListAndArray(new ArrayList<ITarget>(), res, nop, nop2, dup));
+    tr.addRelated(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), res, nop, nop2, dup));
 
     Script sc = new Script(tr, new ITarget.Name("make"));
     sc.validate();
@@ -266,7 +266,7 @@ public class Execute_Test extends MockTestCase {
     IResult r = sc.execute(null, null);
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
-    Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
+    Assert.assertTrue(Sequence.<IResource>fromIterable(r.output()).isEmpty());
   }
 
   @Test
@@ -287,7 +287,7 @@ public class Execute_Test extends MockTestCase {
         atLeast(1).of(res).producesOutput();
         will(returnValue(true));
         atLeast(1).of(result).output();
-        will(returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)));
+        will(returnValue(ListSequence.<IResource>fromListAndArray(new ArrayList<IResource>(), resA, resB)));
 
         atLeast(1).of(nop).after();
         will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
@@ -300,7 +300,7 @@ public class Execute_Test extends MockTestCase {
 
     TargetRange tr = new TargetRange();
     tr.addTarget(nop);
-    tr.addRelated(ListSequence.fromListAndArray(new ArrayList<ITarget>(), res));
+    tr.addRelated(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), res));
 
     Script sc = new Script(tr, new ITarget.Name("nop"));
     sc.validate();
@@ -309,7 +309,7 @@ public class Execute_Test extends MockTestCase {
     IResult r = sc.execute(null, null);
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
-    Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(r.output())).isEmpty());
+    Assert.assertTrue(ListSequence.<IResource>fromList(ListSequence.<IResource>fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.<IResource>fromIterable(r.output())).isEmpty());
   }
 
   @Test
@@ -371,7 +371,7 @@ public class Execute_Test extends MockTestCase {
           }
         })));
         atLeast(1).of(okresult).output();
-        will(returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)));
+        will(returnValue(ListSequence.<IResource>fromListAndArray(new ArrayList<IResource>(), resA, resB)));
 
         atLeast(1).of(gen).before();
         will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
@@ -380,7 +380,7 @@ public class Execute_Test extends MockTestCase {
 
         IJob genjob = new IJob() {
           public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa) {
-            Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(input)).isEmpty());
+            Assert.assertTrue(ListSequence.<IResource>fromList(ListSequence.<IResource>fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.<IResource>fromIterable(input)).isEmpty());
             return failresult;
           }
         };
@@ -400,7 +400,7 @@ public class Execute_Test extends MockTestCase {
 
     TargetRange tr = new TargetRange();
     tr.addTarget(make);
-    tr.addRelated(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, res));
+    tr.addRelated(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), gen, res));
 
     Script sc = new Script(tr, new ITarget.Name("make"));
     sc.validate();
@@ -409,7 +409,7 @@ public class Execute_Test extends MockTestCase {
     IResult r = sc.execute(mons, null);
     Assert.assertNotNull(r);
     Assert.assertFalse(r.isSucessful());
-    Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
+    Assert.assertTrue(Sequence.<IResource>fromIterable(r.output()).isEmpty());
     Assert.assertTrue(fbk[0] instanceof IFeedback.ERROR);
   }
 
@@ -461,7 +461,7 @@ public class Execute_Test extends MockTestCase {
     IResult res = sc.execute(null, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
-    Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
+    Assert.assertTrue(Sequence.<IResource>fromIterable(res.output()).isEmpty());
     Assert.assertNotNull(res.output());
     Assert.assertEquals("FUBAR", vars[0]);
   }

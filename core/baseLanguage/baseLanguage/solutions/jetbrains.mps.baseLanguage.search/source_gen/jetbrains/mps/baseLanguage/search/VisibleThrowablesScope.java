@@ -22,7 +22,7 @@ public class VisibleThrowablesScope extends VisibleClassifiersScope {
   public List<SNode> getClassifiers() {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode cls : super.getClassifiers()) {
-      if (ListSequence.fromList(ClassifierAndSuperClassifiersCache.getInstance(cls).getClassifiers()).where(new IWhereFilter<SNode>() {
+      if (ListSequence.<SNode>fromList(ClassifierAndSuperClassifiersCache.getInstance(cls).getClassifiers()).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return THROWABLE_FQ_NAME.equals(NameUtil.nodeFQName(it));
         }

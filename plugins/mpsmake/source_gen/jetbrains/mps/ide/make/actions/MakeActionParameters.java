@@ -31,12 +31,12 @@ public class MakeActionParameters {
   public MakeActionParameters(IOperationContext context, List<SModelDescriptor> models, SModelDescriptor cmodel, List<IModule> modules, IModule cmodule) {
     this.context = context;
     this.models = (models != null ?
-      ListSequence.fromListWithValues(new ArrayList<SModelDescriptor>(), models) :
+      ListSequence.<SModelDescriptor>fromListWithValues(new ArrayList<SModelDescriptor>(), models) :
       null
     );
     this.cmodel = cmodel;
     this.modules = (modules != null ?
-      ListSequence.fromListWithValues(new ArrayList<IModule>(), modules) :
+      ListSequence.<IModule>fromListWithValues(new ArrayList<IModule>(), modules) :
       null
     );
     this.cmodule = cmodule;
@@ -57,9 +57,9 @@ public class MakeActionParameters {
 
       sb.append("Model '").append(model.getSModelReference().getSModelFqName().getCompactPresentation()).append("'");
 
-    } else if (this.models != null && ListSequence.fromList(this.models).count() > 1) {
+    } else if (this.models != null && ListSequence.<SModelDescriptor>fromList(this.models).count() > 1) {
       Iterable<SModelDescriptor> mds = this.models;
-      if (!(Sequence.fromIterable(mds).any(new IWhereFilter<SModelDescriptor>() {
+      if (!(Sequence.<SModelDescriptor>fromIterable(mds).any(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor md) {
           return md != null && md.isGeneratable();
         }
@@ -76,13 +76,13 @@ public class MakeActionParameters {
 
       sb.append(NameUtil.shortNameFromLongName(module.getClass().getName().replaceAll("\\$.*", ""))).append(" '").append(NameUtil.compactNamespace(module.getModuleReference().getModuleFqName())).append("'");
 
-    } else if (this.modules != null && ListSequence.fromList(this.modules).count() > 1) {
+    } else if (this.modules != null && ListSequence.<IModule>fromList(this.modules).count() > 1) {
       Iterable<IModule> mods = this.modules;
-      if (Sequence.fromIterable(mods).any(new IWhereFilter<IModule>() {
+      if (Sequence.<IModule>fromIterable(mods).any(new IWhereFilter<IModule>() {
         public boolean accept(IModule m) {
           return m == null;
         }
-      }) || Sequence.fromIterable(mods).all(new IWhereFilter<IModule>() {
+      }) || Sequence.<IModule>fromIterable(mods).all(new IWhereFilter<IModule>() {
         public boolean accept(IModule m) {
           return m.isPackaged();
         }
@@ -101,7 +101,7 @@ public class MakeActionParameters {
   public Iterable<IResource> collectInput(boolean dirtyOnly) {
     final IModule module = this.moduleToMake();
     final SModelDescriptor model = this.modelToMake();
-    Iterable<SModelDescriptor> smds = Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
+    Iterable<SModelDescriptor> smds = Sequence.<SModelDescriptor>fromIterable(Sequence.<SModelDescriptor>fromClosure(new ISequenceClosure<SModelDescriptor>() {
       public Iterable<SModelDescriptor> iterable() {
         return new Iterable<SModelDescriptor>() {
           public Iterator<SModelDescriptor> iterator() {
@@ -126,7 +126,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 8:
-                      this._8__yield_nk3wxj_b0a0a0a0a0c0b_it = Sequence.fromIterable(Sequence.fromIterable(_7_models).where(new IWhereFilter<SModelDescriptor>() {
+                      this._8__yield_nk3wxj_b0a0a0a0a0c0b_it = Sequence.fromIterable(Sequence.<SModelDescriptor>fromIterable(_7_models).where(new IWhereFilter<SModelDescriptor>() {
                         public boolean accept(SModelDescriptor md) {
                           return md.isGeneratable();
                         }
@@ -163,13 +163,13 @@ __switch__:
                       if (model != null && model.isGeneratable()) {
                         this.__CP__ = 3;
                         break;
-                      } else if (models != null && ListSequence.fromList(models).count() > 1) {
+                      } else if (models != null && ListSequence.<SModelDescriptor>fromList(models).count() > 1) {
                         this.__CP__ = 5;
                         break;
                       } else if (module != null) {
                         this.__CP__ = 12;
                         break;
-                      } else if (modules != null && ListSequence.fromList(modules).count() > 1) {
+                      } else if (modules != null && ListSequence.<IModule>fromList(modules).count() > 1) {
                         this.__CP__ = 19;
                         break;
                       }
@@ -219,8 +219,8 @@ __switch__:
                       this._21_modelsFromModules = null;
                       ModelAccess.instance().runReadAction(new Runnable() {
                         public void run() {
-                          for (IModule mod : ListSequence.fromList(MakeActionParameters.this.modules)) {
-                            _21_modelsFromModules = Sequence.fromIterable(_21_modelsFromModules).concat(Sequence.fromIterable(modelsToMake(mod)));
+                          for (IModule mod : ListSequence.<IModule>fromList(MakeActionParameters.this.modules)) {
+                            _21_modelsFromModules = Sequence.<SModelDescriptor>fromIterable(_21_modelsFromModules).concat(Sequence.<SModelDescriptor>fromIterable(modelsToMake(mod)));
                           }
                         }
                       });
@@ -244,18 +244,18 @@ __switch__:
         return !(GeneratorManager.isDoNotGenerate(md));
       }
     });
-    return new ModelsToResources(context, Sequence.fromIterable(smds).toListSequence()).resources(dirtyOnly);
+    return new ModelsToResources(context, Sequence.<SModelDescriptor>fromIterable(smds).toListSequence()).resources(dirtyOnly);
   }
 
   public Iterable<SModelDescriptor> modelsToMake(IModule module) {
-    Iterable<SModelDescriptor> models = Sequence.fromIterable(((Iterable<SModelDescriptor>) module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+    Iterable<SModelDescriptor> models = Sequence.<SModelDescriptor>fromIterable(((Iterable<SModelDescriptor>) module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
         return it.isGeneratable();
       }
     });
     if (module instanceof Language) {
-      for (Generator gen : ListSequence.fromList(((Language) module).getGenerators())) {
-        models = Sequence.fromIterable(models).concat(Sequence.fromIterable(modelsToMake(gen)));
+      for (Generator gen : ListSequence.<Generator>fromList(((Language) module).getGenerators())) {
+        models = Sequence.<SModelDescriptor>fromIterable(models).concat(Sequence.<SModelDescriptor>fromIterable(modelsToMake(gen)));
       }
     }
     return models;
@@ -263,9 +263,9 @@ __switch__:
 
   private IModule moduleToMake() {
     Iterable<IModule> modulesSeq = ((Iterable<IModule>) this.modules);
-    if (Sequence.fromIterable(modulesSeq).count() == 1) {
-      return Sequence.fromIterable(modulesSeq).first();
-    } else if (Sequence.fromIterable(modulesSeq).count() > 1) {
+    if (Sequence.<IModule>fromIterable(modulesSeq).count() == 1) {
+      return Sequence.<IModule>fromIterable(modulesSeq).first();
+    } else if (Sequence.<IModule>fromIterable(modulesSeq).count() > 1) {
       return null;
     }
     return this.cmodule;
@@ -273,9 +273,9 @@ __switch__:
 
   private SModelDescriptor modelToMake() {
     Iterable<SModelDescriptor> modelsSeq = ((Iterable<SModelDescriptor>) this.models);
-    if (Sequence.fromIterable(modelsSeq).count() == 1) {
-      return Sequence.fromIterable(modelsSeq).first();
-    } else if (Sequence.fromIterable(modelsSeq).count() > 1) {
+    if (Sequence.<SModelDescriptor>fromIterable(modelsSeq).count() == 1) {
+      return Sequence.<SModelDescriptor>fromIterable(modelsSeq).first();
+    } else if (Sequence.<SModelDescriptor>fromIterable(modelsSeq).count() > 1) {
       return null;
     }
     return this.cmodel;

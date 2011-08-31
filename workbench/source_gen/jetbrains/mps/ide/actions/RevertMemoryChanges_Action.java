@@ -25,7 +25,7 @@ public class RevertMemoryChanges_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModelDescriptor;
+    return ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")) instanceof EditableSModelDescriptor;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -46,8 +46,8 @@ public class RevertMemoryChanges_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
@@ -55,7 +55,7 @@ public class RevertMemoryChanges_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).reloadFromDisk();
+      ((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model"))).reloadFromDisk();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RevertMemoryChanges", t);

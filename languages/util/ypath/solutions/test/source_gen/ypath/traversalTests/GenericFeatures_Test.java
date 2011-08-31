@@ -31,7 +31,7 @@ public class GenericFeatures_Test extends TestCase {
   public String toString(Iterable<Node> nodes) {
     StringBuilder sb = new StringBuilder();
     String sep = "";
-    for (Node n : Sequence.fromIterable(nodes)) {
+    for (Node n : Sequence.<Node>fromIterable(nodes)) {
       sb.append(sep).append(n.getNodeName());
       sep = ", ";
     }

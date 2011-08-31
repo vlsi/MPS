@@ -26,7 +26,7 @@ public class InternalRuntimePacker {
   private static void pack() {
     File tmpDir = FileUtil.createTmpDir();
     getFile().delete();
-    for (String cpi : SetSequence.fromSet(CommandLineGenerator.getClasspath(false))) {
+    for (String cpi : SetSequence.<String>fromSet(CommandLineGenerator.getClasspath(false))) {
       if (!(cpi.endsWith(".jar"))) {
         FileUtil.copyDir(new File(cpi), tmpDir);
       }

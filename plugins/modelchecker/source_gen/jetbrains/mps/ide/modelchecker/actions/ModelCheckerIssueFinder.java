@@ -42,7 +42,7 @@ public class ModelCheckerIssueFinder implements IFinder {
       throw new IllegalArgumentException();
     }
 
-    ProgressContext progressContext = new ProgressContext(indicator, ListSequence.fromList(modelDescriptors).<String>select(new ISelector<SModelDescriptor, String>() {
+    ProgressContext progressContext = new ProgressContext(indicator, ListSequence.<SModelDescriptor>fromList(modelDescriptors).<String>select(new ISelector<SModelDescriptor, String>() {
       public String select(SModelDescriptor md) {
         return getTaskName(md);
       }
@@ -51,7 +51,7 @@ public class ModelCheckerIssueFinder implements IFinder {
     if (modules != null) {
       moduleChecker = new ModuleChecker(progressContext);
       indicator.setIndeterminate(true);
-      for (IModule module : ListSequence.fromList(modules)) {
+      for (IModule module : ListSequence.<IModule>fromList(modules)) {
         moduleChecker.checkModule(module);
         if (moduleChecker.isCancelled()) {
           break;
@@ -66,7 +66,7 @@ public class ModelCheckerIssueFinder implements IFinder {
     }
     modelChecker.setSpecificCheckers(getSpecificCheckers());
 
-    for (SModelDescriptor modelDescriptor : ListSequence.fromList(modelDescriptors)) {
+    for (SModelDescriptor modelDescriptor : ListSequence.<SModelDescriptor>fromList(modelDescriptors)) {
       long modelStartTime = System.currentTimeMillis();
 
       modelChecker.checkModel(modelDescriptor);

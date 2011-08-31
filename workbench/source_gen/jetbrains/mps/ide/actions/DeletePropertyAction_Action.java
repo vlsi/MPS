@@ -26,10 +26,10 @@ public class DeletePropertyAction_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((TreeNode) MapSequence.fromMap(_params).get("node")) instanceof PropertyTreeNode)) {
+    if (!(((TreeNode) MapSequence.<String,Object>fromMap(_params).get("node")) instanceof PropertyTreeNode)) {
       return false;
     }
-    TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
+    TreeNode parent = ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("node")).getParent();
     return parent instanceof PropertiesTreeNode;
   }
 
@@ -51,8 +51,8 @@ public class DeletePropertyAction_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
@@ -60,9 +60,9 @@ public class DeletePropertyAction_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
+      TreeNode parent = ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("node")).getParent();
       PropertiesTreeNode propsNode = (PropertiesTreeNode) parent;
-      PropertyTreeNode propNode = (PropertyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
+      PropertyTreeNode propNode = (PropertyTreeNode) ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("node"));
       propsNode.getSNode().setProperty(propNode.getProperty(), null);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

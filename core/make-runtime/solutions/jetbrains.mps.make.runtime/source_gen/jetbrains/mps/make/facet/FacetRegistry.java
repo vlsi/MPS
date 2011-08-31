@@ -15,7 +15,7 @@ public class FacetRegistry {
   private static Logger LOG = Logger.getLogger(FacetRegistry.class);
   private static FacetRegistry INSTANCE = new FacetRegistry();
 
-  private Map<IFacet.Name, IFacet> facetMap = MapSequence.fromMap(new HashMap<IFacet.Name, IFacet>());
+  private Map<IFacet.Name, IFacet> facetMap = MapSequence.<IFacet.Name,IFacet>fromMap(new HashMap<IFacet.Name, IFacet>());
 
   private FacetRegistry() {
   }
@@ -24,7 +24,7 @@ public class FacetRegistry {
     if (MapSequence.fromMap(facetMap).containsKey(facet.getName())) {
       throw new IllegalArgumentException("already registered");
     }
-    MapSequence.fromMap(facetMap).put(facet.getName(), facet);
+    MapSequence.<IFacet.Name,IFacet>fromMap(facetMap).put(facet.getName(), facet);
   }
 
   public void unregister(IFacet facet) {
@@ -50,7 +50,7 @@ public class FacetRegistry {
     }
     // fallback to the "old" mechanism 
     LOG.debug("facet not found, loading using deprecated mechanism " + fn);
-    return MapSequence.fromMap(facetMap).get(fn);
+    return MapSequence.<IFacet.Name,IFacet>fromMap(facetMap).get(fn);
   }
 
   public Map<IFacet.Name, IFacet> allFacets() {

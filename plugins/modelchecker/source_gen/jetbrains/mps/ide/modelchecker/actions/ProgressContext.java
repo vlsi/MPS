@@ -13,7 +13,7 @@ import jetbrains.mps.ide.progress.TaskProgressSettings;
 public class ProgressContext {
   private long myStartTime;
   private long myEstimatedTime;
-  private List<String> myTaskNames = ListSequence.fromList(new ArrayList<String>());
+  private List<String> myTaskNames = ListSequence.<String>fromList(new ArrayList<String>());
   private int myCurrentTaskIndex = 0;
   private ProgressIndicator myProgressIndicator;
 
@@ -25,7 +25,7 @@ public class ProgressContext {
   }
 
   public ProgressContext(ProgressIndicator progressIndicator, Iterable<String> taskNames) {
-    this(progressIndicator, Sequence.fromIterable(taskNames).toListSequence());
+    this(progressIndicator, Sequence.<String>fromIterable(taskNames).toListSequence());
   }
 
   public ProgressContext(ProgressIndicator progressIndicator, String taskName) {
@@ -33,7 +33,7 @@ public class ProgressContext {
   }
 
   public void saveEstimatedTime(long subtaskStartTime) {
-    addEstimatedTimeMillis(ListSequence.fromList(myTaskNames).getElement(myCurrentTaskIndex), subtaskStartTime);
+    addEstimatedTimeMillis(ListSequence.<String>fromList(myTaskNames).getElement(myCurrentTaskIndex), subtaskStartTime);
     myCurrentTaskIndex++;
   }
 
@@ -81,7 +81,7 @@ public class ProgressContext {
 
   private static long getEstimatedTimeMillis(Iterable<String> taskNames) {
     long result = 0;
-    for (String taskName : Sequence.fromIterable(taskNames)) {
+    for (String taskName : Sequence.<String>fromIterable(taskNames)) {
       result += getEstimatedTimeMillis(taskName);
     }
     return result;

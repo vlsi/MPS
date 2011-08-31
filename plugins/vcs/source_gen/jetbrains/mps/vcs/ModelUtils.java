@@ -213,7 +213,7 @@ public class ModelUtils {
         return name.contains(modelFileName) && modelFileName.endsWith(".zip");
       }
     });
-    return Sequence.fromIterable(Sequence.fromArray(files)).sort(new ISelector<File, Comparable<?>>() {
+    return Sequence.<File>fromIterable(Sequence.fromArray(files)).sort(new ISelector<File, Comparable<?>>() {
       public Comparable<?> select(File f) {
         return f.getName();
       }

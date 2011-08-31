@@ -19,7 +19,7 @@ import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
 public class SnodeDemo {
   public static void main(String[] args) {
     final SNode foo = null;
-    ListSequence.fromList((SLinkOperations.getTargets(foo, "implements", true))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    ListSequence.<SNode>fromList((SLinkOperations.getTargets(foo, "implements", true))).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -69,7 +69,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2__zzz__it = ListSequence.fromList(SLinkOperations.getTargets(it, "extends", true)).iterator();
+                      this._2__zzz__it = ListSequence.<SNode>fromList(SLinkOperations.getTargets(it, "extends", true)).iterator();
                     case 3:
                       if (!(this._2__zzz__it.hasNext())) {
                         this.__CP__ = 1;
@@ -100,7 +100,7 @@ __switch__:
       }
     });
     // The following ypath construct should result in the same expression as above 
-    Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SNode>() {
+    Sequence.<SNode>fromIterable(Sequence.<SNode>fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
         SNode _zzz_ = foo;
         return SLinkOperations.getTargets(_zzz_, "implements", true);
@@ -155,7 +155,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2__yyy__it = ListSequence.fromList(SLinkOperations.getTargets(it, "extends", true)).iterator();
+                      this._2__yyy__it = ListSequence.<SNode>fromList(SLinkOperations.getTargets(it, "extends", true)).iterator();
                     case 3:
                       if (!(this._2__yyy__it.hasNext())) {
                         this.__CP__ = 1;
@@ -186,7 +186,7 @@ __switch__:
       }
     });
     // Another pair of tests 
-    ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(foo, "extends", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    ListSequence.<SNode>fromList(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(foo, "extends", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -206,7 +206,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_p_it = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getParent(it)).iterator();
+                      this._2_p_it = ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getParent(it)).iterator();
                     case 3:
                       if (!(this._2_p_it.hasNext())) {
                         this.__CP__ = 1;
@@ -216,7 +216,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._5_c_it = ListSequence.fromList(SNodeOperations.getChildren(_2_p)).iterator();
+                      this._5_c_it = ListSequence.<SNode>fromList(SNodeOperations.getChildren(_2_p)).iterator();
                     case 6:
                       if (!(this._5_c_it.hasNext())) {
                         this.__CP__ = 3;
@@ -259,7 +259,7 @@ __switch__:
         };
       }
     });
-    ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(foo, "extends", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    ListSequence.<SNode>fromList(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(foo, "extends", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -279,7 +279,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2__zzz__it = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getParent(it)).iterator();
+                      this._2__zzz__it = ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getParent(it)).iterator();
                     case 3:
                       if (!(this._2__zzz__it.hasNext())) {
                         this.__CP__ = 1;
@@ -335,7 +335,7 @@ __switch__:
     // And another one 
     /*
       //  way too complicated 
-      ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), foo)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      ListSequence.<SNode>fromList(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), foo)).<SNode>translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return new _FunctionTypes._return_P1_E0<Iterable<SNode>, SNode>() {
             public Iterable<SNode> invoke(final SNode _zzz_) {
@@ -355,7 +355,7 @@ __switch__:
                             assert false : "Internal error";
                             return false;
                           case 2:
-                            this._2__yyy__it = ListSequence.fromList(SNodeOperations.getChildren(_zzz_)).iterator();
+                            this._2__yyy__it = ListSequence.<SNode>fromList(SNodeOperations.getChildren(_zzz_)).iterator();
                           case 3:
                             if (!(this._2__yyy__it.hasNext())) {
                               this.__CP__ = 1;
@@ -392,7 +392,7 @@ __switch__:
         }
       });
     */
-    Sequence.fromClosure(new ISequenceClosure<SNode>() {
+    Sequence.<SNode>fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -411,7 +411,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 6:
-                      if (ListSequence.fromList(_5__yyy_).isNotEmpty()) {
+                      if (ListSequence.<SNode>fromList(_5__yyy_).isNotEmpty()) {
                         this.__CP__ = 7;
                         break;
                       }
@@ -426,17 +426,17 @@ __switch__:
                       this.__CP__ = 1;
                       break;
                     case 3:
-                      this._5__yyy_ = ListSequence.fromList(new ArrayList<SNode>());
-                      ListSequence.fromList(_5__yyy_).addSequence(ListSequence.fromList(SNodeOperations.getChildren(_3__zzz_)));
+                      this._5__yyy_ = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+                      ListSequence.<SNode>fromList(_5__yyy_).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getChildren(_3__zzz_)));
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      this._9__xxx_ = ListSequence.fromList(_5__yyy_).first();
-                      ListSequence.fromList(_5__yyy_).removeElement(_9__xxx_);
+                      this._9__xxx_ = ListSequence.<SNode>fromList(_5__yyy_).first();
+                      ListSequence.<SNode>fromList(_5__yyy_).removeElement(_9__xxx_);
                       this.__CP__ = 10;
                       break;
                     case 11:
-                      ListSequence.fromList(_5__yyy_).addSequence(ListSequence.fromList(SNodeOperations.getChildren(_9__xxx_)));
+                      ListSequence.<SNode>fromList(_5__yyy_).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getChildren(_9__xxx_)));
                       this.__CP__ = 6;
                       break;
                     default:
@@ -451,7 +451,7 @@ __switch__:
       }
     });
     // Following is just a test 
-    Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SNode>() {
+    Sequence.<SNode>fromIterable(Sequence.<SNode>fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
         SNode _zzz_ = foo;
         return SLinkOperations.getTargets(_zzz_, "implements", true);
@@ -491,7 +491,7 @@ __switch__:
     });
     TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"), SNODE.child("implements"));
     TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("ANCESTORS"));
-    Sequence.fromClosure(new ISequenceClosure<SNode>() {
+    Sequence.<SNode>fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -510,7 +510,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 8:
-                      if (ListSequence.fromList(_7__yyy_).isNotEmpty()) {
+                      if (ListSequence.<SNode>fromList(_7__yyy_).isNotEmpty()) {
                         this.__CP__ = 9;
                         break;
                       }
@@ -529,17 +529,17 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._7__yyy_ = ListSequence.fromList(new ArrayList<SNode>());
-                      ListSequence.fromList(_7__yyy_).addSequence(ListSequence.fromList(SNodeOperations.getChildren(_3__zzz_)));
+                      this._7__yyy_ = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+                      ListSequence.<SNode>fromList(_7__yyy_).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getChildren(_3__zzz_)));
                       this.__CP__ = 8;
                       break;
                     case 9:
-                      this._11__xxx_ = ListSequence.fromList(_7__yyy_).first();
-                      ListSequence.fromList(_7__yyy_).removeElement(_11__xxx_);
+                      this._11__xxx_ = ListSequence.<SNode>fromList(_7__yyy_).first();
+                      ListSequence.<SNode>fromList(_7__yyy_).removeElement(_11__xxx_);
                       this.__CP__ = 12;
                       break;
                     case 13:
-                      ListSequence.fromList(_7__yyy_).addSequence(ListSequence.fromList(SNodeOperations.getChildren(_11__xxx_)));
+                      ListSequence.<SNode>fromList(_7__yyy_).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getChildren(_11__xxx_)));
                       this.__CP__ = 8;
                       break;
                     default:
@@ -556,7 +556,7 @@ __switch__:
     TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("SELF_FOLLOWING_SIBLINGS"));
     TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"));
     TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"));
-    Sequence.fromClosure(new ISequenceClosure<SNode>() {
+    Sequence.<SNode>fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
         SNode _zzz_ = foo;
         return SNodeOperations.getChildren(_zzz_);

@@ -16,11 +16,11 @@ public class ClosuresBase_Test extends TestCase {
   }
 
   public void assertResultsEqual(_FunctionTypes._void_P1_E0<? super List<Integer>> expected, _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> test) {
-    List<Integer> expectedList = ListSequence.fromList(new ArrayList<Integer>());
+    List<Integer> expectedList = ListSequence.<Integer>fromList(new ArrayList<Integer>());
     expected.invoke(expectedList);
-    List<Integer> testList = ListSequence.fromList(new ArrayList<Integer>());
+    List<Integer> testList = ListSequence.<Integer>fromList(new ArrayList<Integer>());
     for (Integer i : test.invoke()) {
-      ListSequence.fromList(testList).addElement(i);
+      ListSequence.<Integer>fromList(testList).addElement(i);
     }
     Assert.assertEquals(expectedList, testList);
   }

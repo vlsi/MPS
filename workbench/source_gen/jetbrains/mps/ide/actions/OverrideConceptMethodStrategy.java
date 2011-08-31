@@ -30,16 +30,16 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
     if (SNodeOperations.isInstanceOf(sourceMethodConcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       sourceMethodConcept = null;
     }
-    Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    Iterable<SNode> paramList = ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return new OverrideConceptMethodStrategy.QuotationClass_3gioqg_a0a0a0a0d0a().createNode(it);
       }
     });
-    SNode superCallExpr = new OverrideConceptMethodStrategy.QuotationClass_3gioqg_a0a4a0().createNode(sourceMethodConcept, Sequence.fromIterable(paramList).toListSequence(), sourceMethod);
+    SNode superCallExpr = new OverrideConceptMethodStrategy.QuotationClass_3gioqg_a0a4a0().createNode(sourceMethodConcept, Sequence.<SNode>fromIterable(paramList).toListSequence(), sourceMethod);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new OverrideConceptMethodStrategy.QuotationClass_3gioqg_a0a0a0f0a().createNode(superCallExpr));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new OverrideConceptMethodStrategy.QuotationClass_3gioqg_a0a0a0f0a().createNode(superCallExpr));
     } else {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(superCallExpr));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(superCallExpr));
     }
   }
 

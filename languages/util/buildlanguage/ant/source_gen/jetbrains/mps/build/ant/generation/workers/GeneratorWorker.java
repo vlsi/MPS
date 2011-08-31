@@ -27,10 +27,10 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Collections;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.make.resources.IResource;
 import java.io.File;
 import jetbrains.mps.messages.IMessageHandler;
 import java.util.List;
@@ -97,7 +97,7 @@ public class GeneratorWorker extends MpsWorker {
     info(s.toString());
     final ProjectOperationContext ctx = ProjectOperationContext.get(project.getProject());
 
-    final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
+    final Iterable<IMResource> resources = Sequence.<IMResource>fromIterable(collectResources(ctx, go)).toListSequence();
     ModelAccess.instance().flushEventQueue();
     final Wrappers._T<Future<IResult>> res = new Wrappers._T<Future<IResult>>();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -122,7 +122,7 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   private Iterable<IModule> withGenerators(Iterable<IModule> modules) {
-    return Sequence.fromIterable(modules).concat(Sequence.fromIterable(modules).where(new IWhereFilter<IModule>() {
+    return Sequence.<IModule>fromIterable(modules).concat(Sequence.<IModule>fromIterable(modules).where(new IWhereFilter<IModule>() {
       public boolean accept(IModule it) {
         return it instanceof Language;
       }
@@ -134,7 +134,7 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   private Iterable<SModelDescriptor> getModelsToGenerate(IModule mod) {
-    return Sequence.fromIterable(((Iterable<SModelDescriptor>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+    return Sequence.<SModelDescriptor>fromIterable(((Iterable<SModelDescriptor>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
         return it.isGeneratable();
       }
@@ -147,19 +147,19 @@ public class GeneratorWorker extends MpsWorker {
       public void run() {
         for (MPSProject p : go.getProjects()) {
           for (IModule mod : withGenerators(p.getModules())) {
-            models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable((getModelsToGenerate(mod))));
+            models.value = Sequence.<SModelDescriptor>fromIterable(models.value).concat(Sequence.<SModelDescriptor>fromIterable((getModelsToGenerate(mod))));
 
           }
         }
         for (IModule mod : withGenerators(go.getModules())) {
-          models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(getModelsToGenerate(mod)));
+          models.value = Sequence.<SModelDescriptor>fromIterable(models.value).concat(Sequence.<SModelDescriptor>fromIterable(getModelsToGenerate(mod)));
         }
         if (go.getModels() != null) {
-          models.value = Sequence.fromIterable(models.value).concat(SetSequence.fromSet(go.getModels()));
+          models.value = Sequence.<SModelDescriptor>fromIterable(models.value).concat(SetSequence.<SModelDescriptor>fromSet(go.getModels()));
         }
       }
     });
-    return Sequence.fromIterable(new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModelDescriptor>() {
+    return Sequence.<IResource>fromIterable(new ModelsToResources(context, Sequence.<SModelDescriptor>fromIterable(models.value).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor smd) {
         return !(GeneratorManager.isDoNotGenerate(smd));
       }
@@ -227,9 +227,9 @@ public class GeneratorWorker extends MpsWorker {
    * @param V vertex type
    */
   public static class Graph<V> {
-    private Set<V> vertices = SetSequence.fromSet(new HashSet<V>());
-    private Map<V, List<V>> fwEdges = MapSequence.fromMap(new HashMap<V, List<V>>());
-    private Map<V, List<V>> bkEdges = MapSequence.fromMap(new HashMap<V, List<V>>());
+    private Set<V> vertices = SetSequence.<V>fromSet(new HashSet<V>());
+    private Map<V, List<V>> fwEdges = MapSequence.<V,List<V>>fromMap(new HashMap<V, List<V>>());
+    private Map<V, List<V>> bkEdges = MapSequence.<V,List<V>>fromMap(new HashMap<V, List<V>>());
     private _FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super V> sorter;
     private boolean asc;
 
@@ -237,20 +237,20 @@ public class GeneratorWorker extends MpsWorker {
     }
 
     public void addEdges(V from, V... to) {
-      List<V> fw = MapSequence.fromMap(fwEdges).get(from);
+      List<V> fw = MapSequence.<V,List<V>>fromMap(fwEdges).get(from);
       if (fw == null) {
-        fw = ListSequence.fromList(new ArrayList<V>());
-        MapSequence.fromMap(fwEdges).put(from, fw);
+        fw = ListSequence.<V>fromList(new ArrayList<V>());
+        MapSequence.<V,List<V>>fromMap(fwEdges).put(from, fw);
       }
       SetSequence.fromSet(vertices).addElement(from);
       for (V next : to) {
-        ListSequence.fromList(fw).addElement(next);
-        List<V> bk = MapSequence.fromMap(bkEdges).get(next);
+        ListSequence.<V>fromList(fw).addElement(next);
+        List<V> bk = MapSequence.<V,List<V>>fromMap(bkEdges).get(next);
         if (bk == null) {
-          bk = ListSequence.fromList(new ArrayList<V>());
-          MapSequence.fromMap(bkEdges).put(next, bk);
+          bk = ListSequence.<V>fromList(new ArrayList<V>());
+          MapSequence.<V,List<V>>fromMap(bkEdges).put(next, bk);
         }
-        ListSequence.fromList(bk).addElement(from);
+        ListSequence.<V>fromList(bk).addElement(from);
         SetSequence.fromSet(vertices).addElement(next);
       }
     }
@@ -262,7 +262,7 @@ public class GeneratorWorker extends MpsWorker {
 
     public Iterable<V> getVertices() {
       return (sorter != null ?
-        SetSequence.fromSet(vertices).sort(sorter, asc) :
+        SetSequence.<V>fromSet(vertices).sort(sorter, asc) :
         vertices
       );
     }
@@ -271,7 +271,7 @@ public class GeneratorWorker extends MpsWorker {
       return new GraphAnalyzer<V>() {
         @Override
         public Iterable<V> forwardEdges(V v) {
-          return MapSequence.fromMap(fwEdges).get(v);
+          return MapSequence.<V,List<V>>fromMap(fwEdges).get(v);
         }
 
         @Override
@@ -281,7 +281,7 @@ public class GeneratorWorker extends MpsWorker {
 
         @Override
         public Iterable<V> backwardEdges(V v) {
-          return MapSequence.fromMap(bkEdges).get(v);
+          return MapSequence.<V,List<V>>fromMap(bkEdges).get(v);
         }
       };
     }

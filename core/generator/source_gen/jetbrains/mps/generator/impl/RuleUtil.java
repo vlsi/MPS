@@ -164,9 +164,9 @@ public class RuleUtil {
 
   public static String[] getTemplateDeclarationParameterNames(SNode templateDeclaration) {
     List<SNode> params = SLinkOperations.getTargets(templateDeclaration, "parameter", true);
-    String[] result = new String[ListSequence.fromList(params).count()];
+    String[] result = new String[ListSequence.<SNode>fromList(params).count()];
     for (int i = 0; i < result.length; i++) {
-      SNode param = ListSequence.fromList(params).getElement(i);
+      SNode param = ListSequence.<SNode>fromList(params).getElement(i);
       if (param == null) {
         return null;
       }

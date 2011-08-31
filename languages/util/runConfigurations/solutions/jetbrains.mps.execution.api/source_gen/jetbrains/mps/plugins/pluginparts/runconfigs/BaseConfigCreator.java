@@ -103,7 +103,7 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
 
   @NotNull
   protected static ConfigurationFactory findFactory(ConfigurationType configurationType, @NonNls String configurationFactoryClassName) {
-    for (ConfigurationFactory factory : Sequence.fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {
+    for (ConfigurationFactory factory : Sequence.<ConfigurationFactory>fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {
       if (factory.getClass().getName().equals(configurationFactoryClassName)) {
         return factory;
       }

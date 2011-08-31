@@ -25,12 +25,12 @@ public class GlobalFilteredScope extends GlobalScope {
   }
 
   public Set<IModule> getVisibleModules() {
-    Iterable<IModule> s = Sequence.fromClosure(new ISequenceClosure<IModule>() {
+    Iterable<IModule> s = Sequence.<IModule>fromClosure(new ISequenceClosure<IModule>() {
       public Iterable<IModule> iterable() {
         return MPSModuleRepository.getInstance().getAllModules();
       }
     });
-    return SetSequence.fromSetAndArray(new HashSet(), Sequence.fromIterable(s).where(new IWhereFilter<IModule>() {
+    return SetSequence.fromSetAndArray(new HashSet(), Sequence.<IModule>fromIterable(s).where(new IWhereFilter<IModule>() {
       public boolean accept(IModule it) {
         return GlobalFilteredScope.this.acceptModule(it);
       }
@@ -46,7 +46,7 @@ public class GlobalFilteredScope extends GlobalScope {
   }
 
   public List<SModelDescriptor> getModelDescriptors(final String modelName) {
-    return Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
+    return Sequence.<SModelDescriptor>fromIterable(Sequence.<SModelDescriptor>fromClosure(new ISequenceClosure<SModelDescriptor>() {
       public Iterable<SModelDescriptor> iterable() {
         return SModelRepository.getInstance().getModelDescriptorsByModelName(modelName);
       }
@@ -58,7 +58,7 @@ public class GlobalFilteredScope extends GlobalScope {
   }
 
   public List<SModelDescriptor> getModelDescriptors() {
-    return Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
+    return Sequence.<SModelDescriptor>fromIterable(Sequence.<SModelDescriptor>fromClosure(new ISequenceClosure<SModelDescriptor>() {
       public Iterable<SModelDescriptor> iterable() {
         return SModelRepository.getInstance().getModelDescriptors();
       }
@@ -81,10 +81,10 @@ public class GlobalFilteredScope extends GlobalScope {
       return false;
     }
     Iterable<IModule> requiredModules = getRequiredModules();
-    if (requiredModules == null || Sequence.fromIterable(requiredModules).isEmpty()) {
+    if (requiredModules == null || Sequence.<IModule>fromIterable(requiredModules).isEmpty()) {
       return true;
     }
-    for (IModule module : Sequence.fromIterable(requiredModules)) {
+    for (IModule module : Sequence.<IModule>fromIterable(requiredModules)) {
       if (m.getDependenciesManager().getAllUsedLanguages().contains(module)) {
         return true;
       }

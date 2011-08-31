@@ -46,16 +46,16 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("selectedFile", event.getData(MPSDataKeys.VIRTUAL_FILE));
-    if (MapSequence.fromMap(_params).get("selectedFile") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("selectedFile", event.getData(MPSDataKeys.VIRTUAL_FILE));
+    if (MapSequence.<String,Object>fromMap(_params).get("selectedFile") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
@@ -63,8 +63,8 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      String oldName = ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getName();
-      RenameFileDialog dialog = new RenameFileDialog(((Project) MapSequence.fromMap(_params).get("project")), oldName, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory());
+      String oldName = ((VirtualFile) MapSequence.<String,Object>fromMap(_params).get("selectedFile")).getName();
+      RenameFileDialog dialog = new RenameFileDialog(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), oldName, ((VirtualFile) MapSequence.<String,Object>fromMap(_params).get("selectedFile")).isDirectory());
       dialog.show();
       if (!(dialog.isOK())) {
         return;
@@ -76,11 +76,11 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
             if (RenameFileOrDirectory_Action.this.isNotValid(result, _params)) {
               return;
             }
-            ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).rename(null, result);
-            ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).refresh();
+            ((VirtualFile) MapSequence.<String,Object>fromMap(_params).get("selectedFile")).rename(null, result);
+            ProjectView.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project"))).refresh();
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getCurrentProjectViewPane().select(null, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")), true);
+                ProjectView.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project"))).getCurrentProjectViewPane().select(null, ((VirtualFile) MapSequence.<String,Object>fromMap(_params).get("selectedFile")), true);
               }
             });
           } catch (IOException e) {
@@ -96,11 +96,11 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
 
   /*package*/ boolean isNotValid(String result, final Map<String, Object> _params) {
     if (result == null || result.length() == 0) {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter valid name");
+      JOptionPane.showMessageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "Enter valid name");
       return true;
     }
-    if (check_g7rid4_a0b0a(((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent(), result) != null) {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), result + " already exists");
+    if (check_g7rid4_a0b0a(((VirtualFile) MapSequence.<String,Object>fromMap(_params).get("selectedFile")).getParent(), result) != null) {
+      JOptionPane.showMessageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), result + " already exists");
       return true;
     }
     return false;

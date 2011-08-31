@@ -49,16 +49,16 @@ public class OptimizeModuleImports_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -69,18 +69,18 @@ public class OptimizeModuleImports_Action extends GeneratedAction {
       final Wrappers._T<String> report = new Wrappers._T<String>("");
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          OptimizeImportsHelper helper = new OptimizeImportsHelper(((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Solution) {
-            report.value = helper.optimizeSolutionImports(((Solution) ((IModule) MapSequence.fromMap(_params).get("module"))));
-          } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language) {
-            report.value = helper.optimizeLanguageImports(((Language) ((IModule) MapSequence.fromMap(_params).get("module"))));
+          OptimizeImportsHelper helper = new OptimizeImportsHelper(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+          if (((IModule) MapSequence.<String,Object>fromMap(_params).get("module")) instanceof Solution) {
+            report.value = helper.optimizeSolutionImports(((Solution) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module"))));
+          } else if (((IModule) MapSequence.<String,Object>fromMap(_params).get("module")) instanceof Language) {
+            report.value = helper.optimizeLanguageImports(((Language) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module"))));
           }
           SModelRepository.getInstance().saveAll();
-          ((IModule) MapSequence.fromMap(_params).get("module")).save();
+          ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")).save();
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         }
       });
-      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), report.value, "Optimize Imports", Messages.getInformationIcon());
+      Messages.showMessageDialog(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), report.value, "Optimize Imports", Messages.getInformationIcon());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "OptimizeModuleImports", t);

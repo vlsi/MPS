@@ -51,16 +51,16 @@ public class HighlightUsages_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("editorCell") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorCell") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
@@ -70,26 +70,26 @@ public class HighlightUsages_Action extends GeneratedAction {
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
-          EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
-          SNode node = ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNodeWRTReference();
-          Set<SReference> usages = new ModelFindOperations(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).findUsages(node);
+          NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getHighlightManager();
+          EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
+          SNode node = ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("editorCell")).getSNodeWRTReference();
+          Set<SReference> usages = new ModelFindOperations(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model"))).findUsages(node);
           boolean highlight = highlightManager.getMessagesFor(node, messageOwner).isEmpty();
-          if (SNodeOperations.getContainingRoot(node) == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
+          if (SNodeOperations.getContainingRoot(node) == ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
             if (highlight) {
               highlightManager.mark(node, HighlightConstants.NODE_COLOR, "source node", messageOwner);
             } else {
-              for (EditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(node, messageOwner))) {
+              for (EditorMessage message : ListSequence.<EditorMessage>fromList(highlightManager.getMessagesFor(node, messageOwner))) {
                 highlightManager.unmark(message);
               }
             }
           }
-          for (SReference ref : SetSequence.fromSet(usages)) {
-            if (ref.getSourceNode().getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
+          for (SReference ref : SetSequence.<SReference>fromSet(usages)) {
+            if (ref.getSourceNode().getContainingRoot() == ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
               if (highlight) {
                 highlightManager.mark(ref.getSourceNode(), HighlightConstants.USAGES_COLOR, "usage", messageOwner);
               } else {
-                for (EditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(ref.getSourceNode(), messageOwner))) {
+                for (EditorMessage message : ListSequence.<EditorMessage>fromList(highlightManager.getMessagesFor(ref.getSourceNode(), messageOwner))) {
                   highlightManager.unmark(message);
                 }
               }

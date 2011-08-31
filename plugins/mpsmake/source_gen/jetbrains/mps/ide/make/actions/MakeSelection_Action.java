@@ -34,7 +34,7 @@ public class MakeSelection_Action extends GeneratedAction {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
     }
-    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")), ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")), ((IModule) MapSequence.fromMap(_params).get("cmodule"))).actionText(MakeSelection_Action.this.cleanMake);
+    String text = new MakeActionParameters(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), ((List<SModelDescriptor>) MapSequence.<String,Object>fromMap(_params).get("models")), ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("cmodel")), ((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")), ((IModule) MapSequence.<String,Object>fromMap(_params).get("cmodule"))).actionText(MakeSelection_Action.this.cleanMake);
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
@@ -60,20 +60,20 @@ public class MakeSelection_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
-    MapSequence.fromMap(_params).put("cmodel", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
-    MapSequence.fromMap(_params).put("cmodule", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    MapSequence.<String,Object>fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
+    MapSequence.<String,Object>fromMap(_params).put("cmodel", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    MapSequence.<String,Object>fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    MapSequence.<String,Object>fromMap(_params).put("cmodule", event.getData(MPSDataKeys.CONTEXT_MODULE));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")), ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")), ((IModule) MapSequence.fromMap(_params).get("cmodule"))), MakeSelection_Action.this.cleanMake).executeAction();
+      new MakeActionImpl(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), ((List<SModelDescriptor>) MapSequence.<String,Object>fromMap(_params).get("models")), ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("cmodel")), ((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")), ((IModule) MapSequence.<String,Object>fromMap(_params).get("cmodule"))), MakeSelection_Action.this.cleanMake).executeAction();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MakeSelection", t);

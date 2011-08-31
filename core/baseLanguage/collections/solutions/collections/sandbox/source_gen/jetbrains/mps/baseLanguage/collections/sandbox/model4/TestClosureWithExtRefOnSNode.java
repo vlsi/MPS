@@ -15,7 +15,7 @@ public class TestClosureWithExtRefOnSNode {
       return null;
     }
     Iterable<SNode> statements = SLinkOperations.getTargets(SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "statement", true);
-    return Sequence.fromIterable(statements).findFirst(new IWhereFilter<SNode>() {
+    return Sequence.<SNode>fromIterable(statements).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
           return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true) == valDecl;

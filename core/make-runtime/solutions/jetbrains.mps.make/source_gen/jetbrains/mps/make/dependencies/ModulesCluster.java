@@ -29,8 +29,8 @@ import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ModulesCluster {
-  private Map<ModuleReference, IModule> modulesView = MapSequence.fromMap(new HashMap<ModuleReference, IModule>());
-  private Map<ModuleReference, ModulesCluster.ModuleDeps> allDeps = MapSequence.fromMap(new HashMap<ModuleReference, ModulesCluster.ModuleDeps>());
+  private Map<ModuleReference, IModule> modulesView = MapSequence.<ModuleReference,IModule>fromMap(new HashMap<ModuleReference, IModule>());
+  private Map<ModuleReference, ModulesCluster.ModuleDeps> allDeps = MapSequence.<ModuleReference,ModulesCluster.ModuleDeps>fromMap(new HashMap<ModuleReference, ModulesCluster.ModuleDeps>());
 
   public ModulesCluster(Iterable<IModule> mods) {
     addAll(mods);
@@ -47,32 +47,32 @@ public class ModulesCluster {
   }
 
   public void collectRequired(Iterable<IModule> pool) {
-    Set<ModuleReference> allRequired = SetSequence.fromSetWithValues(new HashSet<ModuleReference>(), Sequence.fromIterable(MapSequence.fromMap(allDeps).values()).<ModuleReference>translate(new ITranslator2<ModulesCluster.ModuleDeps, ModuleReference>() {
+    Set<ModuleReference> allRequired = SetSequence.<ModuleReference>fromSetWithValues(new HashSet<ModuleReference>(), Sequence.<ModulesCluster.ModuleDeps>fromIterable(MapSequence.fromMap(allDeps).values()).<ModuleReference>translate(new ITranslator2<ModulesCluster.ModuleDeps, ModuleReference>() {
       public Iterable<ModuleReference> translate(ModulesCluster.ModuleDeps dep) {
         return dep.required;
       }
     }));
-    List<IModule> available = Sequence.fromIterable(pool).toListSequence();
+    List<IModule> available = Sequence.<IModule>fromIterable(pool).toListSequence();
     int atSize;
     do {
-      atSize = MapSequence.fromMap(allDeps).count();
-      for (Iterator<IModule> it = ListSequence.fromList(available).iterator(); it.hasNext();) {
+      atSize = MapSequence.<ModuleReference,ModulesCluster.ModuleDeps>fromMap(allDeps).count();
+      for (Iterator<IModule> it = ListSequence.<IModule>fromList(available).iterator(); it.hasNext();) {
         IModule mod = it.next();
         ModuleReference mr = mod.getModuleReference();
-        if (SetSequence.fromSet(allRequired).contains(mr)) {
+        if (SetSequence.<ModuleReference>fromSet(allRequired).contains(mr)) {
           primAdd(mod);
-          SetSequence.fromSet(allRequired).addSequence(ListSequence.fromList(MapSequence.fromMap(allDeps).get(mr).required));
+          SetSequence.fromSet(allRequired).addSequence(ListSequence.<ModuleReference>fromList(MapSequence.<ModuleReference,ModulesCluster.ModuleDeps>fromMap(allDeps).get(mr).required));
           it.remove();
         }
       }
-    } while (atSize < MapSequence.fromMap(allDeps).count());
+    } while (atSize < MapSequence.<ModuleReference,ModulesCluster.ModuleDeps>fromMap(allDeps).count());
   }
 
   public void collectAllRequired() {
   }
 
   public boolean hasCycles() {
-    return ListSequence.fromList(new ModulesCluster.ModulesGraph().findCycles()).isNotEmpty();
+    return ListSequence.<List<ModuleReference>>fromList(new ModulesCluster.ModulesGraph().findCycles()).isNotEmpty();
   }
 
   public Iterable<? extends Iterable<IModule>> buildOrder() {
@@ -80,9 +80,9 @@ public class ModulesCluster {
     Iterable<? extends Iterable<ModuleReference>> compacted = this.compact(order);
     return Sequence.fromIterable(compacted).<List<IModule>>select(new ISelector<Iterable<ModuleReference>, IListSequence<IModule>>() {
       public IListSequence<IModule> select(Iterable<ModuleReference> cycle) {
-        return Sequence.fromIterable(cycle).<IModule>select(new ISelector<ModuleReference, IModule>() {
+        return Sequence.<ModuleReference>fromIterable(cycle).<IModule>select(new ISelector<ModuleReference, IModule>() {
           public IModule select(ModuleReference mr) {
-            return MapSequence.fromMap(modulesView).get(mr);
+            return MapSequence.<ModuleReference,IModule>fromMap(modulesView).get(mr);
           }
         }).toListSequence();
       }
@@ -91,7 +91,7 @@ public class ModulesCluster {
 
   private Iterable<Iterable<ModuleReference>> compact(List<List<ModuleReference>> order) {
     final Wrappers._T<Iterable<ModuleReference>> prev = new Wrappers._T<Iterable<ModuleReference>>(null);
-    return ListSequence.fromList(order).concat(Sequence.fromIterable(Sequence.<List<ModuleReference>>singleton(null))).<Iterable<ModuleReference>>translate(new ITranslator2<List<ModuleReference>, Iterable<ModuleReference>>() {
+    return ListSequence.<List<ModuleReference>>fromList(order).concat(Sequence.<List<ModuleReference>>fromIterable(Sequence.<List<ModuleReference>>singleton(null))).<Iterable<ModuleReference>>translate(new ITranslator2<List<ModuleReference>, Iterable<ModuleReference>>() {
       public Iterable<Iterable<ModuleReference>> translate(final List<ModuleReference> cycle) {
         return new Iterable<Iterable<ModuleReference>>() {
           public Iterator<Iterable<ModuleReference>> iterator() {
@@ -117,13 +117,13 @@ __switch__:
                       this.__CP__ = 7;
                       break;
                     case 8:
-                      if (ListSequence.fromList(cycle).<ModuleReference>translate(new ITranslator2<ModuleReference, ModuleReference>() {
+                      if (ListSequence.<ModuleReference>fromList(cycle).<ModuleReference>translate(new ITranslator2<ModuleReference, ModuleReference>() {
                         public Iterable<ModuleReference> translate(ModuleReference mr) {
-                          return MapSequence.fromMap(allDeps).get(mr).required;
+                          return MapSequence.<ModuleReference,ModulesCluster.ModuleDeps>fromMap(allDeps).get(mr).required;
                         }
-                      }).intersect(Sequence.fromIterable(prev.value).<ModuleReference>translate(new ITranslator2<ModuleReference, ModuleReference>() {
+                      }).intersect(Sequence.<ModuleReference>fromIterable(prev.value).<ModuleReference>translate(new ITranslator2<ModuleReference, ModuleReference>() {
                         public Iterable<ModuleReference> translate(ModuleReference mr) {
-                          return MapSequence.fromMap(allDeps).get(mr).dependent;
+                          return MapSequence.<ModuleReference,ModulesCluster.ModuleDeps>fromMap(allDeps).get(mr).dependent;
                         }
                       })).isEmpty()) {
                         this.__CP__ = 9;
@@ -146,14 +146,14 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      prev.value = ListSequence.fromList(cycle).toListSequence();
+                      prev.value = ListSequence.<ModuleReference>fromList(cycle).toListSequence();
                       this.__CP__ = 1;
                       break;
                     case 7:
                       this.__CP__ = 8;
                       break;
                     case 9:
-                      prev.value = Sequence.fromIterable(prev.value).concat(ListSequence.fromList(cycle).toListSequence());
+                      prev.value = Sequence.<ModuleReference>fromIterable(prev.value).concat(ListSequence.<ModuleReference>fromList(cycle).toListSequence());
                       this.__CP__ = 1;
                       break;
                     case 11:
@@ -183,27 +183,27 @@ __switch__:
   private void primAdd(IModule mod) {
     ModuleReference mr = mod.getModuleReference();
     if (!(MapSequence.fromMap(modulesView).containsKey(mr))) {
-      MapSequence.fromMap(modulesView).put(mr, mod);
+      MapSequence.<ModuleReference,IModule>fromMap(modulesView).put(mr, mod);
       updateDeps(mod);
     }
   }
 
   public void updateDeps(IModule mod) {
     ModuleReference mr = mod.getModuleReference();
-    ModulesCluster.ModuleDeps deps = MapSequence.fromMap(allDeps).get(mr);
+    ModulesCluster.ModuleDeps deps = MapSequence.<ModuleReference,ModulesCluster.ModuleDeps>fromMap(allDeps).get(mr);
     if (deps == null) {
       deps = new ModulesCluster.ModuleDeps();
-      MapSequence.fromMap(allDeps).put(mr, deps);
+      MapSequence.<ModuleReference,ModulesCluster.ModuleDeps>fromMap(allDeps).put(mr, deps);
     }
-    ListSequence.fromList(deps.required).addSequence(Sequence.fromIterable(required(mod)));
+    ListSequence.<ModuleReference>fromList(deps.required).addSequence(Sequence.<ModuleReference>fromIterable(required(mod)));
     for (ModuleReference req : deps.required) {
       if (MapSequence.fromMap(allDeps).containsKey(req)) {
-        ListSequence.fromList(MapSequence.fromMap(allDeps).get(req).dependent).addElement(mr);
+        ListSequence.<ModuleReference>fromList(MapSequence.<ModuleReference,ModulesCluster.ModuleDeps>fromMap(allDeps).get(req).dependent).addElement(mr);
       }
     }
     for (IMapping<ModuleReference, ModulesCluster.ModuleDeps> m : MapSequence.fromMap(allDeps).mappingsSet()) {
-      if (ListSequence.fromList(m.value().required).contains(mr) && !(ListSequence.fromList(deps.dependent).contains(m.key()))) {
-        ListSequence.fromList(deps.dependent).addElement(m.key());
+      if (ListSequence.<ModuleReference>fromList(m.value().required).contains(mr) && !(ListSequence.<ModuleReference>fromList(deps.dependent).contains(m.key()))) {
+        ListSequence.<ModuleReference>fromList(deps.dependent).addElement(m.key());
       }
     }
   }
@@ -211,30 +211,30 @@ __switch__:
   private Iterable<ModuleReference> required(IModule mod) {
     mod.getDependenciesManager();
     DependenciesManager depman = mod.getDependenciesManager();
-    Set<IModule> reqmods = SetSequence.fromSetWithValues(new HashSet<IModule>(), Sequence.fromIterable(((Iterable<Language>) depman.getAllUsedLanguages())).<Generator>translate(new ITranslator2<Language, Generator>() {
+    Set<IModule> reqmods = SetSequence.<IModule>fromSetWithValues(new HashSet<IModule>(), Sequence.<Language>fromIterable(((Iterable<Language>) depman.getAllUsedLanguages())).<Generator>translate(new ITranslator2<Language, Generator>() {
       public Iterable<Generator> translate(Language lang) {
         return lang.getGenerators();
       }
     }));
-    SetSequence.fromSet(reqmods).addSequence(SetSequence.fromSet(depman.getAllRequiredModules()));
-    SetSequence.fromSet(reqmods).addSequence(SetSequence.fromSet(depman.getAllVisibleModules()));
-    Iterable<ModuleReference> reqs = SetSequence.fromSet(reqmods).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
+    SetSequence.fromSet(reqmods).addSequence(SetSequence.<IModule>fromSet(depman.getAllRequiredModules()));
+    SetSequence.fromSet(reqmods).addSequence(SetSequence.<IModule>fromSet(depman.getAllVisibleModules()));
+    Iterable<ModuleReference> reqs = SetSequence.<IModule>fromSet(reqmods).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
       public ModuleReference select(IModule m) {
         return m.getModuleReference();
       }
     });
     if (mod instanceof Generator) {
-      reqs = Sequence.fromIterable(reqs).concat(Sequence.fromIterable(Sequence.<ModuleReference>singleton(((Generator) mod).getSourceLanguage().getModuleReference())));
+      reqs = Sequence.<ModuleReference>fromIterable(reqs).concat(Sequence.<ModuleReference>fromIterable(Sequence.<ModuleReference>singleton(((Generator) mod).getSourceLanguage().getModuleReference())));
     } else if (mod instanceof Language) {
     } else if (mod instanceof DevKit) {
     } else {
     }
-    return Sequence.fromIterable(reqs).distinct().toListSequence();
+    return Sequence.<ModuleReference>fromIterable(reqs).distinct().toListSequence();
   }
 
   public static class ModuleDeps {
-    private List<ModuleReference> dependent = ListSequence.fromList(new LinkedList<ModuleReference>());
-    private List<ModuleReference> required = ListSequence.fromList(new LinkedList<ModuleReference>());
+    private List<ModuleReference> dependent = ListSequence.<ModuleReference>fromList(new LinkedList<ModuleReference>());
+    private List<ModuleReference> required = ListSequence.<ModuleReference>fromList(new LinkedList<ModuleReference>());
 
     public ModuleDeps() {
     }
@@ -245,7 +245,7 @@ __switch__:
     }
 
     public Iterable<ModuleReference> forwardEdges(ModuleReference v) {
-      return ListSequence.fromList(MapSequence.fromMap(allDeps).get(v).dependent).where(new IWhereFilter<ModuleReference>() {
+      return ListSequence.<ModuleReference>fromList(MapSequence.<ModuleReference,ModulesCluster.ModuleDeps>fromMap(allDeps).get(v).dependent).where(new IWhereFilter<ModuleReference>() {
         public boolean accept(ModuleReference mod) {
           return MapSequence.fromMap(allDeps).containsKey(mod);
         }
@@ -253,7 +253,7 @@ __switch__:
     }
 
     public Iterable<ModuleReference> backwardEdges(ModuleReference v) {
-      return ListSequence.fromList(MapSequence.fromMap(allDeps).get(v).required).where(new IWhereFilter<ModuleReference>() {
+      return ListSequence.<ModuleReference>fromList(MapSequence.<ModuleReference,ModulesCluster.ModuleDeps>fromMap(allDeps).get(v).required).where(new IWhereFilter<ModuleReference>() {
         public boolean accept(ModuleReference mod) {
           return MapSequence.fromMap(allDeps).containsKey(mod);
         }

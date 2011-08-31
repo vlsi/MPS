@@ -27,20 +27,20 @@ public class ModelsToResources {
 
   public Iterable<IResource> resources(boolean dirtyOnly) {
     Iterable<SModelDescriptor> smds = models;
-    smds = Sequence.fromIterable(smds).sort(new ISelector<SModelDescriptor, Comparable<?>>() {
+    smds = Sequence.<SModelDescriptor>fromIterable(smds).sort(new ISelector<SModelDescriptor, Comparable<?>>() {
       public Comparable<?> select(SModelDescriptor desc) {
         return desc.getModule().getModuleFqName();
       }
     }, true);
     if (dirtyOnly) {
-      smds = ListSequence.fromListWithValues(new ArrayList<SModelDescriptor>(), GenerationFacade.getModifiedModels(Sequence.fromIterable(smds).toListSequence(), this.context));
+      smds = ListSequence.<SModelDescriptor>fromListWithValues(new ArrayList<SModelDescriptor>(), GenerationFacade.getModifiedModels(Sequence.<SModelDescriptor>fromIterable(smds).toListSequence(), this.context));
     }
     return arrangeByModule(smds);
   }
 
   private Iterable<IResource> arrangeByModule(Iterable<SModelDescriptor> smds) {
     final Wrappers._T<List<SModelDescriptor>> models = new Wrappers._T<List<SModelDescriptor>>(null);
-    return (Iterable<IResource>) Sequence.fromIterable(smds).concat(Sequence.fromIterable(Sequence.<SModelDescriptor>singleton(null))).<MResource>translate(new ITranslator2<SModelDescriptor, MResource>() {
+    return (Iterable<IResource>) Sequence.<SModelDescriptor>fromIterable(smds).concat(Sequence.<SModelDescriptor>fromIterable(Sequence.<SModelDescriptor>singleton(null))).<MResource>translate(new ITranslator2<SModelDescriptor, MResource>() {
       public Iterable<MResource> translate(final SModelDescriptor smd) {
         return new Iterable<MResource>() {
           public Iterator<MResource> iterator() {
@@ -77,7 +77,7 @@ __switch__:
                       this.__CP__ = 11;
                       break;
                     case 12:
-                      if (ListSequence.fromList(models.value).last().getModule() == smd.getModule()) {
+                      if (ListSequence.<SModelDescriptor>fromList(models.value).last().getModule() == smd.getModule()) {
                         this.__CP__ = 13;
                         break;
                       }
@@ -92,11 +92,11 @@ __switch__:
                       break;
                     case 7:
                       this.__CP__ = 1;
-                      this.yield(new MResource(ListSequence.fromList(models.value).last().getModule(), models.value));
+                      this.yield(new MResource(ListSequence.<SModelDescriptor>fromList(models.value).last().getModule(), models.value));
                       return true;
                     case 16:
                       this.__CP__ = 17;
-                      this.yield(new MResource(ListSequence.fromList(models.value).last().getModule(), models.value));
+                      this.yield(new MResource(ListSequence.<SModelDescriptor>fromList(models.value).last().getModule(), models.value));
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -115,7 +115,7 @@ __switch__:
                       this.__CP__ = 12;
                       break;
                     case 13:
-                      ListSequence.fromList(models.value).addElement(smd);
+                      ListSequence.<SModelDescriptor>fromList(models.value).addElement(smd);
                       this.__CP__ = 11;
                       break;
                     case 15:
@@ -126,7 +126,7 @@ __switch__:
                       this.__CP__ = 11;
                       break;
                     case 18:
-                      models.value = ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), smd);
+                      models.value = ListSequence.<SModelDescriptor>fromListAndArray(new ArrayList<SModelDescriptor>(), smd);
                       this.__CP__ = 1;
                       break;
                     default:

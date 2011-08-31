@@ -36,7 +36,7 @@ public enum FileType {
     final Wrappers._T<String> fileName = new Wrappers._T<String>(file.getName());
     if (fileName.value.endsWith(SVN_BASE)) {
       fileName.value = fileName.value.substring(0, fileName.value.length() - FileType.SVN_BASE.length());
-      FileType type = Sequence.fromIterable(Sequence.fromArray(FileType.values())).findFirst(new IWhereFilter<FileType>() {
+      FileType type = Sequence.<FileType>fromIterable(Sequence.fromArray(FileType.values())).findFirst(new IWhereFilter<FileType>() {
         public boolean accept(FileType t) {
           return fileName.value.endsWith(t.mySuffix);
         }
@@ -55,7 +55,7 @@ public enum FileType {
         return null;
       }
       final String str = new String(buf, 0, read);
-      return Sequence.fromIterable(Sequence.fromArray(FileType.values())).findFirst(new IWhereFilter<FileType>() {
+      return Sequence.<FileType>fromIterable(Sequence.fromArray(FileType.values())).findFirst(new IWhereFilter<FileType>() {
         public boolean accept(FileType t) {
           String tagBegin = "<" + t.myRootElement;
           return str.contains(tagBegin + ">") || str.contains(tagBegin + " ");

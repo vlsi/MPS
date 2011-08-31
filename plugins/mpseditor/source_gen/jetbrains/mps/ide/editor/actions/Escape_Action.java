@@ -24,11 +24,11 @@ public class Escape_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).hasNodeInformationDialog()) {
+    if (((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible() || ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).hasNodeInformationDialog()) {
       return false;
     }
-    if (((Boolean) MapSequence.fromMap(_params).get("isModalContext"))) {
-      return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelectionStackSize() > 1;
+    if (((Boolean) MapSequence.<String,Object>fromMap(_params).get("isModalContext"))) {
+      return ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getSelectionManager().getSelectionStackSize() > 1;
     }
     return true;
   }
@@ -51,12 +51,12 @@ public class Escape_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("isModalContext", event.getData(MPSDataKeys.IS_MODAL_CONTEXT));
-    if (MapSequence.fromMap(_params).get("isModalContext") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("isModalContext", event.getData(MPSDataKeys.IS_MODAL_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("isModalContext") == null) {
       return false;
     }
     return true;
@@ -64,14 +64,14 @@ public class Escape_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible()) {
-        ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSearchPanel().deactivate();
+      if (((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).isSearchPanelVisible()) {
+        ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getSearchPanel().deactivate();
       }
 
-      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().clearForOwner(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner());
-      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).onEscape();
+      ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getHighlightManager().clearForOwner(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getHighlightMessagesOwner());
+      ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).onEscape();
 
-      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().setSelection(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getDeepestSelection());
+      ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getSelectionManager().setSelection(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getSelectionManager().getDeepestSelection());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Escape", t);

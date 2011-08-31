@@ -137,7 +137,7 @@ public class TypesProvider {
           TypeBinding[] typeBindings = parameterizedTypeBinding.arguments;
           if (typeBindings != null) {
             for (TypeBinding typeBinding : typeBindings) {
-              ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(createType(typeBinding));
+              ListSequence.<SNode>fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(createType(typeBinding));
             }
           }
         }
@@ -168,7 +168,7 @@ public class TypesProvider {
       SNode tvr = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
       SNode declaringGeneric = myReferentsCreator.myBindingMap.get(typeVariableBinding.declaringElement);
       if (SNodeOperations.isInstanceOf(declaringGeneric, "jetbrains.mps.baseLanguage.structure.GenericDeclaration")) {
-        SLinkOperations.setTarget(tvr, "typeVariableDeclaration", ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(declaringGeneric, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), "typeVariableDeclaration", true)).getElement(typeVariableBinding.rank), false);
+        SLinkOperations.setTarget(tvr, "typeVariableDeclaration", ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(declaringGeneric, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), "typeVariableDeclaration", true)).getElement(typeVariableBinding.rank), false);
 
       } else {
         throw new JavaConverterException("Declaring element for a type var is not a GenericDeclaration");

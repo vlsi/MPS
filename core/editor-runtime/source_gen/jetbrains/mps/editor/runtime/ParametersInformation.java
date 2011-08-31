@@ -45,14 +45,14 @@ public class ParametersInformation<T> {
     JPanel panel = new JPanel(new GridBagLayout());
     panel.setBackground(ToolTip.BACKGROUND_COLOR);
     panel.setBorder(new EmptyBorder(0, 4, 0, 4));
-    for (T method : Sequence.fromIterable(methods)) {
+    for (T method : Sequence.<T>fromIterable(methods)) {
       StyledTextPrinter printer = new StyledTextPrinter();
       this.getStyledMethodPresentation(node, editorContext, method, printer);
       JTextPane textPane = new JTextPane(printer.getDocument());
       textPane.setBorder(null);
       textPane.setFont(EditorSettings.getInstance().getDefaultEditorFont());
       textPane.setOpaque(true);
-      if (Sequence.fromIterable(methods).count() > 1 && this.isMethodCurrent(node, editorContext, method)) {
+      if (Sequence.<T>fromIterable(methods).count() > 1 && this.isMethodCurrent(node, editorContext, method)) {
         textPane.setBackground(new Color(0xe7, 0xfe, 0xea));
       } else {
         textPane.setBackground(ToolTip.BACKGROUND_COLOR);
@@ -61,7 +61,7 @@ public class ParametersInformation<T> {
       constraints.fill = GridBagConstraints.BOTH;
       constraints.gridy = lineNumber++;
       panel.add(textPane, constraints);
-      if (Sequence.fromIterable(methods).last() != method) {
+      if (Sequence.<T>fromIterable(methods).last() != method) {
         constraints = new GridBagConstraints();
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.gridy = lineNumber++;

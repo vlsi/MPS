@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import java.util.List;
 
 @RunWith(JMock.class)
 public class Targets_Test extends MockTestCase {
@@ -40,10 +41,10 @@ public class Targets_Test extends MockTestCase {
     Assert.assertTrue(tr.hasTarget(new ITarget.Name("foo")));
     ITarget trg = tr.getTarget(new ITarget.Name("foo"));
     Assert.assertNotNull(trg);
-    Assert.assertTrue(Sequence.fromIterable(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("bar"), new ITarget.Name("baz")})).disjunction(Sequence.fromIterable(trg.before())).isEmpty());
+    Assert.assertTrue(Sequence.<ITarget.Name>fromIterable(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("bar"), new ITarget.Name("baz")})).disjunction(Sequence.<ITarget.Name>fromIterable(trg.before())).isEmpty());
     Assert.assertFalse(tr.hasCycles());
     tr.sortedTargets();
-    Assert.assertSame(trg, Sequence.fromIterable(tr.sortedTargets()).first());
+    Assert.assertSame(trg, Sequence.<ITarget>fromIterable(tr.sortedTargets()).first());
   }
 
   @Test
@@ -68,10 +69,10 @@ public class Targets_Test extends MockTestCase {
     Mockups.allowing(context, gen);
     Mockups.allowing(context, text);
 
-    tr.addRelated(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text));
+    tr.addRelated(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), gen, text));
     Assert.assertTrue(tr.hasTarget(new ITarget.Name("gen")));
     Assert.assertTrue(tr.hasTarget(new ITarget.Name("text")));
-    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text, make), tr.sortedTargets());
+    Utils.assertSameSequence(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), gen, text, make), tr.sortedTargets());
   }
 
   @Test
@@ -99,15 +100,15 @@ public class Targets_Test extends MockTestCase {
     Mockups.allowing(context, compile);
 
     tr.addTarget(compile);
-    tr.addRelatedPrecursors(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text, make));
+    tr.addRelatedPrecursors(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), gen, text, make));
 
     Assert.assertTrue(tr.hasTarget(new ITarget.Name("gen")));
     Assert.assertTrue(tr.hasTarget(new ITarget.Name("text")));
     Assert.assertTrue(tr.hasTarget(new ITarget.Name("compile")));
     Assert.assertFalse(tr.hasTarget(new ITarget.Name("make")));
 
-    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text, compile), tr.sortedTargets());
-    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text, compile), tr.targetAndSortedPrecursors(compile.getName()));
+    Utils.assertSameSequence(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), gen, text, compile), tr.sortedTargets());
+    Utils.assertSameSequence(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), gen, text, compile), tr.targetAndSortedPrecursors(compile.getName()));
   }
 
   @Test
@@ -124,7 +125,7 @@ public class Targets_Test extends MockTestCase {
     tr.addTarget(make);
 
     Assert.assertTrue(tr.hasCycles());
-    Assert.assertSame(make.getName(), ListSequence.fromList(ListSequence.fromList(tr.cycles()).first()).first());
+    Assert.assertSame(make.getName(), ListSequence.<ITarget.Name>fromList(ListSequence.<List<ITarget.Name>>fromList(tr.cycles()).first()).first());
   }
 
   @Test
@@ -143,11 +144,11 @@ public class Targets_Test extends MockTestCase {
     Mockups.allowing(context, gen);
 
     tr.addTarget(gen);
-    tr.addRelated(ListSequence.fromListAndArray(new ArrayList<ITarget>(), cfg, gen));
+    tr.addRelated(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), cfg, gen));
     Assert.assertTrue(tr.hasTarget(new ITarget.Name("gen")));
     Assert.assertTrue(tr.hasTarget(new ITarget.Name("cfg")));
-    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), cfg, gen), tr.targetAndSortedPrecursors(new ITarget.Name("gen")));
-    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), cfg), tr.immediatePrecursors(new ITarget.Name("gen")));
+    Utils.assertSameSequence(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), cfg, gen), tr.targetAndSortedPrecursors(new ITarget.Name("gen")));
+    Utils.assertSameSequence(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), cfg), tr.immediatePrecursors(new ITarget.Name("gen")));
   }
 
   @Test
@@ -176,12 +177,12 @@ public class Targets_Test extends MockTestCase {
     Mockups.allowing(context, gen);
     Mockups.allowing(context, text);
 
-    tr.addRelated(ListSequence.fromListAndArray(new ArrayList<ITarget>(), res, gen, text));
+    tr.addRelated(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), res, gen, text));
     Assert.assertTrue(tr.hasTarget(new ITarget.Name("res")));
     Assert.assertTrue(tr.hasTarget(new ITarget.Name("gen")));
     Assert.assertTrue(tr.hasTarget(new ITarget.Name("text")));
-    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), res, gen, text, make), tr.targetAndSortedPrecursors(new ITarget.Name("make")));
-    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), res, gen, text), tr.targetAndSortedPrecursors(new ITarget.Name("text")));
-    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text), tr.immediatePrecursors(new ITarget.Name("make")));
+    Utils.assertSameSequence(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), res, gen, text, make), tr.targetAndSortedPrecursors(new ITarget.Name("make")));
+    Utils.assertSameSequence(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), res, gen, text), tr.targetAndSortedPrecursors(new ITarget.Name("text")));
+    Utils.assertSameSequence(ListSequence.<ITarget>fromListAndArray(new ArrayList<ITarget>(), gen, text), tr.immediatePrecursors(new ITarget.Name("make")));
   }
 }

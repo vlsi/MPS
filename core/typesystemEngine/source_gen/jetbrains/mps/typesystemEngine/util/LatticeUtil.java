@@ -28,7 +28,7 @@ public class LatticeUtil {
             if (SNodeOperations.isInstanceOf(childJoinType, "jetbrains.mps.lang.typesystem.structure.JoinType")) {
               for (SNode grandChild : SLinkOperations.getTargets(childJoinType, "argument", true)) {
                 SNodeOperations.detachNode(grandChild);
-                ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(grandChild);
+                ListSequence.<SNode>fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(grandChild);
               }
               SNodeOperations.deleteNode(child);
             }
@@ -46,7 +46,7 @@ public class LatticeUtil {
             if (SNodeOperations.isInstanceOf(childMeetType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
               for (SNode grandChild : SLinkOperations.getTargets(childMeetType, "argument", true)) {
                 SNodeOperations.detachNode(grandChild);
-                ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(grandChild);
+                ListSequence.<SNode>fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(grandChild);
               }
               SNodeOperations.deleteNode(child);
             }
@@ -61,26 +61,26 @@ public class LatticeUtil {
     if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.lang.typesystem.structure.JoinType")) {
       SNode joinWrapper1 = SNodeOperations.cast(node1, "jetbrains.mps.lang.typesystem.structure.JoinType");
       for (SNode bc : SLinkOperations.getTargets(joinWrapper1, "argument", true)) {
-        ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
       }
       if (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.typesystem.structure.JoinType")) {
         SNode joinWrapper2 = SNodeOperations.cast(node2, "jetbrains.mps.lang.typesystem.structure.JoinType");
         for (SNode bc : SLinkOperations.getTargets(joinWrapper2, "argument", true)) {
-          ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
         }
       } else {
-        ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(node2));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(node2));
       }
     } else
     if (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.typesystem.structure.JoinType")) {
       SNode joinWrapper2 = SNodeOperations.cast(node2, "jetbrains.mps.lang.typesystem.structure.JoinType");
-      ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(node1));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(node1));
       for (SNode bc : SLinkOperations.getTargets(joinWrapper2, "argument", true)) {
-        ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
       }
     } else {
-      ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(node1));
-      ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(node2));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(node1));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(node2));
     }
     return joinType;
   }
@@ -90,26 +90,26 @@ public class LatticeUtil {
     if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       SNode meetWrapper1 = SNodeOperations.cast(node1, "jetbrains.mps.lang.typesystem.structure.MeetType");
       for (SNode bc : SLinkOperations.getTargets(meetWrapper1, "argument", true)) {
-        ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
       }
       if (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
         SNode meetWrapper2 = SNodeOperations.cast(node2, "jetbrains.mps.lang.typesystem.structure.MeetType");
         for (SNode bc : SLinkOperations.getTargets(meetWrapper2, "argument", true)) {
-          ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
         }
       } else {
-        ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(node2));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(node2));
       }
     } else
     if (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       SNode meetWrapper2 = SNodeOperations.cast(node2, "jetbrains.mps.lang.typesystem.structure.MeetType");
-      ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(node1));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(node1));
       for (SNode bc : SLinkOperations.getTargets(meetWrapper2, "argument", true)) {
-        ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
       }
     } else {
-      ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(node1));
-      ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(node2));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(node1));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(node2));
     }
     return meetType;
   }

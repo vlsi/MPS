@@ -22,7 +22,7 @@ public class CellAction_DeleteEasily extends CellAction_DeleteNode {
 
   private boolean canBeDeletedEasily() {
     SNode semanticNode = getSourceNode();
-    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(semanticNode)).where(new IWhereFilter<SNode>() {
+    for (SNode child : ListSequence.<SNode>fromList(SNodeOperations.getChildren(semanticNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(AttributeOperations.isAttribute(it));
       }

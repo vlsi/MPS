@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.SNodeId;
 public class DOMF_Design {
   public static class Design_Feature_child extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
     public Iterable<String> getParameters(SNode nodeType) {
-      return Sequence.fromClosure(new ISequenceClosure<String>() {
+      return Sequence.<String>fromClosure(new ISequenceClosure<String>() {
         public Iterable<String> iterable() {
           return new Iterable<String>() {
             public Iterator<String> iterator() {

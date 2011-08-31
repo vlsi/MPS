@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class Mapping_Test1_Test extends TestCase {
   public void test__1() throws Exception {
-    Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> nums = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -72,7 +72,7 @@ __switch__:
     // "num:<n>" 
     // "num:<n*100>" 
     final Wrappers._int count = new Wrappers._int(0);
-    Iterable<String> strings = Sequence.fromIterable(nums).<String>translate(new ITranslator2<Integer, String>() {
+    Iterable<String> strings = Sequence.<Integer>fromIterable(nums).<String>translate(new ITranslator2<Integer, String>() {
       public Iterable<String> translate(final Integer n) {
         return new Iterable<String>() {
           public Iterator<String> iterator() {
@@ -148,7 +148,7 @@ __switch__:
     });
     Assert.assertEquals(0, count.value);
     int resultCount = 0;
-    for (String s : Sequence.fromIterable(strings)) {
+    for (String s : Sequence.<String>fromIterable(strings)) {
       String expected = "num:" + resultCount;
       if (resultCount % 2 != 0) {
         expected = "num:" + ((resultCount - 1) * 100);
@@ -161,8 +161,8 @@ __switch__:
 
   public void test__yieldNull() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
-      List<String> strings = ListSequence.fromListAndArray(new ArrayList<String>(), "a");
-      List<String> strings2 = ListSequence.fromList(strings).<String>translate(new ITranslator2<String, String>() {
+      List<String> strings = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "a");
+      List<String> strings2 = ListSequence.<String>fromList(strings).<String>translate(new ITranslator2<String, String>() {
         public Iterable<String> translate(final String it) {
           return new Iterable<String>() {
             public Iterator<String> iterator() {
@@ -195,10 +195,10 @@ __switch__:
           };
         }
       }).toListSequence();
-      Assert.assertEquals(0, ListSequence.fromList(strings2).count());
+      Assert.assertEquals(0, ListSequence.<String>fromList(strings2).count());
     } else {
-      List<String> strings = ListSequence.fromListAndArray(new ArrayList<String>(), "a");
-      List<String> strings2 = ListSequence.fromList(strings).<String>translate(new ITranslator2<String, String>() {
+      List<String> strings = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "a");
+      List<String> strings2 = ListSequence.<String>fromList(strings).<String>translate(new ITranslator2<String, String>() {
         public Iterable<String> translate(final String it) {
           return new Iterable<String>() {
             public Iterator<String> iterator() {
@@ -231,15 +231,15 @@ __switch__:
           };
         }
       }).toListSequence();
-      Assert.assertEquals(1, ListSequence.fromList(strings2).count());
-      Assert.assertNull(ListSequence.fromList(strings2).first());
-      Assert.assertNull(ListSequence.fromList(strings2).last());
+      Assert.assertEquals(1, ListSequence.<String>fromList(strings2).count());
+      Assert.assertNull(ListSequence.<String>fromList(strings2).first());
+      Assert.assertNull(ListSequence.<String>fromList(strings2).last());
     }
   }
 
   public void test__null() throws Exception {
     List<String> s1 = null;
-    Iterable<String> s2 = ListSequence.fromList(s1).<String>translate(new ITranslator2<String, String>() {
+    Iterable<String> s2 = ListSequence.<String>fromList(s1).<String>translate(new ITranslator2<String, String>() {
       public Iterable<String> translate(final String it) {
         return new Iterable<String>() {
           public Iterator<String> iterator() {
@@ -272,6 +272,6 @@ __switch__:
         };
       }
     });
-    Assert.assertEquals(0, Sequence.fromIterable(s2).count());
+    Assert.assertEquals(0, Sequence.<String>fromIterable(s2).count());
   }
 }

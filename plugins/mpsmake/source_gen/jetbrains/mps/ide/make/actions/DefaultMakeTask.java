@@ -17,12 +17,12 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 
 public class DefaultMakeTask extends Task.Modal {
   private boolean needClean;
-  private Set<IModule> modules = SetSequence.fromSet(new LinkedHashSet<IModule>());
+  private Set<IModule> modules = SetSequence.<IModule>fromSet(new LinkedHashSet<IModule>());
 
   public DefaultMakeTask(Project project, String title, Set<IModule> modules, boolean needClean) {
     super(project, title, true);
     this.needClean = needClean;
-    SetSequence.fromSet(this.modules).addSequence(SetSequence.fromSet(modules));
+    SetSequence.fromSet(this.modules).addSequence(SetSequence.<IModule>fromSet(modules));
   }
 
   public void run(@NotNull final ProgressIndicator indicator) {

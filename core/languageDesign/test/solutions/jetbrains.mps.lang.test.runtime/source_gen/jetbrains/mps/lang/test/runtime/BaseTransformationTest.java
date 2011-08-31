@@ -96,7 +96,7 @@ public abstract class BaseTransformationTest extends TestCase {
   }
 
   private void readSystemMacro() {
-    for (IMapping<Object, Object> property : MapSequence.fromMap(System.getProperties())) {
+    for (IMapping<Object, Object> property : MapSequence.<Object,Object>fromMap(System.getProperties())) {
       if (property.key() instanceof String) {
         String key = (((String) property.key()));
         if (StringUtils.isNotEmpty(key) && key.startsWith(PATH_MACRO_PREFIX)) {

@@ -45,6 +45,7 @@
     <classNode dependClassName="jetbrains.mps.makeTest.test.ChangeModel" />
     <classNode dependClassName="jetbrains.mps.makeTest.test.MakeAssert" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="jetbrains.mps.makeTest.test.MakeAssert" file="MakeAssert.java">

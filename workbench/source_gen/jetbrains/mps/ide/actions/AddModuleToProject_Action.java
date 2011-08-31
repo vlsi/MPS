@@ -29,8 +29,8 @@ public class AddModuleToProject_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    for (IModule module : ((List<IModule>) MapSequence.fromMap(_params).get("modules"))) {
-      if (((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules().contains(module)) {
+    for (IModule module : ((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules"))) {
+      if (((MPSProject) MapSequence.<String,Object>fromMap(_params).get("mpsProject")).getModules().contains(module)) {
         return false;
       }
     }
@@ -55,12 +55,12 @@ public class AddModuleToProject_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
-    if (MapSequence.fromMap(_params).get("modules") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    if (MapSequence.<String,Object>fromMap(_params).get("modules") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     return true;
@@ -68,13 +68,13 @@ public class AddModuleToProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ProjectDescriptor descriptor = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectDescriptor();
-      for (IModule module : ListSequence.fromList(((List<IModule>) MapSequence.fromMap(_params).get("modules")))) {
+      ProjectDescriptor descriptor = ((MPSProject) MapSequence.<String,Object>fromMap(_params).get("mpsProject")).getProjectDescriptor();
+      for (IModule module : ListSequence.<IModule>fromList(((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")))) {
         IFile descriptorFile = module.getDescriptorFile();
         assert descriptorFile != null;
         descriptor.addModule(descriptorFile.getPath());
       }
-      ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).setProjectDescriptor(descriptor);
+      ((MPSProject) MapSequence.<String,Object>fromMap(_params).get("mpsProject")).setProjectDescriptor(descriptor);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddModuleToProject", t);

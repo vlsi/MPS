@@ -39,7 +39,7 @@ public class SetNodePackage_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
+    for (SNode node : ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes")))) {
       if (!(node.isRoot())) {
         return false;
       }
@@ -71,20 +71,20 @@ public class SetNodePackage_Action extends GeneratedAction {
       if (nodes != null) {
       }
       if (error || nodes == null) {
-        MapSequence.fromMap(_params).put("nodes", null);
+        MapSequence.<String,Object>fromMap(_params).put("nodes", null);
       } else {
-        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
+        MapSequence.<String,Object>fromMap(_params).put("nodes", ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), nodes));
       }
     }
-    if (MapSequence.fromMap(_params).get("nodes") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("nodes") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("scope", event.getData(MPSDataKeys.SCOPE));
-    if (MapSequence.fromMap(_params).get("scope") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("scope", event.getData(MPSDataKeys.SCOPE));
+    if (MapSequence.<String,Object>fromMap(_params).get("scope") == null) {
       return false;
     }
     return true;
@@ -96,11 +96,11 @@ public class SetNodePackage_Action extends GeneratedAction {
       final Wrappers._T<String> oldPackage = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          packages.value = SetNodePackage_Action.this.fetchExistingPackages(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), _params);
-          oldPackage.value = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first().getProperty(SModelTreeNode.PACK);
+          packages.value = SetNodePackage_Action.this.fetchExistingPackages(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes")), _params);
+          oldPackage.value = ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes"))).first().getProperty(SModelTreeNode.PACK);
         }
       });
-      final SetNodePackageDialog dialog = new SetNodePackageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Set Virtual Package...", packages.value);
+      final SetNodePackageDialog dialog = new SetNodePackageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "Set Virtual Package...", packages.value);
       dialog.setPackage(oldPackage.value);
       dialog.showDialog();
       if (dialog.isCancelled()) {
@@ -108,10 +108,10 @@ public class SetNodePackage_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
+          for (SNode node : ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes")))) {
             node.setProperty(SModelTreeNode.PACK, dialog.getPackage());
             if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-              for (SNode aspect : ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findAllAspects_7754459869734028917", new Class[]{SNode.class})))) {
+              for (SNode aspect : ListSequence.<SNode>fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findAllAspects_7754459869734028917", new Class[]{SNode.class})))) {
                 aspect.setProperty(SModelTreeNode.PACK, dialog.getPackage());
               }
             }
@@ -126,20 +126,20 @@ public class SetNodePackage_Action extends GeneratedAction {
   }
 
   /*package*/ List<String> fetchExistingPackages(List<SNode> nlist, final Map<String, Object> _params) {
-    Set<SModel> models = SetSequence.fromSet(new HashSet<SModel>());
-    for (SNode node : ListSequence.fromList(nlist)) {
+    Set<SModel> models = SetSequence.<SModel>fromSet(new HashSet<SModel>());
+    for (SNode node : ListSequence.<SNode>fromList(nlist)) {
       SetSequence.fromSet(models).addElement(SNodeOperations.getModel(node));
     }
-    Set<String> packages = SetSequence.fromSet(new HashSet<String>());
-    for (SModel model : SetSequence.fromSet(models)) {
-      for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
+    Set<String> packages = SetSequence.<String>fromSet(new HashSet<String>());
+    for (SModel model : SetSequence.<SModel>fromSet(models)) {
+      for (SNode root : ListSequence.<SNode>fromList(SModelOperations.getRoots(model, null))) {
         String p = root.getProperty(SModelTreeNode.PACK);
         if (p != null) {
           SetSequence.fromSet(packages).addElement(p);
         }
       }
     }
-    List<String> result = ListSequence.fromListWithValues(new ArrayList<String>(), packages);
+    List<String> result = ListSequence.<String>fromListWithValues(new ArrayList<String>(), packages);
     Collections.sort(result);
     return result;
   }

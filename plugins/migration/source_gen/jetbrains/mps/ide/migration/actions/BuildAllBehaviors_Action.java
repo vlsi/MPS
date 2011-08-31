@@ -48,12 +48,12 @@ public class BuildAllBehaviors_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     return true;
@@ -65,7 +65,7 @@ public class BuildAllBehaviors_Action extends GeneratedAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           Iterable<SModelDescriptor> allModels = SModelRepository.getInstance().getModelDescriptors();
-          models.value = Sequence.fromIterable(allModels).where(new IWhereFilter<SModelDescriptor>() {
+          models.value = Sequence.<SModelDescriptor>fromIterable(allModels).where(new IWhereFilter<SModelDescriptor>() {
             public boolean accept(SModelDescriptor it) {
               return it.isGeneratable() && LanguageAspect.BEHAVIOR.is(it);
             }
@@ -73,7 +73,7 @@ public class BuildAllBehaviors_Action extends GeneratedAction {
         }
       });
 
-      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models.value, null, null, null), true).executeAction();
+      new MakeActionImpl(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), models.value, null, null, null), true).executeAction();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "BuildAllBehaviors", t);

@@ -41,11 +41,11 @@ public class XYCTableModel implements TableModel {
   }
 
   public int getRowCount() {
-    return ListSequence.fromList(y()).count() + 1;
+    return ListSequence.<SNode>fromList(y()).count() + 1;
   }
 
   public int getColumnCount() {
-    return ListSequence.fromList(x()).count() + 1;
+    return ListSequence.<SNode>fromList(x()).count() + 1;
   }
 
   public int dataidx(int row, int col) {
@@ -95,8 +95,8 @@ public class XYCTableModel implements TableModel {
       y().set(row - 1, SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(ylink, "target", false)), null));
     }
     int idx = dataidx(row, column);
-    if (idx < ListSequence.fromList(c()).count()) {
-      ListSequence.fromList(c()).setElement(idx, SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(clink, "target", false)), null));
+    if (idx < ListSequence.<SNode>fromList(c()).count()) {
+      ListSequence.<SNode>fromList(c()).setElement(idx, SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(clink, "target", false)), null));
     }
   }
 
@@ -111,17 +111,17 @@ public class XYCTableModel implements TableModel {
       return y().get(row - 1);
     }
     int idx = dataidx(row, column);
-    if (idx >= ListSequence.fromList(c()).count()) {
+    if (idx >= ListSequence.<SNode>fromList(c()).count()) {
       return null;
     }
     return c().get(idx);
   }
 
   public void deleteRow(int rowNumber) {
-    ListSequence.fromList(y()).removeElementAt(rowNumber - 1);
+    ListSequence.<SNode>fromList(y()).removeElementAt(rowNumber - 1);
     for (int i = 0; i < getColumnCount() - 1; i++) {
       int idx = dataidx(rowNumber, 1);
-      ListSequence.fromList(c()).removeElementAt((rowNumber - 1) * (getColumnCount() - 1));
+      ListSequence.<SNode>fromList(c()).removeElementAt((rowNumber - 1) * (getColumnCount() - 1));
     }
   }
 }

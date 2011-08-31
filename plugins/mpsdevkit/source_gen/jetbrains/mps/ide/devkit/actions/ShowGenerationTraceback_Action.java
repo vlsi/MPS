@@ -10,8 +10,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.devkit.generator.GenerationTracer;
 import jetbrains.mps.smodel.IOperationContext;
@@ -35,12 +35,12 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).count() != 1) {
+        if (ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes"))).count() != 1) {
           ShowGenerationTraceback_Action.this.disable(event.getPresentation());
         }
-        GenerationTracer tracer = (GenerationTracer) ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(IGenerationTracer.class);
+        GenerationTracer tracer = (GenerationTracer) ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getComponent(IGenerationTracer.class);
         event.getPresentation().setVisible(tracer.hasTracingData());
-        event.getPresentation().setEnabled(tracer.hasTracebackData(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getSModelReference()));
+        event.getPresentation().setEnabled(tracer.hasTracebackData(SNodeOperations.getModel(((SNode) MapSequence.<String,Object>fromMap(_params).get("node"))).getSModelReference()));
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -58,9 +58,9 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.fromMap(_params).put("node", node);
+      MapSequence.<String,Object>fromMap(_params).put("node", node);
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
     {
@@ -69,20 +69,20 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
       if (nodes != null) {
       }
       if (error || nodes == null) {
-        MapSequence.fromMap(_params).put("nodes", null);
+        MapSequence.<String,Object>fromMap(_params).put("nodes", null);
       } else {
-        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
+        MapSequence.<String,Object>fromMap(_params).put("nodes", ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), nodes));
       }
     }
-    if (MapSequence.fromMap(_params).get("nodes") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("nodes") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
@@ -90,9 +90,9 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GenerationTracer tracer = (GenerationTracer) ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(IGenerationTracer.class);
-      if (!(tracer.showTracebackData(((SNode) MapSequence.fromMap(_params).get("node"))))) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "No tracing data available");
+      GenerationTracer tracer = (GenerationTracer) ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getComponent(IGenerationTracer.class);
+      if (!(tracer.showTracebackData(((SNode) MapSequence.<String,Object>fromMap(_params).get("node"))))) {
+        JOptionPane.showMessageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "No tracing data available");
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

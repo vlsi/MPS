@@ -47,7 +47,7 @@ import jetbrains.mps.ide.ThreadUtils;
 public class ChangesManager extends AbstractProjectComponent {
   private SModelListener myGlobalModelListener = new ChangesManager.MyGlobalSModelListener();
   private ChangeListListener myChangeListListener = new ChangesManager.MyChangeListListener();
-  private final Map<SModelReference, ModelChangesManager> myModelChanges = MapSequence.fromMap(new HashMap<SModelReference, ModelChangesManager>());
+  private final Map<SModelReference, ModelChangesManager> myModelChanges = MapSequence.<SModelReference,ModelChangesManager>fromMap(new HashMap<SModelReference, ModelChangesManager>());
   private ReloadListener myReloadListener = new ChangesManager.MyReloadListener();
   private SModelRepositoryListener myModelRepositoryListener = new ChangesManager.MySModelRepositoryListener();
   private SimpleCommandQueue myCommandQueue = new SimpleCommandQueue("ChangesManager command queue");
@@ -71,7 +71,7 @@ public class ChangesManager extends AbstractProjectComponent {
     ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
 
-    for (ModelChangesManager modelChangesManager : Sequence.fromIterable(MapSequence.fromMap(myModelChanges).values())) {
+    for (ModelChangesManager modelChangesManager : Sequence.<ModelChangesManager>fromIterable(MapSequence.fromMap(myModelChanges).values())) {
       modelChangesManager.dispose(false);
     }
     MapSequence.fromMap(myModelChanges).clear();
@@ -86,11 +86,11 @@ public class ChangesManager extends AbstractProjectComponent {
         }
         SModelReference modelRef = modelDescriptor.getSModelReference();
         if (MapSequence.fromMap(myModelChanges).containsKey(modelRef)) {
-          MapSequence.fromMap(myModelChanges).get(modelRef).update(fileStatus);
+          MapSequence.<SModelReference,ModelChangesManager>fromMap(myModelChanges).get(modelRef).update(fileStatus);
           return;
         }
         ModelChangesManager modelChangesManager = new ModelChangesManager(myProject, modelDescriptor);
-        MapSequence.fromMap(myModelChanges).put(modelRef, modelChangesManager);
+        MapSequence.<SModelReference,ModelChangesManager>fromMap(myModelChanges).put(modelRef, modelChangesManager);
 
       }
     });
@@ -112,7 +112,7 @@ public class ChangesManager extends AbstractProjectComponent {
   }
 
   public void updateLoadedModelStatuses() {
-    for (SModelDescriptor md : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
+    for (SModelDescriptor md : ListSequence.<SModelDescriptor>fromList(SModelRepository.getInstance().getModelDescriptors())) {
       if (md.getLoadingState() != ModelLoadingState.NOT_LOADED && SModelStereotype.isUserModel(md)) {
         updateModelStatus(md, null);
       }
@@ -123,7 +123,7 @@ public class ChangesManager extends AbstractProjectComponent {
     myCommandQueue.addTask(new Runnable() {
       public void run() {
         if (MapSequence.fromMap(myModelChanges).containsKey(modelReference)) {
-          MapSequence.fromMap(myModelChanges).get(modelReference).dispose(true);
+          MapSequence.<SModelReference,ModelChangesManager>fromMap(myModelChanges).get(modelReference).dispose(true);
           MapSequence.fromMap(myModelChanges).removeKey(modelReference);
         }
       }
@@ -135,9 +135,9 @@ public class ChangesManager extends AbstractProjectComponent {
     myCommandQueue.assertSoftlyIsCommandThread();
     SModelReference modelRef = modelDescriptor.getSModelReference();
     if (!(MapSequence.fromMap(myModelChanges).containsKey(modelRef))) {
-      MapSequence.fromMap(myModelChanges).put(modelRef, new ModelChangesManager(myProject, modelDescriptor));
+      MapSequence.<SModelReference,ModelChangesManager>fromMap(myModelChanges).put(modelRef, new ModelChangesManager(myProject, modelDescriptor));
     }
-    return MapSequence.fromMap(myModelChanges).get(modelRef);
+    return MapSequence.<SModelReference,ModelChangesManager>fromMap(myModelChanges).get(modelRef);
   }
 
   @Nullable
@@ -156,14 +156,14 @@ public class ChangesManager extends AbstractProjectComponent {
           public void run() {
             PrintStream out = System.out;
 
-            for (IMapping<SModelReference, ModelChangesManager> smrMcmPair : MapSequence.fromMap(myModelChanges).where(new IWhereFilter<IMapping<SModelReference, ModelChangesManager>>() {
+            for (IMapping<SModelReference, ModelChangesManager> smrMcmPair : MapSequence.<SModelReference,ModelChangesManager>fromMap(myModelChanges).where(new IWhereFilter<IMapping<SModelReference, ModelChangesManager>>() {
               public boolean accept(IMapping<SModelReference, ModelChangesManager> m) {
-                return !(ListSequence.fromList(m.value().getChangeList()).isEmpty());
+                return !(ListSequence.<OldChange>fromList(m.value().getChangeList()).isEmpty());
               }
             })) {
               out.println("==" + smrMcmPair.key() + "==");
 
-              for (OldChange change : ListSequence.fromList(smrMcmPair.value().getChangeList())) {
+              for (OldChange change : ListSequence.<OldChange>fromList(smrMcmPair.value().getChangeList())) {
                 out.println(change);
               }
 
@@ -171,17 +171,17 @@ public class ChangesManager extends AbstractProjectComponent {
             }
             out.println();
             out.println("==Unchanged models==");
-            for (IMapping<SModelReference, ModelChangesManager> smrMcmPair : MapSequence.fromMap(myModelChanges).where(new IWhereFilter<IMapping<SModelReference, ModelChangesManager>>() {
+            for (IMapping<SModelReference, ModelChangesManager> smrMcmPair : MapSequence.<SModelReference,ModelChangesManager>fromMap(myModelChanges).where(new IWhereFilter<IMapping<SModelReference, ModelChangesManager>>() {
               public boolean accept(IMapping<SModelReference, ModelChangesManager> m) {
-                return ListSequence.fromList(m.value().getChangeList()).isEmpty() && m.value().isEnabled();
+                return ListSequence.<OldChange>fromList(m.value().getChangeList()).isEmpty() && m.value().isEnabled();
               }
             })) {
               out.println("- " + smrMcmPair.key());
             }
             out.println();
-            out.println(MapSequence.fromMap(myModelChanges).where(new IWhereFilter<IMapping<SModelReference, ModelChangesManager>>() {
+            out.println(MapSequence.<SModelReference,ModelChangesManager>fromMap(myModelChanges).where(new IWhereFilter<IMapping<SModelReference, ModelChangesManager>>() {
               public boolean accept(IMapping<SModelReference, ModelChangesManager> m) {
-                return ListSequence.fromList(m.value().getChangeList()).isEmpty() && !(m.value().isEnabled());
+                return ListSequence.<OldChange>fromList(m.value().getChangeList()).isEmpty() && !(m.value().isEnabled());
               }
             }).count() + " disabled models");
           }
@@ -204,7 +204,7 @@ public class ChangesManager extends AbstractProjectComponent {
     }
 
     private void processChanges(Collection<Change> changes) {
-      for (Change change : Sequence.fromIterable(changes)) {
+      for (Change change : Sequence.<Change>fromIterable(changes)) {
         updateModelStatus(change.getVirtualFile(), change.getFileStatus());
       }
     }
@@ -216,7 +216,7 @@ public class ChangesManager extends AbstractProjectComponent {
 
     @Override
     public void changesRemoved(Collection<Change> changes, ChangeList fromList) {
-      for (Change change : Sequence.fromIterable(changes)) {
+      for (Change change : Sequence.<Change>fromIterable(changes)) {
         updateModelStatus(change.getVirtualFile(), null);
       }
     }
@@ -228,7 +228,7 @@ public class ChangesManager extends AbstractProjectComponent {
 
     @Override
     public void unchangedFileStatusChanged() {
-      for (VirtualFile virtualFile : ListSequence.fromList(MPSVcsManager.getInstance(myProject).getUnversionedFilesFromChangeListManager())) {
+      for (VirtualFile virtualFile : ListSequence.<VirtualFile>fromList(MPSVcsManager.getInstance(myProject).getUnversionedFilesFromChangeListManager())) {
         updateModelStatus(virtualFile, null);
       }
     }

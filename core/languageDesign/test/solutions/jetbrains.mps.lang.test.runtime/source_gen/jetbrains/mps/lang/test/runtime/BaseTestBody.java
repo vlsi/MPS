@@ -22,8 +22,8 @@ public class BaseTestBody {
   private List<SNode> myCopyes;
 
   public BaseTestBody() {
-    this.myMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    this.myCopyes = ListSequence.fromList(new ArrayList<SNode>());
+    this.myMap = MapSequence.<SNode,SNode>fromMap(new HashMap<SNode, SNode>());
+    this.myCopyes = ListSequence.<SNode>fromList(new ArrayList<SNode>());
   }
 
   public void addNodeById(final String id) throws Exception {
@@ -31,17 +31,17 @@ public class BaseTestBody {
       public void run() {
         SNode node = BaseTestBody.this.myModel.getSModel().getNodeById(id);
         SNode copy = CopyUtil.copy(node, ((Map<SNode, SNode>) BaseTestBody.this.myMap), true);
-        for (SNode a : ListSequence.fromList(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.INodeAnnotattion", false, new String[]{}))) {
+        for (SNode a : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.INodeAnnotattion", false, new String[]{}))) {
           SNodeOperations.deleteNode(a);
         }
         BaseTestBody.this.myModel.getSModel().addRoot(copy);
-        ListSequence.fromList(BaseTestBody.this.myCopyes).addElement(copy);
+        ListSequence.<SNode>fromList(BaseTestBody.this.myCopyes).addElement(copy);
       }
     });
   }
 
   public SNode getNodeById(String id) {
-    return MapSequence.fromMap(this.myMap).get(this.myModel.getSModel().getNodeById(id));
+    return MapSequence.<SNode,SNode>fromMap(this.myMap).get(this.myModel.getSModel().getNodeById(id));
   }
 
   public SNode getRealNodeById(String id) {

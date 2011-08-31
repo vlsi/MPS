@@ -398,7 +398,7 @@ public class CopyPasteUtil {
 
   public static boolean canPasteNodes(SModel model, SNode anchor) {
     List<SNode> nodes = getNodesFromClipboard(model);
-    return ListSequence.fromList(nodes).isNotEmpty() || isConversionAvailable(model, anchor);
+    return ListSequence.<SNode>fromList(nodes).isNotEmpty() || isConversionAvailable(model, anchor);
   }
 
   public static synchronized void pasteNodes(SModel model, SNode anchor) {

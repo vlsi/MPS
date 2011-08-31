@@ -14,16 +14,16 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class ForEach_loop_Test1 extends TestCase {
   public void test_1() {
-    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
+    List<Integer> list = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     int sum = 0;
-    for (Integer i : ListSequence.fromList(list)) {
+    for (Integer i : ListSequence.<Integer>fromList(list)) {
       sum = sum + i;
     }
     Assert.assertEquals(15, sum);
   }
 
   public void test_2() {
-    Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> seq = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -74,7 +74,7 @@ __switch__:
       }
     });
     int sum = 0;
-    for (Integer i : Sequence.fromIterable(seq)) {
+    for (Integer i : Sequence.<Integer>fromIterable(seq)) {
       sum = sum + i;
     }
     Assert.assertEquals(15, sum);

@@ -18,13 +18,13 @@ public class UIQueryRelayStrategy {
   }
 
   public <T extends IOption> T relayQuery(final IQuery<T> query, final IOperationContext context) {
-    List<T> optList = Sequence.fromIterable(query.options()).toListSequence();
-    final String[] options = ListSequence.fromList(optList).<String>select(new ISelector<T, String>() {
+    List<T> optList = Sequence.<T>fromIterable(query.options()).toListSequence();
+    final String[] options = ListSequence.<T>fromList(optList).<String>select(new ISelector<T, String>() {
       public String select(T o) {
         return o.getText();
       }
     }).toGenericArray(String.class);
-    final int defopt = ListSequence.fromList(optList).indexOf(query.defaultOption());
+    final int defopt = ListSequence.<T>fromList(optList).indexOf(query.defaultOption());
     final Wrappers._int res = new Wrappers._int(-1);
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
@@ -34,7 +34,7 @@ public class UIQueryRelayStrategy {
     if (res.value < 0) {
       return query.voidOption();
     }
-    return ListSequence.fromList(optList).getElement(res.value);
+    return ListSequence.<T>fromList(optList).getElement(res.value);
   }
 
   public static interface DialogListener {

@@ -29,8 +29,8 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Collections;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -46,13 +46,13 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 public class MergeContext {
   private ChangeSet myMineChangeSet;
   private ChangeSet myRepositoryChangeSet;
-  private Map<ModelChange, List<ModelChange>> myConflictingChanges = MapSequence.fromMap(new HashMap<ModelChange, List<ModelChange>>());
-  private Map<ModelChange, List<ModelChange>> mySymmetricChanges = MapSequence.fromMap(new HashMap<ModelChange, List<ModelChange>>());
-  private Map<SNodeId, List<ModelChange>> myRootToChanges = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
-  private Map<SNodeId, List<ModelChange>> myNodeToChanges = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
-  private List<ModelChange> myMetadataChanges = ListSequence.fromList(new ArrayList<ModelChange>());
+  private Map<ModelChange, List<ModelChange>> myConflictingChanges = MapSequence.<ModelChange,List<ModelChange>>fromMap(new HashMap<ModelChange, List<ModelChange>>());
+  private Map<ModelChange, List<ModelChange>> mySymmetricChanges = MapSequence.<ModelChange,List<ModelChange>>fromMap(new HashMap<ModelChange, List<ModelChange>>());
+  private Map<SNodeId, List<ModelChange>> myRootToChanges = MapSequence.<SNodeId,List<ModelChange>>fromMap(new HashMap<SNodeId, List<ModelChange>>());
+  private Map<SNodeId, List<ModelChange>> myNodeToChanges = MapSequence.<SNodeId,List<ModelChange>>fromMap(new HashMap<SNodeId, List<ModelChange>>());
+  private List<ModelChange> myMetadataChanges = ListSequence.<ModelChange>fromList(new ArrayList<ModelChange>());
   private SModel myResultModel;
-  private Set<ModelChange> myResolvedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
+  private Set<ModelChange> myResolvedChanges = SetSequence.<ModelChange>fromSet(new HashSet<ModelChange>());
   private NodeCopier myNodeCopier;
   private MergeContext.MyResultModelListener myModelListener = new MergeContext.MyResultModelListener();
   private MergeContext.ChangesInvalidateHandler myChangesInvalidateHandler;
@@ -77,16 +77,16 @@ public class MergeContext {
   }
 
   private void fillRootToChangesMap() {
-    for (ModelChange change : Sequence.fromIterable(getAllChanges())) {
+    for (ModelChange change : Sequence.<ModelChange>fromIterable(getAllChanges())) {
       SNodeId rootId = change.getRootId();
       if (rootId == null) {
         assert change instanceof MetadataChange;
-        ListSequence.fromList(myMetadataChanges).addElement(change);
+        ListSequence.<ModelChange>fromList(myMetadataChanges).addElement(change);
       } else {
-        if (MapSequence.fromMap(myRootToChanges).get(rootId) == null) {
-          MapSequence.fromMap(myRootToChanges).put(rootId, ListSequence.fromList(new ArrayList<ModelChange>()));
+        if (MapSequence.<SNodeId,List<ModelChange>>fromMap(myRootToChanges).get(rootId) == null) {
+          MapSequence.<SNodeId,List<ModelChange>>fromMap(myRootToChanges).put(rootId, ListSequence.<ModelChange>fromList(new ArrayList<ModelChange>()));
         }
-        ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(rootId)).addElement(change);
+        ListSequence.<ModelChange>fromList(MapSequence.<SNodeId,List<ModelChange>>fromMap(myRootToChanges).get(rootId)).addElement(change);
       }
     }
   }
@@ -96,7 +96,7 @@ public class MergeContext {
   }
 
   private void fillNodeToChangesMap() {
-    for (ModelChange change : Sequence.fromIterable(getAllChanges())) {
+    for (ModelChange change : Sequence.<ModelChange>fromIterable(getAllChanges())) {
       SNodeId nodeId = null;
       if (change instanceof NodeGroupChange) {
         nodeId = ((NodeGroupChange) change).getParentNodeId();
@@ -106,60 +106,60 @@ public class MergeContext {
         nodeId = change.getRootId();
       }
       if (nodeId != null) {
-        if (MapSequence.fromMap(myNodeToChanges).get(nodeId) == null) {
-          MapSequence.fromMap(myNodeToChanges).put(nodeId, ListSequence.fromList(new ArrayList<ModelChange>()));
+        if (MapSequence.<SNodeId,List<ModelChange>>fromMap(myNodeToChanges).get(nodeId) == null) {
+          MapSequence.<SNodeId,List<ModelChange>>fromMap(myNodeToChanges).put(nodeId, ListSequence.<ModelChange>fromList(new ArrayList<ModelChange>()));
         }
-        ListSequence.fromList(MapSequence.fromMap(myNodeToChanges).get(nodeId)).addElement(change);
+        ListSequence.<ModelChange>fromList(MapSequence.<SNodeId,List<ModelChange>>fromMap(myNodeToChanges).get(nodeId)).addElement(change);
       }
     }
   }
 
   public Iterable<ModelChange> getApplicableChangesForRoot(SNodeId rootId) {
-    return ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(rootId)).where(new IWhereFilter<ModelChange>() {
+    return ListSequence.<ModelChange>fromList(MapSequence.<SNodeId,List<ModelChange>>fromMap(myRootToChanges).get(rootId)).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
-        return !(SetSequence.fromSet(myResolvedChanges).contains(ch)) && Sequence.fromIterable(getConflictedWith(ch)).isEmpty();
+        return !(SetSequence.<ModelChange>fromSet(myResolvedChanges).contains(ch)) && Sequence.<ModelChange>fromIterable(getConflictedWith(ch)).isEmpty();
       }
     });
   }
 
   public Iterable<ModelChange> getApplicableChangesInNonConflictingRoots() {
-    return SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).<ModelChange>translate(new ITranslator2<SNodeId, ModelChange>() {
+    return SetSequence.<SNodeId>fromSet(MapSequence.fromMap(myRootToChanges).keySet()).<ModelChange>translate(new ITranslator2<SNodeId, ModelChange>() {
       public Iterable<ModelChange> translate(SNodeId root) {
-        Iterable<ModelChange> unresolvedForRoot = ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(root)).where(new IWhereFilter<ModelChange>() {
+        Iterable<ModelChange> unresolvedForRoot = ListSequence.<ModelChange>fromList(MapSequence.<SNodeId,List<ModelChange>>fromMap(myRootToChanges).get(root)).where(new IWhereFilter<ModelChange>() {
           public boolean accept(ModelChange ch) {
-            return !(SetSequence.fromSet(myResolvedChanges).contains(ch));
+            return !(SetSequence.<ModelChange>fromSet(myResolvedChanges).contains(ch));
           }
         });
-        if (Sequence.fromIterable(unresolvedForRoot).all(new IWhereFilter<ModelChange>() {
+        if (Sequence.<ModelChange>fromIterable(unresolvedForRoot).all(new IWhereFilter<ModelChange>() {
           public boolean accept(ModelChange ch) {
-            return Sequence.fromIterable(getConflictedWith(ch)).isEmpty();
+            return Sequence.<ModelChange>fromIterable(getConflictedWith(ch)).isEmpty();
           }
         })) {
           return unresolvedForRoot;
         } else {
-          return Sequence.fromIterable(Collections.<ModelChange>emptyList());
+          return Sequence.<ModelChange>fromIterable(Collections.<ModelChange>emptyList());
         }
       }
-    }).concat(ListSequence.fromList(myMetadataChanges).where(new IWhereFilter<ModelChange>() {
+    }).concat(ListSequence.<ModelChange>fromList(myMetadataChanges).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
-        return !(SetSequence.fromSet(myResolvedChanges).contains(ch));
+        return !(SetSequence.<ModelChange>fromSet(myResolvedChanges).contains(ch));
       }
     }));
   }
 
   public Iterable<ModelChange> getAllChanges() {
-    return ListSequence.fromList(myMineChangeSet.getModelChanges()).concat(ListSequence.fromList(myRepositoryChangeSet.getModelChanges()));
+    return ListSequence.<ModelChange>fromList(myMineChangeSet.getModelChanges()).concat(ListSequence.<ModelChange>fromList(myRepositoryChangeSet.getModelChanges()));
   }
 
   public Iterable<SNodeId> getAffectedRoots() {
-    return (ListSequence.fromList(myMetadataChanges).isEmpty() ?
+    return (ListSequence.<ModelChange>fromList(myMetadataChanges).isEmpty() ?
       MapSequence.fromMap(myRootToChanges).keySet() :
-      SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNodeId>(), null)))
+      SetSequence.<SNodeId>fromSet(MapSequence.fromMap(myRootToChanges).keySet()).concat(ListSequence.<SNodeId>fromList(ListSequence.<SNodeId>fromListAndArray(new ArrayList<SNodeId>(), null)))
     );
   }
 
   public List<ModelChange> getChangesForRoot(@NotNull SNodeId rootId) {
-    return MapSequence.fromMap(myRootToChanges).get(rootId);
+    return MapSequence.<SNodeId,List<ModelChange>>fromMap(myRootToChanges).get(rootId);
   }
 
   public List<ModelChange> getMetadataChanges() {
@@ -167,15 +167,15 @@ public class MergeContext {
   }
 
   public Iterable<ModelChange> getConflictedWith(ModelChange change) {
-    return ListSequence.fromList(MapSequence.fromMap(myConflictingChanges).get(change)).where(new IWhereFilter<ModelChange>() {
+    return ListSequence.<ModelChange>fromList(MapSequence.<ModelChange,List<ModelChange>>fromMap(myConflictingChanges).get(change)).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange other) {
-        return !(SetSequence.fromSet(myResolvedChanges).contains(other));
+        return !(SetSequence.<ModelChange>fromSet(myResolvedChanges).contains(other));
       }
     });
   }
 
   public boolean isChangeResolved(ModelChange change) {
-    return SetSequence.fromSet(myResolvedChanges).contains(change);
+    return SetSequence.<ModelChange>fromSet(myResolvedChanges).contains(change);
   }
 
   public void applyChanges(Iterable<ModelChange> changes) {
@@ -189,7 +189,7 @@ public class MergeContext {
   }
 
   private void applyChangesNoRestoreIds(Iterable<ModelChange> changes) {
-    Sequence.fromIterable(changes).where(new IWhereFilter<ModelChange>() {
+    Sequence.<ModelChange>fromIterable(changes).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return ch instanceof NodeGroupChange;
       }
@@ -198,32 +198,32 @@ public class MergeContext {
         ((NodeGroupChange) ch).prepare();
       }
     });
-    for (ModelChange c : Sequence.fromIterable(changes)) {
+    for (ModelChange c : Sequence.<ModelChange>fromIterable(changes)) {
       applyChange(c);
     }
   }
 
   private void excludeChangesNoRestoreIds(Iterable<ModelChange> changes) {
-    for (ModelChange c : Sequence.fromIterable(changes)) {
+    for (ModelChange c : Sequence.<ModelChange>fromIterable(changes)) {
       excludeChange(c);
     }
   }
 
   private void applyChange(ModelChange change) {
-    if (SetSequence.fromSet(myResolvedChanges).contains(change)) {
+    if (SetSequence.<ModelChange>fromSet(myResolvedChanges).contains(change)) {
     } else {
       change.apply(myResultModel, myNodeCopier);
       SetSequence.fromSet(myResolvedChanges).addElement(change);
-      SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change)));
+      SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.<ModelChange>fromList(MapSequence.<ModelChange,List<ModelChange>>fromMap(mySymmetricChanges).get(change)));
       excludeChangesNoRestoreIds(getConflictedWith(change));
     }
   }
 
   private void excludeChange(ModelChange change) {
-    if (SetSequence.fromSet(myResolvedChanges).contains(change)) {
+    if (SetSequence.<ModelChange>fromSet(myResolvedChanges).contains(change)) {
     } else {
       SetSequence.fromSet(myResolvedChanges).addElement(change);
-      SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change)));
+      SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.<ModelChange>fromList(MapSequence.<ModelChange,List<ModelChange>>fromMap(mySymmetricChanges).get(change)));
     }
   }
 
@@ -270,14 +270,14 @@ public class MergeContext {
   public void restoreState(MergeContextState state) {
     myResultModel.setLoading(true);
     MergeContextState stateCopy = new MergeContextState(state);
-    ListSequence.fromList(SModelOperations.getRoots(myResultModel, null)).visitAll(new IVisitor<SNode>() {
+    ListSequence.<SNode>fromList(SModelOperations.getRoots(myResultModel, null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
         SNodeOperations.deleteNode(r);
       }
     });
     CopyUtil.clearModelProperties(myResultModel);
     CopyUtil.copyModelProperties(stateCopy.myResultModel, myResultModel);
-    ListSequence.fromList(SModelOperations.getRoots(stateCopy.myResultModel, null)).visitAll(new IVisitor<SNode>() {
+    ListSequence.<SNode>fromList(SModelOperations.getRoots(stateCopy.myResultModel, null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
         SModelOperations.addRootNode(myResultModel, r);
       }
@@ -293,8 +293,8 @@ public class MergeContext {
   }
 
   private void invalidateChanges(Iterable<ModelChange> changes) {
-    if (Sequence.fromIterable(changes).isNotEmpty()) {
-      SetSequence.fromSet(myResolvedChanges).addSequence(Sequence.fromIterable(changes));
+    if (Sequence.<ModelChange>fromIterable(changes).isNotEmpty()) {
+      SetSequence.fromSet(myResolvedChanges).addSequence(Sequence.<ModelChange>fromIterable(changes));
       check_358wfv_a1a0a92(myChangesInvalidateHandler);
     }
   }
@@ -316,8 +316,8 @@ public class MergeContext {
 
     private void invalidateDeletedRoot(SModelEvent event) {
       assert event.getAffectedRoot() != null;
-      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getAffectedRoot().getSNodeId());
-      invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
+      List<ModelChange> nodeChanges = MapSequence.<SNodeId,List<ModelChange>>fromMap(myNodeToChanges).get(event.getAffectedRoot().getSNodeId());
+      invalidateChanges(ListSequence.<ModelChange>fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return ch instanceof DeleteRootChange;
         }
@@ -325,17 +325,17 @@ public class MergeContext {
     }
 
     private void beforeNodeRemovedRecursively(SNode node) {
-      for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
+      for (SNode child : ListSequence.<SNode>fromList(SNodeOperations.getChildren(node))) {
         beforeNodeRemovedRecursively(child);
       }
 
       // process child 
-      invalidateChanges(MapSequence.fromMap(myNodeToChanges).get(node.getSNodeId()));
+      invalidateChanges(MapSequence.<SNodeId,List<ModelChange>>fromMap(myNodeToChanges).get(node.getSNodeId()));
     }
 
     private void referenceModified(SModelReferenceEvent event) {
-      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getReference().getSourceNode().getSNodeId());
-      invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
+      List<ModelChange> nodeChanges = MapSequence.<SNodeId,List<ModelChange>>fromMap(myNodeToChanges).get(event.getReference().getSourceNode().getSNodeId());
+      invalidateChanges(ListSequence.<ModelChange>fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return ch instanceof SetReferenceChange;
         }
@@ -356,8 +356,8 @@ public class MergeContext {
     }
 
     private List<NodeGroupChange> getRelevantNodeGroupChanges(SNode parent, final String role) {
-      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(parent.getSNodeId());
-      Iterable<NodeGroupChange> allNodeGroupChanges = ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
+      List<ModelChange> nodeChanges = MapSequence.<SNodeId,List<ModelChange>>fromMap(myNodeToChanges).get(parent.getSNodeId());
+      Iterable<NodeGroupChange> allNodeGroupChanges = ListSequence.<ModelChange>fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange c) {
           return c instanceof NodeGroupChange;
         }
@@ -366,7 +366,7 @@ public class MergeContext {
           return (NodeGroupChange) c;
         }
       });
-      return Sequence.fromIterable(allNodeGroupChanges).where(new IWhereFilter<NodeGroupChange>() {
+      return Sequence.<NodeGroupChange>fromIterable(allNodeGroupChanges).where(new IWhereFilter<NodeGroupChange>() {
         public boolean accept(NodeGroupChange ngc) {
           return role.equals(ngc.getRole());
         }
@@ -377,7 +377,7 @@ public class MergeContext {
       List<SNode> currentChildren = parent.getChildren(role);
 
       List<NodeGroupChange> relevantChanges = getRelevantNodeGroupChanges(parent, role);
-      if (ListSequence.fromList(relevantChanges).isEmpty()) {
+      if (ListSequence.<NodeGroupChange>fromList(relevantChanges).isEmpty()) {
         return;
       }
 
@@ -390,7 +390,7 @@ public class MergeContext {
       final Wrappers._int baseIndex = new Wrappers._int();
       if (0 <= index && index < currentChildren.size()) {
         final SNodeId currentChildId = currentChildren.get(index).getSNodeId();
-        SNode baseChild = ListSequence.fromList(baseChildren).findFirst(new IWhereFilter<SNode>() {
+        SNode baseChild = ListSequence.<SNode>fromList(baseChildren).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode c) {
             return currentChildId.equals(c.getSNodeId());
           }
@@ -402,11 +402,11 @@ public class MergeContext {
       } else if (index == 0) {
         baseIndex.value = 0;
       } else if (index == currentChildren.size()) {
-        baseIndex.value = ListSequence.fromList(baseChildren).count();
+        baseIndex.value = ListSequence.<SNode>fromList(baseChildren).count();
       } else {
         return;
       }
-      invalidateChanges(ListSequence.fromList(relevantChanges).where(new IWhereFilter<NodeGroupChange>() {
+      invalidateChanges(ListSequence.<NodeGroupChange>fromList(relevantChanges).where(new IWhereFilter<NodeGroupChange>() {
         public boolean accept(NodeGroupChange ch) {
           return ch.getBegin() + beginOffset <= baseIndex.value && baseIndex.value < ch.getEnd() + endOffset;
         }
@@ -446,8 +446,8 @@ public class MergeContext {
 
     @Override
     public void propertyChanged(SModelPropertyEvent event) {
-      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getNode().getSNodeId());
-      invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
+      List<ModelChange> nodeChanges = MapSequence.<SNodeId,List<ModelChange>>fromMap(myNodeToChanges).get(event.getNode().getSNodeId());
+      invalidateChanges(ListSequence.<ModelChange>fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return ch instanceof SetPropertyChange;
         }

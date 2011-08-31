@@ -32,7 +32,7 @@ public class RenamePackage_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((TreeNode) MapSequence.fromMap(_params).get("ppNode")) instanceof PackageNode;
+    return ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("ppNode")) instanceof PackageNode;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -53,12 +53,12 @@ public class RenamePackage_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("ppNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
-    if (MapSequence.fromMap(_params).get("ppNode") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("ppNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.<String,Object>fromMap(_params).get("ppNode") == null) {
       return false;
     }
     return true;
@@ -67,14 +67,14 @@ public class RenamePackage_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<Set<SNode>> nodes = new Wrappers._T<Set<SNode>>();
-      final PackageNode treeNode = (PackageNode) ((TreeNode) MapSequence.fromMap(_params).get("ppNode"));
+      final PackageNode treeNode = (PackageNode) ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("ppNode"));
       final String name = treeNode.getPackage();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           nodes.value = treeNode.getNodesUnderPackage();
         }
       });
-      final String newName = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter New Package Name", name);
+      final String newName = JOptionPane.showInputDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "Enter New Package Name", name);
       if (newName == null) {
         return;
       }

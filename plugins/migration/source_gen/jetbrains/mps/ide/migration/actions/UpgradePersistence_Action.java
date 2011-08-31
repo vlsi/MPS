@@ -39,8 +39,8 @@ public class UpgradePersistence_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -48,7 +48,7 @@ public class UpgradePersistence_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new PersistenceUpgradeStage().execute(((MPSProject) MapSequence.fromMap(_params).get("project")));
+      new PersistenceUpgradeStage().execute(((MPSProject) MapSequence.<String,Object>fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "UpgradePersistence", t);

@@ -29,7 +29,7 @@ public class PasteAsJavaClass_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SModel m = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel();
+    SModel m = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getSModel();
     return m != null && SModelOperations.hasLanguage(m, MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference()) && JavaPaster.areDataAvailableInClipboard();
   }
 
@@ -51,12 +51,12 @@ public class PasteAsJavaClass_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("operationContext") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
@@ -64,7 +64,7 @@ public class PasteAsJavaClass_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new JavaPaster().pasteJavaAsClass(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel(), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")));
+      new JavaPaster().pasteJavaAsClass(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getSModel(), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "PasteAsJavaClass", t);

@@ -41,12 +41,12 @@ public class FileDelete_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("selectedFile", event.getData(MPSDataKeys.VIRTUAL_FILE));
-    if (MapSequence.fromMap(_params).get("selectedFile") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("selectedFile", event.getData(MPSDataKeys.VIRTUAL_FILE));
+    if (MapSequence.<String,Object>fromMap(_params).get("selectedFile") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("deleteProvider", event.getData(MPSDataKeys.DELETE_ELEMENT_PROVIDER));
-    if (MapSequence.fromMap(_params).get("deleteProvider") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("deleteProvider", event.getData(MPSDataKeys.DELETE_ELEMENT_PROVIDER));
+    if (MapSequence.<String,Object>fromMap(_params).get("deleteProvider") == null) {
       return false;
     }
     return true;

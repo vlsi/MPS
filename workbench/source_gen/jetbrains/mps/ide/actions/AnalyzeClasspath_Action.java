@@ -40,12 +40,12 @@ public class AnalyzeClasspath_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
@@ -53,9 +53,9 @@ public class AnalyzeClasspath_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ClassPathViewerTool tool = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(ClassPathViewerTool.class);
+      ClassPathViewerTool tool = ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getComponent(ClassPathViewerTool.class);
       tool.openToolLater(true);
-      tool.analyzeModule(((IModule) MapSequence.fromMap(_params).get("module")));
+      tool.analyzeModule(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AnalyzeClasspath", t);

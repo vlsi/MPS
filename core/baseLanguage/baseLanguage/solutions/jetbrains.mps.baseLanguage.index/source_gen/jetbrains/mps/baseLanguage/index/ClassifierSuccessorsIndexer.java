@@ -80,7 +80,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
 
     @NotNull
     public Map<GlobalSNodeId, List<GlobalSNodeId>> map(final FileContent inputData) {
-      final Map<GlobalSNodeId, List<GlobalSNodeId>> result = MapSequence.fromMap(new HashMap<GlobalSNodeId, List<GlobalSNodeId>>());
+      final Map<GlobalSNodeId, List<GlobalSNodeId>> result = MapSequence.<GlobalSNodeId,List<GlobalSNodeId>>fromMap(new HashMap<GlobalSNodeId, List<GlobalSNodeId>>());
       ModelAccess.instance().runIndexing(new Runnable() {
         public void run() {
           SModel sModel = BaseSNodeDescriptorIndex.doModelParsing(inputData);
@@ -90,7 +90,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
               if (SLinkOperations.getTarget(classNode, "superclass", true) != null) {
                 safeMap(SLinkOperations.getTarget(classNode, "superclass", true), classNode);
               }
-              for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(classNode, "implementedInterface", true))) {
+              for (SNode implementedInterface : ListSequence.<SNode>fromList(SLinkOperations.getTargets(classNode, "implementedInterface", true))) {
                 safeMap(implementedInterface, classNode);
               }
               if (isInstanceOfAnonymousClassConcept(classNode)) {
@@ -98,7 +98,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
               }
             } else if (isInstanceOfInterfaceConcept(nextNode)) {
               SNode interfaceNode = (SNode) nextNode;
-              for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getTargets(interfaceNode, "extendedInterface", true))) {
+              for (SNode extendedInterface : ListSequence.<SNode>fromList(SLinkOperations.getTargets(interfaceNode, "extendedInterface", true))) {
                 safeMap(extendedInterface, interfaceNode);
               }
             }
@@ -114,12 +114,12 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
           if (key == null) {
             return;
           }
-          List<GlobalSNodeId> successors = MapSequence.fromMap(result).get(key);
+          List<GlobalSNodeId> successors = MapSequence.<GlobalSNodeId,List<GlobalSNodeId>>fromMap(result).get(key);
           if (successors == null) {
-            successors = ListSequence.fromList(new ArrayList<GlobalSNodeId>());
-            MapSequence.fromMap(result).put(key, successors);
+            successors = ListSequence.<GlobalSNodeId>fromList(new ArrayList<GlobalSNodeId>());
+            MapSequence.<GlobalSNodeId,List<GlobalSNodeId>>fromMap(result).put(key, successors);
           }
-          ListSequence.fromList(successors).addElement(new GlobalSNodeId(node));
+          ListSequence.<GlobalSNodeId>fromList(successors).addElement(new GlobalSNodeId(node));
         }
 
         private boolean isInstanceOfClassConcept(SNode node) {

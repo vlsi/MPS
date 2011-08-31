@@ -65,7 +65,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
   private AtomicMarkableReference<MakeSession> currentSessionStickyMark = new AtomicMarkableReference<MakeSession>(null, false);
   private volatile AtomicReference<Future<IResult>> currentProcess = new AtomicReference<Future<IResult>>();
-  private List<IMakeNotificationListener> listeners = Collections.synchronizedList(ListSequence.fromList(new ArrayList<IMakeNotificationListener>()));
+  private List<IMakeNotificationListener> listeners = Collections.synchronizedList(ListSequence.<IMakeNotificationListener>fromList(new ArrayList<IMakeNotificationListener>()));
   private PluginReloader pluginReloader;
 
   public WorkbenchMakeService(PluginReloader pluginReloader) {
@@ -168,16 +168,16 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
   public void addListener(IMakeNotificationListener listener) {
     checkValidUsage();
-    ListSequence.fromList(listeners).addElement(listener);
+    ListSequence.<IMakeNotificationListener>fromList(listeners).addElement(listener);
   }
 
   public void removeListener(IMakeNotificationListener listener) {
     checkValidUsage();
-    ListSequence.fromList(listeners).removeElement(listener);
+    ListSequence.<IMakeNotificationListener>fromList(listeners).removeElement(listener);
   }
 
   private void notifyListeners(final MakeNotification notification) {
-    ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<IMakeNotificationListener>(), listeners)).visitAll(new IVisitor<IMakeNotificationListener>() {
+    ListSequence.<IMakeNotificationListener>fromList(ListSequence.<IMakeNotificationListener>fromListWithValues(new ArrayList<IMakeNotificationListener>(), listeners)).visitAll(new IVisitor<IMakeNotificationListener>() {
       public void visit(IMakeNotificationListener li) {
         li.handleNotification(notification);
       }

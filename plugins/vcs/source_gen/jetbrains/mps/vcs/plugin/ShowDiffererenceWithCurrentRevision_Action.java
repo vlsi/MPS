@@ -35,12 +35,12 @@ public class ShowDiffererenceWithCurrentRevision_Action extends GeneratedAction 
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModelDescriptor)) {
+    if (!(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")) instanceof EditableSModelDescriptor)) {
       return false;
     }
-    VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getModelFile());
-    if (((SNode) MapSequence.fromMap(_params).get("node")).isRoot() && ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getVcsFor(virtualFile) != null) {
-      FileStatus fileStatus = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
+    VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model"))).getModelFile());
+    if (((SNode) MapSequence.<String,Object>fromMap(_params).get("node")).isRoot() && ProjectLevelVcsManager.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project"))).getVcsFor(virtualFile) != null) {
+      FileStatus fileStatus = ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
       return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
     }
     return false;
@@ -64,24 +64,24 @@ public class ShowDiffererenceWithCurrentRevision_Action extends GeneratedAction 
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
@@ -89,7 +89,7 @@ public class ShowDiffererenceWithCurrentRevision_Action extends GeneratedAction 
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      VcsActionsHelper.showRootDifference(((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel(), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")));
+      VcsActionsHelper.showRootDifference(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getSModel(), ((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), ((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowDiffererenceWithCurrentRevision", t);

@@ -12,7 +12,7 @@
   </root>
   <root nodeId="2603967516254988460">
     <nodeInfo nodeId="108366216419412903" fileName="AttributeUtils.java" startLine="34" startPosition="39" endLine="35" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3903783035314778095" fileName="AttributeUtils.java" startLine="40" startPosition="26" endLine="41" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3903783035314778095" fileName="AttributeUtils.java" startLine="40" startPosition="26" endLine="41" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3903783035314778102" fileName="AttributeUtils.java" startLine="42" startPosition="12" endLine="43" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2084096332909535950" fileName="AttributeUtils.java" startLine="10" startPosition="29" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AttributeUtils#()V" />
     <nodeInfo nodeId="3903783035314778100" fileName="AttributeUtils.java" startLine="42" startPosition="10" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -30,7 +30,7 @@
       <varInfo nodeId="108366216419412899" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="108366216419412901" fileName="AttributeUtils.java" startLine="34" startPosition="39" endLine="35" endPosition="26" />
-    <scopeInfo nodeId="3903783035314707746" fileName="AttributeUtils.java" startLine="40" startPosition="26" endLine="41" endPosition="61" />
+    <scopeInfo nodeId="3903783035314707746" fileName="AttributeUtils.java" startLine="40" startPosition="26" endLine="41" endPosition="70" />
     <scopeInfo nodeId="3903783035314778101" fileName="AttributeUtils.java" startLine="42" startPosition="12" endLine="43" endPosition="55" />
     <scopeInfo nodeId="2084096332909535950" fileName="AttributeUtils.java" startLine="10" startPosition="29" endLine="12" endPosition="3" />
     <scopeInfo nodeId="108366216419407641" fileName="AttributeUtils.java" startLine="14" startPosition="77" endLine="18" endPosition="6" />

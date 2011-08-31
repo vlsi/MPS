@@ -14,9 +14,9 @@ import java.util.List;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.changes.ui.IgnoreUnversionedDialog;
 
 public class IgnoreModuleInVcs_Action extends GeneratedAction {
@@ -33,11 +33,11 @@ public class IgnoreModuleInVcs_Action extends GeneratedAction {
     try {
       {
         Presentation presentation = event.getPresentation();
-        presentation.setText(String.format("Ignore %s...", (((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() == 1 ?
+        presentation.setText(String.format("Ignore %s...", (((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")).size() == 1 ?
           "Module" :
           "Modules"
         )));
-        boolean enabled = ListSequence.fromList(VcsActionsHelper.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")))).isNotEmpty();
+        boolean enabled = ListSequence.<VirtualFile>fromList(VcsActionsHelper.getUnversionedFilesForModules(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), ((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")))).isNotEmpty();
         presentation.setEnabled(enabled);
         presentation.setVisible(enabled);
       }
@@ -53,12 +53,12 @@ public class IgnoreModuleInVcs_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
-    if (MapSequence.fromMap(_params).get("modules") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    if (MapSequence.<String,Object>fromMap(_params).get("modules") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -66,8 +66,8 @@ public class IgnoreModuleInVcs_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<VirtualFile> unversionedFiles = VcsActionsHelper.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
-      IgnoreUnversionedDialog.ignoreSelectedFiles(((Project) MapSequence.fromMap(_params).get("project")), unversionedFiles);
+      List<VirtualFile> unversionedFiles = VcsActionsHelper.getUnversionedFilesForModules(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), ((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")));
+      IgnoreUnversionedDialog.ignoreSelectedFiles(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), unversionedFiles);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "IgnoreModuleInVcs", t);

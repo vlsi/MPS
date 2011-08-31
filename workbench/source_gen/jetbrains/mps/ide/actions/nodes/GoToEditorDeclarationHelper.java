@@ -66,7 +66,7 @@ public class GoToEditorDeclarationHelper {
   }
 
   public static SNode findEditorDeclaration(SModel editorModel, final SNode conceptDeclaration) {
-    return ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "conceptDeclaration", false) == conceptDeclaration;
       }

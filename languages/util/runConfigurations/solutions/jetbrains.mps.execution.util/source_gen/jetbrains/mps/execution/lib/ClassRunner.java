@@ -69,7 +69,7 @@ public class ClassRunner {
     try {
       Class<?> classToStart = Class.forName(className);
       Method method = classToStart.getMethod("main", args.getClass());
-      method.invoke(null, ListSequence.fromList(fileContents).toGenericArray(String.class));
+      method.invoke(null, ListSequence.<String>fromList(fileContents).toGenericArray(String.class));
     } catch (ClassNotFoundException c) {
       System.err.println("Class " + className + " was not found.");
       c.printStackTrace();
@@ -86,7 +86,7 @@ public class ClassRunner {
   }
 
   public static List<String> readArguments(String fileName) throws IOException {
-    List<String> result = ListSequence.fromList(new ArrayList<String>());
+    List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
     new File(fileName).deleteOnExit();
     LineNumberReader reader = new LineNumberReader(new FileReader(fileName));
     while (true) {
@@ -97,7 +97,7 @@ public class ClassRunner {
       if (StringUtils.isEmpty(line)) {
         continue;
       }
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(Arrays.asList(line.split("(\\s)+"))));
+      ListSequence.<String>fromList(result).addSequence(ListSequence.<String>fromList(Arrays.asList(line.split("(\\s)+"))));
     }
     return result;
   }

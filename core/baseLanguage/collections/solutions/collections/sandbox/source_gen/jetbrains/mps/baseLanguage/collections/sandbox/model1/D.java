@@ -12,6 +12,6 @@ public class D<T> {
   private Deque<D<T>> xyz;
 
   public D() {
-    List<D<T>> abc = ListSequence.fromListWithValues(new ArrayList<D<T>>(), LinkedListSequence.fromLinkedList(this.xyz).tailListSequence(2));
+    List<D<T>> abc = ListSequence.<D<T>>fromListWithValues(new ArrayList<D<T>>(), LinkedListSequence.fromLinkedList(this.xyz).tailListSequence(2));
   }
 }

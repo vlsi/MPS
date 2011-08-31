@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class EditorChangesHighlighter extends AbstractProjectComponent implements EditorMessageOwner {
-  private Map<EditorComponent, EditorComponentChangesHighligher> myEditorsHighlighters = MapSequence.fromMap(new HashMap<EditorComponent, EditorComponentChangesHighligher>());
+  private Map<EditorComponent, EditorComponentChangesHighligher> myEditorsHighlighters = MapSequence.<EditorComponent,EditorComponentChangesHighligher>fromMap(new HashMap<EditorComponent, EditorComponentChangesHighligher>());
   private MessageBusConnection myMessageBusConnection;
   private EditorSettingsListener myEditorSettingsListener;
 
@@ -42,12 +42,12 @@ public class EditorChangesHighlighter extends AbstractProjectComponent implement
   }
 
   private void addHighighlighter(@NotNull EditorComponent editorComponent, boolean enabled) {
-    MapSequence.fromMap(myEditorsHighlighters).put(editorComponent, new EditorComponentChangesHighligher(myProject, editorComponent, enabled));
+    MapSequence.<EditorComponent,EditorComponentChangesHighligher>fromMap(myEditorsHighlighters).put(editorComponent, new EditorComponentChangesHighligher(myProject, editorComponent, enabled));
   }
 
   private void disposeHighlighter(@NotNull EditorComponent editorComponent) {
     if (MapSequence.fromMap(myEditorsHighlighters).containsKey(editorComponent)) {
-      MapSequence.fromMap(myEditorsHighlighters).get(editorComponent).dispose();
+      MapSequence.<EditorComponent,EditorComponentChangesHighligher>fromMap(myEditorsHighlighters).get(editorComponent).dispose();
       MapSequence.fromMap(myEditorsHighlighters).removeKey(editorComponent);
     }
   }
@@ -55,21 +55,21 @@ public class EditorChangesHighlighter extends AbstractProjectComponent implement
   public void goToNextChange(@NotNull EditorContext editorContext) {
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
     if (MapSequence.fromMap(myEditorsHighlighters).containsKey(editorComponent)) {
-      MapSequence.fromMap(myEditorsHighlighters).get(editorComponent).goToNextChange(editorContext);
+      MapSequence.<EditorComponent,EditorComponentChangesHighligher>fromMap(myEditorsHighlighters).get(editorComponent).goToNextChange(editorContext);
     }
   }
 
   public void goToPreviousChange(@NotNull EditorContext editorContext) {
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
     if (MapSequence.fromMap(myEditorsHighlighters).containsKey(editorComponent)) {
-      MapSequence.fromMap(myEditorsHighlighters).get(editorComponent).goToPreviousChange(editorContext);
+      MapSequence.<EditorComponent,EditorComponentChangesHighligher>fromMap(myEditorsHighlighters).get(editorComponent).goToPreviousChange(editorContext);
     }
   }
 
   public boolean isPreviousChangeAvailable(@NotNull EditorContext editorContext) {
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
     if (MapSequence.fromMap(myEditorsHighlighters).containsKey(editorComponent)) {
-      return MapSequence.fromMap(myEditorsHighlighters).get(editorComponent).isPreviousChangeAvailable(editorContext);
+      return MapSequence.<EditorComponent,EditorComponentChangesHighligher>fromMap(myEditorsHighlighters).get(editorComponent).isPreviousChangeAvailable(editorContext);
     }
     return false;
   }
@@ -77,7 +77,7 @@ public class EditorChangesHighlighter extends AbstractProjectComponent implement
   public boolean isNextChangeAvailable(@NotNull EditorContext editorContext) {
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
     if (MapSequence.fromMap(myEditorsHighlighters).containsKey(editorComponent)) {
-      return MapSequence.fromMap(myEditorsHighlighters).get(editorComponent).isNextChangeAvailable(editorContext);
+      return MapSequence.<EditorComponent,EditorComponentChangesHighligher>fromMap(myEditorsHighlighters).get(editorComponent).isNextChangeAvailable(editorContext);
     }
     return false;
   }
@@ -85,7 +85,7 @@ public class EditorChangesHighlighter extends AbstractProjectComponent implement
   public void rollbackChanges(@NotNull EditorContext editorContext) {
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
     if (MapSequence.fromMap(myEditorsHighlighters).containsKey(editorComponent)) {
-      MapSequence.fromMap(myEditorsHighlighters).get(editorComponent).rollbackChanges(editorContext);
+      MapSequence.<EditorComponent,EditorComponentChangesHighligher>fromMap(myEditorsHighlighters).get(editorComponent).rollbackChanges(editorContext);
     }
   }
 
@@ -117,7 +117,7 @@ public class EditorChangesHighlighter extends AbstractProjectComponent implement
     public void settingsChanged() {
       boolean currentHighlightChanges = EditorSettings.getInstance().isHighightChanges();
       if (myLastHighlightChanges != currentHighlightChanges) {
-        for (EditorComponentChangesHighligher changesHighligher : Sequence.fromIterable(MapSequence.fromMap(myEditorsHighlighters).values())) {
+        for (EditorComponentChangesHighligher changesHighligher : Sequence.<EditorComponentChangesHighligher>fromIterable(MapSequence.fromMap(myEditorsHighlighters).values())) {
           changesHighligher.setEnabled(currentHighlightChanges);
         }
       }

@@ -40,12 +40,12 @@ public class UpgradeModelPersistenceInModel_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mainFrame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("mainFrame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("mainFrame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("mainFrame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("modelDescriptor", event.getData(MPSDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("modelDescriptor", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.<String,Object>fromMap(_params).get("modelDescriptor") == null) {
       return false;
     }
     return true;
@@ -54,7 +54,7 @@ public class UpgradeModelPersistenceInModel_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       PersistenceUpdater persistenceUpdater = new PersistenceUpdater();
-      persistenceUpdater.upgradePersistenceInModel(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")), ((Frame) MapSequence.fromMap(_params).get("mainFrame")));
+      persistenceUpdater.upgradePersistenceInModel(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("modelDescriptor")), ((Frame) MapSequence.<String,Object>fromMap(_params).get("mainFrame")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "UpgradeModelPersistenceInModel", t);

@@ -17,7 +17,7 @@ public class SequenceFunctionTypes_Test extends ClosuresBase_Test {
     _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> fun2 = null;
     fun1 = fun2;
     fun2 = fun1;
-    final Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    final Iterable<Integer> seq = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -57,7 +57,7 @@ __switch__:
     };
     fun1 = new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
-        return ListSequence.fromListAndArray(new ArrayList<Integer>(), Integer.valueOf(1));
+        return ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), Integer.valueOf(1));
       }
     };
     fun1 = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
@@ -142,7 +142,7 @@ __switch__:
   }
 
   public void test_resultsReturnSequence() throws Exception {
-    final Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    final Iterable<Integer> seq = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {

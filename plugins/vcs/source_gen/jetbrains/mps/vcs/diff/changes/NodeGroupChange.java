@@ -64,9 +64,9 @@ public class NodeGroupChange extends ModelChange {
       assert parent != null;
 
       List<SNode> children = parent.getChildren(myRole);
-      myPreparedIdsToDelete = ListSequence.fromList(new ArrayList<SNodeId>());
+      myPreparedIdsToDelete = ListSequence.<SNodeId>fromList(new ArrayList<SNodeId>());
       for (int i = myBegin; i < myEnd; i++) {
-        ListSequence.fromList(myPreparedIdsToDelete).addElement(children.get(i).getSNodeId());
+        ListSequence.<SNodeId>fromList(myPreparedIdsToDelete).addElement(children.get(i).getSNodeId());
       }
       myPreparedAnchorId = (myBegin == 0 ?
         null :
@@ -78,7 +78,7 @@ public class NodeGroupChange extends ModelChange {
   public void apply(@NotNull final SModel model, @NotNull NodeCopier nodeCopier) {
     // delete old nodes 
     prepare();
-    ListSequence.fromList(myPreparedIdsToDelete).visitAll(new IVisitor<SNodeId>() {
+    ListSequence.<SNodeId>fromList(myPreparedIdsToDelete).visitAll(new IVisitor<SNodeId>() {
       public void visit(SNodeId id) {
         model.getNodeById(id).delete();
       }
@@ -86,10 +86,10 @@ public class NodeGroupChange extends ModelChange {
     myPreparedIdsToDelete = null;
 
     // copy nodes to insert 
-    List<SNode> nodesToAdd = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> nodesToAdd = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     List<SNode> newChildren = getChangeSet().getNewModel().getNodeById(myParentNodeId).getChildren(myRole);
     for (int i = myResultBegin; i < myResultEnd; i++) {
-      ListSequence.fromList(nodesToAdd).addElement(nodeCopier.copyNode(newChildren.get(i)));
+      ListSequence.<SNode>fromList(nodesToAdd).addElement(nodeCopier.copyNode(newChildren.get(i)));
     }
 
     // insert new nodes 
@@ -98,7 +98,7 @@ public class NodeGroupChange extends ModelChange {
       model.getNodeById(myPreparedAnchorId)
     );
     SNode parent = model.getNodeById(myParentNodeId);
-    for (SNode newNode : ListSequence.fromList(nodesToAdd).reversedList()) {
+    for (SNode newNode : ListSequence.<SNode>fromList(nodesToAdd).reversedList()) {
       parent.insertChild(anchor, myRole, newNode);
     }
   }

@@ -30,7 +30,7 @@ public class GoToBookmark_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setText("Go to Bookmark " + GoToBookmark_Action.this.num);
-      event.getPresentation().setEnabled(((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).getBookmark(GoToBookmark_Action.this.num) != null);
+      event.getPresentation().setEnabled(((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(BookmarkManager.class).getBookmark(GoToBookmark_Action.this.num) != null);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "GoToBookmark", t);
@@ -43,8 +43,8 @@ public class GoToBookmark_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -52,7 +52,7 @@ public class GoToBookmark_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).navigateToBookmark(GoToBookmark_Action.this.num);
+      ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(BookmarkManager.class).navigateToBookmark(GoToBookmark_Action.this.num);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToBookmark", t);

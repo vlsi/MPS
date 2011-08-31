@@ -7,16 +7,16 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 
 public class MockEvent {
-  private Map<String, String> props = MapSequence.fromMap(new HashMap<String, String>());
+  private Map<String, String> props = MapSequence.<String,String>fromMap(new HashMap<String, String>());
 
   public MockEvent() {
   }
 
   public void setProp(String propKey, String value) {
-    MapSequence.fromMap(this.props).put(propKey, value);
+    MapSequence.<String,String>fromMap(this.props).put(propKey, value);
   }
 
   public String getProp(String propKey) {
-    return MapSequence.fromMap(this.props).get(propKey);
+    return MapSequence.<String,String>fromMap(this.props).get(propKey);
   }
 }

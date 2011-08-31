@@ -24,13 +24,13 @@ import com.intellij.openapi.vfs.VirtualFileMoveEvent;
 public class ModelCacheReloader implements ApplicationComponent {
   private VirtualFileManager myVirtualFileManager;
   private ModelCacheReloader.CacheFileListener myFileListener = new ModelCacheReloader.CacheFileListener();
-  private List<BaseModelCache> myCaches = ListSequence.fromList(new ArrayList<BaseModelCache>());
+  private List<BaseModelCache> myCaches = ListSequence.<BaseModelCache>fromList(new ArrayList<BaseModelCache>());
 
   public ModelCacheReloader(VirtualFileManager virtualFileManager, TraceInfoCache traceInfoCache, BLDependenciesCache blDependenciesCache, GenerationDependenciesCache generationDependenciesCache) {
     myVirtualFileManager = virtualFileManager;
-    ListSequence.fromList(myCaches).addElement(traceInfoCache);
-    ListSequence.fromList(myCaches).addElement(blDependenciesCache);
-    ListSequence.fromList(myCaches).addElement(generationDependenciesCache);
+    ListSequence.<BaseModelCache>fromList(myCaches).addElement(traceInfoCache);
+    ListSequence.<BaseModelCache>fromList(myCaches).addElement(blDependenciesCache);
+    ListSequence.<BaseModelCache>fromList(myCaches).addElement(generationDependenciesCache);
   }
 
   public void initComponent() {
@@ -49,7 +49,7 @@ public class ModelCacheReloader implements ApplicationComponent {
 
   private void invalidateForFile(VirtualFileEvent event) {
     final IFile file = VirtualFileUtils.toIFile(event.getFile());
-    check_hmm83z_a1a3(ListSequence.fromList(myCaches).findFirst(new IWhereFilter<BaseModelCache>() {
+    check_hmm83z_a1a3(ListSequence.<BaseModelCache>fromList(myCaches).findFirst(new IWhereFilter<BaseModelCache>() {
       public boolean accept(BaseModelCache c) {
         return c.getCacheFileName().equalsIgnoreCase(file.getName());
       }

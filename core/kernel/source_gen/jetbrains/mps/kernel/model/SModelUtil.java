@@ -56,12 +56,12 @@ public class SModelUtil {
   public static SNode findNodeByFQName(String nodeFQName, SNode concept, IScope scope) {
     String modelName = NameUtil.namespaceFromLongName(nodeFQName);
     String name = NameUtil.shortNameFromLongName(nodeFQName);
-    for (SModelDescriptor descriptor : Sequence.fromIterable(scope.getModelDescriptors())) {
+    for (SModelDescriptor descriptor : Sequence.<SModelDescriptor>fromIterable(scope.getModelDescriptors())) {
       if (!(modelName.equals(descriptor.getLongName()))) {
         continue;
       }
       SModel model = descriptor.getSModel();
-      for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
+      for (SNode root : ListSequence.<SNode>fromList(SModelOperations.getRoots(model, null))) {
         if (name.equals(root.getName()) && SNodeOperations.isInstanceOf(root, NameUtil.nodeFQName(concept))) {
           return root;
         }
@@ -74,7 +74,7 @@ public class SModelUtil {
   }
 
   public static SNode findConceptDeclaration(@NotNull final String conceptFQName, final IScope scope) {
-    SNode cd = MapSequence.fromMap(myFQNameToConcepDecl).get(conceptFQName);
+    SNode cd = MapSequence.<String,SNode>fromMap(myFQNameToConcepDecl).get(conceptFQName);
     if (cd != null) {
       return cd;
     }
@@ -113,7 +113,7 @@ public class SModelUtil {
     if (concept == null) {
       return null;
     }
-    Language l = MapSequence.fromMap(myConceptToLanguage).get(concept);
+    Language l = MapSequence.<SNode,Language>fromMap(myConceptToLanguage).get(concept);
     if (l != null) {
       return l;
     }
@@ -144,35 +144,35 @@ public class SModelUtil {
   }
 
   public static List<SNode> getDirectSuperInterfacesAndTheirSupers(SNode concept) {
-    Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
-    for (SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
-      if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
-        for (SNode node : ListSequence.fromList(new ConceptAndSuperConceptsScope(superConcept).getConcepts())) {
+    Set<SNode> result = SetSequence.<SNode>fromSet(new LinkedHashSet<SNode>());
+    for (SNode superConcept : ListSequence.<SNode>fromList(getDirectSuperConcepts(concept))) {
+      if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.<SNode>fromSet(result).contains(superConcept))) {
+        for (SNode node : ListSequence.<SNode>fromList(new ConceptAndSuperConceptsScope(superConcept).getConcepts())) {
           SetSequence.fromSet(result).addElement((SNode) node);
         }
       }
     }
-    return ListSequence.fromListWithValues(new ArrayList<SNode>(), result);
+    return ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), result);
   }
 
   public static List<SNode> getDirectSuperConcepts(SNode concept) {
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> result = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       SNode conceptDecl = (SNode) concept;
       SNode extended = SLinkOperations.getTarget(conceptDecl, "extends", false);
       if (extended != null) {
-        ListSequence.fromList(result).addElement(extended);
+        ListSequence.<SNode>fromList(result).addElement(extended);
       }
-      for (SNode ref : ListSequence.fromList(SLinkOperations.getTargets(conceptDecl, "implements", true))) {
+      for (SNode ref : ListSequence.<SNode>fromList(SLinkOperations.getTargets(conceptDecl, "implements", true))) {
         if (SLinkOperations.getTarget(ref, "intfc", false) != null) {
-          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "intfc", false));
+          ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(ref, "intfc", false));
         }
       }
     } else {
       SNode intConceptDecl = (SNode) concept;
-      for (SNode ref : ListSequence.fromList(SLinkOperations.getTargets(intConceptDecl, "extends", true))) {
+      for (SNode ref : ListSequence.<SNode>fromList(SLinkOperations.getTargets(intConceptDecl, "extends", true))) {
         if (SLinkOperations.getTarget(ref, "intfc", false) != null) {
-          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "intfc", false));
+          ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(ref, "intfc", false));
         }
       }
     }
@@ -225,7 +225,7 @@ public class SModelUtil {
     if (childRole == null) {
       return null;
     }
-    SNode annotationLinkDeclaration = ListSequence.fromList(annotationLinks).findFirst(new IWhereFilter<SNode>() {
+    SNode annotationLinkDeclaration = ListSequence.<SNode>fromList(annotationLinks).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ald) {
         return SPropertyOperations.hasValue(ald, "stereotype", "node", "node") && childRole.equals(AttributesRolesUtil.childRoleFromAttributeRole(SPropertyOperations.getString(ald, "role")));
       }

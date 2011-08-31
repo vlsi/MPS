@@ -57,9 +57,9 @@ public class PatternListPattern_Test extends BaseTransformationTest {
       {
         List<SNode> list = (List<SNode>) pattern.getFieldValue("patternVar_list");
         int i = 0;
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternListPattern_Test.TestBody.QuotationClass_i79cpz_a1b0a0c0g0b0().createNode())));
+        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), new PatternListPattern_Test.TestBody.QuotationClass_i79cpz_a1b0a0c0g0b0().createNode())));
         i++;
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternListPattern_Test.TestBody.QuotationClass_i79cpz_a1b0a0d0g0b0().createNode())));
+        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), new PatternListPattern_Test.TestBody.QuotationClass_i79cpz_a1b0a0d0g0b0().createNode())));
         i++;
       }
       return true;
@@ -162,11 +162,11 @@ public class PatternListPattern_Test extends BaseTransformationTest {
                 patternVar_method = nodeToMatch_ListPattern_9twfax_a0a_0.getReferent("baseMethodDeclaration");
                 {
                   String childRole_ListPattern_9twfax__1 = "actualArgument";
-                  this.patternVar_list = ListSequence.fromList(new ArrayList<SNode>());
+                  this.patternVar_list = ListSequence.<SNode>fromList(new ArrayList<SNode>());
                   patternVar_ignore = null;
                   for (SNode childVar : nodeToMatch_ListPattern_9twfax_a0a_0.getChildren(childRole_ListPattern_9twfax__1)) {
                     patternVar_ignore = childVar;
-                    ListSequence.fromList(this.patternVar_list).addElement(childVar);
+                    ListSequence.<SNode>fromList(this.patternVar_list).addElement(childVar);
                   }
                 }
               }

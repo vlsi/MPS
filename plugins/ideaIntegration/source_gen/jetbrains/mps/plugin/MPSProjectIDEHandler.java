@@ -174,14 +174,14 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           MPSProjectIDEHandler.LOG.error("Can't find a class " + classFqName);
           return;
         }
-        Iterable<SNode> allMethods = (Iterable<SNode>) ListSequence.fromList(SNodeOperations.getChildren(cls)).where(new IWhereFilter<SNode>() {
+        Iterable<SNode> allMethods = (Iterable<SNode>) ListSequence.<SNode>fromList(SNodeOperations.getChildren(cls)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
           }
         });
-        SNode method = Sequence.fromIterable(allMethods).findFirst(new IWhereFilter<SNode>() {
+        SNode method = Sequence.<SNode>fromIterable(allMethods).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return methodName.equals(SPropertyOperations.getString(it, "name")) && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == parameterCount;
+            return methodName.equals(SPropertyOperations.getString(it, "name")) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == parameterCount;
           }
         });
         if (method == null) {

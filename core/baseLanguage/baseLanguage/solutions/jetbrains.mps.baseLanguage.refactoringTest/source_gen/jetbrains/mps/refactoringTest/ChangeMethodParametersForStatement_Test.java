@@ -35,18 +35,18 @@ public class ChangeMethodParametersForStatement_Test extends BaseTransformationT
       {
         SNode c_ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
         SLinkOperations.setTarget(c_ref, "variableDeclaration", SNodeOperations.cast(this.getNodeById("1230052406612"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false);
-        ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406572"), "jetbrains.mps.baseLanguage.structure.ReturnStatement")));
-        ListSequence.fromList(params.getParameters()).getElement(0).setSelected(false);
-        MethodParameter p2 = ListSequence.fromList(params.getParameters()).getElement(1);
-        MethodParameter p1 = ListSequence.fromList(params.getParameters()).getElement(2);
-        ListSequence.fromList(params.getParameters()).setElement(1, p1);
-        ListSequence.fromList(params.getParameters()).setElement(2, p2);
+        ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406572"), "jetbrains.mps.baseLanguage.structure.ReturnStatement")));
+        ListSequence.<MethodParameter>fromList(params.getParameters()).getElement(0).setSelected(false);
+        MethodParameter p2 = ListSequence.<MethodParameter>fromList(params.getParameters()).getElement(1);
+        MethodParameter p1 = ListSequence.<MethodParameter>fromList(params.getParameters()).getElement(2);
+        ListSequence.<MethodParameter>fromList(params.getParameters()).setElement(1, p1);
+        ListSequence.<MethodParameter>fromList(params.getParameters()).setElement(2, p2);
         p1.setName("p1");
         p2.setName("p2");
         params.setName("foo");
         ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
         ref.doRefactor();
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406555"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406582"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406555"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406582"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
       }
     }
   }

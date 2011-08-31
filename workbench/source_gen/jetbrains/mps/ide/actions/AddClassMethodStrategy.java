@@ -37,9 +37,9 @@ public class AddClassMethodStrategy implements StratergyAddMethodDialog.Containe
       SPropertyOperations.set(method, "isAbstract", "" + false);
       SLinkOperations.setTarget(method, "body", SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myClassConcept), "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
       if (insertion) {
-        ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).insertElement(ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).indexOf(myContextMethod) + 1, method);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).insertElement(ListSequence.<SNode>fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).indexOf(myContextMethod) + 1, method);
       } else {
-        ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).addElement(method);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).addElement(method);
       }
     }
     return methods;

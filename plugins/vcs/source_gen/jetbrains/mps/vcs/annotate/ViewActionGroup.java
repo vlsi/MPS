@@ -11,7 +11,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
   public ViewActionGroup(AnnotationColumn annotationColumn, Iterable<AnnotationAspectSubcolumn> subcolumns) {
     super("View");
     setPopup(true);
-    for (AnnotationAspectSubcolumn subcolumn : Sequence.fromIterable(subcolumns)) {
+    for (AnnotationAspectSubcolumn subcolumn : Sequence.<AnnotationAspectSubcolumn>fromIterable(subcolumns)) {
       add(new ViewActionGroup.ShowHideSubcolumnAction(subcolumn));
     }
     addSeparator();

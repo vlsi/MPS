@@ -50,25 +50,25 @@ public class HighlightInstances_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.fromMap(_params).put("node", node);
+      MapSequence.<String,Object>fromMap(_params).put("node", node);
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("editorCell") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorCell") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("scope", event.getData(MPSDataKeys.SCOPE));
-    if (MapSequence.fromMap(_params).get("scope") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("scope", event.getData(MPSDataKeys.SCOPE));
+    if (MapSequence.<String,Object>fromMap(_params).get("scope") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
@@ -76,10 +76,10 @@ public class HighlightInstances_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
-      EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
-      for (SNode ref : SetSequence.fromSet(new ModelFindOperations(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).findInstances(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))), ((IScope) MapSequence.fromMap(_params).get("scope"))))) {
-        if (ref.getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
+      NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getHighlightManager();
+      EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
+      for (SNode ref : SetSequence.<SNode>fromSet(new ModelFindOperations(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model"))).findInstances(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.<String,Object>fromMap(_params).get("node"))), ((IScope) MapSequence.<String,Object>fromMap(_params).get("scope"))))) {
+        if (ref.getContainingRoot() == ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
           highlightManager.mark(ref, HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);
         }
       }

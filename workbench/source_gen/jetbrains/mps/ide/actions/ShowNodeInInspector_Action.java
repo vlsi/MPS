@@ -26,7 +26,7 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((EditorComponent) MapSequence.fromMap(_params).get("editor")) instanceof InspectorEditorComponent;
+    return ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editor")) instanceof InspectorEditorComponent;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -47,12 +47,12 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editor", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editor") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editor", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editor") == null) {
       return false;
     }
     return true;
@@ -60,8 +60,8 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      InspectorEditorComponent inspector = (InspectorEditorComponent) ((EditorComponent) MapSequence.fromMap(_params).get("editor"));
-      inspector.inspectNode(((SNode) MapSequence.fromMap(_params).get("node")), inspector.getOperationContext());
+      InspectorEditorComponent inspector = (InspectorEditorComponent) ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editor"));
+      inspector.inspectNode(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), inspector.getOperationContext());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowNodeInInspector", t);

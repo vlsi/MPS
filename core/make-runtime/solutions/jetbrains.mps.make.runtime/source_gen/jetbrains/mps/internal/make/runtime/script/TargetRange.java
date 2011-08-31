@@ -24,15 +24,15 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
 
 public class TargetRange {
-  private Map<ITarget.Name, ITarget> targetsView = MapSequence.fromMap(new HashMap<ITarget.Name, ITarget>());
-  private Set<ITarget> allTargets = SetSequence.fromSet(new HashSet<ITarget>());
-  private Map<ITarget.Name, TargetRange.TargetRefs> allRefs = MapSequence.fromMap(new HashMap<ITarget.Name, TargetRange.TargetRefs>());
+  private Map<ITarget.Name, ITarget> targetsView = MapSequence.<ITarget.Name,ITarget>fromMap(new HashMap<ITarget.Name, ITarget>());
+  private Set<ITarget> allTargets = SetSequence.<ITarget>fromSet(new HashSet<ITarget>());
+  private Map<ITarget.Name, TargetRange.TargetRefs> allRefs = MapSequence.<ITarget.Name,TargetRange.TargetRefs>fromMap(new HashMap<ITarget.Name, TargetRange.TargetRefs>());
 
   public TargetRange() {
   }
 
   public void addTarget(ITarget trg) {
-    if (!(SetSequence.fromSet(allTargets).contains(trg))) {
+    if (!(SetSequence.<ITarget>fromSet(allTargets).contains(trg))) {
       trg = this.primAddTarget(trg);
       SetSequence.fromSet(allTargets).addElement(trg);
       this.updateRefs(trg);
@@ -40,59 +40,59 @@ public class TargetRange {
   }
 
   public void addRelated(Iterable<ITarget> availableTargets) {
-    Set<ITarget.Name> valences = SetSequence.fromSetWithValues(new HashSet<ITarget.Name>(), Sequence.fromIterable(MapSequence.fromMap(targetsView).values()).<ITarget.Name>translate(new ITranslator2<ITarget, ITarget.Name>() {
+    Set<ITarget.Name> valences = SetSequence.<ITarget.Name>fromSetWithValues(new HashSet<ITarget.Name>(), Sequence.<ITarget>fromIterable(MapSequence.fromMap(targetsView).values()).<ITarget.Name>translate(new ITranslator2<ITarget, ITarget.Name>() {
       public Iterable<ITarget.Name> translate(ITarget trg) {
-        return Sequence.fromIterable(trg.before()).concat(Sequence.fromIterable(trg.notBefore())).concat(Sequence.fromIterable(trg.after())).concat(Sequence.fromIterable(trg.notAfter()));
+        return Sequence.<ITarget.Name>fromIterable(trg.before()).concat(Sequence.<ITarget.Name>fromIterable(trg.notBefore())).concat(Sequence.<ITarget.Name>fromIterable(trg.after())).concat(Sequence.<ITarget.Name>fromIterable(trg.notAfter()));
       }
     }));
-    List<ITarget> available = Sequence.fromIterable(availableTargets).toListSequence();
+    List<ITarget> available = Sequence.<ITarget>fromIterable(availableTargets).toListSequence();
     int atsize;
     do {
-      atsize = SetSequence.fromSet(allTargets).count();
-      for (Iterator<ITarget> it = ListSequence.fromList(available).iterator(); it.hasNext();) {
+      atsize = SetSequence.<ITarget>fromSet(allTargets).count();
+      for (Iterator<ITarget> it = ListSequence.<ITarget>fromList(available).iterator(); it.hasNext();) {
         ITarget trg = it.next();
-        Iterable<ITarget.Name> trgval = Sequence.fromIterable(trg.before()).concat(Sequence.fromIterable(trg.notBefore())).concat(Sequence.fromIterable(trg.after())).concat(Sequence.fromIterable(trg.notAfter()));
-        if (SetSequence.fromSet(valences).contains(trg.getName()) || Sequence.fromIterable(trgval).any(new IWhereFilter<ITarget.Name>() {
+        Iterable<ITarget.Name> trgval = Sequence.<ITarget.Name>fromIterable(trg.before()).concat(Sequence.<ITarget.Name>fromIterable(trg.notBefore())).concat(Sequence.<ITarget.Name>fromIterable(trg.after())).concat(Sequence.<ITarget.Name>fromIterable(trg.notAfter()));
+        if (SetSequence.<ITarget.Name>fromSet(valences).contains(trg.getName()) || Sequence.<ITarget.Name>fromIterable(trgval).any(new IWhereFilter<ITarget.Name>() {
           public boolean accept(ITarget.Name tn) {
             return MapSequence.fromMap(targetsView).containsKey(tn);
           }
         })) {
           addTarget(trg);
-          SetSequence.fromSet(valences).addSequence(Sequence.fromIterable(trgval));
+          SetSequence.fromSet(valences).addSequence(Sequence.<ITarget.Name>fromIterable(trgval));
           it.remove();
         }
       }
-    } while (atsize < SetSequence.fromSet(allTargets).count());
+    } while (atsize < SetSequence.<ITarget>fromSet(allTargets).count());
   }
 
   public void addRelatedPrecursors(Iterable<ITarget> availableTargets) {
-    Set<ITarget.Name> valences = SetSequence.fromSetWithValues(new HashSet<ITarget.Name>(), Sequence.fromIterable(MapSequence.fromMap(targetsView).values()).<ITarget.Name>translate(new ITranslator2<ITarget, ITarget.Name>() {
+    Set<ITarget.Name> valences = SetSequence.<ITarget.Name>fromSetWithValues(new HashSet<ITarget.Name>(), Sequence.<ITarget>fromIterable(MapSequence.fromMap(targetsView).values()).<ITarget.Name>translate(new ITranslator2<ITarget, ITarget.Name>() {
       public Iterable<ITarget.Name> translate(ITarget trg) {
-        return Sequence.fromIterable(trg.after()).concat(Sequence.fromIterable(trg.notAfter()));
+        return Sequence.<ITarget.Name>fromIterable(trg.after()).concat(Sequence.<ITarget.Name>fromIterable(trg.notAfter()));
       }
     }));
-    List<ITarget> available = Sequence.fromIterable(availableTargets).toListSequence();
+    List<ITarget> available = Sequence.<ITarget>fromIterable(availableTargets).toListSequence();
     int atsize;
     do {
-      atsize = SetSequence.fromSet(allTargets).count();
-      for (Iterator<ITarget> it = ListSequence.fromList(available).iterator(); it.hasNext();) {
+      atsize = SetSequence.<ITarget>fromSet(allTargets).count();
+      for (Iterator<ITarget> it = ListSequence.<ITarget>fromList(available).iterator(); it.hasNext();) {
         ITarget trg = it.next();
-        Iterable<ITarget.Name> trgvals = Sequence.fromIterable(trg.before()).concat(Sequence.fromIterable(trg.notBefore()));
-        if (SetSequence.fromSet(valences).contains(trg.getName()) || Sequence.fromIterable(trgvals).any(new IWhereFilter<ITarget.Name>() {
+        Iterable<ITarget.Name> trgvals = Sequence.<ITarget.Name>fromIterable(trg.before()).concat(Sequence.<ITarget.Name>fromIterable(trg.notBefore()));
+        if (SetSequence.<ITarget.Name>fromSet(valences).contains(trg.getName()) || Sequence.<ITarget.Name>fromIterable(trgvals).any(new IWhereFilter<ITarget.Name>() {
           public boolean accept(ITarget.Name tn) {
             return MapSequence.fromMap(targetsView).containsKey(tn);
           }
         })) {
           addTarget(trg);
-          SetSequence.fromSet(valences).addSequence(Sequence.fromIterable(trg.after()).concat(Sequence.fromIterable(trg.notAfter())));
+          SetSequence.fromSet(valences).addSequence(Sequence.<ITarget.Name>fromIterable(trg.after()).concat(Sequence.<ITarget.Name>fromIterable(trg.notAfter())));
           it.remove();
         }
       }
-    } while (atsize < SetSequence.fromSet(allTargets).count());
+    } while (atsize < SetSequence.<ITarget>fromSet(allTargets).count());
   }
 
   public ITarget getTarget(ITarget.Name name) {
-    return MapSequence.fromMap(targetsView).get(name);
+    return MapSequence.<ITarget.Name,ITarget>fromMap(targetsView).get(name);
   }
 
   public boolean hasTarget(ITarget.Name name) {
@@ -100,9 +100,9 @@ public class TargetRange {
   }
 
   public Iterable<ITarget> sortedTargets() {
-    return Sequence.fromIterable(new TargetRange.TargetsGraph().topologicalSort()).<ITarget>select(new ISelector<ITarget.Name, ITarget>() {
+    return Sequence.<ITarget.Name>fromIterable(new TargetRange.TargetsGraph().topologicalSort()).<ITarget>select(new ISelector<ITarget.Name, ITarget>() {
       public ITarget select(ITarget.Name tn) {
-        return MapSequence.fromMap(targetsView).get(tn);
+        return MapSequence.<ITarget.Name,ITarget>fromMap(targetsView).get(tn);
       }
     });
   }
@@ -111,9 +111,9 @@ public class TargetRange {
     if (!(MapSequence.fromMap(targetsView).containsKey(target))) {
       throw new IllegalArgumentException("unknown target");
     }
-    return Sequence.fromIterable(new TargetRange.TargetsGraph().precursors(target)).<ITarget>select(new ISelector<ITarget.Name, ITarget>() {
+    return Sequence.<ITarget.Name>fromIterable(new TargetRange.TargetsGraph().precursors(target)).<ITarget>select(new ISelector<ITarget.Name, ITarget>() {
       public ITarget select(ITarget.Name tn) {
-        return MapSequence.fromMap(targetsView).get(tn);
+        return MapSequence.<ITarget.Name,ITarget>fromMap(targetsView).get(tn);
       }
     });
   }
@@ -122,19 +122,19 @@ public class TargetRange {
     if (!(MapSequence.fromMap(targetsView).containsKey(target))) {
       throw new IllegalArgumentException("unknown target");
     }
-    return ListSequence.fromList(MapSequence.fromMap(allRefs).get(target).after).where(new IWhereFilter<ITarget.Name>() {
+    return ListSequence.<ITarget.Name>fromList(MapSequence.<ITarget.Name,TargetRange.TargetRefs>fromMap(allRefs).get(target).after).where(new IWhereFilter<ITarget.Name>() {
       public boolean accept(ITarget.Name tn) {
         return MapSequence.fromMap(allRefs).containsKey(tn);
       }
     }).<ITarget>select(new ISelector<ITarget.Name, ITarget>() {
       public ITarget select(ITarget.Name tn) {
-        return MapSequence.fromMap(targetsView).get(tn);
+        return MapSequence.<ITarget.Name,ITarget>fromMap(targetsView).get(tn);
       }
     });
   }
 
   public boolean hasCycles() {
-    return ListSequence.fromList(new TargetRange.TargetsGraph().findCycles()).isNotEmpty();
+    return ListSequence.<List<ITarget.Name>>fromList(new TargetRange.TargetsGraph().findCycles()).isNotEmpty();
   }
 
   public List<List<ITarget.Name>> cycles() {
@@ -142,38 +142,38 @@ public class TargetRange {
   }
 
   private ITarget primAddTarget(ITarget trg) {
-    ITarget prev = MapSequence.fromMap(targetsView).get(trg.getName());
+    ITarget prev = MapSequence.<ITarget.Name,ITarget>fromMap(targetsView).get(trg.getName());
     if (prev != null) {
       trg = new TargetRange.CompositeTarget(trg, prev);
     }
-    MapSequence.fromMap(targetsView).put(trg.getName(), trg);
+    MapSequence.<ITarget.Name,ITarget>fromMap(targetsView).put(trg.getName(), trg);
     return trg;
   }
 
   private void updateRefs(ITarget trg) {
-    TargetRange.TargetRefs refs = MapSequence.fromMap(allRefs).get(trg.getName());
+    TargetRange.TargetRefs refs = MapSequence.<ITarget.Name,TargetRange.TargetRefs>fromMap(allRefs).get(trg.getName());
     if (refs == null) {
       refs = new TargetRange.TargetRefs();
-      MapSequence.fromMap(allRefs).put(trg.getName(), refs);
+      MapSequence.<ITarget.Name,TargetRange.TargetRefs>fromMap(allRefs).put(trg.getName(), refs);
     }
-    ListSequence.fromList(refs.before).addSequence(Sequence.fromIterable(trg.before()).concat(Sequence.fromIterable(trg.notAfter())));
-    ListSequence.fromList(refs.after).addSequence(Sequence.fromIterable(trg.after()).concat(Sequence.fromIterable(trg.notBefore())));
-    for (ITarget.Name bf : ListSequence.fromList(refs.before)) {
+    ListSequence.<ITarget.Name>fromList(refs.before).addSequence(Sequence.<ITarget.Name>fromIterable(trg.before()).concat(Sequence.<ITarget.Name>fromIterable(trg.notAfter())));
+    ListSequence.<ITarget.Name>fromList(refs.after).addSequence(Sequence.<ITarget.Name>fromIterable(trg.after()).concat(Sequence.<ITarget.Name>fromIterable(trg.notBefore())));
+    for (ITarget.Name bf : ListSequence.<ITarget.Name>fromList(refs.before)) {
       if (MapSequence.fromMap(allRefs).containsKey(bf)) {
-        ListSequence.fromList(MapSequence.fromMap(allRefs).get(bf).after).addElement(trg.getName());
+        ListSequence.<ITarget.Name>fromList(MapSequence.<ITarget.Name,TargetRange.TargetRefs>fromMap(allRefs).get(bf).after).addElement(trg.getName());
       }
     }
-    for (ITarget.Name bf : ListSequence.fromList(refs.after)) {
+    for (ITarget.Name bf : ListSequence.<ITarget.Name>fromList(refs.after)) {
       if (MapSequence.fromMap(allRefs).containsKey(bf)) {
-        ListSequence.fromList(MapSequence.fromMap(allRefs).get(bf).before).addElement(trg.getName());
+        ListSequence.<ITarget.Name>fromList(MapSequence.<ITarget.Name,TargetRange.TargetRefs>fromMap(allRefs).get(bf).before).addElement(trg.getName());
       }
     }
-    for (IMapping<ITarget.Name, TargetRange.TargetRefs> m : MapSequence.fromMap(allRefs)) {
-      if (ListSequence.fromList(m.value().before).contains(trg.getName()) && !(ListSequence.fromList(refs.after).contains(m.key()))) {
-        ListSequence.fromList(refs.after).addElement(m.key());
+    for (IMapping<ITarget.Name, TargetRange.TargetRefs> m : MapSequence.<ITarget.Name,TargetRange.TargetRefs>fromMap(allRefs)) {
+      if (ListSequence.<ITarget.Name>fromList(m.value().before).contains(trg.getName()) && !(ListSequence.<ITarget.Name>fromList(refs.after).contains(m.key()))) {
+        ListSequence.<ITarget.Name>fromList(refs.after).addElement(m.key());
       }
-      if (ListSequence.fromList(m.value().after).contains(trg.getName()) && !(ListSequence.fromList(refs.before).contains(m.key()))) {
-        ListSequence.fromList(refs.before).addElement(m.key());
+      if (ListSequence.<ITarget.Name>fromList(m.value().after).contains(trg.getName()) && !(ListSequence.<ITarget.Name>fromList(refs.before).contains(m.key()))) {
+        ListSequence.<ITarget.Name>fromList(refs.before).addElement(m.key());
       }
     }
   }
@@ -189,19 +189,19 @@ public class TargetRange {
     }
 
     public Iterable<ITarget.Name> notAfter() {
-      return Sequence.fromIterable(first.notAfter()).concat(Sequence.fromIterable(second.notAfter()));
+      return Sequence.<ITarget.Name>fromIterable(first.notAfter()).concat(Sequence.<ITarget.Name>fromIterable(second.notAfter()));
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromIterable(first.after()).concat(Sequence.fromIterable(second.after()));
+      return Sequence.<ITarget.Name>fromIterable(first.after()).concat(Sequence.<ITarget.Name>fromIterable(second.after()));
     }
 
     public Iterable<ITarget.Name> notBefore() {
-      return Sequence.fromIterable(first.notBefore()).concat(Sequence.fromIterable(second.notBefore()));
+      return Sequence.<ITarget.Name>fromIterable(first.notBefore()).concat(Sequence.<ITarget.Name>fromIterable(second.notBefore()));
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromIterable(first.before()).concat(Sequence.fromIterable(second.before()));
+      return Sequence.<ITarget.Name>fromIterable(first.before()).concat(Sequence.<ITarget.Name>fromIterable(second.before()));
     }
 
     public ITarget.Name getName() {
@@ -242,8 +242,8 @@ public class TargetRange {
   }
 
   private static class TargetRefs {
-    private List<ITarget.Name> before = ListSequence.fromList(new LinkedList<ITarget.Name>());
-    private List<ITarget.Name> after = ListSequence.fromList(new LinkedList<ITarget.Name>());
+    private List<ITarget.Name> before = ListSequence.<ITarget.Name>fromList(new LinkedList<ITarget.Name>());
+    private List<ITarget.Name> after = ListSequence.<ITarget.Name>fromList(new LinkedList<ITarget.Name>());
 
     public TargetRefs() {
     }
@@ -255,7 +255,7 @@ public class TargetRange {
 
     @Override
     public Iterable<ITarget.Name> backwardEdges(ITarget.Name v) {
-      return ListSequence.fromList(MapSequence.fromMap(allRefs).get(v).after).where(new IWhereFilter<ITarget.Name>() {
+      return ListSequence.<ITarget.Name>fromList(MapSequence.<ITarget.Name,TargetRange.TargetRefs>fromMap(allRefs).get(v).after).where(new IWhereFilter<ITarget.Name>() {
         public boolean accept(ITarget.Name tn) {
           return MapSequence.fromMap(allRefs).containsKey(tn);
         }
@@ -264,7 +264,7 @@ public class TargetRange {
 
     @Override
     public Iterable<ITarget.Name> forwardEdges(ITarget.Name v) {
-      return ListSequence.fromList(MapSequence.fromMap(allRefs).get(v).before).where(new IWhereFilter<ITarget.Name>() {
+      return ListSequence.<ITarget.Name>fromList(MapSequence.<ITarget.Name,TargetRange.TargetRefs>fromMap(allRefs).get(v).before).where(new IWhereFilter<ITarget.Name>() {
         public boolean accept(ITarget.Name tn) {
           return MapSequence.fromMap(allRefs).containsKey(tn);
         }

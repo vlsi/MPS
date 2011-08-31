@@ -21,12 +21,12 @@ public class Concat_Test extends Util_Test {
 
   public void test_concatOperation() throws Exception {
     Iterable<Integer> input = this.input5();
-    Iterable<Integer> test = Sequence.fromIterable(input).concat(ListSequence.fromList(Arrays.asList(6, 7, 8, 9, 10)));
+    Iterable<Integer> test = Sequence.<Integer>fromIterable(input).concat(ListSequence.<Integer>fromList(Arrays.asList(6, 7, 8, 9, 10)));
     this.assertIterableEquals(this.expect10(), test);
   }
 
   public void test_nextWithoutHasNext() throws Exception {
-    Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 4, 5))).iterator();
+    Iterator<Integer> it = ListSequence.<Integer>fromList(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).concat(ListSequence.<Integer>fromList(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 4, 5))).iterator();
     Assert.assertSame(1, it.next());
     Assert.assertSame(2, it.next());
     Assert.assertSame(3, it.next());

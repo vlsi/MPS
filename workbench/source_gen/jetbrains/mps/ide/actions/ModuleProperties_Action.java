@@ -49,12 +49,12 @@ public class ModuleProperties_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
@@ -65,18 +65,18 @@ public class ModuleProperties_Action extends GeneratedAction {
       final Wrappers._T<BasePropertiesDialog> dialog = new Wrappers._T<BasePropertiesDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language) {
-            dialog.value = StandardDialogs.createLanguagePropertiesDialog((Language) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Solution) {
-            dialog.value = StandardDialogs.createSolutionPropertiesDialog((Solution) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Library) {
-            dialog.value = StandardDialogs.createLibraryPropertiesDialog((Library) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof DevKit) {
-            dialog.value = StandardDialogs.createDevKitPropertiesDialog((DevKit) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Generator) {
-            dialog.value = StandardDialogs.createGeneratorPropertiesDialog(((Generator) ((IModule) MapSequence.fromMap(_params).get("module"))), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+          if (((IModule) MapSequence.<String,Object>fromMap(_params).get("module")) instanceof Language) {
+            dialog.value = StandardDialogs.createLanguagePropertiesDialog((Language) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+          } else if (((IModule) MapSequence.<String,Object>fromMap(_params).get("module")) instanceof Solution) {
+            dialog.value = StandardDialogs.createSolutionPropertiesDialog((Solution) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+          } else if (((IModule) MapSequence.<String,Object>fromMap(_params).get("module")) instanceof Library) {
+            dialog.value = StandardDialogs.createLibraryPropertiesDialog((Library) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+          } else if (((IModule) MapSequence.<String,Object>fromMap(_params).get("module")) instanceof DevKit) {
+            dialog.value = StandardDialogs.createDevKitPropertiesDialog((DevKit) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+          } else if (((IModule) MapSequence.<String,Object>fromMap(_params).get("module")) instanceof Generator) {
+            dialog.value = StandardDialogs.createGeneratorPropertiesDialog(((Generator) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module"))), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
           } else {
-            throw new IllegalArgumentException("Unknown module type: " + ((IModule) MapSequence.fromMap(_params).get("module")).getClass().getName());
+            throw new IllegalArgumentException("Unknown module type: " + ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")).getClass().getName());
           }
         }
       });

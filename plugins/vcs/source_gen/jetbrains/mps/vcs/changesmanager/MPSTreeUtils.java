@@ -20,7 +20,7 @@ public class MPSTreeUtils {
   }
 
   /*package*/ static PropertiesTreeNode findPropertiesTreeNode(final SNodeTreeNode _this) {
-    for (MPSTreeNode child : Sequence.fromIterable(_this)) {
+    for (MPSTreeNode child : Sequence.<MPSTreeNode>fromIterable(_this)) {
       if (child instanceof PropertiesTreeNode) {
         return ((PropertiesTreeNode) child);
       }
@@ -29,7 +29,7 @@ public class MPSTreeUtils {
   }
 
   /*package*/ static PropertyTreeNode findPropertyTreeNode(final SNodeTreeNode _this, String propertyName) {
-    for (MPSTreeNode child : Sequence.fromIterable(MPSTreeUtils.findPropertiesTreeNode(_this))) {
+    for (MPSTreeNode child : Sequence.<MPSTreeNode>fromIterable(MPSTreeUtils.findPropertiesTreeNode(_this))) {
       if (child instanceof PropertyTreeNode && ObjectUtils.equals(((PropertyTreeNode) child).getProperty(), propertyName)) {
         return ((PropertyTreeNode) child);
       }
@@ -38,7 +38,7 @@ public class MPSTreeUtils {
   }
 
   /*package*/ static ReferencesTreeNode findReferencesTreeNode(final SNodeTreeNode _this) {
-    for (MPSTreeNode child : Sequence.fromIterable(_this)) {
+    for (MPSTreeNode child : Sequence.<MPSTreeNode>fromIterable(_this)) {
       if (child instanceof ReferencesTreeNode) {
         return ((ReferencesTreeNode) child);
       }
@@ -47,7 +47,7 @@ public class MPSTreeUtils {
   }
 
   /*package*/ static ReferenceTreeNode findReferenceTreeNode(final SNodeTreeNode _this, String role) {
-    for (MPSTreeNode child : Sequence.fromIterable(MPSTreeUtils.findReferencesTreeNode(_this))) {
+    for (MPSTreeNode child : Sequence.<MPSTreeNode>fromIterable(MPSTreeUtils.findReferencesTreeNode(_this))) {
       if (child instanceof ReferenceTreeNode && ObjectUtils.equals(((ReferenceTreeNode) child).getRef().getRole(), role)) {
         return ((ReferenceTreeNode) child);
       }
@@ -56,12 +56,12 @@ public class MPSTreeUtils {
   }
 
   /*package*/ static Iterable<MPSTreeNode> getDescendants(final MPSTreeNode _this) {
-    List<MPSTreeNode> children = ListSequence.fromList(new ArrayList<MPSTreeNode>());
-    Iterable<MPSTreeNode> descendants = Sequence.fromIterable(Collections.<MPSTreeNode>emptyList());
-    for (MPSTreeNode child : Sequence.fromIterable(_this)) {
-      ListSequence.fromList(children).addElement(child);
-      descendants = Sequence.fromIterable(descendants).concat(Sequence.fromIterable(MPSTreeUtils.getDescendants(child)));
+    List<MPSTreeNode> children = ListSequence.<MPSTreeNode>fromList(new ArrayList<MPSTreeNode>());
+    Iterable<MPSTreeNode> descendants = Sequence.<MPSTreeNode>fromIterable(Collections.<MPSTreeNode>emptyList());
+    for (MPSTreeNode child : Sequence.<MPSTreeNode>fromIterable(_this)) {
+      ListSequence.<MPSTreeNode>fromList(children).addElement(child);
+      descendants = Sequence.<MPSTreeNode>fromIterable(descendants).concat(Sequence.<MPSTreeNode>fromIterable(MPSTreeUtils.getDescendants(child)));
     }
-    return ListSequence.fromList(children).concat(Sequence.fromIterable(descendants));
+    return ListSequence.<MPSTreeNode>fromList(children).concat(Sequence.<MPSTreeNode>fromIterable(descendants));
   }
 }

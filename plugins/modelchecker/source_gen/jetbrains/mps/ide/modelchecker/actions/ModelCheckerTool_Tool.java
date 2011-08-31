@@ -106,23 +106,23 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   }
 
   public ModelCheckerViewer checkModels(List<SModelDescriptor> modelDescriptors, IOperationContext operationContext, boolean showTab) {
-    return ModelCheckerTool_Tool.this.performCheckingTaskForModels(modelDescriptors, NameUtil.formatNumericalString(ListSequence.fromList(modelDescriptors).count(), "model"), Icons.MODEL_ICON, operationContext, showTab);
+    return ModelCheckerTool_Tool.this.performCheckingTaskForModels(modelDescriptors, NameUtil.formatNumericalString(ListSequence.<SModelDescriptor>fromList(modelDescriptors).count(), "model"), Icons.MODEL_ICON, operationContext, showTab);
   }
 
   public ModelCheckerViewer checkModels(final List<SModelDescriptor> modelDescriptors, IOperationContext operationContext, boolean showTab, final ModelCheckerIssueFinder finder) {
     return ModelCheckerTool_Tool.this.performCheckingTask(new _FunctionTypes._void_P1_E0<ModelCheckerViewer>() {
       public void invoke(ModelCheckerViewer newViewer) {
-        newViewer.prepareAndCheckModels(modelDescriptors, ListSequence.fromList(modelDescriptors).count() + " models", Icons.MODEL_ICON, finder);
+        newViewer.prepareAndCheckModels(modelDescriptors, ListSequence.<SModelDescriptor>fromList(modelDescriptors).count() + " models", Icons.MODEL_ICON, finder);
       }
     }, operationContext, showTab);
   }
 
   public ModelCheckerViewer checkModule(IModule module, IOperationContext operationContext, boolean showTab) {
-    return ModelCheckerTool_Tool.this.performCheckingTaskForModules(ListSequence.fromListAndArray(new ArrayList<IModule>(), module), module.getModuleFqName(), IconManager.getIconFor(module), operationContext, showTab);
+    return ModelCheckerTool_Tool.this.performCheckingTaskForModules(ListSequence.<IModule>fromListAndArray(new ArrayList<IModule>(), module), module.getModuleFqName(), IconManager.getIconFor(module), operationContext, showTab);
   }
 
   public ModelCheckerViewer checkModules(List<IModule> modules, IOperationContext operationContext, boolean showTab) {
-    return ModelCheckerTool_Tool.this.performCheckingTaskForModules(modules, NameUtil.formatNumericalString(ListSequence.fromList(modules).count(), "module"), Icons.MODULE_GROUP_CLOSED, operationContext, showTab);
+    return ModelCheckerTool_Tool.this.performCheckingTaskForModules(modules, NameUtil.formatNumericalString(ListSequence.<IModule>fromList(modules).count(), "module"), Icons.MODULE_GROUP_CLOSED, operationContext, showTab);
   }
 
   public ModelCheckerViewer checkProject(Project project, IOperationContext operationContext, boolean showTab) {

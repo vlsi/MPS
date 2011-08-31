@@ -99,12 +99,12 @@ public class ChangeModelProcessor {
   }
 
   private List<String> generate(SModelDescriptor model, IGenerationHandler generationHandler) {
-    final List<String> results = ListSequence.fromList(new ArrayList<String>());
+    final List<String> results = ListSequence.<String>fromList(new ArrayList<String>());
     List<SModelDescriptor> models = Collections.singletonList(model);
     IMessageHandler handler = new IMessageHandler() {
       public void handle(IMessage msg) {
         if (msg.getKind() == MessageKind.ERROR) {
-          ListSequence.fromList(results).addElement(msg.getText());
+          ListSequence.<String>fromList(results).addElement(msg.getText());
         }
       }
 

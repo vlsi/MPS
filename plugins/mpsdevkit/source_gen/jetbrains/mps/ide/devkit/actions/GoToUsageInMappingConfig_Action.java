@@ -33,16 +33,16 @@ public class GoToUsageInMappingConfig_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node")))))) {
+    if (!(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")))))) {
       return false;
     }
-    if ((SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))) == null)) {
+    if ((SNodeOperations.getContainingRoot(((SNode) MapSequence.<String,Object>fromMap(_params).get("node"))) == null)) {
       return false;
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(((SNode) MapSequence.<String,Object>fromMap(_params).get("node"))), "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
       return false;
     }
-    if (!(((IModule) MapSequence.fromMap(_params).get("module")) instanceof Generator)) {
+    if (!(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")) instanceof Generator)) {
       return false;
     }
     return true;
@@ -70,17 +70,17 @@ public class GoToUsageInMappingConfig_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.fromMap(_params).put("node", node);
+      MapSequence.<String,Object>fromMap(_params).put("node", node);
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
@@ -88,8 +88,8 @@ public class GoToUsageInMappingConfig_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MappingConfigFinder finder = new MappingConfigFinder(((Generator) ((IModule) MapSequence.fromMap(_params).get("module"))), SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))));
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finder), new SearchQuery(null), false, false, false, "No usages found");
+      MappingConfigFinder finder = new MappingConfigFinder(((Generator) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module"))), SNodeOperations.getContainingRoot(((SNode) MapSequence.<String,Object>fromMap(_params).get("node"))));
+      ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finder), new SearchQuery(null), false, false, false, "No usages found");
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToUsageInMappingConfig", t);

@@ -58,7 +58,7 @@ __switch__:
   }
 
   public void test_chainedOperations() throws Exception {
-    Iterable<String> test = Sequence.fromIterable(this.input5()).<Integer>select(new ISelector<Integer, Integer>() {
+    Iterable<String> test = Sequence.<Integer>fromIterable(this.input5()).<Integer>select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it * 3;
       }
