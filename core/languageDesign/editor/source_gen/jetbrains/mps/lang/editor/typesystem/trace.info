@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.TypesystemDescriptor" />
   <root nodeId="1179766709016">
     <nodeInfo nodeId="1179766709018" fileName="typeof_CellKeyMap_FunctionParm_selectedNode_InferenceRule.java" startLine="22" startPosition="117" endLine="23" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1223982086188" fileName="typeof_CellKeyMap_FunctionParm_selectedNode_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -782,14 +782,14 @@
     <unitInfo nodeId="1201271578955" fileName="typeof_CaretPositionParameter_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.typeof_CaretPositionParameter_InferenceRule" />
   </root>
   <root nodeId="1901504820902746966">
-    <nodeInfo nodeId="1901504820902798704" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1901504820902798704" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="23" startPosition="60" endLine="24" endPosition="271" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9215127012917439383" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9215127012917439383" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="23" startPosition="60" endLine="24" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1901504820902746966" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="29" startPosition="46" endLine="30" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1901504820902746966" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="34" startPosition="5" endLine="35" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1901504820902746966" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="35" startPosition="117" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1901504820902746966" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1901504820902746966" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="16" startPosition="142" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RightTransformActionDeprecated_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="1901504820902798704" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="21" startPosition="128" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9215127012917439383" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="21" startPosition="128" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1901504820902746966" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="1901504820902746966" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1901504820902746966" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
@@ -800,7 +800,7 @@
     <scopeInfo nodeId="1901504820902746966" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="29" startPosition="46" endLine="30" endPosition="67" />
     <scopeInfo nodeId="1901504820902746966" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" />
     <scopeInfo nodeId="1901504820902746966" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="16" startPosition="142" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="1901504820902798704" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="24" endPosition="271" />
+    <scopeInfo nodeId="9215127012917439383" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="24" endPosition="269" />
     <scopeInfo nodeId="1901504820902746966" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="34" startPosition="5" endLine="36" endPosition="45" />
     <scopeInfo nodeId="1901504820902748919" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="21" startPosition="128" endLine="25" endPosition="7" />
     <scopeInfo nodeId="1901504820902746966" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
@@ -1031,6 +1031,58 @@
     </scopeInfo>
     <scopeInfo nodeId="6050628152418936547" fileName="typeof_AbstractOperationArguments_InferenceRule.java" startLine="23" startPosition="0" endLine="55" endPosition="0" />
     <unitInfo nodeId="6050628152418936547" fileName="typeof_AbstractOperationArguments_InferenceRule.java" startLine="20" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.typeof_AbstractOperationArguments_InferenceRule" />
+  </root>
+  <root nodeId="6519915829969160778">
+    <nodeInfo nodeId="6519915829969160789" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="32" startPosition="80" endLine="33" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6519915829969176674" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="34" startPosition="5" endLine="35" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6519915829969164102" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="35" startPosition="76" endLine="36" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6519915829969176728" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="37" startPosition="59" endLine="38" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6519915829969176786" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="38" startPosition="72" endLine="39" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6519915829969195390" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="41" startPosition="40" endLine="42" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6519915829969195406" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="44" startPosition="11" endLine="45" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6519915829969195408" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="46" startPosition="7" endLine="47" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6519915829969195430" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="49" startPosition="5" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6519915829969195430" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="50" startPosition="58" endLine="51" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6519915829969195430" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="51" startPosition="54" endLine="52" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="56" startPosition="46" endLine="57" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="61" startPosition="5" endLine="62" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="62" startPosition="117" endLine="63" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="67" startPosition="30" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="27" startPosition="145" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_EditorForNonAbstractConcept_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="6519915829969160787" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="31" startPosition="131" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6519915829969195375" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="40" startPosition="161" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="60" startPosition="68" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="6519915829969195430" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="48" startPosition="5" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6519915829969195365" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="39" startPosition="145" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="59" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="6519915829969176704" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="36" startPosition="72" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="28" startPosition="64" endLine="28" endPosition="64" />
+    <scopeInfo nodeId="6519915829969160788" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="32" startPosition="80" endLine="33" endPosition="13" />
+    <scopeInfo nodeId="6519915829969195376" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="41" startPosition="40" endLine="42" endPosition="113" />
+    <scopeInfo nodeId="6519915829969195366" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="44" startPosition="11" endLine="45" endPosition="15" />
+    <scopeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="56" startPosition="46" endLine="57" endPosition="71" />
+    <scopeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="67" startPosition="30" endLine="68" endPosition="17" />
+    <scopeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="27" startPosition="145" endLine="29" endPosition="3" />
+    <scopeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="61" startPosition="5" endLine="63" endPosition="45" />
+    <scopeInfo nodeId="6519915829969195430" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="49" startPosition="5" endLine="52" endPosition="277" />
+    <scopeInfo nodeId="6519915829969195375" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="40" startPosition="161" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="60" startPosition="68" endLine="64" endPosition="5" />
+    <scopeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="59" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="6519915829969176706" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="37" startPosition="59" endLine="47" endPosition="161">
+      <varInfo nodeId="6519915829969176787" varName="aspects" />
+      <varInfo nodeId="6519915829969176729" varName="acd" />
+    </scopeInfo>
+    <scopeInfo nodeId="6519915829969160779" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="31" startPosition="131" endLine="53" endPosition="5">
+      <varInfo nodeId="6519915829969176675" varName="toCheck" />
+    </scopeInfo>
+    <scopeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="55" endPosition="0" />
+    <unitInfo nodeId="6519915829969195375" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="40" startPosition="138" endLine="44" endPosition="7" unitName="jetbrains.mps.lang.editor.typesystem.check_EditorForNonAbstractConcept_NonTypesystemRule$1" />
+    <unitInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="27" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.check_EditorForNonAbstractConcept_NonTypesystemRule" />
   </root>
   <root nodeId="7806530711847278495">
     <nodeInfo nodeId="7806530711847278522" fileName="typeof_ConceptFunctionParameter_method_InferenceRule.java" startLine="25" startPosition="128" endLine="26" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

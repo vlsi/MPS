@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.IntentionsDescriptor" />
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.IntentionsDescriptor" />
   <root nodeId="1224245135252">
     <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="19" startPosition="30" endLine="20" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="23" startPosition="36" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -79,81 +79,6 @@
     <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
     <unitInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeRootable_Intention" />
-  </root>
-  <root nodeId="6757025334847042380">
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="32" startPosition="36" endLine="33" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="36" startPosition="37" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="40" startPosition="44" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6757025334847043161" fileName="CreateDefaultEditor_Intention.java" startLine="44" startPosition="85" endLine="45" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="49" startPosition="58" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="51" startPosition="5" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6519915829969160789" fileName="CreateDefaultEditor_Intention.java" startLine="56" startPosition="66" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4021785481920462334" fileName="CreateDefaultEditor_Intention.java" startLine="59" startPosition="62" endLine="60" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6519915829969176674" fileName="CreateDefaultEditor_Intention.java" startLine="61" startPosition="5" endLine="62" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6519915829969164102" fileName="CreateDefaultEditor_Intention.java" startLine="62" startPosition="76" endLine="63" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6519915829969176728" fileName="CreateDefaultEditor_Intention.java" startLine="64" startPosition="59" endLine="65" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6519915829969176786" fileName="CreateDefaultEditor_Intention.java" startLine="65" startPosition="72" endLine="66" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6519915829969195390" fileName="CreateDefaultEditor_Intention.java" startLine="68" startPosition="40" endLine="69" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6519915829969195406" fileName="CreateDefaultEditor_Intention.java" startLine="71" startPosition="11" endLine="72" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6519915829969195408" fileName="CreateDefaultEditor_Intention.java" startLine="73" startPosition="7" endLine="74" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6757025334847043169" fileName="CreateDefaultEditor_Intention.java" startLine="75" startPosition="5" endLine="76" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1723009172163864505" fileName="CreateDefaultEditor_Intention.java" startLine="79" startPosition="76" endLine="80" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5794988729150890341" fileName="CreateDefaultEditor_Intention.java" startLine="80" startPosition="303" endLine="81" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6757025334847050802" fileName="CreateDefaultEditor_Intention.java" startLine="81" startPosition="70" endLine="82" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="85" startPosition="37" endLine="86" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="24" startPosition="87" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateDefaultEditor_Intention#()V" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="48" startPosition="84" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6519915829969160787" fileName="CreateDefaultEditor_Intention.java" startLine="55" startPosition="90" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4021785481920462320" fileName="CreateDefaultEditor_Intention.java" startLine="58" startPosition="5" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6519915829969195375" fileName="CreateDefaultEditor_Intention.java" startLine="67" startPosition="161" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="78" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="47" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="6519915829969195365" fileName="CreateDefaultEditor_Intention.java" startLine="66" startPosition="145" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6519915829969176704" fileName="CreateDefaultEditor_Intention.java" startLine="63" startPosition="58" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="54" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="25" startPosition="42" endLine="25" endPosition="42" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="71" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="32" startPosition="36" endLine="33" endPosition="17" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="36" startPosition="37" endLine="37" endPosition="16" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="40" startPosition="44" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="6757025334847042382" fileName="CreateDefaultEditor_Intention.java" startLine="44" startPosition="85" endLine="45" endPosition="55" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="49" startPosition="58" endLine="50" endPosition="19" />
-    <scopeInfo nodeId="6519915829969160788" fileName="CreateDefaultEditor_Intention.java" startLine="56" startPosition="66" endLine="57" endPosition="19" />
-    <scopeInfo nodeId="4021785481920462321" fileName="CreateDefaultEditor_Intention.java" startLine="59" startPosition="62" endLine="60" endPosition="19" />
-    <scopeInfo nodeId="6519915829969195376" fileName="CreateDefaultEditor_Intention.java" startLine="68" startPosition="40" endLine="69" endPosition="113" />
-    <scopeInfo nodeId="6519915829969195366" fileName="CreateDefaultEditor_Intention.java" startLine="71" startPosition="11" endLine="72" endPosition="21" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="85" startPosition="37" endLine="86" endPosition="53" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="24" startPosition="87" endLine="26" endPosition="3" />
-    <scopeInfo nodeId="6757025334847042384" fileName="CreateDefaultEditor_Intention.java" startLine="79" startPosition="76" endLine="82" endPosition="52">
-      <varInfo nodeId="1723009172163864506" varName="editorDeclaration" />
-    </scopeInfo>
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="48" startPosition="84" endLine="52" endPosition="16" />
-    <scopeInfo nodeId="6519915829969195375" fileName="CreateDefaultEditor_Intention.java" startLine="67" startPosition="161" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="78" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="47" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="6519915829969176706" fileName="CreateDefaultEditor_Intention.java" startLine="64" startPosition="59" endLine="74" endPosition="161">
-      <varInfo nodeId="6519915829969176787" varName="aspects" />
-      <varInfo nodeId="6519915829969176729" varName="acd" />
-    </scopeInfo>
-    <scopeInfo nodeId="6757025334847043163" fileName="CreateDefaultEditor_Intention.java" startLine="55" startPosition="90" endLine="76" endPosition="16">
-      <varInfo nodeId="6519915829969176675" varName="toCheck" />
-    </scopeInfo>
-    <scopeInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="54" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="6519915829969195375" fileName="CreateDefaultEditor_Intention.java" startLine="67" startPosition="138" endLine="71" endPosition="7" unitName="jetbrains.mps.lang.structure.intentions.CreateDefaultEditor_Intention$1" />
-    <unitInfo nodeId="6757025334847042380" fileName="CreateDefaultEditor_Intention.java" startLine="24" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.CreateDefaultEditor_Intention" />
   </root>
   <root nodeId="6895093993902311021">
     <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="31" startPosition="30" endLine="32" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

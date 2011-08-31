@@ -26,6 +26,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new ChangePropertyWithNonEmpty_Intention(), "5137527105084909325");
     add(new ChangeTransactionalProperty_Intention(), "1235490923121");
     add(new ColorQuery_Intention(), "1221475845846");
+    add(new CreateDefaultEditor_Intention(), "6757025334847042380");
     add(new ExtractComponent_Intention(), "98380422618971761");
     add(new FontStyleQuery_Intention(), "1221476558282");
     add(new GenerateMultiLineDefaultEditor_Intention(), "1239368960873");
