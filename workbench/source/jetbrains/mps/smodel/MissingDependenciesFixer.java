@@ -32,9 +32,9 @@ public class MissingDependenciesFixer {
   private SModelDescriptor myModelDescriptor;
   private Frame myMainFrame;
 
-  public MissingDependenciesFixer(IOperationContext context, SModelDescriptor modelDescriptor) {
+  public MissingDependenciesFixer(Frame f, SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
-    myMainFrame = context.getMainFrame();
+    myMainFrame = f;
   }
 
   @Deprecated

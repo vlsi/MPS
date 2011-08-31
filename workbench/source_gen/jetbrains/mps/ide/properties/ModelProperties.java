@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import javax.swing.JFrame;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.smodel.MissingDependenciesFixer;
 import java.util.Set;
 import java.util.HashSet;
@@ -91,7 +93,8 @@ public class ModelProperties extends BaseBean {
         ((EditableSModelDescriptor) myModelDescriptor).save();
       }
     });
-    new MissingDependenciesFixer(myContext, myModelDescriptor).fix();
+    JFrame frame = WindowManager.getInstance().getFrame(myContext.getProject());
+    new MissingDependenciesFixer(frame, myModelDescriptor).fix(true);
   }
 
   private void addNewDevKits() {
