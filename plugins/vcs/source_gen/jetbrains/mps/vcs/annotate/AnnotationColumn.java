@@ -18,7 +18,7 @@ import com.intellij.openapi.vcs.history.VcsFileRevision;
 import com.intellij.openapi.vcs.annotate.LineAnnotationAspect;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import java.util.Set;
@@ -119,7 +119,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private LineAnnotationAspect myAuthorAnnotationAspect;
   private AbstractVcs myVcs;
   private VirtualFile myModelVirtualFile;
-  private SModelDescriptor myModelDescriptor;
+  private EditableSModelDescriptor myModelDescriptor;
   private List<LineContent> myFileLineToContent;
   private Map<OldChange, LineContent> myChangesToLineContents = MapSequence.fromMap(new HashMap<OldChange, LineContent>());
   private Set<Integer> myCurrentPseudoLines = null;
@@ -137,7 +137,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
         return n.getSNodeId();
       }
     }));
-    final SModel model = SNodeOperations.getModel(root);
+    SModel model = SNodeOperations.getModel(root);
     myFileAnnotation = fileAnnotation;
     for (VcsFileRevision rev : ListSequence.fromList(fileAnnotation.getRevisions())) {
       MapSequence.fromMap(myRevisionNumberToRevision).put(rev.getRevisionNumber(), rev);
@@ -184,12 +184,12 @@ public class AnnotationColumn extends AbstractLeftColumn {
     myRevisionRange = new VcsRevisionRange(this, myFileAnnotation);
     ListSequence.fromList(myAspectSubcolumns).addElement(new HighlightRevisionSubcolumn(this, myRevisionRange));
     myModelVirtualFile = modelVirtualFile;
-    myModelDescriptor = model.getModelDescriptor();
+    myModelDescriptor = (EditableSModelDescriptor) model.getModelDescriptor();
     myVcs = vcs;
     final ChangesManager changesManager = ChangesManager.getInstance(getProject());
     changesManager.getCommandQueue().runTask(new Runnable() {
       public void run() {
-        ModelChangesManager modelChangesManager = changesManager.getModelChangesManager(model);
+        ModelChangesManager modelChangesManager = changesManager.getModelChangesManager(myModelDescriptor);
         ListSequence.fromList(modelChangesManager.getChangeList()).visitAll(new IVisitor<OldChange>() {
           public void visit(OldChange ch) {
             saveChange(ch);

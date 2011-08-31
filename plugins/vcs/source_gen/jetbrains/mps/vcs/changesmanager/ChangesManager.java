@@ -27,6 +27,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.PrintStream;
@@ -130,7 +131,7 @@ public class ChangesManager extends AbstractProjectComponent {
   }
 
   @NotNull
-  public ModelChangesManager getModelChangesManager(@NotNull SModelDescriptor modelDescriptor) {
+  public ModelChangesManager getModelChangesManager(@NotNull EditableSModelDescriptor modelDescriptor) {
     myCommandQueue.assertSoftlyIsCommandThread();
     SModelReference modelRef = modelDescriptor.getSModelReference();
     if (!(MapSequence.fromMap(myModelChanges).containsKey(modelRef))) {
@@ -139,9 +140,13 @@ public class ChangesManager extends AbstractProjectComponent {
     return MapSequence.fromMap(myModelChanges).get(modelRef);
   }
 
-  @NotNull
+  @Nullable
   public ModelChangesManager getModelChangesManager(@NotNull SModel model) {
-    return getModelChangesManager(model.getModelDescriptor());
+    SModelDescriptor descriptor = model.getModelDescriptor();
+    if (!(descriptor instanceof EditableSModelDescriptor)) {
+      return null;
+    }
+    return getModelChangesManager((EditableSModelDescriptor) descriptor);
   }
 
   public void dump() {
