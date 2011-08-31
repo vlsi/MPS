@@ -58,7 +58,7 @@ class TypeSystemComponent extends CheckingComponent {
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
 
-  public TypeSystemComponent(TypeChecker typeChecker, State state, NodeTypesComponentNew component) {
+  public TypeSystemComponent(TypeChecker typeChecker, State state, NodeTypesComponent component) {
     myState = state;
     myTypeChecker = typeChecker;
     myNodeTypesComponent = component;

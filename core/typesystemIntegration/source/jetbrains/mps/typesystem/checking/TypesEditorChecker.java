@@ -23,7 +23,11 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.newTypesystem.NodeTypesComponent;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
@@ -31,7 +35,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.typesystem.inference.INodeTypesComponent;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
@@ -55,7 +58,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
     context.runTypeCheckingAction(new Runnable() {
       @Override
       public void run() {
-        INodeTypesComponent typesComponent = context.getBaseNodeTypesComponent();
+        NodeTypesComponent typesComponent = context.getBaseNodeTypesComponent();
         if (!wasCheckedOnce || !context.isCheckedRoot(true)) {
           try {
             myMessagesChanged = true;

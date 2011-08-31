@@ -32,7 +32,7 @@ public abstract class CheckingComponent {
   protected boolean myCacheWasRebuilt = false;
   protected TypeChecker myTypeChecker;
   protected final Object ACCESS_LOCK = new Object();
-  protected NodeTypesComponentNew myNodeTypesComponent;
+  protected NodeTypesComponent myNodeTypesComponent;
   protected boolean myIsChecked = false;
   protected MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
 
