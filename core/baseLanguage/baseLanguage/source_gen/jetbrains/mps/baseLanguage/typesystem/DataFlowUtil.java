@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlow;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.DataflowBuilderException;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -36,6 +36,9 @@ public class DataFlowUtil {
   @CheckingMethod
   public static void checkDataFlow(final TypeCheckingContext typeCheckingContext, SNode statementList, boolean checkReturns) {
     if (statementList == null) {
+      return;
+    }
+    if (SNodeOperations.getModel(statementList).isTransient()) {
       return;
     }
     try {
