@@ -69,7 +69,7 @@ public class DataFlowUtil {
       if (n != null && !(SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.TryStatement"))) {
         SNode nodeToSelect;
         SNode sl = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", true, false);
-        if ((sl != null) && ListSequence.fromList(SLinkOperations.getTargets(sl, "statement", true)).isNotEmpty()) {
+        if ((sl != null) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(sl, "statement", true)).isNotEmpty()) {
           nodeToSelect = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.Statement", true, false);
         } else {
           nodeToSelect = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", true, false);
@@ -197,7 +197,7 @@ public class DataFlowUtil {
         continue;
       }
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause")) && SNodeOperations.getAncestor(var, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null) {
-        if (SLinkOperations.getTarget(var, "initializer", true) == null && !(SetSequence.fromSet(usedVariables).contains(var))) {
+        if (SLinkOperations.getTarget(var, "initializer", true) == null && !(SetSequence.<SNode>fromSet(usedVariables).contains(var))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(var, "Unused variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8937659523942275424", null, errorTarget);

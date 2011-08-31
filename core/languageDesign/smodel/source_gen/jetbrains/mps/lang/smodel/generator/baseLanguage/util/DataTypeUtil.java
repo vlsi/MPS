@@ -16,6 +16,6 @@ public class DataTypeUtil {
     if (defMember != null) {
       return defMember;
     }
-    return ListSequence.fromList(SLinkOperations.getTargets(enumDatatype, "member", true)).first();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(enumDatatype, "member", true)).first();
   }
 }

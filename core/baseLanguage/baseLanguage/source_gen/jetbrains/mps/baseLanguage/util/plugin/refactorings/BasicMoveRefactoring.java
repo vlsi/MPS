@@ -33,7 +33,7 @@ public class BasicMoveRefactoring {
     this.correctMoving();
     this.createCopy();
     MoveRefactoringUtils.fixImportsFromNode(this.myReplacing);
-    for (SearchResult<SNode> result : ListSequence.fromList(this.myUsages.getSearchResults())) {
+    for (SearchResult<SNode> result : ListSequence.<SearchResult<SNode>>fromList(this.myUsages.getSearchResults())) {
       this.replaceSingleUsage(result.getObject());
     }
     this.deleteOld();

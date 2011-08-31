@@ -63,12 +63,12 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
   }
 
   private Map<String, Object> getParametersAsMap() {
-    Map<String, Object> result = MapSequence.fromMap(new HashMap<String, Object>());
-    MapSequence.fromMap(result).put("name", myName);
-    MapSequence.fromMap(result).put("name2", myName2);
-    MapSequence.fromMap(result).put("expr", myExpr);
-    MapSequence.fromMap(result).put("i", myI);
-    MapSequence.fromMap(result).put("b", myB);
+    Map<String, Object> result = MapSequence.<String,Object>fromMap(new HashMap<String, Object>());
+    MapSequence.<String,Object>fromMap(result).put("name", myName);
+    MapSequence.<String,Object>fromMap(result).put("name2", myName2);
+    MapSequence.<String,Object>fromMap(result).put("expr", myExpr);
+    MapSequence.<String,Object>fromMap(result).put("i", myI);
+    MapSequence.<String,Object>fromMap(result).put("b", myB);
     return result;
   }
 

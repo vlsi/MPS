@@ -11,10 +11,10 @@ import jetbrains.mps.textGen.TextGenManager;
 public class ArrayLiteral_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("{");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "item", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "item", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "item", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "item", true)).last()) {
+        if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "item", true)).last()) {
           this.append(", ");
         }
       }

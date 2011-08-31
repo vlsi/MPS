@@ -45,20 +45,20 @@ public class ShowNodeType_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
@@ -70,22 +70,22 @@ public class ShowNodeType_Action extends GeneratedAction {
       final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          typeCheckingContext.value = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getTypeCheckingContext();
-          type.value = typeCheckingContext.value.getTypeDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
+          typeCheckingContext.value = ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getTypeCheckingContext();
+          type.value = typeCheckingContext.value.getTypeDontCheck(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")));
         }
       });
       if (type.value == null) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "no type");
+        JOptionPane.showMessageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "no type");
         return;
       }
       MyBaseNodeDialog dialog;
       final Wrappers._T<IErrorReporter> reporter = new Wrappers._T<IErrorReporter>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          reporter.value = typeCheckingContext.value.getTypeMessageDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
+          reporter.value = typeCheckingContext.value.getTypeMessageDontCheck(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")));
         }
       });
-      dialog = new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, reporter.value);
+      dialog = new MyBaseNodeDialog(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), ((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), type.value, reporter.value);
       dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowNodeType", t);

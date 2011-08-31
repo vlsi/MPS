@@ -23,10 +23,10 @@ public class StatementList_Behavior {
   }
 
   public static Set<SNode> call_getExternalVariablesDeclarations_1214501165480(SNode thisNode) {
-    Set<SNode> declarations = SetSequence.fromSet(new HashSet<SNode>());
-    Set<SNode> reference = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(reference).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})));
-    SetSequence.fromSet(reference).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterReference", false, new String[]{})));
+    Set<SNode> declarations = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+    Set<SNode> reference = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+    SetSequence.fromSet(reference).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})));
+    SetSequence.fromSet(reference).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterReference", false, new String[]{})));
     for (SNode ref : reference) {
       boolean statementsContainsVar = false;
       for (SNode parent : SNodeOperations.getAncestors(SLinkOperations.getTarget(ref, "variableDeclaration", false), null, false)) {
@@ -53,15 +53,15 @@ public class StatementList_Behavior {
   }
 
   public static boolean call_isOneLiner_1237538811451(SNode thisNode) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() > 1) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() > 1) {
       return false;
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() == 1) {
-      SNode statement = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).first();
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() == 1) {
+      SNode statement = ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "statement", true)).first();
       if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")) {
         return false;
       }
-      if (ListSequence.fromList(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, new String[]{})).isNotEmpty()) {
+      if (ListSequence.<SNode>fromList(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, new String[]{})).isNotEmpty()) {
         return false;
       }
     }
@@ -73,13 +73,13 @@ public class StatementList_Behavior {
   }
 
   public static Set<SNode> call_uncaughtThrowables_3331512479731115649(SNode thisNode, boolean ignoreMayBeThrowables) {
-    Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> result = SetSequence.<SNode>fromSet(new HashSet<SNode>());
     StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(thisNode, result, ignoreMayBeThrowables);
     return result;
   }
 
   public static void call_collectUncaughtThrowables_5412515780383134474(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true))) {
+    for (SNode statement : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "statement", true))) {
       Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383134223(statement, throwables, ignoreMayBeThrowables);
     }
   }
@@ -98,7 +98,7 @@ public class StatementList_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode statement : SLinkOperations.getTargets(thisNode, "statement", true)) {
       if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true));
+        ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true));
       }
     }
     return result;

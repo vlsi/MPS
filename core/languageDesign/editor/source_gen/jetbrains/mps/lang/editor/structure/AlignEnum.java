@@ -32,10 +32,10 @@ public enum AlignEnum {
   }
 
   public static List<AlignEnum> getConstants() {
-    List<AlignEnum> list = ListSequence.fromList(new LinkedList<AlignEnum>());
-    ListSequence.fromList(list).addElement(AlignEnum.left);
-    ListSequence.fromList(list).addElement(AlignEnum.right);
-    ListSequence.fromList(list).addElement(AlignEnum.center);
+    List<AlignEnum> list = ListSequence.<AlignEnum>fromList(new LinkedList<AlignEnum>());
+    ListSequence.<AlignEnum>fromList(list).addElement(AlignEnum.left);
+    ListSequence.<AlignEnum>fromList(list).addElement(AlignEnum.right);
+    ListSequence.<AlignEnum>fromList(list).addElement(AlignEnum.center);
     return list;
   }
 

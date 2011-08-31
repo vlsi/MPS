@@ -684,7 +684,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
+      return ListSequence.<String>fromListAndArray(new ArrayList<String>(), "true", "false");
     }
   }
 

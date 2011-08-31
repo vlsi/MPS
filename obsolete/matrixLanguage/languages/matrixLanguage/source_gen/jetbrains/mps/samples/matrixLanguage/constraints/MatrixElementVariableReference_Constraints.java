@@ -47,7 +47,7 @@ public class MatrixElementVariableReference_Constraints extends BaseConstraintsD
             List<SNode> vars = new ArrayList<SNode>();
             for (SNode node : nodes) {
               if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement")) {
-                ListSequence.fromList(vars).addElement(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement"), "element", true));
+                ListSequence.<SNode>fromList(vars).addElement(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement"), "element", true));
               }
             }
             SimpleSearchScope result = new SimpleSearchScope(vars);

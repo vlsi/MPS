@@ -22,11 +22,11 @@ public class ChildPart_Behavior {
       } else {
         SLinkOperations.setTarget(refNodeList, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
       }
-      SLinkOperations.setTarget(refNodeList, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
+      SLinkOperations.setTarget(refNodeList, "relationDeclaration", SNodeOperations.cast(MapSequence.<SNode,SNode>fromMap(partsToLinks).get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
       return refNodeList;
     } else {
       SNode refNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNode", null);
-      SLinkOperations.setTarget(refNode, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
+      SLinkOperations.setTarget(refNode, "relationDeclaration", SNodeOperations.cast(MapSequence.<SNode,SNode>fromMap(partsToLinks).get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
       return refNode;
     }
   }

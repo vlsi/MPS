@@ -24,7 +24,7 @@ public class GenerateBuildAction_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return GenerateBuildUtil.getLayout(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))) != null;
+    return GenerateBuildUtil.getLayout(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("modelDescriptor"))) != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -43,12 +43,12 @@ public class GenerateBuildAction_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("modelDescriptor", event.getData(MPSDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("modelDescriptor", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.<String,Object>fromMap(_params).get("modelDescriptor") == null) {
       return false;
     }
     return true;
@@ -56,7 +56,7 @@ public class GenerateBuildAction_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      boolean result = GenerateBuildUtil.generate(GenerateBuildUtil.getLayout(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))), ((Project) MapSequence.fromMap(_params).get("project")), true);
+      boolean result = GenerateBuildUtil.generate(GenerateBuildUtil.getLayout(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("modelDescriptor"))), ((Project) MapSequence.<String,Object>fromMap(_params).get("project")), true);
       if (!(result)) {
         LOG.error("Build files were not generated.");
       }

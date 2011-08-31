@@ -19,7 +19,7 @@ public class CommentedStatementsBlock_TextGen extends SNodeTextGen {
     this.appendNewLine();
     this.appendWithIndent("/*");
     this.increaseDepth();
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "statement", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "statement", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
       }

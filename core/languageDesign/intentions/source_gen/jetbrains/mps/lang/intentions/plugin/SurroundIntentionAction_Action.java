@@ -31,7 +31,7 @@ public class SurroundIntentionAction_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setText(SurroundIntentionAction_Action.this.intention.getDescription(SurroundIntentionAction_Action.this.node, ((EditorContext) MapSequence.fromMap(_params).get("context"))));
+      event.getPresentation().setText(SurroundIntentionAction_Action.this.intention.getDescription(SurroundIntentionAction_Action.this.node, ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("context"))));
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "SurroundIntentionAction", t);
       this.disable(event.getPresentation());
@@ -42,8 +42,8 @@ public class SurroundIntentionAction_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
@@ -51,7 +51,7 @@ public class SurroundIntentionAction_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SurroundIntentionAction_Action.this.intention.execute(SurroundIntentionAction_Action.this.node, ((EditorContext) MapSequence.fromMap(_params).get("context")));
+      SurroundIntentionAction_Action.this.intention.execute(SurroundIntentionAction_Action.this.node, ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("context")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "SurroundIntentionAction", t);
     }

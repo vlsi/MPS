@@ -11,7 +11,7 @@ public class _Layout_Constraints_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<_Layout_Constraints_Enum> constants = ListSequence.fromList(_Layout_Constraints_Enum.getConstants()).iterator();
+    Iterator<_Layout_Constraints_Enum> constants = ListSequence.<_Layout_Constraints_Enum>fromList(_Layout_Constraints_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _Layout_Constraints_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class _Layout_Constraints_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<_Layout_Constraints_Enum> constants = ListSequence.fromList(_Layout_Constraints_Enum.getConstants()).iterator();
+    Iterator<_Layout_Constraints_Enum> constants = ListSequence.<_Layout_Constraints_Enum>fromList(_Layout_Constraints_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _Layout_Constraints_Enum constant = constants.next();
       if (value.equals(constant.getName())) {

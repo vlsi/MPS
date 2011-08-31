@@ -637,6 +637,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.Java_Configuration_Factory" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.Java_Configuration_RunProfileState" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.lib.MultiConceptNode_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.lib.JavaRunParameters_Configuration" />

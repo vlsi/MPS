@@ -14,9 +14,9 @@
     <nodeInfo nodeId="1571838961922885087" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="61" startPosition="129" endLine="62" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1571838961922969825" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="62" startPosition="91" endLine="63" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1571838961922885104" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="64" startPosition="321" endLine="65" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2230548360390286967" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="68" startPosition="72" endLine="69" endPosition="388" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1571838961922885174" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="70" startPosition="14" endLine="71" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1571838961922885224" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="74" startPosition="98" endLine="75" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2230548360390286967" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="68" startPosition="72" endLine="69" endPosition="395" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1571838961922885174" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="70" startPosition="14" endLine="71" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1571838961922885224" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="74" startPosition="105" endLine="75" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="79" startPosition="37" endLine="80" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="87" startPosition="31" endLine="88" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="88" startPosition="26" endLine="89" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -70,7 +70,7 @@
     <nodeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
     <nodeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
     <nodeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2230548360390286819" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="67" startPosition="93" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2230548360390286819" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="67" startPosition="100" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="132" startPosition="70" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="132" startPosition="70" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="90" startPosition="32" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -100,9 +100,9 @@
     <scopeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="50" startPosition="58" endLine="51" endPosition="19" />
     <scopeInfo nodeId="2230548360390198542" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="56" startPosition="90" endLine="57" endPosition="363" />
     <scopeInfo nodeId="1571838961922885132" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="64" startPosition="321" endLine="65" endPosition="211" />
-    <scopeInfo nodeId="2230548360390286821" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="68" startPosition="72" endLine="69" endPosition="388" />
-    <scopeInfo nodeId="1571838961922885173" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="70" startPosition="14" endLine="71" endPosition="126" />
-    <scopeInfo nodeId="1571838961922885214" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="74" startPosition="98" endLine="75" endPosition="129" />
+    <scopeInfo nodeId="2230548360390286821" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="68" startPosition="72" endLine="69" endPosition="395" />
+    <scopeInfo nodeId="1571838961922885173" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="70" startPosition="14" endLine="71" endPosition="133" />
+    <scopeInfo nodeId="1571838961922885214" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="74" startPosition="105" endLine="75" endPosition="136" />
     <scopeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="79" startPosition="37" endLine="80" endPosition="60" />
     <scopeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="141" startPosition="66" endLine="142" endPosition="64" />
     <scopeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="147" startPosition="38" endLine="148" endPosition="80" />
@@ -123,7 +123,7 @@
     <scopeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="91" startPosition="7" endLine="95" endPosition="31" />
     <scopeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="109" startPosition="7" endLine="113" endPosition="31" />
-    <scopeInfo nodeId="2230548360390286809" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="67" startPosition="93" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="2230548360390286809" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="67" startPosition="100" endLine="72" endPosition="7" />
     <scopeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="132" startPosition="70" endLine="137" endPosition="9" />
     <scopeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="90" startPosition="32" endLine="96" endPosition="7" />
     <scopeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="108" startPosition="32" endLine="114" endPosition="7" />

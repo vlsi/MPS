@@ -384,7 +384,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_l9yc2b_a5a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "additionalVar", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "additionalVar", true)).isNotEmpty();
   }
 
   private static class additionalVarListHandler_l9yc2b_b5a extends RefNodeListHandler {

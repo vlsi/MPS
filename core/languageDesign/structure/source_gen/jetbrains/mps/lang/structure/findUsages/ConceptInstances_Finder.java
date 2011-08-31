@@ -31,9 +31,9 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(node, scope, new FindUsagesManager.ProgressAdapter(indicator), false));
+    List<SNode> resNodes = ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(node, scope, new FindUsagesManager.ProgressAdapter(indicator), false));
     for (SNode resNode : resNodes) {
-      ListSequence.fromList(_results).addElement(resNode);
+      ListSequence.<SNode>fromList(_results).addElement(resNode);
     }
   }
 

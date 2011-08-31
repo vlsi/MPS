@@ -35,18 +35,18 @@ public class ProjectStubs extends BaseStubModelRootManager {
   }
 
   protected Set<Language> getLanguagesToImport() {
-    Set<String> moduleIds = SetSequence.fromSet(new HashSet<String>());
+    Set<String> moduleIds = SetSequence.<String>fromSet(new HashSet<String>());
 
     moduleIds.add("86ef8290-12bb-4ca7-947f-093788f263a9");
 
-    Iterable<Language> languages = SetSequence.fromSet(moduleIds).<Language>select(new ISelector<String, Language>() {
+    Iterable<Language> languages = SetSequence.<String>fromSet(moduleIds).<Language>select(new ISelector<String, Language>() {
       public Language select(String it) {
         return (Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(it));
       }
     });
 
     Set<Language> result = new HashSet<Language>();
-    result.addAll(Sequence.fromIterable(languages).toListSequence());
+    result.addAll(Sequence.<Language>fromIterable(languages).toListSequence());
     return result;
   }
 
@@ -55,7 +55,7 @@ public class ProjectStubs extends BaseStubModelRootManager {
     final ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(file);
     new ProjectStructureBuilder(descriptor, file, model) {
       public Iterable<SModelReference> loadReferences(SNode module, ModuleDescriptor d) {
-        return Sequence.fromIterable(((Iterable<ModelRoot>) d.getModelRoots())).<SModelReference>translate(new ITranslator2<ModelRoot, SModelReference>() {
+        return Sequence.<ModelRoot>fromIterable(((Iterable<ModelRoot>) d.getModelRoots())).<SModelReference>translate(new ITranslator2<ModelRoot, SModelReference>() {
           public Iterable<SModelReference> translate(ModelRoot it) {
             return ProjectStubs.this.loadModels(it);
           }
@@ -65,8 +65,8 @@ public class ProjectStubs extends BaseStubModelRootManager {
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
-    Set<BaseStubModelDescriptor> models = SetSequence.fromSet(new HashSet<BaseStubModelDescriptor>());
-    SetSequence.fromSet(models).addSequence(Sequence.fromIterable(ProjectStubs.this.findModules(location)));
+    Set<BaseStubModelDescriptor> models = SetSequence.<BaseStubModelDescriptor>fromSet(new HashSet<BaseStubModelDescriptor>());
+    SetSequence.fromSet(models).addSequence(Sequence.<BaseStubModelDescriptor>fromIterable(ProjectStubs.this.findModules(location)));
     return models;
   }
 
@@ -78,7 +78,7 @@ public class ProjectStubs extends BaseStubModelRootManager {
     IFile folder = FileSystem.getInstance().getFileByPath(location.getPath());
     Iterable<ModulesMiner.ModuleHandle> descriptors = ModulesMiner.getInstance().collectModules(folder, false);
     final String stereotype = SModelStereotype.getStubStereotypeForId("project");
-    return Sequence.fromIterable(descriptors).<BaseStubModelDescriptor>select(new ISelector<ModulesMiner.ModuleHandle, BaseStubModelDescriptor>() {
+    return Sequence.<ModulesMiner.ModuleHandle>fromIterable(descriptors).<BaseStubModelDescriptor>select(new ISelector<ModulesMiner.ModuleHandle, BaseStubModelDescriptor>() {
       public BaseStubModelDescriptor select(ModulesMiner.ModuleHandle it) {
         SModelReference modelRef = ProjectStubs.this.createModelReference(it, location, stereotype);
         BaseStubModelDescriptor descriptor = new BaseStubModelDescriptor(ProjectStubs.this, modelRef, new BaseStubModelDescriptor.FileStubSource(it.getFile()));

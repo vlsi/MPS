@@ -63,12 +63,12 @@ public class IfNotNullAll extends DataFlowConstructor {
               }
             }
           }
-          if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
+          if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
             {
-              Object object = ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first();
+              Object object = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first();
               if (((Program) o).contains(object)) {
                 boolean before = true;
-                int position = ((Program) (o)).getStart(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first());
+                int position = ((Program) (o)).getStart(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first());
                 Instruction instruction = new nullableInstruction(notNullNode);
                 instruction.setSource(node);
                 ((Program) (o)).insert(instruction, position, true, before);

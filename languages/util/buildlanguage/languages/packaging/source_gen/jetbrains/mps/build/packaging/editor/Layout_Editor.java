@@ -519,7 +519,7 @@ public class Layout_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_ybaf4h_a4a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "configuration", true)).count() > 1;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "configuration", true)).count() > 1;
   }
 
   private static class configurationListHandler_ybaf4h_b0e0 extends RefNodeListHandler {

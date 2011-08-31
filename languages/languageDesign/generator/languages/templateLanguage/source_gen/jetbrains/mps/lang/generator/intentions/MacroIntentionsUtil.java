@@ -66,8 +66,8 @@ public class MacroIntentionsUtil {
     if (contextNode == null) {
       return null;
     }
-    if (ListSequence.fromList(AttributeOperations.getAttributeList(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro")))).isNotEmpty()) {
-      return ListSequence.fromList(AttributeOperations.getAttributeList(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro")))).last();
+    if (ListSequence.<SNode>fromList(AttributeOperations.getAttributeList(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro")))).isNotEmpty()) {
+      return ListSequence.<SNode>fromList(AttributeOperations.getAttributeList(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro")))).last();
     }
     return findOuterMacro(SNodeOperations.getParent(contextNode));
   }
@@ -76,15 +76,15 @@ public class MacroIntentionsUtil {
     if (sourceNode == null) {
       return null;
     }
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> result = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     for (SNode child : AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(sourceNode)) {
       if (inCollection) {
         if (SPropertyOperations.hasValue(child, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(child, "sourceCardinality", "1..n", "0..1")) {
-          ListSequence.fromList(result).addElement(child);
+          ListSequence.<SNode>fromList(result).addElement(child);
         }
       } else {
         if (SPropertyOperations.hasValue(child, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(child, "sourceCardinality", "1", "0..1")) {
-          ListSequence.fromList(result).addElement(child);
+          ListSequence.<SNode>fromList(result).addElement(child);
         }
       }
     }

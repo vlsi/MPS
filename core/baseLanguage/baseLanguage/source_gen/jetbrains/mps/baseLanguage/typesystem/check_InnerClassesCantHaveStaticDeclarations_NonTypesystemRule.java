@@ -22,7 +22,7 @@ public class check_InnerClassesCantHaveStaticDeclarations_NonTypesystemRule exte
   }
 
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (Classifier_Behavior.call_isInner_521412098689998677(classConcept) && !(Classifier_Behavior.call_isStatic_521412098689998668(classConcept)) && (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticField", true)).isNotEmpty() || (SLinkOperations.getTarget(classConcept, "classInitializer", true) != null) || ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticMethod", true)).isNotEmpty())) {
+    if (Classifier_Behavior.call_isInner_521412098689998677(classConcept) && !(Classifier_Behavior.call_isStatic_521412098689998668(classConcept)) && (ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "staticField", true)).isNotEmpty() || (SLinkOperations.getTarget(classConcept, "classInitializer", true) != null) || ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "staticMethod", true)).isNotEmpty())) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("name");

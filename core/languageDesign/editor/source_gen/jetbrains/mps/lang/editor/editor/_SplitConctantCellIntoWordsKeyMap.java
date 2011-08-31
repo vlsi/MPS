@@ -69,7 +69,7 @@ public class _SplitConctantCellIntoWordsKeyMap extends EditorCellKeyMap {
       for (String word : strings) {
         SNode constantCell = SNodeOperations.copyNode(node);
         SPropertyOperations.set(constantCell, "text", word);
-        ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(constantCell);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(constantCell);
       }
     }
 

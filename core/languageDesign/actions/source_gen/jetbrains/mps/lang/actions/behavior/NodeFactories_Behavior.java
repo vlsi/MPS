@@ -23,7 +23,7 @@ public class NodeFactories_Behavior {
   public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode nodeFactory : SLinkOperations.getTargets(thisNode, "nodeFactory", true)) {
-      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(nodeFactory, "applicableConcept", false));
+      ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(nodeFactory, "applicableConcept", false));
     }
     return result;
   }
@@ -31,7 +31,7 @@ public class NodeFactories_Behavior {
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SNode nodeFactory = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.NodeFactory", null);
     SLinkOperations.setTarget(nodeFactory, "applicableConcept", baseConcept, false);
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeFactory", true)).addElement(nodeFactory);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "nodeFactory", true)).addElement(nodeFactory);
   }
 
   public static List<SNode> call_getBaseConceptCollection_5270353093116089378(SNode thisNode) {

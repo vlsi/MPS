@@ -20,7 +20,7 @@ public class ReturnStatement_Behavior {
       if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.TryStatement")) {
         SNode tryStatement = SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.TryStatement");
         if ((SLinkOperations.getTarget(tryStatement, "finallyBody", true) != null) && SLinkOperations.getTarget(tryStatement, "finallyBody", true) != SNodeOperations.getParent(thisNode)) {
-          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(tryStatement, "finallyBody", true));
+          ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(tryStatement, "finallyBody", true));
         }
       }
       current = SNodeOperations.getParent(current);

@@ -52,7 +52,7 @@ public class LanguageRef_Editor extends DefaultNodeEditor {
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       List<Language> langList = MPSModuleRepository.getInstance().getAllLanguages();
-      return ListSequence.fromList(langList).<String>select(new ISelector<Language, String>() {
+      return ListSequence.<Language>fromList(langList).<String>select(new ISelector<Language, String>() {
         public String select(Language it) {
           return ((String) it.getModuleReference().getModuleId().toString());
         }

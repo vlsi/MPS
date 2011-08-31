@@ -44,7 +44,7 @@ public class ConvertLoopWithCopySrc_Intention extends BaseIntention implements I
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    Iterable<SNode> nodes = ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.getParent(node))).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> nodes = ListSequence.<SNode>fromList(SNodeOperations.getChildren(SNodeOperations.getParent(node))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.NodeMacro");
       }
@@ -54,10 +54,10 @@ public class ConvertLoopWithCopySrc_Intention extends BaseIntention implements I
       if (seen) {
         if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro")) {
           SNode m = SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"), "sourceNodeQuery", true);
-          if ((m == null) || (SLinkOperations.getTarget(m, "body", true) == null) || ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(m, "body", true), "statement", true)).isEmpty() || ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(m, "body", true), "statement", true)).count() > 1) {
+          if ((m == null) || (SLinkOperations.getTarget(m, "body", true) == null) || ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(m, "body", true), "statement", true)).isEmpty() || ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(m, "body", true), "statement", true)).count() > 1) {
             return false;
           }
-          SNode st = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(m, "body", true), "statement", true)).first();
+          SNode st = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(m, "body", true), "statement", true)).first();
           return SNodeOperations.isInstanceOf(st, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(st, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode");
         } else {
           return false;
@@ -70,7 +70,7 @@ public class ConvertLoopWithCopySrc_Intention extends BaseIntention implements I
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    Iterable<SNode> nodes = ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.getParent(node))).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> nodes = ListSequence.<SNode>fromList(SNodeOperations.getChildren(SNodeOperations.getParent(node))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.NodeMacro");
       }

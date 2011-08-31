@@ -32,10 +32,10 @@ public enum Option {
   }
 
   public static List<Option> getConstants() {
-    List<Option> list = ListSequence.fromList(new LinkedList<Option>());
-    ListSequence.fromList(list).addElement(Option.option_default);
-    ListSequence.fromList(list).addElement(Option.option_1);
-    ListSequence.fromList(list).addElement(Option.drop_it);
+    List<Option> list = ListSequence.<Option>fromList(new LinkedList<Option>());
+    ListSequence.<Option>fromList(list).addElement(Option.option_default);
+    ListSequence.<Option>fromList(list).addElement(Option.option_1);
+    ListSequence.<Option>fromList(list).addElement(Option.drop_it);
     return list;
   }
 

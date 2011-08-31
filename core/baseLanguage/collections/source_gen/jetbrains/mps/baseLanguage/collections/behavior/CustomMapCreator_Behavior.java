@@ -21,20 +21,20 @@ public class CustomMapCreator_Behavior {
     if (res != null) {
       res.changeModel(AuxilaryRuntimeModel.getDescriptor().getSModel());
     }
-    final List<SNode> params = ListSequence.fromList(new ArrayList<SNode>());
+    final List<SNode> params = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     if ((SLinkOperations.getTarget(thisNode, "keyType", true) != null)) {
-      ListSequence.fromList(params).addElement(SLinkOperations.getTarget(thisNode, "keyType", true));
+      ListSequence.<SNode>fromList(params).addElement(SLinkOperations.getTarget(thisNode, "keyType", true));
     }
     if ((SLinkOperations.getTarget(thisNode, "valueType", true) != null)) {
-      ListSequence.fromList(params).addElement(SLinkOperations.getTarget(thisNode, "valueType", true));
+      ListSequence.<SNode>fromList(params).addElement(SLinkOperations.getTarget(thisNode, "valueType", true));
     }
     final List<SNode> tvars = SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "containerDeclaration", false), "typeVariableDeclaration", true);
-    ListSequence.fromList(SNodeOperations.getChildren(res)).toListSequence().visitAll(new IVisitor<SNode>() {
+    ListSequence.<SNode>fromList(SNodeOperations.getChildren(res)).toListSequence().visitAll(new IVisitor<SNode>() {
       public void visit(SNode chld) {
         if (SNodeOperations.isInstanceOf(chld, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-          int index = ListSequence.fromList(tvars).indexOf(SLinkOperations.getTarget(SNodeOperations.cast(chld, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false));
-          SNode realType = ((index >= 0 && index < ListSequence.fromList(params).count()) ?
-            SNodeOperations.copyNode(ListSequence.fromList(params).getElement(index)) :
+          int index = ListSequence.<SNode>fromList(tvars).indexOf(SLinkOperations.getTarget(SNodeOperations.cast(chld, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false));
+          SNode realType = ((index >= 0 && index < ListSequence.<SNode>fromList(params).count()) ?
+            SNodeOperations.copyNode(ListSequence.<SNode>fromList(params).getElement(index)) :
             null
           );
           SNodeOperations.replaceWithAnother(chld, realType);

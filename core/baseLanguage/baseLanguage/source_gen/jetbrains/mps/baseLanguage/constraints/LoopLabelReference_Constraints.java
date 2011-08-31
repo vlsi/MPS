@@ -45,7 +45,7 @@ public class LoopLabelReference_Constraints extends BaseConstraintsDescriptor {
             List<SNode> labels = new ArrayList<SNode>();
             for (SNode loop : SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)) {
               if ((SLinkOperations.getTarget(loop, "loopLabel", true) != null)) {
-                ListSequence.fromList(labels).addElement(SLinkOperations.getTarget(loop, "loopLabel", true));
+                ListSequence.<SNode>fromList(labels).addElement(SLinkOperations.getTarget(loop, "loopLabel", true));
               }
             }
             return labels;

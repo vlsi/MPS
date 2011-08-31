@@ -37,10 +37,10 @@ public class ConvertExecuteFinders_MigrationScript extends BaseMigrationScript {
 
       public void doUpdateInstanceNode(SNode node) {
         SNode replacer = SConceptOperations.createNewNode("jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults", null);
-        for (SNode finder : ListSequence.fromList(SLinkOperations.getTargets(node, "finders", true))) {
+        for (SNode finder : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "finders", true))) {
           SNode finderRef = SConceptOperations.createNewNode("jetbrains.mps.lang.findUsages.structure.FinderReference", null);
           SLinkOperations.setTarget(finderRef, "finder", SLinkOperations.getTarget(finder, "finderDeclaration", false), false);
-          ListSequence.fromList(SLinkOperations.getTargets(replacer, "finder", true)).addElement(finderRef);
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(replacer, "finder", true)).addElement(finderRef);
         }
         SLinkOperations.setTarget(replacer, "queryNode", ((SLinkOperations.getTarget(node, "searchNode", true) == null) ?
           new ConvertExecuteFinders_MigrationScript.QuotationClass_v4ym8i_a0a0c0e0a0a0b0a().createNode() :

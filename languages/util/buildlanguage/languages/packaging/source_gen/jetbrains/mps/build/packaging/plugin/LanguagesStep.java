@@ -56,7 +56,7 @@ public class LanguagesStep extends AbstractStep {
     List<IModule> allModules = this.myMpsProject.getModules();
     ModulesListData data = new ModulesListData(allModules);
     List<ModuleData> children = data.getModules();
-    ListSequence.fromList(children).sort(new Comparator<ModuleData>() {
+    ListSequence.<ModuleData>fromList(children).sort(new Comparator<ModuleData>() {
       public int compare(ModuleData data1, ModuleData data2) {
         IModule module1 = data1.getModule();
         IModule module2 = data2.getModule();
@@ -73,7 +73,7 @@ public class LanguagesStep extends AbstractStep {
       }
     }, true);
     NamespaceTreeBuilder builder = new LanguagesStep.MyTreeBuilder(this.myMpsProject);
-    for (ModuleData moduleData : ListSequence.fromList(children)) {
+    for (ModuleData moduleData : ListSequence.<ModuleData>fromList(children)) {
       builder.addNode(new CheckBoxNode(moduleData, false));
     }
     CheckBoxNode allModulesNode = new CheckBoxNode(data, false);
@@ -100,12 +100,12 @@ public class LanguagesStep extends AbstractStep {
 
   public void _commit(boolean finish) {
     Set<NodeData> selectedItems = this.myCheckTree.getSelectedItems();
-    Set<NodeData> modules = SetSequence.fromSet(new LinkedHashSet<NodeData>());
-    for (NodeData item : SetSequence.fromSet(selectedItems)) {
+    Set<NodeData> modules = SetSequence.<NodeData>fromSet(new LinkedHashSet<NodeData>());
+    for (NodeData item : SetSequence.<NodeData>fromSet(selectedItems)) {
       this.fillWithParents(item, modules);
     }
-    List<NodeData> toSort = ListSequence.fromListWithValues(new LinkedList<NodeData>(), modules);
-    ListSequence.fromList(toSort).sort(new Comparator<NodeData>() {
+    List<NodeData> toSort = ListSequence.<NodeData>fromListWithValues(new LinkedList<NodeData>(), modules);
+    ListSequence.<NodeData>fromList(toSort).sort(new Comparator<NodeData>() {
       public int compare(NodeData a, NodeData b) {
         if ((a instanceof NamespaceData) && (b instanceof ModuleData)) {
           return -1;

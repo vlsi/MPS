@@ -51,7 +51,7 @@ public class ConceptMethodDeclaration_Constraints extends BaseConstraintsDescrip
             SNodeOperations.deleteNode(p);
           }
           for (SNode p : SLinkOperations.getTargets(newReferentNode, "parameter", true)) {
-            ListSequence.fromList(SLinkOperations.getTargets(referenceNode, "parameter", true)).addElement(SNodeOperations.copyNode(p));
+            ListSequence.<SNode>fromList(SLinkOperations.getTargets(referenceNode, "parameter", true)).addElement(SNodeOperations.copyNode(p));
           }
           SPropertyOperations.set(referenceNode, "name", SPropertyOperations.getString(newReferentNode, "name"));
           SLinkOperations.setTarget(referenceNode, "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(newReferentNode, "returnType", true)), true);
@@ -71,7 +71,7 @@ public class ConceptMethodDeclaration_Constraints extends BaseConstraintsDescrip
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false), "concept", false);
             List<SNode> methods = AbstractConceptDeclaration_Behavior.call_getVirtualConceptMethods_1213877394290(concept, operationContext.getScope());
-            return ListSequence.fromList(methods).where(new IWhereFilter<SNode>() {
+            return ListSequence.<SNode>fromList(methods).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SLinkOperations.getTarget(it, "overriddenMethod", false) == null;
               }

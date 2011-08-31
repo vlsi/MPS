@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
@@ -48,11 +49,11 @@ public class MakeFieldStatic extends BaseRefactoring {
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
           refactoringContext.setParameter("declaration", SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
         } else {
-          refactoringContext.setParameter("declaration", SNodeOperations.cast(Sequence.fromIterable(SNodeOperations.getReferences(node)).first().getTargetNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
+          refactoringContext.setParameter("declaration", SNodeOperations.cast(Sequence.<SReference>fromIterable(SNodeOperations.getReferences(node)).first().getTargetNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
         }
         refactoringContext.setParameter("usages", FindUtils.getSearchResults(new EmptyProgressIndicator(), ((SNode) refactoringContext.getParameter("declaration")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder"));
         refactoringContext.setParameter("hasExternalUsages", false);
-        for (SearchResult<SNode> result : ListSequence.fromList(((SearchResults<SNode>) refactoringContext.getParameter("usages")).getSearchResults())) {
+        for (SearchResult<SNode> result : ListSequence.<SearchResult<SNode>>fromList(((SearchResults<SNode>) refactoringContext.getParameter("usages")).getSearchResults())) {
           if (SNodeOperations.getContainingRoot(result.getObject()) != SNodeOperations.getContainingRoot(((SNode) refactoringContext.getParameter("declaration")))) {
             refactoringContext.setParameter("hasExternalUsages", true);
           }
@@ -65,8 +66,8 @@ public class MakeFieldStatic extends BaseRefactoring {
   public void refactor(final RefactoringContext refactoringContext) {
     SNode newDeclaration = new MakeFieldStatic.QuotationClass_so6etp_a0a0a4().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) refactoringContext.getParameter("declaration")), "visibility", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) refactoringContext.getParameter("declaration")), "type", true)), SPropertyOperations.getString(((SNode) refactoringContext.getParameter("declaration")), "name"));
     SNode declarationClassifier = SNodeOperations.getAncestor(((SNode) refactoringContext.getParameter("declaration")), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    ListSequence.fromList(SLinkOperations.getTargets(declarationClassifier, "staticField", true)).addElement(newDeclaration);
-    for (SearchResult<SNode> result : ListSequence.fromList(((SearchResults<SNode>) refactoringContext.getParameter("usages")).getSearchResults())) {
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(declarationClassifier, "staticField", true)).addElement(newDeclaration);
+    for (SearchResult<SNode> result : ListSequence.<SearchResult<SNode>>fromList(((SearchResults<SNode>) refactoringContext.getParameter("usages")).getSearchResults())) {
       SNode usage = result.getObject();
       SNode replacing;
       if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) {

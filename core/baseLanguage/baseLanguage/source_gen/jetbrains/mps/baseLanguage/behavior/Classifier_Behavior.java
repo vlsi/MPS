@@ -67,8 +67,8 @@ public class Classifier_Behavior {
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = new ArrayList<SNode>();
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticField", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
+    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "staticField", true)));
+    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "method", true)));
     return members;
   }
 
@@ -77,7 +77,7 @@ public class Classifier_Behavior {
   }
 
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticField", true)).count() > 0;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "staticField", true)).count() > 0;
   }
 
   public static String virtual_getNestedName_8540045600162184125(SNode thisNode) {
@@ -85,25 +85,25 @@ public class Classifier_Behavior {
   }
 
   public static String call_getNestedNameInContext_8540045600162183880(SNode thisNode, SNode context) {
-    List<SNode> containers = ListSequence.fromList(SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).reversedList();
+    List<SNode> containers = ListSequence.<SNode>fromList(SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).reversedList();
     List<SNode> contextContainers = SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true);
 
     List<SNode> ancestors = SNodeOperations.getAncestors(context, null, true);
-    if (ListSequence.fromList(ancestors).contains(SNodeOperations.getParent(thisNode)) || ListSequence.fromList(ancestors).contains(thisNode)) {
+    if (ListSequence.<SNode>fromList(ancestors).contains(SNodeOperations.getParent(thisNode)) || ListSequence.<SNode>fromList(ancestors).contains(thisNode)) {
       return SPropertyOperations.getString(thisNode, "name");
     }
 
     int index = -1;
     for (SNode ctxCls : contextContainers) {
-      index = ListSequence.fromList(containers).indexOf(ctxCls);
+      index = ListSequence.<SNode>fromList(containers).indexOf(ctxCls);
       if (index != -1) {
         break;
       }
     }
     if (index != -1) {
       List<SNode> newContainers = new ArrayList<SNode>();
-      for (int i = index + 1; i < ListSequence.fromList(containers).count(); i++) {
-        ListSequence.fromList(newContainers).addElement(ListSequence.fromList(containers).getElement(i));
+      for (int i = index + 1; i < ListSequence.<SNode>fromList(containers).count(); i++) {
+        ListSequence.<SNode>fromList(newContainers).addElement(ListSequence.<SNode>fromList(containers).getElement(i));
       }
       containers = newContainers;
     }
@@ -130,11 +130,11 @@ public class Classifier_Behavior {
   }
 
   public static boolean virtual_checkLoops_3980490811621705344(SNode thisNode) {
-    return Classifier_Behavior.call_checkLoops_3980490811621705349(thisNode, SetSequence.fromSet(new HashSet<SNode>()));
+    return Classifier_Behavior.call_checkLoops_3980490811621705349(thisNode, SetSequence.<SNode>fromSet(new HashSet<SNode>()));
   }
 
   public static boolean virtual_isDescendant_7165541881557222913(SNode thisNode, SNode nodeToCompare) {
-    return Classifier_Behavior.call_isDescendant_checkLoops_7165541881557222950(thisNode, nodeToCompare, SetSequence.fromSet(new HashSet<SNode>()));
+    return Classifier_Behavior.call_isDescendant_checkLoops_7165541881557222950(thisNode, nodeToCompare, SetSequence.<SNode>fromSet(new HashSet<SNode>()));
   }
 
   public static boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
@@ -148,9 +148,9 @@ public class Classifier_Behavior {
   public static boolean call_canInstantiateIn_6935810692634457550(SNode thisNode, SNode context) {
     List<SNode> contextClassifiers = Classifier_Behavior.getNonStaticContextClassifiers_6775591514230482802(context);
     List<SNode> required = Classifier_Behavior.getNonStaticContextClassifiers_6775591514230482802(thisNode);
-    ListSequence.fromList(required).removeElement(thisNode);
+    ListSequence.<SNode>fromList(required).removeElement(thisNode);
     for (SNode req : required) {
-      if (!(ListSequence.fromList(contextClassifiers).contains(req))) {
+      if (!(ListSequence.<SNode>fromList(contextClassifiers).contains(req))) {
         return false;
       }
     }
@@ -159,7 +159,7 @@ public class Classifier_Behavior {
 
   public static List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
+    ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "method", true)));
     return result;
   }
 
@@ -173,7 +173,7 @@ public class Classifier_Behavior {
     for (SNode decl : SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)) {
       SNode reference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
       SLinkOperations.setTarget(reference, "typeVariableDeclaration", decl, false);
-      ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(reference);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(reference);
     }
     return result;
   }
@@ -196,13 +196,13 @@ public class Classifier_Behavior {
 
   public static SNode call_getResolvedVar_3305065273710881245(SNode thisNode, SNode reference, SNode ancestor, SNode coercedType) {
     SNode decl = SLinkOperations.getTarget(reference, "typeVariableDeclaration", false);
-    int i = ListSequence.fromList(SLinkOperations.getTargets(ancestor, "typeVariableDeclaration", true)).indexOf(decl);
+    int i = ListSequence.<SNode>fromList(SLinkOperations.getTargets(ancestor, "typeVariableDeclaration", true)).indexOf(decl);
     SNode resolvedVar;
     if (i < 0) {
       resolvedVar = reference;
       // todo method vars 
-    } else if (ListSequence.fromList(SLinkOperations.getTargets(coercedType, "parameter", true)).count() > 0) {
-      resolvedVar = SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(coercedType, "parameter", true)).getElement(i));
+    } else if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(coercedType, "parameter", true)).count() > 0) {
+      resolvedVar = SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(coercedType, "parameter", true)).getElement(i));
     } else {
       resolvedVar = TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091509920(decl);
     }
@@ -301,15 +301,15 @@ public class Classifier_Behavior {
 
   public static List<SNode> getNonStaticContextClassifiers_6775591514230482802(SNode context) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode current : ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
+    for (SNode current : ListSequence.<SNode>fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
       if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
         SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false);
         if ((classifier == null)) {
           continue;
         }
-        ListSequence.fromList(result).addElement(classifier);
+        ListSequence.<SNode>fromList(result).addElement(classifier);
       } else {
-        ListSequence.fromList(result).addElement(current);
+        ListSequence.<SNode>fromList(result).addElement(current);
         if (Classifier_Behavior.call_isStatic_521412098689998668(current)) {
           // according to Java rules static inner classifiers can be only on the second level so we can 
           // safely break here 
@@ -324,7 +324,7 @@ public class Classifier_Behavior {
     SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(contextNode);
     List<SNode> result = new ArrayList<SNode>();
     while (classifier != null) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, contextNode, constraint)));
+      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, contextNode, constraint)));
       if (!(Classifier_Behavior.call_isStatic_521412098689998668(classifier)) || (constraint & IClassifiersSearchScope.STATIC_MEMBER) != 0) {
         classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       } else {
@@ -367,11 +367,11 @@ public class Classifier_Behavior {
         }
         {
           String childRole_Classifier_Behavior_qw8l7c_ = "parameter";
-          this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
+          this.patternVar_l = ListSequence.<SNode>fromList(new ArrayList<SNode>());
           patternVar_foo = null;
           for (SNode childVar : nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a81.getChildren(childRole_Classifier_Behavior_qw8l7c_)) {
             patternVar_foo = childVar;
-            ListSequence.fromList(this.patternVar_l).addElement(childVar);
+            ListSequence.<SNode>fromList(this.patternVar_l).addElement(childVar);
           }
         }
       }

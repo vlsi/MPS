@@ -65,10 +65,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         final List<ModuleReference> moduleReferencesToAdd = BuildGeneratorImpl.this.getModuleReferencesToAdd();
         Runnable runnable;
         Solution solution = (Solution) descriptor.getModule();
-        for (ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
+        for (ModuleReference ref : ListSequence.<ModuleReference>fromList(moduleReferencesToAdd)) {
           (solution).getModuleDescriptor().getUsedLanguages().add(ref);
         }
-        for (ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
+        for (ModuleReference ref : ListSequence.<ModuleReference>fromList(moduleReferencesToAdd)) {
           descriptor.getSModel().addLanguage(ref);
         }
         runnable = BuildGeneratorImpl.this.generate(((EditableSModelDescriptor) descriptor), projectName, projectBasedirPath, modules);
@@ -162,14 +162,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SLinkOperations.setTarget(mpsLayout, "deployDirectory", new BuildGeneratorImpl.QuotationClass_un708i_a0a0o0f().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);
     // 
     SPropertyOperations.set(mpsLayout, "compile", "" + (true));
-    SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "configuration", true)).first(), "name", "default");
+    SPropertyOperations.set(ListSequence.<SNode>fromList(SLinkOperations.getTargets(mpsLayout, "configuration", true)).first(), "name", "default");
     // create zip 
     SNode zip = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Zip", null);
     SLinkOperations.setTarget(zip, "title", PackagingLanguageGenerator.createSimpleString(name + ".zip"), true);
-    ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "component", true)).addElement(zip);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(mpsLayout, "component", true)).addElement(zip);
     // create folder inside zip 
     SNode folder = PackagingLanguageGenerator.createFolder(name);
-    ListSequence.fromList(SLinkOperations.getTargets(zip, "entry", true)).addElement(folder);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(zip, "entry", true)).addElement(folder);
     // add modules to folder 
     BuildGeneratorImpl.createContent(selectedData, folder, targetSModel);
     return mpsLayout;
@@ -197,24 +197,24 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static void createContent(List<NodeData> selectedData, SNode folder, SModel targetSModel) {
-    Map<NodeData, SNode> createdComponent = MapSequence.fromMap(new HashMap<NodeData, SNode>());
-    Set<SNode> topLevel = SetSequence.fromSet(new LinkedHashSet<SNode>());
-    for (NodeData data : ListSequence.fromList(selectedData)) {
+    Map<NodeData, SNode> createdComponent = MapSequence.<NodeData,SNode>fromMap(new HashMap<NodeData, SNode>());
+    Set<SNode> topLevel = SetSequence.<SNode>fromSet(new LinkedHashSet<SNode>());
+    for (NodeData data : ListSequence.<NodeData>fromList(selectedData)) {
       // creating component 
       SNode component = createComponent(data, targetSModel);
       if (component == null) {
         continue;
       }
-      MapSequence.fromMap(createdComponent).put(data, component);
+      MapSequence.<NodeData,SNode>fromMap(createdComponent).put(data, component);
       SetSequence.fromSet(topLevel).addElement(component);
       // dealing with children 
       if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
         List<NodeData> children = data.getChildren();
-        for (NodeData child : ListSequence.fromList(children)) {
+        for (NodeData child : ListSequence.<NodeData>fromList(children)) {
           if (MapSequence.fromMap(createdComponent).containsKey(child)) {
-            SNode childComponent = MapSequence.fromMap(createdComponent).get(child);
-            ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true)).addElement(childComponent);
-            if (SetSequence.fromSet(topLevel).contains(childComponent)) {
+            SNode childComponent = MapSequence.<NodeData,SNode>fromMap(createdComponent).get(child);
+            ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true)).addElement(childComponent);
+            if (SetSequence.<SNode>fromSet(topLevel).contains(childComponent)) {
               SetSequence.fromSet(topLevel).removeElement(childComponent);
             }
           }
@@ -226,13 +226,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         break;
       }
       if (MapSequence.fromMap(createdComponent).containsKey(parent)) {
-        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(MapSequence.fromMap(createdComponent).get(parent), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true)).addElement(component);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(MapSequence.<NodeData,SNode>fromMap(createdComponent).get(parent), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true)).addElement(component);
         SetSequence.fromSet(topLevel).removeElement(component);
       }
     }
     // 
-    for (SNode topLevelComponent : SetSequence.fromSet(topLevel)) {
-      ListSequence.fromList(SLinkOperations.getTargets(folder, "entry", true)).addElement(topLevelComponent);
+    for (SNode topLevelComponent : SetSequence.<SNode>fromSet(topLevel)) {
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(folder, "entry", true)).addElement(topLevelComponent);
     }
   }
 

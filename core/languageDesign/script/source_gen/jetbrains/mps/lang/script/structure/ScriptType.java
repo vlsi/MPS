@@ -31,9 +31,9 @@ public enum ScriptType {
   }
 
   public static List<ScriptType> getConstants() {
-    List<ScriptType> list = ListSequence.fromList(new LinkedList<ScriptType>());
-    ListSequence.fromList(list).addElement(ScriptType.enhancement);
-    ListSequence.fromList(list).addElement(ScriptType.migration);
+    List<ScriptType> list = ListSequence.<ScriptType>fromList(new LinkedList<ScriptType>());
+    ListSequence.<ScriptType>fromList(list).addElement(ScriptType.enhancement);
+    ListSequence.<ScriptType>fromList(list).addElement(ScriptType.migration);
     return list;
   }
 

@@ -60,7 +60,7 @@ public class AnonymousClass_Behavior {
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
       index = AnonymousClass_Behavior.call_getIndexInContainingClass_4164197659856373643(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) + 1;
     } else {
-      index = ListSequence.fromList(SNodeOperations.getDescendants(ancestor, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      index = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(ancestor, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, new String[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == ancestor;
         }

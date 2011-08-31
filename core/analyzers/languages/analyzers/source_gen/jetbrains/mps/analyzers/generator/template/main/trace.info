@@ -89,8 +89,8 @@
   <root nodeId="4943044633102141054">
     <nodeInfo nodeId="1110813413040883022" fileName="QueriesGenerated.java" startLine="155" startPosition="151" endLine="156" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1110813413040883030" fileName="QueriesGenerated.java" startLine="156" startPosition="179" endLine="157" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1110813413040883037" fileName="QueriesGenerated.java" startLine="157" startPosition="85" endLine="158" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="4943044633102141063" fileName="QueriesGenerated.java" startLine="155" startPosition="151" endLine="158" endPosition="142">
+    <nodeInfo nodeId="1110813413040883037" fileName="QueriesGenerated.java" startLine="157" startPosition="85" endLine="158" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="4943044633102141063" fileName="QueriesGenerated.java" startLine="155" startPosition="151" endLine="158" endPosition="156">
       <varInfo nodeId="1110813413040883023" varName="rule" />
       <varInfo nodeId="1110813413040883031" varName="method" />
     </scopeInfo>

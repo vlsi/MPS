@@ -31,9 +31,9 @@ public enum MappingScriptKind {
   }
 
   public static List<MappingScriptKind> getConstants() {
-    List<MappingScriptKind> list = ListSequence.fromList(new LinkedList<MappingScriptKind>());
-    ListSequence.fromList(list).addElement(MappingScriptKind.pre_process_input_model);
-    ListSequence.fromList(list).addElement(MappingScriptKind.post_process_output_model);
+    List<MappingScriptKind> list = ListSequence.<MappingScriptKind>fromList(new LinkedList<MappingScriptKind>());
+    ListSequence.<MappingScriptKind>fromList(list).addElement(MappingScriptKind.pre_process_input_model);
+    ListSequence.<MappingScriptKind>fromList(list).addElement(MappingScriptKind.post_process_output_model);
     return list;
   }
 

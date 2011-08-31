@@ -23,7 +23,7 @@ public class EnumClass_Behavior {
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = IMemberContainer_Behavior.callSuper_getMembers_1213877531970(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass");
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "enumConstant", true)));
+    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "enumConstant", true)));
     return members;
   }
 

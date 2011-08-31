@@ -50,7 +50,7 @@ public class CreateTypesystemIntention_Intention extends BaseIntention implement
     if (editorContext.getSelectedCell().getLinkDeclaration() != SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.typesystem.structure.MessageStatement", "helginsIntention")) {
       return false;
     }
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "helginsIntention", true)).isEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "helginsIntention", true)).isEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
@@ -59,7 +59,7 @@ public class CreateTypesystemIntention_Intention extends BaseIntention implement
     SNode quickFixCall = new CreateTypesystemIntention_Intention.QuotationClass_nynfqi_a0a2a7().createNode(quickFixNode);
 
     SModelOperations.addRootNode(SNodeOperations.getModel(node), quickFixNode);
-    ListSequence.fromList(SLinkOperations.getTargets(node, "helginsIntention", true)).addElement(quickFixCall);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "helginsIntention", true)).addElement(quickFixCall);
   }
 
   public String getLocationString() {

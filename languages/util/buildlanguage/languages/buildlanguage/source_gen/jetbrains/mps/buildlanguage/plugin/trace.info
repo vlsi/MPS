@@ -28,12 +28,12 @@
     <nodeInfo nodeId="2228878981387103619" fileName="Ant_Command.java" startLine="94" startPosition="89" endLine="95" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2228878981387105879" fileName="Ant_Command.java" startLine="95" startPosition="53" endLine="96" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2228878981387105924" fileName="Ant_Command.java" startLine="97" startPosition="33" endLine="98" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2228878981387105934" fileName="Ant_Command.java" startLine="99" startPosition="5" endLine="100" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2228878981387105934" fileName="Ant_Command.java" startLine="99" startPosition="5" endLine="100" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2228878981387105952" fileName="Ant_Command.java" startLine="101" startPosition="49" endLine="102" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2228878981387105944" fileName="Ant_Command.java" startLine="103" startPosition="41" endLine="104" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2228878981387105944" fileName="Ant_Command.java" startLine="103" startPosition="41" endLine="104" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2228878981387105966" fileName="Ant_Command.java" startLine="106" startPosition="5" endLine="107" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2228878981387110119" fileName="Ant_Command.java" startLine="110" startPosition="52" endLine="111" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2228878981387110160" fileName="Ant_Command.java" startLine="111" startPosition="59" endLine="112" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2228878981387110160" fileName="Ant_Command.java" startLine="111" startPosition="59" endLine="112" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2228878981387110241" fileName="Ant_Command.java" startLine="114" startPosition="42" endLine="115" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2228878981387110224" fileName="Ant_Command.java" startLine="118" startPosition="39" endLine="119" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2228878981387110389" fileName="Ant_Command.java" startLine="124" startPosition="67" endLine="125" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -54,22 +54,22 @@
     <nodeInfo nodeId="2228878981387105912" fileName="Ant_Command.java" startLine="96" startPosition="39" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2228878981387105896" fileName="Ant_Command.java" startLine="102" startPosition="53" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="145" startPosition="70" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6773451765634456209" fileName="Ant_Command.java" startLine="77" startPosition="341" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6773451765634456209" fileName="Ant_Command.java" startLine="77" startPosition="349" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefaultAntHome#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2228878981387110209" fileName="Ant_Command.java" startLine="113" startPosition="127" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2228878981387110209" fileName="Ant_Command.java" startLine="113" startPosition="151" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="2228878981387110220" fileName="Ant_Command.java" startLine="117" startPosition="56" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="4666195181811014778" fileName="Ant_Command.java" startLine="137" startPosition="133" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/String;" />
     <nodeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="66" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProcess#(Ljetbrains/mps/smodel/SNode;)Lcom/intellij/execution/process/ProcessHandler;" />
     <nodeInfo nodeId="2228878981387110355" fileName="Ant_Command.java" startLine="126" startPosition="57" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4666195181811014777" fileName="Ant_Command.java" startLine="136" startPosition="63" endLine="141" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2228878981387105886" fileName="Ant_Command.java" startLine="100" startPosition="76" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2228878981387105886" fileName="Ant_Command.java" startLine="100" startPosition="84" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2228878981387110354" fileName="Ant_Command.java" startLine="125" startPosition="61" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTarget#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/buildlanguage/plugin/Ant_Command;" />
     <nodeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAntLocation#(Ljava/lang/String;)Ljetbrains/mps/buildlanguage/plugin/Ant_Command;" />
     <nodeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="52" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setOptions#(Ljava/lang/String;)Ljetbrains/mps/buildlanguage/plugin/Ant_Command;" />
     <nodeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="59" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTargetName#(Ljava/lang/String;)Ljetbrains/mps/buildlanguage/plugin/Ant_Command;" />
     <nodeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="144" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_11bn_a0a0a1a4#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2228878981387110175" fileName="Ant_Command.java" startLine="112" startPosition="158" endLine="121" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2228878981387110175" fileName="Ant_Command.java" startLine="112" startPosition="166" endLine="121" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="134" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTargetName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1051814066736481873" fileName="Ant_Command.java" startLine="76" startPosition="5" endLine="87" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="123" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getGeneratedFileName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
@@ -85,7 +85,7 @@
     <scopeInfo nodeId="6773451765634456210" fileName="Ant_Command.java" startLine="78" startPosition="39" endLine="79" endPosition="40" />
     <scopeInfo nodeId="2228878981386975256" fileName="Ant_Command.java" startLine="90" startPosition="45" endLine="91" endPosition="87" />
     <scopeInfo nodeId="2228878981387105913" fileName="Ant_Command.java" startLine="97" startPosition="33" endLine="98" endPosition="83" />
-    <scopeInfo nodeId="2228878981387105898" fileName="Ant_Command.java" startLine="103" startPosition="41" endLine="104" endPosition="65" />
+    <scopeInfo nodeId="2228878981387105898" fileName="Ant_Command.java" startLine="103" startPosition="41" endLine="104" endPosition="73" />
     <scopeInfo nodeId="2228878981387110210" fileName="Ant_Command.java" startLine="114" startPosition="42" endLine="115" endPosition="46" />
     <scopeInfo nodeId="2228878981387110221" fileName="Ant_Command.java" startLine="118" startPosition="39" endLine="119" endPosition="57" />
     <scopeInfo nodeId="4666195181811014779" fileName="Ant_Command.java" startLine="138" startPosition="30" endLine="139" endPosition="56" />
@@ -99,18 +99,18 @@
     <scopeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="46" startPosition="57" endLine="50" endPosition="16" />
     <scopeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="53" startPosition="49" endLine="57" endPosition="16" />
     <scopeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="60" startPosition="55" endLine="64" endPosition="16" />
-    <scopeInfo nodeId="6773451765634456209" fileName="Ant_Command.java" startLine="77" startPosition="341" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="6773451765634456209" fileName="Ant_Command.java" startLine="77" startPosition="349" endLine="81" endPosition="0" />
     <scopeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="2228878981387105889" fileName="Ant_Command.java" startLine="101" startPosition="49" endLine="105" endPosition="7">
       <varInfo nodeId="2228878981387105953" varName="jarFilePath" />
     </scopeInfo>
-    <scopeInfo nodeId="2228878981387110209" fileName="Ant_Command.java" startLine="113" startPosition="127" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="2228878981387110209" fileName="Ant_Command.java" startLine="113" startPosition="151" endLine="117" endPosition="0" />
     <scopeInfo nodeId="2228878981387110220" fileName="Ant_Command.java" startLine="117" startPosition="56" endLine="121" endPosition="0" />
     <scopeInfo nodeId="4666195181811014778" fileName="Ant_Command.java" startLine="137" startPosition="133" endLine="141" endPosition="0" />
     <scopeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="145" startPosition="70" endLine="149" endPosition="16" />
     <scopeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="66" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="2228878981387110355" fileName="Ant_Command.java" startLine="126" startPosition="57" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="2228878981387105886" fileName="Ant_Command.java" startLine="100" startPosition="76" endLine="106" endPosition="5" />
+    <scopeInfo nodeId="2228878981387105886" fileName="Ant_Command.java" startLine="100" startPosition="84" endLine="106" endPosition="5" />
     <scopeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="52" startPosition="0" endLine="59" endPosition="0" />
@@ -145,8 +145,8 @@
       <varInfo nodeId="2228878981387110344" varName="antHome" />
     </scopeInfo>
     <scopeInfo nodeId="2228878981386973271" fileName="Ant_Command.java" startLine="71" startPosition="0" endLine="89" endPosition="0" />
-    <unitInfo nodeId="6773451765634456209" fileName="Ant_Command.java" startLine="77" startPosition="312" endLine="81" endPosition="5" unitName="jetbrains.mps.buildlanguage.plugin.Ant_Command$1" />
-    <unitInfo nodeId="2228878981387110209" fileName="Ant_Command.java" startLine="113" startPosition="99" endLine="117" endPosition="5" unitName="jetbrains.mps.buildlanguage.plugin.Ant_Command$2" />
+    <unitInfo nodeId="6773451765634456209" fileName="Ant_Command.java" startLine="77" startPosition="320" endLine="81" endPosition="5" unitName="jetbrains.mps.buildlanguage.plugin.Ant_Command$1" />
+    <unitInfo nodeId="2228878981387110209" fileName="Ant_Command.java" startLine="113" startPosition="123" endLine="117" endPosition="5" unitName="jetbrains.mps.buildlanguage.plugin.Ant_Command$2" />
     <unitInfo nodeId="2228878981387110220" fileName="Ant_Command.java" startLine="117" startPosition="27" endLine="121" endPosition="5" unitName="jetbrains.mps.buildlanguage.plugin.Ant_Command$3" />
     <unitInfo nodeId="4666195181811014778" fileName="Ant_Command.java" startLine="137" startPosition="93" endLine="141" endPosition="5" unitName="jetbrains.mps.buildlanguage.plugin.Ant_Command$5" />
     <unitInfo nodeId="2228878981387110355" fileName="Ant_Command.java" startLine="126" startPosition="45" endLine="131" endPosition="5" unitName="jetbrains.mps.buildlanguage.plugin.Ant_Command$4" />
@@ -154,16 +154,16 @@
   </root>
   <root nodeId="2228878981387110405">
     <nodeInfo nodeId="2228878981387110406" fileName="Ant_Kind.java" startLine="17" startPosition="52" endLine="18" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="19" startPosition="0" endLine="20" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignFactories" />
-    <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="25" startPosition="61" endLine="26" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="26" startPosition="101" endLine="27" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="27" startPosition="99" endLine="28" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="28" startPosition="89" endLine="29" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="19" startPosition="0" endLine="20" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignFactories" />
+    <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="25" startPosition="61" endLine="26" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="26" startPosition="123" endLine="27" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="27" startPosition="121" endLine="28" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="28" startPosition="133" endLine="29" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="34" startPosition="25" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="38" startPosition="25" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="42" startPosition="51" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="46" startPosition="34" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="54" startPosition="40" endLine="55" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="21" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Ant_Kind#()V" />
     <nodeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
@@ -178,10 +178,10 @@
     <scopeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="38" startPosition="25" endLine="39" endPosition="16" />
     <scopeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="42" startPosition="51" endLine="43" endPosition="16" />
     <scopeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="46" startPosition="34" endLine="47" endPosition="17" />
-    <scopeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="66" />
+    <scopeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="88" />
     <scopeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="54" startPosition="40" endLine="55" endPosition="103" />
     <scopeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="25" startPosition="61" endLine="29" endPosition="84" />
+    <scopeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="25" startPosition="61" endLine="29" endPosition="106" />
     <scopeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="2228878981387110405" fileName="Ant_Kind.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
@@ -264,7 +264,7 @@
     <nodeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration.java" startLine="154" startPosition="67" endLine="155" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration.java" startLine="158" startPosition="75" endLine="159" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration.java" startLine="163" startPosition="48" endLine="164" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration.java" startLine="167" startPosition="36" endLine="168" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration.java" startLine="167" startPosition="36" endLine="168" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4666195181810980420" fileName="BuildLanguageProject_Configuration.java" startLine="171" startPosition="24" endLine="172" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTargetId" />
     <nodeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration.java" startLine="178" startPosition="61" endLine="179" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration.java" startLine="179" startPosition="106" endLine="180" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -341,7 +341,7 @@
     <scopeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration.java" startLine="154" startPosition="67" endLine="155" endPosition="62" />
     <scopeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration.java" startLine="158" startPosition="75" endLine="159" endPosition="101" />
     <scopeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration.java" startLine="163" startPosition="48" endLine="164" endPosition="85" />
-    <scopeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration.java" startLine="167" startPosition="36" endLine="168" endPosition="105" />
+    <scopeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration.java" startLine="167" startPosition="36" endLine="168" endPosition="112" />
     <scopeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration_Editor.java" startLine="24" startPosition="127" endLine="26" endPosition="26" />
     <scopeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration.java" startLine="76" startPosition="5" endLine="78" endPosition="40" />
     <scopeInfo nodeId="2228878981387110407" fileName="BuildLanguageProject_Configuration.java" startLine="80" startPosition="5" endLine="82" endPosition="44" />
@@ -458,7 +458,7 @@
     <nodeInfo nodeId="4251154893541676640" fileName="ChildChoosePanel.java" startLine="47" startPosition="12" endLine="48" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4666195181810981222" fileName="ChildChoosePanel.java" startLine="52" startPosition="56" endLine="53" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4666195181810981228" fileName="ChildChoosePanel.java" startLine="55" startPosition="25" endLine="56" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4666195181810981235" fileName="ChildChoosePanel.java" startLine="57" startPosition="89" endLine="58" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4666195181810981235" fileName="ChildChoosePanel.java" startLine="57" startPosition="92" endLine="58" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4666195181810981253" fileName="ChildChoosePanel.java" startLine="61" startPosition="7" endLine="62" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4251154893541676656" fileName="ChildChoosePanel.java" startLine="65" startPosition="71" endLine="66" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4251154893541676665" fileName="ChildChoosePanel.java" startLine="68" startPosition="25" endLine="69" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -471,12 +471,12 @@
     <nodeInfo nodeId="4251154893541676734" fileName="ChildChoosePanel.java" startLine="90" startPosition="25" endLine="91" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4251154893541676743" fileName="ChildChoosePanel.java" startLine="93" startPosition="7" endLine="94" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4251154893541676760" fileName="ChildChoosePanel.java" startLine="101" startPosition="48" endLine="102" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4251154893541676772" fileName="ChildChoosePanel.java" startLine="105" startPosition="26" endLine="106" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4251154893541676772" fileName="ChildChoosePanel.java" startLine="105" startPosition="26" endLine="106" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4251154893541676782" fileName="ChildChoosePanel.java" startLine="109" startPosition="37" endLine="110" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4251154893541676792" fileName="ChildChoosePanel.java" startLine="113" startPosition="39" endLine="114" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4251154893541676792" fileName="ChildChoosePanel.java" startLine="113" startPosition="39" endLine="114" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4251154893541676802" fileName="ChildChoosePanel.java" startLine="118" startPosition="45" endLine="119" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4251154893541676815" fileName="ChildChoosePanel.java" startLine="122" startPosition="55" endLine="123" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4251154893541676825" fileName="ChildChoosePanel.java" startLine="124" startPosition="18" endLine="125" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4251154893541676815" fileName="ChildChoosePanel.java" startLine="122" startPosition="55" endLine="123" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4251154893541676825" fileName="ChildChoosePanel.java" startLine="124" startPosition="18" endLine="125" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4251154893541676831" fileName="ChildChoosePanel.java" startLine="128" startPosition="9" endLine="129" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4251154893541676839" fileName="ChildChoosePanel.java" startLine="132" startPosition="31" endLine="133" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4251154893541676849" fileName="ChildChoosePanel.java" startLine="25" startPosition="89" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
@@ -513,16 +513,16 @@
     <scopeInfo nodeId="4251154893541676752" fileName="ChildChoosePanel.java" startLine="98" startPosition="30" endLine="98" endPosition="30" />
     <scopeInfo nodeId="4251154893541676606" fileName="ChildChoosePanel.java" startLine="45" startPosition="23" endLine="46" endPosition="29" />
     <scopeInfo nodeId="4251154893541676614" fileName="ChildChoosePanel.java" startLine="47" startPosition="12" endLine="48" endPosition="57" />
-    <scopeInfo nodeId="4666195181810981234" fileName="ChildChoosePanel.java" startLine="57" startPosition="89" endLine="58" endPosition="87" />
+    <scopeInfo nodeId="4666195181810981234" fileName="ChildChoosePanel.java" startLine="57" startPosition="92" endLine="58" endPosition="90" />
     <scopeInfo nodeId="4251154893541676664" fileName="ChildChoosePanel.java" startLine="68" startPosition="25" endLine="69" endPosition="51" />
     <scopeInfo nodeId="4251154893541676720" fileName="ChildChoosePanel.java" startLine="85" startPosition="33" endLine="86" endPosition="18" />
     <scopeInfo nodeId="4251154893541676733" fileName="ChildChoosePanel.java" startLine="90" startPosition="25" endLine="91" endPosition="67" />
     <scopeInfo nodeId="4251154893541676759" fileName="ChildChoosePanel.java" startLine="101" startPosition="48" endLine="102" endPosition="49" />
-    <scopeInfo nodeId="4251154893541676771" fileName="ChildChoosePanel.java" startLine="105" startPosition="26" endLine="106" endPosition="69" />
+    <scopeInfo nodeId="4251154893541676771" fileName="ChildChoosePanel.java" startLine="105" startPosition="26" endLine="106" endPosition="77" />
     <scopeInfo nodeId="4251154893541676781" fileName="ChildChoosePanel.java" startLine="109" startPosition="37" endLine="110" endPosition="43" />
-    <scopeInfo nodeId="4251154893541676791" fileName="ChildChoosePanel.java" startLine="113" startPosition="39" endLine="114" endPosition="75" />
-    <scopeInfo nodeId="4251154893541676814" fileName="ChildChoosePanel.java" startLine="122" startPosition="55" endLine="123" endPosition="134" />
-    <scopeInfo nodeId="4251154893541676824" fileName="ChildChoosePanel.java" startLine="124" startPosition="18" endLine="125" endPosition="76" />
+    <scopeInfo nodeId="4251154893541676791" fileName="ChildChoosePanel.java" startLine="113" startPosition="39" endLine="114" endPosition="83" />
+    <scopeInfo nodeId="4251154893541676814" fileName="ChildChoosePanel.java" startLine="122" startPosition="55" endLine="123" endPosition="142" />
+    <scopeInfo nodeId="4251154893541676824" fileName="ChildChoosePanel.java" startLine="124" startPosition="18" endLine="125" endPosition="84" />
     <scopeInfo nodeId="4251154893541676838" fileName="ChildChoosePanel.java" startLine="132" startPosition="31" endLine="133" endPosition="57" />
     <scopeInfo nodeId="4666195181810913493" fileName="ChildChoosePanel.java" startLine="41" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="4666195181810913502" varName="node" />
@@ -592,7 +592,7 @@
     <nodeInfo nodeId="4666195181810981273" fileName="TargetChoosePanel.java" startLine="21" startPosition="60" endLine="22" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4666195181810981334" fileName="TargetChoosePanel.java" startLine="25" startPosition="190" endLine="26" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4666195181810981353" fileName="TargetChoosePanel.java" startLine="27" startPosition="16" endLine="28" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4666195181810981361" fileName="TargetChoosePanel.java" startLine="29" startPosition="91" endLine="30" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4666195181810981361" fileName="TargetChoosePanel.java" startLine="29" startPosition="98" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4666195181810981306" fileName="TargetChoosePanel.java" startLine="34" startPosition="7" endLine="35" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4666195181810980173" fileName="TargetChoosePanel.java" startLine="12" startPosition="71" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetChoosePanel#()V" />
     <nodeInfo nodeId="4666195181810981359" fileName="TargetChoosePanel.java" startLine="28" startPosition="61" endLine="31" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -605,7 +605,7 @@
     <scopeInfo nodeId="4666195181810980176" fileName="TargetChoosePanel.java" startLine="13" startPosition="30" endLine="14" endPosition="21" />
     <scopeInfo nodeId="4666195181810980191" fileName="TargetChoosePanel.java" startLine="17" startPosition="51" endLine="18" endPosition="60" />
     <scopeInfo nodeId="4666195181810981313" fileName="TargetChoosePanel.java" startLine="25" startPosition="190" endLine="26" endPosition="146" />
-    <scopeInfo nodeId="4666195181810981360" fileName="TargetChoosePanel.java" startLine="29" startPosition="91" endLine="30" endPosition="89" />
+    <scopeInfo nodeId="4666195181810981360" fileName="TargetChoosePanel.java" startLine="29" startPosition="98" endLine="30" endPosition="96" />
     <scopeInfo nodeId="4666195181810980173" fileName="TargetChoosePanel.java" startLine="12" startPosition="71" endLine="15" endPosition="3" />
     <scopeInfo nodeId="4666195181810980185" fileName="TargetChoosePanel.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="4666195181810980186" varName="node" />
@@ -765,9 +765,9 @@
   </root>
   <root nodeId="8294204555084762824">
     <nodeInfo nodeId="8294204555084762824" fileName="BuildLanguageProject_Producer.java" startLine="16" startPosition="44" endLine="17" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONFIGURATION_FACTORY_CLASS_NAME" />
-    <nodeInfo nodeId="8294204555084762824" fileName="BuildLanguageProject_Producer.java" startLine="22" startPosition="102" endLine="23" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8294204555084762824" fileName="BuildLanguageProject_Producer.java" startLine="23" startPosition="119" endLine="24" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8294204555084762824" fileName="BuildLanguageProject_Producer.java" startLine="24" startPosition="169" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8294204555084762824" fileName="BuildLanguageProject_Producer.java" startLine="22" startPosition="102" endLine="23" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8294204555084762824" fileName="BuildLanguageProject_Producer.java" startLine="23" startPosition="149" endLine="24" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8294204555084762824" fileName="BuildLanguageProject_Producer.java" startLine="24" startPosition="199" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8294204555084762824" fileName="BuildLanguageProject_Producer.java" startLine="29" startPosition="103" endLine="30" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8294204555084762824" fileName="BuildLanguageProject_Producer.java" startLine="33" startPosition="51" endLine="34" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8294204555084762824" fileName="BuildLanguageProject_Producer.java" startLine="37" startPosition="92" endLine="38" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

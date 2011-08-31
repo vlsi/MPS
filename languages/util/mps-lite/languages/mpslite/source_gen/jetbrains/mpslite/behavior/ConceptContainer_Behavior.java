@@ -17,47 +17,47 @@ public class ConceptContainer_Behavior {
 
   public static List<SNode> call_getAllConcepts_1239801518275(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mpsLiteConcept", true)));
-    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "expressionConcept", true));
-    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "statementConcept", true));
+    ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "mpsLiteConcept", true)));
+    ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(thisNode, "expressionConcept", true));
+    ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(thisNode, "statementConcept", true));
     return result;
   }
 
   public static List<SNode> call_getSimpleMPSliteConcepts_1239802881890(SNode thisNode) {
-    Iterable<SNode> mpsLiteConcepts = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mpsLiteConcept", true)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> mpsLiteConcepts = ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "mpsLiteConcept", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mpslite.structure.MPSLiteConceptDeclaration");
       }
     });
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode n : Sequence.fromIterable(mpsLiteConcepts)) {
-      ListSequence.fromList(result).addElement(SNodeOperations.cast(n, "jetbrains.mpslite.structure.MPSLiteConceptDeclaration"));
+    for (SNode n : Sequence.<SNode>fromIterable(mpsLiteConcepts)) {
+      ListSequence.<SNode>fromList(result).addElement(SNodeOperations.cast(n, "jetbrains.mpslite.structure.MPSLiteConceptDeclaration"));
     }
     return result;
   }
 
   public static List<SNode> call_getBinaryOperationConcepts_1239806149720(SNode thisNode) {
-    Iterable<SNode> mpsLiteConcepts = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mpsLiteConcept", true)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> mpsLiteConcepts = ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "mpsLiteConcept", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mpslite.structure.BinaryOperationConcept");
       }
     });
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode n : Sequence.fromIterable(mpsLiteConcepts)) {
-      ListSequence.fromList(result).addElement(SNodeOperations.cast(n, "jetbrains.mpslite.structure.BinaryOperationConcept"));
+    for (SNode n : Sequence.<SNode>fromIterable(mpsLiteConcepts)) {
+      ListSequence.<SNode>fromList(result).addElement(SNodeOperations.cast(n, "jetbrains.mpslite.structure.BinaryOperationConcept"));
     }
     return result;
   }
 
   public static List<SNode> call_getVariableConcepts_1239806150736(SNode thisNode) {
-    Iterable<SNode> mpsLiteConcepts = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mpsLiteConcept", true)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> mpsLiteConcepts = ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "mpsLiteConcept", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mpslite.structure.VariableConcept");
       }
     });
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode n : Sequence.fromIterable(mpsLiteConcepts)) {
-      ListSequence.fromList(result).addElement(SNodeOperations.cast(n, "jetbrains.mpslite.structure.VariableConcept"));
+    for (SNode n : Sequence.<SNode>fromIterable(mpsLiteConcepts)) {
+      ListSequence.<SNode>fromList(result).addElement(SNodeOperations.cast(n, "jetbrains.mpslite.structure.VariableConcept"));
     }
     return result;
   }

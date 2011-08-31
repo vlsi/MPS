@@ -29,17 +29,17 @@ public class SequenceType_Behavior {
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "seq");
+    List<String> variableSuffixes = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "seq");
     if ((SLinkOperations.getTarget(thisNode, "elementType", true) != null)) {
       if (Type_Behavior.call_hasPluralVariableSuffixes_1447667470349154499(SLinkOperations.getTarget(thisNode, "elementType", true))) {
-        for (String suffix : ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "elementType", true)))) {
-          if (!(ListSequence.fromList(variableSuffixes).contains(suffix))) {
-            ListSequence.fromList(variableSuffixes).addElement(suffix);
+        for (String suffix : ListSequence.<String>fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "elementType", true)))) {
+          if (!(ListSequence.<String>fromList(variableSuffixes).contains(suffix))) {
+            ListSequence.<String>fromList(variableSuffixes).addElement(suffix);
           }
         }
       } else {
-        for (String suffix : ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "elementType", true)))) {
-          ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
+        for (String suffix : ListSequence.<String>fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "elementType", true)))) {
+          ListSequence.<String>fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
         }
       }
     }
@@ -54,10 +54,10 @@ public class SequenceType_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     SNode seqCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", null);
     SLinkOperations.setTarget(seqCreator, "elementType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "elementType", true)), true);
-    ListSequence.fromList(result).addElement(seqCreator);
+    ListSequence.<SNode>fromList(result).addElement(seqCreator);
     SNode singCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator", null);
     SLinkOperations.setTarget(singCreator, "elementType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "elementType", true)), true);
-    ListSequence.fromList(result).addElement(singCreator);
+    ListSequence.<SNode>fromList(result).addElement(singCreator);
     return result;
   }
 

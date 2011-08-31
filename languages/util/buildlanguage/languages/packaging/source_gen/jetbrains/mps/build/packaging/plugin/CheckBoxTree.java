@@ -17,7 +17,7 @@ import javax.swing.tree.TreePath;
 
 public class CheckBoxTree<N extends NodeData> extends JPanel {
   private final JTree myTree;
-  private final Set<N> mySelectedItems = SetSequence.fromSet(new HashSet<N>());
+  private final Set<N> mySelectedItems = SetSequence.<N>fromSet(new HashSet<N>());
 
   public CheckBoxTree(CheckBoxNode node) {
     super(new BorderLayout());
@@ -61,7 +61,7 @@ public class CheckBoxTree<N extends NodeData> extends JPanel {
   }
 
   public boolean isChecked(CheckBoxNode<N> cbNode) {
-    return SetSequence.fromSet(CheckBoxTree.this.mySelectedItems).contains(cbNode.getData());
+    return SetSequence.<N>fromSet(CheckBoxTree.this.mySelectedItems).contains(cbNode.getData());
   }
 
   public void uncheckParents(CheckBoxNode<N> cbNode) {
@@ -83,6 +83,6 @@ public class CheckBoxTree<N extends NodeData> extends JPanel {
   }
 
   public Set<N> getSelectedItems() {
-    return SetSequence.fromSetWithValues(new HashSet<N>(), this.mySelectedItems);
+    return SetSequence.<N>fromSetWithValues(new HashSet<N>(), this.mySelectedItems);
   }
 }

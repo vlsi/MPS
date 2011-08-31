@@ -57,7 +57,7 @@ public class FindInstancesDialog extends BaseDialog {
         SNode defaultCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
         SPropertyOperations.set(defaultCondition, "value", "" + true);
         SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
-        ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(expressionStatement);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(expressionStatement);
         SLinkOperations.setTarget(SLinkOperations.getTarget(FindInstancesDialog.this.myNode, "condition", true), "body", statementList, true);
         FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, myModelOwner, myNode) {
           @Override

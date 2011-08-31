@@ -63,12 +63,12 @@ public class NewRootMappingRule_Intention extends BaseIntention implements Inten
       return false;
     }
     List<SNode> configs = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
-    if (ListSequence.fromList(configs).isEmpty()) {
+    if (ListSequence.<SNode>fromList(configs).isEmpty()) {
       return false;
     }
-    SNode usage = ListSequence.fromList(configs).findFirst(new IWhereFilter<SNode>() {
+    SNode usage = ListSequence.<SNode>fromList(configs).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ListSequence.fromList(SLinkOperations.getTargets(it, "rootMappingRule", true)).findFirst(new IWhereFilter<SNode>() {
+        return ListSequence.<SNode>fromList(SLinkOperations.getTargets(it, "rootMappingRule", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SLinkOperations.getTarget(it, "template", false) == node;
           }
@@ -81,21 +81,21 @@ public class NewRootMappingRule_Intention extends BaseIntention implements Inten
 
   public void execute(final SNode node, final EditorContext editorContext) {
     List<SNode> configs = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
-    if (ListSequence.fromList(configs).count() > 1) {
-      Iterable<SNode> sameVPackConfigs = ListSequence.fromList(configs).where(new IWhereFilter<SNode>() {
+    if (ListSequence.<SNode>fromList(configs).count() > 1) {
+      Iterable<SNode> sameVPackConfigs = ListSequence.<SNode>fromList(configs).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return Comparing.equal(SPropertyOperations.getString(it, "virtualPackage"), SPropertyOperations.getString(node, "virtualPackage"));
         }
       });
-      if (Sequence.fromIterable(sameVPackConfigs).isNotEmpty()) {
-        configs = Sequence.fromIterable(sameVPackConfigs).toListSequence();
+      if (Sequence.<SNode>fromIterable(sameVPackConfigs).isNotEmpty()) {
+        configs = Sequence.<SNode>fromIterable(sameVPackConfigs).toListSequence();
       }
     }
-    if (ListSequence.fromList(configs).count() > 1) {
+    if (ListSequence.<SNode>fromList(configs).count() > 1) {
       // TODO: let user to choose mapping config? 
     }
     //  add new rule 
-    SNode rule = SNodeFactoryOperations.addNewChild(ListSequence.fromList(configs).first(), "rootMappingRule", "jetbrains.mps.lang.generator.structure.Root_MappingRule");
+    SNode rule = SNodeFactoryOperations.addNewChild(ListSequence.<SNode>fromList(configs).first(), "rootMappingRule", "jetbrains.mps.lang.generator.structure.Root_MappingRule");
     SLinkOperations.setTarget(rule, "applicableConcept", SLinkOperations.getTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))), "applicableConcept", false), false);
     SLinkOperations.setTarget(rule, "template", node, false);
     //  open in editor 

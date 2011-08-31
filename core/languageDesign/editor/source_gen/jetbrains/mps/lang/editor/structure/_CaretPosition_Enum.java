@@ -32,10 +32,10 @@ public enum _CaretPosition_Enum {
   }
 
   public static List<_CaretPosition_Enum> getConstants() {
-    List<_CaretPosition_Enum> list = ListSequence.fromList(new LinkedList<_CaretPosition_Enum>());
-    ListSequence.fromList(list).addElement(_CaretPosition_Enum.none);
-    ListSequence.fromList(list).addElement(_CaretPosition_Enum.first);
-    ListSequence.fromList(list).addElement(_CaretPosition_Enum.last);
+    List<_CaretPosition_Enum> list = ListSequence.<_CaretPosition_Enum>fromList(new LinkedList<_CaretPosition_Enum>());
+    ListSequence.<_CaretPosition_Enum>fromList(list).addElement(_CaretPosition_Enum.none);
+    ListSequence.<_CaretPosition_Enum>fromList(list).addElement(_CaretPosition_Enum.first);
+    ListSequence.<_CaretPosition_Enum>fromList(list).addElement(_CaretPosition_Enum.last);
     return list;
   }
 

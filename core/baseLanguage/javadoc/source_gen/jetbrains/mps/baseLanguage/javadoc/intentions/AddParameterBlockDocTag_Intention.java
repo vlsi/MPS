@@ -42,7 +42,7 @@ public class AddParameterBlockDocTag_Intention extends BaseIntention implements 
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "param", true)).isEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

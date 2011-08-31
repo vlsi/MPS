@@ -22,13 +22,13 @@ public class RetainedUtil {
   }
 
   /*package*/ static Map<IModule, Iterable<SModelDescriptor>> collectModelsToRetain(Iterable<IResource> input) {
-    final Map<IModule, Iterable<SModelDescriptor>> retainedModels = MapSequence.fromMap(new HashMap<IModule, Iterable<SModelDescriptor>>());
-    Iterable<SModelDescriptor> empty = ListSequence.fromList(new ArrayList<SModelDescriptor>());
+    final Map<IModule, Iterable<SModelDescriptor>> retainedModels = MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(new HashMap<IModule, Iterable<SModelDescriptor>>());
+    Iterable<SModelDescriptor> empty = ListSequence.<SModelDescriptor>fromList(new ArrayList<SModelDescriptor>());
     for (IResource it : input) {
       MResource mres = ((MResource) it);
       IModule module = mres.module();
-      MapSequence.fromMap(retainedModels).put(module, empty);
-      Iterable<SModelDescriptor> modelsToRetain = Sequence.fromIterable(((Iterable<SModelDescriptor>) module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+      MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).put(module, empty);
+      Iterable<SModelDescriptor> modelsToRetain = Sequence.<SModelDescriptor>fromIterable(((Iterable<SModelDescriptor>) module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor it2) {
           return it2.isGeneratable();
         }
@@ -36,22 +36,22 @@ public class RetainedUtil {
       if (module instanceof Language) {
         for (final Generator gen : ((Language) module).getGenerators()) {
           if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
-            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModelDescriptor>) gen.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+            MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).put(gen, Sequence.<SModelDescriptor>fromIterable(((Iterable<SModelDescriptor>) gen.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor it2) {
                 return it2.isGeneratable();
               }
             }));
           }
-          modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
+          modelsToRetain = Sequence.<SModelDescriptor>fromIterable(modelsToRetain).concat(Sequence.<SModelDescriptor>fromIterable(Sequence.<SModelDescriptor>fromClosure(new ISequenceClosure<SModelDescriptor>() {
             public Iterable<SModelDescriptor> iterable() {
-              return MapSequence.fromMap(retainedModels).get(gen);
+              return MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).get(gen);
             }
           })));
         }
       } else if (module instanceof Generator) {
         final Language slang = ((Generator) module).getSourceLanguage();
         if (!(MapSequence.fromMap(retainedModels).containsKey(slang))) {
-          MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(((Iterable<SModelDescriptor>) slang.getOwnModelDescriptors())).subtract(ListSequence.fromList(module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+          MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).put(slang, Sequence.<SModelDescriptor>fromIterable(((Iterable<SModelDescriptor>) slang.getOwnModelDescriptors())).subtract(ListSequence.<SModelDescriptor>fromList(module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
             public boolean accept(SModelDescriptor it3) {
               return it3.isGeneratable();
             }
@@ -62,25 +62,25 @@ public class RetainedUtil {
             continue;
           }
           if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
-            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModelDescriptor>) gen.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+            MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).put(gen, Sequence.<SModelDescriptor>fromIterable(((Iterable<SModelDescriptor>) gen.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor it2) {
                 return it2.isGeneratable();
               }
             }));
           }
-          modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
+          modelsToRetain = Sequence.<SModelDescriptor>fromIterable(modelsToRetain).concat(Sequence.<SModelDescriptor>fromIterable(Sequence.<SModelDescriptor>fromClosure(new ISequenceClosure<SModelDescriptor>() {
             public Iterable<SModelDescriptor> iterable() {
-              return MapSequence.fromMap(retainedModels).get(gen);
+              return MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).get(gen);
             }
           })));
         }
-        modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
+        modelsToRetain = Sequence.<SModelDescriptor>fromIterable(modelsToRetain).concat(Sequence.<SModelDescriptor>fromIterable(Sequence.<SModelDescriptor>fromClosure(new ISequenceClosure<SModelDescriptor>() {
           public Iterable<SModelDescriptor> iterable() {
-            return MapSequence.fromMap(retainedModels).get(slang);
+            return MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).get(slang);
           }
         })));
       }
-      MapSequence.fromMap(retainedModels).put(mres.module(), Sequence.fromIterable(modelsToRetain).subtract(Sequence.fromIterable(mres.models())).toListSequence());
+      MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).put(mres.module(), Sequence.<SModelDescriptor>fromIterable(modelsToRetain).subtract(Sequence.<SModelDescriptor>fromIterable(mres.models())).toListSequence());
     }
     return retainedModels;
   }

@@ -19,7 +19,7 @@ public class check_ParametersCount_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public void applyRule(final SNode instance, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(instance, "actualParameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(instance, "action", false), "constructionParameter", true)).count()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(instance, "actualParameter", true)).count() != ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(instance, "action", false), "constructionParameter", true)).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(instance, "number of parameters doesn't match", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1227032366953", null, errorTarget);

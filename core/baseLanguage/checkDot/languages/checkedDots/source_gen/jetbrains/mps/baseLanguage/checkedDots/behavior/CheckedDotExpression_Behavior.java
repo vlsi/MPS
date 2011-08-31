@@ -11,7 +11,7 @@ public class CheckedDotExpression_Behavior {
   }
 
   public static boolean call_hasLocalContextInside_3674434577577159922(SNode thisNode) {
-    return ListSequence.fromList(SNodeOperations.getDescendantsWhereConceptInList(thisNode, new String[]{"jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", "jetbrains.mps.baseLanguage.structure.ThisExpression"}, false, new String[]{})).isNotEmpty();
+    return ListSequence.<SNode>fromList(SNodeOperations.getDescendantsWhereConceptInList(thisNode, new String[]{"jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", "jetbrains.mps.baseLanguage.structure.ThisExpression"}, false, new String[]{})).isNotEmpty();
 
   }
 }

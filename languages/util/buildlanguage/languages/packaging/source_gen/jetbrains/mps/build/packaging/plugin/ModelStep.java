@@ -75,7 +75,7 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
               if (modelFile == null) {
                 return false;
               }
-              for (SModelRoot root : ListSequence.fromList(solution.getSModelRoots())) {
+              for (SModelRoot root : ListSequence.<SModelRoot>fromList(solution.getSModelRoots())) {
                 if (modelFile.getPath().startsWith(root.getPath())) {
                   return true;
                 }
@@ -85,7 +85,7 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
           });
         }
       });
-      return ListSequence.fromList(filteredDescriptors).toGenericArray(SModelDescriptor.class);
+      return ListSequence.<SModelDescriptor>fromList(filteredDescriptors).toGenericArray(SModelDescriptor.class);
     }
   }
 

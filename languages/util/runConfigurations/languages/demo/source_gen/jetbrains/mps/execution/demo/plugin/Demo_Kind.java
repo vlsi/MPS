@@ -18,16 +18,16 @@ import com.intellij.openapi.extensions.Extensions;
 public class Demo_Kind implements ConfigurationType {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/runApp.png", "jetbrains.mps.lang.plugin"), true);
 
-  private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
+  private final List<ConfigurationFactory> myForeignFactories = ListSequence.<ConfigurationFactory>fromList(new ArrayList<ConfigurationFactory>());
 
   public Demo_Kind() {
   }
 
   public ConfigurationFactory[] getConfigurationFactories() {
-    List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
-    ListSequence.fromList(result).addElement(new DemoApplication_Configuration_Factory(this));
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(myForeignFactories));
-    return ListSequence.fromList(result).toGenericArray(ConfigurationFactory.class);
+    List<ConfigurationFactory> result = ListSequence.<ConfigurationFactory>fromList(new ArrayList<ConfigurationFactory>());
+    ListSequence.<ConfigurationFactory>fromList(result).addElement(new DemoApplication_Configuration_Factory(this));
+    ListSequence.<ConfigurationFactory>fromList(result).addSequence(ListSequence.<ConfigurationFactory>fromList(myForeignFactories));
+    return ListSequence.<ConfigurationFactory>fromList(result).toGenericArray(ConfigurationFactory.class);
   }
 
   @NonNls
@@ -49,7 +49,7 @@ public class Demo_Kind implements ConfigurationType {
   }
 
   public void addForeignFactory(ConfigurationFactory factory) {
-    ListSequence.fromList(myForeignFactories).addElement(factory);
+    ListSequence.<ConfigurationFactory>fromList(myForeignFactories).addElement(factory);
   }
 
   public static Demo_Kind getInstance() {

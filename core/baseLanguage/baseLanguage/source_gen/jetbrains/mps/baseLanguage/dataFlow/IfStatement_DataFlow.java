@@ -26,7 +26,7 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
       _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"));
     }
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "ifTrue", true));
-    if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null) || SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true) != null && ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true)).isNotEmpty()) {
+    if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null) || SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true) != null && ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true)).isNotEmpty()) {
       _context.getBuilder().emitMayBeUnreachable(new Runnable() {
         public void run() {
           _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));

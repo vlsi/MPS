@@ -32,10 +32,10 @@ public class check_ConceptBehavior_NonTypesystemRule extends AbstractNonTypesyst
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "concept", false), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
       return;
     }
-    if (!(ListSequence.fromList(methodDeclarations).isEmpty())) {
+    if (!(ListSequence.<SNode>fromList(methodDeclarations).isEmpty())) {
       boolean notImplementedMethods = false;
       for (SNode cm : methodDeclarations) {
-        if (!(ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "method", true)).contains(cm))) {
+        if (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(nodeToCheck, "method", true)).contains(cm))) {
           notImplementedMethods = true;
         }
       }

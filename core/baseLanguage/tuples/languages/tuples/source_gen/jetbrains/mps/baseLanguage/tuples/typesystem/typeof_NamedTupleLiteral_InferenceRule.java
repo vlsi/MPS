@@ -32,16 +32,16 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
   }
 
   public void applyRule(final SNode literal, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(literal, "componentRef", true)).count() == ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(literal, "tupleDeclaration", false))).foldLeft(0, new ILeftCombinator<SNode, Integer>() {
+    if (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(literal, "componentRef", true)).count() == ListSequence.<SNode>fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(literal, "tupleDeclaration", false))).foldLeft(0, new ILeftCombinator<SNode, Integer>() {
       public Integer combine(Integer s, SNode ntd) {
-        return s + ListSequence.fromList(SLinkOperations.getTargets(ntd, "component", true)).count();
+        return s + ListSequence.<SNode>fromList(SLinkOperations.getTargets(ntd, "component", true)).count();
       }
     }))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(literal, "Invalid components number", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239579091243", null, errorTarget);
     }
-    Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
-    for (SNode cmpRef : ListSequence.fromList(SLinkOperations.getTargets(literal, "componentRef", true))) {
+    Map<SNode, List<SNode>> mmap = MapSequence.<SNode,List<SNode>>fromMap(new HashMap<SNode, List<SNode>>());
+    for (SNode cmpRef : ListSequence.<SNode>fromList(SLinkOperations.getTargets(literal, "componentRef", true))) {
       SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(typeCheckingContext, SLinkOperations.getTarget(SLinkOperations.getTarget(cmpRef, "componentDeclaration", false), "type", true), mmap);
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(cmpRef, "value", true);
@@ -50,17 +50,17 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
       }
     }
     List<SNode> PTYPES = new ArrayList<SNode>();
-    for (SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(literal, "tupleDeclaration", false), "typeVariableDeclaration", true))) {
-      List<SNode> nodes = MapSequence.fromMap(mmap).get(foo);
+    for (SNode foo : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(literal, "tupleDeclaration", false), "typeVariableDeclaration", true))) {
+      List<SNode> nodes = MapSequence.<SNode,List<SNode>>fromMap(mmap).get(foo);
       final SNode PTYPE_typevar_1239968089672 = typeCheckingContext.createNewRuntimeTypesVariable();
-      if (ListSequence.fromList(nodes).isNotEmpty()) {
+      if (ListSequence.<SNode>fromList(nodes).isNotEmpty()) {
         {
           SNode _nodeToCheck_1029348928467 = literal;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968096090", 0, null);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(PTYPE_typevar_1239968089672), (SNode) ListSequence.fromList(nodes).first(), _info_12389875345);
+          typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(PTYPE_typevar_1239968089672), (SNode) ListSequence.<SNode>fromList(nodes).first(), _info_12389875345);
         }
       }
-      ListSequence.fromList(PTYPES).addElement(typeCheckingContext.getRepresentative(PTYPE_typevar_1239968089672));
+      ListSequence.<SNode>fromList(PTYPES).addElement(typeCheckingContext.getRepresentative(PTYPE_typevar_1239968089672));
     }
     {
       SNode _nodeToCheck_1029348928467 = literal;

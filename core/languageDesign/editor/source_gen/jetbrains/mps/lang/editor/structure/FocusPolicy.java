@@ -33,11 +33,11 @@ public enum FocusPolicy {
   }
 
   public static List<FocusPolicy> getConstants() {
-    List<FocusPolicy> list = ListSequence.fromList(new LinkedList<FocusPolicy>());
-    ListSequence.fromList(list).addElement(FocusPolicy.noAttraction);
-    ListSequence.fromList(list).addElement(FocusPolicy.attractsFocus);
-    ListSequence.fromList(list).addElement(FocusPolicy.firstEditableCell);
-    ListSequence.fromList(list).addElement(FocusPolicy.attractsRecursively);
+    List<FocusPolicy> list = ListSequence.<FocusPolicy>fromList(new LinkedList<FocusPolicy>());
+    ListSequence.<FocusPolicy>fromList(list).addElement(FocusPolicy.noAttraction);
+    ListSequence.<FocusPolicy>fromList(list).addElement(FocusPolicy.attractsFocus);
+    ListSequence.<FocusPolicy>fromList(list).addElement(FocusPolicy.firstEditableCell);
+    ListSequence.<FocusPolicy>fromList(list).addElement(FocusPolicy.attractsRecursively);
     return list;
   }
 

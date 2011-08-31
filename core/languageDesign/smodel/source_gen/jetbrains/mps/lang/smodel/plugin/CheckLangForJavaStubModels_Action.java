@@ -37,7 +37,7 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language;
+    return ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")) instanceof Language;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -56,12 +56,12 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
@@ -69,11 +69,11 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Language language = ((Language) ((IModule) MapSequence.fromMap(_params).get("module")));
-      Set<String> langStubModels = SetSequence.fromSet(new HashSet<String>());
-      Set<String> otherStubModels = SetSequence.fromSet(new HashSet<String>());
-      for (EditableSModelDescriptor md : SetSequence.fromSet(language.getAspectModelDescriptors())) {
-        for (SModelReference model : ListSequence.fromList(SModelOperations.getImportedModelUIDs(md.getSModel()))) {
+      Language language = ((Language) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")));
+      Set<String> langStubModels = SetSequence.<String>fromSet(new HashSet<String>());
+      Set<String> otherStubModels = SetSequence.<String>fromSet(new HashSet<String>());
+      for (EditableSModelDescriptor md : SetSequence.<EditableSModelDescriptor>fromSet(language.getAspectModelDescriptors())) {
+        for (SModelReference model : ListSequence.<SModelReference>fromList(SModelOperations.getImportedModelUIDs(md.getSModel()))) {
           if (model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(LanguageID.JAVA))) {
             SModelDescriptor langModelForStub = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model.getLongName()));
             String modelName = model.getSModelFqName().toString();
@@ -86,21 +86,21 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
         }
       }
       String langStubsMsg = "";
-      for (String modelName : SetSequence.fromSet(langStubModels)) {
+      for (String modelName : SetSequence.<String>fromSet(langStubModels)) {
         langStubsMsg += "  " + modelName + "\n";
       }
       String otherStubsMsg = "";
-      for (String modelName : SetSequence.fromSet(otherStubModels)) {
+      for (String modelName : SetSequence.<String>fromSet(otherStubModels)) {
         otherStubsMsg += "  " + modelName + "\n";
       }
-      String message = ((SetSequence.fromSet(langStubModels).isEmpty() ?
+      String message = ((SetSequence.<String>fromSet(langStubModels).isEmpty() ?
         "No language stub models" :
         "Language stub models: \n" + langStubsMsg
-      )) + "\n" + ((SetSequence.fromSet(otherStubModels).isEmpty() ?
+      )) + "\n" + ((SetSequence.<String>fromSet(otherStubModels).isEmpty() ?
         "No other stub models" :
         "Other stub models: \n" + otherStubsMsg
       ));
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), message);
+      JOptionPane.showMessageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), message);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CheckLangForJavaStubModels", t);
     }

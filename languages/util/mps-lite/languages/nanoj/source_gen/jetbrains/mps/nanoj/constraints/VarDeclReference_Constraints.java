@@ -42,14 +42,14 @@ public class VarDeclReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+            List<SNode> result = ListSequence.<SNode>fromList(new ArrayList<SNode>());
             SNode currentStatement = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.nanoj.structure.NanoStatement", true, false);
             while (currentStatement != null) {
               SNode currentBlock = SNodeOperations.getAncestorWhereConceptInList(currentStatement, new String[]{"jetbrains.mps.nanoj.structure.NanoStatementList"}, false, false);
               if ((currentBlock == null)) {
                 break;
               }
-              for (SNode statement : ListSequence.fromList(SNodeOperations.getChildren(currentBlock)).where(new IWhereFilter<SNode>() {
+              for (SNode statement : ListSequence.<SNode>fromList(SNodeOperations.getChildren(currentBlock)).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return SNodeOperations.isInstanceOf(it, "jetbrains.mps.nanoj.structure.NanoStatement");
                 }
@@ -57,7 +57,7 @@ public class VarDeclReference_Constraints extends BaseConstraintsDescriptor {
                 if (statement == currentStatement) {
                   break;
                 }
-                ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(statement, null, false, new String[]{})));
+                ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(statement, null, false, new String[]{})));
               }
               currentStatement = SNodeOperations.getAncestor(currentBlock, "jetbrains.mps.nanoj.structure.NanoStatement", true, false);
             }

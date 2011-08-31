@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNode;
 
 public class EditableUIPropertyAccessCode_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_aaoztm_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "8938819815716373408");
@@ -41,7 +41,7 @@ public class EditableUIPropertyAccessCode_Constraints extends BaseConstraintsDes
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "uiObject", false), "property", true)).where(new IWhereFilter<SNode>() {
+            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "uiObject", false), "property", true)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode p) {
                 return SNodeOperations.isInstanceOf(p, "jetbrains.mps.ui.modeling.structure.EditableUIProperty");
               }

@@ -51,18 +51,18 @@ public class FlipInequality_Intention extends BaseIntention implements Intention
     }
     SLinkOperations.setTarget(newNode, "rightExpression", SLinkOperations.getTarget(node, "leftExpression", true), true);
     SLinkOperations.setTarget(newNode, "leftExpression", SLinkOperations.getTarget(node, "rightExpression", true), true);
-    ListSequence.fromList(SLinkOperations.getTargets(newNode, "afterEquations", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "afterEquations", true)));
-    ListSequence.fromList(SLinkOperations.getTargets(newNode, "afterGroups", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "afterGroups", true)));
-    ListSequence.fromList(SLinkOperations.getTargets(newNode, "beforeEquations", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "beforeEquations", true)));
-    ListSequence.fromList(SLinkOperations.getTargets(newNode, "beforeGroups", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "beforeGroups", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(newNode, "afterEquations", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "afterEquations", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(newNode, "afterGroups", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "afterGroups", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(newNode, "beforeEquations", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "beforeEquations", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(newNode, "beforeGroups", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "beforeGroups", true)));
     SPropertyOperations.set(newNode, "checkOnly", "" + SPropertyOperations.getBoolean(node, "checkOnly"));
     SLinkOperations.setTarget(newNode, "errorString", SLinkOperations.getTarget(node, "errorString", true), true);
-    ListSequence.fromList(SLinkOperations.getTargets(newNode, "helginsIntention", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "helginsIntention", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(newNode, "helginsIntention", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "helginsIntention", true)));
     SLinkOperations.setTarget(newNode, "inequationGroup", SLinkOperations.getTarget(node, "inequationGroup", true), true);
     SPropertyOperations.set(newNode, "inequationPriority", "" + SPropertyOperations.getInteger_def(node, "inequationPriority", "0"));
     SPropertyOperations.set(newNode, "label", SPropertyOperations.getString(node, "label"));
     SLinkOperations.setTarget(newNode, "nodeToCheck", SLinkOperations.getTarget(node, "nodeToCheck", true), true);
-    ListSequence.fromList(SLinkOperations.getTargets(newNode, "rulesToSkip", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "rulesToSkip", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(newNode, "rulesToSkip", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "rulesToSkip", true)));
     SNodeOperations.replaceWithAnother(node, newNode);
   }
 

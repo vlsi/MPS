@@ -25,14 +25,14 @@ public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runt
     List<SNode> res = new ArrayList<SNode>();
     if ((SLinkOperations.getTarget(ct, "container", false) != null)) {
       if ((SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false) != null)) {
-        ListSequence.fromList(res).addElement(new supertypesOf_ContainerType_SubtypingRule.QuotationClass_d3sbvm_a0a0a0a0b0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false), SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false)), "jetbrains.mps.ui.modeling.structure.UIObject"), typeCheckingContext));
+        ListSequence.<SNode>fromList(res).addElement(new supertypesOf_ContainerType_SubtypingRule.QuotationClass_d3sbvm_a0a0a0a0b0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false), SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false)), "jetbrains.mps.ui.modeling.structure.UIObject"), typeCheckingContext));
       }
-      ListSequence.fromList(res).addElement(new supertypesOf_ContainerType_SubtypingRule.QuotationClass_d3sbvm_a0a0b0b0a().createNode(SLinkOperations.getTarget(ct, "uiObject", false), typeCheckingContext));
+      ListSequence.<SNode>fromList(res).addElement(new supertypesOf_ContainerType_SubtypingRule.QuotationClass_d3sbvm_a0a0b0b0a().createNode(SLinkOperations.getTarget(ct, "uiObject", false), typeCheckingContext));
     }
     if ((SLinkOperations.getTarget(ct, "uiObject", false) != null)) {
-      ListSequence.fromList(res).addElement(new supertypesOf_ContainerType_SubtypingRule.QuotationClass_d3sbvm_a0a0a0c0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "uiObject", false), "extends", false), typeCheckingContext));
+      ListSequence.<SNode>fromList(res).addElement(new supertypesOf_ContainerType_SubtypingRule.QuotationClass_d3sbvm_a0a0a0c0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "uiObject", false), "extends", false), typeCheckingContext));
     }
-    ListSequence.fromList(res).addElement(new supertypesOf_ContainerType_SubtypingRule.QuotationClass_d3sbvm_a0a0d0a().createNode(SLinkOperations.getTarget(ct, "uiObject", false), typeCheckingContext));
+    ListSequence.<SNode>fromList(res).addElement(new supertypesOf_ContainerType_SubtypingRule.QuotationClass_d3sbvm_a0a0d0a().createNode(SLinkOperations.getTarget(ct, "uiObject", false), typeCheckingContext));
     return res;
   }
 

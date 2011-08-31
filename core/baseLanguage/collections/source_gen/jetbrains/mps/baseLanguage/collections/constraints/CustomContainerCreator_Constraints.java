@@ -69,12 +69,12 @@ public class CustomContainerCreator_Constraints extends BaseConstraintsDescripto
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode expr = SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Expression");
             return ((expr != null) ?
-              Sequence.fromIterable(CustomContainersUtil.containerDeclarations(SNodeOperations.getModel(expr), TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(expr), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), expr))).where(new IWhereFilter<SNode>() {
+              Sequence.<SNode>fromIterable(CustomContainersUtil.containerDeclarations(SNodeOperations.getModel(expr), TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(expr), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), expr))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return !(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(it, "containerType", true)), "jetbrains.mps.baseLanguage.collections.structure.MapType"));
                 }
               }) :
-              Sequence.fromIterable(Collections.<SNode>emptyList())
+              Sequence.<SNode>fromIterable(Collections.<SNode>emptyList())
             );
           }
 

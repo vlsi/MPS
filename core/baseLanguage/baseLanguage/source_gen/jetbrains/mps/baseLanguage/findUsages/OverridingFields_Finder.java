@@ -45,16 +45,16 @@ public class OverridingFields_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    for (SNode classNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
+    for (SNode classNode : ListSequence.<SNode>fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
       Iterable<SNode> fieldsOfSameKind;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
         fieldsOfSameKind = SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true);
       } else {
         fieldsOfSameKind = SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true);
       }
-      for (SNode field : Sequence.fromIterable(fieldsOfSameKind)) {
+      for (SNode field : Sequence.<SNode>fromIterable(fieldsOfSameKind)) {
         if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(node, "name")) && Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(field, "type", true)).equals(Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(node, "type", true)))) {
-          ListSequence.fromList(_results).addElement(field);
+          ListSequence.<SNode>fromList(_results).addElement(field);
         }
       }
     }

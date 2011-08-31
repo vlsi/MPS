@@ -29,8 +29,8 @@ public class typeof_DefaultMethodCallOperation_InferenceRule extends AbstractInf
     {
       SNode parameter;
       SNode argument;
-      Iterator<SNode> parameter_iterator = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)).iterator();
-      Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "actualArgument", true)).iterator();
+      Iterator<SNode> parameter_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)).iterator();
+      Iterator<SNode> argument_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(nodeToCheck, "actualArgument", true)).iterator();
       while (true) {
         if (!(parameter_iterator.hasNext())) {
           break;
@@ -47,7 +47,7 @@ public class typeof_DefaultMethodCallOperation_InferenceRule extends AbstractInf
         }
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "actualArgument", true)).count()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)).count() != ListSequence.<SNode>fromList(SLinkOperations.getTargets(nodeToCheck, "actualArgument", true)).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Number of parameters doesn't match", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854659855", null, errorTarget);

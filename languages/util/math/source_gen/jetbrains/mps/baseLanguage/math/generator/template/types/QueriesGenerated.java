@@ -209,7 +209,7 @@ public class QueriesGenerated {
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.QuotationClass_x583g4_a1a0a0qb().createNode())) {
       SNode et = MathUtil.getUnboxedElementType(TypeChecker.getInstance().getTypeOf(_context.getNode()));
       boolean flag = true;
-      for (SNode c : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "components", true))) {
+      for (SNode c : ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "components", true))) {
         if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(c), et))) {
           flag = false;
           break;
@@ -224,7 +224,7 @@ public class QueriesGenerated {
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.QuotationClass_x583g4_a1a0a0rb().createNode())) {
       SNode et = MathUtil.getUnboxedElementType(TypeChecker.getInstance().getTypeOf(_context.getNode()));
       boolean flag = true;
-      for (SNode c : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "components", true))) {
+      for (SNode c : ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "components", true))) {
         if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(c), et))) {
           flag = false;
           break;

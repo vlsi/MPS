@@ -33,7 +33,7 @@ public class QueriesGenerated {
   public static boolean createRootRule_Condition_1197658386740(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     // apply rule if at least one Plan exists in input model 
     List<SNode> plans = SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.samples.agreementLanguage.structure.Plan");
-    return ListSequence.fromList(plans).isNotEmpty();
+    return ListSequence.<SNode>fromList(plans).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_1197670052131(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -261,7 +261,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1197663295186(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> values = SLinkOperations.getTargets(_context.getNode(), "value", true);
-    return ListSequence.fromList(values).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.<SNode>fromList(values).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode value) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -279,7 +279,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_quantity_it = ListSequence.fromList(SLinkOperations.getTargets(value, "quantity", true)).iterator();
+                      this._2_quantity_it = ListSequence.<SNode>fromList(SLinkOperations.getTargets(value, "quantity", true)).iterator();
                     case 3:
                       if (!(this._2_quantity_it.hasNext())) {
                         this.__CP__ = 1;
@@ -313,7 +313,7 @@ __switch__:
 
   public static Iterable sourceNodesQuery_1197659602870(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> events = SLinkOperations.getTargets(_context.getNode(), "event", true);
-    return ListSequence.fromList(events).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.<SNode>fromList(events).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode event) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -331,7 +331,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_postingRule_it = ListSequence.fromList(SLinkOperations.getTargets(event, "postingRule", true)).iterator();
+                      this._2_postingRule_it = ListSequence.<SNode>fromList(SLinkOperations.getTargets(event, "postingRule", true)).iterator();
                     case 3:
                       if (!(this._2_postingRule_it.hasNext())) {
                         this.__CP__ = 1;

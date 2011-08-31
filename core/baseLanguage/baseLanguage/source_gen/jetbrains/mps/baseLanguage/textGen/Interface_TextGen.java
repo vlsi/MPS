@@ -28,18 +28,18 @@ public class Interface_TextGen extends SNodeTextGen {
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))), this.getSNode());
     }
-    if (!(ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.Interface")).contains(node))) {
+    if (!(ListSequence.<SNode>fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.Interface")).contains(node))) {
       this.append("static ");
     }
     this.append("interface ");
     this.append(JavaNameUtil.shortName(SPropertyOperations.getString(node, "name")));
     GenericDeclarationTextGen2.typeDeclarations(node, this);
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty()) {
       this.append(" extends ");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty()) {
+      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "extendedInterface", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).last()) {
+          if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).last()) {
             this.append(", ");
           }
         }
@@ -47,20 +47,20 @@ public class Interface_TextGen extends SNodeTextGen {
     }
     this.append(" {");
     this.increaseDepth();
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "staticField", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "staticField", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
-      BaseLanguageTextGen.newLine(ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true)).isNotEmpty(), this);
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
+      BaseLanguageTextGen.newLine(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "staticField", true)).isNotEmpty(), this);
+      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "method", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         }
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).isNotEmpty()) {
       this.appendNewLine();
       BaseClassConceptTextGen.innerClassifiers(node, this);
     }

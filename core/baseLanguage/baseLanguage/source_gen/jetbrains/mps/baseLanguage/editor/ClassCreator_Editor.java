@@ -143,7 +143,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_53xyyk_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() > 0;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() > 0;
   }
 
   public static class _Inline_53xyyk_a1a extends InlineCellProvider {

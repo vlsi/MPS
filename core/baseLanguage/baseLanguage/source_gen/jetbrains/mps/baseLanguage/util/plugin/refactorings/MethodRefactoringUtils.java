@@ -52,14 +52,14 @@ public class MethodRefactoringUtils {
         searchResults = FindUtils.getSearchResults(progressIndicator, method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder");
       }
 
-      for (SearchResult<SNode> result : ListSequence.fromList(searchResults.getSearchResults())) {
-        ListSequence.fromList(results).addElement(SNodeOperations.cast(result.getObject(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+      for (SearchResult<SNode> result : ListSequence.<SearchResult<SNode>>fromList(searchResults.getSearchResults())) {
+        ListSequence.<SNode>fromList(results).addElement(SNodeOperations.cast(result.getObject(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
       }
     }
     if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
       SearchResults<SNode> searchResults = FindUtils.getSearchResults(progressIndicator, method, GlobalScope.getInstance(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
-      for (SearchResult<SNode> result : ListSequence.fromList(searchResults.getSearchResults())) {
-        ListSequence.fromList(results).addElement(SNodeOperations.cast(result.getObject(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+      for (SearchResult<SNode> result : ListSequence.<SearchResult<SNode>>fromList(searchResults.getSearchResults())) {
+        ListSequence.<SNode>fromList(results).addElement(SNodeOperations.cast(result.getObject(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
       }
     }
     return results;

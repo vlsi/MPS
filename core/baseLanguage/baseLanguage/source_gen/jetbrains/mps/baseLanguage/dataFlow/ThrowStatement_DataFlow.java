@@ -20,7 +20,7 @@ public class ThrowStatement_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "throwable", true));
     SNode interrupt = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false);
     SNode tryCatch = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ITryCatchStatement", false, false);
-    if (tryCatch != null && (interrupt == null || ListSequence.fromList(SNodeOperations.getAncestors(tryCatch, null, false)).contains(interrupt))) {
+    if (tryCatch != null && (interrupt == null || ListSequence.<SNode>fromList(SNodeOperations.getAncestors(tryCatch, null, false)).contains(interrupt))) {
       for (SNode catchClause : ITryCatchStatement_Behavior.call_getCatchClauses_3718132079121388582(tryCatch)) {
         SNode caughtType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
         if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "throwable", true)), caughtType)) {

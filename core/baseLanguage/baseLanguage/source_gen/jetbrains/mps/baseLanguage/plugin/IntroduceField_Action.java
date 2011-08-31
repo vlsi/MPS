@@ -31,7 +31,7 @@ public class IntroduceField_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return IntroduceFieldRefactoring.isApplicable(((SNode) MapSequence.fromMap(_params).get("node"))) && !(((EditorComponent) MapSequence.fromMap(_params).get("component")).isReadOnly());
+    return IntroduceFieldRefactoring.isApplicable(((SNode) MapSequence.<String,Object>fromMap(_params).get("node"))) && !(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("component")).isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -54,21 +54,21 @@ public class IntroduceField_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.fromMap(_params).put("node", node);
+      MapSequence.<String,Object>fromMap(_params).put("node", node);
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("component", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("component") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("component", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("component") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
@@ -80,14 +80,14 @@ public class IntroduceField_Action extends GeneratedAction {
       final Wrappers._T<String> error = new Wrappers._T<String>();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          error.value = introducer.init(((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("component")));
+          error.value = introducer.init(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("component")));
         }
       });
       if (error.value == null) {
-        IntroduceFieldDialog dialog = new IntroduceFieldDialog(((Frame) MapSequence.fromMap(_params).get("frame")), introducer, ((EditorContext) MapSequence.fromMap(_params).get("context")));
+        IntroduceFieldDialog dialog = new IntroduceFieldDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), introducer, ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("context")));
         dialog.showDialog();
       } else {
-        JOptionPane.showMessageDialog(((EditorComponent) MapSequence.fromMap(_params).get("component")), error.value, "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("component")), error.value, "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "IntroduceField", t);

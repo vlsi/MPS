@@ -16,10 +16,10 @@ public class CommentLine_Behavior {
   }
 
   public static NodeCaretPair call_tryMergeToRight_439148907936414403(SNode thisNode, int index) {
-    if (index >= 0 && index + 1 < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).count() && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index + 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
-      SNode leftPart = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
+    if (index >= 0 && index + 1 < ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "part", true)).count() && SNodeOperations.isInstanceOf(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && SNodeOperations.isInstanceOf(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index + 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
+      SNode leftPart = SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
       int offset = SPropertyOperations.getString(leftPart, "text").length();
-      SNode rightPart = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index + 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
+      SNode rightPart = SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index + 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
 
       String text = ((StringUtils.isEmpty(SPropertyOperations.getString(leftPart, "text")) ?
         "" :

@@ -31,7 +31,7 @@ public class ShowMembers_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false) != null);
+    return (SNodeOperations.getAncestor(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false) != null);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -54,17 +54,17 @@ public class ShowMembers_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.fromMap(_params).put("node", node);
+      MapSequence.<String,Object>fromMap(_params).put("node", node);
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
@@ -75,14 +75,14 @@ public class ShowMembers_Action extends GeneratedAction {
       final Wrappers._T<List<SNode>> members = new Wrappers._T<List<SNode>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          members.value = IMemberContainer_Behavior.call_getMembers_1213877531970(SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false));
+          members.value = IMemberContainer_Behavior.call_getMembers_1213877531970(SNodeOperations.getAncestor(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false));
         }
       });
-      SNode snode = CommonChoosers.showDialogNodeChooser(((Frame) MapSequence.fromMap(_params).get("frame")), members.value);
+      SNode snode = CommonChoosers.showDialogNodeChooser(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), members.value);
       if (snode == null) {
         return;
       }
-      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).selectNode(snode);
+      ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).selectNode(snode);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowMembers", t);
     }

@@ -40,12 +40,12 @@ public class check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesyste
       return;
     }
 
-    boolean expressionInTemplate = ListSequence.fromList(SNodeOperations.getAncestors(expression, null, true)).where(new IWhereFilter<SNode>() {
+    boolean expressionInTemplate = ListSequence.<SNode>fromList(SNodeOperations.getAncestors(expression, null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment"))) != null;
       }
     }).isNotEmpty() || (SNodeOperations.getAncestor(expression, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", false, false) != null);
-    boolean classifierInTemplate = ListSequence.fromList(SNodeOperations.getAncestors(SLinkOperations.getTarget(expression, "classConcept", false), null, true)).where(new IWhereFilter<SNode>() {
+    boolean classifierInTemplate = ListSequence.<SNode>fromList(SNodeOperations.getAncestors(SLinkOperations.getTarget(expression, "classConcept", false), null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment"))) != null;
       }

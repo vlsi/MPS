@@ -14,7 +14,7 @@ public class MethodOptimizer {
   }
 
   public static void optimize(SNode body) {
-    SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).last();
+    SNode lastStatement = ListSequence.<SNode>fromList(SLinkOperations.getTargets(body, "statement", true)).last();
     if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
       SNode lastReturn = SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ReturnStatement");
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lastReturn, "expression", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) {
@@ -29,8 +29,8 @@ public class MethodOptimizer {
 
   public static void removeUnusedDeclarations(SNode body) {
     List<SNode> references = SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{});
-    for (final SNode declaration : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{}))) {
-      if (ListSequence.fromList(references).where(new IWhereFilter<SNode>() {
+    for (final SNode declaration : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{}))) {
+      if (ListSequence.<SNode>fromList(references).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SLinkOperations.getTarget(it, "variableDeclaration", false) == declaration;
         }
@@ -42,11 +42,11 @@ public class MethodOptimizer {
 
   public static void optimizeAssignmentFollowedByReturn(SNode body, SNode lastReturn, SNode variableReference) {
     List<SNode> statements = SLinkOperations.getTargets(body, "statement", true);
-    int size = ListSequence.fromList(statements).count();
+    int size = ListSequence.<SNode>fromList(statements).count();
     if (size < 2) {
       return;
     }
-    SNode beforeLastStatement = ListSequence.fromList(statements).getElement(size - 2);
+    SNode beforeLastStatement = ListSequence.<SNode>fromList(statements).getElement(size - 2);
     if (SNodeOperations.isInstanceOf(beforeLastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       SNode expressionStatement = SNodeOperations.cast(beforeLastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(expressionStatement, "expression", true), "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
@@ -64,11 +64,11 @@ public class MethodOptimizer {
 
   public static void optimizeVariableFollowedByReturn(SNode body, SNode lastReturn, SNode variableReference) {
     List<SNode> statements = SLinkOperations.getTargets(body, "statement", true);
-    int size = ListSequence.fromList(statements).count();
+    int size = ListSequence.<SNode>fromList(statements).count();
     if (size < 2) {
       return;
     }
-    SNode berforeLastStatement = ListSequence.fromList(statements).getElement(size - 2);
+    SNode berforeLastStatement = ListSequence.<SNode>fromList(statements).getElement(size - 2);
     if (SNodeOperations.isInstanceOf(berforeLastStatement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
       SNode declarationStatement = SNodeOperations.cast(berforeLastStatement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
       if (SLinkOperations.getTarget(declarationStatement, "localVariableDeclaration", true) == SLinkOperations.getTarget(variableReference, "variableDeclaration", false)) {

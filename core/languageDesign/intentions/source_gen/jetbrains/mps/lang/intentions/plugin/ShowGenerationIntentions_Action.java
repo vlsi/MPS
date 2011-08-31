@@ -55,8 +55,8 @@ public class ShowGenerationIntentions_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("editorContext") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorContext") == null) {
       return false;
     }
     return true;
@@ -64,7 +64,7 @@ public class ShowGenerationIntentions_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final EditorCell selectedCell = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell();
+      final EditorCell selectedCell = ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("editorContext")).getSelectedCell();
       int x = selectedCell.getX();
       int y = selectedCell.getY();
       if (selectedCell instanceof EditorCell_Label) {
@@ -85,7 +85,7 @@ public class ShowGenerationIntentions_Action extends GeneratedAction {
         return;
       }
 
-      RelativePoint relativePoint = new RelativePoint(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent(), new Point(x, y));
+      RelativePoint relativePoint = new RelativePoint(((EditorContext) MapSequence.<String,Object>fromMap(_params).get("editorContext")).getNodeEditorComponent(), new Point(x, y));
       popup.value.show(relativePoint);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowGenerationIntentions", t);

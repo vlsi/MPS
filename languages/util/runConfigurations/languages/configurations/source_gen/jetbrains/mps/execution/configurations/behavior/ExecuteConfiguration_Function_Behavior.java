@@ -34,9 +34,9 @@ public class ExecuteConfiguration_Function_Behavior {
 
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor") && (SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"), "debuggerConfiguration", true) != null)) {
-      return ListSequence.fromListAndArray(new ArrayList(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.Project_Parameter"), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter"));
+      return ListSequence.<SNode>fromListAndArray(new ArrayList(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.Project_Parameter"), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter"));
     }
-    return ListSequence.fromListAndArray(new ArrayList(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.Project_Parameter"));
+    return ListSequence.<SNode>fromListAndArray(new ArrayList(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.Project_Parameter"));
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {

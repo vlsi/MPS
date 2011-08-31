@@ -87,9 +87,9 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
             List<SNode> result = new ArrayList<SNode>();
             SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
             List<SNode> directSupers = SConceptOperations.getDirectSuperConcepts(enclosingConcept, false);
-            for (SNode concept : ListSequence.fromList(directSupers)) {
+            for (SNode concept : ListSequence.<SNode>fromList(directSupers)) {
               List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept);
-              ListSequence.fromList(result).addSequence(ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
+              ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(links).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   if (aggregation) {
                     return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference");

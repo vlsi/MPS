@@ -45,7 +45,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     if (!(isTestCase())) {
       return super.getTestMethods();
     }
-    return ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(SNodeOperations.cast(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))).<ITestNodeWrapper>select(new ISelector<SNode, ITestNodeWrapper>() {
+    return ListSequence.<SNode>fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(SNodeOperations.cast(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))).<ITestNodeWrapper>select(new ISelector<SNode, ITestNodeWrapper>() {
       public ITestNodeWrapper select(SNode it) {
         return TestNodeWrapperFactory.tryToWrap(it);
       }

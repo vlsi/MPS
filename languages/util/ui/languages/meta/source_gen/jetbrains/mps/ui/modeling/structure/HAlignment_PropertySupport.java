@@ -11,7 +11,7 @@ public class HAlignment_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<HAlignment> constants = ListSequence.fromList(HAlignment.getConstants()).iterator();
+    Iterator<HAlignment> constants = ListSequence.<HAlignment>fromList(HAlignment.getConstants()).iterator();
     while (constants.hasNext()) {
       HAlignment constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class HAlignment_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<HAlignment> constants = ListSequence.fromList(HAlignment.getConstants()).iterator();
+    Iterator<HAlignment> constants = ListSequence.<HAlignment>fromList(HAlignment.getConstants()).iterator();
     while (constants.hasNext()) {
       HAlignment constant = constants.next();
       if (value.equals(constant.getName())) {

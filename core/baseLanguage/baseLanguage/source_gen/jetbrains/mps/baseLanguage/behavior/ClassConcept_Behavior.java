@@ -42,10 +42,10 @@ public class ClassConcept_Behavior {
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = IMemberContainer_Behavior.callSuper_getMembers_1213877531970(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "field", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "constructor", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticInnerClassifiers", true)));
+    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "field", true)));
+    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)));
+    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "constructor", true)));
+    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "staticInnerClassifiers", true)));
     return members;
   }
 
@@ -65,7 +65,7 @@ public class ClassConcept_Behavior {
   }
 
   public static boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
-    if (SetSequence.fromSet(visited).contains(thisNode)) {
+    if (SetSequence.<SNode>fromSet(visited).contains(thisNode)) {
       LOG.error("circular hierarchy in class " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
       return false;
     }
@@ -80,7 +80,7 @@ public class ClassConcept_Behavior {
   }
 
   public static boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
-    if (SetSequence.fromSet(visited).contains(thisNode)) {
+    if (SetSequence.<SNode>fromSet(visited).contains(thisNode)) {
       LOG.error("circular hierarchy in class " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
       return false;
     }
@@ -93,7 +93,7 @@ public class ClassConcept_Behavior {
   }
 
   public static SNode call_getMainMethod_1213877355884(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return StaticMethodDeclaration_Behavior.call_isMainMethod_1213877536670(it);
       }
@@ -101,7 +101,7 @@ public class ClassConcept_Behavior {
   }
 
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    return Classifier_Behavior.callSuper_hasStaticMemebers_1214840444586(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept") || ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)).count() > 0;
+    return Classifier_Behavior.callSuper_hasStaticMemebers_1214840444586(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept") || ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)).count() > 0;
   }
 
   public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
@@ -123,7 +123,7 @@ public class ClassConcept_Behavior {
         continue;
       }
       if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(method, "isAbstract")) {
-        ListSequence.fromList(methods).addElement(method);
+        ListSequence.<SNode>fromList(methods).addElement(method);
       }
     }
     return methods;
@@ -150,7 +150,7 @@ public class ClassConcept_Behavior {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
         continue;
       }
-      ListSequence.fromList(methods).addElement(method);
+      ListSequence.<SNode>fromList(methods).addElement(method);
     }
     return methods;
   }
@@ -164,8 +164,8 @@ public class ClassConcept_Behavior {
 
   public static List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
     List<SNode> baseMethodDeclarations = new ArrayList<SNode>();
-    ListSequence.fromList(baseMethodDeclarations).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
-    ListSequence.fromList(baseMethodDeclarations).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)));
+    ListSequence.<SNode>fromList(baseMethodDeclarations).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "method", true)));
+    ListSequence.<SNode>fromList(baseMethodDeclarations).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)));
     return baseMethodDeclarations;
   }
 
@@ -222,10 +222,10 @@ public class ClassConcept_Behavior {
     SNode parent = SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
       List<SNode> args = new ArrayList<SNode>();
-      ListSequence.fromList(args).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "parameter", true)));
-      ListSequence.fromList(args).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "actualArgument", true)));
+      ListSequence.<SNode>fromList(args).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "parameter", true)));
+      ListSequence.<SNode>fromList(args).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "actualArgument", true)));
       for (SNode param : args) {
-        if (ListSequence.fromList(SNodeOperations.getDescendants(param, null, true, new String[]{})).contains(((SNode) expr))) {
+        if (ListSequence.<SNode>fromList(SNodeOperations.getDescendants(param, null, true, new String[]{})).contains(((SNode) expr))) {
           contextNode = parent;
           break;
         }

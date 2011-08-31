@@ -23,11 +23,11 @@ public class Path_Behavior {
   }
 
   public static String call_getFullPathWithoutMacro_1226511495568(SNode thisNode) {
-    if ((SLinkOperations.getTarget(thisNode, "compositePathComponent", true) == null) || ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true)).count() == 0) {
+    if ((SLinkOperations.getTarget(thisNode, "compositePathComponent", true) == null) || ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true)).count() == 0) {
       return "";
     }
     StringBuffer sb = new StringBuffer();
-    for (SNode component : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true))) {
+    for (SNode component : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true))) {
       sb.append(SPropertyOperations.getString(component, "path"));
       sb.append(File.separator);
     }
@@ -36,10 +36,10 @@ public class Path_Behavior {
   }
 
   public static String virtual_getName_1221141245424(SNode thisNode) {
-    if ((SLinkOperations.getTarget(thisNode, "compositePathComponent", true) == null) || ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true)).count() == 0) {
+    if ((SLinkOperations.getTarget(thisNode, "compositePathComponent", true) == null) || ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true)).count() == 0) {
       return "";
     }
-    return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true)).last(), "path");
+    return SPropertyOperations.getString(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true)).last(), "path");
   }
 
   public static File virtual_getFile_1233322718999(SNode thisNode) {
@@ -59,7 +59,7 @@ public class Path_Behavior {
     if (basePath == null) {
       basePath = "";
     }
-    for (SNode path : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true))) {
+    for (SNode path : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true))) {
       if (path == currentNode) {
         break;
       }

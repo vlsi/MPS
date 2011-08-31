@@ -28,7 +28,7 @@ public class ConceptFunction_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionReturnType")).first();
+    return ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionReturnType")).first();
   }
 
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
@@ -45,11 +45,11 @@ public class ConceptFunction_Behavior {
 
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     if (thisNode == null) {
-      return ListSequence.fromList(new ArrayList<SNode>());
+      return ListSequence.<SNode>fromList(new ArrayList<SNode>());
     }
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionParameter")));
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "applicableConceptFunctionParameter")));
+    ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionParameter")));
+    ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(thisNode, "applicableConceptFunctionParameter")));
     return (List<SNode>) result;
   }
 
@@ -57,7 +57,7 @@ public class ConceptFunction_Behavior {
     if (!(StatementList_Behavior.call_isOneLiner_1237538811451(SLinkOperations.getTarget(thisNode, "body", true)))) {
       return false;
     }
-    SNode stmt = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "body", true), "statement", true)).first();
+    SNode stmt = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "body", true), "statement", true)).first();
     return SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") || SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ReturnStatement");
   }
 
@@ -99,7 +99,7 @@ public class ConceptFunction_Behavior {
     } else {
       result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(expectedReturnType));
     }
-    if (ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionThrowsType")).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionThrowsType")).isNotEmpty()) {
       result.append(" throws ");
       boolean isFirstThrowable = true;
       for (SNode throwableType : SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionThrowsType")) {

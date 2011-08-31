@@ -21,7 +21,7 @@ public abstract class MethodDuplicatesProcessor extends DuplicatesProcessor<Meth
 
   protected List<EditorMessage> createEditorMessages(MethodMatch duplicate) {
     List<EditorMessage> result = new ArrayList();
-    for (SNode node : ListSequence.fromList(duplicate.getNodes())) {
+    for (SNode node : ListSequence.<SNode>fromList(duplicate.getNodes())) {
       result.add(new DefaultEditorMessage(node, Color.BLUE, null, this.myOwner));
     }
     return result;

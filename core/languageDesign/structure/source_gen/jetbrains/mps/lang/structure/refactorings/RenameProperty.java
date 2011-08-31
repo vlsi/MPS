@@ -59,7 +59,7 @@ public class RenameProperty extends BaseLoggableRefactoring {
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
+    List<SModel> result = ListSequence.<SModel>fromList(new ArrayList<SModel>());
     Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
     if (sourceLanguage == null) {
       return result;
@@ -67,7 +67,7 @@ public class RenameProperty extends BaseLoggableRefactoring {
 
     Map<IModule, List<SModel>> modelsMap = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedProject(), sourceLanguage);
     for (List<SModel> modelList : modelsMap.values()) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(modelList));
+      ListSequence.<SModel>fromList(result).addSequence(ListSequence.<SModel>fromList(modelList));
     }
     return result;
   }

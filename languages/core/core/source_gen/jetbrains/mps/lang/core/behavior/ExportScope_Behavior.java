@@ -45,7 +45,7 @@ public class ExportScope_Behavior {
   public static SNode getExportScope_4075196924244445285(SNode node) {
     // return effective ExportScope or null 
     /*
-      return AttributeOperations.getAttribute(ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
+      return AttributeOperations.getAttribute(ListSequence.<SNode>fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))) != null);
         }

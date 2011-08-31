@@ -31,19 +31,19 @@ public class DistribConfiguration_Behavior {
 
   public static List<SNode> call_getAvailableFolders_1230293856288(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "buildScriptConfiguration", false) == null)) {
-      return ListSequence.fromList(new LinkedList<SNode>());
+      return ListSequence.<SNode>fromList(new LinkedList<SNode>());
     }
     SNode layout = Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(thisNode, "buildScriptConfiguration", false));
     if ((layout == null)) {
-      return ListSequence.fromList(new LinkedList<SNode>());
+      return ListSequence.<SNode>fromList(new LinkedList<SNode>());
     }
     final SNode selectedConfiguration = SLinkOperations.getTarget(thisNode, "buildScriptConfiguration", false);
-    Iterable<SNode> seq = ListSequence.fromList(SLinkOperations.getTargets(layout, "component", true)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> seq = ListSequence.<SNode>fromList(SLinkOperations.getTargets(layout, "component", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Folder") && (ListSequence.fromList(SLinkOperations.getTargets(it, "configuration", true)).isEmpty() || ListSequence.fromList(SLinkOperations.getTargets(it, "configuration", true)).contains(selectedConfiguration));
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Folder") && (ListSequence.<SNode>fromList(SLinkOperations.getTargets(it, "configuration", true)).isEmpty() || ListSequence.<SNode>fromList(SLinkOperations.getTargets(it, "configuration", true)).contains(selectedConfiguration));
       }
     });
-    return Sequence.fromIterable(seq).<SNode>select(new ISelector<SNode, SNode>() {
+    return Sequence.<SNode>fromIterable(seq).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.build.packaging.structure.Folder");
       }
@@ -64,11 +64,11 @@ public class DistribConfiguration_Behavior {
 
   public static List<SNode> virtual_getAllVariable_1234864693585(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "buildScriptConfiguration", false) == null)) {
-      return ListSequence.fromList(new LinkedList<SNode>());
+      return ListSequence.<SNode>fromList(new LinkedList<SNode>());
     }
     SNode layout = Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(thisNode, "buildScriptConfiguration", false));
     if ((layout == null)) {
-      return ListSequence.fromList(new LinkedList<SNode>());
+      return ListSequence.<SNode>fromList(new LinkedList<SNode>());
     }
     return IVariableHolder_Behavior.call_getAllVariable_1234864693585(layout);
   }

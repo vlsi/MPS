@@ -27,7 +27,7 @@ public class UncommentStatements_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) != null) && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
+    return (SNodeOperations.getAncestor(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) != null) && !(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -53,13 +53,13 @@ public class UncommentStatements_Action extends GeneratedAction {
           node = null;
         }
       }
-      MapSequence.fromMap(_params).put("node", node);
+      MapSequence.<String,Object>fromMap(_params).put("node", node);
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
@@ -67,8 +67,8 @@ public class UncommentStatements_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNode commentedStatementsBlock = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false);
-      for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true))) {
+      SNode commentedStatementsBlock = SNodeOperations.getAncestor(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false);
+      for (SNode statement : ListSequence.<SNode>fromList(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true))) {
         SNodeOperations.insertPrevSiblingChild(commentedStatementsBlock, statement);
       }
       SNodeOperations.deleteNode(commentedStatementsBlock);

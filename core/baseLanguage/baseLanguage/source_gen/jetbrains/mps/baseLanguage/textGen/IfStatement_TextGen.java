@@ -26,7 +26,7 @@ public class IfStatement_TextGen extends SNodeTextGen {
     this.decreaseDepth();
     this.appendNewLine();
     this.appendWithIndent("}");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "elsifClauses", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
       }

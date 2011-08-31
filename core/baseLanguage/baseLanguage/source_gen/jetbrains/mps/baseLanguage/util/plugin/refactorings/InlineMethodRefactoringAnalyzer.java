@@ -37,7 +37,7 @@ public class InlineMethodRefactoringAnalyzer {
       public void run() {
         errors.append(InlineMethodRefactoringAnalyzer.this.getOverridingErrors(myOverriding));
         if (forAll) {
-          for (SearchResult<SNode> res : ListSequence.fromList(ussages.getSearchResults())) {
+          for (SearchResult<SNode> res : ListSequence.<SearchResult<SNode>>fromList(ussages.getSearchResults())) {
             InlineMethodRefactoringAnalyzer.this.appendRefactoringProblems(res.getObject(), errors);
           }
         } else {
@@ -50,9 +50,9 @@ public class InlineMethodRefactoringAnalyzer {
 
   private String getOverridingErrors(List<SNode> overridingMethods) {
     StringBuffer errors = new StringBuffer();
-    if (overridingMethods != null && ListSequence.fromList(overridingMethods).count() > 0) {
+    if (overridingMethods != null && ListSequence.<SNode>fromList(overridingMethods).count() > 0) {
       errors.append("Inlined method overriden by this methods: ");
-      for (SNode methodDeclaration : ListSequence.fromList(overridingMethods)) {
+      for (SNode methodDeclaration : ListSequence.<SNode>fromList(overridingMethods)) {
         errors.append(" ").append(SNodeOperations.getParent(methodDeclaration)).append(".").append(methodDeclaration);
       }
       errors.append(".\n");
@@ -79,7 +79,7 @@ public class InlineMethodRefactoringAnalyzer {
   }
 
   /*package*/ static boolean isContainsSelfCalls(SNode method) {
-    for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(method, null, false, new String[]{}))) {
+    for (SNode call : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(method, null, false, new String[]{}))) {
       if (MethodCallAdapter.isMethodCall(call)) {
         if (new MethodCallAdapter(call).getMethodDeclaration() == method) {
           return true;
@@ -91,7 +91,7 @@ public class InlineMethodRefactoringAnalyzer {
 
   /*package*/ static boolean isReturnBreaksExecitionFlow(SNode body) {
     Program program = DataFlowManager.getInstance().buildProgramFor(body);
-    for (Instruction instruction : ListSequence.fromList(program.getInstructions())) {
+    for (Instruction instruction : ListSequence.<Instruction>fromList(program.getInstructions())) {
       if (instruction instanceof RetInstruction) {
         Instruction next = program.get(instruction.getIndex() + 1);
         while (!(next.equals(program.getEnd()))) {
@@ -99,10 +99,10 @@ public class InlineMethodRefactoringAnalyzer {
             return true;
           }
           Set<Instruction> succ = next.succ();
-          if (SetSequence.fromSet(succ).count() != 1) {
+          if (SetSequence.<Instruction>fromSet(succ).count() != 1) {
             return true;
           }
-          next = SetSequence.fromSet(succ).first();
+          next = SetSequence.<Instruction>fromSet(succ).first();
         }
       }
     }

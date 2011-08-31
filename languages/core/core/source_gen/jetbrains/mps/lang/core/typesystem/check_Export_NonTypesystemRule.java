@@ -40,7 +40,7 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
       }
     }
     // check references 
-    for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
+    for (SReference ref : Sequence.<SReference>fromIterable(SNodeOperations.getReferences(node))) {
       if (!(ExportScope_Behavior.checkExport_2565736246230031479(false, SLinkOperations.getTargetNode(ref), namespace))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

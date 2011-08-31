@@ -82,7 +82,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> result = ListSequence.fromList(new ArrayList<String>());
+      List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
       if (nodeType != null) {
         List<String> names = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
@@ -94,7 +94,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
             name :
             NameUtil.capitalize(name)
           );
-          ListSequence.fromList(result).addElement(prefix + mainName + suffix);
+          ListSequence.<String>fromList(result).addElement(prefix + mainName + suffix);
         }
       }
       return result;

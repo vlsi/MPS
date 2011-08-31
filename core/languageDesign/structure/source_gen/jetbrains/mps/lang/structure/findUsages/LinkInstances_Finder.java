@@ -41,7 +41,7 @@ public class LinkInstances_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     // collect roles 
-    Set<String> roles = SetSequence.fromSet(new HashSet<String>());
+    Set<String> roles = SetSequence.<String>fromSet(new HashSet<String>());
     SNode curNode = node;
     do {
       SetSequence.fromSet(roles).addElement(SPropertyOperations.getString(curNode, "role"));
@@ -54,16 +54,16 @@ public class LinkInstances_Finder extends GeneratedFinder {
     }
     boolean isChild = SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference");
     // find instances and link examples 
-    for (SNode instance : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, indicator))) {
-      for (String role : SetSequence.fromSet(roles)) {
+    for (SNode instance : ListSequence.<SNode>fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, indicator))) {
+      for (String role : SetSequence.<String>fromSet(roles)) {
         if (isChild) {
-          for (SNode child : ListSequence.fromList(instance.getChildren(role))) {
-            ListSequence.fromList(_results).addElement(child);
+          for (SNode child : ListSequence.<SNode>fromList(instance.getChildren(role))) {
+            ListSequence.<SNode>fromList(_results).addElement(child);
           }
         } else {
           SNode referent = instance.getReferent(role);
           if (referent != null) {
-            ListSequence.fromList(_results).addElement(referent);
+            ListSequence.<SNode>fromList(_results).addElement(referent);
           }
         }
       }

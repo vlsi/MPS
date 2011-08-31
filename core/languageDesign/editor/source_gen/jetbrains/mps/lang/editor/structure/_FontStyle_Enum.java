@@ -34,12 +34,12 @@ public enum _FontStyle_Enum {
   }
 
   public static List<_FontStyle_Enum> getConstants() {
-    List<_FontStyle_Enum> list = ListSequence.fromList(new LinkedList<_FontStyle_Enum>());
-    ListSequence.fromList(list).addElement(_FontStyle_Enum.bold);
-    ListSequence.fromList(list).addElement(_FontStyle_Enum.italic);
-    ListSequence.fromList(list).addElement(_FontStyle_Enum.boldItalic);
-    ListSequence.fromList(list).addElement(_FontStyle_Enum.plain);
-    ListSequence.fromList(list).addElement(_FontStyle_Enum.query);
+    List<_FontStyle_Enum> list = ListSequence.<_FontStyle_Enum>fromList(new LinkedList<_FontStyle_Enum>());
+    ListSequence.<_FontStyle_Enum>fromList(list).addElement(_FontStyle_Enum.bold);
+    ListSequence.<_FontStyle_Enum>fromList(list).addElement(_FontStyle_Enum.italic);
+    ListSequence.<_FontStyle_Enum>fromList(list).addElement(_FontStyle_Enum.boldItalic);
+    ListSequence.<_FontStyle_Enum>fromList(list).addElement(_FontStyle_Enum.plain);
+    ListSequence.<_FontStyle_Enum>fromList(list).addElement(_FontStyle_Enum.query);
     return list;
   }
 

@@ -32,10 +32,10 @@ public enum AnnotationLinkStereotype {
   }
 
   public static List<AnnotationLinkStereotype> getConstants() {
-    List<AnnotationLinkStereotype> list = ListSequence.fromList(new LinkedList<AnnotationLinkStereotype>());
-    ListSequence.fromList(list).addElement(AnnotationLinkStereotype.node);
-    ListSequence.fromList(list).addElement(AnnotationLinkStereotype.link);
-    ListSequence.fromList(list).addElement(AnnotationLinkStereotype.property);
+    List<AnnotationLinkStereotype> list = ListSequence.<AnnotationLinkStereotype>fromList(new LinkedList<AnnotationLinkStereotype>());
+    ListSequence.<AnnotationLinkStereotype>fromList(list).addElement(AnnotationLinkStereotype.node);
+    ListSequence.<AnnotationLinkStereotype>fromList(list).addElement(AnnotationLinkStereotype.link);
+    ListSequence.<AnnotationLinkStereotype>fromList(list).addElement(AnnotationLinkStereotype.property);
     return list;
   }
 

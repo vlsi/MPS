@@ -18,27 +18,27 @@ public class ConceptDeclaration_Behavior {
 
   public static List<SNode> virtual_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "extends", false));
+    ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(thisNode, "extends", false));
     for (SNode interfaceConceptReference : SLinkOperations.getTargets(thisNode, "implements", true)) {
-      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(interfaceConceptReference, "intfc", false));
+      ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(interfaceConceptReference, "intfc", false));
     }
     return result;
   }
 
   public static List<SNode> call_getAllMethodsInPriorityOrder_9106339407519386338(SNode thisNode) {
-    List<SNode> methods = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> methods = ListSequence.<SNode>fromList(new ArrayList<SNode>());
 
-    ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "method", true)));
+    ListSequence.<SNode>fromList(methods).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "method", true)));
     SNode extendsNode = ((SLinkOperations.getTarget(thisNode, "extends", false) != null) ?
       SLinkOperations.getTarget(thisNode, "extends", false) :
       SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")
     );
     if (extendsNode != thisNode) {
       // todo: more clearly! 
-      ListSequence.fromList(methods).addSequence(ListSequence.fromList(ConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386338(extendsNode)));
+      ListSequence.<SNode>fromList(methods).addSequence(ListSequence.<SNode>fromList(ConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386338(extendsNode)));
     }
 
-    for (SNode interfaceConcept : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implements", true)).where(new IWhereFilter<SNode>() {
+    for (SNode interfaceConcept : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "implements", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "intfc", false) != null);
       }
@@ -47,7 +47,7 @@ public class ConceptDeclaration_Behavior {
         return SLinkOperations.getTarget(it, "intfc", false);
       }
     })) {
-      ListSequence.fromList(methods).addSequence(ListSequence.fromList(InterfaceConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386413(interfaceConcept)));
+      ListSequence.<SNode>fromList(methods).addSequence(ListSequence.<SNode>fromList(InterfaceConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386413(interfaceConcept)));
     }
 
     return methods;

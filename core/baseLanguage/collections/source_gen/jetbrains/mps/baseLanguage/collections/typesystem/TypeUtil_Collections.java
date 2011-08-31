@@ -56,7 +56,7 @@ public class TypeUtil_Collections {
     SNode javaIterable = SNodeOperations.cast(SModelUtil.findNodeByFQName("java.lang.Iterable", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), scope), "jetbrains.mps.baseLanguage.structure.Classifier");
     SNode javaIterableType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(javaIterableType, "classifier", javaIterable, false);
-    ListSequence.fromList(SLinkOperations.getTargets(javaIterableType, "parameter", true)).addElement(entityType);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(javaIterableType, "parameter", true)).addElement(entityType);
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, javaIterableType)) {
       return new TypeUtil_Collections.QuotationClass_kv7ms9_a0a0x0a().createNode(SNodeOperations.copyNode(entity));
     }

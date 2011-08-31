@@ -47,12 +47,12 @@ public class SequenceOperation_Constraints extends BaseConstraintsDescriptor {
       SNode opnd = SLinkOperations.getTarget(SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
       if ((opnd != null)) {
         SNode opndtype = TypeChecker.getInstance().getTypeOf(opnd);
-        for (final SNode cld : ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), "conceptLinkDeclaration", true)).where(new IWhereFilter<SNode>() {
+        for (final SNode cld : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), "conceptLinkDeclaration", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return "expectedOperandType".equals(SPropertyOperations.getString(it, "name"));
           }
         })) {
-          for (SNode exptype : ListSequence.fromList(SLinkOperations.getTargets(_context.getChildConcept(), "conceptLink", true)).where(new IWhereFilter<SNode>() {
+          for (SNode exptype : ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getChildConcept(), "conceptLink", true)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return cld == SLinkOperations.getTarget(it, "conceptLinkDeclaration", false);
             }

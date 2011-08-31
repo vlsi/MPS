@@ -30,12 +30,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~List"), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~ArrayList"), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~LinkedList")));
+        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~List"), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~ArrayList"), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~LinkedList")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListType", null);
-        SLinkOperations.setTarget(result, "elementType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
+        SLinkOperations.setTarget(result, "elementType", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, result);
       }
 
@@ -57,7 +57,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForAll(node, "size", ListSequence.fromList(new ArrayList<ParameterType>()));
+        return ListMigrationUtil.isApplicableForAll(node, "size", ListSequence.<ParameterType>fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -82,13 +82,13 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "get", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT));
+        return ListMigrationUtil.isApplicableForLists(node, "get", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode access = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression", null);
         SLinkOperations.setTarget(access, "list", SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), true);
-        SLinkOperations.setTarget(access, "index", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(access, "index", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), access);
       }
 
@@ -110,7 +110,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "clear", ListSequence.fromList(new ArrayList<ParameterType>()));
+        return ListMigrationUtil.isApplicableForLists(node, "clear", ListSequence.<ParameterType>fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -135,12 +135,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "add", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.ANY));
+        return ListMigrationUtil.isApplicableForLists(node, "add", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.ANY));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddElementOperation", null);
-        SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, opration);
       }
 
@@ -162,13 +162,13 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "add", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT, ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "add", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT, ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation", null);
-        SLinkOperations.setTarget(operation, "index", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
-        SLinkOperations.setTarget(operation, "element", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()), true);
+        SLinkOperations.setTarget(operation, "index", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(operation, "element", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
 
@@ -190,7 +190,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForAll(node, "isEmpty", ListSequence.fromList(new ArrayList<ParameterType>()));
+        return ListMigrationUtil.isApplicableForAll(node, "isEmpty", ListSequence.<ParameterType>fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -215,13 +215,13 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "set", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT, ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "set", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT, ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SetElementOperation", null);
-        SLinkOperations.setTarget(operation, "index", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
-        SLinkOperations.setTarget(operation, "element", SNodeOperations.copyNode(ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).toListSequence()).getElement(1)), true);
+        SLinkOperations.setTarget(operation, "index", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(operation, "element", SNodeOperations.copyNode(ListSequence.<SNode>fromList(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).toListSequence()).getElement(1)), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
 
@@ -243,12 +243,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "remove", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT));
+        return ListMigrationUtil.isApplicableForLists(node, "remove", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation", null);
-        SLinkOperations.setTarget(operation, "index", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(operation, "index", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
 
@@ -270,12 +270,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "remove", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "remove", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation", null);
-        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
 
@@ -297,12 +297,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "removeAll", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "removeAll", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation", null);
-        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
 
@@ -324,12 +324,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "indexOf", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "indexOf", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation", null);
-        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
 
@@ -351,12 +351,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForAll(node, "contains", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForAll(node, "contains", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ContainsOperation", null);
-        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
 
@@ -378,12 +378,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "addAll", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "addAll", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation", null);
-        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
 
@@ -405,12 +405,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "addFirst", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "addFirst", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation", null);
-        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
 
@@ -432,12 +432,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "addLast", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForLists(node, "addLast", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation", null);
-        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
 
@@ -459,7 +459,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "removeFirst", ListSequence.fromList(new ArrayList<ParameterType>()));
+        return ListMigrationUtil.isApplicableForLists(node, "removeFirst", ListSequence.<ParameterType>fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -484,14 +484,14 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return eq_2ocuwj_a0a0a0d0a0a0s0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "ArrayList") && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1 && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() <= 1;
+        return eq_2ocuwj_a0a0a0d0a0a0s0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "ArrayList") && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1 && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() <= 1;
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null);
-        SLinkOperations.setTarget(result, "elementType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
-        if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
-          SLinkOperations.setTarget(result, "copyFrom", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(result, "elementType", ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
+        if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
+          SLinkOperations.setTarget(result, "copyFrom", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         }
         SNodeOperations.replaceWithAnother(node, result);
       }
@@ -514,12 +514,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return eq_2ocuwj_a0a0a0d0a0a0t0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "LinkedList") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
+        return eq_2ocuwj_a0a0a0d0a0a0t0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "LinkedList") && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isEmpty() && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", null);
-        SLinkOperations.setTarget(result, "elementType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
+        SLinkOperations.setTarget(result, "elementType", ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
         SNodeOperations.replaceWithAnother(node, result);
       }
 
@@ -541,12 +541,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Set"), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~HashSet"), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~LinkedHashSet")));
+        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Set"), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~HashSet"), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~LinkedHashSet")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SetType", null);
-        SLinkOperations.setTarget(result, "elementType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
+        SLinkOperations.setTarget(result, "elementType", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, result);
       }
 
@@ -568,12 +568,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForSet(node, "add", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForSet(node, "add", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation", null);
-        SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, opration);
       }
 
@@ -595,12 +595,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForSet(node, "addAll", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForSet(node, "addAll", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation", null);
-        SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, opration);
       }
 
@@ -622,12 +622,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForSet(node, "removeAll", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForSet(node, "removeAll", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation", null);
-        SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, opration);
       }
 
@@ -649,12 +649,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForSet(node, "remove", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForSet(node, "remove", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation", null);
-        SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, opration);
       }
 
@@ -676,14 +676,14 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return eq_2ocuwj_a0a0a0d0a0a0z0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "HashSet") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() <= 1 && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
+        return eq_2ocuwj_a0a0a0d0a0a0z0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "HashSet") && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() <= 1 && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", null);
-        SLinkOperations.setTarget(result, "elementType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
-        if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
-          SLinkOperations.setTarget(result, "copyFrom", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(result, "elementType", ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
+        if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
+          SLinkOperations.setTarget(result, "copyFrom", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         }
         SNodeOperations.replaceWithAnother(node, result);
       }
@@ -706,14 +706,14 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return eq_2ocuwj_a0a0a0d0a0a0ab0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "LinkedHashSet") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() <= 1 && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
+        return eq_2ocuwj_a0a0a0d0a0a0ab0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "LinkedHashSet") && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() <= 1 && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 1;
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator", null);
-        SLinkOperations.setTarget(result, "elementType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
-        if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
-          SLinkOperations.setTarget(result, "copyFrom", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(result, "elementType", ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
+        if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
+          SLinkOperations.setTarget(result, "copyFrom", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         }
         SNodeOperations.replaceWithAnother(node, result);
       }
@@ -736,7 +736,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForIterator(node, "hasNext", ListSequence.fromList(new ArrayList<ParameterType>()));
+        return ListMigrationUtil.isApplicableForIterator(node, "hasNext", ListSequence.<ParameterType>fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -762,7 +762,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForIterator(node, "next", ListSequence.fromList(new ArrayList<ParameterType>()));
+        return ListMigrationUtil.isApplicableForIterator(node, "next", ListSequence.<ParameterType>fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -788,7 +788,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForLists(node, "iterator", ListSequence.fromList(new ArrayList<ParameterType>()));
+        return ListMigrationUtil.isApplicableForLists(node, "iterator", ListSequence.<ParameterType>fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -814,12 +814,12 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Iterator")));
+        return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Iterator")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.IteratorType", null);
-        SLinkOperations.setTarget(result, "elementType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
+        SLinkOperations.setTarget(result, "elementType", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, result);
       }
 

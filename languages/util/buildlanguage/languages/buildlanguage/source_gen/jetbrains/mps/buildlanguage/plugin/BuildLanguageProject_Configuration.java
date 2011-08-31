@@ -165,7 +165,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
   }
 
   public Object[] createMakeTask() {
-    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNode>(), this.getNode().getNode())};
+    return new Object[]{ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), this.getNode().getNode())};
   }
 
   public class MyState {

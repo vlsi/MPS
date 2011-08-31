@@ -24,7 +24,7 @@ public class check_StringSwitchCase_NonTypesystemRule extends AbstractNonTypesys
 
   public void applyRule(final SNode switchStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // checking case elements 
-    Set<String> caseElements = SetSequence.fromSet(new HashSet());
+    Set<String> caseElements = SetSequence.<String>fromSet(new HashSet());
     for (SNode caseElement : SLinkOperations.getTargets(switchStatement, "case", true)) {
       if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(caseElement, "expression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"))) {
         {
@@ -33,7 +33,7 @@ public class check_StringSwitchCase_NonTypesystemRule extends AbstractNonTypesys
         }
       } else {
         String current = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(caseElement, "expression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
-        if (SetSequence.fromSet(caseElements).contains(current)) {
+        if (SetSequence.<String>fromSet(caseElements).contains(current)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(caseElement, "expression", true), "Case expressions should be unique", "r:ed059f83-fdac-4e67-8269-91684666291c(jetbrains.mps.baseLanguage.jdk7.typesystem)", "3446170115498222133", null, errorTarget);

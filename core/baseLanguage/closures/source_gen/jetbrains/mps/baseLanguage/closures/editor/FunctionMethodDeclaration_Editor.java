@@ -348,11 +348,11 @@ public class FunctionMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_s8y0yt_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
   }
 
   private static boolean renderingCondition_s8y0yt_a8a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() > 0;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() > 0;
   }
 
   private static boolean renderingCondition_s8y0yt_a01a(SNode node, EditorContext editorContext, IScope scope) {

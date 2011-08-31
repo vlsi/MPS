@@ -52,7 +52,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   private final TestToolbarPanel myActionToolComponent;
   private final Project myProject;
   private final FailedTestOccurenceNavigator myTestNavigator;
-  private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
+  private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.<_FunctionTypes._void_P0_E0>fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
 
   public UnitTestViewComponent(Project project, IOperationContext context, ConsoleView console, TestRunState testRunState, _FunctionTypes._void_P0_E0 closeListener) {
     this.myProject = project;
@@ -132,11 +132,11 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   }
 
   public void addCloseListener(_FunctionTypes._void_P0_E0 listener) {
-    ListSequence.fromList(this.myListeners).addElement(listener);
+    ListSequence.<_FunctionTypes._void_P0_E0>fromList(this.myListeners).addElement(listener);
   }
 
   public void invokeCloseListeners() {
-    for (_FunctionTypes._void_P0_E0 listener : ListSequence.fromList(this.myListeners)) {
+    for (_FunctionTypes._void_P0_E0 listener : ListSequence.<_FunctionTypes._void_P0_E0>fromList(this.myListeners)) {
       listener.invoke();
     }
   }

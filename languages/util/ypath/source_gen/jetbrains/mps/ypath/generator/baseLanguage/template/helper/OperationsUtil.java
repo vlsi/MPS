@@ -23,21 +23,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class OperationsUtil {
   public static List<SNode> substituteApplicableOperations(SNode wildCardOp) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(wildCardOp, "usedFeature", false), "jetbrains.mps.ypath.structure.IParamFeature") && (SLinkOperations.getTarget(wildCardOp, "paramObject", true) != null)) {
-      return ListSequence.fromListAndArray(new ArrayList<SNode>(), wildCardOp);
+      return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), wildCardOp);
     }
     SNode tpoe = SNodeOperations.getAncestor(wildCardOp, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
     final SNode nodeType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "operand", true));
     SNode tp = ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe);
     final TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(wildCardOp, "axis", "DESCENDANTS"));
     List<SNode> features = ((SLinkOperations.getTarget(wildCardOp, "usedFeature", false) == null) ?
-      ListSequence.fromList(SLinkOperations.getTargets(tp, "features", true)).where(new IWhereFilter<SNode>() {
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(tp, "features", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return TraversalAxisUtil.isAcceptableFeatureForAxis(it, axis);
         }
       }).toListSequence() :
-      ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(wildCardOp, "usedFeature", false))
+      ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(wildCardOp, "usedFeature", false))
     );
-    return ListSequence.fromList(features).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.<SNode>fromList(features).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -57,7 +57,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 6:
-                      this._6_po_it = ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IParamFeature"), nodeType)).iterator();
+                      this._6_po_it = ListSequence.<SNode>fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.IParamFeature"), nodeType)).iterator();
                     case 7:
                       if (!(this._6_po_it.hasNext())) {
                         this.__CP__ = 3;

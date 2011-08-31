@@ -437,7 +437,7 @@
     <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="31" startPosition="83" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="43370322128311168" fileName="HighLevelWatchableCreator_Constraints.java" startLine="44" startPosition="142" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="43370322128311176" fileName="HighLevelWatchableCreator_Constraints.java" startLine="46" startPosition="157" endLine="47" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="43370322128311176" fileName="HighLevelWatchableCreator_Constraints.java" startLine="46" startPosition="157" endLine="47" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43370322128311188" fileName="HighLevelWatchableCreator_Constraints.java" startLine="48" startPosition="13" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="53" startPosition="61" endLine="54" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="58" startPosition="7" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -452,7 +452,7 @@
     <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="29" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
     <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="26" startPosition="50" endLine="27" endPosition="83" />
     <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" />
-    <scopeInfo nodeId="43370322128311175" fileName="HighLevelWatchableCreator_Constraints.java" startLine="46" startPosition="157" endLine="47" endPosition="137" />
+    <scopeInfo nodeId="43370322128311175" fileName="HighLevelWatchableCreator_Constraints.java" startLine="46" startPosition="157" endLine="47" endPosition="151" />
     <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="53" startPosition="61" endLine="54" endPosition="58" />
     <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="43370322128311174" fileName="HighLevelWatchableCreator_Constraints.java" startLine="45" startPosition="56" endLine="48" endPosition="13">
@@ -478,7 +478,7 @@
     <nodeInfo nodeId="5264817233616806016" fileName="WatchableCreator_Constraints.java" startLine="31" startPosition="83" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5264817233616806016" fileName="WatchableCreator_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5264817233616809532" fileName="WatchableCreator_Constraints.java" startLine="44" startPosition="142" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5264817233616809539" fileName="WatchableCreator_Constraints.java" startLine="46" startPosition="157" endLine="47" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5264817233616809539" fileName="WatchableCreator_Constraints.java" startLine="46" startPosition="157" endLine="47" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5264817233616809554" fileName="WatchableCreator_Constraints.java" startLine="48" startPosition="13" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5264817233616806016" fileName="WatchableCreator_Constraints.java" startLine="53" startPosition="61" endLine="54" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5264817233616806016" fileName="WatchableCreator_Constraints.java" startLine="58" startPosition="7" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -493,7 +493,7 @@
     <nodeInfo nodeId="5264817233616806016" fileName="WatchableCreator_Constraints.java" startLine="29" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
     <scopeInfo nodeId="5264817233616806016" fileName="WatchableCreator_Constraints.java" startLine="26" startPosition="41" endLine="27" endPosition="74" />
     <scopeInfo nodeId="5264817233616806016" fileName="WatchableCreator_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" />
-    <scopeInfo nodeId="5264817233616809525" fileName="WatchableCreator_Constraints.java" startLine="46" startPosition="157" endLine="47" endPosition="137" />
+    <scopeInfo nodeId="5264817233616809525" fileName="WatchableCreator_Constraints.java" startLine="46" startPosition="157" endLine="47" endPosition="151" />
     <scopeInfo nodeId="5264817233616806016" fileName="WatchableCreator_Constraints.java" startLine="53" startPosition="61" endLine="54" endPosition="58" />
     <scopeInfo nodeId="5264817233616806016" fileName="WatchableCreator_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="5264817233616809524" fileName="WatchableCreator_Constraints.java" startLine="45" startPosition="56" endLine="48" endPosition="13">

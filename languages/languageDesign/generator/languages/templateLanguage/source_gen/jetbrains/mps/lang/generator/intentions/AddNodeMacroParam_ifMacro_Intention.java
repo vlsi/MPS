@@ -73,7 +73,7 @@ public class AddNodeMacroParam_ifMacro_Intention extends BaseIntention implement
     SLinkOperations.setTarget(dotExpression, "operand", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
     SNode expressionStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifMacro_Condition, "body", true), "statement", true)).addElement(expressionStatement);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifMacro_Condition, "body", true), "statement", true)).addElement(expressionStatement);
     SLinkOperations.setTarget(ifMacro, "conditionFunction", ifMacro_Condition, true);
     // set caret 
     editorContext.selectAndSetCaret(ifMacro, 1);
@@ -88,7 +88,7 @@ public class AddNodeMacroParam_ifMacro_Intention extends BaseIntention implement
     if (sourceNode == null) {
       return null;
     }
-    return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(sourceNode)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(sourceNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return DataTypeDeclaration_Behavior.call_isSimpleBoolean_1220268891062(SLinkOperations.getTarget(it, "dataType", false));
       }
@@ -96,13 +96,13 @@ public class AddNodeMacroParam_ifMacro_Intention extends BaseIntention implement
   }
 
   public static List<Intention> instances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
+    List<Intention> list = ListSequence.<Intention>fromList(new ArrayList<Intention>());
     List<SNode> paramList = parameter(node, editorContext);
     if (paramList != null) {
       for (SNode param : paramList) {
         AddNodeMacroParam_ifMacro_Intention intention = new AddNodeMacroParam_ifMacro_Intention();
         intention.myParameter = param;
-        ListSequence.fromList(list).addElement(intention);
+        ListSequence.<Intention>fromList(list).addElement(intention);
       }
     }
     return list;

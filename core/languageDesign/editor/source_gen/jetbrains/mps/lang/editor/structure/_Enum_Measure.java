@@ -31,9 +31,9 @@ public enum _Enum_Measure {
   }
 
   public static List<_Enum_Measure> getConstants() {
-    List<_Enum_Measure> list = ListSequence.fromList(new LinkedList<_Enum_Measure>());
-    ListSequence.fromList(list).addElement(_Enum_Measure.pixels);
-    ListSequence.fromList(list).addElement(_Enum_Measure.spaces);
+    List<_Enum_Measure> list = ListSequence.<_Enum_Measure>fromList(new LinkedList<_Enum_Measure>());
+    ListSequence.<_Enum_Measure>fromList(list).addElement(_Enum_Measure.pixels);
+    ListSequence.<_Enum_Measure>fromList(list).addElement(_Enum_Measure.spaces);
     return list;
   }
 

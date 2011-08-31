@@ -47,21 +47,21 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      Iterable<SNode> operators = ListSequence.<SNode>fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).<SNode>translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "operators", true);
         }
       });
-      return SLinkOperations.getTarget(BinaryOperationUtil.getNearestOverloaded(operation, leftOperandType, rightOperandType, Sequence.fromIterable(operators).toListSequence()), "returnType", true);
+      return SLinkOperations.getTarget(BinaryOperationUtil.getNearestOverloaded(operation, leftOperandType, rightOperandType, Sequence.<SNode>fromIterable(operators).toListSequence()), "returnType", true);
     }
 
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      Iterable<SNode> operators = ListSequence.<SNode>fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).<SNode>translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "operators", true);
         }
       });
-      return BinaryOperationUtil.hasOverloadedOperators(operation, leftOperandType, rightOperandType, Sequence.fromIterable(operators).toListSequence());
+      return BinaryOperationUtil.hasOverloadedOperators(operation, leftOperandType, rightOperandType, Sequence.<SNode>fromIterable(operators).toListSequence());
     }
 
     public static class QuotationClass_3ist9o_a0a0a0a0 {

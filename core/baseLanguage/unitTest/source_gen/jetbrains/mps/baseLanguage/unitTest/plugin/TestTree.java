@@ -44,7 +44,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
     methodNode.setState(testState);
     List<TestState> priorityList = Arrays.asList(TestState.IN_PROGRESS, TestState.PASSED, TestState.FAILED, TestState.ERROR, TestState.TERMINATED);
     TestState oldState = testCaseNode.getState();
-    if (ListSequence.fromList(priorityList).indexOf(oldState) < ListSequence.fromList(priorityList).indexOf(testState)) {
+    if (ListSequence.<TestState>fromList(priorityList).indexOf(oldState) < ListSequence.<TestState>fromList(priorityList).indexOf(testState)) {
       if (TestState.PASSED.equals(testState)) {
         for (MPSTreeNode method : testCaseNode) {
           if (!(TestState.PASSED.equals(((TestMethodTreeNode) method).getState()))) {
@@ -137,7 +137,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
     MPSTreeNode root = new TextTreeNode("Tests");
     this.setRootVisible(false);
     TestNameMap<TestCaseTreeNode, TestMethodTreeNode> temp = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
-    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(this.myState.getTestsMap()).keySet())) {
+    for (ITestNodeWrapper testCase : SetSequence.<ITestNodeWrapper>fromSet(MapSequence.fromMap(this.myState.getTestsMap()).keySet())) {
       if (testCase == null) {
         continue;
       }
@@ -147,7 +147,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
       }
       testCaseTreeNode.removeAllChildren();
       boolean hasFailedTest = false;
-      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(this.myState.getTestsMap()).get(testCase))) {
+      for (ITestNodeWrapper method : ListSequence.<ITestNodeWrapper>fromList(MapSequence.<ITestNodeWrapper,List<ITestNodeWrapper>>fromMap(this.myState.getTestsMap()).get(testCase))) {
         TestMethodTreeNode oldMethodTreeNode = this.myMap.get(testCase.getFqName(), method.getName());
         TestMethodTreeNode newMethodTreeNode = new TestMethodTreeNode(this.myOperationContext, method);
         TestMethodTreeNode methodTreeNode = (oldMethodTreeNode == null ?
@@ -178,11 +178,11 @@ public class TestTree extends MPSTree implements TestView, Disposable {
   }
 
   public boolean hasFailedTests() {
-    for (final ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(this.myState.getTestsMap()).keySet())) {
+    for (final ITestNodeWrapper testCase : SetSequence.<ITestNodeWrapper>fromSet(MapSequence.fromMap(this.myState.getTestsMap()).keySet())) {
       if (testCase == null) {
         continue;
       }
-      for (final ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(this.myState.getTestsMap()).get(testCase))) {
+      for (final ITestNodeWrapper method : ListSequence.<ITestNodeWrapper>fromList(MapSequence.<ITestNodeWrapper,List<ITestNodeWrapper>>fromMap(this.myState.getTestsMap()).get(testCase))) {
         final Wrappers._T<String> className = new Wrappers._T<String>();
         final Wrappers._T<String> methodName = new Wrappers._T<String>();
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -215,10 +215,10 @@ public class TestTree extends MPSTree implements TestView, Disposable {
   }
 
   public List<String> getMethodName() {
-    List<String> result = ListSequence.fromList(new ArrayList<String>());
+    List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
     for (List<ITestNodeWrapper> values : MapSequence.fromMap(this.myState.getTestsMap()).values()) {
       for (ITestNodeWrapper value : values) {
-        ListSequence.fromList(result).addElement(value.getName());
+        ListSequence.<String>fromList(result).addElement(value.getName());
       }
     }
     return result;
@@ -233,8 +233,8 @@ public class TestTree extends MPSTree implements TestView, Disposable {
   }
 
   public void selectFirstDefectNode() {
-    for (final ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(this.myState.getTestsMap()).keySet())) {
-      for (final ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(this.myState.getTestsMap()).get(testCase))) {
+    for (final ITestNodeWrapper testCase : SetSequence.<ITestNodeWrapper>fromSet(MapSequence.fromMap(this.myState.getTestsMap()).keySet())) {
+      for (final ITestNodeWrapper method : ListSequence.<ITestNodeWrapper>fromList(MapSequence.<ITestNodeWrapper,List<ITestNodeWrapper>>fromMap(this.myState.getTestsMap()).get(testCase))) {
         final Wrappers._T<String> className = new Wrappers._T<String>();
         final Wrappers._T<String> methodName = new Wrappers._T<String>();
         ModelAccess.instance().runReadAction(new Runnable() {

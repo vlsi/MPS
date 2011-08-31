@@ -111,6 +111,6 @@ public class TestMethod_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_ml6tu4_a5a(SNode node, EditorContext editorContext, IScope scope) {
     List<SNode> nextSiblings = SNodeOperations.getNextSiblings(node, false);
-    return ListSequence.fromList(nextSiblings).isNotEmpty();
+    return ListSequence.<SNode>fromList(nextSiblings).isNotEmpty();
   }
 }

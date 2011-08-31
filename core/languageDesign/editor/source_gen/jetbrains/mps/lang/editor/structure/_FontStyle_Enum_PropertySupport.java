@@ -11,7 +11,7 @@ public class _FontStyle_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<_FontStyle_Enum> constants = ListSequence.fromList(_FontStyle_Enum.getConstants()).iterator();
+    Iterator<_FontStyle_Enum> constants = ListSequence.<_FontStyle_Enum>fromList(_FontStyle_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _FontStyle_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class _FontStyle_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<_FontStyle_Enum> constants = ListSequence.fromList(_FontStyle_Enum.getConstants()).iterator();
+    Iterator<_FontStyle_Enum> constants = ListSequence.<_FontStyle_Enum>fromList(_FontStyle_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _FontStyle_Enum constant = constants.next();
       if (value.equals(constant.getName())) {

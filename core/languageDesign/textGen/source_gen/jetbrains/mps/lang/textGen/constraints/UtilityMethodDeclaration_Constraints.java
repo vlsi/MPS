@@ -36,7 +36,7 @@ public class UtilityMethodDeclaration_Constraints extends BaseConstraintsDescrip
         SNode textGen = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", false, false);
         if (textGen != null) {
           while (true) {
-            ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(textGen, "function", true)));
+            ListSequence.<SNode>fromList(methods).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(textGen, "function", true)));
             if ((SLinkOperations.getTarget(textGen, "baseTextGen", false) == null)) {
               break;
             }

@@ -57,7 +57,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ClassifierUpdater {
-  private static Set<Tuples._2<String, String>> reported = SetSequence.fromSet(new HashSet());
+  private static Set<Tuples._2<String, String>> reported = SetSequence.<Tuples._2<String, String>>fromSet(new HashSet());
   private static Logger LOG = Logger.getLogger(ClassifierUpdater.class);
 
   private IModule myModule;
@@ -113,42 +113,42 @@ public class ClassifierUpdater {
   private void updateTypeVariables(ASMClass cls, SNode result) {
     for (ASMTypeVariable tv : cls.getTypeParameters()) {
       SNode tvd = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a0a1().createNode(tv.getName());
-      ListSequence.fromList(SLinkOperations.getTargets(result, "typeVariableDeclaration", true)).addElement(tvd);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(result, "typeVariableDeclaration", true)).addElement(tvd);
       if (tv instanceof ASMFormalTypeParameter) {
         ASMFormalTypeParameter tp = (ASMFormalTypeParameter) tv;
         if (tp.getClassBound() != null) {
           SLinkOperations.setTarget(tvd, "bound", getTypeByASMType(tp.getClassBound(), null, result), true);
         }
         for (ASMType act : tp.getInterfaceBounds()) {
-          ListSequence.fromList(SLinkOperations.getTargets(tvd, "auxBounds", true)).addElement(SNodeOperations.cast(getTypeByASMType(act, null, result), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(tvd, "auxBounds", true)).addElement(SNodeOperations.cast(getTypeByASMType(act, null, result), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
         }
       }
     }
   }
 
   private void updateTypeVariables(ASMMethod method, SNode result, SNode cls) {
-    Map<ASMTypeVariable, SNode> typeVars = MapSequence.fromMap(new HashMap<ASMTypeVariable, SNode>());
+    Map<ASMTypeVariable, SNode> typeVars = MapSequence.<ASMTypeVariable,SNode>fromMap(new HashMap<ASMTypeVariable, SNode>());
     for (ASMTypeVariable tv : method.getTypeParameters()) {
       SNode tvd = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a1a2().createNode(tv.getName());
-      ListSequence.fromList(SLinkOperations.getTargets(result, "typeVariableDeclaration", true)).addElement(tvd);
-      MapSequence.fromMap(typeVars).put(tv, tvd);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(result, "typeVariableDeclaration", true)).addElement(tvd);
+      MapSequence.<ASMTypeVariable,SNode>fromMap(typeVars).put(tv, tvd);
     }
     for (ASMTypeVariable tv : method.getTypeParameters()) {
-      SNode tvd = MapSequence.fromMap(typeVars).get(tv);
+      SNode tvd = MapSequence.<ASMTypeVariable,SNode>fromMap(typeVars).get(tv);
       if (tv instanceof ASMFormalTypeParameter) {
         ASMFormalTypeParameter tp = (ASMFormalTypeParameter) tv;
         if (tp.getClassBound() != null) {
           SLinkOperations.setTarget(tvd, "bound", getTypeByASMType(tp.getClassBound(), result, cls), true);
         }
         for (ASMType act : tp.getInterfaceBounds()) {
-          ListSequence.fromList(SLinkOperations.getTargets(tvd, "auxBounds", true)).addElement(SNodeOperations.cast(getTypeByASMType(act, result, cls), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(tvd, "auxBounds", true)).addElement(SNodeOperations.cast(getTypeByASMType(act, result, cls), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
         }
       }
     }
   }
 
   private SNode findTypeVariableDeclaration(SNode genDecl, final String name) {
-    return ListSequence.fromList(SLinkOperations.getTargets(genDecl, "typeVariableDeclaration", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(genDecl, "typeVariableDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_ol94f8_a0a0a0a0a0a0a3(SPropertyOperations.getString(it, "name"), name);
       }
@@ -161,13 +161,13 @@ public class ClassifierUpdater {
 
   private void updateAnnotations(ASMClass ac, SNode cls) {
     for (ASMAnnotation annotation : ac.getAnnotations()) {
-      ListSequence.fromList(SLinkOperations.getTargets(cls, "annotation", true)).addElement(createAnnotation(annotation));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(cls, "annotation", true)).addElement(createAnnotation(annotation));
     }
   }
 
   private void updateExtendsForInterface(ASMClass ac, SNode intfc) {
     for (ASMType type : ac.getGenericInterfaces()) {
-      ListSequence.fromList(SLinkOperations.getTargets(intfc, "extendedInterface", true)).addElement(SNodeOperations.cast(getTypeByASMType(type, null, intfc), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(intfc, "extendedInterface", true)).addElement(SNodeOperations.cast(getTypeByASMType(type, null, intfc), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
     }
   }
 
@@ -177,7 +177,7 @@ public class ClassifierUpdater {
       SLinkOperations.setTarget(cls, "superclass", SNodeOperations.cast(getTypeByASMType(refSuperclass, null, cls), "jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     }
     for (ASMType type : ac.getGenericInterfaces()) {
-      ListSequence.fromList(SLinkOperations.getTargets(cls, "implementedInterface", true)).addElement(SNodeOperations.cast(getTypeByASMType(type, null, cls), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(cls, "implementedInterface", true)).addElement(SNodeOperations.cast(getTypeByASMType(type, null, cls), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
     }
   }
 
@@ -195,11 +195,11 @@ public class ClassifierUpdater {
       SNode decl = new ClassifierUpdater.QuotationClass_ol94f8_a0a3a0a8().createNode(createVisibility(field), getTypeByASMType(field.getGenericType(), null, cls), field.getName());
       SPropertyOperations.set(decl, "isDeprecated", "" + field.isDeprecated());
       for (ASMAnnotation annotation : field.getAnnotations()) {
-        ListSequence.fromList(SLinkOperations.getTargets(decl, "annotation", true)).addElement(createAnnotation(annotation));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(decl, "annotation", true)).addElement(createAnnotation(annotation));
       }
 
       decl.setId(ASMNodeId.createId(refCls, field));
-      ListSequence.fromList(SLinkOperations.getTargets(cls, "field", true)).addElement(decl);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(cls, "field", true)).addElement(decl);
     }
   }
 
@@ -219,12 +219,12 @@ public class ClassifierUpdater {
         SNode ecd = new ClassifierUpdater.QuotationClass_ol94f8_a0a1a3a0a9().createNode(field.getName());
 
         ecd.setId(ASMNodeId.createId(ac, field));
-        ListSequence.fromList(SLinkOperations.getTargets(enumClass, "enumConstant", true)).addElement(ecd);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(enumClass, "enumConstant", true)).addElement(ecd);
       } else {
         SNode decl = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a0d0a0j().createNode(createVisibility(field), getTypeByASMType(field.getGenericType(), null, cls), field.getName());
         SPropertyOperations.set(decl, "isDeprecated", "" + field.isDeprecated());
         for (ASMAnnotation annotation : field.getAnnotations()) {
-          ListSequence.fromList(SLinkOperations.getTargets(decl, "annotation", true)).addElement(createAnnotation(annotation));
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(decl, "annotation", true)).addElement(createAnnotation(annotation));
         }
         if (field.isFinal()) {
           SPropertyOperations.set(decl, "isFinal", "" + true);
@@ -239,7 +239,7 @@ public class ClassifierUpdater {
         }
 
         decl.setId(ASMNodeId.createId(ac, field));
-        ListSequence.fromList(SLinkOperations.getTargets(cls, "staticField", true)).addElement(decl);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(cls, "staticField", true)).addElement(decl);
       }
     }
   }
@@ -253,7 +253,7 @@ public class ClassifierUpdater {
       }
 
       md.setId(ASMNodeId.createAnnotationMethodId(refCls.getFqName(), m.getName()));
-      ListSequence.fromList(SLinkOperations.getTargets(annotation, "method", true)).addElement(md);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(annotation, "method", true)).addElement(md);
     }
   }
 
@@ -269,15 +269,15 @@ public class ClassifierUpdater {
       SNode constructor = new ClassifierUpdater.QuotationClass_ol94f8_a0a3a0a11().createNode(createVisibility(c), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null), SPropertyOperations.getString(cls, "name"));
       SPropertyOperations.set(constructor, "isDeprecated", "" + c.isDeprecated());
       for (ASMTypeVariable tv : c.getTypeParameters()) {
-        ListSequence.fromList(SLinkOperations.getTargets(constructor, "typeVariableDeclaration", true)).addElement(new ClassifierUpdater.QuotationClass_ol94f8_a0a0a0f0a0l().createNode(tv.getName()));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(constructor, "typeVariableDeclaration", true)).addElement(new ClassifierUpdater.QuotationClass_ol94f8_a0a0a0f0a0l().createNode(tv.getName()));
       }
       {
         ASMType pt;
         String pn;
         List<ASMAnnotation> pa;
-        Iterator<ASMType> pt_iterator = ListSequence.fromList(c.getGenericParameterTypes()).iterator();
-        Iterator<String> pn_iterator = ListSequence.fromList(c.getParameterNames()).iterator();
-        Iterator<List<ASMAnnotation>> pa_iterator = ListSequence.fromList(c.getParameterAnnotations()).iterator();
+        Iterator<ASMType> pt_iterator = ListSequence.<ASMType>fromList(c.getGenericParameterTypes()).iterator();
+        Iterator<String> pn_iterator = ListSequence.<String>fromList(c.getParameterNames()).iterator();
+        Iterator<List<ASMAnnotation>> pa_iterator = ListSequence.<List<ASMAnnotation>>fromList(c.getParameterAnnotations()).iterator();
         while (true) {
           if (!(pt_iterator.hasNext())) {
             break;
@@ -298,19 +298,19 @@ public class ClassifierUpdater {
 
             SNode pd = new ClassifierUpdater.QuotationClass_ol94f8_a0a2a6a6a6a0a11().createNode(getTypeByASMType(pt, constructor, cls), pn);
             addAnnotationsToParameter(pd, pa);
-            ListSequence.fromList(SLinkOperations.getTargets(constructor, "parameter", true)).addElement(pd);
+            ListSequence.<SNode>fromList(SLinkOperations.getTargets(constructor, "parameter", true)).addElement(pd);
           }
         }
       }
       for (ASMAnnotation annotation : c.getAnnotations()) {
-        ListSequence.fromList(SLinkOperations.getTargets(constructor, "annotation", true)).addElement(createAnnotation(annotation));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(constructor, "annotation", true)).addElement(createAnnotation(annotation));
       }
       for (ASMType exception : c.getExceptionTypes()) {
-        ListSequence.fromList(SLinkOperations.getTargets(constructor, "throwsItem", true)).addElement(getTypeByASMType(exception, constructor, cls));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(constructor, "throwsItem", true)).addElement(getTypeByASMType(exception, constructor, cls));
       }
 
       constructor.setId(ASMNodeId.createId(ac, c));
-      ListSequence.fromList(SLinkOperations.getTargets(cls, "constructor", true)).addElement(constructor);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(cls, "constructor", true)).addElement(constructor);
     }
   }
 
@@ -335,7 +335,7 @@ public class ClassifierUpdater {
       this.updateBaseMethod(m, md, cls);
 
       md.setId(ASMNodeId.createId(ac, m));
-      ListSequence.fromList(SLinkOperations.getTargets(cls, "method", true)).addElement(md);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(cls, "method", true)).addElement(md);
     }
   }
 
@@ -359,7 +359,7 @@ public class ClassifierUpdater {
       updateBaseMethod(m, md, cls);
 
       md.setId(ASMNodeId.createId(ac, m));
-      ListSequence.fromList(SLinkOperations.getTargets(cls, "staticMethod", true)).addElement(md);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(cls, "staticMethod", true)).addElement(md);
     }
   }
 
@@ -374,9 +374,9 @@ public class ClassifierUpdater {
       ASMType pt;
       String pn;
       List<ASMAnnotation> pa;
-      Iterator<ASMType> pt_iterator = ListSequence.fromList(m.getGenericParameterTypes()).iterator();
-      Iterator<String> pn_iterator = ListSequence.fromList(m.getParameterNames()).iterator();
-      Iterator<List<ASMAnnotation>> pa_iterator = ListSequence.fromList(m.getParameterAnnotations()).iterator();
+      Iterator<ASMType> pt_iterator = ListSequence.<ASMType>fromList(m.getGenericParameterTypes()).iterator();
+      Iterator<String> pn_iterator = ListSequence.<String>fromList(m.getParameterNames()).iterator();
+      Iterator<List<ASMAnnotation>> pa_iterator = ListSequence.<List<ASMAnnotation>>fromList(m.getParameterAnnotations()).iterator();
       while (true) {
         if (!(pt_iterator.hasNext())) {
           break;
@@ -393,15 +393,15 @@ public class ClassifierUpdater {
         {
           SNode pd = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a6a6a6a41().createNode(getTypeByASMType(pt, md, cls), pn);
           addAnnotationsToParameter(pd, pa);
-          ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).addElement(pd);
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(md, "parameter", true)).addElement(pd);
         }
       }
     }
     for (ASMType exception : m.getExceptionTypes()) {
-      ListSequence.fromList(SLinkOperations.getTargets(md, "throwsItem", true)).addElement(getTypeByASMType(exception, md, cls));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(md, "throwsItem", true)).addElement(getTypeByASMType(exception, md, cls));
     }
     for (ASMAnnotation annotation : m.getAnnotations()) {
-      ListSequence.fromList(SLinkOperations.getTargets(md, "annotation", true)).addElement(createAnnotation(annotation));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(md, "annotation", true)).addElement(createAnnotation(annotation));
     }
   }
 
@@ -443,7 +443,7 @@ public class ClassifierUpdater {
   }
 
   private void addAnnotationsToParameter(SNode pd, List<ASMAnnotation> anns) {
-    ListSequence.fromList(SLinkOperations.getTargets(pd, "annotation", true)).addSequence(ListSequence.fromList(anns).<SNode>select(new ISelector<ASMAnnotation, SNode>() {
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(pd, "annotation", true)).addSequence(ListSequence.<ASMAnnotation>fromList(anns).<SNode>select(new ISelector<ASMAnnotation, SNode>() {
       public SNode select(ASMAnnotation it) {
         return createAnnotation(it);
       }
@@ -456,9 +456,9 @@ public class ClassifierUpdater {
     addClassifierReference(result, "annotation", c);
     Map<String, Object> values = ((Map<String, Object>) annotation.getValues());
     for (String key : MapSequence.fromMap(values).keySet()) {
-      SNode value = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a4a91().createNode(getAnnotationValue(MapSequence.fromMap(values).get(key)));
+      SNode value = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a4a91().createNode(getAnnotationValue(MapSequence.<String,Object>fromMap(values).get(key)));
       addAnnotationMethodReference(value, "key", c, key);
-      ListSequence.fromList(SLinkOperations.getTargets(result, "value", true)).addElement(value);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(result, "value", true)).addElement(value);
     }
     return result;
   }
@@ -499,7 +499,7 @@ public class ClassifierUpdater {
     }
     if (value instanceof List) {
       List<Object> list = (List<Object>) value;
-      return new ClassifierUpdater.QuotationClass_ol94f8_a0b0l0u().createNode(ListSequence.fromList(list).<SNode>select(new ISelector<Object, SNode>() {
+      return new ClassifierUpdater.QuotationClass_ol94f8_a0b0l0u().createNode(ListSequence.<Object>fromList(list).<SNode>select(new ISelector<Object, SNode>() {
         public SNode select(Object it) {
           return getAnnotationValue(it);
         }
@@ -617,7 +617,7 @@ public class ClassifierUpdater {
       }
       toAdd.add(type);
     }
-    ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addSequence(ListSequence.fromList(toAdd));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(result, "parameter", true)).addSequence(ListSequence.<SNode>fromList(toAdd));
   }
 
   private void addClassifierReference(SNode sourceNode, String role, ASMClassType clsType) {
@@ -668,18 +668,18 @@ public class ClassifierUpdater {
 
     Set<SModelReference> models = getModelReferencesFor(packageName);
 
-    if (SetSequence.fromSet(models).isEmpty()) {
+    if (SetSequence.<SModelReference>fromSet(models).isEmpty()) {
       return SReference.create(role, source, null, targetNodeId, resolveInfo);
     }
 
-    if (SetSequence.fromSet(models).count() > 1) {
+    if (SetSequence.<SModelReference>fromSet(models).count() > 1) {
       for (SModelReference model : models) {
         SNodeOperations.getModel(source).addModelImport(model, false);
       }
       return new DynamicReference(role, source, new SModelReference(packageName, SModelStereotype.getStubStereotypeForId(getLanguageId())), resolveInfo);
     }
 
-    SModelReference model = SetSequence.fromSet(models).first();
+    SModelReference model = SetSequence.<SModelReference>fromSet(models).first();
     ModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(model).getModule().getModuleReference();
     SModelReference ref = StubHelper.uidForPackageInStubs(packageName, this.getLanguageId(), moduleRef);
     SNodeOperations.getModel(source).addModelImport(model, false);
@@ -689,10 +689,10 @@ public class ClassifierUpdater {
   private Set<SModelReference> getModelReferencesFor(String packageName) {
     Set<SModelReference> models = StubModelsResolver.getInstance().resolveModel(myModule, new SModelFqName(packageName, SModelStereotype.getStubStereotypeForId(this.getLanguageId())), null);
 
-    if (SetSequence.fromSet(models).isEmpty()) {
+    if (SetSequence.<SModelReference>fromSet(models).isEmpty()) {
       String moduleName = myModule.getModuleFqName();
       Tuples._2<String, String> p = MultiTuple.<String,String>from(packageName, moduleName);
-      if (!(SetSequence.fromSet(reported).contains(p))) {
+      if (!(SetSequence.<Tuples._2<String, String>>fromSet(reported).contains(p))) {
         SetSequence.fromSet(reported).addElement(p);
         if (IdeMain.getTestMode() == IdeMain.TestMode.NO_TEST) {
           String modelName = SNodeOperations.getModel(myClassifier).getLongName();

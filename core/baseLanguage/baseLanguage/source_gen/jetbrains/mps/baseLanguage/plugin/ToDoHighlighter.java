@@ -23,7 +23,7 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
   }
 
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
-    Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
+    Set<EditorMessage> messages = SetSequence.<EditorMessage>fromSet(new LinkedHashSet<EditorMessage>());
     SNode node = rootNode;
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
     for (SNode remark : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.RemarkStatement", false, new String[]{})) {

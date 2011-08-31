@@ -69,7 +69,7 @@ public class RulesFunctions_BaseLanguage {
   }
 
   public static Iterable<SNode> collectReturnStatements(SNode node) {
-    Iterable<SNode> returnStatements = ListSequence.fromList(SNodeOperations.getChildren(node)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> returnStatements = ListSequence.<SNode>fromList(SNodeOperations.getChildren(node)).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -87,7 +87,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 11:
-                      this._11_returnStmt_it = Sequence.fromIterable(collectReturnStatements(it)).iterator();
+                      this._11_returnStmt_it = Sequence.<SNode>fromIterable(collectReturnStatements(it)).iterator();
                     case 12:
                       if (!(this._11_returnStmt_it.hasNext())) {
                         this.__CP__ = 3;
@@ -163,7 +163,7 @@ __switch__:
 
   @InferenceMethod
   public static void inference_InstanceMethodCallOperation(final TypeCheckingContext typeCheckingContext, SNode imco, SNode returnType, SNode instanceType, SNode methodClassifier) {
-    Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
+    Map<SNode, List<SNode>> mmap = MapSequence.<SNode,List<SNode>>fromMap(new HashMap<SNode, List<SNode>>());
     RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, imco, returnType, mmap);
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariablesInternal(typeCheckingContext, methodClassifier, instanceType, mmap, imco);
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithMethodTypeVariables(typeCheckingContext, imco, mmap);
@@ -177,20 +177,20 @@ __switch__:
 
   @InferenceMethod
   public static void inference_matchConcreteTypesWithTypeVariablesInternal(final TypeCheckingContext typeCheckingContext, SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap, SNode nodeToCheck) {
-    if ((genericClassifier != null) && mmap != null && !(MapSequence.fromMap(mmap).isEmpty())) {
-      List<SNode> params = ListSequence.fromList(new ArrayList<SNode>());
+    if ((genericClassifier != null) && mmap != null && !(MapSequence.<SNode,List<SNode>>fromMap(mmap).isEmpty())) {
+      List<SNode> params = ListSequence.<SNode>fromList(new ArrayList<SNode>());
       for (SNode tvd : SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true)) {
-        List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);
+        List<SNode> nodes = MapSequence.<SNode,List<SNode>>fromMap(mmap).get(tvd);
         final SNode p_typevar_1228174472023 = typeCheckingContext.createNewRuntimeTypesVariable();
         if (nodes != null) {
-          SNode tvar = ListSequence.fromList(nodes).first();
+          SNode tvar = ListSequence.<SNode>fromList(nodes).first();
           {
             SNode _nodeToCheck_1029348928467 = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1228174300650", 0, null);
             typeCheckingContext.createEquation((SNode) tvar, (SNode) typeCheckingContext.getRepresentative(p_typevar_1228174472023), _info_12389875345);
           }
         }
-        ListSequence.fromList(params).addElement(typeCheckingContext.getRepresentative(p_typevar_1228174472023));
+        ListSequence.<SNode>fromList(params).addElement(typeCheckingContext.getRepresentative(p_typevar_1228174472023));
       }
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
@@ -202,12 +202,12 @@ __switch__:
 
   @InferenceMethod
   public static void inference_matchConcreteTypesWithMethodTypeVariables(final TypeCheckingContext typeCheckingContext, SNode methodCall, Map<SNode, List<SNode>> mmap) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty() && (SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) != null) && mmap != null && !(MapSequence.fromMap(mmap).isEmpty())) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty() && (SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) != null) && mmap != null && !(MapSequence.<SNode,List<SNode>>fromMap(mmap).isEmpty())) {
       {
         SNode tvd;
         SNode arg;
-        Iterator<SNode> tvd_iterator = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "typeVariableDeclaration", true)).iterator();
-        Iterator<SNode> arg_iterator = ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).iterator();
+        Iterator<SNode> tvd_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "typeVariableDeclaration", true)).iterator();
+        Iterator<SNode> arg_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).iterator();
         while (true) {
           if (!(tvd_iterator.hasNext())) {
             break;
@@ -218,9 +218,9 @@ __switch__:
           tvd = tvd_iterator.next();
           arg = arg_iterator.next();
           {
-            List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);
+            List<SNode> nodes = MapSequence.<SNode,List<SNode>>fromMap(mmap).get(tvd);
             if (nodes != null) {
-              SNode tvar = ListSequence.fromList(nodes).first();
+              SNode tvar = ListSequence.<SNode>fromList(nodes).first();
               {
                 SNode _nodeToCheck_1029348928467 = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7769835591074321262", 0, null);
@@ -236,9 +236,9 @@ __switch__:
   @InferenceMethod
   public static void inference_equateParametersAndReturnType(final TypeCheckingContext typeCheckingContext, final SNode mc, SNode returnType, Map<SNode, List<SNode>> mmap) {
     List<SNode> parameterDeclarations = SLinkOperations.getTargets(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "parameter", true);
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
-      Iterator<SNode> formalIterator = ListSequence.fromList(parameterDeclarations).iterator();
-      Iterator<SNode> actualIterator = ListSequence.fromList(SLinkOperations.getTargets(mc, "actualArgument", true)).iterator();
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.<SNode>fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
+      Iterator<SNode> formalIterator = ListSequence.<SNode>fromList(parameterDeclarations).iterator();
+      Iterator<SNode> actualIterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(mc, "actualArgument", true)).iterator();
       SNode formalParam = null;
       SNode actualParam;
       while (true) {
@@ -274,7 +274,7 @@ __switch__:
             {
               SNode componentType = SLinkOperations.getTarget(matchedNode_5ahx9e_f0b0g, "componentType", true);
               final SNode matchedType = inference_matchTypeWithTypeVariables(typeCheckingContext, componentType, mmap);
-              if (ListSequence.fromList(SLinkOperations.getTargets(mc, "actualArgument", true)).count() == ListSequence.fromList(parameterDeclarations).count()) {
+              if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(mc, "actualArgument", true)).count() == ListSequence.<SNode>fromList(parameterDeclarations).count()) {
                 // the actual parameter may appear to be an array instead of vararg 
                 final SNode actual = actualIterator.next();
                 {
@@ -314,8 +314,8 @@ __switch__:
       {
         SNode arg;
         SNode param;
-        Iterator<SNode> arg_iterator = ListSequence.fromList(SLinkOperations.getTargets(mc, "actualArgument", true)).iterator();
-        Iterator<SNode> param_iterator = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "parameter", true)).iterator();
+        Iterator<SNode> arg_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(mc, "actualArgument", true)).iterator();
+        Iterator<SNode> param_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "parameter", true)).iterator();
         while (true) {
           if (!(arg_iterator.hasNext())) {
             break;
@@ -355,12 +355,12 @@ __switch__:
   public static void inference_setConcreteUpperBorders(final TypeCheckingContext typeCheckingContext, Map<SNode, List<SNode>> mmap) {
     if (mmap != null) {
       for (SNode tvd : MapSequence.fromMap(mmap).keySet()) {
-        List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);
-        if (nodes != null && !(ListSequence.fromList(nodes).isEmpty())) {
+        List<SNode> nodes = MapSequence.<SNode,List<SNode>>fromMap(mmap).get(tvd);
+        if (nodes != null && !(ListSequence.<SNode>fromList(nodes).isEmpty())) {
           {
             SNode _nodeToCheck_1029348928467 = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8531167801199654648", 0, null);
-            typeCheckingContext.createLessThanInequality((SNode) ListSequence.fromList(nodes).first(), (SNode) TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091509920(tvd), false, true, _info_12389875345);
+            typeCheckingContext.createLessThanInequality((SNode) ListSequence.<SNode>fromList(nodes).first(), (SNode) TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091509920(tvd), false, true, _info_12389875345);
           }
         }
       }
@@ -408,7 +408,7 @@ __switch__:
       inference_mapTypeVariable(tvd, typeCheckingContext.getRepresentative(tvar_typevar_1203431658168), mmap);
       SNodeOperations.replaceWithAnother(type, typeCheckingContext.getRepresentative(tvar_typevar_1203431658168));
     } else {
-      List<SNode> children = ListSequence.fromListWithValues(new ArrayList<SNode>(), SNodeOperations.getChildren(type));
+      List<SNode> children = ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), SNodeOperations.getChildren(type));
       for (SNode chld : children) {
         inference_mapTypeVariables(typeCheckingContext, chld, mmap);
       }
@@ -420,12 +420,12 @@ __switch__:
   }
 
   private static void putTypeVariable(SNode tvd, SNode tvar, Map<SNode, List<SNode>> mmap) {
-    List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);
+    List<SNode> nodes = MapSequence.<SNode,List<SNode>>fromMap(mmap).get(tvd);
     if (nodes == null) {
       nodes = new ArrayList<SNode>();
-      MapSequence.fromMap(mmap).put(tvd, nodes);
+      MapSequence.<SNode,List<SNode>>fromMap(mmap).put(tvd, nodes);
     }
-    ListSequence.fromList(nodes).addElement(tvar);
+    ListSequence.<SNode>fromList(nodes).addElement(tvar);
   }
 
   public static boolean isWithinStatic(SNode node) {
@@ -470,7 +470,7 @@ __switch__:
         // can't be duplicated, is overriden 
         continue;
       }
-      if (ListSequence.fromList(SLinkOperations.getTargets(namesake, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(ownMethod, "parameter", true)).count()) {
+      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(namesake, "parameter", true)).count() != ListSequence.<SNode>fromList(SLinkOperations.getTargets(ownMethod, "parameter", true)).count()) {
         continue;
       }
       if (erasureSignature == null) {
@@ -495,19 +495,19 @@ __switch__:
 
   @CheckingMethod
   /*package*/ static void check(final TypeCheckingContext typeCheckingContext, Set<SNode> throwables, SNode mainNode, String message) {
-    List<SNode> throwTypes = ListSequence.fromListWithValues(new ArrayList<SNode>(), throwables);
-    ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
+    List<SNode> throwTypes = ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), throwables);
+    ListSequence.<SNode>fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode tt) {
         return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a1a0a0a0a0b0q_0().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a1a0a0a0a0b0q().createNode(typeCheckingContext));
       }
     });
-    if (ListSequence.fromList(throwTypes).isEmpty()) {
+    if (ListSequence.<SNode>fromList(throwTypes).isEmpty()) {
       return;
     }
     List<SNode> ancSLs = SNodeOperations.getAncestors(mainNode, "jetbrains.mps.baseLanguage.structure.StatementList", false);
     boolean use_quickfix = false;
     for (SNode anc : SNodeOperations.getAncestorsWhereConceptInList(mainNode, new String[]{"jetbrains.mps.baseLanguage.structure.TryStatement", "jetbrains.mps.baseLanguage.structure.TryCatchStatement", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false)) {
-      if (ListSequence.fromList(throwTypes).isEmpty()) {
+      if (ListSequence.<SNode>fromList(throwTypes).isEmpty()) {
         return;
       }
       {
@@ -521,9 +521,9 @@ __switch__:
             }
           }
           if (matches_5ahx9e_a1a5a61) {
-            if (ListSequence.fromList(ancSLs).contains(SLinkOperations.getTarget(matchedNode_5ahx9e_b0f0q, "body", true))) {
+            if (ListSequence.<SNode>fromList(ancSLs).contains(SLinkOperations.getTarget(matchedNode_5ahx9e_b0f0q, "body", true))) {
               for (final SNode cc : SLinkOperations.getTargets(matchedNode_5ahx9e_b0f0q, "catchClause", true)) {
-                ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
+                ListSequence.<SNode>fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
                   public boolean accept(SNode tt) {
                     return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, SLinkOperations.getTarget(SLinkOperations.getTarget(cc, "throwable", true), "type", true));
                   }
@@ -539,9 +539,9 @@ __switch__:
               }
             }
             if (matches_5ahx9e_b1a5a61) {
-              if (ListSequence.fromList(ancSLs).contains(SLinkOperations.getTarget(matchedNode_5ahx9e_b0f0q, "body", true))) {
+              if (ListSequence.<SNode>fromList(ancSLs).contains(SLinkOperations.getTarget(matchedNode_5ahx9e_b0f0q, "body", true))) {
                 for (final SNode cc : SLinkOperations.getTargets(matchedNode_5ahx9e_b0f0q, "catchClause", true)) {
-                  ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
+                  ListSequence.<SNode>fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
                     public boolean accept(SNode tt) {
                       return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, SLinkOperations.getTarget(SLinkOperations.getTarget(cc, "throwable", true), "type", true));
                     }
@@ -549,13 +549,13 @@ __switch__:
                 }
               }
             } else {
-              if (ListSequence.fromList(ancSLs).contains(IMethodLike_Behavior.call_getBody_1239354440022(SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike")))) {
+              if (ListSequence.<SNode>fromList(ancSLs).contains(IMethodLike_Behavior.call_getBody_1239354440022(SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike")))) {
                 SNode methodLike = SNodeOperations.cast(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike");
                 if (IMethodLike_Behavior.call_implicitThrows_4989157187872658723(methodLike)) {
-                  ListSequence.fromList(throwTypes).clear();
+                  ListSequence.<SNode>fromList(throwTypes).clear();
                 } else {
                   for (final SNode thr : IMethodLike_Behavior.call_getThrowableTypes_6204026822016975623(methodLike)) {
-                    ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
+                    ListSequence.<SNode>fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
                       public boolean accept(SNode tt) {
                         return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, thr);
                       }
@@ -569,11 +569,11 @@ __switch__:
           }
         }
       }
-      if (ListSequence.fromList(throwTypes).isEmpty()) {
+      if (ListSequence.<SNode>fromList(throwTypes).isEmpty()) {
         return;
       }
     }
-    if (!(ListSequence.fromList(throwTypes).isEmpty())) {
+    if (!(ListSequence.<SNode>fromList(throwTypes).isEmpty())) {
       String errorString = message;
       for (SNode exc : throwTypes) {
         errorString = errorString + " " + exc;
@@ -584,7 +584,7 @@ __switch__:
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mainNode, errorString, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4460871289557453850", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.AddExceptionToMethodSignature_QuickFix", false);
-            intentionProvider.putArgument("throwableType", SetSequence.fromSet(throwables).first());
+            intentionProvider.putArgument("throwableType", SetSequence.<SNode>fromSet(throwables).first());
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }
         }
@@ -601,7 +601,7 @@ __switch__:
     if (SNodeOperations.isInstanceOf(typeWithVars, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       SNode variableDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(typeWithVars, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
       if (MapSequence.fromMap(typeParamsToArgs).containsKey(variableDeclaration)) {
-        return SNodeOperations.copyNode(MapSequence.fromMap(typeParamsToArgs).get(variableDeclaration));
+        return SNodeOperations.copyNode(MapSequence.<SNode,SNode>fromMap(typeParamsToArgs).get(variableDeclaration));
       } else {
         return SNodeOperations.copyNode(typeWithVars);
       }
@@ -609,7 +609,7 @@ __switch__:
       SNode result = SNodeOperations.copyNode(typeWithVars);
       for (SNode tvr : SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})) {
         if (MapSequence.fromMap(typeParamsToArgs).containsKey(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false))) {
-          SNodeOperations.replaceWithAnother(tvr, SNodeOperations.copyNode(MapSequence.fromMap(typeParamsToArgs).get(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false))));
+          SNodeOperations.replaceWithAnother(tvr, SNodeOperations.copyNode(MapSequence.<SNode,SNode>fromMap(typeParamsToArgs).get(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false))));
         }
       }
       return result;

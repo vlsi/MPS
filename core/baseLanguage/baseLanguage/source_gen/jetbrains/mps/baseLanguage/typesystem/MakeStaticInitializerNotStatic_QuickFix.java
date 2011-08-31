@@ -21,7 +21,7 @@ public class MakeStaticInitializerNotStatic_QuickFix extends QuickFix_Runtime {
     if ((SLinkOperations.getTarget(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "instanceInitializer", true) == null)) {
       SLinkOperations.setNewChild(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "instanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
     }
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "instanceInitializer", true), "statementList", true), "statement", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]), "statementList", true), "statement", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "instanceInitializer", true), "statementList", true), "statement", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]), "statementList", true), "statement", true)));
     SNodeOperations.detachNode(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]));
     SNodeOperations.deleteNode(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]));
   }

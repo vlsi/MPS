@@ -18,18 +18,18 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
 
   private void replaceFields() {
     SNode classNode = SNodeOperations.getAncestor(this.myMoving, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    for (SNode field : ListSequence.fromList(SNodeOperations.getDescendants(this.myMoving, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", false, new String[]{}))) {
+    for (SNode field : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(this.myMoving, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", false, new String[]{}))) {
       SNodeOperations.replaceWithAnother(field, new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0b0a().createNode(classNode, SLinkOperations.getTarget(field, "variableDeclaration", false)));
     }
   }
 
   private void replaceMethods() {
     SNode classNode = SNodeOperations.getAncestor(this.myMoving, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(this.myMoving, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", false, new String[]{}))) {
+    for (SNode call : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(this.myMoving, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", false, new String[]{}))) {
       if (SLinkOperations.getTarget(call, "baseMethodDeclaration", false) != this.myMoving) {
         SNode newCall = new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0a1a1().createNode(classNode, SLinkOperations.getTarget(call, "baseMethodDeclaration", false));
-        ListSequence.fromList(SLinkOperations.getTargets(newCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)));
-        ListSequence.fromList(SLinkOperations.getTargets(newCall, "typeArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(call, "typeArgument", true)));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(newCall, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(call, "actualArgument", true)));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(newCall, "typeArgument", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(call, "typeArgument", true)));
         SNodeOperations.replaceWithAnother(call, newCall);
       }
     }
@@ -51,8 +51,8 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
       } else {
         newCall = new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0b0b0d().createNode(this.myDestination, this.myReplacing);
       }
-      ListSequence.fromList(SLinkOperations.getTargets(newCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)));
-      ListSequence.fromList(SLinkOperations.getTargets(newCall, "typeArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "typeArgument", true)));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(newCall, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(newCall, "typeArgument", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "typeArgument", true)));
       SNodeOperations.replaceWithAnother(usage, newCall);
     }
   }

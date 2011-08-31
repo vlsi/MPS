@@ -78,9 +78,9 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
   }
 
   public List<SNode> getNodes(SNode node) {
-    Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(node)));
-    return SetSequence.fromSet(nodes).toListSequence();
+    Set<SNode> nodes = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+    SetSequence.fromSet(nodes).addSequence(ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(node)));
+    return SetSequence.<SNode>fromSet(nodes).toListSequence();
   }
 
   public boolean isSingle() {
@@ -89,8 +89,8 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
 
   public List<SNode> getConcepts(final SNode node) {
     List<SNode> result = ConceptEditorHelper.getAvailableConceptAspects(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateSwitch")), node);
-    ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"));
-    ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"));
+    ListSequence.<SNode>fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"));
+    ListSequence.<SNode>fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"));
     boolean rootable = SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.getBoolean((SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), "rootable");
     boolean isInterface = SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
     if (rootable || isInterface) {
@@ -111,7 +111,7 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
           for (SNode nodeToAdd : SModelOperations.getRoots(structureModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
             SNode conceptToAdd = (SNode) nodeToAdd;
             if (SPropertyOperations.getBoolean(nodeToAdd, "rootable")) {
-              ListSequence.fromList(result).addElement(conceptToAdd);
+              ListSequence.<SNode>fromList(result).addElement(conceptToAdd);
             }
           }
         }
@@ -137,14 +137,14 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
     });
 
     final List<Generator> genList = language.value.getGenerators();
-    if (ListSequence.fromList(genList).isEmpty()) {
+    if (ListSequence.<Generator>fromList(genList).isEmpty()) {
       NewGeneratorDialog dialog = new NewGeneratorDialog(frame, language.value);
       dialog.showDialog();
       Generator createdGenerator = dialog.getResult();
       if (createdGenerator == null) {
         return null;
       }
-      ListSequence.fromList(genList).addElement(createdGenerator);
+      ListSequence.<Generator>fromList(genList).addElement(createdGenerator);
     }
 
     final List<SNode> mappings = new ArrayList<SNode>();
@@ -152,13 +152,13 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
       public void run() {
         for (Generator generator : genList) {
           for (SNode confAdapter : GenerationFacade.getOwnMappings(generator)) {
-            ListSequence.fromList(mappings).addElement((SNode) confAdapter);
+            ListSequence.<SNode>fromList(mappings).addElement((SNode) confAdapter);
           }
         }
       }
     });
 
-    if (ListSequence.fromList(mappings).isEmpty()) {
+    if (ListSequence.<SNode>fromList(mappings).isEmpty()) {
       // generator is present - this means we don't have template models or mappings 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
@@ -178,18 +178,18 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
           SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
           SPropertyOperations.set(node, "name", "main");
           SModelOperations.addRootNode(model, node);
-          ListSequence.fromList(mappings).addElement(node);
+          ListSequence.<SNode>fromList(mappings).addElement(node);
         }
       });
     }
 
     final Wrappers._T<SNode> mapping = new Wrappers._T<SNode>();
-    if (ListSequence.fromList(mappings).count() > 1) {
+    if (ListSequence.<SNode>fromList(mappings).count() > 1) {
       MappingDialog configurationDialog = new MappingDialog(project, language.value);
       configurationDialog.showDialog();
       mapping.value = configurationDialog.getResult();
     } else {
-      mapping.value = ListSequence.fromList(mappings).first();
+      mapping.value = ListSequence.<SNode>fromList(mappings).first();
     }
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {

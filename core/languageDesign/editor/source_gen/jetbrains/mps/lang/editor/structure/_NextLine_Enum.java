@@ -32,10 +32,10 @@ public enum _NextLine_Enum {
   }
 
   public static List<_NextLine_Enum> getConstants() {
-    List<_NextLine_Enum> list = ListSequence.fromList(new LinkedList<_NextLine_Enum>());
-    ListSequence.fromList(list).addElement(_NextLine_Enum.right);
-    ListSequence.fromList(list).addElement(_NextLine_Enum.next_line);
-    ListSequence.fromList(list).addElement(_NextLine_Enum.indented);
+    List<_NextLine_Enum> list = ListSequence.<_NextLine_Enum>fromList(new LinkedList<_NextLine_Enum>());
+    ListSequence.<_NextLine_Enum>fromList(list).addElement(_NextLine_Enum.right);
+    ListSequence.<_NextLine_Enum>fromList(list).addElement(_NextLine_Enum.next_line);
+    ListSequence.<_NextLine_Enum>fromList(list).addElement(_NextLine_Enum.indented);
     return list;
   }
 

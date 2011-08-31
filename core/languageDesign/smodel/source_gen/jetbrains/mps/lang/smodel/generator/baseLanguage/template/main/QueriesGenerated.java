@@ -203,7 +203,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1207344880832(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode opParm = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", false, new String[]{})).first();
+    SNode opParm = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", false, new String[]{})).first();
     return opParm != null;
   }
 
@@ -1247,7 +1247,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1207344929972(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", false, new String[]{})).first(), "conceptArgument", true);
+    return SLinkOperations.getTarget(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", false, new String[]{})).first(), "conceptArgument", true);
   }
 
   public static SNode sourceNodeQuery_1170443980567(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

@@ -35,7 +35,7 @@ public class ExtractMethod_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ExtractMethodFactory.isRefactoringAvailable(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))) && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
+    return ExtractMethodFactory.isRefactoringAvailable(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes"))) && !(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -60,24 +60,24 @@ public class ExtractMethod_Action extends GeneratedAction {
       if (nodes != null) {
       }
       if (error || nodes == null) {
-        MapSequence.fromMap(_params).put("nodes", null);
+        MapSequence.<String,Object>fromMap(_params).put("nodes", null);
       } else {
-        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
+        MapSequence.<String,Object>fromMap(_params).put("nodes", ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), nodes));
       }
     }
-    if (MapSequence.fromMap(_params).get("nodes") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("nodes") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
@@ -89,12 +89,12 @@ public class ExtractMethod_Action extends GeneratedAction {
       final Wrappers._T<ExtractMethodRefactoring> refactoring = new Wrappers._T<ExtractMethodRefactoring>();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          params.value = ExtractMethodFactory.createParameters(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
+          params.value = ExtractMethodFactory.createParameters(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes")));
           refactoring.value = ExtractMethodFactory.createRefactoring(params.value);
           params.value.setReturnType(refactoring.value.getMethodType());
         }
       });
-      ExtractMethodDialog dialog = new ExtractMethodDialog(((Frame) MapSequence.fromMap(_params).get("frame")), ((EditorContext) MapSequence.fromMap(_params).get("context")), params.value, refactoring.value);
+      ExtractMethodDialog dialog = new ExtractMethodDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("context")), params.value, refactoring.value);
       dialog.pack();
       dialog.showDialog();
     } catch (Throwable t) {

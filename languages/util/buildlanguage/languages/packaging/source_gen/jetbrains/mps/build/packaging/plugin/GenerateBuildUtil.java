@@ -55,7 +55,7 @@ public class GenerateBuildUtil {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModel model = descriptor.getSModel();
-        layout.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.build.packaging.structure.Layout")).first();
+        layout.value = ListSequence.<SNode>fromList(SModelOperations.getRoots(model, "jetbrains.mps.build.packaging.structure.Layout")).first();
       }
     });
     return layout.value;
@@ -75,9 +75,9 @@ public class GenerateBuildUtil {
     final _FunctionTypes._void_P0_E0 generate = new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         if (false && showWindow) {
-          result.value = GeneratorUIFacade.getInstance().generateModels(ProjectOperationContext.get(project), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), new BuildGenerationHandler(baseFolder.value), true, true);
+          result.value = GeneratorUIFacade.getInstance().generateModels(ProjectOperationContext.get(project), ListSequence.<SModelDescriptor>fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), new BuildGenerationHandler(baseFolder.value), true, true);
         } else {
-          result.value = GenerationFacade.generateModels(project, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), ProjectOperationContext.get(project), new BuildGenerationHandler(baseFolder.value), new EmptyProgressIndicator(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create());
+          result.value = GenerationFacade.generateModels(project, ListSequence.<SModelDescriptor>fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), ProjectOperationContext.get(project), new BuildGenerationHandler(baseFolder.value), new EmptyProgressIndicator(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create());
         }
       }
     };

@@ -54,7 +54,7 @@ public class NodeAttributeAccessQualifier_Constraints extends BaseConstraintsDes
             if (leftConcept.value == null) {
               leftConcept.value = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
             }
-            List<SNode> nodeAttrLinks = ListSequence.fromList(annotationLinks).where(new IWhereFilter<SNode>() {
+            List<SNode> nodeAttrLinks = ListSequence.<SNode>fromList(annotationLinks).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SPropertyOperations.hasValue(it, "stereotype", "node", "node") && SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(it, "source", false), NameUtil.nodeFQName(leftConcept.value));
               }

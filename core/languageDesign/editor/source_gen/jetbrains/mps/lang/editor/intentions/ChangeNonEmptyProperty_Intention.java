@@ -42,15 +42,15 @@ public class ChangeNonEmptyProperty_Intention extends BaseIntention implements I
     SNode property = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
     SLinkOperations.setTarget(property, "relationDeclaration", SLinkOperations.getTarget(node, "relationDeclaration", false), false);
     SLinkOperations.setTarget(node, "relationDeclaration", null, false);
-    for (SNode child : ListSequence.fromList(node.getChildren())) {
+    for (SNode child : ListSequence.<SNode>fromList(node.getChildren())) {
       String role = child.getRole_();
       node.removeChild(child);
       property.addChild(role, child);
     }
-    for (Map.Entry<String, String> propertyEntry : SetSequence.fromSet(node.getProperties().entrySet())) {
+    for (Map.Entry<String, String> propertyEntry : SetSequence.<Map.Entry<String, String>>fromSet(node.getProperties().entrySet())) {
       property.setProperty(propertyEntry.getKey(), propertyEntry.getValue());
     }
-    for (SReference reference : ListSequence.fromList(node.getReferences())) {
+    for (SReference reference : ListSequence.<SReference>fromList(node.getReferences())) {
       property.addReference(reference);
     }
     SNodeOperations.replaceWithAnother(node, property);

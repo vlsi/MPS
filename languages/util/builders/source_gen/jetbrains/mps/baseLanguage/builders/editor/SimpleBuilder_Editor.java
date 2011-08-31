@@ -106,7 +106,7 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_jpvk41_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "declaration", false), "parameter", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "declaration", false), "parameter", true)).isNotEmpty();
   }
 
   public static class _Inline_jpvk41_a0a extends InlineCellProvider {

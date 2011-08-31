@@ -57,7 +57,7 @@ import java.awt.event.ActionEvent;
       public void valueChanged(ListSelectionEvent p0) {
         int s = parametersTable.getSelectedRow();
         upButton.setEnabled(s > 0);
-        downButton.setEnabled(s != 0 && s < ListSequence.fromList(ParametersPanel.this.myModel.getParameters()).count() - 1);
+        downButton.setEnabled(s != 0 && s < ListSequence.<MethodParameter>fromList(ParametersPanel.this.myModel.getParameters()).count() - 1);
       }
     });
     this.fitTableColumns(parametersTable);

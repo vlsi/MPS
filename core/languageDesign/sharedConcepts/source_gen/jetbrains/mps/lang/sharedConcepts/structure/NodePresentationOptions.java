@@ -32,10 +32,10 @@ public enum NodePresentationOptions {
   }
 
   public static List<NodePresentationOptions> getConstants() {
-    List<NodePresentationOptions> list = ListSequence.fromList(new LinkedList<NodePresentationOptions>());
-    ListSequence.fromList(list).addElement(NodePresentationOptions.default_);
-    ListSequence.fromList(list).addElement(NodePresentationOptions.referent_);
-    ListSequence.fromList(list).addElement(NodePresentationOptions.custom_);
+    List<NodePresentationOptions> list = ListSequence.<NodePresentationOptions>fromList(new LinkedList<NodePresentationOptions>());
+    ListSequence.<NodePresentationOptions>fromList(list).addElement(NodePresentationOptions.default_);
+    ListSequence.<NodePresentationOptions>fromList(list).addElement(NodePresentationOptions.referent_);
+    ListSequence.<NodePresentationOptions>fromList(list).addElement(NodePresentationOptions.custom_);
     return list;
   }
 

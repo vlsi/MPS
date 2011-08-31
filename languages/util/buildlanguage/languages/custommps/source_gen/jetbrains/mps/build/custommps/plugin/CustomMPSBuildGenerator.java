@@ -48,25 +48,25 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
   public Runnable generate(final EditableSModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     final SNode mpsLayout = this.createMPSLayout(targetModelDescriptor, name, basedir, selectedData);
 
-    SNode zipNode = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "component", true)).first(), "jetbrains.mps.build.packaging.structure.Zip");
-    SNode rootFolder = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(zipNode, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.Folder");
+    SNode zipNode = SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(mpsLayout, "component", true)).first(), "jetbrains.mps.build.packaging.structure.Zip");
+    SNode rootFolder = SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(zipNode, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.Folder");
     List<SNode> entries = SLinkOperations.getTargets(rootFolder, "entry", true);
     SNode mpsBuild = SConceptOperations.createNewNode("jetbrains.mps.build.custommps.structure.MPSBuild", null);
-    ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "component", true)).addElement(mpsBuild);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(mpsLayout, "component", true)).addElement(mpsBuild);
 
     SNode libraryFolder = createLibraryFolder(rootFolder);
-    for (SNode entry : ListSequence.fromList(entries)) {
+    for (SNode entry : ListSequence.<SNode>fromList(entries)) {
       if (SNodeOperations.isInstanceOf(entry, "jetbrains.mps.build.packaging.structure.Module")) {
-        ListSequence.fromList(SLinkOperations.getTargets(libraryFolder, "entry", true)).addElement(entry);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(libraryFolder, "entry", true)).addElement(entry);
       } else if (SNodeOperations.isInstanceOf(entry, "jetbrains.mps.build.packaging.structure.Folder")) {
         SNode oldFolder = SNodeOperations.cast(entry, "jetbrains.mps.build.packaging.structure.Folder");
         SNode newFolder = createLibraryFolder(oldFolder);
-        ListSequence.fromList(SLinkOperations.getTargets(newFolder, "entry", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(oldFolder, "entry", true)));
-        ListSequence.fromList(SLinkOperations.getTargets(mpsBuild, "entry", true)).addElement(newFolder);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(newFolder, "entry", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(oldFolder, "entry", true)));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(mpsBuild, "entry", true)).addElement(newFolder);
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(libraryFolder, "entry", true)).isNotEmpty()) {
-      ListSequence.fromList(SLinkOperations.getTargets(mpsBuild, "entry", true)).addElement(libraryFolder);
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(libraryFolder, "entry", true)).isNotEmpty()) {
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(mpsBuild, "entry", true)).addElement(libraryFolder);
     }
     SNodeOperations.deleteNode(zipNode);
 

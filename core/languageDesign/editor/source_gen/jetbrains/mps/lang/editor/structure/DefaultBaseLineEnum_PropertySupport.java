@@ -11,7 +11,7 @@ public class DefaultBaseLineEnum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<DefaultBaseLineEnum> constants = ListSequence.fromList(DefaultBaseLineEnum.getConstants()).iterator();
+    Iterator<DefaultBaseLineEnum> constants = ListSequence.<DefaultBaseLineEnum>fromList(DefaultBaseLineEnum.getConstants()).iterator();
     while (constants.hasNext()) {
       DefaultBaseLineEnum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class DefaultBaseLineEnum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<DefaultBaseLineEnum> constants = ListSequence.fromList(DefaultBaseLineEnum.getConstants()).iterator();
+    Iterator<DefaultBaseLineEnum> constants = ListSequence.<DefaultBaseLineEnum>fromList(DefaultBaseLineEnum.getConstants()).iterator();
     while (constants.hasNext()) {
       DefaultBaseLineEnum constant = constants.next();
       if (value.equals(constant.getName())) {

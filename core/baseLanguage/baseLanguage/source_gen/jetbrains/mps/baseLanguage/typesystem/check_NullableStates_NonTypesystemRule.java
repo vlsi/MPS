@@ -70,11 +70,11 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
         boolean equals = SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.EqualsExpression");
         boolean isNull = NullableState.NULL.equals(varState);
         boolean isNotNull = NullableState.NOTNULL.equals(varState);
-        if (ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.NullLiteral", false, new String[]{})).isNotEmpty()) {
-          if (SNodeOperations.getAncestor(source, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false) != null && ListSequence.fromList(SNodeOperations.getAncestors(source, null, false)).contains(SLinkOperations.getTarget(SNodeOperations.getAncestor(source, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false), "condition", true))) {
+        if (ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.NullLiteral", false, new String[]{})).isNotEmpty()) {
+          if (SNodeOperations.getAncestor(source, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false) != null && ListSequence.<SNode>fromList(SNodeOperations.getAncestors(source, null, false)).contains(SLinkOperations.getTarget(SNodeOperations.getAncestor(source, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false), "condition", true))) {
             inCondition = true;
           }
-          if (SNodeOperations.getAncestor(source, "jetbrains.mps.baseLanguage.structure.WhileStatement", false, false) != null && ListSequence.fromList(SNodeOperations.getAncestors(source, null, false)).contains(SLinkOperations.getTarget(SNodeOperations.getAncestor(source, "jetbrains.mps.baseLanguage.structure.WhileStatement", false, false), "condition", true))) {
+          if (SNodeOperations.getAncestor(source, "jetbrains.mps.baseLanguage.structure.WhileStatement", false, false) != null && ListSequence.<SNode>fromList(SNodeOperations.getAncestors(source, null, false)).contains(SLinkOperations.getTarget(SNodeOperations.getAncestor(source, "jetbrains.mps.baseLanguage.structure.WhileStatement", false, false), "condition", true))) {
             inCondition = true;
           }
           if (inCondition) {
@@ -97,7 +97,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
       if (instruction instanceof WriteInstruction) {
         WriteInstruction write = (WriteInstruction) instruction;
         List<SNode> annotation = SLinkOperations.getTargets(((SNode) write.getVariable()), "annotation", true);
-        if (annotation != null && ListSequence.fromList(annotation).where(new IWhereFilter<SNode>() {
+        if (annotation != null && ListSequence.<SNode>fromList(annotation).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "annotation", false) != null);
           }
@@ -122,7 +122,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
     // Find Nullable returns of NotNull methods 
     if (SNodeOperations.isInstanceOf(iMethodLike, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       SNode method = SNodeOperations.cast(iMethodLike, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-      if (ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).where(new IWhereFilter<SNode>() {
+      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "annotation", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (SLinkOperations.getTarget(it, "annotation", false) != null);
         }

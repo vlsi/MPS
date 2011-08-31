@@ -9,9 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -70,7 +70,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_763186553349438290(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "moduleDescription", true)).first(), "ModuleToClassesProperty");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "moduleDescription", true)).first(), "ModuleToClassesProperty");
   }
 
   public static Object referenceMacro_GetReferent_763186553349590557(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -163,7 +163,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1216910640246(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.dependency.structure.ModuleDescription", false, new String[]{})).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.<SNode>fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.dependency.structure.ModuleDescription", false, new String[]{})).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return SPropertyOperations.getString(it, "name");
       }

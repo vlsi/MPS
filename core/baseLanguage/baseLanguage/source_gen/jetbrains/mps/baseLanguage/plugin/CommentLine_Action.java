@@ -27,12 +27,12 @@ public class CommentLine_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly()) {
+    if (((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).isReadOnly()) {
       return false;
     }
     SNode singleLineComment = CommentLine_Action.this.getSingleLineComment(_params);
     if (singleLineComment != null) {
-      return ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+      return ListSequence.<SNode>fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.<SNode>fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
     }
     SNode statement = CommentLine_Action.this.getStatement(_params);
     if (statement == null) {
@@ -61,13 +61,13 @@ public class CommentLine_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.fromMap(_params).put("selectedNode", node);
+      MapSequence.<String,Object>fromMap(_params).put("selectedNode", node);
     }
-    if (MapSequence.fromMap(_params).get("selectedNode") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("selectedNode") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
@@ -78,7 +78,7 @@ public class CommentLine_Action extends GeneratedAction {
       SNode singleLineComment = CommentLine_Action.this.getSingleLineComment(_params);
       if (singleLineComment != null) {
         // uncommenting 
-        SNode innerStatement = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), "commentedStatement", true);
+        SNode innerStatement = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), "commentedStatement", true);
         SNodeOperations.replaceWithAnother(singleLineComment, innerStatement);
         SNodeOperations.deleteNode(singleLineComment);
       } else {
@@ -95,10 +95,10 @@ public class CommentLine_Action extends GeneratedAction {
   }
 
   private SNode getStatement(final Map<String, Object> _params) {
-    return SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.Statement", true, false);
+    return SNodeOperations.getAncestor(((SNode) MapSequence.<String,Object>fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.Statement", true, false);
   }
 
   private SNode getSingleLineComment(final Map<String, Object> _params) {
-    return SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.SingleLineComment", true, false);
+    return SNodeOperations.getAncestor(((SNode) MapSequence.<String,Object>fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.SingleLineComment", true, false);
   }
 }

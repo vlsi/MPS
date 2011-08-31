@@ -12,9 +12,9 @@ public class LinkInlineDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("link ");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "reference", true), this.getSNode());
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "line", true)).isNotEmpty()) {
       this.append(" ");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isNotEmpty()) {
+      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "line", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "line", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         }

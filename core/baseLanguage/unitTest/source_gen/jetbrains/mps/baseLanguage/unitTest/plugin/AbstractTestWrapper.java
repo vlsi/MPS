@@ -61,7 +61,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
 
   @NotNull
   public Iterable<ITestNodeWrapper> getTestMethods() {
-    return ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
+    return ListSequence.<ITestNodeWrapper>fromList(new ArrayList<ITestNodeWrapper>());
   }
 
   public TestRunParameters getTestRunParameters() {

@@ -54,31 +54,31 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
         final SNode p2 = new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a5a4a0a0a1a0().createNode();
 
         SNode method = new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a7a4a0a0a1a0().createNode(p1, p2, SLinkOperations.getTarget(SLinkOperations.getTarget(node, "getMainConceptBlock", true), "body", true));
-        ListSequence.fromList(SNodeOperations.getDescendants(method, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", false, new String[]{})).visitAll(new IVisitor<SNode>() {
+        ListSequence.<SNode>fromList(SNodeOperations.getDescendants(method, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", false, new String[]{})).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
             SNodeOperations.replaceWithAnother(it, new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a1a0a0a0i0e0a0a0b0a().createNode(p1));
           }
         });
-        ListSequence.fromList(SNodeOperations.getDescendants(method, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", false, new String[]{})).visitAll(new IVisitor<SNode>() {
+        ListSequence.<SNode>fromList(SNodeOperations.getDescendants(method, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", false, new String[]{})).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
             SNodeOperations.replaceWithAnother(it, new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a1a0a0a0j0e0a0a0b0a().createNode(p2));
           }
         });
-        ListSequence.fromList(SLinkOperations.getTargets(helperClass, "staticMethod", true)).addElement(method);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(helperClass, "staticMethod", true)).addElement(method);
 
         SNode callHelperStmt = new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a21a4a0a0a1a0().createNode(helperClass, SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", null), SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", null), method);
 
         SNode order = SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.plugin.structure.Order", null);
         SPropertyOperations.set(order, "name", SPropertyOperations.getString(node, "name"));
 
-        List<SNode> tabs = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(node, "tabs", true));
-        for (SNode tab : ListSequence.fromList(tabs)) {
+        List<SNode> tabs = ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(node, "tabs", true));
+        for (SNode tab : ListSequence.<SNode>fromList(tabs)) {
           SNode newTab = new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0a81a4a0a0a1a0().createNode(SPropertyOperations.getString(tab, "name"), SPropertyOperations.getString(tab, "shortcutChar"), SLinkOperations.getTarget(node, "mainConcept", false), SLinkOperations.getTarget(node, "mainConcept", false));
 
           // todo rewrite. this code is due to bad behavior of quotations in this case 
           SPropertyOperations.set(newTab, "commandOnCreate", "" + !(SPropertyOperations.getBoolean(tab, "outsideCommand")));
           SLinkOperations.setTarget(newTab, "order", new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a2a4a81a4a0a0a1a0().createNode(order), true);
-          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(newTab, "baseNodeBlock", true), "body", true), "statement", true)).addElement(SNodeOperations.copyNode(callHelperStmt));
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(newTab, "baseNodeBlock", true), "body", true), "statement", true)).addElement(SNodeOperations.copyNode(callHelperStmt));
 
           if (SLinkOperations.getTarget(tab, "initBlock", true) != null) {
             SLinkOperations.setNewChild(newTab, "listenBlock", "jetbrains.mps.lang.plugin.structure.ListenBlock");
@@ -117,7 +117,7 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
           }
 
           SModelOperations.addRootNode(model, newTab);
-          ListSequence.fromList(SLinkOperations.getTargets(order, "tab", true)).addElement(new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0l0s0e0a0a0b0a().createNode(newTab));
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(order, "tab", true)).addElement(new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0l0s0e0a0a0b0a().createNode(newTab));
         }
 
         SNodeOperations.deleteNode(node);

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="153" startPosition="53" endLine="160" endPosition="9" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$4" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="179" startPosition="53" endLine="186" endPosition="9" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$5" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="218" startPosition="51" endLine="230" endPosition="7" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$7" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="196" startPosition="51" endLine="209" endPosition="7" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$6" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="153" startPosition="76" endLine="160" endPosition="9" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$4" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="179" startPosition="76" endLine="186" endPosition="9" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$5" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="218" startPosition="74" endLine="230" endPosition="7" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$7" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="196" startPosition="74" endLine="209" endPosition="7" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$6" />
   <unitInfo fileName="QueriesGenerated.java" startLine="51" startPosition="36" endLine="71" endPosition="7" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$1" />
   <unitInfo fileName="QueriesGenerated.java" startLine="76" startPosition="36" endLine="96" endPosition="7" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$2" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="108" startPosition="53" endLine="134" endPosition="9" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$3" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="108" startPosition="76" endLine="134" endPosition="9" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated$3" />
   <unitInfo fileName="QueriesGenerated.java" startLine="31" startPosition="0" endLine="235" endPosition="0" unitName="jetbrains.mps.nanoc.actions.QueriesGenerated" />
   <root nodeId="6585869519574700078">
     <nodeInfo nodeId="6585869519574747622" fileName="QueriesGenerated.java" startLine="52" startPosition="63" endLine="53" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

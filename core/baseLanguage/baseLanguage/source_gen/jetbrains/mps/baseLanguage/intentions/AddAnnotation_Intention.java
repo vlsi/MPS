@@ -43,7 +43,7 @@ public class AddAnnotation_Intention extends BaseIntention implements Intention 
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty()) {
       return false;
     }
     if (!(HasAnnotation_Behavior.call_canBeAnnotated_1233076312117(node))) {
@@ -53,7 +53,7 @@ public class AddAnnotation_Intention extends BaseIntention implements Intention 
     if (selectedNode == node) {
       return true;
     }
-    return ListSequence.fromList(HasAnnotation_Behavior.call_getChildrenToDisplayIntention_4025276038182319200(node)).contains(selectedNode);
+    return ListSequence.<SNode>fromList(HasAnnotation_Behavior.call_getChildrenToDisplayIntention_4025276038182319200(node)).contains(selectedNode);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

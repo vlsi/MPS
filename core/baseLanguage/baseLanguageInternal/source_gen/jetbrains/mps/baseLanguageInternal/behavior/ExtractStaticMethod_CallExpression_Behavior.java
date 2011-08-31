@@ -23,7 +23,7 @@ public class ExtractStaticMethod_CallExpression_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode bmd : ExtractStaticMethod_CallExpression_Behavior.getMethods_5857910569715993654(thisNode)) {
       if (SPropertyOperations.getString(SNodeOperations.cast(bmd, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "name").equals(methodName)) {
-        ListSequence.fromList(result).addElement(SNodeOperations.cast(bmd, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+        ListSequence.<SNode>fromList(result).addElement(SNodeOperations.cast(bmd, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
       }
     }
     return result;
@@ -50,7 +50,7 @@ public class ExtractStaticMethod_CallExpression_Behavior {
   public static List<SNode> getMethods_5857910569715993654(SNode context) {
     List<SNode> smd = new ArrayList<SNode>();
     for (SNode es : SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", true)) {
-      ListSequence.fromList(smd).addElement(SLinkOperations.getTarget(es, "method", true));
+      ListSequence.<SNode>fromList(smd).addElement(SLinkOperations.getTarget(es, "method", true));
     }
     return smd;
   }

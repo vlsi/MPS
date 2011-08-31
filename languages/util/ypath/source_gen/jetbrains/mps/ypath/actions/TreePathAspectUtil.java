@@ -29,7 +29,7 @@ public class TreePathAspectUtil {
       }
       SNode concept = (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAspect");
       Iterable<SNode> instances = SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(expression), scope, "jetbrains.mps.ypath.structure.TreePathAspect");
-      ListSequence.fromList(treePathAspects).addSequence(Sequence.fromIterable(instances).where(new IWhereFilter<SNode>() {
+      ListSequence.<SNode>fromList(treePathAspects).addSequence(Sequence.<SNode>fromIterable(instances).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           SNode type = TreePath_Behavior.call_getNodeType_1213877481303(it);
           boolean result = false;

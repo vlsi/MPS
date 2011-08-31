@@ -42,7 +42,7 @@ public class StaticFieldDeclaration_Behavior {
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = HasAnnotation_Behavior.callSuper_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
+    ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
   }
 

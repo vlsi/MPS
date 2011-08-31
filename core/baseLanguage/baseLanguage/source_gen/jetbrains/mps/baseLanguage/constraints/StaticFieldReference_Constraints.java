@@ -85,11 +85,11 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
               @NotNull
               @Override
               public List<SNode> getClassifiers() {
-                Set<SNode> enclosingClassifierAncestors = SetSequence.fromSet(new HashSet<SNode>());
-                SetSequence.fromSet(enclosingClassifierAncestors).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false)));
+                Set<SNode> enclosingClassifierAncestors = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+                SetSequence.fromSet(enclosingClassifierAncestors).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false)));
 
                 List<SNode> result = new ArrayList<SNode>();
-                for (SNode classifier : ListSequence.fromList(super.getClassifiers())) {
+                for (SNode classifier : ListSequence.<SNode>fromList(super.getClassifiers())) {
                   if (SPropertyOperations.getBoolean(classifier, "nonStatic")) {
                     continue;
                   }
@@ -101,11 +101,11 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
                   // and having no common Classifier container with enclosing node. 
                   // Useful for Classifiers contained in EditorTestCases 
                   // ("result" should not be able to access classifiers from "nodeToEdit")... 
-                  if (ListSequence.fromList(ancestors).where(new IWhereFilter<SNode>() {
+                  if (ListSequence.<SNode>fromList(ancestors).where(new IWhereFilter<SNode>() {
                     public boolean accept(SNode it) {
                       return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier"));
                     }
-                  }).isNotEmpty() && ListSequence.fromList(ancestors).intersect(SetSequence.fromSet(enclosingClassifierAncestors)).isEmpty()) {
+                  }).isNotEmpty() && ListSequence.<SNode>fromList(ancestors).intersect(SetSequence.<SNode>fromSet(enclosingClassifierAncestors)).isEmpty()) {
                     continue;
                   }
                   result.add(classifier);

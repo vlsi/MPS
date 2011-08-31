@@ -47,32 +47,32 @@ public class ApplicableNodeReference_Constraints extends BaseConstraintsDescript
             if (rule != null) {
               SNode appNode = SLinkOperations.getTarget(rule, "applicableNode", true);
               if (appNode != null) {
-                ListSequence.fromList(result).addElement(appNode);
+                ListSequence.<SNode>fromList(result).addElement(appNode);
               }
               if (SNodeOperations.isInstanceOf(rule, "jetbrains.mps.lang.typesystem.structure.ComparisonRule")) {
                 SNode appNode2 = SLinkOperations.getTarget(SNodeOperations.cast(rule, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), "anotherNode", true);
                 if (appNode2 != null) {
-                  ListSequence.fromList(result).addElement(appNode2);
+                  ListSequence.<SNode>fromList(result).addElement(appNode2);
                 }
               }
               if (SNodeOperations.isInstanceOf(rule, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule")) {
                 SNode appNode2 = SLinkOperations.getTarget(SNodeOperations.cast(rule, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), "supertypeNode", true);
                 if (appNode2 != null) {
-                  ListSequence.fromList(result).addElement(appNode2);
+                  ListSequence.<SNode>fromList(result).addElement(appNode2);
                 }
               }
             }
             SNode coerceStatement = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.CoerceStatement", false, false);
             while (coerceStatement != null) {
               if (SLinkOperations.getTarget(coerceStatement, "pattern", true) != null) {
-                ListSequence.fromList(result).addElement(SLinkOperations.getTarget(coerceStatement, "pattern", true));
+                ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(coerceStatement, "pattern", true));
               }
               coerceStatement = SNodeOperations.getAncestor(coerceStatement, "jetbrains.mps.lang.typesystem.structure.CoerceStatement", false, false);
             }
             SNode matchStatementItem = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", false, false);
             while (matchStatementItem != null) {
               if (SLinkOperations.getTarget(matchStatementItem, "condition", true) != null) {
-                ListSequence.fromList(result).addElement(SLinkOperations.getTarget(matchStatementItem, "condition", true));
+                ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(matchStatementItem, "condition", true));
               }
               matchStatementItem = SNodeOperations.getAncestor(matchStatementItem, "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", false, false);
             }

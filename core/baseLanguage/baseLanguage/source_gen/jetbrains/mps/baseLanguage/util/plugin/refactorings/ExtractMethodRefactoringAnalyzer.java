@@ -57,13 +57,13 @@ public class ExtractMethodRefactoringAnalyzer {
   }
 
   /*package*/ boolean hasExitPoints() {
-    return ListSequence.fromList(this.myInternalExitPoints).count() > 0;
+    return ListSequence.<SNode>fromList(this.myInternalExitPoints).count() > 0;
   }
 
   private boolean isInside(SNode node) {
     SNode current = node;
     while (current != null) {
-      if (ListSequence.fromList(this.myPartToExtract).contains(current)) {
+      if (ListSequence.<SNode>fromList(this.myPartToExtract).contains(current)) {
         return true;
       }
       current = SNodeOperations.getParent(current);
@@ -73,23 +73,23 @@ public class ExtractMethodRefactoringAnalyzer {
 
   private List<SNode> calculateInternalExitPoints() {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
+    for (SNode node : ListSequence.<SNode>fromList(this.myPartToExtract)) {
       List<SNode> returns = SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.ReturnStatement", true, new String[]{});
-      for (SNode ret : ListSequence.fromList(returns)) {
+      for (SNode ret : ListSequence.<SNode>fromList(returns)) {
         SNode a1 = SNodeOperations.getAncestor(ret, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
         SNode a2 = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
         if (a1 == a2) {
-          ListSequence.fromList(result).addElement(ret);
+          ListSequence.<SNode>fromList(result).addElement(ret);
         }
       }
       List<SNode> statements = new ArrayList<SNode>();
-      ListSequence.fromList(statements).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.BreakStatement", false, new String[]{})));
-      ListSequence.fromList(statements).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement", false, new String[]{})));
-      for (SNode st : ListSequence.fromList(statements)) {
+      ListSequence.<SNode>fromList(statements).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.BreakStatement", false, new String[]{})));
+      ListSequence.<SNode>fromList(statements).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement", false, new String[]{})));
+      for (SNode st : ListSequence.<SNode>fromList(statements)) {
         SNode a1 = SNodeOperations.getAncestor(st, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false, false);
         SNode a2 = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false, false);
         if (a1 == a2) {
-          ListSequence.fromList(result).addElement(st);
+          ListSequence.<SNode>fromList(result).addElement(st);
         }
       }
     }
@@ -101,16 +101,16 @@ public class ExtractMethodRefactoringAnalyzer {
   }
 
   /*package*/ List<SNode> getOutputVariables() {
-    Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(result).addSequence(SetSequence.fromSet(this.getVarableLiveAtExitPoints()));
-    Iterable<SNode> t = SetSequence.fromSet(result).intersect(SetSequence.fromSet(this.getModificationsReachingExitPoints(true)));
-    return ListSequence.fromListWithValues(new ArrayList<SNode>(), Sequence.fromIterable(t).toListSequence());
+    Set<SNode> result = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+    SetSequence.fromSet(result).addSequence(SetSequence.<SNode>fromSet(this.getVarableLiveAtExitPoints()));
+    Iterable<SNode> t = SetSequence.<SNode>fromSet(result).intersect(SetSequence.<SNode>fromSet(this.getModificationsReachingExitPoints(true)));
+    return ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), Sequence.<SNode>fromIterable(t).toListSequence());
   }
 
   private Set<SNode> getModificationsReachingExitPoints(boolean internal) {
-    Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
-    for (Instruction preExit : SetSequence.fromSet(this.getPreExitPoints())) {
-      for (WriteInstruction writeInstruction : SetSequence.fromSet(((Set<WriteInstruction>) this.myReachingDefinitions.get(preExit)))) {
+    Set<SNode> result = SetSequence.<SNode>fromSet(new LinkedHashSet<SNode>());
+    for (Instruction preExit : SetSequence.<Instruction>fromSet(this.getPreExitPoints())) {
+      for (WriteInstruction writeInstruction : SetSequence.<WriteInstruction>fromSet(((Set<WriteInstruction>) this.myReachingDefinitions.get(preExit)))) {
         if (internal == this.isInside(((SNode) writeInstruction.getSource()))) {
           SetSequence.fromSet(result).addElement(((SNode) writeInstruction.getVariable()));
         }
@@ -120,9 +120,9 @@ public class ExtractMethodRefactoringAnalyzer {
   }
 
   private Set<SNode> getVarableLiveAtExitPoints() {
-    Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
-    for (Instruction exitPoint : SetSequence.fromSet(this.getExitPoints())) {
-      for (Object variable : SetSequence.fromSet(this.myLiveVariables.get(exitPoint))) {
+    Set<SNode> result = SetSequence.<SNode>fromSet(new LinkedHashSet<SNode>());
+    for (Instruction exitPoint : SetSequence.<Instruction>fromSet(this.getExitPoints())) {
+      for (Object variable : SetSequence.<Object>fromSet(this.myLiveVariables.get(exitPoint))) {
         SetSequence.fromSet(result).addElement(((SNode) variable));
       }
     }
@@ -130,30 +130,30 @@ public class ExtractMethodRefactoringAnalyzer {
   }
 
   private Set<Instruction> getExitPoints() {
-    Set<Instruction> result = SetSequence.fromSet(new LinkedHashSet<Instruction>());
+    Set<Instruction> result = SetSequence.<Instruction>fromSet(new LinkedHashSet<Instruction>());
     Set<Instruction> instructions = this.getInstructions();
-    for (Instruction instruction : SetSequence.fromSet(instructions)) {
-      SetSequence.fromSet(result).addSequence(SetSequence.fromSet(instruction.succ()));
+    for (Instruction instruction : SetSequence.<Instruction>fromSet(instructions)) {
+      SetSequence.fromSet(result).addSequence(SetSequence.<Instruction>fromSet(instruction.succ()));
     }
-    SetSequence.fromSet(result).removeSequence(SetSequence.fromSet(instructions));
+    SetSequence.fromSet(result).removeSequence(SetSequence.<Instruction>fromSet(instructions));
     return result;
   }
 
   private Set<Instruction> getPreExitPoints() {
-    Set<Instruction> result = SetSequence.fromSet(new LinkedHashSet<Instruction>());
+    Set<Instruction> result = SetSequence.<Instruction>fromSet(new LinkedHashSet<Instruction>());
     Set<Instruction> exitPoints = this.getExitPoints();
-    for (Instruction exitPoint : SetSequence.fromSet(exitPoints)) {
-      SetSequence.fromSet(result).addSequence(SetSequence.fromSet(exitPoint.pred()));
+    for (Instruction exitPoint : SetSequence.<Instruction>fromSet(exitPoints)) {
+      SetSequence.fromSet(result).addSequence(SetSequence.<Instruction>fromSet(exitPoint.pred()));
     }
-    Set<Instruction> tmp = SetSequence.fromSet(new HashSet<Instruction>());
-    SetSequence.fromSet(tmp).addSequence(SetSequence.fromSet(result).intersect(SetSequence.fromSet(this.getInstructions())));
+    Set<Instruction> tmp = SetSequence.<Instruction>fromSet(new HashSet<Instruction>());
+    SetSequence.fromSet(tmp).addSequence(SetSequence.<Instruction>fromSet(result).intersect(SetSequence.<Instruction>fromSet(this.getInstructions())));
     return tmp;
   }
 
   /*package*/ boolean isExitPointsDifferent() {
     List<SNode> exits = this.myInternalExitPoints;
-    for (int i = 1; i < ListSequence.fromList(exits).count(); i++) {
-      if (!(MatchingUtil.matchNodes(ListSequence.fromList(exits).getElement(i - 1), ListSequence.fromList(exits).getElement(i)))) {
+    for (int i = 1; i < ListSequence.<SNode>fromList(exits).count(); i++) {
+      if (!(MatchingUtil.matchNodes(ListSequence.<SNode>fromList(exits).getElement(i - 1), ListSequence.<SNode>fromList(exits).getElement(i)))) {
         return true;
       }
     }
@@ -161,9 +161,9 @@ public class ExtractMethodRefactoringAnalyzer {
   }
 
   /*package*/ boolean isAlwaysReturns() {
-    for (Instruction instruction : SetSequence.fromSet(this.getInstructions())) {
+    for (Instruction instruction : SetSequence.<Instruction>fromSet(this.getInstructions())) {
       if (this.myReachability.get(instruction)) {
-        for (Instruction next : SetSequence.fromSet(instruction.succ())) {
+        for (Instruction next : SetSequence.<Instruction>fromSet(instruction.succ())) {
           SNode nextNode = (SNode) next.getSource();
           if (!(next instanceof EndInstruction)) {
             if (next.getSource() == null || !(this.isInside(nextNode))) {
@@ -179,18 +179,18 @@ public class ExtractMethodRefactoringAnalyzer {
   }
 
   /*package*/ Set<Instruction> getInstructions() {
-    Set<Instruction> result = SetSequence.fromSet(new LinkedHashSet<Instruction>());
-    for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
-      SetSequence.fromSet(result).addSequence(ListSequence.fromList(this.myProgram.getInstructionsFor(node)));
+    Set<Instruction> result = SetSequence.<Instruction>fromSet(new LinkedHashSet<Instruction>());
+    for (SNode node : ListSequence.<SNode>fromList(this.myPartToExtract)) {
+      SetSequence.fromSet(result).addSequence(ListSequence.<Instruction>fromList(this.myProgram.getInstructionsFor(node)));
     }
     return result;
   }
 
   /*package*/ boolean isReturnExpressionsNotChangedInStatements() {
     List<SNode> returns = this.calculateInternalExitPoints();
-    for (SNode ret : ListSequence.fromList(returns)) {
-      for (Instruction instruction : ListSequence.fromList(this.myProgram.getInstructionsFor(ret))) {
-        for (WriteInstruction writeInstruction : SetSequence.fromSet(this.myReachingDefinitions.get(instruction))) {
+    for (SNode ret : ListSequence.<SNode>fromList(returns)) {
+      for (Instruction instruction : ListSequence.<Instruction>fromList(this.myProgram.getInstructionsFor(ret))) {
+        for (WriteInstruction writeInstruction : SetSequence.<WriteInstruction>fromSet(this.myReachingDefinitions.get(instruction))) {
           if (this.isInside(((SNode) writeInstruction.getSource()))) {
             return false;
           }
@@ -201,21 +201,21 @@ public class ExtractMethodRefactoringAnalyzer {
   }
 
   public List<MethodParameter> getInputVariables() {
-    Map<SNode, MethodParameter> result = MapSequence.fromMap(new LinkedHashMap<SNode, MethodParameter>(16, (float) 0.75, false));
+    Map<SNode, MethodParameter> result = MapSequence.<SNode,MethodParameter>fromMap(new LinkedHashMap<SNode, MethodParameter>(16, (float) 0.75, false));
     this.addDataflowParameters(result);
     // added to fix problems with closures 
     addExternalParameters(result);
-    for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
-      for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
+    for (SNode node : ListSequence.<SNode>fromList(this.myPartToExtract)) {
+      for (SNode parameter : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
         SNode expressionType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(parameter), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
-        MapSequence.fromMap(result).put(IParameter_Behavior.call_getDeclaration_1225282371351(parameter), new MethodParameter(IParameter_Behavior.call_getDeclaration_1225282371351(parameter), expressionType, IParameter_Behavior.call_getParameterName_1225280611056(parameter), parameter));
+        MapSequence.<SNode,MethodParameter>fromMap(result).put(IParameter_Behavior.call_getDeclaration_1225282371351(parameter), new MethodParameter(IParameter_Behavior.call_getDeclaration_1225282371351(parameter), expressionType, IParameter_Behavior.call_getParameterName_1225280611056(parameter), parameter));
       }
     }
-    return ListSequence.fromListWithValues(new ArrayList<MethodParameter>(), MapSequence.fromMap(result).values());
+    return ListSequence.<MethodParameter>fromListWithValues(new ArrayList<MethodParameter>(), MapSequence.fromMap(result).values());
   }
 
   /*package*/ SNode getClassifier() {
-    return SNodeOperations.getAncestor(ListSequence.fromList(this.myPartToExtract).first(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    return SNodeOperations.getAncestor(ListSequence.<SNode>fromList(this.myPartToExtract).first(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
   }
 
   public IExtractMethodRefactoringProcessor getExtractMethodReafactoringProcessor() {
@@ -223,7 +223,7 @@ public class ExtractMethodRefactoringAnalyzer {
   }
 
   private void findExtractMethodRefactoringProcessor() {
-    SNode first = ListSequence.fromList(this.myPartToExtract).first();
+    SNode first = ListSequence.<SNode>fromList(this.myPartToExtract).first();
     SNode classConcept = SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (classConcept != null) {
       this.myProcessor = new ClassExtractMethodRefactoringProcessor(classConcept, this.myPartToExtract);
@@ -236,24 +236,24 @@ public class ExtractMethodRefactoringAnalyzer {
   }
 
   private void addExternalParameters(Map<SNode, MethodParameter> result) {
-    SNode list = SNodeOperations.getAncestor(ListSequence.fromList(myPartToExtract).getElement(0), "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+    SNode list = SNodeOperations.getAncestor(ListSequence.<SNode>fromList(myPartToExtract).getElement(0), "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(list), "jetbrains.mps.baseLanguage.structure.Statement")) {
       list = SNodeOperations.getAncestor(list, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     }
     Program program = DataFlowManager.getInstance().buildProgramFor(list);
-    Set<Instruction> nodeInstructions = SetSequence.fromSet(new HashSet<Instruction>());
-    for (SNode node : ListSequence.fromList(myPartToExtract)) {
-      SetSequence.fromSet(nodeInstructions).addSequence(ListSequence.fromList(program.getInstructionsFor(node)));
+    Set<Instruction> nodeInstructions = SetSequence.<Instruction>fromSet(new HashSet<Instruction>());
+    for (SNode node : ListSequence.<SNode>fromList(myPartToExtract)) {
+      SetSequence.fromSet(nodeInstructions).addSequence(ListSequence.<Instruction>fromList(program.getInstructionsFor(node)));
     }
     AnalysisResult<Set<WriteInstruction>> reachability = program.analyze(new ReachingDefinitionsAnalyzer());
-    for (Instruction instruction : SetSequence.fromSet(nodeInstructions).where(new IWhereFilter<Instruction>() {
+    for (Instruction instruction : SetSequence.<Instruction>fromSet(nodeInstructions).where(new IWhereFilter<Instruction>() {
       public boolean accept(Instruction it) {
         return it instanceof ReadInstruction;
       }
     })) {
       final ReadInstruction read = (ReadInstruction) instruction;
       Set<WriteInstruction> writes = reachability.get(read);
-      if (SetSequence.fromSet(writes).where(new IWhereFilter<WriteInstruction>() {
+      if (SetSequence.<WriteInstruction>fromSet(writes).where(new IWhereFilter<WriteInstruction>() {
         public boolean accept(WriteInstruction it) {
           return it.getVariable() == read.getVariable();
         }
@@ -272,17 +272,17 @@ public class ExtractMethodRefactoringAnalyzer {
         } else {
           reference = ((SNode) read.getSource());
         }
-        MapSequence.fromMap(result).put(declaration, new MethodParameter(declaration, type, SPropertyOperations.getString(declaration, "name"), reference));
+        MapSequence.<SNode,MethodParameter>fromMap(result).put(declaration, new MethodParameter(declaration, type, SPropertyOperations.getString(declaration, "name"), reference));
       }
     }
   }
 
   private void addDataflowParameters(Map<SNode, MethodParameter> result) {
-    for (Instruction instruction : SetSequence.fromSet(this.getInstructions())) {
+    for (Instruction instruction : SetSequence.<Instruction>fromSet(this.getInstructions())) {
       if ((instruction instanceof ReadInstruction)) {
         ReadInstruction read = (ReadInstruction) instruction;
         Set<WriteInstruction> writes = this.myReachingDefinitions.get(read);
-        for (WriteInstruction write : SetSequence.fromSet(writes)) {
+        for (WriteInstruction write : SetSequence.<WriteInstruction>fromSet(writes)) {
           if (write.getVariable() == read.getVariable()) {
             if (!(this.isInside(((SNode) write.getSource())))) {
               SNode declaration = ((SNode) read.getVariable());
@@ -294,7 +294,7 @@ public class ExtractMethodRefactoringAnalyzer {
                 } else {
                   reference = ((SNode) read.getSource());
                 }
-                MapSequence.fromMap(result).put(declaration, new MethodParameter(declaration, type, SPropertyOperations.getString(declaration, "name"), reference));
+                MapSequence.<SNode,MethodParameter>fromMap(result).put(declaration, new MethodParameter(declaration, type, SPropertyOperations.getString(declaration, "name"), reference));
               }
             }
           }
@@ -304,6 +304,6 @@ public class ExtractMethodRefactoringAnalyzer {
   }
 
   public static boolean isStatements(List<SNode> nodes) {
-    return SNodeOperations.isInstanceOf(ListSequence.fromList(nodes).first(), "jetbrains.mps.baseLanguage.structure.Statement");
+    return SNodeOperations.isInstanceOf(ListSequence.<SNode>fromList(nodes).first(), "jetbrains.mps.baseLanguage.structure.Statement");
   }
 }

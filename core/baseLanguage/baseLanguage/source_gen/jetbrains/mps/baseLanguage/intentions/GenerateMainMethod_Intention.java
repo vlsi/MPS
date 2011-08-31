@@ -49,16 +49,16 @@ public class GenerateMainMethod_Intention extends GenerateIntention implements I
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return !(ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).any(new IWhereFilter<SNode>() {
+    return !(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "staticMethod", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return "main".equals(SPropertyOperations.getString(it, "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType") && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).first(), "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType");
+        return "main".equals(SPropertyOperations.getString(it, "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType") && ListSequence.<SNode>fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(it, "parameter", true)).first(), "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType");
       }
     })) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
   }
 
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SNode methodNode = new GenerateMainMethod_Intention.QuotationClass_r69zem_a0a0a7().createNode();
-    ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).addElement(methodNode);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "staticMethod", true)).addElement(methodNode);
     editorContext.select(SLinkOperations.getTarget(methodNode, "body", true));
   }
 

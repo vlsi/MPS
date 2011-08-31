@@ -31,9 +31,9 @@ public enum AnnotationLinkCardinality {
   }
 
   public static List<AnnotationLinkCardinality> getConstants() {
-    List<AnnotationLinkCardinality> list = ListSequence.fromList(new LinkedList<AnnotationLinkCardinality>());
-    ListSequence.fromList(list).addElement(AnnotationLinkCardinality._0__1);
-    ListSequence.fromList(list).addElement(AnnotationLinkCardinality._0__n);
+    List<AnnotationLinkCardinality> list = ListSequence.<AnnotationLinkCardinality>fromList(new LinkedList<AnnotationLinkCardinality>());
+    ListSequence.<AnnotationLinkCardinality>fromList(list).addElement(AnnotationLinkCardinality._0__1);
+    ListSequence.<AnnotationLinkCardinality>fromList(list).addElement(AnnotationLinkCardinality._0__n);
     return list;
   }
 

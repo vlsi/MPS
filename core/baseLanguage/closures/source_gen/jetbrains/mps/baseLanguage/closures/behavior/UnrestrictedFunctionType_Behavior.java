@@ -45,8 +45,8 @@ public class UnrestrictedFunctionType_Behavior {
     } else {
       sb.append("_void");
     }
-    sb.append("_P").append(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterType", true)).count());
-    sb.append("_E").append(ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).count());
+    sb.append("_P").append(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameterType", true)).count());
+    sb.append("_E").append(ListSequence.<SNode>fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).count());
     return sb.toString();
   }
 
@@ -58,7 +58,7 @@ public class UnrestrictedFunctionType_Behavior {
     SNode tt = SLinkOperations.getTarget(thisNode, "terminateType", true);
     if (SNodeOperations.isInstanceOf(tt, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       List<SNode> args = SLinkOperations.getTargets(SNodeOperations.cast(tt, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true);
-      tt = ListSequence.fromList(args).getElement(0);
+      tt = ListSequence.<SNode>fromList(args).getElement(0);
     }
     return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, "jetbrains.mps.baseLanguage.structure.VoidType")) ?
       tt :

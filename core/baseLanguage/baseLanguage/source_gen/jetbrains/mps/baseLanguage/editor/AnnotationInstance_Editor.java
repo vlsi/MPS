@@ -123,7 +123,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_d5p1uc_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "annotation", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "annotation", false), "method", true)).isNotEmpty();
+    return (SLinkOperations.getTarget(node, "annotation", false) != null) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "annotation", false), "method", true)).isNotEmpty();
   }
 
   public static class _Inline_d5p1uc_a1a extends InlineCellProvider {

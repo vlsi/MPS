@@ -7,9 +7,9 @@
     <nodeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="30" startPosition="59" endLine="31" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="34" startPosition="59" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6056923343037361508" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="38" startPosition="52" endLine="39" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6056923343037361566" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="40" startPosition="103" endLine="41" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6056923343037361566" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="40" startPosition="110" endLine="41" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6056923343037361575" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="41" startPosition="126" endLine="42" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6056923343037361543" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="42" startPosition="127" endLine="43" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6056923343037361543" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="42" startPosition="127" endLine="43" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6056923343037361626" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="48" startPosition="17" endLine="49" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4567781422731220349" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="49" startPosition="139" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="53" startPosition="42" endLine="54" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -53,7 +53,7 @@
     <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="34" startPosition="59" endLine="35" endPosition="20" />
     <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="53" startPosition="42" endLine="54" endPosition="21" />
     <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="59" startPosition="61" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="6056923343037361536" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="40" startPosition="103" endLine="43" endPosition="108">
+    <scopeInfo nodeId="6056923343037361536" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="40" startPosition="110" endLine="43" endPosition="115">
       <varInfo nodeId="6056923343037361567" varName="finderRef" />
     </scopeInfo>
     <scopeInfo nodeId="6056923343037360228" fileName="ConvertExecuteFinders_MigrationScript.java" startLine="72" startPosition="9" endLine="75" endPosition="58" />

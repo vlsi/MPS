@@ -64,7 +64,7 @@ public class MigrationToIndentLayout_MigrationScript extends BaseMigrationScript
           SPropertyOperations.set(node, "vertical", "" + false);
           SNode indentStyle = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem", null);
           SPropertyOperations.set(indentStyle, "flag", "" + true);
-          ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)).addElement(indentStyle);
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "styleItem", true)).addElement(indentStyle);
         }
       }
 

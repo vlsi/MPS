@@ -14,7 +14,7 @@ public class NamedTupleLiteral_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode cref : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "componentRef", true))) {
+    for (SNode cref : ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "componentRef", true))) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(cref, "value", true));
     }
   }

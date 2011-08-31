@@ -73,7 +73,7 @@ public class EventPropertyGetter_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Sequence.fromIterable(Event_Behavior.call_allExtends_5224413709454845737(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate"), "event", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+            return Sequence.<SNode>fromIterable(Event_Behavior.call_allExtends_5224413709454845737(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate"), "event", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode e) {
                 return SLinkOperations.getTargets(e, "property", true);
               }

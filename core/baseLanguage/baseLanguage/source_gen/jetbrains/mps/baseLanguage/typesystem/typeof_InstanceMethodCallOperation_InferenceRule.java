@@ -44,7 +44,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
     // --- following piece of cake is identical for any method call --- 
     //  no more when_concrete 
     final SNode returnType = SLinkOperations.getTarget(methodDeclaration, "returnType", true);
-    if (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isNotEmpty() || SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+    if (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isNotEmpty() || SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       {
         final SNode IT = typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338);
         typeCheckingContext.whenConcrete(IT, new Runnable() {

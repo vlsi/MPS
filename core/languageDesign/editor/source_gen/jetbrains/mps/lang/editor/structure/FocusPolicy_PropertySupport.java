@@ -11,7 +11,7 @@ public class FocusPolicy_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<FocusPolicy> constants = ListSequence.fromList(FocusPolicy.getConstants()).iterator();
+    Iterator<FocusPolicy> constants = ListSequence.<FocusPolicy>fromList(FocusPolicy.getConstants()).iterator();
     while (constants.hasNext()) {
       FocusPolicy constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class FocusPolicy_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<FocusPolicy> constants = ListSequence.fromList(FocusPolicy.getConstants()).iterator();
+    Iterator<FocusPolicy> constants = ListSequence.<FocusPolicy>fromList(FocusPolicy.getConstants()).iterator();
     while (constants.hasNext()) {
       FocusPolicy constant = constants.next();
       if (value.equals(constant.getName())) {

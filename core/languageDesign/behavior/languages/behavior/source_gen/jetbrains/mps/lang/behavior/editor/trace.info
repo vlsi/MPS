@@ -1445,8 +1445,8 @@
     <nodeInfo nodeId="1225194588660" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="254" startPosition="72" endLine="255" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1225194588660" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="255" startPosition="78" endLine="256" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225194588660" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="257" startPosition="10" endLine="258" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225528259194" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="261" startPosition="112" endLine="262" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225528231889" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="265" startPosition="112" endLine="266" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225528259194" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="261" startPosition="112" endLine="262" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225528231889" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="265" startPosition="112" endLine="266" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225194588660" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="270" startPosition="102" endLine="271" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1225194588660" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="274" startPosition="66" endLine="275" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1225194588660" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="275" startPosition="41" endLine="276" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1584,8 +1584,8 @@
     <scopeInfo nodeId="1225194588660" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="146" startPosition="93" endLine="147" endPosition="47" />
     <scopeInfo nodeId="1225194588660" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="167" startPosition="88" endLine="168" endPosition="65" />
     <scopeInfo nodeId="1225194588660" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="226" startPosition="58" endLine="227" endPosition="42" />
-    <scopeInfo nodeId="1225528252818" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="261" startPosition="112" endLine="262" endPosition="99" />
-    <scopeInfo nodeId="1225528229060" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="265" startPosition="112" endLine="266" endPosition="96" />
+    <scopeInfo nodeId="1225528252818" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="261" startPosition="112" endLine="262" endPosition="106" />
+    <scopeInfo nodeId="1225528229060" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="265" startPosition="112" endLine="266" endPosition="103" />
     <scopeInfo nodeId="1225194588660" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="270" startPosition="102" endLine="271" endPosition="50" />
     <scopeInfo nodeId="1225194588660" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="292" startPosition="89" endLine="293" endPosition="66" />
     <scopeInfo nodeId="1225194588660" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="303" startPosition="131" endLine="304" endPosition="139" />

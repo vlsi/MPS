@@ -48,7 +48,7 @@ public class OverrideMethods_Intention extends BaseIntention implements Intentio
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(IMemberContainer_Behavior.call_getMethodsToOverride_5418393554803767537(node)).isNotEmpty();
+    return ListSequence.<SNode>fromList(IMemberContainer_Behavior.call_getMethodsToOverride_5418393554803767537(node)).isNotEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

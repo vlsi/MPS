@@ -10,11 +10,11 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
@@ -40,7 +40,7 @@ public class LocalVariableIntroducer {
           execute();
         }
       };
-      AnAction allOccurences = new AnAction("Replace all " + NameUtil.formatNumericalString(ListSequence.fromList(myRefactoring.getDuplicates()).count() + 1, "occurence")) {
+      AnAction allOccurences = new AnAction("Replace all " + NameUtil.formatNumericalString(ListSequence.<SNode>fromList(myRefactoring.getDuplicates()).count() + 1, "occurence")) {
         public void actionPerformed(AnActionEvent e) {
           myRefactoring.setReplacingAll(true);
           execute();
@@ -55,7 +55,7 @@ public class LocalVariableIntroducer {
 
   private void execute() {
     myRefactoring.setIsFinal(false);
-    myRefactoring.setName(ListSequence.fromList(myRefactoring.getExpectedNames()).first());
+    myRefactoring.setName(ListSequence.<String>fromList(myRefactoring.getExpectedNames()).first());
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {

@@ -49,21 +49,21 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        if (ListSequence.fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true)).isNotEmpty() && ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.debug.apiLang.structure.BreakpointCreator")).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true)).findFirst(new IWhereFilter<SNode>() {
+        if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true)).isNotEmpty() && ListSequence.<SNode>fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.debug.apiLang.structure.BreakpointCreator")).isEmpty() && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "createBreakpoint", true) != null);
           }
         }) != null) {
           SNode debugInfoProvider = SConceptOperations.createNewNode("jetbrains.mps.debug.apiLang.structure.BreakpointCreator", null);
           SModelOperations.addRootNode(SNodeOperations.getModel(node), debugInfoProvider);
-          for (SNode conceptToDebug : ListSequence.fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true))) {
-            ListSequence.fromList(SLinkOperations.getTargets(debugInfoProvider, "breakpointableConcepts", true)).addElement(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0a0c0a0e0a0a0b0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(conceptToDebug, "createBreakpoint", true), "body", true), SLinkOperations.getTarget(conceptToDebug, "declaration", false), SLinkOperations.getTarget(conceptToDebug, "declaration", false)));
+          for (SNode conceptToDebug : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true))) {
+            ListSequence.<SNode>fromList(SLinkOperations.getTargets(debugInfoProvider, "breakpointableConcepts", true)).addElement(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0a0c0a0e0a0a0b0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(conceptToDebug, "createBreakpoint", true), "body", true), SLinkOperations.getTarget(conceptToDebug, "declaration", false), SLinkOperations.getTarget(conceptToDebug, "declaration", false)));
             SNodeOperations.deleteNode(SLinkOperations.getTarget(conceptToDebug, "createBreakpoint", true));
           }
-          for (SNode projectRef : ListSequence.fromList(SNodeOperations.getDescendants(debugInfoProvider, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Debug_Project", false, new String[]{}))) {
+          for (SNode projectRef : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(debugInfoProvider, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Debug_Project", false, new String[]{}))) {
             SNodeOperations.replaceWithAnother(projectRef, SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Debug_Project", null));
           }
-          for (SNode nodeRef : ListSequence.fromList(SNodeOperations.getDescendants(debugInfoProvider, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode", false, new String[]{}))) {
+          for (SNode nodeRef : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(debugInfoProvider, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode", false, new String[]{}))) {
             SNodeOperations.replaceWithAnother(nodeRef, SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode", null));
           }
 
@@ -91,9 +91,9 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
         SNodeOperations.getModel(node).getModelDescriptor().getModule().addDependency(TextGen_Language.MODULE_REFERENCE, false);
 
         // traceable concepts 
-        for (SNode traceableConcept : ListSequence.fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true)).where(new IWhereFilter<SNode>() {
+        for (SNode traceableConcept : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(it, "declaration", false), "implements", true)).findFirst(new IWhereFilter<SNode>() {
+            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(it, "declaration", false), "implements", true)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode interfaceRef) {
                 return eq_nt6246_a0a0a0a0a0a0a0a0a0a7a4a0a0a1a0(SLinkOperations.getTarget(interfaceRef, "intfc", false), SLinkOperations.getTarget(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0a0a0a0a0a0a7a4a0a0a1a0().createNode(), "intfc", false));
               }
@@ -101,22 +101,22 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
           }
         })) {
           SNode conceptDeclaration = SLinkOperations.getTarget(traceableConcept, "declaration", false);
-          ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).addElement(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0b0h0e0a0a0b0a().createNode());
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).addElement(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0b0h0e0a0a0b0a().createNode());
           if ((SLinkOperations.getTarget(traceableConcept, "propertyStringGetter", true) != null)) {
             SNode conceptBehavior = getOrCreateBehavior.invoke(conceptDeclaration);
             SNode methodImpl = new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a1a2a7a4a0a0a1a0().createNode();
             SLinkOperations.setTarget(methodImpl, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(traceableConcept, "propertyStringGetter", true), "body", true)), true);
-            ListSequence.fromList(SLinkOperations.getTargets(conceptBehavior, "method", true)).addElement(methodImpl);
-            for (SNode debuggableNode : ListSequence.fromList(SNodeOperations.getDescendants(methodImpl, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode", false, new String[]{}))) {
+            ListSequence.<SNode>fromList(SLinkOperations.getTargets(conceptBehavior, "method", true)).addElement(methodImpl);
+            for (SNode debuggableNode : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(methodImpl, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode", false, new String[]{}))) {
               SNodeOperations.replaceWithAnother(debuggableNode, new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a1a0a4a2a7a4a0a0a1a0().createNode());
             }
           }
         }
 
         // scope concepts 
-        for (SNode scopeConcept : ListSequence.fromList(SLinkOperations.getTargets(node, "scopeConcepts", true)).where(new IWhereFilter<SNode>() {
+        for (SNode scopeConcept : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "scopeConcepts", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(it, "scopeConcept", false), "implements", true)).findFirst(new IWhereFilter<SNode>() {
+            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(it, "scopeConcept", false), "implements", true)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode interfaceRef) {
                 return eq_nt6246_a0a0a0a0a0a0a0a0a0a01a4a0a0a1a0(SLinkOperations.getTarget(interfaceRef, "intfc", false), SLinkOperations.getTarget(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0a0a0a0a0a0a01a4a0a0a1a0().createNode(), "intfc", false));
               }
@@ -124,20 +124,20 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
           }
         })) {
           SNode conceptDeclaration = SLinkOperations.getTarget(scopeConcept, "scopeConcept", false);
-          ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).addElement(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0b0k0e0a0a0b0a().createNode());
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).addElement(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0b0k0e0a0a0b0a().createNode());
           SNode conceptBehavior = getOrCreateBehavior.invoke(conceptDeclaration);
           SNode methodImpl = new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a3a01a4a0a0a1a0().createNode();
           SLinkOperations.setTarget(methodImpl, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(scopeConcept, "variablesGetter", true), "body", true)), true);
-          ListSequence.fromList(SLinkOperations.getTargets(conceptBehavior, "method", true)).addElement(methodImpl);
-          for (SNode scopeNode : ListSequence.fromList(SNodeOperations.getDescendants(methodImpl, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_ScopeNode", false, new String[]{}))) {
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(conceptBehavior, "method", true)).addElement(methodImpl);
+          for (SNode scopeNode : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(methodImpl, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_ScopeNode", false, new String[]{}))) {
             SNodeOperations.replaceWithAnother(scopeNode, new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a1a0a6a01a4a0a0a1a0().createNode());
           }
         }
 
         // unit concepts 
-        for (SNode unitConcept : ListSequence.fromList(SLinkOperations.getTargets(node, "unitConcepts", true)).where(new IWhereFilter<SNode>() {
+        for (SNode unitConcept : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "unitConcepts", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(it, "unitConcept", false), "implements", true)).findFirst(new IWhereFilter<SNode>() {
+            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(it, "unitConcept", false), "implements", true)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode interfaceRef) {
                 return eq_nt6246_a0a0a0a0a0a0a0a0a0a31a4a0a0a1a0(SLinkOperations.getTarget(interfaceRef, "intfc", false), SLinkOperations.getTarget(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0a0a0a0a0a0a31a4a0a0a1a0().createNode(), "intfc", false));
               }
@@ -145,12 +145,12 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
           }
         })) {
           SNode conceptDeclaration = SLinkOperations.getTarget(unitConcept, "unitConcept", false);
-          ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).addElement(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0b0n0e0a0a0b0a().createNode());
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).addElement(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0b0n0e0a0a0b0a().createNode());
           SNode conceptBehavior = getOrCreateBehavior.invoke(conceptDeclaration);
           SNode methodImpl = new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a3a31a4a0a0a1a0().createNode();
           SLinkOperations.setTarget(methodImpl, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(unitConcept, "getUnitName", true), "body", true)), true);
-          ListSequence.fromList(SLinkOperations.getTargets(conceptBehavior, "method", true)).addElement(methodImpl);
-          for (SNode unitNode : ListSequence.fromList(SNodeOperations.getDescendants(methodImpl, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_UnitNode", false, new String[]{}))) {
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(conceptBehavior, "method", true)).addElement(methodImpl);
+          for (SNode unitNode : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(methodImpl, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_UnitNode", false, new String[]{}))) {
             SNodeOperations.replaceWithAnother(unitNode, new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a1a0a6a31a4a0a0a1a0().createNode());
           }
         }

@@ -31,9 +31,9 @@ public enum TableComponentEnum {
   }
 
   public static List<TableComponentEnum> getConstants() {
-    List<TableComponentEnum> list = ListSequence.fromList(new LinkedList<TableComponentEnum>());
-    ListSequence.fromList(list).addElement(TableComponentEnum.horizontal_collection);
-    ListSequence.fromList(list).addElement(TableComponentEnum.vertical_collection);
+    List<TableComponentEnum> list = ListSequence.<TableComponentEnum>fromList(new LinkedList<TableComponentEnum>());
+    ListSequence.<TableComponentEnum>fromList(list).addElement(TableComponentEnum.horizontal_collection);
+    ListSequence.<TableComponentEnum>fromList(list).addElement(TableComponentEnum.vertical_collection);
     return list;
   }
 

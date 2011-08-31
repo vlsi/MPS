@@ -45,7 +45,7 @@ public class RemoveConditions_Intention extends BaseIntention implements Intenti
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions"))), "condition", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions"))), "condition", true)).isNotEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

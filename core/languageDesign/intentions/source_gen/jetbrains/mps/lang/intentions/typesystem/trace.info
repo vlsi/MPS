@@ -68,8 +68,8 @@
     <unitInfo nodeId="1192798450063" fileName="typeof_ConceptFunctionParameter_node_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.intentions.typesystem.typeof_ConceptFunctionParameter_node_InferenceRule" />
   </root>
   <root nodeId="1240319537225">
-    <nodeInfo nodeId="1240322248784" fileName="typeof_QueryBlock_InferenceRule.java" startLine="22" startPosition="118" endLine="23" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240322152910" fileName="typeof_QueryBlock_InferenceRule.java" startLine="23" startPosition="214" endLine="24" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240322248784" fileName="typeof_QueryBlock_InferenceRule.java" startLine="22" startPosition="118" endLine="23" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240322152910" fileName="typeof_QueryBlock_InferenceRule.java" startLine="23" startPosition="228" endLine="24" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240319537225" fileName="typeof_QueryBlock_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240319537225" fileName="typeof_QueryBlock_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240319537225" fileName="typeof_QueryBlock_InferenceRule.java" startLine="33" startPosition="117" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -134,7 +134,7 @@
     <scopeInfo nodeId="1240319537225" fileName="typeof_QueryBlock_InferenceRule.java" startLine="83" startPosition="66" endLine="84" endPosition="64" />
     <scopeInfo nodeId="1240319537225" fileName="typeof_QueryBlock_InferenceRule.java" startLine="89" startPosition="38" endLine="90" endPosition="87" />
     <scopeInfo nodeId="1240319537225" fileName="typeof_QueryBlock_InferenceRule.java" startLine="18" startPosition="117" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="1240319537226" fileName="typeof_QueryBlock_InferenceRule.java" startLine="22" startPosition="118" endLine="24" endPosition="266" />
+    <scopeInfo nodeId="1240319537226" fileName="typeof_QueryBlock_InferenceRule.java" startLine="22" startPosition="118" endLine="24" endPosition="273" />
     <scopeInfo nodeId="1240319537225" fileName="typeof_QueryBlock_InferenceRule.java" startLine="32" startPosition="5" endLine="34" endPosition="45" />
     <scopeInfo nodeId="1240319537225" fileName="typeof_QueryBlock_InferenceRule.java" startLine="42" startPosition="53" endLine="44" endPosition="5" />
     <scopeInfo nodeId="1240319537225" fileName="typeof_QueryBlock_InferenceRule.java" startLine="59" startPosition="18" endLine="61" endPosition="41" />

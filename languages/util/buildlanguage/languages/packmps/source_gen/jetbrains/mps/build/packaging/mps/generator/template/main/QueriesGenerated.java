@@ -20,9 +20,9 @@ import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -44,10 +44,10 @@ public class QueriesGenerated {
     Tuples._2<SModel, String> key = MultiTuple.<SModel,String>from(_context.getInputModel(), "idea.additional.classpath");
     Set<String> processedPaths = (Set<String>) _context.getTransientObject(key);
     if (processedPaths == null) {
-      processedPaths = SetSequence.fromSet(new HashSet<String>());
+      processedPaths = SetSequence.<String>fromSet(new HashSet<String>());
       _context.putTransientObject(key, processedPaths);
     }
-    boolean wasNotProcesses = !(SetSequence.fromSet(processedPaths).contains(SPropertyOperations.getString(_context.getNode(), "fullPath")));
+    boolean wasNotProcesses = !(SetSequence.<String>fromSet(processedPaths).contains(SPropertyOperations.getString(_context.getNode(), "fullPath")));
     if (wasNotProcesses) {
       SetSequence.fromSet(processedPaths).addElement(SPropertyOperations.getString(_context.getNode(), "fullPath"));
     }
@@ -55,13 +55,13 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_8037435193861318531(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.build.packaging.structure.Block")).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.build.packaging.structure.Block")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode blk) {
         return "idea-patch.jar".equals(SPropertyOperations.getString(blk, "name")) || "mps.jar".equals(SPropertyOperations.getString(blk, "name"));
       }
     }).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode blk) {
-        return SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(blk, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true);
+        return SLinkOperations.getTargets(SNodeOperations.as(ListSequence.<SNode>fromList(SLinkOperations.getTargets(blk, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -71,13 +71,13 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_8037435193861318584(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.build.packaging.structure.Block")).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.build.packaging.structure.Block")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode blk) {
         return "core.baseLanguage".equals(SPropertyOperations.getString(blk, "name")) || "core.languageDesign".equals(SPropertyOperations.getString(blk, "name"));
       }
     }).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode blk) {
-        return SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(blk, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true);
+        return SLinkOperations.getTargets(SNodeOperations.as(ListSequence.<SNode>fromList(SLinkOperations.getTargets(blk, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -88,7 +88,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_8037435193861318628(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode module = SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Module");
-    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(module, false)).concat(ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(module, true, false)));
+    return ListSequence.<SNode>fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(module, false)).concat(ListSequence.<SNode>fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(module, true, false)));
   }
 
   public static void mappingScript_CodeBlock_3583849467508042413(final IOperationContext operationContext, final MappingScriptContext _context) {

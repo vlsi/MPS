@@ -48,7 +48,7 @@ public class EditorCellModel_Behavior {
   }
 
   public static boolean call_isSelectable_1219420196673(SNode thisNode) {
-    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"))).first(), "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem");
+    SNode firstItem = SNodeOperations.cast(ListSequence.<SNode>fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"))).first(), "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem");
     if ((firstItem == null)) {
       return true;
     }
@@ -56,10 +56,10 @@ public class EditorCellModel_Behavior {
   }
 
   public static void call_setSelectable_1241444765326(SNode thisNode, boolean newSelectable) {
-    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"))).first(), "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem");
+    SNode firstItem = SNodeOperations.cast(ListSequence.<SNode>fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"))).first(), "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem");
     if ((firstItem == null)) {
       firstItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
-      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "styleItem", true)).addElement(firstItem);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "styleItem", true)).addElement(firstItem);
     }
     SPropertyOperations.set(firstItem, "flag", "" + (newSelectable));
   }
@@ -91,22 +91,22 @@ public class EditorCellModel_Behavior {
   }
 
   public static Color call_getForegroundColor_1220960215403(SNode thisNode) {
-    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem");
+    SNode item = SNodeOperations.cast(ListSequence.<SNode>fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem");
     return EditorCellModel_Behavior.call_getColor_1225468825117(thisNode, item);
   }
 
   public static Color call_getBackgroundColor_1220969182195(SNode thisNode) {
-    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem");
+    SNode item = SNodeOperations.cast(ListSequence.<SNode>fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem");
     return EditorCellModel_Behavior.call_getColor_1225468825117(thisNode, item);
   }
 
   public static Color call_getTextBackgroundColor_1220972190901(SNode thisNode) {
-    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem");
+    SNode item = SNodeOperations.cast(ListSequence.<SNode>fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem");
     return EditorCellModel_Behavior.call_getColor_1225468825117(thisNode, item);
   }
 
   public static boolean call_isUnderlined_1221220594206(SNode thisNode) {
-    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem");
+    SNode firstItem = SNodeOperations.cast(ListSequence.<SNode>fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem");
     if ((firstItem == null)) {
       return false;
     }
@@ -118,7 +118,7 @@ public class EditorCellModel_Behavior {
   }
 
   public static int call_getFontSize_1221216397365(SNode thisNode) {
-    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem");
+    SNode firstItem = SNodeOperations.cast(ListSequence.<SNode>fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem");
     if ((firstItem == null)) {
       return EditorSettings.getInstance().getDefaultEditorFont().getSize();
     }
@@ -126,7 +126,7 @@ public class EditorCellModel_Behavior {
   }
 
   public static int call_getFontStyle_1221053923273(SNode thisNode) {
-    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem");
+    SNode firstItem = SNodeOperations.cast(ListSequence.<SNode>fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem");
     if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, "style", "PLAIN") == null || SPropertyOperations.hasValue(firstItem, "style", "QUERY", "PLAIN")) {
       return EditorCellModel_Behavior.call_getDefaultFontStyle_1221472292001(thisNode);
     }
@@ -191,7 +191,7 @@ public class EditorCellModel_Behavior {
   }
 
   public static boolean call_getBooleanStyleValue_1237383442523(SNode thisNode, SNode styleItem, boolean defaultValue) {
-    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, styleItem)).first(), "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem");
+    SNode item = SNodeOperations.cast(ListSequence.<SNode>fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, styleItem)).first(), "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem");
     if ((item == null)) {
       return defaultValue;
     }

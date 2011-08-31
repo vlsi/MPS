@@ -37,7 +37,7 @@ public class SimpleBuilder_Behavior {
   public static List<SNode> call_getPossibleChildren_8969040284892300232(SNode thisNode, SModel model, IScope scope) {
     List<SNode> builders = new ArrayList<SNode>();
     for (SNode child : SimpleBuilderDeclaration_Behavior.call_getChildren_3816167865390856298(SLinkOperations.getTarget(thisNode, "declaration", false), model, scope)) {
-      ListSequence.fromList(builders).addSequence(ListSequence.fromList(SimpleBuilderDeclaration_Behavior.call_getDescendants_3816167865390609214(SLinkOperations.getTarget(child, "child", false), model, scope)).where(new IWhereFilter<SNode>() {
+      ListSequence.<SNode>fromList(builders).addSequence(ListSequence.<SNode>fromList(SimpleBuilderDeclaration_Behavior.call_getDescendants_3816167865390609214(SLinkOperations.getTarget(child, "child", false), model, scope)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SPropertyOperations.getBoolean(it, "isAbstract"));
         }
@@ -51,13 +51,13 @@ public class SimpleBuilder_Behavior {
 
     List<SNode> params = SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "declaration", false), "parameter", true);
     List<SNode> args = SLinkOperations.getTargets(thisNode, "argument", true);
-    if (ListSequence.fromList(params).count() != ListSequence.fromList(args).count()) {
+    if (ListSequence.<SNode>fromList(params).count() != ListSequence.<SNode>fromList(args).count()) {
       throw new RuntimeException();
     }
 
     for (SNode ref : SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference", false, new String[]{})) {
-      int index = ListSequence.fromList(params).indexOf(SLinkOperations.getTarget(ref, "parameter", false));
-      SNodeOperations.replaceWithAnother(ref, SNodeOperations.copyNode(ListSequence.fromList(args).getElement(index)));
+      int index = ListSequence.<SNode>fromList(params).indexOf(SLinkOperations.getTarget(ref, "parameter", false));
+      SNodeOperations.replaceWithAnother(ref, SNodeOperations.copyNode(ListSequence.<SNode>fromList(args).getElement(index)));
     }
 
     return result;

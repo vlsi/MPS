@@ -62,13 +62,13 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
     }
 
     private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      if (ListSequence.fromList(selectedNodes).count() != 1) {
+      if (ListSequence.<SNode>fromList(selectedNodes).count() != 1) {
         return false;
       }
       if (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, false, false) == null) {
         return false;
       }
-      if (ListSequence.fromList(SNodeOperations.getAncestors(node, null, false)).where(new IWhereFilter<SNode>() {
+      if (ListSequence.<SNode>fromList(SNodeOperations.getAncestors(node, null, false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isAttribute(it);
         }
@@ -83,7 +83,7 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       // do not hang <TF> on other attributes 
-      SNode applyToNode = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
+      SNode applyToNode = ListSequence.<SNode>fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SNodeOperations.isAttribute(it));
         }
@@ -127,7 +127,7 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
     }
 
     private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      if (ListSequence.fromList(selectedNodes).count() != 1) {
+      if (ListSequence.<SNode>fromList(selectedNodes).count() != 1) {
         return false;
       }
       return QueriesUtil.isNodeMacroApplicable(node);
@@ -175,7 +175,7 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
     }
 
     private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      if (ListSequence.fromList(selectedNodes).count() != 1) {
+      if (ListSequence.<SNode>fromList(selectedNodes).count() != 1) {
         return false;
       }
       return QueriesUtil.isPropertyMacroApplicable(node, editorContext.getSelectedCell());
@@ -226,7 +226,7 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
     }
 
     private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      if (ListSequence.fromList(selectedNodes).count() != 1) {
+      if (ListSequence.<SNode>fromList(selectedNodes).count() != 1) {
         return false;
       }
       return QueriesUtil.isReferenceMacroApplicable(node, editorContext.getSelectedCell());

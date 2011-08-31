@@ -35,7 +35,7 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
   }
 
   public SNode getContainerMethod() {
-    SNode node = ListSequence.fromList(this.myNodesToRefactor).first();
+    SNode node = ListSequence.<SNode>fromList(this.myNodesToRefactor).first();
     while (node != null) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         return node;
@@ -61,7 +61,7 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
 
   public static void universalAddMethod(SNode container, SNode method) {
     SNode concept = SNodeOperations.getConceptDeclaration(method);
-    for (SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(container)))) {
+    for (SNode link : ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(container)))) {
       if (SLinkOperations.getTarget(link, "target", false) == concept) {
         container.addChild(SPropertyOperations.getString(link, "role"), method);
       }

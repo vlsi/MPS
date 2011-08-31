@@ -14,8 +14,8 @@ public class OptionSetReference_Behavior {
 
   public static List<SNode> call_getUsedSymbols_7803330421062325062(SNode thisNode) {
     List<SNode> symbols = new ArrayList<SNode>();
-    for (SNode opt : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "refToOptions", true))) {
-      ListSequence.fromList(symbols).addElement(SLinkOperations.getTarget(opt, "option", false));
+    for (SNode opt : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "refToOptions", true))) {
+      ListSequence.<SNode>fromList(symbols).addElement(SLinkOperations.getTarget(opt, "option", false));
     }
     return symbols;
   }

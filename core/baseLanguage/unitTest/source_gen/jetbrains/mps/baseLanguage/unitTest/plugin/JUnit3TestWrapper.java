@@ -29,7 +29,7 @@ public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
   @NotNull
   @Override
   public Iterable<ITestNodeWrapper> getTestMethods() {
-    return ListSequence.fromList(SLinkOperations.getTargets(myNode, "method", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(myNode, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return JUnit3MethodWrapper.isTestMethod(it);
       }

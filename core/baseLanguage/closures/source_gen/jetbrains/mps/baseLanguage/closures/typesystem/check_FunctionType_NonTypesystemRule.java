@@ -23,11 +23,11 @@ public class check_FunctionType_NonTypesystemRule extends AbstractNonTypesystemR
   public void applyRule(final SNode ft, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(ft, "runtimeIface", false) != null)) {
       SNode rt = SLinkOperations.getTarget(ft, "runtimeIface", false);
-      if (!(ListSequence.fromList(SLinkOperations.getTargets(rt, "method", true)).count() == 1)) {
+      if (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(rt, "method", true)).count() == 1)) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ft, "runtime interface must have exactly one method", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "6871507691291049608", null, errorTarget);
       }
-      SNode mtd = ListSequence.fromList(SLinkOperations.getTargets(rt, "method", true)).first();
+      SNode mtd = ListSequence.<SNode>fromList(SLinkOperations.getTargets(rt, "method", true)).first();
       if ((FunctionType_Behavior.call_getResultType_1230475757059(ft) != null)) {
         if (!(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(mtd, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")))) {
           MessageTarget errorTarget = new NodeMessageTarget();
@@ -39,7 +39,7 @@ public class check_FunctionType_NonTypesystemRule extends AbstractNonTypesystemR
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ft, "void expected", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "6871507691291057444", null, errorTarget);
         }
       }
-      if (!(ListSequence.fromList(SLinkOperations.getTargets(mtd, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(ft, "parameterType", true)).count())) {
+      if (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(mtd, "parameter", true)).count() == ListSequence.<SNode>fromList(SLinkOperations.getTargets(ft, "parameterType", true)).count())) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ft, "wrong parameter number", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "6871507691291057462", null, errorTarget);
       }

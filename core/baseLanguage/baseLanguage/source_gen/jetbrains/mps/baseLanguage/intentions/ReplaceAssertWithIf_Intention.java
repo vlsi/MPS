@@ -63,7 +63,7 @@ public class ReplaceAssertWithIf_Intention extends BaseIntention implements Inte
     SNode notExpr = SNodeFactoryOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.NotExpression");
     SLinkOperations.setTarget(notExpr, "expression", SLinkOperations.getTarget(node, "condition", true), true);
     SNodeFactoryOperations.setNewChild(ifStatement, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).insertElement(0, throwStatement);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).insertElement(0, throwStatement);
     // replace assert with if 
     SNodeOperations.replaceWithAnother(node, ifStatement);
   }

@@ -34,9 +34,9 @@ public class RuntimeUtils {
   public static Map<String, SNode> getRuntimeClassifiersMap() {
     synchronized (RuntimeUtils.class) {
       if (runtimeClassifiers == null) {
-        runtimeClassifiers = MapSequence.fromMap(new HashMap<String, SNode>());
+        runtimeClassifiers = MapSequence.<String,SNode>fromMap(new HashMap<String, SNode>());
         for (SNode cls : SModelOperations.getNodes(getRuntimeModel(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
-          MapSequence.fromMap(runtimeClassifiers).put(SPropertyOperations.getString(cls, "nestedName"), cls);
+          MapSequence.<String,SNode>fromMap(runtimeClassifiers).put(SPropertyOperations.getString(cls, "nestedName"), cls);
         }
         ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
           public void unload() {

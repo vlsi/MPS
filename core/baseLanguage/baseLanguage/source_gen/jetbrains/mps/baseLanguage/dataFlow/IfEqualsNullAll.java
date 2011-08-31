@@ -33,11 +33,11 @@ public class IfEqualsNullAll extends DataFlowConstructor {
       if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
         SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.EqualsExpression"));
         if (notNullNode != null) {
-          ListSequence.fromList(vars).addElement(notNullNode);
+          ListSequence.<SNode>fromList(vars).addElement(notNullNode);
         }
       }
     }
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ReturnStatement"))) {
+    if (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.<SNode>fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ReturnStatement"))) {
       for (SNode var : vars) {
         {
           Object object = SLinkOperations.getTarget(node, "ifTrue", true);
@@ -54,10 +54,10 @@ public class IfEqualsNullAll extends DataFlowConstructor {
     if (SLinkOperations.getTargets(node, "elsifClauses", true) != null) {
       for (SNode var : vars) {
         {
-          Object object = ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first();
+          Object object = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first();
           if (((Program) o).contains(object)) {
             boolean before = true;
-            int position = ((Program) (o)).getStart(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first());
+            int position = ((Program) (o)).getStart(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first());
             Instruction instruction = new notNullInstruction(var);
             instruction.setSource(node);
             ((Program) (o)).insert(instruction, position, true, before);

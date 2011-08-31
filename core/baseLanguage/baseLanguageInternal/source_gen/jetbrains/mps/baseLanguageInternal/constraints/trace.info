@@ -50,7 +50,7 @@
     <nodeInfo nodeId="5822086619725599137" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="57" startPosition="40" endLine="58" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5822086619725599145" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="59" startPosition="20" endLine="60" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5822086619725599149" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="65" startPosition="142" endLine="66" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5822086619725599234" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="72" startPosition="79" endLine="73" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5822086619725599234" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="72" startPosition="79" endLine="73" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5822086619725599160" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="75" startPosition="13" endLine="76" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5822086619725599106" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="80" startPosition="61" endLine="81" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5822086619725599106" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="85" startPosition="7" endLine="86" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -76,7 +76,7 @@
     <scopeInfo nodeId="5822086619725599124" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="54" startPosition="41" endLine="55" endPosition="247" />
     <scopeInfo nodeId="5822086619725599136" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="57" startPosition="40" endLine="58" endPosition="160" />
     <scopeInfo nodeId="5822086619725599144" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="59" startPosition="20" endLine="60" endPosition="88" />
-    <scopeInfo nodeId="5822086619725599219" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="72" startPosition="79" endLine="73" endPosition="177" />
+    <scopeInfo nodeId="5822086619725599219" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="72" startPosition="79" endLine="73" endPosition="191" />
     <scopeInfo nodeId="5822086619725599106" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="80" startPosition="61" endLine="81" endPosition="58" />
     <scopeInfo nodeId="5822086619725599106" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="29" startPosition="0" endLine="32" endPosition="3" />
     <scopeInfo nodeId="5822086619725599181" fileName="ExtractStaticInnerClassCreator_Constraints.java" startLine="71" startPosition="156" endLine="74" endPosition="15" />

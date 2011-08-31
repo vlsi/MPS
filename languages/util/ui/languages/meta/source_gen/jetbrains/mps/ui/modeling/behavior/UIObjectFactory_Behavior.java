@@ -29,17 +29,17 @@ public class UIObjectFactory_Behavior {
     if (!(ConceptFunction_Behavior.call_isReturnOnly_3745452943050787634(thisNode))) {
       return null;
     }
-    SNode exp = SLinkOperations.getTarget(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "body", true), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true);
+    SNode exp = SLinkOperations.getTarget(SNodeOperations.as(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "body", true), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true);
     return ((exp != null) ?
       exp :
-      SLinkOperations.getTarget(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "body", true), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true)
+      SLinkOperations.getTarget(SNodeOperations.as(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "body", true), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true)
     );
   }
 
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> result = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     if ((SLinkOperations.getTarget(thisNode, "context", true) != null)) {
-      ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.ContextUIObjectParam"));
+      ListSequence.<SNode>fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.ContextUIObjectParam"));
     }
     return result;
   }

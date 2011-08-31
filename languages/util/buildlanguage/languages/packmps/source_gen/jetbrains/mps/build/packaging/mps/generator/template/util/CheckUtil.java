@@ -44,7 +44,7 @@ public class CheckUtil {
 
     String samplesPath = PathManager.getHomePath() + File.separator + "samples";
     List<IModule> sampleModules = MPSModuleRepository.getInstance().getAllModulesInDirectory(FileSystem.getInstance().getFileByPath(samplesPath));
-    for (IModule module : ListSequence.fromList(sampleModules)) {
+    for (IModule module : ListSequence.<IModule>fromList(sampleModules)) {
       if (!(module.isCompileInMPS())) {
         String msg = "Module " + module.getModuleFqName() + " is a sample, but is not compiled in MPS";
         if (log.isErrorEnabled()) {
@@ -56,15 +56,15 @@ public class CheckUtil {
 
   public static void checkCoreRuntimeDeps() {
     List<SNode> coreBlocks = new ArrayList<SNode>();
-    ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472858"));
-    ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472940"));
-    ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472865"));
-    ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472896"));
-    ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472902"));
-    ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472907"));
-    ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "5297918386943402887"));
+    ListSequence.<SNode>fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472858"));
+    ListSequence.<SNode>fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472940"));
+    ListSequence.<SNode>fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472865"));
+    ListSequence.<SNode>fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472896"));
+    ListSequence.<SNode>fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472902"));
+    ListSequence.<SNode>fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472907"));
+    ListSequence.<SNode>fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "5297918386943402887"));
 
-    Iterable<IModule> coreModules = ListSequence.fromList(coreBlocks).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    Iterable<IModule> coreModules = ListSequence.<SNode>fromList(coreBlocks).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SNodeOperations.getDescendants(it, "jetbrains.mps.build.packaging.structure.Module", false, new String[]{});
       }
@@ -74,7 +74,7 @@ public class CheckUtil {
       }
     });
 
-    for (Solution solution : ListSequence.fromList(MPSModuleRepository.getInstance().getAllSolutions())) {
+    for (Solution solution : ListSequence.<Solution>fromList(MPSModuleRepository.getInstance().getAllSolutions())) {
       if (solution.isStub()) {
         continue;
       }
@@ -83,14 +83,14 @@ public class CheckUtil {
       }
 
       // if we are here, this means this solution is a part of MPS core 
-      for (Language language : SetSequence.fromSet(solution.getDependenciesManager().getAllUsedLanguages())) {
-        for (IModule module : ListSequence.fromList(((LanguageDependenciesManager) language.getDependenciesManager()).getRuntimeDependOnModules())) {
+      for (Language language : SetSequence.<Language>fromSet(solution.getDependenciesManager().getAllUsedLanguages())) {
+        for (IModule module : ListSequence.<IModule>fromList(((LanguageDependenciesManager) language.getDependenciesManager()).getRuntimeDependOnModules())) {
           if (module.getDescriptorFile() == null) {
             // for filtering out modules like MPS.Classpath 
             continue;
           }
           // check that this module is in classpath on build startup 
-          if (!(Sequence.fromIterable(coreModules).contains(module))) {
+          if (!(Sequence.<IModule>fromIterable(coreModules).contains(module))) {
             String msg = "Module " + module.getModuleFqName() + " should be in core because it's a runtime of language " + language.getModuleFqName() + ", which is used by core solution " + solution.getModuleFqName();
             if (log.isErrorEnabled()) {
               log.error(msg);
@@ -103,7 +103,7 @@ public class CheckUtil {
 
   public static void checkIncludedLanguage() {
     List<Language> langs = MPSModuleRepository.getInstance().getAllLanguages();
-    for (SNode moduleNode : ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472858")), "jetbrains.mps.build.packaging.structure.Module"))) {
+    for (SNode moduleNode : ListSequence.<SNode>fromList(SModelOperations.getNodes(SNodeOperations.getModel(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472858")), "jetbrains.mps.build.packaging.structure.Module"))) {
       IModule module = Module_Behavior.call_getModule_1213877515148(moduleNode);
       if (!(module instanceof Language)) {
         continue;
@@ -115,7 +115,7 @@ public class CheckUtil {
     if (log.isInfoEnabled()) {
       log.info("Check finished");
     }
-    for (Language l : ListSequence.fromList(langs)) {
+    for (Language l : ListSequence.<Language>fromList(langs)) {
       if (log.isWarnEnabled()) {
         log.warn(l.getModuleFqName());
       }

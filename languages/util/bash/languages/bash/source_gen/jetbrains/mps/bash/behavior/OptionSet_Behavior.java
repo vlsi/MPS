@@ -13,7 +13,7 @@ public class OptionSet_Behavior {
 
   public static List<SNode> call_getDeclaredOptions_7803330421060048539(SNode thisNode) {
     List<SNode> options = new ArrayList<SNode>();
-    ListSequence.fromList(options).addSequence(ListSequence.fromList(options));
+    ListSequence.<SNode>fromList(options).addSequence(ListSequence.<SNode>fromList(options));
     return options;
   }
 }

@@ -24,7 +24,7 @@ public class CustomContainerCreator_Behavior {
     if (res != null) {
       res.changeModel(AuxilaryRuntimeModel.getDescriptor().getSModel());
     }
-    ListSequence.fromList(SNodeOperations.getChildren(res)).toListSequence().visitAll(new IVisitor<SNode>() {
+    ListSequence.<SNode>fromList(SNodeOperations.getChildren(res)).toListSequence().visitAll(new IVisitor<SNode>() {
       public void visit(SNode chld) {
         if (SNodeOperations.isInstanceOf(chld, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
           SNodeOperations.replaceWithAnother(chld, SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "elementType", true)));

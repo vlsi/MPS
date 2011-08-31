@@ -30,10 +30,10 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<Pair> res = ListSequence.fromList(new ArrayList<Pair>());
+      List<Pair> res = ListSequence.<Pair>fromList(new ArrayList<Pair>());
       final SNode srcNode = node;
       final boolean isGeneric = SNodeOperations.isInstanceOf(srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
-      for (SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(srcNode), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true)).where(new IWhereFilter<SNode>() {
+      for (SNode fe : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(srcNode), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return it != srcNode && ((isGeneric ?
             SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature") :
@@ -41,8 +41,8 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
           ));
         }
       })) {
-        ListSequence.fromList(res).addElement(new Pair<SNode, Boolean>(fe, Boolean.TRUE));
-        ListSequence.fromList(res).addElement(new Pair<SNode, Boolean>(fe, Boolean.FALSE));
+        ListSequence.<Pair>fromList(res).addElement(new Pair<SNode, Boolean>(fe, Boolean.TRUE));
+        ListSequence.<Pair>fromList(res).addElement(new Pair<SNode, Boolean>(fe, Boolean.FALSE));
       }
       return res;
     }

@@ -61,7 +61,7 @@ public class ThisExpression_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             if (!(SNodeOperations.isInstanceOf(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
-              return Sequence.fromIterable(Collections.<SNode>emptyList());
+              return Sequence.<SNode>fromIterable(Collections.<SNode>emptyList());
             }
             return ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression"));
           }

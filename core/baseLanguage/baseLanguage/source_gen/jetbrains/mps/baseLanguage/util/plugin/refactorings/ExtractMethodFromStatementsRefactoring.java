@@ -17,13 +17,13 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
 
   public ExtractMethodFromStatementsRefactoring(ExtractMethodRefactoringParameters params) {
     super(params);
-    ListSequence.fromList(this.myStatements).addSequence(ListSequence.fromList(((List<SNode>) params.getNodesToRefactor())));
+    ListSequence.<SNode>fromList(this.myStatements).addSequence(ListSequence.<SNode>fromList(((List<SNode>) params.getNodesToRefactor())));
   }
 
   protected SNode createMethodBody() {
     SNode body = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
     this.modifyPartToExtract();
-    ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addSequence(ListSequence.fromList(CopyUtil.copy(this.myStatements)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(body, "statement", true)).addSequence(ListSequence.<SNode>fromList(CopyUtil.copy(this.myStatements)));
     return body;
   }
 
@@ -34,8 +34,8 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
         SNode callStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
         SLinkOperations.setTarget(callStatement, "expression", methodCall, true);
         List<SNode> statements = match.getNodes();
-        SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), callStatement);
-        for (SNode statement : ListSequence.fromList(statements)) {
+        SNodeOperations.insertPrevSiblingChild(ListSequence.<SNode>fromList(statements).first(), callStatement);
+        for (SNode statement : ListSequence.<SNode>fromList(statements)) {
           SNodeOperations.deleteNode(statement);
         }
       }

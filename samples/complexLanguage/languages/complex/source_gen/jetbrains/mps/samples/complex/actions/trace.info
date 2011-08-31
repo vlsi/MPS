@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="23" startPosition="51" endLine="42" endPosition="7" unitName="jetbrains.mps.samples.complex.actions.QueriesGenerated$1" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="46" startPosition="51" endLine="65" endPosition="7" unitName="jetbrains.mps.samples.complex.actions.QueriesGenerated$2" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="69" startPosition="51" endLine="88" endPosition="7" unitName="jetbrains.mps.samples.complex.actions.QueriesGenerated$3" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="92" startPosition="51" endLine="111" endPosition="7" unitName="jetbrains.mps.samples.complex.actions.QueriesGenerated$4" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="115" startPosition="51" endLine="134" endPosition="7" unitName="jetbrains.mps.samples.complex.actions.QueriesGenerated$5" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="138" startPosition="51" endLine="157" endPosition="7" unitName="jetbrains.mps.samples.complex.actions.QueriesGenerated$6" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="23" startPosition="74" endLine="42" endPosition="7" unitName="jetbrains.mps.samples.complex.actions.QueriesGenerated$1" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="46" startPosition="74" endLine="65" endPosition="7" unitName="jetbrains.mps.samples.complex.actions.QueriesGenerated$2" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="69" startPosition="74" endLine="88" endPosition="7" unitName="jetbrains.mps.samples.complex.actions.QueriesGenerated$3" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="92" startPosition="74" endLine="111" endPosition="7" unitName="jetbrains.mps.samples.complex.actions.QueriesGenerated$4" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="115" startPosition="74" endLine="134" endPosition="7" unitName="jetbrains.mps.samples.complex.actions.QueriesGenerated$5" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="138" startPosition="74" endLine="157" endPosition="7" unitName="jetbrains.mps.samples.complex.actions.QueriesGenerated$6" />
   <unitInfo fileName="QueriesGenerated.java" startLine="18" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.samples.complex.actions.QueriesGenerated" />
   <root nodeId="1196261383105">
     <nodeInfo nodeId="1196261582706" fileName="QueriesGenerated.java" startLine="24" startPosition="51" endLine="25" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

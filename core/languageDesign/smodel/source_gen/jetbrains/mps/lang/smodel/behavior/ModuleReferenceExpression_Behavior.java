@@ -46,8 +46,8 @@ public class ModuleReferenceExpression_Behavior {
 
   @NotNull
   public static List<IModule> getVisibleModules_4040588429969394431(IScope scope) {
-    List<IModule> result = ListSequence.fromList(new ArrayList<IModule>());
-    ListSequence.fromList(result).addSequence(Sequence.fromIterable(scope.getVisibleModules()));
+    List<IModule> result = ListSequence.<IModule>fromList(new ArrayList<IModule>());
+    ListSequence.<IModule>fromList(result).addSequence(Sequence.<IModule>fromIterable(scope.getVisibleModules()));
     return result;
   }
 }

@@ -27,25 +27,25 @@ public class IndexedTupleType_Behavior {
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    List<String> suffixes = ListSequence.fromList(new ArrayList<String>());
-    switch (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "componentType", true)).count()) {
+    List<String> suffixes = ListSequence.<String>fromList(new ArrayList<String>());
+    switch (ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "componentType", true)).count()) {
       case 0:
-        ListSequence.fromList(suffixes).addElement("unit");
+        ListSequence.<String>fromList(suffixes).addElement("unit");
         break;
       case 1:
-        ListSequence.fromList(suffixes).addElement("single");
+        ListSequence.<String>fromList(suffixes).addElement("single");
         break;
       case 2:
-        ListSequence.fromList(suffixes).addElement("pair");
+        ListSequence.<String>fromList(suffixes).addElement("pair");
         break;
       case 3:
-        ListSequence.fromList(suffixes).addElement("triple");
+        ListSequence.<String>fromList(suffixes).addElement("triple");
         break;
       case 4:
-        ListSequence.fromList(suffixes).addElement("quadruple");
+        ListSequence.<String>fromList(suffixes).addElement("quadruple");
         break;
       default:
-        ListSequence.fromList(suffixes).addElement("_" + Integer.valueOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "componentType", true)).count()) + "tuple");
+        ListSequence.<String>fromList(suffixes).addElement("_" + Integer.valueOf(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "componentType", true)).count()) + "tuple");
     }
     return suffixes;
   }

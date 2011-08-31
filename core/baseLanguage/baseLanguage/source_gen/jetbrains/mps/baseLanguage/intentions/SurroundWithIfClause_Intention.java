@@ -50,7 +50,7 @@ public class SurroundWithIfClause_Intention extends SurroundWithIntention implem
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode ifStatement = SNodeFactoryOperations.replaceWithNewChild(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IfStatement");
     SLinkOperations.setTarget(ifStatement, "condition", node, true);
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).clear();
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).clear();
     editorContext.select(SLinkOperations.getTarget(ifStatement, "ifTrue", true));
   }
 

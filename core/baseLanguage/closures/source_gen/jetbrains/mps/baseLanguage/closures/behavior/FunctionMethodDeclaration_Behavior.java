@@ -19,7 +19,7 @@ public class FunctionMethodDeclaration_Behavior {
   }
 
   public static SNode call_functionType_2857237956452412451(SNode thisNode) {
-    List<SNode> params = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    List<SNode> params = ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode pd) {
         return SNodeOperations.copyNode(SLinkOperations.getTarget(pd, "type", true));
       }

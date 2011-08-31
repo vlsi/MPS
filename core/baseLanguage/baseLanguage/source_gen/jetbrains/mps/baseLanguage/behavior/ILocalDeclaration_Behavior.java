@@ -21,7 +21,7 @@ public class ILocalDeclaration_Behavior {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     {
       SNode ref;
-      Iterator<SNode> ref_iterator = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.ILocalReference", false, new String[]{})).iterator();
+      Iterator<SNode> ref_iterator = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.ILocalReference", false, new String[]{})).iterator();
       while (true) {
         if (!(ref_iterator.hasNext())) {
           break;
@@ -48,7 +48,7 @@ public class ILocalDeclaration_Behavior {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     {
       SNode ref;
-      Iterator<SNode> ref_iterator = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.ILocalReference", false, new String[]{})).iterator();
+      Iterator<SNode> ref_iterator = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.ILocalReference", false, new String[]{})).iterator();
       while (true) {
         if (!(ref_iterator.hasNext())) {
           break;
@@ -56,7 +56,7 @@ public class ILocalDeclaration_Behavior {
         ref = ref_iterator.next();
         if (ILocalReference_Behavior.call_getDeclaration_3262277503800831941(ref) == thisNode) {
           SNode interrupter = SNodeOperations.getAncestor(ref, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false);
-          if (interrupter == container || ListSequence.fromList(SNodeOperations.getAncestors(interrupter, null, false)).contains(container)) {
+          if (interrupter == container || ListSequence.<SNode>fromList(SNodeOperations.getAncestors(interrupter, null, false)).contains(container)) {
             return true;
           }
         }

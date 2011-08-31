@@ -7,13 +7,13 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.ui.generator.template.helper.SessionObjects;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ui.behavior.UIObjectStatement_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ui.behavior.IUIObjectContextProvider_Behavior;
@@ -55,43 +55,43 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_2610651675187911095(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044204229(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044204328(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044227740(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044249654(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044249707(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_2459884175396123620(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044249760(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044249813(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044315305(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).count() == 1;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_1251509410704218200(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -135,11 +135,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1251509410704217900(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ConceptFunction_Behavior.call_isReturnOnly_3745452943050787634(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "factory", true)).first());
+    return ConceptFunction_Behavior.call_isReturnOnly_3745452943050787634(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "factory", true)).first());
   }
 
   public static boolean baseMappingRule_Condition_1251509410704217940(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "factory", true)).first(), "context", true) == null);
+    return (SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "factory", true)).first(), "context", true) == null);
   }
 
   public static Object propertyMacro_GetPropertyValue_4587250023234473454(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -418,7 +418,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6991444902044181263(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true));
+    return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.as(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true));
   }
 
   public static SNode sourceNodeQuery_6991444902044181289(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -426,7 +426,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6991444902044204258(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first());
+    return SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first());
   }
 
   public static SNode sourceNodeQuery_6991444902044204298(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -434,7 +434,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6991444902044204343(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first());
+    return SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first());
   }
 
   public static SNode sourceNodeQuery_6991444902044204363(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -458,7 +458,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6991444902044227755(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first());
+    return SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first());
   }
 
   public static SNode sourceNodeQuery_6991444902044227775(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -474,11 +474,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_3939571372331610889(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
+    return SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.as(ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
   }
 
   public static SNode sourceNodeQuery_6991444902044249669(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first());
+    return SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first());
   }
 
   public static SNode sourceNodeQuery_6991444902044249689(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -486,7 +486,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6991444902044249722(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first());
+    return SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first());
   }
 
   public static SNode sourceNodeQuery_6991444902044249742(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -494,7 +494,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_410118987918254579(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true));
+    return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true));
   }
 
   public static SNode sourceNodeQuery_410118987918254606(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -502,7 +502,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6991444902044249775(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first());
+    return SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first());
   }
 
   public static SNode sourceNodeQuery_6991444902044249795(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -510,7 +510,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6991444902044249828(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first());
+    return SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).first());
   }
 
   public static SNode sourceNodeQuery_6991444902044249848(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -598,7 +598,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6991444902044315329(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first();
   }
 
   public static SNode sourceNodeQuery_6991444902044315354(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -642,21 +642,21 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6991444902044152372(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(UIObjectFactory_Behavior.call_getExpression_7655275107718418307(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "factory", true)).first()));
+    return SNodeOperations.copyNode(UIObjectFactory_Behavior.call_getExpression_7655275107718418307(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "factory", true)).first()));
   }
 
   public static SNode sourceNodeQuery_1251509410704217966(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "factory", true)).first(), "body", true));
+    return SNodeOperations.copyNode(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "factory", true)).first(), "body", true));
   }
 
   public static SNode sourceNodeQuery_1251509410704218026(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode tpl = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate");
-    SNode rt = SLinkOperations.getTarget(SNodeOperations.cast(HasTemplate_Behavior.call_findTemplate_3939571372331676060(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(tpl, "factory", true)).first(), "context", true), "uiObject", false), SNodeOperations.getModel(tpl), GlobalScope.getInstance()), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "runtimeType", true);
+    SNode rt = SLinkOperations.getTarget(SNodeOperations.cast(HasTemplate_Behavior.call_findTemplate_3939571372331676060(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(tpl, "factory", true)).first(), "context", true), "uiObject", false), SNodeOperations.getModel(tpl), GlobalScope.getInstance()), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "runtimeType", true);
     return rt;
   }
 
   public static SNode sourceNodeQuery_1251509410704218066(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "factory", true)).first(), "body", true));
+    return SNodeOperations.copyNode(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "factory", true)).first(), "body", true));
   }
 
   public static Iterable sourceNodesQuery_1890792421275811990(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -688,7 +688,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1251509410704218302(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(UIObjectTemplate_Behavior.call_allExtendsTemplates_4007322171506129964(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"))).<SNode>select(new ISelector<SNode, SNode>() {
+    return Sequence.<SNode>fromIterable(UIObjectTemplate_Behavior.call_allExtendsTemplates_4007322171506129964(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"))).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode t) {
         return t.getChild(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"));
       }

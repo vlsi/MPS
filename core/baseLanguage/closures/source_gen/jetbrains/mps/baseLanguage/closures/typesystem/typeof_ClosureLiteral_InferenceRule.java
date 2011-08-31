@@ -35,7 +35,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
   }
 
   public void applyRule(final SNode closure, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> paramTypes = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> paramTypes = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     for (SNode param : SLinkOperations.getTargets(closure, "parameter", true)) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(param, "type", true), "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(param, "type", true), "jetbrains.mps.baseLanguage.structure.UndefinedType")) {
         final SNode pt_typevar_1221579075465 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -44,38 +44,38 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221579075466", 0, null);
           typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(pt_typevar_1221579075465), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221579075470", true), _info_12389875345);
         }
-        ListSequence.fromList(paramTypes).addElement(typeCheckingContext.getRepresentative(pt_typevar_1221579075465));
+        ListSequence.<SNode>fromList(paramTypes).addElement(typeCheckingContext.getRepresentative(pt_typevar_1221579075465));
       } else if ((SLinkOperations.getTarget(param, "type", true) != null)) {
-        ListSequence.fromList(paramTypes).addElement(SLinkOperations.getTarget(param, "type", true));
+        ListSequence.<SNode>fromList(paramTypes).addElement(SLinkOperations.getTarget(param, "type", true));
       }
     }
-    List<SNode> allRets = ListSequence.fromList(new ArrayList<SNode>());
-    List<SNode> allYlds = ListSequence.fromList(new ArrayList<SNode>());
-    List<SNode> allYldAlls = ListSequence.fromList(new ArrayList<SNode>());
-    List<SNode> allStmts = ListSequence.fromList(new LinkedList<SNode>());
-    List<SNode> allThrows = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> allRets = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    List<SNode> allYlds = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    List<SNode> allYldAlls = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    List<SNode> allStmts = ListSequence.<SNode>fromList(new LinkedList<SNode>());
+    List<SNode> allThrows = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     for (SNode c : SNodeOperations.getChildren(SLinkOperations.getTarget(closure, "body", true))) {
       if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
-        ListSequence.fromList(allRets).addElement(c);
+        ListSequence.<SNode>fromList(allRets).addElement(c);
       } else if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement")) {
-        ListSequence.fromList(allYlds).addElement(c);
+        ListSequence.<SNode>fromList(allYlds).addElement(c);
       } else if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement")) {
-        ListSequence.fromList(allYldAlls).addElement(c);
+        ListSequence.<SNode>fromList(allYldAlls).addElement(c);
       } else if (!(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock")) && !(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
-        ListSequence.fromList(allStmts).addElement(c);
+        ListSequence.<SNode>fromList(allStmts).addElement(c);
       }
     }
-    while (!(ListSequence.fromList(allStmts).isEmpty())) {
-      SNode stmt = ListSequence.fromList(allStmts).removeElementAt(0);
+    while (!(ListSequence.<SNode>fromList(allStmts).isEmpty())) {
+      SNode stmt = ListSequence.<SNode>fromList(allStmts).removeElementAt(0);
       if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
-        ListSequence.fromList(allRets).addElement(stmt);
+        ListSequence.<SNode>fromList(allRets).addElement(stmt);
       } else if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement")) {
-        ListSequence.fromList(allYlds).addElement(stmt);
+        ListSequence.<SNode>fromList(allYlds).addElement(stmt);
       } else if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement")) {
-        ListSequence.fromList(allYldAlls).addElement(stmt);
+        ListSequence.<SNode>fromList(allYldAlls).addElement(stmt);
       } else
       if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement")) {
-        ListSequence.fromList(allYlds).addElement(stmt);
+        ListSequence.<SNode>fromList(allYlds).addElement(stmt);
       } else {
         if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ThrowStatement")) {
           final SNode tt_typevar_1221579075612 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -84,30 +84,30 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221579075613", 0, null);
             typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(tt_typevar_1221579075612), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221579075617", true), _info_12389875345);
           }
-          ListSequence.fromList(allThrows).addElement(typeCheckingContext.getRepresentative(tt_typevar_1221579075612));
+          ListSequence.<SNode>fromList(allThrows).addElement(typeCheckingContext.getRepresentative(tt_typevar_1221579075612));
         } else
         if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-          for (SNode thr : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "throwsItem", true))) {
-            ListSequence.fromList(allThrows).addElement(SNodeOperations.copyNode(thr));
+          for (SNode thr : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "throwsItem", true))) {
+            ListSequence.<SNode>fromList(allThrows).addElement(SNodeOperations.copyNode(thr));
           }
         }
-        List<SNode> allChildren = ListSequence.fromList(new LinkedList<SNode>());
-        ListSequence.fromList(allChildren).addSequence(ListSequence.fromList(SNodeOperations.getChildren(stmt)));
-        while (ListSequence.fromList(allChildren).isNotEmpty()) {
-          SNode c = ListSequence.fromList(allChildren).removeElementAt(0);
+        List<SNode> allChildren = ListSequence.<SNode>fromList(new LinkedList<SNode>());
+        ListSequence.<SNode>fromList(allChildren).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getChildren(stmt)));
+        while (ListSequence.<SNode>fromList(allChildren).isNotEmpty()) {
+          SNode c = ListSequence.<SNode>fromList(allChildren).removeElementAt(0);
           if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.StatementList")) {
             for (SNode cstmt : SLinkOperations.getTargets(SNodeOperations.cast(c, "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)) {
               if (!(SNodeOperations.isInstanceOf(cstmt, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock")) && !(SNodeOperations.isInstanceOf(cstmt, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
-                ListSequence.fromList(allStmts).addElement(cstmt);
+                ListSequence.<SNode>fromList(allStmts).addElement(cstmt);
               }
             }
           } else if (!(SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
-            ListSequence.fromList(allChildren).addSequence(ListSequence.fromList(SNodeOperations.getChildren(c)));
+            ListSequence.<SNode>fromList(allChildren).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getChildren(c)));
           }
         }
       }
     }
-    List<SNode> realThrows = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> realThrows = ListSequence.<SNode>fromList(new ArrayList<SNode>());
 with_allThrows:
     for (SNode another : allThrows) {
       for (SNode one : realThrows) {
@@ -118,7 +118,7 @@ with_allThrows:
           continue with_allThrows;
         }
       }
-      ListSequence.fromList(realThrows).addElement(another);
+      ListSequence.<SNode>fromList(realThrows).addElement(another);
     }
     final SNode RLCS_typevar_1221579075692 = typeCheckingContext.createNewRuntimeTypesVariable();
     boolean isVoid = false;
@@ -173,18 +173,18 @@ with_allThrows:
       }
     }
     List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(closure, "body", true), "statement", true);
-    SNode lastStmt = (stmts != null && ListSequence.fromList(stmts).count() > 0 ?
+    SNode lastStmt = (stmts != null && ListSequence.<SNode>fromList(stmts).count() > 0 ?
       IMethodLike_Behavior.call_getLastStatement_1239354409446(closure) :
       null
     );
-    boolean returnsValue = !(ListSequence.fromList(allRets).isEmpty());
+    boolean returnsValue = !(ListSequence.<SNode>fromList(allRets).isEmpty());
     boolean returnsFromLast = !(isVoid) && SNodeOperations.isInstanceOf(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && !(IStatementListContainer_Behavior.call_isExecuteSynchronous_1230212745736(closure));
-    boolean yieldsValue = !(ListSequence.fromList(allYlds).isEmpty());
-    switch (ListSequence.fromList(allYldAlls).count()) {
+    boolean yieldsValue = !(ListSequence.<SNode>fromList(allYlds).isEmpty());
+    switch (ListSequence.<SNode>fromList(allYldAlls).count()) {
       case 0:
         break;
       case 1:
-        if (ListSequence.fromList(allYldAlls).getElement(0) == lastStmt && !(yieldsValue)) {
+        if (ListSequence.<SNode>fromList(allYldAlls).getElement(0) == lastStmt && !(yieldsValue)) {
           returnsValue = true;
           {
             SNode _nodeToCheck_1029348928467 = closure;

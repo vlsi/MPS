@@ -22,7 +22,7 @@ public class StyleClassItem_Behavior {
   }
 
   public static SNode virtual_getStyleConstant_1215703564594(SNode thisNode) {
-    return SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "attributeConstant")).first());
+    return SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(thisNode, "attributeConstant")).first());
   }
 
   public static boolean call_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {

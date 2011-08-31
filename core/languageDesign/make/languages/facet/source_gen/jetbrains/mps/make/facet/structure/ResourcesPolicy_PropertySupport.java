@@ -11,7 +11,7 @@ public class ResourcesPolicy_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<ResourcesPolicy> constants = ListSequence.fromList(ResourcesPolicy.getConstants()).iterator();
+    Iterator<ResourcesPolicy> constants = ListSequence.<ResourcesPolicy>fromList(ResourcesPolicy.getConstants()).iterator();
     while (constants.hasNext()) {
       ResourcesPolicy constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class ResourcesPolicy_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<ResourcesPolicy> constants = ListSequence.fromList(ResourcesPolicy.getConstants()).iterator();
+    Iterator<ResourcesPolicy> constants = ListSequence.<ResourcesPolicy>fromList(ResourcesPolicy.getConstants()).iterator();
     while (constants.hasNext()) {
       ResourcesPolicy constant = constants.next();
       if (value.equals(constant.getName())) {

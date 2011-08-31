@@ -546,8 +546,8 @@
     <nodeInfo nodeId="1198233400249" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="27" startPosition="124" endLine="28" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198949721467" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="29" startPosition="118" endLine="30" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198949742156" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="32" startPosition="167" endLine="33" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1198950333581" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="35" startPosition="65" endLine="36" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198950372215" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="38" startPosition="109" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198950333581" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="35" startPosition="72" endLine="36" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198950372215" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="38" startPosition="116" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1198950378289" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="43" startPosition="9" endLine="44" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198950378289" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="44" startPosition="62" endLine="45" endPosition="373" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198949983025" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="51" startPosition="9" endLine="52" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -575,7 +575,7 @@
     <scopeInfo nodeId="1198233312425" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="24" startPosition="52" endLine="24" endPosition="52" />
     <scopeInfo nodeId="1198949711267" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="29" startPosition="118" endLine="30" endPosition="13" />
     <scopeInfo nodeId="1198949731392" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="32" startPosition="167" endLine="33" endPosition="13" />
-    <scopeInfo nodeId="1198950344401" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="38" startPosition="109" endLine="39" endPosition="39" />
+    <scopeInfo nodeId="1198950344401" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="38" startPosition="116" endLine="39" endPosition="39" />
     <scopeInfo nodeId="1198233312425" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="59" startPosition="46" endLine="60" endPosition="67" />
     <scopeInfo nodeId="1198233312425" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="70" startPosition="30" endLine="71" endPosition="17" />
     <scopeInfo nodeId="1198233312425" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="23" startPosition="133" endLine="25" endPosition="3" />
@@ -596,7 +596,7 @@
     <scopeInfo nodeId="1198949961408" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="48" startPosition="5" endLine="56" endPosition="5">
       <varInfo nodeId="1198949961412" varName="cmd" />
     </scopeInfo>
-    <scopeInfo nodeId="1198233420098" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="35" startPosition="65" endLine="47" endPosition="7">
+    <scopeInfo nodeId="1198233420098" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="35" startPosition="72" endLine="47" endPosition="7">
       <varInfo nodeId="1198950333582" varName="notImplementedMethods" />
     </scopeInfo>
     <scopeInfo nodeId="1198233312426" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="27" startPosition="124" endLine="56" endPosition="5">

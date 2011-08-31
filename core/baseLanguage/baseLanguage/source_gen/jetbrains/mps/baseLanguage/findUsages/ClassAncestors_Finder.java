@@ -42,7 +42,7 @@ public class ClassAncestors_Finder extends GeneratedFinder {
     while (current != null) {
       current = SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(current, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
       if (current != null) {
-        ListSequence.fromList(_results).addElement(current);
+        ListSequence.<SNode>fromList(_results).addElement(current);
       }
     }
   }

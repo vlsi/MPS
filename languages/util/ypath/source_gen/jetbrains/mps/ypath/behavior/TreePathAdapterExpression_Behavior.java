@@ -21,10 +21,10 @@ public class TreePathAdapterExpression_Behavior {
       }
     }
     List<SNode> features = SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "treepathAspect", false), "features", true);
-    return ListSequence.fromList(features).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(features).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature"));
       }
-    }).isEmpty() && ListSequence.fromList(features).isNotEmpty();
+    }).isEmpty() && ListSequence.<SNode>fromList(features).isNotEmpty();
   }
 }

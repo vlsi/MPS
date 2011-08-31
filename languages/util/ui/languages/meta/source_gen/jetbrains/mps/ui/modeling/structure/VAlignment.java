@@ -33,11 +33,11 @@ public enum VAlignment {
   }
 
   public static List<VAlignment> getConstants() {
-    List<VAlignment> list = ListSequence.fromList(new LinkedList<VAlignment>());
-    ListSequence.fromList(list).addElement(VAlignment.top);
-    ListSequence.fromList(list).addElement(VAlignment.middle);
-    ListSequence.fromList(list).addElement(VAlignment.bottom);
-    ListSequence.fromList(list).addElement(VAlignment.fill);
+    List<VAlignment> list = ListSequence.<VAlignment>fromList(new LinkedList<VAlignment>());
+    ListSequence.<VAlignment>fromList(list).addElement(VAlignment.top);
+    ListSequence.<VAlignment>fromList(list).addElement(VAlignment.middle);
+    ListSequence.<VAlignment>fromList(list).addElement(VAlignment.bottom);
+    ListSequence.<VAlignment>fromList(list).addElement(VAlignment.fill);
     return list;
   }
 

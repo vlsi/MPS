@@ -19,7 +19,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
   }
 
   public boolean isVisible(SNode node, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty();
   }
 
   public String getDescription() {
@@ -35,15 +35,15 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isEmpty()) {
       return;
     }
     SNode current = node;
-    for (SNode ancestor : ListSequence.fromList(SLinkOperations.getTargets(current, "extendedInterface", true))) {
+    for (SNode ancestor : ListSequence.<SNode>fromList(SLinkOperations.getTargets(current, "extendedInterface", true))) {
       SNode ancestorNode = (SNode) SLinkOperations.getTarget(ancestor, "classifier", false);
-      ListSequence.fromList(_results).addElement(ancestorNode);
-      for (SNode ancestorAncestor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestorNode, scope, indicator))) {
-        ListSequence.fromList(_results).addElement(ancestorAncestor);
+      ListSequence.<SNode>fromList(_results).addElement(ancestorNode);
+      for (SNode ancestorAncestor : ListSequence.<SNode>fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestorNode, scope, indicator))) {
+        ListSequence.<SNode>fromList(_results).addElement(ancestorAncestor);
       }
     }
   }

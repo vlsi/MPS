@@ -306,7 +306,7 @@
     <nodeInfo nodeId="747009152929086177" fileName="MultiConceptNode_Configuration.java" startLine="60" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readExternal#(Lorg/jdom/Element;)V" />
     <nodeInfo nodeId="747009152929086177" fileName="MultiConceptNode_Configuration.java" startLine="164" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljava/lang/Object;" />
     <nodeInfo nodeId="747009152929086222" fileName="MultiConceptNode_Configuration.java" startLine="99" startPosition="51" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6887307225914450352" fileName="MultiConceptNode_Configuration.java" startLine="114" startPosition="156" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
+    <nodeInfo nodeId="6887307225914450352" fileName="MultiConceptNode_Configuration.java" startLine="114" startPosition="238" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
     <nodeInfo nodeId="747009152929086177" fileName="MultiConceptNode_Configuration.java" startLine="129" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljetbrains/mps/execution/configurations/lib/MultiConceptNode_Configuration;" />
     <nodeInfo nodeId="747009152929086177" fileName="MultiConceptNode_Configuration.java" startLine="84" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="747009152929086177" fileName="MultiConceptNode_Configuration.java" startLine="98" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setNode#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -384,7 +384,7 @@
       <varInfo nodeId="747009152929086319" varName="node" />
       <varInfo nodeId="747009152929086332" varName="accept" />
     </scopeInfo>
-    <scopeInfo nodeId="6887307225914450352" fileName="MultiConceptNode_Configuration.java" startLine="114" startPosition="156" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="6887307225914450352" fileName="MultiConceptNode_Configuration.java" startLine="114" startPosition="238" endLine="127" endPosition="0" />
     <scopeInfo nodeId="747009152929086177" fileName="MultiConceptNode_Configuration.java" startLine="129" startPosition="0" endLine="142" endPosition="0" />
     <scopeInfo nodeId="747009152929086177" fileName="MultiConceptNode_Configuration.java" startLine="84" startPosition="0" endLine="98" endPosition="0" />
     <scopeInfo nodeId="747009152929086177" fileName="MultiConceptNode_Configuration.java" startLine="98" startPosition="0" endLine="112" endPosition="0">
@@ -400,7 +400,7 @@
     <unitInfo nodeId="747009152929086335" fileName="MultiConceptNode_Configuration.java" startLine="45" startPosition="47" endLine="49" endPosition="7" unitName="jetbrains.mps.execution.configurations.lib.MultiConceptNode_Configuration$1" />
     <unitInfo nodeId="747009152929086200" fileName="MultiConceptNode_Configuration.java" startLine="91" startPosition="45" endLine="95" endPosition="5" unitName="jetbrains.mps.execution.configurations.lib.MultiConceptNode_Configuration$2" />
     <unitInfo nodeId="747009152929086242" fileName="MultiConceptNode_Configuration.java" startLine="104" startPosition="47" endLine="109" endPosition="7" unitName="jetbrains.mps.execution.configurations.lib.MultiConceptNode_Configuration$3" />
-    <unitInfo nodeId="6887307225914450352" fileName="MultiConceptNode_Configuration.java" startLine="114" startPosition="58" endLine="127" endPosition="5" unitName="jetbrains.mps.execution.configurations.lib.MultiConceptNode_Configuration$4" />
+    <unitInfo nodeId="6887307225914450352" fileName="MultiConceptNode_Configuration.java" startLine="114" startPosition="140" endLine="127" endPosition="5" unitName="jetbrains.mps.execution.configurations.lib.MultiConceptNode_Configuration$4" />
     <unitInfo nodeId="747009152929086177" fileName="MultiConceptNode_Configuration.java" startLine="158" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.execution.configurations.lib.MultiConceptNode_Configuration$MyState" />
     <unitInfo nodeId="747009152929086177" fileName="MultiConceptNode_Configuration_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.execution.configurations.lib.MultiConceptNode_Configuration_Editor" />
     <unitInfo nodeId="747009152929086177" fileName="MultiConceptNode_Configuration.java" startLine="26" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.execution.configurations.lib.MultiConceptNode_Configuration" />

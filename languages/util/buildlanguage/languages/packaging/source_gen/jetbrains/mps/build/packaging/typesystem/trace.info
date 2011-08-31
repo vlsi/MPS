@@ -108,8 +108,8 @@
     <nodeInfo nodeId="1209458877820" fileName="DuplicateModule_NonTypesystemRule.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="1209458877820" fileName="DuplicateModule_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
     <nodeInfo nodeId="1209459021769" fileName="DuplicateModule_NonTypesystemRule.java" startLine="26" startPosition="25" endLine="36" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209459010975" fileName="DuplicateModule_NonTypesystemRule.java" startLine="25" startPosition="110" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209459001995" fileName="DuplicateModule_NonTypesystemRule.java" startLine="24" startPosition="107" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1209459010975" fileName="DuplicateModule_NonTypesystemRule.java" startLine="25" startPosition="117" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1209459001995" fileName="DuplicateModule_NonTypesystemRule.java" startLine="24" startPosition="114" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1209458967633" fileName="DuplicateModule_NonTypesystemRule.java" startLine="23" startPosition="132" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1209458877820" fileName="DuplicateModule_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="1209458877820" fileName="DuplicateModule_NonTypesystemRule.java" startLine="20" startPosition="46" endLine="20" endPosition="46" />
@@ -125,9 +125,9 @@
     <scopeInfo nodeId="1209458877820" fileName="DuplicateModule_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="1209459021771" fileName="DuplicateModule_NonTypesystemRule.java" startLine="27" startPosition="83" endLine="35" endPosition="13" />
     <scopeInfo nodeId="1209459010977" fileName="DuplicateModule_NonTypesystemRule.java" startLine="26" startPosition="25" endLine="36" endPosition="11" />
-    <scopeInfo nodeId="1209459001998" fileName="DuplicateModule_NonTypesystemRule.java" startLine="25" startPosition="110" endLine="37" endPosition="9" />
-    <scopeInfo nodeId="1209458967636" fileName="DuplicateModule_NonTypesystemRule.java" startLine="24" startPosition="107" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="1209459001995" fileName="DuplicateModule_NonTypesystemRule.java" startLine="24" startPosition="107" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="1209459001998" fileName="DuplicateModule_NonTypesystemRule.java" startLine="25" startPosition="117" endLine="37" endPosition="9" />
+    <scopeInfo nodeId="1209458967636" fileName="DuplicateModule_NonTypesystemRule.java" startLine="24" startPosition="114" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="1209459001995" fileName="DuplicateModule_NonTypesystemRule.java" startLine="24" startPosition="114" endLine="38" endPosition="7" />
     <scopeInfo nodeId="1209458877821" fileName="DuplicateModule_NonTypesystemRule.java" startLine="23" startPosition="132" endLine="39" endPosition="5" />
     <scopeInfo nodeId="1209458967633" fileName="DuplicateModule_NonTypesystemRule.java" startLine="23" startPosition="132" endLine="39" endPosition="5" />
     <scopeInfo nodeId="1209458877820" fileName="DuplicateModule_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="41" endPosition="0" />

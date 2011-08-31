@@ -56,7 +56,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       // We do not validate, only check if there is something to test, since validating everything be very slow 
       // see MPS-8781 JUnit run configuration check method performance. 
       MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
-      if (ListSequence.fromList(getTests(mpsProject)).isEmpty()) {
+      if (ListSequence.<ITestNodeWrapper>fromList(getTests(mpsProject)).isEmpty()) {
         throw new RuntimeConfigurationException("Could not find tests to run.");
       }
     }
@@ -133,7 +133,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     if (this.getRunType() != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          all[0] = Sequence.fromIterable(JUnitTests_Configuration.this.getRunType().collect(JUnitTests_Configuration.this, mpsProject)).toListSequence();
+          all[0] = Sequence.<ITestNodeWrapper>fromIterable(JUnitTests_Configuration.this.getRunType().collect(JUnitTests_Configuration.this, mpsProject)).toListSequence();
         }
       });
     }
@@ -141,7 +141,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   }
 
   public List<ITestNodeWrapper> getTestsUnderProgress(final MPSProject mpsProject) {
-    final List<ITestNodeWrapper> stuffToTest = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
+    final List<ITestNodeWrapper> stuffToTest = ListSequence.<ITestNodeWrapper>fromList(new ArrayList<ITestNodeWrapper>());
     final JUnitRunTypes2 runTypes2 = this.getRunType();
     final JUnitTests_Configuration configuration = this;
     Runnable collect = new Runnable() {
@@ -149,7 +149,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
         if (runTypes2 != null) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              ListSequence.fromList(stuffToTest).addSequence(Sequence.fromIterable(runTypes2.collect(configuration, mpsProject)));
+              ListSequence.<ITestNodeWrapper>fromList(stuffToTest).addSequence(Sequence.<ITestNodeWrapper>fromIterable(runTypes2.collect(configuration, mpsProject)));
             }
           });
         }
@@ -172,7 +172,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
         stuffToTest[0] = getTestsUnderProgress(MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()));
       }
     }, ModalityState.NON_MODAL);
-    return ListSequence.fromList(stuffToTest[0]).<SNode>select(new ISelector<ITestNodeWrapper, SNode>() {
+    return ListSequence.<ITestNodeWrapper>fromList(stuffToTest[0]).<SNode>select(new ISelector<ITestNodeWrapper, SNode>() {
       public SNode select(ITestNodeWrapper it) {
         return it.getNode();
       }

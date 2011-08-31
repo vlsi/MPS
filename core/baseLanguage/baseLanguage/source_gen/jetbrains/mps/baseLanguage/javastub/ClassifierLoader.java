@@ -90,7 +90,7 @@ public class ClassifierLoader {
       getClassifier(name, new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode n) {
           SPropertyOperations.set(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Classifier"), "nonStatic", "" + !(isStatic));
-          ListSequence.fromList(SLinkOperations.getTargets(cls, "staticInnerClassifiers", true)).addElement(n);
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(cls, "staticInnerClassifiers", true)).addElement(n);
         }
       });
     }

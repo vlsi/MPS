@@ -47,7 +47,7 @@ public class ReferenceMessageTarget_Constraints extends BaseConstraintsDescripto
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode messageStatement = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.MessageStatement", true, false);
             if (messageStatement == null) {
-              return Sequence.fromIterable(Collections.<SNode>emptyList());
+              return Sequence.<SNode>fromIterable(Collections.<SNode>emptyList());
             }
             SNode nodetype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(messageStatement, "nodeToReport", true));
             {
@@ -56,7 +56,7 @@ public class ReferenceMessageTarget_Constraints extends BaseConstraintsDescripto
               if (coercedNode_h95xiq_d0a0 != null) {
                 return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(coercedNode_h95xiq_d0a0, "concept", false));
               } else {
-                return Sequence.fromIterable(Collections.<SNode>emptyList());
+                return Sequence.<SNode>fromIterable(Collections.<SNode>emptyList());
               }
             }
           }

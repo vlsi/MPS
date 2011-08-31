@@ -17,7 +17,7 @@ public class RunConfiguration_Behavior {
 
   @Nullable
   public static SNode call_getExecutor_3754890006475713427(final SNode thisNode) {
-    return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor")).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "configuration", false) == thisNode;
       }

@@ -23,7 +23,7 @@ public class InlineTagCommentLinePart_Behavior {
     SNodeOperations.deleteNode(thisNode);
     NodeCaretPair pair = CommentLine_Behavior.call_tryMergeToRight_439148907936414403(line, index - 1);
     if (pair == null) {
-      return new NodeCaretPair(ListSequence.fromList(SLinkOperations.getTargets(line, "part", true)).getElement(index), 0);
+      return new NodeCaretPair(ListSequence.<SNode>fromList(SLinkOperations.getTargets(line, "part", true)).getElement(index), 0);
     } else {
       return pair;
     }

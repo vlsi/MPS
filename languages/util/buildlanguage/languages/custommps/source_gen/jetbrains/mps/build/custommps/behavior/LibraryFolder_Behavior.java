@@ -15,7 +15,7 @@ public class LibraryFolder_Behavior {
 
   public static String call_getLibraryPathRelativeToMPSBuild_1240408519032(SNode thisNode) {
     String path = "";
-    for (SNode p : ListSequence.fromList(MPSBuild_Behavior.call_getPathToLibrary_1233680013340(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.custommps.structure.MPSBuild", false, false), thisNode))) {
+    for (SNode p : ListSequence.<SNode>fromList(MPSBuild_Behavior.call_getPathToLibrary_1233680013340(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.custommps.structure.MPSBuild", false, false), thisNode))) {
       path += IStringExpression_Behavior.call_getValue_1213877173054(p);
       path += "/";
     }

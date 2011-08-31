@@ -68,7 +68,7 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
             SNode expr = SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Expression");
             return ((expr != null) ?
               CustomContainersUtil.containerDeclarations(SNodeOperations.getModel(expr), TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(expr), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), expr)) :
-              Sequence.fromIterable(Collections.<SNode>emptyList())
+              Sequence.<SNode>fromIterable(Collections.<SNode>emptyList())
             );
           }
 

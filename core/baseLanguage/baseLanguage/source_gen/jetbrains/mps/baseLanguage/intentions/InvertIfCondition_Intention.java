@@ -79,11 +79,11 @@ public class InvertIfCondition_Intention extends BaseIntention implements Intent
     SNode newIfTrue;
     SNode newIfFalse;
     // Set new ifFalse 
-    if (ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 0) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 0) {
       newIfFalse = null;
     } else
-    if (ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
-      newIfFalse = ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first();
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.<SNode>fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
+      newIfFalse = ListSequence.<SNode>fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first();
     } else {
       newIfFalse = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
       SLinkOperations.setTarget(SNodeOperations.cast(newIfFalse, "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", ifTrue, true);
@@ -94,7 +94,7 @@ public class InvertIfCondition_Intention extends BaseIntention implements Intent
     } else {
       newIfTrue = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
       if (ifFalse != null) {
-        ListSequence.fromList(SLinkOperations.getTargets(newIfTrue, "statement", true)).addElement(ifFalse);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(newIfTrue, "statement", true)).addElement(ifFalse);
       }
     }
     SLinkOperations.setTarget(node, "ifTrue", newIfTrue, true);

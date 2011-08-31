@@ -46,9 +46,9 @@ public class ClassifierType_Behavior {
   public static String call_getPresentation_2354269628709783609(SNode thisNode, String name) {
     String result = name;
     List<SNode> parms = SLinkOperations.getTargets(thisNode, "parameter", true);
-    if (ListSequence.fromList(parms).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(parms).isNotEmpty()) {
       String parmsText = "";
-      for (SNode parm : ListSequence.fromList(parms)) {
+      for (SNode parm : ListSequence.<SNode>fromList(parms)) {
         if (parmsText.length() > 0) {
           parmsText = parmsText + ",";
         }
@@ -77,7 +77,7 @@ public class ClassifierType_Behavior {
 
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     SNode classifierType = SNodeOperations.copyNode(thisNode);
-    ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).clear();
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).clear();
     return classifierType;
   }
 
@@ -86,10 +86,10 @@ public class ClassifierType_Behavior {
     if ((classifier == null)) {
       return false;
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).isEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).isEmpty()) {
       return false;
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isNotEmpty()) {
       return false;
     }
     return true;
@@ -108,11 +108,11 @@ public class ClassifierType_Behavior {
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      if (!(SPropertyOperations.getBoolean(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).isNotEmpty()) {
+      if (!(SPropertyOperations.getBoolean(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).isNotEmpty()) {
         SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
-        SLinkOperations.setTarget(creator, "baseMethodDeclaration", ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first(), false);
-        for (SNode typeParm : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true))) {
-          ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).addElement(SNodeOperations.copyNode(typeParm));
+        SLinkOperations.setTarget(creator, "baseMethodDeclaration", ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first(), false);
+        for (SNode typeParm : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true))) {
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).addElement(SNodeOperations.copyNode(typeParm));
         }
         return creator;
       }
@@ -142,8 +142,8 @@ public class ClassifierType_Behavior {
         {
           SNode typeParam;
           SNode myParam;
-          Iterator<SNode> typeParam_iterator = ListSequence.fromList(((List<SNode>) pattern_hz3823_b0j.getFieldValue("patternVar_l"))).iterator();
-          Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).iterator();
+          Iterator<SNode> typeParam_iterator = ListSequence.<SNode>fromList(((List<SNode>) pattern_hz3823_b0j.getFieldValue("patternVar_l"))).iterator();
+          Iterator<SNode> myParam_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).iterator();
           while (true) {
             if (!(typeParam_iterator.hasNext())) {
               break;
@@ -176,14 +176,14 @@ public class ClassifierType_Behavior {
   }
 
   public static boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).count() != ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count();
   }
 
   public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode) {
     SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(classifierType, "classifier", SLinkOperations.getTarget(thisNode, "classifier", false), false);
     for (SNode typeParam : SLinkOperations.getTargets(thisNode, "parameter", true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).addElement(Type_Behavior.call_getLooseType_5744862332972792015(typeParam));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).addElement(Type_Behavior.call_getLooseType_5744862332972792015(typeParam));
     }
     return classifierType;
   }
@@ -195,7 +195,7 @@ public class ClassifierType_Behavior {
   }
 
   public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty())) {
+    if (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty())) {
       for (SNode parameter : SLinkOperations.getTargets(thisNode, "parameter", true)) {
         if (!(SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.baseLanguage.structure.WildCardType"))) {
           return false;
@@ -293,11 +293,11 @@ public class ClassifierType_Behavior {
         }
         {
           String childRole_ClassifierType_Behavior_hz3823_ = "parameter";
-          this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
+          this.patternVar_l = ListSequence.<SNode>fromList(new ArrayList<SNode>());
           patternVar_ignored = null;
           for (SNode childVar : nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9.getChildren(childRole_ClassifierType_Behavior_hz3823_)) {
             patternVar_ignored = childVar;
-            ListSequence.fromList(this.patternVar_l).addElement(childVar);
+            ListSequence.<SNode>fromList(this.patternVar_l).addElement(childVar);
           }
         }
       }

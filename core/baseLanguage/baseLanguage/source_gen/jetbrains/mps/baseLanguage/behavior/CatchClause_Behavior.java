@@ -19,7 +19,7 @@ public class CatchClause_Behavior {
   }
 
   public static List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "throwable", true));
+    return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "throwable", true));
   }
 
   public static List<SNode> call_getScopeVariables_2496361171403550981(SNode thisNode) {

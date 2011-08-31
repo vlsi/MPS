@@ -49,11 +49,11 @@ public class FilpEqualsIntention_Intention extends BaseIntention implements Inte
     if (SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name") == null) {
       return false;
     }
-    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name").equals("equals") && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).count() == 1;
+    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name").equals("equals") && ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).count() == 1;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode parameter = ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first();
+    SNode parameter = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first();
     SNodeOperations.replaceWithAnother(parameter, SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", true));
     SLinkOperations.setTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", parameter, true);
   }

@@ -129,7 +129,7 @@ public class GridBagConstraints_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), "field", "label", "panel");
+      return ListSequence.<String>fromListAndArray(new ArrayList<String>(), "field", "label", "panel");
     }
   }
 }

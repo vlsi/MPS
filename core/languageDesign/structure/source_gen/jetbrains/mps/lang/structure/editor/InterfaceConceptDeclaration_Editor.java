@@ -798,7 +798,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "aggregation");
-      ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
     }
 
     public String getMatchingText() {
@@ -813,7 +813,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "reference");
-      ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
     }
 
     public String getMatchingText() {

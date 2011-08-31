@@ -18,7 +18,7 @@ public class IEnhancedRunConfiguration_Behavior {
   }
 
   public static List<SNode> virtual_getAdditionalParameters_3636700473138841189(SNode thisNode) {
-    return ListSequence.fromList(new LinkedList<SNode>());
+    return ListSequence.<SNode>fromList(new LinkedList<SNode>());
   }
 
   public static List<SNode> call_getAdditionalParameters_3636700473138841189(SNode thisNode) {

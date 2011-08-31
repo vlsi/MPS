@@ -38,12 +38,12 @@ public class GenerateCustomMPSBuildForProjectAction_Action extends GeneratedActi
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("mpsProject") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -51,8 +51,8 @@ public class GenerateCustomMPSBuildForProjectAction_Action extends GeneratedActi
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      CustomMPSBuildGenerator buildGenerator = new CustomMPSBuildGenerator(((Project) MapSequence.fromMap(_params).get("project")));
-      final GenerateBuildWizard wizard = new GenerateCustomMpsBuildWizard("Generate Custom MPS Build", ((Project) MapSequence.fromMap(_params).get("project")), buildGenerator);
+      CustomMPSBuildGenerator buildGenerator = new CustomMPSBuildGenerator(((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
+      final GenerateBuildWizard wizard = new GenerateCustomMpsBuildWizard("Generate Custom MPS Build", ((Project) MapSequence.<String,Object>fromMap(_params).get("project")), buildGenerator);
       wizard.initWizard();
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {

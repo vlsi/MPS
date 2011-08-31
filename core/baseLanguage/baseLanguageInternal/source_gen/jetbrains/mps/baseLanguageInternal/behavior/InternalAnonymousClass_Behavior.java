@@ -43,7 +43,7 @@ public class InternalAnonymousClass_Behavior {
 
   public static int call_getIndexInContainingClass_3421461530438560434(SNode thisNode) {
     final SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    int index = ListSequence.fromList(SNodeOperations.getDescendantsWhereConceptInList(ancestor, new String[]{"jetbrains.mps.baseLanguage.structure.AnonymousClass", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"}, false, new String[]{})).where(new IWhereFilter<SNode>() {
+    int index = ListSequence.<SNode>fromList(SNodeOperations.getDescendantsWhereConceptInList(ancestor, new String[]{"jetbrains.mps.baseLanguage.structure.AnonymousClass", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"}, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == ancestor;
       }

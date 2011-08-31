@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigrationScript {
@@ -30,7 +30,7 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        for (String propname : SetSequence.fromSet(node.getProperties().keySet())) {
+        for (String propname : SetSequence.<String>fromSet(node.getProperties().keySet())) {
           if (node.getPropertyDeclaration(propname) == null) {
             return true;
           }
@@ -39,7 +39,7 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        for (String propname : SetSequence.fromSet(node.getProperties().keySet())) {
+        for (String propname : SetSequence.<String>fromSet(node.getProperties().keySet())) {
           if (node.getPropertyDeclaration(propname) == null) {
             node.setProperty(propname, null, false);
           }
@@ -89,7 +89,7 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
+        return Sequence.<SReference>fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
             return (SLinkOperations.findLinkDeclaration(it) == null);
           }
@@ -97,7 +97,7 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
+        for (SReference ref : Sequence.<SReference>fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
             return (SLinkOperations.findLinkDeclaration(it) == null);
           }

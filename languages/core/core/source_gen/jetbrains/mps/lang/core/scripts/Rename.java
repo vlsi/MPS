@@ -68,7 +68,7 @@ public class Rename extends BaseGeneratedRefactoring {
   }
 
   public List<IChooseComponent> getChooseComponents(final RefactoringContext refactoringContext) {
-    List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
+    List<IChooseComponent> components = ListSequence.<IChooseComponent>fromList(new ArrayList<IChooseComponent>());
     {
       IChooseComponent<String> chooseComponent;
       chooseComponent = new ChooseStringComponent();
@@ -76,7 +76,7 @@ public class Rename extends BaseGeneratedRefactoring {
       chooseComponent.setCaption("new name:");
       chooseComponent.initComponent();
       chooseComponent.setInitialValue(Rename.this.newName_initialValue(refactoringContext));
-      ListSequence.fromList(components).addElement(chooseComponent);
+      ListSequence.<IChooseComponent>fromList(components).addElement(chooseComponent);
     }
     return components;
   }

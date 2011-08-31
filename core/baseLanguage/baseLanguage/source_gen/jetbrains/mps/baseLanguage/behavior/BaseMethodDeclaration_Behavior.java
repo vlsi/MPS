@@ -67,7 +67,7 @@ public class BaseMethodDeclaration_Behavior {
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "returnType", true));
+    ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(thisNode, "returnType", true));
     return result;
   }
 
@@ -122,7 +122,7 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static Class[] call_getParameterTypes_1213877350411(SNode thisNode, final IModule module) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).<Class>select(new ISelector<SNode, Class>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).<Class>select(new ISelector<SNode, Class>() {
       public Class select(SNode it) {
         return Type_Behavior.call_getClass_1213877337327(SLinkOperations.getTarget(it, "type", true), module);
       }
@@ -152,9 +152,9 @@ public class BaseMethodDeclaration_Behavior {
 
   public static boolean call_hasSameParameters_855369272314187138(SNode thisNode, SNode checked) {
     boolean same = true;
-    for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count(); i++) {
-      String searchedParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).getElement(i), "type", true));
-      String foundParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).getElement(i), "type", true));
+    for (int i = 0; i < ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count(); i++) {
+      String searchedParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(checked, "parameter", true)).getElement(i), "type", true));
+      String foundParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).getElement(i), "type", true));
       if (!(foundParamType.equals(searchedParamType))) {
         same = false;
       }
@@ -169,7 +169,7 @@ public class BaseMethodDeclaration_Behavior {
     if (!(SPropertyOperations.getString(thisNode, "name").equals(SPropertyOperations.getString(checked, "name")))) {
       return false;
     }
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).count())) {
+    if (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == ListSequence.<SNode>fromList(SLinkOperations.getTargets(checked, "parameter", true)).count())) {
       return false;
     }
     if (SNodeOperations.isInstanceOf(checked, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
@@ -183,10 +183,10 @@ public class BaseMethodDeclaration_Behavior {
   public static String call_getErasureSignature_2830572026628006618(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
     List<SNode> parameters = SLinkOperations.getTargets(thisNode, "parameter", true);
-    for (int i = 0; i < ListSequence.fromList(parameters).count(); i++) {
-      SNode param = ListSequence.fromList(parameters).getElement(i);
+    for (int i = 0; i < ListSequence.<SNode>fromList(parameters).count(); i++) {
+      SNode param = ListSequence.<SNode>fromList(parameters).getElement(i);
       sb.append(Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(param, "type", true)));
-      if (i < ListSequence.fromList(parameters).count() - 1) {
+      if (i < ListSequence.<SNode>fromList(parameters).count() - 1) {
         sb.append(",");
       }
     }

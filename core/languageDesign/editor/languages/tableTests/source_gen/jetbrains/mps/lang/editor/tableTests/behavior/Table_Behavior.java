@@ -16,9 +16,9 @@ public class Table_Behavior {
       for (int j = 0; j < SConceptPropertyOperations.getInteger(thisNode, "initialColumnCount"); j++) {
         SNode dataCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null);
         SPropertyOperations.set(dataCell, "value", "$" + i + " " + j + "$");
-        ListSequence.fromList(SLinkOperations.getTargets(row, "cells", true)).addElement(dataCell);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(row, "cells", true)).addElement(dataCell);
       }
-      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "rows", true)).addElement(row);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "rows", true)).addElement(row);
     }
   }
 }

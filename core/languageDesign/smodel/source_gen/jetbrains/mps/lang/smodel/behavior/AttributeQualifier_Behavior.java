@@ -52,13 +52,13 @@ public class AttributeQualifier_Behavior {
     Set<String> subconceptNames = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(attributeType);
     // filter only applicable 
     final ModelAndImportedModelsScope modelScope = new ModelAndImportedModelsScope(model, true, scope);
-    return SetSequence.fromSet(subconceptNames).<SNode>select(new ISelector<String, SNode>() {
+    return SetSequence.<String>fromSet(subconceptNames).<SNode>select(new ISelector<String, SNode>() {
       public SNode select(String fqName) {
         return (SNode) SModelUtil.findConceptDeclaration(fqName, scope);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(final SNode attr) {
-        return modelScope.isInScope(attr) && ListSequence.fromList(SLinkOperations.getTargets(attr, "conceptProperty", true)).where(new IWhereFilter<SNode>() {
+        return modelScope.isInScope(attr) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(attr, "conceptProperty", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "conceptPropertyDeclaration", false) != null);
           }
@@ -68,7 +68,7 @@ public class AttributeQualifier_Behavior {
           }
         }).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode decl) {
-            return SPropertyOperations.hasValue(decl, "name", "role") && ListSequence.fromList(SLinkOperations.getConceptLinkTargets(attr, "attributed")).any(new IWhereFilter<SNode>() {
+            return SPropertyOperations.hasValue(decl, "name", "role") && ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(attr, "attributed")).any(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SConceptOperations.isSubConceptOf(container, NameUtil.nodeFQName(it));
               }

@@ -61,7 +61,7 @@ public abstract class BaseChooseNodeDialog extends BaseDialog {
 
   private void init() {
     this.myVisibleModels.add(this.myContextModel);
-    for (SModelDescriptor modelDescriptor : ListSequence.fromList(((AbstractModule) this.myContextModel.getModule()).getOwnModelDescriptors())) {
+    for (SModelDescriptor modelDescriptor : ListSequence.<SModelDescriptor>fromList(((AbstractModule) this.myContextModel.getModule()).getOwnModelDescriptors())) {
       this.myVisibleModels.add(modelDescriptor);
     }
     SModel model = this.myContextModel.getSModel();

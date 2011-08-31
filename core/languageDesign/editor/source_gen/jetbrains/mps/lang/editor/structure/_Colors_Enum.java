@@ -47,25 +47,25 @@ public enum _Colors_Enum {
   }
 
   public static List<_Colors_Enum> getConstants() {
-    List<_Colors_Enum> list = ListSequence.fromList(new LinkedList<_Colors_Enum>());
-    ListSequence.fromList(list).addElement(_Colors_Enum.none);
-    ListSequence.fromList(list).addElement(_Colors_Enum.red);
-    ListSequence.fromList(list).addElement(_Colors_Enum.pink);
-    ListSequence.fromList(list).addElement(_Colors_Enum.orange);
-    ListSequence.fromList(list).addElement(_Colors_Enum.yellow);
-    ListSequence.fromList(list).addElement(_Colors_Enum.green);
-    ListSequence.fromList(list).addElement(_Colors_Enum.darkGreen);
-    ListSequence.fromList(list).addElement(_Colors_Enum.magenta);
-    ListSequence.fromList(list).addElement(_Colors_Enum.darkMagenta);
-    ListSequence.fromList(list).addElement(_Colors_Enum.cyan);
-    ListSequence.fromList(list).addElement(_Colors_Enum.blue);
-    ListSequence.fromList(list).addElement(_Colors_Enum.lightBlue);
-    ListSequence.fromList(list).addElement(_Colors_Enum.darkBlue);
-    ListSequence.fromList(list).addElement(_Colors_Enum.gray);
-    ListSequence.fromList(list).addElement(_Colors_Enum.lightGray);
-    ListSequence.fromList(list).addElement(_Colors_Enum.darkGray);
-    ListSequence.fromList(list).addElement(_Colors_Enum.white);
-    ListSequence.fromList(list).addElement(_Colors_Enum.black);
+    List<_Colors_Enum> list = ListSequence.<_Colors_Enum>fromList(new LinkedList<_Colors_Enum>());
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.none);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.red);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.pink);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.orange);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.yellow);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.green);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.darkGreen);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.magenta);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.darkMagenta);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.cyan);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.blue);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.lightBlue);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.darkBlue);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.gray);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.lightGray);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.darkGray);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.white);
+    ListSequence.<_Colors_Enum>fromList(list).addElement(_Colors_Enum.black);
     return list;
   }
 

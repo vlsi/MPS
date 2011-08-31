@@ -25,7 +25,7 @@ public class ICheckedNamePolicy_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     SNode dsc = ICheckedNamePolicy_Behavior.call_getDescendantToCheck_3745452943050928880(thisNode);
     if (dsc != null) {
-      ListSequence.fromList(result).addElement(dsc);
+      ListSequence.<SNode>fromList(result).addElement(dsc);
     }
     return result;
   }
@@ -35,10 +35,10 @@ public class ICheckedNamePolicy_Behavior {
   }
 
   public static List<PropertyReference> virtual_getPropertiesToCheck_1628770029971140570(SNode thisNode) {
-    List<PropertyReference> result = ListSequence.fromList(new ArrayList<PropertyReference>());
+    List<PropertyReference> result = ListSequence.<PropertyReference>fromList(new ArrayList<PropertyReference>());
     PropertyReference property = ICheckedNamePolicy_Behavior.call_getPropertyToCheck_5003188907305392322(thisNode);
     if (property != null) {
-      ListSequence.fromList(result).addElement(property);
+      ListSequence.<PropertyReference>fromList(result).addElement(property);
     }
     return result;
   }

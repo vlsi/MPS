@@ -63,9 +63,9 @@ public class IterateContentsVariable_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> postfixes = ListSequence.fromList(new ArrayList<String>());
+      List<String> postfixes = ListSequence.<String>fromList(new ArrayList<String>());
       if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type")) {
-        ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type"))));
+        ListSequence.<String>fromList(postfixes).addSequence(ListSequence.<String>fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type"))));
       }
       return postfixes;
     }

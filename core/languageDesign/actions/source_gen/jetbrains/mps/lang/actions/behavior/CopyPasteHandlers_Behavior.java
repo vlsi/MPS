@@ -26,14 +26,14 @@ public class CopyPasteHandlers_Behavior {
 
   public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     final List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "preProcessor", true)).visitAll(new IVisitor<SNode>() {
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "preProcessor", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(it, "concept", false));
+        ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(it, "concept", false));
       }
     });
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "postProcessor", true)).visitAll(new IVisitor<SNode>() {
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "postProcessor", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(it, "concept", false));
+        ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(it, "concept", false));
       }
     });
     return result;
@@ -42,7 +42,7 @@ public class CopyPasteHandlers_Behavior {
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SNode pastePostProcessor = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.PastePostProcessor", null);
     SLinkOperations.setTarget(pastePostProcessor, "concept", baseConcept, false);
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "postProcessor", true)).addElement(pastePostProcessor);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "postProcessor", true)).addElement(pastePostProcessor);
     String name = SModelUtil.getDeclaringLanguage(baseConcept).getModuleFqName();
     SPropertyOperations.set(thisNode, "name", NameUtil.shortNameFromLongName(name) + "_CopyPasteHandlers");
   }

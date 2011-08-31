@@ -27,7 +27,7 @@ public class TroveCustomContainers_CustomApplicationPlugin extends BaseCustomApp
         SModelDescriptor desc = GlobalScope.getInstance().getModelDescriptor(SModelFqName.fromString("jetbrains.mps.baseLanguage.collections.trove.containers"));
         SModel mdl = desc.getSModel();
         if (mdl != null) {
-          ListSequence.fromList(res).addSequence(ListSequence.fromList(SModelOperations.getNodes(mdl, "jetbrains.mps.baseLanguage.collections.structure.CustomContainers")));
+          ListSequence.<SNode>fromList(res).addSequence(ListSequence.<SNode>fromList(SModelOperations.getNodes(mdl, "jetbrains.mps.baseLanguage.collections.structure.CustomContainers")));
         }
         return res;
       }

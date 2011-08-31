@@ -42,7 +42,7 @@ public class XMLSAXFieldReference_Constraints extends BaseConstraintsDescriptor 
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode n = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.xmlQuery.structure.XMLSAXParser", true, false);
             if ((n != null)) {
-              return ListSequence.fromList(SLinkOperations.getTargets(n, "fields", true)).concat(ListSequence.fromList(SLinkOperations.getTargets(n, "parameters", true)));
+              return ListSequence.<SNode>fromList(SLinkOperations.getTargets(n, "fields", true)).concat(ListSequence.<SNode>fromList(SLinkOperations.getTargets(n, "parameters", true)));
             }
             return null;
           }

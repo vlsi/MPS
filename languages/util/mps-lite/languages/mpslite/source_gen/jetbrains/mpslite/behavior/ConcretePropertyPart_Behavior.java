@@ -27,7 +27,7 @@ public class ConcretePropertyPart_Behavior {
     } else if (SPropertyOperations.hasValue(thisNode, "propertyType", "string", "string")) {
       SLinkOperations.setTarget(propertyDeclaration, "dataType", SLinkOperations.getTarget(new ConcretePropertyPart_Behavior.QuotationClass_e1pb6q_a0c0a0a2a1().createNode(), "dataType", false), false);
     }
-    MapSequence.fromMap(partsToLinks).put(thisNode, propertyDeclaration);
+    MapSequence.<SNode,SNode>fromMap(partsToLinks).put(thisNode, propertyDeclaration);
   }
 
   public static class QuotationClass_e1pb6q_a0c0a0c0b {

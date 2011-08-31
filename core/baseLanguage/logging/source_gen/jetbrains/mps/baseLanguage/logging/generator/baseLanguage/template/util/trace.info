@@ -2,8 +2,8 @@
 <debugInfo>
   <root nodeId="1210176650661">
     <nodeInfo nodeId="1210176706163" fileName="LoggingGenerationUtil.java" startLine="18" startPosition="59" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1210176706177" fileName="LoggingGenerationUtil.java" startLine="20" startPosition="62" endLine="21" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210176706192" fileName="LoggingGenerationUtil.java" startLine="22" startPosition="83" endLine="23" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210176706177" fileName="LoggingGenerationUtil.java" startLine="20" startPosition="69" endLine="21" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210176706192" fileName="LoggingGenerationUtil.java" startLine="22" startPosition="90" endLine="23" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1210176706209" fileName="LoggingGenerationUtil.java" startLine="25" startPosition="5" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1232620462439" fileName="LoggingGenerationUtil.java" startLine="29" startPosition="54" endLine="30" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="37" startPosition="69" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -28,7 +28,7 @@
     <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="71" startPosition="9" endLine="72" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="73" startPosition="7" endLine="74" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="33" startPosition="56" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_gd2srw_a0a0a1a1a0#()V" />
-    <nodeInfo nodeId="1210176706185" fileName="LoggingGenerationUtil.java" startLine="21" startPosition="88" endLine="24" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1210176706185" fileName="LoggingGenerationUtil.java" startLine="21" startPosition="95" endLine="24" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="51" startPosition="16" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="54" startPosition="11" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="64" startPosition="16" endLine="67" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -46,7 +46,7 @@
     <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="42" startPosition="32" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="36" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="34" startPosition="47" endLine="34" endPosition="47" />
-    <scopeInfo nodeId="1210176706191" fileName="LoggingGenerationUtil.java" startLine="22" startPosition="83" endLine="23" endPosition="139" />
+    <scopeInfo nodeId="1210176706191" fileName="LoggingGenerationUtil.java" startLine="22" startPosition="90" endLine="23" endPosition="139" />
     <scopeInfo nodeId="1232620450179" fileName="LoggingGenerationUtil.java" startLine="29" startPosition="54" endLine="30" endPosition="68" />
     <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="49" startPosition="66" endLine="50" endPosition="64" />
     <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="55" startPosition="38" endLine="56" endPosition="91" />
@@ -55,8 +55,8 @@
     <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="33" startPosition="56" endLine="35" endPosition="5" />
     <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="51" startPosition="18" endLine="53" endPosition="41" />
     <scopeInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="64" startPosition="18" endLine="66" endPosition="41" />
-    <scopeInfo nodeId="1210176706185" fileName="LoggingGenerationUtil.java" startLine="21" startPosition="88" endLine="24" endPosition="7" />
-    <scopeInfo nodeId="1210176706176" fileName="LoggingGenerationUtil.java" startLine="20" startPosition="62" endLine="24" endPosition="7" />
+    <scopeInfo nodeId="1210176706185" fileName="LoggingGenerationUtil.java" startLine="21" startPosition="95" endLine="24" endPosition="7" />
+    <scopeInfo nodeId="1210176706176" fileName="LoggingGenerationUtil.java" startLine="20" startPosition="69" endLine="24" endPosition="7" />
     <scopeInfo nodeId="1232620450176" fileName="LoggingGenerationUtil.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1232620459891" varName="sm" />
     </scopeInfo>

@@ -41,7 +41,7 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), "jetbrains.mps.baseLanguage.structure.Interface");
+    return SNodeOperations.isInstanceOf(((SNode) MapSequence.<String,Object>fromMap(_params).get("classifierNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(((SNode) MapSequence.<String,Object>fromMap(_params).get("classifierNode")), "jetbrains.mps.baseLanguage.structure.Interface");
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -67,29 +67,29 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
           node = null;
         }
       }
-      MapSequence.fromMap(_params).put("classifierNode", node);
+      MapSequence.<String,Object>fromMap(_params).put("classifierNode", node);
     }
-    if (MapSequence.fromMap(_params).get("classifierNode") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("classifierNode") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("editorContext") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -97,25 +97,25 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final List<String> finderClasses = ListSequence.fromList(new ArrayList<String>());
+      final List<String> finderClasses = ListSequence.<String>fromList(new ArrayList<String>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-            ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
+          if (SNodeOperations.isInstanceOf(((SNode) MapSequence.<String,Object>fromMap(_params).get("classifierNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+            ListSequence.<String>fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
           } else {
-            ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
-            ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder");
+            ListSequence.<String>fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
+            ListSequence.<String>fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder");
           }
         }
       });
 
       final List<SNode> nodes = new ArrayList<SNode>();
-      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
+      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), "Searching...", true) {
         public void run(@NotNull final ProgressIndicator p) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              for (String finderClass : ListSequence.fromList(finderClasses)) {
-                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finderClass, ((SNode) MapSequence.fromMap(_params).get("classifierNode")), GlobalScope.getInstance(), p)));
+              for (String finderClass : ListSequence.<String>fromList(finderClasses)) {
+                ListSequence.<SNode>fromList(nodes).addSequence(ListSequence.<SNode>fromList(FindUtils.executeFinder(finderClass, ((SNode) MapSequence.<String,Object>fromMap(_params).get("classifierNode")), GlobalScope.getInstance(), p)));
               }
             }
           });
@@ -128,11 +128,11 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
         }
       });
 
-      Rectangle cellBounds = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell().getBounds();
+      Rectangle cellBounds = ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("editorContext")).getSelectedCell().getBounds();
       Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
-      RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
+      RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")), point);
 
-      GoToHelper.showInheritedClassesMenu(nodesIncludingEnumConstants.value, relPoint, ((Project) MapSequence.fromMap(_params).get("project")));
+      GoToHelper.showInheritedClassesMenu(nodesIncludingEnumConstants.value, relPoint, ((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToInheritedClassifier", t);
     }
@@ -140,11 +140,11 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
 
   private List<SNode> appendEnumConstants(List<SNode> nodes, final Map<String, Object> _params) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode node : ListSequence.fromList(nodes)) {
-      ListSequence.fromList(result).addElement(node);
+    for (SNode node : ListSequence.<SNode>fromList(nodes)) {
+      ListSequence.<SNode>fromList(result).addElement(node);
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
-        for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
-          ListSequence.fromList(result).addElement(enumConstant);
+        for (SNode enumConstant : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
+          ListSequence.<SNode>fromList(result).addElement(enumConstant);
         }
       }
     }

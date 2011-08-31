@@ -30,7 +30,7 @@ public class SimpleBuilderDeclaration_Behavior {
     for (SNode builder : SimpleBuilders_Behavior.call_getDescendands_5199967550912479741(container, model, scope)) {
       for (SNode dcl : SLinkOperations.getTargets(builder, "builder", true)) {
         if (SNodeOperations.isInstanceOf(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration") && SimpleBuilderDeclaration_Behavior.call_isDescendant_3816167865390595157(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"), thisNode)) {
-          ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"));
+          ListSequence.<SNode>fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"));
         }
       }
     }
@@ -41,7 +41,7 @@ public class SimpleBuilderDeclaration_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     SNode current = thisNode;
     while (current != null) {
-      ListSequence.fromList(result).addElement(current);
+      ListSequence.<SNode>fromList(result).addElement(current);
       current = SLinkOperations.getTarget(current, "extends", false);
     }
     return result;
@@ -53,8 +53,8 @@ public class SimpleBuilderDeclaration_Behavior {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders", true, false);
     for (SNode sb : SimpleBuilders_Behavior.call_getDescendands_5199967550912479741(container, model, scope)) {
       for (SNode dcl : SLinkOperations.getTargets(sb, "builder", true)) {
-        if (SNodeOperations.isInstanceOf(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration") && ListSequence.fromList(ancestors).contains(SLinkOperations.getTarget(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"), "extended", false))) {
-          ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"));
+        if (SNodeOperations.isInstanceOf(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration") && ListSequence.<SNode>fromList(ancestors).contains(SLinkOperations.getTarget(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"), "extended", false))) {
+          ListSequence.<SNode>fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"));
         }
       }
     }
@@ -64,10 +64,10 @@ public class SimpleBuilderDeclaration_Behavior {
   public static List<SNode> call_getChildren_3816167865390856298(SNode thisNode, SModel model, IScope scope) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode a : SimpleBuilderDeclaration_Behavior.call_getAncestors_7782956297805865272(thisNode)) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(a, "child", true)));
+      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(a, "child", true)));
     }
     for (SNode ext : SimpleBuilderDeclaration_Behavior.call_getExtensions_7782956297805903915(thisNode, model, scope)) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(ext, "child", true)));
+      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(ext, "child", true)));
     }
     return result;
   }
@@ -75,10 +75,10 @@ public class SimpleBuilderDeclaration_Behavior {
   public static List<SNode> call_getProperties_5389689214217081373(SNode thisNode, SModel model, IScope scope) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode a : SimpleBuilderDeclaration_Behavior.call_getAncestors_7782956297805865272(thisNode)) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(a, "property", true)));
+      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(a, "property", true)));
     }
     for (SNode ext : SimpleBuilderDeclaration_Behavior.call_getExtensions_7782956297805903915(thisNode, model, scope)) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(ext, "property", true)));
+      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(ext, "property", true)));
     }
     return result;
   }

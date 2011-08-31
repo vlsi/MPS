@@ -77,41 +77,41 @@ public class Table_Editor extends DefaultNodeEditor {
       public TableModel getTable(final SNode node, final EditorContext editorContext) {
         return new AbstractTableModel() {
           public SNode getValueAt(int row, int column) {
-            return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).getElement(row), "cells", true)).getElement(column);
+            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "rows", true)).getElement(row), "cells", true)).getElement(column);
           }
 
           public int getRowCount() {
-            return ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).count();
+            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "rows", true)).count();
           }
 
           public int getColumnCount() {
-            return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).first(), "cells", true)).count();
+            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "rows", true)).first(), "cells", true)).count();
           }
 
           public void deleteRow(int rowNumber) {
-            ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).removeElementAt(rowNumber);
+            ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "rows", true)).removeElementAt(rowNumber);
           }
 
           @Override
           public void insertRow(int rowNumber) {
             SNode rowNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Row", null);
-            for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).first(), "cells", true)).count(); i++) {
-              ListSequence.fromList(SLinkOperations.getTargets(rowNode, "cells", true)).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
+            for (int i = 0; i < ListSequence.<SNode>fromList(SLinkOperations.getTargets(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "rows", true)).first(), "cells", true)).count(); i++) {
+              ListSequence.<SNode>fromList(SLinkOperations.getTargets(rowNode, "cells", true)).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
             }
-            ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).insertElement(rowNumber, rowNode);
+            ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "rows", true)).insertElement(rowNumber, rowNode);
           }
 
           @Override
           public void deleteColumn(int columnNumber) {
-            for (SNode row : ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true))) {
-              ListSequence.fromList(SLinkOperations.getTargets(row, "cells", true)).removeElementAt(columnNumber);
+            for (SNode row : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "rows", true))) {
+              ListSequence.<SNode>fromList(SLinkOperations.getTargets(row, "cells", true)).removeElementAt(columnNumber);
             }
           }
 
           @Override
           public void insertColumn(int columnNumber) {
-            for (SNode row : ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true))) {
-              ListSequence.fromList(SLinkOperations.getTargets(row, "cells", true)).insertElement(columnNumber, SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
+            for (SNode row : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "rows", true))) {
+              ListSequence.<SNode>fromList(SLinkOperations.getTargets(row, "cells", true)).insertElement(columnNumber, SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
             }
           }
         };

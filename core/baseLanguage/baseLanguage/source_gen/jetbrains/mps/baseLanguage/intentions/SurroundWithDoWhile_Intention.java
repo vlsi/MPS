@@ -40,8 +40,8 @@ public class SurroundWithDoWhile_Intention extends SurroundWithIntention impleme
     SNode whileStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DoWhileStatement", null);
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(node, whileStatement);
-    for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(whileStatement, "body", true), "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
+    for (SNode selectedNode : ListSequence.<SNode>fromList(selectedNodes)) {
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(whileStatement, "body", true), "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
     }
     editorContext.select(SLinkOperations.getTarget(whileStatement, "condition", true));
   }

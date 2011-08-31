@@ -11,7 +11,7 @@ import jetbrains.mps.textGen.TextGenManager;
 
 public class HTMLElement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty()) {
       this.append("<");
       this.append(SPropertyOperations.getString(node, "name"));
       this.append(" />");
@@ -19,7 +19,7 @@ public class HTMLElement_TextGen extends SNodeTextGen {
       this.append("<");
       this.append(SPropertyOperations.getString(node, "name"));
       this.append(">");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isNotEmpty()) {
+      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "line", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "line", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         }

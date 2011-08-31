@@ -19,17 +19,17 @@ public class VariableArityType_Behavior {
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    List<String> variableSuffixes = ListSequence.fromList(new ArrayList<String>());
+    List<String> variableSuffixes = ListSequence.<String>fromList(new ArrayList<String>());
     if ((SLinkOperations.getTarget(thisNode, "componentType", true) != null)) {
       if (Type_Behavior.call_hasPluralVariableSuffixes_1447667470349154499(SLinkOperations.getTarget(thisNode, "componentType", true))) {
-        for (String suffix : ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "componentType", true)))) {
-          if (!(ListSequence.fromList(variableSuffixes).contains(suffix))) {
-            ListSequence.fromList(variableSuffixes).addElement(suffix);
+        for (String suffix : ListSequence.<String>fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "componentType", true)))) {
+          if (!(ListSequence.<String>fromList(variableSuffixes).contains(suffix))) {
+            ListSequence.<String>fromList(variableSuffixes).addElement(suffix);
           }
         }
       } else {
-        for (String suffix : ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "componentType", true)))) {
-          ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
+        for (String suffix : ListSequence.<String>fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "componentType", true)))) {
+          ListSequence.<String>fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
         }
       }
     }

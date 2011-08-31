@@ -11,7 +11,7 @@ public class MPSLitePropertyType_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<MPSLitePropertyType_Enum> constants = ListSequence.fromList(MPSLitePropertyType_Enum.getConstants()).iterator();
+    Iterator<MPSLitePropertyType_Enum> constants = ListSequence.<MPSLitePropertyType_Enum>fromList(MPSLitePropertyType_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       MPSLitePropertyType_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class MPSLitePropertyType_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<MPSLitePropertyType_Enum> constants = ListSequence.fromList(MPSLitePropertyType_Enum.getConstants()).iterator();
+    Iterator<MPSLitePropertyType_Enum> constants = ListSequence.<MPSLitePropertyType_Enum>fromList(MPSLitePropertyType_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       MPSLitePropertyType_Enum constant = constants.next();
       if (value.equals(constant.getName())) {

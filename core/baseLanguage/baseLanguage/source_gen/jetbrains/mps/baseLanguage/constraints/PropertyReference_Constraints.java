@@ -54,14 +54,14 @@ public class PropertyReference_Constraints extends BaseConstraintsDescriptor {
             }
             List<SNode> resultProperties = new ArrayList<SNode>();
             List<SNode> classifiers = new ClassifierAndSuperClassifiersScope(opClassifier).getClassifiers();
-            for (SNode classifier : ListSequence.fromList(classifiers)) {
+            for (SNode classifier : ListSequence.<SNode>fromList(classifiers)) {
               if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-                for (SNode property : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "property", true))) {
+                for (SNode property : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "property", true))) {
                   if (VisibilityUtil.isVisible(((_context.getReferenceNode() == null) ?
                     _context.getEnclosingNode() :
                     _context.getReferenceNode()
                   ), property)) {
-                    ListSequence.fromList(resultProperties).addElement(property);
+                    ListSequence.<SNode>fromList(resultProperties).addElement(property);
                   }
                 }
               }

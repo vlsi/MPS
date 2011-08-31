@@ -45,7 +45,7 @@ public class GenerationContextOp_PropertyPatternRef_Constraints extends BaseCons
             List<SNode> result = new ArrayList<SNode>();
             SNode rule = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule", false, false);
             if ((rule != null) && (SLinkOperations.getTarget(rule, "pattern", true) != null)) {
-              ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(rule, "pattern", true), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{})));
+              ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(rule, "pattern", true), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{})));
             }
             return result;
           }

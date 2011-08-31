@@ -26,7 +26,7 @@ public class QueryFinder implements IFinder {
     assert queryObject instanceof SNode;
     SearchResults instances = FindUtils.getSearchResults(indicator, ((SNode) queryObject), searchQuery.getScope(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
     List<SearchResult<SNode>> instancesList = instances.getSearchResults();
-    Iterator<SearchResult<SNode>> it = ListSequence.fromList(instancesList).iterator();
+    Iterator<SearchResult<SNode>> it = ListSequence.<SearchResult<SNode>>fromList(instancesList).iterator();
     while (it.hasNext()) {
       SearchResult<SNode> current = it.next();
       try {

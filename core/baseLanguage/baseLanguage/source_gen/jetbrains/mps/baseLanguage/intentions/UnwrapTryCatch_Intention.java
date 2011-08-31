@@ -46,7 +46,7 @@ public class UnwrapTryCatch_Intention extends BaseIntention implements Intention
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode selectedNode = editorContext.getSelectedNode();
-    for (SNode ancestor : ListSequence.fromList(SNodeOperations.getAncestors(selectedNode, null, true))) {
+    for (SNode ancestor : ListSequence.<SNode>fromList(SNodeOperations.getAncestors(selectedNode, null, true))) {
       if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement")) {
         return eq_cj56ns_a0a0a0b0g(ancestor, node);
       }
@@ -62,11 +62,11 @@ public class UnwrapTryCatch_Intention extends BaseIntention implements Intention
 
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList")) {
       final SNode statementList = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList");
-      final Wrappers._int index = new Wrappers._int(ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).indexOf(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Statement")));
-      ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).removeElementAt(index.value);
-      ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).visitAll(new IVisitor<SNode>() {
+      final Wrappers._int index = new Wrappers._int(ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList, "statement", true)).indexOf(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Statement")));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList, "statement", true)).removeElementAt(index.value);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(body, "statement", true)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).insertElement(index.value, it);
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList, "statement", true)).insertElement(index.value, it);
           index.value += 1;
         }
       });

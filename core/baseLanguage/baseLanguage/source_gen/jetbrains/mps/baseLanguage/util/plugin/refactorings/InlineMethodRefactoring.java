@@ -47,7 +47,7 @@ public class InlineMethodRefactoring {
     }
     this.myMethodProgram = DataFlowManager.getInstance().buildProgramFor(this.myMethodDeclaration);
     List<SNode> returns = SNodeOperations.getDescendants(this.myMethodDeclaration, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{});
-    this.myHasManyReturns = ListSequence.fromList(returns).count() > 1;
+    this.myHasManyReturns = ListSequence.<SNode>fromList(returns).count() > 1;
     this.myReturnType = SLinkOperations.getTarget(this.myMethodDeclaration, "returnType", true);
   }
 
@@ -79,21 +79,21 @@ public class InlineMethodRefactoring {
     if (SNodeOperations.getAncestor(this.myMethodDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != SNodeOperations.getAncestor(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)) {
       this.replaceLocalStaticMethodCalls(body);
     }
-    for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true))) {
+    for (SNode statement : ListSequence.<SNode>fromList(SLinkOperations.getTargets(body, "statement", true))) {
       SNodeOperations.insertPrevSiblingChild(callStatement, statement);
     }
     SNodeOperations.deleteNode(callStatement);
   }
 
   public void addLastReturnStatement(SNode body) {
-    SNode last = ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).last();
+    SNode last = ListSequence.<SNode>fromList(SLinkOperations.getTargets(body, "statement", true)).last();
     if (SNodeOperations.isInstanceOf(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       SNodeOperations.replaceWithAnother(last, new InlineMethodRefactoring.QuotationClass_49noxv_a0a0a0b0b().createNode(SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)));
     }
   }
 
   private void replaceReturnSatements(SNode body, SNode returnVar, SNode callStatement) {
-    for (SNode returnStatement : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{}))) {
+    for (SNode returnStatement : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{}))) {
       SNode returnExpression = SLinkOperations.getTarget(returnStatement, "expression", true);
       if (returnVar == null) {
         if (returnExpression != null) {
@@ -114,7 +114,7 @@ public class InlineMethodRefactoring {
       SNode t = this.getClassifierType(SNodeOperations.cast(SNodeOperations.getParent(this.myMethodDeclaration), "jetbrains.mps.baseLanguage.structure.Classifier"));
       this.myOperand = this.createVariable(statement, "instance", t, this.myOperand);
     }
-    for (SNode thisExpr : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.IThisExpression", false, new String[]{}))) {
+    for (SNode thisExpr : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.IThisExpression", false, new String[]{}))) {
       SNodeOperations.replaceWithAnother(thisExpr, SNodeOperations.copyNode(this.myOperand));
     }
   }
@@ -138,7 +138,7 @@ public class InlineMethodRefactoring {
 
   private void replaceLocalStaticMethodCalls(SNode body) {
     SNode c = SNodeOperations.getAncestor(this.myMethodDeclaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    for (SNode localCall : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", false, new String[]{}))) {
+    for (SNode localCall : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", false, new String[]{}))) {
       SNode newCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(newCall, "classConcept", c, false);
       SLinkOperations.setTarget(newCall, "baseMethodDeclaration", SLinkOperations.getTarget(localCall, "baseMethodDeclaration", false), false);
@@ -147,9 +147,9 @@ public class InlineMethodRefactoring {
   }
 
   private void replaceParameters(SNode returnExpression, Map<SNode, SNode> parameters) {
-    for (SNode ref : ListSequence.fromList(SNodeOperations.getDescendants(returnExpression, "jetbrains.mps.baseLanguage.structure.ParameterReference", false, new String[]{}))) {
+    for (SNode ref : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(returnExpression, "jetbrains.mps.baseLanguage.structure.ParameterReference", false, new String[]{}))) {
       if (MapSequence.fromMap(parameters).containsKey(SLinkOperations.getTarget(ref, "variableDeclaration", false))) {
-        SNode e = SNodeOperations.copyNode(MapSequence.fromMap(parameters).get(SLinkOperations.getTarget(ref, "variableDeclaration", false)));
+        SNode e = SNodeOperations.copyNode(MapSequence.<SNode,SNode>fromMap(parameters).get(SLinkOperations.getTarget(ref, "variableDeclaration", false)));
         SNodeOperations.replaceWithAnother(ref, e);
       }
     }
@@ -158,19 +158,19 @@ public class InlineMethodRefactoring {
   private Map<SNode, SNode> compareParameters() {
     Set<SNode> usedParameters = this.findUsedParameters();
     SNode statement = SNodeOperations.getAncestor(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
-    Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    Map<SNode, SNode> map = MapSequence.<SNode,SNode>fromMap(new HashMap<SNode, SNode>());
     List<SNode> parameters = SLinkOperations.getTargets(this.myMethodDeclaration, "parameter", true);
-    for (int i = 0; i < ListSequence.fromList(this.myArguments).count(); i++) {
-      SNode parameterDeclaration = ListSequence.fromList(parameters).getElement(i);
-      SNode argument = ListSequence.fromList(this.myArguments).getElement(i);
-      if (SetSequence.fromSet(usedParameters).contains(parameterDeclaration)) {
+    for (int i = 0; i < ListSequence.<SNode>fromList(this.myArguments).count(); i++) {
+      SNode parameterDeclaration = ListSequence.<SNode>fromList(parameters).getElement(i);
+      SNode argument = ListSequence.<SNode>fromList(this.myArguments).getElement(i);
+      if (SetSequence.<SNode>fromSet(usedParameters).contains(parameterDeclaration)) {
         if (this.canSubstituteParameter(argument, parameterDeclaration)) {
-          MapSequence.fromMap(map).put(parameterDeclaration, argument);
+          MapSequence.<SNode,SNode>fromMap(map).put(parameterDeclaration, argument);
         } else {
           String name = SPropertyOperations.getString(parameterDeclaration, "name");
           SNode type = SLinkOperations.getTarget(parameterDeclaration, "type", true);
           SNode ref = this.createVariable(statement, name, type, argument);
-          MapSequence.fromMap(map).put(parameterDeclaration, ref);
+          MapSequence.<SNode,SNode>fromMap(map).put(parameterDeclaration, ref);
         }
       }
     }
@@ -178,8 +178,8 @@ public class InlineMethodRefactoring {
   }
 
   private Set<SNode> findUsedParameters() {
-    Set<SNode> usedParameters = SetSequence.fromSet(new HashSet<SNode>());
-    for (SNode paramReference : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(this.myMethodDeclaration, "body", true), "jetbrains.mps.baseLanguage.structure.ParameterReference", false, new String[]{}))) {
+    Set<SNode> usedParameters = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+    for (SNode paramReference : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(this.myMethodDeclaration, "body", true), "jetbrains.mps.baseLanguage.structure.ParameterReference", false, new String[]{}))) {
       SetSequence.fromSet(usedParameters).addElement(SLinkOperations.getTarget(paramReference, "variableDeclaration", false));
     }
     return usedParameters;
@@ -205,7 +205,7 @@ public class InlineMethodRefactoring {
   }
 
   private boolean variableWriting(SNode parameterDeclaration) {
-    for (Instruction instruction : ListSequence.fromList(this.myMethodProgram.getInstructions())) {
+    for (Instruction instruction : ListSequence.<Instruction>fromList(this.myMethodProgram.getInstructions())) {
       if (instruction instanceof WriteInstruction) {
         WriteInstruction write = (WriteInstruction) instruction;
         SNode node = ((SNode) write.getSource());
@@ -248,10 +248,10 @@ public class InlineMethodRefactoring {
 
   private boolean isNameGood(SNode statement, final String name) {
     SNode list = SNodeOperations.cast(SNodeOperations.getParent(statement), "jetbrains.mps.baseLanguage.structure.StatementList");
-    int start = ListSequence.fromList(SLinkOperations.getTargets(list, "statement", true)).indexOf(statement);
-    for (int i = start; i < ListSequence.fromList(SLinkOperations.getTargets(list, "statement", true)).count(); i++) {
-      SNode st = ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(list, "statement", true)).toListSequence()).getElement(i);
-      for (SNode declaration : ListSequence.fromList(SNodeOperations.getDescendants(st, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{}))) {
+    int start = ListSequence.<SNode>fromList(SLinkOperations.getTargets(list, "statement", true)).indexOf(statement);
+    for (int i = start; i < ListSequence.<SNode>fromList(SLinkOperations.getTargets(list, "statement", true)).count(); i++) {
+      SNode st = ListSequence.<SNode>fromList(ListSequence.<SNode>fromList(SLinkOperations.getTargets(list, "statement", true)).toListSequence()).getElement(i);
+      for (SNode declaration : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(st, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{}))) {
         if (SPropertyOperations.getString(declaration, "name").equals(name)) {
           return false;
         }
@@ -263,12 +263,12 @@ public class InlineMethodRefactoring {
         return name.equals(SPropertyOperations.getString(SNodeOperations.cast(obj, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "name"));
       }
     }));
-    boolean vars = ListSequence.fromList(nodes).isNotEmpty();
+    boolean vars = ListSequence.<SNode>fromList(nodes).isNotEmpty();
     if (vars) {
       return false;
     }
     SNode declaration = SNodeOperations.getAncestor(statement, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(declaration, "parameter", true))) {
+    for (SNode param : ListSequence.<SNode>fromList(SLinkOperations.getTargets(declaration, "parameter", true))) {
       if (name.equals(SPropertyOperations.getString(param, "name"))) {
         return false;
       }
@@ -280,7 +280,7 @@ public class InlineMethodRefactoring {
     StringBuffer buff = new StringBuffer();
     Set<SNode> nodesToCheck = ClassRefactoringUtils.getClassMemberRefernce(SLinkOperations.getTarget(this.myMethodDeclaration, "body", true));
     String end = SNodeOperations.getParent(this.myMethodDeclaration) + "." + this.myMethodDeclaration;
-    for (SNode node : SetSequence.fromSet(nodesToCheck)) {
+    for (SNode node : SetSequence.<SNode>fromSet(nodesToCheck)) {
       SNode classifier = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       if (!(VisibilityUtil.isVisible(this.myMethodCall, node))) {
         String start = "";

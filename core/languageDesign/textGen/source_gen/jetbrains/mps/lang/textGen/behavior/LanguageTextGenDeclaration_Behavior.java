@@ -16,10 +16,10 @@ public class LanguageTextGenDeclaration_Behavior {
 
   public static List<SNode> call_getParameters_1234799367488(SNode thisNode) {
     if (thisNode == null) {
-      return ListSequence.fromList(new ArrayList<SNode>());
+      return ListSequence.<SNode>fromList(new ArrayList<SNode>());
     }
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "applicableHiddenParameter")));
+    ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(thisNode, "applicableHiddenParameter")));
     return (List<SNode>) result;
   }
 
@@ -29,10 +29,10 @@ public class LanguageTextGenDeclaration_Behavior {
     for (SNode baseTextGen : list) {
       for (SNode func : SLinkOperations.getTargets(baseTextGen, "operation", true)) {
         if (SPropertyOperations.getString(func, "name") != null) {
-          ListSequence.fromList(result).addElement(func);
+          ListSequence.<SNode>fromList(result).addElement(func);
         }
       }
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(baseTextGen, "operation", true)));
+      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(baseTextGen, "operation", true)));
     }
     return result;
   }
@@ -43,7 +43,7 @@ public class LanguageTextGenDeclaration_Behavior {
     for (SNode baseTextGen : list) {
       for (SNode func : SLinkOperations.getTargets(baseTextGen, "function", true)) {
         if (SPropertyOperations.getString(func, "name") != null) {
-          ListSequence.fromList(result).addElement(func);
+          ListSequence.<SNode>fromList(result).addElement(func);
         }
       }
     }
@@ -51,7 +51,7 @@ public class LanguageTextGenDeclaration_Behavior {
   }
 
   public static List<SNode> call_getBaseTextGenComponents_1234781318244(SNode thisNode, List<SNode> list, SNode node) {
-    ListSequence.fromList(list).addElement(node);
+    ListSequence.<SNode>fromList(list).addElement(node);
     if ((SLinkOperations.getTarget(node, "baseTextGen", false) == null) || !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "baseTextGen", false), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"))) {
       return list;
     } else {

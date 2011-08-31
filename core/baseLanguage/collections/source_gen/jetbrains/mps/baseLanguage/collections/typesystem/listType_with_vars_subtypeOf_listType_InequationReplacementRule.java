@@ -18,11 +18,11 @@ public class listType_with_vars_subtypeOf_listType_InequationReplacementRule ext
   }
 
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
-    return !(ListSequence.fromList(SNodeOperations.getChildren(supertype)).any(new IWhereFilter<SNode>() {
+    return !(ListSequence.<SNode>fromList(SNodeOperations.getChildren(supertype)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode ch) {
         return SNodeOperations.isInstanceOf(ch, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
       }
-    })) && ListSequence.fromList(SNodeOperations.getChildren(subtype)).any(new IWhereFilter<SNode>() {
+    })) && ListSequence.<SNode>fromList(SNodeOperations.getChildren(subtype)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode ch) {
         return SNodeOperations.isInstanceOf(ch, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
       }

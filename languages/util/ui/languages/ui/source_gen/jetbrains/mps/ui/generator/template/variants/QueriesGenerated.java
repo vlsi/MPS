@@ -72,11 +72,11 @@ public class QueriesGenerated {
     if (res.endsWith(sfx)) {
       res = res.substring(0, res.length() - sfx.length());
     }
-    return res + "_" + Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).first();
+    return res + "_" + Sequence.<String>fromIterable(VariantsUtil.generateVariants(_context.getNode())).first();
   }
 
   public static Object propertyMacro_GetPropertyValue_3210848622155981205(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).first();
+    return Sequence.<String>fromIterable(VariantsUtil.generateVariants(_context.getNode())).first();
   }
 
   public static Object referenceMacro_GetReferent_3210848622155026189(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -88,7 +88,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_3210848622155981243(final IOperationContext operationContext, final IfMacroContext _context) {
-    return Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).count() > 1;
+    return Sequence.<String>fromIterable(VariantsUtil.generateVariants(_context.getNode())).count() > 1;
   }
 
   public static SNode sourceNodeQuery_3210848622155981195(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -144,7 +144,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_3210848622155981218(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).skip(1).<SNode>select(new ISelector<String, SNode>() {
+    return Sequence.<String>fromIterable(VariantsUtil.generateVariants(_context.getNode())).skip(1).<SNode>select(new ISelector<String, SNode>() {
       public SNode select(String it) {
         return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a62().createNode(it);
       }
@@ -152,7 +152,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_3210848622155981255(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "annotation", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "annotation", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode ann) {
         return !(VariantsUtil.isGenerateVariantsAnn(ann) || VariantsUtil.isVariantAnn(ann));
       }
@@ -169,26 +169,26 @@ public class QueriesGenerated {
 
   public static SNode mapSrcMacro_mapper_8586335042091303254(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode copy = SNodeOperations.copyNode(_context.getNode());
-    ListSequence.fromList(SLinkOperations.getTargets(copy, "annotation", true)).removeWhere(new IWhereFilter<SNode>() {
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(copy, "annotation", true)).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode ann) {
         return VariantsUtil.isGenerateVariantsAnn(ann) || VariantsUtil.isVariantAnn(ann);
       }
     });
-    ListSequence.fromList(SLinkOperations.getTargets(copy, "annotation", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0c0eb().createNode(Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).first()));
-    if (Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).count() > 1) {
-      List<SNode> vals = Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).skip(1).<SNode>select(new ISelector<String, SNode>() {
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(copy, "annotation", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0c0eb().createNode(Sequence.<String>fromIterable(VariantsUtil.generateVariants(_context.getNode())).first()));
+    if (Sequence.<String>fromIterable(VariantsUtil.generateVariants(_context.getNode())).count() > 1) {
+      List<SNode> vals = Sequence.<String>fromIterable(VariantsUtil.generateVariants(_context.getNode())).skip(1).<SNode>select(new ISelector<String, SNode>() {
         public SNode select(String it) {
           return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a3a03().createNode(it);
         }
       }).toListSequence();
-      ListSequence.fromList(SLinkOperations.getTargets(copy, "annotation", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0b0d0eb().createNode(vals));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(copy, "annotation", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0b0d0eb().createNode(vals));
     }
     String sfx = "_" + VariantsUtil.withinVariant(_context.getNode());
     String name = SPropertyOperations.getString(_context.getNode(), "name");
     if (name.endsWith(sfx)) {
       name = name.substring(0, name.length() - sfx.length());
     }
-    SPropertyOperations.set(copy, "name", name + "_" + Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).first());
+    SPropertyOperations.set(copy, "name", name + "_" + Sequence.<String>fromIterable(VariantsUtil.generateVariants(_context.getNode())).first());
     return copy;
   }
 

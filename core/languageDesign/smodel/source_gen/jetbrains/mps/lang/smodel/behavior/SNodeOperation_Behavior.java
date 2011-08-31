@@ -39,7 +39,7 @@ public class SNodeOperation_Behavior {
   }
 
   public static SNode call_getParameter_1213877508972(SNode thisNode, final SNode parameterConcept) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(parameterConcept));
       }

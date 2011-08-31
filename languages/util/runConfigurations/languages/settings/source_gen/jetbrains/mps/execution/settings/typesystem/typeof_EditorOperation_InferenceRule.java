@@ -30,8 +30,8 @@ public class typeof_EditorOperation_InferenceRule extends AbstractInferenceRule_
     List<SNode> parameters = ConceptFunction_Behavior.call_getParameters_1213877374450(SLinkOperations.getTarget(editorOperation, "editorOperationDeclaration", false));
 
     // all editor operation parameters are declared 
-    for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(editorOperation, "arguments", true)).count(); i++) {
-      if (i >= ListSequence.fromList(parameters).count()) {
+    for (int i = 0; i < ListSequence.<SNode>fromList(SLinkOperations.getTargets(editorOperation, "arguments", true)).count(); i++) {
+      if (i >= ListSequence.<SNode>fromList(parameters).count()) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(editorOperation, "Incompatible number of parameters", "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477929", null, errorTarget);
@@ -41,12 +41,12 @@ public class typeof_EditorOperation_InferenceRule extends AbstractInferenceRule_
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTargets(editorOperation, "arguments", true).get(i);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "5313207397360251117", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "5313207397360251119", true), (SNode) typeCheckingContext.typeOf(ListSequence.fromList(parameters).getElement(i), "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "5313207397360251127", true), false, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "5313207397360251119", true), (SNode) typeCheckingContext.typeOf(ListSequence.<SNode>fromList(parameters).getElement(i), "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "5313207397360251127", true), false, true, _info_12389875345);
       }
     }
 
     // all declared parameters present 
-    if (ListSequence.fromList(SLinkOperations.getTargets(editorOperation, "arguments", true)).count() < ListSequence.fromList(parameters).count()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(editorOperation, "arguments", true)).count() < ListSequence.<SNode>fromList(parameters).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(editorOperation, "Incompatible number of parameters", "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235639162", null, errorTarget);

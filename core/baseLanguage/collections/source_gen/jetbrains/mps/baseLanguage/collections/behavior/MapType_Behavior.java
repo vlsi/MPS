@@ -36,9 +36,9 @@ public class MapType_Behavior {
 
   public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(new MapType_Behavior.QuotationClass_icy1a5_a0a0b0c().createNode(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
-    ListSequence.fromList(result).addElement(new MapType_Behavior.QuotationClass_icy1a5_a0a0c0c().createNode(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
-    ListSequence.fromList(result).addSequence(Sequence.fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
+    ListSequence.<SNode>fromList(result).addElement(new MapType_Behavior.QuotationClass_icy1a5_a0a0b0c().createNode(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
+    ListSequence.<SNode>fromList(result).addElement(new MapType_Behavior.QuotationClass_icy1a5_a0a0c0c().createNode(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
+    ListSequence.<SNode>fromList(result).addSequence(Sequence.<SNode>fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
     return result;
   }
 

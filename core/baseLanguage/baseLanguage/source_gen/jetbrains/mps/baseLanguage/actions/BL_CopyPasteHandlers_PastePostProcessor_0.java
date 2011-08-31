@@ -25,12 +25,12 @@ public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProce
   public void postProcesNode(SNode pastedNode) {
     SNode containingClassifier = SNodeOperations.getAncestor(pastedNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     final SReference staticFieldRef = SNodeOperations.getReference(pastedNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration"));
-    Iterable<SNode> visibleStaticFields = ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(containingClassifier, pastedNode, IClassifiersSearchScope.STATIC_FIELD)).<SNode>select(new ISelector<SNode, SNode>() {
+    Iterable<SNode> visibleStaticFields = ListSequence.<SNode>fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(containingClassifier, pastedNode, IClassifiersSearchScope.STATIC_FIELD)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
       }
     });
-    SNode staticFieldDecl = Sequence.fromIterable(visibleStaticFields).where(new IWhereFilter<SNode>() {
+    SNode staticFieldDecl = Sequence.<SNode>fromIterable(visibleStaticFields).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(SLinkOperations.getResolveInfo(staticFieldRef));
       }

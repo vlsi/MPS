@@ -21,7 +21,7 @@ import javax.swing.JComponent;
 public class RunReplacement_Tool extends GeneratedTool {
   private static final Icon ICON = IconManager.EMPTY_ICON;
 
-  private List<ReplacementView> myViews = ListSequence.fromList(new ArrayList<ReplacementView>());
+  private List<ReplacementView> myViews = ListSequence.<ReplacementView>fromList(new ArrayList<ReplacementView>());
 
   public RunReplacement_Tool(Project project) {
     super(project, "Replacement", -1, ICON, ToolWindowAnchor.BOTTOM, false);
@@ -29,8 +29,8 @@ public class RunReplacement_Tool extends GeneratedTool {
 
   public void closeTab(ReplacementView view) {
     view.dispose();
-    int index = ListSequence.fromList(RunReplacement_Tool.this.myViews).indexOf(view);
-    ListSequence.fromList(RunReplacement_Tool.this.myViews).removeElement(view);
+    int index = ListSequence.<ReplacementView>fromList(RunReplacement_Tool.this.myViews).indexOf(view);
+    ListSequence.<ReplacementView>fromList(RunReplacement_Tool.this.myViews).removeElement(view);
     RunReplacement_Tool.this.closeTab(index);
   }
 
@@ -45,10 +45,10 @@ public class RunReplacement_Tool extends GeneratedTool {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ReplacementView view = new ReplacementView(RunReplacement_Tool.this, RunReplacement_Tool.this.getProject(), FindUtils.makeProvider(new QueryFinder(query)), searchQuery, query);
-        ListSequence.fromList(RunReplacement_Tool.this.myViews).addElement(view);
+        ListSequence.<ReplacementView>fromList(RunReplacement_Tool.this.myViews).addElement(view);
         String name = "Query ";
-        if (ListSequence.fromList(RunReplacement_Tool.this.myViews).count() > 1) {
-          name += String.valueOf(ListSequence.fromList(RunReplacement_Tool.this.myViews).count());
+        if (ListSequence.<ReplacementView>fromList(RunReplacement_Tool.this.myViews).count() > 1) {
+          name += String.valueOf(ListSequence.<ReplacementView>fromList(RunReplacement_Tool.this.myViews).count());
         }
         Content content = RunReplacement_Tool.this.addContent(view.getComponent(), name, jetbrains.mps.ide.findusages.view.icons.IconManager.getIconForIHolder(searchQuery.getObjectHolder()), false);
         RunReplacement_Tool.this.setAvailable(true);

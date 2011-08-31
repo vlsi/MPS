@@ -11,7 +11,7 @@ public class Severity_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<Severity> constants = ListSequence.fromList(Severity.getConstants()).iterator();
+    Iterator<Severity> constants = ListSequence.<Severity>fromList(Severity.getConstants()).iterator();
     while (constants.hasNext()) {
       Severity constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class Severity_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<Severity> constants = ListSequence.fromList(Severity.getConstants()).iterator();
+    Iterator<Severity> constants = ListSequence.<Severity>fromList(Severity.getConstants()).iterator();
     while (constants.hasNext()) {
       Severity constant = constants.next();
       if (value.equals(constant.getName())) {

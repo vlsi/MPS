@@ -46,7 +46,7 @@ public class NewTemplateFragment_Intention extends BaseIntention implements Inte
     if (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, false, false) == null) {
       return false;
     }
-    if (ListSequence.fromList(SNodeOperations.getAncestors(node, null, false)).where(new IWhereFilter<SNode>() {
+    if (ListSequence.<SNode>fromList(SNodeOperations.getAncestors(node, null, false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isAttribute(it);
       }
@@ -60,7 +60,7 @@ public class NewTemplateFragment_Intention extends BaseIntention implements Inte
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode applyToNode = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
+    SNode applyToNode = ListSequence.<SNode>fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isAttribute(it));
       }

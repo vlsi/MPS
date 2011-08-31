@@ -13,7 +13,7 @@ import com.intellij.execution.BeforeRunTask;
 import com.intellij.openapi.extensions.Extensions;
 
 public class BeforeTasksInitializer_CustomProjectPlugin extends BaseCustomProjectPlugin {
-  private List<BeforeRunTaskProvider> myRegisteredBeforeTasks = ListSequence.fromList(new ArrayList<BeforeRunTaskProvider>());
+  private List<BeforeRunTaskProvider> myRegisteredBeforeTasks = ListSequence.<BeforeRunTaskProvider>fromList(new ArrayList<BeforeRunTaskProvider>());
 
   public BeforeTasksInitializer_CustomProjectPlugin() {
   }
@@ -22,16 +22,16 @@ public class BeforeTasksInitializer_CustomProjectPlugin extends BaseCustomProjec
     ExtensionPoint<BeforeRunTaskProvider<BeforeRunTask>> beforeTasksExtensionPoint = Extensions.getArea(project.getProject()).getExtensionPoint(BeforeRunTaskProvider.EXTENSION_POINT_NAME);
     {
       BeforeRunTaskProvider beforeTask = (BeforeRunTaskProvider) new CompileWithGcc_BeforeTask();
-      ListSequence.fromList(BeforeTasksInitializer_CustomProjectPlugin.this.myRegisteredBeforeTasks).addElement(beforeTask);
+      ListSequence.<BeforeRunTaskProvider>fromList(BeforeTasksInitializer_CustomProjectPlugin.this.myRegisteredBeforeTasks).addElement(beforeTask);
       beforeTasksExtensionPoint.registerExtension(beforeTask);
     }
   }
 
   public void doDispose(MPSProject project) {
     ExtensionPoint<BeforeRunTaskProvider<BeforeRunTask>> beforeTasksExtensionPoint = Extensions.getArea(project.getProject()).getExtensionPoint(BeforeRunTaskProvider.EXTENSION_POINT_NAME);
-    for (BeforeRunTaskProvider beforeTask : ListSequence.fromList(BeforeTasksInitializer_CustomProjectPlugin.this.myRegisteredBeforeTasks)) {
+    for (BeforeRunTaskProvider beforeTask : ListSequence.<BeforeRunTaskProvider>fromList(BeforeTasksInitializer_CustomProjectPlugin.this.myRegisteredBeforeTasks)) {
       beforeTasksExtensionPoint.unregisterExtension(beforeTask);
     }
-    ListSequence.fromList(BeforeTasksInitializer_CustomProjectPlugin.this.myRegisteredBeforeTasks).clear();
+    ListSequence.<BeforeRunTaskProvider>fromList(BeforeTasksInitializer_CustomProjectPlugin.this.myRegisteredBeforeTasks).clear();
   }
 }

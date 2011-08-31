@@ -24,6 +24,6 @@ public class EnumerationDataTypeDeclaration_Behavior {
     if (defaultMember != null) {
       return defaultMember;
     }
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "member", true)).first();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "member", true)).first();
   }
 }

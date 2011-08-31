@@ -20,9 +20,9 @@ public class InternalAnonymousClassCreator_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     List<SNode> methods = SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, new String[]{});
-    Set<SNode> vars = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> vars = SetSequence.<SNode>fromSet(new HashSet<SNode>());
     for (SNode method : methods) {
-      SetSequence.fromSet(vars).addSequence(SetSequence.fromSet(StatementList_Behavior.call_getExternalVariablesDeclarations_1214501165480(SLinkOperations.getTarget(method, "body", true))));
+      SetSequence.fromSet(vars).addSequence(SetSequence.<SNode>fromSet(StatementList_Behavior.call_getExternalVariablesDeclarations_1214501165480(SLinkOperations.getTarget(method, "body", true))));
     }
     for (SNode var : vars) {
       _context.getBuilder().emitRead(var);

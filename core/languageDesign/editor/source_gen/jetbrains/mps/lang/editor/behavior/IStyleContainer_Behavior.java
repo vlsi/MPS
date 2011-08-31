@@ -27,11 +27,11 @@ public class IStyleContainer_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode item : SLinkOperations.getTargets(thisNode, "styleItem", true)) {
       if (SNodeOperations.isInstanceOf(item, NameUtil.nodeFQName(itemConcept))) {
-        ListSequence.fromList(result).addElement(item);
+        ListSequence.<SNode>fromList(result).addElement(item);
       }
     }
-    if ((IStyleContainer_Behavior.call_getParent_1219419981626(thisNode) != null) && !(ListSequence.fromList(result).contains(IStyleContainer_Behavior.call_getParent_1219419981626(thisNode)))) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(IStyleContainer_Behavior.call_getParent_1219419981626(thisNode), itemConcept)));
+    if ((IStyleContainer_Behavior.call_getParent_1219419981626(thisNode) != null) && !(ListSequence.<SNode>fromList(result).contains(IStyleContainer_Behavior.call_getParent_1219419981626(thisNode)))) {
+      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(IStyleContainer_Behavior.call_getParent_1219419981626(thisNode), itemConcept)));
     }
     return result;
   }

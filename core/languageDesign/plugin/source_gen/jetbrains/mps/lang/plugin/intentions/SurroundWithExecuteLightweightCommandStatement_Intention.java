@@ -40,10 +40,10 @@ public class SurroundWithExecuteLightweightCommandStatement_Intention extends Su
     SNode readActionStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement", null);
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(node, readActionStatement);
-    for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(readActionStatement, "commandClosureLiteral", true), "body", true), "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
+    for (SNode selectedNode : ListSequence.<SNode>fromList(selectedNodes)) {
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(readActionStatement, "commandClosureLiteral", true), "body", true), "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
     }
-    editorContext.select(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(readActionStatement, "commandClosureLiteral", true), "body", true), "statement", true)).first());
+    editorContext.select(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(readActionStatement, "commandClosureLiteral", true), "body", true), "statement", true)).first());
   }
 
   public String getLocationString() {

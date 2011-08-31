@@ -18,7 +18,7 @@ public class BehaviourPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      BehaviourPopup_ActionGroup.this.addParameterizedAction(new GoToOverridingMethod_Action(ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder")), PluginId.getId("jetbrains.mps.baseLanguage"), ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder"));
+      BehaviourPopup_ActionGroup.this.addParameterizedAction(new GoToOverridingMethod_Action(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder")), PluginId.getId("jetbrains.mps.baseLanguage"), ListSequence.<String>fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder"));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -12,6 +12,6 @@ public class MPSLiteConceptReference_Behavior {
   }
 
   public static SNode virtual_getConcept_1238594571574(SNode thisNode, Map<SNode, SNode> conceptsToTargets) {
-    return MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(thisNode, "conceptDeclaration", false));
+    return MapSequence.<SNode,SNode>fromMap(conceptsToTargets).get(SLinkOperations.getTarget(thisNode, "conceptDeclaration", false));
   }
 }

@@ -38,7 +38,7 @@
     <nodeInfo nodeId="4217760266503650622" fileName="InstructionReference_Constraints.java" startLine="21" startPosition="45" endLine="22" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4217760266503650622" fileName="InstructionReference_Constraints.java" startLine="26" startPosition="47" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4217760266503650628" fileName="InstructionReference_Constraints.java" startLine="34" startPosition="138" endLine="35" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4217760266503650638" fileName="InstructionReference_Constraints.java" startLine="36" startPosition="171" endLine="37" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4217760266503650638" fileName="InstructionReference_Constraints.java" startLine="36" startPosition="171" endLine="37" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4217760266503650649" fileName="InstructionReference_Constraints.java" startLine="38" startPosition="9" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4217760266503650622" fileName="InstructionReference_Constraints.java" startLine="43" startPosition="57" endLine="44" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4217760266503650622" fileName="InstructionReference_Constraints.java" startLine="20" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InstructionReference_Constraints#()V" />
@@ -50,7 +50,7 @@
     <nodeInfo nodeId="4217760266503650622" fileName="InstructionReference_Constraints.java" startLine="29" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
     <scopeInfo nodeId="4217760266503650622" fileName="InstructionReference_Constraints.java" startLine="21" startPosition="45" endLine="22" endPosition="68" />
     <scopeInfo nodeId="4217760266503650622" fileName="InstructionReference_Constraints.java" startLine="26" startPosition="47" endLine="27" endPosition="16" />
-    <scopeInfo nodeId="4217760266503650637" fileName="InstructionReference_Constraints.java" startLine="36" startPosition="171" endLine="37" endPosition="134" />
+    <scopeInfo nodeId="4217760266503650637" fileName="InstructionReference_Constraints.java" startLine="36" startPosition="171" endLine="37" endPosition="148" />
     <scopeInfo nodeId="4217760266503650622" fileName="InstructionReference_Constraints.java" startLine="43" startPosition="57" endLine="44" endPosition="46" />
     <scopeInfo nodeId="4217760266503650622" fileName="InstructionReference_Constraints.java" startLine="20" startPosition="0" endLine="23" endPosition="3" />
     <scopeInfo nodeId="4217760266503650634" fileName="InstructionReference_Constraints.java" startLine="35" startPosition="52" endLine="38" endPosition="9">
@@ -81,7 +81,7 @@
     <nodeInfo nodeId="4943044633102057755" fileName="ApplicableNodeReference_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4943044633102057801" fileName="ApplicableNodeReference_Constraints.java" startLine="44" startPosition="142" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4943044633102118271" fileName="ApplicableNodeReference_Constraints.java" startLine="45" startPosition="56" endLine="46" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633102119239" fileName="ApplicableNodeReference_Constraints.java" startLine="47" startPosition="169" endLine="48" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633102119239" fileName="ApplicableNodeReference_Constraints.java" startLine="47" startPosition="169" endLine="48" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4943044633102057779" fileName="ApplicableNodeReference_Constraints.java" startLine="49" startPosition="13" endLine="50" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4943044633102057755" fileName="ApplicableNodeReference_Constraints.java" startLine="54" startPosition="61" endLine="55" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4943044633102057755" fileName="ApplicableNodeReference_Constraints.java" startLine="59" startPosition="7" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -96,7 +96,7 @@
     <nodeInfo nodeId="4943044633102057755" fileName="ApplicableNodeReference_Constraints.java" startLine="29" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
     <scopeInfo nodeId="4943044633102057755" fileName="ApplicableNodeReference_Constraints.java" startLine="26" startPosition="48" endLine="27" endPosition="71" />
     <scopeInfo nodeId="4943044633102057755" fileName="ApplicableNodeReference_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" />
-    <scopeInfo nodeId="4943044633102119213" fileName="ApplicableNodeReference_Constraints.java" startLine="47" startPosition="169" endLine="48" endPosition="183" />
+    <scopeInfo nodeId="4943044633102119213" fileName="ApplicableNodeReference_Constraints.java" startLine="47" startPosition="169" endLine="48" endPosition="190" />
     <scopeInfo nodeId="4943044633102057755" fileName="ApplicableNodeReference_Constraints.java" startLine="54" startPosition="61" endLine="55" endPosition="58" />
     <scopeInfo nodeId="4943044633102057755" fileName="ApplicableNodeReference_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="4943044633102057755" fileName="ApplicableNodeReference_Constraints.java" startLine="33" startPosition="101" endLine="38" endPosition="0" />

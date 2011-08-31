@@ -62,7 +62,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     final Wrappers._boolean result = new Wrappers._boolean(false);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModel model = SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first());
+        SModel model = SNodeOperations.getModel(ListSequence.<SNode>fromList(refactoringContext.getSelectedNodes()).first());
         for (SNode node : refactoringContext.getSelectedNodes()) {
           if (SNodeOperations.getModel(node) != model) {
             return;
@@ -89,7 +89,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
       for (SNode node : refactoringContext.getSelectedNodes()) {
         SNode editor = ((SNode) AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498069412(node, editorModelDescriptor.getSModel()));
         if (editor != null) {
-          ListSequence.fromList(editors).addElement(editor);
+          ListSequence.<SNode>fromList(editors).addElement(editor);
         }
       }
     }
@@ -99,7 +99,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
       for (SNode node : refactoringContext.getSelectedNodes()) {
         SNode behavior = ((SNode) AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498069412(node, behaviorModelDescriptor.getSModel()));
         if (behavior != null) {
-          ListSequence.fromList(behaviors).addElement(behavior);
+          ListSequence.<SNode>fromList(behaviors).addElement(behavior);
         }
       }
     }
@@ -109,7 +109,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
       for (SNode node : refactoringContext.getSelectedNodes()) {
         SNode constraint = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498069412(node, constraintsModelDescriptor.getSModel()), "jetbrains.mps.lang.constraints.structure.ConceptConstraints");
         if (constraint != null) {
-          ListSequence.fromList(constraints).addElement(constraint);
+          ListSequence.<SNode>fromList(constraints).addElement(constraint);
         }
       }
     }
@@ -119,7 +119,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
       for (SNode node : refactoringContext.getSelectedNodes()) {
         SNode dataFlow = ((SNode) AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498069412(node, dataflowModelDescriptor.getSModel()));
         if (dataFlow != null) {
-          ListSequence.fromList(dataFlows).addElement(dataFlow);
+          ListSequence.<SNode>fromList(dataFlows).addElement(dataFlow);
         }
       }
     }
@@ -128,7 +128,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
       refactoringContext.changeFeatureName(node, ((SModelReference) refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
     }
     refactoringContext.moveNodesToModel(refactoringContext.getSelectedNodes(), SModelRepository.getInstance().getModelDescriptor(((SModelReference) refactoringContext.getParameter("targetModel"))).getSModel());
-    if (ListSequence.fromList(editors).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(editors).isNotEmpty()) {
       refactoringContext.updateByDefault(editorModelDescriptor.getSModel());
       SModelDescriptor targetEditorModelDescriptor = targetLanguage.getEditorModelDescriptor();
       if (targetEditorModelDescriptor == null) {
@@ -138,7 +138,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
       refactoringContext.moveNodesToModel(editors, editorModel);
       refactoringContext.updateByDefault(editorModel);
     }
-    if (ListSequence.fromList(behaviors).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(behaviors).isNotEmpty()) {
       refactoringContext.updateByDefault(behaviorModelDescriptor.getSModel());
       SModelDescriptor targetBehaviorModelDescriptor = targetLanguage.getBehaviorModelDescriptor();
       if (targetBehaviorModelDescriptor == null) {
@@ -148,7 +148,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
       refactoringContext.moveNodesToModel(behaviors, behaviorModel);
       refactoringContext.updateByDefault(behaviorModel);
     }
-    if (ListSequence.fromList(constraints).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(constraints).isNotEmpty()) {
       refactoringContext.updateByDefault(constraintsModelDescriptor.getSModel());
       SModelDescriptor targetConstraintsModelDescriptor = targetLanguage.getConstraintsModelDescriptor();
       if (targetConstraintsModelDescriptor == null) {
@@ -158,7 +158,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
       refactoringContext.moveNodesToModel(constraints, constraintsModel);
       refactoringContext.updateByDefault(constraintsModel);
     }
-    if (ListSequence.fromList(dataFlows).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(dataFlows).isNotEmpty()) {
       refactoringContext.updateByDefault(dataflowModelDescriptor.getSModel());
       SModelDescriptor targetDataFlowModelDescriptor = targetLanguage.getDataFlowModelDescriptor();
       if (targetDataFlowModelDescriptor == null) {
@@ -172,21 +172,21 @@ public class MoveConcepts extends BaseLoggableRefactoring {
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
+    List<SModel> result = ListSequence.<SModel>fromList(new ArrayList<SModel>());
 
     Project project = refactoringContext.getSelectedProject();
     Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("sourceModel")));
     if (sourceLanguage != null) {
       Map<IModule, List<SModel>> models = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project, sourceLanguage);
-      for (List<SModel> list : Sequence.fromIterable(models.values())) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SModel>) list));
+      for (List<SModel> list : Sequence.<List<SModel>>fromIterable(models.values())) {
+        ListSequence.<SModel>fromList(result).addSequence(ListSequence.<SModel>fromList((List<SModel>) list));
       }
     }
     Language targetLanguage = Language.getLanguageFor(SModelRepository.getInstance().getModelDescriptor(((SModelReference) refactoringContext.getParameter("targetModel"))));
     if (targetLanguage != null) {
       Map<IModule, List<SModel>> models = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project, targetLanguage);
-      for (List<SModel> list : Sequence.fromIterable(models.values())) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SModel>) list));
+      for (List<SModel> list : Sequence.<List<SModel>>fromIterable(models.values())) {
+        ListSequence.<SModel>fromList(result).addSequence(ListSequence.<SModel>fromList((List<SModel>) list));
       }
     }
 
@@ -195,7 +195,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SearchResults searchResults = new SearchResults();
-    for (SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
+    for (SNode selNode : ListSequence.<SNode>fromList(refactoringContext.getSelectedNodes())) {
       searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     }
     return searchResults;

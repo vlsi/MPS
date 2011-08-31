@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="24" startPosition="51" endLine="46" endPosition="7" unitName="jetbrains.mps.baseLanguage.money.actions.QueriesGenerated$1" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="50" startPosition="51" endLine="72" endPosition="7" unitName="jetbrains.mps.baseLanguage.money.actions.QueriesGenerated$2" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="76" startPosition="51" endLine="98" endPosition="7" unitName="jetbrains.mps.baseLanguage.money.actions.QueriesGenerated$3" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="24" startPosition="74" endLine="46" endPosition="7" unitName="jetbrains.mps.baseLanguage.money.actions.QueriesGenerated$1" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="50" startPosition="74" endLine="72" endPosition="7" unitName="jetbrains.mps.baseLanguage.money.actions.QueriesGenerated$2" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="76" startPosition="74" endLine="98" endPosition="7" unitName="jetbrains.mps.baseLanguage.money.actions.QueriesGenerated$3" />
   <unitInfo fileName="QueriesGenerated.java" startLine="19" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.actions.QueriesGenerated" />
   <root nodeId="1187360473104">
     <nodeInfo nodeId="1187361008740" fileName="QueriesGenerated.java" startLine="26" startPosition="164" endLine="27" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

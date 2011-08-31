@@ -20,8 +20,8 @@ public class StaticConceptMethodCall_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode behavior : SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")) {
       SNode concept = SLinkOperations.getTarget(behavior, "concept", false);
-      if (concept != null && ListSequence.fromList(ConceptBehavior_Behavior.call_getVisibleStaticMethods_1225194243338(behavior, enclosingNode)).isNotEmpty()) {
-        ListSequence.fromList(result).addElement(concept);
+      if (concept != null && ListSequence.<SNode>fromList(ConceptBehavior_Behavior.call_getVisibleStaticMethods_1225194243338(behavior, enclosingNode)).isNotEmpty()) {
+        ListSequence.<SNode>fromList(result).addElement(concept);
       }
     }
     return result;

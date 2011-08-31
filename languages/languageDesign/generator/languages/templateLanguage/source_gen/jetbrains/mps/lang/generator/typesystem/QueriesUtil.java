@@ -87,7 +87,7 @@ public class QueriesUtil {
     }
     List<SNode> attributes = AttributeOperations.getAttributeList(node, new IAttributeDescriptor.AllAttributes());
     SNode prevMacro = null;
-    for (SNode attribute : ListSequence.fromList(attributes)) {
+    for (SNode attribute : ListSequence.<SNode>fromList(attributes)) {
       if (attribute == currMacroNode) {
         break;
       }
@@ -117,7 +117,7 @@ public class QueriesUtil {
 
   public static SNode getEnclosing_TemplateFragment(SNode node) {
     //  find first ancestor (inclusive) which has a template fragment attribute 
-    Iterable<SNode> TFs = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> TFs = ListSequence.<SNode>fromList(SNodeOperations.getAncestors(node, null, true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -174,7 +174,7 @@ __switch__:
         };
       }
     });
-    return Sequence.fromIterable(TFs).first();
+    return Sequence.<SNode>fromIterable(TFs).first();
   }
 
   public static SNode getQueryFunction_fromSourceSubstituteMacro(SNode macro) {

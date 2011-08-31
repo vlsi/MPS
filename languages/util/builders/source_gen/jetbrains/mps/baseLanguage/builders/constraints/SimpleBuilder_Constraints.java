@@ -54,13 +54,13 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
 
               List<SNode> result = new ArrayList<SNode>();
 
-              for (SNode dcl : ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders")).<SNode>translate(new ITranslator2<SNode, SNode>() {
+              for (SNode dcl : ListSequence.<SNode>fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders")).<SNode>translate(new ITranslator2<SNode, SNode>() {
                 public Iterable<SNode> translate(SNode it) {
                   return SLinkOperations.getTargets(it, "builder", true);
                 }
               })) {
                 if (SNodeOperations.isInstanceOf(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration") && SimpleBuilderDeclaration_Behavior.call_isRoot_8969040284892403078(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"))) {
-                  ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"));
+                  ListSequence.<SNode>fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"));
                 }
               }
 

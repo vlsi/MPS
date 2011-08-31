@@ -248,7 +248,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_eb7h0d_a5a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_eb7h0d_a6a(SNode node, EditorContext editorContext, IScope scope) {

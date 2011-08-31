@@ -46,7 +46,7 @@ public class Inherits_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Sequence.fromIterable(((Iterable<IModule>) operationContext.getScope().getVisibleModules())).<SModelDescriptor>translate(new ITranslator2<IModule, SModelDescriptor>() {
+            return Sequence.<IModule>fromIterable(((Iterable<IModule>) operationContext.getScope().getVisibleModules())).<SModelDescriptor>translate(new ITranslator2<IModule, SModelDescriptor>() {
               public Iterable<SModelDescriptor> translate(IModule m) {
                 return m.getOwnModelDescriptors();
               }
@@ -54,7 +54,7 @@ public class Inherits_Constraints extends BaseConstraintsDescriptor {
               public boolean accept(SModelDescriptor smd) {
                 return ((smd.getModelRootManager() instanceof BaseStubModelRootManager) ?
                   "gwt_stub".equals(smd.getStereotype()) :
-                  Sequence.fromIterable(((Iterable<ModuleReference>) smd.getSModel().importedLanguages())).contains(ModuleReference.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)"))
+                  Sequence.<ModuleReference>fromIterable(((Iterable<ModuleReference>) smd.getSModel().importedLanguages())).contains(ModuleReference.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)"))
                 );
               }
             }).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {

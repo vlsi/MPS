@@ -11,7 +11,7 @@ public class GroupPosition_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<GroupPosition> constants = ListSequence.fromList(GroupPosition.getConstants()).iterator();
+    Iterator<GroupPosition> constants = ListSequence.<GroupPosition>fromList(GroupPosition.getConstants()).iterator();
     while (constants.hasNext()) {
       GroupPosition constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class GroupPosition_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<GroupPosition> constants = ListSequence.fromList(GroupPosition.getConstants()).iterator();
+    Iterator<GroupPosition> constants = ListSequence.<GroupPosition>fromList(GroupPosition.getConstants()).iterator();
     while (constants.hasNext()) {
       GroupPosition constant = constants.next();
       if (value.equals(constant.getName())) {

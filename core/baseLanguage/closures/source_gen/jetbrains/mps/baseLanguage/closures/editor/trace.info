@@ -120,7 +120,7 @@
     <nodeInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="202" startPosition="72" endLine="203" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="203" startPosition="78" endLine="204" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="205" startPosition="10" endLine="206" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1214831821940" fileName="FunctionType_Editor.java" startLine="209" startPosition="111" endLine="210" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1214831821940" fileName="FunctionType_Editor.java" startLine="209" startPosition="111" endLine="210" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="100821637069067319" fileName="FunctionType_Editor.java" startLine="213" startPosition="111" endLine="214" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="218" startPosition="34" endLine="219" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="222" startPosition="69" endLine="223" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -274,7 +274,7 @@
     <scopeInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="148" startPosition="104" endLine="149" endPosition="48" />
     <scopeInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="156" startPosition="106" endLine="157" endPosition="54" />
     <scopeInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="164" startPosition="106" endLine="165" endPosition="51" />
-    <scopeInfo nodeId="1214831809760" fileName="FunctionType_Editor.java" startLine="209" startPosition="111" endLine="210" endPosition="100" />
+    <scopeInfo nodeId="1214831809760" fileName="FunctionType_Editor.java" startLine="209" startPosition="111" endLine="210" endPosition="107" />
     <scopeInfo nodeId="100821637069063576" fileName="FunctionType_Editor.java" startLine="213" startPosition="111" endLine="214" endPosition="76" />
     <scopeInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="218" startPosition="34" endLine="219" endPosition="14" />
     <scopeInfo nodeId="1199542516142" fileName="FunctionType_Editor.java" startLine="222" startPosition="69" endLine="223" endPosition="67" />
@@ -1394,7 +1394,7 @@
     <nodeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="274" startPosition="72" endLine="275" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="275" startPosition="78" endLine="276" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="277" startPosition="10" endLine="278" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229605593742" fileName="ControlAbstractionDeclaration_Editor.java" startLine="281" startPosition="111" endLine="282" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229605593742" fileName="ControlAbstractionDeclaration_Editor.java" startLine="281" startPosition="111" endLine="282" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="286" startPosition="116" endLine="287" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="290" startPosition="66" endLine="291" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="291" startPosition="41" endLine="292" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1563,7 +1563,7 @@
     <scopeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="198" startPosition="106" endLine="199" endPosition="64" />
     <scopeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="206" startPosition="106" endLine="207" endPosition="50" />
     <scopeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="268" startPosition="58" endLine="269" endPosition="42" />
-    <scopeInfo nodeId="1229605592804" fileName="ControlAbstractionDeclaration_Editor.java" startLine="281" startPosition="111" endLine="282" endPosition="112" />
+    <scopeInfo nodeId="1229605592804" fileName="ControlAbstractionDeclaration_Editor.java" startLine="281" startPosition="111" endLine="282" endPosition="119" />
     <scopeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="286" startPosition="116" endLine="287" endPosition="50" />
     <scopeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="315" startPosition="131" endLine="316" endPosition="139" />
     <scopeInfo nodeId="1229602292447" fileName="ControlAbstractionDeclaration_Editor.java" startLine="332" startPosition="101" endLine="333" endPosition="50" />
@@ -1833,7 +1833,7 @@
     <nodeInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="235" startPosition="78" endLine="236" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="237" startPosition="10" endLine="238" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229604562422" fileName="ControlAbstractionContainer_Editor.java" startLine="241" startPosition="111" endLine="242" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229605496929" fileName="ControlAbstractionContainer_Editor.java" startLine="245" startPosition="111" endLine="246" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229605496929" fileName="ControlAbstractionContainer_Editor.java" startLine="245" startPosition="111" endLine="246" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="250" startPosition="116" endLine="251" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="254" startPosition="66" endLine="255" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="255" startPosition="41" endLine="256" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1961,7 +1961,7 @@
     <scopeInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="72" startPosition="85" endLine="73" endPosition="82" />
     <scopeInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="179" startPosition="106" endLine="180" endPosition="64" />
     <scopeInfo nodeId="1229604562421" fileName="ControlAbstractionContainer_Editor.java" startLine="241" startPosition="111" endLine="242" endPosition="124" />
-    <scopeInfo nodeId="1229605488880" fileName="ControlAbstractionContainer_Editor.java" startLine="245" startPosition="111" endLine="246" endPosition="112" />
+    <scopeInfo nodeId="1229605488880" fileName="ControlAbstractionContainer_Editor.java" startLine="245" startPosition="111" endLine="246" endPosition="119" />
     <scopeInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="250" startPosition="116" endLine="251" endPosition="50" />
     <scopeInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="279" startPosition="131" endLine="280" endPosition="139" />
     <scopeInfo nodeId="1229604189999" fileName="ControlAbstractionContainer_Editor.java" startLine="296" startPosition="110" endLine="297" endPosition="50" />
@@ -2179,9 +2179,9 @@
     <nodeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="199" startPosition="72" endLine="200" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="200" startPosition="78" endLine="201" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="202" startPosition="10" endLine="203" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236783662954" fileName="ClosureControlStatement_Editor.java" startLine="206" startPosition="111" endLine="207" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236783662942" fileName="ClosureControlStatement_Editor.java" startLine="210" startPosition="112" endLine="211" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236783662930" fileName="ClosureControlStatement_Editor.java" startLine="214" startPosition="113" endLine="215" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236783662954" fileName="ClosureControlStatement_Editor.java" startLine="206" startPosition="111" endLine="207" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236783662942" fileName="ClosureControlStatement_Editor.java" startLine="210" startPosition="112" endLine="211" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236783662930" fileName="ClosureControlStatement_Editor.java" startLine="214" startPosition="113" endLine="215" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="219" startPosition="33" endLine="220" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="223" startPosition="69" endLine="224" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="227" startPosition="81" endLine="228" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2355,9 +2355,9 @@
     <scopeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="79" startPosition="5" endLine="80" endPosition="86" />
     <scopeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="142" startPosition="106" endLine="143" endPosition="56" />
     <scopeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="154" startPosition="58" endLine="155" endPosition="74" />
-    <scopeInfo nodeId="1236783662953" fileName="ClosureControlStatement_Editor.java" startLine="206" startPosition="111" endLine="207" endPosition="245" />
-    <scopeInfo nodeId="1236783662941" fileName="ClosureControlStatement_Editor.java" startLine="210" startPosition="112" endLine="211" endPosition="104" />
-    <scopeInfo nodeId="1236783662929" fileName="ClosureControlStatement_Editor.java" startLine="214" startPosition="113" endLine="215" endPosition="149" />
+    <scopeInfo nodeId="1236783662953" fileName="ClosureControlStatement_Editor.java" startLine="206" startPosition="111" endLine="207" endPosition="259" />
+    <scopeInfo nodeId="1236783662941" fileName="ClosureControlStatement_Editor.java" startLine="210" startPosition="112" endLine="211" endPosition="111" />
+    <scopeInfo nodeId="1236783662929" fileName="ClosureControlStatement_Editor.java" startLine="214" startPosition="113" endLine="215" endPosition="156" />
     <scopeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="219" startPosition="33" endLine="220" endPosition="14" />
     <scopeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="223" startPosition="69" endLine="224" endPosition="67" />
     <scopeInfo nodeId="1229629886791" fileName="ClosureControlStatement_Editor.java" startLine="227" startPosition="81" endLine="228" endPosition="66" />
@@ -2580,7 +2580,7 @@
     <nodeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="170" startPosition="72" endLine="171" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="171" startPosition="78" endLine="172" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="173" startPosition="10" endLine="174" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229716584087" fileName="UnrestrictedFunctionType_Editor.java" startLine="177" startPosition="111" endLine="178" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229716584087" fileName="UnrestrictedFunctionType_Editor.java" startLine="177" startPosition="111" endLine="178" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="182" startPosition="105" endLine="183" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="186" startPosition="66" endLine="187" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="187" startPosition="41" endLine="188" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2697,7 +2697,7 @@
     <scopeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="117" startPosition="93" endLine="118" endPosition="49" />
     <scopeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="125" startPosition="106" endLine="126" endPosition="54" />
     <scopeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="133" startPosition="106" endLine="134" endPosition="51" />
-    <scopeInfo nodeId="1229716584086" fileName="UnrestrictedFunctionType_Editor.java" startLine="177" startPosition="111" endLine="178" endPosition="100" />
+    <scopeInfo nodeId="1229716584086" fileName="UnrestrictedFunctionType_Editor.java" startLine="177" startPosition="111" endLine="178" endPosition="107" />
     <scopeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="182" startPosition="105" endLine="183" endPosition="50" />
     <scopeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="204" startPosition="89" endLine="205" endPosition="65" />
     <scopeInfo nodeId="1229716582700" fileName="UnrestrictedFunctionType_Editor.java" startLine="215" startPosition="131" endLine="216" endPosition="139" />
@@ -3006,8 +3006,8 @@
     <nodeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="89" startPosition="72" endLine="90" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="90" startPosition="78" endLine="91" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="92" startPosition="10" endLine="93" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2881440809021462031" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="96" startPosition="111" endLine="97" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2881440809021496268" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="100" startPosition="111" endLine="101" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2881440809021462031" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="96" startPosition="111" endLine="97" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2881440809021496268" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="100" startPosition="111" endLine="101" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="105" startPosition="101" endLine="106" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="109" startPosition="66" endLine="110" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="110" startPosition="41" endLine="111" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3072,8 +3072,8 @@
     <scopeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="42" startPosition="84" endLine="43" endPosition="81" />
     <scopeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="60" startPosition="87" endLine="61" endPosition="60" />
     <scopeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="72" startPosition="87" endLine="73" endPosition="65" />
-    <scopeInfo nodeId="4037957461502351058" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="96" startPosition="111" endLine="97" endPosition="99" />
-    <scopeInfo nodeId="4037957461502351073" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="100" startPosition="111" endLine="101" endPosition="96" />
+    <scopeInfo nodeId="4037957461502351058" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="96" startPosition="111" endLine="97" endPosition="106" />
+    <scopeInfo nodeId="4037957461502351073" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="100" startPosition="111" endLine="101" endPosition="103" />
     <scopeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="105" startPosition="101" endLine="106" endPosition="50" />
     <scopeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="127" startPosition="89" endLine="128" endPosition="65" />
     <scopeInfo nodeId="1235747094428" fileName="CompactInvokeFunctionExpression_Editor.java" startLine="138" startPosition="131" endLine="139" endPosition="139" />
@@ -3381,8 +3381,8 @@
     <nodeInfo nodeId="4816492477345855407" fileName="FunctionMethodDeclaration_Editor.java" startLine="338" startPosition="112" endLine="339" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4816492477345855414" fileName="FunctionMethodDeclaration_Editor.java" startLine="342" startPosition="112" endLine="343" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4816492477345855421" fileName="FunctionMethodDeclaration_Editor.java" startLine="346" startPosition="112" endLine="347" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4816492477345855429" fileName="FunctionMethodDeclaration_Editor.java" startLine="350" startPosition="111" endLine="351" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4816492477345855451" fileName="FunctionMethodDeclaration_Editor.java" startLine="354" startPosition="111" endLine="355" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4816492477345855429" fileName="FunctionMethodDeclaration_Editor.java" startLine="350" startPosition="111" endLine="351" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4816492477345855451" fileName="FunctionMethodDeclaration_Editor.java" startLine="354" startPosition="111" endLine="355" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3059910031788836932" fileName="FunctionMethodDeclaration_Editor.java" startLine="358" startPosition="112" endLine="359" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4816492477345855508" fileName="FunctionMethodDeclaration_Editor.java" startLine="362" startPosition="112" endLine="363" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4816492477345855367" fileName="FunctionMethodDeclaration_Editor.java" startLine="367" startPosition="101" endLine="368" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -3595,8 +3595,8 @@
     <scopeInfo nodeId="4816492477345855406" fileName="FunctionMethodDeclaration_Editor.java" startLine="338" startPosition="112" endLine="339" endPosition="59" />
     <scopeInfo nodeId="4816492477345855413" fileName="FunctionMethodDeclaration_Editor.java" startLine="342" startPosition="112" endLine="343" endPosition="62" />
     <scopeInfo nodeId="4816492477345855420" fileName="FunctionMethodDeclaration_Editor.java" startLine="346" startPosition="112" endLine="347" endPosition="66" />
-    <scopeInfo nodeId="4816492477345855428" fileName="FunctionMethodDeclaration_Editor.java" startLine="350" startPosition="111" endLine="351" endPosition="112" />
-    <scopeInfo nodeId="4816492477345855450" fileName="FunctionMethodDeclaration_Editor.java" startLine="354" startPosition="111" endLine="355" endPosition="99" />
+    <scopeInfo nodeId="4816492477345855428" fileName="FunctionMethodDeclaration_Editor.java" startLine="350" startPosition="111" endLine="351" endPosition="119" />
+    <scopeInfo nodeId="4816492477345855450" fileName="FunctionMethodDeclaration_Editor.java" startLine="354" startPosition="111" endLine="355" endPosition="106" />
     <scopeInfo nodeId="3059910031788836930" fileName="FunctionMethodDeclaration_Editor.java" startLine="358" startPosition="112" endLine="359" endPosition="62" />
     <scopeInfo nodeId="4816492477345855507" fileName="FunctionMethodDeclaration_Editor.java" startLine="362" startPosition="112" endLine="363" endPosition="126" />
     <scopeInfo nodeId="4816492477345855367" fileName="FunctionMethodDeclaration_Editor.java" startLine="367" startPosition="101" endLine="368" endPosition="50" />

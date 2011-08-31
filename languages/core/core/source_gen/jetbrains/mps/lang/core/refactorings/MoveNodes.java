@@ -59,19 +59,19 @@ public class MoveNodes extends BaseLoggableRefactoring {
           SNode concept = SNodeOperations.getConceptDeclaration(targetNode);
           ConceptAndSuperConceptsScope superConceptsScope = new ConceptAndSuperConceptsScope(concept);
           List<SNode> linkDeclarations = (List<SNode>) superConceptsScope.getLinkDeclarationsExcludingOverridden();
-          Iterable<SNode> childLinkDeclarations = ListSequence.fromList(linkDeclarations).where(new IWhereFilter<SNode>() {
+          Iterable<SNode> childLinkDeclarations = ListSequence.<SNode>fromList(linkDeclarations).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference");
             }
           });
-          Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).<String>select(new ISelector<SNode, String>() {
+          Iterable<String> childLinksRoles = Sequence.<SNode>fromIterable(childLinkDeclarations).<String>select(new ISelector<SNode, String>() {
             public String select(SNode it) {
               return SModelUtil.getGenuineLinkRole(it);
             }
           });
           for (SNode node : refactoringContext.getSelectedNodes()) {
             String childRole = node.getRole_();
-            if (!(Sequence.fromIterable(childLinksRoles).contains(childRole))) {
+            if (!(Sequence.<String>fromIterable(childLinksRoles).contains(childRole))) {
               return;
             }
             for (SNode linkDeclaration : childLinkDeclarations) {
@@ -106,11 +106,11 @@ public class MoveNodes extends BaseLoggableRefactoring {
     }
     if (((Object) refactoringContext.getParameter("target")) instanceof SNode) {
       SNode targetNode = (SNode) ((Object) refactoringContext.getParameter("target"));
-      movedNodes = refactoringContext.moveNodesToNode(nodes, ListSequence.fromList(nodes).first().getRole_(), targetNode);
+      movedNodes = refactoringContext.moveNodesToNode(nodes, ListSequence.<SNode>fromList(nodes).first().getRole_(), targetNode);
       targetModel = SNodeOperations.getModel(targetNode);
     }
     if (targetModel != null) {
-      refactoringContext.setParameter("nodeToOpen", ListSequence.fromList(movedNodes).first());
+      refactoringContext.setParameter("nodeToOpen", ListSequence.<SNode>fromList(movedNodes).first());
     }
   }
 
@@ -120,7 +120,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SearchResults searchResults = new SearchResults();
-    for (SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
+    for (SNode selNode : ListSequence.<SNode>fromList(refactoringContext.getSelectedNodes())) {
       searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     }
     return searchResults;

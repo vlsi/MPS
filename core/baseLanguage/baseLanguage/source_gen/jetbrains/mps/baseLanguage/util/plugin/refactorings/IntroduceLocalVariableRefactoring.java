@@ -37,7 +37,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
       // <node> 
     }
     if (myIsReplacingAll) {
-      for (SNode duplicate : ListSequence.fromList(myDuplicates)) {
+      for (SNode duplicate : ListSequence.<SNode>fromList(myDuplicates)) {
         replaceNode(duplicate, varDeclaration);
       }
     }
@@ -61,16 +61,16 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
 
   private void moveDeclarationIfNeed(SNode node, SNode declaration) {
     List<SNode> declAncestors = SNodeOperations.getAncestors(declaration, null, false);
-    ListSequence.fromList(declAncestors).addElement(declaration);
+    ListSequence.<SNode>fromList(declAncestors).addElement(declaration);
     SNode commonList = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-    while ((commonList != null) && !(ListSequence.fromList(declAncestors).contains(commonList))) {
+    while ((commonList != null) && !(ListSequence.<SNode>fromList(declAncestors).contains(commonList))) {
       commonList = SNodeOperations.getAncestor(commonList, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     }
     if ((commonList != null)) {
       SNode firstAncestor = null;
-      for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(commonList, "statement", true))) {
+      for (SNode statement : ListSequence.<SNode>fromList(SLinkOperations.getTargets(commonList, "statement", true))) {
         List<SNode> nodeAncestors = SNodeOperations.getAncestors(node, null, false);
-        if (ListSequence.fromList(declAncestors).contains(statement) || ListSequence.fromList(nodeAncestors).contains(statement)) {
+        if (ListSequence.<SNode>fromList(declAncestors).contains(statement) || ListSequence.<SNode>fromList(nodeAncestors).contains(statement)) {
           firstAncestor = statement;
           break;
         }

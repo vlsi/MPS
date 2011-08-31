@@ -60,8 +60,8 @@ public class ShowSurroundWithIntentions_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("editorContext") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorContext") == null) {
       return false;
     }
     return true;
@@ -88,7 +88,7 @@ public class ShowSurroundWithIntentions_Action extends GeneratedAction {
         return;
       }
 
-      RelativePoint relativePoint = new RelativePoint(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent(), new Point(x, y));
+      RelativePoint relativePoint = new RelativePoint(((EditorContext) MapSequence.<String,Object>fromMap(_params).get("editorContext")).getNodeEditorComponent(), new Point(x, y));
       popup.value.show(relativePoint);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowSurroundWithIntentions", t);
@@ -96,13 +96,13 @@ public class ShowSurroundWithIntentions_Action extends GeneratedAction {
   }
 
   /*package*/ EditorCell getAnchorCell(final Map<String, Object> _params) {
-    Selection selection = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent().getSelectionManager().getSelection();
+    Selection selection = ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("editorContext")).getNodeEditorComponent().getSelectionManager().getSelection();
     if (selection == null) {
       return null;
     }
     List<EditorCell> selectedCells = selection.getSelectedCells();
-    if (ListSequence.fromList(selectedCells).isNotEmpty()) {
-      return ListSequence.fromList(selectedCells).first();
+    if (ListSequence.<EditorCell>fromList(selectedCells).isNotEmpty()) {
+      return ListSequence.<EditorCell>fromList(selectedCells).first();
     }
     return null;
   }

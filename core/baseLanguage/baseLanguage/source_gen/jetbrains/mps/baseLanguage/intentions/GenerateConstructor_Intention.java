@@ -67,7 +67,7 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
       SNode constructor = SNodeFactoryOperations.addNewChild(classConcept, "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
       constructorDeclaration = constructor;
       SNodeFactoryOperations.setNewChild(constructor, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-      if (ListSequence.fromList(SLinkOperations.getTargets(selectedSuperConstructor, "parameter", true)).isNotEmpty()) {
+      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(selectedSuperConstructor, "parameter", true)).isNotEmpty()) {
         SNode invocation = SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(constructor, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation");
         SLinkOperations.setTarget(invocation, "baseMethodDeclaration", selectedSuperConstructor, false);
         for (SNode superParam : SLinkOperations.getTargets(selectedSuperConstructor, "parameter", true)) {
@@ -80,7 +80,7 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
       }
       for (SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
         SNode parameterDeclaration = new GenerateConstructor_Intention.QuotationClass_mrvrtl_a0a0a4a3a7().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(field, "type", true)), GenerateGettersAndSettersUtil.getParameterNameForField(field, project));
-        ListSequence.fromList(SLinkOperations.getTargets(constructor, "parameter", true)).addElement(parameterDeclaration);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(constructor, "parameter", true)).addElement(parameterDeclaration);
         SNode expressionStatement = SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(constructor, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
         SNode assignmentExpression = SNodeFactoryOperations.setNewChild(expressionStatement, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
         SLinkOperations.setTarget(assignmentExpression, "lValue", new GenerateConstructor_Intention.QuotationClass_mrvrtl_a2a4a4a3a7().createNode(field), true);
@@ -102,11 +102,11 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
         if (superclass.value == null) {
           superclass.value = SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
         }
-        if (ListSequence.fromList(SLinkOperations.getTargets(superclass.value, "constructor", true)).count() > 1) {
+        if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(superclass.value, "constructor", true)).count() > 1) {
           needsShowConstructorsDialog.value = true;
         } else {
           intentionContext.getContextParametersMap().put("selectedConstructors", new ArrayList<SNode>());
-          ListSequence.fromList(((List<SNode>) intentionContext.getContextParametersMap().get("selectedConstructors"))).addElement(ListSequence.fromList(SLinkOperations.getTargets(superclass.value, "constructor", true)).first());
+          ListSequence.<SNode>fromList(((List<SNode>) intentionContext.getContextParametersMap().get("selectedConstructors"))).addElement(ListSequence.<SNode>fromList(SLinkOperations.getTargets(superclass.value, "constructor", true)).first());
         }
       }
     });
@@ -121,7 +121,7 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
     final Wrappers._boolean needsShowFieldsDialog = new Wrappers._boolean(false);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty()) {
+        if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty()) {
           needsShowFieldsDialog.value = true;
         } else {
           intentionContext.getContextParametersMap().put("selectedFields", new ArrayList<SNode>());

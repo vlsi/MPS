@@ -39,11 +39,11 @@ public class ActionDeclaration_Behavior {
   }
 
   public static boolean call_isLoadIconFromResoures_1588596821190606499(SNode thisNode, IModule module) {
-    if (ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor")).isEmpty()) {
+    if (ListSequence.<SNode>fromList(SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor")).isEmpty()) {
       return false;
     }
     String fullPath = ActionDeclaration_Behavior.call_getFullPath_6301602537765917913(thisNode, module);
-    for (String sourcePath : ListSequence.fromList(module.getSourcePaths())) {
+    for (String sourcePath : ListSequence.<String>fromList(module.getSourcePaths())) {
       String prefix = ActionDeclaration_Behavior.call_getPrefix_1588596821190636875(thisNode, sourcePath);
       if (fullPath.startsWith(prefix)) {
         return true;
@@ -54,7 +54,7 @@ public class ActionDeclaration_Behavior {
 
   public static String call_getIconResourcePath_1588596821190635995(SNode thisNode, IModule module) {
     String fullPath = ActionDeclaration_Behavior.call_getFullPath_6301602537765917913(thisNode, module);
-    for (String sourcePath : ListSequence.fromList(module.getSourcePaths())) {
+    for (String sourcePath : ListSequence.<String>fromList(module.getSourcePaths())) {
       String prefix = ActionDeclaration_Behavior.call_getPrefix_1588596821190636875(thisNode, sourcePath);
       if (fullPath.startsWith(prefix)) {
         return fullPath.substring(prefix.length() + 1);
