@@ -9457,7 +9457,6 @@
       <zipfileset dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/startup.msd" prefix="module" />
-      <zipfileset dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
       <zipfileset dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.lib.startup.jar" compress="true" duplicate="preserve" filesonly="true">
