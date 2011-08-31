@@ -92,6 +92,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepositoryListener" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelListener" />
     <classNode dependClassName="jetbrains.mps.vcs.MPSVcsManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ModelChangesManager" />
@@ -178,8 +179,10 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ModelChangesManager" />
@@ -351,6 +354,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.CounterMap" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.MPSTreeUtils" />
@@ -388,6 +392,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ModelChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.NodeFileStatusListener" />

@@ -14,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.ThreadUtils;
@@ -83,8 +85,12 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
               return;
             }
             final SModel model = editedNode.getModel();
-            if (model != null && model.getModelDescriptor() != null) {
-              myModelChangesManager = ChangesManager.getInstance(project).getModelChangesManager(model);
+            SModelDescriptor descriptor = (model != null ?
+              model.getModelDescriptor() :
+              null
+            );
+            if (descriptor instanceof EditableSModelDescriptor) {
+              myModelChangesManager = ChangesManager.getInstance(project).getModelChangesManager((EditableSModelDescriptor) descriptor);
               myChangeListener = new EditorComponentChangesHighligher.MyChangeListener();
             } else {
               return;
