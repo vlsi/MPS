@@ -60,7 +60,7 @@ public class ClassPathFactory {
 
   @UseCarefully
   //this is supposed to be used only on class reloading
-  public void update() {
+  public void invalidateAll() {
     for (RealClassPathItem p : myCache.values()) {
       p.invalidate();
     }
@@ -71,9 +71,8 @@ public class ClassPathFactory {
   //this should be used only from modules to invalidate their classpaths
   public void invalidate(Set<String> paths) {
     for (String path : paths) {
-      if (myCache.containsKey(path)) {
-        myCache.remove(path).invalidate();
-      }
+      if (!myCache.containsKey(path)) continue;
+      myCache.remove(path).invalidate();
     }
   }
 

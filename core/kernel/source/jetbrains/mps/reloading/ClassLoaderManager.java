@@ -209,7 +209,7 @@ public class ClassLoaderManager implements ApplicationComponent {
 
       myRuntimeEnvironment.reloadAll();
 
-      ClassPathFactory.getInstance().update();
+      ClassPathFactory.getInstance().invalidateAll();
       for (IModule m : myRepository.getAllModules()) {
         m.updateClassPath();
       }
