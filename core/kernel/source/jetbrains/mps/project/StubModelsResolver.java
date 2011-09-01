@@ -19,6 +19,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
@@ -67,10 +68,7 @@ public class StubModelsResolver {
     if (myStubModulesCache.containsKey(key)) return;
 
     IModule module = MPSModuleRepository.getInstance().getModule(key.o1);
-    Set<SModelDescriptor> visibleModels = new HashSet<SModelDescriptor>();
-    for (IModule visibleModule : module.getScope().getVisibleModules()) {
-      visibleModels.addAll(visibleModule.getOwnModelDescriptors());
-    }
+    Set<SModelDescriptor> visibleModels = new HashSet<SModelDescriptor>(IterableUtil.asCollection(module.getScope().getModelDescriptors()));
 
     fillCacheWithModels(key, visibleModels);
   }
