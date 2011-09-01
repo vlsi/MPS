@@ -18,10 +18,11 @@ public class IBLDeprecatable_Behavior {
     }
     if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation")) {
       for (SNode annotation : SLinkOperations.getTargets(SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)) {
-        if ((annotation == null) || (SLinkOperations.getTarget(annotation, "annotation", false) == null) || SPropertyOperations.getString(SLinkOperations.getTarget(annotation, "annotation", false), "name") == null) {
+        SNode annotationLink = SLinkOperations.getTarget(annotation, "annotation", false);
+        if ((annotation == null) || (annotationLink == null) || SPropertyOperations.getString(annotationLink, "name") == null) {
           continue;
         }
-        if (SPropertyOperations.getString(SLinkOperations.getTarget(annotation, "annotation", false), "name").equals("Deprecated")) {
+        if (SPropertyOperations.getString(annotationLink, "name").equals("Deprecated")) {
           return true;
         }
       }

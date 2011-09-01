@@ -6619,38 +6619,41 @@
   </root>
   <root nodeId="1224848545824">
     <nodeInfo nodeId="1224848553385" fileName="IBLDeprecatable_Behavior.java" startLine="16" startPosition="67" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224848553393" fileName="IBLDeprecatable_Behavior.java" startLine="21" startPosition="216" endLine="22" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1224848553413" fileName="IBLDeprecatable_Behavior.java" startLine="24" startPosition="133" endLine="25" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224848553433" fileName="IBLDeprecatable_Behavior.java" startLine="28" startPosition="5" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225207612515" fileName="IBLDeprecatable_Behavior.java" startLine="32" startPosition="73" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225207612520" fileName="IBLDeprecatable_Behavior.java" startLine="33" startPosition="47" endLine="34" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225207612527" fileName="IBLDeprecatable_Behavior.java" startLine="34" startPosition="85" endLine="35" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225207612587" fileName="IBLDeprecatable_Behavior.java" startLine="35" startPosition="36" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3316774609316125844" fileName="IBLDeprecatable_Behavior.java" startLine="20" startPosition="165" endLine="21" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224848553393" fileName="IBLDeprecatable_Behavior.java" startLine="22" startPosition="128" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="1224848553413" fileName="IBLDeprecatable_Behavior.java" startLine="25" startPosition="89" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224848553433" fileName="IBLDeprecatable_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225207612515" fileName="IBLDeprecatable_Behavior.java" startLine="33" startPosition="73" endLine="34" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225207612520" fileName="IBLDeprecatable_Behavior.java" startLine="34" startPosition="47" endLine="35" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225207612527" fileName="IBLDeprecatable_Behavior.java" startLine="35" startPosition="85" endLine="36" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225207612587" fileName="IBLDeprecatable_Behavior.java" startLine="36" startPosition="36" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224848545824" fileName="IBLDeprecatable_Behavior.java" startLine="11" startPosition="39" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1224848553380" fileName="IBLDeprecatable_Behavior.java" startLine="15" startPosition="76" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224848553391" fileName="IBLDeprecatable_Behavior.java" startLine="20" startPosition="165" endLine="23" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224848553411" fileName="IBLDeprecatable_Behavior.java" startLine="23" startPosition="9" endLine="26" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224848545824" fileName="IBLDeprecatable_Behavior.java" startLine="31" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMessage_1225207468592#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1224848553389" fileName="IBLDeprecatable_Behavior.java" startLine="19" startPosition="103" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1224848553387" fileName="IBLDeprecatable_Behavior.java" startLine="18" startPosition="5" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224848545824" fileName="IBLDeprecatable_Behavior.java" startLine="14" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isDeprecated_1224609060727#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1224848553391" fileName="IBLDeprecatable_Behavior.java" startLine="21" startPosition="90" endLine="24" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224848553411" fileName="IBLDeprecatable_Behavior.java" startLine="24" startPosition="9" endLine="27" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224848545824" fileName="IBLDeprecatable_Behavior.java" startLine="32" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMessage_1225207468592#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1224848553389" fileName="IBLDeprecatable_Behavior.java" startLine="19" startPosition="103" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1224848553387" fileName="IBLDeprecatable_Behavior.java" startLine="18" startPosition="5" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224848545824" fileName="IBLDeprecatable_Behavior.java" startLine="14" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isDeprecated_1224609060727#(Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="1224848545826" fileName="IBLDeprecatable_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1224848553384" fileName="IBLDeprecatable_Behavior.java" startLine="16" startPosition="67" endLine="17" endPosition="18" />
-    <scopeInfo nodeId="1224848553392" fileName="IBLDeprecatable_Behavior.java" startLine="21" startPosition="216" endLine="22" endPosition="19" />
-    <scopeInfo nodeId="1224848553412" fileName="IBLDeprecatable_Behavior.java" startLine="24" startPosition="133" endLine="25" endPosition="22" />
+    <scopeInfo nodeId="1224848553392" fileName="IBLDeprecatable_Behavior.java" startLine="22" startPosition="128" endLine="23" endPosition="19" />
+    <scopeInfo nodeId="1224848553412" fileName="IBLDeprecatable_Behavior.java" startLine="25" startPosition="89" endLine="26" endPosition="22" />
     <scopeInfo nodeId="1224848545824" fileName="IBLDeprecatable_Behavior.java" startLine="11" startPosition="39" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="1225207555068" fileName="IBLDeprecatable_Behavior.java" startLine="32" startPosition="73" endLine="36" endPosition="29">
+    <scopeInfo nodeId="1225207555068" fileName="IBLDeprecatable_Behavior.java" startLine="33" startPosition="73" endLine="37" endPosition="29">
       <varInfo nodeId="1225207612516" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1224848553390" fileName="IBLDeprecatable_Behavior.java" startLine="20" startPosition="165" endLine="26" endPosition="9" />
-    <scopeInfo nodeId="1224848545824" fileName="IBLDeprecatable_Behavior.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1224848553388" fileName="IBLDeprecatable_Behavior.java" startLine="19" startPosition="103" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="1224848553389" fileName="IBLDeprecatable_Behavior.java" startLine="19" startPosition="103" endLine="27" endPosition="7">
+    <scopeInfo nodeId="1224848553390" fileName="IBLDeprecatable_Behavior.java" startLine="20" startPosition="165" endLine="27" endPosition="9">
+      <varInfo nodeId="3316774609316125845" varName="annotationLink" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224848545824" fileName="IBLDeprecatable_Behavior.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1224848553388" fileName="IBLDeprecatable_Behavior.java" startLine="19" startPosition="103" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="1224848553389" fileName="IBLDeprecatable_Behavior.java" startLine="19" startPosition="103" endLine="28" endPosition="7">
       <varInfo nodeId="1224848553427" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="1224848547767" fileName="IBLDeprecatable_Behavior.java" startLine="15" startPosition="76" endLine="29" endPosition="17" />
-    <scopeInfo nodeId="1224848545824" fileName="IBLDeprecatable_Behavior.java" startLine="14" startPosition="0" endLine="31" endPosition="0" />
-    <unitInfo nodeId="1224848545824" fileName="IBLDeprecatable_Behavior.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_Behavior" />
+    <scopeInfo nodeId="1224848547767" fileName="IBLDeprecatable_Behavior.java" startLine="15" startPosition="76" endLine="30" endPosition="17" />
+    <scopeInfo nodeId="1224848545824" fileName="IBLDeprecatable_Behavior.java" startLine="14" startPosition="0" endLine="32" endPosition="0" />
+    <unitInfo nodeId="1224848545824" fileName="IBLDeprecatable_Behavior.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_Behavior" />
   </root>
   <root nodeId="1225271178070">
     <nodeInfo nodeId="1225271178073" fileName="StringType_Behavior.java" startLine="18" startPosition="78" endLine="19" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
