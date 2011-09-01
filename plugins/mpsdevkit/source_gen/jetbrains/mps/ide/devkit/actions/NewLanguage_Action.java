@@ -46,16 +46,16 @@ public class NewLanguage_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
@@ -63,15 +63,15 @@ public class NewLanguage_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NewLanguageDialog dialog = new NewLanguageDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
-      dialog.setProject(((MPSProject) MapSequence.fromMap(_params).get("project")));
+      NewLanguageDialog dialog = new NewLanguageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")));
+      dialog.setProject(((MPSProject) MapSequence.<String,Object>fromMap(_params).get("project")));
       dialog.showDialog();
       Language l = dialog.getResult();
       if (l == null) {
         return;
       }
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(l, NewLanguage_Action.this.folder);
-      ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
+      ((MPSProject) MapSequence.<String,Object>fromMap(_params).get("project")).setFolderFor(l, NewLanguage_Action.this.folder);
+      ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("ideaProject")));
       projectPane.rebuildTree();
       projectPane.selectModule(l, false);
     } catch (Throwable t) {

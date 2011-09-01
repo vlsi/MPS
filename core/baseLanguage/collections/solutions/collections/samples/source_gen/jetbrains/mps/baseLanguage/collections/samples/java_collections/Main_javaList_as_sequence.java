@@ -15,12 +15,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     }
     System.out.println("java-list as sequence");
     Iterable<Integer> sequence = javaList;
-    for (Integer n : Sequence.fromIterable(sequence)) {
+    for (Integer n : Sequence.<Integer>fromIterable(sequence)) {
       System.out.println(n);
     }
     System.out.println("java-list as list");
     List<Integer> list = javaList;
-    for (Integer n : ListSequence.fromList(list)) {
+    for (Integer n : ListSequence.<Integer>fromList(list)) {
       System.out.println(n);
     }
   }

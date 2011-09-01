@@ -91,21 +91,21 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
 
   private MPSTreeNode rebuildOurTree() {
     MultiMap<SNode, SNode> methodsByContainer = new MultiMap<SNode, SNode>();
-    for (SNode method : ListSequence.fromList(collectImplementableMethods())) {
+    for (SNode method : ListSequence.<SNode>fromList(collectImplementableMethods())) {
       methodsByContainer.putValue(getContainer(method), method);
     }
     List<SNode> containers = new ArrayList<SNode>();
-    ListSequence.fromList(containers).addSequence(SetSequence.fromSet(methodsByContainer.keySet()));
+    ListSequence.<SNode>fromList(containers).addSequence(SetSequence.<SNode>fromSet(methodsByContainer.keySet()));
     TextTreeNode root = new TextTreeNode("Methods");
-    for (SNode container : ListSequence.fromList(containers).sort(new Comparator<SNode>() {
+    for (SNode container : ListSequence.<SNode>fromList(containers).sort(new Comparator<SNode>() {
       public int compare(SNode a, SNode b) {
         return compareContainers(a, b);
       }
     }, true)) {
       List<SNode> methods = new ArrayList<SNode>();
-      ListSequence.fromList(methods).addSequence(Sequence.fromIterable(methodsByContainer.get(container)));
+      ListSequence.<SNode>fromList(methods).addSequence(Sequence.<SNode>fromIterable(methodsByContainer.get(container)));
       BaseAddMethodDialog.NodeTreeNode node = new BaseAddMethodDialog.NodeTreeNode(container);
-      for (SNode method : ListSequence.fromList(methods).sort(new Comparator<SNode>() {
+      for (SNode method : ListSequence.<SNode>fromList(methods).sort(new Comparator<SNode>() {
         public int compare(SNode a, SNode b) {
           return compareMethods(a, b);
         }
@@ -146,10 +146,10 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         List<TreePath> paths = new ArrayList<TreePath>(Arrays.asList(myTree.getSelectionPaths()));
-        List<BaseAddMethodDialog.MethodTreeNode> methodNodes = ListSequence.fromList(new ArrayList<BaseAddMethodDialog.MethodTreeNode>());
+        List<BaseAddMethodDialog.MethodTreeNode> methodNodes = ListSequence.<BaseAddMethodDialog.MethodTreeNode>fromList(new ArrayList<BaseAddMethodDialog.MethodTreeNode>());
         for (TreePath path : paths) {
           if (path.getLastPathComponent() instanceof BaseAddMethodDialog.MethodTreeNode) {
-            ListSequence.fromList(methodNodes).addElement((BaseAddMethodDialog.MethodTreeNode) path.getLastPathComponent());
+            ListSequence.<BaseAddMethodDialog.MethodTreeNode>fromList(methodNodes).addElement((BaseAddMethodDialog.MethodTreeNode) path.getLastPathComponent());
           }
         }
         Collections.sort(methodNodes, new Comparator<BaseAddMethodDialog.MethodTreeNode>() {
@@ -157,7 +157,7 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
             return compareMethods(m1.getMethod(), m2.getMethod());
           }
         });
-        List<SNode> methods = doAddMethods(ListSequence.fromList(methodNodes).reversedList());
+        List<SNode> methods = doAddMethods(ListSequence.<BaseAddMethodDialog.MethodTreeNode>fromList(methodNodes).reversedList());
         if (methods.isEmpty()) {
           return;
         }

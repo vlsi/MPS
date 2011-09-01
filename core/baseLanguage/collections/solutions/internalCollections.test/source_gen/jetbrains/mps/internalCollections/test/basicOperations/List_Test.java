@@ -27,118 +27,118 @@ import jetbrains.mps.internal.collections.runtime.backports.Deque;
 
 public class List_Test extends Util_Test {
   public void test_listCreator() throws Exception {
-    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
+    List<Integer> test = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     this.assertIterableEquals(this.expect5(), test);
   }
 
   public void test_initSize() throws Exception {
-    List<Integer> ali = ListSequence.fromList(new ArrayList<Integer>(10));
-    List<Integer> lli = ListSequence.fromListWithValues(new LinkedList<Integer>(), ali);
+    List<Integer> ali = ListSequence.<Integer>fromList(new ArrayList<Integer>(10));
+    List<Integer> lli = ListSequence.<Integer>fromListWithValues(new LinkedList<Integer>(), ali);
     ali = lli;
   }
 
   public void test_add() throws Exception {
-    List<Integer> test = ListSequence.fromList(new ArrayList<Integer>());
+    List<Integer> test = ListSequence.<Integer>fromList(new ArrayList<Integer>());
     for (int i = 1; i <= 5; i++) {
-      ListSequence.fromList(test).addElement(i);
+      ListSequence.<Integer>fromList(test).addElement(i);
     }
     this.assertIterableEquals(this.expect5(), test);
   }
 
   public void test_addAll() throws Exception {
-    List<Integer> test = ListSequence.fromList(new ArrayList<Integer>());
-    ListSequence.fromList(test).addSequence(Sequence.fromIterable(this.input5()));
+    List<Integer> test = ListSequence.<Integer>fromList(new ArrayList<Integer>());
+    ListSequence.<Integer>fromList(test).addSequence(Sequence.<Integer>fromIterable(this.input5()));
     this.assertIterableEquals(this.expect5(), test);
-    List<Number> nlist = ListSequence.fromList(new ArrayList<Number>());
-    ListSequence.fromList(nlist).addSequence(ListSequence.fromList(test));
+    List<Number> nlist = ListSequence.<Number>fromList(new ArrayList<Number>());
+    ListSequence.<Number>fromList(nlist).addSequence(ListSequence.<Integer>fromList(test));
     this.assertIterableEquals(this.expect5(), nlist);
   }
 
   public void test_copy() throws Exception {
-    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
-    List<Integer> copy = ListSequence.fromListWithValues(new ArrayList<Integer>(), test);
+    List<Integer> test = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
+    List<Integer> copy = ListSequence.<Integer>fromListWithValues(new ArrayList<Integer>(), test);
     this.assertIterableEquals(this.input5(), copy);
-    ListSequence.fromList(copy).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 6, 7, 8, 9, 10)));
+    ListSequence.<Integer>fromList(copy).addSequence(ListSequence.<Integer>fromList(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 6, 7, 8, 9, 10)));
     this.assertIterableEquals(this.input10(), copy);
     this.assertIterableEquals(this.input5(), test);
-    List<Integer> copy2 = ListSequence.fromListWithValues(new LinkedList<Integer>(), copy);
+    List<Integer> copy2 = ListSequence.<Integer>fromListWithValues(new LinkedList<Integer>(), copy);
     this.assertIterableEquals(this.input10(), copy2);
-    ListSequence.fromList(copy2).removeSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 10, 9, 8, 7, 6)));
+    ListSequence.<Integer>fromList(copy2).removeSequence(ListSequence.<Integer>fromList(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 10, 9, 8, 7, 6)));
     this.assertIterableEquals(this.input5(), copy2);
     this.assertIterableEquals(this.input10(), copy);
   }
 
   public void test_remove() throws Exception {
-    List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E");
+    List<String> test = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E");
     for (String s : Arrays.asList("A", "B", "C", "D", "E")) {
-      ListSequence.fromList(test).removeElement(s);
+      ListSequence.<String>fromList(test).removeElement(s);
     }
-    Assert.assertTrue(ListSequence.fromList(test).isEmpty());
-    Assert.assertSame(0, ListSequence.fromList(test).count());
-    Assert.assertSame(0, ListSequence.fromList(test).count());
+    Assert.assertTrue(ListSequence.<String>fromList(test).isEmpty());
+    Assert.assertSame(0, ListSequence.<String>fromList(test).count());
+    Assert.assertSame(0, ListSequence.<String>fromList(test).count());
   }
 
   public void test_removeAll() throws Exception {
-    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
-    ListSequence.fromList(test).removeSequence(Sequence.fromIterable(this.input5()));
-    Assert.assertTrue(ListSequence.fromList(test).isEmpty());
-    Assert.assertSame(0, ListSequence.fromList(test).count());
-    Assert.assertSame(0, ListSequence.fromList(test).count());
+    List<Integer> test = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
+    ListSequence.<Integer>fromList(test).removeSequence(Sequence.<Integer>fromIterable(this.input5()));
+    Assert.assertTrue(ListSequence.<Integer>fromList(test).isEmpty());
+    Assert.assertSame(0, ListSequence.<Integer>fromList(test).count());
+    Assert.assertSame(0, ListSequence.<Integer>fromList(test).count());
   }
 
   public void test_reverse() throws Exception {
-    List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E");
-    this.assertIterableEquals(Arrays.asList("E", "D", "C", "B", "A"), ListSequence.fromList(test).reversedList());
+    List<String> test = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E");
+    this.assertIterableEquals(Arrays.asList("E", "D", "C", "B", "A"), ListSequence.<String>fromList(test).reversedList());
     this.assertIterableEquals(Arrays.asList("A", "B", "C", "D", "E"), test);
   }
 
   public void test_sameList() throws Exception {
-    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
+    List<Integer> test = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     List<Integer> test2 = test;
-    ListSequence.fromList(test2).removeSequence(Sequence.fromIterable(this.input5()));
+    ListSequence.<Integer>fromList(test2).removeSequence(Sequence.<Integer>fromIterable(this.input5()));
     this.assertIterableEquals(test, test2);
-    ListSequence.fromList(test2).addSequence(Sequence.fromIterable(this.input5()));
+    ListSequence.<Integer>fromList(test2).addSequence(Sequence.<Integer>fromIterable(this.input5()));
     this.assertIterableEquals(this.input5(), test);
     this.assertIterableEquals(test, test2);
   }
 
   public void test_toArray() throws Exception {
-    List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C");
-    String[] arr = ListSequence.fromList(test).toGenericArray(String.class);
+    List<String> test = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "A", "B", "C");
+    String[] arr = ListSequence.<String>fromList(test).toGenericArray(String.class);
     Assert.assertEquals(Arrays.asList(arr), test);
-    List<String> test2 = ListSequence.fromListAndArray(new ArrayList<String>(), "X", "Y", "Z");
-    String[] strings = ListSequence.fromList(test2).toGenericArray(String.class);
+    List<String> test2 = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "X", "Y", "Z");
+    String[] strings = ListSequence.<String>fromList(test2).toGenericArray(String.class);
     Assert.assertEquals(Arrays.asList(strings), test2);
   }
 
   public void test_insertSet() throws Exception {
-    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 5);
+    List<Integer> test = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 5);
     Assert.assertEquals(Arrays.asList(new Integer[]{1, 2, 3, 5}), test);
-    int insElm = ListSequence.fromList(test).insertElement(3, 4);
+    int insElm = ListSequence.<Integer>fromList(test).insertElement(3, 4);
     Assert.assertEquals(4, insElm);
     Assert.assertEquals(Arrays.asList(new Integer[]{1, 2, 3, 4, 5}), test);
-    int setElm = ListSequence.fromList(test).setElement(2, 0);
+    int setElm = ListSequence.<Integer>fromList(test).setElement(2, 0);
     Assert.assertEquals(3, setElm);
   }
 
   public void test_elementAccess() throws Exception {
-    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 5);
-    int val = ListSequence.fromList(test).getElement(3);
+    List<Integer> test = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 5);
+    int val = ListSequence.<Integer>fromList(test).getElement(3);
     Assert.assertEquals(5, val);
-    ListSequence.fromList(test).setElement(3, 4);
+    ListSequence.<Integer>fromList(test).setElement(3, 4);
     Assert.assertEquals(Arrays.asList(new Integer[]{1, 2, 3, 4}), test);
-    List<Integer> foo = ListSequence.fromList(new ArrayList<Integer>());
-    ListSequence.fromList(foo).addElement(1);
-    Assert.assertSame(1, ListSequence.fromList(foo).getElement(0));
-    ListSequence.fromList(foo).setElement(0, 2);
-    Assert.assertSame(2, ListSequence.fromList(foo).getElement(0));
+    List<Integer> foo = ListSequence.<Integer>fromList(new ArrayList<Integer>());
+    ListSequence.<Integer>fromList(foo).addElement(1);
+    Assert.assertSame(1, ListSequence.<Integer>fromList(foo).getElement(0));
+    ListSequence.<Integer>fromList(foo).setElement(0, 2);
+    Assert.assertSame(2, ListSequence.<Integer>fromList(foo).getElement(0));
     int i = 0;
-    ListSequence.fromList(foo).setElement(i, 42);
-    Assert.assertSame(42, ListSequence.fromList(foo).getElement(i));
+    ListSequence.<Integer>fromList(foo).setElement(i, 42);
+    Assert.assertSame(42, ListSequence.<Integer>fromList(foo).getElement(i));
   }
 
   public void test_serializeList() throws Exception {
-    List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "Quick", "brown", "fox");
+    List<String> test = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "Quick", "brown", "fox");
     ByteArrayOutputStream baos = new ByteArrayOutputStream();
     ObjectOutputStream oos = new ObjectOutputStream(baos);
     oos.writeObject(test);
@@ -151,132 +151,132 @@ public class List_Test extends Util_Test {
   }
 
   public void test_emptyLinkedList() throws Exception {
-    List<String> llist = ListSequence.fromList(new LinkedList<String>());
-    Assert.assertTrue(ListSequence.fromList(llist).isEmpty());
+    List<String> llist = ListSequence.<String>fromList(new LinkedList<String>());
+    Assert.assertTrue(ListSequence.<String>fromList(llist).isEmpty());
   }
 
   public void test_nonEmptyLinkedList() throws Exception {
-    List<String> llist = ListSequence.fromListAndArray(new LinkedList<String>(), "A", "B", "C");
-    Assert.assertFalse(ListSequence.fromList(llist).isEmpty());
-    Assert.assertEquals(3, ListSequence.fromList(llist).count());
+    List<String> llist = ListSequence.<String>fromListAndArray(new LinkedList<String>(), "A", "B", "C");
+    Assert.assertFalse(ListSequence.<String>fromList(llist).isEmpty());
+    Assert.assertEquals(3, ListSequence.<String>fromList(llist).count());
   }
 
   public void test_clear() throws Exception {
-    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 5);
-    Assert.assertTrue(ListSequence.fromList(test).isNotEmpty());
-    ListSequence.fromList(test).clear();
-    Assert.assertTrue(ListSequence.fromList(test).isEmpty());
+    List<Integer> test = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 5);
+    Assert.assertTrue(ListSequence.<Integer>fromList(test).isNotEmpty());
+    ListSequence.<Integer>fromList(test).clear();
+    Assert.assertTrue(ListSequence.<Integer>fromList(test).isEmpty());
   }
 
   public void test_addFirst() throws Exception {
-    List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "B", "C");
-    ListSequence.fromList(test).insertElement(0, "A");
+    List<String> test = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "B", "C");
+    ListSequence.<String>fromList(test).insertElement(0, "A");
     this.assertIterableEquals(this.inputABC(), test);
   }
 
   public void test_addLast() throws Exception {
-    List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B");
-    ListSequence.fromList(test).addElement("C");
+    List<String> test = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "A", "B");
+    ListSequence.<String>fromList(test).addElement("C");
     this.assertIterableEquals(this.inputABC(), test);
   }
 
   public void test_removeAt() throws Exception {
-    List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "FOO", "C");
-    String foo = ListSequence.fromList(test).removeElementAt(2);
+    List<String> test = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "A", "B", "FOO", "C");
+    String foo = ListSequence.<String>fromList(test).removeElementAt(2);
     Assert.assertEquals("FOO", foo);
     this.assertIterableEquals(this.inputABC(), test);
   }
 
   public void test_removeFirst() throws Exception {
-    List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "FOO", "A", "B", "C");
-    String foo = ListSequence.fromList(test).removeElementAt(0);
+    List<String> test = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "FOO", "A", "B", "C");
+    String foo = ListSequence.<String>fromList(test).removeElementAt(0);
     Assert.assertEquals("FOO", foo);
     this.assertIterableEquals(this.inputABC(), test);
   }
 
   public void test_removeLast() throws Exception {
-    List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C", "FOO");
-    String foo = ListSequence.fromList(test).removeLastElement();
+    List<String> test = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "A", "B", "C", "FOO");
+    String foo = ListSequence.<String>fromList(test).removeLastElement();
     Assert.assertEquals("FOO", foo);
     this.assertIterableEquals(this.inputABC(), test);
   }
 
   public void test_primitiveParameter() throws Exception {
-    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
+    List<Integer> test = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     this.assertIterableEquals(this.input5(), test);
     List<Integer> TEST = test;
     test = TEST;
-    int[] arr = ArrayUtils.toIntArray(ListSequence.fromList(test));
-    List<Character> cempty = ListSequence.fromList(new ArrayList<Character>());
-    Assert.assertEquals(0, ListSequence.fromList(cempty).toGenericArray(Character.class).length);
-    List<Byte> bempty = ListSequence.fromList(new LinkedList<Byte>());
+    int[] arr = ArrayUtils.toIntArray(ListSequence.<Integer>fromList(test));
+    List<Character> cempty = ListSequence.<Character>fromList(new ArrayList<Character>());
+    Assert.assertEquals(0, ListSequence.<Character>fromList(cempty).toGenericArray(Character.class).length);
+    List<Byte> bempty = ListSequence.<Byte>fromList(new LinkedList<Byte>());
   }
 
   public void test_array() throws Exception {
-    List<int[]> test = ListSequence.fromListAndArray(new ArrayList<int[]>(), new int[]{1, 2, 3}, new int[]{3, 2, 1});
-    int[] array = ListSequence.fromList(test).getElement(1);
+    List<int[]> test = ListSequence.<int[]>fromListAndArray(new ArrayList<int[]>(), new int[]{1, 2, 3}, new int[]{3, 2, 1});
+    int[] array = ListSequence.<int[]>fromList(test).getElement(1);
     Assert.assertSame(3, array.length);
   }
 
   public void test_fromArray() throws Exception {
     String[] arr = new String[]{"A", "B", "C"};
-    List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), arr);
+    List<String> test = ListSequence.<String>fromListAndArray(new ArrayList<String>(), arr);
     this.assertIterableEquals(this.inputABC(), test);
   }
 
   public void test__toString() throws Exception {
-    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
+    List<Integer> test = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     Assert.assertEquals("[1, 2, 3, 4, 5]", String.valueOf(test));
-    List<List<Integer>> test2 = ListSequence.fromListAndArray(new ArrayList<List<Integer>>(), ListSequence.fromListAndArray(new ArrayList<Integer>(), 1), LinkedListSequence.fromListAndArray(new LinkedList<Integer>(), 2));
+    List<List<Integer>> test2 = ListSequence.<List<Integer>>fromListAndArray(new ArrayList<List<Integer>>(), ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1), LinkedListSequence.<Integer>fromListAndArray(new LinkedList<Integer>(), 2));
     Assert.assertEquals("[[1], [2]]", String.valueOf(test2));
   }
 
   public void test_mps5845() throws Exception {
     /*
-      List<String> abc = ListSequence.fromList(new ArrayList<String>());
-      ListSequence.fromList(abc).addElement(new Integer(123));
-      Assert.assertEquals("123", ListSequence.fromList(abc).first());
+      List<String> abc = ListSequence.<String>fromList(new ArrayList<String>());
+      ListSequence.<String>fromList(abc).addElement(new Integer(123));
+      Assert.assertEquals("123", ListSequence.<String>fromList(abc).first());
     */
   }
 
   public void test_mps5818() throws Exception {
     /*
-      List<Object> abc = ListSequence.fromList(new ArrayList<String>());
+      List<Object> abc = ListSequence.<Object>fromList(new ArrayList<String>());
     */
   }
 
   public void test_mps6093() throws Exception {
-    List<String> strings = ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C");
-    List<Object> objs = ListSequence.fromListWithValues(new ArrayList<Object>(), strings);
+    List<String> strings = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "A", "B", "C");
+    List<Object> objs = ListSequence.<Object>fromListWithValues(new ArrayList<Object>(), strings);
     this.assertIterableEquals(this.inputABC(), objs);
   }
 
   public void test_subList() throws Exception {
-    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-    List<Integer> sublist = ListSequence.fromList(list).subListSequence(0, 5);
+    List<Integer> list = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    List<Integer> sublist = ListSequence.<Integer>fromList(list).subListSequence(0, 5);
     this.assertIterableEquals(this.input5(), sublist);
-    ListSequence.fromList(sublist).addSequence(ListSequence.fromList(sublist).reversedList());
+    ListSequence.<Integer>fromList(sublist).addSequence(ListSequence.<Integer>fromList(sublist).reversedList());
     this.assertIterableEquals(ArrayUtils.fromIntegerArray(new int[]{1, 2, 3, 4, 5, 5, 4, 3, 2, 1, 6, 7, 8, 9, 10}), list);
   }
 
   public void test_headList() throws Exception {
-    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-    List<Integer> headlist = ListSequence.fromList(list).headListSequence(5);
+    List<Integer> list = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    List<Integer> headlist = ListSequence.<Integer>fromList(list).headListSequence(5);
     this.assertIterableEquals(this.input5(), headlist);
-    ListSequence.fromList(headlist).addSequence(ListSequence.fromList(headlist).reversedList());
+    ListSequence.<Integer>fromList(headlist).addSequence(ListSequence.<Integer>fromList(headlist).reversedList());
     this.assertIterableEquals(ArrayUtils.fromIntegerArray(new int[]{1, 2, 3, 4, 5, 5, 4, 3, 2, 1, 6, 7, 8, 9, 10}), list);
   }
 
   public void test_tailList() throws Exception {
-    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 6, 7, 8, 9, 10, 1, 2, 3, 4, 5);
-    List<Integer> taillist = ListSequence.fromList(list).tailListSequence(5);
+    List<Integer> list = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 6, 7, 8, 9, 10, 1, 2, 3, 4, 5);
+    List<Integer> taillist = ListSequence.<Integer>fromList(list).tailListSequence(5);
     this.assertIterableEquals(this.input5(), taillist);
-    ListSequence.fromList(taillist).addSequence(ListSequence.fromList(taillist).reversedList());
+    ListSequence.<Integer>fromList(taillist).addSequence(ListSequence.<Integer>fromList(taillist).reversedList());
     this.assertIterableEquals(ArrayUtils.fromIntegerArray(new int[]{6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 5, 4, 3, 2, 1}), list);
   }
 
   public void test_containsAll() throws Exception {
-    Iterable<Integer> bigSeq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> bigSeq = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -326,35 +326,35 @@ __switch__:
         };
       }
     });
-    List<Integer> bigList = Sequence.fromIterable(bigSeq).toListSequence();
+    List<Integer> bigList = Sequence.<Integer>fromIterable(bigSeq).toListSequence();
     Collections.shuffle(bigList);
-    List<Integer> anotherBigList = ListSequence.fromList(bigList).<Integer>select(new ISelector<Integer, Integer>() {
+    List<Integer> anotherBigList = ListSequence.<Integer>fromList(bigList).<Integer>select(new ISelector<Integer, Integer>() {
       public Integer select(Integer i) {
         return i;
       }
     }).toListSequence();
     Collections.shuffle(anotherBigList);
     long start = System.currentTimeMillis();
-    Assert.assertTrue(ListSequence.fromList(bigList).<Integer>select(new ISelector<Integer, Integer>() {
+    Assert.assertTrue(ListSequence.<Integer>fromList(bigList).<Integer>select(new ISelector<Integer, Integer>() {
       public Integer select(Integer i) {
         return i;
       }
-    }).containsSequence(ListSequence.fromList(anotherBigList).<Integer>select(new ISelector<Integer, Integer>() {
+    }).containsSequence(ListSequence.<Integer>fromList(anotherBigList).<Integer>select(new ISelector<Integer, Integer>() {
       public Integer select(Integer i) {
         return i;
       }
     })));
     long seqDuration = System.currentTimeMillis() - start;
     long startAgain = System.currentTimeMillis();
-    Assert.assertTrue(ListSequence.fromList(bigList).containsSequence(ListSequence.fromList(anotherBigList)));
+    Assert.assertTrue(ListSequence.<Integer>fromList(bigList).containsSequence(ListSequence.<Integer>fromList(anotherBigList)));
     long listDuration = System.currentTimeMillis() - startAgain;
     Assert.assertTrue(seqDuration * 2 < listDuration);
   }
 
   public void test_mps6232() throws Exception {
-    List<String> hs = ListSequence.fromListAndArray(new ArrayList<String>(), null);
-    Assert.assertSame(1, ListSequence.fromList(hs).count());
-    Assert.assertTrue(ListSequence.fromList(hs).contains(null));
+    List<String> hs = ListSequence.<String>fromListAndArray(new ArrayList<String>(), null);
+    Assert.assertSame(1, ListSequence.<String>fromList(hs).count());
+    Assert.assertTrue(ListSequence.<String>fromList(hs).contains(null));
   }
 
   public void test_mps8045() throws Exception {
@@ -363,12 +363,12 @@ __switch__:
   }
 
   public void test_linkedlist() throws Exception {
-    Deque<Integer> ll = LinkedListSequence.fromLinkedList(new LinkedList<Integer>());
-    Assert.assertTrue(LinkedListSequence.fromLinkedList(ll).isEmpty());
+    Deque<Integer> ll = LinkedListSequence.<Integer>fromLinkedList(new LinkedList<Integer>());
+    Assert.assertTrue(LinkedListSequence.<Integer>fromLinkedList(ll).isEmpty());
   }
 
   public List<Foo> mps5684helper() {
-    List<Bar> bars = ListSequence.fromListAndArray(new ArrayList<Bar>(), new Bar());
-    return ListSequence.fromListWithValues(new ArrayList<Foo>(), bars);
+    List<Bar> bars = ListSequence.<Bar>fromListAndArray(new ArrayList<Bar>(), new Bar());
+    return ListSequence.<Foo>fromListWithValues(new ArrayList<Foo>(), bars);
   }
 }

@@ -44,7 +44,7 @@ public class ProjectPropertiesComponent extends JPanel {
   }
 
   public boolean isModified() {
-    return !(myEditableDescriptor.isSame(getMPSProject().getProjectDescriptor())) || Sequence.fromIterable(Sequence.fromArray(myExtraPanels)).any(new IWhereFilter<ProjectPrefsExtraPanel>() {
+    return !(myEditableDescriptor.isSame(getMPSProject().getProjectDescriptor())) || Sequence.<ProjectPrefsExtraPanel>fromIterable(Sequence.fromArray(myExtraPanels)).any(new IWhereFilter<ProjectPrefsExtraPanel>() {
       public boolean accept(ProjectPrefsExtraPanel ep) {
         return ep.isModified();
       }

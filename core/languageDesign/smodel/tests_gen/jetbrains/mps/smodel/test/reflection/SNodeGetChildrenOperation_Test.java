@@ -74,7 +74,7 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       this.addNodeById("8758390115029078425");
       this.addNodeById("5815925154349132136");
       this.addNodeById("2166349271756548530");
-      TestUtilities.assertEquals(Sequence.fromArray(new SNode[]{SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "child_1_n"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "childSubConcept_0_n")}), ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078426"), "jetbrains.mps.lang.smodelTests.structure.Root"))).<SNode>select(new ISelector<SNode, SNode>() {
+      TestUtilities.assertEquals(Sequence.fromArray(new SNode[]{SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "child_1_n"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "childSubConcept_0_n")}), ListSequence.<SNode>fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078426"), "jetbrains.mps.lang.smodelTests.structure.Root"))).<SNode>select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.getContainingLinkDeclaration(it);
         }
@@ -92,7 +92,7 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       this.addNodeById("8758390115029078425");
       this.addNodeById("5815925154349132136");
       this.addNodeById("2166349271756548530");
-      TestUtilities.assertEquals(Sequence.fromArray(new String[]{SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "child_1_n"), "role"), SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "childSubConcept_0_n"), "role")}), ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078426"), "jetbrains.mps.lang.smodelTests.structure.Root"))).<String>select(new ISelector<SNode, String>() {
+      TestUtilities.assertEquals(Sequence.fromArray(new String[]{SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "child_1_n"), "role"), SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "childSubConcept_0_n"), "role")}), ListSequence.<SNode>fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078426"), "jetbrains.mps.lang.smodelTests.structure.Root"))).<String>select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return SNodeOperations.getContainingLinkRole(it);
         }
@@ -103,17 +103,17 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       this.addNodeById("8758390115029078425");
       this.addNodeById("5815925154349132136");
       this.addNodeById("2166349271756548530");
-      int initialSize = ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("2166349271756548531"), "jetbrains.mps.lang.smodelTests.structure.Root"))).count();
+      int initialSize = ListSequence.<SNode>fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("2166349271756548531"), "jetbrains.mps.lang.smodelTests.structure.Root"))).count();
       SNode unspecifiedChild = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.GrandChild", null);
       String unspecifiedChildRole = this.addUnspecifiedChild(SNodeOperations.cast(this.getNodeById("2166349271756548531"), "jetbrains.mps.lang.smodelTests.structure.Root"), unspecifiedChild);
-      Assert.assertEquals(initialSize + 1, ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("2166349271756548531"), "jetbrains.mps.lang.smodelTests.structure.Root"))).count());
-      Iterable<SNode> unspecifiedChildren = ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("2166349271756548531"), "jetbrains.mps.lang.smodelTests.structure.Root"))).where(new IWhereFilter<SNode>() {
+      Assert.assertEquals(initialSize + 1, ListSequence.<SNode>fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("2166349271756548531"), "jetbrains.mps.lang.smodelTests.structure.Root"))).count());
+      Iterable<SNode> unspecifiedChildren = ListSequence.<SNode>fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("2166349271756548531"), "jetbrains.mps.lang.smodelTests.structure.Root"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (SNodeOperations.getContainingLinkDeclaration(it) == null);
         }
       });
-      Assert.assertEquals(1, Sequence.fromIterable(unspecifiedChildren).count());
-      SNode theChild = Sequence.fromIterable(unspecifiedChildren).first();
+      Assert.assertEquals(1, Sequence.<SNode>fromIterable(unspecifiedChildren).count());
+      SNode theChild = Sequence.<SNode>fromIterable(unspecifiedChildren).first();
       Assert.assertEquals(unspecifiedChildRole, SNodeOperations.getContainingLinkRole(theChild));
       Assert.assertEquals(unspecifiedChild, theChild);
     }
@@ -132,8 +132,8 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       this.addNodeById("5815925154349132136");
       this.addNodeById("2166349271756548530");
       List<SNode> singleChild = SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078426"), "jetbrains.mps.lang.smodelTests.structure.Root"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "child_1_n"));
-      Assert.assertEquals(1, ListSequence.fromList(singleChild).count());
-      Assert.assertEquals(SNodeOperations.cast(this.getNodeById("8758390115029078427"), "jetbrains.mps.lang.smodelTests.structure.Child"), ListSequence.fromList(singleChild).first());
+      Assert.assertEquals(1, ListSequence.<SNode>fromList(singleChild).count());
+      Assert.assertEquals(SNodeOperations.cast(this.getNodeById("8758390115029078427"), "jetbrains.mps.lang.smodelTests.structure.Child"), ListSequence.<SNode>fromList(singleChild).first());
       List<SNode> twins = SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("5815925154349132137"), "jetbrains.mps.lang.smodelTests.structure.Root"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "child_1_n"));
       TestUtilities.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("5815925154349132142"), "jetbrains.mps.lang.smodelTests.structure.Child"), SNodeOperations.cast(this.getNodeById("5815925154349132138"), "jetbrains.mps.lang.smodelTests.structure.Child")}), twins);
     }
@@ -151,9 +151,9 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       this.addNodeById("5815925154349132136");
       this.addNodeById("2166349271756548530");
       SNode nullNode = null;
-      Assert.assertTrue(ListSequence.fromList(SNodeOperations.getChildren(nullNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "child_0_n"))).isEmpty());
+      Assert.assertTrue(ListSequence.<SNode>fromList(SNodeOperations.getChildren(nullNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "child_0_n"))).isEmpty());
       SNode nullLinkDeclaration = null;
-      Assert.assertTrue(ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078426"), "jetbrains.mps.lang.smodelTests.structure.Root"), nullLinkDeclaration)).isEmpty());
+      Assert.assertTrue(ListSequence.<SNode>fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078426"), "jetbrains.mps.lang.smodelTests.structure.Root"), nullLinkDeclaration)).isEmpty());
     }
 
     public String addUnspecifiedChild(SNode input, SNode unspecifiedChild) {

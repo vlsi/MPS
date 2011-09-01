@@ -44,8 +44,8 @@ public class EvaluateExpression_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("operationContext") == null) {
       return false;
     }
     return true;
@@ -55,7 +55,7 @@ public class EvaluateExpression_Action extends GeneratedAction {
     try {
       IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);
       if (evaluationProvider != null) {
-        evaluationProvider.showEvaluationDialog(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")));
+        evaluationProvider.showEvaluationDialog(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")));
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

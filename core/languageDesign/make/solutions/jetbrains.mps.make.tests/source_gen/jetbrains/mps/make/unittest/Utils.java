@@ -11,8 +11,8 @@ public class Utils {
   }
 
   public static <T> void assertSameSequence(Iterable<T> expexted, Iterable<T> actual) {
-    Iterator<T> expIt = Sequence.fromIterable(expexted).iterator();
-    Iterator<T> testIt = Sequence.fromIterable(actual).iterator();
+    Iterator<T> expIt = Sequence.<T>fromIterable(expexted).iterator();
+    Iterator<T> testIt = Sequence.<T>fromIterable(actual).iterator();
     while (expIt.hasNext() && testIt.hasNext()) {
       Assert.assertEquals(expIt.next(), testIt.next());
     }

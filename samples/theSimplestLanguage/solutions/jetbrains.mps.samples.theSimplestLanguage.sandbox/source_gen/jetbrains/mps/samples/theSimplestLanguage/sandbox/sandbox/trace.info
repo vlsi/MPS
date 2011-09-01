@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Hello.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.samples.theSimplestLanguage.sandbox.sandbox.Hello" />
+  <root nodeId="1222955054650">
+    <nodeInfo nodeId="1222955054650" fileName="Hello.java" startLine="10" startPosition="42" endLine="11" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222955054650" fileName="Hello.java" startLine="6" startPosition="20" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Hello#()V" />
+    <nodeInfo nodeId="1222955054650" fileName="Hello.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <scopeInfo nodeId="1222955054650" fileName="Hello.java" startLine="7" startPosition="18" endLine="7" endPosition="18" />
+    <scopeInfo nodeId="1222955054650" fileName="Hello.java" startLine="10" startPosition="42" endLine="11" endPosition="37" />
+    <scopeInfo nodeId="1222955054650" fileName="Hello.java" startLine="6" startPosition="20" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="1222955054650" fileName="Hello.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
+    <unitInfo nodeId="1222955054650" fileName="Hello.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.samples.theSimplestLanguage.sandbox.sandbox.Hello" />
+  </root>
 </debugInfo>
 

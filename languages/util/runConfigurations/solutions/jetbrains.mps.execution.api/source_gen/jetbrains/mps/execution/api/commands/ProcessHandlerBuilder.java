@@ -25,27 +25,27 @@ public class ProcessHandlerBuilder {
   private static final Pattern REPLACE_PATTERN = Pattern.compile(REGEX);
   private static final Pattern MATCH_PATTERN = Pattern.compile(REGEX + ".*");
 
-  private final List<String> myCommandLine = ListSequence.fromList(new ArrayList<String>());
+  private final List<String> myCommandLine = ListSequence.<String>fromList(new ArrayList<String>());
 
   public ProcessHandlerBuilder() {
   }
 
   public ProcessHandlerBuilder append(@Nullable String command) {
     if (!(StringUtils.isEmpty(command))) {
-      ListSequence.fromList(myCommandLine).addSequence(Sequence.fromIterable(splitCommandInParts(command)));
+      ListSequence.<String>fromList(myCommandLine).addSequence(Sequence.<String>fromIterable(splitCommandInParts(command)));
     }
     return this;
   }
 
   public ProcessHandlerBuilder append(String... command) {
-    for (String commandPart : Sequence.fromIterable(Sequence.fromArray(command))) {
+    for (String commandPart : Sequence.<String>fromIterable(Sequence.fromArray(command))) {
       append(commandPart);
     }
     return this;
   }
 
   public ProcessHandlerBuilder append(@NotNull List<String> command) {
-    for (String commandPart : ListSequence.fromList(command)) {
+    for (String commandPart : ListSequence.<String>fromList(command)) {
       append(commandPart);
     }
     return this;
@@ -66,7 +66,7 @@ public class ProcessHandlerBuilder {
   }
 
   public ProcessHandlerBuilder appendKey(@Nullable String key, @NotNull List<String> parameters) {
-    if (StringUtils.isNotEmpty(key) && ListSequence.fromList(parameters).isNotEmpty()) {
+    if (StringUtils.isNotEmpty(key) && ListSequence.<String>fromList(parameters).isNotEmpty()) {
       return append("-" + key).append(parameters);
     }
     return this;
@@ -80,11 +80,11 @@ public class ProcessHandlerBuilder {
     if (!(workingDirectory.exists())) {
       throw new ExecutionException("Working directory " + workingDirectory + " does not exist.");
     }
-    ProcessBuilder builder = new ProcessBuilder(ListSequence.fromList(myCommandLine).toGenericArray(String.class));
+    ProcessBuilder builder = new ProcessBuilder(ListSequence.<String>fromList(myCommandLine).toGenericArray(String.class));
     builder.directory(workingDirectory);
     try {
       Process process = builder.start();
-      DefaultProcessHandler processHandler = new DefaultProcessHandler(process, ListSequence.fromList(myCommandLine).foldLeft("", new ILeftCombinator<String, String>() {
+      DefaultProcessHandler processHandler = new DefaultProcessHandler(process, ListSequence.<String>fromList(myCommandLine).foldLeft("", new ILeftCombinator<String, String>() {
         public String combine(String s, String it) {
           return (StringUtils.isEmpty(s) ?
             it :
@@ -104,9 +104,9 @@ public class ProcessHandlerBuilder {
 
   private GeneralCommandLine getCommandLine(String workingDirectory) {
     GeneralCommandLine commandLine = new GeneralCommandLine();
-    commandLine.setExePath(ListSequence.fromList(myCommandLine).getElement(0));
+    commandLine.setExePath(ListSequence.<String>fromList(myCommandLine).getElement(0));
     commandLine.setWorkDirectory(workingDirectory);
-    commandLine.addParameters(ListSequence.fromList(myCommandLine).tailListSequence(1));
+    commandLine.addParameters(ListSequence.<String>fromList(myCommandLine).tailListSequence(1));
     return commandLine;
   }
 
@@ -123,7 +123,7 @@ public class ProcessHandlerBuilder {
     while (ProcessHandlerBuilder.MATCH_PATTERN.matcher(command).matches()) {
       command = REPLACE_PATTERN.matcher(command).replaceAll("$1\\" + charToReplace);
     }
-    return Sequence.fromIterable(Sequence.fromArray(command.split("\\" + charToReplace))).where(new IWhereFilter<String>() {
+    return Sequence.<String>fromIterable(Sequence.fromArray(command.split("\\" + charToReplace))).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
         return StringUtils.isNotEmpty(it);
       }

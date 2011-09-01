@@ -6,12 +6,12 @@ import junit.framework.TestCase;
 import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
@@ -20,17 +20,17 @@ public class Cycles_Test extends TestCase {
     Graph<String> graph = new Graph<String>();
     GraphAnalyzer<String> cd = graph.getCycleDetector();
     graph.addEdges("A", "B");
-    Assert.assertTrue(ListSequence.fromList(cd.findCycles()).isEmpty());
-    final Queue<String> q = QueueSequence.fromQueueAndArray(new LinkedList<String>(), "A", "B");
-    Sequence.fromIterable(cd.topologicalSort()).visitAll(new IVisitor<String>() {
+    Assert.assertTrue(ListSequence.<List<String>>fromList(cd.findCycles()).isEmpty());
+    final Queue<String> q = QueueSequence.<String>fromQueueAndArray(new LinkedList<String>(), "A", "B");
+    Sequence.<String>fromIterable(cd.topologicalSort()).visitAll(new IVisitor<String>() {
       public void visit(String v) {
         Assert.assertEquals(QueueSequence.fromQueue(q).removeFirstElement(), v);
       }
     });
     graph.addEdges("B", "A");
     List<List<String>> cycles = cd.findCycles();
-    Assert.assertSame(1, ListSequence.fromList(cycles).count());
-    Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B"), ListSequence.fromList(cycles).getElement(0));
+    Assert.assertSame(1, ListSequence.<List<String>>fromList(cycles).count());
+    Assert.assertEquals(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "A", "B"), ListSequence.<List<String>>fromList(cycles).getElement(0));
   }
 
   public void test_self() throws Exception {
@@ -38,12 +38,12 @@ public class Cycles_Test extends TestCase {
     GraphAnalyzer<String> cd = graph.getCycleDetector();
     graph.addEdges("A", "A");
     List<List<String>> cycles = cd.findCycles();
-    Assert.assertSame(1, ListSequence.fromList(cycles).count());
-    Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<String>(), "A"), ListSequence.fromList(cycles).getElement(0));
+    Assert.assertSame(1, ListSequence.<List<String>>fromList(cycles).count());
+    Assert.assertEquals(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "A"), ListSequence.<List<String>>fromList(cycles).getElement(0));
     graph.addEdges("B", "B");
     List<List<String>> cycles2 = cd.findCycles();
-    Assert.assertSame(2, ListSequence.fromList(cycles2).count());
-    Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList(), ListSequence.fromListAndArray(new ArrayList<String>(), "A"), ListSequence.fromListAndArray(new ArrayList<String>(), "B"))).disjunction(ListSequence.fromList(cycles2)).isEmpty());
+    Assert.assertSame(2, ListSequence.<List<String>>fromList(cycles2).count());
+    Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList(), ListSequence.<String>fromListAndArray(new ArrayList<String>(), "A"), ListSequence.<String>fromListAndArray(new ArrayList<String>(), "B"))).disjunction(ListSequence.<List<String>>fromList(cycles2)).isEmpty());
   }
 
   public void test_oneCycle() throws Exception {
@@ -54,9 +54,9 @@ public class Cycles_Test extends TestCase {
     graph.addEdges("D", "C");
     graph.addEdges("C", "B", "E");
     List<List<String>> cycles = cd.findCycles();
-    Assert.assertSame(1, ListSequence.fromList(cycles).count());
-    Assert.assertSame(3, ListSequence.fromList(ListSequence.fromList(cycles).getElement(0)).count());
-    Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "B", "C", "D")).disjunction(ListSequence.fromList(ListSequence.fromList(cycles).getElement(0))).isEmpty());
+    Assert.assertSame(1, ListSequence.<List<String>>fromList(cycles).count());
+    Assert.assertSame(3, ListSequence.<String>fromList(ListSequence.<List<String>>fromList(cycles).getElement(0)).count());
+    Assert.assertTrue(ListSequence.<String>fromList(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "B", "C", "D")).disjunction(ListSequence.<String>fromList(ListSequence.<List<String>>fromList(cycles).getElement(0))).isEmpty());
   }
 
   public void test_linear() throws Exception {
@@ -71,16 +71,16 @@ public class Cycles_Test extends TestCase {
       }
     }, false);
     List<List<String>> cycles = cd.findCycles();
-    Assert.assertSame(0, ListSequence.fromList(cycles).count());
+    Assert.assertSame(0, ListSequence.<List<String>>fromList(cycles).count());
     cycles = cd.findCycles();
-    Assert.assertSame(0, ListSequence.fromList(cycles).count());
+    Assert.assertSame(0, ListSequence.<List<String>>fromList(cycles).count());
     graph.sort(new _FunctionTypes._return_P1_E0<Integer, String>() {
       public Integer invoke(String s) {
         return ((Object) s).hashCode();
       }
     }, true);
     cycles = cd.findCycles();
-    Assert.assertSame(0, ListSequence.fromList(cycles).count());
+    Assert.assertSame(0, ListSequence.<List<String>>fromList(cycles).count());
   }
 
   public void test_fourCycles() throws Exception {
@@ -96,10 +96,10 @@ public class Cycles_Test extends TestCase {
     graph.addEdges("H", "I");
     graph.addEdges("I", "G", "K");
     List<List<String>> cycles = cd.findCycles();
-    Assert.assertSame(3, ListSequence.fromList(cycles).count());
-    Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "E")).disjunction(ListSequence.fromList(ListSequence.fromList(cycles).getElement(0))).isEmpty());
-    Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "D", "C")).disjunction(ListSequence.fromList(ListSequence.fromList(cycles).getElement(1))).isEmpty());
-    Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "G", "I", "F", "H")).disjunction(ListSequence.fromList(ListSequence.fromList(cycles).getElement(2))).isEmpty());
+    Assert.assertSame(3, ListSequence.<List<String>>fromList(cycles).count());
+    Assert.assertTrue(ListSequence.<String>fromList(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "A", "B", "E")).disjunction(ListSequence.<String>fromList(ListSequence.<List<String>>fromList(cycles).getElement(0))).isEmpty());
+    Assert.assertTrue(ListSequence.<String>fromList(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "D", "C")).disjunction(ListSequence.<String>fromList(ListSequence.<List<String>>fromList(cycles).getElement(1))).isEmpty());
+    Assert.assertTrue(ListSequence.<String>fromList(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "G", "I", "F", "H")).disjunction(ListSequence.<String>fromList(ListSequence.<List<String>>fromList(cycles).getElement(2))).isEmpty());
   }
 
   public void test_topoSort() throws Exception {
@@ -115,14 +115,14 @@ public class Cycles_Test extends TestCase {
     graph.addEdges("H", "I");
     graph.addEdges("I", "K", "J");
     List<List<String>> cycles = cd.findCycles();
-    Assert.assertSame(0, ListSequence.fromList(cycles).count());
-    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"), cd.topologicalSort());
+    Assert.assertSame(0, ListSequence.<List<String>>fromList(cycles).count());
+    Utils.assertSameSequence(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"), cd.topologicalSort());
     graph.sort(new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String s) {
         return s;
       }
     }, false);
-    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"), cd.topologicalSort());
+    Utils.assertSameSequence(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"), cd.topologicalSort());
   }
 
   public void test_precursors() throws Exception {
@@ -131,15 +131,15 @@ public class Cycles_Test extends TestCase {
     graph.addEdges("C", "D", "E");
     graph.addEdges("D", "F");
     GraphAnalyzer<String> cd = graph.getCycleDetector();
-    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<String>(), "C", "E"), cd.precursors("E"));
+    Utils.assertSameSequence(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "C", "E"), cd.precursors("E"));
     graph.addEdges("D", "E");
-    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<String>(), "C", "D", "E"), cd.precursors("E"));
+    Utils.assertSameSequence(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "C", "D", "E"), cd.precursors("E"));
     graph.addEdges("B", "C");
     graph.sort(new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String s) {
         return s;
       }
     }, false);
-    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E"), cd.precursors("E"));
+    Utils.assertSameSequence(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E"), cd.precursors("E"));
   }
 }

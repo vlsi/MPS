@@ -73,7 +73,7 @@ public class MPSOpenProjectRunner extends Runner {
   }
 
   private void initPathMacros() {
-    for (Map.Entry<Object, Object> property : SetSequence.fromSet(System.getProperties().entrySet())) {
+    for (Map.Entry<Object, Object> property : SetSequence.<Map.Entry<Object, Object>>fromSet(System.getProperties().entrySet())) {
       if (!(property.getKey() instanceof String) || !(property.getValue() instanceof String)) {
         continue;
       }

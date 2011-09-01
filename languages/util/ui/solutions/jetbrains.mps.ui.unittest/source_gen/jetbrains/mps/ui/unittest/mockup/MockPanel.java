@@ -10,7 +10,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class MockPanel extends MockWidget {
   protected String type;
-  private List<MockPanel.WidgetComp> widgets = ListSequence.fromList(new ArrayList<MockPanel.WidgetComp>());
+  private List<MockPanel.WidgetComp> widgets = ListSequence.<MockPanel.WidgetComp>fromList(new ArrayList<MockPanel.WidgetComp>());
 
   public MockPanel(String type) {
     this.type = type;
@@ -26,13 +26,13 @@ public class MockPanel extends MockWidget {
   }
 
   public void addChild(MockWidget widg, String comp) {
-    ListSequence.fromList(this.widgets).addElement(new MockPanel.WidgetComp(widg, comp));
+    ListSequence.<MockPanel.WidgetComp>fromList(this.widgets).addElement(new MockPanel.WidgetComp(widg, comp));
   }
 
   @Override
   public StringBuilder appendXML(StringBuilder sb) {
     sb.append("<panel type=\"" + this.type + "\">");
-    for (MockPanel.WidgetComp w : ListSequence.fromList(this.widgets)) {
+    for (MockPanel.WidgetComp w : ListSequence.<MockPanel.WidgetComp>fromList(this.widgets)) {
       sb.append("<child comp=\"" + w.compartment() + "\">");
       w.widget().appendXML(sb);
       sb.append("</child>");

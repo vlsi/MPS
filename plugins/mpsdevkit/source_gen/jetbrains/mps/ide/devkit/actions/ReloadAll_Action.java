@@ -44,8 +44,8 @@ public class ReloadAll_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -53,7 +53,7 @@ public class ReloadAll_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Reloading Classes", false) {
+      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), "Reloading Classes", false) {
         public void run(@NotNull final ProgressIndicator indicator) {
           indicator.setIndeterminate(true);
           ModelAccess.instance().runWriteAction(new Runnable() {

@@ -73,9 +73,9 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
   protected List<SNode> findToChooseFromOnInit(FindUsagesManager manager, FindUsagesManager.ProgressAdapter progressAdapter) {
     Set<SNode> instances = manager.findInstances(this.myTargetConcept, myScope, progressAdapter, false);
     if (this.myAcceptor == null) {
-      return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
+      return ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), instances);
     } else {
-      return ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).where(new IWhereFilter<SNode>() {
+      return ListSequence.<SNode>fromList(ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), instances)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return MainNodeChooser.this.myAcceptor.invoke(it);
         }
@@ -88,7 +88,7 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
   }
 
   protected Iterable<SNode> findNodes(SModel model, final String fqName) {
-    return ListSequence.fromList(SModelOperations.getNodes(model, null)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SModelOperations.getNodes(model, null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         if (!(it.isInstanceOfConcept(MainNodeChooser.this.myTargetConcept))) {
           return false;

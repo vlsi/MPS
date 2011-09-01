@@ -24,7 +24,7 @@ public class ApplyNonConflictsForRoot extends BaseAction {
 
   @Override
   protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
-    event.getPresentation().setEnabled(Sequence.fromIterable(getChanges()).isNotEmpty());
+    event.getPresentation().setEnabled(Sequence.<ModelChange>fromIterable(getChanges()).isNotEmpty());
   }
 
   private Iterable<ModelChange> getChanges() {

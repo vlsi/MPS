@@ -32,7 +32,7 @@ public class CleanModule_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IModule m = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
+    IModule m = ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getModule();
     return m != null && m.isCompileInMPS();
   }
 
@@ -54,12 +54,12 @@ public class CleanModule_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
@@ -67,8 +67,8 @@ public class CleanModule_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final IModule m = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
-      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Cleaning", true) {
+      final IModule m = ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getModule();
+      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), "Cleaning", true) {
         public void run(@NotNull final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {

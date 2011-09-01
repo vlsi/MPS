@@ -46,9 +46,9 @@ import java.io.FileNotFoundException;
       }
     }
 
-    List<String> newConfigLines = ListSequence.fromList(new ArrayList<String>());
-    ListSequence.fromList(newConfigLines).addElement("[merge \"mps\"]");
-    ListSequence.fromList(newConfigLines).addElement("\tname = MPS merge driver");
+    List<String> newConfigLines = ListSequence.<String>fromList(new ArrayList<String>());
+    ListSequence.<String>fromList(newConfigLines).addElement("[merge \"mps\"]");
+    ListSequence.<String>fromList(newConfigLines).addElement("\tname = MPS merge driver");
 
     AbstractInstaller.State packerState = InternalRuntimePacker.packIfNeeded(dryRun);
     if (packerState != AbstractInstaller.State.INSTALLED) {
@@ -60,27 +60,27 @@ import java.io.FileNotFoundException;
       return createScriptResult;
     }
 
-    ListSequence.fromList(newConfigLines).addElement(String.format("\tdriver = \"\\\"%s\\\" %%O %%A %%B %%L\"", myScriptFile.getAbsolutePath().replace("\\", "\\\\")));
-    ListSequence.fromList(newConfigLines).addElement("");
+    ListSequence.<String>fromList(newConfigLines).addElement(String.format("\tdriver = \"\\\"%s\\\" %%O %%A %%B %%L\"", myScriptFile.getAbsolutePath().replace("\\", "\\\\")));
+    ListSequence.<String>fromList(newConfigLines).addElement("");
 
     List<String> configLines = StringsIO.readLines(myConfigFile);
-    int sectionStart = ListSequence.fromList(configLines).indexOf(ListSequence.fromList(configLines).findFirst(new IWhereFilter<String>() {
+    int sectionStart = ListSequence.<String>fromList(configLines).indexOf(ListSequence.<String>fromList(configLines).findFirst(new IWhereFilter<String>() {
       public boolean accept(String line) {
         return line.matches("\\s*\\[merge\\s+\"mps\"\\]\\s*");
       }
     }));
     if (sectionStart != -1) {
-      Iterable<String> skipped = ListSequence.fromList(configLines).skip(sectionStart);
-      int sectionEnd = Sequence.fromIterable(skipped).indexOf(Sequence.fromIterable(skipped).findFirst(new IWhereFilter<String>() {
+      Iterable<String> skipped = ListSequence.<String>fromList(configLines).skip(sectionStart);
+      int sectionEnd = Sequence.<String>fromIterable(skipped).indexOf(Sequence.<String>fromIterable(skipped).findFirst(new IWhereFilter<String>() {
         public boolean accept(String line) {
           return line.trim().isEmpty();
         }
       })) + sectionStart + 1;
-      List<String> section = ListSequence.fromList(configLines).page(sectionStart, sectionEnd).toListSequence();
-      boolean equal = ListSequence.fromList(section).count() == ListSequence.fromList(newConfigLines).count();
+      List<String> section = ListSequence.<String>fromList(configLines).page(sectionStart, sectionEnd).toListSequence();
+      boolean equal = ListSequence.<String>fromList(section).count() == ListSequence.<String>fromList(newConfigLines).count();
       if (equal) {
-        for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
-          if (neq_btx4zt_a0a0a0e0s0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
+        for (int i = 0; i < ListSequence.<String>fromList(section).count(); i++) {
+          if (neq_btx4zt_a0a0a0e0s0a(ListSequence.<String>fromList(section).getElement(i), ListSequence.<String>fromList(newConfigLines).getElement(i))) {
             equal = false;
             break;
           }
@@ -92,7 +92,7 @@ import java.io.FileNotFoundException;
         if (dryRun) {
           return AbstractInstaller.State.OUTDATED;
         } else {
-          configLines = ListSequence.fromList(configLines).take(sectionStart).concat(ListSequence.fromList(newConfigLines)).concat(ListSequence.fromList(configLines).skip(sectionEnd)).toListSequence();
+          configLines = ListSequence.<String>fromList(configLines).take(sectionStart).concat(ListSequence.<String>fromList(newConfigLines)).concat(ListSequence.<String>fromList(configLines).skip(sectionEnd)).toListSequence();
         }
       }
     } else {
@@ -100,8 +100,8 @@ import java.io.FileNotFoundException;
         return AbstractInstaller.State.NOT_INSTALLED;
       }
 
-      ListSequence.fromList(configLines).addElement("");
-      ListSequence.fromList(configLines).addSequence(ListSequence.fromList(newConfigLines));
+      ListSequence.<String>fromList(configLines).addElement("");
+      ListSequence.<String>fromList(configLines).addSequence(ListSequence.<String>fromList(newConfigLines));
     }
 
     try {

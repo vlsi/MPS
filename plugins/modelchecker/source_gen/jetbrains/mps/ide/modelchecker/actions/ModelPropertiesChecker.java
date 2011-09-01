@@ -23,20 +23,20 @@ public class ModelPropertiesChecker extends SpecificChecker {
     progressContext.getProgressIndicator().setText("Checking " + SModelOperations.getModelName(model) + " model properties...");
     progressContext.getProgressIndicator().setText2("");
 
-    List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
+    List<SearchResult<ModelCheckerIssue>> results = ListSequence.<SearchResult<ModelCheckerIssue>>fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
     IScope scope = check_t4d01o_a0g0a(check_t4d01o_a0a6a0(modelDescriptor));
     if (scope != null) {
       List<String> errors = new ModelValidator(modelDescriptor.getSModel()).validate(scope);
-      if (!(ListSequence.fromList(errors).isEmpty())) {
-        String extraMessage = ListSequence.fromList(errors).getElement(0);
-        if (ListSequence.fromList(errors).count() == 2) {
-          extraMessage += "; " + ListSequence.fromList(errors).getElement(1);
-        } else if (ListSequence.fromList(errors).count() > 2) {
+      if (!(ListSequence.<String>fromList(errors).isEmpty())) {
+        String extraMessage = ListSequence.<String>fromList(errors).getElement(0);
+        if (ListSequence.<String>fromList(errors).count() == 2) {
+          extraMessage += "; " + ListSequence.<String>fromList(errors).getElement(1);
+        } else if (ListSequence.<String>fromList(errors).count() > 2) {
           extraMessage += "; ...";
         }
-        ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, SModelOperations.getModelName(model) + ": " + NameUtil.formatNumericalString(ListSequence.fromList(errors).count(), "unresolved dependency") + " (" + extraMessage + "; see model properties)", null, ModelChecker.SEVERITY_ERROR, "Model properties"));
+        ListSequence.<SearchResult<ModelCheckerIssue>>fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, SModelOperations.getModelName(model) + ": " + NameUtil.formatNumericalString(ListSequence.<String>fromList(errors).count(), "unresolved dependency") + " (" + extraMessage + "; see model properties)", null, ModelChecker.SEVERITY_ERROR, "Model properties"));
       }
     }
     return results;

@@ -105,7 +105,7 @@ public class StackFrameContext extends EvaluationContext {
 
   @NotNull
   public Map<String, SNode> getVariables(final _FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) {
-    final Map<String, SNode> result = MapSequence.fromMap(new LinkedHashMap<String, SNode>(16, (float) 0.75, false));
+    final Map<String, SNode> result = MapSequence.<String,SNode>fromMap(new LinkedHashMap<String, SNode>(16, (float) 0.75, false));
 
     foreachVariable(new _FunctionTypes._return_P1_E0<Boolean, LocalVariable>() {
       public Boolean invoke(LocalVariable variable) {
@@ -119,7 +119,7 @@ public class StackFrameContext extends EvaluationContext {
               log.warn("Could not deduce type for a variable " + name);
             }
           } else {
-            MapSequence.fromMap(result).put(name, type);
+            MapSequence.<String,SNode>fromMap(result).put(name, type);
           }
         } catch (ClassNotLoadedException cne) {
           if (jdiType == null) {
@@ -129,7 +129,7 @@ public class StackFrameContext extends EvaluationContext {
                 log.warn("Could not deduce type for a variable " + name);
               }
             } else {
-              MapSequence.fromMap(result).put(name, classifierType);
+              MapSequence.<String,SNode>fromMap(result).put(name, classifierType);
             }
           } else {
             if (log.isWarnEnabled()) {
@@ -151,7 +151,7 @@ public class StackFrameContext extends EvaluationContext {
       if (stackFrame != null) {
         try {
           List<LocalVariable> variables = stackFrame.visibleVariables();
-          for (LocalVariable variable : ListSequence.fromList(variables)) {
+          for (LocalVariable variable : ListSequence.<LocalVariable>fromList(variables)) {
             if (action.invoke(variable)) {
               return;
             }

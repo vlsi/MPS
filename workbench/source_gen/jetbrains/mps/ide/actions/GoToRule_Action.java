@@ -41,12 +41,12 @@ public class GoToRule_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("ruleModelAndId", event.getData(MPSDataKeys.RULE_MODEL_AND_ID));
-    if (MapSequence.fromMap(_params).get("ruleModelAndId") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("ruleModelAndId", event.getData(MPSDataKeys.RULE_MODEL_AND_ID));
+    if (MapSequence.<String,Object>fromMap(_params).get("ruleModelAndId") == null) {
       return false;
     }
     return true;
@@ -54,7 +54,7 @@ public class GoToRule_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GoToTypeErrorRuleUtil.goToRuleById(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Pair<String, String>) MapSequence.fromMap(_params).get("ruleModelAndId")));
+      GoToTypeErrorRuleUtil.goToRuleById(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), ((Pair<String, String>) MapSequence.<String,Object>fromMap(_params).get("ruleModelAndId")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToRule", t);

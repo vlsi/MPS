@@ -14,8 +14,8 @@ public class Modelchecker_ProjectPlugin extends BaseProjectPlugin {
   }
 
   public List<BaseGeneratedTool> initAllTools(Project project) {
-    List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
-    ListSequence.fromList(tools).addElement(new ModelCheckerTool_Tool(project));
+    List<BaseGeneratedTool> tools = ListSequence.<BaseGeneratedTool>fromList(new ArrayList<BaseGeneratedTool>());
+    ListSequence.<BaseGeneratedTool>fromList(tools).addElement(new ModelCheckerTool_Tool(project));
     return tools;
   }
 }

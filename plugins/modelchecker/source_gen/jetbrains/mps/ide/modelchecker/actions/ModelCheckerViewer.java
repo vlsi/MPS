@@ -121,7 +121,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
       public void run() {
         // Select all fixable issues 
         List<ModelCheckerIssue> issuesToFix = ModelCheckerViewer.this.getIssuesToFix();
-        if (ListSequence.fromList(issuesToFix).isEmpty()) {
+        if (ListSequence.<ModelCheckerIssue>fromList(issuesToFix).isEmpty()) {
           Messages.showInfoMessage("There are no quick fixes for current problems", "No Quick Fixes");
           return;
         }
@@ -131,10 +131,10 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
         }
         while (true) {
           int fixedBefore = fixedTotal.value;
-          for (ModelCheckerIssue issue : ListSequence.fromListWithValues(new ArrayList<ModelCheckerIssue>(), issuesToFix)) {
+          for (ModelCheckerIssue issue : ListSequence.<ModelCheckerIssue>fromListWithValues(new ArrayList<ModelCheckerIssue>(), issuesToFix)) {
             if (issue.fix()) {
               fixedTotal.value++;
-              ListSequence.fromList(issuesToFix).removeElement(issue);
+              ListSequence.<ModelCheckerIssue>fromList(issuesToFix).removeElement(issue);
             }
           }
           if (fixedBefore == fixedTotal.value) {
@@ -156,14 +156,14 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
   }
 
   private List<ModelCheckerIssue> getIssuesToFix() {
-    final Set<SNodePointer> includedResultNodes = SetSequence.fromSetWithValues(new HashSet<SNodePointer>(), myUsagesView.getIncludedResultNodes());
-    return ListSequence.fromList(((List<SearchResult<ModelCheckerIssue>>) getSearchResults().getSearchResults())).<ModelCheckerIssue>select(new ISelector<SearchResult<ModelCheckerIssue>, ModelCheckerIssue>() {
+    final Set<SNodePointer> includedResultNodes = SetSequence.<SNodePointer>fromSetWithValues(new HashSet<SNodePointer>(), myUsagesView.getIncludedResultNodes());
+    return ListSequence.<SearchResult<ModelCheckerIssue>>fromList(((List<SearchResult<ModelCheckerIssue>>) getSearchResults().getSearchResults())).<ModelCheckerIssue>select(new ISelector<SearchResult<ModelCheckerIssue>, ModelCheckerIssue>() {
       public ModelCheckerIssue select(SearchResult<ModelCheckerIssue> sr) {
         return sr.getObject();
       }
     }).where(new IWhereFilter<ModelCheckerIssue>() {
       public boolean accept(ModelCheckerIssue sr) {
-        return sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(new SNodePointer(((ModelCheckerIssue.NodeIssue) sr).getNode())) && sr.isFixable();
+        return sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.<SNodePointer>fromSet(includedResultNodes).contains(new SNodePointer(((ModelCheckerIssue.NodeIssue) sr).getNode())) && sr.isFixable();
       }
     }).toListSequence();
   }

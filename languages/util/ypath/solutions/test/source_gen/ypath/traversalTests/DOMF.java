@@ -44,7 +44,7 @@ public class DOMF extends TreePath<Node> {
 
     public Iterable<Node> sequence() {
       final NodeList cns = this.thisNode.getChildNodes();
-      return Sequence.fromClosure(new ISequenceClosure<Node>() {
+      return Sequence.<Node>fromClosure(new ISequenceClosure<Node>() {
         public Iterable<Node> iterable() {
           return new Iterable<Node>() {
             public Iterator<Node> iterator() {
@@ -114,7 +114,7 @@ __switch__:
 
     public int size() {
       final NodeList cns = this.thisNode.getChildNodes();
-      Iterable<Node> seq = Sequence.fromClosure(new ISequenceClosure<Node>() {
+      Iterable<Node> seq = Sequence.<Node>fromClosure(new ISequenceClosure<Node>() {
         public Iterable<Node> iterable() {
           return new Iterable<Node>() {
             public Iterator<Node> iterator() {
@@ -176,7 +176,7 @@ __switch__:
           };
         }
       });
-      return Sequence.fromIterable(seq).count();
+      return Sequence.<Node>fromIterable(seq).count();
     }
   }
 
@@ -191,7 +191,7 @@ __switch__:
 
     public Iterable<Node> sequence() {
       final NodeList els = ((Element) this.thisNode).getElementsByTagName(this.param);
-      return Sequence.fromClosure(new ISequenceClosure<Node>() {
+      return Sequence.<Node>fromClosure(new ISequenceClosure<Node>() {
         public Iterable<Node> iterable() {
           return new Iterable<Node>() {
             public Iterator<Node> iterator() {

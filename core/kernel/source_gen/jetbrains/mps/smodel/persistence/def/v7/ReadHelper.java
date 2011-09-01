@@ -24,12 +24,12 @@ public class ReadHelper {
   private int myMaxImportIndex = 0;
 
   public ReadHelper(SModelReference modelRef) {
-    myModelByIx = MapSequence.fromMap(new HashMap<String, SModelReference>());
+    myModelByIx = MapSequence.<String,SModelReference>fromMap(new HashMap<String, SModelReference>());
     myModelRef = modelRef;
   }
 
   public void addModelRef(String index, SModelReference modelRef) {
-    MapSequence.fromMap(myModelByIx).put(index, modelRef);
+    MapSequence.<String,SModelReference>fromMap(myModelByIx).put(index, modelRef);
   }
 
   public void addImportToModel(SModel model, String index, String modelUID, int version, boolean implicit) {
@@ -53,7 +53,7 @@ public class ReadHelper {
   public SModelReference getSModelReference(@NotNull String ix) {
     return (StringUtils.isEmpty(ix) ?
       myModelRef :
-      MapSequence.fromMap(myModelByIx).get(ix)
+      MapSequence.<String,SModelReference>fromMap(myModelByIx).get(ix)
     );
   }
 

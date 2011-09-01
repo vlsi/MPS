@@ -45,7 +45,7 @@ public class NewRuntimeModule_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((IModule) MapSequence.fromMap(_params).get("contextModule")) instanceof Language;
+    return ((IModule) MapSequence.<String,Object>fromMap(_params).get("contextModule")) instanceof Language;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -66,20 +66,20 @@ public class NewRuntimeModule_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("contextModule", event.getData(MPSDataKeys.CONTEXT_MODULE));
-    if (MapSequence.fromMap(_params).get("contextModule") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("contextModule", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    if (MapSequence.<String,Object>fromMap(_params).get("contextModule") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
-    if (MapSequence.fromMap(_params).get("treeNode") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.<String,Object>fromMap(_params).get("treeNode") == null) {
       return false;
     }
     return true;
@@ -87,15 +87,15 @@ public class NewRuntimeModule_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final List<IModule> modules = ListSequence.fromList(new ArrayList<IModule>());
+      final List<IModule> modules = ListSequence.<IModule>fromList(new ArrayList<IModule>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ListSequence.fromList(modules).addSequence(ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules()));
+          ListSequence.<IModule>fromList(modules).addSequence(ListSequence.<IModule>fromList(MPSModuleRepository.getInstance().getAllModules()));
         }
       });
-      BaseModuleModel baseSolutionModel = new BaseModuleModel(((Project) MapSequence.fromMap(_params).get("project")), "runtime module") {
+      BaseModuleModel baseSolutionModel = new BaseModuleModel(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), "runtime module") {
         public ModuleReference[] find(IScope p0) {
-          return ListSequence.fromList(modules).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
+          return ListSequence.<IModule>fromList(modules).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
             public ModuleReference select(IModule it) {
               return it.getModuleReference();
             }
@@ -108,11 +108,11 @@ public class NewRuntimeModule_Action extends GeneratedAction {
               if (module == null) {
                 return;
               }
-              final Language language = (Language) ((IModule) MapSequence.fromMap(_params).get("contextModule"));
+              final Language language = (Language) ((IModule) MapSequence.<String,Object>fromMap(_params).get("contextModule"));
               Dependency dependency = new Dependency();
               dependency.setModuleRef(module);
               language.getModuleDescriptor().getRuntimeModules().add(dependency);
-              final MPSTree mpsTree = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getTree();
+              final MPSTree mpsTree = ((MPSTreeNode) ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("treeNode"))).getTree();
               ModelAccess.instance().runWriteInEDT(new Runnable() {
                 public void run() {
                   language.save();
@@ -123,7 +123,7 @@ public class NewRuntimeModule_Action extends GeneratedAction {
           };
         }
       };
-      ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(((Project) MapSequence.fromMap(_params).get("project")), baseSolutionModel, new FakePsiContext());
+      ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), baseSolutionModel, new FakePsiContext());
       popup.invoke(new ChooseByNamePopupComponent.Callback() {
         public void elementChosen(Object p0) {
           ((NavigationItem) p0).navigate(true);

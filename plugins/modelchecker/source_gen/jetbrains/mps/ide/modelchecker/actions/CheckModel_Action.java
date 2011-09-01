@@ -34,8 +34,8 @@ public class CheckModel_Action extends GeneratedAction {
     try {
       {
         String whatToCheck = "Model";
-        if (((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() > 1) {
-          whatToCheck = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() + " Models";
+        if (((List<SModelDescriptor>) MapSequence.<String,Object>fromMap(_params).get("models")).size() > 1) {
+          whatToCheck = ((List<SModelDescriptor>) MapSequence.<String,Object>fromMap(_params).get("models")).size() + " Models";
         }
         event.getPresentation().setText("Check " + whatToCheck);
       }
@@ -51,20 +51,20 @@ public class CheckModel_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
-    if (MapSequence.fromMap(_params).get("models") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
+    if (MapSequence.<String,Object>fromMap(_params).get("models") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("operationContext") == null) {
       return false;
     }
     return true;
@@ -74,18 +74,18 @@ public class CheckModel_Action extends GeneratedAction {
     try {
       // check all models in model 
       List<SModelDescriptor> modelsToCheck = new ArrayList<SModelDescriptor>();
-      for (SModelDescriptor model : ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"))) {
+      for (SModelDescriptor model : ((List<SModelDescriptor>) MapSequence.<String,Object>fromMap(_params).get("models"))) {
         String name = model.getLongName();
-        for (SModelDescriptor innerModel : ListSequence.fromList(model.getModule().getOwnModelDescriptors())) {
+        for (SModelDescriptor innerModel : ListSequence.<SModelDescriptor>fromList(model.getModule().getOwnModelDescriptors())) {
           if (innerModel.getLongName().startsWith(name)) {
             modelsToCheck.add(innerModel);
           }
         }
       }
       if (modelsToCheck.size() > 1) {
-        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModels(modelsToCheck, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
+        ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModels(modelsToCheck, ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")), true);
       } else {
-        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModel(modelsToCheck.get(0), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
+        ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModel(modelsToCheck.get(0), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")), true);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

@@ -50,7 +50,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
   }
 
   private static void copyDependencies(ModelDependencies from, ModelDependencies to) throws JavaDependenciesMerger.MergeException {
-    for (RootDependencies fromRootDep : Sequence.fromIterable(from.getDependencies())) {
+    for (RootDependencies fromRootDep : Sequence.<RootDependencies>fromIterable(from.getDependencies())) {
       RootDependencies toRootDep = to.getDependency(fromRootDep.getFileName());
       if (toRootDep == null) {
         to.addDependencies(fromRootDep);
@@ -65,10 +65,10 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
       throw new JavaDependenciesMerger.MergeException("Different class names: " + rd1.getClassName() + " and " + rd2.getClassName());
     }
     Set<String> dependNodes = rd1.getDependencies();
-    SetSequence.fromSet(dependNodes).addSequence(SetSequence.fromSet(rd2.getDependencies()));
+    SetSequence.fromSet(dependNodes).addSequence(SetSequence.<String>fromSet(rd2.getDependencies()));
     Set<String> extendsNodes = rd1.getExtends();
-    SetSequence.fromSet(extendsNodes).addSequence(SetSequence.fromSet(rd2.getExtends()));
-    return new RootDependencies(rd1.getClassName(), rd1.getFileName(), SetSequence.fromSet(dependNodes).toListSequence(), SetSequence.fromSet(extendsNodes).toListSequence());
+    SetSequence.fromSet(extendsNodes).addSequence(SetSequence.<String>fromSet(rd2.getExtends()));
+    return new RootDependencies(rd1.getClassName(), rd1.getFileName(), SetSequence.<String>fromSet(dependNodes).toListSequence(), SetSequence.<String>fromSet(extendsNodes).toListSequence());
   }
 
   private static boolean neq_bqsatu_a0a0d(Object a, Object b) {

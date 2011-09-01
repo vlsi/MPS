@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class ChangeSet {
   private final SModel myOldModel;
   private final SModel myNewModel;
-  private final List<ModelChange> myModelChanges = ListSequence.fromList(new ArrayList<ModelChange>());
+  private final List<ModelChange> myModelChanges = ListSequence.<ModelChange>fromList(new ArrayList<ModelChange>());
   private ChangeSet myOppositeChangeSet = null;
 
   /*package*/ ChangeSet(@NotNull SModel oldModel, @NotNull SModel newModel) {
@@ -30,7 +30,7 @@ public class ChangeSet {
 
   @NotNull
   public <C extends ModelChange> Iterable<C> getModelChanges(final Class<C> changeClass) {
-    return ListSequence.fromList(myModelChanges).where(new IWhereFilter<ModelChange>() {
+    return ListSequence.<ModelChange>fromList(myModelChanges).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return changeClass.isInstance(ch);
       }
@@ -71,7 +71,7 @@ public class ChangeSet {
       myOppositeChangeSet = new ChangeSet(myNewModel, myOldModel);
       myOppositeChangeSet.myOppositeChangeSet = this;
 
-      myOppositeChangeSet.addAll(ListSequence.fromList(myModelChanges).<ModelChange>select(new ISelector<ModelChange, ModelChange>() {
+      myOppositeChangeSet.addAll(ListSequence.<ModelChange>fromList(myModelChanges).<ModelChange>select(new ISelector<ModelChange, ModelChange>() {
         public ModelChange select(ModelChange c) {
           return c.getOppositeChange();
         }
@@ -80,10 +80,10 @@ public class ChangeSet {
   }
 
   /*package*/ void add(@NotNull ModelChange change) {
-    ListSequence.fromList(myModelChanges).addElement(change);
+    ListSequence.<ModelChange>fromList(myModelChanges).addElement(change);
   }
 
   /*package*/ void addAll(Iterable<? extends ModelChange> change) {
-    ListSequence.fromList(myModelChanges).addSequence(Sequence.fromIterable(change));
+    ListSequence.<ModelChange>fromList(myModelChanges).addSequence(Sequence.fromIterable(change));
   }
 }

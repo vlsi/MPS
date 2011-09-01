@@ -22,7 +22,7 @@ public class TestFeatures_Test extends TestCase {
     ITreeTraversal<Node> nodes = TreeTraversalFactory.Traverse(new DOM2().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"), "nodes");
     Assert.assertEquals("root, a, b, c", this.toString(nodes));
     ITreeTraversal<Node> attribs = TreeTraversalFactory.Traverse(new DOM2().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"), "attributes");
-    Assert.assertEquals(0, Sequence.fromIterable(attribs).count());
+    Assert.assertEquals(0, Sequence.<Node>fromIterable(attribs).count());
     ITreeTraversal<Node> rootChildren = TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOM2().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN"), "nodes"), TreeTraversalFactory.Axis("CHILDREN"));
     Assert.assertEquals("r1, a", this.toString(rootChildren));
     ITreeTraversal<Node> everything = TreeTraversalFactory.Traverse(new DOM2().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"));
@@ -38,7 +38,7 @@ public class TestFeatures_Test extends TestCase {
   public String toString(Iterable<Node> nodes) {
     StringBuilder sb = new StringBuilder();
     String sep = "";
-    for (Node n : Sequence.fromIterable(nodes)) {
+    for (Node n : Sequence.<Node>fromIterable(nodes)) {
       sb.append(sep).append(n.getNodeName());
       sep = ", ";
     }

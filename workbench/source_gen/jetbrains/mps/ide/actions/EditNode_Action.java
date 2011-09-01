@@ -49,16 +49,16 @@ public class EditNode_Action extends GeneratedAction {
       if (nodes != null) {
       }
       if (error || nodes == null) {
-        MapSequence.fromMap(_params).put("nodes", null);
+        MapSequence.<String,Object>fromMap(_params).put("nodes", null);
       } else {
-        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
+        MapSequence.<String,Object>fromMap(_params).put("nodes", ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), nodes));
       }
     }
-    if (MapSequence.fromMap(_params).get("nodes") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("nodes") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
@@ -66,10 +66,10 @@ public class EditNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MPSEditorOpener opener = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(MPSEditorOpener.class);
-      for (SNode node : ((List<SNode>) MapSequence.fromMap(_params).get("nodes"))) {
+      MPSEditorOpener opener = ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getComponent(MPSEditorOpener.class);
+      for (SNode node : ((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes"))) {
         if (node != null) {
-          opener.editNode(node, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+          opener.editNode(node, ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
         }
       }
     } catch (Throwable t) {

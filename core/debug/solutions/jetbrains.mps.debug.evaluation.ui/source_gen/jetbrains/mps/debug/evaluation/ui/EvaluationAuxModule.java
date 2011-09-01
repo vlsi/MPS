@@ -91,7 +91,7 @@ public class EvaluationAuxModule extends AbstractModule {
       // todo when JAVA_STUBS = true, write here whatever is needed for evaluation to work 
       return new DefaultScope() {
         protected Set<IModule> getInitialModules() {
-          return SetSequence.fromSetWithValues(new HashSet<IModule>(), Sequence.<IModule>singleton(EvaluationAuxModule.this));
+          return SetSequence.<IModule>fromSetWithValues(new HashSet<IModule>(), Sequence.<IModule>singleton(EvaluationAuxModule.this));
         }
       };
     }

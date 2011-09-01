@@ -28,32 +28,32 @@ public class CommitNumberSubcolumn extends AnnotationAspectSubcolumn {
 
   @Override
   public String getTextForFileLine(int fileLine) {
-    return "" + MapSequence.fromMap(myRevisionsToNumbers).get(myFileAnnotation.getLineRevisionNumber(fileLine));
+    return "" + MapSequence.<VcsRevisionNumber,Integer>fromMap(myRevisionsToNumbers).get(myFileAnnotation.getLineRevisionNumber(fileLine));
   }
 
   private void computeNumbers(Iterable<Integer> fileLines) {
-    myRevisionsToNumbers = MapSequence.fromMap(new HashMap<VcsRevisionNumber, Integer>());
-    final Map<VcsRevisionNumber, VcsFileRevision> revisionNumberToRevision = MapSequence.fromMap(new HashMap<VcsRevisionNumber, VcsFileRevision>());
-    for (VcsFileRevision rev : ListSequence.fromList(myFileAnnotation.getRevisions())) {
-      MapSequence.fromMap(revisionNumberToRevision).put(rev.getRevisionNumber(), rev);
+    myRevisionsToNumbers = MapSequence.<VcsRevisionNumber,Integer>fromMap(new HashMap<VcsRevisionNumber, Integer>());
+    final Map<VcsRevisionNumber, VcsFileRevision> revisionNumberToRevision = MapSequence.<VcsRevisionNumber,VcsFileRevision>fromMap(new HashMap<VcsRevisionNumber, VcsFileRevision>());
+    for (VcsFileRevision rev : ListSequence.<VcsFileRevision>fromList(myFileAnnotation.getRevisions())) {
+      MapSequence.<VcsRevisionNumber,VcsFileRevision>fromMap(revisionNumberToRevision).put(rev.getRevisionNumber(), rev);
     }
 
-    List<VcsRevisionNumber> revisionNumbers = SetSequence.fromSet(SetSequence.fromSetWithValues(new HashSet<VcsRevisionNumber>(), Sequence.fromIterable(fileLines).<VcsRevisionNumber>select(new ISelector<Integer, VcsRevisionNumber>() {
+    List<VcsRevisionNumber> revisionNumbers = SetSequence.<VcsRevisionNumber>fromSet(SetSequence.<VcsRevisionNumber>fromSetWithValues(new HashSet<VcsRevisionNumber>(), Sequence.<Integer>fromIterable(fileLines).<VcsRevisionNumber>select(new ISelector<Integer, VcsRevisionNumber>() {
       public VcsRevisionNumber select(Integer fl) {
         return myFileAnnotation.getLineRevisionNumber(fl);
       }
     }))).sort(new ISelector<VcsRevisionNumber, Comparable<?>>() {
       public Comparable<?> select(VcsRevisionNumber rn) {
-        return MapSequence.fromMap(revisionNumberToRevision).get(rn).getRevisionDate();
+        return MapSequence.<VcsRevisionNumber,VcsFileRevision>fromMap(revisionNumberToRevision).get(rn).getRevisionDate();
       }
     }, true).toListSequence();
-    revisionNumbers = ListSequence.fromList(revisionNumbers).sort(new ISelector<VcsRevisionNumber, Comparable<?>>() {
+    revisionNumbers = ListSequence.<VcsRevisionNumber>fromList(revisionNumbers).sort(new ISelector<VcsRevisionNumber, Comparable<?>>() {
       public Comparable<?> select(VcsRevisionNumber rn) {
-        return check_efout7_a0a0a0a0f0b(MapSequence.fromMap(revisionNumberToRevision).get(rn));
+        return check_efout7_a0a0a0a0f0b(MapSequence.<VcsRevisionNumber,VcsFileRevision>fromMap(revisionNumberToRevision).get(rn));
       }
     }, true).toListSequence();
-    for (int i = 0; i < ListSequence.fromList(revisionNumbers).count(); i++) {
-      MapSequence.fromMap(myRevisionsToNumbers).put(ListSequence.fromList(revisionNumbers).getElement(i), i + 1);
+    for (int i = 0; i < ListSequence.<VcsRevisionNumber>fromList(revisionNumbers).count(); i++) {
+      MapSequence.<VcsRevisionNumber,Integer>fromMap(myRevisionsToNumbers).put(ListSequence.<VcsRevisionNumber>fromList(revisionNumbers).getElement(i), i + 1);
     }
   }
 

@@ -40,7 +40,7 @@ public final class VisibilityUtil {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(name, "visibility", true), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
       //  check special cases of protected access 
       SNode classifier = SNodeOperations.getAncestor(name, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-      for (SNode cls : ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
+      for (SNode cls : ListSequence.<SNode>fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
         if (BaseLanguageUtil.isAssignable(cls, classifier)) {
           if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") && SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation") || SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
             // check ExpressionName or PrimaryExpression is subclass of cls, works only with right context 
@@ -66,7 +66,7 @@ public final class VisibilityUtil {
   }
 
   public static SNode topClassifier(@NotNull SNode node) {
-    return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last();
+    return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last();
   }
 
   private static boolean isClassifierAccessible(@NotNull SNode context, @Nullable SNode classifier) {
@@ -86,7 +86,7 @@ public final class VisibilityUtil {
     }
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifier, "visibility", true), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
       // parent cannot be null here 
-      for (SNode cls : ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
+      for (SNode cls : ListSequence.<SNode>fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
         if (BaseLanguageUtil.isAssignable(cls, parent) && isClassifierAccessible(context, parent)) {
           return true;
         }
@@ -102,7 +102,7 @@ public final class VisibilityUtil {
 
   public static boolean isLocalMember(@NotNull SNode context, @NotNull final SNode member) {
     // hiding and shadowing are not checked here 
-    return ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode cls) {
         return isMember(cls, member);
       }

@@ -19,12 +19,12 @@ import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 
 public class ParameterizedSuite extends Suite {
-  private List<Runner> myRunners = ListSequence.fromList(new ArrayList<Runner>());
+  private List<Runner> myRunners = ListSequence.<Runner>fromList(new ArrayList<Runner>());
 
   public ParameterizedSuite(Class<?> klass, RunnerBuilder builder) throws Throwable {
     super(klass, Collections.<Runner>emptyList());
-    for (Class<?> parameter : ListSequence.fromList(getParametersList(getTestClass()))) {
-      ListSequence.fromList(myRunners).addElement(builder.runnerForClass(parameter));
+    for (Class<?> parameter : ListSequence.<Class<?>>fromList(getParametersList(getTestClass()))) {
+      ListSequence.<Runner>fromList(myRunners).addElement(builder.runnerForClass(parameter));
     }
   }
 
@@ -34,7 +34,7 @@ public class ParameterizedSuite extends Suite {
 
   private FrameworkMethod getParametersMethod(TestClass testClass) throws Exception {
     List<FrameworkMethod> methods = testClass.getAnnotatedMethods(ParameterizedSuite.SuiteClasses.class);
-    for (FrameworkMethod each : ListSequence.fromList(methods)) {
+    for (FrameworkMethod each : ListSequence.<FrameworkMethod>fromList(methods)) {
       int modifiers = each.getMethod().getModifiers();
       if (Modifier.isStatic(modifiers) && Modifier.isPublic(modifiers)) {
         return each;
@@ -50,7 +50,7 @@ public class ParameterizedSuite extends Suite {
 
   @Override
   public void run(RunNotifier notifier) {
-    if (ListSequence.fromList(myRunners).isEmpty()) {
+    if (ListSequence.<Runner>fromList(myRunners).isEmpty()) {
       notifier.fireTestStarted(getDescription());
       notifier.fireTestFinished(getDescription());
       return;

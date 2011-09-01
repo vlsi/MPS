@@ -38,19 +38,19 @@ public class TransformationUtil {
 
   public static void replaceArrayConstructor(SNode newArrayExpression, SNode fqNameNode, SNode size) {
     SNode invokeConstructorMethodCall = new TransformationUtil.QuotationClass_crriw5_a0a0a0().createNode(fqNameNode);
-    ListSequence.fromList(SLinkOperations.getTargets(invokeConstructorMethodCall, "actualArgument", true)).addElement(size);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(invokeConstructorMethodCall, "actualArgument", true)).addElement(size);
     SNodeOperations.replaceWithAnother(newArrayExpression, invokeConstructorMethodCall);
   }
 
   public static void replaceArrayWithInitializerConstructor(SNode newArrayExpression, SNode fqNameNode, List<SNode> values) {
     SNode invokeConstructorMethodCall = new TransformationUtil.QuotationClass_crriw5_a0a0a1().createNode(fqNameNode);
-    ListSequence.fromList(SLinkOperations.getTargets(invokeConstructorMethodCall, "actualArgument", true)).addSequence(ListSequence.fromList(values));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(invokeConstructorMethodCall, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(values));
     SNodeOperations.replaceWithAnother(newArrayExpression, invokeConstructorMethodCall);
   }
 
   public static void replaceConstructor(SNode newExpression, SNode fqNameNode, SNode jnSignature, List<SNode> actualArguments) {
     SNode invokeConstructorMethodCall = new TransformationUtil.QuotationClass_crriw5_a0a0a2().createNode(fqNameNode, jnSignature);
-    ListSequence.fromList(SLinkOperations.getTargets(invokeConstructorMethodCall, "actualArgument", true)).addSequence(ListSequence.fromList(actualArguments));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(invokeConstructorMethodCall, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(actualArguments));
     SNodeOperations.replaceWithAnother(newExpression, invokeConstructorMethodCall);
   }
 
@@ -62,7 +62,7 @@ public class TransformationUtil {
     SNode returnProxyType = getValueProxyTypeFromType(returnType);
     SNode thisNode = TransformationUtil.createThisNodeReplacement();
     SNode invokeMethodCall = new TransformationUtil.QuotationClass_crriw5_a0a2a4().createNode(createStringLiteral(methodName), createStringLiteral(jniSignature), returnProxyType, thisNode);
-    ListSequence.fromList(SLinkOperations.getTargets(invokeMethodCall, "actualArgument", true)).addSequence(ListSequence.fromList(arguments));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(invokeMethodCall, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(arguments));
     SNodeOperations.replaceWithAnother(superMethodCall, new TransformationUtil.QuotationClass_crriw5_a0a0e0e().createNode(invokeMethodCall, returnProxyType));
   }
 
@@ -118,14 +118,14 @@ public class TransformationUtil {
 
   public static void replaceStaticMethodCall(SNode staticMethodCall, SNode classFqNameNode, String methodName, String jniSignature, SNode returnType, List<SNode> arguments) {
     SNode methodCall = new TransformationUtil.QuotationClass_crriw5_a0a0a9().createNode(classFqNameNode, createStringLiteral(methodName), createStringLiteral(jniSignature));
-    ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.fromList(arguments));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(arguments));
     SNodeOperations.replaceWithAnother(staticMethodCall, new TransformationUtil.QuotationClass_crriw5_a0a0c0j().createNode(getValueProxyTypeFromType(returnType), methodCall));
   }
 
   public static void replaceMethodCall(SNode wholeExpression, SNode instance, SNode methodCall, String methodName, String jniSignature, SNode returnType, List<SNode> arguments) {
     SNode valueProxyReturnType = getValueProxyTypeFromType(returnType);
     SNode invokeMethodCall = new TransformationUtil.QuotationClass_crriw5_a0a1a01().createNode(createStringLiteral(methodName), createStringLiteral(jniSignature), valueProxyReturnType, instance);
-    ListSequence.fromList(SLinkOperations.getTargets(invokeMethodCall, "actualArgument", true)).addSequence(ListSequence.fromList(arguments));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(invokeMethodCall, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(arguments));
     SNodeOperations.replaceWithAnother(wholeExpression, new TransformationUtil.QuotationClass_crriw5_a0a0d0k().createNode(valueProxyReturnType, invokeMethodCall));
   }
 
@@ -143,7 +143,7 @@ public class TransformationUtil {
   public static void checkForAnonimousClassCreations(SNode evaluator) {
     // TODO in some cases, we might actually support anonymous classes creation 
     SNode evalMethod = findEvaluateMethod(evaluator);
-    if (ListSequence.fromList(SNodeOperations.getDescendants(evalMethod, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, new String[]{})).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SNodeOperations.getDescendants(evalMethod, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, new String[]{})).isNotEmpty()) {
       throw new UnsupportedOperationException("Anonimous classes evaluation is not supported.");
     }
   }
@@ -169,7 +169,7 @@ public class TransformationUtil {
 
   private static SNode findEvaluateMethod(SNode evaluator) {
     // TODO use this method everywhere 
-    return ListSequence.fromList(SNodeOperations.getDescendants(evaluator, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, new String[]{})).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SNodeOperations.getDescendants(evaluator, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, new String[]{})).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("evaluate");
       }
@@ -208,7 +208,7 @@ public class TransformationUtil {
   public static SNode createClassFqNameNode(SModel model, SNode classConcept) {
     SNode fqNameNode;
     // TODO this is not completely correct: model can contain several classes 
-    if (ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.Classifier")).contains(classConcept)) {
+    if (ListSequence.<SNode>fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.Classifier")).contains(classConcept)) {
       fqNameNode = new TransformationUtil.QuotationClass_crriw5_a0a0a2a02().createNode();
     } else {
       fqNameNode = createStringLiteral(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(classConcept, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));
@@ -234,7 +234,7 @@ public class TransformationUtil {
   }
 
   public static String getJniSignature(SNode methodDeclaration) {
-    return getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    return getJniSignature(ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "type", true);
       }
@@ -243,7 +243,7 @@ public class TransformationUtil {
 
   public static String getJniSignature(Iterable<SNode> arguments, SNode returnType) {
     final Wrappers._T<String> signature = new Wrappers._T<String>("(");
-    Sequence.fromIterable(arguments).visitAll(new IVisitor<SNode>() {
+    Sequence.<SNode>fromIterable(arguments).visitAll(new IVisitor<SNode>() {
       public void visit(SNode type) {
         signature.value += TransformationUtil.getJniSignatureFromType(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.Type"));
       }
@@ -358,7 +358,7 @@ public class TransformationUtil {
       SLinkOperations.setTarget(foreachStatement, "iterable", new TransformationUtil.QuotationClass_crriw5_a0a0a0a1a13().createNode(SLinkOperations.getTarget(foreachStatement, "iterable", true)), true);
     }
     // next two lines add type parameters in a specific magical way so the test would pass 
-    ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(foreachStatement, "iterable", true), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "typeArgument", true)).addElement(SNodeOperations.copyNode(valueProxyType));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(foreachStatement, "iterable", true), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "typeArgument", true)).addElement(SNodeOperations.copyNode(valueProxyType));
     SLinkOperations.setTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", new TransformationUtil.QuotationClass_crriw5_a0a0e0fb().createNode(valueProxyType), true);
   }
 
@@ -385,7 +385,7 @@ public class TransformationUtil {
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.StatementList")) {
         SNode bsStatementList = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.StatementList");
         List<SNode> statements = SLinkOperations.getTargets(bsStatementList, "statement", true);
-        if (ListSequence.fromList(statements).getElement(ListSequence.fromList(statements).count() - 1) == blockStatement) {
+        if (ListSequence.<SNode>fromList(statements).getElement(ListSequence.<SNode>fromList(statements).count() - 1) == blockStatement) {
           parent = SNodeOperations.getParent(bsStatementList);
         }
       }

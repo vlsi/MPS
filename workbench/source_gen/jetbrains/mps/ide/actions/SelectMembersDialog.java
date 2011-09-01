@@ -29,7 +29,7 @@ public abstract class SelectMembersDialog<T extends SNode> extends BaseDialog {
   private String myMemberDescription;
   private boolean myAnswer = false;
   protected Frame myFrame;
-  private List<T> mySelectedMembers = ListSequence.fromList(new ArrayList<T>());
+  private List<T> mySelectedMembers = ListSequence.<T>fromList(new ArrayList<T>());
   private MPSTree myTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
       return rebuildOurTree();
@@ -64,7 +64,7 @@ public abstract class SelectMembersDialog<T extends SNode> extends BaseDialog {
   private void disposeTrue() {
     myAnswer = true;
     for (MPSTreeNode selectedNode : myTree.getSelectedNodes(MPSNodeInSelectDialog.class, null)) {
-      ListSequence.fromList(mySelectedMembers).addElement(((MPSNodeInSelectDialog<T>) selectedNode).getNode());
+      ListSequence.<T>fromList(mySelectedMembers).addElement(((MPSNodeInSelectDialog<T>) selectedNode).getNode());
     }
     dispose();
   }
@@ -108,7 +108,7 @@ public abstract class SelectMembersDialog<T extends SNode> extends BaseDialog {
   }
 
   public List<T> getSelectedMembers() {
-    return ListSequence.fromListWithValues(new ArrayList<T>(), mySelectedMembers);
+    return ListSequence.<T>fromListWithValues(new ArrayList<T>(), mySelectedMembers);
   }
 
   public boolean getAnswer() {

@@ -47,8 +47,8 @@ public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
@@ -56,9 +56,9 @@ public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (IModule module : ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules())) {
+      for (IModule module : ListSequence.<IModule>fromList(MPSModuleRepository.getInstance().getAllModules())) {
         String report = "";
-        OptimizeImportsHelper helper = new OptimizeImportsHelper(((IOperationContext) MapSequence.fromMap(_params).get("context")));
+        OptimizeImportsHelper helper = new OptimizeImportsHelper(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
         if (module instanceof Solution) {
           report = helper.optimizeSolutionImports(((Solution) module));
         } else if (module instanceof Language) {

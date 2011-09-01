@@ -25,7 +25,7 @@ public class AddToFavoritesGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(AddToFavoritesGroup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.AddToFavoritesGroup_ActionGroup";
 
-  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
+  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.<Pair<ActionPlace, Condition<BaseAction>>>fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
 
   public AddToFavoritesGroup_ActionGroup() {
     super("AddToFavoritesGroup", ID);

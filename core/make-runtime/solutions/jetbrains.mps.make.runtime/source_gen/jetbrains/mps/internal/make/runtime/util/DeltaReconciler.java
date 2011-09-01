@@ -14,7 +14,7 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class DeltaReconciler {
-  private List<DeltaReconciler.DeltaContainer> topContainer = ListSequence.fromList(new ArrayList<DeltaReconciler.DeltaContainer>());
+  private List<DeltaReconciler.DeltaContainer> topContainer = ListSequence.<DeltaReconciler.DeltaContainer>fromList(new ArrayList<DeltaReconciler.DeltaContainer>());
 
   public DeltaReconciler() {
   }
@@ -28,7 +28,7 @@ public class DeltaReconciler {
   }
 
   public final void addAll(Iterable<IDelta> toReconcile) {
-    Sequence.fromIterable(toReconcile).visitAll(new IVisitor<IDelta>() {
+    Sequence.<IDelta>fromIterable(toReconcile).visitAll(new IVisitor<IDelta>() {
       public void visit(IDelta d) {
         DeltaReconciler.DeltaContainer.insert(d, topContainer);
       }
@@ -36,7 +36,7 @@ public class DeltaReconciler {
   }
 
   public void reconcileAll() {
-    ListSequence.fromList(topContainer).visitAll(new IVisitor<DeltaReconciler.DeltaContainer>() {
+    ListSequence.<DeltaReconciler.DeltaContainer>fromList(topContainer).visitAll(new IVisitor<DeltaReconciler.DeltaContainer>() {
       public void visit(DeltaReconciler.DeltaContainer dc) {
         dc.mergeContent().reconcile();
       }
@@ -44,7 +44,7 @@ public class DeltaReconciler {
   }
 
   public void visitAll(final IDeltaVisitor visitor) {
-    ListSequence.fromList(topContainer).visitAll(new IVisitor<DeltaReconciler.DeltaContainer>() {
+    ListSequence.<DeltaReconciler.DeltaContainer>fromList(topContainer).visitAll(new IVisitor<DeltaReconciler.DeltaContainer>() {
       public void visit(DeltaReconciler.DeltaContainer dc) {
         dc.mergeContent().acceptVisitor(visitor);
       }
@@ -53,14 +53,14 @@ public class DeltaReconciler {
 
   private static class DeltaContainer {
     private IDelta delta;
-    private List<DeltaReconciler.DeltaContainer> content = ListSequence.fromList(new ArrayList<DeltaReconciler.DeltaContainer>());
+    private List<DeltaReconciler.DeltaContainer> content = ListSequence.<DeltaReconciler.DeltaContainer>fromList(new ArrayList<DeltaReconciler.DeltaContainer>());
 
     private DeltaContainer(IDelta delta) {
       this.delta = delta;
     }
 
     private IDelta mergeContent() {
-      return ListSequence.fromList(content).foldLeft(this.delta, new ILeftCombinator<DeltaReconciler.DeltaContainer, IDelta>() {
+      return ListSequence.<DeltaReconciler.DeltaContainer>fromList(content).foldLeft(this.delta, new ILeftCombinator<DeltaReconciler.DeltaContainer, IDelta>() {
         public IDelta combine(IDelta d, DeltaReconciler.DeltaContainer dc) {
           return d.merge(dc.mergeContent());
         }
@@ -77,24 +77,24 @@ public class DeltaReconciler {
 
     private static void insert(final IDelta delta, List<DeltaReconciler.DeltaContainer> into) {
       DeltaReconciler.DeltaContainer dc = null;
-      for (Iterator<DeltaReconciler.DeltaContainer> it = ListSequence.fromList(into).iterator(); it.hasNext();) {
+      for (Iterator<DeltaReconciler.DeltaContainer> it = ListSequence.<DeltaReconciler.DeltaContainer>fromList(into).iterator(); it.hasNext();) {
         DeltaReconciler.DeltaContainer next = it.next();
         if (delta.contains(next.delta)) {
           if (dc == null) {
             dc = new DeltaReconciler.DeltaContainer(delta);
           }
-          ListSequence.fromList(dc.content).addElement(next);
+          ListSequence.<DeltaReconciler.DeltaContainer>fromList(dc.content).addElement(next);
           it.remove();
         }
       }
       if (dc != null) {
-        ListSequence.fromList(into).addElement(dc);
-      } else if (!(ListSequence.fromList(into).any(new IWhereFilter<DeltaReconciler.DeltaContainer>() {
+        ListSequence.<DeltaReconciler.DeltaContainer>fromList(into).addElement(dc);
+      } else if (!(ListSequence.<DeltaReconciler.DeltaContainer>fromList(into).any(new IWhereFilter<DeltaReconciler.DeltaContainer>() {
         public boolean accept(DeltaReconciler.DeltaContainer it) {
           return it.tryInsert(delta);
         }
       }))) {
-        ListSequence.fromList(into).addElement(new DeltaReconciler.DeltaContainer(delta));
+        ListSequence.<DeltaReconciler.DeltaContainer>fromList(into).addElement(new DeltaReconciler.DeltaContainer(delta));
       }
     }
   }

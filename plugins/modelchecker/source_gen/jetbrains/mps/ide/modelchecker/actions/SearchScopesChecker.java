@@ -29,15 +29,15 @@ public class SearchScopesChecker extends SpecificChecker {
   }
 
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
-    List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
+    List<SearchResult<ModelCheckerIssue>> results = ListSequence.<SearchResult<ModelCheckerIssue>>fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
-    for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+    for (SNode node : ListSequence.<SNode>fromList(SModelOperations.getNodes(model, null))) {
       if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for valid search scopes in references..."))) {
         break;
       }
       SNode concept = SNodeOperations.getConceptDeclaration(node);
 
-      for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
+      for (SReference ref : Sequence.<SReference>fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
         public boolean accept(SReference it) {
           return ModelCheckerUtils.isDeclaredLink(SLinkOperations.findLinkDeclaration(it), false) && (SLinkOperations.getTargetNode(it) != null);
         }

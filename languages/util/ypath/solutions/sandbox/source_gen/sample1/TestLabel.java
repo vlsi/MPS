@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class TestLabel {
   public static void main(String[] args) {
 outer:
-    for (Integer foo : ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)) {
+    for (Integer foo : ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)) {
 label:
       do {
 none:

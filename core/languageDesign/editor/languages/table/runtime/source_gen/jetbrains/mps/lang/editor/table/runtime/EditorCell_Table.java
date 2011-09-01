@@ -137,16 +137,16 @@ public class EditorCell_Table extends EditorCell_Collection {
       return;
     }
     graphics.setColor(Color.GRAY);
-    List<Integer> positionsX = ListSequence.fromList(new ArrayList<Integer>());
-    List<Integer> positionsY = ListSequence.fromList(new ArrayList<Integer>());
+    List<Integer> positionsX = ListSequence.<Integer>fromList(new ArrayList<Integer>());
+    List<Integer> positionsY = ListSequence.<Integer>fromList(new ArrayList<Integer>());
 
     for (Iterator<EditorCell> rowsIterator = iterator(); rowsIterator.hasNext();) {
       EditorCell nextRow = rowsIterator.next();
       assert nextRow instanceof EditorCell_Collection;
-      ListSequence.fromList(positionsY).addElement(nextRow.getY());
+      ListSequence.<Integer>fromList(positionsY).addElement(nextRow.getY());
       if (!(rowsIterator.hasNext())) {
         // adding last row bottom coordinates 
-        ListSequence.fromList(positionsY).addElement(nextRow.getY() + nextRow.getHeight());
+        ListSequence.<Integer>fromList(positionsY).addElement(nextRow.getY() + nextRow.getHeight());
       }
       int index = -1;
       for (Iterator<EditorCell> cellIterator = ((EditorCell_Collection) nextRow).iterator(); cellIterator.hasNext(); index++) {
@@ -156,25 +156,25 @@ public class EditorCell_Table extends EditorCell_Collection {
           continue;
         }
         int x = nextCell.getX();
-        if (index >= ListSequence.fromList(positionsX).count()) {
-          ListSequence.fromList(positionsX).addElement(x);
+        if (index >= ListSequence.<Integer>fromList(positionsX).count()) {
+          ListSequence.<Integer>fromList(positionsX).addElement(x);
         } else {
-          ListSequence.fromList(positionsX).setElement(index, Math.min(x, ListSequence.fromList(positionsX).getElement(index)));
+          ListSequence.<Integer>fromList(positionsX).setElement(index, Math.min(x, ListSequence.<Integer>fromList(positionsX).getElement(index)));
         }
       }
       assert index > 0;
     }
-    assert ListSequence.fromList(positionsX).count() > 1;
-    int firstX = ListSequence.fromList(positionsX).first();
-    int lastX = ListSequence.fromList(positionsX).last();
-    for (int y : ListSequence.fromList(positionsY)) {
+    assert ListSequence.<Integer>fromList(positionsX).count() > 1;
+    int firstX = ListSequence.<Integer>fromList(positionsX).first();
+    int lastX = ListSequence.<Integer>fromList(positionsX).last();
+    for (int y : ListSequence.<Integer>fromList(positionsY)) {
       graphics.drawLine(firstX, y, lastX, y);
     }
 
-    assert ListSequence.fromList(positionsY).count() > 1;
-    int firstY = ListSequence.fromList(positionsY).first();
-    int lastY = ListSequence.fromList(positionsY).last();
-    for (int x : ListSequence.fromList(positionsX)) {
+    assert ListSequence.<Integer>fromList(positionsY).count() > 1;
+    int firstY = ListSequence.<Integer>fromList(positionsY).first();
+    int lastY = ListSequence.<Integer>fromList(positionsY).last();
+    for (int x : ListSequence.<Integer>fromList(positionsX)) {
       graphics.drawLine(x, firstY, x, lastY);
     }
   }
@@ -186,11 +186,11 @@ public class EditorCell_Table extends EditorCell_Collection {
   public List<EditorCell> getColumnCells(int columnIntex) {
     assert !(myEmpty);
     assert columnIntex >= 0 && columnIntex < myModel.getColumnCount();
-    List<EditorCell> result = ListSequence.fromList(new ArrayList<EditorCell>());
+    List<EditorCell> result = ListSequence.<EditorCell>fromList(new ArrayList<EditorCell>());
     for (Iterator<EditorCell> rowsIterator = iterator(); rowsIterator.hasNext();) {
       EditorCell nextRow = rowsIterator.next();
       assert nextRow instanceof EditorCell_Collection;
-      ListSequence.fromList(result).addElement(((EditorCell_Collection) nextRow).getCellAt(columnIntex + 1));
+      ListSequence.<EditorCell>fromList(result).addElement(((EditorCell_Collection) nextRow).getCellAt(columnIntex + 1));
     }
     return result;
   }

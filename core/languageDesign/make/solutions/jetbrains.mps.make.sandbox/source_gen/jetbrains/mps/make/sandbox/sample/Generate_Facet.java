@@ -20,11 +20,11 @@ import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class Generate_Facet extends IFacet.Stub {
-  private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
+  private List<ITarget> targets = ListSequence.<ITarget>fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("Generate");
 
   public Generate_Facet() {
-    ListSequence.fromList(targets).addElement(new Generate_Facet.Target_GenerateTarget());
+    ListSequence.<ITarget>fromList(targets).addElement(new Generate_Facet.Target_GenerateTarget());
   }
 
   public Iterable<ITarget> targets() {

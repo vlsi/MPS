@@ -48,8 +48,8 @@ public class QuickCreate_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
@@ -61,7 +61,7 @@ public class QuickCreate_Action extends GeneratedAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           boolean controlDown = event.getInputEvent().isControlDown();
-          ActionGroup group = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"))).getQuickCreateGroup(controlDown);
+          ActionGroup group = ((MPSTreeNode) ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("node"))).getQuickCreateGroup(controlDown);
 
           if (group != null) {
             Presentation pres = new Presentation();

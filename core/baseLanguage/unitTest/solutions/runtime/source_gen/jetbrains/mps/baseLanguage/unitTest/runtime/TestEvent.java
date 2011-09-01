@@ -90,7 +90,7 @@ public class TestEvent {
 
   public static String isTestEvent(String messageString) {
     String token = null;
-    for (String expectedToken : ListSequence.fromList(TestEvent.ALL_TOKENS)) {
+    for (String expectedToken : ListSequence.<String>fromList(TestEvent.ALL_TOKENS)) {
       if (messageString.startsWith(expectedToken)) {
         token = expectedToken;
         break;
@@ -124,6 +124,6 @@ public class TestEvent {
   }
 
   static {
-    TestEvent.ALL_TOKENS = ListSequence.fromListAndArray(new ArrayList<String>(), TestEvent.START_TEST_PREFIX, TestEvent.END_TEST_PREFIX, TestEvent.ERROR_TEST_PREFIX, TestEvent.ERROR_TEST_SUFFIX, TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX);
+    TestEvent.ALL_TOKENS = ListSequence.<String>fromListAndArray(new ArrayList<String>(), TestEvent.START_TEST_PREFIX, TestEvent.END_TEST_PREFIX, TestEvent.ERROR_TEST_PREFIX, TestEvent.ERROR_TEST_SUFFIX, TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX);
   }
 }

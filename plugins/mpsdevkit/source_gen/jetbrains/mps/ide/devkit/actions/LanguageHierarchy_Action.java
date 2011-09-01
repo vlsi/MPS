@@ -31,7 +31,7 @@ public class LanguageHierarchy_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language;
+    return ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")) instanceof Language;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -52,12 +52,12 @@ public class LanguageHierarchy_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
@@ -65,9 +65,9 @@ public class LanguageHierarchy_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Language language = (Language) ((IModule) MapSequence.fromMap(_params).get("module"));
+      Language language = (Language) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module"));
       MPSLanguageVirtualFile file = MPSLanguagesVirtualFileSystem.getInstance().getFileFor(language);
-      FileEditorManager editorManager = FileEditorManager.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
+      FileEditorManager editorManager = FileEditorManager.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
       FileEditor[] res = editorManager.openFile(file, true);
       MPSLanguageEditor languageEditor = (MPSLanguageEditor) res[0];
       languageEditor.getComponent().requestFocus();

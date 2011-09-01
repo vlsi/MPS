@@ -116,7 +116,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 4:
-                      this._5_child_it = Sequence.fromIterable(Sequence.fromArray(dir.getChildren())).iterator();
+                      this._5_child_it = Sequence.<VirtualFile>fromIterable(Sequence.fromArray(dir.getChildren())).iterator();
                     case 6:
                       if (!(this._5_child_it.hasNext())) {
                         this.__CP__ = 1;
@@ -178,7 +178,7 @@ __switch__:
   public static Iterable<VirtualFile> getUnversionedFilesForModule(@NotNull Project project, @NotNull IModule module) {
     IFile descriptorFile = module.getDescriptorFile();
     if (descriptorFile == null) {
-      return Sequence.fromIterable(Collections.<VirtualFile>emptyList());
+      return Sequence.<VirtualFile>fromIterable(Collections.<VirtualFile>emptyList());
     }
     IFile moduleDir = descriptorFile.getParent();
     VcsFileStatusProvider statusProvider = project.getComponent(VcsFileStatusProvider.class);
@@ -186,7 +186,7 @@ __switch__:
   }
 
   public static List<VirtualFile> getUnversionedFilesForModules(@NotNull final Project project, List<IModule> module) {
-    return ListSequence.fromList(module).<VirtualFile>translate(new ITranslator2<IModule, VirtualFile>() {
+    return ListSequence.<IModule>fromList(module).<VirtualFile>translate(new ITranslator2<IModule, VirtualFile>() {
       public Iterable<VirtualFile> translate(IModule m) {
         return getUnversionedFilesForModule(project, m);
       }

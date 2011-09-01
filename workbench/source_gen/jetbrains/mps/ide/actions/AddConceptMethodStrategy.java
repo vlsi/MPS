@@ -40,9 +40,9 @@ public class AddConceptMethodStrategy implements StratergyAddMethodDialog.Contai
       SPropertyOperations.set(method, "isVirtual", "" + false);
 
       if (insertion) {
-        ListSequence.fromList(SLinkOperations.getTargets(myBehavior, "method", true)).insertElement(ListSequence.fromList(SLinkOperations.getTargets(myBehavior, "method", true)).indexOf(myContextMethod) + 1, method);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(myBehavior, "method", true)).insertElement(ListSequence.<SNode>fromList(SLinkOperations.getTargets(myBehavior, "method", true)).indexOf(myContextMethod) + 1, method);
       } else {
-        ListSequence.fromList(SLinkOperations.getTargets(myBehavior, "method", true)).addElement(method);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(myBehavior, "method", true)).addElement(method);
       }
     }
     return methods;
@@ -57,7 +57,7 @@ public class AddConceptMethodStrategy implements StratergyAddMethodDialog.Contai
     if ((concept == null)) {
       return 0;
     }
-    return ListSequence.fromList(SConceptOperations.getAllSuperConcepts(concept, false)).count();
+    return ListSequence.<SNode>fromList(SConceptOperations.getAllSuperConcepts(concept, false)).count();
   }
 
   public int compareContainers(SNode c1, SNode c2) {

@@ -66,7 +66,7 @@ public class AllSubclassifiersScope extends AbstractClassifiersScope {
         result = true;
       }
       if (!(result)) {
-        for (SNode iface : ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "implementedInterface", true)).where(new IWhereFilter<SNode>() {
+        for (SNode iface : ListSequence.<SNode>fromList(SLinkOperations.getTargets((SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "implementedInterface", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "classifier", false) != null);
           }
@@ -83,7 +83,7 @@ public class AllSubclassifiersScope extends AbstractClassifiersScope {
       }
     } else
     if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface")) {
-      for (SNode iface : ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Interface")), "extendedInterface", true)).where(new IWhereFilter<SNode>() {
+      for (SNode iface : ListSequence.<SNode>fromList(SLinkOperations.getTargets((SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Interface")), "extendedInterface", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (SLinkOperations.getTarget(it, "classifier", false) != null);
         }

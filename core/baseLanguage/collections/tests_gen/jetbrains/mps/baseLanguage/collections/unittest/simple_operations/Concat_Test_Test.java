@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Concat_Test_Test extends TestCase {
   public void test_test1() throws Exception {
-    Iterable<Integer> s1 = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> s1 = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -54,7 +54,7 @@ __switch__:
         };
       }
     });
-    Iterable<Integer> s2 = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> s2 = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -95,18 +95,18 @@ __switch__:
         };
       }
     });
-    List<Integer> s3 = Sequence.fromIterable(s1).concat(Sequence.fromIterable(s2)).toListSequence();
-    Assert.assertTrue(ListSequence.fromList(s3).first() == 1);
-    Assert.assertTrue(ListSequence.fromList(s3).getElement(1) == 2);
-    Assert.assertTrue(ListSequence.fromList(s3).getElement(2) == 3);
-    Assert.assertTrue(ListSequence.fromList(s3).getElement(3) == 3);
-    Assert.assertTrue(ListSequence.fromList(s3).getElement(4) == 4);
-    Assert.assertTrue(ListSequence.fromList(s3).getElement(5) == 5);
+    List<Integer> s3 = Sequence.<Integer>fromIterable(s1).concat(Sequence.<Integer>fromIterable(s2)).toListSequence();
+    Assert.assertTrue(ListSequence.<Integer>fromList(s3).first() == 1);
+    Assert.assertTrue(ListSequence.<Integer>fromList(s3).getElement(1) == 2);
+    Assert.assertTrue(ListSequence.<Integer>fromList(s3).getElement(2) == 3);
+    Assert.assertTrue(ListSequence.<Integer>fromList(s3).getElement(3) == 3);
+    Assert.assertTrue(ListSequence.<Integer>fromList(s3).getElement(4) == 4);
+    Assert.assertTrue(ListSequence.<Integer>fromList(s3).getElement(5) == 5);
     // null test 
     s1 = null;
-    Iterable<Integer> s2_ = Sequence.fromIterable(s1).concat(Sequence.fromIterable(s2));
-    Assert.assertEquals(3, Sequence.fromIterable(s2_).count());
-    Iterable<Integer> s2__ = Sequence.fromIterable(s2).concat(null);
-    Assert.assertEquals(3, Sequence.fromIterable(s2__).count());
+    Iterable<Integer> s2_ = Sequence.<Integer>fromIterable(s1).concat(Sequence.<Integer>fromIterable(s2));
+    Assert.assertEquals(3, Sequence.<Integer>fromIterable(s2_).count());
+    Iterable<Integer> s2__ = Sequence.<Integer>fromIterable(s2).concat(null);
+    Assert.assertEquals(3, Sequence.<Integer>fromIterable(s2__).count());
   }
 }

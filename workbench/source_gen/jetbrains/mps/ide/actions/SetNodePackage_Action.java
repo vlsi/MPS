@@ -9,8 +9,8 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -42,7 +42,7 @@ public class SetNodePackage_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).all(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode n) {
         return SNodeOperations.getParent(n) == null && !(SNodeOperations.getModel(n).isNotEditable());
       }
@@ -71,7 +71,7 @@ public class SetNodePackage_Action extends GeneratedAction {
       List<SNode> nodes = event.getData(MPSDataKeys.NODES);
       boolean error = false;
       if (nodes != null) {
-        for (SNode node : ListSequence.fromList(nodes)) {
+        for (SNode node : ListSequence.<SNode>fromList(nodes)) {
           if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.BaseConcept"))) {
             error = true;
             break;
@@ -79,20 +79,20 @@ public class SetNodePackage_Action extends GeneratedAction {
         }
       }
       if (error || nodes == null) {
-        MapSequence.fromMap(_params).put("nodes", null);
+        MapSequence.<String,Object>fromMap(_params).put("nodes", null);
       } else {
-        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
+        MapSequence.<String,Object>fromMap(_params).put("nodes", ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), nodes));
       }
     }
-    if (MapSequence.fromMap(_params).get("nodes") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("nodes") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("scope", event.getData(MPSDataKeys.SCOPE));
-    if (MapSequence.fromMap(_params).get("scope") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("scope", event.getData(MPSDataKeys.SCOPE));
+    if (MapSequence.<String,Object>fromMap(_params).get("scope") == null) {
       return false;
     }
     return true;
@@ -104,11 +104,11 @@ public class SetNodePackage_Action extends GeneratedAction {
       final Wrappers._T<String> oldPackage = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          packages.value = SetNodePackage_Action.this.fetchExistingPackages(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), _params);
-          oldPackage.value = SPropertyOperations.getString(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first(), "virtualPackage");
+          packages.value = SetNodePackage_Action.this.fetchExistingPackages(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes")), _params);
+          oldPackage.value = SPropertyOperations.getString(ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes"))).first(), "virtualPackage");
         }
       });
-      final SetNodePackageDialog dialog = new SetNodePackageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Set Virtual Package", packages.value);
+      final SetNodePackageDialog dialog = new SetNodePackageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "Set Virtual Package", packages.value);
       dialog.setPackage(oldPackage.value);
       dialog.showDialog();
       if (dialog.isCancelled()) {
@@ -116,10 +116,10 @@ public class SetNodePackage_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
+          for (SNode node : ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes")))) {
             SPropertyOperations.set(node, "virtualPackage", dialog.getPackage());
             if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-              for (SNode aspect : ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findAllAspects_7754459869734028917", new Class[]{SNode.class})))) {
+              for (SNode aspect : ListSequence.<SNode>fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findAllAspects_7754459869734028917", new Class[]{SNode.class})))) {
                 SPropertyOperations.set(((SNode) aspect), "virtualPackage", dialog.getPackage());
               }
             }
@@ -134,12 +134,12 @@ public class SetNodePackage_Action extends GeneratedAction {
   }
 
   /*package*/ List<String> fetchExistingPackages(List<SNode> nlist, final Map<String, Object> _params) {
-    Set<SModel> models = SetSequence.fromSetWithValues(new HashSet<SModel>(), ListSequence.fromList(nlist).<SModel>select(new ISelector<SNode, SModel>() {
+    Set<SModel> models = SetSequence.<SModel>fromSetWithValues(new HashSet<SModel>(), ListSequence.<SNode>fromList(nlist).<SModel>select(new ISelector<SNode, SModel>() {
       public SModel select(SNode n) {
         return SNodeOperations.getModel(n);
       }
     }));
-    Set<String> packages = SetSequence.fromSetWithValues(new HashSet<String>(), SetSequence.fromSet(models).<SNode>translate(new ITranslator2<SModel, SNode>() {
+    Set<String> packages = SetSequence.<String>fromSetWithValues(new HashSet<String>(), SetSequence.<SModel>fromSet(models).<SNode>translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel m) {
         return SModelOperations.getRoots(m, "jetbrains.mps.lang.core.structure.BaseConcept");
       }
@@ -152,7 +152,7 @@ public class SetNodePackage_Action extends GeneratedAction {
         return p != null;
       }
     }));
-    List<String> result = ListSequence.fromListWithValues(new ArrayList<String>(), packages);
+    List<String> result = ListSequence.<String>fromListWithValues(new ArrayList<String>(), packages);
     Collections.sort(result);
     return result;
   }

@@ -23,7 +23,7 @@ public class ChangeGroup {
     myLeftBounds = leftBounds;
     myRightBounds = rightBounds;
     myChanges = changes;
-    myChangeType = ListSequence.fromList(changes).<ChangeType>select(new ISelector<ModelChange, ChangeType>() {
+    myChangeType = ListSequence.<ModelChange>fromList(changes).<ChangeType>select(new ISelector<ModelChange, ChangeType>() {
       public ChangeType select(ModelChange ch) {
         return ch.getType();
       }
@@ -35,9 +35,9 @@ public class ChangeGroup {
         );
       }
     });
-    if (mergeContext != null && ListSequence.fromList(changes).any(new IWhereFilter<ModelChange>() {
+    if (mergeContext != null && ListSequence.<ModelChange>fromList(changes).any(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
-        return Sequence.fromIterable(mergeContext.getConflictedWith(ch)).isNotEmpty();
+        return Sequence.<ModelChange>fromIterable(mergeContext.getConflictedWith(ch)).isNotEmpty();
       }
     })) {
       myChangeType = ChangeType.CONFLICTED;

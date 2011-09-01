@@ -18,7 +18,7 @@ public class User {
   public void test() {
     Library l = new Library();
     final boolean res = false;
-    ListSequence.fromList(l.user).addElement(new _FunctionTypes._return_P0_E0<Tuples._2<Boolean, String>>() {
+    ListSequence.<_FunctionTypes._return_P0_E0<? extends Tuples._2<Boolean, String>>>fromList(l.user).addElement(new _FunctionTypes._return_P0_E0<Tuples._2<Boolean, String>>() {
       public Tuples._2<Boolean, String> invoke() {
         return MultiTuple.<Boolean,String>from(res, getName());
       }

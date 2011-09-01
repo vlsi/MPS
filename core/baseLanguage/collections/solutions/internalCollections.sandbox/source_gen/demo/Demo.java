@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class Demo {
   public static void main(String[] args) {
     Iterable<Integer> seq;
-    Sequence.fromIterable(seq).<Integer>translate(new ITranslator2<Integer, Integer>() {
+    Sequence.<Integer>fromIterable(seq).<Integer>translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer i) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -81,7 +81,7 @@ __switch__:
         };
       }
     });
-    Sequence.fromIterable(seq).<Integer>translate(new ITranslator2<Integer, Integer>() {
+    Sequence.<Integer>fromIterable(seq).<Integer>translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -122,6 +122,6 @@ __switch__:
         return it;
       }
     });
-    Sequence.fromIterable(seq).count();
+    Sequence.<Integer>fromIterable(seq).count();
   }
 }

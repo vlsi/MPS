@@ -56,20 +56,20 @@ public class TextPreviewModel_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("cmodel", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    MapSequence.fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
+    MapSequence.<String,Object>fromMap(_params).put("cmodel", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    MapSequence.<String,Object>fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MakeSession session = new MakeSession(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, true);
+      MakeSession session = new MakeSession(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), null, true);
       if (IMakeService.INSTANCE.get().openNewSession(session)) {
-        TextPreviewUtil.previewModelText(session, ((IOperationContext) MapSequence.fromMap(_params).get("context")), TextPreviewModel_Action.this.modelToGenerate(_params));
+        TextPreviewUtil.previewModelText(session, ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), TextPreviewModel_Action.this.modelToGenerate(_params));
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -80,10 +80,10 @@ public class TextPreviewModel_Action extends GeneratedAction {
 
   private SModelDescriptor modelToGenerate(final Map<String, Object> _params) {
     SModelDescriptor md = null;
-    if (((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")) != null) {
-      md = ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel"));
-    } else if (((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() > 0) {
-      md = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0);
+    if (((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("cmodel")) != null) {
+      md = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("cmodel"));
+    } else if (((List<SModelDescriptor>) MapSequence.<String,Object>fromMap(_params).get("models")).size() > 0) {
+      md = ((List<SModelDescriptor>) MapSequence.<String,Object>fromMap(_params).get("models")).get(0);
     }
     return md;
   }

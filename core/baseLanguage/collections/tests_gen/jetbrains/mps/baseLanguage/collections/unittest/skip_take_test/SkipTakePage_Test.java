@@ -11,7 +11,7 @@ import junit.framework.Assert;
 
 public class SkipTakePage_Test extends TestCase {
   public void test_skip1() throws Exception {
-    Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> s = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -61,17 +61,17 @@ __switch__:
         };
       }
     });
-    Assert.assertSame(Sequence.fromIterable(s).toListSequence().count(), 10);
-    Assert.assertSame(Sequence.fromIterable(s).first(), 0);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).toListSequence().count(), 10);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).first(), 0);
     int i = 1;
-    s = Sequence.fromIterable(s).skip(i);
-    Assert.assertSame(Sequence.fromIterable(s).toListSequence().count(), 9);
-    Assert.assertSame(Sequence.fromIterable(s).first(), 1);
-    Assert.assertSame(Sequence.fromIterable(s).skip(5).first(), 6);
+    s = Sequence.<Integer>fromIterable(s).skip(i);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).toListSequence().count(), 9);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).first(), 1);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).skip(5).first(), 6);
   }
 
   public void test_take1() throws Exception {
-    Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> s = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -121,17 +121,17 @@ __switch__:
         };
       }
     });
-    Assert.assertSame(Sequence.fromIterable(s).toListSequence().count(), 10);
-    Assert.assertSame(Sequence.fromIterable(s).first(), 0);
-    s = Sequence.fromIterable(s).take(5);
-    Assert.assertSame(Sequence.fromIterable(s).toListSequence().count(), 5);
-    Assert.assertSame(Sequence.fromIterable(s).first(), 0);
-    Assert.assertSame(Sequence.fromIterable(s).last(), 4);
-    Assert.assertSame(Sequence.fromIterable(s).take(1).last(), 0);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).toListSequence().count(), 10);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).first(), 0);
+    s = Sequence.<Integer>fromIterable(s).take(5);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).toListSequence().count(), 5);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).first(), 0);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).last(), 4);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).take(1).last(), 0);
   }
 
   public void test_takeSkip() throws Exception {
-    Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> s = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -181,14 +181,14 @@ __switch__:
         };
       }
     });
-    s = Sequence.fromIterable(s).skip(5).take(3);
-    Assert.assertSame(Sequence.fromIterable(s).toListSequence().count(), 3);
-    Assert.assertSame(Sequence.fromIterable(s).first(), 5);
-    Assert.assertSame(Sequence.fromIterable(s).last(), 7);
+    s = Sequence.<Integer>fromIterable(s).skip(5).take(3);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).toListSequence().count(), 3);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).first(), 5);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).last(), 7);
   }
 
   public void test_page() throws Exception {
-    Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> s = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -238,9 +238,9 @@ __switch__:
         };
       }
     });
-    s = Sequence.fromIterable(s).page(5, 8);
-    Assert.assertSame(Sequence.fromIterable(s).toListSequence().count(), 3);
-    Assert.assertSame(Sequence.fromIterable(s).first(), 5);
-    Assert.assertSame(Sequence.fromIterable(s).last(), 7);
+    s = Sequence.<Integer>fromIterable(s).page(5, 8);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).toListSequence().count(), 3);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).first(), 5);
+    Assert.assertSame(Sequence.<Integer>fromIterable(s).last(), 7);
   }
 }

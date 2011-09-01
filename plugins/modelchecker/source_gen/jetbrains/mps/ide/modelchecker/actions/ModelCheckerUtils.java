@@ -18,34 +18,34 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ModelCheckerUtils {
   public static List<SModelDescriptor> getModelDescriptors(SModelDescriptor modelDescriptor) {
-    List<SModelDescriptor> modelDescrpitors = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-    ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
+    List<SModelDescriptor> modelDescrpitors = ListSequence.<SModelDescriptor>fromList(new ArrayList<SModelDescriptor>());
+    ListSequence.<SModelDescriptor>fromList(modelDescrpitors).addElement(modelDescriptor);
     return modelDescrpitors;
   }
 
   public static List<SModelDescriptor> getModelDescriptors(IModule module) {
-    List<SModelDescriptor> modelDescrpitors = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-    for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
+    List<SModelDescriptor> modelDescrpitors = ListSequence.<SModelDescriptor>fromList(new ArrayList<SModelDescriptor>());
+    for (SModelDescriptor modelDescriptor : ListSequence.<SModelDescriptor>fromList(module.getOwnModelDescriptors())) {
       if (SModelStereotype.isUserModel(modelDescriptor)) {
-        ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
+        ListSequence.<SModelDescriptor>fromList(modelDescrpitors).addElement(modelDescriptor);
       }
       if (ModelCheckerSettings.getInstance().isCheckStubs() && SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) {
-        ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
+        ListSequence.<SModelDescriptor>fromList(modelDescrpitors).addElement(modelDescriptor);
       }
     }
     if (module instanceof Language) {
       Language language = (Language) module;
-      for (Generator generator : ListSequence.fromList(language.getGenerators())) {
-        ListSequence.fromList(modelDescrpitors).addSequence(ListSequence.fromList(getModelDescriptors(generator)));
+      for (Generator generator : ListSequence.<Generator>fromList(language.getGenerators())) {
+        ListSequence.<SModelDescriptor>fromList(modelDescrpitors).addSequence(ListSequence.<SModelDescriptor>fromList(getModelDescriptors(generator)));
       }
     }
     return modelDescrpitors;
   }
 
   public static List<SModelDescriptor> getModelDescriptors(List<IModule> modules) {
-    List<SModelDescriptor> modelDescrpitors = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-    for (IModule module : ListSequence.fromList(modules)) {
-      ListSequence.fromList(modelDescrpitors).addSequence(ListSequence.fromList(getModelDescriptors(module)));
+    List<SModelDescriptor> modelDescrpitors = ListSequence.<SModelDescriptor>fromList(new ArrayList<SModelDescriptor>());
+    for (IModule module : ListSequence.<IModule>fromList(modules)) {
+      ListSequence.<SModelDescriptor>fromList(modelDescrpitors).addSequence(ListSequence.<SModelDescriptor>fromList(getModelDescriptors(module)));
     }
     return modelDescrpitors;
   }
@@ -59,7 +59,7 @@ public class ModelCheckerUtils {
       return 0;
     }
     int issueCount = 0;
-    for (SearchResult<ModelCheckerIssue> issue : ListSequence.fromList(issues.getSearchResults())) {
+    for (SearchResult<ModelCheckerIssue> issue : ListSequence.<SearchResult<ModelCheckerIssue>>fromList(issues.getSearchResults())) {
       if (severity.equals(issue.getCategories().get(0).o2)) {
         issueCount++;
       }

@@ -27,7 +27,7 @@ public class SelectLocalEnd_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return EditorActionUtils.isReadonlyActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))) && SelectLocalEnd_Action.this.canCallSelectLocalEnd(_params);
+    return EditorActionUtils.isReadonlyActionEnabled(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent"))) && SelectLocalEnd_Action.this.canCallSelectLocalEnd(_params);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -48,16 +48,16 @@ public class SelectLocalEnd_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("editorCell") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorCell") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("editorContext") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorContext") == null) {
       return false;
     }
     return true;
@@ -65,8 +65,8 @@ public class SelectLocalEnd_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).executeAction(CellActionType.SELECT_LOCAL_END);
-      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).scrollToCell(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
+      ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("editorCell")).executeAction(CellActionType.SELECT_LOCAL_END);
+      ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).scrollToCell(((EditorCell) MapSequence.<String,Object>fromMap(_params).get("editorCell")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "SelectLocalEnd", t);
@@ -75,6 +75,6 @@ public class SelectLocalEnd_Action extends GeneratedAction {
   }
 
   private boolean canCallSelectLocalEnd(final Map<String, Object> _params) {
-    return ((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Label && !(((EditorCell) MapSequence.fromMap(_params).get("editorCell")).isLastCaretPosition()) && ((EditorCell_Label) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).isLastPositionAllowed();
+    return ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("editorCell")) instanceof EditorCell_Label && !(((EditorCell) MapSequence.<String,Object>fromMap(_params).get("editorCell")).isLastCaretPosition()) && ((EditorCell_Label) ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("editorCell"))).isLastPositionAllowed();
   }
 }

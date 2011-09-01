@@ -75,24 +75,24 @@ public class NewModelFromSource_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
-    if (MapSequence.fromMap(_params).get("treeNode") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.<String,Object>fromMap(_params).get("treeNode") == null) {
       return false;
     }
     return true;
@@ -100,23 +100,23 @@ public class NewModelFromSource_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (((IModule) MapSequence.fromMap(_params).get("module")).getSModelRoots().size() == 0) {
-        int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
+      if (((IModule) MapSequence.<String,Object>fromMap(_params).get("module")).getSModelRoots().size() == 0) {
+        int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
         if (code != JOptionPane.YES_OPTION) {
           return;
         } else {
-          NewModelUtil.ShowModulePropertiesDialog(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+          NewModelUtil.ShowModulePropertiesDialog(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
         }
       }
-      if (((IModule) MapSequence.fromMap(_params).get("module")).getSModelRoots().size() == 0) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
+      if (((IModule) MapSequence.<String,Object>fromMap(_params).get("module")).getSModelRoots().size() == 0) {
+        JOptionPane.showMessageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
         return;
       }
       final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
-      final IOperationContext localContext = ((IOperationContext) MapSequence.fromMap(_params).get("context"));
+      final IOperationContext localContext = ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context"));
       final IModule localModule = (localContext.getModule() != null ?
         localContext.getModule() :
-        ((IModule) MapSequence.fromMap(_params).get("module"))
+        ((IModule) MapSequence.<String,Object>fromMap(_params).get("module"))
       );
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -136,7 +136,7 @@ public class NewModelFromSource_Action extends GeneratedAction {
             return JavaCompiler.checkBaseModelMatchesSourceDirectory(sModel, new File(file.getPath()));
           }
         });
-        String generatorOutputPath = ((IModule) MapSequence.fromMap(_params).get("module")).getGeneratorOutputPath();
+        String generatorOutputPath = ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")).getGeneratorOutputPath();
         File initial = null;
         File output = new File(generatorOutputPath);
         if (output.exists()) {
@@ -156,13 +156,13 @@ public class NewModelFromSource_Action extends GeneratedAction {
         if (initial != null) {
           treeFileChooser.setInitialFile(FileSystem.getInstance().getFileByPath(initial.getAbsolutePath()));
         }
-        IFile resultFile = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
+        IFile resultFile = treeFileChooser.showDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")));
         if (resultFile != null) {
-          JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), new File(resultFile.getPath()), false, sModel);
+          JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), new File(resultFile.getPath()), false, sModel);
           javaCompiler.compile();
         }
         SModelDescriptor modelDescriptor = result;
-        ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectModel(modelDescriptor, false);
+        ProjectPane.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project"))).selectModel(modelDescriptor, false);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -172,15 +172,15 @@ public class NewModelFromSource_Action extends GeneratedAction {
   }
 
   protected String getStereotype(final Map<String, Object> _params) {
-    if (((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof StereotypeProvider) {
-      return ((StereotypeProvider) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getStereotype();
+    if (((TreeNode) MapSequence.<String,Object>fromMap(_params).get("treeNode")) instanceof StereotypeProvider) {
+      return ((StereotypeProvider) ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("treeNode"))).getStereotype();
     }
     return null;
   }
 
   protected boolean isStrict(final Map<String, Object> _params) {
-    if (((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof StereotypeProvider) {
-      return ((StereotypeProvider) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).isStrict();
+    if (((TreeNode) MapSequence.<String,Object>fromMap(_params).get("treeNode")) instanceof StereotypeProvider) {
+      return ((StereotypeProvider) ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("treeNode"))).isStrict();
     }
     return false;
   }

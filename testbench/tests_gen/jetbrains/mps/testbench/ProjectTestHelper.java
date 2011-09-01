@@ -123,7 +123,7 @@ public class ProjectTestHelper {
   }
 
   private Iterable<IModule> withGenerators(Iterable<IModule> modules) {
-    return Sequence.fromIterable(modules).concat(Sequence.fromIterable(modules).where(new IWhereFilter<IModule>() {
+    return Sequence.<IModule>fromIterable(modules).concat(Sequence.<IModule>fromIterable(modules).where(new IWhereFilter<IModule>() {
       public boolean accept(IModule it) {
         return it instanceof Language;
       }
@@ -139,7 +139,7 @@ public class ProjectTestHelper {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (IModule mod : withGenerators(Collections.singletonList(module))) {
-          models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(((Iterable<SModelDescriptor>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+          models.value = Sequence.<SModelDescriptor>fromIterable(models.value).concat(Sequence.<SModelDescriptor>fromIterable(((Iterable<SModelDescriptor>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
             public boolean accept(SModelDescriptor it) {
               return it.isGeneratable();
             }
@@ -147,7 +147,7 @@ public class ProjectTestHelper {
         }
       }
     });
-    return new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModelDescriptor>() {
+    return new ModelsToResources(context, Sequence.<SModelDescriptor>fromIterable(models.value).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor smd) {
         return !(GeneratorManager.isDoNotGenerate(smd));
       }
@@ -163,7 +163,7 @@ public class ProjectTestHelper {
     private final Project project;
     private final IModule module;
     private String tmpPath;
-    private Map<String, String> path2tmp = MapSequence.fromMap(new HashMap<String, String>());
+    private Map<String, String> path2tmp = MapSequence.<String,String>fromMap(new HashMap<String, String>());
     private final ProjectTestHelper.MyMessageHandler myMessageHandler = new ProjectTestHelper.MyMessageHandler();
 
     public PrivToken(IModule module, Project project) {
@@ -237,20 +237,20 @@ public class ProjectTestHelper {
     }
 
     public List<String> diff() {
-      List<String> diffs = ListSequence.fromList(new ArrayList<String>());
+      List<String> diffs = ListSequence.<String>fromList(new ArrayList<String>());
       for (IMapping<String, String> p2t : MapSequence.fromMap(path2tmp).mappingsSet()) {
         File orig = new File(p2t.key());
         File revd = new File(p2t.value());
         if (orig.exists() && revd.exists() && orig.isDirectory() && revd.isDirectory()) {
           diffDirs(orig, revd, diffs);
         } else if (!(orig.exists()) && !(revd.exists())) {
-          ListSequence.fromList(diffs).addElement("None exists: " + orig + " or " + revd);
+          ListSequence.<String>fromList(diffs).addElement("None exists: " + orig + " or " + revd);
         } else if (!(orig.exists())) {
-          ListSequence.fromList(diffs).addElement("Created: " + revd);
+          ListSequence.<String>fromList(diffs).addElement("Created: " + revd);
         } else if (!(revd.exists())) {
-          ListSequence.fromList(diffs).addElement("Removed: " + orig);
+          ListSequence.<String>fromList(diffs).addElement("Removed: " + orig);
         } else {
-          ListSequence.fromList(diffs).addElement("Something weird here: " + orig + " or here " + revd);
+          ListSequence.<String>fromList(diffs).addElement("Something weird here: " + orig + " or here " + revd);
         }
       }
       return diffs;
@@ -258,7 +258,7 @@ public class ProjectTestHelper {
 
     private IFile tmpFile(String path) {
       if (MapSequence.fromMap(path2tmp).containsKey(path)) {
-        return FileSystem.getInstance().getFileByPath(MapSequence.fromMap(path2tmp).get(path));
+        return FileSystem.getInstance().getFileByPath(MapSequence.<String,String>fromMap(path2tmp).get(path));
       }
       int idx = path.indexOf("/");
       idx = (idx < 0 ?
@@ -269,32 +269,32 @@ public class ProjectTestHelper {
         path.replace(':', '_') :
         path.substring(idx + 1)
       ));
-      MapSequence.fromMap(path2tmp).put(path, tmp);
+      MapSequence.<String,String>fromMap(path2tmp).put(path, tmp);
       return FileSystem.getInstance().getFileByPath(tmp);
     }
 
     private void diffDirs(final File orig, File revd, final List<String> diffs) {
       Iterable<String> onames = Sequence.fromArray(orig.list());
       Iterable<String> rnames = Sequence.fromArray(revd.list());
-      if (Sequence.fromIterable(onames).disjunction(Sequence.fromIterable(rnames)).isNotEmpty()) {
-        Sequence.fromIterable(onames).subtract(Sequence.fromIterable(rnames)).visitAll(new IVisitor<String>() {
+      if (Sequence.<String>fromIterable(onames).disjunction(Sequence.<String>fromIterable(rnames)).isNotEmpty()) {
+        Sequence.<String>fromIterable(onames).subtract(Sequence.<String>fromIterable(rnames)).visitAll(new IVisitor<String>() {
           public void visit(String it) {
             if ("trace.info".equals(it)) {
               return;
             }
-            ListSequence.fromList(diffs).addElement("Removed: " + new File(orig, it));
+            ListSequence.<String>fromList(diffs).addElement("Removed: " + new File(orig, it));
           }
         });
-        Sequence.fromIterable(rnames).subtract(Sequence.fromIterable(onames)).visitAll(new IVisitor<String>() {
+        Sequence.<String>fromIterable(rnames).subtract(Sequence.<String>fromIterable(onames)).visitAll(new IVisitor<String>() {
           public void visit(String it) {
             if ("trace.info".equals(it)) {
               return;
             }
-            ListSequence.fromList(diffs).addElement("Created: " + new File(orig, it));
+            ListSequence.<String>fromList(diffs).addElement("Created: " + new File(orig, it));
           }
         });
       }
-      for (String name : Sequence.fromIterable(onames).intersect(Sequence.fromIterable(rnames))) {
+      for (String name : Sequence.<String>fromIterable(onames).intersect(Sequence.<String>fromIterable(rnames))) {
         if ("trace.info".equals(name)) {
           continue;
         }
@@ -306,25 +306,25 @@ public class ProjectTestHelper {
             List<String> olines = fileToStrings(onext);
             Patch patch = DiffUtils.diff(olines, fileToStrings(rnext));
             if (!(patch.getDeltas().isEmpty())) {
-              ListSequence.fromList(diffs).addSequence(ListSequence.fromList(DiffUtils.generateUnifiedDiff(onext.getPath(), rnext.getPath(), olines, patch, 5)));
+              ListSequence.<String>fromList(diffs).addSequence(ListSequence.<String>fromList(DiffUtils.generateUnifiedDiff(onext.getPath(), rnext.getPath(), olines, patch, 5)));
             }
           } else {
             diffDirs(onext, rnext, diffs);
           }
         } else {
-          ListSequence.fromList(diffs).addElement("Something weird here: " + onext + " or here " + rnext);
+          ListSequence.<String>fromList(diffs).addElement("Something weird here: " + onext + " or here " + rnext);
         }
       }
     }
 
     private List<String> fileToStrings(File f) {
-      List<String> result = ListSequence.fromList(new ArrayList<String>());
+      List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
       BufferedReader in = null;
       try {
         in = new BufferedReader(new FileReader(f));
         String line;
         while ((line = in.readLine()) != null) {
-          ListSequence.fromList(result).addElement(line);
+          ListSequence.<String>fromList(result).addElement(line);
         }
       } catch (IOException e) {
         e.printStackTrace();
@@ -340,7 +340,7 @@ public class ProjectTestHelper {
     }
 
     private void cleanUp() {
-      for (Queue<File> dirs = QueueSequence.fromQueueAndArray(new LinkedList<File>(), new File(tmpPath)); QueueSequence.fromQueue(dirs).isNotEmpty();) {
+      for (Queue<File> dirs = QueueSequence.<File>fromQueueAndArray(new LinkedList<File>(), new File(tmpPath)); QueueSequence.<File>fromQueue(dirs).isNotEmpty();) {
         File dir = QueueSequence.fromQueue(dirs).removeFirstElement();
         dir.deleteOnExit();
         for (File f : dir.listFiles()) {

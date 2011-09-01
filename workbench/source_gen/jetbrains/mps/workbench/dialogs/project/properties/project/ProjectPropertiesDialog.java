@@ -36,7 +36,7 @@ public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
   private void initUI() {
     addComponent(StandardComponents.createProjectModulesPanel(this, "Modules", myProperties.getModules()), BaseBindedDialog.ConstraintsType.LIST);
     addComponent(StandardComponents.createTestConfigsPanel(this, "Test Configurations", myProperties.getTestConfigurations(), myProperties), BaseBindedDialog.ConstraintsType.LIST);
-    for (ProjectPrefsExtraPanel extraPanel : Sequence.fromIterable(Sequence.fromArray(myExtraPanels))) {
+    for (ProjectPrefsExtraPanel extraPanel : Sequence.<ProjectPrefsExtraPanel>fromIterable(Sequence.fromArray(myExtraPanels))) {
       addComponent(extraPanel.getComponent(), BaseBindedDialog.ConstraintsType.LIST);
     }
   }

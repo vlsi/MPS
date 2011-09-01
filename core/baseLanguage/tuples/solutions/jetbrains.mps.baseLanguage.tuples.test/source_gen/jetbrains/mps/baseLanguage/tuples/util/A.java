@@ -12,6 +12,6 @@ public class A {
   }
 
   public static Iterable<Tuples._2<String, Boolean>> foo() {
-    return ListSequence.fromListAndArray(new ArrayList<Tuples._2<String, Boolean>>(), MultiTuple.<String,Boolean>from("true", false));
+    return ListSequence.<Tuples._2<String, Boolean>>fromListAndArray(new ArrayList<Tuples._2<String, Boolean>>(), MultiTuple.<String,Boolean>from("true", false));
   }
 }

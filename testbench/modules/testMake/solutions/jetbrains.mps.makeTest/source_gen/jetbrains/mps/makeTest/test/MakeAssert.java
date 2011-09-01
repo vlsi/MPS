@@ -57,7 +57,7 @@ public class MakeAssert {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         try {
-          SNode test = ListSequence.fromList(SModelOperations.getRoots(testModel, null)).first();
+          SNode test = ListSequence.<SNode>fromList(SModelOperations.getRoots(testModel, null)).first();
           String className = NameUtil.nodeFQName(test);
           genHandler.compile(ITaskProgressHelper.EMPTY);
           ClassLoader classLoader = genHandler.getCompiler().getClassLoader(MakeAssert.class.getClassLoader());

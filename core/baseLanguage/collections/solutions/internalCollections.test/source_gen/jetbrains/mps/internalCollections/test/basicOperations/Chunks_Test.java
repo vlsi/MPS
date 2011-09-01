@@ -27,23 +27,23 @@ public class Chunks_Test extends Util_Test {
 
   public void test_chunkOperations() throws Exception {
     Iterable<Integer> input = this.input10();
-    this.assertIterableEquals(Arrays.asList(1, 2, 3), Sequence.fromIterable(input).take(3));
-    this.assertIterableEquals(Arrays.asList(8, 9, 10), Sequence.fromIterable(input).skip(7));
-    this.assertIterableEquals(Arrays.asList(1, 2, 3), Sequence.fromIterable(input).cut(7));
-    this.assertIterableEquals(Arrays.asList(8, 9, 10), Sequence.fromIterable(input).tail(3));
-    this.assertIterableEquals(Arrays.asList(5, 6, 7), Sequence.fromIterable(input).page(4, 7));
-    this.assertIterableEquals(Sequence.fromIterable(input).skip(3).take(5), Sequence.fromIterable(input).page(3, 8));
+    this.assertIterableEquals(Arrays.asList(1, 2, 3), Sequence.<Integer>fromIterable(input).take(3));
+    this.assertIterableEquals(Arrays.asList(8, 9, 10), Sequence.<Integer>fromIterable(input).skip(7));
+    this.assertIterableEquals(Arrays.asList(1, 2, 3), Sequence.<Integer>fromIterable(input).cut(7));
+    this.assertIterableEquals(Arrays.asList(8, 9, 10), Sequence.<Integer>fromIterable(input).tail(3));
+    this.assertIterableEquals(Arrays.asList(5, 6, 7), Sequence.<Integer>fromIterable(input).page(4, 7));
+    this.assertIterableEquals(Sequence.<Integer>fromIterable(input).skip(3).take(5), Sequence.<Integer>fromIterable(input).page(3, 8));
   }
 
   public void test_pageOperationNoSideEffects() throws Exception {
     Iterable<Integer> input = this.input10();
     int from = 3;
     int to = 8;
-    this.assertIterableEquals(Arrays.asList(5, 6, 7), Sequence.fromIterable(input).page(from = from + 1, to = to - 1));
+    this.assertIterableEquals(Arrays.asList(5, 6, 7), Sequence.<Integer>fromIterable(input).page(from = from + 1, to = to - 1));
   }
 
   public void test_takeAll() throws Exception {
-    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> test = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -93,15 +93,15 @@ __switch__:
         };
       }
     });
-    Assert.assertSame(100, Sequence.fromIterable(test).take(Integer.MAX_VALUE).count());
+    Assert.assertSame(100, Sequence.<Integer>fromIterable(test).take(Integer.MAX_VALUE).count());
   }
 
   public void test_nextWithoutHasNext() throws Exception {
-    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-    this.assertIteratorYields(ListSequence.fromList(test).take(3).iterator(), 1, 2, 3);
-    this.assertIteratorYields(ListSequence.fromList(test).skip(7).iterator(), 8, 9, 10);
-    this.assertIteratorYields(ListSequence.fromList(test).cut(4).iterator(), 1, 2, 3, 4, 5, 6);
-    this.assertIteratorYields(ListSequence.fromList(test).tail(5).iterator(), 6, 7, 8, 9, 10);
-    this.assertIteratorYields(ListSequence.fromList(test).page(4, 7).iterator(), 5, 6, 7);
+    List<Integer> test = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    this.assertIteratorYields(ListSequence.<Integer>fromList(test).take(3).iterator(), 1, 2, 3);
+    this.assertIteratorYields(ListSequence.<Integer>fromList(test).skip(7).iterator(), 8, 9, 10);
+    this.assertIteratorYields(ListSequence.<Integer>fromList(test).cut(4).iterator(), 1, 2, 3, 4, 5, 6);
+    this.assertIteratorYields(ListSequence.<Integer>fromList(test).tail(5).iterator(), 6, 7, 8, 9, 10);
+    this.assertIteratorYields(ListSequence.<Integer>fromList(test).page(4, 7).iterator(), 5, 6, 7);
   }
 }

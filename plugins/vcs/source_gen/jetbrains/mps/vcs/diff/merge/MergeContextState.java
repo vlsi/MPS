@@ -23,11 +23,11 @@ public class MergeContextState {
   /*package*/ MergeContextState(SModel resultModel, Set<ModelChange> resolvedChanges, Map<SNodeId, SNodeId> idReplacementCache) {
     myResultModel = CopyUtil.copyModel(resultModel);
     myResultModel.setLoading(true);
-    myResolvedChanges = SetSequence.fromSetWithValues(new HashSet<ModelChange>(), resolvedChanges);
-    myIdReplacementCache = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>(MapSequence.fromMap(idReplacementCache).count()));
-    MapSequence.fromMap(idReplacementCache).visitAll(new IVisitor<IMapping<SNodeId, SNodeId>>() {
+    myResolvedChanges = SetSequence.<ModelChange>fromSetWithValues(new HashSet<ModelChange>(), resolvedChanges);
+    myIdReplacementCache = MapSequence.<SNodeId,SNodeId>fromMap(new HashMap<SNodeId, SNodeId>(MapSequence.<SNodeId,SNodeId>fromMap(idReplacementCache).count()));
+    MapSequence.<SNodeId,SNodeId>fromMap(idReplacementCache).visitAll(new IVisitor<IMapping<SNodeId, SNodeId>>() {
       public void visit(IMapping<SNodeId, SNodeId> m) {
-        MapSequence.fromMap(myIdReplacementCache).put(m.key(), m.value());
+        MapSequence.<SNodeId,SNodeId>fromMap(myIdReplacementCache).put(m.key(), m.value());
       }
     });
   }

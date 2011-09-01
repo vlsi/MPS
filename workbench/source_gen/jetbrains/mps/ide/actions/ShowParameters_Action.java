@@ -57,16 +57,16 @@ public class ShowParameters_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editor", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editor") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editor", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editor") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("cell") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.<String,Object>fromMap(_params).get("cell") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("editorContext") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorContext") == null) {
       return false;
     }
     return true;
@@ -74,13 +74,13 @@ public class ShowParameters_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Point p = new Point(((EditorCell) MapSequence.fromMap(_params).get("cell")).getX() + ((EditorCell) MapSequence.fromMap(_params).get("cell")).getWidth(), ((EditorCell) MapSequence.fromMap(_params).get("cell")).getY() + ((EditorCell) MapSequence.fromMap(_params).get("cell")).getHeight());
-      EditorCell currentCell = ((EditorCell) MapSequence.fromMap(_params).get("cell"));
+      Point p = new Point(((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell")).getX() + ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell")).getWidth(), ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell")).getY() + ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell")).getHeight());
+      EditorCell currentCell = ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell"));
       while (currentCell != null) {
         ParametersInformation parametersInformation = currentCell.getStyle().get(StyleAttributes.PARAMETERS_INFORMATION);
         if (parametersInformation != null) {
-          Component componet = parametersInformation.getComponent(currentCell.getSNode(), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
-          MPSToolTipManager.getInstance().showToolTip(new ToolTipData(componet), ((EditorComponent) MapSequence.fromMap(_params).get("editor")), p);
+          Component componet = parametersInformation.getComponent(currentCell.getSNode(), ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("editorContext")));
+          MPSToolTipManager.getInstance().showToolTip(new ToolTipData(componet), ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editor")), p);
           return;
         }
         currentCell = currentCell.getParent();
@@ -93,6 +93,6 @@ public class ShowParameters_Action extends GeneratedAction {
   }
 
   /*package*/ SNode getCellNode(final Map<String, Object> _params) {
-    return ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNode();
+    return ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell")).getSNode();
   }
 }

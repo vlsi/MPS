@@ -47,12 +47,12 @@ public class LibraryDescriptorPersistence {
             result_u6e1uy_a0a0g0c0a.setUUID(result_u6e1uy_a0a2a0a0g0c0a);
           }
 
-          result_u6e1uy_a0a0g0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(libraryElement, "models")).first(), "modelRoot"), file, macros));
+          result_u6e1uy_a0a0g0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(libraryElement, "models")).first(), "modelRoot"), file, macros));
 
-          List<Dependency> depList = ModuleDescriptorPersistence.loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(libraryElement, "dependencies")).first());
+          List<Dependency> depList = ModuleDescriptorPersistence.loadDependenciesList(ListSequence.<Element>fromList(AttributeUtils.elementChildren(libraryElement, "dependencies")).first());
           result_u6e1uy_a0a0g0c0a.getDependencies().addAll(depList);
 
-          result_u6e1uy_a0a0g0c0a.getUsedLanguages().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(libraryElement, "usedLanguages")).first(), "usedLanguage")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
+          result_u6e1uy_a0a0g0c0a.getUsedLanguages().addAll(ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(libraryElement, "usedLanguages")).first(), "usedLanguage")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
             public ModuleReference select(Element ul) {
               return ModuleReference.fromString(ul.getText());
             }

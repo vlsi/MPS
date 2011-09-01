@@ -167,7 +167,7 @@ public class RunMigrationScriptsDialog extends JDialog {
     int[] ints = myTable.getSelectedRows();
     for (int anInt : ints) {
       int modelIndex = ((RunMigrationScriptsDialog.MySortingTableModel) myTable.getModel()).convertRowIndexToModel(anInt);
-      ListSequence.fromList(list).addElement(ListSequence.fromList(myScripts).getElement(modelIndex));
+      ListSequence.<SNode>fromList(list).addElement(ListSequence.<SNode>fromList(myScripts).getElement(modelIndex));
     }
     return list;
   }
@@ -177,7 +177,7 @@ public class RunMigrationScriptsDialog extends JDialog {
     int count = myTable.getModel().getRowCount();
     for (int i = 0; i < count; i++) {
       if (((RunMigrationScriptsDialog.MySortingTableModel) myTable.getModel()).isChecked(i)) {
-        ListSequence.fromList(list).addElement(ListSequence.fromList(myScripts).getElement(i));
+        ListSequence.<SNode>fromList(list).addElement(ListSequence.<SNode>fromList(myScripts).getElement(i));
       }
     }
     return list;
@@ -193,7 +193,7 @@ public class RunMigrationScriptsDialog extends JDialog {
 
   private class MyTableModel extends DefaultTableModel {
     public MyTableModel() {
-      super(new String[]{"", "script", "category", "language"}, ListSequence.fromList(myScripts).count());
+      super(new String[]{"", "script", "category", "language"}, ListSequence.<SNode>fromList(myScripts).count());
     }
 
     public boolean isCellEditable(int row, int column) {
@@ -208,7 +208,7 @@ public class RunMigrationScriptsDialog extends JDialog {
     }
 
     public Object getValueAt(int row, int column) {
-      SNode sn = ListSequence.fromList(myScripts).getElement(row);
+      SNode sn = ListSequence.<SNode>fromList(myScripts).getElement(row);
       if (column == 0) {
         SNode script = sn;
         return mySelectedScriptIds.contains(script.getId());
@@ -230,7 +230,7 @@ public class RunMigrationScriptsDialog extends JDialog {
     }
 
     public void setValueAt(Object aValue, int row, int column) {
-      String id = ListSequence.fromList(myScripts).getElement(row).getId();
+      String id = ListSequence.<SNode>fromList(myScripts).getElement(row).getId();
       if ((Boolean) aValue) {
         mySelectedScriptIds.add(id);
       } else {

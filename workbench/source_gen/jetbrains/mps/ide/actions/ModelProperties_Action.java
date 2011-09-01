@@ -27,7 +27,7 @@ public class ModelProperties_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((Integer) MapSequence.fromMap(_params).get("size")) == 1;
+    return ((Integer) MapSequence.<String,Object>fromMap(_params).get("size")) == 1;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -48,20 +48,20 @@ public class ModelProperties_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("size", event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE));
-    if (MapSequence.fromMap(_params).get("size") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("size", event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE));
+    if (MapSequence.<String,Object>fromMap(_params).get("size") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("place", event.getData(MPSDataKeys.PLACE));
-    if (MapSequence.fromMap(_params).get("place") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("place", event.getData(MPSDataKeys.PLACE));
+    if (MapSequence.<String,Object>fromMap(_params).get("place") == null) {
       return false;
     }
     return true;
@@ -69,7 +69,7 @@ public class ModelProperties_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      StandardDialogs.createModelPropertiesDialog(((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context"))).showDialog();
+      StandardDialogs.createModelPropertiesDialog(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context"))).showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ModelProperties", t);

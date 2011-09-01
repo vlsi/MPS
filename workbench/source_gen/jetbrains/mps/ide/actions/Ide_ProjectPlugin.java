@@ -15,14 +15,14 @@ public class Ide_ProjectPlugin extends BaseProjectPlugin {
   }
 
   public List<BaseGeneratedTool> initAllTools(Project project) {
-    List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
-    ListSequence.fromList(tools).addElement(new AnalyzeStacktrace_Tool(project));
+    List<BaseGeneratedTool> tools = ListSequence.<BaseGeneratedTool>fromList(new ArrayList<BaseGeneratedTool>());
+    ListSequence.<BaseGeneratedTool>fromList(tools).addElement(new AnalyzeStacktrace_Tool(project));
     return tools;
   }
 
   public List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
-    List<BaseProjectPrefsComponent> components = ListSequence.fromList(new ArrayList<BaseProjectPrefsComponent>());
-    ListSequence.fromList(components).addElement(new PersistentOptions_PreferencesComponent(project));
+    List<BaseProjectPrefsComponent> components = ListSequence.<BaseProjectPrefsComponent>fromList(new ArrayList<BaseProjectPrefsComponent>());
+    ListSequence.<BaseProjectPrefsComponent>fromList(components).addElement(new PersistentOptions_PreferencesComponent(project));
     return components;
   }
 }

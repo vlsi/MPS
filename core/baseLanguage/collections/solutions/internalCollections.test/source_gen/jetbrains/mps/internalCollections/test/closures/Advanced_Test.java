@@ -9,7 +9,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class Advanced_Test extends Util_Test {
   public void test_nestedYield() throws Exception {
-    Iterable<String> test = Sequence.fromClosure(new ISequenceClosure<String>() {
+    Iterable<String> test = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
         return new Iterable<String>() {
           public Iterator<String> iterator() {
@@ -28,7 +28,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 4:
-                      this._4_s_it = Sequence.fromClosure(new ISequenceClosure<String>() {
+                      this._4_s_it = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
                         public Iterable<String> iterable() {
                           return new Iterable<String>() {
                             public Iterator<String> iterator() {

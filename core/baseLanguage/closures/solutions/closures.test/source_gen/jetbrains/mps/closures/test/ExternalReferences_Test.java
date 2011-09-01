@@ -172,7 +172,7 @@ __switch__:
     } else {
       foo = "bar";
     }
-    String f = Sequence.fromIterable(Sequence.<Integer>singleton(42)).foldLeft(foo, new ILeftCombinator<Integer, String>() {
+    String f = Sequence.<Integer>fromIterable(Sequence.<Integer>singleton(42)).foldLeft(foo, new ILeftCombinator<Integer, String>() {
       public String combine(String s, Integer it) {
         return "" + it + s;
       }

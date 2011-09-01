@@ -31,7 +31,7 @@ public class DeleteGenerator_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Generator;
+    return ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")) instanceof Generator;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -52,16 +52,16 @@ public class DeleteGenerator_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("contxet", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("contxet") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("contxet", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("contxet") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
@@ -69,7 +69,7 @@ public class DeleteGenerator_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Generator", "Are you sure you want to delete generator?\n\nThis operation is not undoable.");
+      final DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), "Delete Generator", "Are you sure you want to delete generator?\n\nThis operation is not undoable.");
       dialog.setOptions(true, false, false, false);
       dialog.show();
       if (!(dialog.isOK())) {
@@ -77,11 +77,11 @@ public class DeleteGenerator_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          Generator generator = ((Generator) ((IModule) MapSequence.fromMap(_params).get("module")));
+          Generator generator = ((Generator) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")));
           Language sourceLanguage = generator.getSourceLanguage();
           int genIndex = sourceLanguage.getGenerators().indexOf(generator);
           GeneratorDescriptor genToDelete = sourceLanguage.getModuleDescriptor().getGenerators().get(genIndex);
-          DeleteGeneratorHelper.deleteGenerator(((Project) MapSequence.fromMap(_params).get("project")), sourceLanguage, generator, genToDelete, dialog.isSafe(), dialog.isDeleteFiles());
+          DeleteGeneratorHelper.deleteGenerator(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), sourceLanguage, generator, genToDelete, dialog.isSafe(), dialog.isDeleteFiles());
         }
       });
     } catch (Throwable t) {

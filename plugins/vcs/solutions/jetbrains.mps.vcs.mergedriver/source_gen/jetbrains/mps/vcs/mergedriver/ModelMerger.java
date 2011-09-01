@@ -11,8 +11,8 @@ import jetbrains.mps.vcs.ModelUtils;
 import java.io.IOException;
 import jetbrains.mps.vcs.diff.merge.MergeContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.OutputStream;
@@ -64,14 +64,14 @@ import jetbrains.mps.util.FileUtil;
           log.info("Merging " + baseModel.getSModelReference() + "...");
         }
         final MergeContext mergeContext = new MergeContext(baseModel, localModel, latestModel);
-        int conflictingChangesCount = Sequence.fromIterable(mergeContext.getAllChanges()).where(new IWhereFilter<ModelChange>() {
+        int conflictingChangesCount = Sequence.<ModelChange>fromIterable(mergeContext.getAllChanges()).where(new IWhereFilter<ModelChange>() {
           public boolean accept(ModelChange c) {
-            return Sequence.fromIterable(mergeContext.getConflictedWith(c)).isNotEmpty();
+            return Sequence.<ModelChange>fromIterable(mergeContext.getConflictedWith(c)).isNotEmpty();
           }
         }).count();
         if (conflictingChangesCount == 0) {
           if (log.isInfoEnabled()) {
-            log.info(String.format("%s: %d changes detected: %d local and %d latest", baseModel.getLongName(), Sequence.fromIterable(mergeContext.getAllChanges()).count(), ListSequence.fromList(mergeContext.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeContext.getRepositoryChangeSet().getModelChanges()).count()));
+            log.info(String.format("%s: %d changes detected: %d local and %d latest", baseModel.getLongName(), Sequence.<ModelChange>fromIterable(mergeContext.getAllChanges()).count(), ListSequence.<ModelChange>fromList(mergeContext.getMyChangeSet().getModelChanges()).count(), ListSequence.<ModelChange>fromList(mergeContext.getRepositoryChangeSet().getModelChanges()).count()));
           }
           mergeContext.getResultModel().setLoading(true);
           Runnable applyAction = new Runnable() {
@@ -103,7 +103,7 @@ import jetbrains.mps.util.FileUtil;
           }
         } else {
           if (log.isInfoEnabled()) {
-            log.info(String.format("%s: %d changes detected, %d of them are conflicting", baseModel.getLongName(), Sequence.fromIterable(mergeContext.getAllChanges()).count(), conflictingChangesCount));
+            log.info(String.format("%s: %d changes detected, %d of them are conflicting", baseModel.getLongName(), Sequence.<ModelChange>fromIterable(mergeContext.getAllChanges()).count(), conflictingChangesCount));
           }
         }
       } catch (Throwable e) {

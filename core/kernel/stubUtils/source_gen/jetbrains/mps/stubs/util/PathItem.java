@@ -18,7 +18,7 @@ import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 
 public abstract class PathItem {
-  private static List<String> EMPTY_LIST = ListSequence.fromList(new ArrayList<String>());
+  private static List<String> EMPTY_LIST = ListSequence.<String>fromList(new ArrayList<String>());
 
   private IFile file;
 
@@ -49,7 +49,7 @@ public abstract class PathItem {
       return PathItem.EMPTY_LIST;
     }
     List<IFile> lst = fld.getChildren();
-    return ListSequence.fromList(lst).where(new IWhereFilter<IFile>() {
+    return ListSequence.<IFile>fromList(lst).where(new IWhereFilter<IFile>() {
       public boolean accept(IFile f) {
         return f.isDirectory();
       }
@@ -68,7 +68,7 @@ public abstract class PathItem {
     if (fld == null) {
       return PathItem.EMPTY_LIST;
     }
-    return ListSequence.fromList(((List<IFile>) fld.getChildren())).<String>select(new ISelector<IFile, String>() {
+    return ListSequence.<IFile>fromList(((List<IFile>) fld.getChildren())).<String>select(new ISelector<IFile, String>() {
       public String select(IFile f) {
         return (String) f.getName();
       }
@@ -88,7 +88,7 @@ public abstract class PathItem {
       throw new IOException();
     }
     List<IFile> lst = fld.getChildren();
-    IFile file = ListSequence.fromList(lst).findFirst(new IWhereFilter<IFile>() {
+    IFile file = ListSequence.<IFile>fromList(lst).findFirst(new IWhereFilter<IFile>() {
       public boolean accept(IFile f) {
         return resName.equals(f.getName()) && !(f.isDirectory());
       }
@@ -113,7 +113,7 @@ public abstract class PathItem {
         continue;
       }
       List<IFile> lst = fld.getChildren();
-      fld = ListSequence.fromList(lst).findFirst(new IWhereFilter<IFile>() {
+      fld = ListSequence.<IFile>fromList(lst).findFirst(new IWhereFilter<IFile>() {
         public boolean accept(IFile f) {
           return p.equals(f.getName()) && f.isDirectory();
         }

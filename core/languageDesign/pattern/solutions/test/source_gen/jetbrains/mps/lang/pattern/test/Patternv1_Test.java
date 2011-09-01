@@ -57,9 +57,9 @@ public class Patternv1_Test extends BaseTransformationTest {
       {
         List<SNode> list = (List<SNode>) pattern.getFieldValue("patternVar_list");
         int i = 0;
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), new Patternv1_Test.TestBody.QuotationClass_o71ow3_a1b0a0c0g0b0().createNode())));
+        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), new Patternv1_Test.TestBody.QuotationClass_o71ow3_a1b0a0c0g0b0().createNode())));
         i++;
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), new Patternv1_Test.TestBody.QuotationClass_o71ow3_a1b0a0d0g0b0().createNode())));
+        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), new Patternv1_Test.TestBody.QuotationClass_o71ow3_a1b0a0d0g0b0().createNode())));
         i++;
       }
       return true;
@@ -162,11 +162,11 @@ public class Patternv1_Test extends BaseTransformationTest {
                 patternVar_method = nodeToMatch_v1_1fh_a0a_0.getReferent("baseMethodDeclaration");
                 {
                   String childRole_v1_1fh__1 = "actualArgument";
-                  this.patternVar_list = ListSequence.fromList(new ArrayList<SNode>());
+                  this.patternVar_list = ListSequence.<SNode>fromList(new ArrayList<SNode>());
                   patternVar_ignore = null;
                   for (SNode childVar : nodeToMatch_v1_1fh_a0a_0.getChildren(childRole_v1_1fh__1)) {
                     patternVar_ignore = childVar;
-                    ListSequence.fromList(this.patternVar_list).addElement(childVar);
+                    ListSequence.<SNode>fromList(this.patternVar_list).addElement(childVar);
                   }
                 }
               }

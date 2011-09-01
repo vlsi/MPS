@@ -277,7 +277,7 @@ public class JavaCompiler {
     if (classifierList.isEmpty()) {
       return new ArrayList<SNode>();
     }
-    List<SNode> sNodeList = wrapper.getOurNodesFromClassifier(ListSequence.fromList(classifierList).first());
+    List<SNode> sNodeList = wrapper.getOurNodesFromClassifier(ListSequence.<SNode>fromList(classifierList).first());
     for (SNode node : sNodeList) {
       if ((SNodeOperations.getParent(node) != null)) {
         SNodeOperations.detachNode(node);
@@ -375,12 +375,12 @@ public class JavaCompiler {
     JavaConverterTreeBuilder treeBuilder = new JavaConverterTreeBuilder();
     List<SNode> result = treeBuilder.exec(referentsCreator, myPackageFQNamesToModels, isolated);
     // insert comments from each compilation unit 
-    for (final CompilationUnitDeclaration cud : ListSequence.fromList(myCompilationUnitDeclarations)) {
+    for (final CompilationUnitDeclaration cud : ListSequence.<CompilationUnitDeclaration>fromList(myCompilationUnitDeclarations)) {
       char[] content = cud.compilationResult().getCompilationUnit().getContents();
       int[][] comments = cud.comments;
       int[] lineends = cud.compilationResult().lineSeparatorPositions;
       final Map<SNode, Integer> positions = treeBuilder.myPositions;
-      Iterable<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>> blocks = ListSequence.fromList(treeBuilder.myBlocks).where(new IWhereFilter<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>() {
+      Iterable<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>> blocks = ListSequence.<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>fromList(treeBuilder.myBlocks).where(new IWhereFilter<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>() {
         public boolean accept(Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> it) {
           return it._1() == cud;
         }
@@ -397,24 +397,24 @@ public class JavaCompiler {
         final int linestart = Math.abs(comment[0]);
         // find appropriate block 
         SNode block = null;
-        for (Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> blk : Sequence.fromIterable(blocks)) {
+        for (Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> blk : Sequence.<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>fromIterable(blocks)) {
           if ((int) blk._2() <= linestart && linestart <= (int) blk._3()) {
             block = blk._0();
             break;
           }
         }
         if ((block != null)) {
-          int pos = ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).where(new IWhereFilter<SNode>() {
+          int pos = ListSequence.<SNode>fromList(SLinkOperations.getTargets(block, "statement", true)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return !(MapSequence.fromMap(positions).containsKey(it)) || Math.abs(MapSequence.fromMap(positions).get(it)) <= linestart;
+              return !(MapSequence.fromMap(positions).containsKey(it)) || Math.abs(MapSequence.<SNode,Integer>fromMap(positions).get(it)) <= linestart;
             }
           }).count();
-          for (String line : ListSequence.fromList(CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1]))))) {
+          for (String line : ListSequence.<String>fromList(CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1]))))) {
             SNode commentText = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TextCommentPart", null);
             SPropertyOperations.set(commentText, "text", line);
             SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
-            ListSequence.fromList(SLinkOperations.getTargets(commentLine, "commentPart", true)).addElement(commentText);
-            ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).insertElement(pos++, commentLine);
+            ListSequence.<SNode>fromList(SLinkOperations.getTargets(commentLine, "commentPart", true)).addElement(commentText);
+            ListSequence.<SNode>fromList(SLinkOperations.getTargets(block, "statement", true)).insertElement(pos++, commentLine);
           }
         }
       }

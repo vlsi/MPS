@@ -38,7 +38,7 @@ public class AttributeOperations {
   }
 
   public static Iterable<SNode> getAttributes(SNode node, final IAttributeDescriptor descriptor) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "smodelAttribute", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "smodelAttribute", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return descriptor.match(it);
       }
@@ -47,15 +47,15 @@ public class AttributeOperations {
 
   public static SNode getAttribute(SNode node, IAttributeDescriptor descriptor) {
     Iterable<SNode> list = getAttributes(node, descriptor);
-    if (Sequence.fromIterable(list).isEmpty()) {
+    if (Sequence.<SNode>fromIterable(list).isEmpty()) {
       return null;
     }
     // todo: error if more than 1 attribute found 
-    return Sequence.fromIterable(list).first();
+    return Sequence.<SNode>fromIterable(list).first();
   }
 
   public static SNode addAttribute(SNode node, IAttributeDescriptor descriptor, SNode value) {
-    ListSequence.fromList(SLinkOperations.getTargets(node, "smodelAttribute", true)).addElement(value);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "smodelAttribute", true)).addElement(value);
     descriptor.update(value);
     return value;
   }
@@ -68,8 +68,8 @@ public class AttributeOperations {
 
   public static void deleteAttribute(SNode node, IAttributeDescriptor descriptor, SNode value) {
     List<SNode> list = new ArrayList<SNode>();
-    ListSequence.fromList(list).addSequence(Sequence.fromIterable(getAttributes(node, descriptor)));
-    for (SNode attribute : ListSequence.fromList(list)) {
+    ListSequence.<SNode>fromList(list).addSequence(Sequence.<SNode>fromIterable(getAttributes(node, descriptor)));
+    for (SNode attribute : ListSequence.<SNode>fromList(list)) {
       if (value == null || value == attribute) {
         SNodeOperations.deleteNode(attribute);
       }
@@ -78,7 +78,7 @@ public class AttributeOperations {
 
   public static SNode setAttribute(SNode node, IAttributeDescriptor descriptor, SNode value) {
     Iterable<SNode> oldlist = getAttributes(node, descriptor);
-    if (Sequence.fromIterable(oldlist).isEmpty()) {
+    if (Sequence.<SNode>fromIterable(oldlist).isEmpty()) {
       if ((value == null)) {
         return null;
       }
@@ -139,7 +139,7 @@ public class AttributeOperations {
   }
 
   public static List<SNode> getNodeAttributes(SNode node) {
-    return Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.NodeAttributeString(null))).toListSequence();
+    return Sequence.<SNode>fromIterable(getAttributes(node, new IAttributeDescriptor.NodeAttributeString(null))).toListSequence();
     // <node> 
   }
 
@@ -148,7 +148,7 @@ public class AttributeOperations {
   }
 
   public static List<SNode> getNodeAttributes(SNode node, String role) {
-    return Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.NodeAttributeString(role))).toListSequence();
+    return Sequence.<SNode>fromIterable(getAttributes(node, new IAttributeDescriptor.NodeAttributeString(role))).toListSequence();
   }
 
   public static void setNodeAttribute(SNode node, String role, SNode attribute) {
@@ -172,15 +172,15 @@ public class AttributeOperations {
   }
 
   public static List<SNode> getPropertyAttributes(SNode node, String role, String propertyName) {
-    return Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(role, propertyName))).toListSequence();
+    return Sequence.<SNode>fromIterable(getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(role, propertyName))).toListSequence();
   }
 
   public static Set<SNode> getPropertyAttributeForPropertyName(SNode node, String propertyName) {
-    return SetSequence.fromSetWithValues(new HashSet<SNode>(), getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(null, propertyName)));
+    return SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(null, propertyName)));
   }
 
   public static Set<String> getPropertyNamesFromAttributes(SNode node) {
-    return SetSequence.fromSetWithValues(new HashSet<String>(), Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(null, null))).<String>select(new ISelector<SNode, String>() {
+    return SetSequence.<String>fromSetWithValues(new HashSet<String>(), Sequence.<SNode>fromIterable(getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(null, null))).<String>select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return getPropertyName(SNodeOperations.as(it, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
       }
@@ -204,15 +204,15 @@ public class AttributeOperations {
   }
 
   public static List<SNode> getLinkAttributes(SNode node, String role, String linkRole) {
-    return Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.LinkAttributeString(role, linkRole))).toListSequence();
+    return Sequence.<SNode>fromIterable(getAttributes(node, new IAttributeDescriptor.LinkAttributeString(role, linkRole))).toListSequence();
   }
 
   public static Set<SNode> getLinkAttributeForLinkRole(SNode node, String linkRole) {
-    return SetSequence.fromSetWithValues(new HashSet<SNode>(), getAttributes(node, new IAttributeDescriptor.LinkAttributeString(null, linkRole)));
+    return SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), getAttributes(node, new IAttributeDescriptor.LinkAttributeString(null, linkRole)));
   }
 
   public static Set<String> getLinkNamesFromAttributes(SNode node) {
-    return SetSequence.fromSetWithValues(new HashSet<String>(), Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.LinkAttributeString(null, null))).<String>select(new ISelector<SNode, String>() {
+    return SetSequence.<String>fromSetWithValues(new HashSet<String>(), Sequence.<SNode>fromIterable(getAttributes(node, new IAttributeDescriptor.LinkAttributeString(null, null))).<String>select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return getLinkRole(SNodeOperations.as(it, "jetbrains.mps.lang.core.structure.LinkAttribute"));
       }
@@ -227,7 +227,7 @@ public class AttributeOperations {
     private IAttributeDescriptor myAttributeDescriptor;
 
     public AttributeList(SNode attributed, IAttributeDescriptor descriptor) {
-      super(attributed, "smodelAttribute", (List<SNode>) Sequence.fromIterable(AttributeOperations.getAttributes(SNodeOperations.cast(attributed, "jetbrains.mps.lang.core.structure.BaseConcept"), descriptor)).toListSequence());
+      super(attributed, "smodelAttribute", (List<SNode>) Sequence.<SNode>fromIterable(AttributeOperations.getAttributes(SNodeOperations.cast(attributed, "jetbrains.mps.lang.core.structure.BaseConcept"), descriptor)).toListSequence());
       myAttributeDescriptor = descriptor;
     }
 

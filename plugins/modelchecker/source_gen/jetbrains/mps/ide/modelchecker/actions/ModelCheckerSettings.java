@@ -99,22 +99,22 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   }
 
   public List<SpecificChecker> getSpecificCheckers() {
-    List<SpecificChecker> specificCheckers = ListSequence.fromList(new ArrayList<SpecificChecker>());
+    List<SpecificChecker> specificCheckers = ListSequence.<SpecificChecker>fromList(new ArrayList<SpecificChecker>());
 
     if (myMigrationMode) {
       // todo this is a hack ti use model chacker in migration tool 
-      ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
+      ListSequence.<SpecificChecker>fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
     } else {
-      ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker());
-      ListSequence.fromList(specificCheckers).addElement(new ModelPropertiesChecker());
+      ListSequence.<SpecificChecker>fromList(specificCheckers).addElement(new UnavailableConceptsChecker());
+      ListSequence.<SpecificChecker>fromList(specificCheckers).addElement(new ModelPropertiesChecker());
       if (isCheckUnresolvedReferences()) {
-        ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
+        ListSequence.<SpecificChecker>fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
       }
       if (isCheckTypesystem()) {
-        ListSequence.fromList(specificCheckers).addElement(new TypesystemChecker());
+        ListSequence.<SpecificChecker>fromList(specificCheckers).addElement(new TypesystemChecker());
       }
       if (isCheckConstraints()) {
-        ListSequence.fromList(specificCheckers).addElement(new LangSpecificChecker());
+        ListSequence.<SpecificChecker>fromList(specificCheckers).addElement(new LangSpecificChecker());
       }
     }
     return specificCheckers;

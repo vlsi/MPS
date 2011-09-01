@@ -25,7 +25,7 @@ public class CopyNodeName_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SNode) MapSequence.fromMap(_params).get("node")).isRoot();
+    return ((SNode) MapSequence.<String,Object>fromMap(_params).get("node")).isRoot();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -46,8 +46,8 @@ public class CopyNodeName_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
@@ -55,7 +55,7 @@ public class CopyNodeName_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      CopyPasteUtil.copyTextToClipboard(((SNode) MapSequence.fromMap(_params).get("node")).getModel().getLongName() + "." + ((SNode) MapSequence.fromMap(_params).get("node")).getName());
+      CopyPasteUtil.copyTextToClipboard(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")).getModel().getLongName() + "." + ((SNode) MapSequence.<String,Object>fromMap(_params).get("node")).getName());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "CopyNodeName", t);

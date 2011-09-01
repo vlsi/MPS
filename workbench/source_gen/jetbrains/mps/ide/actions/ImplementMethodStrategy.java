@@ -34,7 +34,7 @@ public class ImplementMethodStrategy extends BaseMethodUpdateStrategy {
     super.updateMethod(sourceMethod, method);
     SNode defaultReturnExpr = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.Type"), "virtual_createDefaultTypeExpression_3359611512358152580", new Class[]{SNode.class}));
     if ((defaultReturnExpr != null)) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(defaultReturnExpr));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(defaultReturnExpr));
     }
   }
 }

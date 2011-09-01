@@ -10,7 +10,7 @@ import java.util.List;
 
 /*package*/ class Main_sequence_as_javaList {
   /*package*/ static void main(String[] args) {
-    Iterable<Integer> sequence = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> sequence = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -60,7 +60,7 @@ __switch__:
         };
       }
     });
-    List<Integer> list = Sequence.fromIterable(sequence).toListSequence();
+    List<Integer> list = Sequence.<Integer>fromIterable(sequence).toListSequence();
     System.out.println("list: type cast -> java-list");
     List<Integer> javaList = list;
     for (Integer n : javaList) {

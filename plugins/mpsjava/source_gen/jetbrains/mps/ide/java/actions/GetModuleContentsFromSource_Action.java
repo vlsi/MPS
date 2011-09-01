@@ -45,16 +45,16 @@ public class GetModuleContentsFromSource_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
@@ -70,9 +70,9 @@ public class GetModuleContentsFromSource_Action extends GeneratedAction {
           return file.isDirectory();
         }
       });
-      IFile result = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
+      IFile result = treeFileChooser.showDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")));
       if (result != null) {
-        JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), new File(result.getPath()), true);
+        JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), new File(result.getPath()), true);
         javaCompiler.compile();
       }
     } catch (Throwable t) {

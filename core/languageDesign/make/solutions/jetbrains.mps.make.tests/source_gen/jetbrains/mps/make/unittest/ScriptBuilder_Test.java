@@ -29,7 +29,7 @@ public class ScriptBuilder_Test extends MockTestCase {
   @Test
   public void test_make() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
-    scb.withFacetNames(Sequence.fromIterable(Sequence.fromArray(facets)).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
+    scb.withFacetNames(Sequence.<IFacet>fromIterable(Sequence.fromArray(facets)).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
       public IFacet.Name select(IFacet f) {
         return f.getName();
       }
@@ -38,8 +38,8 @@ public class ScriptBuilder_Test extends MockTestCase {
     IScript sc = scb.toScript();
     Assert.assertNotNull(sc);
     Assert.assertTrue(sc.isValid());
-    List<ITarget.Name> expected = ListSequence.fromListAndArray(new ArrayList<ITarget.Name>(), new ITarget.Name("cfg"), new ITarget.Name("gen"), new ITarget.Name("textgen"), new ITarget.Name("make"));
-    Utils.assertSameSequence(expected, Sequence.fromIterable(sc.allTargets()).<ITarget.Name>select(new ISelector<ITarget, ITarget.Name>() {
+    List<ITarget.Name> expected = ListSequence.<ITarget.Name>fromListAndArray(new ArrayList<ITarget.Name>(), new ITarget.Name("cfg"), new ITarget.Name("gen"), new ITarget.Name("textgen"), new ITarget.Name("make"));
+    Utils.assertSameSequence(expected, Sequence.<ITarget>fromIterable(sc.allTargets()).<ITarget.Name>select(new ISelector<ITarget, ITarget.Name>() {
       public ITarget.Name select(ITarget t) {
         return t.getName();
       }
@@ -49,7 +49,7 @@ public class ScriptBuilder_Test extends MockTestCase {
   @Test
   public void test_gen() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
-    scb.withFacetNames(Sequence.fromIterable(Sequence.fromArray(facets)).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
+    scb.withFacetNames(Sequence.<IFacet>fromIterable(Sequence.fromArray(facets)).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
       public IFacet.Name select(IFacet f) {
         return f.getName();
       }
@@ -58,8 +58,8 @@ public class ScriptBuilder_Test extends MockTestCase {
     IScript sc = scb.toScript();
     Assert.assertNotNull(sc);
     Assert.assertTrue(sc.isValid());
-    List<ITarget.Name> expected = ListSequence.fromListAndArray(new ArrayList<ITarget.Name>(), new ITarget.Name("cfg"), new ITarget.Name("gen"), new ITarget.Name("textgen"), new ITarget.Name("make"));
-    Utils.assertSameSequence(expected, Sequence.fromIterable(sc.allTargets()).<ITarget.Name>select(new ISelector<ITarget, ITarget.Name>() {
+    List<ITarget.Name> expected = ListSequence.<ITarget.Name>fromListAndArray(new ArrayList<ITarget.Name>(), new ITarget.Name("cfg"), new ITarget.Name("gen"), new ITarget.Name("textgen"), new ITarget.Name("make"));
+    Utils.assertSameSequence(expected, Sequence.<ITarget>fromIterable(sc.allTargets()).<ITarget.Name>select(new ISelector<ITarget, ITarget.Name>() {
       public ITarget.Name select(ITarget t) {
         return t.getName();
       }
@@ -70,7 +70,7 @@ public class ScriptBuilder_Test extends MockTestCase {
   @ExpectLogEvent(text = "target not found: none", level = Priority.ERROR_INT)
   public void test_none() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
-    scb.withFacetNames(Sequence.fromIterable(Sequence.fromArray(facets)).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
+    scb.withFacetNames(Sequence.<IFacet>fromIterable(Sequence.fromArray(facets)).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
       public IFacet.Name select(IFacet f) {
         return f.getName();
       }
@@ -83,7 +83,7 @@ public class ScriptBuilder_Test extends MockTestCase {
 
   @After
   public void tearDown() throws Exception {
-    for (IFacet fn : Sequence.fromIterable(Sequence.fromArray(facets))) {
+    for (IFacet fn : Sequence.<IFacet>fromIterable(Sequence.fromArray(facets))) {
       FacetRegistry.getInstance().unregister(fn);
     }
     context.assertIsSatisfied();

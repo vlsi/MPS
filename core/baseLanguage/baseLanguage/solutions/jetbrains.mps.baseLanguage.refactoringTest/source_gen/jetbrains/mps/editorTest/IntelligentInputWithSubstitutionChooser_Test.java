@@ -26,7 +26,7 @@ public class IntelligentInputWithSubstitutionChooser_Test extends BaseTransforma
       final IEditor editor = TestBody.this.initEditor("3294454325389407451", "3294454325389407455");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "C");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.<String>fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
       BaseEditorTestBody.typeString(editorComponent, "olor.BLACK");
     }
   }

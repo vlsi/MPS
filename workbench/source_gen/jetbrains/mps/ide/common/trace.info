@@ -6,7 +6,7 @@
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="25" startPosition="36" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myButton_c0" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="26" startPosition="30" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPath" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="27" startPosition="24" endLine="28" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMode" />
-    <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="28" startPosition="21" endLine="29" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBindings" />
+    <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="28" startPosition="21" endLine="29" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBindings" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="38" startPosition="22" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="39" startPosition="23" endLine="40" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="40" startPosition="31" endLine="41" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -25,7 +25,7 @@
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="66" startPosition="48" endLine="67" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="67" startPosition="60" endLine="68" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="68" startPosition="154" endLine="69" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="69" startPosition="21" endLine="70" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="69" startPosition="21" endLine="70" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="76" startPosition="30" endLine="77" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="82" startPosition="43" endLine="83" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="83" startPosition="44" endLine="84" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -56,7 +56,7 @@
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="92" startPosition="29" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="108" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPath#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="114" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMode#(I)V" />
-    <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="29" startPosition="92" endLine="36" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEvents" />
+    <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="29" startPosition="105" endLine="36" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEvents" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="81" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_b0#()Ljava/lang/Object;" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="73" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unbind#()V" />
     <nodeInfo nodeId="1203601634745" fileName="PathField.java" startLine="37" startPosition="0" endLine="46" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PathField#()V" />
@@ -87,7 +87,7 @@
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="108" startPosition="0" endLine="114" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="114" startPosition="0" endLine="120" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="38" startPosition="22" endLine="45" endPosition="53" />
-    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="63" startPosition="5" endLine="70" endPosition="65" />
+    <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="63" startPosition="5" endLine="70" endPosition="78" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="81" startPosition="0" endLine="88" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="73" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="1203601634745" fileName="PathField.java" startLine="37" startPosition="0" endLine="46" endPosition="3" />

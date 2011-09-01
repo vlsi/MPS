@@ -11,7 +11,7 @@ import junit.framework.Assert;
 
 public class Union_Test extends TestCase {
   public void test_union1() throws Exception {
-    Iterable<Integer> s1 = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> s1 = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -52,7 +52,7 @@ __switch__:
         };
       }
     });
-    Iterable<Integer> s2 = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> s2 = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -93,20 +93,20 @@ __switch__:
         };
       }
     });
-    Iterable<Integer> s3 = Sequence.fromIterable(s1).union(Sequence.fromIterable(s2));
-    Assert.assertSame(Sequence.fromIterable(s3).count(), 4);
+    Iterable<Integer> s3 = Sequence.<Integer>fromIterable(s1).union(Sequence.<Integer>fromIterable(s2));
+    Assert.assertSame(Sequence.<Integer>fromIterable(s3).count(), 4);
     // order in s3 is undefined 
-    Assert.assertTrue(Sequence.fromIterable(s3).contains(1));
-    Assert.assertTrue(Sequence.fromIterable(s3).contains(2));
-    Assert.assertTrue(Sequence.fromIterable(s3).contains(3));
-    Assert.assertTrue(Sequence.fromIterable(s3).contains(4));
+    Assert.assertTrue(Sequence.<Integer>fromIterable(s3).contains(1));
+    Assert.assertTrue(Sequence.<Integer>fromIterable(s3).contains(2));
+    Assert.assertTrue(Sequence.<Integer>fromIterable(s3).contains(3));
+    Assert.assertTrue(Sequence.<Integer>fromIterable(s3).contains(4));
     // null test 
     s1 = null;
-    Iterable<Integer> s2_ = Sequence.fromIterable(s1).union(Sequence.fromIterable(s2));
-    Assert.assertEquals(3, Sequence.fromIterable(s2_).count());
-    Iterable<Integer> s2__ = Sequence.fromIterable(s2).union(null);
-    Assert.assertEquals(3, Sequence.fromIterable(s2__).count());
-    Iterable<Integer> s4 = Sequence.fromIterable(s1).union(null);
-    Assert.assertNull(Sequence.fromIterable(s4).first());
+    Iterable<Integer> s2_ = Sequence.<Integer>fromIterable(s1).union(Sequence.<Integer>fromIterable(s2));
+    Assert.assertEquals(3, Sequence.<Integer>fromIterable(s2_).count());
+    Iterable<Integer> s2__ = Sequence.<Integer>fromIterable(s2).union(null);
+    Assert.assertEquals(3, Sequence.<Integer>fromIterable(s2__).count());
+    Iterable<Integer> s4 = Sequence.<Integer>fromIterable(s1).union(null);
+    Assert.assertNull(Sequence.<Integer>fromIterable(s4).first());
   }
 }

@@ -170,7 +170,7 @@ public class DOM2 extends TreePath<Node> {
 
     public Iterable<Node> sequence() {
       final Node _node = this.thisNode;
-      return Sequence.fromClosure(new ISequenceClosure<Node>() {
+      return Sequence.<Node>fromClosure(new ISequenceClosure<Node>() {
         public Iterable<Node> iterable() {
           return new Iterable<Node>() {
             public Iterator<Node> iterator() {

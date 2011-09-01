@@ -17,14 +17,14 @@ public class NullSequence_Test extends Util_Test {
     if (Sequence.USE_NULL_SEQUENCE) {
       Iterable<Integer> nullSeq = null;
       Assert.assertNull(nullSeq);
-      Assert.assertNull(Sequence.fromIterable(nullSeq).first());
-      Assert.assertNull(Sequence.fromIterable(nullSeq).last());
-      Assert.assertEquals(0, Sequence.fromIterable(nullSeq).count());
-      Assert.assertEquals(0, Sequence.fromIterable(nullSeq).count());
-      List<Integer> list5 = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
-      ListSequence.fromList(list5).addSequence(Sequence.fromIterable(nullSeq));
+      Assert.assertNull(Sequence.<Integer>fromIterable(nullSeq).first());
+      Assert.assertNull(Sequence.<Integer>fromIterable(nullSeq).last());
+      Assert.assertEquals(0, Sequence.<Integer>fromIterable(nullSeq).count());
+      Assert.assertEquals(0, Sequence.<Integer>fromIterable(nullSeq).count());
+      List<Integer> list5 = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
+      ListSequence.<Integer>fromList(list5).addSequence(Sequence.<Integer>fromIterable(nullSeq));
       this.assertIterableEquals(this.expect5(), list5);
-      ListSequence.fromList(list5).removeSequence(Sequence.fromIterable(nullSeq));
+      ListSequence.<Integer>fromList(list5).removeSequence(Sequence.<Integer>fromIterable(nullSeq));
       this.assertIterableEquals(this.expect5(), list5);
     }
   }
@@ -32,24 +32,24 @@ public class NullSequence_Test extends Util_Test {
   public void test_nullCompareOperations() throws Exception {
     if (Sequence.USE_NULL_SEQUENCE) {
       Iterable<Integer> input = this.input5();
-      this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).concat(null));
-      this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).union(null));
-      this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).intersect(null));
-      this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).disjunction(null));
-      this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).subtract(null));
+      this.assertIterableEquals(this.expect5(), Sequence.<Integer>fromIterable(input).concat(null));
+      this.assertIterableEquals(this.expect5(), Sequence.<Integer>fromIterable(input).union(null));
+      this.assertIterableEquals(this.expectEmpty(), Sequence.<Integer>fromIterable(input).intersect(null));
+      this.assertIterableEquals(this.expect5(), Sequence.<Integer>fromIterable(input).disjunction(null));
+      this.assertIterableEquals(this.expect5(), Sequence.<Integer>fromIterable(input).subtract(null));
     }
   }
 
   public void test_nullTranslate() throws Exception {
     if (Sequence.USE_NULL_SEQUENCE) {
       Iterable<Integer> input = this.input5();
-      Iterable<String> nullSeq = Sequence.fromIterable(input).<String>translate(new ITranslator2<Integer, String>() {
+      Iterable<String> nullSeq = Sequence.<Integer>fromIterable(input).<String>translate(new ITranslator2<Integer, String>() {
         public Iterable<String> translate(Integer it) {
           return ((ISequence<String>) null);
         }
       });
-      Assert.assertEquals(0, Sequence.fromIterable(nullSeq).count());
-      Assert.assertEquals(0, Sequence.fromIterable(nullSeq).count());
+      Assert.assertEquals(0, Sequence.<String>fromIterable(nullSeq).count());
+      Assert.assertEquals(0, Sequence.<String>fromIterable(nullSeq).count());
     }
   }
 
@@ -57,12 +57,12 @@ public class NullSequence_Test extends Util_Test {
     if (Sequence.USE_NULL_SEQUENCE) {
       List<Integer> nullList = null;
       Assert.assertNull(nullList);
-      Assert.assertNull(ListSequence.fromList(nullList).first());
-      Assert.assertNull(ListSequence.fromList(nullList).last());
-      Assert.assertNull(ListSequence.fromList(nullList).first());
-      Assert.assertNull(ListSequence.fromList(nullList).getElement(-1));
-      Assert.assertEquals(0, ListSequence.fromList(nullList).count());
-      Assert.assertEquals(0, ListSequence.fromList(nullList).count());
+      Assert.assertNull(ListSequence.<Integer>fromList(nullList).first());
+      Assert.assertNull(ListSequence.<Integer>fromList(nullList).last());
+      Assert.assertNull(ListSequence.<Integer>fromList(nullList).first());
+      Assert.assertNull(ListSequence.<Integer>fromList(nullList).getElement(-1));
+      Assert.assertEquals(0, ListSequence.<Integer>fromList(nullList).count());
+      Assert.assertEquals(0, ListSequence.<Integer>fromList(nullList).count());
     }
   }
 
@@ -75,15 +75,15 @@ public class NullSequence_Test extends Util_Test {
 
   public void test_nullArray() throws Exception {
     int[] arr = null;
-    for (int i : Sequence.fromIterable(ArrayUtils.fromIntegerArray(arr))) {
+    for (int i : Sequence.<Integer>fromIterable(ArrayUtils.fromIntegerArray(arr))) {
       Assert.assertTrue(false);
     }
     Integer[] iarr = null;
-    for (Integer i : Sequence.fromIterable(Sequence.fromArray(iarr))) {
+    for (Integer i : Sequence.<Integer>fromIterable(Sequence.fromArray(iarr))) {
       Assert.assertTrue(false);
     }
     Object[] oarr = null;
-    for (Object i : Sequence.fromIterable(Sequence.fromArray(oarr))) {
+    for (Object i : Sequence.<Object>fromIterable(Sequence.fromArray(oarr))) {
       Assert.assertTrue(false);
     }
   }

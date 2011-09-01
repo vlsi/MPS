@@ -130,7 +130,7 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
       }
     });
 
-    Iterator<IScript> scit = Sequence.fromIterable(myScripts).iterator();
+    Iterator<IScript> scit = Sequence.<IScript>fromIterable(myScripts).iterator();
     Iterator<? extends Iterable<IResource>> clit = Sequence.fromIterable(myClInput).iterator();
     while (scit.hasNext() && clit.hasNext()) {
       Iterable<IResource> cl = clit.next();
@@ -145,14 +145,14 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
       }
 
       if (InternalFlag.isInternalMode()) {
-        myMessageHandler.handle(new Message(MessageKind.INFORMATION, "Modules cluster " + (idx[0] + 1) + "/" + clsize + " [" + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
+        myMessageHandler.handle(new Message(MessageKind.INFORMATION, "Modules cluster " + (idx[0] + 1) + "/" + clsize + " [" + IterableUtils.join(Sequence.<IResource>fromIterable(cl).<String>select(new ISelector<IResource, String>() {
           public String select(IResource r) {
             return ((IResource) r).describe();
           }
         }), ", ") + "]"));
       }
 
-      pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
+      pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.<IResource>fromIterable(cl).<String>select(new ISelector<IResource, String>() {
         public String select(IResource r) {
           return ((IResource) r).describe();
         }

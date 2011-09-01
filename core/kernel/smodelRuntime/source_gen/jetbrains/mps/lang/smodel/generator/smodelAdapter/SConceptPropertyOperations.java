@@ -71,7 +71,7 @@ public class SConceptPropertyOperations {
             if (SNodeOperations.isInstanceOf(cpd, "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration")) {
               SNode bcp = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.BooleanConceptProperty", null);
               SLinkOperations.setTarget(bcp, "conceptPropertyDeclaration", SNodeOperations.cast(cpd, "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration"), false);
-              ListSequence.fromList(SLinkOperations.getTargets(node, "conceptProperty", true)).addElement(bcp);
+              ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "conceptProperty", true)).addElement(bcp);
               break;
             }
           }

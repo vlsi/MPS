@@ -30,7 +30,7 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
   private Set<Pair<String, String>> myAbsentReferentRoles = new HashSet<Pair<String, String>>();
   private Set<Pair<String, String>> myAbsentPropertyNames = new HashSet<Pair<String, String>>();
   private Set<SModel> myModifiableModels = new HashSet<SModel>();
-  private Set<String> myOldNames = SetSequence.fromSet(new HashSet<String>());
+  private Set<String> myOldNames = SetSequence.<String>fromSet(new HashSet<String>());
 
   public RefactoringNodeMembersAccessModifier() {
   }
@@ -102,7 +102,7 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
   }
 
   private boolean isModificationMode(SModel model, String oldName) {
-    return myModifiableModels.contains(model) && SetSequence.fromSet(myOldNames).contains(oldName);
+    return myModifiableModels.contains(model) && SetSequence.<String>fromSet(myOldNames).contains(oldName);
   }
 
   public String getNewChildRole(SModel model, String conceptFQName, String role) {

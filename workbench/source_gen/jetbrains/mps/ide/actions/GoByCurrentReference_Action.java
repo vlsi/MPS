@@ -43,11 +43,11 @@ public class GoByCurrentReference_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SNode targetNode = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
+    SNode targetNode = ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell")).getSNodeWRTReference();
     if (targetNode == null) {
       return false;
     }
-    if (targetNode == ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNode()) {
+    if (targetNode == ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell")).getSNode()) {
       return false;
     }
     return true;
@@ -71,20 +71,20 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("cell") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.<String,Object>fromMap(_params).get("cell") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
@@ -92,14 +92,14 @@ public class GoByCurrentReference_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SNode targetNode = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
+      final SNode targetNode = ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell")).getSNodeWRTReference();
       String targetSter = SNodeOperations.getModel(targetNode).getStereotype();
       String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
 
       if (neq_1m2c1e_a0e0a0d(stubSter, targetSter)) {
         GoByCurrentReference_Action.this.open(targetNode, _params);
       } else {
-        SNode node = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
+        SNode node = ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell")).getSNodeWRTReference();
         SModel model = node.getModel();
         IModule module = model.getModelDescriptor().getModule();
         assert module != null;
@@ -135,7 +135,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
   }
 
   private void open(SNode targetNode, final Map<String, Object> _params) {
-    ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(MPSEditorOpener.class).openNode(targetNode, ((IOperationContext) MapSequence.fromMap(_params).get("context")), true, !(targetNode.isRoot()));
+    ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getComponent(MPSEditorOpener.class).openNode(targetNode, ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), true, !(targetNode.isRoot()));
   }
 
   private boolean navigateToJavaStub(@NotNull String projectPath, SNode targetNode, final Map<String, Object> _params) {
@@ -156,7 +156,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
       }
     } else if (isConstructor) {
       String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref, _params);
-      int paramCount = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).count();
+      int paramCount = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).count();
       for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
         if (np.openClass(projectPath, classifierName)) {
           if (np.openConstructor(projectPath, classifierName, paramCount)) {
@@ -168,7 +168,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
       String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref, _params);
       SNode method = SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
-        if (np.openMethod(projectPath, classifierName, SPropertyOperations.getString(method, "name"), ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count())) {
+        if (np.openMethod(projectPath, classifierName, SPropertyOperations.getString(method, "name"), ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).count())) {
           return true;
         }
       }

@@ -10,15 +10,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
   /*package*/ static void main(String[] args) {
     List<Integer> ll = new ArrayList<Integer>();
     List<Integer> lll = ll;
-    List<String> list = ListSequence.fromListAndArray(new ArrayList<String>(), "val1", "val2", "val3");
-    ListSequence.fromList(list).addElement("var4");
-    ListSequence.fromList(list).addElement("var5");
-    ListSequence.fromList(list).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "var6", "var7")));
-    for (String s : ListSequence.fromList(list)) {
+    List<String> list = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "val1", "val2", "val3");
+    ListSequence.<String>fromList(list).addElement("var4");
+    ListSequence.<String>fromList(list).addElement("var5");
+    ListSequence.<String>fromList(list).addSequence(ListSequence.<String>fromList(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "var6", "var7")));
+    for (String s : ListSequence.<String>fromList(list)) {
       System.out.println(s);
     }
-    for (int i = 0; i < ListSequence.fromList(list).count(); i++) {
-      System.out.println(ListSequence.fromList(list).getElement(i));
+    for (int i = 0; i < ListSequence.<String>fromList(list).count(); i++) {
+      System.out.println(ListSequence.<String>fromList(list).getElement(i));
     }
   }
 }

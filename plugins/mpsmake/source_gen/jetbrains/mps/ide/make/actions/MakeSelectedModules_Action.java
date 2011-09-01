@@ -30,7 +30,7 @@ public class MakeSelectedModules_Action extends GeneratedAction {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
     }
-    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, ((List<IModule>) MapSequence.fromMap(_params).get("modules")), ((IModule) MapSequence.fromMap(_params).get("cmodule"))).actionText(false);
+    String text = new MakeActionParameters(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), null, null, ((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")), ((IModule) MapSequence.<String,Object>fromMap(_params).get("cmodule"))).actionText(false);
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
@@ -56,18 +56,18 @@ public class MakeSelectedModules_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
-    MapSequence.fromMap(_params).put("cmodule", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    MapSequence.<String,Object>fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    MapSequence.<String,Object>fromMap(_params).put("cmodule", event.getData(MPSDataKeys.CONTEXT_MODULE));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, ((List<IModule>) MapSequence.fromMap(_params).get("modules")), ((IModule) MapSequence.fromMap(_params).get("cmodule"))), false).executeAction();
+      new MakeActionImpl(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), null, null, ((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")), ((IModule) MapSequence.<String,Object>fromMap(_params).get("cmodule"))), false).executeAction();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MakeSelectedModules", t);

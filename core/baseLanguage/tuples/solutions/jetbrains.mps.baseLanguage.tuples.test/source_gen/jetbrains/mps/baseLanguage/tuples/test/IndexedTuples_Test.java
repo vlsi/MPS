@@ -99,7 +99,7 @@ public class IndexedTuples_Test extends TestCase {
 
   public void test_mps5466() throws Exception {
     Iterable<Tuples._2<String, Boolean>> seq = A.foo();
-    Assert.assertSame(1, Sequence.fromIterable(seq).where(new IWhereFilter<Tuples._2<String, Boolean>>() {
+    Assert.assertSame(1, Sequence.<Tuples._2<String, Boolean>>fromIterable(seq).where(new IWhereFilter<Tuples._2<String, Boolean>>() {
       public boolean accept(Tuples._2<String, Boolean> it) {
         return it._1() != true;
       }
@@ -107,9 +107,9 @@ public class IndexedTuples_Test extends TestCase {
   }
 
   public void test_listOfTuples() throws Exception {
-    List<Tuples._2<Integer, String>> lot = ListSequence.fromListAndArray(new ArrayList<Tuples._2<Integer, String>>(), MultiTuple.<Integer,String>from(1, "A"), MultiTuple.<Integer,String>from(2, "B"), MultiTuple.<Integer,String>from(3, "C"));
-    Assert.assertSame(3, ListSequence.fromList(lot).count());
-    Assert.assertEquals("B", ListSequence.fromList(lot).getElement(1)._1());
+    List<Tuples._2<Integer, String>> lot = ListSequence.<Tuples._2<Integer, String>>fromListAndArray(new ArrayList<Tuples._2<Integer, String>>(), MultiTuple.<Integer,String>from(1, "A"), MultiTuple.<Integer,String>from(2, "B"), MultiTuple.<Integer,String>from(3, "C"));
+    Assert.assertSame(3, ListSequence.<Tuples._2<Integer, String>>fromList(lot).count());
+    Assert.assertEquals("B", ListSequence.<Tuples._2<Integer, String>>fromList(lot).getElement(1)._1());
   }
 
   public void test_arrayOfTuples() throws Exception {
@@ -147,7 +147,7 @@ public class IndexedTuples_Test extends TestCase {
       }
     });
     foo.waitFor(asd);
-    Assert.assertSame(1, ListSequence.fromList(foo.jobs).count());
+    Assert.assertSame(1, ListSequence.<Tuples._2<_FunctionTypes._return_P0_E0<? extends Boolean>, _FunctionTypes._void_P0_E0>>fromList(foo.jobs).count());
   }
 
   public void test_mps7409() throws Exception {
@@ -183,7 +183,7 @@ public class IndexedTuples_Test extends TestCase {
 
   public void test_mps6985() throws Exception {
     Tuples._2<Integer, Integer> pair;
-    pair = MapSequence.fromMap(new Sum().map).get(42);
+    pair = MapSequence.<Integer,Tuples._2<Integer, Integer>>fromMap(new Sum().map).get(42);
   }
 
   public void test_mps11447() throws Exception {

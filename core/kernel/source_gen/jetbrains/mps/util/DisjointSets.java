@@ -12,45 +12,45 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.HashSet;
 
 public class DisjointSets<T> {
-  private Map<T, T> myParent = MapSequence.fromMap(new HashMap<T, T>());
-  private Map<T, Integer> myRank = MapSequence.fromMap(new HashMap<T, Integer>());
+  private Map<T, T> myParent = MapSequence.<T,T>fromMap(new HashMap<T, T>());
+  private Map<T, Integer> myRank = MapSequence.<T,Integer>fromMap(new HashMap<T, Integer>());
 
   public DisjointSets(Iterable<T> elements) {
-    for (T e : Sequence.fromIterable(elements)) {
-      MapSequence.fromMap(myParent).put(e, e);
-      MapSequence.fromMap(myRank).put(e, 0);
+    for (T e : Sequence.<T>fromIterable(elements)) {
+      MapSequence.<T,T>fromMap(myParent).put(e, e);
+      MapSequence.<T,Integer>fromMap(myRank).put(e, 0);
     }
   }
 
   private T getRoot(T x) {
-    if (MapSequence.fromMap(myParent).get(x) != x) {
-      MapSequence.fromMap(myParent).put(x, getRoot(MapSequence.fromMap(myParent).get(x)));
+    if (MapSequence.<T,T>fromMap(myParent).get(x) != x) {
+      MapSequence.<T,T>fromMap(myParent).put(x, getRoot(MapSequence.<T,T>fromMap(myParent).get(x)));
     }
-    return MapSequence.fromMap(myParent).get(x);
+    return MapSequence.<T,T>fromMap(myParent).get(x);
   }
 
   public void unite(T a, T b) {
     a = getRoot(a);
     b = getRoot(b);
-    if (MapSequence.fromMap(myRank).get(a) < MapSequence.fromMap(myRank).get(b)) {
-      MapSequence.fromMap(myParent).put(a, b);
+    if (MapSequence.<T,Integer>fromMap(myRank).get(a) < MapSequence.<T,Integer>fromMap(myRank).get(b)) {
+      MapSequence.<T,T>fromMap(myParent).put(a, b);
     } else {
-      MapSequence.fromMap(myParent).put(b, a);
-      if (MapSequence.fromMap(myRank).get(a) - MapSequence.fromMap(myRank).get(b) == 0) {
-        MapSequence.fromMap(myRank).put(a, MapSequence.fromMap(myRank).get(a) + 1);
+      MapSequence.<T,T>fromMap(myParent).put(b, a);
+      if (MapSequence.<T,Integer>fromMap(myRank).get(a) - MapSequence.<T,Integer>fromMap(myRank).get(b) == 0) {
+        MapSequence.<T,Integer>fromMap(myRank).put(a, MapSequence.<T,Integer>fromMap(myRank).get(a) + 1);
       }
     }
   }
 
   public Iterable<Set<T>> getSets() {
-    final Map<T, Set<T>> rootToSet = MapSequence.fromMap(new HashMap<T, Set<T>>());
-    SetSequence.fromSet(MapSequence.fromMap(myParent).keySet()).visitAll(new IVisitor<T>() {
+    final Map<T, Set<T>> rootToSet = MapSequence.<T,Set<T>>fromMap(new HashMap<T, Set<T>>());
+    SetSequence.<T>fromSet(MapSequence.fromMap(myParent).keySet()).visitAll(new IVisitor<T>() {
       public void visit(T x) {
         T r = getRoot(x);
-        if (MapSequence.fromMap(rootToSet).get(r) == null) {
-          MapSequence.fromMap(rootToSet).put(r, SetSequence.fromSet(new HashSet<T>()));
+        if (MapSequence.<T,Set<T>>fromMap(rootToSet).get(r) == null) {
+          MapSequence.<T,Set<T>>fromMap(rootToSet).put(r, SetSequence.<T>fromSet(new HashSet<T>()));
         }
-        SetSequence.fromSet(MapSequence.fromMap(rootToSet).get(r)).addElement(x);
+        SetSequence.fromSet(MapSequence.<T,Set<T>>fromMap(rootToSet).get(r)).addElement(x);
       }
     });
     return MapSequence.fromMap(rootToSet).values();

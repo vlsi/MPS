@@ -24,8 +24,8 @@ public class SNodeCompare {
   private static boolean nodePropertiesEquals(SNode a, SNode b) {
     Map<String, String> aMap = (Map<String, String>) a.getProperties();
     Map<String, String> bMap = (Map<String, String>) b.getProperties();
-    for (String p : SetSequence.fromSet(MapSequence.fromMap(aMap).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(bMap).keySet()))) {
-      if (neq_acety0_a0a0c0a(MapSequence.fromMap(aMap).get(p), MapSequence.fromMap(bMap).get(p))) {
+    for (String p : SetSequence.<String>fromSet(MapSequence.fromMap(aMap).keySet()).union(SetSequence.<String>fromSet(MapSequence.fromMap(bMap).keySet()))) {
+      if (neq_acety0_a0a0c0a(MapSequence.<String,String>fromMap(aMap).get(p), MapSequence.<String,String>fromMap(bMap).get(p))) {
         return false;
       }
     }
@@ -33,20 +33,20 @@ public class SNodeCompare {
   }
 
   private static boolean nodeReferencesEquals(SNode a, SNode b) {
-    final Map<String, SReference> aMap = MapSequence.fromMap(new HashMap<String, SReference>());
-    final Map<String, SReference> bMap = MapSequence.fromMap(new HashMap<String, SReference>());
-    Sequence.fromIterable(SNodeOperations.getReferences(a)).visitAll(new IVisitor<SReference>() {
+    final Map<String, SReference> aMap = MapSequence.<String,SReference>fromMap(new HashMap<String, SReference>());
+    final Map<String, SReference> bMap = MapSequence.<String,SReference>fromMap(new HashMap<String, SReference>());
+    Sequence.<SReference>fromIterable(SNodeOperations.getReferences(a)).visitAll(new IVisitor<SReference>() {
       public void visit(SReference ref) {
-        MapSequence.fromMap(aMap).put(SLinkOperations.getRole(ref), ref);
+        MapSequence.<String,SReference>fromMap(aMap).put(SLinkOperations.getRole(ref), ref);
       }
     });
-    Sequence.fromIterable(SNodeOperations.getReferences(b)).visitAll(new IVisitor<SReference>() {
+    Sequence.<SReference>fromIterable(SNodeOperations.getReferences(b)).visitAll(new IVisitor<SReference>() {
       public void visit(SReference ref) {
-        MapSequence.fromMap(bMap).put(SLinkOperations.getRole(ref), ref);
+        MapSequence.<String,SReference>fromMap(bMap).put(SLinkOperations.getRole(ref), ref);
       }
     });
 
-    for (String r : SetSequence.fromSet(MapSequence.fromMap(aMap).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(bMap).keySet()))) {
+    for (String r : SetSequence.<String>fromSet(MapSequence.fromMap(aMap).keySet()).union(SetSequence.<String>fromSet(MapSequence.fromMap(bMap).keySet()))) {
       SReference aRef = a.getReference(r);
       SReference bRef = b.getReference(r);
       if (aRef == null || bRef == null) {
@@ -78,9 +78,9 @@ public class SNodeCompare {
   }
 
   private static boolean nodeChildrenEquals(SNode a, SNode b) {
-    Set<String> roles = SetSequence.fromSetWithValues(new HashSet<String>(), a.getChildRoles(true));
-    SetSequence.fromSet(roles).addSequence(SetSequence.fromSet(b.getChildRoles()));
-    for (String r : SetSequence.fromSet(roles)) {
+    Set<String> roles = SetSequence.<String>fromSetWithValues(new HashSet<String>(), a.getChildRoles(true));
+    SetSequence.fromSet(roles).addSequence(SetSequence.<String>fromSet(b.getChildRoles()));
+    for (String r : SetSequence.<String>fromSet(roles)) {
       List<SNode> aChildren = a.getChildren(r);
       List<SNode> bChildren = b.getChildren(r);
       if (aChildren.size() != bChildren.size()) {

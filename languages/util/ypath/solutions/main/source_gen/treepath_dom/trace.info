@@ -312,7 +312,7 @@
     <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="176" startPosition="46" endLine="232" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="175" startPosition="39" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
     <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="174" startPosition="42" endLine="234" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="173" startPosition="64" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="173" startPosition="70" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1184239525317" fileName="DOM2.java" startLine="172" startPosition="39" endLine="236" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184239525310" fileName="DOM2.java" startLine="170" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sequence#()Ljava/lang/Iterable;" />
     <scopeInfo nodeId="1184245739808" fileName="DOM2.java" startLine="41" startPosition="39" endLine="41" endPosition="39" />
@@ -424,7 +424,7 @@
     <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="176" startPosition="46" endLine="232" endPosition="16" />
     <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="175" startPosition="39" endLine="234" endPosition="0" />
     <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="174" startPosition="42" endLine="234" endPosition="12" />
-    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="173" startPosition="64" endLine="236" endPosition="0" />
+    <scopeInfo nodeId="1227876790038" fileName="DOM2.java" startLine="173" startPosition="70" endLine="236" endPosition="0" />
     <scopeInfo nodeId="1184239525312" fileName="DOM2.java" startLine="171" startPosition="38" endLine="236" endPosition="9">
       <varInfo nodeId="1184239525314" varName="_node" />
     </scopeInfo>
@@ -450,7 +450,7 @@
     <unitInfo nodeId="1184245749912" fileName="DOM2.java" startLine="134" startPosition="0" endLine="163" endPosition="0" unitName="treepath_dom.DOM2$ATTR_value_Property" />
     <unitInfo nodeId="1227876790038" fileName="DOM2.java" startLine="177" startPosition="25" endLine="232" endPosition="15" unitName="treepath_dom.DOM2$3" />
     <unitInfo nodeId="1227876790038" fileName="DOM2.java" startLine="175" startPosition="21" endLine="234" endPosition="11" unitName="treepath_dom.DOM2$2" />
-    <unitInfo nodeId="1227876790038" fileName="DOM2.java" startLine="173" startPosition="38" endLine="236" endPosition="7" unitName="treepath_dom.DOM2$1" />
+    <unitInfo nodeId="1227876790038" fileName="DOM2.java" startLine="173" startPosition="44" endLine="236" endPosition="7" unitName="treepath_dom.DOM2$1" />
     <unitInfo nodeId="1184239525310" fileName="DOM2.java" startLine="164" startPosition="0" endLine="247" endPosition="0" unitName="treepath_dom.DOM2$Feature_attributes" />
     <unitInfo nodeId="1184239525252" fileName="DOM2.java" startLine="19" startPosition="0" endLine="317" endPosition="0" unitName="treepath_dom.DOM2" />
   </root>

@@ -48,20 +48,20 @@ public class GoToNodeById_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
@@ -69,7 +69,7 @@ public class GoToNodeById_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      String value = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getLongName(), JOptionPane.QUESTION_MESSAGE);
+      String value = JOptionPane.showInputDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getLongName(), JOptionPane.QUESTION_MESSAGE);
       if (value == null) {
         return;
       }
@@ -77,19 +77,19 @@ public class GoToNodeById_Action extends GeneratedAction {
       final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
       final SNodeId id = SNodeId.fromString(value);
       if (id == null) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Wrong node ID format " + value);
+        JOptionPane.showMessageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "Wrong node ID format " + value);
         return;
       }
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          node.value = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel().getNodeById(id);
+          node.value = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getSModel().getNodeById(id);
         }
       });
       if (node.value == null) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't find node with id " + value);
+        JOptionPane.showMessageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "Can't find node with id " + value);
         return;
       }
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(node.value, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(node.value, ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToNodeById", t);

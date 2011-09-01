@@ -100,7 +100,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     // "conflicted" red frame. In this case, we repaint conflicted red frame again 
     EditorCell_Collection parent = cell.getParent();
     if (parent != null && parent.getChildCount() == 1) {
-      EditorMessage messageToRepaint = ListSequence.fromList(((List<EditorMessage>) parent.getMessages())).findFirst(new IWhereFilter<EditorMessage>() {
+      EditorMessage messageToRepaint = ListSequence.<EditorMessage>fromList(((List<EditorMessage>) parent.getMessages())).findFirst(new IWhereFilter<EditorMessage>() {
         public boolean accept(EditorMessage m) {
           return m instanceof ChangeEditorMessage && ((ChangeEditorMessage) m).isConflicted();
         }
@@ -232,7 +232,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   private static boolean hasChildrenWithDifferentNode(EditorCell cell) {
     if (cell instanceof EditorCell_Collection) {
       final EditorCell_Collection collectionCell = (EditorCell_Collection) cell;
-      return Sequence.fromIterable(((Iterable<EditorCell>) collectionCell)).any(new IWhereFilter<EditorCell>() {
+      return Sequence.<EditorCell>fromIterable(((Iterable<EditorCell>) collectionCell)).any(new IWhereFilter<EditorCell>() {
         public boolean accept(EditorCell child) {
           return child.getSNode() != collectionCell.getSNode();
         }
@@ -267,7 +267,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   }
 
   public static List<ChangeEditorMessage> createMessages(SModel editedModel, ModelChange change, EditorMessageOwner owner, ChangeEditorMessage.ConflictChecker conflictChecker) {
-    List<ChangeEditorMessage> messages = ListSequence.fromList(new LinkedList<ChangeEditorMessage>());
+    List<ChangeEditorMessage> messages = ListSequence.<ChangeEditorMessage>fromList(new LinkedList<ChangeEditorMessage>());
     SNodeId id;
     MessageTarget messageTarget;
     if (change instanceof AddRootChange || change instanceof DeleteRootChange) {
@@ -329,7 +329,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       } else {
         List<SNode> editedChildren = editedModel.getNodeById(parentId).getChildren(role);
         for (int i = beginIndex; i < endIndex; i++) {
-          ListSequence.fromList(messages).addElement(new ChangeEditorMessage(editedChildren.get(i), new NodeMessageTarget(), owner, change, conflictChecker));
+          ListSequence.<ChangeEditorMessage>fromList(messages).addElement(new ChangeEditorMessage(editedChildren.get(i), new NodeMessageTarget(), owner, change, conflictChecker));
         }
         return messages;
       }
@@ -337,7 +337,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       return null;
     }
     SNode node = editedModel.getNodeById(id);
-    ListSequence.fromList(messages).addElement(new ChangeEditorMessage(node, messageTarget, owner, change, conflictChecker));
+    ListSequence.<ChangeEditorMessage>fromList(messages).addElement(new ChangeEditorMessage(node, messageTarget, owner, change, conflictChecker));
     return messages;
   }
 

@@ -30,7 +30,7 @@ public class StructureModificationProcessor {
 
   private boolean playRefactoring(@NotNull StructureModification data) {
     boolean result = data.apply(myModelMap);
-    for (IMapping<SModelReference, Integer> entry : MapSequence.fromMap(data.getDependencies())) {
+    for (IMapping<SModelReference, Integer> entry : MapSequence.<SModelReference,Integer>fromMap(data.getDependencies())) {
       // also adds implicit import if necessary 
       myModel.updateImportedModelUsedVersion(entry.key(), entry.value() + 1);
     }
@@ -41,8 +41,8 @@ public class StructureModificationProcessor {
     int modelVersion = model.getVersion();
     if (modelVersion > usedVersion) {
       boolean played = false;
-      for (StructureModification data : ListSequence.fromList(model.getStructureModificationLog().getHistory())) {
-        if (MapSequence.fromMap(data.getDependencies()).get(model.getSModelReference()) < usedVersion) {
+      for (StructureModification data : ListSequence.<StructureModification>fromList(model.getStructureModificationLog().getHistory())) {
+        if (MapSequence.<SModelReference,Integer>fromMap(data.getDependencies()).get(model.getSModelReference()) < usedVersion) {
           continue;
         }
         played |= playRefactoring(data);
@@ -79,7 +79,7 @@ public class StructureModificationProcessor {
     boolean played;
     do {
       played = false;
-      for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(myModel))) {
+      for (SModel.ImportElement importElement : ListSequence.<SModel.ImportElement>fromList(SModelOperations.getAllImportElements(myModel))) {
         EditableSModelDescriptor usedModel = as_etzqsh_a0a0a1a5a2(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), EditableSModelDescriptor.class);
         if (usedModel != null && playModelRefactorings(usedModel, importElement.getUsedVersion())) {
           result = played = true;
@@ -91,15 +91,15 @@ public class StructureModificationProcessor {
 
   public static void addToLog(@NotNull final StructureModification data) {
     // add all missed dependencies with current version 
-    for (StructureModification.Entry entry : ListSequence.fromList(data.getData())) {
-      Sequence.fromIterable(entry.getDependentModels()).visitAll(new IVisitor<SModelReference>() {
+    for (StructureModification.Entry entry : ListSequence.<StructureModification.Entry>fromList(data.getData())) {
+      Sequence.<SModelReference>fromIterable(entry.getDependentModels()).visitAll(new IVisitor<SModelReference>() {
         public void visit(SModelReference it) {
           data.addDependencyModel(it);
         }
       });
     }
     // add modification to all dependent models 
-    for (IMapping<SModelReference, Integer> dependency : MapSequence.fromMap(data.getDependencies())) {
+    for (IMapping<SModelReference, Integer> dependency : MapSequence.<SModelReference,Integer>fromMap(data.getDependencies())) {
       EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(dependency.key());
       StructureModificationLog modificationLog = model.getStructureModificationLog();
       modificationLog.addStructureModification(data);
@@ -111,7 +111,7 @@ public class StructureModificationProcessor {
 
   public static boolean hasRefactoringsToPlay(@NotNull SModel model) {
     if (refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(model)) {
-      for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model))) {
+      for (SModel.ImportElement importElement : ListSequence.<SModel.ImportElement>fromList(SModelOperations.getAllImportElements(model))) {
         EditableSModelDescriptor usedModel = as_etzqsh_a0a0a0a0a1(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), EditableSModelDescriptor.class);
         if (usedModel != null && importElement.getUsedVersion() < usedModel.getVersion()) {
           return true;

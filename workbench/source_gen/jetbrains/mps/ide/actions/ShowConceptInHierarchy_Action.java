@@ -56,21 +56,21 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.fromMap(_params).put("node", node);
+      MapSequence.<String,Object>fromMap(_params).put("node", node);
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("editorCell") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorCell") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editor", event.getData(MPSDataKeys.MPS_EDITOR));
-    if (MapSequence.fromMap(_params).get("editor") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editor", event.getData(MPSDataKeys.MPS_EDITOR));
+    if (MapSequence.<String,Object>fromMap(_params).get("editor") == null) {
       return false;
     }
     return true;
@@ -78,8 +78,8 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      HierarchyViewTool tool = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(HierarchyViewTool.class);
-      tool.showItemInHierarchy(ShowConceptInHierarchy_Action.this.getConceptNode(_params), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      HierarchyViewTool tool = ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getComponent(HierarchyViewTool.class);
+      tool.showItemInHierarchy(ShowConceptInHierarchy_Action.this.getConceptNode(_params), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -89,7 +89,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
   }
 
   private SNode getConceptNode(final Map<String, Object> _params) {
-    SNode refNode = ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNodeWRTReference();
+    SNode refNode = ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("editorCell")).getSNodeWRTReference();
     if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       return SNodeOperations.cast(refNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
     }
@@ -99,15 +99,15 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
         return concept;
       }
     }
-    SNode outerConcept = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
+    SNode outerConcept = SNodeOperations.getAncestor(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
     if (outerConcept != null) {
       return outerConcept;
     }
 
-    if (!(((IEditor) MapSequence.fromMap(_params).get("editor")) instanceof TabbedEditor)) {
+    if (!(((IEditor) MapSequence.<String,Object>fromMap(_params).get("editor")) instanceof TabbedEditor)) {
       return null;
     }
-    TabbedEditor tabbedEditor = (TabbedEditor) ((IEditor) MapSequence.fromMap(_params).get("editor"));
+    TabbedEditor tabbedEditor = (TabbedEditor) ((IEditor) MapSequence.<String,Object>fromMap(_params).get("editor"));
     SNode editedNode = tabbedEditor.getCurrentlyEditedNode().getNode();
     if (!(SNodeOperations.isInstanceOf(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       return null;

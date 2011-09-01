@@ -55,7 +55,7 @@ public class MergeRootsDialog extends BaseDialog {
   private DiffEditor myResultEditor;
   private DiffEditor myMineEditor;
   private DiffEditor myRepositoryEditor;
-  private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.fromList(new ArrayList<ChangeGroupBuilder>());
+  private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.<ChangeGroupBuilder>fromList(new ArrayList<ChangeGroupBuilder>());
   private DiffEditorsGroup myDiffEditorsGroup = new DiffEditorsGroup();
   private MergeContextState myStateToRestore;
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.MERGE_TYPES);
@@ -64,7 +64,7 @@ public class MergeRootsDialog extends BaseDialog {
     super(mergeModelsDialog, "Merging " + rootName);
     myConflictChecker = new ChangeEditorMessage.ConflictChecker() {
       public boolean isChangeConflicted(ModelChange ch) {
-        return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
+        return Sequence.<ModelChange>fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
       }
     };
     myModelsDialog = mergeModelsDialog;
@@ -137,18 +137,18 @@ public class MergeRootsDialog extends BaseDialog {
   }
 
   private void highlightAllChanges() {
-    ListSequence.fromList(myChangeGroupBuilders).visitAll(new IVisitor<ChangeGroupBuilder>() {
+    ListSequence.<ChangeGroupBuilder>fromList(myChangeGroupBuilders).visitAll(new IVisitor<ChangeGroupBuilder>() {
       public void visit(ChangeGroupBuilder b) {
         b.invalidate();
       }
     });
 
-    List<ModelChange> changesForRoot = ListSequence.fromList(myMergeContext.getChangesForRoot(myRootId)).where(new IWhereFilter<ModelChange>() {
+    List<ModelChange> changesForRoot = ListSequence.<ModelChange>fromList(myMergeContext.getChangesForRoot(myRootId)).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return !(myMergeContext.isChangeResolved(ch));
       }
     }).toListSequence();
-    for (ModelChange change : ListSequence.fromList(changesForRoot)) {
+    for (ModelChange change : ListSequence.<ModelChange>fromList(changesForRoot)) {
       higlightChange(myResultEditor, myMergeContext.getResultModel(), change);
       if (myMergeContext.isMyChange(change)) {
         higlightChange(myMineEditor, myMergeContext.getMyModel(), change);
@@ -159,12 +159,12 @@ public class MergeRootsDialog extends BaseDialog {
     myMineEditor.repaintAndRebuildEditorMessages();
     myResultEditor.repaintAndRebuildEditorMessages();
     myRepositoryEditor.repaintAndRebuildEditorMessages();
-    int conflictingChanges = ListSequence.fromList(changesForRoot).where(new IWhereFilter<ModelChange>() {
+    int conflictingChanges = ListSequence.<ModelChange>fromList(changesForRoot).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
-        return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
+        return Sequence.<ModelChange>fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
       }
     }).count();
-    myStatusBar.setText(MergeModelsDialog.generateUnresolvedChangesText(ListSequence.fromList(changesForRoot).count(), conflictingChanges));
+    myStatusBar.setText(MergeModelsDialog.generateUnresolvedChangesText(ListSequence.<ModelChange>fromList(changesForRoot).count(), conflictingChanges));
   }
 
   private void higlightChange(DiffEditor diffEditor, SModel model, ModelChange change) {
@@ -175,7 +175,7 @@ public class MergeRootsDialog extends BaseDialog {
     // create change group builder, trapecium strip and merge buttons painter 
     // 'mine' parameter means mine changeset, 'inspector' - highlight inspector editor component 
     ChangeGroupBuilder changeGroupBuilder = createChangeGroupBuilder(mine, inspector);
-    ListSequence.fromList(myChangeGroupBuilders).addElement(changeGroupBuilder);
+    ListSequence.<ChangeGroupBuilder>fromList(myChangeGroupBuilders).addElement(changeGroupBuilder);
     ChangeTrapeciumStrip strip = new ChangeTrapeciumStrip(changeGroupBuilder);
     JPanel panel = (inspector ?
       myBottomPanel :

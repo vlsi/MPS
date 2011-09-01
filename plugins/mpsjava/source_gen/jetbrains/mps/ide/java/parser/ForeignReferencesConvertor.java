@@ -118,14 +118,14 @@ public class ForeignReferencesConvertor {
     List<SNode> goodMethods = new ArrayList<SNode>();
     for (SNode method : SLinkOperations.getTargets(classifier, "method", true)) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
-        ListSequence.fromList(goodMethods).addElement(method);
+        ListSequence.<SNode>fromList(goodMethods).addElement(method);
       }
     }
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode classConcept = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       if (constructor) {
         for (SNode method : SLinkOperations.getTargets(classConcept, "constructor", true)) {
-          ListSequence.fromList(goodMethods).addElement(method);
+          ListSequence.<SNode>fromList(goodMethods).addElement(method);
         }
       } else {
         for (SNode method : SLinkOperations.getTargets(classConcept, "staticMethod", true)) {
@@ -136,7 +136,7 @@ public class ForeignReferencesConvertor {
       }
     }
     for (SNode method : goodMethods) {
-      Iterator<SNode> iterator = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).iterator();
+      Iterator<SNode> iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).iterator();
       StringBuilder sb = new StringBuilder();
       while (iterator.hasNext()) {
         sb.append(mpsTypeAsString(SLinkOperations.getTarget(iterator.next(), "type", true)));
@@ -158,7 +158,7 @@ public class ForeignReferencesConvertor {
       SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
       sb.append(SNodeOperations.getModel(classifier).getLongName()).append('.').append(SPropertyOperations.getString(classifier, "name"));
       List<SNode> typeParameters = SLinkOperations.getTargets(classifierType, "parameter", true);
-      if (typeParameters != null && !(ListSequence.fromList(typeParameters).isEmpty())) {
+      if (typeParameters != null && !(ListSequence.<SNode>fromList(typeParameters).isEmpty())) {
         sb.append('<');
         appendTypesList(sb, typeParameters);
         sb.append('>');
@@ -190,7 +190,7 @@ public class ForeignReferencesConvertor {
   }
 
   private void appendTypesList(StringBuilder sb, List<SNode> types) {
-    Iterator<SNode> iterator = ListSequence.fromList(types).iterator();
+    Iterator<SNode> iterator = ListSequence.<SNode>fromList(types).iterator();
     while (iterator.hasNext()) {
       sb.append(mpsTypeAsString(iterator.next()));
       if (iterator.hasNext()) {

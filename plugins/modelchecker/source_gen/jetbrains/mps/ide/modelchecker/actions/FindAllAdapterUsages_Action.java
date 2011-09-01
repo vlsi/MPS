@@ -46,12 +46,12 @@ public class FindAllAdapterUsages_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("operationContext") == null) {
       return false;
     }
     return true;
@@ -60,12 +60,12 @@ public class FindAllAdapterUsages_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors();
-      modelDescriptors = ListSequence.fromList(modelDescriptors).where(new IWhereFilter<SModelDescriptor>() {
+      modelDescriptors = ListSequence.<SModelDescriptor>fromList(modelDescriptors).where(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor md) {
           return SModelStereotype.isUserModel(md);
         }
       }).toListSequence();
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModels(modelDescriptors, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new AdapterUsagesFinder());
+      ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModels(modelDescriptors, ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")), true, new AdapterUsagesFinder());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "FindAllAdapterUsages", t);

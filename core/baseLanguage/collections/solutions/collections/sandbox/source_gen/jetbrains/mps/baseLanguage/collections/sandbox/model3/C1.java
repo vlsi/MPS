@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
   private int fff;
 
   /*package*/ void m1() {
-    List<List<String>> lll = ListSequence.fromList(new ArrayList<List<String>>());
+    List<List<String>> lll = ListSequence.<List<String>>fromList(new ArrayList<List<String>>());
   }
 
   public Object m2() {
@@ -27,20 +27,20 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 
   public void m4() {
     List<String> list;
-    ListSequence.fromList(list).first();
+    ListSequence.<String>fromList(list).first();
     this.fff;
     this.m3();
   }
 
   public void m5() {
-    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure<T>() {
+    Iterable<String> ss = Sequence.<Object>fromClosure(new ISequenceClosure<T>() {
       public Iterable<T> iterable() {
         "1";
         "2";
         return "3";
       }
     });
-    for (String s : Sequence.fromIterable(ss)) {
+    for (String s : Sequence.<String>fromIterable(ss)) {
       System.out.println(s);
     }
   }

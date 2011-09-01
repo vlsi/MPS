@@ -29,7 +29,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
   private JComboBox myCombo;
 
   public ManagerTableCellEditor(final IBindedDialog owner) {
-    super(new JComboBox(ListSequence.fromList(getManagers(owner.getOperationContext())).toGenericArray(ModelRootManager.class)));
+    super(new JComboBox(ListSequence.<ModelRootManager>fromList(getManagers(owner.getOperationContext())).toGenericArray(ModelRootManager.class)));
     myCombo = ((JComboBox) super.getComponent());
 
     myCombo.setRenderer(new DefaultListCellRenderer() {
@@ -42,13 +42,13 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
   }
 
   public static List<ModelRootManager> getManagers(final IOperationContext context) {
-    final List<ModelRootManager> result = ListSequence.fromList(new ArrayList<ModelRootManager>());
+    final List<ModelRootManager> result = ListSequence.<ModelRootManager>fromList(new ArrayList<ModelRootManager>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SNode node : ListSequence.fromList(getManagerNodes(context))) {
+        for (SNode node : ListSequence.<SNode>fromList(getManagerNodes(context))) {
           Language language = Language.getLanguageFor(node.getModel().getModelDescriptor());
           ModelRootManager manager = new ModelRootManager(language.getModuleReference().getModuleId().toString(), ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.stubs.structure.AbstractModelCreator"), "jetbrains.mps.lang.stubs.structure.AbstractModelCreator"), "call_getGeneratedClassFQName_5553449326502826666", new Class[]{SNode.class})));
-          ListSequence.fromList(result).addElement(manager);
+          ListSequence.<ModelRootManager>fromList(result).addElement(manager);
         }
       }
     });

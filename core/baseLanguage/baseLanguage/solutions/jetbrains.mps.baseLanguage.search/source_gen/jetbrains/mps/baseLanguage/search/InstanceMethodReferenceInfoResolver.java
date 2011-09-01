@@ -30,11 +30,11 @@ import java.util.Map;
       return null;
     }
     if (methods.size() == 1) {
-      return ListSequence.fromList(methods).first();
+      return ListSequence.<SNode>fromList(methods).first();
     }
     methods = MethodResolveUtil.selectByParmCount(methods, this.myActualArguments);
     if (methods.size() == 1) {
-      return ListSequence.fromList(methods).first();
+      return ListSequence.<SNode>fromList(methods).first();
     }
     SNode classifier = SLinkOperations.getTarget(this.myInstanceType, "classifier", false);
     List<SNode> typeParameters = SLinkOperations.getTargets(this.myInstanceType, "parameter", true);

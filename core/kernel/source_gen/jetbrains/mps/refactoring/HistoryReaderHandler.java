@@ -161,7 +161,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       StructureModificationLog result = (StructureModificationLog) resultObject;
       if ("StructureModification".equals(tagName)) {
         StructureModification child = (StructureModification) value;
-        ListSequence.fromList(result.getHistory()).addElement(child);
+        ListSequence.<StructureModification>fromList(result.getHistory()).addElement(child);
         return;
       }
       super.handleChild(resultObject, tagName, value);
@@ -207,17 +207,17 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       }
       if ("move".equals(tagName)) {
         StructureModification.MoveNode child = (StructureModification.MoveNode) value;
-        ListSequence.fromList(result.getData()).addElement(child);
+        ListSequence.<StructureModification.Entry>fromList(result.getData()).addElement(child);
         return;
       }
       if ("rename".equals(tagName)) {
         StructureModification.RenameNode child = (StructureModification.RenameNode) value;
-        ListSequence.fromList(result.getData()).addElement(child);
+        ListSequence.<StructureModification.Entry>fromList(result.getData()).addElement(child);
         return;
       }
       if ("RenameModel".equals(tagName)) {
         StructureModification.RenameModel child = (StructureModification.RenameModel) value;
-        ListSequence.fromList(result.getData()).addElement(child);
+        ListSequence.<StructureModification.Entry>fromList(result.getData()).addElement(child);
         return;
       }
       super.handleChild(resultObject, tagName, value);
@@ -232,7 +232,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
 
     @Override
     protected Map<SModelReference, Integer> createObject(Attributes attrs) {
-      return MapSequence.fromMap(new HashMap<SModelReference, Integer>());
+      return MapSequence.<SModelReference,Integer>fromMap(new HashMap<SModelReference, Integer>());
     }
 
     @Override

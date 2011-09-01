@@ -50,7 +50,7 @@ public class NewLanguageDialogContentPane extends JPanel {
   private MPSProject myProject;
   private Language myResult;
   private NewLanguageDialog myDialog;
-  public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
+  public List<AutoBinding> myBindings = ListSequence.<AutoBinding>fromList(new ArrayList<AutoBinding>());
   private Events myEvents = new Events(null) {
     {
     }
@@ -98,7 +98,7 @@ public class NewLanguageDialogContentPane extends JPanel {
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
-      ListSequence.fromList(this.myBindings).addElement(binding);
+      ListSequence.<AutoBinding>fromList(this.myBindings).addElement(binding);
     }
     {
       Object sourceObject = myThis;
@@ -107,7 +107,7 @@ public class NewLanguageDialogContentPane extends JPanel {
       Property targetProperty = BeanProperty.create("path");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
-      ListSequence.fromList(this.myBindings).addElement(binding);
+      ListSequence.<AutoBinding>fromList(this.myBindings).addElement(binding);
     }
   }
 

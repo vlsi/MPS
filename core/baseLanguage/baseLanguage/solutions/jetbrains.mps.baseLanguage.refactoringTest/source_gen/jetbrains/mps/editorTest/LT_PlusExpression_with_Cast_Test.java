@@ -26,7 +26,7 @@ public class LT_PlusExpression_with_Cast_Test extends BaseTransformationTest {
       final IEditor editor = TestBody.this.initEditor("3956753173913342772", "3956753173913342774");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "(type");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.<String>fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
     }
   }
 }

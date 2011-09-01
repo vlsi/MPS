@@ -15,9 +15,9 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
 
 public class Graph<V> {
-  private Set<V> vertices = SetSequence.fromSet(new HashSet<V>());
-  private Map<V, List<V>> fwEdges = MapSequence.fromMap(new HashMap<V, List<V>>());
-  private Map<V, List<V>> bkEdges = MapSequence.fromMap(new HashMap<V, List<V>>());
+  private Set<V> vertices = SetSequence.<V>fromSet(new HashSet<V>());
+  private Map<V, List<V>> fwEdges = MapSequence.<V,List<V>>fromMap(new HashMap<V, List<V>>());
+  private Map<V, List<V>> bkEdges = MapSequence.<V,List<V>>fromMap(new HashMap<V, List<V>>());
   private _FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super V> sorter;
   private boolean asc;
 
@@ -25,20 +25,20 @@ public class Graph<V> {
   }
 
   public void addEdges(V from, V... to) {
-    List<V> fw = MapSequence.fromMap(fwEdges).get(from);
+    List<V> fw = MapSequence.<V,List<V>>fromMap(fwEdges).get(from);
     if (fw == null) {
-      fw = ListSequence.fromList(new ArrayList<V>());
-      MapSequence.fromMap(fwEdges).put(from, fw);
+      fw = ListSequence.<V>fromList(new ArrayList<V>());
+      MapSequence.<V,List<V>>fromMap(fwEdges).put(from, fw);
     }
     SetSequence.fromSet(vertices).addElement(from);
     for (V next : to) {
-      ListSequence.fromList(fw).addElement(next);
-      List<V> bk = MapSequence.fromMap(bkEdges).get(next);
+      ListSequence.<V>fromList(fw).addElement(next);
+      List<V> bk = MapSequence.<V,List<V>>fromMap(bkEdges).get(next);
       if (bk == null) {
-        bk = ListSequence.fromList(new ArrayList<V>());
-        MapSequence.fromMap(bkEdges).put(next, bk);
+        bk = ListSequence.<V>fromList(new ArrayList<V>());
+        MapSequence.<V,List<V>>fromMap(bkEdges).put(next, bk);
       }
-      ListSequence.fromList(bk).addElement(from);
+      ListSequence.<V>fromList(bk).addElement(from);
       SetSequence.fromSet(vertices).addElement(next);
     }
   }
@@ -50,7 +50,7 @@ public class Graph<V> {
 
   public Iterable<V> getVertices() {
     return (sorter != null ?
-      SetSequence.fromSet(vertices).sort(sorter, asc) :
+      SetSequence.<V>fromSet(vertices).sort(sorter, asc) :
       vertices
     );
   }
@@ -59,7 +59,7 @@ public class Graph<V> {
     return new GraphAnalyzer<V>() {
       @Override
       public Iterable<V> forwardEdges(V v) {
-        return MapSequence.fromMap(fwEdges).get(v);
+        return MapSequence.<V,List<V>>fromMap(fwEdges).get(v);
       }
 
       @Override
@@ -69,7 +69,7 @@ public class Graph<V> {
 
       @Override
       public Iterable<V> backwardEdges(V v) {
-        return MapSequence.fromMap(bkEdges).get(v);
+        return MapSequence.<V,List<V>>fromMap(bkEdges).get(v);
       }
     };
   }

@@ -4,8 +4,8 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.ide.projectPane.Icons;
 import java.util.Arrays;
@@ -21,7 +21,7 @@ public class DiffButtonsPainter extends ButtonsPainter {
 
   protected Iterable<FoldingAreaButton> createButtonsForChangeGroup(ChangeGroup changeGroup, int y) {
     FoldingAreaButton button = null;
-    boolean allInsert = ListSequence.fromList(changeGroup.getChanges()).all(new IWhereFilter<ModelChange>() {
+    boolean allInsert = ListSequence.<ModelChange>fromList(changeGroup.getChanges()).all(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange c) {
         return c.getType() == ChangeType.ADD;
       }

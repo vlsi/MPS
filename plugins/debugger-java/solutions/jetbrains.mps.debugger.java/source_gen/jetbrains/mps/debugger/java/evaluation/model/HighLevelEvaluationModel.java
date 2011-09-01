@@ -53,7 +53,7 @@ public class HighLevelEvaluationModel extends AbstractEvaluationModel {
       return rootCopy;
     }
     SNode parentsCopy = this.findNodesCopy(root, rootCopy, SNodeOperations.getParent(originalNodeToFind));
-    return ListSequence.fromList(SNodeOperations.getChildren(parentsCopy)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SNodeOperations.getChildren(parentsCopy)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getContainingLinkRole(it).equals(SNodeOperations.getContainingLinkRole(originalNodeToFind));
       }

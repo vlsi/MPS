@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.resources.FResource;
+import jetbrains.mps.make.resources.IResource;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
@@ -46,7 +47,7 @@ public class TextPreviewUtil {
         try {
           IResult result = future.get();
           if (result.isSucessful()) {
-            FResource fres = (FResource) Sequence.fromIterable(result.output()).first();
+            FResource fres = (FResource) Sequence.<IResource>fromIterable(result.output()).first();
 
             final TextPreviewFile tfile = new TextPreviewFile(md.getSModelReference().getSModelFqName().getCompactPresentation(), "Generated text for " + md.getSModelReference().getSModelFqName().getLongName(), fres.contents());
 

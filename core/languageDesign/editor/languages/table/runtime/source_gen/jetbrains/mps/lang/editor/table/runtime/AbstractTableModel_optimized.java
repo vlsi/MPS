@@ -13,22 +13,22 @@ public abstract class AbstractTableModel_optimized implements TableModel_optimiz
   }
 
   public TableRow getRow(int index) {
-    return ListSequence.fromList(getRows()).getElement(index);
+    return ListSequence.<TableRow>fromList(getRows()).getElement(index);
   }
 
   public int getRowCount() {
-    return ListSequence.fromList(getRows()).count();
+    return ListSequence.<TableRow>fromList(getRows()).count();
   }
 
   public void removeColumn(int index) {
-    for (TableRow row : ListSequence.fromList(getRows())) {
+    for (TableRow row : ListSequence.<TableRow>fromList(getRows())) {
       row.removeCell(index);
     }
   }
 
   public void createNewColumn(final int index) {
     if (myKeepSameSizeRows) {
-      ListSequence.fromList(getRows()).visitAll(new IVisitor<TableRow>() {
+      ListSequence.<TableRow>fromList(getRows()).visitAll(new IVisitor<TableRow>() {
         public void visit(TableRow it) {
           it.createNewCell(index);
         }

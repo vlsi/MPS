@@ -50,7 +50,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
     List<SNode> result = new ArrayList<SNode>();
     for (SModelDescriptor model : models) {
       List<SNode> classifiers = ClassifiersCache.getInstance(model).getClassifiers();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(classifiers));
+      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(classifiers));
     }
     return result;
   }
@@ -78,13 +78,13 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
         if (targetModel == null) {
           return null;
         }
-        return ListSequence.fromList(ClassifiersCache.getInstance(targetModel).getClassifiersByRefName(referenceInfo)).first();
+        return ListSequence.<SNode>fromList(ClassifiersCache.getInstance(targetModel).getClassifiersByRefName(referenceInfo)).first();
       }
 
       Collection<IModule> visibleModules = IterableUtil.asCollection(myScope.getVisibleModules());
 
       List<SNode> classifiers = new ArrayList<SNode>();
-      for (SModelDescriptor model : Sequence.fromIterable(((Iterable<IModule>) visibleModules)).<SModelDescriptor>translate(new ITranslator2<IModule, SModelDescriptor>() {
+      for (SModelDescriptor model : Sequence.<IModule>fromIterable(((Iterable<IModule>) visibleModules)).<SModelDescriptor>translate(new ITranslator2<IModule, SModelDescriptor>() {
         public Iterable<SModelDescriptor> translate(IModule it) {
           return it.getOwnModelDescriptors();
         }
@@ -93,14 +93,14 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
           continue;
         }
 
-        ListSequence.fromList(classifiers).addSequence(ListSequence.fromList(ClassifiersCache.getInstance(model).getClassifiersByRefName(referenceInfo)));
+        ListSequence.<SNode>fromList(classifiers).addSequence(ListSequence.<SNode>fromList(ClassifiersCache.getInstance(model).getClassifiersByRefName(referenceInfo)));
       }
 
-      if (ListSequence.fromList(classifiers).isEmpty()) {
+      if (ListSequence.<SNode>fromList(classifiers).isEmpty()) {
         return null;
       }
-      if (ListSequence.fromList(classifiers).count() > 1) {
-        for (SNode cls : ListSequence.fromList(classifiers)) {
+      if (ListSequence.<SNode>fromList(classifiers).count() > 1) {
+        for (SNode cls : ListSequence.<SNode>fromList(classifiers)) {
           if (SNodeOperations.getModel(cls) == myModel) {
             return cls;
           }
@@ -115,7 +115,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
         warn.append(" in ");
         warn.append(myModel.getLongName());
         warn.append(" can reference nodes from models: ");
-        ListSequence.fromList(classifiers).visitAll(new IVisitor<SNode>() {
+        ListSequence.<SNode>fromList(classifiers).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
             warn.append(SNodeOperations.getModel(it).getSModelReference()).append("; ");
           }
@@ -126,7 +126,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
         }
         return null;
       }
-      return ListSequence.fromList(classifiers).getElement(0);
+      return ListSequence.<SNode>fromList(classifiers).getElement(0);
     }
 
     private static IModule check_x9ho2v_a0b0a0i0a0(SModelDescriptor checkedDotOperand) {

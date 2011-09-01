@@ -16,18 +16,18 @@ import com.intellij.openapi.util.Disposer;
 import javax.swing.JTextField;
 
 public class BaseFieldWithButtonComponent extends JPanel implements Disposable {
-  private final List<ActionListener> myListeners = ListSequence.fromList(new ArrayList<ActionListener>());
+  private final List<ActionListener> myListeners = ListSequence.<ActionListener>fromList(new ArrayList<ActionListener>());
   private String myText;
 
   public BaseFieldWithButtonComponent() {
   }
 
   public void removeActionListener(ActionListener listener) {
-    ListSequence.fromList(this.myListeners).removeElement(listener);
+    ListSequence.<ActionListener>fromList(this.myListeners).removeElement(listener);
   }
 
   public void addActionListener(@NotNull final ActionListener listener) {
-    ListSequence.fromList(this.myListeners).addElement(listener);
+    ListSequence.<ActionListener>fromList(this.myListeners).addElement(listener);
     this.getTextField().addKeyListener(new KeyAdapter() {
       @Override
       public void keyReleased(KeyEvent p0) {
@@ -51,7 +51,7 @@ public class BaseFieldWithButtonComponent extends JPanel implements Disposable {
   }
 
   protected void onChange() {
-    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<ActionListener>() {
+    ListSequence.<ActionListener>fromList(this.myListeners).visitAll(new IVisitor<ActionListener>() {
       public void visit(ActionListener it) {
         it.actionPerformed(null);
       }

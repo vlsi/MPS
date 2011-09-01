@@ -20,11 +20,11 @@ import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class TextGen__Facet extends IFacet.Stub {
-  private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
+  private List<ITarget> targets = ListSequence.<ITarget>fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("TextGen_");
 
   public TextGen__Facet() {
-    ListSequence.fromList(targets).addElement(new TextGen__Facet.Target_ConditionallyGenerate());
+    ListSequence.<ITarget>fromList(targets).addElement(new TextGen__Facet.Target_ConditionallyGenerate());
   }
 
   public Iterable<ITarget> targets() {

@@ -27,7 +27,7 @@ public class TryingToLeftTransformNewExpression_Test extends BaseTransformationT
       final IEditor editor = TestBody.this.initEditor("2907839077756812217", "2907839077756812221");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, " ");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.<String>fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
       Assert.assertTrue(editorComponent.getNodeSubstituteChooser().isVisible());
       editorComponent.getNodeSubstituteChooser().setVisible(false);
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveUp_Action");

@@ -31,17 +31,17 @@ public class ChangeParametersOrder_Test extends BaseTransformationTest {
       this.addNodeById("1230052943947");
       this.addNodeById("1230052943971");
       ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("1230052943949"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-      SNode p1 = ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).first();
-      SNode p0 = ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).getElement(1);
-      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).clear();
-      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(p0);
-      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(p1);
+      SNode p1 = ListSequence.<SNode>fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).first();
+      SNode p0 = ListSequence.<SNode>fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).getElement(1);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).clear();
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(p0);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(p1);
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052943949"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-      List<SNode> ussages = ListSequence.fromList(new ArrayList<SNode>());
-      ListSequence.fromList(ussages).addElement(SNodeOperations.cast(this.getNodeById("1230052943965"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
+      List<SNode> ussages = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+      ListSequence.<SNode>fromList(ussages).addElement(SNodeOperations.cast(this.getNodeById("1230052943965"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
       ref.setUsages(ussages);
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943948"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943972"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943948"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943972"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }
 }

@@ -22,7 +22,7 @@ public class Array_Test extends Util_Test {
 
   public void test_iterateArrayYield() throws Exception {
     final int[] arr = new int[]{1, 2, 3, 4, 5};
-    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> test = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -71,7 +71,7 @@ __switch__:
       }
     });
     this.assertIterableEquals(this.expect5(), test);
-    Iterable<Integer> test2 = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> test2 = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -121,7 +121,7 @@ __switch__:
     });
     this.assertIterableEquals(this.expect5(), test2);
     final String[] arr2 = new String[]{"A", "B", "C"};
-    Iterable<String> test3 = Sequence.fromClosure(new ISequenceClosure<String>() {
+    Iterable<String> test3 = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
         return new Iterable<String>() {
           public Iterator<String> iterator() {
@@ -170,7 +170,7 @@ __switch__:
       }
     });
     this.assertIterableEquals(this.inputABC(), test3);
-    Iterable<String> test4 = Sequence.fromClosure(new ISequenceClosure<String>() {
+    Iterable<String> test4 = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
         return new Iterable<String>() {
           public Iterator<String> iterator() {

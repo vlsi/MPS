@@ -37,7 +37,7 @@ public class CellUtil {
   }
 
   public static SNode getConceptPropertyDeclaration(SNode node, final String conceptPropertyName) {
-    return ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_getConceptPropertyDeclarations_1213877394562", new Class[]{SNode.class}))).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_getConceptPropertyDeclarations_1213877394562", new Class[]{SNode.class}))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return conceptPropertyName.equals(SPropertyOperations.getString(it, "name"));
       }

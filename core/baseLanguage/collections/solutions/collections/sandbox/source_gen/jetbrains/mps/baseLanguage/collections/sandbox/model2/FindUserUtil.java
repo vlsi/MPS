@@ -14,11 +14,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
   /*package*/ static User findUser(final PasswordIdentity identity) {
     List<User> allUsers = User.allUsers();
-    List<User> matchedUsers = ListSequence.fromList(allUsers).where(new IWhereFilter<User>() {
+    List<User> matchedUsers = ListSequence.<User>fromList(allUsers).where(new IWhereFilter<User>() {
       public boolean accept(User it) {
         return identity.equals(it.identity);
       }
     }).toListSequence();
-    return ListSequence.fromList(matchedUsers).first();
+    return ListSequence.<User>fromList(matchedUsers).first();
   }
 }

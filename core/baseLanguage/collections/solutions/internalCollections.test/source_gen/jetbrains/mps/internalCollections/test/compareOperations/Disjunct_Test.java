@@ -21,19 +21,19 @@ public class Disjunct_Test extends Util_Test {
 
   public void test_discjunctOperation() throws Exception {
     Iterable<Integer> input = Arrays.asList(1, 2, 2, 3, 4, 4);
-    Iterable<Integer> test = Sequence.fromIterable(input).disjunction(ListSequence.fromList(Arrays.asList(1, 2, 4, 4, 5)));
+    Iterable<Integer> test = Sequence.<Integer>fromIterable(input).disjunction(ListSequence.<Integer>fromList(Arrays.asList(1, 2, 4, 4, 5)));
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(2, 3, 5), test);
   }
 
   public void test_disjunctionEquivalence() throws Exception {
     Iterable<String> a = Arrays.asList("X", "W", "Z", "Y", "X", "Z", "X", "Y", "W");
     Iterable<String> b = Arrays.asList("V", "X", "V", "Z", "Z", "Z", "Y");
-    this.assertIterableEqualsIgnoreOrder(Sequence.fromIterable(a).disjunction(Sequence.fromIterable(b)), Sequence.fromIterable(a).union(Sequence.fromIterable(b)).subtract(Sequence.fromIterable(a).intersect(Sequence.fromIterable(b))));
-    this.assertIterableEqualsIgnoreOrder(Sequence.fromIterable(a).disjunction(Sequence.fromIterable(b)), Sequence.fromIterable(a).subtract(Sequence.fromIterable(b)).union(Sequence.fromIterable(b).subtract(Sequence.fromIterable(a))));
+    this.assertIterableEqualsIgnoreOrder(Sequence.<String>fromIterable(a).disjunction(Sequence.<String>fromIterable(b)), Sequence.<String>fromIterable(a).union(Sequence.<String>fromIterable(b)).subtract(Sequence.<String>fromIterable(a).intersect(Sequence.<String>fromIterable(b))));
+    this.assertIterableEqualsIgnoreOrder(Sequence.<String>fromIterable(a).disjunction(Sequence.<String>fromIterable(b)), Sequence.<String>fromIterable(a).subtract(Sequence.<String>fromIterable(b)).union(Sequence.<String>fromIterable(b).subtract(Sequence.<String>fromIterable(a))));
   }
 
   public void test_nextWithoutHasNext() throws Exception {
-    Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4)).disjunction(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 3, 4, 5, 6))).iterator();
+    Iterator<Integer> it = ListSequence.<Integer>fromList(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4)).disjunction(ListSequence.<Integer>fromList(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 3, 4, 5, 6))).iterator();
     Assert.assertSame(1, it.next());
     Assert.assertSame(2, it.next());
     Assert.assertSame(5, it.next());

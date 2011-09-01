@@ -44,9 +44,9 @@ public class TestNodePath_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.fromMap(_params).put("node", node);
+      MapSequence.<String,Object>fromMap(_params).put("node", node);
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
@@ -54,8 +54,8 @@ public class TestNodePath_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNode root = SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node")));
-      if (((SNode) MapSequence.fromMap(_params).get("node")) != root.findChildByPath(root.getNodePath(((SNode) MapSequence.fromMap(_params).get("node"))))) {
+      SNode root = SNodeOperations.getContainingRoot(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")));
+      if (((SNode) MapSequence.<String,Object>fromMap(_params).get("node")) != root.findChildByPath(root.getNodePath(((SNode) MapSequence.<String,Object>fromMap(_params).get("node"))))) {
         Logger.getLogger("TestNode_Action").error("find child by path works improperly");
       }
     } catch (Throwable t) {

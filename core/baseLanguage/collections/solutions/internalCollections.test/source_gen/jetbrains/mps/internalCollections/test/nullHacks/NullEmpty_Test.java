@@ -16,25 +16,25 @@ import java.util.HashSet;
 public class NullEmpty_Test extends Util_Test {
   public void test_nullFirstLast() throws Exception {
     if (Sequence.NULL_WHEN_EMPTY) {
-      Iterable<Integer> emptySeq = Sequence.fromIterable(Collections.<Integer>emptyList());
-      Assert.assertNull(Sequence.fromIterable(emptySeq).first());
-      Assert.assertNull(Sequence.fromIterable(emptySeq).last());
-      List<Integer> emptyList = ListSequence.fromList(new ArrayList<Integer>());
-      Assert.assertNull(ListSequence.fromList(emptyList).first());
-      Assert.assertNull(ListSequence.fromList(emptyList).last());
-      Assert.assertNull(ListSequence.fromList(emptyList).first());
-      Assert.assertNull(ListSequence.fromList(emptyList).getElement(-1));
+      Iterable<Integer> emptySeq = Sequence.<Integer>fromIterable(Collections.<Integer>emptyList());
+      Assert.assertNull(Sequence.<Integer>fromIterable(emptySeq).first());
+      Assert.assertNull(Sequence.<Integer>fromIterable(emptySeq).last());
+      List<Integer> emptyList = ListSequence.<Integer>fromList(new ArrayList<Integer>());
+      Assert.assertNull(ListSequence.<Integer>fromList(emptyList).first());
+      Assert.assertNull(ListSequence.<Integer>fromList(emptyList).last());
+      Assert.assertNull(ListSequence.<Integer>fromList(emptyList).first());
+      Assert.assertNull(ListSequence.<Integer>fromList(emptyList).getElement(-1));
     }
   }
 
   public void test_nullAddAll() throws Exception {
-    List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
+    List<Integer> test = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     List<Integer> nullList = null;
-    ListSequence.fromList(test).addSequence(ListSequence.fromList(nullList));
+    ListSequence.<Integer>fromList(test).addSequence(ListSequence.<Integer>fromList(nullList));
     this.assertIterableEquals(this.expect5(), test);
-    Set<Integer> test2 = SetSequence.fromSetAndArray(new HashSet<Integer>(), 1, 2, 3, 4, 5);
+    Set<Integer> test2 = SetSequence.<Integer>fromSetAndArray(new HashSet<Integer>(), 1, 2, 3, 4, 5);
     Set<Integer> nullSet = null;
-    ListSequence.fromList(test).addSequence(SetSequence.fromSet(nullSet));
+    ListSequence.<Integer>fromList(test).addSequence(SetSequence.<Integer>fromSet(nullSet));
     this.assertIterableEqualsAsSet(this.expect5(), test2);
   }
 }

@@ -55,7 +55,7 @@ public class ProjectProperties {
   }
 
   public void saveTo(MPSProject project) {
-    ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<Path>(), myProjectDescriptor.getModules())).visitAll(new IVisitor<Path>() {
+    ListSequence.<Path>fromList(ListSequence.<Path>fromListWithValues(new ArrayList<Path>(), myProjectDescriptor.getModules())).visitAll(new IVisitor<Path>() {
       public void visit(Path it) {
         myProjectDescriptor.removeModule(it.getPath());
       }

@@ -23,25 +23,25 @@ public class ChangeColors {
 
   @NotNull
   public static Color get(@NotNull ChangeType changeType) {
-    return MapSequence.fromMap(ourColors).get(changeType);
+    return MapSequence.<ChangeType,Color>fromMap(ourColors).get(changeType);
   }
 
   @NotNull
   public static Color getForTree(@NotNull ChangeType changeType) {
-    return MapSequence.fromMap(ourTreeColors).get(changeType);
+    return MapSequence.<ChangeType,Color>fromMap(ourTreeColors).get(changeType);
   }
 
   static {
-    MapSequence.fromMap(ourColors).put(ChangeType.ADD, ADD);
-    MapSequence.fromMap(ourTreeColors).put(ChangeType.ADD, FileStatus.COLOR_ADDED);
+    MapSequence.<ChangeType,Color>fromMap(ourColors).put(ChangeType.ADD, ADD);
+    MapSequence.<ChangeType,Color>fromMap(ourTreeColors).put(ChangeType.ADD, FileStatus.COLOR_ADDED);
 
-    MapSequence.fromMap(ourColors).put(ChangeType.DELETE, DELETE);
-    MapSequence.fromMap(ourTreeColors).put(ChangeType.DELETE, FileStatus.COLOR_MISSING);
+    MapSequence.<ChangeType,Color>fromMap(ourColors).put(ChangeType.DELETE, DELETE);
+    MapSequence.<ChangeType,Color>fromMap(ourTreeColors).put(ChangeType.DELETE, FileStatus.COLOR_MISSING);
 
-    MapSequence.fromMap(ourColors).put(ChangeType.CHANGE, CHANGE);
-    MapSequence.fromMap(ourTreeColors).put(ChangeType.CHANGE, FileStatus.COLOR_MODIFIED);
+    MapSequence.<ChangeType,Color>fromMap(ourColors).put(ChangeType.CHANGE, CHANGE);
+    MapSequence.<ChangeType,Color>fromMap(ourTreeColors).put(ChangeType.CHANGE, FileStatus.COLOR_MODIFIED);
 
-    MapSequence.fromMap(ourColors).put(ChangeType.CONFLICTED, CONFLICTED);
-    MapSequence.fromMap(ourTreeColors).put(ChangeType.CONFLICTED, FileStatus.MERGED_WITH_CONFLICTS.getColor());
+    MapSequence.<ChangeType,Color>fromMap(ourColors).put(ChangeType.CONFLICTED, CONFLICTED);
+    MapSequence.<ChangeType,Color>fromMap(ourTreeColors).put(ChangeType.CONFLICTED, FileStatus.MERGED_WITH_CONFLICTS.getColor());
   }
 }

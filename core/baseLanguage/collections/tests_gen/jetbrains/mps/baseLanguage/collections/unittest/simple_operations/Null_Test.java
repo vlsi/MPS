@@ -10,16 +10,16 @@ import junit.framework.Assert;
 public class Null_Test extends TestCase {
   public void test__1() throws Exception {
     List<String> l = null;
-    ListSequence.fromList(l).addElement("");
-    ListSequence.fromList(l).addSequence(ListSequence.fromList(l));
-    Assert.assertNull(ListSequence.fromList(l).first());
-    Assert.assertNull(ListSequence.fromList(l).last());
-    Assert.assertNull(ListSequence.fromList(l).first());
-    Assert.assertEquals(-1, ListSequence.fromList(l).indexOf(""));
-    Assert.assertTrue(ListSequence.fromList(l).isEmpty());
-    Assert.assertFalse(ListSequence.fromList(l).isNotEmpty());
-    Assert.assertEquals(0, ListSequence.fromList(l).count());
-    ListSequence.fromList(l).removeElement("");
-    ListSequence.fromList(l).removeSequence(ListSequence.fromList(l));
+    ListSequence.<String>fromList(l).addElement("");
+    ListSequence.<String>fromList(l).addSequence(ListSequence.<String>fromList(l));
+    Assert.assertNull(ListSequence.<String>fromList(l).first());
+    Assert.assertNull(ListSequence.<String>fromList(l).last());
+    Assert.assertNull(ListSequence.<String>fromList(l).first());
+    Assert.assertEquals(-1, ListSequence.<String>fromList(l).indexOf(""));
+    Assert.assertTrue(ListSequence.<String>fromList(l).isEmpty());
+    Assert.assertFalse(ListSequence.<String>fromList(l).isNotEmpty());
+    Assert.assertEquals(0, ListSequence.<String>fromList(l).count());
+    ListSequence.<String>fromList(l).removeElement("");
+    ListSequence.<String>fromList(l).removeSequence(ListSequence.<String>fromList(l));
   }
 }

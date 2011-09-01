@@ -9,7 +9,7 @@ import junit.framework.Assert;
 public class Generics1_Test extends TestCase {
   public void test_test1() throws Exception {
     BooleanSequence bools = new BooleanSequence();
-    for (Boolean bool : Sequence.fromIterable(bools.get())) {
+    for (Boolean bool : Sequence.<Boolean>fromIterable(bools.get())) {
       Assert.assertTrue(bool.booleanValue());
     }
   }
@@ -17,7 +17,7 @@ public class Generics1_Test extends TestCase {
   public void test_test2() throws Exception {
     IntegerSequence ints = new IntegerSequence();
     int count = 0;
-    for (Integer i : Sequence.fromIterable(ints.get())) {
+    for (Integer i : Sequence.<Integer>fromIterable(ints.get())) {
       Assert.assertEquals(count, i.intValue());
       count++;
     }

@@ -11,9 +11,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class MockWidget {
-  private Map<String, String> props = MapSequence.fromMap(new HashMap<String, String>());
-  private Map<String, MockWidget.PropHandlers> propHandlers = MapSequence.fromMap(new HashMap<String, MockWidget.PropHandlers>());
-  private Map<String, MockWidget.EventHandlers> eventHandlers = MapSequence.fromMap(new HashMap<String, MockWidget.EventHandlers>());
+  private Map<String, String> props = MapSequence.<String,String>fromMap(new HashMap<String, String>());
+  private Map<String, MockWidget.PropHandlers> propHandlers = MapSequence.<String,MockWidget.PropHandlers>fromMap(new HashMap<String, MockWidget.PropHandlers>());
+  private Map<String, MockWidget.EventHandlers> eventHandlers = MapSequence.<String,MockWidget.EventHandlers>fromMap(new HashMap<String, MockWidget.EventHandlers>());
 
   public MockWidget() {
   }
@@ -29,19 +29,19 @@ public class MockWidget {
   }
 
   public void setProp(String key, String val) {
-    MapSequence.fromMap(this.props).put(key, val);
-    MockWidget.PropHandlers hdlrs = MapSequence.fromMap(this.propHandlers).get(key);
+    MapSequence.<String,String>fromMap(this.props).put(key, val);
+    MockWidget.PropHandlers hdlrs = MapSequence.<String,MockWidget.PropHandlers>fromMap(this.propHandlers).get(key);
     if (hdlrs != null) {
       hdlrs.fire();
     }
   }
 
   public String getProp(String key) {
-    return MapSequence.fromMap(this.props).get(key);
+    return MapSequence.<String,String>fromMap(this.props).get(key);
   }
 
   public void triggerEvent(String eventKey, MockEvent event) {
-    MockWidget.EventHandlers hdlrs = MapSequence.fromMap(this.eventHandlers).get(eventKey);
+    MockWidget.EventHandlers hdlrs = MapSequence.<String,MockWidget.EventHandlers>fromMap(this.eventHandlers).get(eventKey);
     if (hdlrs != null) {
       hdlrs.fire(event);
     }
@@ -49,15 +49,15 @@ public class MockWidget {
 
   public void addPropHanler(String key, MockPropChngHandler hdlr) {
     MockWidget.PropHandlers hdlrs = (MapSequence.fromMap(this.propHandlers).containsKey(key) ?
-      MapSequence.fromMap(this.propHandlers).get(key) :
+      MapSequence.<String,MockWidget.PropHandlers>fromMap(this.propHandlers).get(key) :
       new MockWidget.PropHandlers(key)
     );
-    MapSequence.fromMap(this.propHandlers).put(key, hdlrs);
+    MapSequence.<String,MockWidget.PropHandlers>fromMap(this.propHandlers).put(key, hdlrs);
     hdlrs.add(hdlr);
   }
 
   public void removePropHandler(String key, MockPropChngHandler hdlr) {
-    MockWidget.PropHandlers hdlrs = MapSequence.fromMap(this.propHandlers).get(key);
+    MockWidget.PropHandlers hdlrs = MapSequence.<String,MockWidget.PropHandlers>fromMap(this.propHandlers).get(key);
     if (hdlrs != null) {
       hdlrs.remove(hdlr);
     }
@@ -65,15 +65,15 @@ public class MockWidget {
 
   public void addEventHandler(String event, MockEventHandler hdlr) {
     MockWidget.EventHandlers hdlrs = (MapSequence.fromMap(this.eventHandlers).containsKey(event) ?
-      MapSequence.fromMap(this.eventHandlers).get(event) :
+      MapSequence.<String,MockWidget.EventHandlers>fromMap(this.eventHandlers).get(event) :
       new MockWidget.EventHandlers(event)
     );
-    MapSequence.fromMap(this.eventHandlers).put(event, hdlrs);
+    MapSequence.<String,MockWidget.EventHandlers>fromMap(this.eventHandlers).put(event, hdlrs);
     hdlrs.add(hdlr);
   }
 
   public void removeEventHandler(String event, MockEventHandler hdlr) {
-    MockWidget.EventHandlers hdlrs = MapSequence.fromMap(this.eventHandlers).get(event);
+    MockWidget.EventHandlers hdlrs = MapSequence.<String,MockWidget.EventHandlers>fromMap(this.eventHandlers).get(event);
     if (hdlrs != null) {
       hdlrs.remove(hdlr);
     }
@@ -85,13 +85,13 @@ public class MockWidget {
   }
 
   protected void appendXMLAttrs(StringBuilder sb) {
-    for (IMapping<String, String> m : MapSequence.fromMap(this.props)) {
+    for (IMapping<String, String> m : MapSequence.<String,String>fromMap(this.props)) {
       sb.append(" " + m.key() + "=\"" + m.value() + "\"");
     }
   }
 
   public class PropHandlers {
-    private List<MockPropChngHandler> hdlrs = ListSequence.fromList(new ArrayList<MockPropChngHandler>());
+    private List<MockPropChngHandler> hdlrs = ListSequence.<MockPropChngHandler>fromList(new ArrayList<MockPropChngHandler>());
     private String propKey;
 
     public PropHandlers(String key) {
@@ -99,22 +99,22 @@ public class MockWidget {
     }
 
     public void add(MockPropChngHandler h) {
-      ListSequence.fromList(this.hdlrs).addElement(h);
+      ListSequence.<MockPropChngHandler>fromList(this.hdlrs).addElement(h);
     }
 
     public void remove(MockPropChngHandler h) {
-      ListSequence.fromList(this.hdlrs).removeElement(h);
+      ListSequence.<MockPropChngHandler>fromList(this.hdlrs).removeElement(h);
     }
 
     public void fire() {
-      for (MockPropChngHandler h : ListSequence.fromList(this.hdlrs)) {
+      for (MockPropChngHandler h : ListSequence.<MockPropChngHandler>fromList(this.hdlrs)) {
         h.handle(MockWidget.this, this.propKey);
       }
     }
   }
 
   public class EventHandlers {
-    private List<MockEventHandler> hdlrs = ListSequence.fromList(new ArrayList<MockEventHandler>());
+    private List<MockEventHandler> hdlrs = ListSequence.<MockEventHandler>fromList(new ArrayList<MockEventHandler>());
     private String eventKey;
 
     public EventHandlers(String key) {
@@ -122,15 +122,15 @@ public class MockWidget {
     }
 
     public void add(MockEventHandler h) {
-      ListSequence.fromList(this.hdlrs).addElement(h);
+      ListSequence.<MockEventHandler>fromList(this.hdlrs).addElement(h);
     }
 
     public void remove(MockEventHandler h) {
-      ListSequence.fromList(this.hdlrs).removeElement(h);
+      ListSequence.<MockEventHandler>fromList(this.hdlrs).removeElement(h);
     }
 
     public void fire(MockEvent event) {
-      for (MockEventHandler h : ListSequence.fromList(this.hdlrs)) {
+      for (MockEventHandler h : ListSequence.<MockEventHandler>fromList(this.hdlrs)) {
         h.handle(MockWidget.this, event);
       }
     }

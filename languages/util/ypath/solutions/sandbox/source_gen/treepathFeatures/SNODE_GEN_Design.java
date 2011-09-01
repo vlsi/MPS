@@ -21,7 +21,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class SNODE_GEN_Design {
   public static class Design_Feature_child extends IGenericParameterizedFeatureDesign.Stub<SNode> implements IGenericParameterizedFeatureDesign<SNode> {
     public Iterable<SNode> getParameters(SNode nodeType) {
-      return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
+      return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return "aggregation".equals(SPropertyOperations.getString_def(it, "metaClass", "reference"));
         }
@@ -78,7 +78,7 @@ public class SNODE_GEN_Design {
 
   public static class Design_Feature_link extends IGenericParameterizedFeatureDesign.Stub<SNode> implements IGenericParameterizedFeatureDesign<SNode> {
     public Iterable<SNode> getParameters(SNode nodeType) {
-      return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
+      return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString_def(it, "metaClass", "reference") == null || "reference".equals(SPropertyOperations.getString_def(it, "metaClass", "reference"));
         }

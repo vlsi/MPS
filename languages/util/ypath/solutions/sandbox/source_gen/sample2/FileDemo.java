@@ -30,7 +30,7 @@ public class FileDemo {
     for (File d : TreeTraversalFactory.Filter(new File_TreePath().startTraversal(listOfFiles), File_TreePath.DIR_NodeKindTrigger.getInstance())) {
       System.out.println("Is a directory");
     }
-    Iterable<File> sequenceOfFiles = Sequence.fromClosure(new ISequenceClosure<File>() {
+    Iterable<File> sequenceOfFiles = Sequence.<File>fromClosure(new ISequenceClosure<File>() {
       public Iterable<File> iterable() {
         return new Iterable<File>() {
           public Iterator<File> iterator() {
