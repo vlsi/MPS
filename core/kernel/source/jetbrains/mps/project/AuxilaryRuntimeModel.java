@@ -30,31 +30,27 @@ public class AuxilaryRuntimeModel implements ModelOwner {
   public AuxilaryRuntimeModel() {
   }
 
-  public static SModelDescriptor getDescriptor() {
-    AuxilaryRuntimeModel instance = getInstance();
-    SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(MY_MODEL_REFERENCE);
-    if (descriptor != null) return descriptor;
-    // use synchronized method
-    return instance.getDescriptor_internal();
-  }
+  private static final Object LOCK = new Object();
+  private static volatile SModelDescriptor ourInstance = null;
 
-  private static AuxilaryRuntimeModel getInstance() {
-    return ApplicationManager.getApplication().getComponent(AuxilaryRuntimeModel.class);
+  public static SModelDescriptor getDescriptor() {
+    if (ourInstance != null) return ourInstance;
+    synchronized (LOCK) {
+      if (ourInstance != null) return ourInstance;
+      AuxilaryRuntimeModel instance = ApplicationManager.getApplication().getComponent(AuxilaryRuntimeModel.class);
+      ourInstance = SModelRepository.getInstance().getModelDescriptor(MY_MODEL_REFERENCE);
+      if (ourInstance == null) {
+        ourInstance = new AuxModelDescriptor();
+        SModelRepository.getInstance().registerModelDescriptor(ourInstance, instance);
+      }
+      return ourInstance;
+    }
   }
 
   public static boolean isAuxModel(SModel model) {
     if (model == null) return false;
     SModelDescriptor descriptor = getDescriptor();
     return model.getModelDescriptor() == descriptor;
-  }
-
-  private synchronized SModelDescriptor getDescriptor_internal() {
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(MY_MODEL_REFERENCE);
-    if (modelDescriptor == null) {
-      modelDescriptor = new AuxModelDescriptor();
-      SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, this);
-    }
-    return modelDescriptor;
   }
 
   private static class AuxModelDescriptor extends BaseSModelDescriptor {
