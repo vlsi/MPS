@@ -39,13 +39,13 @@ public abstract class RealClassPathItem extends AbstractClassPathItem {
 
   //-----------------------
 
-  private List<Runnable> myInvalidationListeners  = new ArrayList<Runnable>();
+  private final List<Runnable> myInvalidationListeners  = new ArrayList<Runnable>();
 
-  public void addInvalidationAction(Runnable action){
+  public synchronized void addInvalidationAction(Runnable action){
     myInvalidationListeners.add(action);
   }
 
-  private void callInvalidationListeners() {
+  private synchronized void callInvalidationListeners() {
     for (Runnable action:myInvalidationListeners){
       action.run();
     }

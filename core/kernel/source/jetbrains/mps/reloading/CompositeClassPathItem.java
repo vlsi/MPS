@@ -30,10 +30,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   public void add(IClassPathItem item) {
     assert item != null;
     myChildren.add(item);
-  }
-
-  public void remove(IClassPathItem item) {
-    myChildren.remove(item);
+    item.addInvalidationAction(myInvalidationListener);
   }
 
   public byte[] getClass(String name) {
@@ -163,5 +160,23 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
     result.append("}");
     return result.toString();
+  }
+
+  private final List<Runnable> myInvalidationListeners  = new ArrayList<Runnable>();
+  private final Runnable myInvalidationListener = new Runnable() {
+    public void run() {
+      callInvalidationListeners();
+    }
+  };
+
+  public synchronized void addInvalidationAction(Runnable action){
+    myInvalidationListeners.add(action);
+  }
+
+  private synchronized void callInvalidationListeners() {
+    for (Runnable action:myInvalidationListeners){
+      action.run();
+    }
+    myInvalidationListeners.clear();
   }
 }

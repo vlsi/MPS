@@ -32,10 +32,8 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   }
 
   //todo can make it faster
-
-
   public Iterable<String> getRootClasses(String namespace) {
-    return new ConditionalIterable<String>(getAvailableClasses(namespace),new Condition<String>() {
+    return new ConditionalIterable<String>(getAvailableClasses(namespace), new Condition<String>() {
       public boolean met(String className) {
         return !(className.contains("$"));
       }
