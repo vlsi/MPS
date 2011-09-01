@@ -248,6 +248,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.MarkerAnnotation" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.MemberValuePair" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.MessageSend" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.NameReference" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.NormalAnnotation" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.NullLiteral" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.OR_OR_Expression" />

@@ -54,6 +54,7 @@ import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 import org.eclipse.jdt.internal.compiler.ast.PostfixExpression;
 import org.eclipse.jdt.internal.compiler.ast.PrefixExpression;
 import org.eclipse.jdt.internal.compiler.ast.CastExpression;
+import org.eclipse.jdt.internal.compiler.ast.NameReference;
 import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
 import org.eclipse.jdt.internal.compiler.ast.SuperReference;
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
@@ -548,8 +549,12 @@ public class JavaConverterTreeBuilder {
   /*package*/ SNode processExpression(CastExpression x) {
     SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.CastExpression", null);
     SLinkOperations.setTarget(result, "expression", processExpressionRefl(x.expression), true);
-    if (x.type instanceof Expression) {
-      SLinkOperations.setTarget(result, "type", createType(((Expression) x.type).resolvedType), true);
+    if (x.type != null) {
+      if (x.type.resolvedType != null) {
+        SLinkOperations.setTarget(result, "type", createType(x.type.resolvedType), true);
+      } else if (x.type instanceof NameReference && ((NameReference) x.type).binding instanceof TypeBinding) {
+        SLinkOperations.setTarget(result, "type", createType((TypeBinding) ((NameReference) x.type).binding), true);
+      }
     }
     return result;
   }
