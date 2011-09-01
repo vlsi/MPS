@@ -116,7 +116,6 @@
   <unitInfo fileName="InstanceOfExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.InstanceOfExpression_BehaviorDescriptor" />
   <unitInfo fileName="OrExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.OrExpression_BehaviorDescriptor" />
   <unitInfo fileName="AndExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AndExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ParenthesizedExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ParenthesizedExpression_BehaviorDescriptor" />
   <unitInfo fileName="WhileStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.WhileStatement_BehaviorDescriptor" />
   <unitInfo fileName="NotEqualsExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.NotEqualsExpression_BehaviorDescriptor" />
   <unitInfo fileName="CastExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CastExpression_BehaviorDescriptor" />
@@ -164,6 +163,7 @@
   <unitInfo fileName="FloatingPointConstant_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.FloatingPointConstant_BehaviorDescriptor" />
   <unitInfo fileName="EnumConstantReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantReference_BehaviorDescriptor" />
   <unitInfo fileName="BlockStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BlockStatement_BehaviorDescriptor" />
+  <unitInfo fileName="ParenthesizedExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ParenthesizedExpression_BehaviorDescriptor" />
   <unitInfo fileName="StringLiteral_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StringLiteral_BehaviorDescriptor" />
   <unitInfo fileName="SuperConstructorInvocation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SuperConstructorInvocation_BehaviorDescriptor" />
   <unitInfo fileName="PlusExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PlusExpression_BehaviorDescriptor" />
@@ -8080,6 +8080,18 @@
       <varInfo nodeId="5412515780383209419" varName="throwables" />
     </scopeInfo>
     <unitInfo nodeId="5412515780383209412" fileName="SingleLineComment_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SingleLineComment_Behavior" />
+  </root>
+  <root nodeId="6307653274956830892">
+    <nodeInfo nodeId="6307653274956830908" fileName="ParenthesizedExpression_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6307653274956830892" fileName="ParenthesizedExpression_Behavior.java" startLine="9" startPosition="47" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6307653274956830892" fileName="ParenthesizedExpression_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_eval_1213877519769#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/project/IModule;)Ljava/lang/Object;" />
+    <scopeInfo nodeId="6307653274956830894" fileName="ParenthesizedExpression_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="6307653274956830902" fileName="ParenthesizedExpression_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="120" />
+    <scopeInfo nodeId="6307653274956830892" fileName="ParenthesizedExpression_Behavior.java" startLine="9" startPosition="47" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="6307653274956830892" fileName="ParenthesizedExpression_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="6307653274956830904" varName="module" />
+    </scopeInfo>
+    <unitInfo nodeId="6307653274956830892" fileName="ParenthesizedExpression_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ParenthesizedExpression_Behavior" />
   </root>
   <root nodeId="7236590470026154810">
     <nodeInfo nodeId="7236590470026154819" fileName="TextCommentPart_Behavior.java" startLine="12" startPosition="76" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
