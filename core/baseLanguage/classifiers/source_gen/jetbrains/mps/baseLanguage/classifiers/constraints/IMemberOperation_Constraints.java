@@ -56,7 +56,7 @@ public class IMemberOperation_Constraints extends BaseConstraintsDescriptor {
               if (coercedNode_dyvyal_c0a0 != null) {
                 for (SNode member : BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_dyvyal_c0a0, _context.getEnclosingNode())) {
                   if (SNodeOperations.isInstanceOf(member, NameUtil.nodeFQName(_context.getLinkTarget())) && IMember_Behavior.call_canBeReferent_8179323502814657526(member, _context.getLinkTarget())) {
-                    ListSequence.fromList(applicableMembers).addElement(member);
+                    ListSequence.<SNode>fromList(applicableMembers).addElement(member);
                   }
                 }
               } else {

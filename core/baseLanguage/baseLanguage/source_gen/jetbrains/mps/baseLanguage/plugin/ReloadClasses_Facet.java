@@ -26,11 +26,11 @@ import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class ReloadClasses_Facet extends IFacet.Stub {
-  private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
+  private List<ITarget> targets = ListSequence.<ITarget>fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.baseLanguage.ReloadClasses");
 
   public ReloadClasses_Facet() {
-    ListSequence.fromList(targets).addElement(new ReloadClasses_Facet.Target_reloadClasses());
+    ListSequence.<ITarget>fromList(targets).addElement(new ReloadClasses_Facet.Target_reloadClasses());
   }
 
   public Iterable<ITarget> targets() {
@@ -74,7 +74,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
             case 0:
               boolean nonEmptyCompilation = pa.global().properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() != null && pa.global().properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything();
 
-              if (nonEmptyCompilation && Sequence.fromIterable(input).any(new IWhereFilter<IResource>() {
+              if (nonEmptyCompilation && Sequence.<IResource>fromIterable(input).any(new IWhereFilter<IResource>() {
                 public boolean accept(IResource in) {
                   return ((TResource) in).module().reloadClassesAfterGeneration();
                 }
@@ -92,7 +92,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
                 monitor.currentProgress().advanceWork("Reloading classes", 1);
                 monitor.currentProgress().finishWork("Reloading classes");
               }
-              _output_i849au_a0a = Sequence.fromIterable(_output_i849au_a0a).concat(Sequence.fromIterable(input));
+              _output_i849au_a0a = Sequence.<IResource>fromIterable(_output_i849au_a0a).concat(Sequence.<IResource>fromIterable(input));
             default:
               return new IResult.SUCCESS(_output_i849au_a0a);
           }

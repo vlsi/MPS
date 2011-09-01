@@ -27,8 +27,8 @@ public class FindSourceBlock_Behavior {
 
   public static boolean call_isSet_1213877521577(SNode thisNode) {
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(thisNode);
-    SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "body", true), "statement", true)).last();
-    Set<SNode> expressions = SetSequence.fromSet(new HashSet<SNode>());
+    SNode lastStatement = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "body", true), "statement", true)).last();
+    Set<SNode> expressions = SetSequence.<SNode>fromSet(new HashSet<SNode>());
     for (SNode returnStatement : returnStatements) {
       SetSequence.fromSet(expressions).addElement(SLinkOperations.getTarget(returnStatement, "expression", true));
     }

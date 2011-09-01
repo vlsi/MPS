@@ -4,7 +4,7 @@
   <unitInfo fileName="QueriesGenerated.java" startLine="28" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.QueriesGenerated" />
   <root nodeId="1197044812173">
     <nodeInfo nodeId="7991477654791680149" fileName="QueriesGenerated.java" startLine="29" startPosition="150" endLine="30" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7991477654791680155" fileName="QueriesGenerated.java" startLine="30" startPosition="52" endLine="31" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7991477654791680155" fileName="QueriesGenerated.java" startLine="30" startPosition="52" endLine="31" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7222148688691894763" fileName="QueriesGenerated.java" startLine="34" startPosition="154" endLine="35" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="35" startPosition="66" endLine="36" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="reductionRule_417xrn_a0a2a" />
     <nodeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="36" startPosition="213" endLine="37" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="conseq_417xrn_a0a0a4a" />
@@ -483,7 +483,7 @@
     <scopeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="591" startPosition="127" endLine="592" endPosition="18" />
     <scopeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="605" startPosition="39" endLine="606" endPosition="41" />
     <scopeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="610" startPosition="196" endLine="611" endPosition="21" />
-    <scopeInfo nodeId="7991477654791680148" fileName="QueriesGenerated.java" startLine="29" startPosition="150" endLine="31" endPosition="226">
+    <scopeInfo nodeId="7991477654791680148" fileName="QueriesGenerated.java" startLine="29" startPosition="150" endLine="31" endPosition="233">
       <varInfo nodeId="7991477654791680150" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="1197044812173" fileName="Mappingmain.java" startLine="130" startPosition="64" endLine="132" endPosition="5" />
@@ -2615,8 +2615,8 @@
     <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="437" startPosition="13" endLine="440" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="446" startPosition="9" endLine="449" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplateNode#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="7991477654791670226" fileName="QueriesGenerated.java" startLine="79" startPosition="188" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7991477654791670251" fileName="QueriesGenerated.java" startLine="189" startPosition="191" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="7991477654791670226" fileName="QueriesGenerated.java" startLine="79" startPosition="195" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7991477654791670251" fileName="QueriesGenerated.java" startLine="189" startPosition="198" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Comparable;" />
     <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="356" startPosition="81" endLine="360" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/lang/Object;" />
     <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="360" startPosition="0" endLine="364" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultResolveInfo#()Ljava/lang/String;" />
     <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="364" startPosition="0" endLine="368" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplateNode#()Ljetbrains/mps/smodel/SNodePointer;" />
@@ -2745,10 +2745,10 @@
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="420" startPosition="31" endLine="423" endPosition="23" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="428" startPosition="17" endLine="431" endPosition="17" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="7991477654791670226" fileName="QueriesGenerated.java" startLine="79" startPosition="188" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="7991477654791670226" fileName="QueriesGenerated.java" startLine="79" startPosition="195" endLine="83" endPosition="0" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="150" startPosition="33" endLine="154" endPosition="0" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="166" startPosition="33" endLine="170" endPosition="0" />
-    <scopeInfo nodeId="7991477654791670251" fileName="QueriesGenerated.java" startLine="189" startPosition="191" endLine="193" endPosition="0" />
+    <scopeInfo nodeId="7991477654791670251" fileName="QueriesGenerated.java" startLine="189" startPosition="198" endLine="193" endPosition="0" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="208" startPosition="29" endLine="212" endPosition="0" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="260" startPosition="13" endLine="264" endPosition="0" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="356" startPosition="81" endLine="360" endPosition="0" />
@@ -2798,8 +2798,8 @@
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="66" startPosition="9" endLine="451" endPosition="7" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="64" startPosition="158" endLine="456" endPosition="46" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="63" startPosition="0" endLine="458" endPosition="0" />
-    <unitInfo nodeId="7991477654791670226" fileName="QueriesGenerated.java" startLine="79" startPosition="165" endLine="83" endPosition="5" unitName="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.QueriesGenerated$1" />
-    <unitInfo nodeId="7991477654791670251" fileName="QueriesGenerated.java" startLine="189" startPosition="156" endLine="193" endPosition="5" unitName="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.QueriesGenerated$2" />
+    <unitInfo nodeId="7991477654791670226" fileName="QueriesGenerated.java" startLine="79" startPosition="172" endLine="83" endPosition="5" unitName="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.QueriesGenerated$1" />
+    <unitInfo nodeId="7991477654791670251" fileName="QueriesGenerated.java" startLine="189" startPosition="163" endLine="193" endPosition="5" unitName="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.QueriesGenerated$2" />
     <unitInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="356" startPosition="60" endLine="368" endPosition="37" unitName="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.TemplateFindUsagesDescriptor$1" />
     <unitInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="24" startPosition="0" endLine="459" endPosition="0" unitName="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.TemplateFindUsagesDescriptor" />
   </root>

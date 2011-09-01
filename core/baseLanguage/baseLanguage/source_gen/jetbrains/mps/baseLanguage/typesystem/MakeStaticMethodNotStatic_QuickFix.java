@@ -23,14 +23,14 @@ public class MakeStaticMethodNotStatic_QuickFix extends QuickFix_Runtime {
     SPropertyOperations.set(methodDeclaration, "name", SPropertyOperations.getString(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "name"));
     SPropertyOperations.set(methodDeclaration, "isFinal", "" + SPropertyOperations.getBoolean(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "isFinal"));
     SLinkOperations.setTarget(methodDeclaration, "returnType", SLinkOperations.getTarget(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "returnType", true), true);
-    ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "parameter", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "parameter", true)));
     SLinkOperations.setTarget(methodDeclaration, "body", SLinkOperations.getTarget(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "body", true), true);
-    ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "throwsItem", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "throwsItem", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodDeclaration, "throwsItem", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "throwsItem", true)));
     SPropertyOperations.set(methodDeclaration, "isDeprecated", "" + SPropertyOperations.getBoolean(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "isDeprecated"));
-    ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "annotation", true)));
-    ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "typeVariableDeclaration", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "typeVariableDeclaration", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodDeclaration, "annotation", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "annotation", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodDeclaration, "typeVariableDeclaration", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "typeVariableDeclaration", true)));
     SLinkOperations.setTarget(methodDeclaration, "visibility", SLinkOperations.getTarget(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), "visibility", true), true);
-    ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("containingClass")[0]), "method", true)).addElement(methodDeclaration);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("containingClass")[0]), "method", true)).addElement(methodDeclaration);
     SNodeOperations.detachNode(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]));
     SNodeOperations.deleteNode(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]));
   }

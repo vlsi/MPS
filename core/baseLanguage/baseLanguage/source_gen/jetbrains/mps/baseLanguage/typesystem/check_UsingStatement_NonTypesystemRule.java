@@ -46,7 +46,7 @@ outer:
       ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(SLinkOperations.getTarget(classifierType, "classifier", false), ClassifierAndSuperClassifiersScope.INSTANCE_METHOD);
       List<SNode> methodsByName = scope.getMethodsByName("dispose");
       for (SNode bmd : methodsByName) {
-        if (ListSequence.fromList(SLinkOperations.getTargets(bmd, "parameter", true)).isEmpty()) {
+        if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(bmd, "parameter", true)).isEmpty()) {
           continue outer;
         }
       }

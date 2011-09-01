@@ -2,6 +2,87 @@
 <debugInfo>
   <unitInfo fileName="TheSimplestLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.theSimplestLanguage.structure.TheSimplestLanguage_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.theSimplestLanguage.structure.StructureAspectDescriptor" />
-  <unitInfo fileName="TheSimplestConcept.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.samples.theSimplestLanguage.structure.TheSimplestConcept" />
+  <root nodeId="1222954937628">
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="15" startPosition="78" endLine="16" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="16" startPosition="112" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEXT" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="17" startPosition="43" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="19" startPosition="68" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="20" startPosition="45" endLine="21" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="21" startPosition="64" endLine="22" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="24" startPosition="41" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="28" startPosition="27" endLine="29" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="32" startPosition="37" endLine="33" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="36" startPosition="27" endLine="37" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="40" startPosition="37" endLine="41" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="44" startPosition="39" endLine="45" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="48" startPosition="49" endLine="49" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="52" startPosition="28" endLine="53" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="56" startPosition="38" endLine="57" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="60" startPosition="37" endLine="61" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="64" startPosition="47" endLine="65" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="68" startPosition="41" endLine="69" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="72" startPosition="49" endLine="73" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="76" startPosition="48" endLine="77" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="80" startPosition="50" endLine="81" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="84" startPosition="69" endLine="85" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="88" startPosition="73" endLine="89" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="92" startPosition="59" endLine="93" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="23" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TheSimplestConcept#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/samples/theSimplestLanguage/structure/TheSimplestConcept;" />
+    <nodeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/samples/theSimplestLanguage/structure/TheSimplestConcept;" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="24" startPosition="41" endLine="25" endPosition="16" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="28" startPosition="27" endLine="29" endPosition="53" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="32" startPosition="37" endLine="33" endPosition="53" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="36" startPosition="27" endLine="37" endPosition="53" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="40" startPosition="37" endLine="41" endPosition="53" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="44" startPosition="39" endLine="45" endPosition="66" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="48" startPosition="49" endLine="49" endPosition="66" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="52" startPosition="28" endLine="53" endPosition="54" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="56" startPosition="38" endLine="57" endPosition="54" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="60" startPosition="37" endLine="61" endPosition="64" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="64" startPosition="47" endLine="65" endPosition="64" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="68" startPosition="41" endLine="69" endPosition="67" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="72" startPosition="49" endLine="73" endPosition="79" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="76" startPosition="48" endLine="77" endPosition="82" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="80" startPosition="50" endLine="81" endPosition="61" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="84" startPosition="69" endLine="85" endPosition="70" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="88" startPosition="73" endLine="89" endPosition="201" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="92" startPosition="59" endLine="93" endPosition="53" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <unitInfo nodeId="1222954937628" fileName="TheSimplestConcept.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.samples.theSimplestLanguage.structure.TheSimplestConcept" />
+  </root>
 </debugInfo>
 

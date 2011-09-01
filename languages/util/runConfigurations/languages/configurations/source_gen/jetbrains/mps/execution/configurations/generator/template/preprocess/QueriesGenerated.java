@@ -25,14 +25,14 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
   public static void mappingScript_CodeBlock_5916922432461069146(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for (SNode executor : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor")).where(new IWhereFilter<SNode>() {
+    for (SNode executor : ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return RunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(it) && RunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(it);
       }
     })) {
-      for (SNode builder : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(executor, "execute", true), "jetbrains.mps.execution.commands.structure.CommandBuilderExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      for (SNode builder : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(executor, "execute", true), "jetbrains.mps.execution.commands.structure.CommandBuilderExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode commandBuilder) {
-          return (ListSequence.fromList(SLinkOperations.getTargets(commandBuilder, "argument", true)).findFirst(new IWhereFilter<SNode>() {
+          return (ListSequence.<SNode>fromList(SLinkOperations.getTargets(commandBuilder, "argument", true)).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode arg) {
               return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arg, "parameterDeclaration", false), "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration");
             }
@@ -44,7 +44,7 @@ public class QueriesGenerated {
           SNode debuggerSettings = new QueriesGenerated.QuotationClass_x583g4_a0a1a0a0a0a0().createNode(debuggerSettignsParameter);
           SLinkOperations.setNewChild(debuggerSettings, "operand", "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter");
           SNode debuggerAssignment = new QueriesGenerated.QuotationClass_x583g4_a0a3a0a0a0a0().createNode(SLinkOperations.getTarget(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(builder, "commandPart", false)), "debuggerParameter", true));
-          ListSequence.fromList(SLinkOperations.getTargets(builder, "argument", true)).addElement(debuggerAssignment);
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(builder, "argument", true)).addElement(debuggerAssignment);
           SLinkOperations.setTarget(debuggerAssignment, "value", debuggerSettings, true);
         }
       }

@@ -27,7 +27,7 @@ public class check_SPropertyAccess_NonTypesystemRule extends AbstractNonTypesyst
       List<SNode> declaredProperties = AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(inputNodeConcept);
       SNode property = SLinkOperations.getTarget(op, "property", false);
       String conceptName = SPropertyOperations.getString(inputNodeConcept, "name");
-      if (!(ListSequence.fromList(declaredProperties).contains(property))) {
+      if (!(ListSequence.<SNode>fromList(declaredProperties).contains(property))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected for an instance of " + conceptName, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226069952494", null, errorTarget);
       }

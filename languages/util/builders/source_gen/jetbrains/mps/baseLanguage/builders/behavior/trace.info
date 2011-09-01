@@ -30,7 +30,7 @@
     <nodeInfo nodeId="2679357232284040708" fileName="BeanPropertyBuilder_Behavior.java" startLine="19" startPosition="43" endLine="20" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2679357232284060725" />
     <nodeInfo nodeId="2679357232284040708" fileName="BeanPropertyBuilder_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2679357232284060737" />
     <nodeInfo nodeId="2679357232284040708" fileName="BeanPropertyBuilder_Behavior.java" startLine="21" startPosition="85" endLine="22" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_4797501453850342017" />
-    <nodeInfo nodeId="2679357232284060733" fileName="BeanPropertyBuilder_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2679357232284060733" fileName="BeanPropertyBuilder_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4797501453850445971" fileName="BeanPropertyBuilder_Behavior.java" startLine="31" startPosition="105" endLine="32" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4797501453850342034" fileName="BeanPropertyBuilder_Behavior.java" startLine="35" startPosition="145" endLine="36" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2679357232284040708" fileName="BeanPropertyBuilder_Behavior.java" startLine="39" startPosition="78" endLine="40" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -112,7 +112,7 @@
     <nodeInfo nodeId="2679357232284040708" fileName="BeanPropertyBuilder_Behavior.java" startLine="84" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="2679357232284040710" fileName="BeanPropertyBuilder_Behavior.java" startLine="24" startPosition="43" endLine="24" endPosition="43" />
     <scopeInfo nodeId="2679357232284040708" fileName="BeanPropertyBuilder_Behavior.java" startLine="82" startPosition="42" endLine="82" endPosition="42" />
-    <scopeInfo nodeId="2679357232284060727" fileName="BeanPropertyBuilder_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="229" />
+    <scopeInfo nodeId="2679357232284060727" fileName="BeanPropertyBuilder_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="236" />
     <scopeInfo nodeId="2679357232284060739" fileName="BeanPropertyBuilder_Behavior.java" startLine="31" startPosition="105" endLine="32" endPosition="62" />
     <scopeInfo nodeId="4797501453850342019" fileName="BeanPropertyBuilder_Behavior.java" startLine="35" startPosition="145" endLine="36" endPosition="160" />
     <scopeInfo nodeId="2679357232284040708" fileName="BeanPropertyBuilder_Behavior.java" startLine="54" startPosition="111" endLine="55" endPosition="274" />
@@ -186,25 +186,25 @@
     <nodeInfo nodeId="3436597452201032652" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="23" startPosition="88" endLine="24" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5199967550912567401" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="27" startPosition="113" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3816167865390609219" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="28" startPosition="48" endLine="29" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7782956297805866133" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="32" startPosition="308" endLine="33" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7782956297805866133" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="32" startPosition="308" endLine="33" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5199967550912567445" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="36" startPosition="5" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7782956297805865297" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="40" startPosition="83" endLine="41" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7782956297805865310" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="41" startPosition="48" endLine="42" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7782956297805865337" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="43" startPosition="29" endLine="44" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7782956297805865326" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="44" startPosition="56" endLine="45" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7782956297805865337" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="43" startPosition="29" endLine="44" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7782956297805865326" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="44" startPosition="63" endLine="45" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7782956297805865306" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="46" startPosition="5" endLine="47" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7782956297805904008" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="50" startPosition="112" endLine="51" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7782956297805903936" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="51" startPosition="48" endLine="52" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7782956297805903949" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="52" startPosition="110" endLine="53" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7782956297805904028" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="56" startPosition="332" endLine="57" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7782956297805904028" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="56" startPosition="339" endLine="57" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7782956297805904026" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="60" startPosition="5" endLine="61" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3816167865390856315" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="64" startPosition="110" endLine="65" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7782956297805940239" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="66" startPosition="103" endLine="67" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7782956297805940313" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="69" startPosition="120" endLine="70" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7782956297805940239" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="66" startPosition="103" endLine="67" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7782956297805940313" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="69" startPosition="120" endLine="70" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3816167865390856507" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="71" startPosition="5" endLine="72" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5389689214217081377" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="75" startPosition="112" endLine="76" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7782956297805865431" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="77" startPosition="103" endLine="78" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7782956297805904088" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="80" startPosition="120" endLine="81" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7782956297805865431" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="77" startPosition="103" endLine="78" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7782956297805904088" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="80" startPosition="120" endLine="81" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5389689214217081406" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="82" startPosition="5" endLine="83" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6254726786820574437" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="86" startPosition="89" endLine="87" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3816167865390595154" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="15" startPosition="48" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -230,12 +230,12 @@
     <scopeInfo nodeId="3816167865390595156" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="8969040284892403081" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="19" startPosition="73" endLine="20" endPosition="251" />
     <scopeInfo nodeId="3816167865390595160" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="23" startPosition="88" endLine="24" endPosition="225" />
-    <scopeInfo nodeId="7782956297805866110" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="32" startPosition="308" endLine="33" endPosition="152" />
-    <scopeInfo nodeId="7782956297805903963" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="56" startPosition="332" endLine="57" endPosition="161" />
-    <scopeInfo nodeId="7782956297805940215" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="66" startPosition="103" endLine="67" endPosition="117" />
-    <scopeInfo nodeId="7782956297805940272" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="69" startPosition="120" endLine="70" endPosition="119" />
-    <scopeInfo nodeId="7782956297805865383" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="77" startPosition="103" endLine="78" endPosition="120" />
-    <scopeInfo nodeId="7782956297805904046" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="80" startPosition="120" endLine="81" endPosition="122" />
+    <scopeInfo nodeId="7782956297805866110" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="32" startPosition="308" endLine="33" endPosition="159" />
+    <scopeInfo nodeId="7782956297805903963" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="56" startPosition="339" endLine="57" endPosition="168" />
+    <scopeInfo nodeId="7782956297805940215" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="66" startPosition="103" endLine="67" endPosition="131" />
+    <scopeInfo nodeId="7782956297805940272" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="69" startPosition="120" endLine="70" endPosition="133" />
+    <scopeInfo nodeId="7782956297805865383" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="77" startPosition="103" endLine="78" endPosition="134" />
+    <scopeInfo nodeId="7782956297805904046" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="80" startPosition="120" endLine="81" endPosition="136" />
     <scopeInfo nodeId="6254726786820574414" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="86" startPosition="89" endLine="87" endPosition="20" />
     <scopeInfo nodeId="7782956297805865318" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="43" startPosition="29" endLine="45" endPosition="69" />
     <scopeInfo nodeId="3816167865390595154" fileName="SimpleBuilderDeclaration_Behavior.java" startLine="15" startPosition="48" endLine="18" endPosition="0" />
@@ -315,12 +315,12 @@
     <nodeInfo nodeId="5199967550912479723" fileName="SimpleBuilders_Behavior.java" startLine="22" startPosition="81" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5199967550912479730" fileName="SimpleBuilders_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5199967550912479748" fileName="SimpleBuilders_Behavior.java" startLine="28" startPosition="115" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5199967550912479793" fileName="SimpleBuilders_Behavior.java" startLine="31" startPosition="88" endLine="32" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5199967550912479793" fileName="SimpleBuilders_Behavior.java" startLine="31" startPosition="88" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5199967550912479757" fileName="SimpleBuilders_Behavior.java" startLine="34" startPosition="5" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6211769134875410559" fileName="SimpleBuilders_Behavior.java" startLine="38" startPosition="83" endLine="39" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6211769134875410570" fileName="SimpleBuilders_Behavior.java" startLine="39" startPosition="48" endLine="40" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6211769134875410603" fileName="SimpleBuilders_Behavior.java" startLine="41" startPosition="29" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6211769134875410591" fileName="SimpleBuilders_Behavior.java" startLine="42" startPosition="56" endLine="43" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6211769134875410603" fileName="SimpleBuilders_Behavior.java" startLine="41" startPosition="29" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6211769134875410591" fileName="SimpleBuilders_Behavior.java" startLine="42" startPosition="63" endLine="43" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6211769134875410579" fileName="SimpleBuilders_Behavior.java" startLine="44" startPosition="5" endLine="45" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5199967550912384282" fileName="SimpleBuilders_Behavior.java" startLine="14" startPosition="38" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="5199967550912479714" fileName="SimpleBuilders_Behavior.java" startLine="18" startPosition="88" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -334,7 +334,7 @@
     <scopeInfo nodeId="5199967550912384284" fileName="SimpleBuilders_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="5199967550912479718" fileName="SimpleBuilders_Behavior.java" startLine="19" startPosition="24" endLine="20" endPosition="18" />
     <scopeInfo nodeId="5199967550912479722" fileName="SimpleBuilders_Behavior.java" startLine="22" startPosition="81" endLine="23" endPosition="19" />
-    <scopeInfo nodeId="5199967550912479792" fileName="SimpleBuilders_Behavior.java" startLine="31" startPosition="88" endLine="32" endPosition="53" />
+    <scopeInfo nodeId="5199967550912479792" fileName="SimpleBuilders_Behavior.java" startLine="31" startPosition="88" endLine="32" endPosition="60" />
     <scopeInfo nodeId="6211769134875410584" fileName="SimpleBuilders_Behavior.java" startLine="41" startPosition="29" endLine="43" endPosition="76" />
     <scopeInfo nodeId="5199967550912384282" fileName="SimpleBuilders_Behavior.java" startLine="14" startPosition="38" endLine="17" endPosition="0" />
     <scopeInfo nodeId="5199967550912479772" fileName="SimpleBuilders_Behavior.java" startLine="30" startPosition="145" endLine="33" endPosition="7" />
@@ -655,7 +655,7 @@
     <nodeInfo nodeId="7057666463730306574" fileName="Builder_Behavior.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getCreatorExpression_7057666463730727863#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="7057666463730306574" fileName="Builder_Behavior.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAttachStatement_7288041816792215495#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="7057666463730306574" fileName="Builder_Behavior.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAttachStatementChild_4797501453850305563#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="3436597452201032528" fileName="Builder_Behavior.java" startLine="91" startPosition="208" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3436597452201032528" fileName="Builder_Behavior.java" startLine="91" startPosition="215" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="7057666463730306574" fileName="Builder_Behavior.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isLeaf_7057666463730595159#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="7057666463730306574" fileName="Builder_Behavior.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getResultType_7057666463730718251#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="7057666463730306574" fileName="Builder_Behavior.java" startLine="54" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getCreatorExpression_7057666463730727863#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
@@ -709,7 +709,7 @@
       <varInfo nodeId="4797501453850305568" varName="parentBuilder" />
       <varInfo nodeId="4797501453850305573" varName="childRef" />
     </scopeInfo>
-    <scopeInfo nodeId="3436597452201032528" fileName="Builder_Behavior.java" startLine="91" startPosition="208" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="3436597452201032528" fileName="Builder_Behavior.java" startLine="91" startPosition="215" endLine="95" endPosition="0" />
     <scopeInfo nodeId="7057666463730306574" fileName="Builder_Behavior.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="7057666463730306574" fileName="Builder_Behavior.java" startLine="49" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="7057666463730306574" fileName="Builder_Behavior.java" startLine="54" startPosition="0" endLine="59" endPosition="0">
@@ -729,7 +729,7 @@
     <scopeInfo nodeId="7057666463730306574" fileName="Builder_Behavior.java" startLine="89" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="7057666463730366743" varName="context" />
     </scopeInfo>
-    <unitInfo nodeId="3436597452201032528" fileName="Builder_Behavior.java" startLine="91" startPosition="185" endLine="95" endPosition="5" unitName="jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior$1" />
+    <unitInfo nodeId="3436597452201032528" fileName="Builder_Behavior.java" startLine="91" startPosition="192" endLine="95" endPosition="5" unitName="jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior$1" />
     <unitInfo nodeId="7057666463730306574" fileName="Builder_Behavior.java" startLine="15" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior" />
   </root>
   <root nodeId="7288041816793071804">
@@ -746,10 +746,10 @@
     <nodeInfo nodeId="4315270135340702030" fileName="SimpleBuilder_Behavior.java" startLine="50" startPosition="147" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4315270135340702033" fileName="SimpleBuilder_Behavior.java" startLine="51" startPosition="0" endLine="52" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4315270135340702041" fileName="SimpleBuilder_Behavior.java" startLine="52" startPosition="130" endLine="53" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4315270135340702049" fileName="SimpleBuilder_Behavior.java" startLine="54" startPosition="87" endLine="55" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4315270135340702049" fileName="SimpleBuilder_Behavior.java" startLine="54" startPosition="101" endLine="55" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="4315270135340702059" fileName="SimpleBuilder_Behavior.java" startLine="56" startPosition="5" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4315270135340702062" fileName="SimpleBuilder_Behavior.java" startLine="58" startPosition="166" endLine="59" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4315270135340702071" fileName="SimpleBuilder_Behavior.java" startLine="59" startPosition="108" endLine="60" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4315270135340702062" fileName="SimpleBuilder_Behavior.java" startLine="58" startPosition="166" endLine="59" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4315270135340702071" fileName="SimpleBuilder_Behavior.java" startLine="59" startPosition="115" endLine="60" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4315270135340710723" fileName="SimpleBuilder_Behavior.java" startLine="61" startPosition="5" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4315270135340710725" fileName="SimpleBuilder_Behavior.java" startLine="62" startPosition="0" endLine="63" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7288041816793075512" fileName="SimpleBuilder_Behavior.java" startLine="66" startPosition="139" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -778,7 +778,7 @@
     <nodeInfo nodeId="4797501453850479381" fileName="SimpleBuilder_Behavior.java" startLine="75" startPosition="11" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7288041816793071804" fileName="SimpleBuilder_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getResultType_7057666463730718251#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="7288041816793071804" fileName="SimpleBuilder_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLeaf_7057666463730595159#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="8969040284892333088" fileName="SimpleBuilder_Behavior.java" startLine="40" startPosition="244" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8969040284892333088" fileName="SimpleBuilder_Behavior.java" startLine="40" startPosition="258" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="4315270135340702060" fileName="SimpleBuilder_Behavior.java" startLine="57" startPosition="0" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7288041816793071804" fileName="SimpleBuilder_Behavior.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getResultType_7288041816793071817#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="7288041816793071804" fileName="SimpleBuilder_Behavior.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isLeaf_7288041816793416227#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Z" />
@@ -800,14 +800,14 @@
     <scopeInfo nodeId="7288041816793071819" fileName="SimpleBuilder_Behavior.java" startLine="29" startPosition="81" endLine="30" endPosition="110" />
     <scopeInfo nodeId="7288041816793416229" fileName="SimpleBuilder_Behavior.java" startLine="33" startPosition="76" endLine="34" endPosition="109" />
     <scopeInfo nodeId="8969040284892333089" fileName="SimpleBuilder_Behavior.java" startLine="41" startPosition="41" endLine="42" endPosition="69" />
-    <scopeInfo nodeId="4315270135340702048" fileName="SimpleBuilder_Behavior.java" startLine="54" startPosition="87" endLine="55" endPosition="35" />
+    <scopeInfo nodeId="4315270135340702048" fileName="SimpleBuilder_Behavior.java" startLine="54" startPosition="101" endLine="55" endPosition="35" />
     <scopeInfo nodeId="4797501453850479366" fileName="SimpleBuilder_Behavior.java" startLine="73" startPosition="173" endLine="74" endPosition="92" />
     <scopeInfo nodeId="4797501453850479382" fileName="SimpleBuilder_Behavior.java" startLine="76" startPosition="172" endLine="77" endPosition="91" />
     <scopeInfo nodeId="7288041816793071804" fileName="SimpleBuilder_Behavior.java" startLine="107" startPosition="111" endLine="108" endPosition="268" />
     <scopeInfo nodeId="7288041816793071804" fileName="SimpleBuilder_Behavior.java" startLine="111" startPosition="106" endLine="112" endPosition="264" />
     <scopeInfo nodeId="7288041816793071804" fileName="SimpleBuilder_Behavior.java" startLine="115" startPosition="135" endLine="116" endPosition="286" />
     <scopeInfo nodeId="7288041816793071804" fileName="SimpleBuilder_Behavior.java" startLine="119" startPosition="169" endLine="120" endPosition="308" />
-    <scopeInfo nodeId="4315270135340702061" fileName="SimpleBuilder_Behavior.java" startLine="58" startPosition="166" endLine="60" endPosition="119">
+    <scopeInfo nodeId="4315270135340702061" fileName="SimpleBuilder_Behavior.java" startLine="58" startPosition="166" endLine="60" endPosition="126">
       <varInfo nodeId="4315270135340702063" varName="index" />
     </scopeInfo>
     <scopeInfo nodeId="7288041816793071804" fileName="SimpleBuilder_Behavior.java" startLine="87" startPosition="78" endLine="89" endPosition="223" />
@@ -823,7 +823,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7288041816793071804" fileName="SimpleBuilder_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="7288041816793071804" fileName="SimpleBuilder_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="8969040284892333088" fileName="SimpleBuilder_Behavior.java" startLine="40" startPosition="244" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="8969040284892333088" fileName="SimpleBuilder_Behavior.java" startLine="40" startPosition="258" endLine="44" endPosition="0" />
     <scopeInfo nodeId="4315270135340702060" fileName="SimpleBuilder_Behavior.java" startLine="57" startPosition="0" endLine="61" endPosition="5">
       <varInfo nodeId="4315270135340702085" varName="ref" />
     </scopeInfo>
@@ -882,7 +882,7 @@
       <varInfo nodeId="7288041816793075496" varName="childBuilder" />
       <varInfo nodeId="7288041816793075500" varName="childRef" />
     </scopeInfo>
-    <unitInfo nodeId="8969040284892333088" fileName="SimpleBuilder_Behavior.java" startLine="40" startPosition="221" endLine="44" endPosition="7" unitName="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilder_Behavior$1" />
+    <unitInfo nodeId="8969040284892333088" fileName="SimpleBuilder_Behavior.java" startLine="40" startPosition="235" endLine="44" endPosition="7" unitName="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilder_Behavior$1" />
     <unitInfo nodeId="7288041816793071804" fileName="SimpleBuilder_Behavior.java" startLine="20" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilder_Behavior" />
   </root>
   <root nodeId="7802271442981792255">

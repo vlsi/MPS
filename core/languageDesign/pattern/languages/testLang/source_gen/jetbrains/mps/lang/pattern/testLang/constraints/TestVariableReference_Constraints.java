@@ -49,7 +49,7 @@ public class TestVariableReference_Constraints extends BaseConstraintsDescriptor
             Set<String> names = new HashSet();
             for (SNode var : variables) {
               if (!(names.contains(SPropertyOperations.getString(var, "name")))) {
-                ListSequence.fromList(result).addElement(var);
+                ListSequence.<SNode>fromList(result).addElement(var);
                 names.add(SPropertyOperations.getString(var, "name"));
               }
             }

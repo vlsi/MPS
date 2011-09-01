@@ -60,7 +60,7 @@ public class InstanceMethodCallOperation_Behavior {
     SNode declaration = SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false);
     SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(thisNode);
     SNode declarationClassifier = SNodeOperations.getAncestor(declaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    if (!(classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
+    if (!(classifier == declarationClassifier || ListSequence.<SNode>fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
       return false;
     }
     int constraint = IClassifiersSearchScope.INSTANCE_METHOD;
@@ -78,6 +78,6 @@ public class InstanceMethodCallOperation_Behavior {
   public static void call_convertToLocal_5311267937735269230(SNode thisNode) {
     SNode methodCall = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall");
     SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), false);
-    ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)));
   }
 }

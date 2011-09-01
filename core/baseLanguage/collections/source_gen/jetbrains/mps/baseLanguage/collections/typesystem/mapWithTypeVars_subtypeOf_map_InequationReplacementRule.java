@@ -20,11 +20,11 @@ public class mapWithTypeVars_subtypeOf_map_InequationReplacementRule extends Abs
   }
 
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
-    return !(ListSequence.fromList(SNodeOperations.getChildren(supertype)).any(new IWhereFilter<SNode>() {
+    return !(ListSequence.<SNode>fromList(SNodeOperations.getChildren(supertype)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode c) {
         return SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
       }
-    })) && ListSequence.fromList(SNodeOperations.getChildren(subtype)).any(new IWhereFilter<SNode>() {
+    })) && ListSequence.<SNode>fromList(SNodeOperations.getChildren(subtype)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode c) {
         return SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
       }

@@ -24,10 +24,10 @@ public class MakeStaticFieldNotStatic_QuickFix extends QuickFix_Runtime {
     SLinkOperations.setTarget(fieldDeclaration, "type", SLinkOperations.getTarget(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]), "type", true), true);
     SPropertyOperations.set(fieldDeclaration, "isFinal", "" + SPropertyOperations.getBoolean(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]), "isFinal"));
     SLinkOperations.setTarget(fieldDeclaration, "initializer", SLinkOperations.getTarget(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]), "initializer", true), true);
-    ListSequence.fromList(SLinkOperations.getTargets(fieldDeclaration, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]), "annotation", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(fieldDeclaration, "annotation", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]), "annotation", true)));
     SLinkOperations.setTarget(fieldDeclaration, "visibility", SLinkOperations.getTarget(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]), "visibility", true), true);
     SPropertyOperations.set(fieldDeclaration, "isDeprecated", "" + SPropertyOperations.getBoolean(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]), "isDeprecated"));
-    ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("containingClass")[0]), "field", true)).addElement(fieldDeclaration);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("containingClass")[0]), "field", true)).addElement(fieldDeclaration);
     SNodeOperations.detachNode(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]));
     SNodeOperations.deleteNode(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]));
   }

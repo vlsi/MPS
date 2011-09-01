@@ -64,9 +64,9 @@ public class XMLSAXAttributeReference_Constraints extends BaseConstraintsDescrip
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode creator = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator", true, false);
-            List<SNode> n = ListSequence.fromList(new ArrayList<SNode>());
+            List<SNode> n = ListSequence.<SNode>fromList(new ArrayList<SNode>());
             if ((creator != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(creator), "jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule")) {
-              ListSequence.fromList(n).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(creator), "jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule"), "attrs", true)).where(new IWhereFilter<SNode>() {
+              ListSequence.<SNode>fromList(n).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(creator), "jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule"), "attrs", true)).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return SPropertyOperations.getBoolean(it, "isRequired");
                 }

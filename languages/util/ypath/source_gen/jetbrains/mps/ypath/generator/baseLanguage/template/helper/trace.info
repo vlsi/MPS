@@ -6,7 +6,7 @@
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="104" startPosition="27" endLine="104" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="114" startPosition="28" endLine="114" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="117" startPosition="28" endLine="117" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1200150617938" fileName="OperationsUtil.java" startLine="25" startPosition="219" endLine="26" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200150617938" fileName="OperationsUtil.java" startLine="25" startPosition="219" endLine="26" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1199879911057" fileName="OperationsUtil.java" startLine="27" startPosition="5" endLine="28" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1199879911064" fileName="OperationsUtil.java" startLine="28" startPosition="132" endLine="29" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1199879911072" fileName="OperationsUtil.java" startLine="29" startPosition="113" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -19,7 +19,7 @@
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="48" startPosition="35" endLine="49" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_18_io" />
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="56" startPosition="28" endLine="57" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="57" startPosition="54" endLine="58" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="59" startPosition="27" endLine="60" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="59" startPosition="27" endLine="60" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="62" startPosition="55" endLine="63" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="63" startPosition="40" endLine="64" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="65" startPosition="23" endLine="66" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -80,7 +80,7 @@
     <nodeInfo nodeId="1200052526487" fileName="OperationsUtil.java" startLine="143" startPosition="34" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1200052526500" fileName="OperationsUtil.java" startLine="146" startPosition="5" endLine="149" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1200052526513" fileName="OperationsUtil.java" startLine="149" startPosition="5" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225096926873" fileName="OperationsUtil.java" startLine="33" startPosition="111" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1225096926873" fileName="OperationsUtil.java" startLine="33" startPosition="118" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="61" startPosition="27" endLine="65" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="69" startPosition="27" endLine="73" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="76" startPosition="28" endLine="80" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -94,7 +94,7 @@
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="43" startPosition="45" endLine="135" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="42" startPosition="38" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
     <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="41" startPosition="56" endLine="137" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="40" startPosition="94" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="40" startPosition="101" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1199879911116" fileName="OperationsUtil.java" startLine="39" startPosition="6" endLine="139" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1199879793929" fileName="OperationsUtil.java" startLine="23" startPosition="29" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="substituteApplicableOperations#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="98" startPosition="27" endLine="98" endPosition="27" />
@@ -102,9 +102,9 @@
     <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="104" startPosition="27" endLine="104" endPosition="27" />
     <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="114" startPosition="28" endLine="114" endPosition="28" />
     <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="117" startPosition="28" endLine="117" endPosition="28" />
-    <scopeInfo nodeId="1200150593582" fileName="OperationsUtil.java" startLine="25" startPosition="219" endLine="26" endPosition="79" />
+    <scopeInfo nodeId="1200150593582" fileName="OperationsUtil.java" startLine="25" startPosition="219" endLine="26" endPosition="86" />
     <scopeInfo nodeId="1225096926876" fileName="OperationsUtil.java" startLine="34" startPosition="41" endLine="35" endPosition="72" />
-    <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="59" startPosition="27" endLine="60" endPosition="217" />
+    <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="59" startPosition="27" endLine="60" endPosition="224" />
     <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="129" startPosition="28" endLine="130" endPosition="37" />
     <scopeInfo nodeId="1200052526488" fileName="OperationsUtil.java" startLine="144" startPosition="115" endLine="145" endPosition="163" />
     <scopeInfo nodeId="1200052526501" fileName="OperationsUtil.java" startLine="147" startPosition="110" endLine="148" endPosition="158" />
@@ -124,7 +124,7 @@
     <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="90" startPosition="28" endLine="93" endPosition="34" />
     <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="94" startPosition="28" endLine="97" endPosition="34" />
     <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="120" startPosition="28" endLine="123" endPosition="79" />
-    <scopeInfo nodeId="1225096926873" fileName="OperationsUtil.java" startLine="33" startPosition="111" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1225096926873" fileName="OperationsUtil.java" startLine="33" startPosition="118" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="107" startPosition="27" endLine="111" endPosition="84" />
     <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="120" startPosition="28" endLine="125" endPosition="28" />
     <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="69" startPosition="27" endLine="75" endPosition="28" />
@@ -144,7 +144,7 @@
     <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="43" startPosition="45" endLine="135" endPosition="14" />
     <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="42" startPosition="38" endLine="137" endPosition="0" />
     <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="41" startPosition="56" endLine="137" endPosition="10" />
-    <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="40" startPosition="94" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="40" startPosition="101" endLine="139" endPosition="0" />
     <scopeInfo nodeId="1199879793932" fileName="OperationsUtil.java" startLine="24" startPosition="78" endLine="139" endPosition="24">
       <varInfo nodeId="1199879911080" varName="axis" />
       <varInfo nodeId="1199879911073" varName="tp" />
@@ -155,10 +155,10 @@
     <scopeInfo nodeId="1199879793929" fileName="OperationsUtil.java" startLine="23" startPosition="29" endLine="141" endPosition="0">
       <varInfo nodeId="1199879877239" varName="wildCardOp" />
     </scopeInfo>
-    <unitInfo nodeId="1225096926873" fileName="OperationsUtil.java" startLine="33" startPosition="88" endLine="37" endPosition="7" unitName="jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil$1" />
+    <unitInfo nodeId="1225096926873" fileName="OperationsUtil.java" startLine="33" startPosition="95" endLine="37" endPosition="7" unitName="jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil$1" />
     <unitInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="44" startPosition="23" endLine="135" endPosition="13" unitName="jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil$4" />
     <unitInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="42" startPosition="19" endLine="137" endPosition="9" unitName="jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil$3" />
-    <unitInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="40" startPosition="64" endLine="139" endPosition="5" unitName="jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil$2" />
+    <unitInfo nodeId="1225096924453" fileName="OperationsUtil.java" startLine="40" startPosition="71" endLine="139" endPosition="5" unitName="jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil$2" />
     <unitInfo nodeId="1199879785635" fileName="OperationsUtil.java" startLine="23" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil" />
   </root>
 </debugInfo>

@@ -48,7 +48,7 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
     c.weightx = 1;
     c.gridx = 1;
     List<String> expectedNames = this.getRefactoring().getExpectedNames();
-    this.myName = new JComboBox(ListSequence.fromList(expectedNames).toGenericArray(String.class));
+    this.myName = new JComboBox(ListSequence.<String>fromList(expectedNames).toGenericArray(String.class));
     this.myName.setEditable(true);
     result.add(this.myName, c);
     this.myName.addActionListener(new ActionListener() {
@@ -56,10 +56,10 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
         IntroduceVariableDialog.this.getRefactoring().setName(((String) IntroduceVariableDialog.this.myName.getSelectedItem()));
       }
     });
-    this.myName.setSelectedItem(ListSequence.fromList(expectedNames).first());
+    this.myName.setSelectedItem(ListSequence.<String>fromList(expectedNames).first());
     JTextField textField = ((JTextField) this.myName.getEditor().getEditorComponent());
     textField.setSelectionStart(0);
-    textField.setSelectionEnd(ListSequence.fromList(expectedNames).first().length());
+    textField.setSelectionEnd(ListSequence.<String>fromList(expectedNames).first().length());
     textField.addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent p0) {
         if (p0.getKeyCode() == KeyEvent.VK_ENTER && !(IntroduceVariableDialog.this.myName.isPopupVisible())) {
@@ -75,7 +75,7 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
     c.fill = GridBagConstraints.HORIZONTAL;
     c.gridx = 0;
     c.gridy = gridy;
-    this.myReplaceAll = new JCheckBox("replace duplicates (" + ListSequence.fromList(getRefactoring().getDuplicates()).count() + " found)");
+    this.myReplaceAll = new JCheckBox("replace duplicates (" + ListSequence.<SNode>fromList(getRefactoring().getDuplicates()).count() + " found)");
     this.myPanel.add(this.myReplaceAll, c);
   }
 

@@ -26,7 +26,7 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class DefaultEditorBuilder {
-  private Deque<SNode> collectionsStack = DequeSequence.fromDeque(new LinkedList<SNode>());
+  private Deque<SNode> collectionsStack = DequeSequence.<SNode>fromDeque(new LinkedList<SNode>());
   private SNode editorNode;
   private SNode conceptDeclaration;
 
@@ -43,32 +43,32 @@ public class DefaultEditorBuilder {
       addProperty(nameProperty);
     }
 
-    Iterable<SNode> props = ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(conceptDeclaration)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> props = ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(conceptDeclaration)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it != nameProperty && SNodeOperations.getParent(it) != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
       }
     });
-    List<SNode> children = ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(conceptDeclaration)).where(new IWhereFilter<SNode>() {
+    List<SNode> children = ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(conceptDeclaration)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getParent(it) != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
       }
     }).toListSequence();
-    List<SNode> references = ListSequence.fromList(children).where(new IWhereFilter<SNode>() {
+    List<SNode> references = ListSequence.<SNode>fromList(children).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference") || isSmartReference(it);
       }
     }).toListSequence();
-    ListSequence.fromList(children).removeSequence(ListSequence.fromList(references));
+    ListSequence.<SNode>fromList(children).removeSequence(ListSequence.<SNode>fromList(references));
 
     buildHeader(references);
-    if (Sequence.fromIterable(props).count() > 0 || ListSequence.fromList(children).count() > 0) {
+    if (Sequence.<SNode>fromIterable(props).count() > 0 || ListSequence.<SNode>fromList(children).count() > 0) {
       addLabel("{");
       setMatchingLabel("body-brace");
       newLine();
       pushCollection();
       indent();
       boolean first = true;
-      for (SNode property : Sequence.fromIterable(props)) {
+      for (SNode property : Sequence.<SNode>fromIterable(props)) {
         if (SNodeOperations.getParent(property) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
           continue;
         }
@@ -79,7 +79,7 @@ public class DefaultEditorBuilder {
         newLine();
         first = false;
       }
-      for (SNode linkDeclaration : ListSequence.fromList(children)) {
+      for (SNode linkDeclaration : ListSequence.<SNode>fromList(children)) {
         if (!(first)) {
           addEmptyLine();
         }
@@ -113,22 +113,22 @@ public class DefaultEditorBuilder {
       addProperty(nameProperty);
     }
 
-    Iterable<SNode> props = ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(conceptDeclaration)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> props = ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(conceptDeclaration)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it != nameProperty && SNodeOperations.getParent(it) != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
       }
     });
-    List<SNode> children = ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(conceptDeclaration)).where(new IWhereFilter<SNode>() {
+    List<SNode> children = ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(conceptDeclaration)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getParent(it) != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
       }
     }).toListSequence();
-    List<SNode> references = ListSequence.fromList(children).where(new IWhereFilter<SNode>() {
+    List<SNode> references = ListSequence.<SNode>fromList(children).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference") || isSmartReference(it);
       }
     }).toListSequence();
-    ListSequence.fromList(children).removeSequence(ListSequence.fromList(references));
+    ListSequence.<SNode>fromList(children).removeSequence(ListSequence.<SNode>fromList(references));
 
     buildHeader(references);
     addPunctuation("(");
@@ -136,7 +136,7 @@ public class DefaultEditorBuilder {
 
     noSpace();
     boolean first = true;
-    for (SNode property : Sequence.fromIterable(props)) {
+    for (SNode property : Sequence.<SNode>fromIterable(props)) {
       if (!(first)) {
         addPunctuation(",");
       }
@@ -145,7 +145,7 @@ public class DefaultEditorBuilder {
       addProperty(property);
       first = false;
     }
-    for (SNode linkDeclaration : ListSequence.fromList(children).sort(new ISelector<SNode, Comparable<?>>() {
+    for (SNode linkDeclaration : ListSequence.<SNode>fromList(children).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return LinkDeclaration_Behavior.call_isSingular_1213877254557(it);
       }
@@ -175,7 +175,7 @@ public class DefaultEditorBuilder {
   }
 
   private void buildHeader(Iterable<SNode> references) {
-    for (SNode linkDeclaration : Sequence.fromIterable(references)) {
+    for (SNode linkDeclaration : Sequence.<SNode>fromIterable(references)) {
       addLabel(camelToLabel(SPropertyOperations.getString(linkDeclaration, "role")));
       if (SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference")) {
         if (LinkDeclaration_Behavior.call_isSingular_1213877254557(linkDeclaration)) {
@@ -199,17 +199,17 @@ public class DefaultEditorBuilder {
 
   private void popCollection() {
     SNode collection = DequeSequence.fromDeque(collectionsStack).popElement();
-    if (DequeSequence.fromDeque(collectionsStack).isEmpty()) {
+    if (DequeSequence.<SNode>fromDeque(collectionsStack).isEmpty()) {
       SLinkOperations.setTarget(editorNode, "cellModel", collection, true);
     } else {
-      ListSequence.fromList(SLinkOperations.getTargets(DequeSequence.fromDeque(collectionsStack).peekElement(), "childCellModel", true)).addElement(collection);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(DequeSequence.fromDeque(collectionsStack).peekElement(), "childCellModel", true)).addElement(collection);
     }
   }
 
   private void addLabel(String text) {
     SNode nameCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Constant", null);
     SPropertyOperations.set(nameCell, "text", text);
-    ListSequence.fromList(SLinkOperations.getTargets(DequeSequence.fromDeque(collectionsStack).peekElement(), "childCellModel", true)).addElement(nameCell);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(DequeSequence.fromDeque(collectionsStack).peekElement(), "childCellModel", true)).addElement(nameCell);
   }
 
   public void setMatchingLabel(String matchingLabel) {
@@ -242,34 +242,34 @@ public class DefaultEditorBuilder {
 
   private void setBooleanStyle(SNode concept) {
     SNode collection = DequeSequence.fromDeque(collectionsStack).peekElement();
-    SNode cell = (ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).isEmpty() ?
+    SNode cell = (ListSequence.<SNode>fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).isEmpty() ?
       collection :
-      ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).last()
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).last()
     );
     SNode classItem = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(concept), null);
     SPropertyOperations.set(classItem, "flag", "" + true);
-    ListSequence.fromList(SLinkOperations.getTargets(cell, "styleItem", true)).addElement(classItem);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(cell, "styleItem", true)).addElement(classItem);
   }
 
   public void setStyle(SNode style) {
     SNode collection = DequeSequence.fromDeque(collectionsStack).peekElement();
-    SNode cell = (ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).isEmpty() ?
+    SNode cell = (ListSequence.<SNode>fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).isEmpty() ?
       collection :
-      ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).last()
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).last()
     );
-    ListSequence.fromList(SLinkOperations.getTargets(cell, "styleItem", true)).addElement(style);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(cell, "styleItem", true)).addElement(style);
   }
 
   private void addProperty(SNode property) {
     SNode propertyCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
     SLinkOperations.setTarget(propertyCell, "relationDeclaration", property, false);
-    ListSequence.fromList(SLinkOperations.getTargets(DequeSequence.fromDeque(collectionsStack).peekElement(), "childCellModel", true)).addElement(propertyCell);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(DequeSequence.fromDeque(collectionsStack).peekElement(), "childCellModel", true)).addElement(propertyCell);
   }
 
   private void addRefNode(SNode link) {
     SNode linkCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNode", null);
     SLinkOperations.setTarget(linkCell, "relationDeclaration", link, false);
-    ListSequence.fromList(SLinkOperations.getTargets(DequeSequence.fromDeque(collectionsStack).peekElement(), "childCellModel", true)).addElement(linkCell);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(DequeSequence.fromDeque(collectionsStack).peekElement(), "childCellModel", true)).addElement(linkCell);
   }
 
   private void addRefNodeList(SNode link, String separatorText) {
@@ -279,14 +279,14 @@ public class DefaultEditorBuilder {
     if (separatorText != null) {
       SPropertyOperations.set(linkCell, "separatorText", separatorText);
     }
-    ListSequence.fromList(SLinkOperations.getTargets(DequeSequence.fromDeque(collectionsStack).peekElement(), "childCellModel", true)).addElement(linkCell);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(DequeSequence.fromDeque(collectionsStack).peekElement(), "childCellModel", true)).addElement(linkCell);
   }
 
   private void addRefCell(SNode link) {
     SNode linkCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null);
     SLinkOperations.setTarget(linkCell, "relationDeclaration", link, false);
     SLinkOperations.setTarget(linkCell, "editorComponent", createInlineEditorComponent(SLinkOperations.getTarget(link, "target", false)), true);
-    ListSequence.fromList(SLinkOperations.getTargets(DequeSequence.fromDeque(collectionsStack).peekElement(), "childCellModel", true)).addElement(linkCell);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(DequeSequence.fromDeque(collectionsStack).peekElement(), "childCellModel", true)).addElement(linkCell);
   }
 
   private SNode createInlineEditorComponent(SNode concept) {
@@ -344,8 +344,8 @@ public class DefaultEditorBuilder {
   }
 
   private SNode getNameProperty(SNode concept) {
-    final Map<SNode, Integer> idProperties = MapSequence.fromMap(new HashMap<SNode, Integer>());
-    for (SNode property : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(concept))) {
+    final Map<SNode, Integer> idProperties = MapSequence.<SNode,Integer>fromMap(new HashMap<SNode, Integer>());
+    for (SNode property : ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(concept))) {
       if (SNodeOperations.getParent(property) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
         continue;
       }
@@ -369,11 +369,11 @@ public class DefaultEditorBuilder {
         200 :
         0
       );
-      MapSequence.fromMap(idProperties).put(property, prio);
+      MapSequence.<SNode,Integer>fromMap(idProperties).put(property, prio);
     }
-    return SetSequence.fromSet(MapSequence.fromMap(idProperties).keySet()).sort(new ISelector<SNode, Comparable<?>>() {
+    return SetSequence.<SNode>fromSet(MapSequence.fromMap(idProperties).keySet()).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
-        return MapSequence.fromMap(idProperties).get(it);
+        return MapSequence.<SNode,Integer>fromMap(idProperties).get(it);
       }
     }, false).first();
   }
@@ -386,7 +386,7 @@ public class DefaultEditorBuilder {
     if ((concept == null)) {
       return false;
     }
-    for (SNode prop : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(concept))) {
+    for (SNode prop : ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(concept))) {
       if (SNodeOperations.getParent(prop) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
         continue;
       }
@@ -394,7 +394,7 @@ public class DefaultEditorBuilder {
     }
 
     int count = 0;
-    for (SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
+    for (SNode link : ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
       if (SNodeOperations.getParent(link) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
         continue;
       }

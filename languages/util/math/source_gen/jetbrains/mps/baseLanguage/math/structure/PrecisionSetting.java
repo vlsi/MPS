@@ -34,12 +34,12 @@ public enum PrecisionSetting {
   }
 
   public static List<PrecisionSetting> getConstants() {
-    List<PrecisionSetting> list = ListSequence.fromList(new LinkedList<PrecisionSetting>());
-    ListSequence.fromList(list).addElement(PrecisionSetting.CUSTOM);
-    ListSequence.fromList(list).addElement(PrecisionSetting.DECIMAL32);
-    ListSequence.fromList(list).addElement(PrecisionSetting.DECIMAL64);
-    ListSequence.fromList(list).addElement(PrecisionSetting.DECIMAL128);
-    ListSequence.fromList(list).addElement(PrecisionSetting.UNLIMITED);
+    List<PrecisionSetting> list = ListSequence.<PrecisionSetting>fromList(new LinkedList<PrecisionSetting>());
+    ListSequence.<PrecisionSetting>fromList(list).addElement(PrecisionSetting.CUSTOM);
+    ListSequence.<PrecisionSetting>fromList(list).addElement(PrecisionSetting.DECIMAL32);
+    ListSequence.<PrecisionSetting>fromList(list).addElement(PrecisionSetting.DECIMAL64);
+    ListSequence.<PrecisionSetting>fromList(list).addElement(PrecisionSetting.DECIMAL128);
+    ListSequence.<PrecisionSetting>fromList(list).addElement(PrecisionSetting.UNLIMITED);
     return list;
   }
 

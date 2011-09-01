@@ -21,7 +21,7 @@ public class SimpleWord_Behavior {
       return false;
     }
     SNode refConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.IConcreteWordUnit");
-    for (SNode unit : ListSequence.fromList(SConceptOperations.getAllSubConcepts(refConcept, SNodeOperations.getModel(thisNode), scope))) {
+    for (SNode unit : ListSequence.<SNode>fromList(SConceptOperations.getAllSubConcepts(refConcept, SNodeOperations.getModel(thisNode), scope))) {
       if (StringUtils.isNotEmpty(SConceptPropertyOperations.getString(unit, "pattern"))) {
         int index = value.indexOf(IConcreteWordUnit_Behavior.call_getPattern_3263637656469698018(unit));
         if (index != -1) {

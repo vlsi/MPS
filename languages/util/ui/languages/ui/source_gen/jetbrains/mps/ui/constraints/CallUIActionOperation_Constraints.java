@@ -50,7 +50,7 @@ public class CallUIActionOperation_Constraints extends BaseConstraintsDescriptor
               IMatchingPattern pattern_cl463f_b0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.ui.structure.UIObjectType");
               SNode coercedNode_cl463f_b0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(ot, pattern_cl463f_b0a0);
               if (coercedNode_cl463f_b0a0 != null) {
-                return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(coercedNode_cl463f_b0a0, "uiObject", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+                return Sequence.<SNode>fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(coercedNode_cl463f_b0a0, "uiObject", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
                   public Iterable<SNode> translate(SNode uio) {
                     return SLinkOperations.getTargets(uio, "action", true);
                   }

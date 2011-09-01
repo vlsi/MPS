@@ -53,13 +53,13 @@ import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class JavaCompile_Facet extends IFacet.Stub {
-  private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
+  private List<ITarget> targets = ListSequence.<ITarget>fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.baseLanguage.JavaCompile");
 
   public JavaCompile_Facet() {
-    ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_compile());
-    ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_auxCompile());
-    ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_compileToMemory());
+    ListSequence.<ITarget>fromList(targets).addElement(new JavaCompile_Facet.Target_compile());
+    ListSequence.<ITarget>fromList(targets).addElement(new JavaCompile_Facet.Target_auxCompile());
+    ListSequence.<ITarget>fromList(targets).addElement(new JavaCompile_Facet.Target_compileToMemory());
   }
 
   public Iterable<ITarget> targets() {
@@ -102,7 +102,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(false);
-              int work = Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
+              int work = Sequence.<IResource>fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
                 public Integer combine(Integer s, IResource it) {
                   return s + ((((TResource) it).module().isCompileInMPS() ?
                     100 :
@@ -114,7 +114,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.SUCCESS(_output_wf1ya0_a0a);
               }
               monitor.currentProgress().beginWork("Compiling", work, monitor.currentProgress().workLeft());
-              for (IResource resource : Sequence.fromIterable(input)) {
+              for (IResource resource : Sequence.<IResource>fromIterable(input)) {
                 final TResource tres = (TResource) resource;
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
@@ -150,7 +150,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
                 monitor.currentProgress().advanceWork("Compiling", 50);
-                _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
+                _output_wf1ya0_a0a = Sequence.<IResource>fromIterable(_output_wf1ya0_a0a).concat(Sequence.<IResource>fromIterable(Sequence.<IResource>singleton(tres)));
               }
               monitor.currentProgress().finishWork("Compiling");
             default:
@@ -251,7 +251,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
           Iterable<IResource> _output_wf1ya0_a0b = null;
           switch (0) {
             case 0:
-              int work = Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
+              int work = Sequence.<IResource>fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
                 public Integer combine(Integer s, IResource it) {
                   return s + ((((TResource) it).module().isCompileInMPS() ?
                     0 :
@@ -275,7 +275,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
               monitor.currentProgress().beginWork("Compiling in IntelliJ IDEA", work, monitor.currentProgress().workLeft());
 
               boolean refreshed = false;
-              for (IResource resource : Sequence.fromIterable(input)) {
+              for (IResource resource : Sequence.<IResource>fromIterable(input)) {
                 TResource tres = (TResource) resource;
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_wf1ya0_a0b);
@@ -312,7 +312,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                   return new IResult.FAILURE(_output_wf1ya0_a0b);
                 }
                 monitor.currentProgress().advanceWork("Compiling in IntelliJ IDEA", 50);
-                _output_wf1ya0_a0b = Sequence.fromIterable(_output_wf1ya0_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
+                _output_wf1ya0_a0b = Sequence.<IResource>fromIterable(_output_wf1ya0_a0b).concat(Sequence.<IResource>fromIterable(Sequence.<IResource>singleton(tres)));
               }
               monitor.currentProgress().finishWork("Compiling in IntelliJ IDEA");
             default:
@@ -414,10 +414,10 @@ public class JavaCompile_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               final JavaCompiler jc = new JavaCompiler();
-              final Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
-              for (IResource r : Sequence.fromIterable(input)) {
+              final Set<IModule> modules = SetSequence.<IModule>fromSet(new HashSet<IModule>());
+              for (IResource r : Sequence.<IResource>fromIterable(input)) {
                 FResource fres = ((FResource) r);
-                MapSequence.fromMap(fres.contents()).visitAll(new IVisitor<IMapping<String, Object>>() {
+                MapSequence.<String,Object>fromMap(fres.contents()).visitAll(new IVisitor<IMapping<String, Object>>() {
                   public void visit(IMapping<String, Object> m) {
                     jc.addSourceFile("", m.key(), m.value());
                   }
@@ -442,7 +442,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
                   ccp.value = (CompositeClassPathItem) AbstractModule.getDependenciesClasspath(modules, true);
-                  Sequence.fromIterable(pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).classPath()).visitAll(new IVisitor<IClassPathItem>() {
+                  Sequence.<IClassPathItem>fromIterable(pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).classPath()).visitAll(new IVisitor<IClassPathItem>() {
                     public void visit(IClassPathItem cpi) {
                       ccp.value.add(cpi);
                     }
@@ -453,7 +453,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
               if ((boolean) pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors()) {
                 return new IResult.FAILURE(_output_wf1ya0_a0c);
               }
-              _output_wf1ya0_a0c = Sequence.fromIterable(_output_wf1ya0_a0c).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CResource(new IClassesData() {
+              _output_wf1ya0_a0c = Sequence.<IResource>fromIterable(_output_wf1ya0_a0c).concat(Sequence.<IResource>fromIterable(Sequence.<IResource>singleton(new CResource(new IClassesData() {
                 public ClassLoader getClassLoader(ClassLoader parent) {
                   return jc.getClassLoader(parent);
                 }
@@ -558,22 +558,22 @@ public class JavaCompile_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile");
         if (properties.hasProperties(name)) {
           JavaCompile_Facet.Target_compile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_compile.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.compile.compiledAnything", String.valueOf(props.compiledAnything()));
+          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.compile.compiledAnything", String.valueOf(props.compiledAnything()));
         }
       }
       {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.auxCompile");
         if (properties.hasProperties(name)) {
           JavaCompile_Facet.Target_auxCompile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.auxCompile.skipAuxCompile", String.valueOf(props.skipAuxCompile()));
+          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.auxCompile.skipAuxCompile", String.valueOf(props.skipAuxCompile()));
         }
       }
       {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory");
         if (properties.hasProperties(name)) {
           JavaCompile_Facet.Target_compileToMemory.Parameters props = properties.properties(name, JavaCompile_Facet.Target_compileToMemory.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.classPath", null);
-          MapSequence.fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.errors", String.valueOf((boolean) props.errors()));
+          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.classPath", null);
+          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.errors", String.valueOf((boolean) props.errors()));
         }
       }
     }
@@ -584,14 +584,14 @@ public class JavaCompile_Facet extends IFacet.Stub {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile");
           JavaCompile_Facet.Target_compile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_compile.Parameters.class);
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.compile.compiledAnything")) {
-            props.compiledAnything(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.baseLanguage.JavaCompile.compile.compiledAnything")));
+            props.compiledAnything(Boolean.valueOf(MapSequence.<String,String>fromMap(store).get("jetbrains.mps.baseLanguage.JavaCompile.compile.compiledAnything")));
           }
         }
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.auxCompile");
           JavaCompile_Facet.Target_auxCompile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.auxCompile.skipAuxCompile")) {
-            props.skipAuxCompile(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.baseLanguage.JavaCompile.auxCompile.skipAuxCompile")));
+            props.skipAuxCompile(Boolean.valueOf(MapSequence.<String,String>fromMap(store).get("jetbrains.mps.baseLanguage.JavaCompile.auxCompile.skipAuxCompile")));
           }
         }
         {
@@ -601,7 +601,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
             props.classPath(null);
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.errors")) {
-            props.errors(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.errors")));
+            props.errors(Boolean.valueOf(MapSequence.<String,String>fromMap(store).get("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.errors")));
           }
         }
       } catch (RuntimeException re) {

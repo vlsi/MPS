@@ -66,7 +66,7 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(PersistentConfiguration_Behavior.getContextPersistentProperties_946964771156066434(_context.getEnclosingNode())).where(new IWhereFilter<SNode>() {
+            return ListSequence.<SNode>fromList(PersistentConfiguration_Behavior.getContextPersistentProperties_946964771156066434(_context.getEnclosingNode())).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(it, "type", true), new EditorExpression_Constraints.QuotationClass_lq9qwe_a1a0a0a0a0a0a0a0a1a0b0a1a2().createNode());
               }

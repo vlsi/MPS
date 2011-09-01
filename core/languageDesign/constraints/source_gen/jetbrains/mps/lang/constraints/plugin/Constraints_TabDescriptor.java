@@ -52,12 +52,12 @@ public class Constraints_TabDescriptor extends EditorTabDescriptor {
   }
 
   public List<SNode> getNodes(SNode node) {
-    List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> list = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     SNode n = getNode(node);
     if (n == null) {
       return list;
     }
-    ListSequence.fromList(list).addElement(n);
+    ListSequence.<SNode>fromList(list).addElement(n);
     return list;
   }
 
@@ -67,14 +67,14 @@ public class Constraints_TabDescriptor extends EditorTabDescriptor {
 
   public SNode getNode(SNode node) {
     List<SNode> nodes = AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_1567570417158062208(node, LanguageAspect.CONSTRAINTS);
-    return (ListSequence.fromList(nodes).isEmpty() ?
+    return (ListSequence.<SNode>fromList(nodes).isEmpty() ?
       null :
-      ListSequence.fromList(nodes).first()
+      ListSequence.<SNode>fromList(nodes).first()
     );
   }
 
   public List<SNode> getConcepts(final SNode node) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConceptConstraints"));
+    return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConceptConstraints"));
   }
 
   public SNode createNode(final SNode node, final SNode concept) {

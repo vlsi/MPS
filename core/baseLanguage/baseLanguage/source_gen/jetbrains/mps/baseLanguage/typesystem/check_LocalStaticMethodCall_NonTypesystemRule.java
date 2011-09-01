@@ -25,14 +25,14 @@ public class check_LocalStaticMethodCall_NonTypesystemRule extends AbstractNonTy
 
   public void applyRule(final SNode call, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> containers = SNodeOperations.getAncestors(call, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
-    Set<SNode> containersAndParentClasses = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> containersAndParentClasses = SetSequence.<SNode>fromSet(new HashSet<SNode>());
     for (SNode classConcept : containers) {
       List<SNode> classifiers = new ClassifierAndSuperClassifiersScope(classConcept).getClassifiers();
       for (SNode classifier : classifiers) {
         SetSequence.fromSet(containersAndParentClasses).addElement(classifier);
       }
     }
-    if (!(SetSequence.fromSet(containersAndParentClasses).contains(SNodeOperations.getParent(SLinkOperations.getTarget(call, "baseMethodDeclaration", false))))) {
+    if (!(SetSequence.<SNode>fromSet(containersAndParentClasses).contains(SNodeOperations.getParent(SLinkOperations.getTarget(call, "baseMethodDeclaration", false))))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(call, "This method can't be called from the current context", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1228992682236", null, errorTarget);

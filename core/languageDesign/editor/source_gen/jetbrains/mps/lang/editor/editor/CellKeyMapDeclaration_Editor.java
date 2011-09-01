@@ -312,10 +312,10 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> prefixes = ListSequence.fromList(new ArrayList<String>());
-      ListSequence.fromList(prefixes).addElement("_KeyMap");
+      List<String> prefixes = ListSequence.<String>fromList(new ArrayList<String>());
+      ListSequence.<String>fromList(prefixes).addElement("_KeyMap");
       if (SLinkOperations.getTarget(node, "applicableConcept", false) != null) {
-        ListSequence.fromList(prefixes).addElement(SPropertyOperations.getString(SLinkOperations.getTarget(node, "applicableConcept", false), "name") + "_KeyMap");
+        ListSequence.<String>fromList(prefixes).addElement(SPropertyOperations.getString(SLinkOperations.getTarget(node, "applicableConcept", false), "name") + "_KeyMap");
       }
       return prefixes;
     }

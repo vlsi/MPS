@@ -54,7 +54,7 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     List<SNode> fields = SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true);
-    if (ListSequence.fromList(fields).isEmpty()) {
+    if (ListSequence.<SNode>fromList(fields).isEmpty()) {
       return false;
     }
     boolean allGettersImplemented = true;
@@ -62,9 +62,9 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
       Project project = editorContext.getOperationContext().getProject();
       final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(fieldDeclaration, project);
       boolean fieldHasGetter = false;
-      if (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
+      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
-          return getterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
+          return getterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
         }
       })) {
         fieldHasGetter = true;
@@ -83,9 +83,9 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
     for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
       Project ideaProject = editorContext.getOperationContext().getProject();
       final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, ideaProject);
-      if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
+      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
-          return getterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
+          return getterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
         }
       })) {
         continue;
@@ -93,7 +93,7 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
       // Method creation begins 
       SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
       SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
-      SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGetter_Intention.QuotationClass_wkvgdi_a0a0a6a2a7().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
+      SNode added = ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGetter_Intention.QuotationClass_wkvgdi_a0a0a6a2a7().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
       lastAdded = added;
     }
     if (lastAdded != null) {

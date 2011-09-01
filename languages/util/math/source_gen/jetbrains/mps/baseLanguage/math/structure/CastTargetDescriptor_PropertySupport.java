@@ -11,7 +11,7 @@ public class CastTargetDescriptor_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<CastTargetDescriptor> constants = ListSequence.fromList(CastTargetDescriptor.getConstants()).iterator();
+    Iterator<CastTargetDescriptor> constants = ListSequence.<CastTargetDescriptor>fromList(CastTargetDescriptor.getConstants()).iterator();
     while (constants.hasNext()) {
       CastTargetDescriptor constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class CastTargetDescriptor_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<CastTargetDescriptor> constants = ListSequence.fromList(CastTargetDescriptor.getConstants()).iterator();
+    Iterator<CastTargetDescriptor> constants = ListSequence.<CastTargetDescriptor>fromList(CastTargetDescriptor.getConstants()).iterator();
     while (constants.hasNext()) {
       CastTargetDescriptor constant = constants.next();
       if (value.equals(constant.getName())) {

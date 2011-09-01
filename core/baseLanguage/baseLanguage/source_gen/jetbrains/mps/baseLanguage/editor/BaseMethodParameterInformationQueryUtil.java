@@ -29,9 +29,9 @@ public class BaseMethodParameterInformationQueryUtil {
       members = IMemberContainer_Behavior.call_getMembers_1213877531970(classifier);
     }
     List<SNode> methodsToShow = new ArrayList<SNode>();
-    for (SNode member : ListSequence.fromList(members)) {
+    for (SNode member : ListSequence.<SNode>fromList(members)) {
       if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && eq_bha4h6_a0a0a5a0(SPropertyOperations.getString(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name"), SPropertyOperations.getString(method, "name"))) {
-        ListSequence.fromList(methodsToShow).addElement(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+        ListSequence.<SNode>fromList(methodsToShow).addElement(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
       }
     }
     return methodsToShow;
@@ -52,7 +52,7 @@ public class BaseMethodParameterInformationQueryUtil {
     }
     if (SNodeOperations.isInstanceOf(methodDeclaration, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
       SNode classifier = SNodeOperations.getAncestor(methodDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-      if (classifier != null && ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).isNotEmpty()) {
+      if (classifier != null && ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).isNotEmpty()) {
         styledText.append("<");
         for (SNode param : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
           if (SNodeOperations.getIndexInParent(param) > 0) {

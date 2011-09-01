@@ -2,7 +2,104 @@
 <debugInfo>
   <unitInfo fileName="Logging_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.Logging_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.StructureAspectDescriptor" />
-  <unitInfo fileName="Severity_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.Severity_PropertySupport" />
-  <unitInfo fileName="Severity.java" startLine="9" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.Severity" />
+  <root nodeId="1167245107475">
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="16" startPosition="0" endLine="17" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="17" startPosition="24" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="20" startPosition="5" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="20" startPosition="39" endLine="21" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="21" startPosition="23" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="25" startPosition="27" endLine="26" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="27" startPosition="5" endLine="28" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="29" startPosition="33" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="29" startPosition="36" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="33" startPosition="28" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="34" startPosition="5" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="37" startPosition="47" endLine="38" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="38" startPosition="49" endLine="39" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="38" startPosition="86" endLine="39" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="39" startPosition="69" endLine="40" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="40" startPosition="69" endLine="41" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="41" startPosition="68" endLine="42" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="42" startPosition="5" endLine="43" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="42" startPosition="69" endLine="43" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="43" startPosition="68" endLine="44" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="44" startPosition="69" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="48" startPosition="39" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="53" startPosition="24" endLine="54" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="56" startPosition="58" endLine="57" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="59" startPosition="58" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="62" startPosition="57" endLine="63" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="65" startPosition="58" endLine="66" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="68" startPosition="57" endLine="69" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="71" startPosition="58" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="73" startPosition="5" endLine="74" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="10" startPosition="44" endLine="13" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="16" startPosition="43" endLine="19" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="24" startPosition="47" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="30" startPosition="43" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="39" startPosition="51" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="52" startPosition="51" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="55" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="58" startPosition="5" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="61" startPosition="5" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="64" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="67" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="70" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="19" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Severity#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/baseLanguage/logging/structure/Severity;" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="14" startPosition="103" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="28" startPosition="103" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="36" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="9" startPosition="63" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1167245107475" fileName="Severity.java" startLine="51" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/logging/structure/Severity;" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="25" startPosition="27" endLine="26" endPosition="23" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="29" startPosition="36" endLine="30" endPosition="24" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="33" startPosition="28" endLine="34" endPosition="24" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="48" startPosition="39" endLine="49" endPosition="26" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="53" startPosition="24" endLine="54" endPosition="35" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="56" startPosition="58" endLine="57" endPosition="28" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="59" startPosition="58" endLine="60" endPosition="28" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="62" startPosition="57" endLine="63" endPosition="27" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="65" startPosition="58" endLine="66" endPosition="28" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="68" startPosition="57" endLine="69" endPosition="27" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="71" startPosition="58" endLine="72" endPosition="28" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="20" startPosition="39" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="15" startPosition="33" endLine="19" endPosition="7" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="19" startPosition="0" endLine="23" endPosition="3" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="29" startPosition="33" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="37" startPosition="47" endLine="45" endPosition="16" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="36" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="9" startPosition="63" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="52" startPosition="51" endLine="74" endPosition="33" />
+    <scopeInfo nodeId="1167245107475" fileName="Severity.java" startLine="51" startPosition="0" endLine="76" endPosition="0" />
+    <unitInfo nodeId="1167245107475" fileName="Severity_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.Severity_PropertySupport" />
+    <unitInfo nodeId="1167245107475" fileName="Severity.java" startLine="9" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.structure.Severity" />
+  </root>
 </debugInfo>
 

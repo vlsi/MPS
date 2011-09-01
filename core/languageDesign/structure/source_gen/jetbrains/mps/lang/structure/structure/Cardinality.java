@@ -33,11 +33,11 @@ public enum Cardinality {
   }
 
   public static List<Cardinality> getConstants() {
-    List<Cardinality> list = ListSequence.fromList(new LinkedList<Cardinality>());
-    ListSequence.fromList(list).addElement(Cardinality._0__1);
-    ListSequence.fromList(list).addElement(Cardinality._1);
-    ListSequence.fromList(list).addElement(Cardinality._0__n);
-    ListSequence.fromList(list).addElement(Cardinality._1__n);
+    List<Cardinality> list = ListSequence.<Cardinality>fromList(new LinkedList<Cardinality>());
+    ListSequence.<Cardinality>fromList(list).addElement(Cardinality._0__1);
+    ListSequence.<Cardinality>fromList(list).addElement(Cardinality._1);
+    ListSequence.<Cardinality>fromList(list).addElement(Cardinality._0__n);
+    ListSequence.<Cardinality>fromList(list).addElement(Cardinality._1__n);
     return list;
   }
 

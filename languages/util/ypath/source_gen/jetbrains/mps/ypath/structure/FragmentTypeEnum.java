@@ -39,17 +39,17 @@ public enum FragmentTypeEnum {
   }
 
   public static List<FragmentTypeEnum> getConstants() {
-    List<FragmentTypeEnum> list = ListSequence.fromList(new LinkedList<FragmentTypeEnum>());
-    ListSequence.fromList(list).addElement(FragmentTypeEnum.replace_single);
-    ListSequence.fromList(list).addElement(FragmentTypeEnum.replace_selection);
-    ListSequence.fromList(list).addElement(FragmentTypeEnum.replace_all);
-    ListSequence.fromList(list).addElement(FragmentTypeEnum.remove_single);
-    ListSequence.fromList(list).addElement(FragmentTypeEnum.remove_selection);
-    ListSequence.fromList(list).addElement(FragmentTypeEnum.remove_all);
-    ListSequence.fromList(list).addElement(FragmentTypeEnum.insert_at_start);
-    ListSequence.fromList(list).addElement(FragmentTypeEnum.insert_at_end);
-    ListSequence.fromList(list).addElement(FragmentTypeEnum.insert_before);
-    ListSequence.fromList(list).addElement(FragmentTypeEnum.insert_after);
+    List<FragmentTypeEnum> list = ListSequence.<FragmentTypeEnum>fromList(new LinkedList<FragmentTypeEnum>());
+    ListSequence.<FragmentTypeEnum>fromList(list).addElement(FragmentTypeEnum.replace_single);
+    ListSequence.<FragmentTypeEnum>fromList(list).addElement(FragmentTypeEnum.replace_selection);
+    ListSequence.<FragmentTypeEnum>fromList(list).addElement(FragmentTypeEnum.replace_all);
+    ListSequence.<FragmentTypeEnum>fromList(list).addElement(FragmentTypeEnum.remove_single);
+    ListSequence.<FragmentTypeEnum>fromList(list).addElement(FragmentTypeEnum.remove_selection);
+    ListSequence.<FragmentTypeEnum>fromList(list).addElement(FragmentTypeEnum.remove_all);
+    ListSequence.<FragmentTypeEnum>fromList(list).addElement(FragmentTypeEnum.insert_at_start);
+    ListSequence.<FragmentTypeEnum>fromList(list).addElement(FragmentTypeEnum.insert_at_end);
+    ListSequence.<FragmentTypeEnum>fromList(list).addElement(FragmentTypeEnum.insert_before);
+    ListSequence.<FragmentTypeEnum>fromList(list).addElement(FragmentTypeEnum.insert_after);
     return list;
   }
 

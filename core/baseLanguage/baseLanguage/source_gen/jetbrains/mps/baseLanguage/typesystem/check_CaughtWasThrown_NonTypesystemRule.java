@@ -35,7 +35,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new check_CaughtWasThrown_NonTypesystemRule.QuotationClass_r5g8rc_a1a0a0a1a1a0().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new check_CaughtWasThrown_NonTypesystemRule.QuotationClass_r5g8rc_a1a0a0a1a1a0_0().createNode(typeCheckingContext)) || caughtClassifier == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Exception") || caughtClassifier == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Throwable")) {
         // ignore 
       } else {
-        Set<SNode> thrown = SetSequence.fromSet(new HashSet<SNode>());
+        Set<SNode> thrown = SetSequence.<SNode>fromSet(new HashSet<SNode>());
         {
           SNode matchedNode_13ophr_b0a1a1a = SNodeOperations.getParent(catchClause);
           {
@@ -63,7 +63,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
           }
         }
 
-        if (!(SetSequence.fromSet(thrown).any(new IWhereFilter<SNode>() {
+        if (!(SetSequence.<SNode>fromSet(thrown).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode t) {
             return TypeChecker.getInstance().getSubtypingManager().isSubtype(new check_CaughtWasThrown_NonTypesystemRule.QuotationClass_r5g8rc_a0a0a0a0a0a3a0b0b0a().createNode(t, typeCheckingContext), caughtType) || TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new check_CaughtWasThrown_NonTypesystemRule.QuotationClass_r5g8rc_a1a0a0a0a0a3a0b0b0a().createNode(t, typeCheckingContext));
           }

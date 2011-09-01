@@ -109,14 +109,14 @@ public class UtilityMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_26flog_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.UtilityMethodCall"), "function", false), "parameter", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.UtilityMethodCall"), "function", false), "parameter", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_26flog_a3a(SNode node, EditorContext editorContext, IScope scope) {
     if (SLinkOperations.getTarget(node, "function", false) == null) {
       return false;
     }
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "function", false), "parameter", true)).isEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "function", false), "parameter", true)).isEmpty();
   }
 
   public static class _Inline_26flog_a0a extends InlineCellProvider {

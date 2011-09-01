@@ -74,7 +74,7 @@ public class ReplaceWithConcreteSubconcept_Intention extends BaseIntention imple
 
   private static List<SNode> parameter(final SNode node, final EditorContext editorContext) {
     SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
-    return ListSequence.fromList(SConceptOperations.getAllSubConcepts(selectedNodeConcept, SNodeOperations.getModel(node), GlobalScope.getInstance())).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SConceptOperations.getAllSubConcepts(selectedNodeConcept, SNodeOperations.getModel(node), GlobalScope.getInstance())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SConceptPropertyOperations.getBoolean(it, "abstract"));
       }
@@ -82,13 +82,13 @@ public class ReplaceWithConcreteSubconcept_Intention extends BaseIntention imple
   }
 
   public static List<Intention> instances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
+    List<Intention> list = ListSequence.<Intention>fromList(new ArrayList<Intention>());
     List<SNode> paramList = parameter(node, editorContext);
     if (paramList != null) {
       for (SNode param : paramList) {
         ReplaceWithConcreteSubconcept_Intention intention = new ReplaceWithConcreteSubconcept_Intention();
         intention.myParameter = param;
-        ListSequence.fromList(list).addElement(intention);
+        ListSequence.<Intention>fromList(list).addElement(intention);
       }
     }
     return list;

@@ -8,8 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
+import java.util.ArrayList;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 
@@ -31,7 +31,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_3893401255414161783(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), _context.getNode(), _context.getNode());
+    return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), _context.getNode(), _context.getNode());
   }
 
   public static TemplateModel getDescriptor(TemplateModule module) {

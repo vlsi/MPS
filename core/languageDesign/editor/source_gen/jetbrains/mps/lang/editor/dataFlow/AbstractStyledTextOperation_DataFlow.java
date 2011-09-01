@@ -15,7 +15,7 @@ public class AbstractStyledTextOperation_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitNop();
-    for (SNode argument : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "actualArgument", true))) {
+    for (SNode argument : ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "actualArgument", true))) {
       _context.getBuilder().build((SNode) argument);
     }
   }

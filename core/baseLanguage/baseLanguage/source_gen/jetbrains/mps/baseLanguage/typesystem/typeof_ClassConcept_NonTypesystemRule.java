@@ -28,7 +28,7 @@ public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystem
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(cls, "superclass", true), "Class expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637809856", null, errorTarget);
       }
     }
-    for (SNode impl : ListSequence.fromList(SLinkOperations.getTargets(cls, "implementedInterface", true))) {
+    for (SNode impl : ListSequence.<SNode>fromList(SLinkOperations.getTargets(cls, "implementedInterface", true))) {
       if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(impl, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
@@ -36,7 +36,7 @@ public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystem
         }
       }
     }
-    if (!(SPropertyOperations.getBoolean(cls, "abstractClass")) && ListSequence.fromList(IMemberContainer_Behavior.call_getMethodsToImplement_5418393554803775106(cls)).isNotEmpty()) {
+    if (!(SPropertyOperations.getBoolean(cls, "abstractClass")) && ListSequence.<SNode>fromList(IMemberContainer_Behavior.call_getMethodsToImplement_5418393554803775106(cls)).isNotEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cls, "Class has unimplemented methods (press Ctrl+I to see)", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637871546", null, errorTarget);

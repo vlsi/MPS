@@ -1113,7 +1113,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
+      return ListSequence.<String>fromListAndArray(new ArrayList<String>(), "true", "false");
     }
   }
 
@@ -1122,8 +1122,8 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-      ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText", null));
+      List<SNode> result = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+      ListSequence.<SNode>fromList(result).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText", null));
       return result;
     }
 
@@ -1153,8 +1153,8 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> result = ListSequence.fromList(new ArrayList<String>());
-      ListSequence.fromList(result).addElement(SPropertyOperations.getString(node, "separatorText"));
+      List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
+      ListSequence.<String>fromList(result).addElement(SPropertyOperations.getString(node, "separatorText"));
       return result;
     }
 

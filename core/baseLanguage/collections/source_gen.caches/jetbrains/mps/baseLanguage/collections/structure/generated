@@ -4,16 +4,16 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-3y2r6y3czb0h44qur9lgd1udqb2qdek" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6jeeuoa32c4fcnlyzfgxurlptmclvzn" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8f40zw2ng3ru04g6jirwqdjoy2uzoh2" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3lxfcg9w0sl635r6n0c4d5sryip3kpx" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="cbxbas4wcql77jgbid2dra89g3u345r" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-6r5i332c87x8xyc3ivazsp5i0nmdz40" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="33wkjgiezx0fo2ce3ik1767insl4n2e" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-5g8163zp0j3pctdgbcilsfbj6z1v6tf" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-9zsmkcdrciod0d58wbop70w313aqjiz" />
   <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="-1nd6uy0e8gxev0yzcrmonka8fmr2chr" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6wcb0wku66kauzfch9knq1rbzi73svq" />
-  <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="bs12zx6bureypbcmufkaon2v0z94d94" />
+  <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="-baj2y4382ioht2zsqjkzzwr9lctb7g" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="9gsrblz09ks4c4fg3fgyn64pi8f1wd1" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="exvglk6y5zgrj3jxf5fsomfzxig7fz3" />
   <common hash="-rav7da6sgih8z52yptosn9ixq9v93b" dependsOnNodes="true">
     <dep root="1151688443754" />
     <dep root="1151689724996" />
@@ -210,7 +210,6 @@
   </source>
   <source id="1151701983961" name="SequenceOperation" hash="-9vbfmtyy1zxt4rppzxzmfanmhstdciq">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="6099516049394485216" />
     <dep root="6099516049394485324" />
@@ -282,7 +281,6 @@
   </source>
   <source id="1160612413312" name="AddElementOperation" hash="-dok2t7s3x2pm2lcpplopxu1x8n0ygov">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -303,7 +301,6 @@
   </source>
   <source id="1160666733551" name="AddAllElementsOperation" hash="-9wxt2qxi2q0c94cg9e2gef9o2z25z1i">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -326,7 +323,6 @@
   </source>
   <source id="1162934736510" name="GetElementOperation" hash="84wiijhpxvav8s3zr0hxi2vlg38luao">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -395,7 +391,6 @@
   </source>
   <source id="1167380149909" name="RemoveElementOperation" hash="1wxhd5wzd35etlkj1skgt7pezuyyep9">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -487,7 +482,6 @@
   </source>
   <source id="1173946412755" name="RemoveAllElementsOperation" hash="b65dt09qw7wum6xgx3tz3nr8yyx79l">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -510,7 +504,6 @@
   </source>
   <source id="1175845471038" name="ReverseOperation" hash="-aifuhua23wkw0hauinl57is1xqp4wip">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -699,7 +692,6 @@
   </source>
   <source id="1201225890326" name="MapOperation" hash="aoqgtip61mqx14j3zam1qcqxe9s4dvy">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="6099516049394485216" />
     <dep root="6099516049394485324" />
@@ -1012,7 +1004,6 @@
   <source id="1225621920911" name="InsertElementOperation" hash="201cp422lga3yzs1mpofhws6w6qo654">
     <dep root="1151688443754" />
     <dep root="1151701983961" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -1035,7 +1026,6 @@
   <source id="1225645868993" name="SetElementOperation" hash="921m1dx1dehmbg0cugmvkhz7tva0as5">
     <dep root="1151688443754" />
     <dep root="1151701983961" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -1219,7 +1209,6 @@
   </source>
   <source id="1227022159410" name="AddFirstElementOperation" hash="-ayrd4xqlpuwzpekz129676mtjyt1cx5">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -1243,7 +1232,6 @@
   </source>
   <source id="1227022179634" name="AddLastElementOperation" hash="4dh44569isfwzlpjvjkg9z9pc1oaq6e">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -1265,7 +1253,6 @@
   <source id="1227022196108" name="RemoveAtElementOperation" hash="20lrybsh6dt7zvozyiwixz30nytdgp1">
     <dep root="1151688443754" />
     <dep root="1151701983961" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -1287,7 +1274,6 @@
   </source>
   <source id="1227022210526" name="ClearAllElementsOperation" hash="5om0tettf6fou4ij7w90w0cxch5pvr2">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -1332,7 +1318,6 @@
   </source>
   <source id="1227026094155" name="RemoveLastElementOperation" hash="30xmtg99w9cmumf1wuankhvz982gi81">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -1436,7 +1421,6 @@
   </source>
   <source id="1237470736245" name="AbstractIteratorOperation" hash="-3fzb3p37ytqa04ylbhgatf8z6xlu9h0">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="6099516049394485216" />
     <dep root="6099516049394485324" />
@@ -1516,7 +1500,6 @@
   </source>
   <source id="1237497044713" name="AbstractEnumeratorOperation" hash="-cu60tjl0z4eg4hlhp3fpdtfteky9tsd">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="6099516049394485216" />
     <dep root="6099516049394485324" />
@@ -1799,10 +1782,6 @@
     <file name="LinkedHashSetCreator.java" />
   </source>
   <source id="1240219850850" name="LinkedHashMapOrder" hash="34riisk5koe5trpgbdoxcqnbhz9oqj8">
-    <dep root="1151688443754" />
-    <dep root="1227008614712" />
-    <dep root="1237721394592" />
-    <dep root="3358009230509553641" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -1984,7 +1963,6 @@
   </source>
   <source id="1240325842691" name="AsSequenceOperation" hash="e2bciuioppgjkeovnxpduuy9piksoi">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="6099516049394485216" />
     <dep root="6099516049394485324" />
@@ -2031,7 +2009,6 @@
   </source>
   <source id="1240824716764" name="AbstractMappingOperation" hash="-d66jo1iqgff3wxrrv7jl4clfgj3yf0v">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="6099516049394485216" />
     <dep root="6099516049394485324" />
@@ -2186,7 +2163,6 @@
   </source>
   <source id="3358009230508699637" name="PopOperation" hash="-8on36t0gntbyouklmx3ittrhu1yk7xf">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="497032923610827734" />
@@ -2209,7 +2185,6 @@
   </source>
   <source id="3358009230508699932" name="PushOperation" hash="2qdfb2xkikugujt7xxj0tblb8u3e1ym">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="497032923610827734" />
@@ -2284,7 +2259,6 @@
   <source id="3055999550620853964" name="RemoveWhereOperation" hash="-akauj3nd23hru1yid1bjvptzjyfym3y">
     <dep root="1151688443754" />
     <dep root="1204796164442" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -2332,7 +2306,6 @@
   <source id="5633809102336885303" name="SubListOperation" hash="-14v3gn6mt2sgt4nfpmq85a2etmj9m18">
     <dep root="1151688443754" />
     <dep root="1151701983961" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -2354,7 +2327,6 @@
   </source>
   <source id="5784983078884872741" name="PeekOperation" hash="3dsnen1abs2r0nd49ox4a10eomstfba">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="497032923610827734" />
@@ -2378,7 +2350,6 @@
   <source id="5232196642625574978" name="HeadListOperation" hash="eavu2h89dk8w3mqjdiid47zt68vfh7h">
     <dep root="1151688443754" />
     <dep root="1151701983961" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -2401,7 +2372,6 @@
   <source id="5232196642625575054" name="TailListOperation" hash="1zegt49xb65ebglpu3mpq9ggilus280">
     <dep root="1151688443754" />
     <dep root="1151701983961" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="2141797557972817928" />
     <dep root="2141797557973018607" />
@@ -2423,7 +2393,6 @@
   </source>
   <source id="6099516049394485216" name="CustomContainerDeclaration" hash="9mkhuy8woxi1y1iky2uif9rzj94pzoa">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="6099516049394485324" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -2442,7 +2411,6 @@
   </source>
   <source id="6099516049394485324" name="CustomContainers" hash="-cf5nvp6fxu1osvlmtty3rr0mmumfkq2">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="6099516049394485216" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -2491,7 +2459,6 @@
   </source>
   <source id="1153944193378" name="ForEachVariable" hash="dx99jq4t4wt6ghgs5r2aacvbwpwg90j">
     <dep root="1151688443754" />
-    <dep root="1227026082377" />
     <dep root="1237467705688" />
     <dep root="6099516049394485216" />
     <dep root="6099516049394485324" />

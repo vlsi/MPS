@@ -31,7 +31,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
   }
 
   public int getRowCount() {
-    return ListSequence.fromList(this.myParameters).count();
+    return ListSequence.<MethodParameter>fromList(this.myParameters).count();
   }
 
   public int getColumnCount() {
@@ -39,19 +39,19 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
   }
 
   public void swapRows(int a, int b) {
-    MethodParameter param = ListSequence.fromList(this.myParameters).getElement(a);
-    ListSequence.fromList(this.myParameters).setElement(a, ListSequence.fromList(this.myParameters).getElement(b));
-    ListSequence.fromList(this.myParameters).setElement(b, param);
+    MethodParameter param = ListSequence.<MethodParameter>fromList(this.myParameters).getElement(a);
+    ListSequence.<MethodParameter>fromList(this.myParameters).setElement(a, ListSequence.<MethodParameter>fromList(this.myParameters).getElement(b));
+    ListSequence.<MethodParameter>fromList(this.myParameters).setElement(b, param);
   }
 
   public Object getValueAt(int row, int column) {
     switch (column) {
       case IS_SELECTED_COLUMN_INDEX:
-        return ListSequence.fromList(this.myParameters).getElement(row).isSelected();
+        return ListSequence.<MethodParameter>fromList(this.myParameters).getElement(row).isSelected();
       case TYPE_COLUMN_INDEX:
-        return ListSequence.fromList(this.myParameters).getElement(row).getTypeName();
+        return ListSequence.<MethodParameter>fromList(this.myParameters).getElement(row).getTypeName();
       case NAME_COLUMN_INDEX:
-        return ListSequence.fromList(this.myParameters).getElement(row).getName();
+        return ListSequence.<MethodParameter>fromList(this.myParameters).getElement(row).getName();
       default:
         return null;
     }
@@ -60,13 +60,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
   public void setValueAt(Object value, int row, int column) {
     switch (column) {
       case IS_SELECTED_COLUMN_INDEX:
-        ListSequence.fromList(this.myParameters).getElement(row).setSelected((Boolean) value);
+        ListSequence.<MethodParameter>fromList(this.myParameters).getElement(row).setSelected((Boolean) value);
         break;
       case TYPE_COLUMN_INDEX:
-        ListSequence.fromList(this.myParameters).getElement(row).setTypeByName((String) value);
+        ListSequence.<MethodParameter>fromList(this.myParameters).getElement(row).setTypeByName((String) value);
         break;
       case NAME_COLUMN_INDEX:
-        ListSequence.fromList(this.myParameters).getElement(row).setName((String) value);
+        ListSequence.<MethodParameter>fromList(this.myParameters).getElement(row).setName((String) value);
         break;
       default:
     }

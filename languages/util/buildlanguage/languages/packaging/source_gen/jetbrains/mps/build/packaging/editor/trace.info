@@ -354,7 +354,7 @@
     <nodeInfo nodeId="1202917336768" fileName="Layout_Editor.java" startLine="514" startPosition="72" endLine="515" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1202917336768" fileName="Layout_Editor.java" startLine="515" startPosition="78" endLine="516" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1202917336768" fileName="Layout_Editor.java" startLine="517" startPosition="10" endLine="518" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="462257719548068301" fileName="Layout_Editor.java" startLine="521" startPosition="111" endLine="522" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="462257719548068301" fileName="Layout_Editor.java" startLine="521" startPosition="111" endLine="522" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1202917336768" fileName="Layout_Editor.java" startLine="526" startPosition="107" endLine="527" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1202917336768" fileName="Layout_Editor.java" startLine="530" startPosition="66" endLine="531" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1202917336768" fileName="Layout_Editor.java" startLine="531" startPosition="41" endLine="532" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -622,7 +622,7 @@
     <scopeInfo nodeId="1202917336768" fileName="Layout_Editor.java" startLine="378" startPosition="110" endLine="379" endPosition="56" />
     <scopeInfo nodeId="1202917336768" fileName="Layout_Editor.java" startLine="471" startPosition="58" endLine="472" endPosition="42" />
     <scopeInfo nodeId="1202917336768" fileName="Layout_Editor.java" startLine="489" startPosition="58" endLine="490" endPosition="45" />
-    <scopeInfo nodeId="462257719547994834" fileName="Layout_Editor.java" startLine="521" startPosition="111" endLine="522" endPosition="102" />
+    <scopeInfo nodeId="462257719547994834" fileName="Layout_Editor.java" startLine="521" startPosition="111" endLine="522" endPosition="109" />
     <scopeInfo nodeId="1202917336768" fileName="Layout_Editor.java" startLine="526" startPosition="107" endLine="527" endPosition="50" />
     <scopeInfo nodeId="1202917336768" fileName="Layout_Editor.java" startLine="555" startPosition="131" endLine="556" endPosition="139" />
     <scopeInfo nodeId="1202917336768" fileName="Layout_Editor.java" startLine="572" startPosition="102" endLine="573" endPosition="50" />
@@ -2319,7 +2319,7 @@
     <nodeInfo nodeId="1204116610828" fileName="ConfigurationReferencesEditorComponent.java" startLine="70" startPosition="110" endLine="71" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1204116610828" fileName="ConfigurationReferencesEditorComponent.java" startLine="71" startPosition="54" endLine="72" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1204116610828" fileName="ConfigurationReferencesEditorComponent.java" startLine="72" startPosition="49" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204299963617" fileName="ConfigurationReferencesEditorComponent.java" startLine="76" startPosition="111" endLine="77" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204299963617" fileName="ConfigurationReferencesEditorComponent.java" startLine="76" startPosition="111" endLine="77" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1204116610828" fileName="ConfigurationReferencesEditorComponent.java" startLine="81" startPosition="106" endLine="82" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1204116610828" fileName="ConfigurationReferencesEditorComponent.java" startLine="85" startPosition="66" endLine="86" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1204116610828" fileName="ConfigurationReferencesEditorComponent.java" startLine="86" startPosition="41" endLine="87" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2378,7 +2378,7 @@
     <scopeInfo nodeId="1204116610828" fileName="ConfigurationReferencesEditorComponent.java" startLine="54" startPosition="5" endLine="55" endPosition="82" />
     <scopeInfo nodeId="1204116610828" fileName="ConfigurationReferencesEditorComponent.java" startLine="55" startPosition="82" endLine="56" endPosition="85" />
     <scopeInfo nodeId="1204116610828" fileName="ConfigurationReferencesEditorComponent.java" startLine="70" startPosition="110" endLine="71" endPosition="54" />
-    <scopeInfo nodeId="1204299963616" fileName="ConfigurationReferencesEditorComponent.java" startLine="76" startPosition="111" endLine="77" endPosition="136" />
+    <scopeInfo nodeId="1204299963616" fileName="ConfigurationReferencesEditorComponent.java" startLine="76" startPosition="111" endLine="77" endPosition="143" />
     <scopeInfo nodeId="1204116610828" fileName="ConfigurationReferencesEditorComponent.java" startLine="81" startPosition="106" endLine="82" endPosition="50" />
     <scopeInfo nodeId="1204116610828" fileName="ConfigurationReferencesEditorComponent.java" startLine="103" startPosition="89" endLine="104" endPosition="66" />
     <scopeInfo nodeId="1204116610828" fileName="ConfigurationReferencesEditorComponent.java" startLine="114" startPosition="131" endLine="115" endPosition="139" />
@@ -4471,8 +4471,8 @@
   <root nodeId="1226514876978">
     <nodeInfo nodeId="1226514876978" fileName="MacroReference_MenuComponent.java" startLine="21" startPosition="41" endLine="22" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1226514924183" fileName="MacroReference_MenuComponent.java" startLine="29" startPosition="105" endLine="30" endPosition="363" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226514924202" fileName="MacroReference_MenuComponent.java" startLine="30" startPosition="363" endLine="31" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1226514924207" fileName="MacroReference_MenuComponent.java" startLine="31" startPosition="66" endLine="32" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1226514924202" fileName="MacroReference_MenuComponent.java" startLine="30" startPosition="363" endLine="31" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1226514924207" fileName="MacroReference_MenuComponent.java" startLine="31" startPosition="74" endLine="32" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226514876978" fileName="MacroReference_MenuComponent.java" startLine="35" startPosition="162" endLine="36" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1226514924213" fileName="MacroReference_MenuComponent.java" startLine="40" startPosition="47" endLine="41" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1226514924226" fileName="MacroReference_MenuComponent.java" startLine="42" startPosition="14" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

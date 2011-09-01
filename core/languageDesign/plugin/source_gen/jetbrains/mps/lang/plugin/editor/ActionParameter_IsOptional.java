@@ -71,9 +71,9 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> result = ListSequence.fromList(new ArrayList<String>());
-      ListSequence.fromList(result).addElement("optional");
-      ListSequence.fromList(result).addElement("required");
+      List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
+      ListSequence.<String>fromList(result).addElement("optional");
+      ListSequence.<String>fromList(result).addElement("required");
       return result;
     }
 

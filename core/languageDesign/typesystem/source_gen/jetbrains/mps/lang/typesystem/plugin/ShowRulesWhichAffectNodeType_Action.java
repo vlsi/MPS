@@ -47,13 +47,13 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.fromMap(_params).put("node", node);
+      MapSequence.<String,Object>fromMap(_params).put("node", node);
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("operationContext") == null) {
       return false;
     }
     return true;
@@ -65,11 +65,11 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
       final Wrappers._T<IResultProvider> provider = new Wrappers._T<IResultProvider>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          query.value = new SearchQuery(((SNode) MapSequence.fromMap(_params).get("node")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getScope());
+          query.value = new SearchQuery(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")).getScope());
           provider.value = FindUtils.makeProvider(new AffectingRulesFinder());
         }
       });
-      ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getComponent(UsagesViewTool.class).findUsages(provider.value, query.value, false, true, false, "no rules found");
+      ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")).getComponent(UsagesViewTool.class).findUsages(provider.value, query.value, false, true, false, "no rules found");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
     }

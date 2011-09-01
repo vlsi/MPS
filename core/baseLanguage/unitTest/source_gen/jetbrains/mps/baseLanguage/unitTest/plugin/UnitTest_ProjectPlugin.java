@@ -14,8 +14,8 @@ public class UnitTest_ProjectPlugin extends BaseProjectPlugin {
   }
 
   public List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
-    List<BaseProjectPrefsComponent> components = ListSequence.fromList(new ArrayList<BaseProjectPrefsComponent>());
-    ListSequence.fromList(components).addElement(new JUnitTestActionOptions_PreferencesComponent(project));
+    List<BaseProjectPrefsComponent> components = ListSequence.<BaseProjectPrefsComponent>fromList(new ArrayList<BaseProjectPrefsComponent>());
+    ListSequence.<BaseProjectPrefsComponent>fromList(components).addElement(new JUnitTestActionOptions_PreferencesComponent(project));
     return components;
   }
 }

@@ -58,7 +58,7 @@
     <nodeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="106" startPosition="78" endLine="107" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="108" startPosition="10" endLine="109" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6283241156709766227" fileName="TestMethod_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6283241156709766238" fileName="TestMethod_Editor.java" startLine="113" startPosition="76" endLine="114" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6283241156709766238" fileName="TestMethod_Editor.java" startLine="113" startPosition="76" endLine="114" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="71" startPosition="90" endLine="73" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="41" startPosition="82" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="41" startPosition="82" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -92,7 +92,7 @@
     <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="51" startPosition="5" endLine="53" endPosition="62" />
     <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="71" startPosition="90" endLine="73" endPosition="74" />
     <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="97" startPosition="5" endLine="99" endPosition="81" />
-    <scopeInfo nodeId="6283241156709760422" fileName="TestMethod_Editor.java" startLine="112" startPosition="111" endLine="114" endPosition="60">
+    <scopeInfo nodeId="6283241156709760422" fileName="TestMethod_Editor.java" startLine="112" startPosition="111" endLine="114" endPosition="67">
       <varInfo nodeId="6283241156709766228" varName="nextSiblings" />
     </scopeInfo>
     <scopeInfo nodeId="1171931690895" fileName="TestMethod_Editor.java" startLine="41" startPosition="82" endLine="44" endPosition="5" />

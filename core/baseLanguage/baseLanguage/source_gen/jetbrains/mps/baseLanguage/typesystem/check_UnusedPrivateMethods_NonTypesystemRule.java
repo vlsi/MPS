@@ -35,7 +35,7 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
           }
           if (matches_sl9v9q_a0a0a) {
             {
-              if (SNodeOperations.isInstanceOf(matchedNode_sl9v9q_a0a0, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(matchedNode_sl9v9q_a0a0, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SNodeOperations.getParent(matchedNode_sl9v9q_a0a0), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).count() == 1) {
+              if (SNodeOperations.isInstanceOf(matchedNode_sl9v9q_a0a0, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") && ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(matchedNode_sl9v9q_a0a0, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).isEmpty() && ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(SNodeOperations.getParent(matchedNode_sl9v9q_a0a0), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).count() == 1) {
                 // an idiom - uninstantiable class 
                 return;
               }
@@ -44,7 +44,7 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
                 while (SNodeOperations.getAncestor(topClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null) {
                   topClassifier = SNodeOperations.getAncestor(topClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
                 }
-                if (!(ListSequence.fromList(SNodeOperations.getDescendants(topClassifier, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})).any(new IWhereFilter<SNode>() {
+                if (!(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(topClassifier, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})).any(new IWhereFilter<SNode>() {
                   public boolean accept(SNode call) {
                     return SLinkOperations.getTarget(call, "baseMethodDeclaration", false) == matchedNode_sl9v9q_a0a0;
                   }

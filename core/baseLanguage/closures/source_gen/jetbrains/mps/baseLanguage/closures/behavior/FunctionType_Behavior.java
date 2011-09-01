@@ -63,8 +63,8 @@ public class FunctionType_Behavior {
     } else {
       sb.append("_void");
     }
-    sb.append("_P").append(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterType", true)).count());
-    sb.append("_E").append(ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).count());
+    sb.append("_P").append(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameterType", true)).count());
+    sb.append("_E").append(ListSequence.<SNode>fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).count());
     return sb.toString();
   }
 
@@ -114,59 +114,59 @@ with_meet:
 
   public static SNode call_getDeclarationRuntimeType_1230319610063(SNode thisNode) {
     String rtCls = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(thisNode) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(thisNode);
-    SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
+    SNode ice = MapSequence.<String,SNode>fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
     if (ice == null) {
       throw new RuntimeException("No classifier found:" + rtCls);
     }
     SNode ct = new FunctionType_Behavior.QuotationClass_ksvwin_a0a3a9().createNode(ice);
     if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
-      ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode)), true));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode)), true));
     }
     if ((FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode) != null)) {
-      ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode)), true));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode)), true));
     }
     for (SNode pt : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt), false));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt), false));
     }
-    for (SNode tt : ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).sort(new ISelector<SNode, Comparable<?>>() {
+    for (SNode tt : ListSequence.<SNode>fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode t) {
         return Classifier_Behavior.call_getNestedName_8540045600162184125(SLinkOperations.getTarget(t, "classifier", false));
       }
     }, true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(tt, true));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(tt, true));
     }
     return ct;
   }
 
   public static SNode call_getRuntimeType_1230319150573(SNode thisNode) {
     String rtCls = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(thisNode) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(thisNode);
-    SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
+    SNode ice = MapSequence.<String,SNode>fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
     if (ice == null) {
       throw new RuntimeException("No classifier found:" + rtCls);
     }
     SNode ct = new FunctionType_Behavior.QuotationClass_ksvwin_a0a3a01().createNode(ice);
     if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
-      ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode))));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode))));
     }
     if ((FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode) != null)) {
-      ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode))));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode))));
     }
     for (SNode pt : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt)));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt)));
     }
-    for (SNode tt : ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).sort(new ISelector<SNode, Comparable<?>>() {
+    for (SNode tt : ListSequence.<SNode>fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode t) {
         return Classifier_Behavior.call_getNestedName_8540045600162184125(SLinkOperations.getTarget(t, "classifier", false));
       }
     }, true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(tt));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(tt));
     }
     return ct;
   }
 
   public static SNode call_getDeclarationRuntimeType_811905832257074290(SNode thisNode, SNode sample) {
     String rtCls = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(thisNode) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(thisNode);
-    SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
+    SNode ice = MapSequence.<String,SNode>fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtCls);
     if (ice == null) {
       throw new RuntimeException("No classifier found:" + rtCls);
     }
@@ -176,24 +176,24 @@ with_meet:
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(sample, "resultType", true), "jetbrains.mps.baseLanguage.structure.NullType")) {
         rt = FunctionType_Behavior.call_getResultType_1230475757059(thisNode);
       }
-      ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(rt), true));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(rt), true));
     }
     if ((FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode) != null)) {
       SNode tt = FunctionType_Behavior.call_getTerminateType_1232032188607(sample);
       if (SNodeOperations.isInstanceOf(tt, "jetbrains.mps.baseLanguage.structure.NullType")) {
         tt = FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode);
       }
-      ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(tt), true));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(tt), true));
     }
     for (SNode pt : SLinkOperations.getTargets(sample, "parameterType", true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt), false));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt), false));
     }
-    for (SNode tt : ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(sample)).sort(new ISelector<SNode, Comparable<?>>() {
+    for (SNode tt : ListSequence.<SNode>fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(sample)).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode t) {
         return Classifier_Behavior.call_getNestedName_8540045600162184125(SLinkOperations.getTarget(t, "classifier", false));
       }
     }, true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(tt, true));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(tt, true));
     }
     return ct;
   }
@@ -217,14 +217,14 @@ with_meet:
 with_throws:
     for (SNode tt : SLinkOperations.getTargets(thisNode, "throwsType", true)) {
       if (!(Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(tt, "classifier", false), SLinkOperations.getTarget(new FunctionType_Behavior.QuotationClass_ksvwin_a0b0a0a1a41().createNode(), "classifier", false)))) {
-        for (int i = 0; i < ListSequence.fromList(res).count(); ++i) {
-          SNode restt = ListSequence.fromList(res).getElement(i);
+        for (int i = 0; i < ListSequence.<SNode>fromList(res).count(); ++i) {
+          SNode restt = ListSequence.<SNode>fromList(res).getElement(i);
           if (Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(restt, "classifier", false), SLinkOperations.getTarget(tt, "classifier", false))) {
-            ListSequence.fromList(res).setElement(i, tt);
+            ListSequence.<SNode>fromList(res).setElement(i, tt);
             continue with_throws;
           }
         }
-        ListSequence.fromList(res).addElement(tt);
+        ListSequence.<SNode>fromList(res).addElement(tt);
       }
     }
     return res;
@@ -243,12 +243,12 @@ with_throws:
   }
 
   public static List<SNode> call_getNormalizedParameterTypes_1213877405276(SNode thisNode) {
-    List<SNode> resList = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> resList = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     List<SNode> paramTypes = SLinkOperations.getTargets(thisNode, "parameterType", true);
     int idx = 0;
     for (SNode p : paramTypes) {
       SNode pct = ClassifierTypeUtil.getTypeCoercedToClassifierType(p);
-      ListSequence.fromList(resList).addElement(pct);
+      ListSequence.<SNode>fromList(resList).addElement(pct);
       idx++;
     }
     return resList;

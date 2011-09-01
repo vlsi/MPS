@@ -11,7 +11,7 @@ public class Result_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<Result> constants = ListSequence.fromList(Result.getConstants()).iterator();
+    Iterator<Result> constants = ListSequence.<Result>fromList(Result.getConstants()).iterator();
     while (constants.hasNext()) {
       Result constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class Result_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<Result> constants = ListSequence.fromList(Result.getConstants()).iterator();
+    Iterator<Result> constants = ListSequence.<Result>fromList(Result.getConstants()).iterator();
     while (constants.hasNext()) {
       Result constant = constants.next();
       if (value.equals(constant.getName())) {

@@ -52,12 +52,12 @@ public class convert_to_restricted_Intention extends BaseIntention implements In
     SNode rft = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
     List<SNode> ptypes = SLinkOperations.getTargets(node, "parameterType", true);
     for (SNode pt : ptypes) {
-      ListSequence.fromList(SLinkOperations.getTargets(rft, "parameterType", true)).addElement(SNodeOperations.detachNode(pt));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(rft, "parameterType", true)).addElement(SNodeOperations.detachNode(pt));
     }
     SLinkOperations.setTarget(rft, "resultType", SNodeOperations.detachNode(SLinkOperations.getTarget(node, "resultType", true)), true);
     List<SNode> ttypes = SLinkOperations.getTargets(node, "throwsType", true);
     for (SNode tt : ttypes) {
-      ListSequence.fromList(SLinkOperations.getTargets(rft, "throwsType", true)).addElement(SNodeOperations.detachNode(tt));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(rft, "throwsType", true)).addElement(SNodeOperations.detachNode(tt));
     }
   }
 

@@ -75,7 +75,7 @@ public class MovePropertyUp extends BaseGeneratedRefactoring {
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float) 0.75, false));
+    Map<IModule, List<SModel>> result = MapSequence.<IModule,List<SModel>>fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float) 0.75, false));
     Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
     if (sourceLanguage != null) {
       MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
@@ -105,14 +105,14 @@ public class MovePropertyUp extends BaseGeneratedRefactoring {
   }
 
   public List<IChooseComponent> getChooseComponents(final RefactoringContext refactoringContext) {
-    List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
+    List<IChooseComponent> components = ListSequence.<IChooseComponent>fromList(new ArrayList<IChooseComponent>());
     {
       IChooseComponent<SNode> chooseComponent;
       chooseComponent = MovePropertyUp.this.targetConcept_componentCreator(refactoringContext);
       chooseComponent.setPropertyName("targetConcept");
       chooseComponent.setCaption("choose target concept");
       chooseComponent.initComponent();
-      ListSequence.fromList(components).addElement(chooseComponent);
+      ListSequence.<IChooseComponent>fromList(components).addElement(chooseComponent);
     }
     return components;
   }

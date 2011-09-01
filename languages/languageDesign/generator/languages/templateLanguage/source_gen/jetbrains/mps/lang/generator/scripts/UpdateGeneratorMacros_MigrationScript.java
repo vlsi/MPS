@@ -41,7 +41,7 @@ public class UpdateGeneratorMacros_MigrationScript extends BaseMigrationScript {
         if (statements.size() != 1) {
           return false;
         }
-        SNode statement = ListSequence.fromList(statements).first();
+        SNode statement = ListSequence.<SNode>fromList(statements).first();
         if ((statement == null) || !(SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
           return false;
         }

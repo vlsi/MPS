@@ -52,12 +52,12 @@ public class ConceptMethodDeclaration_Behavior {
     if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "returnType", true), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "overriddenMethod", false), "returnType", true)))) {
       return false;
     }
-    int parameterCount = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count();
-    if (parameterCount != ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "overriddenMethod", false), "parameter", true)).count()) {
+    int parameterCount = ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count();
+    if (parameterCount != ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "overriddenMethod", false), "parameter", true)).count()) {
       return false;
     }
     for (int i = 0; i < parameterCount; i++) {
-      if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).getElement(i), "type", true), SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "overriddenMethod", false), "parameter", true)).getElement(i), "type", true)))) {
+      if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).getElement(i), "type", true), SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "overriddenMethod", false), "parameter", true)).getElement(i), "type", true)))) {
         return false;
       }
     }

@@ -242,27 +242,27 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_ls0i5e_a1c0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "author", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_ls0i5e_a2c0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "since", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "since", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_ls0i5e_a3c0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "version", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "version", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_ls0i5e_a4c0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "see", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "see", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_ls0i5e_a5c0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_ls0i5e_a6c0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsTag", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsTag", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_ls0i5e_a7c0(SNode node, EditorContext editorContext, IScope scope) {

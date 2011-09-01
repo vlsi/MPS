@@ -15,7 +15,7 @@ public class UIAction_Behavior {
   }
 
   public static SNode virtual_findTemplate_3939571372331676060(final SNode thisNode, SModel model, IScope scope) {
-    return ListSequence.fromList(SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.ui.modeling.structure.UIActionCode")).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.ui.modeling.structure.UIActionCode")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode tpl) {
         return SLinkOperations.getTarget(tpl, "action", false) == thisNode;
       }

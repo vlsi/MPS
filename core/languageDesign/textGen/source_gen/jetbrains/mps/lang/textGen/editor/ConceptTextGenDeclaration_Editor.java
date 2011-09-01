@@ -343,7 +343,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return Sequence.fromIterable(((Iterable<String>) Charset.availableCharsets().keySet())).toListSequence();
+      return Sequence.<String>fromIterable(((Iterable<String>) Charset.availableCharsets().keySet())).toListSequence();
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

@@ -20,7 +20,7 @@ public class LetExpression_Behavior {
 
   public static List<SNode> virtual_getVariables_8981808925914841576(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "variable", true));
+    ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(thisNode, "variable", true));
     return result;
   }
 

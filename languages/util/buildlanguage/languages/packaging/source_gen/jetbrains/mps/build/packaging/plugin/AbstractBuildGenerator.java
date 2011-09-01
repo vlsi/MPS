@@ -21,7 +21,7 @@ public abstract class AbstractBuildGenerator {
   private String myModelName;
   private SModelDescriptor myModelDescriptor;
   private boolean myCreateModel = true;
-  private final List<NodeData> myModules = ListSequence.fromList(new LinkedList<NodeData>());
+  private final List<NodeData> myModules = ListSequence.<NodeData>fromList(new LinkedList<NodeData>());
 
   public AbstractBuildGenerator() {
   }
@@ -78,12 +78,12 @@ public abstract class AbstractBuildGenerator {
   }
 
   public List<NodeData> getModules() {
-    return ListSequence.fromListWithValues(new ArrayList<NodeData>(), this.myModules);
+    return ListSequence.<NodeData>fromListWithValues(new ArrayList<NodeData>(), this.myModules);
   }
 
   public void setModules(List<NodeData> modules) {
-    ListSequence.fromList(this.myModules).clear();
-    ListSequence.fromList(this.myModules).addSequence(ListSequence.fromList(modules));
+    ListSequence.<NodeData>fromList(this.myModules).clear();
+    ListSequence.<NodeData>fromList(this.myModules).addSequence(ListSequence.<NodeData>fromList(modules));
   }
 
   public void setCreateModel(boolean createModel) {

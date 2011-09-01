@@ -44,7 +44,7 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174350", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.getRepresentative(InstanceType_typevar_1206554174334), (SNode) new typeof_FieldReferenceOperation_InferenceRule.QuotationClass_7hlfbz_a0a5a0().createNode(fieldClassifier, typeCheckingContext), true, false, _info_12389875345);
     }
-    Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
+    Map<SNode, List<SNode>> mmap = MapSequence.<SNode,List<SNode>>fromMap(new HashMap<SNode, List<SNode>>());
     SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(typeCheckingContext, SLinkOperations.getTarget(fieldDeclaration, "type", true), mmap);
     {
       SNode _nodeToCheck_1029348928467 = fieldReference;

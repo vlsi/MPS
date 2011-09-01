@@ -42,16 +42,16 @@ public class ShowInferredNodeType_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
@@ -62,15 +62,15 @@ public class ShowInferredNodeType_Action extends GeneratedAction {
       final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          type.value = TypeChecker.getInstance().getInferredTypeOf(((SNode) MapSequence.fromMap(_params).get("node")));
+          type.value = TypeChecker.getInstance().getInferredTypeOf(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")));
         }
       });
       if (type.value == null) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "no type");
+        JOptionPane.showMessageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "no type");
         return;
       }
       MyBaseNodeDialog dialog;
-      dialog = new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, null);
+      dialog = new MyBaseNodeDialog(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), ((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), type.value, null);
       dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowInferredNodeType", t);

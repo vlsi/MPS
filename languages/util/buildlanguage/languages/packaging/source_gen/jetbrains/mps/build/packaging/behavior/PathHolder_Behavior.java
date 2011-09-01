@@ -41,7 +41,7 @@ public class PathHolder_Behavior {
   }
 
   public static void call_shrink_55204148067446984(final SNode thisNode, List<SNode> macro) {
-    SNode suitableMacro = ListSequence.fromList(macro).findFirst(new IWhereFilter<SNode>() {
+    SNode suitableMacro = ListSequence.<SNode>fromList(macro).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(thisNode, "fullPath").startsWith(SPropertyOperations.getString(it, "path") + Util.SEPARATOR);
       }
@@ -70,7 +70,7 @@ public class PathHolder_Behavior {
     if (SPropertyOperations.getString(pathHolder, "fullPath").equals(path)) {
       PathHolder_Behavior.call_shrink_55204148067446984(pathHolder, macros);
     } else {
-      SLinkOperations.setTarget(pathHolder, "macro", ListSequence.fromList(macros).findFirst(new IWhereFilter<SNode>() {
+      SLinkOperations.setTarget(pathHolder, "macro", ListSequence.<SNode>fromList(macros).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return eq_ohoc40_a0a0a0a0a2a0a0e0g(SPropertyOperations.getString(it, "name"), Layout_Behavior.getBasedirName_1226509010730());
         }

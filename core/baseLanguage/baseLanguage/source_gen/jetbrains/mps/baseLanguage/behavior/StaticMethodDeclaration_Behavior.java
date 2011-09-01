@@ -40,12 +40,12 @@ public class StaticMethodDeclaration_Behavior {
   }
 
   public static boolean call_isMainMethod_1213877536670(SNode thisNode) {
-    return "main".equals(SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == 1 && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).first()), new StaticMethodDeclaration_Behavior.QuotationClass_qyxuoz_a1a0a0a3().createNode(), false);
+    return "main".equals(SPropertyOperations.getString(thisNode, "name")) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == 1 && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).first()), new StaticMethodDeclaration_Behavior.QuotationClass_qyxuoz_a1a0a0a3().createNode(), false);
   }
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = HasAnnotation_Behavior.callSuper_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
+    ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
   }
 

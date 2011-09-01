@@ -31,9 +31,9 @@ public enum _LeftRight_Enum {
   }
 
   public static List<_LeftRight_Enum> getConstants() {
-    List<_LeftRight_Enum> list = ListSequence.fromList(new LinkedList<_LeftRight_Enum>());
-    ListSequence.fromList(list).addElement(_LeftRight_Enum.left);
-    ListSequence.fromList(list).addElement(_LeftRight_Enum.right);
+    List<_LeftRight_Enum> list = ListSequence.<_LeftRight_Enum>fromList(new LinkedList<_LeftRight_Enum>());
+    ListSequence.<_LeftRight_Enum>fromList(list).addElement(_LeftRight_Enum.left);
+    ListSequence.<_LeftRight_Enum>fromList(list).addElement(_LeftRight_Enum.right);
     return list;
   }
 

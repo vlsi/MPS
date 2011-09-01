@@ -42,7 +42,7 @@ public class Code_TabDescriptor extends EditorTabDescriptor {
       return new ArrayList<SNode>();
     }
     final SNode event = node;
-    return Sequence.fromIterable(EditorExtensions.getInstance().findAllEventHandlerTemplates()).where(new IWhereFilter<SNode>() {
+    return Sequence.<SNode>fromIterable(EditorExtensions.getInstance().findAllEventHandlerTemplates()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode eht) {
         return SLinkOperations.getTarget(eht, "event", false) == event;
       }
@@ -54,13 +54,13 @@ public class Code_TabDescriptor extends EditorTabDescriptor {
   }
 
   public List<SNode> getConcepts(final SNode node) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.EventHandlerTemplate"));
+    return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.EventHandlerTemplate"));
   }
 
   public SNode createNode(final SNode node, final SNode concept) {
     String defVal = "<default>";
     Object[] msg = new Object[]{"Choose destination model for the new template:"};
-    Object[] selVals = Sequence.fromIterable(Sequence.<Object>singleton(defVal)).concat(Sequence.fromIterable(EditorExtensions.getInstance().findEventHandlerTemplateCreatorsInfo())).toGenericArray(Object.class);
+    Object[] selVals = Sequence.<Object>fromIterable(Sequence.<Object>singleton(defVal)).concat(Sequence.<Object>fromIterable(EditorExtensions.getInstance().findEventHandlerTemplateCreatorsInfo())).toGenericArray(Object.class);
     Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
     Object creatorInfo = JOptionPane.showInputDialog(frame, msg, "Choose destination model", JOptionPane.QUESTION_MESSAGE, null, selVals, defVal);
     if (defVal.equals(creatorInfo)) {

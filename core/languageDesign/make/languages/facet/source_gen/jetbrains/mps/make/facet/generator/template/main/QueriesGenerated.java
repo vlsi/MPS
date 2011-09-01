@@ -5,6 +5,7 @@ package jetbrains.mps.make.facet.generator.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -22,7 +23,6 @@ import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -40,11 +40,11 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_671853460608709085(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.make.facet.structure.FacetDeclaration")).isNotEmpty();
+    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.make.facet.structure.FacetDeclaration")).isNotEmpty();
   }
 
   public static boolean createRootRule_Condition_2824583209542435179(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.make.facet.structure.FacetDeclaration")).isNotEmpty();
+    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.make.facet.structure.FacetDeclaration")).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_8170824575195255922(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -189,7 +189,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_671853460608694391(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "TargetDeclaration_class"), "constructor", true)).first();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "TargetDeclaration_class"), "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1330985609386428780(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -197,23 +197,23 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2457327449352637583(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0mb().createNode(), "classifier", false), "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0mb().createNode(), "classifier", false), "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getString(it, "name").endsWith("_" + ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "component", true)).count());
+        return SPropertyOperations.getString(it, "name").endsWith("_" + ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "component", true)).count());
       }
     });
   }
 
   public static Object referenceMacro_GetReferent_2457327449352637535(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0nb().createNode(), "classifier", false), "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0nb().createNode(), "classifier", false), "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getString(it, "name").endsWith("_" + ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "component", true)).count());
+        return SPropertyOperations.getString(it, "name").endsWith("_" + ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "component", true)).count());
       }
     });
   }
 
   public static Object referenceMacro_GetReferent_671853460608824185(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "FacetDeclaration_class"), "constructor", true)).first();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "FacetDeclaration_class"), "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_2146492603954835938(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -253,7 +253,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7320828025189279641(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "component", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "component", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1977954644795426653(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -265,11 +265,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4902059885395479673(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "component", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "component", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_5189627237350267862(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependency", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "dependency", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode d) {
         return SPropertyOperations.getString_def(d, "qualifier", "BEFORE") == SEnumOperations.getEnumMemberValue(((SNode) _context.getVariable("qualifier")));
       }
@@ -277,7 +277,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5189627237350270268(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(((List<SNode>) _context.getVariable("related"))).isNotEmpty();
+    return ListSequence.<SNode>fromList(((List<SNode>) _context.getVariable("related"))).isNotEmpty();
   }
 
   public static SNode sourceNodeQuery_2146492603954835971(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -373,7 +373,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1330985609386428769(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "input", true), "resourceType", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "input", true), "resourceType", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "classifier", false) != null);
       }
@@ -385,7 +385,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5189627237350267857(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependency", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "dependency", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode d) {
         return SPropertyOperations.getString_def(d, "qualifier", "BEFORE") == SEnumOperations.getEnumMemberValue(((SNode) _context.getVariable("qualifier")));
       }
@@ -401,7 +401,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_671853460608824199(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.make.facet.structure.FacetDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.make.facet.structure.FacetDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode fd) {
         return SPropertyOperations.getString(fd, "name");
       }

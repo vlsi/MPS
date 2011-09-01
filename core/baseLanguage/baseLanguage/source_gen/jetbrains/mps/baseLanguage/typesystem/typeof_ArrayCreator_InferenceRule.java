@@ -22,7 +22,7 @@ public class typeof_ArrayCreator_InferenceRule extends AbstractInferenceRule_Run
 
   public void applyRule(final SNode arrayCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode type = SLinkOperations.getTarget(arrayCreator, "componentType", true);
-    for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).count(); i++) {
+    for (int i = 0; i < ListSequence.<SNode>fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).count(); i++) {
       type = new typeof_ArrayCreator_InferenceRule.QuotationClass_vouny3_a0a0a1a0().createNode(type, typeCheckingContext);
     }
     {

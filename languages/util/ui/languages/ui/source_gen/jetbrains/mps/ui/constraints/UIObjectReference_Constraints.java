@@ -39,7 +39,7 @@ public class UIObjectReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode lastSlc = ListSequence.fromList(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.IStatementListContainer", true)).last();
+            SNode lastSlc = ListSequence.<SNode>fromList(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.IStatementListContainer", true)).last();
             return SNodeOperations.getDescendants(lastSlc, "jetbrains.mps.ui.structure.IUIObjectDeclaration", false, new String[]{});
           }
 

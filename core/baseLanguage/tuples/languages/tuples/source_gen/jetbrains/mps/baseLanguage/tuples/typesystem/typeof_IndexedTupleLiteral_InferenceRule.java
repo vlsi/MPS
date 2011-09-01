@@ -23,9 +23,9 @@ public class typeof_IndexedTupleLiteral_InferenceRule extends AbstractInferenceR
   }
 
   public void applyRule(final SNode tuple, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> memberTypes = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> memberTypes = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     for (SNode mbr : SLinkOperations.getTargets(tuple, "component", true)) {
-      ListSequence.fromList(memberTypes).addElement(typeCheckingContext.typeOf(mbr, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "974579920306587589", true));
+      ListSequence.<SNode>fromList(memberTypes).addElement(typeCheckingContext.typeOf(mbr, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "974579920306587589", true));
     }
     {
       SNode _nodeToCheck_1029348928467 = tuple;

@@ -18,7 +18,7 @@ public class check_DuplicatedConstructors_NonTypesystemRule extends AbstractNonT
 
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> constructors = SLinkOperations.getTargets(classConcept, "constructor", true);
-    if (ListSequence.fromList(constructors).count() > 1) {
+    if (ListSequence.<SNode>fromList(constructors).count() > 1) {
       for (SNode constructor : constructors) {
         RulesFunctions_BaseLanguage.checkDuplicates(typeCheckingContext, constructor, classConcept, constructors);
       }

@@ -27,7 +27,7 @@ public class IMethodCall_DeleteTypeArguments {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      ListSequence.fromList(SLinkOperations.getTargets(node, "typeArgument", true)).clear();
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeArgument", true)).clear();
     }
   }
 }

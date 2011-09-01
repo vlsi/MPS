@@ -155,7 +155,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_4943044633102141062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false)), "jetbrains.mps.analyzers.structure.Rule");
     SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(rule, "perform");
-    return ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).toListSequence()).getElement(1);
+    return ListSequence.<SNode>fromList(ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).toListSequence()).getElement(1);
   }
 
   public static Object referenceMacro_GetReferent_4444769741952754168(final IOperationContext operationContext, final ReferenceMacroContext _context) {

@@ -29,11 +29,11 @@ public class BTestCase_Behavior {
     List<SNode> methods = new ArrayList<SNode>();
     if ((SLinkOperations.getTarget(node, "superclass", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) {
       List<SNode> superMethods = ITestCase_Behavior.call_getTestSet_1216130724401(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"));
-      ListSequence.fromList(methods).addSequence(ListSequence.fromList(superMethods));
+      ListSequence.<SNode>fromList(methods).addSequence(ListSequence.<SNode>fromList(superMethods));
     }
-    ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true)).where(new IWhereFilter<SNode>() {
+    ListSequence.<SNode>fromList(methods).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode method) {
-        return (ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
+        return (ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode annotation) {
             return SLinkOperations.getTarget(annotation, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.junit(MPS.Classpath/org.junit@java_stub)", "~Ignore"));
           }
@@ -61,9 +61,9 @@ public class BTestCase_Behavior {
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     if (!(SPropertyOperations.getBoolean(thisNode, "abstractClass"))) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)));
+      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)));
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))));
+        ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))));
       }
     }
     return result;
@@ -71,7 +71,7 @@ public class BTestCase_Behavior {
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = IMemberContainer_Behavior.callSuper_getMembers_1213877531970(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase");
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)));
+    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)));
     return members;
   }
 

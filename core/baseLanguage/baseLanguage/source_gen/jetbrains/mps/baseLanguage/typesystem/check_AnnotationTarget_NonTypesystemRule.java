@@ -32,7 +32,7 @@ public class check_AnnotationTarget_NonTypesystemRule extends AbstractNonTypesys
     if (targetAi == null) {
       return;
     }
-    boolean goodTarget = AnnotationUtil.accept(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(targetAi, "value", true)).first(), "value", true), SNodeOperations.as(SNodeOperations.getParent(annotationInstance), "jetbrains.mps.baseLanguage.structure.HasAnnotation"));
+    boolean goodTarget = AnnotationUtil.accept(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(targetAi, "value", true)).first(), "value", true), SNodeOperations.as(SNodeOperations.getParent(annotationInstance), "jetbrains.mps.baseLanguage.structure.HasAnnotation"));
     if (!(goodTarget)) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(annotationInstance, "wrong target of annotation", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8695552310380242272", null, errorTarget);

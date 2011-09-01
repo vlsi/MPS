@@ -19,10 +19,10 @@ public class ThisConstructorInvocation_TextGen extends SNodeTextGen {
     this.appendNewLine();
     this.indentBuffer();
     this.append("this(");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "actualArgument", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
+        if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
           this.append(", ");
         }
       }

@@ -17,16 +17,16 @@ import com.intellij.openapi.extensions.Extensions;
 public class ExecutableFile_Kind implements ConfigurationType {
   private static final Icon ICON = new ImageIcon(ExecutableFile_Kind.class.getResource("executable.png"));
 
-  private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
+  private final List<ConfigurationFactory> myForeignFactories = ListSequence.<ConfigurationFactory>fromList(new ArrayList<ConfigurationFactory>());
 
   public ExecutableFile_Kind() {
   }
 
   public ConfigurationFactory[] getConfigurationFactories() {
-    List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
-    ListSequence.fromList(result).addElement(new NanoCFile_Configuration_Factory(this));
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(myForeignFactories));
-    return ListSequence.fromList(result).toGenericArray(ConfigurationFactory.class);
+    List<ConfigurationFactory> result = ListSequence.<ConfigurationFactory>fromList(new ArrayList<ConfigurationFactory>());
+    ListSequence.<ConfigurationFactory>fromList(result).addElement(new NanoCFile_Configuration_Factory(this));
+    ListSequence.<ConfigurationFactory>fromList(result).addSequence(ListSequence.<ConfigurationFactory>fromList(myForeignFactories));
+    return ListSequence.<ConfigurationFactory>fromList(result).toGenericArray(ConfigurationFactory.class);
   }
 
   @NonNls
@@ -48,7 +48,7 @@ public class ExecutableFile_Kind implements ConfigurationType {
   }
 
   public void addForeignFactory(ConfigurationFactory factory) {
-    ListSequence.fromList(myForeignFactories).addElement(factory);
+    ListSequence.<ConfigurationFactory>fromList(myForeignFactories).addElement(factory);
   }
 
   public static ExecutableFile_Kind getInstance() {

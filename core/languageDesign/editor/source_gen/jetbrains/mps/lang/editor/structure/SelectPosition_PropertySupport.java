@@ -11,7 +11,7 @@ public class SelectPosition_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<SelectPosition> constants = ListSequence.fromList(SelectPosition.getConstants()).iterator();
+    Iterator<SelectPosition> constants = ListSequence.<SelectPosition>fromList(SelectPosition.getConstants()).iterator();
     while (constants.hasNext()) {
       SelectPosition constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class SelectPosition_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<SelectPosition> constants = ListSequence.fromList(SelectPosition.getConstants()).iterator();
+    Iterator<SelectPosition> constants = ListSequence.<SelectPosition>fromList(SelectPosition.getConstants()).iterator();
     while (constants.hasNext()) {
       SelectPosition constant = constants.next();
       if (value.equals(constant.getName())) {

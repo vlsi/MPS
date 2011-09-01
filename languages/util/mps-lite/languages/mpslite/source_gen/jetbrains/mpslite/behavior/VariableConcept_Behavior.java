@@ -34,7 +34,7 @@ public class VariableConcept_Behavior {
   }
 
   public static void virtual_fillConcept_1239891562930(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    SNode conceptDeclaration = ((SNode) MapSequence.fromMap(conceptsToTargets).get(thisNode));
+    SNode conceptDeclaration = ((SNode) MapSequence.<SNode,SNode>fromMap(conceptsToTargets).get(thisNode));
     SNode typeLink = SLinkOperations.addNewChild(conceptDeclaration, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SPropertyOperations.set(typeLink, "metaClass", "aggregation");
     SPropertyOperations.set(typeLink, "sourceCardinality", "1");
@@ -43,8 +43,8 @@ public class VariableConcept_Behavior {
     SNode propertyDecl = SLinkOperations.addNewChild(conceptDeclaration, "propertyDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
     SLinkOperations.setTarget(propertyDecl, "dataType", SLinkOperations.getTarget(new VariableConcept_Behavior.QuotationClass_mkovpu_a0c0h0d().createNode(), "dataType", false), false);
     SPropertyOperations.set(propertyDecl, "name", SPropertyOperations.getString(thisNode, "namePropertyName"));
-    MapSequence.fromMap(partsToLinks).put(SLinkOperations.getTarget(thisNode, "typeConcept", true), typeLink);
-    MapSequence.fromMap(partsToLinks).put(thisNode, propertyDecl);
+    MapSequence.<SNode,SNode>fromMap(partsToLinks).put(SLinkOperations.getTarget(thisNode, "typeConcept", true), typeLink);
+    MapSequence.<SNode,SNode>fromMap(partsToLinks).put(thisNode, propertyDecl);
   }
 
   public static SNode virtual_createEditor_1239890004879(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
@@ -65,9 +65,9 @@ public class VariableConcept_Behavior {
     SPropertyOperations.set(referenceDeclaration, "metaClass", "reference");
     SPropertyOperations.set(referenceDeclaration, "sourceCardinality", "1");
     SPropertyOperations.set(referenceDeclaration, "role", "declaration");
-    SLinkOperations.setTarget(referenceDeclaration, "target", MapSequence.fromMap(conceptsToTargets).get(thisNode), false);
-    SLinkOperations.setTarget(additionalConcept, "extends", (SNode) MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "expressionConcept", true)), false);
-    MapSequence.fromMap(partsToLinks).put(SLinkOperations.getTarget(thisNode, "reference", true), referenceDeclaration);
+    SLinkOperations.setTarget(referenceDeclaration, "target", MapSequence.<SNode,SNode>fromMap(conceptsToTargets).get(thisNode), false);
+    SLinkOperations.setTarget(additionalConcept, "extends", (SNode) MapSequence.<SNode,SNode>fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "expressionConcept", true)), false);
+    MapSequence.<SNode,SNode>fromMap(partsToLinks).put(SLinkOperations.getTarget(thisNode, "reference", true), referenceDeclaration);
     return additionalConcept;
   }
 
@@ -75,24 +75,24 @@ public class VariableConcept_Behavior {
     SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
     SNode contentCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null);
     SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
-    SLinkOperations.setTarget(contentCell, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(SLinkOperations.getTarget(thisNode, "reference", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
+    SLinkOperations.setTarget(contentCell, "relationDeclaration", SNodeOperations.cast(MapSequence.<SNode,SNode>fromMap(partsToLinks).get(SLinkOperations.getTarget(thisNode, "reference", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
     SNode editorComponent = SLinkOperations.setNewChild(contentCell, "editorComponent", "jetbrains.mps.lang.editor.structure.InlineEditorComponent");
     SNode propertyCell = SLinkOperations.setNewChild(editorComponent, "cellModel", "jetbrains.mps.lang.editor.structure.CellModel_Property");
-    SLinkOperations.setTarget(propertyCell, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(thisNode), "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), false);
+    SLinkOperations.setTarget(propertyCell, "relationDeclaration", SNodeOperations.cast(MapSequence.<SNode,SNode>fromMap(partsToLinks).get(thisNode), "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), false);
     return editor;
   }
 
   public static SNode call_createVariableScope_1239942296621(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    SNode statementConcept = MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "statementConcept", true));
+    SNode statementConcept = MapSequence.<SNode,SNode>fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "statementConcept", true));
     final List<SNode> conceptReferences = new ArrayList<SNode>();
     for (SNode blockReference : SLinkOperations.getTargets(thisNode, "scopeBlock", true)) {
-      ListSequence.fromList(conceptReferences).addElement(new VariableConcept_Behavior.QuotationClass_mkovpu_a0a0a0c0h().createNode(MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(blockReference, "conceptDeclaration", false))));
+      ListSequence.<SNode>fromList(conceptReferences).addElement(new VariableConcept_Behavior.QuotationClass_mkovpu_a0a0a0c0h().createNode(MapSequence.<SNode,SNode>fromMap(conceptsToTargets).get(SLinkOperations.getTarget(blockReference, "conceptDeclaration", false))));
     }
     return VariableConcept_Behavior.call_createVariableScope_internal_1239972513878(thisNode, statementConcept, conceptReferences, conceptsToTargets, partsToLinks);
   }
 
   public static SNode call_createVariableScope_internal_1239972513878(SNode thisNode, SNode statementConcept, List<SNode> conceptReferences, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    SNode result = new VariableConcept_Behavior.QuotationClass_mkovpu_a0a0a8().createNode(SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(SLinkOperations.getTarget(thisNode, "reference", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), statementConcept, conceptReferences, statementConcept, statementConcept);
+    SNode result = new VariableConcept_Behavior.QuotationClass_mkovpu_a0a0a8().createNode(SNodeOperations.cast(MapSequence.<SNode,SNode>fromMap(partsToLinks).get(SLinkOperations.getTarget(thisNode, "reference", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), statementConcept, conceptReferences, statementConcept, statementConcept);
     return result;
   }
 

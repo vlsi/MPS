@@ -1,79 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="MatrixInitializerIndexReference_DataFlow.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MatrixInitializerIndexReference_DataFlow" />
-  <unitInfo fileName="MathSymbolIndexReference_DataFlow.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MathSymbolIndexReference_DataFlow" />
-  <unitInfo fileName="ExponentialOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.ExponentialOperation_DataFlow" />
-  <unitInfo fileName="MathFuncExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MathFuncExpression_DataFlow" />
-  <unitInfo fileName="MatrixNorm_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MatrixNorm_DataFlow" />
-  <unitInfo fileName="Determinant_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.Determinant_DataFlow" />
-  <unitInfo fileName="MatrixZero_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MatrixZero_DataFlow" />
-  <unitInfo fileName="DivExpressionFraction_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.DivExpressionFraction_DataFlow" />
-  <unitInfo fileName="MathSymbolIndex_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MathSymbolIndex_DataFlow" />
-  <unitInfo fileName="VectorInitializer_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.VectorInitializer_DataFlow" />
-  <unitInfo fileName="LinearSolveOperation_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.LinearSolveOperation_DataFlow" />
-  <unitInfo fileName="MatrixElementAccessExpression_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MatrixElementAccessExpression_DataFlow" />
-  <unitInfo fileName="MathSymbol_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MathSymbol_DataFlow" />
-  <unitInfo fileName="MatrixConstructor_DataFlow.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MatrixConstructor_DataFlow" />
-  <unitInfo fileName="MathSymbolFromToIndex_DataFlow.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MathSymbolFromToIndex_DataFlow" />
-  <unitInfo fileName="MatrixInitializer_DataFlow.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MatrixInitializer_DataFlow" />
   <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.DFABuilders" />
   <root nodeId="1236428213402">
     <nodeInfo nodeId="1236428216296" fileName="MathSymbolIndexReference_DataFlow.java" startLine="14" startPosition="102" endLine="15" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236428213402" fileName="MathSymbolIndexReference_DataFlow.java" startLine="10" startPosition="72" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MathSymbolIndexReference_DataFlow#()V" />
+    <nodeInfo nodeId="1236428213402" fileName="MathSymbolIndexReference_DataFlow.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="1236428213402" fileName="MathSymbolIndexReference_DataFlow.java" startLine="11" startPosition="46" endLine="11" endPosition="46" />
     <scopeInfo nodeId="1236428213404" fileName="MathSymbolIndexReference_DataFlow.java" startLine="14" startPosition="102" endLine="15" endPosition="101" />
+    <scopeInfo nodeId="1236428213402" fileName="MathSymbolIndexReference_DataFlow.java" startLine="10" startPosition="72" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="1236428213402" fileName="MathSymbolIndexReference_DataFlow.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <unitInfo nodeId="1236428213402" fileName="MathSymbolIndexReference_DataFlow.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MathSymbolIndexReference_DataFlow" />
   </root>
   <root nodeId="1236428241304">
     <nodeInfo nodeId="1236595047854" fileName="MathSymbolIndex_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236428243667" fileName="MathSymbolIndex_DataFlow.java" startLine="16" startPosition="105" endLine="17" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236428241304" fileName="MathSymbolIndex_DataFlow.java" startLine="11" startPosition="63" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MathSymbolIndex_DataFlow#()V" />
+    <nodeInfo nodeId="1236428241304" fileName="MathSymbolIndex_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="1236428241304" fileName="MathSymbolIndex_DataFlow.java" startLine="12" startPosition="37" endLine="12" endPosition="37" />
+    <scopeInfo nodeId="1236428241304" fileName="MathSymbolIndex_DataFlow.java" startLine="11" startPosition="63" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1236428241306" fileName="MathSymbolIndex_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="56" />
+    <scopeInfo nodeId="1236428241304" fileName="MathSymbolIndex_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <unitInfo nodeId="1236428241304" fileName="MathSymbolIndex_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MathSymbolIndex_DataFlow" />
   </root>
   <root nodeId="1236428269346">
     <nodeInfo nodeId="1236428335500" fileName="MathSymbol_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236428397970" fileName="MathSymbol_DataFlow.java" startLine="16" startPosition="100" endLine="17" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236428409745" fileName="MathSymbol_DataFlow.java" startLine="17" startPosition="109" endLine="18" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236428269346" fileName="MathSymbol_DataFlow.java" startLine="11" startPosition="58" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MathSymbol_DataFlow#()V" />
+    <nodeInfo nodeId="1236428269346" fileName="MathSymbol_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="1236428269346" fileName="MathSymbol_DataFlow.java" startLine="12" startPosition="32" endLine="12" endPosition="32" />
+    <scopeInfo nodeId="1236428269346" fileName="MathSymbol_DataFlow.java" startLine="11" startPosition="58" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1236428269348" fileName="MathSymbol_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="107" />
+    <scopeInfo nodeId="1236428269346" fileName="MathSymbol_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <unitInfo nodeId="1236428269346" fileName="MathSymbol_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MathSymbol_DataFlow" />
   </root>
   <root nodeId="1236595058300">
     <nodeInfo nodeId="1236595061381" fileName="MathSymbolFromToIndex_DataFlow.java" startLine="16" startPosition="102" endLine="17" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236595367597" fileName="MathSymbolFromToIndex_DataFlow.java" startLine="17" startPosition="56" endLine="18" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236595372169" fileName="MathSymbolFromToIndex_DataFlow.java" startLine="18" startPosition="101" endLine="19" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236595058300" fileName="MathSymbolFromToIndex_DataFlow.java" startLine="12" startPosition="69" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MathSymbolFromToIndex_DataFlow#()V" />
+    <nodeInfo nodeId="1236595058300" fileName="MathSymbolFromToIndex_DataFlow.java" startLine="15" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="1236595058300" fileName="MathSymbolFromToIndex_DataFlow.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="1236595058300" fileName="MathSymbolFromToIndex_DataFlow.java" startLine="12" startPosition="69" endLine="14" endPosition="3" />
     <scopeInfo nodeId="1236595058302" fileName="MathSymbolFromToIndex_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="212" />
+    <scopeInfo nodeId="1236595058300" fileName="MathSymbolFromToIndex_DataFlow.java" startLine="15" startPosition="0" endLine="21" endPosition="0" />
+    <unitInfo nodeId="1236595058300" fileName="MathSymbolFromToIndex_DataFlow.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MathSymbolFromToIndex_DataFlow" />
   </root>
   <root nodeId="1237104084169">
     <nodeInfo nodeId="1237104089312" fileName="DivExpressionFraction_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237104097196" fileName="DivExpressionFraction_DataFlow.java" startLine="16" startPosition="106" endLine="17" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237104084169" fileName="DivExpressionFraction_DataFlow.java" startLine="11" startPosition="69" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DivExpressionFraction_DataFlow#()V" />
+    <nodeInfo nodeId="1237104084169" fileName="DivExpressionFraction_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="1237104084169" fileName="DivExpressionFraction_DataFlow.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="1237104084169" fileName="DivExpressionFraction_DataFlow.java" startLine="11" startPosition="69" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1237104084171" fileName="DivExpressionFraction_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="108" />
+    <scopeInfo nodeId="1237104084169" fileName="DivExpressionFraction_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <unitInfo nodeId="1237104084169" fileName="DivExpressionFraction_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.DivExpressionFraction_DataFlow" />
   </root>
   <root nodeId="1418611629042596876">
     <nodeInfo nodeId="1418611629042596879" fileName="MatrixZero_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1418611629042596882" fileName="MatrixZero_DataFlow.java" startLine="16" startPosition="101" endLine="17" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1418611629042596876" fileName="MatrixZero_DataFlow.java" startLine="11" startPosition="58" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatrixZero_DataFlow#()V" />
+    <nodeInfo nodeId="1418611629042596876" fileName="MatrixZero_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="1418611629042596876" fileName="MatrixZero_DataFlow.java" startLine="12" startPosition="32" endLine="12" endPosition="32" />
+    <scopeInfo nodeId="1418611629042596876" fileName="MatrixZero_DataFlow.java" startLine="11" startPosition="58" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1418611629042596878" fileName="MatrixZero_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="104" />
+    <scopeInfo nodeId="1418611629042596876" fileName="MatrixZero_DataFlow.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <unitInfo nodeId="1418611629042596876" fileName="MatrixZero_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MatrixZero_DataFlow" />
   </root>
   <root nodeId="1418611629042596902">
     <nodeInfo nodeId="1418611629042596923" fileName="LinearSolveOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1418611629042596936" fileName="LinearSolveOperation_DataFlow.java" startLine="16" startPosition="103" endLine="17" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1418611629042596927" fileName="LinearSolveOperation_DataFlow.java" startLine="17" startPosition="103" endLine="18" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1418611629042596902" fileName="LinearSolveOperation_DataFlow.java" startLine="11" startPosition="68" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LinearSolveOperation_DataFlow#()V" />
+    <nodeInfo nodeId="1418611629042596902" fileName="LinearSolveOperation_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="1418611629042596902" fileName="LinearSolveOperation_DataFlow.java" startLine="12" startPosition="42" endLine="12" endPosition="42" />
+    <scopeInfo nodeId="1418611629042596902" fileName="LinearSolveOperation_DataFlow.java" startLine="11" startPosition="68" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1418611629042596904" fileName="LinearSolveOperation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="119" />
+    <scopeInfo nodeId="1418611629042596902" fileName="LinearSolveOperation_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <unitInfo nodeId="1418611629042596902" fileName="LinearSolveOperation_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.LinearSolveOperation_DataFlow" />
   </root>
   <root nodeId="263012178968580059">
     <nodeInfo nodeId="263012178968580066" fileName="Determinant_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="263012178968580059" fileName="Determinant_DataFlow.java" startLine="11" startPosition="59" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Determinant_DataFlow#()V" />
+    <nodeInfo nodeId="263012178968580059" fileName="Determinant_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="263012178968580059" fileName="Determinant_DataFlow.java" startLine="12" startPosition="33" endLine="12" endPosition="33" />
     <scopeInfo nodeId="263012178968580061" fileName="Determinant_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="102" />
+    <scopeInfo nodeId="263012178968580059" fileName="Determinant_DataFlow.java" startLine="11" startPosition="59" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="263012178968580059" fileName="Determinant_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <unitInfo nodeId="263012178968580059" fileName="Determinant_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.Determinant_DataFlow" />
   </root>
   <root nodeId="3417571330832093636">
-    <nodeInfo nodeId="3417571330832094777" fileName="MatrixConstructor_DataFlow.java" startLine="17" startPosition="114" endLine="18" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3417571330832094777" fileName="MatrixConstructor_DataFlow.java" startLine="17" startPosition="121" endLine="18" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3417571330832093636" fileName="MatrixConstructor_DataFlow.java" startLine="12" startPosition="65" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatrixConstructor_DataFlow#()V" />
     <nodeInfo nodeId="3417571330832093640" fileName="MatrixConstructor_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="3417571330832093643" fileName="MatrixConstructor_DataFlow.java" startLine="17" startPosition="114" endLine="18" endPosition="48" />
+    <nodeInfo nodeId="3417571330832093636" fileName="MatrixConstructor_DataFlow.java" startLine="15" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="3417571330832093636" fileName="MatrixConstructor_DataFlow.java" startLine="13" startPosition="39" endLine="13" endPosition="39" />
+    <scopeInfo nodeId="3417571330832093643" fileName="MatrixConstructor_DataFlow.java" startLine="17" startPosition="121" endLine="18" endPosition="48" />
+    <scopeInfo nodeId="3417571330832093636" fileName="MatrixConstructor_DataFlow.java" startLine="12" startPosition="65" endLine="14" endPosition="3" />
     <scopeInfo nodeId="3417571330832093638" fileName="MatrixConstructor_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
     <scopeInfo nodeId="3417571330832093640" fileName="MatrixConstructor_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="3417571330832093636" fileName="MatrixConstructor_DataFlow.java" startLine="15" startPosition="0" endLine="21" endPosition="0" />
+    <unitInfo nodeId="3417571330832093636" fileName="MatrixConstructor_DataFlow.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MatrixConstructor_DataFlow" />
   </root>
   <root nodeId="4253775830167790686">
     <nodeInfo nodeId="4253775830167790689" fileName="MathFuncExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4253775830167790686" fileName="MathFuncExpression_DataFlow.java" startLine="11" startPosition="66" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MathFuncExpression_DataFlow#()V" />
+    <nodeInfo nodeId="4253775830167790686" fileName="MathFuncExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="4253775830167790686" fileName="MathFuncExpression_DataFlow.java" startLine="12" startPosition="40" endLine="12" endPosition="40" />
     <scopeInfo nodeId="4253775830167790688" fileName="MathFuncExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="102" />
+    <scopeInfo nodeId="4253775830167790686" fileName="MathFuncExpression_DataFlow.java" startLine="11" startPosition="66" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="4253775830167790686" fileName="MathFuncExpression_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <unitInfo nodeId="4253775830167790686" fileName="MathFuncExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MathFuncExpression_DataFlow" />
   </root>
   <root nodeId="5359814223490144978">
     <nodeInfo nodeId="5359814223490144981" fileName="VectorInitializer_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5359814223490144984" fileName="VectorInitializer_DataFlow.java" startLine="16" startPosition="107" endLine="17" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5359814223490146698" fileName="VectorInitializer_DataFlow.java" startLine="17" startPosition="106" endLine="18" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5359814223490144978" fileName="VectorInitializer_DataFlow.java" startLine="11" startPosition="65" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VectorInitializer_DataFlow#()V" />
+    <nodeInfo nodeId="5359814223490144978" fileName="VectorInitializer_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="5359814223490144978" fileName="VectorInitializer_DataFlow.java" startLine="12" startPosition="39" endLine="12" endPosition="39" />
+    <scopeInfo nodeId="5359814223490144978" fileName="VectorInitializer_DataFlow.java" startLine="11" startPosition="65" endLine="13" endPosition="3" />
     <scopeInfo nodeId="5359814223490144980" fileName="VectorInitializer_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="101" />
+    <scopeInfo nodeId="5359814223490144978" fileName="VectorInitializer_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <unitInfo nodeId="5359814223490144978" fileName="VectorInitializer_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.VectorInitializer_DataFlow" />
   </root>
   <root nodeId="5359814223490146121">
     <nodeInfo nodeId="5359814223490146124" fileName="MatrixInitializer_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -81,25 +131,55 @@
     <nodeInfo nodeId="5359814223490146145" fileName="MatrixInitializer_DataFlow.java" startLine="17" startPosition="106" endLine="18" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5359814223490146680" fileName="MatrixInitializer_DataFlow.java" startLine="18" startPosition="106" endLine="19" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5359814223490146689" fileName="MatrixInitializer_DataFlow.java" startLine="19" startPosition="101" endLine="20" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5359814223490146121" fileName="MatrixInitializer_DataFlow.java" startLine="11" startPosition="65" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatrixInitializer_DataFlow#()V" />
+    <nodeInfo nodeId="5359814223490146121" fileName="MatrixInitializer_DataFlow.java" startLine="14" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="5359814223490146121" fileName="MatrixInitializer_DataFlow.java" startLine="12" startPosition="39" endLine="12" endPosition="39" />
+    <scopeInfo nodeId="5359814223490146121" fileName="MatrixInitializer_DataFlow.java" startLine="11" startPosition="65" endLine="13" endPosition="3" />
     <scopeInfo nodeId="5359814223490146123" fileName="MatrixInitializer_DataFlow.java" startLine="15" startPosition="102" endLine="20" endPosition="101" />
+    <scopeInfo nodeId="5359814223490146121" fileName="MatrixInitializer_DataFlow.java" startLine="14" startPosition="0" endLine="22" endPosition="0" />
+    <unitInfo nodeId="5359814223490146121" fileName="MatrixInitializer_DataFlow.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MatrixInitializer_DataFlow" />
   </root>
   <root nodeId="5359814223490146668">
     <nodeInfo nodeId="5359814223490146671" fileName="MatrixInitializerIndexReference_DataFlow.java" startLine="14" startPosition="102" endLine="15" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5359814223490146668" fileName="MatrixInitializerIndexReference_DataFlow.java" startLine="10" startPosition="79" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatrixInitializerIndexReference_DataFlow#()V" />
+    <nodeInfo nodeId="5359814223490146668" fileName="MatrixInitializerIndexReference_DataFlow.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="5359814223490146668" fileName="MatrixInitializerIndexReference_DataFlow.java" startLine="11" startPosition="53" endLine="11" endPosition="53" />
     <scopeInfo nodeId="5359814223490146670" fileName="MatrixInitializerIndexReference_DataFlow.java" startLine="14" startPosition="102" endLine="15" endPosition="98" />
+    <scopeInfo nodeId="5359814223490146668" fileName="MatrixInitializerIndexReference_DataFlow.java" startLine="10" startPosition="79" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="5359814223490146668" fileName="MatrixInitializerIndexReference_DataFlow.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <unitInfo nodeId="5359814223490146668" fileName="MatrixInitializerIndexReference_DataFlow.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MatrixInitializerIndexReference_DataFlow" />
   </root>
   <root nodeId="7255837154369354655">
     <nodeInfo nodeId="7255837154369354658" fileName="ExponentialOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7255837154369354655" fileName="ExponentialOperation_DataFlow.java" startLine="11" startPosition="68" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExponentialOperation_DataFlow#()V" />
+    <nodeInfo nodeId="7255837154369354655" fileName="ExponentialOperation_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="7255837154369354655" fileName="ExponentialOperation_DataFlow.java" startLine="12" startPosition="42" endLine="12" endPosition="42" />
     <scopeInfo nodeId="7255837154369354657" fileName="ExponentialOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
+    <scopeInfo nodeId="7255837154369354655" fileName="ExponentialOperation_DataFlow.java" startLine="11" startPosition="68" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="7255837154369354655" fileName="ExponentialOperation_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <unitInfo nodeId="7255837154369354655" fileName="ExponentialOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.ExponentialOperation_DataFlow" />
   </root>
   <root nodeId="758819215871427723">
     <nodeInfo nodeId="758819215871427726" fileName="MatrixNorm_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="758819215871427723" fileName="MatrixNorm_DataFlow.java" startLine="11" startPosition="58" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatrixNorm_DataFlow#()V" />
+    <nodeInfo nodeId="758819215871427723" fileName="MatrixNorm_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="758819215871427723" fileName="MatrixNorm_DataFlow.java" startLine="12" startPosition="32" endLine="12" endPosition="32" />
     <scopeInfo nodeId="758819215871427725" fileName="MatrixNorm_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="100" />
+    <scopeInfo nodeId="758819215871427723" fileName="MatrixNorm_DataFlow.java" startLine="11" startPosition="58" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="758819215871427723" fileName="MatrixNorm_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <unitInfo nodeId="758819215871427723" fileName="MatrixNorm_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MatrixNorm_DataFlow" />
   </root>
   <root nodeId="964810815943255970">
     <nodeInfo nodeId="964810815943255973" fileName="MatrixElementAccessExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="964810815943257102" fileName="MatrixElementAccessExpression_DataFlow.java" startLine="16" startPosition="107" endLine="17" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="964810815943257112" fileName="MatrixElementAccessExpression_DataFlow.java" startLine="17" startPosition="105" endLine="18" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="964810815943255970" fileName="MatrixElementAccessExpression_DataFlow.java" startLine="11" startPosition="77" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MatrixElementAccessExpression_DataFlow#()V" />
+    <nodeInfo nodeId="964810815943255970" fileName="MatrixElementAccessExpression_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="964810815943255970" fileName="MatrixElementAccessExpression_DataFlow.java" startLine="12" startPosition="51" endLine="12" endPosition="51" />
+    <scopeInfo nodeId="964810815943255970" fileName="MatrixElementAccessExpression_DataFlow.java" startLine="11" startPosition="77" endLine="13" endPosition="3" />
     <scopeInfo nodeId="964810815943255972" fileName="MatrixElementAccessExpression_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="105" />
+    <scopeInfo nodeId="964810815943255970" fileName="MatrixElementAccessExpression_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <unitInfo nodeId="964810815943255970" fileName="MatrixElementAccessExpression_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.dataFlow.MatrixElementAccessExpression_DataFlow" />
   </root>
 </debugInfo>
 

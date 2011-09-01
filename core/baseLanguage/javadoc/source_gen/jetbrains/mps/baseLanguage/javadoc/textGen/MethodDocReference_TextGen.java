@@ -18,11 +18,11 @@ public class MethodDocReference_TextGen extends SNodeTextGen {
     this.append("#");
     this.append(SPropertyOperations.getString(method, "name"));
     this.append("(");
-    for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count(); i++) {
+    for (int i = 0; i < ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).count(); i++) {
       if (i != 0) {
         this.append(", ");
       }
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(i), "type", true), this.getSNode());
+      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(i), "type", true), this.getSNode());
     }
     this.append(")");
   }

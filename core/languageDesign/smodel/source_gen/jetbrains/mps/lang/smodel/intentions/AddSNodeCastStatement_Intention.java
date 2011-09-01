@@ -77,7 +77,7 @@ public class AddSNodeCastStatement_Intention extends BaseIntention implements In
       SLinkOperations.setTarget(castExpression, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), true);
       SLinkOperations.setTarget(castExpression, "expression", SNodeOperations.copyNode(expression), true);
     }
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "ifTrue", true), "statement", true)).insertElement(0, castVariable);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "ifTrue", true), "statement", true)).insertElement(0, castVariable);
   }
 
   public String getLocationString() {

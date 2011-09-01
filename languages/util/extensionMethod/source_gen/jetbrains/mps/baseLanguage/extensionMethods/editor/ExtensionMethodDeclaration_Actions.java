@@ -28,7 +28,7 @@ public class ExtensionMethodDeclaration_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() == 0) {
+      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() == 0) {
         SNodeFactoryOperations.addNewChild(node, "throwsItem", "jetbrains.mps.baseLanguage.structure.Type");
       }
     }

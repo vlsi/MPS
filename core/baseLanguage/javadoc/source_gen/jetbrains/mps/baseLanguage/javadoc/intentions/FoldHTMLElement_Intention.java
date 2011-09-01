@@ -38,17 +38,17 @@ public class FoldHTMLElement_Intention extends BaseIntention implements Intentio
       "..." :
       SPropertyOperations.getString(node, "name")
     );
-    return (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty() ?
+    return (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty() ?
       String.format(Locale.getDefault(), "Convert to <%s></%s>", name, name) :
       String.format(Locale.getDefault(), "Convert to <%s />", name)
     );
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty()) {
       SNodeFactoryOperations.addNewChild(node, "line", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
     } else {
-      ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).clear();
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "line", true)).clear();
     }
   }
 

@@ -81,7 +81,7 @@
     <nodeInfo nodeId="1213104841313" fileName="LinkDeclaration_Constraints.java" startLine="86" startPosition="139" endLine="87" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213104841319" fileName="LinkDeclaration_Constraints.java" startLine="87" startPosition="56" endLine="88" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213104841328" fileName="LinkDeclaration_Constraints.java" startLine="88" startPosition="176" endLine="89" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104841339" fileName="LinkDeclaration_Constraints.java" startLine="90" startPosition="71" endLine="91" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104841339" fileName="LinkDeclaration_Constraints.java" startLine="90" startPosition="78" endLine="91" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1227876796988" fileName="LinkDeclaration_Constraints.java" startLine="94" startPosition="36" endLine="95" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876796996" fileName="LinkDeclaration_Constraints.java" startLine="96" startPosition="19" endLine="97" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104841372" fileName="LinkDeclaration_Constraints.java" startLine="100" startPosition="13" endLine="101" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -96,7 +96,7 @@
     <nodeInfo nodeId="1213104841300" fileName="LinkDeclaration_Constraints.java" startLine="103" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
     <nodeInfo nodeId="1213104841300" fileName="LinkDeclaration_Constraints.java" startLine="45" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateValue#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/IScope;)Z" />
     <nodeInfo nodeId="1213104841300" fileName="LinkDeclaration_Constraints.java" startLine="57" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateValue#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="1227876796982" fileName="LinkDeclaration_Constraints.java" startLine="92" startPosition="118" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1227876796982" fileName="LinkDeclaration_Constraints.java" startLine="92" startPosition="132" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1213104841345" fileName="LinkDeclaration_Constraints.java" startLine="91" startPosition="118" endLine="99" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213104841335" fileName="LinkDeclaration_Constraints.java" startLine="89" startPosition="106" endLine="100" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1213104841300" fileName="LinkDeclaration_Constraints.java" startLine="39" startPosition="74" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -126,8 +126,8 @@
     <scopeInfo nodeId="1213104841300" fileName="LinkDeclaration_Constraints.java" startLine="103" startPosition="0" endLine="108" endPosition="0" />
     <scopeInfo nodeId="1213104841300" fileName="LinkDeclaration_Constraints.java" startLine="45" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="1213104841300" fileName="LinkDeclaration_Constraints.java" startLine="57" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1227876796982" fileName="LinkDeclaration_Constraints.java" startLine="92" startPosition="118" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="1213104841338" fileName="LinkDeclaration_Constraints.java" startLine="90" startPosition="71" endLine="99" endPosition="18">
+    <scopeInfo nodeId="1227876796982" fileName="LinkDeclaration_Constraints.java" startLine="92" startPosition="132" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="1213104841338" fileName="LinkDeclaration_Constraints.java" startLine="90" startPosition="78" endLine="99" endPosition="18">
       <varInfo nodeId="1213104841340" varName="links" />
     </scopeInfo>
     <scopeInfo nodeId="1213104841335" fileName="LinkDeclaration_Constraints.java" startLine="89" startPosition="106" endLine="100" endPosition="13" />
@@ -144,7 +144,7 @@
     <scopeInfo nodeId="1213104841300" fileName="LinkDeclaration_Constraints.java" startLine="75" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="1213104841300" fileName="LinkDeclaration_Constraints.java" startLine="68" startPosition="83" endLine="111" endPosition="22" />
     <scopeInfo nodeId="1213104841300" fileName="LinkDeclaration_Constraints.java" startLine="66" startPosition="0" endLine="113" endPosition="0" />
-    <unitInfo nodeId="1227876796982" fileName="LinkDeclaration_Constraints.java" startLine="92" startPosition="95" endLine="99" endPosition="15" unitName="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints$5" />
+    <unitInfo nodeId="1227876796982" fileName="LinkDeclaration_Constraints.java" startLine="92" startPosition="109" endLine="99" endPosition="15" unitName="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints$5" />
     <unitInfo nodeId="1213104841300" fileName="LinkDeclaration_Constraints.java" startLine="40" startPosition="44" endLine="51" endPosition="5" unitName="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints$1" />
     <unitInfo nodeId="1213104841300" fileName="LinkDeclaration_Constraints.java" startLine="52" startPosition="31" endLine="63" endPosition="5" unitName="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints$2" />
     <unitInfo nodeId="1213104841300" fileName="LinkDeclaration_Constraints.java" startLine="79" startPosition="19" endLine="108" endPosition="9" unitName="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints$4" />

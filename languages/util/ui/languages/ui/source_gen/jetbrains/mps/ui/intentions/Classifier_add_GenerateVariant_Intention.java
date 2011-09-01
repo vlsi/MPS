@@ -57,15 +57,15 @@ public class Classifier_add_GenerateVariant_Intention extends BaseIntention impl
 
   public void execute(final SNode node, final EditorContext editorContext) {
     final SNode gv = SLinkOperations.getTarget(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0a0f().createNode(), "classifier", false);
-    SNode ann = ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode ann = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ann) {
         return SLinkOperations.getTarget(ann, "annotation", false) == gv;
       }
     });
     if ((ann == null)) {
-      ann = ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).addElement(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0a0a2a5().createNode());
+      ann = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "annotation", true)).addElement(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0a0a2a5().createNode());
     }
-    ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).first(), "value", true), "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true)).addElement(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0d0f().createNode(this.myParameter));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(ann, "value", true)).first(), "value", true), "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true)).addElement(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0d0f().createNode(this.myParameter));
     Language langToDep = Variants.languageToGenerate(this.myParameter);
     ModuleReference langRefToEng = langToDep.getModuleReference();
     IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
@@ -95,7 +95,7 @@ public class Classifier_add_GenerateVariant_Intention extends BaseIntention impl
 
   private static List<String> parameter(final SNode node, final EditorContext editorContext) {
     final SNode gv = SLinkOperations.getTarget(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0a0a().createNode(), "classifier", false);
-    Iterable<String> setgv = ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
+    Iterable<String> setgv = ListSequence.<SNode>fromList(SLinkOperations.getTargets(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ann) {
         return SLinkOperations.getTarget(ann, "annotation", false) == gv;
       }
@@ -108,17 +108,17 @@ public class Classifier_add_GenerateVariant_Intention extends BaseIntention impl
         return SPropertyOperations.getString(SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
       }
     });
-    return Sequence.fromIterable(Variants.availableVariants()).subtract(Sequence.fromIterable(setgv)).toListSequence();
+    return Sequence.<String>fromIterable(Variants.availableVariants()).subtract(Sequence.<String>fromIterable(setgv)).toListSequence();
   }
 
   public static List<Intention> instances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
+    List<Intention> list = ListSequence.<Intention>fromList(new ArrayList<Intention>());
     List<String> paramList = parameter(node, editorContext);
     if (paramList != null) {
       for (String param : paramList) {
         Classifier_add_GenerateVariant_Intention intention = new Classifier_add_GenerateVariant_Intention();
         intention.myParameter = param;
-        ListSequence.fromList(list).addElement(intention);
+        ListSequence.<Intention>fromList(list).addElement(intention);
       }
     }
     return list;

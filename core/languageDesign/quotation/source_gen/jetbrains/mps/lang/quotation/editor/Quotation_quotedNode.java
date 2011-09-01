@@ -29,9 +29,9 @@ public class Quotation_quotedNode extends AbstractCellMenuComponent {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-      for (SNode nextConcept : ListSequence.fromList(SModelSearchUtil.createConceptsFromModelLanguagesScope(SNodeOperations.getModel(node), true, operationContext.getScope()).getNodes())) {
-        ListSequence.fromList(result).addElement((SNode) nextConcept);
+      List<SNode> result = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+      for (SNode nextConcept : ListSequence.<SNode>fromList(SModelSearchUtil.createConceptsFromModelLanguagesScope(SNodeOperations.getModel(node), true, operationContext.getScope()).getNodes())) {
+        ListSequence.<SNode>fromList(result).addElement((SNode) nextConcept);
       }
       return result;
     }

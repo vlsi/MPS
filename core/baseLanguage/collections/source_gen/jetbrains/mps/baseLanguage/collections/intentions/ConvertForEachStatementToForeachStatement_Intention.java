@@ -59,7 +59,7 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
     SNode newVariable = SNodeFactoryOperations.setNewChild(foreachStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
     SPropertyOperations.set(newVariable, "name", SPropertyOperations.getString(oldVariable, "name"));
     SLinkOperations.setTarget(newVariable, "type", variableType, true);
-    for (SNode oldRef : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(foreachStatement, "body", true), "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode oldRef : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(foreachStatement, "body", true), "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "variable", false) == oldVariable;
       }

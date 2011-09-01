@@ -11,7 +11,7 @@ public class Options_DefaultCustom_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<Options_DefaultCustom> constants = ListSequence.fromList(Options_DefaultCustom.getConstants()).iterator();
+    Iterator<Options_DefaultCustom> constants = ListSequence.<Options_DefaultCustom>fromList(Options_DefaultCustom.getConstants()).iterator();
     while (constants.hasNext()) {
       Options_DefaultCustom constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class Options_DefaultCustom_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<Options_DefaultCustom> constants = ListSequence.fromList(Options_DefaultCustom.getConstants()).iterator();
+    Iterator<Options_DefaultCustom> constants = ListSequence.<Options_DefaultCustom>fromList(Options_DefaultCustom.getConstants()).iterator();
     while (constants.hasNext()) {
       Options_DefaultCustom constant = constants.next();
       if (value.equals(constant.getName())) {

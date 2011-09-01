@@ -29,7 +29,7 @@ public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends S
     List<SNode> result = new ArrayList<SNode>();
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(listType, "elementType", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true, typeCheckingContext);
     if (SLinkOperations.getTarget(classifierType, "classifier", false) == SLinkOperations.getTarget(new supertypesOf_ListType_ListType_elementSNode_SubtypingRule.QuotationClass_84rynv_a0a0c0a().createNode(typeCheckingContext), "classifier", false)) {
-      ListSequence.fromList(result).addElement(new supertypesOf_ListType_ListType_elementSNode_SubtypingRule.QuotationClass_84rynv_a0a0a0c0a().createNode(typeCheckingContext));
+      ListSequence.<SNode>fromList(result).addElement(new supertypesOf_ListType_ListType_elementSNode_SubtypingRule.QuotationClass_84rynv_a0a0a0c0a().createNode(typeCheckingContext));
     }
     return result;
   }

@@ -11,7 +11,7 @@ public class _YesNoDefault_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<_YesNoDefault_Enum> constants = ListSequence.fromList(_YesNoDefault_Enum.getConstants()).iterator();
+    Iterator<_YesNoDefault_Enum> constants = ListSequence.<_YesNoDefault_Enum>fromList(_YesNoDefault_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _YesNoDefault_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class _YesNoDefault_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<_YesNoDefault_Enum> constants = ListSequence.fromList(_YesNoDefault_Enum.getConstants()).iterator();
+    Iterator<_YesNoDefault_Enum> constants = ListSequence.<_YesNoDefault_Enum>fromList(_YesNoDefault_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _YesNoDefault_Enum constant = constants.next();
       if (value.equals(constant.getName())) {

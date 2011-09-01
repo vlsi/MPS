@@ -71,7 +71,7 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
         return module instanceof Solution;
       }
     });
-    return ListSequence.fromList(solutionsList).toGenericArray(IModule.class);
+    return ListSequence.<IModule>fromList(solutionsList).toGenericArray(IModule.class);
   }
 
   protected boolean isCheckBoxEnabled() {

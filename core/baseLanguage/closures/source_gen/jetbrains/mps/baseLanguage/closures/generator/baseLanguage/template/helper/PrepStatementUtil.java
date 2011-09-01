@@ -144,7 +144,7 @@ public class PrepStatementUtil {
     Object data = new Integer[]{ifTrueLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, sn, data);
     this.prepStatementList(genContext, SLinkOperations.getTarget(ifstmt, "ifTrue", true));
-    if (ListSequence.fromList(SLinkOperations.getTargets(ifstmt, "elsifClauses", true)).count() > 0) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(ifstmt, "elsifClauses", true)).count() > 0) {
       for (SNode eicls : SLinkOperations.getTargets(ifstmt, "elsifClauses", true)) {
         int tmp = this.ctx.incrementLabel();
         SNode sn1 = SLinkOperations.getTarget(eicls, "statementList", true);
@@ -186,7 +186,7 @@ public class PrepStatementUtil {
       if ((SLinkOperations.getTarget(scase, "body", true) != null)) {
         List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(scase, "body", true), "statement", true);
         int endCaseLabel = nextCaseLabel;
-        if (ListSequence.fromList(stmts).count() > 0 && SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement")) {
+        if (ListSequence.<SNode>fromList(stmts).count() > 0 && SNodeOperations.isInstanceOf(ListSequence.<SNode>fromList(stmts).getElement(ListSequence.<SNode>fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement")) {
           endCaseLabel = nextLabel;
         }
         SNode sn = SLinkOperations.getTarget(scase, "body", true);

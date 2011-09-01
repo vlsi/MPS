@@ -70,16 +70,16 @@ public class LanguageErrorsComponent {
     if (dependency == null) {
       return;
     }
-    Set<SNode> errorNodes = MapSequence.fromMap(myDependenciesToNodes).get(dependency);
+    Set<SNode> errorNodes = MapSequence.<SNode,Set<SNode>>fromMap(myDependenciesToNodes).get(dependency);
     if (errorNodes == null) {
       errorNodes = new THashSet<SNode>(1);
-      MapSequence.fromMap(myDependenciesToNodes).put(dependency, errorNodes);
+      MapSequence.<SNode,Set<SNode>>fromMap(myDependenciesToNodes).put(dependency, errorNodes);
     }
     SetSequence.fromSet(errorNodes).addElement(currentNode);
-    Set<SNode> additional = MapSequence.fromMap(myNodesToDependecies).get(currentNode);
+    Set<SNode> additional = MapSequence.<SNode,Set<SNode>>fromMap(myNodesToDependecies).get(currentNode);
     if (additional == null) {
       additional = new THashSet<SNode>(1);
-      MapSequence.fromMap(myNodesToDependecies).put(currentNode, additional);
+      MapSequence.<SNode,Set<SNode>>fromMap(myNodesToDependecies).put(currentNode, additional);
     }
     SetSequence.fromSet(additional).addElement(dependency);
     addModelListener(SNodeOperations.getModel(dependency).getModelDescriptor());
@@ -102,10 +102,10 @@ public class LanguageErrorsComponent {
       ruleNode.getModel() + ""
     );
     SimpleErrorReporter reporter = new SimpleErrorReporter(errorNode, errorString, modelId, id, MessageStatus.ERROR, messageTarget);
-    Set<IErrorReporter> reporters = MapSequence.fromMap(myNodesToErrors).get(errorNode);
+    Set<IErrorReporter> reporters = MapSequence.<SNode,Set<IErrorReporter>>fromMap(myNodesToErrors).get(errorNode);
     if (reporters == null) {
       reporters = new THashSet<IErrorReporter>(1);
-      MapSequence.fromMap(myNodesToErrors).put(errorNode, reporters);
+      MapSequence.<SNode,Set<IErrorReporter>>fromMap(myNodesToErrors).put(errorNode, reporters);
     }
     SetSequence.fromSet(reporters).addElement(reporter);
   }
@@ -114,7 +114,7 @@ public class LanguageErrorsComponent {
     if (modelDescriptor == null) {
       return;
     }
-    if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
+    if (!(SetSequence.<SModelDescriptor>fromSet(myListenedModels).contains(modelDescriptor))) {
       modelDescriptor.addModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
     }
@@ -126,10 +126,10 @@ public class LanguageErrorsComponent {
     Set<SNode> additionals = MapSequence.fromMap(myNodesToDependecies).removeKey(errorNode);
     if (additionals != null) {
       for (SNode additional : additionals) {
-        Set<SNode> errors = MapSequence.fromMap(myDependenciesToNodes).get(additional);
+        Set<SNode> errors = MapSequence.<SNode,Set<SNode>>fromMap(myDependenciesToNodes).get(additional);
         if (errors != null) {
           SetSequence.fromSet(errors).removeElement(errorNode);
-          if (SetSequence.fromSet(errors).isEmpty()) {
+          if (SetSequence.<SNode>fromSet(errors).isEmpty()) {
             MapSequence.fromMap(myDependenciesToNodes).removeKey(additional);
           }
         }
@@ -141,15 +141,15 @@ public class LanguageErrorsComponent {
   public boolean check(SNode root, Set<AbstractConstraintsChecker> checkers, IOperationContext operationContext) {
     // returns whether state has been changed after check 
     invalidate();
-    if (myCheckedRoot && SetSequence.fromSet(myInvalidNodes).isEmpty()) {
+    if (myCheckedRoot && SetSequence.<SNode>fromSet(myInvalidNodes).isEmpty()) {
       return false;
     }
     Set<SNode> frontier = new THashSet<SNode>(1);
     SetSequence.fromSet(frontier).addElement(root);
     Set<SNode> newFrontier = new THashSet<SNode>(1);
-    while (!(SetSequence.fromSet(frontier).isEmpty())) {
+    while (!(SetSequence.<SNode>fromSet(frontier).isEmpty())) {
       for (SNode node : frontier) {
-        if (!(myCheckedRoot) || SetSequence.fromSet(myInvalidNodes).contains(node)) {
+        if (!(myCheckedRoot) || SetSequence.<SNode>fromSet(myInvalidNodes).contains(node)) {
           try {
             myCurrentNode = node;
             addDependency(node);
@@ -161,7 +161,7 @@ public class LanguageErrorsComponent {
             SetSequence.fromSet(myInvalidNodes).removeElement(node);
           }
         }
-        SetSequence.fromSet(newFrontier).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
+        SetSequence.fromSet(newFrontier).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getChildren(node)));
       }
       frontier = newFrontier;
       newFrontier = new THashSet<SNode>(1);
@@ -173,13 +173,13 @@ public class LanguageErrorsComponent {
   public Set<IErrorReporter> getErrors() {
     Set<IErrorReporter> result = new THashSet<IErrorReporter>(1);
     for (SNode errorNode : MapSequence.fromMap(myNodesToErrors).keySet()) {
-      SetSequence.fromSet(result).addSequence(SetSequence.fromSet(MapSequence.fromMap(myNodesToErrors).get(errorNode)));
+      SetSequence.fromSet(result).addSequence(SetSequence.<IErrorReporter>fromSet(MapSequence.<SNode,Set<IErrorReporter>>fromMap(myNodesToErrors).get(errorNode)));
     }
     return result;
   }
 
   public void invalidate() {
-    if (SetSequence.fromSet(myInvalidation).isEmpty()) {
+    if (SetSequence.<SNode>fromSet(myInvalidation).isEmpty()) {
       return;
     }
     for (SNode toInvalidate : myInvalidation) {

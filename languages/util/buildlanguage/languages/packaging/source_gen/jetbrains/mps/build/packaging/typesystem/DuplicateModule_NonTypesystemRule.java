@@ -21,8 +21,8 @@ public class DuplicateModule_NonTypesystemRule extends AbstractNonTypesystemRule
   }
 
   public void applyRule(final SNode iCompositeComponent, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    for (SNode e : ListSequence.fromList(SLinkOperations.getTargets(iCompositeComponent, "entry", true))) {
-      for (SNode e2 : ListSequence.fromList(SLinkOperations.getTargets(iCompositeComponent, "entry", true))) {
+    for (SNode e : ListSequence.<SNode>fromList(SLinkOperations.getTargets(iCompositeComponent, "entry", true))) {
+      for (SNode e2 : ListSequence.<SNode>fromList(SLinkOperations.getTargets(iCompositeComponent, "entry", true))) {
         if (!(e == e2)) {
           if (AbstractProjectComponent_Behavior.call_equals_1213877333900(e, e2)) {
             {

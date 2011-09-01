@@ -26,12 +26,12 @@ import jetbrains.mps.smodel.Generator;
 
 public class ConceptEditorHelper {
   public static List<SNode> getAvailableConceptAspects(SModel structureModel, SNode node) {
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> result = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     for (SNode root : SModelOperations.getRoots(structureModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       if (SConceptOperations.isSubConceptOf(root, "jetbrains.mps.lang.structure.structure.IConceptAspect") && SPropertyOperations.getBoolean(root, "rootable")) {
         SNode candidate = (SNode) root;
         if (IConceptAspect_Behavior.call_isApplicable_7839831476331657915(SNodeOperations.cast(SConceptOperations.createNewNode(NameUtil.nodeFQName(candidate), null), "jetbrains.mps.lang.structure.structure.IConceptAspect"), node)) {
-          ListSequence.fromList(result).addElement(candidate);
+          ListSequence.<SNode>fromList(result).addElement(candidate);
         }
       }
     }
@@ -39,10 +39,10 @@ public class ConceptEditorHelper {
   }
 
   public static List<SNode> getAvailableConceptAspects(LanguageAspect aspect, SNode node) {
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> result = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     Language language = GlobalScope.getInstance().getLanguage(aspect.getMainLanguage());
     SModel structureModel = language.getStructureModelDescriptor().getSModel();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(getAvailableConceptAspects(structureModel, node)));
+    ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(getAvailableConceptAspects(structureModel, node)));
     return result;
   }
 
@@ -66,9 +66,9 @@ public class ConceptEditorHelper {
   }
 
   public static List<SNode> sortRootsByConcept(List<SNode> roots, final SNode[] conceptOrder) {
-    return ListSequence.fromList(roots).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.<SNode>fromList(roots).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode root) {
-        int conceptIndex = Sequence.fromIterable(Sequence.fromArray(conceptOrder)).indexOf(SNodeOperations.getConceptDeclaration(root));
+        int conceptIndex = Sequence.<SNode>fromIterable(Sequence.fromArray(conceptOrder)).indexOf(SNodeOperations.getConceptDeclaration(root));
         return (conceptIndex == -1 ?
           conceptOrder.length :
           conceptIndex
@@ -99,7 +99,7 @@ public class ConceptEditorHelper {
     }
 
     public boolean met(SModelDescriptor modelDescriptor) {
-      for (Generator generator : ListSequence.fromList(this.myLanguage.getGenerators())) {
+      for (Generator generator : ListSequence.<Generator>fromList(this.myLanguage.getGenerators())) {
         if (generator.getOwnTemplateModels().contains(modelDescriptor)) {
           return true;
         }

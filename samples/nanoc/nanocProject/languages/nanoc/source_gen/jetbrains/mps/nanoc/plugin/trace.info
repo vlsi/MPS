@@ -96,7 +96,7 @@
     <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="26" startPosition="40" endLine="27" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="27" startPosition="25" endLine="28" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="27" startPosition="55" endLine="28" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="29" startPosition="71" endLine="30" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="29" startPosition="86" endLine="30" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="31" startPosition="31" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="36" startPosition="11" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="36" startPosition="35" endLine="37" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -110,11 +110,11 @@
     <nodeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="49" startPosition="35" endLine="50" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="49" startPosition="82" endLine="50" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="51" startPosition="5" endLine="52" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="53" startPosition="44" endLine="54" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="54" startPosition="87" endLine="55" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="54" startPosition="87" endLine="55" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="53" startPosition="44" endLine="54" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="54" startPosition="102" endLine="55" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="54" startPosition="102" endLine="55" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2617013732192820131" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="55" startPosition="81" endLine="56" endPosition="492" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="55" startPosition="129" endLine="56" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="55" startPosition="144" endLine="56" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2617013732192775194" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="59" startPosition="31" endLine="60" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGDBLocation" />
     <nodeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="59" startPosition="36" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6573626905552569795" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="60" startPosition="32" endLine="61" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGCCLocation" />
@@ -133,7 +133,7 @@
     <nodeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDisplayName#()Ljava/lang/String;" />
     <nodeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
     <nodeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isModified#()Z" />
-    <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="35" startPosition="71" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="35" startPosition="86" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStateObject#()Ljetbrains/mps/nanoc/plugin/ProgramsLocationComponent_PreferencesComponent/MyState;" />
     <nodeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isModified#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/nanoc/jetbrains/mps/nanoc/pluginutil/ProgramsLocationEditor;)Z" />
     <nodeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeUIResources#()V" />
@@ -155,13 +155,13 @@
     <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="22" startPosition="74" endLine="23" endPosition="19" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="23" startPosition="34" endLine="24" endPosition="26" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="27" startPosition="25" endLine="28" endPosition="21" />
-    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="29" startPosition="71" endLine="30" endPosition="19" />
+    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="29" startPosition="86" endLine="30" endPosition="19" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="31" startPosition="31" endLine="32" endPosition="64" />
     <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="36" startPosition="11" endLine="37" endPosition="21" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="36" startPosition="35" endLine="37" endPosition="55" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="49" startPosition="35" endLine="50" endPosition="54" />
     <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="49" startPosition="82" endLine="50" endPosition="24" />
-    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="54" startPosition="87" endLine="55" endPosition="129" />
+    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="54" startPosition="102" endLine="55" endPosition="144" />
     <scopeInfo nodeId="2617013732192790794" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="55" startPosition="81" endLine="56" endPosition="492" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="59" startPosition="36" endLine="60" endPosition="28" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="64" startPosition="35" endLine="65" endPosition="54" />
@@ -178,7 +178,7 @@
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="35" startPosition="71" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="35" startPosition="86" endLine="39" endPosition="7" />
     <scopeInfo nodeId="2617013732192790798" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="41" startPosition="74" endLine="45" endPosition="202" />
     <scopeInfo nodeId="2617013732192775193" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="2617013732192790791" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="48" startPosition="39" endLine="52" endPosition="28" />
@@ -203,16 +203,16 @@
   </root>
   <root nodeId="3968096696026358789">
     <nodeInfo nodeId="3968096696026358790" fileName="ExecutableFile_Kind.java" startLine="17" startPosition="63" endLine="18" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="19" startPosition="0" endLine="20" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignFactories" />
-    <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="25" startPosition="61" endLine="26" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="26" startPosition="101" endLine="27" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="27" startPosition="88" endLine="28" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="28" startPosition="89" endLine="29" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="19" startPosition="0" endLine="20" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignFactories" />
+    <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="25" startPosition="61" endLine="26" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="26" startPosition="123" endLine="27" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="27" startPosition="110" endLine="28" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="28" startPosition="133" endLine="29" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="34" startPosition="25" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="38" startPosition="25" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="42" startPosition="51" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="46" startPosition="34" endLine="47" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="54" startPosition="51" endLine="55" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="21" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExecutableFile_Kind#()V" />
     <nodeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
@@ -227,10 +227,10 @@
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="38" startPosition="25" endLine="39" endPosition="16" />
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="42" startPosition="51" endLine="43" endPosition="16" />
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="46" startPosition="34" endLine="47" endPosition="29" />
-    <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="66" />
+    <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="88" />
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="54" startPosition="51" endLine="55" endPosition="114" />
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="25" startPosition="61" endLine="29" endPosition="84" />
+    <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="25" startPosition="61" endLine="29" endPosition="106" />
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="3968096696026358789" fileName="ExecutableFile_Kind.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
@@ -285,7 +285,7 @@
     <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="116" startPosition="56" endLine="117" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="120" startPosition="75" endLine="121" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="125" startPosition="48" endLine="126" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="129" startPosition="36" endLine="130" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="129" startPosition="36" endLine="130" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="133" startPosition="46" endLine="134" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="142" startPosition="61" endLine="143" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="143" startPosition="84" endLine="144" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -348,7 +348,7 @@
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="116" startPosition="56" endLine="117" endPosition="51" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="120" startPosition="75" endLine="121" endPosition="66" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="125" startPosition="48" endLine="126" endPosition="74" />
-    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="129" startPosition="36" endLine="130" endPosition="105" />
+    <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="129" startPosition="36" endLine="130" endPosition="112" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="133" startPosition="46" endLine="134" endPosition="110" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="74" startPosition="5" endLine="76" endPosition="40" />
     <scopeInfo nodeId="3968096696026358791" fileName="NanoCFile_Configuration.java" startLine="137" startPosition="24" endLine="139" endPosition="5" />

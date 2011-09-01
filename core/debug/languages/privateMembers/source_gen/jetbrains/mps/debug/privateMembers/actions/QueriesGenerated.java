@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_6113527081580345350(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.privateMembers.structure.PrivateStaticFieldReference");
       SNode childConcept = (SNode) _context.getChildConcept();
@@ -34,7 +34,7 @@ public class QueriesGenerated {
             List<SNode> visibleClassifiers = (List<SNode>) searchScope.getClassifierNodes();
             List<SNode> classifiers = new ArrayList<SNode>();
             for (SNode cls : visibleClassifiers) {
-              ListSequence.fromList(classifiers).addElement(cls);
+              ListSequence.<SNode>fromList(classifiers).addElement(cls);
             }
             return classifiers;
           }
@@ -42,7 +42,7 @@ public class QueriesGenerated {
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.<INodeSubstituteAction>fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.debug.privateMembers.structure.PrivateStaticFieldReference", null);
                 SLinkOperations.setTarget(result, "classifier", (item), false);

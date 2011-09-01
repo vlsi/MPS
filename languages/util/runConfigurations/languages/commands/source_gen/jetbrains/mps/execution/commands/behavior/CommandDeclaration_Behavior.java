@@ -45,23 +45,23 @@ public class CommandDeclaration_Behavior {
 
   public static List<SNode> call_getDistinctFieldParameters_6129022259108623165(SNode thisNode) {
     // we get all parameters generated into fields and select a list with uniquie names 
-    final Iterable<SNode> parameterDeclarations = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "executePart", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    final Iterable<SNode> parameterDeclarations = ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "executePart", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return ListSequence.fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(it)).where(new IWhereFilter<SNode>() {
+        return ListSequence.<SNode>fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(it)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return CommandParameterDeclaration_Behavior.call_generateField_8478830098674441876(it);
           }
         });
       }
     });
-    Iterable<String> fieldNames = Sequence.fromIterable(parameterDeclarations).<String>select(new ISelector<SNode, String>() {
+    Iterable<String> fieldNames = Sequence.<SNode>fromIterable(parameterDeclarations).<String>select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return CommandParameterDeclaration_Behavior.call_getFieldName_7327337331549117850(it);
       }
     }).distinct();
-    return Sequence.fromIterable(fieldNames).<SNode>translate(new ITranslator2<String, SNode>() {
+    return Sequence.<String>fromIterable(fieldNames).<SNode>translate(new ITranslator2<String, SNode>() {
       public Iterable<SNode> translate(final String it) {
-        SNode first = Sequence.fromIterable(parameterDeclarations).findFirst(new IWhereFilter<SNode>() {
+        SNode first = Sequence.<SNode>fromIterable(parameterDeclarations).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode decl) {
             return eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0e(CommandParameterDeclaration_Behavior.call_getFieldName_7327337331549117850(decl), it);
           }

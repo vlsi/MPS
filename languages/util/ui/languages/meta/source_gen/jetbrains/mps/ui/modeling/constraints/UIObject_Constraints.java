@@ -53,9 +53,9 @@ public class UIObject_Constraints extends BaseConstraintsDescriptor {
             // respect extending object's "belongsTo" ref 
             final SNode mbt = UIObject_Behavior.call_mustBelongTo_1719339442171055203(uio);
             if (mbt != null) {
-              ListSequence.fromList(nodes).removeWhere(new IWhereFilter<SNode>() {
+              ListSequence.<SNode>fromList(nodes).removeWhere(new IWhereFilter<SNode>() {
                 public boolean accept(SNode n) {
-                  return !(Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(n)).contains(mbt));
+                  return !(Sequence.<SNode>fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(n)).contains(mbt));
                 }
               });
             }

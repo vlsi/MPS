@@ -89,7 +89,7 @@ public class IMethodCall_typeArguments extends AbstractCellProvider {
   }
 
   private static boolean renderingCondition_q1hswy_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeArgument", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeArgument", true)).isNotEmpty();
   }
 
   private static class typeArgumentListHandler_q1hswy_b0a extends RefNodeListHandler {

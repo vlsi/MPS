@@ -30,7 +30,7 @@ public class QueriesUtil {
     SModel outputModel = generator.getOutputModel();
     SNode outputClassType = SModelOperations.createNewNode(outputModel, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(outputClassType, "classifier", enclosingClass, false);
-    for (SNode typeVar : ListSequence.fromList(SLinkOperations.getTargets(enclosingClass, "typeVariableDeclaration", true))) {
+    for (SNode typeVar : ListSequence.<SNode>fromList(SLinkOperations.getTargets(enclosingClass, "typeVariableDeclaration", true))) {
       SNode typeVarRef = SLinkOperations.addNewChild(outputClassType, "parameter", "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
       SLinkOperations.setTarget(typeVarRef, "typeVariableDeclaration", typeVar, false);
     }

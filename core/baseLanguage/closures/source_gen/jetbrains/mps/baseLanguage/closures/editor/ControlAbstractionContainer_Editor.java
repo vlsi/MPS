@@ -243,7 +243,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_82dbmy_a6a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
   }
 
   private static class typeVariableDeclarationListHandler_82dbmy_b6a extends RefNodeListHandler {

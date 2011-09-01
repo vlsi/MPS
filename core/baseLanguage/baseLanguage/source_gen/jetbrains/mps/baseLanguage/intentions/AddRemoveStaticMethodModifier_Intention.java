@@ -54,7 +54,7 @@ public class AddRemoveStaticMethodModifier_Intention extends BaseIntention imple
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
       return false;
     }
-    for (SNode variableReference : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode variableReference : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(node, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference");
       }
@@ -75,13 +75,13 @@ public class AddRemoveStaticMethodModifier_Intention extends BaseIntention imple
       method = SNodeFactoryOperations.addNewChild(classConcept, "staticMethod", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
     }
     SLinkOperations.setTarget(method, "returnType", SLinkOperations.getTarget(node, "returnType", true), true);
-    ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)));
     SLinkOperations.setTarget(method, "body", SLinkOperations.getTarget(node, "body", true), true);
-    ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsItem", true)));
     SLinkOperations.setTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "visibility", SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "visibility", true), true);
     SPropertyOperations.set(method, "name", SPropertyOperations.getString(node, "name"));
     SPropertyOperations.set(method, "isFinal", "" + (SPropertyOperations.getBoolean(node, "isFinal")));
-    ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "annotation", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "annotation", true)));
     SNodeOperations.deleteNode(node);
   }
 

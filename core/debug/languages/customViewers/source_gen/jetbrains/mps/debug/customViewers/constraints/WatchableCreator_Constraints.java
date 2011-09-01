@@ -44,7 +44,7 @@ public class WatchableCreator_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
             for (SNode container : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.debug.customViewers.structure.CustomWatchablesContainer")) {
-              ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(container, "watchable", true)));
+              ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(container, "watchable", true)));
             }
             return result;
           }

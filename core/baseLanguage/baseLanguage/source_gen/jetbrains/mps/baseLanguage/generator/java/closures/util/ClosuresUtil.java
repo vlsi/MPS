@@ -73,10 +73,10 @@ public class ClosuresUtil {
       GenerationSessionContext sessionContext = generator.getGeneratorSessionContext();
       Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>) sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA));
       if (closureContexts == null) {
-        closureContexts = MapSequence.fromMap(new HashMap<SNode, ClosuresUtil.ClosureContextData>());
+        closureContexts = MapSequence.<SNode,ClosuresUtil.ClosureContextData>fromMap(new HashMap<SNode, ClosuresUtil.ClosureContextData>());
         sessionContext.putTransientObject(CLOSURE_CONTEXT_DATA, closureContexts);
       }
-      MapSequence.fromMap(closureContexts).put(node, new ClosuresUtil.ClosureContextData());
+      MapSequence.<SNode,ClosuresUtil.ClosureContextData>fromMap(closureContexts).put(node, new ClosuresUtil.ClosureContextData());
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         processMethodDeclaration(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), generator);
       } else {
@@ -89,10 +89,10 @@ public class ClosuresUtil {
     if (SLinkOperations.getTarget(method, "body", true) == null) {
       return false;
     }
-    if (ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(method, "body", true), "jetbrains.mps.baseLanguage.structure.Closure", false, new String[]{})).isEmpty()) {
+    if (ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(method, "body", true), "jetbrains.mps.baseLanguage.structure.Closure", false, new String[]{})).isEmpty()) {
       return false;
     }
-    Set<SNode> varDecl = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(method, "parameter", true));
+    Set<SNode> varDecl = SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(method, "parameter", true));
     return processNode(method, SLinkOperations.getTarget(method, "body", true), varDecl, generator);
   }
 
@@ -100,15 +100,15 @@ public class ClosuresUtil {
     if (SLinkOperations.getTarget(concFunc, "body", true) == null) {
       return false;
     }
-    if (ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(concFunc, "body", true), "jetbrains.mps.baseLanguage.structure.Closure", false, new String[]{})).isEmpty()) {
+    if (ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(concFunc, "body", true), "jetbrains.mps.baseLanguage.structure.Closure", false, new String[]{})).isEmpty()) {
       return false;
     }
-    return processNode(concFunc, SLinkOperations.getTarget(concFunc, "body", true), SetSequence.fromSet(new HashSet<SNode>()), generator);
+    return processNode(concFunc, SLinkOperations.getTarget(concFunc, "body", true), SetSequence.<SNode>fromSet(new HashSet<SNode>()), generator);
   }
 
   private static boolean processNode(SNode contextOwner, SNode node, Set<SNode> localVariables, ITemplateGenerator generator) {
     boolean outerVarsFound = false;
-    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
+    for (SNode child : ListSequence.<SNode>fromList(SNodeOperations.getChildren(node))) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
         SetSequence.fromSet(localVariables).addElement(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
       } else if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Closure")) {
@@ -132,14 +132,14 @@ public class ClosuresUtil {
 
   private static boolean processClosureNode(SNode contextOwner, SNode node, Set<SNode> localVars, ITemplateGenerator generator) {
     boolean outerVarsFound = false;
-    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
+    for (SNode child : ListSequence.<SNode>fromList(SNodeOperations.getChildren(node))) {
       // skip inner closure 
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Closure")) {
         continue;
       }
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ParameterReference")) {
         SNode variable = SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
-        if (SetSequence.fromSet(localVars).contains(variable)) {
+        if (SetSequence.<SNode>fromSet(localVars).contains(variable)) {
           getClosureContextData(contextOwner, generator).putVariable(variable);
           outerVarsFound = true;
         }
@@ -158,7 +158,7 @@ public class ClosuresUtil {
     if (closureContexts == null) {
       return null;
     }
-    return MapSequence.fromMap(closureContexts).get(contextOwner);
+    return MapSequence.<SNode,ClosuresUtil.ClosureContextData>fromMap(closureContexts).get(contextOwner);
   }
 
   public static class ClosureContextData {
@@ -177,11 +177,11 @@ public class ClosuresUtil {
     }
 
     public String getVariableName(SNode var) {
-      return MapSequence.fromMap(this.myVar2Name).get(var);
+      return MapSequence.<SNode,String>fromMap(this.myVar2Name).get(var);
     }
 
     public boolean isEmpty() {
-      return this.myVars == null || ListSequence.fromList(this.myVars).isEmpty();
+      return this.myVars == null || ListSequence.<SNode>fromList(this.myVars).isEmpty();
     }
 
     public boolean hasVariable(SNode var) {
@@ -201,15 +201,15 @@ public class ClosuresUtil {
       while (MapSequence.fromMap(this.myName2Var).containsKey(name)) {
         name = SPropertyOperations.getString(var, "name") + (count++);
       }
-      MapSequence.fromMap(this.myName2Var).put(name, var);
-      MapSequence.fromMap(this.myVar2Name).put(var, name);
-      ListSequence.fromList(this.myVars).addElement(var);
+      MapSequence.<String,SNode>fromMap(this.myName2Var).put(name, var);
+      MapSequence.<SNode,String>fromMap(this.myVar2Name).put(var, name);
+      ListSequence.<SNode>fromList(this.myVars).addElement(var);
     }
 
     private void ensureInitialized() {
       if (this.myVars == null) {
-        this.myVar2Name = MapSequence.fromMap(new HashMap<SNode, String>());
-        this.myName2Var = MapSequence.fromMap(new HashMap<String, SNode>());
+        this.myVar2Name = MapSequence.<SNode,String>fromMap(new HashMap<SNode, String>());
+        this.myName2Var = MapSequence.<String,SNode>fromMap(new HashMap<String, SNode>());
         this.myVars = new ArrayList<SNode>();
       }
     }

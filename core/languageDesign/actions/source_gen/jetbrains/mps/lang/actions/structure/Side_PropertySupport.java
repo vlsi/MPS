@@ -11,7 +11,7 @@ public class Side_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<Side> constants = ListSequence.fromList(Side.getConstants()).iterator();
+    Iterator<Side> constants = ListSequence.<Side>fromList(Side.getConstants()).iterator();
     while (constants.hasNext()) {
       Side constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class Side_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<Side> constants = ListSequence.fromList(Side.getConstants()).iterator();
+    Iterator<Side> constants = ListSequence.<Side>fromList(Side.getConstants()).iterator();
     while (constants.hasNext()) {
       Side constant = constants.next();
       if (value.equals(constant.getName())) {

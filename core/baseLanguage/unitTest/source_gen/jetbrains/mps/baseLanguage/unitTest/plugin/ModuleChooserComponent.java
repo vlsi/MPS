@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ModuleChooserComponent extends BaseChooserComponent {
-  private final List<ModuleReference> myCheckedModules = ListSequence.fromList(new ArrayList<ModuleReference>());
+  private final List<ModuleReference> myCheckedModules = ListSequence.<ModuleReference>fromList(new ArrayList<ModuleReference>());
 
   public ModuleChooserComponent() {
     super();
@@ -40,18 +40,18 @@ public class ModuleChooserComponent extends BaseChooserComponent {
   }
 
   private void collectModules() {
-    ListSequence.fromList(this.myCheckedModules).clear();
+    ListSequence.<ModuleReference>fromList(this.myCheckedModules).clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false));
+        List<SNode> nodes = ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false));
         for (SNode node : nodes) {
           SModel model = SNodeOperations.getModel(node);
           SModelDescriptor md = model.getModelDescriptor();
           ModuleReference module = md.getModule().getModuleReference();
-          if (ListSequence.fromList(ModuleChooserComponent.this.myCheckedModules).contains(module)) {
+          if (ListSequence.<ModuleReference>fromList(ModuleChooserComponent.this.myCheckedModules).contains(module)) {
             continue;
           }
-          ListSequence.fromList(ModuleChooserComponent.this.myCheckedModules).addElement(module);
+          ListSequence.<ModuleReference>fromList(ModuleChooserComponent.this.myCheckedModules).addElement(module);
         }
       }
     });

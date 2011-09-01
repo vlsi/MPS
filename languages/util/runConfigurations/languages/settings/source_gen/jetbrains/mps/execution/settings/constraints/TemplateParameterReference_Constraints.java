@@ -62,7 +62,7 @@ public class TemplateParameterReference_Constraints extends BaseConstraintsDescr
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode template = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate", false, false);
             if ((template == null)) {
-              return Sequence.fromIterable(Collections.<SNode>emptyList());
+              return Sequence.<SNode>fromIterable(Collections.<SNode>emptyList());
             }
             return SLinkOperations.getTargets(template, "templateParameter", true);
           }

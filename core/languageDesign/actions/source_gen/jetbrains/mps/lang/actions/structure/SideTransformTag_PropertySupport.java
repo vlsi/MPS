@@ -11,7 +11,7 @@ public class SideTransformTag_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<SideTransformTag> constants = ListSequence.fromList(SideTransformTag.getConstants()).iterator();
+    Iterator<SideTransformTag> constants = ListSequence.<SideTransformTag>fromList(SideTransformTag.getConstants()).iterator();
     while (constants.hasNext()) {
       SideTransformTag constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class SideTransformTag_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<SideTransformTag> constants = ListSequence.fromList(SideTransformTag.getConstants()).iterator();
+    Iterator<SideTransformTag> constants = ListSequence.<SideTransformTag>fromList(SideTransformTag.getConstants()).iterator();
     while (constants.hasNext()) {
       SideTransformTag constant = constants.next();
       if (value.equals(constant.getName())) {

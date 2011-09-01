@@ -32,10 +32,10 @@ public enum Level {
   }
 
   public static List<Level> getConstants() {
-    List<Level> list = ListSequence.fromList(new LinkedList<Level>());
-    ListSequence.fromList(list).addElement(Level.application);
-    ListSequence.fromList(list).addElement(Level.project);
-    ListSequence.fromList(list).addElement(Level.module);
+    List<Level> list = ListSequence.<Level>fromList(new LinkedList<Level>());
+    ListSequence.<Level>fromList(list).addElement(Level.application);
+    ListSequence.<Level>fromList(list).addElement(Level.project);
+    ListSequence.<Level>fromList(list).addElement(Level.module);
     return list;
   }
 

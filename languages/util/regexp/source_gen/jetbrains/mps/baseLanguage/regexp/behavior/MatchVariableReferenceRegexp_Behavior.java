@@ -18,7 +18,7 @@ public class MatchVariableReferenceRegexp_Behavior {
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return "\\" + (ListSequence.fromList(vars).indexOf(SLinkOperations.getTarget(thisNode, "match", false)) + 1);
+    return "\\" + (ListSequence.<SNode>fromList(vars).indexOf(SLinkOperations.getTarget(thisNode, "match", false)) + 1);
   }
 
   public static String call_getString_1222610343965(SNode thisNode, List<SNode> vars) {

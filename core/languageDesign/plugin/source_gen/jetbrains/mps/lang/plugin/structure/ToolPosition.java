@@ -33,11 +33,11 @@ public enum ToolPosition {
   }
 
   public static List<ToolPosition> getConstants() {
-    List<ToolPosition> list = ListSequence.fromList(new LinkedList<ToolPosition>());
-    ListSequence.fromList(list).addElement(ToolPosition.bottom);
-    ListSequence.fromList(list).addElement(ToolPosition.top);
-    ListSequence.fromList(list).addElement(ToolPosition.left);
-    ListSequence.fromList(list).addElement(ToolPosition.right);
+    List<ToolPosition> list = ListSequence.<ToolPosition>fromList(new LinkedList<ToolPosition>());
+    ListSequence.<ToolPosition>fromList(list).addElement(ToolPosition.bottom);
+    ListSequence.<ToolPosition>fromList(list).addElement(ToolPosition.top);
+    ListSequence.<ToolPosition>fromList(list).addElement(ToolPosition.left);
+    ListSequence.<ToolPosition>fromList(list).addElement(ToolPosition.right);
     return list;
   }
 

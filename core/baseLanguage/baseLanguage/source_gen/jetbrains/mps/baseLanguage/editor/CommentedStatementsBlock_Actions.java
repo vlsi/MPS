@@ -32,7 +32,7 @@ public class CommentedStatementsBlock_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true))) {
+      for (SNode statement : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "statement", true))) {
         SNodeOperations.insertPrevSiblingChild(node, statement);
       }
       SNodeOperations.deleteNode(node);

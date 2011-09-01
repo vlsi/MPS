@@ -32,10 +32,10 @@ public class SNodeListType_Behavior {
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "nodes");
+    List<String> variableSuffixes = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "nodes");
     if ((SLinkOperations.getTarget(thisNode, "elementConcept", false) != null)) {
       String name = NameUtil.pluralize(NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "elementConcept", false), "name")));
-      ListSequence.fromList(variableSuffixes).addSequence(ListSequence.fromList(NameUtil.splitByCamels(name)));
+      ListSequence.<String>fromList(variableSuffixes).addSequence(ListSequence.<String>fromList(NameUtil.splitByCamels(name)));
     }
     return variableSuffixes;
   }

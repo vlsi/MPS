@@ -28,7 +28,7 @@ public class EnumsAreEnum_SubtypingRule extends SubtypingRule_Runtime implements
     List<SNode> result = new ArrayList<SNode>();
     SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
-      ListSequence.fromList(result).addElement(new EnumsAreEnum_SubtypingRule.QuotationClass_b0gd6z_a0a0a0c0a().createNode(classifier, typeCheckingContext));
+      ListSequence.<SNode>fromList(result).addElement(new EnumsAreEnum_SubtypingRule.QuotationClass_b0gd6z_a0a0a0c0a().createNode(classifier, typeCheckingContext));
     }
     return result;
   }

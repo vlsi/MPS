@@ -30,15 +30,15 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
 
   public List<SNode> getSubOrSuperTypes(SNode itt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
-    String clname = "Tuples._" + ListSequence.fromList(SLinkOperations.getTargets(itt, "componentType", true)).count();
+    String clname = "Tuples._" + ListSequence.<SNode>fromList(SLinkOperations.getTargets(itt, "componentType", true)).count();
     SModel rtmodel = SNodeOperations.getModel(SLinkOperations.getTarget(new Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.QuotationClass_tm6bn3_a0a0a2a0().createNode(typeCheckingContext), "classifier", false));
     for (SNode ct : SModelOperations.getNodes(rtmodel, "jetbrains.mps.baseLanguage.structure.Classifier")) {
       if ((clname).equals(Classifier_Behavior.call_getNestedName_8540045600162184125(ct))) {
         SNode supertype = new Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.QuotationClass_tm6bn3_a0a0a0a3a0().createNode(ct, typeCheckingContext);
-        ListSequence.fromList(result).addElement(supertype);
+        ListSequence.<SNode>fromList(result).addElement(supertype);
         for (SNode comptype : SLinkOperations.getTargets(itt, "componentType", true)) {
           SNode javatype = ClassifierTypeUtil.getTypeCoercedToClassifierType(comptype);
-          ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).addElement(SNodeOperations.copyNode(javatype));
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(supertype, "parameter", true)).addElement(SNodeOperations.copyNode(javatype));
         }
       }
     }

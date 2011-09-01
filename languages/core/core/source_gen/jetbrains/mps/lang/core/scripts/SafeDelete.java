@@ -50,11 +50,11 @@ public class SafeDelete extends BaseGeneratedRefactoring {
     SearchResults<SNode> searchResults = FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
 
     List<SearchResult<SNode>> searchResultsList = searchResults.getSearchResults();
-    List<SearchResult<SNode>> searchResultsCopy = ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), searchResultsList);
+    List<SearchResult<SNode>> searchResultsCopy = ListSequence.<SearchResult<SNode>>fromListWithValues(new ArrayList<SearchResult<SNode>>(), searchResultsList);
 
     for (SearchResult<SNode> searchResult : searchResultsCopy) {
       SNode resultNode = searchResult.getObject();
-      if (ListSequence.fromList(SNodeOperations.getAncestors(resultNode, null, true)).contains(refactoringContext.getSelectedNode())) {
+      if (ListSequence.<SNode>fromList(SNodeOperations.getAncestors(resultNode, null, true)).contains(refactoringContext.getSelectedNode())) {
         searchResults.remove(searchResult);
       }
     }

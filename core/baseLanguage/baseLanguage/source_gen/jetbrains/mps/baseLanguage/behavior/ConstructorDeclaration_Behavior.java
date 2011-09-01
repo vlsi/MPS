@@ -39,7 +39,7 @@ public class ConstructorDeclaration_Behavior {
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = HasAnnotation_Behavior.callSuper_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
-    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
+    ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
   }
 
@@ -99,7 +99,7 @@ public class ConstructorDeclaration_Behavior {
     SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
     if (classifierType == null) {
-      return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "constructor", true)).first();
+      return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "constructor", true)).first();
     }
     SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
     if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
@@ -108,17 +108,17 @@ public class ConstructorDeclaration_Behavior {
     SNode superclass = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     if (superclass != SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum")) {
       List<SNode> constructors = SLinkOperations.getTargets(superclass, "constructor", true);
-      if (ListSequence.fromList(constructors).isEmpty()) {
+      if (ListSequence.<SNode>fromList(constructors).isEmpty()) {
         return null;
       }
       for (SNode constructor : constructors) {
-        if (ListSequence.fromList(SLinkOperations.getTargets(constructor, "parameter", true)).isEmpty()) {
+        if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(constructor, "parameter", true)).isEmpty()) {
           return constructor;
         }
       }
       return null;
     } else {
-      return ListSequence.fromList(SLinkOperations.getTargets(superclass, "constructor", true)).first();
+      return ListSequence.<SNode>fromList(SLinkOperations.getTargets(superclass, "constructor", true)).first();
     }
   }
 

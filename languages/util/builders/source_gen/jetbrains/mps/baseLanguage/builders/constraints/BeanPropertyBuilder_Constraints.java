@@ -65,14 +65,14 @@ public class BeanPropertyBuilder_Constraints extends BaseConstraintsDescriptor {
             SNode contextBuilder = Builder_Behavior.getContextBuilder_7057666463730366732(_context.getEnclosingNode());
             SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Builder_Behavior.call_getResultType_7057666463730718251(contextBuilder), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
             if (classifierType == null) {
-              return Sequence.fromIterable(Collections.<SNode>emptyList());
+              return Sequence.<SNode>fromIterable(Collections.<SNode>emptyList());
             }
             List<SNode> methods = new ArrayList<SNode>();
             for (SNode m : Classifier_Behavior.call_getVisibleMembers_1213877306257(SLinkOperations.getTarget(classifierType, "classifier", false), _context.getEnclosingNode(), IClassifiersSearchScope.INSTANCE_METHOD)) {
 
               SNode method = SNodeOperations.cast(m, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-              if (ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && BeanPropertyBuilder_Behavior.getPropertyName_2679357232284040711(SPropertyOperations.getString(method, "name")) != null) {
-                ListSequence.fromList(methods).addElement(method);
+              if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && BeanPropertyBuilder_Behavior.getPropertyName_2679357232284040711(SPropertyOperations.getString(method, "name")) != null) {
+                ListSequence.<SNode>fromList(methods).addElement(method);
               }
             }
             return methods;

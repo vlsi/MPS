@@ -15,7 +15,7 @@ public class ExternalCommandDeclaration_Behavior {
 
   public static boolean call_isArgsListEnabled_3147078024750286840(SNode thisNode) {
     boolean enabled = false;
-    for (SNode declaration : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "optionDeclaration", true))) {
+    for (SNode declaration : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "optionDeclaration", true))) {
       if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.bash.structure.ArgumentList")) {
         if (enabled) {
           return false;
@@ -28,9 +28,9 @@ public class ExternalCommandDeclaration_Behavior {
 
   public static List<SNode> call_getArguments_3263637656467504997(SNode thisNode) {
     List<SNode> args = new ArrayList<SNode>();
-    for (SNode opt : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "optionDeclaration", true))) {
+    for (SNode opt : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "optionDeclaration", true))) {
       if (SNodeOperations.isInstanceOf(opt, "jetbrains.mps.bash.structure.Argument")) {
-        ListSequence.fromList(args).addElement(SNodeOperations.cast(opt, "jetbrains.mps.bash.structure.Argument"));
+        ListSequence.<SNode>fromList(args).addElement(SNodeOperations.cast(opt, "jetbrains.mps.bash.structure.Argument"));
       }
     }
     return args;
@@ -38,9 +38,9 @@ public class ExternalCommandDeclaration_Behavior {
 
   public static List<SNode> call_getOptionsWithParam_3263637656468078156(SNode thisNode) {
     List<SNode> options = new ArrayList<SNode>();
-    for (SNode opt : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "optionDeclaration", true))) {
+    for (SNode opt : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "optionDeclaration", true))) {
       if (SNodeOperations.isInstanceOf(opt, "jetbrains.mps.bash.structure.OptionWithParam")) {
-        ListSequence.fromList(options).addElement(SNodeOperations.cast(opt, "jetbrains.mps.bash.structure.OptionWithParam"));
+        ListSequence.<SNode>fromList(options).addElement(SNodeOperations.cast(opt, "jetbrains.mps.bash.structure.OptionWithParam"));
       }
     }
     return options;
@@ -48,9 +48,9 @@ public class ExternalCommandDeclaration_Behavior {
 
   public static List<SNode> call_getOptions_3263637656468511424(SNode thisNode) {
     List<SNode> symbols = new ArrayList<SNode>();
-    for (SNode opt : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "optionDeclaration", true))) {
+    for (SNode opt : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "optionDeclaration", true))) {
       if (SNodeOperations.isInstanceOf(opt, "jetbrains.mps.bash.structure.OptionSet")) {
-        ListSequence.fromList(symbols).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(opt, "jetbrains.mps.bash.structure.OptionSet"), "options", true)));
+        ListSequence.<SNode>fromList(symbols).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(opt, "jetbrains.mps.bash.structure.OptionSet"), "options", true)));
       }
     }
     return symbols;

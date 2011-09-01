@@ -73,7 +73,7 @@ public class LocalInstanceMethodCall_Constraints extends BaseConstraintsDescript
             }
             SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getEnclosingNode());
             int constraint = IClassifiersSearchScope.INSTANCE_METHOD;
-            Set<String> names = SetSequence.fromSet(new HashSet<String>());
+            Set<String> names = SetSequence.<String>fromSet(new HashSet<String>());
             while (classifier != null) {
               SNode context = ((_context.getReferenceNode() == null) ?
                 _context.getEnclosingNode() :
@@ -81,8 +81,8 @@ public class LocalInstanceMethodCall_Constraints extends BaseConstraintsDescript
               );
               List<SNode> instanceMethodDeclarations = (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, context, constraint);
               for (SNode method : instanceMethodDeclarations) {
-                if (!(SetSequence.fromSet(names).contains(SPropertyOperations.getString(method, "name")))) {
-                  ListSequence.fromList(result).addElement(method);
+                if (!(SetSequence.<String>fromSet(names).contains(SPropertyOperations.getString(method, "name")))) {
+                  ListSequence.<SNode>fromList(result).addElement(method);
                 }
               }
               for (SNode method : instanceMethodDeclarations) {

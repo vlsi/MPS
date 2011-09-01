@@ -23,13 +23,13 @@ public class JUnitTestActionOptions_PreferencesComponent extends BaseProjectPref
 
   public void loadState(Element state) {
     XmlSerializer.deserializeInto(this.myState, state);
-    for (BasePrefsPage page : ListSequence.fromList(this.getPages())) {
+    for (BasePrefsPage page : ListSequence.<BasePrefsPage>fromList(this.getPages())) {
       page.reset();
     }
   }
 
   public Element getState() {
-    for (BasePrefsPage page : ListSequence.fromList(this.getPages())) {
+    for (BasePrefsPage page : ListSequence.<BasePrefsPage>fromList(this.getPages())) {
       try {
         page.apply();
       } catch (ConfigurationException e) {
@@ -43,7 +43,7 @@ public class JUnitTestActionOptions_PreferencesComponent extends BaseProjectPref
   }
 
   public List<BasePrefsPage> createPages() {
-    List<BasePrefsPage> result = ListSequence.fromList(new ArrayList<BasePrefsPage>());
+    List<BasePrefsPage> result = ListSequence.<BasePrefsPage>fromList(new ArrayList<BasePrefsPage>());
     return result;
   }
 

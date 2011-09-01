@@ -19,7 +19,7 @@ public class ForStatement_Behavior {
   }
 
   public static List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "variable", true));
+    return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "variable", true));
   }
 
   public static List<SNode> call_getScopeVariables_2496361171403550965(SNode thisNode) {

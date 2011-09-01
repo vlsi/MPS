@@ -34,10 +34,10 @@ public class InlineMethod_Action extends GeneratedAction {
     final Wrappers._T<Boolean> b = new Wrappers._T<Boolean>(false);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        b.value = MethodCallAdapter.isMethodCall(((SNode) MapSequence.fromMap(_params).get("node"))) || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+        b.value = MethodCallAdapter.isMethodCall(((SNode) MapSequence.<String,Object>fromMap(_params).get("node"))) || SNodeOperations.isInstanceOf(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       }
     });
-    return b.value && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
+    return b.value && !(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -60,25 +60,25 @@ public class InlineMethod_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.fromMap(_params).put("node", node);
+      MapSequence.<String,Object>fromMap(_params).put("node", node);
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("operationContext") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
@@ -86,7 +86,7 @@ public class InlineMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      InlineMethodDialog dialog = new InlineMethodDialog(((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")));
+      InlineMethodDialog dialog = new InlineMethodDialog(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), ((Project) MapSequence.<String,Object>fromMap(_params).get("project")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")));
       dialog.tryToShow();
       dialog.pack();
     } catch (Throwable t) {

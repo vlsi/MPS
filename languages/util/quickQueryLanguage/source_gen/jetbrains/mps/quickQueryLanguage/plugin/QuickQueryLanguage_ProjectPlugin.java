@@ -14,8 +14,8 @@ public class QuickQueryLanguage_ProjectPlugin extends BaseProjectPlugin {
   }
 
   public List<BaseGeneratedTool> initAllTools(Project project) {
-    List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
-    ListSequence.fromList(tools).addElement(new RunReplacement_Tool(project));
+    List<BaseGeneratedTool> tools = ListSequence.<BaseGeneratedTool>fromList(new ArrayList<BaseGeneratedTool>());
+    ListSequence.<BaseGeneratedTool>fromList(tools).addElement(new RunReplacement_Tool(project));
     return tools;
   }
 }

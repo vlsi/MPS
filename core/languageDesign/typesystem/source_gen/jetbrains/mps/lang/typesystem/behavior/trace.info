@@ -225,7 +225,7 @@
     <nodeInfo nodeId="1213877428170" fileName="MeetType_Behavior.java" startLine="16" startPosition="78" endLine="17" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877428175" fileName="MeetType_Behavior.java" startLine="17" startPosition="50" endLine="18" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877428186" fileName="MeetType_Behavior.java" startLine="19" startPosition="29" endLine="20" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877428195" fileName="MeetType_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877428195" fileName="MeetType_Behavior.java" startLine="21" startPosition="100" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877428209" fileName="MeetType_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877428214" fileName="MeetType_Behavior.java" startLine="25" startPosition="19" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877428165" fileName="MeetType_Behavior.java" startLine="12" startPosition="32" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -233,7 +233,7 @@
     <nodeInfo nodeId="1213877428181" fileName="MeetType_Behavior.java" startLine="18" startPosition="79" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1213877428165" fileName="MeetType_Behavior.java" startLine="15" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1213877428167" fileName="MeetType_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1213877428194" fileName="MeetType_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="1213877428194" fileName="MeetType_Behavior.java" startLine="21" startPosition="100" endLine="22" endPosition="25" />
     <scopeInfo nodeId="1213877428165" fileName="MeetType_Behavior.java" startLine="12" startPosition="32" endLine="15" endPosition="0" />
     <scopeInfo nodeId="1213877428185" fileName="MeetType_Behavior.java" startLine="19" startPosition="29" endLine="23" endPosition="7" />
     <scopeInfo nodeId="1213877428181" fileName="MeetType_Behavior.java" startLine="18" startPosition="79" endLine="24" endPosition="5">
@@ -268,7 +268,7 @@
     <nodeInfo nodeId="1213877496037" fileName="JoinType_Behavior.java" startLine="16" startPosition="78" endLine="17" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877496042" fileName="JoinType_Behavior.java" startLine="17" startPosition="50" endLine="18" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877496053" fileName="JoinType_Behavior.java" startLine="19" startPosition="29" endLine="20" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877496062" fileName="JoinType_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877496062" fileName="JoinType_Behavior.java" startLine="21" startPosition="100" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877496076" fileName="JoinType_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877496081" fileName="JoinType_Behavior.java" startLine="25" startPosition="19" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877496034" fileName="JoinType_Behavior.java" startLine="12" startPosition="32" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -276,7 +276,7 @@
     <nodeInfo nodeId="1213877496048" fileName="JoinType_Behavior.java" startLine="18" startPosition="79" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1213877496034" fileName="JoinType_Behavior.java" startLine="15" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1213877496087" fileName="JoinType_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1213877496061" fileName="JoinType_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="1213877496061" fileName="JoinType_Behavior.java" startLine="21" startPosition="100" endLine="22" endPosition="25" />
     <scopeInfo nodeId="1213877496034" fileName="JoinType_Behavior.java" startLine="12" startPosition="32" endLine="15" endPosition="0" />
     <scopeInfo nodeId="1213877496052" fileName="JoinType_Behavior.java" startLine="19" startPosition="29" endLine="23" endPosition="7" />
     <scopeInfo nodeId="1213877496048" fileName="JoinType_Behavior.java" startLine="18" startPosition="79" endLine="24" endPosition="5">
@@ -292,8 +292,8 @@
   <root nodeId="1213877521567">
     <nodeInfo nodeId="1213877521570" fileName="FindSourceBlock_Behavior.java" startLine="24" startPosition="83" endLine="25" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877521580" fileName="FindSourceBlock_Behavior.java" startLine="28" startPosition="66" endLine="29" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877521586" fileName="FindSourceBlock_Behavior.java" startLine="29" startPosition="101" endLine="30" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877521596" fileName="FindSourceBlock_Behavior.java" startLine="30" startPosition="153" endLine="31" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877521586" fileName="FindSourceBlock_Behavior.java" startLine="29" startPosition="101" endLine="30" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877521596" fileName="FindSourceBlock_Behavior.java" startLine="30" startPosition="160" endLine="31" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877521604" fileName="FindSourceBlock_Behavior.java" startLine="32" startPosition="52" endLine="33" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877521616" fileName="FindSourceBlock_Behavior.java" startLine="35" startPosition="114" endLine="36" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215617285928" fileName="FindSourceBlock_Behavior.java" startLine="38" startPosition="36" endLine="39" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -330,7 +330,7 @@
     <nodeInfo nodeId="1213877521567" fileName="FindSourceBlock_Behavior.java" startLine="47" startPosition="51" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_1go9bg_a0a0b#()V" />
     <nodeInfo nodeId="1213877521567" fileName="FindSourceBlock_Behavior.java" startLine="83" startPosition="56" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_1go9bg_a1a0a1a5a2#()V" />
     <nodeInfo nodeId="1213877521567" fileName="FindSourceBlock_Behavior.java" startLine="20" startPosition="39" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1213877521602" fileName="FindSourceBlock_Behavior.java" startLine="31" startPosition="71" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1213877521602" fileName="FindSourceBlock_Behavior.java" startLine="31" startPosition="78" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1213877521614" fileName="FindSourceBlock_Behavior.java" startLine="34" startPosition="5" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877521630" fileName="FindSourceBlock_Behavior.java" startLine="39" startPosition="61" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877521567" fileName="FindSourceBlock_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
@@ -358,7 +358,7 @@
     <scopeInfo nodeId="1213877521567" fileName="FindSourceBlock_Behavior.java" startLine="47" startPosition="51" endLine="49" endPosition="5" />
     <scopeInfo nodeId="1213877521567" fileName="FindSourceBlock_Behavior.java" startLine="83" startPosition="56" endLine="85" endPosition="5" />
     <scopeInfo nodeId="1213877521567" fileName="FindSourceBlock_Behavior.java" startLine="20" startPosition="39" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1213877521602" fileName="FindSourceBlock_Behavior.java" startLine="31" startPosition="71" endLine="34" endPosition="5">
+    <scopeInfo nodeId="1213877521602" fileName="FindSourceBlock_Behavior.java" startLine="31" startPosition="78" endLine="34" endPosition="5">
       <varInfo nodeId="1213877521612" varName="returnStatement" />
     </scopeInfo>
     <scopeInfo nodeId="1213877521567" fileName="FindSourceBlock_Behavior.java" startLine="61" startPosition="9" endLine="64" endPosition="59" />

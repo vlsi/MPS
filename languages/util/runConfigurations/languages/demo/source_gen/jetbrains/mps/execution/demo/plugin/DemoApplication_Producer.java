@@ -20,8 +20,8 @@ public class DemoApplication_Producer {
   }
 
   public static List<RuntimeConfigurationProducer> getProducers(ConfigurationType configurationType) {
-    List<RuntimeConfigurationProducer> creators = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
-    ListSequence.fromList(creators).addElement(new DemoApplication_Producer.ProducerPart_NodeSomeConcept_rh22bz_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    List<RuntimeConfigurationProducer> creators = ListSequence.<RuntimeConfigurationProducer>fromList(new ArrayList<RuntimeConfigurationProducer>());
+    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new DemoApplication_Producer.ProducerPart_NodeSomeConcept_rh22bz_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     return creators;
   }
 

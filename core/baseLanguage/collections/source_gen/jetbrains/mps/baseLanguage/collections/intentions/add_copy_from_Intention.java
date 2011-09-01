@@ -43,7 +43,7 @@ public class add_copy_from_Intention extends BaseIntention implements Intention 
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return AbstractContainerCreator_Behavior.call_canHaveParameter_2261417478150191157(node) && ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).count() == 0 && (SLinkOperations.getTarget(node, "copyFrom", true) == null);
+    return AbstractContainerCreator_Behavior.call_canHaveParameter_2261417478150191157(node) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "initValue", true)).count() == 0 && (SLinkOperations.getTarget(node, "copyFrom", true) == null);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

@@ -32,10 +32,10 @@ public enum EquationDirection_Enum {
   }
 
   public static List<EquationDirection_Enum> getConstants() {
-    List<EquationDirection_Enum> list = ListSequence.fromList(new LinkedList<EquationDirection_Enum>());
-    ListSequence.fromList(list).addElement(EquationDirection_Enum.none);
-    ListSequence.fromList(list).addElement(EquationDirection_Enum.left);
-    ListSequence.fromList(list).addElement(EquationDirection_Enum.right);
+    List<EquationDirection_Enum> list = ListSequence.<EquationDirection_Enum>fromList(new LinkedList<EquationDirection_Enum>());
+    ListSequence.<EquationDirection_Enum>fromList(list).addElement(EquationDirection_Enum.none);
+    ListSequence.<EquationDirection_Enum>fromList(list).addElement(EquationDirection_Enum.left);
+    ListSequence.<EquationDirection_Enum>fromList(list).addElement(EquationDirection_Enum.right);
     return list;
   }
 

@@ -111,7 +111,7 @@ public class MultiConceptNode_Configuration implements IPersistentConfiguration,
   }
 
   private boolean isValid(final SNode node) {
-    return ListSequence.fromList(myTargets).findFirst(new IWhereFilter<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
+    return ListSequence.<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>fromList(myTargets).findFirst(new IWhereFilter<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
       public boolean accept(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         SNode concept = it._0();
         _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();

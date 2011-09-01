@@ -37,7 +37,7 @@ public class typeof_SuperMethodCall_InferenceRule extends AbstractInferenceRule_
     SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(superMethodCall);
     List<SNode> typeVarRefs = new ArrayList<SNode>();
     for (SNode typeVariableDeclaration : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
-      ListSequence.fromList(typeVarRefs).addElement(new typeof_SuperMethodCall_InferenceRule.QuotationClass_okooqp_a0a0a0g0a().createNode(typeVariableDeclaration, typeCheckingContext));
+      ListSequence.<SNode>fromList(typeVarRefs).addElement(new typeof_SuperMethodCall_InferenceRule.QuotationClass_okooqp_a0a0a0g0a().createNode(typeVariableDeclaration, typeCheckingContext));
     }
     {
       SNode _nodeToCheck_1029348928467 = superMethodCall;
@@ -45,7 +45,7 @@ public class typeof_SuperMethodCall_InferenceRule extends AbstractInferenceRule_
       typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_5569019188765050003), (SNode) new typeof_SuperMethodCall_InferenceRule.QuotationClass_okooqp_a0a7a0().createNode(classifier, typeVarRefs, typeCheckingContext), _info_12389875345);
     }
     // --- following piece of cake is identical for any method call --- 
-    Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
+    Map<SNode, List<SNode>> mmap = MapSequence.<SNode,List<SNode>>fromMap(new HashMap<SNode, List<SNode>>());
     RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, superMethodCall, SLinkOperations.getTarget(SLinkOperations.getTarget(superMethodCall, "baseMethodDeclaration", false), "returnType", true), mmap);
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, typeCheckingContext.getRepresentative(instanceType_typevar_5569019188765050003), mmap);
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithMethodTypeVariables(typeCheckingContext, superMethodCall, mmap);

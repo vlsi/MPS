@@ -16,14 +16,14 @@ public abstract class DuplicatesProcessor<T> {
 
   public void process(List<T> duplicates) {
     boolean replaceAll = false;
-    for (T duplicate : ListSequence.fromList(duplicates)) {
+    for (T duplicate : ListSequence.<T>fromList(duplicates)) {
       if (!(replaceAll)) {
         List<EditorMessage> messages = this.createEditorMessages(duplicate);
         this.myEditorContext.getNodeEditorComponent().getHighlightManager().mark(messages);
         AskDialog dialog = new AskDialog(this.myEditorContext.getOperationContext().getMainFrame(), "Process Duplicates");
         dialog.showDialog();
         AskDialog.DialogResults shouldSubstitute = dialog.getResult();
-        for (EditorMessage message : ListSequence.fromList(messages)) {
+        for (EditorMessage message : ListSequence.<EditorMessage>fromList(messages)) {
           this.myEditorContext.getNodeEditorComponent().getHighlightManager().unmark(message);
         }
         myEditorContext.getNodeEditorComponent().getHighlightManager().repaintAndRebuildEditorMessages();

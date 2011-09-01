@@ -93,7 +93,7 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
   }
 
   private static boolean renderingCondition_bx3ota_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.fromIterable(((Iterable<SReference>) node.getReferencesIterable())).any(new IWhereFilter<SReference>() {
+    return Sequence.<SReference>fromIterable(((Iterable<SReference>) node.getReferencesIterable())).any(new IWhereFilter<SReference>() {
       public boolean accept(SReference ref) {
         return ref.getTargetNode() == null;
       }
@@ -101,7 +101,7 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
   }
 
   private static JComponent _QueryFunction_JComponent_bx3ota_a0b0a(final SNode node, final EditorContext editorContext) {
-    String txt = Sequence.fromIterable(((Iterable<SReference>) node.getReferencesIterable())).where(new IWhereFilter<SReference>() {
+    String txt = Sequence.<SReference>fromIterable(((Iterable<SReference>) node.getReferencesIterable())).where(new IWhereFilter<SReference>() {
       public boolean accept(SReference ref) {
         return ref.getTargetNode() == null;
       }

@@ -20,6 +20,7 @@ import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.baseLanguage.behavior.IParameter_Behavior;
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IStaticContainerForMethods_Behavior;
@@ -46,7 +47,7 @@ public abstract class ExtractMethodRefactoring {
     List<SNode> params = new ArrayList<SNode>();
     Map<SNode, SNode> inputToParams = this.createInputParameters(body, params);
     Map<SNode, SNode> inputMapping = this.createInputVaryablesMapping(inputToParams, this.myParameters.getNodesToRefactor());
-    this.myMatches = new MethodDuplicatesFinder(this.myParameters.getNodesToRefactor(), inputMapping, params, this.getOutputReferences()).findDuplicates(SNodeOperations.getAncestor(ListSequence.fromList(this.myParameters.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
+    this.myMatches = new MethodDuplicatesFinder(this.myParameters.getNodesToRefactor(), inputMapping, params, this.getOutputReferences()).findDuplicates(SNodeOperations.getAncestor(ListSequence.<SNode>fromList(this.myParameters.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
     this.replaceInputVariablesByParameters(SLinkOperations.getTargets(body, "statement", true), inputToParams);
     SNode newMethod = this.createNewMethod(SNodeOperations.copyNode(this.getMethodType()), params, body);
 
@@ -67,11 +68,11 @@ public abstract class ExtractMethodRefactoring {
 
   protected MethodMatch createMatch(List<SNode> nodes, Map<SNode, SNode> inputMapping, List<SNode> parametersOrder) {
     MethodMatch match = new MethodMatch(parametersOrder);
-    for (SNode node : ListSequence.fromList(nodes)) {
+    for (SNode node : ListSequence.<SNode>fromList(nodes)) {
       match.putNode(node);
     }
-    for (SNode node : SetSequence.fromSet(MapSequence.fromMap(inputMapping).keySet())) {
-      match.putMapping(node, MapSequence.fromMap(inputMapping).get(node));
+    for (SNode node : SetSequence.<SNode>fromSet(MapSequence.fromMap(inputMapping).keySet())) {
+      match.putMapping(node, MapSequence.<SNode,SNode>fromMap(inputMapping).get(node));
     }
     return match;
   }
@@ -92,10 +93,10 @@ public abstract class ExtractMethodRefactoring {
 
   private void correctThrowsList(SNode method) {
     List<SNode> throwables = new ArrayList<SNode>();
-    for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true))) {
-      ListSequence.fromList(throwables).addSequence(SetSequence.fromSet(Statement_Behavior.call_uncaughtThrowables_5412515780383108857(statement, false)));
+    for (SNode statement : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true))) {
+      ListSequence.<SNode>fromList(throwables).addSequence(SetSequence.<SNode>fromSet(Statement_Behavior.call_uncaughtThrowables_5412515780383108857(statement, false)));
     }
-    ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(throwables).<SNode>select(new ISelector<SNode, SNode>() {
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.<SNode>fromList(throwables).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0a0a2a6().createNode(it);
       }
@@ -103,20 +104,20 @@ public abstract class ExtractMethodRefactoring {
   }
 
   protected void createNewDeclarations(SNode method) {
-    Map<SNode, List<SNode>> mapping = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
-    for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendantsWhereConceptInList(method, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.ParameterReference"}, false, new String[]{}))) {
+    Map<SNode, List<SNode>> mapping = MapSequence.<SNode,List<SNode>>fromMap(new HashMap<SNode, List<SNode>>());
+    for (SNode reference : ListSequence.<SNode>fromList(SNodeOperations.getDescendantsWhereConceptInList(method, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.ParameterReference"}, false, new String[]{}))) {
       SNode declaration = SLinkOperations.getTarget(reference, "variableDeclaration", false);
-      if (!(ListSequence.fromList(SNodeOperations.getAncestors(declaration, null, false)).contains(method))) {
-        if (!(SetSequence.fromSet(MapSequence.fromMap(mapping).keySet()).contains(declaration))) {
-          MapSequence.fromMap(mapping).put(declaration, new ArrayList<SNode>());
+      if (!(ListSequence.<SNode>fromList(SNodeOperations.getAncestors(declaration, null, false)).contains(method))) {
+        if (!(SetSequence.<SNode>fromSet(MapSequence.fromMap(mapping).keySet()).contains(declaration))) {
+          MapSequence.<SNode,List<SNode>>fromMap(mapping).put(declaration, new ArrayList<SNode>());
         }
-        ListSequence.fromList(MapSequence.fromMap(mapping).get(declaration)).addElement(reference);
+        ListSequence.<SNode>fromList(MapSequence.<SNode,List<SNode>>fromMap(mapping).get(declaration)).addElement(reference);
       }
     }
-    for (SNode declaration : SetSequence.fromSet(MapSequence.fromMap(mapping).keySet())) {
+    for (SNode declaration : SetSequence.<SNode>fromSet(MapSequence.fromMap(mapping).keySet())) {
       SNode newDeclaration = new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a2a7().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), SPropertyOperations.getString(declaration, "name"));
-      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first(), new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0b0c0h().createNode(newDeclaration));
-      for (SNode reference : ListSequence.fromList(MapSequence.fromMap(mapping).get(declaration))) {
+      SNodeOperations.insertPrevSiblingChild(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first(), new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0b0c0h().createNode(newDeclaration));
+      for (SNode reference : ListSequence.<SNode>fromList(MapSequence.<SNode,List<SNode>>fromMap(mapping).get(declaration))) {
         SNodeOperations.replaceWithAnother(reference, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0c0c0h().createNode(newDeclaration));
       }
     }
@@ -130,7 +131,7 @@ public abstract class ExtractMethodRefactoring {
     SNode methodDeclaration = declaration;
     SLinkOperations.setTarget(methodDeclaration, "returnType", SNodeOperations.copyNode(returnType), true);
     SPropertyOperations.set(methodDeclaration, "name", this.myParameters.getName());
-    ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).addSequence(ListSequence.fromList(params));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).addSequence(ListSequence.<SNode>fromList(params));
     SLinkOperations.setTarget(methodDeclaration, "body", body, true);
     return methodDeclaration;
   }
@@ -145,8 +146,8 @@ public abstract class ExtractMethodRefactoring {
   }
 
   protected Map<SNode, SNode> createInputParameters(SNode body, List<SNode> parameters) {
-    Map<SNode, SNode> result = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    for (MethodParameter methodParameter : ListSequence.fromList(this.myParameters.getParameters())) {
+    Map<SNode, SNode> result = MapSequence.<SNode,SNode>fromMap(new HashMap<SNode, SNode>());
+    for (MethodParameter methodParameter : ListSequence.<MethodParameter>fromList(this.myParameters.getParameters())) {
       if (methodParameter.isSelected()) {
         SNode parameter = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
         SLinkOperations.setTarget(parameter, "type", SNodeOperations.copyNode(methodParameter.getType()), true);
@@ -154,8 +155,8 @@ public abstract class ExtractMethodRefactoring {
         if (methodParameter.isFinal()) {
           SPropertyOperations.set(parameter, "isFinal", "" + true);
         }
-        ListSequence.fromList(parameters).addElement(parameter);
-        MapSequence.fromMap(result).put(methodParameter.getDeclaration(), parameter);
+        ListSequence.<SNode>fromList(parameters).addElement(parameter);
+        MapSequence.<SNode,SNode>fromMap(result).put(methodParameter.getDeclaration(), parameter);
       }
     }
     return result;
@@ -163,26 +164,26 @@ public abstract class ExtractMethodRefactoring {
 
   public void replaceInputVariablesByParameters(List<SNode> nodes, Map<SNode, SNode> mapping) {
     Map<SNode, SNode> anotherMap = this.createInputVaryablesMapping(mapping, nodes);
-    for (SNode node : SetSequence.fromSet(MapSequence.fromMap(anotherMap).keySet())) {
-      SNodeOperations.replaceWithAnother(node, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0b0l().createNode(MapSequence.fromMap(anotherMap).get(node)));
+    for (SNode node : SetSequence.<SNode>fromSet(MapSequence.fromMap(anotherMap).keySet())) {
+      SNodeOperations.replaceWithAnother(node, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0b0l().createNode(MapSequence.<SNode,SNode>fromMap(anotherMap).get(node)));
     }
   }
 
   public Map<SNode, SNode> createInputVaryablesMapping(Map<SNode, SNode> variableDeclarationToParameter, List<SNode> nodes) {
-    Map<SNode, SNode> mapping = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    for (SNode node : ListSequence.fromList(nodes)) {
-      for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
+    Map<SNode, SNode> mapping = MapSequence.<SNode,SNode>fromMap(new HashMap<SNode, SNode>());
+    for (SNode node : ListSequence.<SNode>fromList(nodes)) {
+      for (SNode reference : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
         if (MoveRefactoringUtils.isReference(reference)) {
-          SNode target = Sequence.fromIterable(SNodeOperations.getReferences(reference)).first().getTargetNode();
+          SNode target = Sequence.<SReference>fromIterable(SNodeOperations.getReferences(reference)).first().getTargetNode();
           if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(target)) {
-            MapSequence.fromMap(mapping).put(reference, MapSequence.fromMap(variableDeclarationToParameter).get(target));
+            MapSequence.<SNode,SNode>fromMap(mapping).put(reference, MapSequence.<SNode,SNode>fromMap(variableDeclarationToParameter).get(target));
           }
         }
       }
-      for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
+      for (SNode parameter : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
         SNode declaration = IParameter_Behavior.call_getDeclaration_1225282371351(parameter);
         if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(declaration)) {
-          MapSequence.fromMap(mapping).put(parameter, MapSequence.fromMap(variableDeclarationToParameter).get(declaration));
+          MapSequence.<SNode,SNode>fromMap(mapping).put(parameter, MapSequence.<SNode,SNode>fromMap(variableDeclarationToParameter).get(declaration));
         }
       }
     }
@@ -195,9 +196,9 @@ public abstract class ExtractMethodRefactoring {
 
   protected List<SNode> createCallParameters() {
     List<SNode> result = new ArrayList<SNode>();
-    for (MethodParameter parameter : ListSequence.fromList(this.myParameters.getParameters())) {
+    for (MethodParameter parameter : ListSequence.<MethodParameter>fromList(this.myParameters.getParameters())) {
       if (parameter.isSelected()) {
-        ListSequence.fromList(result).addElement(parameter.getReference());
+        ListSequence.<SNode>fromList(result).addElement(parameter.getReference());
       }
     }
     return result;
@@ -228,11 +229,11 @@ public abstract class ExtractMethodRefactoring {
   }
 
   public Set<SNode> getOutputReferences() {
-    Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> result = SetSequence.<SNode>fromSet(new HashSet<SNode>());
     List<SNode> outputVariables = myParameters.getAnalyzer().getOutputVariables();
-    for (SNode node : ListSequence.fromList(myParameters.getNodesToRefactor())) {
-      for (SNode varReference : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
-        if (ListSequence.fromList(outputVariables).contains(SLinkOperations.getTarget(varReference, "variableDeclaration", false))) {
+    for (SNode node : ListSequence.<SNode>fromList(myParameters.getNodesToRefactor())) {
+      for (SNode varReference : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
+        if (ListSequence.<SNode>fromList(outputVariables).contains(SLinkOperations.getTarget(varReference, "variableDeclaration", false))) {
           SetSequence.fromSet(result).addElement(varReference);
         }
       }

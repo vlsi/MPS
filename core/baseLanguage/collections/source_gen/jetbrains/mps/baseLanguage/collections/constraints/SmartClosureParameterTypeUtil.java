@@ -35,7 +35,7 @@ public class SmartClosureParameterTypeUtil {
     } else
     if (SNodeOperations.isInstanceOf(vabs, "jetbrains.mps.baseLanguage.structure.IMethodCall") && SNodeOperations.getParent(SNodeOperations.getParent(scpd)) == vabs) {
       List<SNode> paramDecls = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(vabs, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "parameter", true);
-      SNode pd = ListSequence.fromList(paramDecls).getElement(SNodeOperations.getIndexInParent(SNodeOperations.getParent(scpd)));
+      SNode pd = ListSequence.<SNode>fromList(paramDecls).getElement(SNodeOperations.getIndexInParent(SNodeOperations.getParent(scpd)));
       SNode ptype = SLinkOperations.getTarget(pd, "type", true);
       if (SNodeOperations.isInstanceOf(ptype, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
         {

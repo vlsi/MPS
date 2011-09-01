@@ -23,14 +23,14 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
   }
 
   public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> list = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     SNode concept = SLinkOperations.getTarget(type, "conceptDeclaraton", false);
     if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept, false);
-      for (SNode superConcept : ListSequence.fromList(superConcepts)) {
-        ListSequence.fromList(list).addElement(new supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.QuotationClass_keb29w_a0a0a0b0c0a().createNode(superConcept, typeCheckingContext));
+      for (SNode superConcept : ListSequence.<SNode>fromList(superConcepts)) {
+        ListSequence.<SNode>fromList(list).addElement(new supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.QuotationClass_keb29w_a0a0a0b0c0a().createNode(superConcept, typeCheckingContext));
       }
-      ListSequence.fromList(list).addElement(new supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.QuotationClass_keb29w_a0a0c0c0a().createNode(typeCheckingContext));
+      ListSequence.<SNode>fromList(list).addElement(new supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.QuotationClass_keb29w_a0a0c0c0a().createNode(typeCheckingContext));
     }
     return list;
   }

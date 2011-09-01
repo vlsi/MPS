@@ -57,8 +57,8 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
       currentStatement = getParentStatement(node, currentList);
       Program program = DataFlowManager.getInstance().buildProgramFor(currentList);
       AnalysisResult<Set<WriteInstruction>> definitions = program.analyze(new ReachingDefinitionsAnalyzer());
-      for (Instruction nodeInstruction : ListSequence.fromList(program.getInstructionsFor(currentStatement))) {
-        for (WriteInstruction instruction : SetSequence.fromSet(definitions.get(nodeInstruction))) {
+      for (Instruction nodeInstruction : ListSequence.<Instruction>fromList(program.getInstructionsFor(currentStatement))) {
+        for (WriteInstruction instruction : SetSequence.<WriteInstruction>fromSet(definitions.get(nodeInstruction))) {
           if (instruction.getVariable() == variable) {
             myAssignment = ((SNode) instruction.getSource());
           }

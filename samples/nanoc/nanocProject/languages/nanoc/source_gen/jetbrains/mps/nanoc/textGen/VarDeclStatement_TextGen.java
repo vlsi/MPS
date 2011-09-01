@@ -18,10 +18,10 @@ public class VarDeclStatement_TextGen extends SNodeTextGen {
     }
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "type", true), this.getSNode());
     this.append(" ");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "varDecl", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "varDecl", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "varDecl", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "varDecl", true)).last()) {
+        if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "varDecl", true)).last()) {
           this.append(", ");
         }
       }

@@ -48,7 +48,7 @@ public class MakeVariableFinal_Intention extends BaseIntention implements Intent
     if ((classNode == null)) {
       return false;
     }
-    return !(ListSequence.fromList(SNodeOperations.getAncestors(varDeclStmt, null, false)).contains(classNode));
+    return !(ListSequence.<SNode>fromList(SNodeOperations.getAncestors(varDeclStmt, null, false)).contains(classNode));
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

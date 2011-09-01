@@ -64,15 +64,15 @@ public class convert_test_case_to_unittest_case_Intention extends BaseIntention 
     if ((SLinkOperations.getTarget(node, "superclass", true) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false) != SLinkOperations.getTarget(new convert_test_case_to_unittest_case_Intention.QuotationClass_p2nyw8_a0a0a3a7().createNode(), "classifier", false)) {
       SLinkOperations.setTarget(SLinkOperations.getTarget(testCase, "superclass", true), "classifier", SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false), false);
     }
-    for (SNode m : ListSequence.fromList(SLinkOperations.getTargets(node, "method", true))) {
+    for (SNode m : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "method", true))) {
       if (SPropertyOperations.getString(m, "name").startsWith("test")) {
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", true)).addElement(new convert_test_case_to_unittest_case_Intention.QuotationClass_p2nyw8_a0a0a0a0e0h().createNode(SNodeOperations.detachNode(SLinkOperations.getTarget(m, "body", true)), SPropertyOperations.getString(m, "name").substring("test".length())));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", true)).addElement(new convert_test_case_to_unittest_case_Intention.QuotationClass_p2nyw8_a0a0a0a0e0h().createNode(SNodeOperations.detachNode(SLinkOperations.getTarget(m, "body", true)), SPropertyOperations.getString(m, "name").substring("test".length())));
       } else {
-        ListSequence.fromList(SLinkOperations.getTargets(testCase, "method", true)).addElement(SNodeOperations.detachNode(m));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(testCase, "method", true)).addElement(SNodeOperations.detachNode(m));
       }
     }
-    for (SNode f : ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true))) {
-      ListSequence.fromList(SLinkOperations.getTargets(testCase, "staticField", true)).addElement(SNodeOperations.detachNode(f));
+    for (SNode f : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "staticField", true))) {
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(testCase, "staticField", true)).addElement(SNodeOperations.detachNode(f));
     }
   }
 

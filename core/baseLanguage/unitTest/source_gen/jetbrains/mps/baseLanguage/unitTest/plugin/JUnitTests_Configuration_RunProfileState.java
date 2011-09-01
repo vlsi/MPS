@@ -51,7 +51,7 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    List<ITestNodeWrapper> nodeWrappers = ListSequence.fromList(myRunConfiguration.getTests(project.getComponent(MPSProject.class))).toListSequence();
+    List<ITestNodeWrapper> nodeWrappers = ListSequence.<ITestNodeWrapper>fromList(myRunConfiguration.getTests(project.getComponent(MPSProject.class))).toListSequence();
 
     final ProcessHandler process = new Junit_Command().setDebuggerSettings(myDebuggerSettings.getCommandLine(true)).createProcess(nodeWrappers, myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
 

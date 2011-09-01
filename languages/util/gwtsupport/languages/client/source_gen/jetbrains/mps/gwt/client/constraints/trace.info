@@ -11,7 +11,7 @@
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="68" startPosition="61" endLine="69" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="73" startPosition="7" endLine="74" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="29" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Inherits_Constraints#()V" />
-    <nodeInfo nodeId="6017889698595854305" fileName="Inherits_Constraints.java" startLine="49" startPosition="187" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6017889698595854305" fileName="Inherits_Constraints.java" startLine="49" startPosition="196" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="6017889698595854316" fileName="Inherits_Constraints.java" startLine="54" startPosition="59" endLine="58" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6017889698595854367" fileName="Inherits_Constraints.java" startLine="60" startPosition="77" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="37" startPosition="85" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
@@ -29,7 +29,7 @@
     <scopeInfo nodeId="6017889698595854368" fileName="Inherits_Constraints.java" startLine="61" startPosition="70" endLine="62" endPosition="125" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="68" startPosition="61" endLine="69" endPosition="58" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="29" startPosition="0" endLine="32" endPosition="3" />
-    <scopeInfo nodeId="6017889698595854305" fileName="Inherits_Constraints.java" startLine="49" startPosition="187" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="6017889698595854305" fileName="Inherits_Constraints.java" startLine="49" startPosition="196" endLine="53" endPosition="0" />
     <scopeInfo nodeId="6017889698595854315" fileName="Inherits_Constraints.java" startLine="54" startPosition="59" endLine="58" endPosition="18" />
     <scopeInfo nodeId="6017889698595854367" fileName="Inherits_Constraints.java" startLine="60" startPosition="77" endLine="64" endPosition="0" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="37" startPosition="85" endLine="42" endPosition="0" />
@@ -41,7 +41,7 @@
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="42" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="35" startPosition="83" endLine="74" endPosition="22" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="33" startPosition="0" endLine="76" endPosition="0" />
-    <unitInfo nodeId="6017889698595854305" fileName="Inherits_Constraints.java" startLine="49" startPosition="144" endLine="53" endPosition="13" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints$3" />
+    <unitInfo nodeId="6017889698595854305" fileName="Inherits_Constraints.java" startLine="49" startPosition="153" endLine="53" endPosition="13" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints$3" />
     <unitInfo nodeId="6017889698595854367" fileName="Inherits_Constraints.java" startLine="60" startPosition="36" endLine="64" endPosition="13" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints$3" />
     <unitInfo nodeId="6017889698595854314" fileName="Inherits_Constraints.java" startLine="53" startPosition="25" endLine="60" endPosition="13" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints$3" />
     <unitInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="46" startPosition="19" endLine="71" endPosition="9" unitName="jetbrains.mps.gwt.client.constraints.Inherits_Constraints$2" />
@@ -58,7 +58,7 @@
     <nodeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="35" startPosition="5" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="36" startPosition="0" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538143413" fileName="PatternFilter_Constraints.java" startLine="41" startPosition="131" endLine="42" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207538181487" fileName="PatternFilter_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="499" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207538181487" fileName="PatternFilter_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538181472" fileName="PatternFilter_Constraints.java" startLine="47" startPosition="128" endLine="48" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538181517" fileName="PatternFilter_Constraints.java" startLine="49" startPosition="5" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PatternFilter_Constraints#()V" />
@@ -73,7 +73,7 @@
     <scopeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="25" startPosition="44" endLine="26" endPosition="16" />
     <scopeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="33" startPosition="51" endLine="34" endPosition="68" />
     <scopeInfo nodeId="2968360207538140443" fileName="PatternFilter_Constraints.java" startLine="41" startPosition="131" endLine="42" endPosition="127" />
-    <scopeInfo nodeId="2968360207538164785" fileName="PatternFilter_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="499" />
+    <scopeInfo nodeId="2968360207538164785" fileName="PatternFilter_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="513" />
     <scopeInfo nodeId="2968360207538181461" fileName="PatternFilter_Constraints.java" startLine="47" startPosition="128" endLine="48" endPosition="128" />
     <scopeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" />
     <scopeInfo nodeId="2968360207537893572" fileName="PatternFilter_Constraints.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
@@ -93,7 +93,7 @@
     <nodeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="35" startPosition="5" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="36" startPosition="0" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538563861" fileName="Public_Constraints.java" startLine="41" startPosition="131" endLine="42" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207538563868" fileName="Public_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="499" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207538563868" fileName="Public_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538563884" fileName="Public_Constraints.java" startLine="47" startPosition="128" endLine="48" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538563891" fileName="Public_Constraints.java" startLine="49" startPosition="5" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Public_Constraints#()V" />
@@ -108,7 +108,7 @@
     <scopeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="25" startPosition="44" endLine="26" endPosition="16" />
     <scopeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="33" startPosition="51" endLine="34" endPosition="68" />
     <scopeInfo nodeId="2968360207538563860" fileName="Public_Constraints.java" startLine="41" startPosition="131" endLine="42" endPosition="127" />
-    <scopeInfo nodeId="2968360207538563867" fileName="Public_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="499" />
+    <scopeInfo nodeId="2968360207538563867" fileName="Public_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="513" />
     <scopeInfo nodeId="2968360207538563883" fileName="Public_Constraints.java" startLine="47" startPosition="128" endLine="48" endPosition="128" />
     <scopeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" />
     <scopeInfo nodeId="2968360207538563842" fileName="Public_Constraints.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
@@ -128,7 +128,7 @@
     <nodeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="35" startPosition="5" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="36" startPosition="0" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538563913" fileName="Source_Constraints.java" startLine="41" startPosition="131" endLine="42" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207538563920" fileName="Source_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="499" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207538563920" fileName="Source_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538563936" fileName="Source_Constraints.java" startLine="47" startPosition="128" endLine="48" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538563943" fileName="Source_Constraints.java" startLine="49" startPosition="5" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Source_Constraints#()V" />
@@ -143,7 +143,7 @@
     <scopeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="25" startPosition="44" endLine="26" endPosition="16" />
     <scopeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="33" startPosition="51" endLine="34" endPosition="68" />
     <scopeInfo nodeId="2968360207538563912" fileName="Source_Constraints.java" startLine="41" startPosition="131" endLine="42" endPosition="127" />
-    <scopeInfo nodeId="2968360207538563919" fileName="Source_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="499" />
+    <scopeInfo nodeId="2968360207538563919" fileName="Source_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="513" />
     <scopeInfo nodeId="2968360207538563935" fileName="Source_Constraints.java" startLine="47" startPosition="128" endLine="48" endPosition="128" />
     <scopeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" />
     <scopeInfo nodeId="2968360207538563894" fileName="Source_Constraints.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
@@ -163,7 +163,7 @@
     <nodeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="35" startPosition="5" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="36" startPosition="0" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538563965" fileName="SuperSource_Constraints.java" startLine="41" startPosition="131" endLine="42" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207538563972" fileName="SuperSource_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="499" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207538563972" fileName="SuperSource_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538563988" fileName="SuperSource_Constraints.java" startLine="47" startPosition="128" endLine="48" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538563995" fileName="SuperSource_Constraints.java" startLine="49" startPosition="5" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuperSource_Constraints#()V" />
@@ -178,7 +178,7 @@
     <scopeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="25" startPosition="44" endLine="26" endPosition="16" />
     <scopeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="33" startPosition="51" endLine="34" endPosition="68" />
     <scopeInfo nodeId="2968360207538563964" fileName="SuperSource_Constraints.java" startLine="41" startPosition="131" endLine="42" endPosition="127" />
-    <scopeInfo nodeId="2968360207538563971" fileName="SuperSource_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="499" />
+    <scopeInfo nodeId="2968360207538563971" fileName="SuperSource_Constraints.java" startLine="44" startPosition="128" endLine="45" endPosition="513" />
     <scopeInfo nodeId="2968360207538563987" fileName="SuperSource_Constraints.java" startLine="47" startPosition="128" endLine="48" endPosition="128" />
     <scopeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" />
     <scopeInfo nodeId="2968360207538563946" fileName="SuperSource_Constraints.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
@@ -203,7 +203,7 @@
     <nodeInfo nodeId="2309001323587016403" fileName="GWTModule_Constraints.java" startLine="56" startPosition="44" endLine="57" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="56" startPosition="44" endLine="57" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="59" startPosition="7" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207538671993" fileName="GWTModule_Constraints.java" startLine="64" startPosition="127" endLine="65" endPosition="578" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207538671993" fileName="GWTModule_Constraints.java" startLine="64" startPosition="127" endLine="65" endPosition="592" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538672009" fileName="GWTModule_Constraints.java" startLine="66" startPosition="5" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GWTModule_Constraints#()V" />
     <nodeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="37" startPosition="0" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -220,7 +220,7 @@
     <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="38" startPosition="51" endLine="39" endPosition="68" />
     <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="50" startPosition="37" endLine="51" endPosition="20" />
     <scopeInfo nodeId="2309001323587016402" fileName="GWTModule_Constraints.java" startLine="56" startPosition="44" endLine="57" endPosition="30" />
-    <scopeInfo nodeId="2968360207538671960" fileName="GWTModule_Constraints.java" startLine="64" startPosition="127" endLine="65" endPosition="578" />
+    <scopeInfo nodeId="2968360207538671960" fileName="GWTModule_Constraints.java" startLine="64" startPosition="127" endLine="65" endPosition="592" />
     <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="55" startPosition="56" endLine="57" endPosition="30" />
     <scopeInfo nodeId="2968360207538671955" fileName="GWTModule_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
     <scopeInfo nodeId="2968360207538671957" fileName="GWTModule_Constraints.java" startLine="63" startPosition="123" endLine="67" endPosition="16" />

@@ -52,9 +52,9 @@ public class ExecuteCalculator_Action extends GeneratedAction {
           node = null;
         }
       }
-      MapSequence.fromMap(_params).put("calcNode", node);
+      MapSequence.<String,Object>fromMap(_params).put("calcNode", node);
     }
-    if (MapSequence.fromMap(_params).get("calcNode") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("calcNode") == null) {
       return false;
     }
     return true;
@@ -84,9 +84,9 @@ public class ExecuteCalculator_Action extends GeneratedAction {
   }
 
   private Class getCalcClass(final Map<String, Object> _params) {
-    String className = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("calcNode")), "name");
-    String fqClassName = SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode"))).getLongName() + "." + className;
-    return SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode"))).getModelDescriptor().getModule().getClass(fqClassName);
+    String className = SPropertyOperations.getString(((SNode) MapSequence.<String,Object>fromMap(_params).get("calcNode")), "name");
+    String fqClassName = SNodeOperations.getModel(((SNode) MapSequence.<String,Object>fromMap(_params).get("calcNode"))).getLongName() + "." + className;
+    return SNodeOperations.getModel(((SNode) MapSequence.<String,Object>fromMap(_params).get("calcNode"))).getModelDescriptor().getModule().getClass(fqClassName);
   }
 
   private Method getMainMethod(final Map<String, Object> _params) {

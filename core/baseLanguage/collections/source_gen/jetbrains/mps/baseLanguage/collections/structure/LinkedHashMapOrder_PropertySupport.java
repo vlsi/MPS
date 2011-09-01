@@ -11,7 +11,7 @@ public class LinkedHashMapOrder_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<LinkedHashMapOrder> constants = ListSequence.fromList(LinkedHashMapOrder.getConstants()).iterator();
+    Iterator<LinkedHashMapOrder> constants = ListSequence.<LinkedHashMapOrder>fromList(LinkedHashMapOrder.getConstants()).iterator();
     while (constants.hasNext()) {
       LinkedHashMapOrder constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class LinkedHashMapOrder_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<LinkedHashMapOrder> constants = ListSequence.fromList(LinkedHashMapOrder.getConstants()).iterator();
+    Iterator<LinkedHashMapOrder> constants = ListSequence.<LinkedHashMapOrder>fromList(LinkedHashMapOrder.getConstants()).iterator();
     while (constants.hasNext()) {
       LinkedHashMapOrder constant = constants.next();
       if (value.equals(constant.getName())) {

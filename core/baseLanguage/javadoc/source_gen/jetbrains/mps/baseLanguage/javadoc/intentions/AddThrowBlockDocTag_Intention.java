@@ -42,7 +42,7 @@ public class AddThrowBlockDocTag_Intention extends BaseIntention implements Inte
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsTag", true)).isEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsTag", true)).isEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

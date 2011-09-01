@@ -24,11 +24,11 @@ public class NodeRefactoring_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
     try {
 outer:
-      for (IRefactoring refactoring : ListSequence.fromList(RefactoringUtil.getAllRefactorings())) {
+      for (IRefactoring refactoring : ListSequence.<IRefactoring>fromList(RefactoringUtil.getAllRefactorings())) {
         // @hack 
         if (refactoring instanceof OldRefactoringAdapter) {
-          List<String> old = ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.core.scripts.Rename", "jetbrains.mps.lang.structure.scripts.RenameConcept", "jetbrains.mps.lang.structure.scripts.RenameLink", "jetbrains.mps.lang.structure.scripts.RenameProperty", "jetbrains.mps.lang.core.scripts.MoveNodes", "jetbrains.mps.lang.structure.scripts.MoveConcepts", "jetbrains.mps.lang.structure.scripts.MoveLinkUp", "jetbrains.mps.lang.structure.scripts.MovePropertyUp");
-          for (String name : ListSequence.fromList(old)) {
+          List<String> old = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.core.scripts.Rename", "jetbrains.mps.lang.structure.scripts.RenameConcept", "jetbrains.mps.lang.structure.scripts.RenameLink", "jetbrains.mps.lang.structure.scripts.RenameProperty", "jetbrains.mps.lang.core.scripts.MoveNodes", "jetbrains.mps.lang.structure.scripts.MoveConcepts", "jetbrains.mps.lang.structure.scripts.MoveLinkUp", "jetbrains.mps.lang.structure.scripts.MovePropertyUp");
+          for (String name : ListSequence.<String>fromList(old)) {
             if (((OldRefactoringAdapter) refactoring).getRefactoringClassName().equals(name)) {
               continue outer;
             }

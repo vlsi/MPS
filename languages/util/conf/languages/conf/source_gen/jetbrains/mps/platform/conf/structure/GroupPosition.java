@@ -33,11 +33,11 @@ public enum GroupPosition {
   }
 
   public static List<GroupPosition> getConstants() {
-    List<GroupPosition> list = ListSequence.fromList(new LinkedList<GroupPosition>());
-    ListSequence.fromList(list).addElement(GroupPosition.FIRST);
-    ListSequence.fromList(list).addElement(GroupPosition.LAST);
-    ListSequence.fromList(list).addElement(GroupPosition.BEFORE);
-    ListSequence.fromList(list).addElement(GroupPosition.AFTER);
+    List<GroupPosition> list = ListSequence.<GroupPosition>fromList(new LinkedList<GroupPosition>());
+    ListSequence.<GroupPosition>fromList(list).addElement(GroupPosition.FIRST);
+    ListSequence.<GroupPosition>fromList(list).addElement(GroupPosition.LAST);
+    ListSequence.<GroupPosition>fromList(list).addElement(GroupPosition.BEFORE);
+    ListSequence.<GroupPosition>fromList(list).addElement(GroupPosition.AFTER);
     return list;
   }
 

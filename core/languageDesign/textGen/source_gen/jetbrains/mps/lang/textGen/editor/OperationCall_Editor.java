@@ -73,7 +73,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_hquq1v_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "function", false), "parameter", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "function", false), "parameter", true)).isNotEmpty();
   }
 
   public static class _Inline_hquq1v_a0a extends InlineCellProvider {

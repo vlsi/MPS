@@ -16,7 +16,7 @@ public class ConstraintsUtil {
     if (!(isInsideOfClassifier(node))) {
       return false;
     }
-    return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember", false)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember", false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(ClassifierMember_Behavior.call_isStatic_8986964027630462944(it));
       }

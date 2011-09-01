@@ -11,7 +11,7 @@ public class Taxable_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<Taxable> constants = ListSequence.fromList(Taxable.getConstants()).iterator();
+    Iterator<Taxable> constants = ListSequence.<Taxable>fromList(Taxable.getConstants()).iterator();
     while (constants.hasNext()) {
       Taxable constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class Taxable_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<Taxable> constants = ListSequence.fromList(Taxable.getConstants()).iterator();
+    Iterator<Taxable> constants = ListSequence.<Taxable>fromList(Taxable.getConstants()).iterator();
     while (constants.hasNext()) {
       Taxable constant = constants.next();
       if (value.equals(constant.getName())) {

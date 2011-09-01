@@ -60,8 +60,8 @@
     <nodeInfo nodeId="8821725594354763764" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="39" startPosition="76" endLine="40" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8821725594354779344" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="40" startPosition="149" endLine="41" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8821725594354779355" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="41" startPosition="65" endLine="42" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8821725594354779372" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="43" startPosition="69" endLine="44" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8821725594354779428" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="45" startPosition="5" endLine="46" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8821725594354779372" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="43" startPosition="76" endLine="44" endPosition="319" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8821725594354779428" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="45" startPosition="5" endLine="46" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1616052750811363739" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="49" startPosition="37" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1616052750811363739" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="15" startPosition="122" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SurroundWithExecuteLightweightCommandStatement_Intention#()V" />
     <nodeInfo nodeId="8821725594354779365" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="42" startPosition="70" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -78,7 +78,7 @@
     <scopeInfo nodeId="1616052750811363739" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="27" startPosition="37" endLine="28" endPosition="17" />
     <scopeInfo nodeId="1616052750811363739" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="31" startPosition="44" endLine="32" endPosition="17" />
     <scopeInfo nodeId="1616052750811363741" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="25" />
-    <scopeInfo nodeId="8821725594354779368" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="43" startPosition="69" endLine="44" endPosition="312" />
+    <scopeInfo nodeId="8821725594354779368" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="43" startPosition="76" endLine="44" endPosition="319" />
     <scopeInfo nodeId="1616052750811363739" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="49" startPosition="37" endLine="50" endPosition="50" />
     <scopeInfo nodeId="1616052750811363739" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="15" startPosition="122" endLine="17" endPosition="3" />
     <scopeInfo nodeId="8821725594354779365" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="42" startPosition="70" endLine="45" endPosition="5" />
@@ -88,7 +88,7 @@
     <scopeInfo nodeId="1616052750811363739" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1616052750811363739" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="1616052750811363739" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1616052750811363743" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="39" startPosition="76" endLine="46" endPosition="223">
+    <scopeInfo nodeId="1616052750811363743" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="39" startPosition="76" endLine="46" endPosition="230">
       <varInfo nodeId="8821725594354763765" varName="readActionStatement" />
       <varInfo nodeId="8821725594354779345" varName="selectedNodes" />
     </scopeInfo>

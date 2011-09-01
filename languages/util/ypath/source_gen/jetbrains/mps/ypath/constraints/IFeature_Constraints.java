@@ -43,7 +43,7 @@ public class IFeature_Constraints extends BaseConstraintsDescriptor {
       public void setValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "default";
         if ((SPropertyOperations.getBoolean(propertyValue))) {
-          for (SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true))) {
+          for (SNode foo : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true))) {
             if (foo != node) {
               SPropertyOperations.set(foo, "default", "" + (false));
             }
@@ -72,7 +72,7 @@ public class IFeature_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             final SNode feature = _context.getReferenceNode();
             final boolean isGeneric = SNodeOperations.isInstanceOf(feature, "jetbrains.mps.ypath.structure.IGenericFeature");
-            return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(feature), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true)).where(new IWhereFilter<SNode>() {
+            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(feature), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return it != feature && ((isGeneric ?
                   SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature") :

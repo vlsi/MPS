@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class FacetManifest implements IFacetManifest {
-  private List<IFacet> facets = ListSequence.fromList(new ArrayList<IFacet>());
+  private List<IFacet> facets = ListSequence.<IFacet>fromList(new ArrayList<IFacet>());
 
   public FacetManifest() {
-    ListSequence.fromList(facets).addElement(new JavaCompile_Facet());
-    ListSequence.fromList(facets).addElement(new ReloadClasses_Facet());
+    ListSequence.<IFacet>fromList(facets).addElement(new JavaCompile_Facet());
+    ListSequence.<IFacet>fromList(facets).addElement(new ReloadClasses_Facet());
   }
 
   public Iterable<IFacet> facets() {
@@ -22,7 +22,7 @@ public class FacetManifest implements IFacetManifest {
   }
 
   public IFacet lookup(final IFacet.Name fn) {
-    return ListSequence.fromList(facets).findFirst(new IWhereFilter<IFacet>() {
+    return ListSequence.<IFacet>fromList(facets).findFirst(new IWhereFilter<IFacet>() {
       public boolean accept(IFacet f) {
         return f.getName().equals(fn);
       }

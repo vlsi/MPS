@@ -216,7 +216,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_7zoim2_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() > 0;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).count() > 0;
   }
 
   public static class _Inline_7zoim2_a3a0 extends InlineCellProvider {

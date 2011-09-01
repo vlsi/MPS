@@ -74,7 +74,7 @@ public class Ant_Command {
     if (StringUtils.isEmpty(jdkHome)) {
       throw new ExecutionException("Could not find valid java home.");
     }
-    return new Java_Command().setClassPath(Ant_Command.getAntClassPath(myAntLocation)).setProgramParameter(Java_Command.protect("-Djava.home=" + jdkHome) + " " + Java_Command.protect("-Dant.home=" + myAntLocation) + " " + IterableUtils.join(Sequence.fromIterable(Ant_Command.getMacroValues()).<String>select(new ISelector<String, String>() {
+    return new Java_Command().setClassPath(Ant_Command.getAntClassPath(myAntLocation)).setProgramParameter(Java_Command.protect("-Djava.home=" + jdkHome) + " " + Java_Command.protect("-Dant.home=" + myAntLocation) + " " + IterableUtils.join(Sequence.<String>fromIterable(Ant_Command.getMacroValues()).<String>select(new ISelector<String, String>() {
       public String select(String it) {
         return Java_Command.protect(it);
       }
@@ -97,11 +97,11 @@ public class Ant_Command {
     if (!(antLibFile.exists())) {
       throw new ExecutionException("Ant directory " + antlib + " does not exist.");
     }
-    List<String> classPath = ListSequence.fromList(new ArrayList<String>());
+    List<String> classPath = ListSequence.<String>fromList(new ArrayList<String>());
     for (File jarFile : antLibFile.listFiles()) {
       String jarFilePath = jarFile.getAbsolutePath();
       if (jarFilePath.endsWith(".jar")) {
-        ListSequence.fromList(classPath).addElement(jarFilePath);
+        ListSequence.<String>fromList(classPath).addElement(jarFilePath);
       }
     }
     return classPath;
@@ -109,8 +109,8 @@ public class Ant_Command {
 
   private static Iterable<String> getMacroValues() {
     final PathMacros pathMacros = PathMacros.getInstance();
-    List<String> macroValues = ListSequence.fromListAndArray(new ArrayList<String>(), "-D" + "mps_home" + "=" + jetbrains.mps.util.PathManager.getHomePath());
-    return ListSequence.fromList(macroValues).union(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<String>() {
+    List<String> macroValues = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "-D" + "mps_home" + "=" + jetbrains.mps.util.PathManager.getHomePath());
+    return ListSequence.<String>fromList(macroValues).union(Sequence.<String>fromIterable(Sequence.<String>fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
         return pathMacros.getUserMacroNames();
       }

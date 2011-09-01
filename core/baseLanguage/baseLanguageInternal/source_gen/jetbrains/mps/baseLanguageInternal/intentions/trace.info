@@ -9,7 +9,7 @@
     <nodeInfo nodeId="1229871173583" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="38" startPosition="58" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="40" startPosition="5" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229871180015" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229871180015" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229871192693" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="48" startPosition="76" endLine="49" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="52" startPosition="37" endLine="53" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="13" startPosition="107" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="add_parameter_to_InternalClassifierType_Intention#()V" />
@@ -30,7 +30,7 @@
     <scopeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="29" startPosition="44" endLine="30" endPosition="17" />
     <scopeInfo nodeId="1229871155085" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="33" />
     <scopeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="38" startPosition="58" endLine="39" endPosition="19" />
-    <scopeInfo nodeId="1229871178687" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="99" />
+    <scopeInfo nodeId="1229871178687" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="106" />
     <scopeInfo nodeId="1229871155087" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="48" startPosition="76" endLine="49" endPosition="103" />
     <scopeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="52" startPosition="37" endLine="53" endPosition="59" />
     <scopeInfo nodeId="1229871155083" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="13" startPosition="107" endLine="15" endPosition="3" />

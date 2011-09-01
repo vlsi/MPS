@@ -36,7 +36,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.test.structure.NodesTestCase");
+    return SNodeOperations.isInstanceOf(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), "jetbrains.mps.lang.test.structure.NodesTestCase");
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -60,22 +60,22 @@ public class RunTestInMPS_Action extends GeneratedAction {
       if (modelDescriptor == null) {
         return false;
       }
-      MapSequence.fromMap(_params).put("model", modelDescriptor.getSModel());
+      MapSequence.<String,Object>fromMap(_params).put("model", modelDescriptor.getSModel());
     }
-    if (MapSequence.fromMap(_params).get("model") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.fromMap(_params).put("node", node);
+      MapSequence.<String,Object>fromMap(_params).put("node", node);
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -83,9 +83,9 @@ public class RunTestInMPS_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Set<SNode> tests = SetSequence.fromSet(new HashSet<SNode>());
-      SetSequence.fromSet(tests).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.test.structure.NodesTestCase"))).toListSequence());
-      for (SNode test : SetSequence.fromSet(tests)) {
+      final Set<SNode> tests = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+      SetSequence.fromSet(tests).addSequence(ListSequence.<SNode>fromList(ITestCase_Behavior.call_getTestSet_1216130724401(SNodeOperations.cast(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), "jetbrains.mps.lang.test.structure.NodesTestCase"))).toListSequence());
+      for (SNode test : SetSequence.<SNode>fromSet(tests)) {
         RunTestInMPS_Action.this.runTest(test, _params);
       }
     } catch (Throwable t) {
@@ -98,10 +98,10 @@ public class RunTestInMPS_Action extends GeneratedAction {
       final String className = ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(test));
       final String testName = ITestMethod_Behavior.call_getTestName_1216136419751(test);
       System.out.println("Test " + className + "." + testName);
-      final Class c = ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor().getModule().getClass(ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(test)));
+      final Class c = ((SModel) MapSequence.<String,Object>fromMap(_params).get("model")).getModelDescriptor().getModule().getClass(ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(test)));
       final Method meth = c.getMethod("runTest", String.class, String.class, Boolean.TYPE);
       Constructor ctor = c.getConstructor(Project.class, SModelDescriptor.class);
-      final Object testClass = ctor.newInstance(((Project) MapSequence.fromMap(_params).get("project")), ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor());
+      final Object testClass = ctor.newInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), ((SModel) MapSequence.<String,Object>fromMap(_params).get("model")).getModelDescriptor());
       Thread thread = new Thread(new Runnable() {
         public void run() {
           try {

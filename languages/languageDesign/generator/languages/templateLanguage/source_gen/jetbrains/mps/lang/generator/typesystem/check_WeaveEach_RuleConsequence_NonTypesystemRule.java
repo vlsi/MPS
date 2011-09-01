@@ -27,7 +27,7 @@ public class check_WeaveEach_RuleConsequence_NonTypesystemRule extends AbstractN
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(weaveEach, "No template", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "546192990993044375", null, errorTarget);
       }
-    } else if (!(ListSequence.fromList(SLinkOperations.getTargets(template, "parameter", true)).isEmpty())) {
+    } else if (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(template, "parameter", true)).isEmpty())) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(weaveEach, "Cannot weave template with arguments", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "546192990993046864", null, errorTarget);

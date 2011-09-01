@@ -12,8 +12,8 @@ import com.intellij.openapi.extensions.ExtensionPoint;
 import com.intellij.openapi.extensions.Extensions;
 
 public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
-  private List<ConfigurationType> myRegisteredKinds = ListSequence.fromList(new ArrayList<ConfigurationType>());
-  private List<RuntimeConfigurationProducer> myRegisteredProducers = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
+  private List<ConfigurationType> myRegisteredKinds = ListSequence.<ConfigurationType>fromList(new ArrayList<ConfigurationType>());
+  private List<RuntimeConfigurationProducer> myRegisteredProducers = ListSequence.<RuntimeConfigurationProducer>fromList(new ArrayList<RuntimeConfigurationProducer>());
 
   public RunConfigurationsInitializer_CustomApplicationPlugin() {
   }
@@ -23,7 +23,7 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
     ExtensionPoint<ConfigurationType> configurationExtensionPoint = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
     {
       ExecutableFile_Kind runConfigurationKind = new ExecutableFile_Kind();
-      ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).addElement(runConfigurationKind);
+      ListSequence.<ConfigurationType>fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).addElement(runConfigurationKind);
       configurationExtensionPoint.registerExtension(runConfigurationKind);
     }
 
@@ -34,15 +34,15 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
 
   public void doDispose() {
     ExtensionPoint<ConfigurationType> configurationExtensionPoint = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
-    for (ConfigurationType configurationKind : ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).reversedList()) {
+    for (ConfigurationType configurationKind : ListSequence.<ConfigurationType>fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).reversedList()) {
       configurationExtensionPoint.unregisterExtension(configurationKind);
     }
-    ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).clear();
+    ListSequence.<ConfigurationType>fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).clear();
 
     ExtensionPoint<RuntimeConfigurationProducer> producerExtensionPoint = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
-    for (RuntimeConfigurationProducer producer : ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers)) {
+    for (RuntimeConfigurationProducer producer : ListSequence.<RuntimeConfigurationProducer>fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers)) {
       producerExtensionPoint.unregisterExtension(producer);
     }
-    ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers).clear();
+    ListSequence.<RuntimeConfigurationProducer>fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers).clear();
   }
 }

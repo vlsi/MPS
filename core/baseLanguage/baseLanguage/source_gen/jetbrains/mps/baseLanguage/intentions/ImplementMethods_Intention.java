@@ -48,7 +48,7 @@ public class ImplementMethods_Intention extends BaseIntention implements Intenti
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(IMemberContainer_Behavior.call_getMethodsToImplement_5418393554803775106(node)).isNotEmpty();
+    return ListSequence.<SNode>fromList(IMemberContainer_Behavior.call_getMethodsToImplement_5418393554803775106(node)).isNotEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

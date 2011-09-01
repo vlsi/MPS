@@ -23,7 +23,7 @@ public class SuperNodeExpression_Behavior {
         result = SLinkOperations.getTarget(cd, "extends", false);
       } else {
         SNode icd = ((SNode) concept);
-        result = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(icd, "extends", true)).first(), "intfc", false);
+        result = SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(icd, "extends", true)).first(), "intfc", false);
       }
     }
     return result;

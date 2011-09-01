@@ -55,7 +55,7 @@ public class Typesystem_TabDescriptor extends EditorTabDescriptor {
 
   public List<SNode> getNodes(SNode node) {
     List<SNode> rules = (List<SNode>) GoToRulesHelper.getRules(node, false);
-    return ListSequence.fromList(rules).sort(new Comparator<SNode>() {
+    return ListSequence.<SNode>fromList(rules).sort(new Comparator<SNode>() {
       public int compare(SNode a, SNode b) {
         boolean aConceptRef = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(a, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference");
         boolean bConceptRef = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(b, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference");

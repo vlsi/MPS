@@ -33,11 +33,11 @@ public enum CellKeyMapCaretPolicy {
   }
 
   public static List<CellKeyMapCaretPolicy> getConstants() {
-    List<CellKeyMapCaretPolicy> list = ListSequence.fromList(new LinkedList<CellKeyMapCaretPolicy>());
-    ListSequence.fromList(list).addElement(CellKeyMapCaretPolicy.ANY_POSITION);
-    ListSequence.fromList(list).addElement(CellKeyMapCaretPolicy.FIRST_POSITION);
-    ListSequence.fromList(list).addElement(CellKeyMapCaretPolicy.LAST_POSITION);
-    ListSequence.fromList(list).addElement(CellKeyMapCaretPolicy.INTERMEDIATE_POSITION);
+    List<CellKeyMapCaretPolicy> list = ListSequence.<CellKeyMapCaretPolicy>fromList(new LinkedList<CellKeyMapCaretPolicy>());
+    ListSequence.<CellKeyMapCaretPolicy>fromList(list).addElement(CellKeyMapCaretPolicy.ANY_POSITION);
+    ListSequence.<CellKeyMapCaretPolicy>fromList(list).addElement(CellKeyMapCaretPolicy.FIRST_POSITION);
+    ListSequence.<CellKeyMapCaretPolicy>fromList(list).addElement(CellKeyMapCaretPolicy.LAST_POSITION);
+    ListSequence.<CellKeyMapCaretPolicy>fromList(list).addElement(CellKeyMapCaretPolicy.INTERMEDIATE_POSITION);
     return list;
   }
 

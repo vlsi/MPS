@@ -22,7 +22,7 @@ public class GenerationUtils {
 
   public static SNode generateEditorCellModel(SNode lineList, SNode concept, Map<SNode, SNode> partsToLinks) {
     List<SNode> lines = SLinkOperations.getTargets(lineList, "line", true);
-    if (ListSequence.fromList(lines).count() == 0) {
+    if (ListSequence.<SNode>fromList(lines).count() == 0) {
       if (SPropertyOperations.getBoolean(concept, "abstract")) {
         SNode errorCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Error", null);
         SPropertyOperations.set(errorCell, "text", "abstract " + SPropertyOperations.getString(concept, "name"));
@@ -30,15 +30,15 @@ public class GenerationUtils {
       } else {
         return null;
       }
-    } else if (ListSequence.fromList(lines).count() == 1) {
-      List<SNode> lineParts = SLinkOperations.getTargets(ListSequence.fromList(lines).first(), "linePart", true);
-      if (ListSequence.fromList(lineParts).count() == 1) {
-        return LinePart_Behavior.call_createCellModel_1238614099938(ListSequence.fromList(lineParts).first(), partsToLinks);
+    } else if (ListSequence.<SNode>fromList(lines).count() == 1) {
+      List<SNode> lineParts = SLinkOperations.getTargets(ListSequence.<SNode>fromList(lines).first(), "linePart", true);
+      if (ListSequence.<SNode>fromList(lineParts).count() == 1) {
+        return LinePart_Behavior.call_createCellModel_1238614099938(ListSequence.<SNode>fromList(lineParts).first(), partsToLinks);
       } else {
         SNode hCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
         SLinkOperations.setTarget(hCollection, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
         for (SNode linePart : lineParts) {
-          ListSequence.fromList(SLinkOperations.getTargets(hCollection, "childCellModel", true)).addElement(LinePart_Behavior.call_createCellModel_1238614099938(linePart, partsToLinks));
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(hCollection, "childCellModel", true)).addElement(LinePart_Behavior.call_createCellModel_1238614099938(linePart, partsToLinks));
         }
         return hCollection;
       }
@@ -48,9 +48,9 @@ public class GenerationUtils {
       for (SNode line : lines) {
         SNode hCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
         SLinkOperations.setTarget(hCollection, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
-        ListSequence.fromList(SLinkOperations.getTargets(vCollection, "childCellModel", true)).addElement(hCollection);
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(vCollection, "childCellModel", true)).addElement(hCollection);
         for (SNode linePart : SLinkOperations.getTargets(line, "linePart", true)) {
-          ListSequence.fromList(SLinkOperations.getTargets(hCollection, "childCellModel", true)).addElement(LinePart_Behavior.call_createCellModel_1238614099938(linePart, partsToLinks));
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(hCollection, "childCellModel", true)).addElement(LinePart_Behavior.call_createCellModel_1238614099938(linePart, partsToLinks));
         }
       }
       return vCollection;
@@ -58,12 +58,12 @@ public class GenerationUtils {
   }
 
   public static void fillBinarySideTransformActions(SNode binaryOperationConcept, SNode actions, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> linePartsToLinks) {
-    SNode expressionConcept = (SNode) MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(binaryOperationConcept, "jetbrains.mpslite.structure.ConceptContainer", false, false), "expressionConcept", true));
+    SNode expressionConcept = (SNode) MapSequence.<SNode,SNode>fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(binaryOperationConcept, "jetbrains.mpslite.structure.ConceptContainer", false, false), "expressionConcept", true));
     if ((expressionConcept != null)) {
-      SNode rtBuilder = new GenerationUtils.QuotationClass_vxpwrw_a0a0a1a1().createNode(SNodeOperations.cast(MapSequence.fromMap(linePartsToLinks).get(SLinkOperations.getTarget(binaryOperationConcept, "leftTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MapSequence.fromMap(conceptsToTargets).get(binaryOperationConcept), expressionConcept);
-      SNode ltBuilder = new GenerationUtils.QuotationClass_vxpwrw_a0a1a1a1().createNode(SNodeOperations.cast(MapSequence.fromMap(linePartsToLinks).get(SLinkOperations.getTarget(binaryOperationConcept, "rightTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MapSequence.fromMap(conceptsToTargets).get(binaryOperationConcept), expressionConcept);
-      ListSequence.fromList(SLinkOperations.getTargets(actions, "actionsBuilder", true)).addElement(rtBuilder);
-      ListSequence.fromList(SLinkOperations.getTargets(actions, "actionsBuilder", true)).addElement(ltBuilder);
+      SNode rtBuilder = new GenerationUtils.QuotationClass_vxpwrw_a0a0a1a1().createNode(SNodeOperations.cast(MapSequence.<SNode,SNode>fromMap(linePartsToLinks).get(SLinkOperations.getTarget(binaryOperationConcept, "leftTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MapSequence.<SNode,SNode>fromMap(conceptsToTargets).get(binaryOperationConcept), expressionConcept);
+      SNode ltBuilder = new GenerationUtils.QuotationClass_vxpwrw_a0a1a1a1().createNode(SNodeOperations.cast(MapSequence.<SNode,SNode>fromMap(linePartsToLinks).get(SLinkOperations.getTarget(binaryOperationConcept, "rightTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MapSequence.<SNode,SNode>fromMap(conceptsToTargets).get(binaryOperationConcept), expressionConcept);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(actions, "actionsBuilder", true)).addElement(rtBuilder);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(actions, "actionsBuilder", true)).addElement(ltBuilder);
     }
   }
 

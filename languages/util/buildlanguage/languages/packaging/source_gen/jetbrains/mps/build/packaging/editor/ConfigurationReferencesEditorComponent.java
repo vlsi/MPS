@@ -74,7 +74,7 @@ public class ConfigurationReferencesEditorComponent extends AbstractCellProvider
   }
 
   private static boolean renderingCondition_qws93t_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return editorContext.isInspector() || (!(ListSequence.fromList(SLinkOperations.getTargets(node, "configuration", true)).isEmpty()));
+    return editorContext.isInspector() || (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "configuration", true)).isEmpty()));
   }
 
   private static class configurationListHandler_qws93t_b0a extends RefNodeListHandler {

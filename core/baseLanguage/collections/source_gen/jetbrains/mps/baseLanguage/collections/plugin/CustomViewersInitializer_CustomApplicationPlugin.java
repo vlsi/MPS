@@ -13,7 +13,7 @@ import jetbrains.mps.debug.customViewers.CustomViewersManager;
 public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private static Logger LOG = Logger.getLogger(CustomViewersInitializer_CustomApplicationPlugin.class);
 
-  private List<ValueWrapperFactory> myFactories = ListSequence.fromList(new ArrayList<ValueWrapperFactory>());
+  private List<ValueWrapperFactory> myFactories = ListSequence.<ValueWrapperFactory>fromList(new ArrayList<ValueWrapperFactory>());
 
   public CustomViewersInitializer_CustomApplicationPlugin() {
   }
@@ -23,22 +23,22 @@ public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustom
     if (manager != null) {
       {
         ValueWrapperFactory factory = new ListViewer_WrapperFactory();
-        ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).addElement(factory);
+        ListSequence.<ValueWrapperFactory>fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).addElement(factory);
         manager.addFactory(factory);
       }
       {
         ValueWrapperFactory factory = new MapEntryViewer_WrapperFactory();
-        ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).addElement(factory);
+        ListSequence.<ValueWrapperFactory>fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).addElement(factory);
         manager.addFactory(factory);
       }
       {
         ValueWrapperFactory factory = new MapViewer_WrapperFactory();
-        ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).addElement(factory);
+        ListSequence.<ValueWrapperFactory>fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).addElement(factory);
         manager.addFactory(factory);
       }
       {
         ValueWrapperFactory factory = new SetViewer_WrapperFactory();
-        ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).addElement(factory);
+        ListSequence.<ValueWrapperFactory>fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).addElement(factory);
         manager.addFactory(factory);
       }
     }
@@ -47,12 +47,12 @@ public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustom
   public void doDispose() {
     CustomViewersManager manager = CustomViewersManager.getInstance();
     if (manager != null) {
-      for (ValueWrapperFactory factory : ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).reversedList()) {
+      for (ValueWrapperFactory factory : ListSequence.<ValueWrapperFactory>fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).reversedList()) {
         manager.removeFactory(factory);
       }
-    } else if (ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).isNotEmpty()) {
+    } else if (ListSequence.<ValueWrapperFactory>fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).isNotEmpty()) {
       LOG.error("Cant find custom viewers manager while myFactories nonempty: " + CustomViewersInitializer_CustomApplicationPlugin.this.myFactories);
     }
-    ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).clear();
+    ListSequence.<ValueWrapperFactory>fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).clear();
   }
 }

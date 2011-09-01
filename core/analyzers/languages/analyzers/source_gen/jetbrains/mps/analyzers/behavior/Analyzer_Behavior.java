@@ -36,7 +36,7 @@ public class Analyzer_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode rule : SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(thisNode), GlobalScope.getInstance(), "jetbrains.mps.analyzers.structure.Rule")) {
       if (SLinkOperations.getTarget(rule, "analyzer", false) == thisNode) {
-        ListSequence.fromList(result).addElement(rule);
+        ListSequence.<SNode>fromList(result).addElement(rule);
       }
     }
     return result;

@@ -22,8 +22,8 @@ public class IContainerOperation_Behavior {
     for (SNode et : SLinkOperations.getConceptLinkTargets(thisNode, "expectedOperandType")) {
       if ((et != null)) {
         SNode rt = SNodeOperations.copyNode(et);
-        SNodeOperations.replaceWithAnother(ListSequence.fromList(SNodeOperations.getChildren(rt)).first(), SNodeOperations.copyNode(elementType));
-        ListSequence.fromList(SLinkOperations.getTargets(jt, "argument", true)).addElement(rt);
+        SNodeOperations.replaceWithAnother(ListSequence.<SNode>fromList(SNodeOperations.getChildren(rt)).first(), SNodeOperations.copyNode(elementType));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(jt, "argument", true)).addElement(rt);
       }
     }
     return jt;

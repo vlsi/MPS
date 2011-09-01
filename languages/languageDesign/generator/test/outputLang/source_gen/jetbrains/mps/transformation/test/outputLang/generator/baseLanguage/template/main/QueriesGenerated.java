@@ -146,7 +146,7 @@ public class QueriesGenerated {
   }
 
   public static SNode templateFragment_ContextNodeQuery_3571912445009937447(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    return SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first(), "body", true);
+    return SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first(), "body", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_3571912445009918066(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {

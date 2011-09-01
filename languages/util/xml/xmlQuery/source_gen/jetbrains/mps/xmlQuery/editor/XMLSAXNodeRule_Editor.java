@@ -435,19 +435,19 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_b42orx_a9a(SNode node, EditorContext editorContext, IScope scope) {
-    return ((SLinkOperations.getTarget(node, "creator", true) != null) || ListSequence.fromList(SLinkOperations.getTargets(node, "attrs", true)).isNotEmpty()) && !(SPropertyOperations.getBoolean(node, "isCompact"));
+    return ((SLinkOperations.getTarget(node, "creator", true) != null) || ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "attrs", true)).isNotEmpty()) && !(SPropertyOperations.getBoolean(node, "isCompact"));
   }
 
   private static boolean renderingCondition_b42orx_a11a(SNode node, EditorContext editorContext, IScope scope) {
-    return (ListSequence.fromList(SLinkOperations.getTargets(node, "attrs", true)).isNotEmpty() || ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty()) && !(SPropertyOperations.getBoolean(node, "isCompact"));
+    return (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "attrs", true)).isNotEmpty() || ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty()) && !(SPropertyOperations.getBoolean(node, "isCompact"));
   }
 
   private static boolean renderingCondition_b42orx_a21a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isCompact")) || ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty();
+    return !(SPropertyOperations.getBoolean(node, "isCompact")) || ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_b42orx_a31a(SNode node, EditorContext editorContext, IScope scope) {
-    return (ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty() || (SLinkOperations.getTarget(node, "text", true) != null)) && !(SPropertyOperations.getBoolean(node, "isCompact"));
+    return (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty() || (SLinkOperations.getTarget(node, "text", true) != null)) && !(SPropertyOperations.getBoolean(node, "isCompact"));
   }
 
   private static boolean renderingCondition_b42orx_a41a(SNode node, EditorContext editorContext, IScope scope) {

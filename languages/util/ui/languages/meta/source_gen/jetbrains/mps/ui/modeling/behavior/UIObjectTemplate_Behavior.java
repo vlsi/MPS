@@ -15,7 +15,7 @@ public class UIObjectTemplate_Behavior {
   }
 
   public static Iterable<SNode> call_allExtendsTemplates_4007322171506129964(final SNode thisNode) {
-    return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(thisNode, "uiObject", false))).<SNode>select(new ISelector<SNode, SNode>() {
+    return Sequence.<SNode>fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(thisNode, "uiObject", false))).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode uio) {
         return SNodeOperations.as(HasTemplate_Behavior.call_findTemplate_3939571372331676060(uio, SNodeOperations.getModel(thisNode), GlobalScope.getInstance()), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate");
       }

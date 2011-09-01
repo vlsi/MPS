@@ -109,12 +109,12 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
       if (nodeType != null) {
         result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
       } else {
-        result = ListSequence.fromList(new ArrayList<String>());
+        result = ListSequence.<String>fromList(new ArrayList<String>());
       }
       // we need this because of smart input 
       // DO NOT REMOVE IT 
       if (SPropertyOperations.getString(node, "name") != null) {
-        ListSequence.fromList(result).addElement(SPropertyOperations.getString(node, "name"));
+        ListSequence.<String>fromList(result).addElement(SPropertyOperations.getString(node, "name"));
       }
       return result;
     }

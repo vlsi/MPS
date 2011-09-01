@@ -33,7 +33,7 @@ public class FindLanguageUsages_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language;
+    return ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")) instanceof Language;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -52,16 +52,16 @@ public class FindLanguageUsages_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("scope", event.getData(MPSDataKeys.SCOPE));
-    if (MapSequence.fromMap(_params).get("scope") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("scope", event.getData(MPSDataKeys.SCOPE));
+    if (MapSequence.<String,Object>fromMap(_params).get("scope") == null) {
       return false;
     }
     return true;
@@ -71,15 +71,15 @@ public class FindLanguageUsages_Action extends GeneratedAction {
     try {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
-      final IModule module = ((IModule) MapSequence.fromMap(_params).get("module"));
-      final IScope scope = ((IScope) MapSequence.fromMap(_params).get("scope"));
+      final IModule module = ((IModule) MapSequence.<String,Object>fromMap(_params).get("module"));
+      final IScope scope = ((IScope) MapSequence.<String,Object>fromMap(_params).get("scope"));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           query[0] = new SearchQuery(module, scope);
           provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder());
         }
       });
-      ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Language has no usages");
+      ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Language has no usages");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindLanguageUsages", t);
     }

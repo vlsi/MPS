@@ -15,9 +15,9 @@ public class LambdaApplication_Behavior {
 
   public static List<SNode> call_getArguments_5066394162984555451(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "argument", true)));
+    ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "argument", true)));
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "function", true), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(LambdaApplication_Behavior.call_getArguments_5066394162984555451(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "function", true), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"))));
+      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(LambdaApplication_Behavior.call_getArguments_5066394162984555451(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "function", true), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"))));
     }
     return result;
   }
@@ -38,6 +38,6 @@ public class LambdaApplication_Behavior {
   }
 
   public static boolean call_isFullApplication_1308935328408190838(SNode thisNode) {
-    return !(LambdaApplication_Behavior.call_isInner_1308935328408185123(thisNode)) && (ListSequence.fromList(LambdaApplication_Behavior.call_getArguments_5066394162984555451(thisNode)).count() == ListSequence.fromList(LambdaAbstraction_Behavior.call_getAllVariables_5066394162984559815(LambdaApplication_Behavior.call_getLambdaAbstraction_4976946798230781575(thisNode))).count());
+    return !(LambdaApplication_Behavior.call_isInner_1308935328408185123(thisNode)) && (ListSequence.<SNode>fromList(LambdaApplication_Behavior.call_getArguments_5066394162984555451(thisNode)).count() == ListSequence.<SNode>fromList(LambdaAbstraction_Behavior.call_getAllVariables_5066394162984559815(LambdaApplication_Behavior.call_getLambdaAbstraction_4976946798230781575(thisNode))).count());
   }
 }

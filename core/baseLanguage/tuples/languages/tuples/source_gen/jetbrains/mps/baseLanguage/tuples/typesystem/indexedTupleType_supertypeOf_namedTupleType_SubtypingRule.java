@@ -25,24 +25,24 @@ public class indexedTupleType_supertypeOf_namedTupleType_SubtypingRule extends S
   }
 
   public SNode getSubOrSuperType(SNode ntt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final List<SNode> queue = ListSequence.fromList(new LinkedList<SNode>());
+    final List<SNode> queue = ListSequence.<SNode>fromList(new LinkedList<SNode>());
     final List<SNode> pts = SLinkOperations.getTargets(ntt, "parameter", true);
-    return new indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.QuotationClass_pquv4f_a0c0a().createNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ntt, "classifier", false), "component", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    return new indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.QuotationClass_pquv4f_a0c0a().createNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ntt, "classifier", false), "component", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode cmp) {
         SNode tmp = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
         SLinkOperations.setTarget(tmp, "componentType", SNodeOperations.copyNode(SLinkOperations.getTarget(cmp, "type", true)), true);
-        ListSequence.fromList(queue).clear();
-        ListSequence.fromList(queue).addElement(SLinkOperations.getTarget(tmp, "componentType", true));
-        while (ListSequence.fromList(queue).isNotEmpty()) {
-          SNode t = ListSequence.fromList(queue).removeElementAt(0);
+        ListSequence.<SNode>fromList(queue).clear();
+        ListSequence.<SNode>fromList(queue).addElement(SLinkOperations.getTarget(tmp, "componentType", true));
+        while (ListSequence.<SNode>fromList(queue).isNotEmpty()) {
+          SNode t = ListSequence.<SNode>fromList(queue).removeElementAt(0);
           if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
             int idx = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false));
-            if (idx < ListSequence.fromList(pts).count()) {
-              SNodeOperations.replaceWithAnother(t, SNodeOperations.copyNode(ListSequence.fromList(pts).getElement(idx)));
+            if (idx < ListSequence.<SNode>fromList(pts).count()) {
+              SNodeOperations.replaceWithAnother(t, SNodeOperations.copyNode(ListSequence.<SNode>fromList(pts).getElement(idx)));
             }
           } else {
-            for (SNode c : ListSequence.fromList(SNodeOperations.getChildren(t))) {
-              ListSequence.fromList(queue).addElement(c);
+            for (SNode c : ListSequence.<SNode>fromList(SNodeOperations.getChildren(t))) {
+              ListSequence.<SNode>fromList(queue).addElement(c);
             }
           }
         }

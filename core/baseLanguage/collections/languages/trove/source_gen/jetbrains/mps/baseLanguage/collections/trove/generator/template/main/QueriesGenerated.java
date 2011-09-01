@@ -164,7 +164,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5499565529811382514(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), new QueriesGenerated.QuotationClass_x583g4_a1a0a43().createNode(), new QueriesGenerated.QuotationClass_x583g4_a2a0a43().createNode(), new QueriesGenerated.QuotationClass_x583g4_a3a0a43().createNode(), new QueriesGenerated.QuotationClass_x583g4_a4a0a43().createNode(), new QueriesGenerated.QuotationClass_x583g4_a5a0a43().createNode(), new QueriesGenerated.QuotationClass_x583g4_a6a0a43().createNode());
+    return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), new QueriesGenerated.QuotationClass_x583g4_a1a0a43().createNode(), new QueriesGenerated.QuotationClass_x583g4_a2a0a43().createNode(), new QueriesGenerated.QuotationClass_x583g4_a3a0a43().createNode(), new QueriesGenerated.QuotationClass_x583g4_a4a0a43().createNode(), new QueriesGenerated.QuotationClass_x583g4_a5a0a43().createNode(), new QueriesGenerated.QuotationClass_x583g4_a6a0a43().createNode());
   }
 
   public static class QuotationClass_x583g4_a1a0a43 {

@@ -137,7 +137,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
       return false;
     }
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
   }
 
   public static class _Inline_jug38p_a3a extends InlineCellProvider {

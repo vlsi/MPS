@@ -53,17 +53,17 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention extends BaseIntent
 
   public void execute(final SNode node, final EditorContext editorContext) {
     List<SNode> TFs = SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "template", false), "contentNode", true), "jetbrains.mps.lang.generator.structure.TemplateFragment", true, new String[]{});
-    if (ListSequence.fromList(TFs).count() == 0) {
+    if (ListSequence.<SNode>fromList(TFs).count() == 0) {
       JOptionPane.showMessageDialog(null, "No fragments found");
       return;
     }
-    if (ListSequence.fromList(TFs).count() > 1) {
+    if (ListSequence.<SNode>fromList(TFs).count() > 1) {
       JOptionPane.showMessageDialog(null, "Too many fragments");
       return;
     }
     // ------ 
     SNode oldTemplate = SLinkOperations.getTarget(node, "template", false);
-    SNode fragmentToSet = SNodeOperations.copyNode(SNodeOperations.getParent(ListSequence.fromList(TFs).first()));
+    SNode fragmentToSet = SNodeOperations.copyNode(SNodeOperations.getParent(ListSequence.<SNode>fromList(TFs).first()));
     SNode TFtoDelete = AttributeOperations.getAttribute(fragmentToSet, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment")));
     SNodeOperations.deleteNode(TFtoDelete);
     SNode inlineTemplate = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence");

@@ -60,19 +60,19 @@ public class MoveNodes extends BaseGeneratedRefactoring {
       SNode concept = SNodeOperations.getConceptDeclaration(targetNode);
       ConceptAndSuperConceptsScope superConceptsScope = new ConceptAndSuperConceptsScope(concept);
       List<SNode> linkDeclarations = (List<SNode>) superConceptsScope.getLinkDeclarationsExcludingOverridden();
-      Iterable<SNode> childLinkDeclarations = ListSequence.fromList(linkDeclarations).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> childLinkDeclarations = ListSequence.<SNode>fromList(linkDeclarations).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference");
         }
       });
-      Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).<String>select(new ISelector<SNode, String>() {
+      Iterable<String> childLinksRoles = Sequence.<SNode>fromIterable(childLinkDeclarations).<String>select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return SModelUtil.getGenuineLinkRole(it);
         }
       });
       for (SNode node : refactoringContext.getSelectedNodes()) {
         String childRole = node.getRole_();
-        if (!(Sequence.fromIterable(childLinksRoles).contains(childRole))) {
+        if (!(Sequence.<String>fromIterable(childLinksRoles).contains(childRole))) {
           return false;
         }
         for (SNode linkDeclaration : childLinkDeclarations) {
@@ -106,7 +106,7 @@ public class MoveNodes extends BaseGeneratedRefactoring {
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SearchResults searchResults = new SearchResults();
-    for (SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
+    for (SNode selNode : ListSequence.<SNode>fromList(refactoringContext.getSelectedNodes())) {
       searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     }
     return searchResults;
@@ -122,7 +122,7 @@ public class MoveNodes extends BaseGeneratedRefactoring {
     }
     if (((Object) refactoringContext.getParameter("target")) instanceof SNode) {
       SNode targetNode = (SNode) ((Object) refactoringContext.getParameter("target"));
-      movedNodes = refactoringContext.moveNodesToNode(nodes, ListSequence.fromList(nodes).first().getRole_(), targetNode);
+      movedNodes = refactoringContext.moveNodesToNode(nodes, ListSequence.<SNode>fromList(nodes).first().getRole_(), targetNode);
       targetModel = SNodeOperations.getModel(targetNode);
     }
     if (targetModel != null) {
@@ -130,7 +130,7 @@ public class MoveNodes extends BaseGeneratedRefactoring {
       if (refactoringContext.getSelectedMPSProject() != null) {
         final IOperationContext operationContext = new ModuleContext(module, refactoringContext.getSelectedMPSProject());
         if (operationContext != null) {
-          refactoringContext.setParameter("nodeToOpen", ListSequence.fromList(movedNodes).first());
+          refactoringContext.setParameter("nodeToOpen", ListSequence.<SNode>fromList(movedNodes).first());
         }
       }
     }
@@ -141,7 +141,7 @@ public class MoveNodes extends BaseGeneratedRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), ((SNode) refactoringContext.getParameter("nodeToOpen")));
+    return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), ((SNode) refactoringContext.getParameter("nodeToOpen")));
   }
 
   public boolean doesUpdateModel() {
@@ -153,14 +153,14 @@ public class MoveNodes extends BaseGeneratedRefactoring {
   }
 
   public List<IChooseComponent> getChooseComponents(final RefactoringContext refactoringContext) {
-    List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
+    List<IChooseComponent> components = ListSequence.<IChooseComponent>fromList(new ArrayList<IChooseComponent>());
     {
       IChooseComponent<Object> chooseComponent;
       chooseComponent = MoveNodes.this.target_componentCreator(refactoringContext);
       chooseComponent.setPropertyName("target");
       chooseComponent.setCaption("choose target");
       chooseComponent.initComponent();
-      ListSequence.fromList(components).addElement(chooseComponent);
+      ListSequence.<IChooseComponent>fromList(components).addElement(chooseComponent);
     }
     return components;
   }

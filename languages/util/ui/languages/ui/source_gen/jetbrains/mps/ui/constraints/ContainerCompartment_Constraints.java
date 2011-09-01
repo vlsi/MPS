@@ -76,12 +76,12 @@ public class ContainerCompartment_Constraints extends BaseConstraintsDescriptor 
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            Iterable<SNode> allConts = Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "uiObject", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+            Iterable<SNode> allConts = Sequence.<SNode>fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "uiObject", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode uio) {
                 return SLinkOperations.getTargets(uio, "compartment", true);
               }
             });
-            Iterable<SNode> specializedConts = Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "uiObject", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+            Iterable<SNode> specializedConts = Sequence.<SNode>fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "uiObject", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode uio) {
                 return SLinkOperations.getTargets(uio, "compartment", true);
               }
@@ -94,12 +94,12 @@ public class ContainerCompartment_Constraints extends BaseConstraintsDescriptor 
                 return comp != null;
               }
             });
-            Iterable<SNode> existingConts = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "compartment", true)).<SNode>select(new ISelector<SNode, SNode>() {
+            Iterable<SNode> existingConts = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "compartment", true)).<SNode>select(new ISelector<SNode, SNode>() {
               public SNode select(SNode comp) {
                 return SLinkOperations.getTarget(comp, "container", false);
               }
             });
-            return Sequence.fromIterable(allConts).subtract(Sequence.fromIterable(specializedConts)).subtract(Sequence.fromIterable(existingConts));
+            return Sequence.<SNode>fromIterable(allConts).subtract(Sequence.<SNode>fromIterable(specializedConts)).subtract(Sequence.<SNode>fromIterable(existingConts));
           }
 
           @Override

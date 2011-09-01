@@ -51,22 +51,22 @@ public abstract class IntroduceVariableRefactoring {
       return "Expression has no type";
     } else {
       this.myExpressionType = SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.Type");
-      Set<String> expectedNames = SetSequence.fromSet(new HashSet<String>());
+      Set<String> expectedNames = SetSequence.<String>fromSet(new HashSet<String>());
       String expectedVariableName = Expression_Behavior.call_getVariableExpectedName_1213877519781(node);
       if (expectedVariableName != null) {
         SetSequence.fromSet(expectedNames).addElement(NameUtil.decapitalize(expectedVariableName));
       }
       List<String> variableSuffixes = Type_Behavior.call_getVariableSuffixes_1213877337304(myExpressionType);
       if (variableSuffixes != null) {
-        SetSequence.fromSet(expectedNames).addSequence(ListSequence.fromList(variableSuffixes));
+        SetSequence.fromSet(expectedNames).addSequence(ListSequence.<String>fromList(variableSuffixes));
       }
-      this.myExpectedNames = SetSequence.fromSet(expectedNames).where(new IWhereFilter<String>() {
+      this.myExpectedNames = SetSequence.<String>fromSet(expectedNames).where(new IWhereFilter<String>() {
         public boolean accept(String it) {
           return it.matches("[a-zA-Z0-9_]*");
         }
       }).toListSequence();
-      if (ListSequence.fromList(this.myExpectedNames).isEmpty()) {
-        ListSequence.fromList(this.myExpectedNames).addElement("");
+      if (ListSequence.<String>fromList(this.myExpectedNames).isEmpty()) {
+        ListSequence.<String>fromList(this.myExpectedNames).addElement("");
       }
       return null;
     }
@@ -82,7 +82,7 @@ public abstract class IntroduceVariableRefactoring {
       if (SNodeOperations.isInstanceOf(exprClassifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
         List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
         expressionType = new IntroduceVariableRefactoring.QuotationClass_x65dk2_a0a1a1a2a1().createNode(SLinkOperations.getTarget(SNodeOperations.cast(exprClassifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false));
-        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).addSequence(ListSequence.fromList(params));
+        ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).addSequence(ListSequence.<SNode>fromList(params));
       }
     }
     if (SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
@@ -114,7 +114,7 @@ public abstract class IntroduceVariableRefactoring {
   }
 
   public boolean hasDuplicates() {
-    return ListSequence.fromList(myDuplicates).isNotEmpty();
+    return ListSequence.<SNode>fromList(myDuplicates).isNotEmpty();
   }
 
   public String getName() {
@@ -145,7 +145,7 @@ public abstract class IntroduceVariableRefactoring {
 
   protected void findDuplicates() {
     this.myDuplicates = new SimpleDuplicatesFinder(this.getExpression()).findDuplicates(this.getRootToFindDuplicates(this.getExpression()));
-    this.myDuplicates = ListSequence.fromList(this.myDuplicates).where(new IWhereFilter<SNode>() {
+    this.myDuplicates = ListSequence.<SNode>fromList(this.myDuplicates).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
       }

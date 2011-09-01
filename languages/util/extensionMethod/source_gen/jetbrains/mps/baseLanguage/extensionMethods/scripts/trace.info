@@ -10,14 +10,14 @@
     <nodeInfo nodeId="7517860079983491997" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="39" startPosition="92" endLine="40" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7517860079983492009" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="41" startPosition="33" endLine="42" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7517860079983491917" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="43" startPosition="9" endLine="44" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7517860079983491927" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="45" startPosition="165" endLine="46" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7517860079983491927" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="45" startPosition="172" endLine="46" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7517860079983491940" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="47" startPosition="9" endLine="48" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7517860079983491960" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="51" startPosition="123" endLine="52" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7517860079983491969" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="54" startPosition="11" endLine="55" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7517860079983491980" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="56" startPosition="9" endLine="57" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7517860079983491856" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="60" startPosition="52" endLine="61" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7517860079983491864" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="61" startPosition="177" endLine="62" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7517860079983491872" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="62" startPosition="143" endLine="63" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7517860079983491872" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="62" startPosition="143" endLine="63" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7517860079983491720" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="66" startPosition="42" endLine="67" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7517860079983491883" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="35" startPosition="59" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7517860079983492007" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="40" startPosition="235" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -38,11 +38,11 @@
     <scopeInfo nodeId="7517860079983491720" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="31" startPosition="59" endLine="32" endPosition="82" />
     <scopeInfo nodeId="7517860079983491884" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="36" startPosition="184" endLine="37" endPosition="23" />
     <scopeInfo nodeId="7517860079983492008" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="41" startPosition="33" endLine="42" endPosition="23" />
-    <scopeInfo nodeId="7517860079983491926" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="45" startPosition="165" endLine="46" endPosition="23" />
+    <scopeInfo nodeId="7517860079983491926" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="45" startPosition="172" endLine="46" endPosition="23" />
     <scopeInfo nodeId="7517860079983491959" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="51" startPosition="123" endLine="52" endPosition="27" />
     <scopeInfo nodeId="7517860079983491720" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="66" startPosition="42" endLine="67" endPosition="20" />
     <scopeInfo nodeId="7517860079983491949" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="50" startPosition="133" endLine="53" endPosition="13" />
-    <scopeInfo nodeId="7517860079983491855" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="60" startPosition="52" endLine="63" endPosition="187">
+    <scopeInfo nodeId="7517860079983491855" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="60" startPosition="52" endLine="63" endPosition="201">
       <varInfo nodeId="7517860079983491857" varName="methodCall" />
     </scopeInfo>
     <scopeInfo nodeId="7517860079983491720" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="22" startPosition="76" endLine="26" endPosition="0" />

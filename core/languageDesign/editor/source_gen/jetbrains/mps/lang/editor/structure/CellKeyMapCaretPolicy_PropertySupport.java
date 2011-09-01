@@ -11,7 +11,7 @@ public class CellKeyMapCaretPolicy_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<CellKeyMapCaretPolicy> constants = ListSequence.fromList(CellKeyMapCaretPolicy.getConstants()).iterator();
+    Iterator<CellKeyMapCaretPolicy> constants = ListSequence.<CellKeyMapCaretPolicy>fromList(CellKeyMapCaretPolicy.getConstants()).iterator();
     while (constants.hasNext()) {
       CellKeyMapCaretPolicy constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class CellKeyMapCaretPolicy_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<CellKeyMapCaretPolicy> constants = ListSequence.fromList(CellKeyMapCaretPolicy.getConstants()).iterator();
+    Iterator<CellKeyMapCaretPolicy> constants = ListSequence.<CellKeyMapCaretPolicy>fromList(CellKeyMapCaretPolicy.getConstants()).iterator();
     while (constants.hasNext()) {
       CellKeyMapCaretPolicy constant = constants.next();
       if (value.equals(constant.getName())) {

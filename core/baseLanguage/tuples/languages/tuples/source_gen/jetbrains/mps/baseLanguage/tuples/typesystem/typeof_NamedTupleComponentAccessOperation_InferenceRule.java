@@ -27,9 +27,9 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> PTYPES = new ArrayList<SNode>();
     SNode tupleDecl = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(operation, "component", false)), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
-    for (SNode tvr : ListSequence.fromList(SLinkOperations.getTargets(tupleDecl, "typeVariableDeclaration", true))) {
+    for (SNode tvr : ListSequence.<SNode>fromList(SLinkOperations.getTargets(tupleDecl, "typeVariableDeclaration", true))) {
       final SNode PTYPE_typevar_1239974367138 = typeCheckingContext.createNewRuntimeTypesVariable();
-      ListSequence.fromList(PTYPES).addElement(typeCheckingContext.getRepresentative(PTYPE_typevar_1239974367138));
+      ListSequence.<SNode>fromList(PTYPES).addElement(typeCheckingContext.getRepresentative(PTYPE_typevar_1239974367138));
     }
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(operation);
@@ -39,15 +39,15 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
     SNode opType = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "component", false), "type", true));
     if (SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       int idx = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false));
-      opType = ListSequence.fromList(PTYPES).getElement(idx);
+      opType = ListSequence.<SNode>fromList(PTYPES).getElement(idx);
     } else {
       List<SNode> variableReferences = SNodeOperations.getDescendants(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
       List<SNode> tvrs = new ArrayList<SNode>();
-      ListSequence.fromList(tvrs).addSequence(ListSequence.fromList(variableReferences));
+      ListSequence.<SNode>fromList(tvrs).addSequence(ListSequence.<SNode>fromList(variableReferences));
       for (SNode tvr : tvrs) {
         int idx = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false));
-        if (idx < ListSequence.fromList(PTYPES).count()) {
-          SNodeOperations.replaceWithAnother(tvr, ListSequence.fromList(PTYPES).getElement(idx));
+        if (idx < ListSequence.<SNode>fromList(PTYPES).count()) {
+          SNodeOperations.replaceWithAnother(tvr, ListSequence.<SNode>fromList(PTYPES).getElement(idx));
         }
       }
     }

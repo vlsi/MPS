@@ -17,7 +17,7 @@ public class MappingConfigRefSet_Behavior {
   }
 
   public static boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
-    for (SNode r : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "refs", true))) {
+    for (SNode r : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "refs", true))) {
       if (!(MappingConfigRefBase_Behavior.call_isComplete_2721285250110257005(r))) {
         return false;
       }

@@ -21,7 +21,7 @@ public class Event_Behavior {
   }
 
   public static Iterable<SNode> call_allExtends_5224413709454845737(final SNode thisNode) {
-    return Sequence.fromClosure(new ISequenceClosure<SNode>() {
+    return Sequence.<SNode>fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -74,7 +74,7 @@ __switch__:
   }
 
   public static SNode virtual_findTemplate_3939571372331676060(final SNode thisNode, SModel model, IScope scope) {
-    return ListSequence.fromList(SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate")).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode eht) {
         return SLinkOperations.getTarget(eht, "event", false) == thisNode;
       }

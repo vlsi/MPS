@@ -1001,13 +1001,13 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         public Set<SNode> getSourceNodes(SNode targetNode) {
           SNode instanceMethodDeclaration = SLinkOperations.getTarget(targetNode, "baseMethodDeclaration", false);
           List<SNode> declarations = SLinkOperations.getTargets(instanceMethodDeclaration, "typeVariableDeclaration", true);
-          Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
-          if (ListSequence.fromList(declarations).isNotEmpty()) {
+          Set<SNode> result = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+          if (ListSequence.<SNode>fromList(declarations).isNotEmpty()) {
             {
               SNode param;
               SNode arg;
-              Iterator<SNode> param_iterator = ListSequence.fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).iterator();
-              Iterator<SNode> arg_iterator = ListSequence.fromList(SLinkOperations.getTargets(targetNode, "actualArgument", true)).iterator();
+              Iterator<SNode> param_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).iterator();
+              Iterator<SNode> arg_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(targetNode, "actualArgument", true)).iterator();
               while (true) {
                 if (!(param_iterator.hasNext())) {
                   break;
@@ -1019,7 +1019,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
                 arg = arg_iterator.next();
                 for (SNode tvr : SNodeOperations.getDescendants(SLinkOperations.getTarget(param, "type", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})) {
                   SNode variableDeclaration = SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false);
-                  if (ListSequence.fromList(declarations).contains(variableDeclaration)) {
+                  if (ListSequence.<SNode>fromList(declarations).contains(variableDeclaration)) {
                     SetSequence.fromSet(result).addElement(arg);
                   }
                 }

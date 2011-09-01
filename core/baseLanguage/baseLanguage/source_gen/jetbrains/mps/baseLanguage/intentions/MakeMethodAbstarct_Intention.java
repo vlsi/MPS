@@ -57,12 +57,12 @@ public class MakeMethodAbstarct_Intention extends BaseIntention implements Inten
       return false;
     }
     List<SNode> includingStatementLists = SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.StatementList", true);
-    Iterable<SNode> includingBodies = ListSequence.fromList(includingStatementLists).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> includingBodies = ListSequence.<SNode>fromList(includingStatementLists).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.hasRole(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "body");
       }
     });
-    return Sequence.fromIterable(includingBodies).isEmpty();
+    return Sequence.<SNode>fromIterable(includingBodies).isEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

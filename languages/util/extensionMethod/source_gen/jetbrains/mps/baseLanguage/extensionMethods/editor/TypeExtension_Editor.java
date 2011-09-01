@@ -193,7 +193,7 @@ public class TypeExtension_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_tbgpz7_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
   }
 
   private static class staticFieldsListHandler_tbgpz7_a7a extends RefNodeListHandler {

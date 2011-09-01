@@ -42,7 +42,7 @@ public class add_throws_to_FunctionType_Intention extends BaseIntention implemen
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsType", true)).isEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsType", true)).isEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

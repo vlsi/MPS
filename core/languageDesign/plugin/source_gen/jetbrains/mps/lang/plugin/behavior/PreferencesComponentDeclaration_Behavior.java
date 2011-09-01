@@ -26,7 +26,7 @@ public class PreferencesComponentDeclaration_Behavior {
 
   public static List<SNode> virtual_getMembers_1213877528124(SNode thisNode) {
     List<SNode> members = new ArrayList<SNode>();
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "persistenPropertyDeclaration", true)));
+    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "persistenPropertyDeclaration", true)));
     return members;
   }
 }

@@ -42,19 +42,19 @@ public class MethodCallAdapter {
 
   public void removeArguments() {
     if (SNodeOperations.isInstanceOf(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).clear();
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).clear();
     }
     if (SNodeOperations.isInstanceOf(this.myMethodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation")) {
-      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"), "actualArgument", true)).clear();
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"), "actualArgument", true)).clear();
     }
   }
 
   public void addArgument(SNode arguemnt) {
     if (SNodeOperations.isInstanceOf(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).addElement(arguemnt);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).addElement(arguemnt);
     }
     if (SNodeOperations.isInstanceOf(this.myMethodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation")) {
-      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"), "actualArgument", true)).addElement(arguemnt);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"), "actualArgument", true)).addElement(arguemnt);
     }
   }
 

@@ -37,7 +37,7 @@ public class LinkAttributeAccessQualifier_Behavior {
   public static Iterable<SNode> virtual_getLinkAccessScope_2906110183022538642(SNode thisNode) {
     // TODO: create IAttributeAccessQualifierContainer interface with abstract method node<SNodeType> .getAttributeContainerType() 
     SNode attributeContainer = IOperation_Behavior.call_getOperand_1213877410070(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.smodel.structure.AttributeAccessOperation"));
-    return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(attributeContainer), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true), "concept", false))).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(attributeContainer), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true), "concept", false))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference");
       }

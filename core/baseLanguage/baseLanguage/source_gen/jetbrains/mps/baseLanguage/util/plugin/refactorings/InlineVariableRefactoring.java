@@ -27,7 +27,7 @@ public abstract class InlineVariableRefactoring {
 
   public void optimizeDeclaration(SNode variable) {
     Program program = DataFlowManager.getInstance().buildProgramFor(getBaseStatementList(variable));
-    for (Instruction instruction : ListSequence.fromList(program.getInstructions())) {
+    for (Instruction instruction : ListSequence.<Instruction>fromList(program.getInstructions())) {
       if (instruction instanceof ReadInstruction) {
         ReadInstruction read = (ReadInstruction) instruction;
         if (read.getVariable() == variable) {
@@ -35,7 +35,7 @@ public abstract class InlineVariableRefactoring {
         }
       }
     }
-    for (Instruction instruction : ListSequence.fromList(program.getInstructions())) {
+    for (Instruction instruction : ListSequence.<Instruction>fromList(program.getInstructions())) {
       if (instruction instanceof WriteInstruction) {
         WriteInstruction write = (WriteInstruction) instruction;
         if (write.getSource() != variable && write.getVariable() == variable) {
@@ -51,8 +51,8 @@ public abstract class InlineVariableRefactoring {
     SNode method = SNodeOperations.getAncestor(assignment, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(method, "body", true));
     AnalysisResult<Set<ReadInstruction>> reachingReads = program.analyze(new ReachingReadsAnalyzer());
-    for (Instruction instruction : ListSequence.fromList(program.getInstructionsFor(assignment))) {
-      for (Instruction next : SetSequence.fromSet(instruction.succ())) {
+    for (Instruction instruction : ListSequence.<Instruction>fromList(program.getInstructionsFor(assignment))) {
+      for (Instruction next : SetSequence.<Instruction>fromSet(instruction.succ())) {
         for (ReadInstruction read : reachingReads.get(next)) {
           if (read.getVariable() == variable) {
             return;

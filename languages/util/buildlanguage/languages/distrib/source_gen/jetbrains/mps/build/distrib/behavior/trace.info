@@ -68,7 +68,7 @@
     <nodeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDistribConfiguration_1230207861621#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVMOptionfFileName_1231748960223#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAntPathFromAbstractPath_1234513234515#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1234793567460" fileName="SystemSpecificConfig_Behavior.java" startLine="47" startPosition="90" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1234793567460" fileName="SystemSpecificConfig_Behavior.java" startLine="47" startPosition="97" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getVMOptionsFilePath_1231769123888#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAllUsedVariable_1234793567442#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
     <nodeInfo nodeId="1234793567454" fileName="SystemSpecificConfig_Behavior.java" startLine="46" startPosition="234" endLine="51" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -92,7 +92,7 @@
     <scopeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1234513273721" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="1234793567460" fileName="SystemSpecificConfig_Behavior.java" startLine="47" startPosition="90" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1234793567460" fileName="SystemSpecificConfig_Behavior.java" startLine="47" startPosition="97" endLine="51" endPosition="0" />
     <scopeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="53" startPosition="0" endLine="58" endPosition="0" />
@@ -106,7 +106,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="31" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="44" startPosition="0" endLine="53" endPosition="0" />
-    <unitInfo nodeId="1234793567460" fileName="SystemSpecificConfig_Behavior.java" startLine="47" startPosition="63" endLine="51" endPosition="5" unitName="jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior$1" />
+    <unitInfo nodeId="1234793567460" fileName="SystemSpecificConfig_Behavior.java" startLine="47" startPosition="70" endLine="51" endPosition="5" unitName="jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior$1" />
     <unitInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="17" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior" />
   </root>
   <root nodeId="1230208019848">
@@ -170,8 +170,8 @@
   <root nodeId="1230292751070">
     <nodeInfo nodeId="1230292786057" fileName="UniversalConfig_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1230292984505" fileName="UniversalConfig_Behavior.java" startLine="19" startPosition="85" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239641842564" fileName="UniversalConfig_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5311051194232934856" fileName="UniversalConfig_Behavior.java" startLine="27" startPosition="85" endLine="28" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239641842564" fileName="UniversalConfig_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5311051194232934856" fileName="UniversalConfig_Behavior.java" startLine="27" startPosition="85" endLine="28" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1230292751070" fileName="UniversalConfig_Behavior.java" startLine="11" startPosition="39" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1230292751070" fileName="UniversalConfig_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStartupScriptName_1230292766208#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1230292751070" fileName="UniversalConfig_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStartupScriptExtension_1230292961412#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
@@ -180,8 +180,8 @@
     <scopeInfo nodeId="1230292751072" fileName="UniversalConfig_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1230292766210" fileName="UniversalConfig_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="210" />
     <scopeInfo nodeId="1230292961414" fileName="UniversalConfig_Behavior.java" startLine="19" startPosition="85" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="1239641827581" fileName="UniversalConfig_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="214" />
-    <scopeInfo nodeId="5311051194232934854" fileName="UniversalConfig_Behavior.java" startLine="27" startPosition="85" endLine="28" endPosition="280" />
+    <scopeInfo nodeId="1239641827581" fileName="UniversalConfig_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="221" />
+    <scopeInfo nodeId="5311051194232934854" fileName="UniversalConfig_Behavior.java" startLine="27" startPosition="85" endLine="28" endPosition="287" />
     <scopeInfo nodeId="1230292751070" fileName="UniversalConfig_Behavior.java" startLine="11" startPosition="39" endLine="14" endPosition="0" />
     <scopeInfo nodeId="1230292751070" fileName="UniversalConfig_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1230292751070" fileName="UniversalConfig_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
@@ -194,18 +194,18 @@
     <nodeInfo nodeId="1231852542527" fileName="DistribConfiguration_Behavior.java" startLine="23" startPosition="108" endLine="24" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1231852674993" fileName="DistribConfiguration_Behavior.java" startLine="24" startPosition="47" endLine="25" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230292830957" fileName="DistribConfiguration_Behavior.java" startLine="28" startPosition="74" endLine="29" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1230293900515" fileName="DistribConfiguration_Behavior.java" startLine="33" startPosition="91" endLine="34" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1230293900515" fileName="DistribConfiguration_Behavior.java" startLine="33" startPosition="91" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1230294015011" fileName="DistribConfiguration_Behavior.java" startLine="35" startPosition="5" endLine="36" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230294025198" fileName="DistribConfiguration_Behavior.java" startLine="37" startPosition="27" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1230294025198" fileName="DistribConfiguration_Behavior.java" startLine="37" startPosition="27" endLine="38" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1230294897542" fileName="DistribConfiguration_Behavior.java" startLine="39" startPosition="5" endLine="40" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230294599699" fileName="DistribConfiguration_Behavior.java" startLine="42" startPosition="39" endLine="43" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1230294599699" fileName="DistribConfiguration_Behavior.java" startLine="42" startPosition="39" endLine="43" endPosition="316" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1230294644866" fileName="DistribConfiguration_Behavior.java" startLine="47" startPosition="37" endLine="48" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1230295599678" fileName="DistribConfiguration_Behavior.java" startLine="53" startPosition="83" endLine="54" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1231692579698" fileName="DistribConfiguration_Behavior.java" startLine="57" startPosition="75" endLine="58" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1231749032498" fileName="DistribConfiguration_Behavior.java" startLine="61" startPosition="80" endLine="62" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1234874469975" fileName="DistribConfiguration_Behavior.java" startLine="66" startPosition="91" endLine="67" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234874469975" fileName="DistribConfiguration_Behavior.java" startLine="66" startPosition="91" endLine="67" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234874469979" fileName="DistribConfiguration_Behavior.java" startLine="68" startPosition="5" endLine="69" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234874469989" fileName="DistribConfiguration_Behavior.java" startLine="70" startPosition="27" endLine="71" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234874469989" fileName="DistribConfiguration_Behavior.java" startLine="70" startPosition="27" endLine="71" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234874792344" fileName="DistribConfiguration_Behavior.java" startLine="72" startPosition="5" endLine="73" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234977139546" fileName="DistribConfiguration_Behavior.java" startLine="76" startPosition="70" endLine="77" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240229592181" fileName="DistribConfiguration_Behavior.java" startLine="80" startPosition="50" endLine="81" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -214,8 +214,8 @@
     <nodeInfo nodeId="1234874469968" fileName="DistribConfiguration_Behavior.java" startLine="65" startPosition="82" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1234874469987" fileName="DistribConfiguration_Behavior.java" startLine="69" startPosition="143" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getProjectName_1230292821821#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1230294599697" fileName="DistribConfiguration_Behavior.java" startLine="41" startPosition="136" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1230294560788" fileName="DistribConfiguration_Behavior.java" startLine="46" startPosition="83" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1230294599697" fileName="DistribConfiguration_Behavior.java" startLine="41" startPosition="143" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1230294560788" fileName="DistribConfiguration_Behavior.java" startLine="46" startPosition="90" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getProjectFolderAntName_1230295546376#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVMOptionsExt_1231692561653#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVMOptionsFileName_1231749012626#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
@@ -227,23 +227,23 @@
     <nodeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="64" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAllVariable_1234864693585#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <nodeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="31" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAvailableFolders_1230293856288#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="1230292821823" fileName="DistribConfiguration_Behavior.java" startLine="28" startPosition="74" endLine="29" endPosition="174" />
-    <scopeInfo nodeId="1230293892488" fileName="DistribConfiguration_Behavior.java" startLine="33" startPosition="91" endLine="34" endPosition="60" />
-    <scopeInfo nodeId="1230294017856" fileName="DistribConfiguration_Behavior.java" startLine="37" startPosition="27" endLine="38" endPosition="60" />
-    <scopeInfo nodeId="1230294599698" fileName="DistribConfiguration_Behavior.java" startLine="42" startPosition="39" endLine="43" endPosition="302" />
+    <scopeInfo nodeId="1230293892488" fileName="DistribConfiguration_Behavior.java" startLine="33" startPosition="91" endLine="34" endPosition="67" />
+    <scopeInfo nodeId="1230294017856" fileName="DistribConfiguration_Behavior.java" startLine="37" startPosition="27" endLine="38" endPosition="67" />
+    <scopeInfo nodeId="1230294599698" fileName="DistribConfiguration_Behavior.java" startLine="42" startPosition="39" endLine="43" endPosition="316" />
     <scopeInfo nodeId="1230294560789" fileName="DistribConfiguration_Behavior.java" startLine="47" startPosition="37" endLine="48" endPosition="90" />
     <scopeInfo nodeId="1230295546378" fileName="DistribConfiguration_Behavior.java" startLine="53" startPosition="83" endLine="54" endPosition="143" />
     <scopeInfo nodeId="1231692561655" fileName="DistribConfiguration_Behavior.java" startLine="57" startPosition="75" endLine="58" endPosition="23" />
     <scopeInfo nodeId="1231749012628" fileName="DistribConfiguration_Behavior.java" startLine="61" startPosition="80" endLine="62" endPosition="136" />
-    <scopeInfo nodeId="1234874469974" fileName="DistribConfiguration_Behavior.java" startLine="66" startPosition="91" endLine="67" endPosition="60" />
-    <scopeInfo nodeId="1234874469988" fileName="DistribConfiguration_Behavior.java" startLine="70" startPosition="27" endLine="71" endPosition="60" />
+    <scopeInfo nodeId="1234874469974" fileName="DistribConfiguration_Behavior.java" startLine="66" startPosition="91" endLine="67" endPosition="67" />
+    <scopeInfo nodeId="1234874469988" fileName="DistribConfiguration_Behavior.java" startLine="70" startPosition="27" endLine="71" endPosition="67" />
     <scopeInfo nodeId="1234977118032" fileName="DistribConfiguration_Behavior.java" startLine="76" startPosition="70" endLine="77" endPosition="151" />
     <scopeInfo nodeId="1240229578760" fileName="DistribConfiguration_Behavior.java" startLine="80" startPosition="50" endLine="81" endPosition="19" />
     <scopeInfo nodeId="1230292819377" fileName="DistribConfiguration_Behavior.java" startLine="22" startPosition="43" endLine="25" endPosition="72">
       <varInfo nodeId="1231852668411" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1230294599697" fileName="DistribConfiguration_Behavior.java" startLine="41" startPosition="136" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1230294560788" fileName="DistribConfiguration_Behavior.java" startLine="46" startPosition="83" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1230294599697" fileName="DistribConfiguration_Behavior.java" startLine="41" startPosition="143" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1230294560788" fileName="DistribConfiguration_Behavior.java" startLine="46" startPosition="90" endLine="50" endPosition="0" />
     <scopeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
@@ -260,8 +260,8 @@
       <varInfo nodeId="1230294897543" varName="selectedConfiguration" />
     </scopeInfo>
     <scopeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="31" startPosition="0" endLine="52" endPosition="0" />
-    <unitInfo nodeId="1230294599697" fileName="DistribConfiguration_Behavior.java" startLine="41" startPosition="113" endLine="45" endPosition="5" unitName="jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior$1" />
-    <unitInfo nodeId="1230294560788" fileName="DistribConfiguration_Behavior.java" startLine="46" startPosition="56" endLine="50" endPosition="5" unitName="jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior$2" />
+    <unitInfo nodeId="1230294599697" fileName="DistribConfiguration_Behavior.java" startLine="41" startPosition="120" endLine="45" endPosition="5" unitName="jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior$1" />
+    <unitInfo nodeId="1230294560788" fileName="DistribConfiguration_Behavior.java" startLine="46" startPosition="63" endLine="50" endPosition="5" unitName="jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior$2" />
     <unitInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="21" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior" />
   </root>
   <root nodeId="1231864296686">
@@ -334,7 +334,7 @@
     <nodeInfo nodeId="1234542172209" fileName="MacConfig_Behavior.java" startLine="30" startPosition="5" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239641455464" fileName="MacConfig_Behavior.java" startLine="34" startPosition="82" endLine="35" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234518005071" fileName="MacConfig_Behavior.java" startLine="12" startPosition="33" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1234542153366" fileName="MacConfig_Behavior.java" startLine="26" startPosition="57" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1234542153366" fileName="MacConfig_Behavior.java" startLine="26" startPosition="64" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1234518005071" fileName="MacConfig_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStartupFileName_1234518093971#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1234518005071" fileName="MacConfig_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStartupFileExtension_1234518093983#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1234518005071" fileName="MacConfig_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_addVmoptionsToArchive_1239641445163#(Ljetbrains/mps/smodel/SNode;)Z" />
@@ -346,7 +346,7 @@
     <scopeInfo nodeId="1234542153368" fileName="MacConfig_Behavior.java" startLine="27" startPosition="106" endLine="28" endPosition="101" />
     <scopeInfo nodeId="1239641445166" fileName="MacConfig_Behavior.java" startLine="34" startPosition="82" endLine="35" endPosition="221" />
     <scopeInfo nodeId="1234518005071" fileName="MacConfig_Behavior.java" startLine="12" startPosition="33" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="1234542137505" fileName="MacConfig_Behavior.java" startLine="26" startPosition="57" endLine="29" endPosition="7" />
+    <scopeInfo nodeId="1234542137505" fileName="MacConfig_Behavior.java" startLine="26" startPosition="64" endLine="29" endPosition="7" />
     <scopeInfo nodeId="1234518005071" fileName="MacConfig_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="1234518005071" fileName="MacConfig_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1234518005071" fileName="MacConfig_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />

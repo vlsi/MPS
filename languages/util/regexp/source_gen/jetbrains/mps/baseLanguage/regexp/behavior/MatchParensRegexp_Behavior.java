@@ -20,7 +20,7 @@ public class MatchParensRegexp_Behavior {
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    ListSequence.fromList(vars).addElement(thisNode);
+    ListSequence.<SNode>fromList(vars).addElement(thisNode);
     return "(" + Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "regexp", true), vars) + ")";
   }
 
@@ -28,7 +28,7 @@ public class MatchParensRegexp_Behavior {
     SNode parens = thisNode;
     List<SNode> parensList = new ArrayList<SNode>();
     Regexp_Behavior.call_getString_1222432436326(Regexp_Behavior.call_getTopLevelRegexp_1223362823237(thisNode), parensList);
-    return 1 + ListSequence.fromList(parensList).indexOf(parens);
+    return 1 + ListSequence.<SNode>fromList(parensList).indexOf(parens);
   }
 
   public static SNode virtual_getValue_1224857430232(SNode thisNode) {

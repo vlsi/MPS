@@ -42,7 +42,7 @@ public class AddThrows_Intention extends BaseIntention implements Intention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

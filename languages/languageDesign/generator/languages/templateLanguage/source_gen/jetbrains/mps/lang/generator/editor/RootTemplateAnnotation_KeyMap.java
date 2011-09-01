@@ -57,7 +57,7 @@ public class RootTemplateAnnotation_KeyMap extends EditorCellKeyMap {
     }
 
     private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      if (ListSequence.fromList(selectedNodes).count() != 1) {
+      if (ListSequence.<SNode>fromList(selectedNodes).count() != 1) {
         return false;
       }
       SNode applyToNode = SNodeOperations.getContainingRoot(node);

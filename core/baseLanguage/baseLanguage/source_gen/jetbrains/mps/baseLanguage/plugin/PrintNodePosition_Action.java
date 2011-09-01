@@ -43,17 +43,17 @@ public class PrintNodePosition_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.fromMap(_params).put("node", node);
+      MapSequence.<String,Object>fromMap(_params).put("node", node);
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
+    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
@@ -61,9 +61,9 @@ public class PrintNodePosition_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      DebugInfo result = TraceInfoCache.getInstance().get(((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
+      DebugInfo result = TraceInfoCache.getInstance().get(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")));
       if (result != null) {
-        PositionInfo positionInfo = result.getPositionForNode(((SNode) MapSequence.fromMap(_params).get("node")).getSNodeId().toString());
+        PositionInfo positionInfo = result.getPositionForNode(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")).getSNodeId().toString());
         System.out.println(positionInfo);
       }
     } catch (Throwable t) {

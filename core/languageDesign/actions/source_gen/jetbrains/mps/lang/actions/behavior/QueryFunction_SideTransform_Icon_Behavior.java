@@ -16,7 +16,7 @@ public class QueryFunction_SideTransform_Icon_Behavior {
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     List<SNode> result = ConceptFunction_Behavior.callSuper_getParameters_1213877374450(thisNode, "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon");
     if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", true, false) == null) {
-      ListSequence.fromList(result).removeElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject"));
+      ListSequence.<SNode>fromList(result).removeElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject"));
     }
     return result;
   }

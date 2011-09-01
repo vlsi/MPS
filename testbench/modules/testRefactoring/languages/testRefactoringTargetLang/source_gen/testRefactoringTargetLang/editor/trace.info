@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="AnsotherGoodConcept_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="testRefactoringTargetLang.editor.AnsotherGoodConcept_Editor" />
+  <root nodeId="1198682124391">
+    <nodeInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="17" startPosition="93" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="17" startPosition="93" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="18" startPosition="46" endLine="19" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="19" startPosition="34" endLine="20" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="11" startPosition="67" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_x6a4n9_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" />
+    <scopeInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="17" startPosition="93" endLine="18" endPosition="46" />
+    <scopeInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="11" startPosition="67" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="16" startPosition="87" endLine="20" endPosition="22" />
+    <scopeInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="15" startPosition="0" endLine="22" endPosition="0" />
+    <unitInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="testRefactoringTargetLang.editor.AnsotherGoodConcept_Editor" />
+  </root>
 </debugInfo>
 

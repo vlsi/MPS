@@ -23,7 +23,7 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
   }
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "componentType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "componentType", true)).count())) {
+    if (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(subtype, "componentType", true)).count() == ListSequence.<SNode>fromList(SLinkOperations.getTargets(supertype, "componentType", true)).count())) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "Member types count don't match", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854492399", null, errorTarget);
       HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
@@ -31,8 +31,8 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
     {
       SNode lmt;
       SNode rmt;
-      Iterator<SNode> lmt_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "componentType", true)).iterator();
-      Iterator<SNode> rmt_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "componentType", true)).iterator();
+      Iterator<SNode> lmt_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(subtype, "componentType", true)).iterator();
+      Iterator<SNode> rmt_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(supertype, "componentType", true)).iterator();
       while (true) {
         if (!(lmt_iterator.hasNext())) {
           break;
@@ -54,14 +54,14 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
 
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "componentType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "componentType", true)).count())) {
+    if (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(subtype, "componentType", true)).count() == ListSequence.<SNode>fromList(SLinkOperations.getTargets(supertype, "componentType", true)).count())) {
       result_14532009 = false;
     }
     {
       SNode lmt;
       SNode rmt;
-      Iterator<SNode> lmt_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "componentType", true)).iterator();
-      Iterator<SNode> rmt_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "componentType", true)).iterator();
+      Iterator<SNode> lmt_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(subtype, "componentType", true)).iterator();
+      Iterator<SNode> rmt_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(supertype, "componentType", true)).iterator();
       while (true) {
         if (!(lmt_iterator.hasNext())) {
           break;

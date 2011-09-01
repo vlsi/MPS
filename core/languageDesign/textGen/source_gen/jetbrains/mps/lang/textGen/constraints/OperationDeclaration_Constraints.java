@@ -42,7 +42,7 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
         List<SNode> result = new ArrayList<SNode>();
         List<SNode> tgList = SModelOperations.getRootsIncludingImported(_context.getModel(), GlobalScope.getInstance(), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
         for (SNode tg : tgList) {
-          ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(tg, "operation", true)));
+          ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(tg, "operation", true)));
         }
         return result;
       }

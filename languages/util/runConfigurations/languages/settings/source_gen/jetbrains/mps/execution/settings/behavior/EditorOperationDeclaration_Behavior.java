@@ -20,7 +20,7 @@ public class EditorOperationDeclaration_Behavior {
   }
 
   public static SNode call_getMethodbyName_946964771156066997(SNode thisNode, final String name) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.options(MPS.Classpath/com.intellij.openapi.options@java_stub)", "~SettingsEditor"), "method", true)).union(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.api.settings(MPS.Classpath/jetbrains.mps.execution.api.settings@java_stub)", "~SettingsEditorEx"), "method", true))).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.options(MPS.Classpath/com.intellij.openapi.options@java_stub)", "~SettingsEditor"), "method", true)).union(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.api.settings(MPS.Classpath/jetbrains.mps.execution.api.settings@java_stub)", "~SettingsEditorEx"), "method", true))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(name);
       }

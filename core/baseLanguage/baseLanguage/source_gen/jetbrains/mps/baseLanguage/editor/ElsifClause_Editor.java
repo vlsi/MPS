@@ -150,11 +150,11 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
       // todo: but we need it since we can't enable/disable 
       // todo: menu items by condition 
       SNode ifStatement = ElsifClause_Behavior.call_getIfStatement_1213877360521(node);
-      List<String> result = ListSequence.fromList(new ArrayList<String>());
+      List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
       if ((SLinkOperations.getTarget(ifStatement, "ifFalseStatement", true) == null)) {
-        ListSequence.fromList(result).addElement("else");
+        ListSequence.<String>fromList(result).addElement("else");
       }
-      ListSequence.fromList(result).addElement("else if");
+      ListSequence.<String>fromList(result).addElement("else if");
       return result;
     }
 

@@ -14,7 +14,7 @@ public class ProcessBuilderExpression_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode part : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "part", true))) {
+    for (SNode part : ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "part", true))) {
       _context.getBuilder().build((SNode) part);
     }
   }

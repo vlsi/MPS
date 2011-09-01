@@ -33,11 +33,11 @@ public enum TargetDependencyQualifier {
   }
 
   public static List<TargetDependencyQualifier> getConstants() {
-    List<TargetDependencyQualifier> list = ListSequence.fromList(new LinkedList<TargetDependencyQualifier>());
-    ListSequence.fromList(list).addElement(TargetDependencyQualifier.before);
-    ListSequence.fromList(list).addElement(TargetDependencyQualifier.not_before);
-    ListSequence.fromList(list).addElement(TargetDependencyQualifier.after);
-    ListSequence.fromList(list).addElement(TargetDependencyQualifier.not_after);
+    List<TargetDependencyQualifier> list = ListSequence.<TargetDependencyQualifier>fromList(new LinkedList<TargetDependencyQualifier>());
+    ListSequence.<TargetDependencyQualifier>fromList(list).addElement(TargetDependencyQualifier.before);
+    ListSequence.<TargetDependencyQualifier>fromList(list).addElement(TargetDependencyQualifier.not_before);
+    ListSequence.<TargetDependencyQualifier>fromList(list).addElement(TargetDependencyQualifier.after);
+    ListSequence.<TargetDependencyQualifier>fromList(list).addElement(TargetDependencyQualifier.not_after);
     return list;
   }
 

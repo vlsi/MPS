@@ -19,9 +19,9 @@ public class AnnotationInstanceParameterInformationQuery extends ParametersInfor
 
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     if (SLinkOperations.getTarget(node, "annotation", false) != null) {
-      return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(node, "annotation", false));
+      return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(node, "annotation", false));
     } else {
-      return ListSequence.fromList(new ArrayList<SNode>());
+      return ListSequence.<SNode>fromList(new ArrayList<SNode>());
     }
   }
 
@@ -33,7 +33,7 @@ public class AnnotationInstanceParameterInformationQuery extends ParametersInfor
       styledText.append("<no name>");
     }
     styledText.append("(");
-    for (SNode annotationMethod : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "annotation", false), "method", true))) {
+    for (SNode annotationMethod : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "annotation", false), "method", true))) {
       if (SNodeOperations.getIndexInParent(annotationMethod) > 0) {
         styledText.append(", ");
       }

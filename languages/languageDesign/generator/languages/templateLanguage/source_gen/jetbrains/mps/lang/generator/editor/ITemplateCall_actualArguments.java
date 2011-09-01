@@ -114,7 +114,7 @@ public class ITemplateCall_actualArguments extends AbstractCellProvider {
   }
 
   private static boolean renderingCondition_1xd1xh_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty() || (SLinkOperations.getTarget(node, "template", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "template", false), "parameter", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty() || (SLinkOperations.getTarget(node, "template", false) != null) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "template", false), "parameter", true)).isNotEmpty();
   }
 
   private static class actualArgumentListHandler_1xd1xh_b0a extends RefNodeListHandler {

@@ -41,11 +41,11 @@ public class RemoveTVDInAnonymousClass_Intention extends BaseIntention implement
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).clear();
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).clear();
   }
 
   public String getLocationString() {

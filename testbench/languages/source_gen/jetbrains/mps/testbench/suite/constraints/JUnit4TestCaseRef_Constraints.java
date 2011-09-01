@@ -66,8 +66,8 @@ public class JUnit4TestCaseRef_Constraints extends BaseConstraintsDescriptor {
               public List<SNode> getClassifiers() {
                 final SNode testAnn = SLinkOperations.getTarget(new JUnit4TestCaseRef_Constraints.QuotationClass_qd3c0x_a0a0a0a0a0b0a0a0a0b0a1a0b0a().createNode(), "annotation", false);
                 List<SNode> res = super.getClassifiers();
-                for (Iterator<SNode> it = ListSequence.fromList(res).iterator(); it.hasNext();) {
-                  if (!(ListSequence.fromList(SLinkOperations.getTargets(it.next(), "method", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+                for (Iterator<SNode> it = ListSequence.<SNode>fromList(res).iterator(); it.hasNext();) {
+                  if (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(it.next(), "method", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
                     public Iterable<SNode> translate(SNode m) {
                       return SLinkOperations.getTargets(m, "annotation", true);
                     }

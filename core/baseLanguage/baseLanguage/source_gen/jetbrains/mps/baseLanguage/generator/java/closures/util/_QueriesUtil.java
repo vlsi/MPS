@@ -38,14 +38,14 @@ public class _QueriesUtil {
   public static SNode find_ContextOwner_ClosureContext_generatedClass_constructor(SNode inputNode, ITemplateGenerator generator) {
     SNode generatedClass = (SNode) find_ContextOwner_ClosureContext_generatedClass(inputNode, generator);
     if (generatedClass != null) {
-      return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
+      return ListSequence.<SNode>fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
     }
     return null;
   }
 
   public static SNode find_Closure_generatedClosureAdapter_constructor(SNode closure, ITemplateGenerator generator) {
     SNode closureAdapterClass = (SNode) generator.findOutputNodeByInputNodeAndMappingName(closure, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
-    return ListSequence.fromList(SLinkOperations.getTargets(closureAdapterClass, "constructor", true)).first();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(closureAdapterClass, "constructor", true)).first();
   }
 
   public static SNode resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(SNode localVarDeclStmt, ITemplateGenerator generator) {

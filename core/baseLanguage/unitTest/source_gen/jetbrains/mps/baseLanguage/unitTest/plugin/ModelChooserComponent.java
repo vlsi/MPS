@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ModelChooserComponent extends BaseChooserComponent {
-  private final List<SModelReference> myCheckedModels = ListSequence.fromList(new ArrayList<SModelReference>());
+  private final List<SModelReference> myCheckedModels = ListSequence.<SModelReference>fromList(new ArrayList<SModelReference>());
 
   public ModelChooserComponent() {
     super();
@@ -39,17 +39,17 @@ public class ModelChooserComponent extends BaseChooserComponent {
   }
 
   private void collectModels() {
-    ListSequence.fromList(this.myCheckedModels).clear();
+    ListSequence.<SModelReference>fromList(this.myCheckedModels).clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false));
+        List<SNode> nodes = ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false));
         for (SNode node : nodes) {
           SModel model = SNodeOperations.getModel(node);
           SModelReference md = model.getSModelReference();
-          if (ListSequence.fromList(ModelChooserComponent.this.myCheckedModels).contains(md)) {
+          if (ListSequence.<SModelReference>fromList(ModelChooserComponent.this.myCheckedModels).contains(md)) {
             continue;
           }
-          ListSequence.fromList(ModelChooserComponent.this.myCheckedModels).addElement(md);
+          ListSequence.<SModelReference>fromList(ModelChooserComponent.this.myCheckedModels).addElement(md);
         }
       }
     });

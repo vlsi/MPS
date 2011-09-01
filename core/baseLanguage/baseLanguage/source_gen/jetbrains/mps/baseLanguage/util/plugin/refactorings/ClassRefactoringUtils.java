@@ -15,19 +15,19 @@ public class ClassRefactoringUtils {
   }
 
   public static Set<SNode> getClassMemberRefernce(SNode body) {
-    Set<SNode> nodesToCheck = SetSequence.fromSet(new HashSet<SNode>());
-    for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(body, null, false, new String[]{}))) {
+    Set<SNode> nodesToCheck = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+    for (SNode call : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(body, null, false, new String[]{}))) {
       if (MethodCallAdapter.isMethodCall(call)) {
         SetSequence.fromSet(nodesToCheck).addElement(new MethodCallAdapter(call).getMethodDeclaration());
       }
     }
-    for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{}))) {
+    for (SNode call : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{}))) {
       SetSequence.fromSet(nodesToCheck).addElement(SLinkOperations.getTarget(call, "fieldDeclaration", false));
     }
-    for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", false, new String[]{}))) {
+    for (SNode call : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", false, new String[]{}))) {
       SetSequence.fromSet(nodesToCheck).addElement(SLinkOperations.getTarget(call, "variableDeclaration", false));
     }
-    for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", false, new String[]{}))) {
+    for (SNode call : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", false, new String[]{}))) {
       SetSequence.fromSet(nodesToCheck).addElement(SLinkOperations.getTarget(call, "variableDeclaration", false));
     }
     return nodesToCheck;

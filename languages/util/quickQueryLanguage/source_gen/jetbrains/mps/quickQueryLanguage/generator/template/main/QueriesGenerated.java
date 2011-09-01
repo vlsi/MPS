@@ -39,7 +39,7 @@ public class QueriesGenerated {
     SNode defaultCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
     SPropertyOperations.set(defaultCondition, "value", "" + false);
     SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
-    ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(expressionStatement);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(expressionStatement);
     return statementList;
   }
 }

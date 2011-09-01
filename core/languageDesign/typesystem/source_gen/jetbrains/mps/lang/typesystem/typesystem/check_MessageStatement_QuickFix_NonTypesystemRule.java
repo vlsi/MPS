@@ -22,7 +22,7 @@ public class check_MessageStatement_QuickFix_NonTypesystemRule extends AbstractN
 
   public void applyRule(final SNode messageStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> intentions = SLinkOperations.getTargets(messageStatement, "helginsIntention", true);
-    if (ListSequence.fromList(intentions).count() > 1) {
+    if (ListSequence.<SNode>fromList(intentions).count() > 1) {
       for (SNode intention : intentions) {
         if (SPropertyOperations.getBoolean(intention, "applyImmediately")) {
           {

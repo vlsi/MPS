@@ -291,13 +291,13 @@ public class ConfReader {
         if (bc != null) {
           SNode bep = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.BeanExtensionPoint", null);
           bep.setId(createForeignId(resolveInfo(EXTENSION_POINT, ep.getAttributeValue(NAME))));
-          ListSequence.fromList(SLinkOperations.getTargets(node, "fragment", true)).addElement(bep);
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "fragment", true)).addElement(bep);
           setProperty("name", bep, ep.getAttributeValue(NAME));
           addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.BeanExtensionPoint", "beanClass"), bep, bc);
         } else if (ifc != null) {
           SNode iep = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", null);
           iep.setId(createForeignId(resolveInfo(EXTENSION_POINT, ep.getAttributeValue(NAME))));
-          ListSequence.fromList(SLinkOperations.getTargets(node, "fragment", true)).addElement(iep);
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "fragment", true)).addElement(iep);
           setProperty("name", iep, ep.getAttributeValue(NAME));
           addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", "iface"), iep, ifc);
         } else {

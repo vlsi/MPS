@@ -20,7 +20,7 @@ public class MoveRefactoringUtils {
 
   public static void addNodeAtLink(SNode container, SNode node) {
     SNode concept = SNodeOperations.getConceptDeclaration(node);
-    for (SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(container)))) {
+    for (SNode link : ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(container)))) {
       if (SLinkOperations.getTarget(link, "target", false) == concept) {
         container.addChild(SPropertyOperations.getString(link, "role"), node);
       }
@@ -43,14 +43,14 @@ public class MoveRefactoringUtils {
   }
 
   public static void fixImportsFromNode(SNode node) {
-    for (SNode descendant : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
-      for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(descendant))) {
+    for (SNode descendant : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
+      for (SReference reference : Sequence.<SReference>fromIterable(SNodeOperations.getReferences(descendant))) {
         addNodeModelImportIfNeed(node, SLinkOperations.getTargetNode(reference));
       }
     }
   }
 
   public static boolean isReference(SNode node) {
-    return ListSequence.fromList(SNodeOperations.getChildren(node)).isEmpty() && Sequence.fromIterable(SNodeOperations.getReferences(node)).count() == 1;
+    return ListSequence.<SNode>fromList(SNodeOperations.getChildren(node)).isEmpty() && Sequence.<SReference>fromIterable(SNodeOperations.getReferences(node)).count() == 1;
   }
 }

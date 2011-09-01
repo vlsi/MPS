@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class AnnotationUtil {
-  private static Map<SNode, BLElementType> ourMap = MapSequence.fromMap(new HashMap<SNode, BLElementType>());
+  private static Map<SNode, BLElementType> ourMap = MapSequence.<SNode,BLElementType>fromMap(new HashMap<SNode, BLElementType>());
 
   public AnnotationUtil() {
   }
@@ -40,7 +40,7 @@ public class AnnotationUtil {
 
   public static boolean acceptKind(SNode targetKind, SNode hasAnnotation) {
     SNode enumConst = SLinkOperations.getTarget(targetKind, "enumConstantDeclaration", false);
-    BLElementType blElementType = MapSequence.fromMap(ourMap).get(enumConst);
+    BLElementType blElementType = MapSequence.<SNode,BLElementType>fromMap(ourMap).get(enumConst);
     return blElementType != null && blElementType.accept(hasAnnotation);
   }
 
@@ -197,13 +197,13 @@ public class AnnotationUtil {
   }
 
   static {
-    MapSequence.fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a0a0().createNode(), "enumConstantDeclaration", false), BLElementType.TYPE);
-    MapSequence.fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a1a0().createNode(), "enumConstantDeclaration", false), BLElementType.FIELD);
-    MapSequence.fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a2a0().createNode(), "enumConstantDeclaration", false), BLElementType.METHOD);
-    MapSequence.fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a3a0().createNode(), "enumConstantDeclaration", false), BLElementType.PARAMETER);
-    MapSequence.fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a4a0().createNode(), "enumConstantDeclaration", false), BLElementType.CONSTRUCTOR);
-    MapSequence.fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a5a0().createNode(), "enumConstantDeclaration", false), BLElementType.LOCAL_VARIABLE);
-    MapSequence.fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a6a0().createNode(), "enumConstantDeclaration", false), BLElementType.ANNOTATION_TYPE);
-    MapSequence.fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a7a0().createNode(), "enumConstantDeclaration", false), BLElementType.PACKAGE);
+    MapSequence.<SNode,BLElementType>fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a0a0().createNode(), "enumConstantDeclaration", false), BLElementType.TYPE);
+    MapSequence.<SNode,BLElementType>fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a1a0().createNode(), "enumConstantDeclaration", false), BLElementType.FIELD);
+    MapSequence.<SNode,BLElementType>fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a2a0().createNode(), "enumConstantDeclaration", false), BLElementType.METHOD);
+    MapSequence.<SNode,BLElementType>fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a3a0().createNode(), "enumConstantDeclaration", false), BLElementType.PARAMETER);
+    MapSequence.<SNode,BLElementType>fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a4a0().createNode(), "enumConstantDeclaration", false), BLElementType.CONSTRUCTOR);
+    MapSequence.<SNode,BLElementType>fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a5a0().createNode(), "enumConstantDeclaration", false), BLElementType.LOCAL_VARIABLE);
+    MapSequence.<SNode,BLElementType>fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a6a0().createNode(), "enumConstantDeclaration", false), BLElementType.ANNOTATION_TYPE);
+    MapSequence.<SNode,BLElementType>fromMap(ourMap).put(SLinkOperations.getTarget(new AnnotationUtil.QuotationClass_3nvpiw_a0a0a7a0().createNode(), "enumConstantDeclaration", false), BLElementType.PACKAGE);
   }
 }

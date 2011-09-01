@@ -326,7 +326,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_y68cfu_a4a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
   }
 
   private static boolean renderingCondition_y68cfu_a4b7a(SNode node, EditorContext editorContext, IScope scope) {

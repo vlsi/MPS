@@ -26,7 +26,7 @@ public final class LastStatementUtil {
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.StatementList")) {
         SNode bsStatementList = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.StatementList");
         List<SNode> statements = SLinkOperations.getTargets(bsStatementList, "statement", true);
-        if (ListSequence.fromList(statements).getElement(ListSequence.fromList(statements).count() - 1) == blockStatement) {
+        if (ListSequence.<SNode>fromList(statements).getElement(ListSequence.<SNode>fromList(statements).count() - 1) == blockStatement) {
           parent = SNodeOperations.getParent(bsStatementList);
         }
       }

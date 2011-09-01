@@ -137,7 +137,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_bfm5ok_a2b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "auxBounds", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "auxBounds", true)).isNotEmpty();
   }
 
   private static class auxBoundsListHandler_bfm5ok_b2b0 extends RefNodeListHandler {

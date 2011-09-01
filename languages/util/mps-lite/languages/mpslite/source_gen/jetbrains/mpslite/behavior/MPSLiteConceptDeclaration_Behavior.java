@@ -13,7 +13,7 @@ public class MPSLiteConceptDeclaration_Behavior {
   }
 
   public static void virtual_fillConcept_1239891562930(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    LineList_Behavior.call_fillConceptStructure_1238593666753(SLinkOperations.getTarget(thisNode, "lineList", true), ((SNode) MapSequence.fromMap(conceptsToTargets).get(thisNode)), conceptsToTargets, partsToLinks);
+    LineList_Behavior.call_fillConceptStructure_1238593666753(SLinkOperations.getTarget(thisNode, "lineList", true), ((SNode) MapSequence.<SNode,SNode>fromMap(conceptsToTargets).get(thisNode)), conceptsToTargets, partsToLinks);
   }
 
   public static SNode virtual_createEditor_1239890004879(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {

@@ -17,7 +17,7 @@ public class typeof_IOperation_InferenceRule extends AbstractInferenceRule_Runti
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode returnType = ListSequence.fromList(SLinkOperations.getConceptLinkTargets(op, "returnType")).first();
+    SNode returnType = ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(op, "returnType")).first();
     if (returnType != null) {
       {
         SNode _nodeToCheck_1029348928467 = op;

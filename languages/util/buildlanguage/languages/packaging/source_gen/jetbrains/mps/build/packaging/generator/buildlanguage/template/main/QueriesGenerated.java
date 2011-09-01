@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
@@ -15,7 +16,6 @@ import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavi
 import java.io.File;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.build.packaging.behavior.ICompositeComponent_Behavior;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.packaging.behavior.Copy_Behavior;
@@ -68,7 +68,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1221758915287(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.packaging.structure.Module", false, new String[]{})).isNotEmpty();
+    return ListSequence.<SNode>fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.packaging.structure.Module", false, new String[]{})).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_4738159245302752665(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -125,7 +125,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1239624236213(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String result = "";
-    for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "value", true))) {
+    for (SNode v : ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "value", true))) {
       result += IStringExpression_Behavior.call_getValue_1213877173054(v);
     }
     return result;
@@ -580,7 +580,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840479911(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -588,7 +588,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240841047944(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -596,7 +596,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840294750(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -604,7 +604,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840306379(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -616,7 +616,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840735467(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -624,7 +624,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840773419(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -632,7 +632,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840783973(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -640,7 +640,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840750954(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -648,7 +648,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840759868(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -660,7 +660,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840687220(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -668,7 +668,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840829512(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -676,7 +676,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840823386(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -684,7 +684,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840703152(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -692,7 +692,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840717719(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -704,7 +704,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840629555(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -712,7 +712,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840665834(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -720,7 +720,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840670841(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -743,41 +743,41 @@ public class QueriesGenerated {
     SNode holder = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.IMacroHolder", false, false);
     if (holder == null) {
       List<SNode> descendants = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.build.packaging.structure.Macro", false, new String[]{});
-      SNode macro = ListSequence.fromList(descendants).findFirst(new IWhereFilter<SNode>() {
+      SNode macro = ListSequence.<SNode>fromList(descendants).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(it, "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", false), "name"));
         }
       });
       if (macro != null) {
-        return ListSequence.fromList(_context.getAllOutputNodesByInputNodeAndMappingLabel(macro, "MacroToPropertyDeclaration")).first();
+        return ListSequence.<SNode>fromList(_context.getAllOutputNodesByInputNodeAndMappingLabel(macro, "MacroToPropertyDeclaration")).first();
       }
-      return ListSequence.fromList(PropertyReference_Behavior.getAllVisibleDeclarations_1239123615225(_context.getOutputNode())).findFirst(new IWhereFilter<SNode>() {
+      return ListSequence.<SNode>fromList(PropertyReference_Behavior.getAllVisibleDeclarations_1239123615225(_context.getOutputNode())).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(it, "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", false), "name"));
         }
       });
     }
     SNode macro = IMacroHolder_Behavior.call_findMacroForReference_1234972707641(holder, SLinkOperations.getTarget(_context.getNode(), "macro", false));
-    return ListSequence.fromList(_context.getAllOutputNodesByInputNodeAndMappingLabel(macro, "MacroToPropertyDeclaration")).first();
+    return ListSequence.<SNode>fromList(_context.getAllOutputNodesByInputNodeAndMappingLabel(macro, "MacroToPropertyDeclaration")).first();
   }
 
   public static Object referenceMacro_GetReferent_1220983242941(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode holder = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.IMacroHolder", false, false);
     if (holder == null) {
       List<SNode> descendants = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.build.packaging.structure.Macro", false, new String[]{});
-      for (SNode m : ListSequence.fromList(descendants)) {
+      for (SNode m : ListSequence.<SNode>fromList(descendants)) {
         if (SPropertyOperations.getString(m, "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", true), "name"))) {
           return m;
         }
       }
-      return ListSequence.fromList(PropertyReference_Behavior.getAllVisibleDeclarations_1239123615225(_context.getOutputNode())).findFirst(new IWhereFilter<SNode>() {
+      return ListSequence.<SNode>fromList(PropertyReference_Behavior.getAllVisibleDeclarations_1239123615225(_context.getOutputNode())).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(it, "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", true), "name"));
         }
       });
     }
     SNode macro = IMacroHolder_Behavior.call_findMacroForReference_1234972707641(holder, SLinkOperations.getTarget(_context.getNode(), "macro", true));
-    return ListSequence.fromList(_context.getAllOutputNodesByInputNodeAndMappingLabel(macro, "MacroToPropertyDeclaration")).first();
+    return ListSequence.<SNode>fromList(_context.getAllOutputNodesByInputNodeAndMappingLabel(macro, "MacroToPropertyDeclaration")).first();
   }
 
   public static Object referenceMacro_GetReferent_1230221653582(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -785,7 +785,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840845369(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -793,7 +793,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840856055(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -805,7 +805,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_4159241239519682285(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -821,7 +821,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_437343344535742236(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(Layout_Behavior.getDeployDirName_462257719548547196());
       }
@@ -830,7 +830,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1220361608323(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> references = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", true, false), "jetbrains.mps.build.packaging.structure.VariableReference", false, new String[]{});
-    for (SNode ref : ListSequence.fromList(references)) {
+    for (SNode ref : ListSequence.<SNode>fromList(references)) {
       if (SLinkOperations.getTarget(ref, "variable", false) == _context.getNode()) {
         return true;
       }
@@ -911,7 +911,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1902360454496031486(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, false)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getString(it, "fullPath").endsWith(".jar"));
       }
@@ -927,7 +927,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1210099219016(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, false)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getString(it, "fullPath").endsWith(".jar"));
       }
@@ -936,10 +936,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_2850282874221194302(final IOperationContext operationContext, final IfMacroContext _context) {
     if (SPropertyOperations.getBoolean(_context.getNode(), "doNotJar")) {
-      if (ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, false)).isNotEmpty()) {
+      if (ListSequence.<SNode>fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, false)).isNotEmpty()) {
         _context.showErrorMessage(_context.getNode(), "non-empty runtime classpath for " + Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName());
       }
-      if (ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode(), false)).isNotEmpty()) {
+      if (ListSequence.<SNode>fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode(), false)).isNotEmpty()) {
         _context.showErrorMessage(_context.getNode(), "non-empty stub classpath for " + Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName());
       }
     }
@@ -956,7 +956,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1219157474820(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode layout = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false);
-    return (layout == null) || (!(ListSequence.fromList(SLinkOperations.getTargets(layout, "builtInVariable", true)).contains(SLinkOperations.getTarget(_context.getNode(), "variable", false))) && ListSequence.fromList(IVariableHolder_Behavior.call_getAllVariable_1234864693585(layout)).contains(SLinkOperations.getTarget(_context.getNode(), "variable", false)));
+    return (layout == null) || (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(layout, "builtInVariable", true)).contains(SLinkOperations.getTarget(_context.getNode(), "variable", false))) && ListSequence.<SNode>fromList(IVariableHolder_Behavior.call_getAllVariable_1234864693585(layout)).contains(SLinkOperations.getTarget(_context.getNode(), "variable", false)));
   }
 
   public static boolean ifMacro_Condition_1220026604203(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1148,7 +1148,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1234271765511(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "jetbrains.mps.build.packaging.structure.Replace", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "jetbrains.mps.build.packaging.structure.Replace", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return AbstractProjectComponent_Behavior.call_included_1213877333807(it, _context.getNode());
       }
@@ -1156,7 +1156,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_437343344536141882(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "jetbrains.mps.build.packaging.structure.Branding", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "jetbrains.mps.build.packaging.structure.Branding", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return AbstractProjectComponent_Behavior.call_included_1213877333807(it, _context.getNode());
       }
@@ -1172,7 +1172,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1203613712380(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Layout_Behavior.call_getTopologicalSortedComponents_1213877228296(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), _context.getNode())).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(Layout_Behavior.call_getTopologicalSortedComponents_1213877228296(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), _context.getNode())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.ICompositeComponent");
       }
@@ -1196,7 +1196,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1204020868967(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Layout_Behavior.call_getModules_1213877228340(_context.getNode())).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(Layout_Behavior.call_getModules_1213877228340(_context.getNode())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return Module_Behavior.call_getModule_1213877515148(it) != null && !(Module_Behavior.call_getModule_1213877515148(it).isPackaged());
       }
@@ -1213,9 +1213,9 @@ public class QueriesGenerated {
     for (IModule m : Module_Behavior.call_getModule_1213877515148(_context.getNode()).getDependenciesManager().getAllRequiredModules()) {
       SNode propertyNode = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.BaseConcept", null);
       propertyNode.setProperty(MREF, m.getModuleReference().toString());
-      ListSequence.fromList(res).addElement(propertyNode);
+      ListSequence.<SNode>fromList(res).addElement(propertyNode);
     }
-    return ListSequence.fromList(res).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.<SNode>fromList(res).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return it.getProperty(MREF);
       }
@@ -1223,7 +1223,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1902360454495856121(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
       }
@@ -1231,7 +1231,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1902360454495907423(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode(), true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode(), true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
       }
@@ -1251,7 +1251,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1237395979883(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode(), false)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode(), false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getString(it, "fullPath").endsWith(".jar"));
       }
@@ -1259,7 +1259,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1210099260514(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, false)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getString(it, "fullPath").endsWith(".jar"));
       }
@@ -1275,7 +1275,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4470173663067859641(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(ModuleCycle_Behavior.call_getClassPath_1218646038565(_context.getNode())).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.<SNode>fromList(ModuleCycle_Behavior.call_getClassPath_1218646038565(_context.getNode())).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return SPropertyOperations.getString(it, "fullPath");
       }
@@ -1287,7 +1287,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4470173663067859683(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(SLinkOperations.getTarget(_context.getNode(), "module", false), false)).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.<SNode>fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(SLinkOperations.getTarget(_context.getNode(), "module", false), false)).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return SPropertyOperations.getString(it, "fullPath");
       }
@@ -1295,7 +1295,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4470173663067859661(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getSourcesDirectories_1775602641704992067(SLinkOperations.getTarget(_context.getNode(), "module", false))).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.<SNode>fromList(Module_Behavior.call_getSourcesDirectories_1775602641704992067(SLinkOperations.getTarget(_context.getNode(), "module", false))).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return SPropertyOperations.getString(it, "fullPath");
       }
@@ -1303,7 +1303,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1217518508070(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "moduleReference", true)).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "moduleReference", true)).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return SPropertyOperations.getString(SLinkOperations.getTarget(it, "module", false), "name");
       }
@@ -1311,7 +1311,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1219419191024(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "macro", true)).sort(new Comparator<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "macro", true)).sort(new Comparator<SNode>() {
       public int compare(SNode a, SNode b) {
         return SPropertyOperations.getString(a, "name").compareTo(SPropertyOperations.getString(b, "name"));
       }
@@ -1319,7 +1319,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4470173663067771918(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(ModuleCycle_Behavior.getMPSClassPath_1218716245482(IMacroHolder_Behavior.call_getPath_1234976932856(_context.getNode()), SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true))).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.<SNode>fromList(ModuleCycle_Behavior.getMPSClassPath_1218716245482(IMacroHolder_Behavior.call_getPath_1234976932856(_context.getNode()), SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true))).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return SPropertyOperations.getString(it, "fullPath");
       }
@@ -1423,14 +1423,14 @@ __switch__:
 
   public static void mappingScript_CodeBlock_1217435006860(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.Layout");
-    for (SNode layout : ListSequence.fromList(layouts)) {
+    for (SNode layout : ListSequence.<SNode>fromList(layouts)) {
       if (!(SPropertyOperations.getBoolean(layout, "compile"))) {
         continue;
       }
       List<SNode> modules = SNodeOperations.getDescendants(layout, "jetbrains.mps.build.packaging.structure.Module", false, new String[]{});
-      Map<IModule, List<SNode>> map = MapSequence.fromMap(new LinkedHashMap<IModule, List<SNode>>(16, (float) 0.75, false));
+      Map<IModule, List<SNode>> map = MapSequence.<IModule,List<SNode>>fromMap(new LinkedHashMap<IModule, List<SNode>>(16, (float) 0.75, false));
       // fill map 
-      for (SNode module : ListSequence.fromList(modules)) {
+      for (SNode module : ListSequence.<SNode>fromList(modules)) {
         IModule imodule = Module_Behavior.call_getModule_1213877515148(module);
         if (imodule == null) {
           _context.showErrorMessage(module, "Missing module " + SPropertyOperations.getString(module, "name") + ".");
@@ -1439,17 +1439,17 @@ __switch__:
         if ((imodule instanceof DevKit) || (!(imodule.isCompileInMPS()))) {
           continue;
         }
-        List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
+        List<SNode> modulesForIModule = MapSequence.<IModule,List<SNode>>fromMap(map).get(imodule);
         if (modulesForIModule == null) {
           modulesForIModule = new ArrayList<SNode>();
-          MapSequence.fromMap(map).put(imodule, modulesForIModule);
+          MapSequence.<IModule,List<SNode>>fromMap(map).put(imodule, modulesForIModule);
         }
-        ListSequence.fromList(modulesForIModule).addElement(module);
+        ListSequence.<SNode>fromList(modulesForIModule).addElement(module);
       }
       // calculate module cycles 
       Set<IModule> modulesToProcess = MapSequence.fromMap(map).keySet();
-      Set<IModule> modulesCopy = SetSequence.fromSet(new LinkedHashSet());
-      SetSequence.fromSet(modulesCopy).addSequence(SetSequence.fromSet(modulesToProcess).sort(new ISelector<IModule, Comparable<?>>() {
+      Set<IModule> modulesCopy = SetSequence.<IModule>fromSet(new LinkedHashSet());
+      SetSequence.fromSet(modulesCopy).addSequence(SetSequence.<IModule>fromSet(modulesToProcess).sort(new ISelector<IModule, Comparable<?>>() {
         public Comparable<?> select(IModule it) {
           return it.getModuleFqName();
         }
@@ -1457,35 +1457,35 @@ __switch__:
       List<Set<IModule>> sm = (List<Set<IModule>>) StronglyConnectedModules.getInstance().getStronglyConnectedComponents(modulesCopy);
       // say to all modules it's cycle 
       SNode lastCycle = null;
-      List<SNode> result = ListSequence.fromList(new ArrayList<SNode>(ListSequence.fromList(sm).count()));
-      for (Set<IModule> moduleSet : ListSequence.fromList(sm)) {
+      List<SNode> result = ListSequence.<SNode>fromList(new ArrayList<SNode>(ListSequence.<Set<IModule>>fromList(sm).count()));
+      for (Set<IModule> moduleSet : ListSequence.<Set<IModule>>fromList(sm)) {
         SNode cycle = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycle", null);
-        ListSequence.fromList(result).addElement(cycle);
+        ListSequence.<SNode>fromList(result).addElement(cycle);
         // add dependency to the previous cycle so that compilation order would be preserved 
         if (lastCycle != null) {
           SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycleReference", null);
           SLinkOperations.setTarget(ref, "cycle", lastCycle, false);
-          ListSequence.fromList(SLinkOperations.getTargets(cycle, "dependency", true)).addElement(ref);
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(cycle, "dependency", true)).addElement(ref);
         }
         lastCycle = cycle;
-        Iterable<IModule> sortedModuleSet = SetSequence.fromSet(moduleSet).sort(new ISelector<IModule, Comparable<?>>() {
+        Iterable<IModule> sortedModuleSet = SetSequence.<IModule>fromSet(moduleSet).sort(new ISelector<IModule, Comparable<?>>() {
           public Comparable<?> select(IModule it) {
             return it.getModuleFqName();
           }
         }, true);
-        SPropertyOperations.set(cycle, "name", _context.createUniqueName("cycle." + Sequence.fromIterable(sortedModuleSet).first().getModuleFqName(), layout));
-        for (IModule imodule : Sequence.fromIterable(sortedModuleSet)) {
-          List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
-          for (SNode module : ListSequence.fromList(modulesForIModule)) {
+        SPropertyOperations.set(cycle, "name", _context.createUniqueName("cycle." + Sequence.<IModule>fromIterable(sortedModuleSet).first().getModuleFqName(), layout));
+        for (IModule imodule : Sequence.<IModule>fromIterable(sortedModuleSet)) {
+          List<SNode> modulesForIModule = MapSequence.<IModule,List<SNode>>fromMap(map).get(imodule);
+          for (SNode module : ListSequence.<SNode>fromList(modulesForIModule)) {
             SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.NewModuleReference", null);
             SLinkOperations.setTarget(ref, "module", module, false);
             SLinkOperations.addChild(cycle, "moduleReference", ref);
           }
         }
       }
-      ListSequence.fromList(SLinkOperations.getTargets(layout, "cycle", true)).addSequence(ListSequence.fromList(result).sort(new ISelector<SNode, Comparable<?>>() {
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(layout, "cycle", true)).addSequence(ListSequence.<SNode>fromList(result).sort(new ISelector<SNode, Comparable<?>>() {
         public Comparable<?> select(SNode it) {
-          return SPropertyOperations.getString(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(it, "moduleReference", true)).first(), "module", false), "name");
+          return SPropertyOperations.getString(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(it, "moduleReference", true)).first(), "module", false), "name");
         }
       }, true));
     }
@@ -1493,10 +1493,10 @@ __switch__:
 
   public static void mappingScript_CodeBlock_1219229087938(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> holders = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.IMacroHolder");
-    for (SNode holder : ListSequence.fromList(holders)) {
+    for (SNode holder : ListSequence.<SNode>fromList(holders)) {
       List<String> allMAcroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(holder, true);
       SLinkOperations.removeAllChildren(holder, "macro");
-      for (String macroName : ListSequence.fromList(allMAcroNames)) {
+      for (String macroName : ListSequence.<String>fromList(allMAcroNames)) {
         SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
         SPropertyOperations.set(macro, "name", macroName);
         SPropertyOperations.set(macro, "path", IMacroHolder_Behavior.call_evaluateMacro_1234975967990(holder, macroName).replace("\\", Util.SEPARATOR));
@@ -1508,12 +1508,12 @@ __switch__:
   public static void mappingScript_CodeBlock_1238426776124(final IOperationContext operationContext, final MappingScriptContext _context) {
     // <node> 
     List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.Layout");
-    for (SNode layout : ListSequence.fromList(layouts)) {
-      Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
-      for (SNode m : ListSequence.fromList(Layout_Behavior.call_getModules_1213877228340(layout))) {
+    for (SNode layout : ListSequence.<SNode>fromList(layouts)) {
+      Set<IModule> modules = SetSequence.<IModule>fromSet(new HashSet<IModule>());
+      for (SNode m : ListSequence.<SNode>fromList(Layout_Behavior.call_getModules_1213877228340(layout))) {
         SetSequence.fromSet(modules).addElement(Module_Behavior.call_getModule_1213877515148(m));
       }
-      for (IModule module : SetSequence.fromSet(modules)) {
+      for (IModule module : SetSequence.<IModule>fromSet(modules)) {
         Set<IModule> dependency = module.getDependenciesManager().getAllVisibleModules();
         if (module instanceof DevKit) {
           DevKit d = (DevKit) module;
@@ -1521,8 +1521,8 @@ __switch__:
           dependency.addAll(d.getAllExportedSolutions());
           dependency.addAll(d.getAllExtendedDevkits());
         }
-        for (IModule dependent : SetSequence.fromSet(dependency)) {
-          if (!(dependent instanceof Generator) && !(SetSequence.fromSet(modules).contains(dependent)) && !(dependent.isPackaged()) && dependent.getDescriptorFile() != null && dependent.isCompileInMPS()) {
+        for (IModule dependent : SetSequence.<IModule>fromSet(dependency)) {
+          if (!(dependent instanceof Generator) && !(SetSequence.<IModule>fromSet(modules).contains(dependent)) && !(dependent.isPackaged()) && dependent.getDescriptorFile() != null && dependent.isCompileInMPS()) {
             String moduleFqName = module.getModuleFqName();
             String errorText = "Required module " + dependent.getModuleFqName() + " is absent. Used by module " + moduleFqName + ".";
             System.err.println(errorText);
@@ -1539,14 +1539,14 @@ __switch__:
 
   public static void mappingScript_CodeBlock_9027273598492288378(final IOperationContext operationContext, final MappingScriptContext _context) {
     // blocks aren't generated so we delete them 
-    for (SNode block : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.Block"))) {
+    for (SNode block : ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.Block"))) {
       SNodeOperations.deleteNode(block);
     }
   }
 
   public static void mappingScript_CodeBlock_5934900624260317374(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), null))) {
-      for (SNode module : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.build.packaging.structure.Module", false, new String[]{}))) {
+    for (SNode root : ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getModel(), null))) {
+      for (SNode module : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.build.packaging.structure.Module", false, new String[]{}))) {
         if (Module_Behavior.call_getModule_1213877515148(module) == null) {
           _context.showErrorMessage(module, "Module not found");
         }

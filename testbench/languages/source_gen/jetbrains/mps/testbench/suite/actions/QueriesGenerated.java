@@ -23,8 +23,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.baseLanguage.search.AllSubclassifiersScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
@@ -43,7 +43,7 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SolutionRef_1280144168199506928(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.SolutionRef");
       SNode childConcept = (SNode) _context.getChildConcept();
@@ -51,7 +51,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
           public Object calculate() {
             List<Solution> allSolutions = MPSModuleRepository.getInstance().getAllSolutions();
-            return ListSequence.fromList(allSolutions).<ModuleReference>select(new ISelector<Solution, ModuleReference>() {
+            return ListSequence.<Solution>fromList(allSolutions).<ModuleReference>select(new ISelector<Solution, ModuleReference>() {
               public ModuleReference select(Solution s) {
                 return s.getModuleReference();
               }
@@ -61,7 +61,7 @@ public class QueriesGenerated {
         Iterable<ModuleReference> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final ModuleReference item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.<INodeSubstituteAction>fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode solutionRef = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.SolutionRef", null);
                 SPropertyOperations.set(solutionRef, "moduleFQName", (item).getModuleFqName());
@@ -85,7 +85,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_JUnit3TestCaseRef_1280144168199520224(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef");
       SNode childConcept = (SNode) _context.getChildConcept();
@@ -94,7 +94,7 @@ public class QueriesGenerated {
           public Object calculate() {
             SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
             final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {
+            return Sequence.<SModelDescriptor>fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {
               public Iterable<SNode> translate(SModelDescriptor smd) {
                 return new AllSubclassifiersScope(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0c0a0a0a0a2a0a1a1().createNode(), "classifier", false), smd.getSModel(), IClassifiersSearchScope.CLASS, (mscope != null ?
                   mscope :
@@ -111,7 +111,7 @@ public class QueriesGenerated {
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.<INodeSubstituteAction>fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "klass", (item), false);
@@ -136,7 +136,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_JUnit4TestCaseRef_1280144168199633207(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef");
       SNode childConcept = (SNode) _context.getChildConcept();
@@ -147,14 +147,14 @@ public class QueriesGenerated {
             final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
             final SNode testAnn = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0c0a0a0a0a2a0a1a2().createNode(), "annotation", false);
 
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {
+            return Sequence.<SModelDescriptor>fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {
               public Iterable<SNode> translate(SModelDescriptor smd) {
                 return new ReachableClassifiersScope(smd.getSModel(), IClassifiersSearchScope.CLASS, (mscope != null ?
                   mscope :
                   operationContext.getScope()
                 )).getNodes(new Condition<SNode>() {
                   public boolean met(SNode cls) {
-                    return ListSequence.fromList(SLinkOperations.getTargets(cls, "method", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+                    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(cls, "method", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
                       public Iterable<SNode> translate(SNode m) {
                         return SLinkOperations.getTargets(m, "annotation", true);
                       }
@@ -172,7 +172,7 @@ public class QueriesGenerated {
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.<INodeSubstituteAction>fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "klass", (item), false);
@@ -197,7 +197,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TestCaseRef_1280144168199742766(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.TestCaseRef");
       SNode childConcept = (SNode) _context.getChildConcept();
@@ -205,7 +205,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
           public Object calculate() {
             SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {
+            return Sequence.<SModelDescriptor>fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {
               public Iterable<SNode> translate(SModelDescriptor smd) {
                 return SModelOperations.getNodes(((SModel) smd.getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
               }
@@ -215,7 +215,7 @@ public class QueriesGenerated {
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.<INodeSubstituteAction>fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "testCase", (item), false);

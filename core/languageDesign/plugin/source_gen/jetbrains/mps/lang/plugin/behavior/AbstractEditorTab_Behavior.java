@@ -24,9 +24,9 @@ public class AbstractEditorTab_Behavior {
   }
 
   public static List<PropertyReference> virtual_getPropertiesToCheck_1628770029971140570(SNode thisNode) {
-    List<PropertyReference> props = ListSequence.fromList(new ArrayList<PropertyReference>());
-    ListSequence.fromList(props).addElement(new PropertyReference(thisNode, "name"));
-    ListSequence.fromList(props).addElement(new PropertyReference(thisNode, "emptyCaption"));
+    List<PropertyReference> props = ListSequence.<PropertyReference>fromList(new ArrayList<PropertyReference>());
+    ListSequence.<PropertyReference>fromList(props).addElement(new PropertyReference(thisNode, "name"));
+    ListSequence.<PropertyReference>fromList(props).addElement(new PropertyReference(thisNode, "emptyCaption"));
     return props;
   }
 }

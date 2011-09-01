@@ -30,13 +30,13 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForType(node, 2, ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map"), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~HashMap")));
+        return ListMigrationUtil.isApplicableForType(node, 2, ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map"), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~HashMap")));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapType", null);
-        SLinkOperations.setTarget(result, "keyType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
-        SLinkOperations.setTarget(result, "valueType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()), true);
+        SLinkOperations.setTarget(result, "keyType", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
+        SLinkOperations.setTarget(result, "valueType", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).last()), true);
         SNodeOperations.replaceWithAnother(node, result);
       }
 
@@ -58,12 +58,12 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForMap(node, "get", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForMap(node, "get", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapElement", null);
-        SLinkOperations.setTarget(operation, "key", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(operation, "key", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SLinkOperations.setTarget(operation, "map", SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), true);
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), operation);
       }
@@ -86,16 +86,16 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForMap(node, "put", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT, ParameterType.NOT_INT));
+        return ListMigrationUtil.isApplicableForMap(node, "put", ListSequence.<ParameterType>fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT, ParameterType.NOT_INT));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode assignment = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapElement", null);
-        SLinkOperations.setTarget(operation, "key", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
+        SLinkOperations.setTarget(operation, "key", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SLinkOperations.setTarget(operation, "map", SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), true);
         SLinkOperations.setTarget(assignment, "lValue", operation, true);
-        SLinkOperations.setTarget(assignment, "rValue", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()), true);
+        SLinkOperations.setTarget(assignment, "rValue", SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()), true);
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), assignment);
       }
 
@@ -117,7 +117,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForMap(node, "values", ListSequence.fromList(new ArrayList<ParameterType>()));
+        return ListMigrationUtil.isApplicableForMap(node, "values", ListSequence.<ParameterType>fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -143,7 +143,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForMap(node, "keySet", ListSequence.fromList(new ArrayList<ParameterType>()));
+        return ListMigrationUtil.isApplicableForMap(node, "keySet", ListSequence.<ParameterType>fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -169,7 +169,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForMap(node, "clear", ListSequence.fromList(new ArrayList<ParameterType>()));
+        return ListMigrationUtil.isApplicableForMap(node, "clear", ListSequence.<ParameterType>fromList(new ArrayList<ParameterType>()));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -195,13 +195,13 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return eq_ds6c8y_a0a0a0d0a0a0h0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "HashMap") && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 2 && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() == 0;
+        return eq_ds6c8y_a0a0a0d0a0a0h0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "HashMap") && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 2 && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() == 0;
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", null);
-        SLinkOperations.setTarget(result, "keyType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
-        SLinkOperations.setTarget(result, "valueType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).last(), true);
+        SLinkOperations.setTarget(result, "keyType", ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
+        SLinkOperations.setTarget(result, "valueType", ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).last(), true);
         SNodeOperations.replaceWithAnother(node, result);
       }
 

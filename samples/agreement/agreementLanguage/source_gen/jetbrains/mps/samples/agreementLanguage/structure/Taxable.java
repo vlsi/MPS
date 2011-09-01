@@ -31,9 +31,9 @@ public enum Taxable {
   }
 
   public static List<Taxable> getConstants() {
-    List<Taxable> list = ListSequence.fromList(new LinkedList<Taxable>());
-    ListSequence.fromList(list).addElement(Taxable.taxable);
-    ListSequence.fromList(list).addElement(Taxable.tax_free);
+    List<Taxable> list = ListSequence.<Taxable>fromList(new LinkedList<Taxable>());
+    ListSequence.<Taxable>fromList(list).addElement(Taxable.taxable);
+    ListSequence.<Taxable>fromList(list).addElement(Taxable.tax_free);
     return list;
   }
 

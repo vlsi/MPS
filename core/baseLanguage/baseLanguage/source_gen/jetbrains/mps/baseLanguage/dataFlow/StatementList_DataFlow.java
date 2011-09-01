@@ -19,13 +19,13 @@ public class StatementList_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       SNode bmd = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-      for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(bmd, "parameter", true))) {
+      for (SNode param : ListSequence.<SNode>fromList(SLinkOperations.getTargets(bmd, "parameter", true))) {
         _context.getBuilder().build((SNode) param);
       }
     }
     _context.getBuilder().emitNop();
     SNode lastStatement = null;
-    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).isNotEmpty()) {
       SNode methodLike = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
       if ((methodLike != null)) {
         lastStatement = IMethodLike_Behavior.call_getLastStatement_1239354409446(methodLike);

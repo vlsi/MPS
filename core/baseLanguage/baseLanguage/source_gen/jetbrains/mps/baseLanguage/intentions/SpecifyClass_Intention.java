@@ -43,7 +43,7 @@ public class SpecifyClass_Intention extends BaseIntention implements Intention {
     SLinkOperations.setTarget(smc, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
     List<SNode> args = SLinkOperations.getTargets(node, "actualArgument", true);
     for (SNode arg : args) {
-      ListSequence.fromList(SLinkOperations.getTargets(smc, "actualArgument", true)).addElement(SNodeOperations.detachNode(arg));
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(smc, "actualArgument", true)).addElement(SNodeOperations.detachNode(arg));
     }
     editorContext.selectWRTFocusPolicy(smc);
   }

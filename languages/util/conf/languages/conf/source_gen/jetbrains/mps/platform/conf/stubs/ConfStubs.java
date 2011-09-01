@@ -42,27 +42,27 @@ public class ConfStubs extends BaseStubModelRootManager {
   }
 
   protected Set<Language> getLanguagesToImport() {
-    Set<String> moduleIds = SetSequence.fromSet(new HashSet<String>());
+    Set<String> moduleIds = SetSequence.<String>fromSet(new HashSet<String>());
 
     moduleIds.add("32d0a39c-772f-4490-8142-e50f9a9f19d4");
 
-    Iterable<Language> languages = SetSequence.fromSet(moduleIds).<Language>select(new ISelector<String, Language>() {
+    Iterable<Language> languages = SetSequence.<String>fromSet(moduleIds).<Language>select(new ISelector<String, Language>() {
       public Language select(String it) {
         return (Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(it));
       }
     });
 
     Set<Language> result = new HashSet<Language>();
-    result.addAll(Sequence.fromIterable(languages).toListSequence());
+    result.addAll(Sequence.<Language>fromIterable(languages).toListSequence());
     return result;
   }
 
   protected void updateModel(final StubLocation location, final SModel model, final StubSource source) {
     String pkg = model.getSModelFqName().getLongName();
-    List<Tuples._3<String, String, SNode>> doclst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
+    List<Tuples._3<String, String, SNode>> doclst = ListSequence.<Tuples._3<String, String, SNode>>fromList(new ArrayList<Tuples._3<String, String, SNode>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", null);
     PathItem pi = ConfPathItem.getPathItem(location.getPath());
-    for (String docres : ListSequence.fromList(pi.resources(pkg))) {
+    for (String docres : ListSequence.<String>fromList(pi.resources(pkg))) {
       SNodeId id = ConfReader.createForeignId(pi.baseName(docres));
       SNode doc = (SNode) model.getNodeById(id);
       if ((doc == null)) {
@@ -71,7 +71,7 @@ public class ConfStubs extends BaseStubModelRootManager {
         SPropertyOperations.set(doc, "name", pi.baseName(docres));
         SModelOperations.addRootNode(model, doc);
       }
-      ListSequence.fromList(doclst).addElement(MultiTuple.<String,String,SNode>from(pkg, docres, doc));
+      ListSequence.<Tuples._3<String, String, SNode>>fromList(doclst).addElement(MultiTuple.<String,String,SNode>from(pkg, docres, doc));
     }
     final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf"), ConfStubs.this, location);
     ConfReader reader = new ConfReader(new ConfReader.Resolver() {
@@ -83,7 +83,7 @@ public class ConfStubs extends BaseStubModelRootManager {
         return descs.smodelRefWithId(pk);
       }
     });
-    for (Tuples._3<String, String, SNode> doctuple : ListSequence.fromList(doclst)) {
+    for (Tuples._3<String, String, SNode> doctuple : ListSequence.<Tuples._3<String, String, SNode>>fromList(doclst)) {
       InputStream is = null;
       try {
         is = pi.openResource(doctuple._0(), doctuple._1());

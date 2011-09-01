@@ -101,7 +101,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_lu5mzk_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "action", false), "constructionParameter", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "action", false), "constructionParameter", true)).isNotEmpty();
   }
 
   public static class _Inline_lu5mzk_a0a extends InlineCellProvider {

@@ -30,14 +30,14 @@ public class JUnitTests_Producer {
   }
 
   public static List<RuntimeConfigurationProducer> getProducers(ConfigurationType configurationType) {
-    List<RuntimeConfigurationProducer> creators = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
-    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_Model_f2w1m9_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_IModule_f2w1m9_b(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_MPSProject_f2w1m9_c(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_Node_f2w1m9_d(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_NlistITestCase_f2w1m9_e(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_NlistITestMethod_f2w1m9_f(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_NodeINamedConcept_f2w1m9_g(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    List<RuntimeConfigurationProducer> creators = ListSequence.<RuntimeConfigurationProducer>fromList(new ArrayList<RuntimeConfigurationProducer>());
+    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_Model_f2w1m9_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_IModule_f2w1m9_b(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_MPSProject_f2w1m9_c(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_Node_f2w1m9_d(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_NlistITestCase_f2w1m9_e(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_NlistITestMethod_f2w1m9_f(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_NodeINamedConcept_f2w1m9_g(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     return creators;
   }
 
@@ -52,7 +52,7 @@ public class JUnitTests_Producer {
 
     protected JUnitTests_Configuration doCreateConfiguration(final SModel source) {
       setSourceElement(new MPSPsiElement(source));
-      if (Sequence.fromIterable(TestUtils.getModelTests(source)).isEmpty()) {
+      if (Sequence.<ITestNodeWrapper>fromIterable(TestUtils.getModelTests(source)).isEmpty()) {
         return null;
       }
       String name = SModelOperations.getModelName(source);
@@ -129,7 +129,7 @@ public class JUnitTests_Producer {
 
     protected JUnitTests_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
-      SNode testNode = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(source, Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts()).<String>select(new ISelector<SNode, String>() {
+      SNode testNode = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(source, Sequence.<SNode>fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts()).<String>select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return INamedConcept_Behavior.call_getFqName_1213877404258(it);
         }
@@ -139,7 +139,7 @@ public class JUnitTests_Producer {
       }
 
       ITestNodeWrapper wrapper = TestNodeWrapperFactory.tryToWrap(testNode);
-      if (wrapper == null || Sequence.fromIterable(wrapper.getTestMethods()).isEmpty()) {
+      if (wrapper == null || Sequence.<ITestNodeWrapper>fromIterable(wrapper.getTestMethods()).isEmpty()) {
         return null;
       }
 
@@ -176,7 +176,7 @@ public class JUnitTests_Producer {
       setSourceElement(new MPSPsiElement(source));
       boolean containsTest = false;
       for (SNode testCase : source) {
-        if (ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(testCase)).isNotEmpty()) {
+        if (ListSequence.<SNode>fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(testCase)).isNotEmpty()) {
           containsTest = true;
           break;
         }
@@ -185,7 +185,7 @@ public class JUnitTests_Producer {
         return null;
       }
 
-      JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(source).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "name") + ",...");
+      JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), SPropertyOperations.getString(SNodeOperations.cast(ListSequence.<SNode>fromList(source).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "name") + ",...");
       configuration.setRunType(JUnitRunTypes2.NODE);
       configuration.setTestCases(TestUtils.nodesToCloneableList(source));
       return configuration;
@@ -216,7 +216,7 @@ public class JUnitTests_Producer {
 
     protected JUnitTests_Configuration doCreateConfiguration(final List<SNode> source) {
       setSourceElement(new MPSPsiElement(source));
-      JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), ITestMethod_Behavior.call_getTestName_1216136419751(ListSequence.fromList(source).first()) + ",...");
+      JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), ITestMethod_Behavior.call_getTestName_1216136419751(ListSequence.<SNode>fromList(source).first()) + ",...");
       configuration.setRunType(JUnitRunTypes2.METHOD);
       configuration.setTestMethods(TestUtils.nodesToCloneableList(source));
       return configuration;

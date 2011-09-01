@@ -60,7 +60,7 @@ public class ReplaceEqualityWithEquals_Intention extends BaseIntention implement
     SLinkOperations.setTarget(equalsExpression, "operand", leftExpr, true);
     SNode operation = SNodeFactoryOperations.setNewChild(equalsExpression, "operation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
     SLinkOperations.setTarget(operation, "baseMethodDeclaration", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ReplaceEqualityWithEquals_Intention.QuotationClass_6thnk0_a0a0c0f0h().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false), false);
-    ListSequence.fromList(SLinkOperations.getTargets(operation, "actualArgument", true)).insertElement(0, rightExpression);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(operation, "actualArgument", true)).insertElement(0, rightExpression);
     SNodeOperations.replaceWithAnother(node, equalsExpression);
   }
 

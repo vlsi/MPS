@@ -28,7 +28,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConvertAnonymousRefactoring {
-  private static final Set<String> ROLES_NOT_TO_COPY = SetSequence.fromSetAndArray(new HashSet<String>(), "visibility");
+  private static final Set<String> ROLES_NOT_TO_COPY = SetSequence.<String>fromSetAndArray(new HashSet<String>(), "visibility");
 
   private SNode myClassToRefactor;
   private String myNameForInnerClass;
@@ -46,7 +46,7 @@ public class ConvertAnonymousRefactoring {
     collectInformation();
     SNode creator = SNodeOperations.as(SNodeOperations.getParent(myClassToRefactor), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
     if ((creator != null)) {
-      SNodeOperations.replaceWithAnother(creator, makeInnerConstructorInvocation(ListSequence.fromList(SLinkOperations.getTargets(makeInnerClass(), "constructor", true)).getElement(0)));
+      SNodeOperations.replaceWithAnother(creator, makeInnerConstructorInvocation(ListSequence.<SNode>fromList(SLinkOperations.getTargets(makeInnerClass(), "constructor", true)).getElement(0)));
     }
   }
 
@@ -58,48 +58,48 @@ public class ConvertAnonymousRefactoring {
   }
 
   private void createParameterDeclarationsForFields() {
-    this.myInnerConstructorParameters = MapSequence.fromMap(new LinkedHashMap<SNode, SNode>(16, (float) 0.75, false));
-    for (SNode varDeclaration : SetSequence.fromSet(MapSequence.fromMap(this.myInnerFields).keySet())) {
-      MapSequence.fromMap(this.myInnerConstructorParameters).put(MapSequence.fromMap(this.myInnerFields).get(varDeclaration), new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a1a0a0b0c().createNode(SLinkOperations.getTarget(varDeclaration, "type", true), SPropertyOperations.getString(varDeclaration, "name")));
+    this.myInnerConstructorParameters = MapSequence.<SNode,SNode>fromMap(new LinkedHashMap<SNode, SNode>(16, (float) 0.75, false));
+    for (SNode varDeclaration : SetSequence.<SNode>fromSet(MapSequence.fromMap(this.myInnerFields).keySet())) {
+      MapSequence.<SNode,SNode>fromMap(this.myInnerConstructorParameters).put(MapSequence.<SNode,SNode>fromMap(this.myInnerFields).get(varDeclaration), new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a1a0a0b0c().createNode(SLinkOperations.getTarget(varDeclaration, "type", true), SPropertyOperations.getString(varDeclaration, "name")));
     }
   }
 
   private void collectFields() {
-    this.myInnerFields = MapSequence.fromMap(new LinkedHashMap<SNode, SNode>(16, (float) 0.75, false));
-    for (SNode varReference : Sequence.fromIterable(this.getExternalReferences(this.myClassToRefactor))) {
+    this.myInnerFields = MapSequence.<SNode,SNode>fromMap(new LinkedHashMap<SNode, SNode>(16, (float) 0.75, false));
+    for (SNode varReference : Sequence.<SNode>fromIterable(this.getExternalReferences(this.myClassToRefactor))) {
       SNode varDeclaration = SLinkOperations.getTarget(varReference, "variableDeclaration", false);
       if (!(MapSequence.fromMap(this.myInnerFields).containsKey(varDeclaration))) {
-        MapSequence.fromMap(this.myInnerFields).put(varDeclaration, new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a1a0a0b0b0d().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(varDeclaration, "type", true)), "my" + NameUtil.capitalize(SPropertyOperations.getString(varDeclaration, "name"))));
+        MapSequence.<SNode,SNode>fromMap(this.myInnerFields).put(varDeclaration, new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a1a0a0b0b0d().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(varDeclaration, "type", true)), "my" + NameUtil.capitalize(SPropertyOperations.getString(varDeclaration, "name"))));
       }
     }
   }
 
   private void collectTypeVaryables() {
-    this.myInnerTypeVaryables = MapSequence.fromMap(new LinkedHashMap<SNode, SNode>(16, (float) 0.75, false));
-    Iterable<SNode> typeVariableReferences = ListSequence.fromList(SLinkOperations.getTargets(this.myClassToRefactor, "typeParameter", true)).where(new IWhereFilter<SNode>() {
+    this.myInnerTypeVaryables = MapSequence.<SNode,SNode>fromMap(new LinkedHashMap<SNode, SNode>(16, (float) 0.75, false));
+    Iterable<SNode> typeVariableReferences = ListSequence.<SNode>fromList(SLinkOperations.getTargets(this.myClassToRefactor, "typeParameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
       }
     });
-    for (SNode typeReference : Sequence.fromIterable(typeVariableReferences)) {
+    for (SNode typeReference : Sequence.<SNode>fromIterable(typeVariableReferences)) {
       SNode typeDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(typeReference, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
       if (!(MapSequence.fromMap(this.myInnerTypeVaryables).containsKey(typeDeclaration))) {
-        MapSequence.fromMap(this.myInnerTypeVaryables).put(typeDeclaration, SNodeOperations.copyNode(typeDeclaration));
+        MapSequence.<SNode,SNode>fromMap(this.myInnerTypeVaryables).put(typeDeclaration, SNodeOperations.copyNode(typeDeclaration));
       }
-      SNodeOperations.replaceWithAnother(typeReference, new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0c0c0e().createNode(MapSequence.fromMap(this.myInnerTypeVaryables).get(typeDeclaration)));
+      SNodeOperations.replaceWithAnother(typeReference, new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0c0c0e().createNode(MapSequence.<SNode,SNode>fromMap(this.myInnerTypeVaryables).get(typeDeclaration)));
     }
   }
 
   private void collectSuperConstructorParameters() {
     this.mySuperConstructorParameters = new ArrayList<SNode>();
-    for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(this.myClassToRefactor, "baseMethodDeclaration", false), "parameter", true))) {
-      ListSequence.fromList(this.mySuperConstructorParameters).addElement(SNodeOperations.copyNode(param));
+    for (SNode param : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(this.myClassToRefactor, "baseMethodDeclaration", false), "parameter", true))) {
+      ListSequence.<SNode>fromList(this.mySuperConstructorParameters).addElement(SNodeOperations.copyNode(param));
     }
   }
 
   private SNode makeInnerClass() {
     SNode innerClass = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null);
-    ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(this.myClassToRefactor, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "staticInnerClassifiers", true)).addElement(innerClass);
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(this.myClassToRefactor, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "staticInnerClassifiers", true)).addElement(innerClass);
     SPropertyOperations.set(innerClass, "name", this.myNameForInnerClass);
     SLinkOperations.setTarget(innerClass, "visibility", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null), true);
     this.chooseNonStaticForInnerClass(innerClass);
@@ -112,48 +112,48 @@ public class ConvertAnonymousRefactoring {
   }
 
   private void makeInnerConstructor(SNode innerClass) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).isEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).isEmpty()) {
       SNode ctor = SModelOperations.createNewNode(SNodeOperations.getModel(innerClass), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
-      ListSequence.fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).addElement(ctor);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).addElement(ctor);
       SLinkOperations.setNewChild(ctor, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
       SLinkOperations.setNewChild(ctor, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
       SLinkOperations.setNewChild(ctor, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
     }
-    SNode innerConstructor = ListSequence.fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).getElement(0);
+    SNode innerConstructor = ListSequence.<SNode>fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).getElement(0);
     this.addParametersToConstructor(innerConstructor);
     this.makeConstructorBody(innerConstructor);
   }
 
   private void makeConstructorBody(SNode constructorDeclaration) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(this.myClassToRefactor, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty()) {
-      List<SNode> parameterReferences = ListSequence.fromList(this.mySuperConstructorParameters).<SNode>select(new ISelector<SNode, SNode>() {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(this.myClassToRefactor, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty()) {
+      List<SNode> parameterReferences = ListSequence.<SNode>fromList(this.mySuperConstructorParameters).<SNode>select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0a0a0a8().createNode(it);
         }
       }).toListSequence();
       SNode invocation = new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a1a0a8().createNode(parameterReferences);
       SLinkOperations.setTarget(invocation, "baseMethodDeclaration", SLinkOperations.getTarget(this.myClassToRefactor, "baseMethodDeclaration", false), false);
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(constructorDeclaration, "body", true), "statement", true)).insertElement(0, invocation);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(constructorDeclaration, "body", true), "statement", true)).insertElement(0, invocation);
     }
-    for (SNode fieldDeclaration : SetSequence.fromSet(MapSequence.fromMap(this.myInnerConstructorParameters).keySet())) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(constructorDeclaration, "body", true), "statement", true)).addElement(new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0b0i().createNode(MapSequence.fromMap(this.myInnerConstructorParameters).get(fieldDeclaration), fieldDeclaration));
+    for (SNode fieldDeclaration : SetSequence.<SNode>fromSet(MapSequence.fromMap(this.myInnerConstructorParameters).keySet())) {
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(constructorDeclaration, "body", true), "statement", true)).addElement(new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0b0i().createNode(MapSequence.<SNode,SNode>fromMap(this.myInnerConstructorParameters).get(fieldDeclaration), fieldDeclaration));
     }
   }
 
   private void addParametersToConstructor(SNode constructorDeclaration) {
-    ListSequence.fromList(SLinkOperations.getTargets(constructorDeclaration, "parameter", true)).addSequence(ListSequence.fromList(this.mySuperConstructorParameters));
-    ListSequence.fromList(SLinkOperations.getTargets(constructorDeclaration, "parameter", true)).addSequence(Sequence.fromIterable(MapSequence.fromMap(this.myInnerConstructorParameters).values()));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(constructorDeclaration, "parameter", true)).addSequence(ListSequence.<SNode>fromList(this.mySuperConstructorParameters));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(constructorDeclaration, "parameter", true)).addSequence(Sequence.<SNode>fromIterable(MapSequence.fromMap(this.myInnerConstructorParameters).values()));
   }
 
   private void copyChildren(SNode from, SNode to) {
-    Set<String> toConceptRoles = SetSequence.fromSetWithValues(new HashSet(), ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(to))).<String>select(new ISelector<SNode, String>() {
+    Set<String> toConceptRoles = SetSequence.<String>fromSetWithValues(new HashSet(), ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(to))).<String>select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "role");
       }
     }));
-    for (String role : SetSequence.fromSet(from.getChildRoles())) {
-      if (SetSequence.fromSet(toConceptRoles).contains(role) && !(SetSequence.fromSet(ROLES_NOT_TO_COPY).contains(role))) {
-        for (SNode child : ListSequence.fromList(from.getChildren(role))) {
+    for (String role : SetSequence.<String>fromSet(from.getChildRoles())) {
+      if (SetSequence.<String>fromSet(toConceptRoles).contains(role) && !(SetSequence.<String>fromSet(ROLES_NOT_TO_COPY).contains(role))) {
+        for (SNode child : ListSequence.<SNode>fromList(from.getChildren(role))) {
           to.addChild(role, SNodeOperations.detachNode(((SNode) child)));
         }
       }
@@ -170,26 +170,26 @@ public class ConvertAnonymousRefactoring {
   }
 
   private void addFieldsToInnerClass(SNode innerClass) {
-    ListSequence.fromList(SLinkOperations.getTargets(innerClass, "field", true)).addSequence(Sequence.fromIterable(MapSequence.fromMap(this.myInnerFields).values()));
-    for (SNode varReference : Sequence.fromIterable(this.getExternalReferences(innerClass))) {
-      SNodeOperations.replaceWithAnother(varReference, new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0b0m().createNode(MapSequence.fromMap(this.myInnerFields).get(SLinkOperations.getTarget(varReference, "variableDeclaration", false))));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(innerClass, "field", true)).addSequence(Sequence.<SNode>fromIterable(MapSequence.fromMap(this.myInnerFields).values()));
+    for (SNode varReference : Sequence.<SNode>fromIterable(this.getExternalReferences(innerClass))) {
+      SNodeOperations.replaceWithAnother(varReference, new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0b0m().createNode(MapSequence.<SNode,SNode>fromMap(this.myInnerFields).get(SLinkOperations.getTarget(varReference, "variableDeclaration", false))));
     }
   }
 
   private void addTypeVaryablesToInnerClass(SNode innerClass) {
-    ListSequence.fromList(SLinkOperations.getTargets(innerClass, "typeVariableDeclaration", true)).addSequence(Sequence.fromIterable(MapSequence.fromMap(this.myInnerTypeVaryables).values()));
-    for (SNode typeReference : ListSequence.fromList(SNodeOperations.getDescendants(innerClass, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{}))) {
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(innerClass, "typeVariableDeclaration", true)).addSequence(Sequence.<SNode>fromIterable(MapSequence.fromMap(this.myInnerTypeVaryables).values()));
+    for (SNode typeReference : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(innerClass, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{}))) {
       if (MapSequence.fromMap(this.myInnerTypeVaryables).containsKey(SLinkOperations.getTarget(typeReference, "typeVariableDeclaration", false))) {
-        SNodeOperations.replaceWithAnother(typeReference, new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0b0n().createNode(MapSequence.fromMap(this.myInnerTypeVaryables).get(SLinkOperations.getTarget(typeReference, "typeVariableDeclaration", false))));
+        SNodeOperations.replaceWithAnother(typeReference, new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0b0n().createNode(MapSequence.<SNode,SNode>fromMap(this.myInnerTypeVaryables).get(SLinkOperations.getTarget(typeReference, "typeVariableDeclaration", false))));
       }
     }
   }
 
   private void addSuperToInnerClass(SNode innerClass) {
     SNode superInnerClass = new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a41().createNode(SLinkOperations.getTarget(this.myClassToRefactor, "classifier", false));
-    ListSequence.fromList(SLinkOperations.getTargets(superInnerClass, "parameter", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(this.myClassToRefactor, "typeParameter", true)));
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(superInnerClass, "parameter", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(this.myClassToRefactor, "typeParameter", true)));
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(this.myClassToRefactor, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
-      ListSequence.fromList(SLinkOperations.getTargets(innerClass, "implementedInterface", true)).addElement(superInnerClass);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(innerClass, "implementedInterface", true)).addElement(superInnerClass);
     } else {
       SLinkOperations.setTarget(innerClass, "superclass", superInnerClass, true);
     }
@@ -197,7 +197,7 @@ public class ConvertAnonymousRefactoring {
 
   private SNode makeInnerConstructorInvocation(SNode constructor) {
     SNode constructorInvocation = new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a51().createNode(constructor, SLinkOperations.getTargets(this.myClassToRefactor, "actualArgument", true));
-    ListSequence.fromList(SLinkOperations.getTargets(constructorInvocation, "actualArgument", true)).addSequence(SetSequence.fromSet(MapSequence.fromMap(this.myInnerFields).keySet()).<SNode>select(new ISelector<SNode, SNode>() {
+    ListSequence.<SNode>fromList(SLinkOperations.getTargets(constructorInvocation, "actualArgument", true)).addSequence(SetSequence.<SNode>fromSet(MapSequence.fromMap(this.myInnerFields).keySet()).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") ?
           new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0a0b0p().createNode(it) :
@@ -205,21 +205,21 @@ public class ConvertAnonymousRefactoring {
         );
       }
     }));
-    for (SNode typeVaryable : SetSequence.fromSet(MapSequence.fromMap(this.myInnerTypeVaryables).keySet())) {
-      ListSequence.fromList(SLinkOperations.getTargets(constructorInvocation, "typeParameter", true)).addElement(new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0c0p().createNode(typeVaryable));
+    for (SNode typeVaryable : SetSequence.<SNode>fromSet(MapSequence.fromMap(this.myInnerTypeVaryables).keySet())) {
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(constructorInvocation, "typeParameter", true)).addElement(new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0c0p().createNode(typeVaryable));
     }
     return constructorInvocation;
   }
 
   private Iterable<SNode> getExternalReferences(final SNode node) {
-    Iterable<SNode> result = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.ParameterReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> result = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.ParameterReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(ListSequence.fromList(SNodeOperations.getAncestors(SLinkOperations.getTarget(it, "variableDeclaration", false), null, false)).contains(node));
+        return !(ListSequence.<SNode>fromList(SNodeOperations.getAncestors(SLinkOperations.getTarget(it, "variableDeclaration", false), null, false)).contains(node));
       }
     });
-    result = Sequence.fromIterable(result).concat(ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    result = Sequence.<SNode>fromIterable(result).concat(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(ListSequence.fromList(SNodeOperations.getAncestors(SLinkOperations.getTarget(it, "variableDeclaration", false), null, false)).contains(node));
+        return !(ListSequence.<SNode>fromList(SNodeOperations.getAncestors(SLinkOperations.getTarget(it, "variableDeclaration", false), null, false)).contains(node));
       }
     }));
     return result;

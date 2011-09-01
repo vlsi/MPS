@@ -34,11 +34,11 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class CopyBuildArtifacts_Facet extends IFacet.Stub {
-  private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
+  private List<ITarget> targets = ListSequence.<ITarget>fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.build.custommps.CopyBuildArtifacts");
 
   public CopyBuildArtifacts_Facet() {
-    ListSequence.fromList(targets).addElement(new CopyBuildArtifacts_Facet.Target_copyFiles());
+    ListSequence.<ITarget>fromList(targets).addElement(new CopyBuildArtifacts_Facet.Target_copyFiles());
   }
 
   public Iterable<ITarget> targets() {
@@ -80,7 +80,7 @@ public class CopyBuildArtifacts_Facet extends IFacet.Stub {
           Iterable<IResource> _output_srsvb8_a0a = null;
           switch (0) {
             case 0:
-              final List<Tuples._2<IFile, IFile>> toCopy = ListSequence.fromList(new ArrayList<Tuples._2<IFile, IFile>>());
+              final List<Tuples._2<IFile, IFile>> toCopy = ListSequence.<Tuples._2<IFile, IFile>>fromList(new ArrayList<Tuples._2<IFile, IFile>>());
               for (IResource resource : input) {
                 TResource tres = (TResource) resource;
                 String dest = pa.forResource(tres).properties(Target_copyFiles.this.getName(), CopyBuildArtifacts_Facet.Target_copyFiles.Parameters.class).destination();
@@ -90,11 +90,11 @@ public class CopyBuildArtifacts_Facet extends IFacet.Stub {
                     new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
                       @Override
                       public boolean acceptWritten(IFile file) {
-                        if (!(Sequence.fromIterable(Sequence.fromArray(new String[]{"dependencies", "generated", "trace.info"})).contains(file.getName()))) {
+                        if (!(Sequence.<String>fromIterable(Sequence.fromArray(new String[]{"dependencies", "generated", "trace.info"})).contains(file.getName()))) {
                           String path = file.getPath();
                           IFile copy = destDir.getDescendant(file.getName());
-                          ListSequence.fromList(toCopy).addElement(MultiTuple.<IFile,IFile>from(file, copy));
-                          monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Copying " + ListSequence.fromList(toCopy).last())));
+                          ListSequence.<Tuples._2<IFile, IFile>>fromList(toCopy).addElement(MultiTuple.<IFile,IFile>from(file, copy));
+                          monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Copying " + ListSequence.<Tuples._2<IFile, IFile>>fromList(toCopy).last())));
                         }
                         return true;
                       }
@@ -106,7 +106,7 @@ public class CopyBuildArtifacts_Facet extends IFacet.Stub {
                   public void run() {
                     ModelAccess.instance().requireWrite(new Runnable() {
                       public void run() {
-                        ListSequence.fromList(toCopy).visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
+                        ListSequence.<Tuples._2<IFile, IFile>>fromList(toCopy).visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
                           public void visit(Tuples._2<IFile, IFile> ftc) {
                             IFileUtils.copyFileContent(ftc._0(), ftc._1());
                           }
@@ -116,7 +116,7 @@ public class CopyBuildArtifacts_Facet extends IFacet.Stub {
                   }
                 });
 
-                _output_srsvb8_a0a = Sequence.fromIterable(_output_srsvb8_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+                _output_srsvb8_a0a = Sequence.<IResource>fromIterable(_output_srsvb8_a0a).concat(Sequence.<IResource>fromIterable(Sequence.<IResource>singleton(resource)));
               }
             default:
               return new IResult.SUCCESS(_output_srsvb8_a0a);
@@ -210,7 +210,7 @@ public class CopyBuildArtifacts_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.build.custommps.CopyBuildArtifacts.copyFiles");
         if (properties.hasProperties(name)) {
           CopyBuildArtifacts_Facet.Target_copyFiles.Parameters props = properties.properties(name, CopyBuildArtifacts_Facet.Target_copyFiles.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.build.custommps.CopyBuildArtifacts.copyFiles.destination", String.valueOf(props.destination()));
+          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.build.custommps.CopyBuildArtifacts.copyFiles.destination", String.valueOf(props.destination()));
         }
       }
     }
@@ -221,7 +221,7 @@ public class CopyBuildArtifacts_Facet extends IFacet.Stub {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.build.custommps.CopyBuildArtifacts.copyFiles");
           CopyBuildArtifacts_Facet.Target_copyFiles.Parameters props = properties.properties(name, CopyBuildArtifacts_Facet.Target_copyFiles.Parameters.class);
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.build.custommps.CopyBuildArtifacts.copyFiles.destination")) {
-            props.destination(String.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.build.custommps.CopyBuildArtifacts.copyFiles.destination")));
+            props.destination(String.valueOf(MapSequence.<String,String>fromMap(store).get("jetbrains.mps.build.custommps.CopyBuildArtifacts.copyFiles.destination")));
           }
         }
       } catch (RuntimeException re) {

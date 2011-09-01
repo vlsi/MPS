@@ -32,16 +32,16 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
 
   public void applyRule(final SNode classifierType, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == 0 || ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count())) {
+    if (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == 0 || ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count())) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classifierType, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591081", null, errorTarget);
     }
-    Map<SNode, SNode> typeParamsToArgs = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    Map<SNode, SNode> typeParamsToArgs = MapSequence.<SNode,SNode>fromMap(new HashMap<SNode, SNode>());
     {
       SNode typeParameter;
       SNode typeVar;
-      Iterator<SNode> typeParameter_iterator = ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).iterator();
-      Iterator<SNode> typeVar_iterator = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).iterator();
+      Iterator<SNode> typeParameter_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).iterator();
+      Iterator<SNode> typeVar_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).iterator();
       while (true) {
         if (!(typeParameter_iterator.hasNext())) {
           break;
@@ -51,7 +51,7 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
         }
         typeParameter = typeParameter_iterator.next();
         typeVar = typeVar_iterator.next();
-        MapSequence.fromMap(typeParamsToArgs).put(typeVar, typeParameter);
+        MapSequence.<SNode,SNode>fromMap(typeParamsToArgs).put(typeVar, typeParameter);
       }
     }
     for (SNode typeParameter : SLinkOperations.getTargets(classifierType, "parameter", true)) {
@@ -60,12 +60,12 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeParameter, "primitive types not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591112", null, errorTarget);
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count()) {
       {
         SNode typeArgument;
         SNode typeVar;
-        Iterator<SNode> typeArgument_iterator = ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).iterator();
-        Iterator<SNode> typeVar_iterator = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).iterator();
+        Iterator<SNode> typeArgument_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).iterator();
+        Iterator<SNode> typeVar_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).iterator();
         while (true) {
           if (!(typeArgument_iterator.hasNext())) {
             break;

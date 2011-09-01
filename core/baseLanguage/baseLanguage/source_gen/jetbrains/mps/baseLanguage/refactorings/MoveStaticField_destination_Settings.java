@@ -17,6 +17,6 @@ public class MoveStaticField_destination_Settings extends IChooserSettings.BaseC
   }
 
   public boolean met(final SNode entity) {
-    return SNodeOperations.isInstanceOf(entity, "jetbrains.mps.baseLanguage.structure.Classifier") && !(ListSequence.fromList(SNodeOperations.getAncestors(MoveStaticField_destination_Settings.this.myRefactoringContext.getSelectedNode(), null, false)).contains(entity));
+    return SNodeOperations.isInstanceOf(entity, "jetbrains.mps.baseLanguage.structure.Classifier") && !(ListSequence.<SNode>fromList(SNodeOperations.getAncestors(MoveStaticField_destination_Settings.this.myRefactoringContext.getSelectedNode(), null, false)).contains(entity));
   }
 }

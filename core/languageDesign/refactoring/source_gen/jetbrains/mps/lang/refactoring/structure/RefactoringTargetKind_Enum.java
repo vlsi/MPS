@@ -34,12 +34,12 @@ public enum RefactoringTargetKind_Enum {
   }
 
   public static List<RefactoringTargetKind_Enum> getConstants() {
-    List<RefactoringTargetKind_Enum> list = ListSequence.fromList(new LinkedList<RefactoringTargetKind_Enum>());
-    ListSequence.fromList(list).addElement(RefactoringTargetKind_Enum.node);
-    ListSequence.fromList(list).addElement(RefactoringTargetKind_Enum.model);
-    ListSequence.fromList(list).addElement(RefactoringTargetKind_Enum.language);
-    ListSequence.fromList(list).addElement(RefactoringTargetKind_Enum.solution);
-    ListSequence.fromList(list).addElement(RefactoringTargetKind_Enum.devkit);
+    List<RefactoringTargetKind_Enum> list = ListSequence.<RefactoringTargetKind_Enum>fromList(new LinkedList<RefactoringTargetKind_Enum>());
+    ListSequence.<RefactoringTargetKind_Enum>fromList(list).addElement(RefactoringTargetKind_Enum.node);
+    ListSequence.<RefactoringTargetKind_Enum>fromList(list).addElement(RefactoringTargetKind_Enum.model);
+    ListSequence.<RefactoringTargetKind_Enum>fromList(list).addElement(RefactoringTargetKind_Enum.language);
+    ListSequence.<RefactoringTargetKind_Enum>fromList(list).addElement(RefactoringTargetKind_Enum.solution);
+    ListSequence.<RefactoringTargetKind_Enum>fromList(list).addElement(RefactoringTargetKind_Enum.devkit);
     return list;
   }
 

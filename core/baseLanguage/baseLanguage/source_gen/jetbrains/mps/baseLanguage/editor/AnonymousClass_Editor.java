@@ -370,15 +370,15 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_msf9u8_a0a0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_msf9u8_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_msf9u8_a3a0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_msf9u8_a1b0(SNode node, EditorContext editorContext, IScope scope) {
@@ -386,23 +386,23 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_msf9u8_a2b0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "instanceInitializer", true) != null && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
+    return SLinkOperations.getTarget(node, "instanceInitializer", true) != null && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_msf9u8_a3b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_msf9u8_a4b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty() && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_msf9u8_a5b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_msf9u8_a6b0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty() && SLinkOperations.getTarget(node, "instanceInitializer", true) != null);
+    return !(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty() && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty() && SLinkOperations.getTarget(node, "instanceInitializer", true) != null);
   }
 
   public static class _Inline_msf9u8_a0a0 extends InlineCellProvider {

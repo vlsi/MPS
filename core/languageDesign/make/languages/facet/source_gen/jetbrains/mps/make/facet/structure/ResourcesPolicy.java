@@ -33,11 +33,11 @@ public enum ResourcesPolicy {
   }
 
   public static List<ResourcesPolicy> getConstants() {
-    List<ResourcesPolicy> list = ListSequence.fromList(new LinkedList<ResourcesPolicy>());
-    ListSequence.fromList(list).addElement(ResourcesPolicy.transform);
-    ListSequence.fromList(list).addElement(ResourcesPolicy.pass_through);
-    ListSequence.fromList(list).addElement(ResourcesPolicy.consume);
-    ListSequence.fromList(list).addElement(ResourcesPolicy.produce);
+    List<ResourcesPolicy> list = ListSequence.<ResourcesPolicy>fromList(new LinkedList<ResourcesPolicy>());
+    ListSequence.<ResourcesPolicy>fromList(list).addElement(ResourcesPolicy.transform);
+    ListSequence.<ResourcesPolicy>fromList(list).addElement(ResourcesPolicy.pass_through);
+    ListSequence.<ResourcesPolicy>fromList(list).addElement(ResourcesPolicy.consume);
+    ListSequence.<ResourcesPolicy>fromList(list).addElement(ResourcesPolicy.produce);
     return list;
   }
 

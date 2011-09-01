@@ -81,7 +81,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7946777123643247149(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "text", true)).first();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "text", true)).first();
   }
 
   public static SNode sourceNodeQuery_7417816926334633027(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

@@ -32,7 +32,7 @@ public class typeof_LambdaAbstraction_InferenceRule extends AbstractInferenceRul
     SNode result = typeCheckingContext.getRepresentative(R_typevar_627759474950188093);
     List<SNode> reversedNodes = new ArrayList<SNode>();
     for (SNode node : SLinkOperations.getTargets(lambdaAbstraction, "variable", true)) {
-      ListSequence.fromList(reversedNodes).insertElement(0, node);
+      ListSequence.<SNode>fromList(reversedNodes).insertElement(0, node);
     }
     for (SNode node : reversedNodes) {
       final SNode D_typevar_6115593414628019700 = typeCheckingContext.createNewRuntimeTypesVariable();

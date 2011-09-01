@@ -20,7 +20,7 @@ public class check_CustomContainerCreator_elementType_NonTypesystemRule extends 
 
   public void applyRule(final SNode ccc, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SLinkOperations.getTarget(ccc, "elementType", true);
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ccc, "containerDeclaration", false), "typeVariableDeclaration", true)).count() <= 1 && ((ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ccc, "containerDeclaration", false), "typeVariableDeclaration", true)).count() == 1) == (SLinkOperations.getTarget(ccc, "elementType", true) != null)))) {
+    if (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ccc, "containerDeclaration", false), "typeVariableDeclaration", true)).count() <= 1 && ((ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ccc, "containerDeclaration", false), "typeVariableDeclaration", true)).count() == 1) == (SLinkOperations.getTarget(ccc, "elementType", true) != null)))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ccc, "Invalid type parameter", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5192033827214196979", null, errorTarget);
     }

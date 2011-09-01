@@ -17,7 +17,7 @@ public class CheckingUtil {
       return false;
     }
     SNode lValue = SLinkOperations.getTarget(assignment, "lValue", true);
-    if (ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).contains(lValue)) {
+    if (ListSequence.<SNode>fromList(SNodeOperations.getAncestors(node, null, true)).contains(lValue)) {
       return true;
     }
     return false;

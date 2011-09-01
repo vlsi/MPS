@@ -35,16 +35,16 @@ public class ImplementedInterfaces_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> classNodes = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", node, scope, indicator);
-    ListSequence.fromList(classNodes).addElement(node);
-    for (SNode classNode : ListSequence.fromList(classNodes)) {
-      for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "implementedInterface", true))) {
+    ListSequence.<SNode>fromList(classNodes).addElement(node);
+    for (SNode classNode : ListSequence.<SNode>fromList(classNodes)) {
+      for (SNode implementedInterface : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "implementedInterface", true))) {
         SNode interfaceNode = (SNode) SLinkOperations.getTarget(implementedInterface, "classifier", false);
-        ListSequence.fromList(result).addElement(interfaceNode);
-        ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SNode>) FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", interfaceNode, scope, indicator)));
+        ListSequence.<SNode>fromList(result).addElement(interfaceNode);
+        ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList((List<SNode>) FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", interfaceNode, scope, indicator)));
       }
     }
-    for (SNode interfaceNode : ListSequence.fromList(result)) {
-      ListSequence.fromList(_results).addElement(interfaceNode);
+    for (SNode interfaceNode : ListSequence.<SNode>fromList(result)) {
+      ListSequence.<SNode>fromList(_results).addElement(interfaceNode);
     }
   }
 

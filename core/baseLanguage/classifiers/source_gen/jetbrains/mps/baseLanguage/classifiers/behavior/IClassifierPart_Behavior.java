@@ -21,7 +21,7 @@ public class IClassifierPart_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode child : SNodeOperations.getChildren(thisNode)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")) {
-        ListSequence.fromList(result).addElement(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"));
+        ListSequence.<SNode>fromList(result).addElement(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"));
       }
     }
     return result;

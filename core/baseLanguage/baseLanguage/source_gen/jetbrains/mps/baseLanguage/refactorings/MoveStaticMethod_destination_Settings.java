@@ -17,6 +17,6 @@ public class MoveStaticMethod_destination_Settings extends IChooserSettings.Base
   }
 
   public boolean met(final SNode entity) {
-    return SNodeOperations.isInstanceOf(entity, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(ListSequence.fromList(SNodeOperations.getAncestors(MoveStaticMethod_destination_Settings.this.myRefactoringContext.getSelectedNode(), null, false)).contains(entity));
+    return SNodeOperations.isInstanceOf(entity, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(ListSequence.<SNode>fromList(SNodeOperations.getAncestors(MoveStaticMethod_destination_Settings.this.myRefactoringContext.getSelectedNode(), null, false)).contains(entity));
   }
 }

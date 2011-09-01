@@ -50,12 +50,12 @@ public class ReplaceEqualsWithEquality_Intention extends BaseIntention implement
     if (SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name") == null) {
       return false;
     }
-    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name").equals("equals") && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).count() == 1;
+    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name").equals("equals") && ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).count() == 1;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode leftExpr = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", true);
-    SNode rightExpression = ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first();
+    SNode rightExpression = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first();
     SNode equalsExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EqualsExpression", null);
     SLinkOperations.setTarget(equalsExpression, "leftExpression", leftExpr, true);
     SLinkOperations.setTarget(equalsExpression, "rightExpression", rightExpression, true);

@@ -116,7 +116,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_91bvrs_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() > 0;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).count() > 0;
   }
 
   public static class _Inline_91bvrs_a0a extends InlineCellProvider {

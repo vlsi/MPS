@@ -34,12 +34,12 @@ public enum Keymap {
   }
 
   public static List<Keymap> getConstants() {
-    List<Keymap> list = ListSequence.fromList(new LinkedList<Keymap>());
-    ListSequence.fromList(list).addElement(Keymap.Mac_OS_X);
-    ListSequence.fromList(list).addElement(Keymap.XWin);
-    ListSequence.fromList(list).addElement(Keymap.GNOME);
-    ListSequence.fromList(list).addElement(Keymap.KDE);
-    ListSequence.fromList(list).addElement(Keymap.Default);
+    List<Keymap> list = ListSequence.<Keymap>fromList(new LinkedList<Keymap>());
+    ListSequence.<Keymap>fromList(list).addElement(Keymap.Mac_OS_X);
+    ListSequence.<Keymap>fromList(list).addElement(Keymap.XWin);
+    ListSequence.<Keymap>fromList(list).addElement(Keymap.GNOME);
+    ListSequence.<Keymap>fromList(list).addElement(Keymap.KDE);
+    ListSequence.<Keymap>fromList(list).addElement(Keymap.Default);
     return list;
   }
 

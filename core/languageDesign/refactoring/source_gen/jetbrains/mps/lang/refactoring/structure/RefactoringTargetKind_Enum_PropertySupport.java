@@ -11,7 +11,7 @@ public class RefactoringTargetKind_Enum_PropertySupport extends PropertySupport 
     if (value == null) {
       return true;
     }
-    Iterator<RefactoringTargetKind_Enum> constants = ListSequence.fromList(RefactoringTargetKind_Enum.getConstants()).iterator();
+    Iterator<RefactoringTargetKind_Enum> constants = ListSequence.<RefactoringTargetKind_Enum>fromList(RefactoringTargetKind_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       RefactoringTargetKind_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class RefactoringTargetKind_Enum_PropertySupport extends PropertySupport 
     if (value == null) {
       return null;
     }
-    Iterator<RefactoringTargetKind_Enum> constants = ListSequence.fromList(RefactoringTargetKind_Enum.getConstants()).iterator();
+    Iterator<RefactoringTargetKind_Enum> constants = ListSequence.<RefactoringTargetKind_Enum>fromList(RefactoringTargetKind_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       RefactoringTargetKind_Enum constant = constants.next();
       if (value.equals(constant.getName())) {

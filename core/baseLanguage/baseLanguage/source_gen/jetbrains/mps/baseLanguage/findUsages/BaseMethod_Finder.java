@@ -53,15 +53,15 @@ public class BaseMethod_Finder extends GeneratedFinder {
     SNode classNode = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     SNode interfaceNode = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Interface", false, false);
     if (classNode != null) {
-      ListSequence.fromList(allAncestors).addElement(classNode);
-      ListSequence.fromList(allAncestors).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", classNode, scope, indicator)));
-      ListSequence.fromList(allAncestors).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder", classNode, scope, indicator)));
+      ListSequence.<SNode>fromList(allAncestors).addElement(classNode);
+      ListSequence.<SNode>fromList(allAncestors).addSequence(ListSequence.<SNode>fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", classNode, scope, indicator)));
+      ListSequence.<SNode>fromList(allAncestors).addSequence(ListSequence.<SNode>fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder", classNode, scope, indicator)));
     } else if (interfaceNode != null) {
-      ListSequence.fromList(allAncestors).addElement(interfaceNode);
-      ListSequence.fromList(allAncestors).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", interfaceNode, scope, indicator)));
+      ListSequence.<SNode>fromList(allAncestors).addElement(interfaceNode);
+      ListSequence.<SNode>fromList(allAncestors).addSequence(ListSequence.<SNode>fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", interfaceNode, scope, indicator)));
     }
-    Set<SNode> results = SetSequence.fromSet(new HashSet<SNode>());
-    for (SNode ancestor : ListSequence.fromList(allAncestors)) {
+    Set<SNode> results = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+    for (SNode ancestor : ListSequence.<SNode>fromList(allAncestors)) {
       List<SNode> classMethods = null;
       if (isStatic) {
         if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
@@ -74,14 +74,14 @@ public class BaseMethod_Finder extends GeneratedFinder {
           classMethods = SLinkOperations.getTargets(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.Interface"), "method", true);
         }
       }
-      for (SNode classMethod : ListSequence.fromList(classMethods)) {
+      for (SNode classMethod : ListSequence.<SNode>fromList(classMethods)) {
         if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(classMethod, method)) {
           SetSequence.fromSet(results).addElement(classMethod);
         }
       }
     }
-    for (SNode result : SetSequence.fromSet(results)) {
-      ListSequence.fromList(_results).addElement(result);
+    for (SNode result : SetSequence.<SNode>fromSet(results)) {
+      ListSequence.<SNode>fromList(_results).addElement(result);
     }
   }
 

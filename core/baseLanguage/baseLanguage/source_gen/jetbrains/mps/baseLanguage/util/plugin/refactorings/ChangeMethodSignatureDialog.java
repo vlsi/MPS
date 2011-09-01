@@ -85,11 +85,11 @@ public class ChangeMethodSignatureDialog extends BaseDialog {
           ChangeMethodSignatureDialog.this.myEditor.addLanguageStructureModel((Language) module);
         }
         IModule m = ChangeMethodSignatureDialog.this.myOperationContext.getModule();
-        for (Language language : SetSequence.fromSet(m.getDependenciesManager().getAllUsedLanguages())) {
+        for (Language language : SetSequence.<Language>fromSet(m.getDependenciesManager().getAllUsedLanguages())) {
           ChangeMethodSignatureDialog.this.myEditor.addLanguage(language);
         }
         SModel model = ChangeMethodSignatureDialog.this.myDeclaration.getModel();
-        for (SModelReference imported : ListSequence.fromList(SModelOperations.getImportedModelUIDs(model))) {
+        for (SModelReference imported : ListSequence.<SModelReference>fromList(SModelOperations.getImportedModelUIDs(model))) {
           ChangeMethodSignatureDialog.this.myEditor.addModel(imported);
         }
       }
@@ -102,10 +102,10 @@ public class ChangeMethodSignatureDialog extends BaseDialog {
   @BaseDialog.Button(position = 0, name = "Refactor", mnemonic = 'R', defaultButton = true)
   public void onOk() {
     final List<SNode> methodsToRefactor = MethodRefactoringUtils.findOverridingMethods(this.myDeclaration, this.myOperationContext);
-    ListSequence.fromList(methodsToRefactor).addElement(myDeclaration);
-    myRefactorings = ListSequence.fromList(new ArrayList<ChangeMethodSignatureRefactoring>());
-    for (SNode method : ListSequence.fromList(methodsToRefactor)) {
-      ListSequence.fromList(myRefactorings).addElement(new ChangeMethodSignatureRefactoring(this.myParameters, method));
+    ListSequence.<SNode>fromList(methodsToRefactor).addElement(myDeclaration);
+    myRefactorings = ListSequence.<ChangeMethodSignatureRefactoring>fromList(new ArrayList<ChangeMethodSignatureRefactoring>());
+    for (SNode method : ListSequence.<SNode>fromList(methodsToRefactor)) {
+      ListSequence.<ChangeMethodSignatureRefactoring>fromList(myRefactorings).addElement(new ChangeMethodSignatureRefactoring(this.myParameters, method));
     }
     this.dispose();
   }

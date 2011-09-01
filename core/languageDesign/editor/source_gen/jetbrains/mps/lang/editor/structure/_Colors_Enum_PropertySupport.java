@@ -11,7 +11,7 @@ public class _Colors_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<_Colors_Enum> constants = ListSequence.fromList(_Colors_Enum.getConstants()).iterator();
+    Iterator<_Colors_Enum> constants = ListSequence.<_Colors_Enum>fromList(_Colors_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _Colors_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class _Colors_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<_Colors_Enum> constants = ListSequence.fromList(_Colors_Enum.getConstants()).iterator();
+    Iterator<_Colors_Enum> constants = ListSequence.<_Colors_Enum>fromList(_Colors_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _Colors_Enum constant = constants.next();
       if (value.equals(constant.getName())) {

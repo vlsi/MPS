@@ -22,7 +22,7 @@ public abstract class DocCommentTextGen {
 
     textGen.appendNewLine();
     DocCommentTextGen.javadocIndent(textGen);
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "body", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "body", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "body", true)) {
         TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
       }
@@ -33,22 +33,22 @@ public abstract class DocCommentTextGen {
       DocCommentTextGen.javadocIndent(textGen);
     }
 
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "author", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "author", true)) {
         TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "since", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "since", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "since", true)) {
         TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "version", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "version", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "version", true)) {
         TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "see", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "see", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "see", true)) {
         TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
       }

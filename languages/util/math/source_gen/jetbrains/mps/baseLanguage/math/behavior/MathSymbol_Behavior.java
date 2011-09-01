@@ -17,7 +17,7 @@ public class MathSymbol_Behavior {
     SNode sI = SNodeOperations.getAncestor(sender, "jetbrains.mps.baseLanguage.math.structure.AbstractIndex", true, false);
     int i;
     if (sI != SLinkOperations.getTarget(thisNode, "var", true)) {
-      ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(thisNode, "var", true));
+      ListSequence.<SNode>fromList(indices).addElement(SLinkOperations.getTarget(thisNode, "var", true));
     }
     SNode ms = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.math.structure.MathSymbol", false, false);
     if (ms != null) {

@@ -35,13 +35,13 @@ public enum SideTransformTag {
   }
 
   public static List<SideTransformTag> getConstants() {
-    List<SideTransformTag> list = ListSequence.fromList(new LinkedList<SideTransformTag>());
-    ListSequence.fromList(list).addElement(SideTransformTag.default_);
-    ListSequence.fromList(list).addElement(SideTransformTag.ext_1);
-    ListSequence.fromList(list).addElement(SideTransformTag.ext_2);
-    ListSequence.fromList(list).addElement(SideTransformTag.ext_3);
-    ListSequence.fromList(list).addElement(SideTransformTag.ext_4);
-    ListSequence.fromList(list).addElement(SideTransformTag.ext_5);
+    List<SideTransformTag> list = ListSequence.<SideTransformTag>fromList(new LinkedList<SideTransformTag>());
+    ListSequence.<SideTransformTag>fromList(list).addElement(SideTransformTag.default_);
+    ListSequence.<SideTransformTag>fromList(list).addElement(SideTransformTag.ext_1);
+    ListSequence.<SideTransformTag>fromList(list).addElement(SideTransformTag.ext_2);
+    ListSequence.<SideTransformTag>fromList(list).addElement(SideTransformTag.ext_3);
+    ListSequence.<SideTransformTag>fromList(list).addElement(SideTransformTag.ext_4);
+    ListSequence.<SideTransformTag>fromList(list).addElement(SideTransformTag.ext_5);
     return list;
   }
 

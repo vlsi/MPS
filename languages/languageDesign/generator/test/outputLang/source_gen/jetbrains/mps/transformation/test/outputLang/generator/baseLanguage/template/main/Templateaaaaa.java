@@ -31,8 +31,8 @@ public class Templateaaaaa implements TemplateDeclarationWeavingAware {
   }
 
   private Map<String, Object> getParametersAsMap() {
-    Map<String, Object> result = MapSequence.fromMap(new HashMap<String, Object>());
-    MapSequence.fromMap(result).put("nnnn", myNnnn);
+    Map<String, Object> result = MapSequence.<String,Object>fromMap(new HashMap<String, Object>());
+    MapSequence.<String,Object>fromMap(result).put("nnnn", myNnnn);
     return result;
   }
 

@@ -35,13 +35,13 @@ public enum Severity {
   }
 
   public static List<Severity> getConstants() {
-    List<Severity> list = ListSequence.fromList(new LinkedList<Severity>());
-    ListSequence.fromList(list).addElement(Severity.fatal);
-    ListSequence.fromList(list).addElement(Severity.error);
-    ListSequence.fromList(list).addElement(Severity.warn);
-    ListSequence.fromList(list).addElement(Severity.debug);
-    ListSequence.fromList(list).addElement(Severity.info);
-    ListSequence.fromList(list).addElement(Severity.trace);
+    List<Severity> list = ListSequence.<Severity>fromList(new LinkedList<Severity>());
+    ListSequence.<Severity>fromList(list).addElement(Severity.fatal);
+    ListSequence.<Severity>fromList(list).addElement(Severity.error);
+    ListSequence.<Severity>fromList(list).addElement(Severity.warn);
+    ListSequence.<Severity>fromList(list).addElement(Severity.debug);
+    ListSequence.<Severity>fromList(list).addElement(Severity.info);
+    ListSequence.<Severity>fromList(list).addElement(Severity.trace);
     return list;
   }
 

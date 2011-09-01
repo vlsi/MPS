@@ -28,7 +28,7 @@ public class check_EnumConstantHasConstructorDeclaration_NonTypesystemRule exten
 
     SNode constructorDeclaration = SLinkOperations.getTarget(enumConstant, "baseMethodDeclaration", false);
     if ((constructorDeclaration == null)) {
-      if (ListSequence.fromList(SLinkOperations.getTargets(enumClass, "constructor", true)).isEmpty()) {
+      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(enumClass, "constructor", true)).isEmpty()) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(enumConstant, "no constructor is declared", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4909195013914035846", null, errorTarget);

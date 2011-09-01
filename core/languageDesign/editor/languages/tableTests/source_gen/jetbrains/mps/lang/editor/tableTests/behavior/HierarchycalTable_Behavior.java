@@ -14,7 +14,7 @@ public class HierarchycalTable_Behavior {
     for (int i = 0; i < SConceptPropertyOperations.getInteger(thisNode, "initialColumnCount"); i++) {
       SNode dataCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null);
       SPropertyOperations.set(dataCell, "value", "h-" + i);
-      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "headers", true)).addElement(dataCell);
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "headers", true)).addElement(dataCell);
     }
   }
 }

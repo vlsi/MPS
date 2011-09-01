@@ -49,7 +49,7 @@ public class RenameMethod extends BaseRefactoring {
         overriding.value = MethodRefactoringUtils.findOverridingMethods(RenameUtil.getMethodDeclaration(refactoringContext.getSelectedNode()), new EmptyProgressIndicator());
       }
     });
-    return (ListSequence.fromList(overriding.value).isEmpty() ?
+    return (ListSequence.<SNode>fromList(overriding.value).isEmpty() ?
       RenameMethod.this.ask(refactoringContext, MPSChooserFactory.createStringChooser(refactoringContext, "newName", new RenameMethod_newName_Settings(refactoringContext))) :
       RenameMethod.this.ask(refactoringContext, MPSChooserFactory.createStringChooser(refactoringContext, "newName", new RenameMethod_newName_Settings(refactoringContext)), MPSChooserFactory.createBooleanChooser(refactoringContext, "refactorOverriding", new RenameMethod_refactorOverriding_Settings(refactoringContext)))
     );
@@ -59,8 +59,8 @@ public class RenameMethod extends BaseRefactoring {
     SNode method = RenameUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
 
     List<SNode> overriding = MethodRefactoringUtils.findOverridingMethods(method, new EmptyProgressIndicator());
-    if (ListSequence.fromList(overriding).isNotEmpty() && ((Boolean) refactoringContext.getParameter("refactorOverriding"))) {
-      for (SNode node : ListSequence.fromList(overriding)) {
+    if (ListSequence.<SNode>fromList(overriding).isNotEmpty() && ((Boolean) refactoringContext.getParameter("refactorOverriding"))) {
+      for (SNode node : ListSequence.<SNode>fromList(overriding)) {
         SPropertyOperations.set(node, "name", ((String) refactoringContext.getParameter("newName")));
       }
     }

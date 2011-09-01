@@ -25,13 +25,13 @@ public class typeof_CustomConstructorUsage_InferenceRule extends AbstractInferen
     }
     SNode args = SLinkOperations.getTarget(SLinkOperations.getTarget(customConstructorUsage, "customConstructor", false), "arguments", true);
     if (SNodeOperations.isInstanceOf(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause")) {
-      int min = Math.min(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"), "parameter", true)).count(), ListSequence.fromList(SLinkOperations.getTargets(customConstructorUsage, "element", true)).count());
+      int min = Math.min(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"), "parameter", true)).count(), ListSequence.<SNode>fromList(SLinkOperations.getTargets(customConstructorUsage, "element", true)).count());
       for (int i = 0; i < min; i++) {
-        SNode actualParam = ListSequence.fromList(SLinkOperations.getTargets(customConstructorUsage, "element", true)).getElement(i);
+        SNode actualParam = ListSequence.<SNode>fromList(SLinkOperations.getTargets(customConstructorUsage, "element", true)).getElement(i);
         {
           SNode _nodeToCheck_1029348928467 = actualParam;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "2299894485109903431", 0, null);
-          typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.typeOf(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"), "parameter", true)).getElement(i), "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "2299894485109903433", true), (SNode) typeCheckingContext.typeOf(actualParam, "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "2299894485109903442", true), false, true, _info_12389875345);
+          typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.typeOf(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"), "parameter", true)).getElement(i), "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "2299894485109903433", true), (SNode) typeCheckingContext.typeOf(actualParam, "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "2299894485109903442", true), false, true, _info_12389875345);
         }
       }
     }

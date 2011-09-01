@@ -49,11 +49,11 @@ public class ConvertClassCreatorToAnonimous_Intention extends BaseIntention impl
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode anonimousClassCreator = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
     SLinkOperations.setTarget(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "classifier", SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
-    for (SNode typeParm : ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true))) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "typeParameter", true)).addElement(typeParm);
+    for (SNode typeParm : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true))) {
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "typeParameter", true)).addElement(typeParm);
     }
-    for (SNode typeParm : ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true))) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "typeParameter", true)).addElement(typeParm);
+    for (SNode typeParm : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true))) {
+      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "typeParameter", true)).addElement(typeParm);
     }
   }
 

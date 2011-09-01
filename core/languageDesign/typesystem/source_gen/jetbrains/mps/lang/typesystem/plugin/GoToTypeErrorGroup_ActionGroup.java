@@ -23,7 +23,7 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GoToTypeErrorGroup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup";
 
-  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
+  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.<Pair<ActionPlace, Condition<BaseAction>>>fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
 
   public GoToTypeErrorGroup_ActionGroup() {
     super("Go to Rule Which Caused Error", ID);

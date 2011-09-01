@@ -23,7 +23,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
   }
 
   public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final List<SNode> ptypes = ListSequence.fromList(new ArrayList<SNode>());
+    final List<SNode> ptypes = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     for (SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
       final SNode T_typevar_668767903263948977 = typeCheckingContext.createNewRuntimeTypesVariable();
       {
@@ -31,7 +31,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "668767903263948978", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "668767903263948980", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_668767903263948977), true, true, _info_12389875345);
       }
-      ListSequence.fromList(ptypes).addElement(typeCheckingContext.getRepresentative(T_typevar_668767903263948977));
+      ListSequence.<SNode>fromList(ptypes).addElement(typeCheckingContext.getRepresentative(T_typevar_668767903263948977));
     }
     final SNode ret_typevar_668767903263948995 = typeCheckingContext.createNewRuntimeTypesVariable();
     {

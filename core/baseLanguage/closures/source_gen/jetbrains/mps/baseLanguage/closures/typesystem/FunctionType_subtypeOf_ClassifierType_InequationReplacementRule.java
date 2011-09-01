@@ -34,12 +34,12 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     String errorMsg;
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
       List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
-      Iterable<SNode> cands = ListSequence.fromList(methods).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> cands = ListSequence.<SNode>fromList(methods).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode m) {
           return !("equals".equals(SPropertyOperations.getString(m, "name"))) && SPropertyOperations.getBoolean(m, "isAbstract");
         }
       });
-      Iterator<SNode> it = Sequence.fromIterable(cands).iterator();
+      Iterator<SNode> it = Sequence.<SNode>fromIterable(cands).iterator();
       SNode mtd = (it.hasNext() ?
         it.next() :
         null
@@ -47,8 +47,8 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
       if (it.hasNext()) {
         errorMsg = ": more than one abstract method";
       } else if (mtd != null) {
-        SNode md = ListSequence.fromList(methods).getElement(0);
-        if (ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).count()) {
+        SNode md = ListSequence.<SNode>fromList(methods).getElement(0);
+        if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == ListSequence.<SNode>fromList(SLinkOperations.getTargets(md, "parameter", true)).count()) {
           SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
           if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
             {
@@ -61,8 +61,8 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           {
             SNode fpt;
             SNode mpt;
-            Iterator<SNode> fpt_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
-            Iterator<SNode> mpt_iterator = ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).iterator();
+            Iterator<SNode> fpt_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
+            Iterator<SNode> mpt_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(md, "parameter", true)).iterator();
             while (true) {
               if (!(fpt_iterator.hasNext())) {
                 break;
@@ -104,12 +104,12 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
       String errorMsg;
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
         List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
-        Iterable<SNode> cands = ListSequence.fromList(methods).where(new IWhereFilter<SNode>() {
+        Iterable<SNode> cands = ListSequence.<SNode>fromList(methods).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode m) {
             return !("equals".equals(SPropertyOperations.getString(m, "name"))) && SPropertyOperations.getBoolean(m, "isAbstract");
           }
         });
-        Iterator<SNode> it = Sequence.fromIterable(cands).iterator();
+        Iterator<SNode> it = Sequence.<SNode>fromIterable(cands).iterator();
         SNode mtd = (it.hasNext() ?
           it.next() :
           null
@@ -117,8 +117,8 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
         if (it.hasNext()) {
           errorMsg = ": more than one abstract method";
         } else if (mtd != null) {
-          SNode md = ListSequence.fromList(methods).getElement(0);
-          if (ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).count()) {
+          SNode md = ListSequence.<SNode>fromList(methods).getElement(0);
+          if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == ListSequence.<SNode>fromList(SLinkOperations.getTargets(md, "parameter", true)).count()) {
             SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
             if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
               result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, true);
@@ -126,8 +126,8 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
             {
               SNode fpt;
               SNode mpt;
-              Iterator<SNode> fpt_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
-              Iterator<SNode> mpt_iterator = ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).iterator();
+              Iterator<SNode> fpt_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
+              Iterator<SNode> mpt_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(md, "parameter", true)).iterator();
               while (true) {
                 if (!(fpt_iterator.hasNext())) {
                   break;

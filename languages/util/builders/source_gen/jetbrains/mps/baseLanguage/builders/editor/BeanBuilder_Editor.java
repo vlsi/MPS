@@ -72,7 +72,7 @@ public class BeanBuilder_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_2z05lc_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty();
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty();
   }
 
   public static class _Inline_2z05lc_a0a extends InlineCellProvider {

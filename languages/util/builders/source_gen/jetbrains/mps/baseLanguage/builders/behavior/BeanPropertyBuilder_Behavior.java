@@ -25,7 +25,7 @@ public class BeanPropertyBuilder_Behavior {
   }
 
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
-    return Type_Behavior.call_getJavaType_1213877337345(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "setter", false), "parameter", true)).first(), "type", true));
+    return Type_Behavior.call_getJavaType_1213877337345(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "setter", false), "parameter", true)).first(), "type", true));
   }
 
   public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {

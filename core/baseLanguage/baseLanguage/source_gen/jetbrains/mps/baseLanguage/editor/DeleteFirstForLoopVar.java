@@ -28,10 +28,10 @@ public class DeleteFirstForLoopVar {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "additionalVar", true)).isEmpty()) {
+      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "additionalVar", true)).isEmpty()) {
         SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "variable", true));
       } else {
-        SNode var = ListSequence.fromList(SLinkOperations.getTargets(node, "additionalVar", true)).removeElementAt(0);
+        SNode var = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "additionalVar", true)).removeElementAt(0);
         SNodeOperations.replaceWithAnother(SLinkOperations.getTarget(node, "variable", true), var);
       }
     }

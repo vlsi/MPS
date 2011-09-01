@@ -88,7 +88,7 @@ public class Builder_Behavior {
   }
 
   public static SNode getContextBuilder_7057666463730366732(SNode context) {
-    return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", false)).findFirst(new IWhereFilter<SNode>() {
+    return SLinkOperations.getTarget(ListSequence.<SNode>fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", false)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(BuilderContainer_Behavior.call_isLeaf_932644095877881871(it));
       }

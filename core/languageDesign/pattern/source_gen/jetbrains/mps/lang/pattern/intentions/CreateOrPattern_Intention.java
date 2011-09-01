@@ -51,7 +51,7 @@ public class CreateOrPattern_Intention extends BaseIntention implements Intentio
     SNode currentNode = editorContext.getSelectedNode();
     SNode orPattern = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.pattern.structure.OrPattern", null);
     SNodeOperations.replaceWithAnother(currentNode, orPattern);
-    SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(orPattern, "clause", true)).first(), "patternNode", currentNode, true);
+    SLinkOperations.setTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(orPattern, "clause", true)).first(), "patternNode", currentNode, true);
   }
 
   public String getLocationString() {

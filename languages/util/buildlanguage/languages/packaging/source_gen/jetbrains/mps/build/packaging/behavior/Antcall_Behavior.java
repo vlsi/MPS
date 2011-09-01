@@ -41,6 +41,6 @@ public class Antcall_Behavior {
   }
 
   public static List<SNode> virtual_getPostProcessingTasks_1213877333861(SNode thisNode) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "delete", true));
+    return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "delete", true));
   }
 }

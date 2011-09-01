@@ -26,7 +26,7 @@ public class typeof_InternalThisExpression_InferenceRule extends AbstractInferen
     SLinkOperations.getTargets(c, "typeVariableDeclaration", true);
     {
       SNode tvd;
-      Iterator<SNode> tvd_iterator = ListSequence.fromList(SLinkOperations.getTargets(c, "typeVariableDeclaration", true)).iterator();
+      Iterator<SNode> tvd_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(c, "typeVariableDeclaration", true)).iterator();
       while (true) {
         if (!(tvd_iterator.hasNext())) {
           break;
@@ -35,7 +35,7 @@ public class typeof_InternalThisExpression_InferenceRule extends AbstractInferen
         {
           SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
           SLinkOperations.setTarget(tvr, "typeVariableDeclaration", tvd, false);
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(tvr);
+          ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(tvr);
         }
       }
     }

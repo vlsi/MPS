@@ -21,7 +21,7 @@ public class Container_Behavior {
   }
 
   public static Iterable<SNode> call_allSpecializes_513490887686361085(final SNode thisNode) {
-    return Sequence.fromClosure(new ISequenceClosure<SNode>() {
+    return Sequence.<SNode>fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -74,14 +74,14 @@ __switch__:
   }
 
   public static SNode virtual_findTemplate_3939571372331676060(SNode thisNode, SModel model, IScope scope) {
-    final List<SNode> asc = Sequence.fromIterable(Container_Behavior.call_allSpecializes_513490887686361085(thisNode)).toListSequence();
-    return ListSequence.fromList(SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.ui.modeling.structure.ContainerTemplate")).where(new IWhereFilter<SNode>() {
+    final List<SNode> asc = Sequence.<SNode>fromIterable(Container_Behavior.call_allSpecializes_513490887686361085(thisNode)).toListSequence();
+    return ListSequence.<SNode>fromList(SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.ui.modeling.structure.ContainerTemplate")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode ct) {
-        return ListSequence.fromList(asc).contains(SLinkOperations.getTarget(ct, "container", false));
+        return ListSequence.<SNode>fromList(asc).contains(SLinkOperations.getTarget(ct, "container", false));
       }
     }).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode ct) {
-        return ListSequence.fromList(asc).indexOf(SLinkOperations.getTarget(ct, "container", false));
+        return ListSequence.<SNode>fromList(asc).indexOf(SLinkOperations.getTarget(ct, "container", false));
       }
     }, true).first();
   }

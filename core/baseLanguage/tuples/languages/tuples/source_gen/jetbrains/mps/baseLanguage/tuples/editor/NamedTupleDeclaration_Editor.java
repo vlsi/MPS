@@ -336,7 +336,7 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_955wzk_a5a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
   }
 
   private static boolean renderingCondition_955wzk_a8a(SNode node, EditorContext editorContext, IScope scope) {

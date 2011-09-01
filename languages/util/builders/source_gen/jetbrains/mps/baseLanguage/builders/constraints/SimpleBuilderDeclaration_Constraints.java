@@ -48,7 +48,7 @@ public class SimpleBuilderDeclaration_Constraints extends BaseConstraintsDescrip
             for (SNode builders : SimpleBuilders_Behavior.call_getAncestors_6211769134875410554(container)) {
               for (SNode dcl : SLinkOperations.getTargets(builders, "builder", true)) {
                 if (SNodeOperations.isInstanceOf(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration")) {
-                  ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"));
+                  ListSequence.<SNode>fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"));
                 }
               }
             }

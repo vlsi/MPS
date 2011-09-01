@@ -40,9 +40,9 @@ public class check_OverrideNullAnnotations_NonTypesystemRule extends AbstractNon
         }
       }
     }
-    for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(superMethod, "parameter", true)).count(); i++) {
-      if (ParameterDeclaration_Behavior.call_hasAnnotation_5499146221535981742(ListSequence.fromList(SLinkOperations.getTargets(superMethod, "parameter", true)).getElement(i), SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)", "~Nullable"))) {
-        SNode param = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(i);
+    for (int i = 0; i < ListSequence.<SNode>fromList(SLinkOperations.getTargets(superMethod, "parameter", true)).count(); i++) {
+      if (ParameterDeclaration_Behavior.call_hasAnnotation_5499146221535981742(ListSequence.<SNode>fromList(SLinkOperations.getTargets(superMethod, "parameter", true)).getElement(i), SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)", "~Nullable"))) {
+        SNode param = ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(i);
         if (param != null && !(ParameterDeclaration_Behavior.call_hasAnnotation_5499146221535981742(param, SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)", "~Nullable")))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();

@@ -32,12 +32,12 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class Sample_Facet extends IFacet.Stub {
-  private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
+  private List<ITarget> targets = ListSequence.<ITarget>fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("sampleFacet.Sample");
 
   public Sample_Facet() {
-    ListSequence.fromList(targets).addElement(new Sample_Facet.Target_readParams());
-    ListSequence.fromList(targets).addElement(new Sample_Facet.Target_reportFiles());
+    ListSequence.<ITarget>fromList(targets).addElement(new Sample_Facet.Target_readParams());
+    ListSequence.<ITarget>fromList(targets).addElement(new Sample_Facet.Target_reportFiles());
   }
 
   public Iterable<ITarget> targets() {
@@ -220,7 +220,7 @@ public class Sample_Facet extends IFacet.Stub {
                     return true;
                   }
                 });
-                _output_kf1bs5_a0b = Sequence.fromIterable(_output_kf1bs5_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+                _output_kf1bs5_a0b = Sequence.<IResource>fromIterable(_output_kf1bs5_a0b).concat(Sequence.<IResource>fromIterable(Sequence.<IResource>singleton(resource)));
               }
             default:
               return new IResult.SUCCESS(_output_kf1bs5_a0b);
@@ -288,9 +288,9 @@ public class Sample_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("sampleFacet.Sample.readParams");
         if (properties.hasProperties(name)) {
           Sample_Facet.Target_readParams.Parameters props = properties.properties(name, Sample_Facet.Target_readParams.Parameters.class);
-          MapSequence.fromMap(store).put("sampleFacet.Sample.readParams.SomeParam", String.valueOf(props.SomeParam()));
-          MapSequence.fromMap(store).put("sampleFacet.Sample.readParams.Count", String.valueOf(props.Count()));
-          MapSequence.fromMap(store).put("sampleFacet.Sample.readParams.arch", String.valueOf(props.arch()));
+          MapSequence.<String,String>fromMap(store).put("sampleFacet.Sample.readParams.SomeParam", String.valueOf(props.SomeParam()));
+          MapSequence.<String,String>fromMap(store).put("sampleFacet.Sample.readParams.Count", String.valueOf(props.Count()));
+          MapSequence.<String,String>fromMap(store).put("sampleFacet.Sample.readParams.arch", String.valueOf(props.arch()));
         }
       }
     }
@@ -301,13 +301,13 @@ public class Sample_Facet extends IFacet.Stub {
           ITarget.Name name = new ITarget.Name("sampleFacet.Sample.readParams");
           Sample_Facet.Target_readParams.Parameters props = properties.properties(name, Sample_Facet.Target_readParams.Parameters.class);
           if (MapSequence.fromMap(store).containsKey("sampleFacet.Sample.readParams.SomeParam")) {
-            props.SomeParam(String.valueOf(MapSequence.fromMap(store).get("sampleFacet.Sample.readParams.SomeParam")));
+            props.SomeParam(String.valueOf(MapSequence.<String,String>fromMap(store).get("sampleFacet.Sample.readParams.SomeParam")));
           }
           if (MapSequence.fromMap(store).containsKey("sampleFacet.Sample.readParams.Count")) {
-            props.Count(Integer.valueOf(MapSequence.fromMap(store).get("sampleFacet.Sample.readParams.Count")));
+            props.Count(Integer.valueOf(MapSequence.<String,String>fromMap(store).get("sampleFacet.Sample.readParams.Count")));
           }
           if (MapSequence.fromMap(store).containsKey("sampleFacet.Sample.readParams.arch")) {
-            props.arch(String.valueOf(MapSequence.fromMap(store).get("sampleFacet.Sample.readParams.arch")));
+            props.arch(String.valueOf(MapSequence.<String,String>fromMap(store).get("sampleFacet.Sample.readParams.arch")));
           }
         }
       } catch (RuntimeException re) {

@@ -28,7 +28,7 @@ public class check_LinkRefExpression_NonTypesystemRule extends AbstractNonTypesy
       return;
     }
     List<SNode> declaredLinks = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept);
-    if (!(ListSequence.fromList(declaredLinks).contains(link))) {
+    if (!(ListSequence.<SNode>fromList(declaredLinks).contains(link))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(expr, "link '" + SPropertyOperations.getString(link, "role") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226360207686", null, errorTarget);
     }

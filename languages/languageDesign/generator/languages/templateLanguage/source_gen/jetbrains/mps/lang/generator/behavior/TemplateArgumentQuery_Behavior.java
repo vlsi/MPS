@@ -24,8 +24,8 @@ public class TemplateArgumentQuery_Behavior {
     SNode expr = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression", false, false);
     SNode call = SNodeOperations.cast(SNodeOperations.getParent(expr), "jetbrains.mps.lang.generator.structure.ITemplateCall");
     int index = SNodeOperations.getIndexInParent(expr);
-    if ((call != null) && (SLinkOperations.getTarget(call, "template", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(call, "template", false), "parameter", true)).isNotEmpty() && index >= 0 && index < ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(call, "template", false), "parameter", true)).count()) {
-      SNode templateParameter = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(call, "template", false), "parameter", true)).getElement(index);
+    if ((call != null) && (SLinkOperations.getTarget(call, "template", false) != null) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(call, "template", false), "parameter", true)).isNotEmpty() && index >= 0 && index < ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(call, "template", false), "parameter", true)).count()) {
+      SNode templateParameter = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(call, "template", false), "parameter", true)).getElement(index);
       return SNodeOperations.copyNode(SLinkOperations.getTarget(templateParameter, "type", true));
     }
     return new TemplateArgumentQuery_Behavior.QuotationClass_8mmc34_a0e0b().createNode();

@@ -47,7 +47,7 @@ public class QueriesUtil {
 
   public static SNode getGeneratedClassByAncestor(SNode inputNode, final TemplateQueryContext genctx) {
     List<SNode> ancestors = SNodeOperations.getAncestors(inputNode, null, false);
-    Iterable<SNode> outputClasses = ListSequence.fromList(ancestors).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> outputClasses = ListSequence.<SNode>fromList(ancestors).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -104,13 +104,13 @@ __switch__:
         };
       }
     });
-    return Sequence.fromIterable(outputClasses).first();
+    return Sequence.<SNode>fromIterable(outputClasses).first();
   }
 
   public static String keyMapActionClassName(SNode keyMapItem) {
     SNode keyMapDeclaration = SNodeOperations.cast(SNodeOperations.getParent(keyMapItem), "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration");
     int index = 0;
-    for (SNode curItem : ListSequence.fromList(SLinkOperations.getTargets(keyMapDeclaration, "item", true))) {
+    for (SNode curItem : ListSequence.<SNode>fromList(SLinkOperations.getTargets(keyMapDeclaration, "item", true))) {
       if (curItem == keyMapItem) {
         break;
       }
@@ -123,12 +123,12 @@ __switch__:
     SNode bigCell = root;
     Set<String> namesSet = ((Set<String>) context.getStepObject(bigCell));
     if (namesSet == null) {
-      namesSet = SetSequence.fromSet(new HashSet<String>());
+      namesSet = SetSequence.<String>fromSet(new HashSet<String>());
       context.putStepObject(bigCell, namesSet);
     }
     String result = name;
     int index = 1;
-    while (SetSequence.fromSet(namesSet).contains(result)) {
+    while (SetSequence.<String>fromSet(namesSet).contains(result)) {
       result = name + "_" + index;
       index++;
     }

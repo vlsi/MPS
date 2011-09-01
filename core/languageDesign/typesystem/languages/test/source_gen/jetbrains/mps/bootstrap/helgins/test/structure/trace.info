@@ -1,8 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Test_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.test.structure.Test_Language" />
-  <unitInfo fileName="BConcept.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.test.structure.BConcept" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.test.structure.StructureAspectDescriptor" />
-  <unitInfo fileName="AConcept.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.test.structure.AConcept" />
+  <root nodeId="1185806650601">
+    <nodeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="12" startPosition="43" endLine="13" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="13" startPosition="97" endLine="14" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPRESSION" />
+    <nodeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="16" startPosition="31" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="20" startPosition="37" endLine="21" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="24" startPosition="46" endLine="25" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="28" startPosition="63" endLine="29" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="32" startPosition="49" endLine="33" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AConcept#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExpression#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setExpression#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/bootstrap/helgins/test/structure/AConcept;" />
+    <nodeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/bootstrap/helgins/test/structure/AConcept;" />
+    <scopeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="16" startPosition="31" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="20" startPosition="37" endLine="21" endPosition="77" />
+    <scopeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="24" startPosition="46" endLine="25" endPosition="46" />
+    <scopeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="28" startPosition="63" endLine="29" endPosition="176" />
+    <scopeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="32" startPosition="49" endLine="33" endPosition="43" />
+    <scopeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1185806650601" fileName="AConcept.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="1185806650601" fileName="AConcept.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.test.structure.AConcept" />
+  </root>
+  <root nodeId="1185959958415">
+    <nodeInfo nodeId="1185959958415" fileName="BConcept.java" startLine="11" startPosition="42" endLine="12" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1185959958415" fileName="BConcept.java" startLine="14" startPosition="31" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1185959958415" fileName="BConcept.java" startLine="18" startPosition="63" endLine="19" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1185959958415" fileName="BConcept.java" startLine="22" startPosition="49" endLine="23" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1185959958415" fileName="BConcept.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BConcept#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1185959958415" fileName="BConcept.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/bootstrap/helgins/test/structure/BConcept;" />
+    <nodeInfo nodeId="1185959958415" fileName="BConcept.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/bootstrap/helgins/test/structure/BConcept;" />
+    <scopeInfo nodeId="1185959958415" fileName="BConcept.java" startLine="14" startPosition="31" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="1185959958415" fileName="BConcept.java" startLine="18" startPosition="63" endLine="19" endPosition="176" />
+    <scopeInfo nodeId="1185959958415" fileName="BConcept.java" startLine="22" startPosition="49" endLine="23" endPosition="43" />
+    <scopeInfo nodeId="1185959958415" fileName="BConcept.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1185959958415" fileName="BConcept.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1185959958415" fileName="BConcept.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="1185959958415" fileName="BConcept.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.test.structure.BConcept" />
+  </root>
 </debugInfo>
 

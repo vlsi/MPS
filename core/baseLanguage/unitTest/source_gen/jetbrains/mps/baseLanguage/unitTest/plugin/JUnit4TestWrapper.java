@@ -29,7 +29,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
   @NotNull
   @Override
   public Iterable<ITestNodeWrapper> getTestMethods() {
-    return ListSequence.fromList(SLinkOperations.getTargets(myNode, "method", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(myNode, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return JUnit4MethodWrapper.isJUnit4TestMethod(it);
       }
@@ -45,7 +45,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
   }
 
   public static boolean isJUnit4TestCase(SNode clazz) {
-    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(clazz, "method", true))) {
+    for (SNode method : ListSequence.<SNode>fromList(SLinkOperations.getTargets(clazz, "method", true))) {
       if (JUnit4MethodWrapper.isJUnit4TestMethod(method)) {
         return true;
       }

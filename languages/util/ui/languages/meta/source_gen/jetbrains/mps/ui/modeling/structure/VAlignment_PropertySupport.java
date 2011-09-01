@@ -11,7 +11,7 @@ public class VAlignment_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<VAlignment> constants = ListSequence.fromList(VAlignment.getConstants()).iterator();
+    Iterator<VAlignment> constants = ListSequence.<VAlignment>fromList(VAlignment.getConstants()).iterator();
     while (constants.hasNext()) {
       VAlignment constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class VAlignment_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<VAlignment> constants = ListSequence.fromList(VAlignment.getConstants()).iterator();
+    Iterator<VAlignment> constants = ListSequence.<VAlignment>fromList(VAlignment.getConstants()).iterator();
     while (constants.hasNext()) {
       VAlignment constant = constants.next();
       if (value.equals(constant.getName())) {

@@ -24,7 +24,7 @@ public class check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule extends 
 
   public void applyRule(final SNode debuggerReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(debuggerReference), "jetbrains.mps.debug.apiLang.structure.BreakpointCreator")) {
-      Set<SNode> throwables = SetSequence.fromSet(new HashSet<SNode>());
+      Set<SNode> throwables = SetSequence.<SNode>fromSet(new HashSet<SNode>());
       SetSequence.fromSet(throwables).addElement(new check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule.QuotationClass_fpej4j_a0a0b0a0a().createNode(typeCheckingContext));
       RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, debuggerReference);
     }

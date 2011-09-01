@@ -217,7 +217,7 @@ public class LinearSolveOperation_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_kydwvz_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).count() > 0;
+    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "annotation", true)).count() > 0;
   }
 
   private static boolean renderingCondition_kydwvz_a1a(SNode node, EditorContext editorContext, IScope scope) {

@@ -13,12 +13,12 @@ public class InternalStaticMethodCall_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), this);
     this.append(".");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
       this.append("<");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
+      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "typeParameter", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).last()) {
+          if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).last()) {
             this.append(", ");
           }
         }
@@ -27,10 +27,10 @@ public class InternalStaticMethodCall_TextGen extends SNodeTextGen {
     }
     this.append(SPropertyOperations.getString(node, "methodName"));
     this.append("(");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
+    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "actualArgument", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
+        if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
           this.append(", ");
         }
       }

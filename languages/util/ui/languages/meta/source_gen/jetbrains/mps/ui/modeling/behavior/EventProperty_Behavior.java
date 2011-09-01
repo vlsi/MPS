@@ -15,7 +15,7 @@ public class EventProperty_Behavior {
   }
 
   public static SNode virtual_findTemplate_3939571372331676060(final SNode thisNode, SModel model, IScope scope) {
-    return ListSequence.fromList(SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.ui.modeling.structure.EventPropertyGetter")).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.<SNode>fromList(SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.ui.modeling.structure.EventPropertyGetter")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode epg) {
         return SLinkOperations.getTarget(epg, "property", false) == thisNode;
       }

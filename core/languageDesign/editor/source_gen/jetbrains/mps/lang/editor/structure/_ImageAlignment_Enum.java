@@ -32,10 +32,10 @@ public enum _ImageAlignment_Enum {
   }
 
   public static List<_ImageAlignment_Enum> getConstants() {
-    List<_ImageAlignment_Enum> list = ListSequence.fromList(new LinkedList<_ImageAlignment_Enum>());
-    ListSequence.fromList(list).addElement(_ImageAlignment_Enum.alignmentJustify);
-    ListSequence.fromList(list).addElement(_ImageAlignment_Enum.alignmentCenter);
-    ListSequence.fromList(list).addElement(_ImageAlignment_Enum.alignmentTile);
+    List<_ImageAlignment_Enum> list = ListSequence.<_ImageAlignment_Enum>fromList(new LinkedList<_ImageAlignment_Enum>());
+    ListSequence.<_ImageAlignment_Enum>fromList(list).addElement(_ImageAlignment_Enum.alignmentJustify);
+    ListSequence.<_ImageAlignment_Enum>fromList(list).addElement(_ImageAlignment_Enum.alignmentCenter);
+    ListSequence.<_ImageAlignment_Enum>fromList(list).addElement(_ImageAlignment_Enum.alignmentTile);
     return list;
   }
 

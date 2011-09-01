@@ -25,13 +25,13 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
   }
 
   public List<SNode> getSubOrSuperTypes(SNode ct, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> res = ListSequence.<SNode>fromList(new ArrayList<SNode>());
     if (SLinkOperations.getTarget(new supertypesOf_ISequence_class_SubtypingRule.QuotationClass_gd2fo6_a0a0b0a().createNode(typeCheckingContext), "classifier", false) == SLinkOperations.getTarget(ct, "classifier", false)) {
-      res = ListSequence.fromList(new ArrayList<SNode>());
+      res = ListSequence.<SNode>fromList(new ArrayList<SNode>());
       List<SNode> ptypes = SLinkOperations.getTargets(ct, "parameter", true);
-      if (ListSequence.fromList(ptypes).count() > 0) {
-        SNode elType = ListSequence.fromList(ptypes).getElement(0);
-        ListSequence.fromList(res).addElement(new supertypesOf_ISequence_class_SubtypingRule.QuotationClass_gd2fo6_a0a0b0c0b0a().createNode(elType, typeCheckingContext));
+      if (ListSequence.<SNode>fromList(ptypes).count() > 0) {
+        SNode elType = ListSequence.<SNode>fromList(ptypes).getElement(0);
+        ListSequence.<SNode>fromList(res).addElement(new supertypesOf_ISequence_class_SubtypingRule.QuotationClass_gd2fo6_a0a0b0c0b0a().createNode(elType, typeCheckingContext));
       }
     }
     return res;

@@ -45,7 +45,7 @@ public class QuickFixArgumentReference_Constraints extends BaseConstraintsDescri
             List<SNode> nodes = new ArrayList<SNode>();
             SNode quickFix = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", false, false);
             if ((quickFix != null)) {
-              ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(quickFix, "quickFixArgument", true)));
+              ListSequence.<SNode>fromList(nodes).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(quickFix, "quickFixArgument", true)));
             }
             return nodes;
           }
