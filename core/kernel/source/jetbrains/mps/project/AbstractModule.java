@@ -291,7 +291,7 @@ public abstract class AbstractModule implements IModule {
         if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
 
         try {
-          IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path.getPath(), this);
+          IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path.getPath(), this.getModuleFqName());
           myCachedClassPathItem.add(pathItem);
         } catch (IOException e) {
           LOG.debug(e.getMessage());

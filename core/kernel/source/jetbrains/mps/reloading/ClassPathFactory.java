@@ -20,6 +20,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
@@ -39,6 +40,7 @@ public class ClassPathFactory {
 
   private Map<String, RealClassPathItem> myCache = new HashMap<String, RealClassPathItem>();
 
+  @NotNull
   public RealClassPathItem createFromPath(String path, @Nullable String requestor) throws IOException {
     if (!myCache.containsKey(path)) return myCache.get(path);
 

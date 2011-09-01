@@ -668,7 +668,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
             continue;
           }
 
-          result.add(ClassPathFactory.getInstance().createFromPath(s, this));
+          result.add(ClassPathFactory.getInstance().createFromPath(s, this.getModuleFqName()));
         } catch (IOException e) {
           LOG.debug(e.getMessage());
         }
