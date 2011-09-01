@@ -29,31 +29,34 @@ import java.util.Map;
 import java.util.Set;
 
 public class ClassPathFactory {
-  private static final Logger LOG = Logger.getLogger(ClassPathFactory.class);
   private static final ClassPathFactory ourInstance = new ClassPathFactory();
 
   public static ClassPathFactory getInstance() {
     return ourInstance;
   }
 
-  public RealClassPathItem createFromPath(String path) {
-    try {
-      return createFromPath(path, null);
-    } catch (IOException e) {
-      LOG.debug("Can't find classpath " + path);
-      return null;
-    }
-  }
+  //--------------------------
 
-  public RealClassPathItem createFromPath(String path, @Nullable IModule module) throws IOException {
-    boolean exists = path.contains("!/") ? !FileSystem.getInstance().getFileByPath(path).exists() : !new File(path).exists();
-    if (exists) {
-      String moduleString = module == null ? "" : (" in " + module.toString());
+  private Map<String, RealClassPathItem> myCache = new HashMap<String, RealClassPathItem>();
+
+  public RealClassPathItem createFromPath(String path, @Nullable String requestor) throws IOException {
+    if (!myCache.containsKey(path)) return myCache.get(path);
+
+    IFile file = FileSystem.getInstance().getFileByPath(path);
+    boolean exists = file.exists() ;
+    if (!exists) {
+      String moduleString = requestor == null ? "" : (" in " + requestor.toString());
       String message = "Can't load class path item " + path + moduleString + "." + (new File(path).isDirectory() ? " Execute make in IDEA." : "");
       throw new IOException(message);
     }
 
-    return getInstance().get(path);
+    if (file.isDirectory()) {
+      myCache.put(path, new FileClassPathItem(path));
+    } else {
+      myCache.put(path, new JarFileClassPathItem(path));
+    }
+
+    return myCache.get(path);
   }
 
   //--------------------------
@@ -74,21 +77,5 @@ public class ClassPathFactory {
       if (!myCache.containsKey(path)) continue;
       myCache.remove(path).invalidate();
     }
-  }
-
-  //--------------------------
-
-  private Map<String, RealClassPathItem> myCache = new HashMap<String, RealClassPathItem>();
-
-  private RealClassPathItem get(String path) {
-    if (!myCache.containsKey(path)) {
-      if (new File(path).isDirectory()) {
-        myCache.put(path, new FileClassPathItem(path));
-      } else {
-        myCache.put(path, new JarFileClassPathItem(path));
-      }
-    }
-
-    return myCache.get(path);
   }
 }
