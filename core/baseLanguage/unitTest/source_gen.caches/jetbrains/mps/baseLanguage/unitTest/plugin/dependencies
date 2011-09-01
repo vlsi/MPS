@@ -605,6 +605,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.editors.MPSEditorOpener" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.plugin.BaseTestTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.TestContainerRow" file="TestContainerRow.java">
@@ -641,6 +642,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.editors.MPSEditorOpener" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.plugin.BaseTestTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.TestNameMap" file="TestNameMap.java">
@@ -786,6 +788,7 @@
     <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestView" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTree" />
@@ -1016,6 +1019,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
