@@ -60,7 +60,15 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private ModelLoadingState myNamesLoadingState = ModelLoadingState.NOT_LOADED;
 
-  //private IClassPathItem myLanguageRuntimeClasspathCache;
+  private final Object LOCK = new Object();
+  private Runnable myClasspathInvalidator = new Runnable() {
+    public void run() {
+      synchronized (LOCK) {
+        myLanguageRuntimeClasspathCache = null;
+      }
+    }
+  };
+  private CompositeClassPathItem myLanguageRuntimeClasspathCache;
 
   private CachesInvalidator myCachesInvalidator;
 
@@ -652,27 +660,28 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public IClassPathItem getLanguageRuntimeClasspath() {
-    if (myLanguageRuntimeClasspathCache == null) {
-      CompositeClassPathItem result = new CompositeClassPathItem();
-      for (ModelRoot entry : getRuntimeModelsEntries()) {
-        String s = entry.getPath();
-        try {
-          IFile file = FileSystem.getInstance().getFileByPath(s);
-          if (!file.exists()) {
-            LOG.debug("Can't find " + s);
-            continue;
-          }
+    synchronized (LOCK) {
+      if (myLanguageRuntimeClasspathCache == null) {
+        myLanguageRuntimeClasspathCache = new CompositeClassPathItem();
+        myLanguageRuntimeClasspathCache.addInvalidationAction(myClasspathInvalidator);
+        for (ModelRoot entry : getRuntimeModelsEntries()) {
+          String s = entry.getPath();
+          try {
+            IFile file = FileSystem.getInstance().getFileByPath(s);
+            if (!file.exists()) {
+              LOG.debug("Can't find " + s);
+              continue;
+            }
 
-          result.add(ClassPathFactory.getInstance().createFromPath(s, this.getModuleFqName()));
-        } catch (IOException e) {
-          LOG.debug(e.getMessage());
+            myLanguageRuntimeClasspathCache.add(ClassPathFactory.getInstance().createFromPath(s, this.getModuleFqName()));
+          } catch (IOException e) {
+            LOG.debug(e.getMessage());
+          }
         }
       }
 
-      myLanguageRuntimeClasspathCache = result;
+      return myLanguageRuntimeClasspathCache;
     }
-
-    return myLanguageRuntimeClasspathCache;
   }
 
   //todo check this code. Wy not to do it where we add jars?

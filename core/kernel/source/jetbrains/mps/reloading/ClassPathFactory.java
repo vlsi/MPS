@@ -42,7 +42,7 @@ public class ClassPathFactory {
 
   @NotNull
   public RealClassPathItem createFromPath(String path, @Nullable String requestor) throws IOException {
-    if (!myCache.containsKey(path)) return myCache.get(path);
+    if (myCache.containsKey(path)) return myCache.get(path);
 
     IFile file = FileSystem.getInstance().getFileByPath(path);
     boolean exists = file.exists() ;
