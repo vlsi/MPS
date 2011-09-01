@@ -17,6 +17,9 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.logging.Logger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class RealClassPathItem extends AbstractClassPathItem {
   private static final Logger LOG = Logger.getLogger(RealClassPathItem.class);
   private boolean myValid = true;
@@ -24,6 +27,7 @@ public abstract class RealClassPathItem extends AbstractClassPathItem {
 
   public void invalidate() {
     myValid = false;
+    callInvalidationListeners();
   }
 
   protected void checkValidity() {
@@ -31,5 +35,20 @@ public abstract class RealClassPathItem extends AbstractClassPathItem {
     if (myErrorShown) return;
     myErrorShown = true;
     LOG.error("Using outdated classpath: " + this, new Throwable());
+  }
+
+  //-----------------------
+
+  private List<Runnable> myInvalidationListeners  = new ArrayList<Runnable>();
+
+  public void addInvalidationAction(Runnable action){
+    myInvalidationListeners.add(action);
+  }
+
+  private void callInvalidationListeners() {
+    for (Runnable action:myInvalidationListeners){
+      action.run();
+    }
+    myInvalidationListeners.clear();
   }
 }
