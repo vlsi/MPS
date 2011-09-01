@@ -534,12 +534,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         result.add(modelDescriptor);
       }
     }
-    for (StubSolution ss : getModuleDescriptor().getStubSolutions()) {
-      IModule s = MPSModuleRepository.getInstance().getModule(new ModuleReference(ss.getName(), ss.getId()));
-      for (SModelDescriptor md : s.getOwnModelDescriptors()) {
-        result.add(md);
-      }
-    }
     return result;
   }
 
