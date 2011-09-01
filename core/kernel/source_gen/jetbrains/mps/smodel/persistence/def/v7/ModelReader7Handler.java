@@ -33,15 +33,15 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
   private static String[] EMPTY_ARRAY = new String[0];
   protected static Log log = LogFactory.getLog(ModelReader7Handler.class);
 
-  private ModelReader7Handler.modelElementHandler modelhandler = new ModelReader7Handler.modelElementHandler();
-  private ModelReader7Handler.persistenceElementHandler persistencehandler = new ModelReader7Handler.persistenceElementHandler();
-  private ModelReader7Handler.module_referenceElementHandler module_referencehandler = new ModelReader7Handler.module_referenceElementHandler();
-  private ModelReader7Handler.importElementHandler importhandler = new ModelReader7Handler.importElementHandler();
-  private ModelReader7Handler.rootsElementHandler rootshandler = new ModelReader7Handler.rootsElementHandler();
-  private ModelReader7Handler.rootContentElementHandler rootContenthandler = new ModelReader7Handler.rootContentElementHandler();
-  private ModelReader7Handler.nodeElementHandler nodehandler = new ModelReader7Handler.nodeElementHandler();
-  private ModelReader7Handler.propertyElementHandler propertyhandler = new ModelReader7Handler.propertyElementHandler();
-  private ModelReader7Handler.linkElementHandler linkhandler = new ModelReader7Handler.linkElementHandler();
+  private ModelReader7Handler.ModelElementHandler modelhandler = new ModelReader7Handler.ModelElementHandler();
+  private ModelReader7Handler.PersistenceElementHandler persistencehandler = new ModelReader7Handler.PersistenceElementHandler();
+  private ModelReader7Handler.Module_referenceElementHandler module_referencehandler = new ModelReader7Handler.Module_referenceElementHandler();
+  private ModelReader7Handler.ImportElementHandler importhandler = new ModelReader7Handler.ImportElementHandler();
+  private ModelReader7Handler.RootsElementHandler rootshandler = new ModelReader7Handler.RootsElementHandler();
+  private ModelReader7Handler.RootContentElementHandler rootContenthandler = new ModelReader7Handler.RootContentElementHandler();
+  private ModelReader7Handler.NodeElementHandler nodehandler = new ModelReader7Handler.NodeElementHandler();
+  private ModelReader7Handler.PropertyElementHandler propertyhandler = new ModelReader7Handler.PropertyElementHandler();
+  private ModelReader7Handler.LinkElementHandler linkhandler = new ModelReader7Handler.LinkElementHandler();
   private Stack<ModelReader7Handler.ElementHandler> myHandlersStack = new Stack<ModelReader7Handler.ElementHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
@@ -160,10 +160,10 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class modelElementHandler extends ModelReader7Handler.ElementHandler {
+  public class ModelElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"modelUID"};
 
-    public modelElementHandler() {
+    public ModelElementHandler() {
     }
 
     @Override
@@ -282,10 +282,10 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class persistenceElementHandler extends ModelReader7Handler.ElementHandler {
+  public class PersistenceElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"version"};
 
-    public persistenceElementHandler() {
+    public PersistenceElementHandler() {
     }
 
     @Override
@@ -308,10 +308,10 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class module_referenceElementHandler extends ModelReader7Handler.ElementHandler {
+  public class Module_referenceElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"namespace"};
 
-    public module_referenceElementHandler() {
+    public Module_referenceElementHandler() {
     }
 
     @Override
@@ -334,10 +334,10 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class importElementHandler extends ModelReader7Handler.ElementHandler {
+  public class ImportElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"index", "version", "modelUID"};
 
-    public importElementHandler() {
+    public ImportElementHandler() {
     }
 
     @Override
@@ -370,10 +370,10 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class rootsElementHandler extends ModelReader7Handler.ElementHandler {
+  public class RootsElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public rootsElementHandler() {
+    public RootsElementHandler() {
     }
 
     @Override
@@ -398,10 +398,10 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class rootContentElementHandler extends ModelReader7Handler.ElementHandler {
+  public class RootContentElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"id"};
 
-    public rootContentElementHandler() {
+    public RootContentElementHandler() {
     }
 
     @Override
@@ -445,10 +445,10 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class nodeElementHandler extends ModelReader7Handler.ElementHandler {
+  public class NodeElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"type"};
 
-    public nodeElementHandler() {
+    public NodeElementHandler() {
     }
 
     @Override
@@ -551,10 +551,10 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class propertyElementHandler extends ModelReader7Handler.ElementHandler {
+  public class PropertyElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"name"};
 
-    public propertyElementHandler() {
+    public PropertyElementHandler() {
     }
 
     @Override
@@ -585,10 +585,10 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class linkElementHandler extends ModelReader7Handler.ElementHandler {
+  public class LinkElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"role", "targetNodeId"};
 
-    public linkElementHandler() {
+    public LinkElementHandler() {
     }
 
     @Override

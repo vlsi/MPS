@@ -16,12 +16,12 @@ import jetbrains.mps.smodel.SNodeId;
 public class LineToContentMapReader6Handler extends XMLSAXHandler<List<LineContent>> {
   private static String[] EMPTY_ARRAY = new String[0];
 
-  private LineToContentMapReader6Handler.modelElementHandler modelhandler = new LineToContentMapReader6Handler.modelElementHandler();
-  private LineToContentMapReader6Handler.nodeElementHandler nodehandler = new LineToContentMapReader6Handler.nodeElementHandler();
-  private LineToContentMapReader6Handler.propertyElementHandler propertyhandler = new LineToContentMapReader6Handler.propertyElementHandler();
-  private LineToContentMapReader6Handler.linkElementHandler linkhandler = new LineToContentMapReader6Handler.linkElementHandler();
-  private LineToContentMapReader6Handler.root_stubsElementHandler root_stubshandler = new LineToContentMapReader6Handler.root_stubsElementHandler();
-  private LineToContentMapReader6Handler.nullElementHandler nullhandler = new LineToContentMapReader6Handler.nullElementHandler();
+  private LineToContentMapReader6Handler.ModelElementHandler modelhandler = new LineToContentMapReader6Handler.ModelElementHandler();
+  private LineToContentMapReader6Handler.NodeElementHandler nodehandler = new LineToContentMapReader6Handler.NodeElementHandler();
+  private LineToContentMapReader6Handler.PropertyElementHandler propertyhandler = new LineToContentMapReader6Handler.PropertyElementHandler();
+  private LineToContentMapReader6Handler.LinkElementHandler linkhandler = new LineToContentMapReader6Handler.LinkElementHandler();
+  private LineToContentMapReader6Handler.Root_stubsElementHandler root_stubshandler = new LineToContentMapReader6Handler.Root_stubsElementHandler();
+  private LineToContentMapReader6Handler.NullElementHandler nullhandler = new LineToContentMapReader6Handler.NullElementHandler();
   private Stack<LineToContentMapReader6Handler.ElementHandler> myHandlersStack = new Stack<LineToContentMapReader6Handler.ElementHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
@@ -140,10 +140,10 @@ public class LineToContentMapReader6Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class modelElementHandler extends LineToContentMapReader6Handler.ElementHandler {
+  public class ModelElementHandler extends LineToContentMapReader6Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public modelElementHandler() {
+    public ModelElementHandler() {
     }
 
     @Override
@@ -208,10 +208,10 @@ public class LineToContentMapReader6Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class nodeElementHandler extends LineToContentMapReader6Handler.ElementHandler {
+  public class NodeElementHandler extends LineToContentMapReader6Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"type"};
 
-    public nodeElementHandler() {
+    public NodeElementHandler() {
     }
 
     @Override
@@ -272,10 +272,10 @@ public class LineToContentMapReader6Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class propertyElementHandler extends LineToContentMapReader6Handler.ElementHandler {
+  public class PropertyElementHandler extends LineToContentMapReader6Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"name"};
 
-    public propertyElementHandler() {
+    public PropertyElementHandler() {
     }
 
     @Override
@@ -298,10 +298,10 @@ public class LineToContentMapReader6Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class linkElementHandler extends LineToContentMapReader6Handler.ElementHandler {
+  public class LinkElementHandler extends LineToContentMapReader6Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"role"};
 
-    public linkElementHandler() {
+    public LinkElementHandler() {
     }
 
     @Override
@@ -324,10 +324,10 @@ public class LineToContentMapReader6Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class root_stubsElementHandler extends LineToContentMapReader6Handler.ElementHandler {
+  public class Root_stubsElementHandler extends LineToContentMapReader6Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public root_stubsElementHandler() {
+    public Root_stubsElementHandler() {
     }
 
     @Override
@@ -350,10 +350,10 @@ public class LineToContentMapReader6Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class nullElementHandler extends LineToContentMapReader6Handler.ElementHandler {
+  public class NullElementHandler extends LineToContentMapReader6Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public nullElementHandler() {
+    public NullElementHandler() {
     }
   }
 }

@@ -14,9 +14,9 @@ import jetbrains.mps.util.InternUtil;
 public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
   private static String[] EMPTY_ARRAY = new String[0];
 
-  private BLDependenciesHandler.dependenciesRootElementHandler dependenciesRoothandler = new BLDependenciesHandler.dependenciesRootElementHandler();
-  private BLDependenciesHandler.dependencyElementHandler dependencyhandler = new BLDependenciesHandler.dependencyElementHandler();
-  private BLDependenciesHandler.classNodeElementHandler classNodehandler = new BLDependenciesHandler.classNodeElementHandler();
+  private BLDependenciesHandler.DependenciesRootElementHandler dependenciesRoothandler = new BLDependenciesHandler.DependenciesRootElementHandler();
+  private BLDependenciesHandler.DependencyElementHandler dependencyhandler = new BLDependenciesHandler.DependencyElementHandler();
+  private BLDependenciesHandler.ClassNodeElementHandler classNodehandler = new BLDependenciesHandler.ClassNodeElementHandler();
   private Stack<BLDependenciesHandler.ElementHandler> myHandlersStack = new Stack<BLDependenciesHandler.ElementHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
@@ -128,10 +128,10 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     }
   }
 
-  public class dependenciesRootElementHandler extends BLDependenciesHandler.ElementHandler {
+  public class DependenciesRootElementHandler extends BLDependenciesHandler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public dependenciesRootElementHandler() {
+    public DependenciesRootElementHandler() {
     }
 
     @Override
@@ -159,10 +159,10 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     }
   }
 
-  public class dependencyElementHandler extends BLDependenciesHandler.ElementHandler {
+  public class DependencyElementHandler extends BLDependenciesHandler.ElementHandler {
     private String[] requiredAttributes = new String[]{"className"};
 
-    public dependencyElementHandler() {
+    public DependencyElementHandler() {
     }
 
     @Override
@@ -217,10 +217,10 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     }
   }
 
-  public class classNodeElementHandler extends BLDependenciesHandler.ElementHandler {
+  public class ClassNodeElementHandler extends BLDependenciesHandler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public classNodeElementHandler() {
+    public ClassNodeElementHandler() {
     }
 
     @Override

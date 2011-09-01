@@ -17,13 +17,13 @@ import jetbrains.mps.smodel.SNodeId;
 public class LineToContentMapReader7Handler extends XMLSAXHandler<List<LineContent>> {
   private static String[] EMPTY_ARRAY = new String[0];
 
-  private LineToContentMapReader7Handler.modelElementHandler modelhandler = new LineToContentMapReader7Handler.modelElementHandler();
-  private LineToContentMapReader7Handler.rootsElementHandler rootshandler = new LineToContentMapReader7Handler.rootsElementHandler();
-  private LineToContentMapReader7Handler.rootContentElementHandler rootContenthandler = new LineToContentMapReader7Handler.rootContentElementHandler();
-  private LineToContentMapReader7Handler.nodeElementHandler nodehandler = new LineToContentMapReader7Handler.nodeElementHandler();
-  private LineToContentMapReader7Handler.propertyElementHandler propertyhandler = new LineToContentMapReader7Handler.propertyElementHandler();
-  private LineToContentMapReader7Handler.linkElementHandler linkhandler = new LineToContentMapReader7Handler.linkElementHandler();
-  private LineToContentMapReader7Handler.nullElementHandler nullhandler = new LineToContentMapReader7Handler.nullElementHandler();
+  private LineToContentMapReader7Handler.ModelElementHandler modelhandler = new LineToContentMapReader7Handler.ModelElementHandler();
+  private LineToContentMapReader7Handler.RootsElementHandler rootshandler = new LineToContentMapReader7Handler.RootsElementHandler();
+  private LineToContentMapReader7Handler.RootContentElementHandler rootContenthandler = new LineToContentMapReader7Handler.RootContentElementHandler();
+  private LineToContentMapReader7Handler.NodeElementHandler nodehandler = new LineToContentMapReader7Handler.NodeElementHandler();
+  private LineToContentMapReader7Handler.PropertyElementHandler propertyhandler = new LineToContentMapReader7Handler.PropertyElementHandler();
+  private LineToContentMapReader7Handler.LinkElementHandler linkhandler = new LineToContentMapReader7Handler.LinkElementHandler();
+  private LineToContentMapReader7Handler.NullElementHandler nullhandler = new LineToContentMapReader7Handler.NullElementHandler();
   private Stack<LineToContentMapReader7Handler.ElementHandler> myHandlersStack = new Stack<LineToContentMapReader7Handler.ElementHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
@@ -142,10 +142,10 @@ public class LineToContentMapReader7Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class modelElementHandler extends LineToContentMapReader7Handler.ElementHandler {
+  public class ModelElementHandler extends LineToContentMapReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public modelElementHandler() {
+    public ModelElementHandler() {
     }
 
     @Override
@@ -208,10 +208,10 @@ public class LineToContentMapReader7Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class rootsElementHandler extends LineToContentMapReader7Handler.ElementHandler {
+  public class RootsElementHandler extends LineToContentMapReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public rootsElementHandler() {
+    public RootsElementHandler() {
     }
 
     @Override
@@ -234,10 +234,10 @@ public class LineToContentMapReader7Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class rootContentElementHandler extends LineToContentMapReader7Handler.ElementHandler {
+  public class RootContentElementHandler extends LineToContentMapReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public rootContentElementHandler() {
+    public RootContentElementHandler() {
     }
 
     @Override
@@ -270,10 +270,10 @@ public class LineToContentMapReader7Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class nodeElementHandler extends LineToContentMapReader7Handler.ElementHandler {
+  public class NodeElementHandler extends LineToContentMapReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public nodeElementHandler() {
+    public NodeElementHandler() {
     }
 
     @Override
@@ -326,10 +326,10 @@ public class LineToContentMapReader7Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class propertyElementHandler extends LineToContentMapReader7Handler.ElementHandler {
+  public class PropertyElementHandler extends LineToContentMapReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"name"};
 
-    public propertyElementHandler() {
+    public PropertyElementHandler() {
     }
 
     @Override
@@ -352,10 +352,10 @@ public class LineToContentMapReader7Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class linkElementHandler extends LineToContentMapReader7Handler.ElementHandler {
+  public class LinkElementHandler extends LineToContentMapReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"role"};
 
-    public linkElementHandler() {
+    public LinkElementHandler() {
     }
 
     @Override
@@ -378,10 +378,10 @@ public class LineToContentMapReader7Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class nullElementHandler extends LineToContentMapReader7Handler.ElementHandler {
+  public class NullElementHandler extends LineToContentMapReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public nullElementHandler() {
+    public NullElementHandler() {
     }
   }
 }
