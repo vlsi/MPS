@@ -60,7 +60,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private ModelLoadingState myNamesLoadingState = ModelLoadingState.NOT_LOADED;
 
-  private IClassPathItem myLanguageRuntimeClasspathCache;
+  //private IClassPathItem myLanguageRuntimeClasspathCache;
 
   private CachesInvalidator myCachesInvalidator;
 
@@ -169,7 +169,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     rereadModels();
     updatePackagedDescriptorClasspath();
-    updateClassPath();
+    invalidateClassPath();
     revalidateGenerators();
   }
 
@@ -637,11 +637,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
     }
     return result;
-  }
-
-  public void updateClassPath() {
-    super.updateClassPath();
-    myLanguageRuntimeClasspathCache = null;
   }
 
   public void invalidateClassPath() {

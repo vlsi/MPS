@@ -50,8 +50,6 @@ import java.util.*;
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
-  public static final String MODULE_DIR = "module";
-
   private boolean myModelsRead = false;
   private boolean myInitialized = false;
 
@@ -60,7 +58,7 @@ public abstract class AbstractModule implements IModule {
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
   private ModuleScope myScope = createScope();
 
-  private CompositeClassPathItem myCachedClassPathItem;
+  //private CompositeClassPathItem myCachedClassPathItem;
   private DependenciesManager myDependenciesManager;
 
   //----model creation
@@ -232,10 +230,6 @@ public abstract class AbstractModule implements IModule {
 
   //----classpath
 
-  public void updateClassPath() {
-    myCachedClassPathItem = null;
-  }
-
   public void invalidateClassPath() {
     Set<String> invalidate = new HashSet<String>();
     for (StubPath path : getAllStubPaths()) {
@@ -323,7 +317,7 @@ public abstract class AbstractModule implements IModule {
     rereadModels();
 
     updatePackagedDescriptorClasspath();
-    updateClassPath();
+    invalidateClassPath();
   }
 
   public void onModuleLoad() {
