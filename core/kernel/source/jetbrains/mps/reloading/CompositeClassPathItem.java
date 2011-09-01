@@ -162,21 +162,9 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return result.toString();
   }
 
-  private final List<Runnable> myInvalidationListeners  = new ArrayList<Runnable>();
   private final Runnable myInvalidationListener = new Runnable() {
     public void run() {
       callInvalidationListeners();
     }
   };
-
-  public synchronized void addInvalidationAction(Runnable action){
-    myInvalidationListeners.add(action);
-  }
-
-  private synchronized void callInvalidationListeners() {
-    for (Runnable action:myInvalidationListeners){
-      action.run();
-    }
-    myInvalidationListeners.clear();
-  }
 }

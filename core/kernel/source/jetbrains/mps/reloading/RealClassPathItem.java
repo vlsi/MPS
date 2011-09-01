@@ -36,19 +36,4 @@ public abstract class RealClassPathItem extends AbstractClassPathItem {
     myErrorShown = true;
     LOG.error("Using outdated classpath: " + this, new Throwable());
   }
-
-  //-----------------------
-
-  private final List<Runnable> myInvalidationListeners  = new ArrayList<Runnable>();
-
-  public synchronized void addInvalidationAction(Runnable action){
-    myInvalidationListeners.add(action);
-  }
-
-  private synchronized void callInvalidationListeners() {
-    for (Runnable action:myInvalidationListeners){
-      action.run();
-    }
-    myInvalidationListeners.clear();
-  }
 }
