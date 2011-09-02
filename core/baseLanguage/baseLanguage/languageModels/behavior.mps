@@ -559,6 +559,9 @@
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2496361171403550978">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1164903280175" resolveInfo="CatchClause" />
     </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="6307653274956830892">
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1079359253375" resolveInfo="ParenthesizedExpression" />
+    </node>
   </roots>
   <root id="1213877208326">
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1213877208327">
@@ -29675,6 +29678,43 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="2496361171403550991">
         <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
       </node>
+    </node>
+  </root>
+  <root id="6307653274956830892">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="6307653274956830893">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6307653274956830894" />
+    </node>
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="6307653274956830899">
+      <property name="name" nameId="tpck.1169194664001" value="eval" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="1213877519769" resolveInfo="eval" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6307653274956830902">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6307653274956830908">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6307653274956830915">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6307653274956830910">
+              <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="6307653274956830909" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6307653274956830914">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1079359253376" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6307653274956830919">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1213877519769" resolveInfo="eval" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6307653274956830920">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6307653274956830904" resolveInfo="module" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6307653274956830904">
+        <property name="name" nameId="tpck.1169194664001" value="module" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6307653274956830905">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="afxk.~IModule" resolveInfo="IModule" />
+        </node>
+      </node>
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6307653274956830906">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6307653274956830907" />
     </node>
   </root>
 </model>
