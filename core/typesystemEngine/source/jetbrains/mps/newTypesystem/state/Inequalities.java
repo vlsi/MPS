@@ -74,9 +74,10 @@ public class Inequalities {  //
     }
   }
 
-  private SNode getNodeWithNoInput(ManyToManyMap<SNode, SNode> inputsToOutputs, Set<SNode> unsorted) {
+  private SNode getNodeWithNoInput(ManyToManyMap<SNode, SNode> inputsToOutputs, Set<SNode> unsorted, Set<SNode> used) {
     for (SNode node : unsorted) {
-      if (inputsToOutputs.getBySecond(node).isEmpty()) {
+      if (used.containsAll(inputsToOutputs.getBySecond(node))) {
+  //    if (inputsToOutputs.getBySecond(node).isEmpty()) {
         return node;
       }
     }
@@ -261,13 +262,16 @@ public class Inequalities {  //
         }
       }
     }
-    while (myNodesInc.size() > 0) {
-      SNode current = getNodeWithNoInput(myInputsToOutputsInc, myNodesInc);
+    Set<SNode> nodes = new HashSet<SNode>(myNodesInc);
+    Set<SNode> usedNodes = new HashSet<SNode>();
+    while (nodes.size() > 0) {
+      SNode current = getNodeWithNoInput(myInputsToOutputsInc, nodes, usedNodes);
       if (solveRelationsForNode(current)) {
         return true;
       }
-      myNodesInc.remove(current);
-      myInputsToOutputsInc.clearFirst(current);
+      nodes.remove(current);
+      usedNodes.add(current);
+      //myInputsToOutputsInc.clearFirst(current);
     }
     //last chance
     for (RelationBlock inequality : inequalities) {
