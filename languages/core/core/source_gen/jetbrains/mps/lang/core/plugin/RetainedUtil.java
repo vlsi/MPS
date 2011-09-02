@@ -17,10 +17,10 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import jetbrains.mps.make.delta.IDelta;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class RetainedUtil {
@@ -91,20 +91,22 @@ public class RetainedUtil {
     return retainedModels;
   }
 
-  public static Iterable<IDelta> retainedFilesDelta(Iterable<SModelDescriptor> smd, IModule mod) {
-    return new RetainedUtil.RetainedFilesDelta(mod).deltas(smd);
+  public static Iterable<IDelta> retainedFilesDelta(Iterable<SModelDescriptor> smd, IModule mod, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
+    return new RetainedUtil.RetainedFilesDelta(mod, getFile).deltas(smd);
   }
 
-  public static Iterable<IDelta> retainedCachesDelta(Iterable<SModelDescriptor> smd, IModule mod) {
-    return new RetainedUtil.RetainedCachesDelta(mod).deltas(smd);
+  public static Iterable<IDelta> retainedCachesDelta(Iterable<SModelDescriptor> smd, IModule mod, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
+    return new RetainedUtil.RetainedCachesDelta(mod, getFile).deltas(smd);
   }
 
   /*package*/ static class RetainedFilesDelta {
     private IModule module;
     protected Map<String, FilesDelta> dir2delta = MapSequence.<String,FilesDelta>fromMap(new HashMap<String, FilesDelta>());
+    private _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile;
 
-    public RetainedFilesDelta(IModule module) {
+    public RetainedFilesDelta(IModule module, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
       this.module = module;
+      this.getFile = getFile;
     }
 
     public Iterable<IDelta> deltas(Iterable<SModelDescriptor> smds) {
@@ -118,7 +120,7 @@ public class RetainedUtil {
     }
 
     protected IFile getRootOutputDir(String output) {
-      return FileSystem.getInstance().getFileByPath(output);
+      return getFile.invoke(output);
     }
 
     private Iterable<IDelta> collectedDeltas() {
@@ -138,8 +140,8 @@ public class RetainedUtil {
   }
 
   /*package*/ static class RetainedCachesDelta extends RetainedUtil.RetainedFilesDelta {
-    public RetainedCachesDelta(IModule mod) {
-      super(mod);
+    public RetainedCachesDelta(IModule mod, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
+      super(mod, getFile);
     }
 
     @Override

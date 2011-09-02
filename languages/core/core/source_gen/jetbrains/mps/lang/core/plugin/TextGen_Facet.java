@@ -17,12 +17,14 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
@@ -38,8 +40,6 @@ import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.vfs.IFile;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -113,19 +113,27 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + gres.model().getLongName())));
                   continue;
                 }
+                _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile = pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).pathToFile();
+                if (getFile == null) {
+                  getFile = new _FunctionTypes._return_P1_E0<IFile, String>() {
+                    public IFile invoke(String p) {
+                      return FileSystem.getInstance().getFileByPath(p);
+                    }
+                  };
+                }
 
                 Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedFilesDelta(Sequence.<SModelDescriptor>fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
                   public boolean accept(SModelDescriptor smd) {
                     return !(GeneratorManager.isDoNotGenerate(smd));
                   }
-                }), gres.module());
+                }), gres.module(), getFile);
                 Iterable<IDelta> retainedCachesDelta = RetainedUtil.retainedCachesDelta(Sequence.<SModelDescriptor>fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
                   public boolean accept(SModelDescriptor smd) {
                     return !(GeneratorManager.isDoNotGenerate(smd));
                   }
-                }), gres.module());
+                }), gres.module(), getFile);
 
-                final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), FileSystem.getInstance().getFileByPath(output), FileGenerationUtil.getCachesDir(FileSystem.getInstance().getFileByPath(output)));
+                final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), getFile.invoke(output), FileGenerationUtil.getCachesDir(getFile.invoke(output)));
 
                 final Wrappers._boolean ok = new Wrappers._boolean();
                 boolean generateDI = pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo() == null || pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo();
