@@ -198,7 +198,7 @@ public class ModuleMaker {
     }
 
     for (IModule module : modules) {
-      module.invalidateClassPath();
+      module.updateClassPath();
     }
 
     return new MPSCompilationResult(listener == null ? 0 : listener.getErrorCount(), 0, false, hasJavaToCompile, messages);
@@ -291,6 +291,9 @@ public class ModuleMaker {
   private void invalidateClasspath(Set<IModule> modules) {
     for (IModule m : modules) {
       m.invalidateClassPath();
+    }
+    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
+      m.updateClassPath();
     }
   }
 

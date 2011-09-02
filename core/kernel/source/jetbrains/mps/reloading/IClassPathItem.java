@@ -51,6 +51,4 @@ public interface IClassPathItem {
   IClassPathItem optimize();
 
   void accept(IClassPathItemVisitor visitor);
-
-  void addInvalidationAction(Runnable action);
 }

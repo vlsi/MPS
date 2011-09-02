@@ -18,8 +18,6 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Pattern;
 
 public abstract class AbstractClassPathItem implements IClassPathItem {
@@ -34,8 +32,10 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   }
 
   //todo can make it faster
+
+
   public Iterable<String> getRootClasses(String namespace) {
-    return new ConditionalIterable<String>(getAvailableClasses(namespace), new Condition<String>() {
+    return new ConditionalIterable<String>(getAvailableClasses(namespace),new Condition<String>() {
       public boolean met(String className) {
         return !(className.contains("$"));
       }
@@ -57,20 +57,5 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
       result = Math.max(result, getTimestamp(subpackage));
     }
     return result;
-  }
-
-  //-----------------------
-
-  private final List<Runnable> myInvalidationListeners  = new ArrayList<Runnable>();
-
-  public synchronized void addInvalidationAction(Runnable action){
-    myInvalidationListeners.add(action);
-  }
-
-  protected synchronized void callInvalidationListeners() {
-    for (Runnable action:myInvalidationListeners){
-      action.run();
-    }
-    myInvalidationListeners.clear();
   }
 }

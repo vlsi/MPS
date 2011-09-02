@@ -21,7 +21,6 @@ import sun.misc.Launcher;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -96,10 +95,11 @@ public class CommonPaths {
     for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
       try {
         File file = new File(url.toURI());
+
         if (!file.exists()) continue;
 
-        if (file.getName().equals(name)) {
-          return ClassPathFactory.getInstance().createFromPath(file.getCanonicalPath(), "Common paths");
+        if (file.getPath().endsWith(name)) {
+          return ClassPathFactory.getInstance().createFromPath(file.getCanonicalPath());
         }
       } catch (URISyntaxException e) {
         LOG.error(e);
@@ -150,13 +150,10 @@ public class CommonPaths {
 
     try {
       Scanner sc;
-      for (sc = new Scanner(acp, "UTF-8"); sc.hasNextLine(); ) {
+      for (sc = new Scanner(acp, "UTF-8"); sc.hasNextLine();) {
         File dir = new File(homePath, sc.nextLine());
-        if (!dir.exists()) continue;
-        try {
-          result.add(ClassPathFactory.getInstance().createFromPath(dir.getAbsolutePath(), "Common paths"));
-        } catch (IOException e) {
-          LOG.error(e);
+        if (dir.exists()) {
+          result.add(ClassPathFactory.getInstance().createFromPath(dir.getAbsolutePath()));
         }
       }
       sc.close();
@@ -183,11 +180,12 @@ public class CommonPaths {
   private static void addIfExists(CompositeClassPathItem item, String path) {
     path = PathManager.getHomePath() + path.replace('/', File.separatorChar);
     File file = new File(path);
-    if (!file.exists()) return;
-    try {
-      item.add(ClassPathFactory.getInstance().createFromPath(path, "Common paths"));
-    } catch (Throwable e) {
-      LOG.error(e);
+    if (file.exists()) {
+      try {
+        item.add(ClassPathFactory.getInstance().createFromPath(path));
+      } catch (Throwable e) {
+        LOG.error(e);
+      }
     }
   }
 

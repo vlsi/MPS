@@ -111,7 +111,7 @@ public class ClasspathSelectionTree extends Tree {
 
     private IClassPathItem classpathChosen() {
       try {
-        return ClassPathFactory.getInstance().createFromPath(myFile.getAbsolutePath(), "ClasspathSelectionTree");
+        return ClassPathFactory.getInstance().createFromPath(myFile.getAbsolutePath());
       } catch (Throwable ex) {
         ClasspathSelectionTree.LOG.error(ex);
         return null;
