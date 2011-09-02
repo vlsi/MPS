@@ -209,7 +209,7 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
 
-  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean finalExpansion) {
+  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     try {
       if (!isIncrementalMode() || refreshTypes) {
         clear();
@@ -222,7 +222,8 @@ class TypeSystemComponent extends CheckingComponent {
       //if (!loadTypesystemRules(nodeToCheck)) {
       //  return;
       //}
-      computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
+      computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
+      if (typeCalculated(initialNode) != null) return;
       solveInequalitiesAndExpandTypes(finalExpansion);
       performActionsAfterChecking();
     } finally {
@@ -248,11 +249,11 @@ class TypeSystemComponent extends CheckingComponent {
       if (prevNode != null) {
         additionalNodes.add(prevNode);
       }
-      computeTypes(node, true, false, additionalNodes, false);
+      computeTypes(node, true, false, additionalNodes, false, initialNode);
       type = getType(initialNode);
       if (type == null || HUtil.hasVariablesInside(type)) {
         if (node.isRoot()) {
-          computeTypes(node, true, true, new ArrayList<SNode>(0), true);
+          computeTypes(node, true, true, new ArrayList<SNode>(0), true, initialNode);
           type = getType(initialNode);
           return type;
         }
@@ -291,7 +292,7 @@ class TypeSystemComponent extends CheckingComponent {
     return new THashSet<Pair<String, String>>(set);
   }
 
-  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes) {
+  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes, SNode initialNode) {
     if (node == null) return;
     Set<SNode> frontier = new LinkedHashSet<SNode>();
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
@@ -350,12 +351,20 @@ class TypeSystemComponent extends CheckingComponent {
           myPartlyCheckedNodes.add(sNode);
         }
         myFullyCheckedNodes.add(sNode);
+        if (typeCalculated(initialNode) != null) return;
       }
       Set<SNode> newFrontierPopped = myCurrentFrontiers.pop();
       assert newFrontierPopped == newFrontier;
       frontier = newFrontier;
       newFrontier = new LinkedHashSet<SNode>();
     }
+  }
+
+  private SNode typeCalculated(SNode initialNode) {
+    if (initialNode== null) return null;
+    SNode type = getType(initialNode);
+    if (type!= null && !TypesUtil.hasVariablesInside(type)) return type;
+    return null;
   }
 
   //"type affected" means that *type* of this node depends on this set
@@ -390,7 +399,7 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   public void computeTypes(boolean refreshTypes) {
-    computeTypes(myNodeTypesComponent.getNode(), refreshTypes, true, new ArrayList<SNode>(0), true);
+    computeTypes(myNodeTypesComponent.getNode(), refreshTypes, true, new ArrayList<SNode>(0), true, null);
   }
 
   private void performActionsAfterChecking() {
