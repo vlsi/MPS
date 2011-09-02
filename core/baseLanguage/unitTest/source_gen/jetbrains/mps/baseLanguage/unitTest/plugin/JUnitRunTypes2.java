@@ -10,8 +10,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.project.IModule;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.ide.DataManager;
 
 public enum JUnitRunTypes2 {
   METHOD() {
@@ -118,7 +116,7 @@ public enum JUnitRunTypes2 {
     }
 
     public String check(JUnitTests_Configuration configuration) {
-      MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
+      MPSProject mpsProject = configuration.getProject().getComponent(MPSProject.class);
       if (mpsProject != null) {
         if (Sequence.<ITestNodeWrapper>fromIterable(TestUtils.getProjectTests(mpsProject)).isEmpty()) {
           return "Project does not contain tests.";
