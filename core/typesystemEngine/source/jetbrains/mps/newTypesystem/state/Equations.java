@@ -154,6 +154,7 @@ public class Equations {
       }
     }
     myState.executeOperation(new AddEquationOperation(var, type, source, info));
+
     return true;
   }
 
