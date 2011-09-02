@@ -26,7 +26,6 @@ import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.annotations.Nullable;
@@ -189,13 +188,17 @@ public class Java_Command {
   }
 
   private static List<String> getClassRunnerClassPath() {
-    final Wrappers._T<List<String>> cp = new Wrappers._T<List<String>>();
+    final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        cp.value = Sequence.<String>fromIterable(Sequence.<String>singleton(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("5b247b59-8fd0-4475-a767-9e9ff6a9d01c")).getClassesGen().getAbsolutePath())).toListSequence();
+        module.value = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("5b247b59-8fd0-4475-a767-9e9ff6a9d01c"));
       }
     });
-    return cp.value;
+
+    List<String> cp = ListSequence.<String>fromList(new ArrayList<String>());
+    ClasspathStringCollector visitor = new ClasspathStringCollector(cp);
+    module.value.getClassPathItem().accept(visitor);
+    return visitor.getResultAndReInit();
   }
 
   public static String getJavaCommand(@Nullable String javaHome) throws ExecutionException {

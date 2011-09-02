@@ -24,7 +24,7 @@ public class typeof_WeakConstantReference_InferenceRule extends AbstractInferenc
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguageInternal.structure.WeakConstantReference";
+    return "jetbrains.mps.baseLanguageInternal.structure.ConstantValue";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

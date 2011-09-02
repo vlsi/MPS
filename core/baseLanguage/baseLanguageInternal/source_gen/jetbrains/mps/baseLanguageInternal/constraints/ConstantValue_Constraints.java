@@ -24,11 +24,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.runtime.impl.ProviderGeneratedSearchScope;
 
-public class WeakConstantReference_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_d5zdlf_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "1585405235656398265");
+public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
+  private static SNodePointer breakingNode_r7ripe_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "1585405235656398265");
 
-  public WeakConstantReference_Constraints() {
-    super("jetbrains.mps.baseLanguageInternal.structure.WeakConstantReference");
+  public ConstantValue_Constraints() {
+    super("jetbrains.mps.baseLanguageInternal.structure.ConstantValue");
   }
 
   @Override
@@ -71,14 +71,14 @@ public class WeakConstantReference_Constraints extends BaseConstraintsDescriptor
           public ISearchScope createSearchScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new ProviderGeneratedSearchScope(this, operationContext, _context) {
               public boolean isInScope(SNode checkedNode) {
-                return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), "constant", false), "initializer", true) != null);
+                return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), "constant", false), "initializer", true) != null) && SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getReferenceNode(), "constant", false), "isFinal");
               }
             };
           }
 
           @Override
           public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_d5zdlf_a0a2a0a0a1a0b0a1a1;
+            return breakingNode_r7ripe_a0a2a0a0a1a0b0a1a1;
           }
         };
       }

@@ -83,7 +83,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1585405235656310156">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="weak" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp68.1585405235656310154" resolveInfo="WeakConstantReference" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp68.1585405235656310154" resolveInfo="ConstantValue" />
     </node>
   </roots>
   <root id="1173990741533">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d35aw4gblnmvrygm9jzr4adim8t5uk9" parametersHash="bd2md4kisf64tmz12qeimkxk3so7ywz">
+<dependencies version="2" modelHash="-uy0rqa7vc4naxq5o7j9lwdh3iltrzf">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-3y2r6y3czb0h44qur9lgd1udqb2qdek" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="33wkjgiezx0fo2ce3ik1767insl4n2e" />
   <dep model="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" hash="caob73bt010qamop72qesq01lhfoeik" />
@@ -111,7 +111,6 @@
     <file name="mps.vmoptions" />
   </source>
   <source id="2235195415637076848" name="help-build" hash="1etsffdbdcxli2vfnx2d4jgn2cf2p30">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" />
     <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" />
@@ -143,8 +142,8 @@
   <source id="7715871110555971738" name="mpsboot.jar" hash="sfi7pjjrcbnyn5ce3ex5doh5rj0ofd" />
   <source id="1479728067424032862" name="platform.editor" hash="cvilzm68d9qicivdltfu6qytelifhqt" />
   <source id="5297918386943402887" name="mps.solutions" hash="2l2k9a0yzlrwqkp771m00fwh0aikffq" />
-  <source id="2738111162319948310" name="core.execution" hash="-iyhybv9xhyxg7wvd7yt33rwssmwgfm" />
+  <source id="2738111162319948310" name="core.execution" hash="-950meue7ez0wa1hs6iu1q65atdzpmte" />
   <source id="5358686142361317193" name="mpstest.jar" hash="97oef7qu5ui60ebibhpqq318oaqm7wb" />
-  <source id="6108265972537541352" name="branding" hash="-4rkiw99mwj4xruixoil3yf3fq832gvq" />
+  <source id="6108265972537541352" name="branding" hash="8xo6u3k2a5awex4mybd60q51zi4gk6j" />
 </dependencies>
 
