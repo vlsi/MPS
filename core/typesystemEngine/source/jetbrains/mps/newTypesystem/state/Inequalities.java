@@ -30,10 +30,16 @@ import jetbrains.mps.util.ManyToManyMap;
 import java.util.*;
 
 public class Inequalities {  //
-  private final State myState;
+  private final State myState;       /*
   private ManyToManyMap<SNode, SNode> myInputsToOutputs = new ManyToManyMap<SNode, SNode>();
   private ManyToManyMap<SNode, RelationBlock> myNodesToBlocks = new ManyToManyMap<SNode, RelationBlock>();
   private Set<SNode> myNodes = new THashSet<SNode>();
+                                       */
+  private ManyToManyMap<SNode, SNode> myInputsToOutputsInc = new ManyToManyMap<SNode, SNode>();
+  private ManyToManyMap<SNode, RelationBlock> myNodesToBlocksInc = new ManyToManyMap<SNode, RelationBlock>();
+  private Set<SNode> myNodesInc = new THashSet<SNode>();
+
+
   private static final ComparableRelation comparableRelation = new ComparableRelation();
   private static final SubTypingRelation subTypingRelation = new SubTypingRelation();
 
@@ -93,20 +99,29 @@ public class Inequalities {  //
   public void solveRelations() {
     solvingInProcess = true;
     List<RelationBlock> inequalities = getRelationsToSolve();
-    initializeMaps(inequalities);
+ //   initializeMaps(inequalities);
+    initializeMapsInc(inequalities);
     while (iteration(inequalities)) {
       inequalities = getRelationsToSolve();
     }
     solvingInProcess = false;
   }
-
+  /*
   private void addVariablesLink(SNode input, SNode output) {
     if (!TypesUtil.isVariable(input)) return;
     if (!TypesUtil.isVariable(output)) return;
     if (input == output) return;
     myInputsToOutputs.addLink(input, output);
-  }
+  } */
 
+  private void addVariablesLinkInc(SNode input, SNode output) {
+     if (!TypesUtil.isVariable(input)) return;
+     if (!TypesUtil.isVariable(output)) return;
+     if (input == output) return;
+     myInputsToOutputsInc.addLink(input, output);
+   }
+
+                          /*
   private void initializeMaps(List<RelationBlock> inequalities) {
     myInputsToOutputs.clear();
     myNodesToBlocks.clear();
@@ -121,9 +136,11 @@ public class Inequalities {  //
         if (input == null || output == null) continue;
         if (TypesUtil.isVariable(input)) {
           myNodes.add(input);
+          myNodesToBlocks.addLink(input, inequality);
         }
         if (TypesUtil.isVariable(output)) {
           myNodes.add(output);
+          myNodesToBlocks.addLink(output, inequality);
         }
         if (input != output) {
           for (SNode inputVar : TypesUtil.getVariables(input, myState)) {
@@ -132,33 +149,125 @@ public class Inequalities {  //
             }
           }
         }
-        myNodesToBlocks.addLink(input, inequality);
-        myNodesToBlocks.addLink(output, inequality);
+      }
+    }
+  }                    */
+
+  private void initializeMapsInc(List<RelationBlock> inequalities) {
+    myInputsToOutputsInc.clear();
+    myNodesToBlocksInc.clear();
+    myNodesInc.clear();
+    for (RelationBlock inequality : inequalities) {
+      onInequalityAdded(inequality);
+    }
+  }
+
+  public void onEquationAdded(SNode child, SNode parent) {
+    if (!solvingInProcess) return;
+    for (RelationBlock block : new ArrayList<RelationBlock>(myNodesToBlocksInc.getByFirst(child))) {
+      myNodesToBlocksInc.removeLink(child, block);
+      if (TypesUtil.isVariable(parent)) {
+        myNodesToBlocksInc.addLink(parent, block);
+      }
+    }
+    myNodesInc.remove(child);
+    if (TypesUtil.isVariable(parent)) {
+      myNodesInc.add(parent);
+    }
+    List<SNode> variables = TypesUtil.getVariables(parent, myState);
+
+    for (SNode outputVar : new ArrayList<SNode>(myInputsToOutputsInc.getByFirst(child))) {
+      for (SNode inputVar : variables) {
+        addVariablesLinkInc(inputVar, outputVar);
+      }
+      myInputsToOutputsInc.removeLink(child, outputVar);
+    }
+
+    for (SNode inputVar : new ArrayList<SNode>(myInputsToOutputsInc.getBySecond(child))) {
+      for (SNode outputVar : variables) {
+        addVariablesLinkInc(inputVar, outputVar);
+      }
+      myInputsToOutputsInc.removeLink(inputVar, child);
+    }
+  }
+
+  public void onInequalityAdded(RelationBlock inequality) {
+    if (!solvingInProcess) return;
+    if (inequality.isCheckOnly()) { return; }
+    for (Pair<SNode, SNode> pair : inequality.getInputsAndOutputs()) {
+      SNode input = myState.getRepresentative(pair.first);
+      SNode output = myState.getRepresentative(pair.second);
+      if (input == null || output == null) continue;
+      if (TypesUtil.isVariable(input)) {
+        myNodesInc.add(input);
+        myNodesToBlocksInc.addLink(input, inequality);
+      }
+      if (TypesUtil.isVariable(output)) {
+        myNodesInc.add(output);
+        myNodesToBlocksInc.addLink(output, inequality);
+      }
+      if (input != output) {
+        for (SNode inputVar : TypesUtil.getVariables(input, myState)) {
+          for (SNode outputVar : TypesUtil.getVariables(output, myState)) {
+            addVariablesLinkInc(myState.getRepresentative(inputVar), myState.getRepresentative(outputVar));
+          }
+        }
       }
     }
   }
 
+  private boolean compareMap (ManyToManyMap m1, ManyToManyMap m2) {
+    Set first1 = m1.getFirst();
+    Set first2 = m2.getFirst();
 
+    if (!(first1.containsAll(first2) && first2.containsAll(first1))) {
+      return false;
+    }
+    for (Object f : first1) {
+      if (!m1.getByFirst(f).containsAll(m2.getByFirst(f))) return false;
+      if (!m2.getByFirst(f).containsAll(m1.getByFirst(f))) return false;
+    }
+    return true;
+  }
+
+              /*
+  private void compareMaps() {
+    if (!(myNodes.containsAll(myNodesInc) && myNodesInc.containsAll(myNodes))) {
+      System.out.println("Nodes incompatible");
+      System.out.println(myNodes);
+      System.out.println(myNodesInc);
+    }
+    if (!compareMap(myNodesToBlocksInc, myNodesToBlocks)) {
+      System.out.println("NodesToBlocks incompatible");
+    }
+    if (!compareMap(myInputsToOutputs, myInputsToOutputsInc)) {
+      System.out.println("inputs incompatible");
+      printMMMap(myInputsToOutputs);
+      printMMMap(myInputsToOutputsInc);
+    }
+  }
+                                                            */
   private boolean iteration(List<RelationBlock> inequalities) {
-    initializeMaps(inequalities);
-    if (myNodes.size() == 0) {
+ //   initializeMaps(inequalities);
+  //  compareMaps();
+    if (myNodesInc.size() == 0) {
       return false;
     }
     for (Block block : myState.getBlocks(BlockKind.WHEN_CONCRETE)) {
       SNode node = myState.getRepresentative(((WhenConcreteBlock) block).getArgument());
-      if (myNodes.contains(node) && myInputsToOutputs.getBySecond(node).isEmpty()) {
+      if (myNodesInc.contains(node) && myInputsToOutputsInc.getBySecond(node).isEmpty()) {
         if (solveRelationsForNode(node)) {
           return true;
         }
       }
     }
-    while (myNodes.size() > 0) {
-      SNode current = getNodeWithNoInput(myInputsToOutputs, myNodes);
+    while (myNodesInc.size() > 0) {
+      SNode current = getNodeWithNoInput(myInputsToOutputsInc, myNodesInc);
       if (solveRelationsForNode(current)) {
         return true;
       }
-      myNodes.remove(current);
-      myInputsToOutputs.clearFirst(current);
+      myNodesInc.remove(current);
+      myInputsToOutputsInc.clearFirst(current);
     }
     //last chance
     for (RelationBlock inequality : inequalities) {
@@ -210,7 +319,7 @@ public class Inequalities {  //
   private boolean solveRelationForNode(SNode node, AbstractRelation relation) {
     Map<SNode, RelationBlock> typesToBlocks = new THashMap<SNode, RelationBlock>();
     assert TypesUtil.isVariable(node);
-    Set<RelationBlock> blocks = myNodesToBlocks.getByFirst(node);
+    Set<RelationBlock> blocks = myNodesToBlocksInc.getByFirst(node);
     blocks = getRelationBlocks(blocks, relation);
     Set<SNode> rightTypes = new LinkedHashSet<SNode>();
     Set<SNode> leftTypes = new LinkedHashSet<SNode>();

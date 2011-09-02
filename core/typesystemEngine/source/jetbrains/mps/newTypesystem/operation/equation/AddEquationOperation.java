@@ -42,6 +42,7 @@ public class AddEquationOperation extends AbstractEquationOperation {
   public void execute(State state) {
     super.execute(state);
     state.substitute(myChild, myParent);
+    state.getInequalities().onEquationAdded(myChild, myParent);
   }
 
   public SNode getChild() {
