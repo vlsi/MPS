@@ -104,8 +104,6 @@ public interface IModule extends ModelOwner {
 
   void invalidateCaches();
 
-  void updateClassPath();
-
   void invalidateClassPath();
 
   void save();
