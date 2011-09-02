@@ -16,6 +16,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import jetbrains.mps.make.delta.IDelta;
+import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class RetainedUtil {
   public RetainedUtil() {
@@ -83,5 +89,62 @@ public class RetainedUtil {
       MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).put(mres.module(), Sequence.<SModelDescriptor>fromIterable(modelsToRetain).subtract(Sequence.<SModelDescriptor>fromIterable(mres.models())).toListSequence());
     }
     return retainedModels;
+  }
+
+  public static Iterable<IDelta> retainedFilesDelta(Iterable<SModelDescriptor> smd, IModule mod) {
+    return new RetainedUtil.RetainedFilesDelta(mod).deltas(smd);
+  }
+
+  public static Iterable<IDelta> retainedCachesDelta(Iterable<SModelDescriptor> smd, IModule mod) {
+    return new RetainedUtil.RetainedCachesDelta(mod).deltas(smd);
+  }
+
+  /*package*/ static class RetainedFilesDelta {
+    private IModule module;
+    protected Map<String, FilesDelta> dir2delta = MapSequence.<String,FilesDelta>fromMap(new HashMap<String, FilesDelta>());
+
+    public RetainedFilesDelta(IModule module) {
+      this.module = module;
+    }
+
+    public Iterable<IDelta> deltas(Iterable<SModelDescriptor> smds) {
+      for (SModelDescriptor smd : smds) {
+        String output = module.getOutputFor(smd);
+        if (output != null) {
+          deltaForDir(output).kept(FileGenerationUtil.getDefaultOutputDir(smd, this.getRootOutputDir(output)));
+        }
+      }
+      return this.collectedDeltas();
+    }
+
+    protected IFile getRootOutputDir(String output) {
+      return FileSystem.getInstance().getFileByPath(output);
+    }
+
+    private Iterable<IDelta> collectedDeltas() {
+      return Sequence.<FilesDelta>fromIterable(MapSequence.fromMap(dir2delta).values()).<IDelta>select(new ISelector<FilesDelta, IDelta>() {
+        public IDelta select(FilesDelta it) {
+          return (IDelta) it;
+        }
+      });
+    }
+
+    protected FilesDelta deltaForDir(String dir) {
+      if (!(MapSequence.fromMap(dir2delta).containsKey(dir))) {
+        MapSequence.<String,FilesDelta>fromMap(dir2delta).put(dir, new FilesDelta(this.getRootOutputDir(dir)));
+      }
+      return MapSequence.<String,FilesDelta>fromMap(dir2delta).get(dir);
+    }
+  }
+
+  /*package*/ static class RetainedCachesDelta extends RetainedUtil.RetainedFilesDelta {
+    public RetainedCachesDelta(IModule mod) {
+      super(mod);
+    }
+
+    @Override
+    protected IFile getRootOutputDir(String output) {
+      return FileGenerationUtil.getCachesDir(super.getRootOutputDir(output));
+    }
   }
 }

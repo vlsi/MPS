@@ -17,15 +17,13 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
 import jetbrains.mps.make.java.BLDependenciesCache;
@@ -37,11 +35,11 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.smodel.resources.TResource;
-import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.vfs.IFile;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -115,33 +113,20 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + gres.model().getLongName())));
                   continue;
                 }
-                final IFile targetDir = (pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).pathToFile() != null ?
-                  pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).pathToFile().invoke(output) :
-                  FileSystem.getInstance().getFileByPath(output)
-                );
-                final IFile cachesDir = FileGenerationUtil.getCachesDir(targetDir);
-                final FilesDelta targetDelta = new FilesDelta(targetDir);
-                Sequence.<SModelDescriptor>fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
-                  public boolean accept(SModelDescriptor smd) {
-                    return !(GeneratorManager.isDoNotGenerate(smd));
-                  }
-                }).visitAll(new IVisitor<SModelDescriptor>() {
-                  public void visit(SModelDescriptor smd) {
-                    targetDelta.kept(FileGenerationUtil.getDefaultOutputDir(smd, targetDir));
-                  }
-                });
-                final FilesDelta cachesDelta = new FilesDelta(cachesDir);
-                Sequence.<SModelDescriptor>fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
-                  public boolean accept(SModelDescriptor smd) {
-                    return !(GeneratorManager.isDoNotGenerate(smd));
-                  }
-                }).visitAll(new IVisitor<SModelDescriptor>() {
-                  public void visit(SModelDescriptor smd) {
-                    cachesDelta.kept(FileGenerationUtil.getDefaultOutputDir(smd, cachesDir));
-                  }
-                });
 
-                final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), targetDir, cachesDir);
+                Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedFilesDelta(Sequence.<SModelDescriptor>fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
+                  public boolean accept(SModelDescriptor smd) {
+                    return !(GeneratorManager.isDoNotGenerate(smd));
+                  }
+                }), gres.module());
+                Iterable<IDelta> retainedCachesDelta = RetainedUtil.retainedCachesDelta(Sequence.<SModelDescriptor>fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
+                  public boolean accept(SModelDescriptor smd) {
+                    return !(GeneratorManager.isDoNotGenerate(smd));
+                  }
+                }), gres.module());
+
+                final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), FileSystem.getInstance().getFileByPath(output), FileGenerationUtil.getCachesDir(FileSystem.getInstance().getFileByPath(output)));
+
                 final Wrappers._boolean ok = new Wrappers._boolean();
                 boolean generateDI = pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo() == null || pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo();
                 final TextGenerator textgen = new TextGenerator(javaStreamHandler, BLDependenciesCache.getInstance().getGenerator(), (generateDI ?
@@ -194,7 +179,7 @@ public class TextGen_Facet extends IFacet.Stub {
                   }
                 });
                 monitor.currentProgress().advanceWork("Writing", 50);
-                _output_21gswx_a0a = Sequence.<IResource>fromIterable(_output_21gswx_a0a).concat(Sequence.<IResource>fromIterable(Sequence.<IResource>singleton(new TResource(gres.module(), Sequence.<IDelta>fromIterable(javaStreamHandler.delta()).concat(Sequence.<IDelta>fromIterable(Sequence.fromArray(new IDelta[]{targetDelta, cachesDelta})))))));
+                _output_21gswx_a0a = Sequence.<IResource>fromIterable(_output_21gswx_a0a).concat(Sequence.<IResource>fromIterable(Sequence.<IResource>singleton(new TResource(gres.module(), Sequence.<IDelta>fromIterable(javaStreamHandler.delta()).concat(Sequence.<IDelta>fromIterable(retainedFilesDelta)).concat(Sequence.<IDelta>fromIterable(retainedCachesDelta))))));
               }
               monitor.currentProgress().finishWork("Writing");
             default:
