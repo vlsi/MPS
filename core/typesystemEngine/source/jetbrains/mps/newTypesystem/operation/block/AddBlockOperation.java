@@ -19,6 +19,7 @@ import jetbrains.mps.newTypesystem.operation.PresentationKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.Block;
 import jetbrains.mps.newTypesystem.state.blocks.BlockKind;
+import jetbrains.mps.newTypesystem.state.blocks.RelationBlock;
 
 public class AddBlockOperation extends AbstractBlockOperation {
 
@@ -49,5 +50,8 @@ public class AddBlockOperation extends AbstractBlockOperation {
   public void execute(State state) {
     super.execute(state);
     state.collectVarsExecuteIfNecessary(myBlock);
+    if (myBlock.getBlockKind().equals(BlockKind.INEQUALITY)) {
+      state.getInequalities().onInequalityAdded((RelationBlock)myBlock);
+    }
   }
 }
