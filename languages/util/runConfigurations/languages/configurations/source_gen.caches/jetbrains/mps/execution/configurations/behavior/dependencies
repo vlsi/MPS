@@ -78,6 +78,7 @@
     <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.DebuggerSettings_Parameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.ExecuteBeforeTask_ConceptFunction_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.ExecuteConfiguration_Function_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.GetProjectOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.ModelSource_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.ModuleSource_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.NodeListSource_BehaviorDescriptor" />
@@ -184,6 +185,16 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ILocalVariableElementList_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.ExecuteConfiguration_Function_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.behavior.GetProjectOperation_BehaviorDescriptor" file="GetProjectOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />

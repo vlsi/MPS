@@ -9,9 +9,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.JavaRunParameters_Configuration;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.ide.DataManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -55,8 +52,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     if (this.getRunType() != null) {
       // We do not validate, only check if there is something to test, since validating everything be very slow 
       // see MPS-8781 JUnit run configuration check method performance. 
-      MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
-      if (ListSequence.<ITestNodeWrapper>fromList(getTests(mpsProject)).isEmpty()) {
+      if (ListSequence.<ITestNodeWrapper>fromList(getTests()).isEmpty()) {
         throw new RuntimeConfigurationException("Could not find tests to run.");
       }
     }
@@ -128,19 +124,19 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     myState.myRunType = value;
   }
 
-  public List<ITestNodeWrapper> getTests(final MPSProject mpsProject) {
+  public List<ITestNodeWrapper> getTests() {
     final List<ITestNodeWrapper>[] all = (List<ITestNodeWrapper>[]) new List[1];
     if (this.getRunType() != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          all[0] = Sequence.<ITestNodeWrapper>fromIterable(JUnitTests_Configuration.this.getRunType().collect(JUnitTests_Configuration.this, mpsProject)).toListSequence();
+          all[0] = Sequence.<ITestNodeWrapper>fromIterable(JUnitTests_Configuration.this.getRunType().collect(JUnitTests_Configuration.this)).toListSequence();
         }
       });
     }
     return all[0];
   }
 
-  public List<ITestNodeWrapper> getTestsUnderProgress(final MPSProject mpsProject) {
+  public List<ITestNodeWrapper> getTestsUnderProgress() {
     final List<ITestNodeWrapper> stuffToTest = ListSequence.<ITestNodeWrapper>fromList(new ArrayList<ITestNodeWrapper>());
     final JUnitRunTypes2 runTypes2 = this.getRunType();
     final JUnitTests_Configuration configuration = this;
@@ -149,7 +145,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
         if (runTypes2 != null) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              ListSequence.<ITestNodeWrapper>fromList(stuffToTest).addSequence(Sequence.<ITestNodeWrapper>fromIterable(runTypes2.collect(configuration, mpsProject)));
+              ListSequence.<ITestNodeWrapper>fromList(stuffToTest).addSequence(Sequence.<ITestNodeWrapper>fromIterable(runTypes2.collect(configuration)));
             }
           });
         }
@@ -157,7 +153,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     };
     if (eq_p90f5h_a0a4a51_0(this.getRunType(), JUnitRunTypes2.PROJECT) || eq_p90f5h_a0a4a51(this.getRunType(), JUnitRunTypes2.MODULE)) {
       // collecting for module/project is slow, so execute under progress 
-      ProgressManager.getInstance().runProcessWithProgressSynchronously(collect, "Collecting Tests To Run", false, mpsProject.getProject());
+      ProgressManager.getInstance().runProcessWithProgressSynchronously(collect, "Collecting Tests To Run", false, this.getProject());
     } else {
       collect.run();
     }
@@ -168,8 +164,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     final List<ITestNodeWrapper>[] stuffToTest = (List<ITestNodeWrapper>[]) new List[1];
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
-        // TODO project??? 
-        stuffToTest[0] = getTestsUnderProgress(MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()));
+        stuffToTest[0] = getTestsUnderProgress();
       }
     }, ModalityState.NON_MODAL);
     return ListSequence.<ITestNodeWrapper>fromList(stuffToTest[0]).<SNode>select(new ISelector<ITestNodeWrapper, SNode>() {
