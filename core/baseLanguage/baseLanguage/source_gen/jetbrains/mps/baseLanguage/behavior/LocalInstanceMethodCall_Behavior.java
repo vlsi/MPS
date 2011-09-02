@@ -8,6 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class LocalInstanceMethodCall_Behavior {
   public static void init(SNode thisNode) {
@@ -17,5 +19,13 @@ public class LocalInstanceMethodCall_Behavior {
     SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     List<SNode> methods = new ClassifierAndSuperClassifiersScope(classifier, IClassifiersSearchScope.INSTANCE_METHOD).getMethodsByName(methodName);
     return methods;
+  }
+
+  public static SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
+    SNode cls = Classifier_Behavior.getContextClassifier_6172562527426750080(thisNode);
+    return (cls != null ?
+      TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier_Behavior.call_getThisType_3305065273710880775(cls), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true) :
+      null
+    );
   }
 }
