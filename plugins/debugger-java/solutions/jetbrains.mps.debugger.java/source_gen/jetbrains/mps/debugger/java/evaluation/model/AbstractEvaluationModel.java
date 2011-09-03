@@ -235,7 +235,7 @@ public abstract class AbstractEvaluationModel {
         classpaths.add(item);
       }
       String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.") + "tools.jar";
-      classpaths.add(ClassPathFactory.getInstance().createFromPath(path, "AbstractEvaluationModel"));
+      classpaths.add(ClassPathFactory.getInstance().createFromPath(path));
 
       Project project = myContext.getProject();
       final String fullClassName = this.myAuxModel.getLongName() + "." + AbstractEvaluationModel.EVALUATOR_NAME;
