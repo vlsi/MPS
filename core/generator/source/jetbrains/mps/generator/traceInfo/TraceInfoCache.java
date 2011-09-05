@@ -24,6 +24,7 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -31,6 +32,7 @@ import jetbrains.mps.traceInfo.DebugInfo;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -74,15 +76,38 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     return status.getDebugInfo();
   }
 
+  @Nullable
+  public DebugInfo get(@NotNull SModelDescriptor modelDescriptor) {
+    // we do not want to acquire myModelsLock inside of myCache lock, so we get module here
+    // see MPS-13899
+    final IModule module = modelDescriptor.getModule();
+    synchronized (myCache) {
+      if (myCache.containsKey(modelDescriptor)) {
+        return myCache.get(modelDescriptor);
+      }
+
+      myFilesToModels.put(getCacheFile(modelDescriptor), modelDescriptor);
+      DebugInfo cache = readCache(modelDescriptor, module);
+      myCache.put(modelDescriptor, cache);
+
+      return cache;
+    }
+  }
+
   @Override
   protected DebugInfo readCache(SModelDescriptor sm) {
-    ClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoaderFor(sm.getModule(), false);
+    LOG.warning("Should not use readCache method since it may cause a deadlock.\nSee MPS-13899", new RuntimeException());
+    return readCache(sm, sm.getModule());
+  }
+
+  protected DebugInfo readCache(SModelDescriptor sm, IModule module) {
+    ClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoaderFor(module, false);
     if (classLoader == null) {
       return null;
     }
     DebugInfo info = getCacheFromClassloader(sm, classLoader);
     if (info == null) {
-      if (InternalFlag.isInternalMode() && !(sm.getModule().isCompileInMPS())) {
+      if (InternalFlag.isInternalMode() && !(module.isCompileInMPS())) {
         for (IdeaPluginDescriptor plugin : PluginManager.getPlugins()) {
           info = TraceInfoCache.getInstance().getCacheFromClassloader(sm, plugin.getPluginClassLoader());
           if (info != null) {
