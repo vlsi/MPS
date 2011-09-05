@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.workbench.actions.imports;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.workbench.actions.goTo.ChooseByNamePopupMPS;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
@@ -33,10 +33,11 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeElement;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
+import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
+import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
@@ -59,12 +60,6 @@ public class ImportHelper {
   }
 
   public static void addModelImport(final Project project, final IModule module, final SModelDescriptor model) {
-    FakePsiElement fakePsiContext = new FakePsiElement() {
-      public PsiElement getParent() {
-        return null;
-      }
-    };
-
     BaseModelModel goToModelModel = new BaseModelModel(project) {
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
         return new AddModelItem(project, model, modelReference, module);
@@ -81,7 +76,7 @@ public class ImportHelper {
         };
         ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
         List<SModelReference> filteredModelRefs = new ArrayList<SModelReference>();
-        for (SModelDescriptor md:iter){
+        for (SModelDescriptor md : iter) {
           filteredModelRefs.add(md.getSModelReference());
         }
         return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
@@ -92,7 +87,7 @@ public class ImportHelper {
         return "Import model:";
       }
     };
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToModelModel, fakePsiContext);
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -119,7 +114,7 @@ public class ImportHelper {
 
       public ModuleReference[] find(IScope scope) {
         ArrayList<ModuleReference> res = new ArrayList<ModuleReference>();
-        for (Language l:scope.getVisibleLanguages()){
+        for (Language l : scope.getVisibleLanguages()) {
           res.add(l.getModuleReference());
         }
         return res.toArray(new ModuleReference[res.size()]);
@@ -130,7 +125,7 @@ public class ImportHelper {
         return "Import language:";
       }
     };
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToLanguageModel, fakePsiContext);
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToLanguageModel);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -157,7 +152,7 @@ public class ImportHelper {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           ModuleReference ref = getModuleReference();
-          if (myContextModule.getScope().getLanguage(ref)==null) {
+          if (myContextModule.getScope().getLanguage(ref) == null) {
             myContextModule.addUsedLanguage(ref);
             ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
           }
@@ -229,7 +224,7 @@ public class ImportHelper {
         }
       };
     }
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToNodeModel, fakePsiContext, initialText);
+    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

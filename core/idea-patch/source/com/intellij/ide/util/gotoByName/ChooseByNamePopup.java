@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,18 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.workbench.actions.goTo;
+package com.intellij.ide.util.gotoByName;
 
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import com.intellij.ide.util.gotoByName.ChooseByNameModel;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
-import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
+import com.intellij.ide.util.gotoByName.temp.IdeaItemProvider;
+import com.intellij.ide.util.gotoByName.temp.ItemProvider;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.popup.ComponentPopupBuilder;
+import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.DimensionService;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.text.StringUtil;
@@ -32,36 +33,27 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.statistics.StatisticsInfo;
 import com.intellij.psi.statistics.StatisticsManager;
 import com.intellij.ui.ScreenUtil;
+import com.intellij.ui.awt.RelativePoint;
+import com.intellij.ui.popup.AbstractPopup;
+import jetbrains.mps.util.annotation.Patch;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.JLayeredPane;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseByNamePopupComponent {
-  private static final Key<ChooseByNamePopupMPS> CHOOSE_BY_NAME_POPUP_IN_PROJECT_KEY = new Key<ChooseByNamePopupMPS>("ChooseByNamePopupMPS");
+public class ChooseByNamePopup extends com.intellij.ide.util.gotoByName.temp.ChooseByNameBase implements ChooseByNamePopupComponent {
+  private static final Key<ChooseByNamePopup> CHOOSE_BY_NAME_POPUP_IN_PROJECT_KEY = new Key<ChooseByNamePopup>("ChooseByNamePopup");
   private Component myOldFocusOwner = null;
   private boolean myShowListForEmptyPattern = false;
 
-  private ChooseByNamePopupMPS(final Project project, final ChooseByNameModel model, final ChooseByNamePopupMPS oldPopup,
-                               final PsiElement context, @Nullable final String predefinedText) {
-    super(project, model, oldPopup != null ? oldPopup.getEnteredText() : predefinedText, context);
-    if (oldPopup == null && predefinedText != null) {
-      setPreselectInitialText(true);
-    }
-    if (oldPopup != null) { //inherit old focus owner
-      myOldFocusOwner = oldPopup.myPreviouslyFocusedComponent;
-    }
-  }
-
-  private ChooseByNamePopupMPS(final Project project, final ChooseByNameModel model, final ChooseByNamePopupMPS oldPopup,
-                               EntityMatcher matcher, @Nullable final String predefinedText) {
-    super(project, model, oldPopup != null ? oldPopup.getEnteredText() : predefinedText, matcher);
+  protected ChooseByNamePopup(final Project project, final ChooseByNameModel model, ItemProvider provider, final ChooseByNamePopup oldPopup,
+                              final PsiElement context, @Nullable final String predefinedText) {
+    super(project, model, provider, oldPopup != null ? oldPopup.getEnteredText() : predefinedText);
     if (oldPopup == null && predefinedText != null) {
       setPreselectInitialText(true);
     }
@@ -80,7 +72,7 @@ public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseB
     if (myInitialText != null) {
       rebuildList(0, 0, null, ModalityState.current(), null);
     }
-    if (myOldFocusOwner != null){
+    if (myOldFocusOwner != null) {
       myPreviouslyFocusedComponent = myOldFocusOwner;
       myOldFocusOwner = null;
     }
@@ -90,7 +82,7 @@ public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseB
     return true;
   }
 
-  protected boolean isShowListForEmptyPattern(){
+  protected boolean isShowListForEmptyPattern() {
     return myShowListForEmptyPattern;
   }
 
@@ -98,7 +90,7 @@ public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseB
     myShowListForEmptyPattern = showListForEmptyPattern;
   }
 
-  protected boolean isCloseByFocusLost(){
+  protected boolean isCloseByFocusLost() {
     return true;
   }
 
@@ -118,7 +110,7 @@ public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseB
     myListScrollPane.setBorder(null);
     if (myDropdownPopup == null) {
       ComponentPopupBuilder builder = JBPopupFactory.getInstance().createComponentPopupBuilder(myListScrollPane, myListScrollPane);
-      builder.setFocusable(false).setRequestFocus(false).setCancelKeyEnabled(false).setFocusOwners(new JComponent[] {myTextField}).setBelongsToGlobalPopupStack(false).setForceHeavyweight(true).setModalContext(false);
+      builder.setFocusable(false).setRequestFocus(false).setCancelKeyEnabled(false).setFocusOwners(new JComponent[]{myTextField}).setBelongsToGlobalPopupStack(false).setForceHeavyweight(true).setModalContext(false);
       builder.setCancelCallback(new Computable<Boolean>() {
         @Override
         public Boolean compute() {
@@ -143,32 +135,35 @@ public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseB
   }
 
   protected void close(final boolean isOk) {
-    if (myDisposedFlag){
+    if (myDisposedFlag) {
       return;
     }
 
-    if (isOk){
+    if (isOk) {
       myModel.saveInitialCheckBoxState(myCheckBox.isSelected());
 
       final List<Object> chosenElements = getChosenElements();
       if (chosenElements != null) {
-        for (Object element : chosenElements) {
-          myActionListener.elementChosen(element);
-          String text = myModel.getFullName(element);
-          if (text != null) {
-            StatisticsManager.getInstance().incUseCount(new StatisticsInfo(statisticsContext(), text));
+        if (myActionListener instanceof MultiElementsCallback) {
+          ((MultiElementsCallback) myActionListener).elementsChosen(chosenElements);
+        } else {
+          for (Object element : chosenElements) {
+            myActionListener.elementChosen(element);
+            String text = myModel.getFullName(element);
+            if (text != null) {
+              StatisticsManager.getInstance().incUseCount(new StatisticsInfo(statisticsContext(), text));
+            }
           }
         }
       } else {
         return;
       }
 
-      if (!chosenElements.isEmpty()){
+      if (!chosenElements.isEmpty()) {
         final String enteredText = getEnteredText();
         if (enteredText.indexOf('*') >= 0) {
           FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.wildcards");
-        }
-        else {
+        } else {
           for (Object element : chosenElements) {
             final String name = myModel.getElementName(element);
             if (name != null) {
@@ -179,8 +174,7 @@ public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseB
             }
           }
         }
-      }
-      else{
+      } else {
         return;
       }
     }
@@ -192,7 +186,12 @@ public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseB
     //LaterInvocator.leaveModal(myTextFieldPanel);
 
     cleanupUI();
-    myActionListener.onClose ();
+    myActionListener.onClose();
+  }
+
+  @Nullable
+  public static ChooseByNamePopup getActivePopup(@NotNull final Project project) {
+    return CHOOSE_BY_NAME_POPUP_IN_PROJECT_KEY.get(project);
   }
 
   private void cleanupUI() {
@@ -207,32 +206,27 @@ public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseB
     }
   }
 
-  public static ChooseByNamePopupMPS createPopup(final Project project, final ChooseByNameModel model, final PsiElement context) {
-    return createPopup(project, model, context, null);
-  }
-  public static ChooseByNamePopupMPS createPopup(final Project project, final ChooseByNameModel model, EntityMatcher matcher) {
-    return createPopup(project, model, matcher, null);
+  @Deprecated
+  public static ChooseByNamePopup createPopup(final Project project, final ChooseByNameModel model, final PsiElement context) {
+    return createPopup(project, model, new IdeaItemProvider(context), context, null);
   }
 
-  public static ChooseByNamePopupMPS createPopup(final Project project, final ChooseByNameModel model, EntityMatcher matcher,
+  public static ChooseByNamePopup createPopup(final Project project, final ChooseByNameModel model, ItemProvider provider, final PsiElement context) {
+    return createPopup(project, model, provider, context, null);
+  }
+
+  public static ChooseByNamePopup createPopup(final Project project, final ChooseByNameModel model, final PsiElement context,
                                               @Nullable final String predefinedText) {
-    final ChooseByNamePopupMPS oldPopup = project.getUserData(CHOOSE_BY_NAME_POPUP_IN_PROJECT_KEY);
+    return createPopup(project, model, new IdeaItemProvider(context), context, predefinedText);
+  }
+
+  public static ChooseByNamePopup createPopup(final Project project, final ChooseByNameModel model, ItemProvider provider, final PsiElement context,
+                                              @Nullable final String predefinedText) {
+    final ChooseByNamePopup oldPopup = project.getUserData(CHOOSE_BY_NAME_POPUP_IN_PROJECT_KEY);
     if (oldPopup != null) {
       oldPopup.close(false);
     }
-    ChooseByNamePopupMPS newPopup = new ChooseByNamePopupMPS(project, model, oldPopup, matcher, predefinedText);
-
-    project.putUserData(CHOOSE_BY_NAME_POPUP_IN_PROJECT_KEY, newPopup);
-    return newPopup;
-  }
-
-  public static ChooseByNamePopupMPS createPopup(final Project project, final ChooseByNameModel model, final PsiElement context,
-                                              @Nullable final String predefinedText) {
-    final ChooseByNamePopupMPS oldPopup = project.getUserData(CHOOSE_BY_NAME_POPUP_IN_PROJECT_KEY);
-    if (oldPopup != null) {
-      oldPopup.close(false);
-    }
-    ChooseByNamePopupMPS newPopup = new ChooseByNamePopupMPS(project, model, oldPopup, context, predefinedText);
+    ChooseByNamePopup newPopup = new ChooseByNamePopup(project, model, provider, oldPopup, context, predefinedText);
 
     project.putUserData(CHOOSE_BY_NAME_POPUP_IN_PROJECT_KEY, newPopup);
     return newPopup;
@@ -240,19 +234,19 @@ public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseB
 
   private static final Pattern patternToDetectLinesAndColumns = Pattern.compile("(.*?)(?:\\:|@|,|#)(\\d+)?(?:(?:\\D)(\\d+)?)?");
 
-  public String getNamePattern(String pattern) {
+  public String transformPattern(String pattern) {
     if (pattern.indexOf(':') != -1 ||
-        pattern.indexOf(',') != -1 ||
-        pattern.indexOf(';') != -1 ||
-        pattern.indexOf('#') != -1 ||
-        pattern.indexOf('@') != -1) { // quick test if reg exp should be used
+      pattern.indexOf(',') != -1 ||
+      pattern.indexOf(';') != -1 ||
+      pattern.indexOf('#') != -1 ||
+      pattern.indexOf('@') != -1) { // quick test if reg exp should be used
       final Matcher matcher = patternToDetectLinesAndColumns.matcher(pattern);
       if (matcher.matches()) {
         pattern = matcher.group(1);
       }
     }
 
-    return super.getNamePattern(pattern);
+    return super.transformPattern(pattern);
   }
 
   public int getLinePosition() {
@@ -262,15 +256,15 @@ public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseB
   private int getLineOrColumn(final boolean line) {
     final Matcher matcher = patternToDetectLinesAndColumns.matcher(getEnteredText());
     if (matcher.matches()) {
-      final int groupNumber = line ? 2:3;
+      final int groupNumber = line ? 2 : 3;
       try {
-        if(groupNumber <= matcher.groupCount()) {
+        if (groupNumber <= matcher.groupCount()) {
           final String group = matcher.group(groupNumber);
           if (group != null) return Integer.parseInt(group) - 1;
         }
         if (!line && getLineOrColumn(true) != -1) return 0;
+      } catch (NumberFormatException ignored) {
       }
-      catch (NumberFormatException ignored) {}
     }
 
     return -1;
@@ -278,5 +272,38 @@ public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseB
 
   public int getColumnPosition() {
     return getLineOrColumn(false);
+  }
+
+  public void showItemPopup(final JBPopup hint) {
+    if (myDropdownPopup != null && myDropdownPopup.isVisible()) {
+      Dimension hintSize = null;
+      if (hint instanceof AbstractPopup) {
+        final String key = ((AbstractPopup) hint).getDimensionServiceKey();
+        if (key != null) {
+          hintSize = DimensionService.getInstance().getSize(key);
+        }
+      }
+
+      if (hintSize == null) {
+        hintSize = hint.getContent().getPreferredSize();
+      }
+
+      final Dimension size = myDropdownPopup.getSize();
+      GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+      final int width = gd.getDisplayMode().getWidth();
+      Point p;
+      if (hintSize != null) {
+        final int dropDownX = myDropdownPopup.getLocationOnScreen().x;
+        if (dropDownX + size.width + 10 + hintSize.width < width || (dropDownX - hintSize.width - 10 < 0)) {
+          p = new Point(size.width + 5, 0);
+        } else {
+          p = new Point(-hintSize.width - 5, 0);
+        }
+      } else {
+        p = new Point(size.width + 5, 0);
+      }
+
+      hint.show(new RelativePoint(myDropdownPopup.getContent(), p));
+    }
   }
 }

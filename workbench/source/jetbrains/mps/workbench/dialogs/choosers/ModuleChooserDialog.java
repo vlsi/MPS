@@ -23,12 +23,12 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
+import jetbrains.mps.workbench.actions.goTo.matcher.ChooseByNamePanel;
+import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import org.jetbrains.annotations.Nullable;
@@ -44,7 +44,7 @@ import java.util.List;
 class ModuleChooserDialog extends BaseDialog {
   private List<ModuleReference> myModules = new ArrayList<ModuleReference>();
   private List<ModuleReference> myNonProjectModules = new ArrayList<ModuleReference>();
-  private SmartChooseByNamePanel myChooser;
+  private ChooseByNamePanel myChooser;
   private boolean myIsCancelled = true;
   private boolean myOkDone = false;
   private boolean myIsMultipleSelection = false;
@@ -97,7 +97,7 @@ class ModuleChooserDialog extends BaseDialog {
       }
     };
 
-    myChooser = new SmartChooseByNamePanel(goToModuleModel, !myNonProjectModules.isEmpty(), DefaultMatcherFactory.createAllMatcher(goToModuleModel));
+    myChooser = MpsPopupFactory.createPanelForPackage(goToModuleModel, !myNonProjectModules.isEmpty());
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {

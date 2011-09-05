@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.dialogs.choosers;
 
 import com.intellij.ide.DataManager;
-import jetbrains.mps.workbench.actions.goTo.ChooseByNamePopupMPS;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
@@ -28,9 +28,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
+import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
-import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
@@ -136,7 +135,7 @@ public class CommonChoosers {
       }
     };
 
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToNodeModel, new FakePsiContext());
+    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -171,7 +170,7 @@ public class CommonChoosers {
       }
     };
 
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToModelModel, DefaultMatcherFactory.createAllMatcher(goToModelModel));
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -212,7 +211,7 @@ public class CommonChoosers {
         return (ModuleReference[]) modules.toArray();
       }
     };
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToModuleModel, DefaultMatcherFactory.createAllMatcher(goToModuleModel));
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModuleModel);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

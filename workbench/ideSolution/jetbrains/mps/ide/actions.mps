@@ -77,7 +77,6 @@
   <import index="lu34" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.choose.modules(jetbrains.mps.workbench.choose.modules@java_stub)" version="-1" />
   <import index="ho7a" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="xcrn" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.navigation(com.intellij.navigation@java_stub)" version="-1" />
-  <import index="2kq0" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.choose.base(jetbrains.mps.workbench.choose.base@java_stub)" version="-1" />
   <import index="819b" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.pom(com.intellij.pom@java_stub)" version="-1" />
   <import index="lkw3" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" version="-1" />
   <import index="n2ga" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ui.treeStructure(com.intellij.ui.treeStructure@java_stub)" version="-1" />
@@ -106,7 +105,6 @@
   <import index="t6nq" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.fileEditor(MPS.Classpath/com.intellij.openapi.fileEditor@java_stub)" version="-1" />
   <import index="foat" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.structureView(MPS.Classpath/com.intellij.ide.structureView@java_stub)" version="-1" />
   <import index="f7i0" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.structureview(MPS.Classpath/jetbrains.mps.workbench.structureview@java_stub)" version="-1" />
-  <import index="tpci" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
   <import index="hqaf" modelUID="r:39c01cc7-82c8-4706-9a38-48a33acb0535(jetbrains.mps.ide.findusages.view.optionseditor)" version="-1" />
   <import index="tpeg" modelUID="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)" version="-1" />
   <import index="supv" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
@@ -125,6 +123,7 @@
   <import index="wzsw" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.common(MPS.Classpath/jetbrains.mps.ide.common@java_stub)" version="-1" />
   <import index="hp43" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ui(MPS.Classpath/com.intellij.ui@java_stub)" version="-1" />
   <import index="jwig" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project.structure.project(MPS.Classpath/jetbrains.mps.project.structure.project@java_stub)" version="-1" />
+  <import index="j08o" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.actions.goTo.matcher(MPS.Classpath/jetbrains.mps.workbench.actions.goTo.matcher@java_stub)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -16057,25 +16056,20 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2777079932569210251">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2777079932569210252">
             <property name="name" nameId="tpck.1169194664001" value="popup" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3191039665180861847">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lj90.~ChooseByNamePopupMPS" resolveInfo="ChooseByNamePopupMPS" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1402666617209495478">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bsou.~ChooseByNamePopup" resolveInfo="ChooseByNamePopup" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4466037218324020412">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lj90.~ChooseByNamePopupMPS" resolveInfo="ChooseByNamePopupMPS" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lj90.~ChooseByNamePopupMPS%dcreatePopup(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dide%dutil%dgotoByName%dChooseByNameModel,com%dintellij%dpsi%dPsiElement)%cjetbrains%dmps%dworkbench%dactions%dgoTo%dChooseByNamePopupMPS" resolveInfo="createPopup" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4466037218324020413">
-                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4466037218324020414" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4466037218324020415">
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7193245081074854584">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="j08o.~MpsPopupFactory%dcreatePackagePopup(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dide%dutil%dgotoByName%dChooseByNameModel)%ccom%dintellij%dide%dutil%dgotoByName%dChooseByNamePopup" resolveInfo="createPackagePopup" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="j08o.~MpsPopupFactory" resolveInfo="MpsPopupFactory" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7193245081074854585">
+                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7193245081074854586" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="7193245081074854587">
                   <link role="member" roleId="tp4f.1205756909548" targetNodeId="2777079932569210487" resolveInfo="project" />
                 </node>
               </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4466037218324020416">
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7193245081074854588">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2777079932569140022" resolveInfo="baseSolutionModel" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4466037218324020417">
-                <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4466037218324020418">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2kq0.~FakePsiContext%d&lt;init&gt;()" resolveInfo="FakePsiContext" />
-                </node>
               </node>
             </node>
           </node>
@@ -16086,7 +16080,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2777079932569210252" resolveInfo="popup" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2777079932569212908">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lj90.~ChooseByNameBaseMPS%dinvoke(com%dintellij%dide%dutil%dgotoByName%dChooseByNamePopupComponent$Callback,com%dintellij%dopenapi%dapplication%dModalityState,boolean)%cvoid" resolveInfo="invoke" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bsou.~ChooseByNameBase%dinvoke(com%dintellij%dide%dutil%dgotoByName%dChooseByNamePopupComponent$Callback,com%dintellij%dopenapi%dapplication%dModalityState,boolean)%cvoid" resolveInfo="invoke" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2777079932569212909">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="2777079932569212911">
                   <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="2777079932569212912">

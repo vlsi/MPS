@@ -13,14 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.goTo.matcher;
+package com.intellij.ide.util.gotoByName.temp;
 
 import com.intellij.openapi.util.Computable;
 
-import java.util.Set;
+import java.util.List;
 
-public interface EntityMatcher {
-  boolean nameMatches(String shortPattern, String shortName);
+public interface ItemProvider {
+  void setBase(ChooseByNameBase base) ;
 
-  Set<Object> getElementsByPattern(String fullPattern, String shortName, boolean checkboxState, Computable<Boolean> isCancelled);
+  List<String> getNamesByPattern(String[] names, String pattern);
+
+  List<Object> filterElements(String pattern, boolean everywhere, Computable<Boolean> cancelled, int maxListSize, String extra);
 }

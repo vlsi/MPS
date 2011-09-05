@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.dialogs.choosers;
+package jetbrains.mps.workbench.actions.goTo.matcher;
 
 import com.intellij.ide.DataManager;
-import jetbrains.mps.workbench.actions.goTo.ChooseByNameBaseMPS;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
-import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
+import com.intellij.ide.util.gotoByName.temp.ItemProvider;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
@@ -31,22 +30,13 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.util.List;
 
-public class SmartChooseByNamePanel extends ChooseByNameBaseMPS {
+public class ChooseByNamePanel extends ChooseByNamePopup {
   private JPanel myPanel;
   private boolean myCheckboxVisible = false;
 
-  public SmartChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible, EntityMatcher matcher) {
-    super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, "", matcher);
+  ChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible, ItemProvider provider) {
+    super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, provider, null, new FakePsiContext(), "");
     myCheckboxVisible = checkboxVisible;
-  }
-
-  public SmartChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible) {
-    super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, "", new FakePsiContext());
-    myCheckboxVisible = checkboxVisible;
-  }
-
-  protected int getVisibleItemsCount() {
-    return 500;
   }
 
   protected void initUI(Callback callback, ModalityState modalityState, boolean allowMultipleSelection) {
