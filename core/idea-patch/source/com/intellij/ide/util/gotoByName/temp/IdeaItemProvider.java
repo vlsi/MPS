@@ -16,10 +16,10 @@
 package com.intellij.ide.util.gotoByName.temp;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.CustomMatcherModel;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProcessCanceledException;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Comparing;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
@@ -33,36 +33,35 @@ import com.intellij.util.SmartList;
 import com.intellij.util.containers.ContainerUtil;
 import org.jetbrains.annotations.Nullable;
 
-import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 import java.util.*;
 
-public abstract class ChooseByNameIdea extends ChooseByNameBase {
-  private static final Logger LOG = Logger.getInstance("#com.intellij.ide.util.gotoByName.ChooseByNameBase");
-  private final Reference<PsiElement> myContext;
+public class IdeaItemProvider implements ItemProvider {
+  private static final Logger LOG = Logger.getInstance("#com.intellij.ide.util.gotoByName.ChooseByNameIdea");
+  private ChooseByNameBase myBase;
+  private WeakReference<PsiElement> myContext;
 
-  /**
-   * @param initialText initial text which will be in the lookup text field
-   * @param context
-   */
-  protected ChooseByNameIdea(Project project, ChooseByNameModel model, String initialText, final PsiElement context) {
-    super(project, model, initialText);
+  public IdeaItemProvider(PsiElement context) {
     myContext = new WeakReference<PsiElement>(context);
   }
 
-  protected List<Object> filterElements(String pattern, boolean everywhere, Computable<Boolean> cancelled, int maxListSize, String extra) {
+  public void setBase(ChooseByNameBase base) {
+    myBase = base;
+  }
+
+  public List<Object> filterElements(String pattern, boolean everywhere, Computable<Boolean> cancelled, int maxListSize, String extra) {
     String namePattern = getNamePattern(pattern);
     String qualifierPattern = getQualifierPattern(pattern);
 
-    if (isSearchInAnyPlace() && namePattern.trim().length() > 0) {
+    if (myBase.isSearchInAnyPlace() && namePattern.trim().length() > 0) {
       namePattern = "*" + namePattern + "*";
     }
 
     boolean empty = namePattern.length() == 0 || namePattern.equals("@");    // TODO[yole]: remove implicit dependency
-    if (empty && !canShowListForEmptyPattern()) return Collections.emptyList();
+    if (empty && !myBase.canShowListForEmptyPattern()) return Collections.emptyList();
 
     List<String> namesList = new ArrayList<String>();
-    getNamesByPattern(getNames(everywhere), cancelled, namesList, namePattern);
+    getNamesByPattern(myBase.getNames(everywhere), cancelled, namesList, namePattern);
     if (cancelled.compute()) {
       throw new ProcessCanceledException();
     }
@@ -78,7 +77,7 @@ public abstract class ChooseByNameIdea extends ChooseByNameBase {
       if (cancelled.compute()) {
         throw new ProcessCanceledException();
       }
-      final Object[] elements = myModel.getElementsByName(name, everywhere, namePattern);
+      final Object[] elements = myBase.getModel().getElementsByName(name, everywhere, namePattern);
       if (elements.length > 1) {
         sameNameElements.clear();
         for (final Object element : elements) {
@@ -111,11 +110,11 @@ public abstract class ChooseByNameIdea extends ChooseByNameBase {
   }
 
   private void sortByProximity(final List<Object> sameNameElements) {
-    Collections.sort(sameNameElements, new PathProximityComparator(myModel, myContext.get()));
+    Collections.sort(sameNameElements, new PathProximityComparator(myBase.getModel(), myContext.get()));
   }
 
   private String getQualifierPattern(String pattern) {
-    final String[] separators = myModel.getSeparators();
+    final String[] separators = myBase.getModel().getSeparators();
     int lastSeparatorOccurence = 0;
     for (String separator : separators) {
       lastSeparatorOccurence = Math.max(lastSeparatorOccurence, pattern.lastIndexOf(separator));
@@ -123,8 +122,11 @@ public abstract class ChooseByNameIdea extends ChooseByNameBase {
     return pattern.substring(0, lastSeparatorOccurence);
   }
 
-  protected String getNamePattern(String pattern) {
-    final String[] separators = myModel.getSeparators();
+  public String getNamePattern(String pattern) {
+    myBase.transformPattern(pattern);
+
+    ChooseByNameModel model = myBase.getModel();
+    final String[] separators = model.getSeparators();
     int lastSeparatorOccurence = 0;
     for (String separator : separators) {
       final int idx = pattern.lastIndexOf(separator);
@@ -136,7 +138,7 @@ public abstract class ChooseByNameIdea extends ChooseByNameBase {
 
   private List<String> split(String s) {
     List<String> answer = new ArrayList<String>();
-    for (String token : StringUtil.tokenize(s, StringUtil.join(myModel.getSeparators(), ""))) {
+    for (String token : StringUtil.tokenize(s, StringUtil.join(myBase.getModel().getSeparators(), ""))) {
       if (token.length() > 0) {
         answer.add(token);
       }
@@ -146,7 +148,7 @@ public abstract class ChooseByNameIdea extends ChooseByNameBase {
   }
 
   private boolean matchesQualifier(final Object element, final String qualifierPattern) {
-    final String name = myModel.getFullName(element);
+    final String name = myBase.getModel().getFullName(element);
     if (name == null) return false;
 
     final List<String> suspects = split(name);
@@ -187,7 +189,7 @@ public abstract class ChooseByNameIdea extends ChooseByNameBase {
     return true;
   }
 
-  protected List<String> getNamesByPattern(String[] names, String pattern){
+  public List<String> getNamesByPattern(String[] names, String pattern){
     ArrayList<String> res = new ArrayList<String>();
     getNamesByPattern(names,null, res, pattern);
     return res;
@@ -197,7 +199,7 @@ public abstract class ChooseByNameIdea extends ChooseByNameBase {
                                  Computable<Boolean> cancelled,
                                  final List<String> list,
                                  String pattern) throws ProcessCanceledException {
-    if (!canShowListForEmptyPattern()) {
+    if (!myBase.canShowListForEmptyPattern()) {
       LOG.assertTrue(pattern.length() > 0);
     }
 
@@ -224,8 +226,8 @@ public abstract class ChooseByNameIdea extends ChooseByNameBase {
   private boolean matches(String pattern, NameUtil.Matcher matcher, String name) {
     boolean matches = false;
     if (name != null) {
-      if (myModel instanceof CustomMatcherModel) {
-        if (((CustomMatcherModel) myModel).matches(name, pattern)) {
+      if (myBase.getModel() instanceof CustomMatcherModel) {
+        if (((CustomMatcherModel) myBase.getModel()).matches(name, pattern)) {
           matches = true;
         }
       } else if (pattern.length() == 0 || matcher.matches(name)) {

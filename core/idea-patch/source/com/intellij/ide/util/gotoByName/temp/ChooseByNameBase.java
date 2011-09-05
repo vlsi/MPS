@@ -67,6 +67,7 @@ import java.util.List;
 public abstract class ChooseByNameBase {
   protected final Project myProject;
   protected final ChooseByNameModel myModel;
+  protected ItemProvider myProvider;
   protected final String myInitialText;
   private boolean myPreselectInitialText;
   private boolean mySearchInAnyPlace = false;
@@ -123,10 +124,12 @@ public abstract class ChooseByNameBase {
    * @param initialText initial text which will be in the lookup text field
    * @param context
    */
-  protected ChooseByNameBase(Project project, ChooseByNameModel model, String initialText) {
+  protected ChooseByNameBase(Project project, ChooseByNameModel model,ItemProvider provider, String initialText) {
     myProject = project;
     myModel = model;
+    myProvider = provider;
     myInitialText = initialText;
+    myProvider.setBase(this);
   }
 
   public boolean isPreselectInitialText() {
@@ -165,6 +168,10 @@ public abstract class ChooseByNameBase {
                      final ModalityState modalityState,
                      boolean allowMultipleSelection) {
     initUI(callback, modalityState, allowMultipleSelection);
+  }
+
+  public ChooseByNameModel getModel() {
+    return myModel;
   }
 
   public class JPanelProvider extends JPanel implements DataProvider {
@@ -497,6 +504,10 @@ public abstract class ChooseByNameBase {
     }
   }
 
+  public String transformPattern(String pattern) {
+    return pattern;
+  }
+
   protected void doClose(final boolean ok) {
     if (myDisposedFlag) return;
 
@@ -554,7 +565,7 @@ public abstract class ChooseByNameBase {
     }
   }
 
-  protected String[] getNames(boolean checkboxState) {
+  public String[] getNames(boolean checkboxState) {
     return checkboxState ? myNames[1] : myNames[0];
   }
 
@@ -992,7 +1003,7 @@ public abstract class ChooseByNameBase {
     }
 
     private void fillInCommonPrefix(final String pattern) {
-      final List<String> list = getNamesByPattern(getNames(myCheckBox.isSelected()), pattern);
+      final List<String> list = myProvider.getNamesByPattern(getNames(myCheckBox.isSelected()), pattern);
 
       if (isComplexPattern(pattern)) return; //TODO: support '*'
       final String oldText = myTextField.getText();
@@ -1092,7 +1103,7 @@ public abstract class ChooseByNameBase {
         public void run() {
           try {
             ensureNamesLoaded(myCheckboxState);
-            elements.addAll(filterElements(myPattern, myCheckboxState, new Computable<Boolean>() {
+            elements.addAll(myProvider.filterElements(myPattern, myCheckboxState, new Computable<Boolean>() {
               public Boolean compute() {
                 return myCancelled;
               }
@@ -1153,13 +1164,8 @@ public abstract class ChooseByNameBase {
     }
   }
 
-  protected List<String> getNamesByPattern(String[] names, String pattern) {
-    return new ArrayList<String>();
-  }
-
-  protected abstract List<Object> filterElements(String pattern, boolean everywhere, Computable<Boolean> cancelled, int maxListSize, String extra);
-
-  protected boolean canShowListForEmptyPattern() {
+  public
+  boolean canShowListForEmptyPattern() {
     return isShowListForEmptyPattern() || (isShowListAfterCompletionKeyStroke() && lastKeyStrokeIsCompletion());
   }
 
