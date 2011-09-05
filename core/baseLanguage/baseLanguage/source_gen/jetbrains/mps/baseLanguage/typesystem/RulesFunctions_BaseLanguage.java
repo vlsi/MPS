@@ -346,7 +346,7 @@ __switch__:
       {
         SNode _nodeToCheck_1029348928467 = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044080", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(mc, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044077", true), (SNode) new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a0a2a2a6().createNode(typeCheckingContext), true, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(mc, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044077", true), (SNode) new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a0a2a2a6().createNode(typeCheckingContext), false, true, _info_12389875345);
       }
     }
   }

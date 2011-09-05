@@ -2083,7 +2083,7 @@
     <nodeInfo nodeId="1203441371359" fileName="RulesFunctions_BaseLanguage.java" startLine="343" startPosition="199" endLine="344" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3254522536313044080" fileName="RulesFunctions_BaseLanguage.java" startLine="346" startPosition="7" endLine="347" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3254522536313044080" fileName="RulesFunctions_BaseLanguage.java" startLine="347" startPosition="48" endLine="348" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3254522536313044080" fileName="RulesFunctions_BaseLanguage.java" startLine="348" startPosition="205" endLine="349" endPosition="340" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3254522536313044080" fileName="RulesFunctions_BaseLanguage.java" startLine="348" startPosition="205" endLine="349" endPosition="341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8531167801199654607" fileName="RulesFunctions_BaseLanguage.java" startLine="357" startPosition="60" endLine="358" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8531167801199654648" fileName="RulesFunctions_BaseLanguage.java" startLine="360" startPosition="11" endLine="361" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8531167801199654648" fileName="RulesFunctions_BaseLanguage.java" startLine="361" startPosition="52" endLine="362" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2612,7 +2612,7 @@
     <scopeInfo nodeId="3768281636845649754" fileName="RulesFunctions_BaseLanguage.java" startLine="302" startPosition="19" endLine="305" endPosition="269" />
     <scopeInfo nodeId="3768281636845649757" fileName="RulesFunctions_BaseLanguage.java" startLine="330" startPosition="13" endLine="333" endPosition="260" />
     <scopeInfo nodeId="1203441371359" fileName="RulesFunctions_BaseLanguage.java" startLine="341" startPosition="7" endLine="344" endPosition="251" />
-    <scopeInfo nodeId="3254522536313044080" fileName="RulesFunctions_BaseLanguage.java" startLine="346" startPosition="7" endLine="349" endPosition="340" />
+    <scopeInfo nodeId="3254522536313044080" fileName="RulesFunctions_BaseLanguage.java" startLine="346" startPosition="7" endLine="349" endPosition="341" />
     <scopeInfo nodeId="8531167801199654648" fileName="RulesFunctions_BaseLanguage.java" startLine="360" startPosition="11" endLine="363" endPosition="229" />
     <scopeInfo nodeId="1203452876024" fileName="RulesFunctions_BaseLanguage.java" startLine="377" startPosition="13" endLine="380" endPosition="96" />
     <scopeInfo nodeId="1203431602916" fileName="RulesFunctions_BaseLanguage.java" startLine="411" startPosition="120" endLine="414" endPosition="7">
