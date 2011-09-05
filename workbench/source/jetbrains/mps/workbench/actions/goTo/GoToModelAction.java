@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.actions.goTo;
 
 import com.intellij.featureStatistics.FeatureUsageTracker;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -28,6 +29,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
+import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 
@@ -71,7 +73,7 @@ public class GoToModelAction extends BaseAction {
         return result.toArray(new SModelReference[result.size()]);
       }
     };
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToModelModel, DefaultMatcherFactory.createAllMatcher(goToModelModel));
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel,new MPSItemProvider(DefaultMatcherFactory.createAllMatcher(goToModelModel)),new FakePsiContext());
     popup.setShowListForEmptyPattern(true);
     popup.invoke(new NavigateCallback(), ModalityState.current(), true);
   }

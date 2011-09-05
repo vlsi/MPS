@@ -17,27 +17,33 @@
 package jetbrains.mps.workbench.actions.goTo;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
+import com.intellij.ide.util.gotoByName.temp.ChooseByNameBase;
+import com.intellij.ide.util.gotoByName.temp.ItemProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
 
 import java.util.*;
 
-public abstract class ChooseByNameBaseMPS extends com.intellij.ide.util.gotoByName.temp.ChooseByNameBase {
+public class MPSItemProvider implements ItemProvider{
   private EntityMatcher myMatcher;
+  private ChooseByNameBase myBase;
 
-  /**
-   * @param initialText initial text which will be in the lookup text field
-   * @param context
-   */
-  protected ChooseByNameBaseMPS(Project project, ChooseByNameModel model, String initialText, EntityMatcher matcher) {
-    super(project, model, initialText);
+  public MPSItemProvider(EntityMatcher matcher) {
     myMatcher = matcher;
   }
 
-  @Override
-  protected void filterElements(Set<Object> elementsArray, String pattern, boolean everywhere, Computable<Boolean> cancelled, int maxListSize, String extra) {
-    String[] names = getNames(everywhere);
+  public void setBase(ChooseByNameBase base) {
+    myBase = base;
+  }
+
+  public List<String> getNamesByPattern(String[] names, String pattern) {
+    return Collections.emptyList();
+  }
+
+  public List<Object> filterElements(String pattern, boolean everywhere, Computable<Boolean> cancelled, int maxListSize, String extra) {
+    ArrayList<Object> res = new ArrayList<Object>();
+    String[] names = myBase.getNames(everywhere);
     String namePattern = getNamePattern(pattern);
 
     List<String> namesList = getNamesByPattern(namePattern, names, cancelled);
@@ -47,21 +53,23 @@ public abstract class ChooseByNameBaseMPS extends com.intellij.ide.util.gotoByNa
 
     for (String name : namesList) {
       Set<Object> elems = myMatcher.getElementsByPattern(pattern, name, everywhere, cancelled);
-      if (elementsArray.size() + elems.size() <= maxListSize) {
-        elementsArray.addAll(elems);
+      if (res.size() + elems.size() <= maxListSize) {
+        res.addAll(elems);
       } else {
         Iterator<Object> iter = elems.iterator();
-        while (elementsArray.size() < maxListSize) {
-          elementsArray.add(iter.next());
+        while (res.size() < maxListSize) {
+          res.add(iter.next());
         }
-        elementsArray.add(extra);
+        res.add(extra);
         break;
       }
     }
+
+    return res;
   }
 
   protected String getNamePattern(String pattern) {
-    return getNamePattern(myModel, pattern);
+    return getNamePattern(myBase.getModel(), pattern);
   }
 
   public static String getNamePattern(ChooseByNameModel model, String pattern) {
@@ -82,7 +90,7 @@ public abstract class ChooseByNameBaseMPS extends com.intellij.ide.util.gotoByNa
 
     boolean empty = pattern.length() == 0;
     if (empty) {
-      if (!canShowListForEmptyPattern()) return Collections.emptyList();
+      if (!myBase.canShowListForEmptyPattern()) return Collections.emptyList();
       return Arrays.asList(names);
     }
 

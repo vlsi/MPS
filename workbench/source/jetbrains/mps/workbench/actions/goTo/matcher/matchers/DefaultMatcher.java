@@ -27,7 +27,7 @@ import com.intellij.psi.util.proximity.PsiProximityComparator;
 import com.intellij.util.Function;
 import com.intellij.util.SmartList;
 import com.intellij.util.containers.ContainerUtil;
-import jetbrains.mps.workbench.actions.goTo.ChooseByNameBaseMPS;
+import jetbrains.mps.workbench.actions.goTo.MPSItemProvider;
 import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
 
 import java.lang.ref.WeakReference;
@@ -132,7 +132,7 @@ public class DefaultMatcher implements EntityMatcher {
   }
 
   public String getShortNamePattern(String s) {
-    return ChooseByNameBaseMPS.getNamePattern(myModel, s);
+    return MPSItemProvider.getNamePattern(myModel, s);
   }
 
   private String getQualifierPattern(String pattern) {

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.goTo;
 
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -30,6 +31,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
+import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 
@@ -65,7 +67,7 @@ public class GoToModuleAction extends BaseAction {
         return modules.toArray(new ModuleReference[modules.size()]);
       }
     };
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToModuleModel, DefaultMatcherFactory.createAllMatcher(goToModuleModel));
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModuleModel, new MPSItemProvider(DefaultMatcherFactory.createAllMatcher(goToModuleModel)), new FakePsiContext());
 
     popup.invoke(new NavigateCallback(), ModalityState.current(), true);
   }

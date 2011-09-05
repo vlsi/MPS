@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.goTo;
 
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -28,6 +29,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
+import jetbrains.mps.workbench.actions.goTo.matcher.matchers.DefaultMatcher;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 
@@ -46,7 +48,7 @@ public class GoToRootNodeAction extends BaseAction {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
 
-    ChooseByNamePopupMPS popup;
+    ChooseByNamePopup popup;
 
     if (!myUseCache) {
       BaseNodeModel baseNodeModel = new BaseNodeModel(project) {
@@ -62,10 +64,10 @@ public class GoToRootNodeAction extends BaseAction {
           return nodes.toArray(new SNode[0]);
         }
       };
-      popup = ChooseByNamePopupMPS.createPopup(project, baseNodeModel, new FakePsiContext());
+      popup = ChooseByNamePopup.createPopup(project, baseNodeModel, new MPSItemProvider(new DefaultMatcher(baseNodeModel, new FakePsiContext())), new FakePsiContext());
     } else {
       MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex());
-      popup = ChooseByNamePopupMPS.createPopup(project, chooseSNodeResult, new FakePsiContext());
+      popup = ChooseByNamePopup.createPopup(project, chooseSNodeResult,new MPSItemProvider(new DefaultMatcher(chooseSNodeResult, new FakePsiContext())), new FakePsiContext());
     }
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {

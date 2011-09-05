@@ -29,8 +29,10 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import javax.swing.tree.TreeNode;
-import jetbrains.mps.workbench.actions.goTo.ChooseByNamePopupMPS;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
+import jetbrains.mps.workbench.actions.goTo.MPSItemProvider;
+import jetbrains.mps.workbench.actions.goTo.matcher.matchers.DefaultMatcher;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
 
@@ -123,7 +125,8 @@ public class NewRuntimeModule_Action extends GeneratedAction {
           };
         }
       };
-      ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(((Project) MapSequence.fromMap(_params).get("project")), baseSolutionModel, new FakePsiContext());
+      FakePsiContext fpc = new FakePsiContext();
+      ChooseByNamePopup popup = ChooseByNamePopup.createPopup(((Project) MapSequence.fromMap(_params).get("project")), baseSolutionModel, new MPSItemProvider(new DefaultMatcher(baseSolutionModel, fpc)), fpc);
       popup.invoke(new ChooseByNamePopupComponent.Callback() {
         public void elementChosen(Object p0) {
           ((NavigationItem) p0).navigate(true);

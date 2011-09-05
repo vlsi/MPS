@@ -16,12 +16,12 @@
 package jetbrains.mps.workbench.dialogs.choosers;
 
 import com.intellij.ide.DataManager;
-import jetbrains.mps.workbench.actions.goTo.ChooseByNameBaseMPS;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
-import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.actions.goTo.MPSItemProvider;
+import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
 import jetbrains.mps.workbench.actions.goTo.matcher.matchers.DefaultMatcher;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 
@@ -32,18 +32,17 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.util.List;
 
-public class SmartChooseByNamePanel extends ChooseByNameBaseMPS {
+public class SmartChooseByNamePanel extends ChooseByNamePopup {
   private JPanel myPanel;
   private boolean myCheckboxVisible = false;
 
   public SmartChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible, EntityMatcher matcher) {
-    super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, "", matcher);
+    super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, new MPSItemProvider(matcher), null, new FakePsiContext(), "");
     myCheckboxVisible = checkboxVisible;
   }
 
   public SmartChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible) {
-    super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, "", new DefaultMatcher(model,new FakePsiContext()));
-    myCheckboxVisible = checkboxVisible;
+    this(model,checkboxVisible,new DefaultMatcher(model, new FakePsiContext()));
   }
 
   protected int getVisibleItemsCount() {

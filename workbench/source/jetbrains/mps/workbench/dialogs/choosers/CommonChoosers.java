@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.dialogs.choosers;
 
 import com.intellij.ide.DataManager;
-import jetbrains.mps.workbench.actions.goTo.ChooseByNamePopupMPS;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
@@ -28,7 +28,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.actions.goTo.MPSItemProvider;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
+import jetbrains.mps.workbench.actions.goTo.matcher.matchers.DefaultMatcher;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
@@ -136,7 +138,7 @@ public class CommonChoosers {
       }
     };
 
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToNodeModel, new FakePsiContext());
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, new MPSItemProvider(new DefaultMatcher(goToNodeModel, new FakePsiContext())), new FakePsiContext());
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -171,7 +173,7 @@ public class CommonChoosers {
       }
     };
 
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToModelModel, DefaultMatcherFactory.createAllMatcher(goToModelModel));
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, new MPSItemProvider(DefaultMatcherFactory.createAllMatcher(goToModelModel)), new FakePsiContext());
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -212,7 +214,7 @@ public class CommonChoosers {
         return (ModuleReference[]) modules.toArray();
       }
     };
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToModuleModel, DefaultMatcherFactory.createAllMatcher(goToModuleModel));
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModuleModel, new MPSItemProvider(DefaultMatcherFactory.createAllMatcher(goToModuleModel)),new FakePsiContext() );
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

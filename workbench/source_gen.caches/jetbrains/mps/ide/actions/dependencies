@@ -2032,6 +2032,7 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.NewRuntimeModule_Action" file="NewRuntimeModule_Action.java">
+    <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopup" />
     <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent" />
     <classNode dependClassName="com.intellij.navigation.NavigationItem" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -2059,7 +2060,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.ChooseByNamePopupMPS" />
+    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.MPSItemProvider" />
+    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.matcher.matchers.DefaultMatcher" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.base.FakePsiContext" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.modules.BaseModuleItem" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.modules.BaseModuleModel" />

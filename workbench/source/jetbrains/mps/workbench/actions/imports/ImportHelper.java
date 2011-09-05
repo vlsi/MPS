@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.workbench.actions.imports;
 
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.workbench.actions.goTo.ChooseByNamePopupMPS;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.workbench.actions.goTo.MPSItemProvider;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeElement;
@@ -93,7 +94,7 @@ public class ImportHelper {
         return "Import model:";
       }
     };
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToModelModel, fakePsiContext);
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, new MPSItemProvider(new DefaultMatcher(goToModelModel,fakePsiContext)), fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -131,7 +132,7 @@ public class ImportHelper {
         return "Import language:";
       }
     };
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToLanguageModel, fakePsiContext);
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel,new MPSItemProvider(new DefaultMatcher(goToLanguageModel,fakePsiContext)), fakePsiContext);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -230,7 +231,7 @@ public class ImportHelper {
         }
       };
     }
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToNodeModel, new DefaultMatcher(goToNodeModel,fakePsiContext), initialText);
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, new MPSItemProvider(new DefaultMatcher(goToNodeModel,fakePsiContext)),fakePsiContext ,initialText);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
