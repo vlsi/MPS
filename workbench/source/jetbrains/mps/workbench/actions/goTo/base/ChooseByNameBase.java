@@ -121,9 +121,12 @@ public abstract class ChooseByNameBase {
   private int myMaximumListSizeLimit = MAXIMUM_LIST_SIZE_LIMIT;
   @NonNls
   private static final String NOT_FOUND_IN_PROJECT_CARD = "syslib";
-  @NonNls private static final String NOT_FOUND_CARD = "nfound";
-  @NonNls private static final String CHECK_BOX_CARD = "chkbox";
-  @NonNls private static final String SEARCHING_CARD = "searching";
+  @NonNls
+  private static final String NOT_FOUND_CARD = "nfound";
+  @NonNls
+  private static final String CHECK_BOX_CARD = "chkbox";
+  @NonNls
+  private static final String SEARCHING_CARD = "searching";
   private static final int REBUILD_DELAY = 300;
 
   private final Alarm myHideAlarm = new Alarm();
@@ -219,22 +222,20 @@ public abstract class ChooseByNameBase {
         }
 
         if (element instanceof DataProvider) {
-          return ((DataProvider)element).getData(dataId);
+          return ((DataProvider) element).getData(dataId);
         }
-      }
-      else if (LangDataKeys.PSI_ELEMENT_ARRAY.is(dataId)) {
+      } else if (LangDataKeys.PSI_ELEMENT_ARRAY.is(dataId)) {
         final List<Object> chosenElements = getChosenElements();
         if (chosenElements != null) {
           List<PsiElement> result = new ArrayList<PsiElement>();
           for (Object element : chosenElements) {
             if (element instanceof PsiElement) {
-              result.add((PsiElement)element);
+              result.add((PsiElement) element);
             }
           }
           return result.toArray(new PsiElement[result.size()]);
         }
-      }
-      else if (PlatformDataKeys.DOMINANT_HINT_AREA_RECTANGLE.is(dataId)) {
+      } else if (PlatformDataKeys.DOMINANT_HINT_AREA_RECTANGLE.is(dataId)) {
         return getBounds();
       }
       return null;
@@ -326,8 +327,7 @@ public abstract class ChooseByNameBase {
     if (myModel.getPromptText() != null) {
       checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.X_AXIS));
       checkBoxPanel.add(myCheckBox);
-    }
-    else {
+    } else {
       checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.LINE_AXIS));
       checkBoxPanel.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
       checkBoxPanel.add(myCheckBox);
@@ -397,8 +397,7 @@ public abstract class ChooseByNameBase {
                     }
                   }
                 });
-              }
-              else {
+              } else {
                 hideHint();
               }
             }
@@ -461,7 +460,7 @@ public abstract class ChooseByNameBase {
     myList = new JBList(myListModel);
     myList.setFocusable(false);
     myList.setSelectionMode(allowMultipleSelection ? ListSelectionModel.MULTIPLE_INTERVAL_SELECTION :
-                            ListSelectionModel.SINGLE_SELECTION);
+      ListSelectionModel.SINGLE_SELECTION);
     myList.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         if (!myTextField.hasFocus()) {
@@ -473,8 +472,7 @@ public abstract class ChooseByNameBase {
             myMaximumListSizeLimit += MAXIMUM_LIST_SIZE_LIMIT;
             rebuildList(myList.getSelectedIndex(), REBUILD_DELAY, null, ModalityState.current(), e);
             e.consume();
-          }
-          else {
+          } else {
             doClose(true);
           }
         }
@@ -522,12 +520,11 @@ public abstract class ChooseByNameBase {
     final Object element = getChosenElement();
     if (hint != null) {
       if (element instanceof PsiElement) {
-        myTextFieldPanel.updateHint((PsiElement)element);
-      }
-      else if (element instanceof DataProvider) {
-        final Object o = ((DataProvider)element).getData(LangDataKeys.PSI_ELEMENT.getName());
+        myTextFieldPanel.updateHint((PsiElement) element);
+      } else if (element instanceof DataProvider) {
+        final Object o = ((DataProvider) element).getData(LangDataKeys.PSI_ELEMENT.getName());
         if (o instanceof PsiElement) {
-          myTextFieldPanel.updateHint((PsiElement)o);
+          myTextFieldPanel.updateHint((PsiElement) o);
         }
       }
     }
@@ -569,7 +566,7 @@ public abstract class ChooseByNameBase {
     int index = checkboxState ? 1 : 0;
     if (myNames[index] != null) return;
 
-    Window window = (Window)SwingUtilities.getAncestorOfClass(Window.class, myTextField);
+    Window window = (Window) SwingUtilities.getAncestorOfClass(Window.class, myTextField);
     //LOG.assertTrue (myTextField != null);
     //LOG.assertTrue (window != null);
     Window ownerWindow = null;
@@ -634,15 +631,13 @@ public abstract class ChooseByNameBase {
     Component parent = UIUtil.findUltimateParent(window);
 
     if (parent instanceof JFrame) {
-      layeredPane = ((JFrame)parent).getLayeredPane();
-    }
-    else if (parent instanceof JDialog) {
-      layeredPane = ((JDialog)parent).getLayeredPane();
-    }
-    else {
+      layeredPane = ((JFrame) parent).getLayeredPane();
+    } else if (parent instanceof JDialog) {
+      layeredPane = ((JDialog) parent).getLayeredPane();
+    } else {
       throw new IllegalStateException("cannot find parent window: project=" + myProject +
-                                      (myProject != null ? "; open=" + myProject.isOpen() : "") +
-                                      "; window=" + window);
+        (myProject != null ? "; open=" + myProject.isOpen() : "") +
+        "; window=" + window);
     }
     return layeredPane;
   }
@@ -664,7 +659,7 @@ public abstract class ChooseByNameBase {
       public void run() {
         final String text = myTextField.getText();
         if (!canShowListForEmptyPattern() &&
-            (text == null || text.trim().length() == 0)) {
+          (text == null || text.trim().length() == 0)) {
           myListModel.clear();
           hideList();
           myCard.show(myCardContainer, CHECK_BOX_CARD);
@@ -701,8 +696,7 @@ public abstract class ChooseByNameBase {
 
         if (delay > 0) {
           myAlarm.addRequest(request, delay, ModalityState.stateForComponent(myTextField));
-        }
-        else {
+        } else {
           request.run();
         }
       }
@@ -766,8 +760,7 @@ public abstract class ChooseByNameBase {
     if (!commands.isEmpty()) {
       showList();
       myListUpdater.appendToModel(commands, pos);
-    }
-    else {
+    } else {
       if (pos == 0) {
         pos = detectBestStatisticalPosition();
       }
@@ -854,8 +847,7 @@ public abstract class ChooseByNameBase {
     public void apply() {
       if (idx < myListModel.size()) {
         myListModel.add(idx, element);
-      }
-      else {
+      } else {
         myListModel.addElement(element);
       }
     }
@@ -896,8 +888,7 @@ public abstract class ChooseByNameBase {
 
           if (!myCommands.isEmpty()) {
             myAlarm.addRequest(this, DELAY);
-          }
-          else {
+          } else {
             doPostponedOkIfNeeded();
           }
           if (!myDisposedFlag) {
@@ -921,8 +912,7 @@ public abstract class ChooseByNameBase {
     if (myPosponedOkAction != null) {
       if (success) {
         myPosponedOkAction.setDone();
-      }
-      else {
+      } else {
         myPosponedOkAction.setRejected();
       }
     }
@@ -992,7 +982,7 @@ public abstract class ChooseByNameBase {
       final Shortcut[] shortcuts = KeymapManager.getInstance().getActiveKeymap().getShortcuts(actionCodeCompletion);
       for (final Shortcut shortcut : shortcuts) {
         if (shortcut instanceof KeyboardShortcut) {
-          return ((KeyboardShortcut)shortcut).getFirstKeyStroke();
+          return ((KeyboardShortcut) shortcut).getFirstKeyStroke();
         }
       }
       return null;
@@ -1042,8 +1032,7 @@ public abstract class ChooseByNameBase {
       }
       try {
         super.processKeyEvent(e);
-      }
-      catch (NullPointerException e1) {
+      } catch (NullPointerException e1) {
         if (!Patches.SUN_BUG_6322854) {
           throw e1;
         }
@@ -1064,8 +1053,7 @@ public abstract class ChooseByNameBase {
           final String string = name.toLowerCase();
           if (commonPrefix == null) {
             commonPrefix = string;
-          }
-          else {
+          } else {
             while (commonPrefix.length() > 0) {
               if (string.startsWith(commonPrefix)) {
                 break;
@@ -1159,12 +1147,11 @@ public abstract class ChooseByNameBase {
                 break;
               }
               if (elem instanceof PsiElement) {
-                final PsiElement psiElement = (PsiElement)elem;
+                final PsiElement psiElement = (PsiElement) elem;
                 psiElement.isWritable(); // That will cache writable flag in VirtualFile. Taking the action here makes it canceleable.
               }
             }
-          }
-          catch (ProcessCanceledException e) {
+          } catch (ProcessCanceledException e) {
             //OK
           }
         }
@@ -1181,8 +1168,7 @@ public abstract class ChooseByNameBase {
         myCheckboxState = true;
         ApplicationManager.getApplication().runReadAction(action);
         cardToShow = elements.isEmpty() ? NOT_FOUND_CARD : NOT_FOUND_IN_PROJECT_CARD;
-      }
-      else {
+      } else {
         cardToShow = elements.isEmpty() ? NOT_FOUND_CARD : CHECK_BOX_CARD;
       }
       showCard(cardToShow, 0);
@@ -1206,66 +1192,73 @@ public abstract class ChooseByNameBase {
     }
 
     private void addElementsByPattern(Set<Object> elementsArray, String pattern) {
-      String namePattern = getNamePattern(pattern);
-      String qualifierPattern = getQualifierPattern(pattern);
-
-      if (isSearchInAnyPlace() && namePattern.trim().length() > 0) {
-        namePattern = "*" + namePattern + "*";
-      }
-
-      boolean empty = namePattern.length() == 0 || namePattern.equals("@");    // TODO[yole]: remove implicit dependency
-      if (empty && !canShowListForEmptyPattern()) return;
-
-      List<String> namesList = new ArrayList<String>();
-      getNamesByPattern(myCheckboxState, this, namesList, namePattern);
-      if (myCancelled) {
-        throw new ProcessCanceledException();
-      }
-      // Here we sort using namePattern to have similar logic with empty qualified patten case
-      Collections.sort(namesList, new MatchesComparator(namePattern));
-
-      boolean overflow = false;
-      List<Object> sameNameElements = new SmartList<Object>();
-      All:
-      for (String name : namesList) {
-        if (myCancelled) {
-          throw new ProcessCanceledException();
+      filterElements(elementsArray, pattern, myCheckboxState, new Computable<Boolean>() {
+        public Boolean compute() {
+          return myCancelled;
         }
-        final Object[] elements = myModel.getElementsByName(name, myCheckboxState, namePattern);
-        if (elements.length > 1) {
-          sameNameElements.clear();
-          for (final Object element : elements) {
-            if (matchesQualifier(element, qualifierPattern)) {
-              sameNameElements.add(element);
-            }
-          }
-          sortByProximity(sameNameElements);
-          for (Object element : sameNameElements) {
-            elementsArray.add(element);
-            if (elementsArray.size() >= myMaximumListSizeLimit) {
-              overflow = true;
-              break All;
-            }
-          }
-        }
-        else if (elements.length == 1 && matchesQualifier(elements[0], qualifierPattern)) {
-          elementsArray.add(elements[0]);
-          if (elementsArray.size() >= myMaximumListSizeLimit) {
-            overflow = true;
-            break;
-          }
-        }
-      }
-
-      if (overflow) {
-        elementsArray.add(EXTRA_ELEM);
-      }
+      });
     }
 
     private void cancel() {
       if (myCanCancel) {
         myCancelled = true;
       }
+    }
+  }
+
+  private void filterElements(Set<Object> elementsArray, String pattern, boolean everywhere, Computable<Boolean> cancelled) {
+    String namePattern = getNamePattern(pattern);
+    String qualifierPattern = getQualifierPattern(pattern);
+
+    if (isSearchInAnyPlace() && namePattern.trim().length() > 0) {
+      namePattern = "*" + namePattern + "*";
+    }
+
+    boolean empty = namePattern.length() == 0 || namePattern.equals("@");    // TODO[yole]: remove implicit dependency
+    if (empty && !canShowListForEmptyPattern()) return;
+
+    List<String> namesList = new ArrayList<String>();
+    getNamesByPattern(everywhere, cancelled, namesList, namePattern);
+    if (cancelled.compute()) {
+      throw new ProcessCanceledException();
+    }
+    // Here we sort using namePattern to have similar logic with empty qualified patten case
+    Collections.sort(namesList, new MatchesComparator(namePattern));
+
+    boolean overflow = false;
+    List<Object> sameNameElements = new SmartList<Object>();
+    All:
+    for (String name : namesList) {
+      if (cancelled.compute()) {
+        throw new ProcessCanceledException();
+      }
+      final Object[] elements = myModel.getElementsByName(name, everywhere, namePattern);
+      if (elements.length > 1) {
+        sameNameElements.clear();
+        for (final Object element : elements) {
+          if (matchesQualifier(element, qualifierPattern)) {
+            sameNameElements.add(element);
+          }
+        }
+        sortByProximity(sameNameElements);
+        for (Object element : sameNameElements) {
+          elementsArray.add(element);
+          if (elementsArray.size() >= myMaximumListSizeLimit) {
+            overflow = true;
+            break All;
+          }
+        }
+      } else if (elements.length == 1 && matchesQualifier(elements[0], qualifierPattern)) {
+        elementsArray.add(elements[0]);
+        if (elementsArray.size() >= myMaximumListSizeLimit) {
+          overflow = true;
+          break;
+        }
+      }
+    }
+
+    if (overflow) {
+      elementsArray.add(EXTRA_ELEM);
     }
   }
 
@@ -1318,8 +1311,7 @@ public abstract class ChooseByNameBase {
           return false;
         }
       }
-    }
-    catch (Exception e) {
+    } catch (Exception e) {
       // Do nothing. No matches appears valid result for "bad" pattern
       return false;
     }
@@ -1328,7 +1320,7 @@ public abstract class ChooseByNameBase {
   }
 
   private void getNamesByPattern(final boolean checkboxState,
-                                 CalcElementsThread calcElementsThread,
+                                 Computable<Boolean> cancelled,
                                  final List<String> list,
                                  String pattern) throws ProcessCanceledException {
     if (!canShowListForEmptyPattern()) {
@@ -1344,15 +1336,14 @@ public abstract class ChooseByNameBase {
 
     try {
       for (String name : names) {
-        if (calcElementsThread != null && calcElementsThread.myCancelled) {
+        if (cancelled != null && cancelled.compute()) {
           break;
         }
         if (matches(pattern, matcher, name)) {
           list.add(name);
         }
       }
-    }
-    catch (Exception e) {
+    } catch (Exception e) {
       // Do nothing. No matches appears valid result for "bad" pattern
     }
   }
@@ -1362,18 +1353,17 @@ public abstract class ChooseByNameBase {
   }
 
   protected boolean lastKeyStrokeIsCompletion() {
-     return myTextField.isCompletionKeyStroke();
+    return myTextField.isCompletionKeyStroke();
   }
 
   private boolean matches(String pattern, NameUtil.Matcher matcher, String name) {
     boolean matches = false;
     if (name != null) {
       if (myModel instanceof CustomMatcherModel) {
-        if (((CustomMatcherModel)myModel).matches(name, pattern)) {
+        if (((CustomMatcherModel) myModel).matches(name, pattern)) {
           matches = true;
         }
-      }
-      else if (pattern.length() == 0 || matcher.matches(name)) {
+      } else if (pattern.length() == 0 || matcher.matches(name)) {
         matches = true;
       }
     }
