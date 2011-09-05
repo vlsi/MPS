@@ -50,7 +50,7 @@ public abstract class ChooseByNameIdea extends ChooseByNameBase {
     myContext = new WeakReference<PsiElement>(context);
   }
 
-  protected void filterElements(Set<Object> elementsArray, String pattern, boolean everywhere, Computable<Boolean> cancelled, int maxListSize, String extra) {
+  protected List<Object> filterElements(String pattern, boolean everywhere, Computable<Boolean> cancelled, int maxListSize, String extra) {
     String namePattern = getNamePattern(pattern);
     String qualifierPattern = getQualifierPattern(pattern);
 
@@ -59,7 +59,7 @@ public abstract class ChooseByNameIdea extends ChooseByNameBase {
     }
 
     boolean empty = namePattern.length() == 0 || namePattern.equals("@");    // TODO[yole]: remove implicit dependency
-    if (empty && !canShowListForEmptyPattern()) return;
+    if (empty && !canShowListForEmptyPattern()) return Collections.emptyList();
 
     List<String> namesList = new ArrayList<String>();
     getNamesByPattern(getNames(everywhere), cancelled, namesList, namePattern);
@@ -71,6 +71,8 @@ public abstract class ChooseByNameIdea extends ChooseByNameBase {
 
     boolean overflow = false;
     List<Object> sameNameElements = new SmartList<Object>();
+    ArrayList<Object> res = new ArrayList<Object>();
+
     All:
     for (String name : namesList) {
       if (cancelled.compute()) {
@@ -86,15 +88,15 @@ public abstract class ChooseByNameIdea extends ChooseByNameBase {
         }
         sortByProximity(sameNameElements);
         for (Object element : sameNameElements) {
-          elementsArray.add(element);
-          if (elementsArray.size() >= maxListSize) {
+          res.add(element);
+          if (res.size() >= maxListSize) {
             overflow = true;
             break All;
           }
         }
       } else if (elements.length == 1 && matchesQualifier(elements[0], qualifierPattern)) {
-        elementsArray.add(elements[0]);
-        if (elementsArray.size() >= maxListSize) {
+        res.add(elements[0]);
+        if (res.size() >= maxListSize) {
           overflow = true;
           break;
         }
@@ -102,8 +104,10 @@ public abstract class ChooseByNameIdea extends ChooseByNameBase {
     }
 
     if (overflow) {
-      elementsArray.add(extra);
+      res.add(extra);
     }
+
+    return res;
   }
 
   private void sortByProximity(final List<Object> sameNameElements) {

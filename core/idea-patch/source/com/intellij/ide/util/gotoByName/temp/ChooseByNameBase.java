@@ -61,8 +61,6 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.text.DefaultEditorKit;
 import java.awt.*;
 import java.awt.event.*;
-import java.lang.ref.Reference;
-import java.lang.ref.WeakReference;
 import java.util.*;
 import java.util.List;
 
@@ -1059,10 +1057,6 @@ public abstract class ChooseByNameBase {
     }
   }
 
-  protected List<String> getNamesByPattern(String[] names, String pattern){
-    return new ArrayList<String>();
-  }
-
   private static final String EXTRA_ELEM = "...";
 
   private class CalcElementsThread implements Runnable {
@@ -1098,7 +1092,11 @@ public abstract class ChooseByNameBase {
         public void run() {
           try {
             ensureNamesLoaded(myCheckboxState);
-            addElementsByPattern(elements, myPattern);
+            elements.addAll(filterElements(myPattern, myCheckboxState, new Computable<Boolean>() {
+              public Boolean compute() {
+                return myCancelled;
+              }
+            }, myMaximumListSizeLimit, EXTRA_ELEM));
             for (Object elem : elements) {
               if (myCancelled) {
                 break;
@@ -1148,14 +1146,6 @@ public abstract class ChooseByNameBase {
       }, delay, myModalityState);
     }
 
-    private void addElementsByPattern(Set<Object> elementsArray, String pattern) {
-      filterElements(elementsArray, pattern, myCheckboxState, new Computable<Boolean>() {
-        public Boolean compute() {
-          return myCancelled;
-        }
-      }, myMaximumListSizeLimit, EXTRA_ELEM);
-    }
-
     private void cancel() {
       if (myCanCancel) {
         myCancelled = true;
@@ -1163,7 +1153,11 @@ public abstract class ChooseByNameBase {
     }
   }
 
-  protected abstract void filterElements(Set<Object> elementsArray, String pattern, boolean everywhere, Computable<Boolean> cancelled, int maxListSize, String extra);
+  protected List<String> getNamesByPattern(String[] names, String pattern) {
+    return new ArrayList<String>();
+  }
+
+  protected abstract List<Object> filterElements(String pattern, boolean everywhere, Computable<Boolean> cancelled, int maxListSize, String extra);
 
   protected boolean canShowListForEmptyPattern() {
     return isShowListForEmptyPattern() || (isShowListAfterCompletionKeyStroke() && lastKeyStrokeIsCompletion());
