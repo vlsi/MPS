@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.goTo.base;
+package com.intellij.ide.util.gotoByName.temp;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.CustomMatcherModel;
@@ -119,7 +119,7 @@ public abstract class ChooseByNameIdea extends ChooseByNameBase {
     return pattern.substring(0, lastSeparatorOccurence);
   }
 
-  private String getNamePattern(String pattern) {
+  protected String getNamePattern(String pattern) {
     final String[] separators = myModel.getSeparators();
     int lastSeparatorOccurence = 0;
     for (String separator : separators) {
