@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelFqName;
 import java.util.Collection;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.IterableUtil;
@@ -73,14 +74,26 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
     }
 
     public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
+      String classname = referenceInfo;
+      int dotIndex = classname.lastIndexOf(".");
+      if (dotIndex >= 0) {
+        String package_ = classname.substring(0, dotIndex);
+        classname = classname.substring(dotIndex + 1);
+        return resolveClass(package_, null, classname);
+      }
+
       if (targetModelReference.getSModelId() != null) {
         SModelDescriptor targetModel = this.myScope.getModelDescriptor(targetModelReference);
         if (targetModel == null) {
           return null;
         }
-        return ListSequence.<SNode>fromList(ClassifiersCache.getInstance(targetModel).getClassifiersByRefName(referenceInfo)).first();
+        return ListSequence.<SNode>fromList(ClassifiersCache.getInstance(targetModel).getClassifiersByRefName(classname)).first();
       }
+      SModelFqName modelname = targetModelReference.getSModelFqName();
+      return resolveClass(modelname.getLongName(), modelname.getStereotype(), classname);
+    }
 
+    public SNode resolveClass(String modelname, String stereotype, String classname) {
       Collection<IModule> visibleModules = IterableUtil.asCollection(myScope.getVisibleModules());
 
       List<SNode> classifiers = new ArrayList<SNode>();
@@ -89,11 +102,15 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
           return it.getOwnModelDescriptors();
         }
       }).distinct()) {
-        if (!(model.getSModelReference().getSModelFqName().equals(targetModelReference.getSModelFqName()))) {
+        SModelFqName modelFqName = model.getSModelReference().getSModelFqName();
+        if (!(modelFqName.getLongName().equals(modelname))) {
+          continue;
+        }
+        if (stereotype != null && !(modelFqName.getStereotype().equals(stereotype))) {
           continue;
         }
 
-        ListSequence.<SNode>fromList(classifiers).addSequence(ListSequence.<SNode>fromList(ClassifiersCache.getInstance(model).getClassifiersByRefName(referenceInfo)));
+        ListSequence.<SNode>fromList(classifiers).addSequence(ListSequence.<SNode>fromList(ClassifiersCache.getInstance(model).getClassifiersByRefName(classname)));
       }
 
       if (ListSequence.<SNode>fromList(classifiers).isEmpty()) {
@@ -104,14 +121,14 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
           if (SNodeOperations.getModel(cls) == myModel) {
             return cls;
           }
-          if (check_x9ho2v_a0b0a0i0a0_0(check_x9ho2v_a0a1a0a8a0a_0(myModel)) == check_x9ho2v_a0b0a0i0a0(check_x9ho2v_a0a1a0a8a0a(SNodeOperations.getModel(cls)))) {
+          if (check_x9ho2v_a0b0a0g0b0_0(check_x9ho2v_a0a1a0a6a1a_0(myModel)) == check_x9ho2v_a0b0a0g0b0(check_x9ho2v_a0a1a0a6a1a(SNodeOperations.getModel(cls)))) {
             return cls;
           }
         }
 
         final StringBuilder warn = new StringBuilder();
         warn.append("reference can't be resolved: ");
-        warn.append(referenceInfo);
+        warn.append(classname);
         warn.append(" in ");
         warn.append(myModel.getLongName());
         warn.append(" can reference nodes from models: ");
@@ -129,28 +146,28 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       return ListSequence.<SNode>fromList(classifiers).getElement(0);
     }
 
-    private static IModule check_x9ho2v_a0b0a0i0a0(SModelDescriptor checkedDotOperand) {
+    private static IModule check_x9ho2v_a0b0a0g0b0(SModelDescriptor checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModule();
       }
       return null;
     }
 
-    private static SModelDescriptor check_x9ho2v_a0a1a0a8a0a(SModel checkedDotOperand) {
+    private static SModelDescriptor check_x9ho2v_a0a1a0a6a1a(SModel checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModelDescriptor();
       }
       return null;
     }
 
-    private static IModule check_x9ho2v_a0b0a0i0a0_0(SModelDescriptor checkedDotOperand) {
+    private static IModule check_x9ho2v_a0b0a0g0b0_0(SModelDescriptor checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModule();
       }
       return null;
     }
 
-    private static SModelDescriptor check_x9ho2v_a0a1a0a8a0a_0(SModel checkedDotOperand) {
+    private static SModelDescriptor check_x9ho2v_a0a1a0a6a1a_0(SModel checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModelDescriptor();
       }

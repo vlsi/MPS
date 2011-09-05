@@ -17,7 +17,7 @@ public class AnnotationInstance_TextGen extends SNodeTextGen {
     } else {
       this.appendWithIndent("@");
     }
-    BaseLanguageTextGen.importPart(SLinkOperations.getTarget(node, "annotation", false), this);
+    BaseLanguageTextGen.importRefPart(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", "annotation")), this);
     this.append(this.getReferentPresentation(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", "annotation")), true));
     if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {
       this.append("(");
