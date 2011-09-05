@@ -37,6 +37,7 @@ import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeElement;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
+import jetbrains.mps.workbench.actions.goTo.matcher.matchers.DefaultMatcher;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
@@ -229,7 +230,7 @@ public class ImportHelper {
         }
       };
     }
-    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToNodeModel, fakePsiContext, initialText);
+    ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToNodeModel, new DefaultMatcher(goToNodeModel,fakePsiContext), initialText);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

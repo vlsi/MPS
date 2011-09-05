@@ -132,7 +132,7 @@ public class DefaultMatcher implements EntityMatcher {
   }
 
   public String getShortNamePattern(String s) {
-    return ChooseByNameBaseMPS.getNamePattern_static(myModel, s);
+    return ChooseByNameBaseMPS.getNamePattern(myModel, s);
   }
 
   private String getQualifierPattern(String pattern) {

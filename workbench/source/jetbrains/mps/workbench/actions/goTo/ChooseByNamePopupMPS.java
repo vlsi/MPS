@@ -32,6 +32,8 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.statistics.StatisticsInfo;
 import com.intellij.psi.statistics.StatisticsManager;
 import com.intellij.ui.ScreenUtil;
+import jetbrains.mps.workbench.actions.goTo.matcher.matchers.DefaultMatcher;
+import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
@@ -48,16 +50,6 @@ public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseB
   private Component myOldFocusOwner = null;
   private boolean myShowListForEmptyPattern = false;
 
-  private ChooseByNamePopupMPS(final Project project, final ChooseByNameModel model, final ChooseByNamePopupMPS oldPopup,
-                               final PsiElement context, @Nullable final String predefinedText) {
-    super(project, model, oldPopup != null ? oldPopup.getEnteredText() : predefinedText, context);
-    if (oldPopup == null && predefinedText != null) {
-      setPreselectInitialText(true);
-    }
-    if (oldPopup != null) { //inherit old focus owner
-      myOldFocusOwner = oldPopup.myPreviouslyFocusedComponent;
-    }
-  }
 
   private ChooseByNamePopupMPS(final Project project, final ChooseByNameModel model, final ChooseByNamePopupMPS oldPopup,
                                EntityMatcher matcher, @Nullable final String predefinedText) {
@@ -208,7 +200,7 @@ public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseB
   }
 
   public static ChooseByNamePopupMPS createPopup(final Project project, final ChooseByNameModel model, final PsiElement context) {
-    return createPopup(project, model, context, null);
+    return createPopup(project, model, new DefaultMatcher(model,context));
   }
   public static ChooseByNamePopupMPS createPopup(final Project project, final ChooseByNameModel model, EntityMatcher matcher) {
     return createPopup(project, model, matcher, null);
@@ -226,17 +218,6 @@ public class ChooseByNamePopupMPS extends ChooseByNameBaseMPS implements ChooseB
     return newPopup;
   }
 
-  public static ChooseByNamePopupMPS createPopup(final Project project, final ChooseByNameModel model, final PsiElement context,
-                                              @Nullable final String predefinedText) {
-    final ChooseByNamePopupMPS oldPopup = project.getUserData(CHOOSE_BY_NAME_POPUP_IN_PROJECT_KEY);
-    if (oldPopup != null) {
-      oldPopup.close(false);
-    }
-    ChooseByNamePopupMPS newPopup = new ChooseByNamePopupMPS(project, model, oldPopup, context, predefinedText);
-
-    project.putUserData(CHOOSE_BY_NAME_POPUP_IN_PROJECT_KEY, newPopup);
-    return newPopup;
-  }
 
   private static final Pattern patternToDetectLinesAndColumns = Pattern.compile("(.*?)(?:\\:|@|,|#)(\\d+)?(?:(?:\\D)(\\d+)?)?");
 

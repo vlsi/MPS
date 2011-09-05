@@ -22,6 +22,7 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
 import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.actions.goTo.matcher.matchers.DefaultMatcher;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 
 import javax.swing.JComponent;
@@ -41,7 +42,7 @@ public class SmartChooseByNamePanel extends ChooseByNameBaseMPS {
   }
 
   public SmartChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible) {
-    super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, "", new FakePsiContext());
+    super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, "", new DefaultMatcher(model,new FakePsiContext()));
     myCheckboxVisible = checkboxVisible;
   }
 
