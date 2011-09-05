@@ -12,9 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.SModelReference;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.util.NameUtil;
@@ -100,38 +97,6 @@ public abstract class BaseLanguageTextGen {
       return;
     }
     BaseLanguageTextGen.appendClsName(BaseLanguageTextGen.getPackageName(node, textGen), SPropertyOperations.getString(node, "nestedName"), false, textGen);
-  }
-
-  public static void importRefPart(SReference ref, final SNodeTextGen textGen) {
-    if (ref == null) {
-      return;
-    }
-
-    String shortName = null;
-    String packageName = null;
-    if (ref instanceof DynamicReference) {
-      shortName = ref.getResolveInfo();
-      SModelReference modelReference = ref.getTargetSModelReference();
-      if (modelReference != null) {
-        packageName = modelReference.getLongName();
-      }
-      int dot = shortName.lastIndexOf(".");
-      if (dot >= 0) {
-        packageName = shortName.substring(0, dot);
-        shortName = shortName.substring(dot + 1);
-      }
-    } else {
-      SNode target = ref.getTargetNodeSilently();
-      if (target == null) {
-        return;
-      }
-      shortName = (SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.Classifier") ?
-        SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.Classifier"), "nestedName") :
-        target.getResolveInfo()
-      );
-      packageName = BaseLanguageTextGen.getPackageName(target, textGen);
-    }
-    BaseLanguageTextGen.appendClsName(packageName, shortName, false, textGen);
   }
 
   public static void internalClassifierName(SNode node, final SNodeTextGen textGen) {

@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TypeVariableDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -17,7 +16,7 @@ public class TypeVariableDeclaration_TextGen extends SNodeTextGen {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "bound", true), this.getSNode());
       for (SNode clsType : SLinkOperations.getTargets(node, "auxBounds", true)) {
         this.append(" & ");
-        BaseLanguageTextGen.importRefPart(SNodeOperations.getReference(clsType, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), this);
+        BaseLanguageTextGen.importPart(clsType, this);
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), clsType, this.getSNode());
       }
     }
