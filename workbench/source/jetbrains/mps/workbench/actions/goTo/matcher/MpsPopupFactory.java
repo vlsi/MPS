@@ -46,6 +46,6 @@ public abstract class MpsPopupFactory {
   }
 
   private static ItemProvider packageProvider() {
-    return new CompositeItemProvider(new MPSPackageItemProvider(CONTEXT), new IdeaItemProvider(CONTEXT));
+    return new CompositeItemProvider(new IdeaItemProvider(CONTEXT), new MPSPackageItemProvider(CONTEXT));
   }
 }
