@@ -33,6 +33,7 @@ import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.util.FileUtil;
 import java.io.PrintWriter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
@@ -103,8 +104,11 @@ public class Java_Command {
     }
     if (check_yvpt_a0a3a0a(myProgramParameter) + classPathString.length() >= Java_Command.getMaxCommandLine()) {
       try {
-        String parametersFile = Java_Command.writeToTmpFile(myProgramParameter);
-        String classPathFile = Java_Command.writeToTmpFile(classPathString);
+        String parametersFile = Java_Command.writeToTmpFile(ProcessHandlerBuilder.splitCommandInParts((myProgramParameter == null ?
+          "" :
+          myProgramParameter
+        )));
+        String classPathFile = Java_Command.writeToTmpFile(myClassPath);
         String classRunnerClassPath = IterableUtils.join(ListSequence.fromList(Java_Command.getClassRunnerClassPath()).<String>select(new ISelector<String, String>() {
           public String select(String it) {
             return Java_Command.protect(it);
@@ -256,11 +260,13 @@ public class Java_Command {
     return result;
   }
 
-  private static String writeToTmpFile(String text) throws FileNotFoundException {
+  private static String writeToTmpFile(Iterable<String> text) throws FileNotFoundException {
     File tmpFile = FileUtil.createTmpFile();
     tmpFile.deleteOnExit();
     PrintWriter writer = new PrintWriter(tmpFile);
-    writer.append(text);
+    for (String line : Sequence.fromIterable(text)) {
+      writer.println(line);
+    }
     writer.flush();
     writer.close();
     return tmpFile.getAbsolutePath();
