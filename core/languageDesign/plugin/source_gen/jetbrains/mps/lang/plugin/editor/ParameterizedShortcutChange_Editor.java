@@ -113,9 +113,9 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         StringBuilder params = new StringBuilder();
-        for (SNode param : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "action", false), "constructionParameter", true))) {
+        for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "action", false), "constructionParameter", true))) {
           params.append(SPropertyOperations.getString(param, "name"));
-          if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "action", false), "constructionParameter", true)).last() != param) {
+          if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "action", false), "constructionParameter", true)).last() != param) {
             params.append(", ");
           }
         }

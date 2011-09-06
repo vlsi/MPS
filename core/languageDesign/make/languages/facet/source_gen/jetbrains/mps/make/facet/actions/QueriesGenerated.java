@@ -68,7 +68,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TargetDependency_8351679702044371560(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.TargetDependency");
       SNode childConcept = (SNode) _context.getChildConcept();
@@ -76,9 +76,9 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
           public Object calculate() {
             final Iterable<SNode> relatedFacets = FacetDeclaration_Behavior.call_allRelated_8351679702044331818(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.FacetDeclaration", false, false));
-            return ListSequence.<SNode>fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.make.facet.structure.TargetDeclaration")).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.make.facet.structure.TargetDeclaration")).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode fct) {
-                return Sequence.<SNode>fromIterable(relatedFacets).contains(SNodeOperations.getAncestor(fct, "jetbrains.mps.make.facet.structure.FacetDeclaration", false, false));
+                return Sequence.fromIterable(relatedFacets).contains(SNodeOperations.getAncestor(fct, "jetbrains.mps.make.facet.structure.FacetDeclaration", false, false));
               }
             }).<Tuples._2<SNode, SNode>>translate(new ITranslator2<SNode, Tuples._2<SNode, SNode>>() {
               public Iterable<Tuples._2<SNode, SNode>> translate(final SNode td) {
@@ -133,7 +133,7 @@ __switch__:
         Iterable<Tuples._2<SNode, SNode>> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final Tuples._2<SNode, SNode> item : queryResult) {
-            ListSequence.<INodeSubstituteAction>fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode dep = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.make.facet.structure.TargetDependency", null);
                 SPropertyOperations.set(dep, "qualifier", SEnumOperations.getEnumMemberValue((item)._0()));
@@ -157,7 +157,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_7320828025189375232(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
@@ -170,7 +170,7 @@ __switch__:
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.<INodeSubstituteAction>fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode lve = SNodeFactoryOperations.createNewNode("jetbrains.mps.make.facet.structure.LocalParametersExpression", null);
                 SNode lvce = SNodeFactoryOperations.createNewNode("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", null);
@@ -195,7 +195,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_3344436107830239664(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
@@ -204,11 +204,11 @@ __switch__:
           public Object calculate() {
             final SNode td = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false);
             SNode fd = SNodeOperations.cast(SNodeOperations.getParent(td), "jetbrains.mps.make.facet.structure.FacetDeclaration");
-            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(fd, "targetDeclaration", true)).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SLinkOperations.getTargets(fd, "targetDeclaration", true)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode sibl) {
                 return sibl != td;
               }
-            }).concat(ListSequence.<SNode>fromList(SLinkOperations.getTargets(fd, "required", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+            }).concat(ListSequence.fromList(SLinkOperations.getTargets(fd, "required", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode rfd) {
                 return SLinkOperations.getTargets(SLinkOperations.getTarget(rfd, "facet", false), "targetDeclaration", true);
               }
@@ -226,7 +226,7 @@ __switch__:
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.<INodeSubstituteAction>fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode fve = new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0a2a2a0a1a8().createNode(SNodeOperations.getAncestor((item), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false));
                 SNode op = new QueriesGenerated.QuotationClass_x583g4_a0a1a0a0a0a0a0a2a2a0a1a8().createNode((item));
@@ -249,7 +249,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_FacetReferenceExpression_7178445679340358586(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.FacetReferenceExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
@@ -262,7 +262,7 @@ __switch__:
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.<INodeSubstituteAction>fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0j().createNode((item));
               }
@@ -287,10 +287,10 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_IPropertyExpression_2191561637326275634(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression");
-      ListSequence.<INodeSubstituteAction>fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SLinkOperations.setNewChild(_context.getSourceNode(), "resource", "jetbrains.mps.baseLanguage.structure.Expression");
           return _context.getSourceNode();
@@ -313,7 +313,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_FacetReferenceExpression_8703512757937161165(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.TargetReferenceExpression");
       Calculable calculable = new Calculable() {
@@ -324,7 +324,7 @@ __switch__:
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.<INodeSubstituteAction>fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode tre = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.make.facet.structure.TargetReferenceExpression");
             SLinkOperations.setTarget(tre, "facetRef", _context.getSourceNode(), true);
@@ -346,7 +346,7 @@ __switch__:
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_FacetReference_8703512757937205090(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
         public Object calculate() {
@@ -354,7 +354,7 @@ __switch__:
         }
       };
       SNode node = (SNode) calc.calculate();
-      ListSequence.<INodeSubstituteAction>fromList(result).addSequence(ListSequence.<INodeSubstituteAction>fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
     }
     return result;
   }

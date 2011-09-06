@@ -26,7 +26,7 @@ public class checkThrowsOfMethodIsCaught_NonTypesystemRule extends AbstractNonTy
     if ((method == null)) {
       return;
     }
-    Set<SNode> throwables = SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(method, "throwsItem", true));
+    Set<SNode> throwables = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(method, "throwsItem", true));
     RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, methodCall);
   }
 

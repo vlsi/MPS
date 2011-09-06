@@ -49,7 +49,7 @@ public class CollectTests_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("modelDesc")), _params) && ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("modelDesc")).getSModel().importedLanguages().contains(ModuleReference.fromString("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
+    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getSModel().importedLanguages().contains(ModuleReference.fromString("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -68,12 +68,12 @@ public class CollectTests_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("modelDesc", event.getData(MPSDataKeys.MODEL));
-    if (MapSequence.<String,Object>fromMap(_params).get("modelDesc") == null) {
+    MapSequence.fromMap(_params).put("modelDesc", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("modelDesc") == null) {
       return false;
     }
     return true;
@@ -93,7 +93,7 @@ public class CollectTests_Action extends GeneratedAction {
             proInd.popState();
           }
         }
-      }, "Collecting Tests", true, ((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
+      }, "Collecting Tests", true, ((Project) MapSequence.fromMap(_params).get("project")));
       if (!(done.value)) {
         CollectTests_Action.this.displayInfo("Collect Tests action cancelled", _params);
       }
@@ -104,7 +104,7 @@ public class CollectTests_Action extends GeneratedAction {
 
   private boolean doExecute(ProgressIndicator proInd, final Map<String, Object> _params) {
     final Logger LOG = Logger.getLogger("jetbrains.mps.testbench.suite");
-    final SModel model = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("modelDesc")).getSModel();
+    final SModel model = ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getSModel();
     final Wrappers._T<List<ModuleReference>> solutions = new Wrappers._T<List<ModuleReference>>();
     final Wrappers._T<List<ModuleReference>> existing = new Wrappers._T<List<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -113,7 +113,7 @@ public class CollectTests_Action extends GeneratedAction {
         existing.value = CollectTests_Action.this.existingSolutions(model, _params);
       }
     });
-    ListSequence.<ModuleReference>fromList(solutions.value).removeSequence(ListSequence.<ModuleReference>fromList(existing.value));
+    ListSequence.fromList(solutions.value).removeSequence(ListSequence.fromList(existing.value));
 
     int done = 0;
     for (ModuleReference mref : solutions.value) {
@@ -156,11 +156,11 @@ public class CollectTests_Action extends GeneratedAction {
                         SPropertyOperations.set(sref, "moduleFQName", mref.getModuleFqName());
                         SPropertyOperations.set(sref, "moduleID", mref.getModuleId().toString());
                       }
-                      ListSequence.<SNode>fromList(SLinkOperations.getTargets(suite.value, "testRef", true)).addElement(tref.invoke());
+                      ListSequence.fromList(SLinkOperations.getTargets(suite.value, "testRef", true)).addElement(tref.invoke());
                       model.addModelImport(smd.getSModelReference(), false);
-                      ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("modelDesc")).getModule().addDependency(module.getModuleReference(), false);
+                      ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getModule().addDependency(module.getModuleReference(), false);
                     }
-                  }, ((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
+                  }, ((Project) MapSequence.fromMap(_params).get("project")));
                 }
               });
             }
@@ -169,7 +169,7 @@ public class CollectTests_Action extends GeneratedAction {
           }
         }
       }
-      proInd.setFraction(((double) ++done) / ListSequence.<ModuleReference>fromList(solutions.value).count());
+      proInd.setFraction(((double) ++done) / ListSequence.fromList(solutions.value).count());
     }
     return true;
   }
@@ -187,7 +187,7 @@ public class CollectTests_Action extends GeneratedAction {
 
   private List<ModuleReference> allSolutions(final Map<String, Object> _params) {
     List<Solution> allSolutions = MPSModuleRepository.getInstance().getAllSolutions();
-    return ListSequence.<Solution>fromList(allSolutions).<ModuleReference>select(new ISelector<Solution, ModuleReference>() {
+    return ListSequence.fromList(allSolutions).<ModuleReference>select(new ISelector<Solution, ModuleReference>() {
       public ModuleReference select(Solution s) {
         return s.getModuleReference();
       }
@@ -195,14 +195,14 @@ public class CollectTests_Action extends GeneratedAction {
   }
 
   private void displayInfo(String info, final Map<String, Object> _params) {
-    IdeFrame frame = WindowManager.getInstance().getIdeFrame(((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
+    IdeFrame frame = WindowManager.getInstance().getIdeFrame(((Project) MapSequence.fromMap(_params).get("project")));
     if (frame != null) {
       frame.getStatusBar().setInfo(info);
     }
   }
 
   private List<ModuleReference> existingSolutions(SModel model, final Map<String, Object> _params) {
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite")).<ModuleReference>select(new ISelector<SNode, ModuleReference>() {
+    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite")).<ModuleReference>select(new ISelector<SNode, ModuleReference>() {
       public ModuleReference select(SNode ms) {
         return IModuleRef_Behavior.call_moduleReference_1280144168199513544(SLinkOperations.getTarget(ms, "moduleRef", true));
       }

@@ -65,7 +65,7 @@ public class MPSBuild_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.Layout") && (ListSequence.<SNode>fromList(SNodeOperations.getChildren(_context.getParentNode())).where(new IWhereFilter<SNode>() {
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.Layout") && (ListSequence.fromList(SNodeOperations.getChildren(_context.getParentNode())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.custommps.structure.MPSBuild");
       }

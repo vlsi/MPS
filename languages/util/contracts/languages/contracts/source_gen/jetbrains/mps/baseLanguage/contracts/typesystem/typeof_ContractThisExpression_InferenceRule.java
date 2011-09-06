@@ -27,7 +27,7 @@ public class typeof_ContractThisExpression_InferenceRule extends AbstractInferen
     SNode classifier = SNodeOperations.getAncestor(contractThisExpression, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     List<SNode> typeVarRefs = new ArrayList<SNode>();
     for (SNode typeVariableDeclaration : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
-      ListSequence.<SNode>fromList(typeVarRefs).addElement(new typeof_ContractThisExpression_InferenceRule.QuotationClass_scihsm_a0a0a0c0a().createNode(typeVariableDeclaration, typeCheckingContext));
+      ListSequence.fromList(typeVarRefs).addElement(new typeof_ContractThisExpression_InferenceRule.QuotationClass_scihsm_a0a0a0c0a().createNode(typeVariableDeclaration, typeCheckingContext));
     }
     {
       SNode _nodeToCheck_1029348928467 = contractThisExpression;

@@ -23,7 +23,7 @@ public class typeof_AbstractOperationArguments_InferenceRule extends AbstractInf
 
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> argumentTypes = SLinkOperations.getConceptLinkTargets(operation, "operationArgumentType");
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(operation, "actualArgument", true)).count() != ListSequence.<SNode>fromList(argumentTypes).count()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(operation, "actualArgument", true)).count() != ListSequence.fromList(argumentTypes).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(operation, "Wrong number of arguments", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6050628152418938611", null, errorTarget);
@@ -32,8 +32,8 @@ public class typeof_AbstractOperationArguments_InferenceRule extends AbstractInf
       {
         SNode argument;
         SNode type;
-        Iterator<SNode> argument_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(operation, "actualArgument", true)).iterator();
-        Iterator<SNode> type_iterator = ListSequence.<SNode>fromList(argumentTypes).iterator();
+        Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getTargets(operation, "actualArgument", true)).iterator();
+        Iterator<SNode> type_iterator = ListSequence.fromList(argumentTypes).iterator();
         while (true) {
           if (!(argument_iterator.hasNext())) {
             break;

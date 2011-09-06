@@ -18,7 +18,7 @@ public class Closure_Behavior {
     for (SNode varRef : SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
       SNode closure = SNodeOperations.getAncestor(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.Closure", false, false);
       if ((closure == null) || closure != SNodeOperations.getParent(thisNode)) {
-        ListSequence.<SNode>fromList(referencedInClosures).addElement(SLinkOperations.getTarget(varRef, "variableDeclaration", false));
+        ListSequence.fromList(referencedInClosures).addElement(SLinkOperations.getTarget(varRef, "variableDeclaration", false));
       }
     }
     return referencedInClosures;

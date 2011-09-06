@@ -79,14 +79,14 @@ public class ListMigrationUtil {
     if (!(eq_gtz9m1_a0a2a5(SModelOperations.getModelName(SNodeOperations.getModel(declaration)), "java.util"))) {
       return false;
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() != ListSequence.<ParameterType>fromList(params).count()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() != ListSequence.fromList(params).count()) {
       return false;
     }
     {
       SNode argument;
       ParameterType param;
-      Iterator<SNode> argument_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).iterator();
-      Iterator<ParameterType> param_iterator = ListSequence.<ParameterType>fromList(params).iterator();
+      Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).iterator();
+      Iterator<ParameterType> param_iterator = ListSequence.fromList(params).iterator();
       while (true) {
         if (!(argument_iterator.hasNext())) {
           break;
@@ -112,10 +112,10 @@ public class ListMigrationUtil {
   }
 
   public static boolean isApplicableForType(SNode node, int params, List<SNode> classifiers) {
-    if (!(ListSequence.<SNode>fromList(classifiers).contains(SLinkOperations.getTarget(node, "classifier", false)))) {
+    if (!(ListSequence.fromList(classifiers).contains(SLinkOperations.getTarget(node, "classifier", false)))) {
       return false;
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).count() != params) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() != params) {
       return false;
     }
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {

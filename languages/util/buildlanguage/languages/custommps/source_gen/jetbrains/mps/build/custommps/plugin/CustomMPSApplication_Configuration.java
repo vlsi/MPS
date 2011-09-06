@@ -48,7 +48,7 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
       final Wrappers._boolean isApplicable = new Wrappers._boolean();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          isApplicable.value = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() || ListSequence.<SNode>fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.custommps.structure.MPSDistribution", false, new String[]{})).isNotEmpty();
+          isApplicable.value = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.custommps.structure.MPSDistribution", false, new String[]{})).isNotEmpty();
         }
       });
       return isApplicable.value;

@@ -36,8 +36,8 @@ public class ShowTodoViewer_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -45,7 +45,7 @@ public class ShowTodoViewer_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(TodoViewer_Tool.class).openToolLater(true);
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(TodoViewer_Tool.class).openToolLater(true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowTodoViewer", t);
     }

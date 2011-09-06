@@ -15,7 +15,7 @@ public class ReplaceRegexpOperation_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "search", true));
-    for (SNode r : ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "replacement", true))) {
+    for (SNode r : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "replacement", true))) {
       _context.getBuilder().build((SNode) r);
     }
   }

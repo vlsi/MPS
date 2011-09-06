@@ -69,7 +69,7 @@ public class Regexp_Behavior {
   }
 
   public static boolean virtual_isValid_4759120547781297301(SNode thisNode) {
-    for (SNode n : ListSequence.<SNode>fromList(SNodeOperations.getChildren(thisNode))) {
+    for (SNode n : ListSequence.fromList(SNodeOperations.getChildren(thisNode))) {
       if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.regexp.structure.Regexp") && !(Regexp_Behavior.call_isValid_4759120547781297301(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")))) {
         return false;
       }

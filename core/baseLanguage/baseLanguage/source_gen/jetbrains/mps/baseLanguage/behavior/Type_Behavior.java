@@ -50,9 +50,9 @@ public class Type_Behavior {
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
+    List<String> result = ListSequence.fromList(new ArrayList<String>());
     for (String s : NameUtil.splitByCamels(BaseConcept_Behavior.call_getPresentation_1213877396640(thisNode))) {
-      ListSequence.<String>fromList(result).addElement(s);
+      ListSequence.fromList(result).addElement(s);
     }
     return result;
   }
@@ -93,7 +93,7 @@ public class Type_Behavior {
     List<SNode> creators = new ArrayList<SNode>();
     SNode ac = Type_Behavior.call_getAbstractCreator_1213877337340(thisNode);
     if ((ac != null)) {
-      ListSequence.<SNode>fromList(creators).addElement(ac);
+      ListSequence.fromList(creators).addElement(ac);
     }
     return creators;
   }

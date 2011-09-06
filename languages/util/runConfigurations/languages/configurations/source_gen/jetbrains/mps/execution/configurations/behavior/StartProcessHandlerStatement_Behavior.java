@@ -30,7 +30,7 @@ public class StartProcessHandlerStatement_Behavior {
       return null;
     }
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "tool", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral")) {
-      SNode first = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "tool", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"), "componentRef", true)).findFirst(new IWhereFilter<SNode>() {
+      SNode first = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "tool", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"), "componentRef", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(SLinkOperations.getTarget(it, "componentDeclaration", false), "name").equals(name);
         }

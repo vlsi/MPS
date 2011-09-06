@@ -42,10 +42,10 @@ public class RequiredAdditionalArgumentReference_Constraints extends BaseConstra
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            List<SNode> nodes = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+            List<SNode> nodes = ListSequence.fromList(new ArrayList<SNode>());
             SNode refactoring = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.refactoring.structure.OldRefactoring", false, false);
-            ListSequence.<SNode>fromList(nodes).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(refactoring, "arguments", true)));
-            ListSequence.<SNode>fromList(nodes).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(refactoring, "internalArguments", true)));
+            ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(refactoring, "arguments", true)));
+            ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(refactoring, "internalArguments", true)));
             return nodes;
           }
 

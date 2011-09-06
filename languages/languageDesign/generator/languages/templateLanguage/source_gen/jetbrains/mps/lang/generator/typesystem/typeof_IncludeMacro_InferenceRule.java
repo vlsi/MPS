@@ -34,24 +34,24 @@ public class typeof_IncludeMacro_InferenceRule extends AbstractInferenceRule_Run
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "No template", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154465925404", null, errorTarget);
       }
     } else if ((containingTemplate == null)) {
-      if (!(ListSequence.<SNode>fromList(SLinkOperations.getTargets(includedTemplate, "parameter", true)).isEmpty())) {
+      if (!(ListSequence.fromList(SLinkOperations.getTargets(includedTemplate, "parameter", true)).isEmpty())) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "Cannot include template with arguments", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466064615", null, errorTarget);
         }
       }
     } else {
-      Map<String, SNode> available = MapSequence.<String,SNode>fromMap(new HashMap<String, SNode>());
-      for (SNode param : ListSequence.<SNode>fromList(SLinkOperations.getTargets(containingTemplate, "parameter", true))) {
-        MapSequence.<String,SNode>fromMap(available).put(SPropertyOperations.getString(param, "name"), SLinkOperations.getTarget(param, "type", true));
+      Map<String, SNode> available = MapSequence.fromMap(new HashMap<String, SNode>());
+      for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(containingTemplate, "parameter", true))) {
+        MapSequence.fromMap(available).put(SPropertyOperations.getString(param, "name"), SLinkOperations.getTarget(param, "type", true));
       }
-      for (SNode p : ListSequence.<SNode>fromList(SLinkOperations.getTargets(includedTemplate, "parameter", true))) {
+      for (SNode p : ListSequence.fromList(SLinkOperations.getTargets(includedTemplate, "parameter", true))) {
         if (!(MapSequence.fromMap(available).containsKey(SPropertyOperations.getString(p, "name")))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "no `" + SPropertyOperations.getString(p, "name") + "' parameter", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466207801", null, errorTarget);
           }
-        } else if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(MapSequence.<String,SNode>fromMap(available).get(SPropertyOperations.getString(p, "name")), SLinkOperations.getTarget(p, "type", true)))) {
+        } else if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(MapSequence.fromMap(available).get(SPropertyOperations.getString(p, "name")), SLinkOperations.getTarget(p, "type", true)))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "bad type of `" + SPropertyOperations.getString(p, "name") + "' parameter", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466207820", null, errorTarget);

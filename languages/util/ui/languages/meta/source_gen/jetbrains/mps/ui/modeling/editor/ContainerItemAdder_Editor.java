@@ -205,6 +205,6 @@ public class ContainerItemAdder_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_fh5ymh_a3a0(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.<SNode>fromIterable(ContainerItemAdder_Behavior.call_aspectDefs_1055897155339717884(node)).isNotEmpty();
+    return Sequence.fromIterable(ContainerItemAdder_Behavior.call_aspectDefs_1055897155339717884(node)).isNotEmpty();
   }
 }

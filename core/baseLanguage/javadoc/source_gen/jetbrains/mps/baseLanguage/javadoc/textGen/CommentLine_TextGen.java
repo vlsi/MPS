@@ -15,7 +15,7 @@ public class CommentLine_TextGen extends SNodeTextGen {
       this.appendNewLine();
       DocCommentTextGen.javadocIndent(this);
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "part", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "part", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "part", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
       }

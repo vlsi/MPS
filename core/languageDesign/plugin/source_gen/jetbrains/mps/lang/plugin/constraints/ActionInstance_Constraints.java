@@ -45,12 +45,12 @@ public class ActionInstance_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> ownActions = SModelOperations.getRoots(SNodeOperations.getModel(_context.getEnclosingNode()), "jetbrains.mps.lang.plugin.structure.ActionDeclaration");
-            List<SNode> abstractImported = ListSequence.<SNode>fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(_context.getEnclosingNode()), GlobalScope.getInstance(), "jetbrains.mps.lang.plugin.structure.ActionDeclaration")).where(new IWhereFilter<SNode>() {
+            List<SNode> abstractImported = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(_context.getEnclosingNode()), GlobalScope.getInstance(), "jetbrains.mps.lang.plugin.structure.ActionDeclaration")).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return ListSequence.<SNode>fromList(SLinkOperations.getTargets(it, "constructionParameter", true)).isNotEmpty();
+                return ListSequence.fromList(SLinkOperations.getTargets(it, "constructionParameter", true)).isNotEmpty();
               }
             }).toListSequence();
-            return ListSequence.<SNode>fromList(ownActions).union(ListSequence.<SNode>fromList(abstractImported));
+            return ListSequence.fromList(ownActions).union(ListSequence.fromList(abstractImported));
           }
 
           @Override

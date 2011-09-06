@@ -91,7 +91,7 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention implemen
         SNode paddingRightStyleClassItem = SNodeFactoryOperations.addNewChild(constantCell, "styleItem", "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem");
         SPropertyOperations.set(paddingRightStyleClassItem, "value", "0.5");
       }
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(constantCell);
+      ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(constantCell);
       i++;
     }
   }

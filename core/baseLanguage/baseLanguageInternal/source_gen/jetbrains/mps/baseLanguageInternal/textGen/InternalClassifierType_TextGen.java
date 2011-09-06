@@ -13,12 +13,12 @@ public class InternalClassifierType_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     String fqClassName = SPropertyOperations.getString(node, "fqClassName");
     BaseLangInternal.className(fqClassName, this);
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
       this.append("<");
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "parameter", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
             this.append(", ");
           }
         }

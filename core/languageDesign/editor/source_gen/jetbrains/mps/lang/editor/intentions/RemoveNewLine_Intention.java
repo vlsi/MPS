@@ -48,7 +48,7 @@ public class RemoveNewLine_Intention extends BaseIntention implements Intention 
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNodeOperations.deleteNode(ListSequence.<SNode>fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"))).first());
+    SNodeOperations.deleteNode(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"))).first());
   }
 
   public String getLocationString() {

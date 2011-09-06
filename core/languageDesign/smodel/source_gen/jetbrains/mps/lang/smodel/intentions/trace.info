@@ -28,7 +28,7 @@
     <nodeInfo nodeId="1193746356201" fileName="AddSNodeCastStatement_Intention.java" startLine="75" startPosition="12" endLine="76" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1193746356210" fileName="AddSNodeCastStatement_Intention.java" startLine="76" startPosition="147" endLine="77" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1193746356221" fileName="AddSNodeCastStatement_Intention.java" startLine="77" startPosition="142" endLine="78" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193745326706" fileName="AddSNodeCastStatement_Intention.java" startLine="79" startPosition="5" endLine="80" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193745326706" fileName="AddSNodeCastStatement_Intention.java" startLine="79" startPosition="5" endLine="80" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1193745200272" fileName="AddSNodeCastStatement_Intention.java" startLine="83" startPosition="37" endLine="84" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1193745200272" fileName="AddSNodeCastStatement_Intention.java" startLine="17" startPosition="89" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddSNodeCastStatement_Intention#()V" />
     <nodeInfo nodeId="1193745200272" fileName="AddSNodeCastStatement_Intention.java" startLine="41" startPosition="84" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -82,7 +82,7 @@
       <varInfo nodeId="1193745412081" varName="isApplicable" />
     </scopeInfo>
     <scopeInfo nodeId="1193745200272" fileName="AddSNodeCastStatement_Intention.java" startLine="47" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="1193745200278" fileName="AddSNodeCastStatement_Intention.java" startLine="63" startPosition="76" endLine="80" endPosition="160">
+    <scopeInfo nodeId="1193745200278" fileName="AddSNodeCastStatement_Intention.java" startLine="63" startPosition="76" endLine="80" endPosition="153">
       <varInfo nodeId="1193746216328" varName="expression" />
       <varInfo nodeId="1193745326632" varName="de" />
       <varInfo nodeId="1193745326640" varName="declaration" />
@@ -102,8 +102,8 @@
     <nodeInfo nodeId="1203704393457" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="41" startPosition="5" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1203705028488" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1203705048412" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213126636995" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="50" startPosition="132" endLine="51" endPosition="340" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1203705289613" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="51" startPosition="340" endLine="52" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213126636995" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="50" startPosition="132" endLine="51" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1203705289613" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="51" startPosition="333" endLine="52" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1203704393457" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="55" startPosition="37" endLine="56" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1203704393457" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="14" startPosition="101" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceConceptIsWithConceptEquals_Intention#()V" />
     <nodeInfo nodeId="1203704393457" fileName="ReplaceConceptIsWithConceptEquals_Intention.java" startLine="38" startPosition="84" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -194,10 +194,10 @@
     <nodeInfo nodeId="1206998439635" fileName="AddOperationParameter_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1206998294783" fileName="AddOperationParameter_Intention.java" startLine="40" startPosition="58" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1206998294783" fileName="AddOperationParameter_Intention.java" startLine="42" startPosition="5" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206998491278" fileName="AddOperationParameter_Intention.java" startLine="47" startPosition="102" endLine="48" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1206998491278" fileName="AddOperationParameter_Intention.java" startLine="47" startPosition="95" endLine="48" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1206998510398" fileName="AddOperationParameter_Intention.java" startLine="49" startPosition="5" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1206998604708" fileName="AddOperationParameter_Intention.java" startLine="53" startPosition="76" endLine="54" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206998638855" fileName="AddOperationParameter_Intention.java" startLine="55" startPosition="69" endLine="56" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206998638855" fileName="AddOperationParameter_Intention.java" startLine="55" startPosition="62" endLine="56" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206998578166" fileName="AddOperationParameter_Intention.java" startLine="57" startPosition="12" endLine="58" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206998294783" fileName="AddOperationParameter_Intention.java" startLine="62" startPosition="37" endLine="63" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1206998294783" fileName="AddOperationParameter_Intention.java" startLine="15" startPosition="89" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddOperationParameter_Intention#()V" />
@@ -221,8 +221,8 @@
     <scopeInfo nodeId="1206998294783" fileName="AddOperationParameter_Intention.java" startLine="31" startPosition="44" endLine="32" endPosition="17" />
     <scopeInfo nodeId="1206998294785" fileName="AddOperationParameter_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="30" />
     <scopeInfo nodeId="1206998294783" fileName="AddOperationParameter_Intention.java" startLine="40" startPosition="58" endLine="41" endPosition="19" />
-    <scopeInfo nodeId="1206998467645" fileName="AddOperationParameter_Intention.java" startLine="47" startPosition="102" endLine="48" endPosition="123" />
-    <scopeInfo nodeId="1206998615216" fileName="AddOperationParameter_Intention.java" startLine="55" startPosition="69" endLine="56" endPosition="229" />
+    <scopeInfo nodeId="1206998467645" fileName="AddOperationParameter_Intention.java" startLine="47" startPosition="95" endLine="48" endPosition="116" />
+    <scopeInfo nodeId="1206998615216" fileName="AddOperationParameter_Intention.java" startLine="55" startPosition="62" endLine="56" endPosition="215" />
     <scopeInfo nodeId="1206998710514" fileName="AddOperationParameter_Intention.java" startLine="57" startPosition="12" endLine="58" endPosition="126" />
     <scopeInfo nodeId="1206998294783" fileName="AddOperationParameter_Intention.java" startLine="62" startPosition="37" endLine="63" endPosition="50" />
     <scopeInfo nodeId="1206998294783" fileName="AddOperationParameter_Intention.java" startLine="15" startPosition="89" endLine="17" endPosition="3" />

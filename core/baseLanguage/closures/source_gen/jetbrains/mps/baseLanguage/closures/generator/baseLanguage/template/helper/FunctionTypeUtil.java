@@ -62,8 +62,8 @@ public class FunctionTypeUtil {
     } else if (SNodeOperations.isInstanceOf(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       SNode meth = FunctionTypeUtil.getFunctionMethod(functionTypeOrClassifier);
       List<SNode> res = new ArrayList<SNode>();
-      for (SNode pd : ListSequence.<SNode>fromList(SLinkOperations.getTargets(meth, "parameter", true))) {
-        ListSequence.<SNode>fromList(res).addElement(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pd, "type", true), SNodeOperations.cast(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
+      for (SNode pd : ListSequence.fromList(SLinkOperations.getTargets(meth, "parameter", true))) {
+        ListSequence.fromList(res).addElement(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pd, "type", true), SNodeOperations.cast(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
       }
       return res;
     } else {
@@ -73,7 +73,7 @@ public class FunctionTypeUtil {
 
   private static SNode getFunctionMethod(SNode functionTypeOrClassifier) {
     List<SNode> methods = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "method", true);
-    return ListSequence.<SNode>fromList(methods).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(methods).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode m) {
         return !("equals".equals(SPropertyOperations.getString(m, "name"))) && SPropertyOperations.getBoolean(m, "isAbstract");
       }
@@ -141,9 +141,9 @@ with_meet:
 
   public static SNode unbound(SNode maybeBound) {
     SNode res = null;
-    List<SNode> q = ListSequence.<SNode>fromListAndArray(new LinkedList<SNode>(), SNodeOperations.copyNode(maybeBound));
-    while (!(ListSequence.<SNode>fromList(q).isEmpty())) {
-      SNode n = ListSequence.<SNode>fromList(q).removeElementAt(0);
+    List<SNode> q = ListSequence.fromListAndArray(new LinkedList<SNode>(), SNodeOperations.copyNode(maybeBound));
+    while (!(ListSequence.fromList(q).isEmpty())) {
+      SNode n = ListSequence.fromList(q).removeElementAt(0);
       if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
         n = SNodeOperations.replaceWithAnother(n, SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true));
       }
@@ -151,7 +151,7 @@ with_meet:
         n = SNodeOperations.replaceWithAnother(n, SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true));
       }
       if ((n != null)) {
-        ListSequence.<SNode>fromList(q).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getChildren(n)));
+        ListSequence.fromList(q).addSequence(ListSequence.fromList(SNodeOperations.getChildren(n)));
       }
       if ((res == null)) {
         res = n;
@@ -205,7 +205,7 @@ with_meet:
     );
 
     if ((lCType != null) && (rFType != null)) {
-      if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(lCType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.closures.structure.FunctionType"), true), "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType") || ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).all(new IWhereFilter<SNode>() {
+      if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(lCType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.closures.structure.FunctionType"), true), "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType") || ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).all(new IWhereFilter<SNode>() {
         public boolean accept(SNode rs) {
           return (SLinkOperations.getTarget(rs, "expression", true) == null);
         }
@@ -222,18 +222,18 @@ with_meet:
     } else
     if ((lFType != null) && (rFType != null)) {
       final SNode adapterAnn = SLinkOperations.getTarget(new FunctionTypeUtil.QuotationClass_2t0coq_a0a0a0a0j0j().createNode(), "annotation", false);
-      final SNode annInst = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(rexpr), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "parameter", true)).getElement(SNodeOperations.getIndexInParent(rexpr)), "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
+      final SNode annInst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(rexpr), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "parameter", true)).getElement(SNodeOperations.getIndexInParent(rexpr)), "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode ann) {
           return SLinkOperations.getTarget(ann, "annotation", false) == adapterAnn;
         }
       });
       if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (annInst != null)) {
-        SNode cls = ListSequence.<SNode>fromList(SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(rexpr), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false)), genContext.getScope(), "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
+        SNode cls = ListSequence.fromList(SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(rexpr), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false)), genContext.getScope(), "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode cls) {
-            return SPropertyOperations.getString(cls, "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(annInst, "value", true)).first(), "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value"));
+            return SPropertyOperations.getString(cls, "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(annInst, "value", true)).first(), "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value"));
           }
         });
-        SNode adapterFType = FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(cls, "method", true)).findFirst(new IWhereFilter<SNode>() {
+        SNode adapterFType = FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(cls, "method", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode md) {
             return SNodeOperations.isInstanceOf(md, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration");
           }
@@ -243,26 +243,26 @@ with_meet:
 with_tvd:
         for (SNode tvd : SLinkOperations.getTargets(cls, "typeVariableDeclaration", true)) {
           if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(adapterFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false) == tvd) {
-            ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.copyNode(SLinkOperations.getTarget(lFType, "resultType", true))));
+            ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.copyNode(SLinkOperations.getTarget(lFType, "resultType", true))));
             continue;
           } else {
-            for (int idx = 0; idx < ListSequence.<SNode>fromList(SLinkOperations.getTargets(adapterFType, "parameterType", true)).count(); ++idx) {
-              if (SLinkOperations.getTarget(SNodeOperations.as(ListSequence.<SNode>fromList(SLinkOperations.getTargets(adapterFType, "parameterType", true)).getElement(idx), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false) == tvd) {
-                ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.copyNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(lFType, "parameterType", true)).getElement(idx))));
+            for (int idx = 0; idx < ListSequence.fromList(SLinkOperations.getTargets(adapterFType, "parameterType", true)).count(); ++idx) {
+              if (SLinkOperations.getTarget(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(adapterFType, "parameterType", true)).getElement(idx), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false) == tvd) {
+                ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(lFType, "parameterType", true)).getElement(idx))));
                 continue with_tvd;
               }
             }
           }
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(new FunctionTypeUtil.QuotationClass_2t0coq_a0a0b0e0c0a0j0j().createNode(tvd));
+          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(new FunctionTypeUtil.QuotationClass_2t0coq_a0a0b0e0c0a0j0j().createNode(tvd));
         }
         ClosureLiteralUtil.addAdaptableClosureLiteralTarget(genContext, SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), ct);
-      } else if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType") || ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).all(new IWhereFilter<SNode>() {
+      } else if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType") || ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).all(new IWhereFilter<SNode>() {
         public boolean accept(SNode rs) {
           return (SLinkOperations.getTarget(rs, "expression", true) == null);
         }
       }))) {
         ClosureLiteralUtil.addAdaptableClosureLiteralTarget(genContext, SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), FunctionType_Behavior.call_getDeclarationRuntimeType_811905832257074290(lFType, rFType));
-      } else if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") || ListSequence.<SNode>fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(lFType)).count() != ListSequence.<SNode>fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(rFType)).count()) {
+      } else if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") || ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(lFType)).count() != ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(rFType)).count()) {
         FunctionTypeUtil.addAdaptableClassifierTypeTarget(genContext, FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(rFType), FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(lFType));
         Values.PREP_DATA.set(genContext, rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(lFType), "classifier", false)));
       }
@@ -272,15 +272,15 @@ with_tvd:
   public static void addAdaptableClassifierTypeTarget(TemplateQueryContext genContext, SNode adaptable, SNode target) {
     List<SNode> allAdaptable = getAllAdaptableClassifiers(genContext);
     if (allAdaptable == null) {
-      allAdaptable = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+      allAdaptable = ListSequence.fromList(new ArrayList<SNode>());
       genContext.putStepObject(Keys.ALL_NEEDS_ADAPTED, allAdaptable);
     }
-    if (!(ListSequence.<SNode>fromList(allAdaptable).contains(SLinkOperations.getTarget(adaptable, "classifier", false)))) {
-      ListSequence.<SNode>fromList(allAdaptable).addElement(SLinkOperations.getTarget(adaptable, "classifier", false));
+    if (!(ListSequence.fromList(allAdaptable).contains(SLinkOperations.getTarget(adaptable, "classifier", false)))) {
+      ListSequence.fromList(allAdaptable).addElement(SLinkOperations.getTarget(adaptable, "classifier", false));
     }
     List<SNode> trgList = (List<SNode>) genContext.getStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))));
     if (trgList == null) {
-      trgList = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+      trgList = ListSequence.fromList(new ArrayList<SNode>());
       genContext.putStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))), trgList);
     }
     boolean hasOneAlready = false;
@@ -291,7 +291,7 @@ with_tvd:
       }
     }
     if (!(hasOneAlready)) {
-      ListSequence.<SNode>fromList(trgList).addElement(SLinkOperations.getTarget(target, "classifier", false));
+      ListSequence.fromList(trgList).addElement(SLinkOperations.getTarget(target, "classifier", false));
       Values.ADAPTABLE.set(genContext, SLinkOperations.getTarget(target, "classifier", false), SLinkOperations.getTarget(adaptable, "classifier", false));
     }
   }
@@ -305,15 +305,15 @@ with_tvd:
   }
 
   public static Map<SNode, SNode> mapAdaptableTargetTVDs(SNode adaptable, SNode target) {
-    Map<SNode, SNode> resMap = MapSequence.<SNode,SNode>fromMap(new HashMap<SNode, SNode>());
-    SNode adMethod = ListSequence.<SNode>fromList(SLinkOperations.getTargets(adaptable, "method", true)).getElement(0);
-    SNode trgMethod = ListSequence.<SNode>fromList(SLinkOperations.getTargets(target, "method", true)).getElement(0);
+    Map<SNode, SNode> resMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    SNode adMethod = ListSequence.fromList(SLinkOperations.getTargets(adaptable, "method", true)).getElement(0);
+    SNode trgMethod = ListSequence.fromList(SLinkOperations.getTargets(target, "method", true)).getElement(0);
     doMapTVDS(resMap, SLinkOperations.getTarget(adMethod, "returnType", true), SLinkOperations.getTarget(trgMethod, "returnType", true));
     {
       SNode adParm;
       SNode trgParm;
-      Iterator<SNode> adParm_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(adMethod, "parameter", true)).iterator();
-      Iterator<SNode> trgParm_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(trgMethod, "parameter", true)).iterator();
+      Iterator<SNode> adParm_iterator = ListSequence.fromList(SLinkOperations.getTargets(adMethod, "parameter", true)).iterator();
+      Iterator<SNode> trgParm_iterator = ListSequence.fromList(SLinkOperations.getTargets(trgMethod, "parameter", true)).iterator();
       while (true) {
         if (!(adParm_iterator.hasNext())) {
           break;
@@ -333,7 +333,7 @@ with_tvd:
     SNode adTVD = SLinkOperations.getTarget(SNodeOperations.as(adType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
     SNode trgTVD = SLinkOperations.getTarget(SNodeOperations.as(trgType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
     if ((adTVD != null) && (trgTVD != null)) {
-      MapSequence.<SNode,SNode>fromMap(theMap).put(adTVD, trgTVD);
+      MapSequence.fromMap(theMap).put(adTVD, trgTVD);
     }
   }
 

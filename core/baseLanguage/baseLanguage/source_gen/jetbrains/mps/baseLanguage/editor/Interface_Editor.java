@@ -290,7 +290,7 @@ public class Interface_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_4hcgjd_a5a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
   }
 
   private static boolean renderingCondition_4hcgjd_a8a(SNode node, EditorContext editorContext, IScope scope) {

@@ -25,7 +25,7 @@ public class ShowHelpForRoot_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return HelpHelper.helpForRootIsAvailable(((SNode) MapSequence.<String,Object>fromMap(_params).get("node"))) && HelpHelper.getDefaultHelpFor(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")), ((SNode) MapSequence.<String,Object>fromMap(_params).get("node"))) != HelpHelper.HelpType.ROOT_NODE;
+    return HelpHelper.helpForRootIsAvailable(((SNode) MapSequence.fromMap(_params).get("node"))) && HelpHelper.getDefaultHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node"))) != HelpHelper.HelpType.ROOT_NODE;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -48,19 +48,19 @@ public class ShowHelpForRoot_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.<String,Object>fromMap(_params).put("node", node);
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      HelpHelper.showHelpForRoot(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")));
+      HelpHelper.showHelpForRoot(((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowHelpForRoot", t);
     }

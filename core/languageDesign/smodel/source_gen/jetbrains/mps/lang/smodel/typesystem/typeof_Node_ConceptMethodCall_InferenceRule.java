@@ -25,8 +25,8 @@ public class typeof_Node_ConceptMethodCall_InferenceRule extends AbstractInferen
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(conceptMethodCall, "no method declaration", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1179410829052", null, errorTarget);
     }
-    int actCount = ListSequence.<SNode>fromList(SLinkOperations.getTargets(conceptMethodCall, "actualArgument", true)).count();
-    int expCount = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(conceptMethodCall, "baseMethodDeclaration", false), "parameter", true)).count();
+    int actCount = ListSequence.fromList(SLinkOperations.getTargets(conceptMethodCall, "actualArgument", true)).count();
+    int expCount = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(conceptMethodCall, "baseMethodDeclaration", false), "parameter", true)).count();
     if (!(actCount == expCount)) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(conceptMethodCall, "Wrong parameters number: expected " + expCount + ", actual " + actCount, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1179410886099", null, errorTarget);
@@ -34,8 +34,8 @@ public class typeof_Node_ConceptMethodCall_InferenceRule extends AbstractInferen
     {
       SNode arg;
       SNode parameter;
-      Iterator<SNode> arg_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(conceptMethodCall, "actualArgument", true)).iterator();
-      Iterator<SNode> parameter_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(conceptMethodCall, "baseMethodDeclaration", false), "parameter", true)).iterator();
+      Iterator<SNode> arg_iterator = ListSequence.fromList(SLinkOperations.getTargets(conceptMethodCall, "actualArgument", true)).iterator();
+      Iterator<SNode> parameter_iterator = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(conceptMethodCall, "baseMethodDeclaration", false), "parameter", true)).iterator();
       while (true) {
         if (!(arg_iterator.hasNext())) {
           break;

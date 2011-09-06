@@ -40,29 +40,29 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     // search for straight usages & search for SUPER calls 
     // BUG IN BASE LANGUAGE -- AT THE TIME THIS THING DOES NOT FIND SUPER() CALLS 
-    for (SNode nodeUsage : ListSequence.<SNode>fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator))) {
-      ListSequence.<SNode>fromList(_results).addElement(nodeUsage);
+    for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator))) {
+      ListSequence.fromList(_results).addElement(nodeUsage);
     }
     // WORKAROUND - FIND SUPER() CALLS 
-    for (SNode subclassResult : ListSequence.<SNode>fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope, indicator))) {
-      for (SNode constructorNode : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(subclassResult, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true))) {
-        for (SNode invocation : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(constructorNode, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode subclassResult : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope, indicator))) {
+      for (SNode constructorNode : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(subclassResult, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true))) {
+        for (SNode invocation : ListSequence.fromList(SNodeOperations.getDescendants(constructorNode, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation");
           }
         })) {
           boolean thisConstructor = true;
           SNode invocationNode = SNodeOperations.cast(invocation, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation");
-          if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(invocationNode, "actualArgument", true)).count() == ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).count()) {
-            for (int i = 0; i < ListSequence.<SNode>fromList(SLinkOperations.getTargets(invocationNode, "actualArgument", true)).count(); i++) {
-              SNode actualArgument = ListSequence.<SNode>fromList(SLinkOperations.getTargets(invocationNode, "actualArgument", true)).getElement(i);
-              SNode formalArgument = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).getElement(i);
+          if (ListSequence.fromList(SLinkOperations.getTargets(invocationNode, "actualArgument", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count()) {
+            for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(invocationNode, "actualArgument", true)).count(); i++) {
+              SNode actualArgument = ListSequence.fromList(SLinkOperations.getTargets(invocationNode, "actualArgument", true)).getElement(i);
+              SNode formalArgument = ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).getElement(i);
               if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, "type", true)))) {
                 thisConstructor = false;
               }
             }
             if (thisConstructor) {
-              ListSequence.<SNode>fromList(_results).addElement(invocationNode);
+              ListSequence.fromList(_results).addElement(invocationNode);
             }
           }
         }
@@ -71,18 +71,18 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
     // search for enum constants creation 
     SNode enumNode = SNodeOperations.cast(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false), "jetbrains.mps.baseLanguage.structure.EnumClass");
     if (enumNode != null) {
-      for (SNode enumConstant : ListSequence.<SNode>fromList(SLinkOperations.getTargets(enumNode, "enumConstant", true))) {
+      for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(enumNode, "enumConstant", true))) {
         boolean thisConstructor = true;
-        if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(enumConstant, "actualArgument", true)).count() == ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).count()) {
-          for (int i = 0; i < ListSequence.<SNode>fromList(SLinkOperations.getTargets(enumConstant, "actualArgument", true)).count(); i++) {
-            SNode actualArgument = ListSequence.<SNode>fromList(SLinkOperations.getTargets(enumConstant, "actualArgument", true)).getElement(i);
-            SNode formalArgument = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).getElement(i);
+        if (ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "actualArgument", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count()) {
+          for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "actualArgument", true)).count(); i++) {
+            SNode actualArgument = ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "actualArgument", true)).getElement(i);
+            SNode formalArgument = ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).getElement(i);
             if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, "type", true)))) {
               thisConstructor = false;
             }
           }
           if (thisConstructor) {
-            ListSequence.<SNode>fromList(_results).addElement(enumConstant);
+            ListSequence.fromList(_results).addElement(enumConstant);
           }
         }
       }

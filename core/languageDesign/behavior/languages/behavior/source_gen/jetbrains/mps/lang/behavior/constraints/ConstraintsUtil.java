@@ -19,6 +19,6 @@ public class ConstraintsUtil {
       return false;
     }
 
-    return ListSequence.<SNode>fromList(SNodeOperations.getAncestorsWhereConceptInList(node, new String[]{"jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration"}, false)).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getAncestorsWhereConceptInList(node, new String[]{"jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration"}, false)).isNotEmpty();
   }
 }

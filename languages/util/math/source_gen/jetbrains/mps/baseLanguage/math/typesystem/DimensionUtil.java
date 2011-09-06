@@ -23,13 +23,13 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class DimensionUtil {
   @InferenceMethod
   public static void checkDim(final TypeCheckingContext typeCheckingContext, final List<SNode> components, final int n, final List<SNode> types, final boolean row, final SNode node) {
-    if (n == ListSequence.<SNode>fromList(components).count()) {
+    if (n == ListSequence.fromList(components).count()) {
       final SNode T_typevar_757772128652074250 = typeCheckingContext.createNewRuntimeTypesVariable();
       int s = 0;
       int f = 0;
       boolean cbd = true;
       boolean cbc = true;
-      for (SNode type : ListSequence.<SNode>fromList(types)) {
+      for (SNode type : ListSequence.fromList(types)) {
         {
           SNode matchedNode_48zlf8_a0f0a0a = type;
           {
@@ -195,12 +195,12 @@ public class DimensionUtil {
       }
     } else {
       {
-        final SNode t1 = typeCheckingContext.typeOf(ListSequence.<SNode>fromList(components).getElement(n), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652013457", true);
+        final SNode t1 = typeCheckingContext.typeOf(ListSequence.fromList(components).getElement(n), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652013457", true);
         typeCheckingContext.whenConcrete(t1, new Runnable() {
           public void run() {
             List<SNode> types2 = new ArrayList<SNode>();
-            ListSequence.<SNode>fromList(types2).addSequence(ListSequence.<SNode>fromList(types));
-            ListSequence.<SNode>fromList(types2).addElement(typeCheckingContext.getRepresentative(t1));
+            ListSequence.fromList(types2).addSequence(ListSequence.fromList(types));
+            ListSequence.fromList(types2).addElement(typeCheckingContext.getRepresentative(t1));
             checkDim(typeCheckingContext, components, n + 1, types2, row, node);
           }
         }, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128651891776", false, false);

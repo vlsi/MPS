@@ -84,9 +84,9 @@ public class ReplacementView {
   }
 
   public List<SNode> getExecuteResult(List<SNodePointer> nodes) {
-    List<SNode> results = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    List<SNode> results = ListSequence.fromList(new ArrayList<SNode>());
     for (SNodePointer nodePointer : nodes) {
-      ListSequence.<SNode>fromList(results).addElement(nodePointer.getNode());
+      ListSequence.fromList(results).addElement(nodePointer.getNode());
     }
     return results;
   }

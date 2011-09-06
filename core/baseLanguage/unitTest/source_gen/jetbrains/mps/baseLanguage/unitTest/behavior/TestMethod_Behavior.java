@@ -33,8 +33,8 @@ public class TestMethod_Behavior {
 
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "throwsItem", true)));
-    ListSequence.<SNode>fromList(result).addElement(new TestMethod_Behavior.QuotationClass_6y0hvj_a0a0c0d().createNode());
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "throwsItem", true)));
+    ListSequence.fromList(result).addElement(new TestMethod_Behavior.QuotationClass_6y0hvj_a0a0c0d().createNode());
     return result;
   }
 

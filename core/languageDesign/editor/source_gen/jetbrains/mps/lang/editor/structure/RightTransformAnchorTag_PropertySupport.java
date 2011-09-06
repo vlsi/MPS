@@ -11,7 +11,7 @@ public class RightTransformAnchorTag_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<RightTransformAnchorTag> constants = ListSequence.<RightTransformAnchorTag>fromList(RightTransformAnchorTag.getConstants()).iterator();
+    Iterator<RightTransformAnchorTag> constants = ListSequence.fromList(RightTransformAnchorTag.getConstants()).iterator();
     while (constants.hasNext()) {
       RightTransformAnchorTag constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class RightTransformAnchorTag_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<RightTransformAnchorTag> constants = ListSequence.<RightTransformAnchorTag>fromList(RightTransformAnchorTag.getConstants()).iterator();
+    Iterator<RightTransformAnchorTag> constants = ListSequence.fromList(RightTransformAnchorTag.getConstants()).iterator();
     while (constants.hasNext()) {
       RightTransformAnchorTag constant = constants.next();
       if (value.equals(constant.getName())) {

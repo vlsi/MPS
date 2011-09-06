@@ -5,9 +5,9 @@ package jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.plugin.behavior.RunConfigurationDeclaration_Behavior;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -47,7 +47,7 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_3945544195318644608(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration")).isNotEmpty() || ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator")).isNotEmpty() || ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator")).isNotEmpty() || ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration")).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return RunConfigurationDeclaration_Behavior.call_isForeign_5236594288019752588(it);
       }
@@ -190,7 +190,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6135182812223258861(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SConceptPropertyOperations.getString(ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(RunConfigCreator_Behavior.call_getFunction_5528847031674340387(((SNode) SNodeOperations.getContainingRoot(_context.getNode()))), "applicableConceptFunctionParameter")).first(), "alias");
+    return SConceptPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(RunConfigCreator_Behavior.call_getFunction_5528847031674340387(((SNode) SNodeOperations.getContainingRoot(_context.getNode()))), "applicableConceptFunctionParameter")).first(), "alias");
   }
 
   public static Object propertyMacro_GetPropertyValue_6017961579228925652(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -218,7 +218,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7613255952469569297(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode statement = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement", false, new String[]{})).first();
+    SNode statement = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement", false, new String[]{})).first();
     if ((statement == null)) {
       return _context.getTemplateValue();
     }
@@ -432,7 +432,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_3945544195318680275(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ConfigTypeClass"), "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ConfigTypeClass"), "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_3945544195318716860(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -448,7 +448,7 @@ public class QueriesGenerated {
     if (result == null) {
       result = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_OldConfigCreatorClass");
     }
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(result, "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(result, "constructor", true)).first();
   }
 
   public static boolean ifMacro_Condition_7840798570674908544(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -537,7 +537,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7613255952469569231(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(RunConfigurationDeclaration_Behavior.call_isForeign_5236594288019752588(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement", false, new String[]{})).first(), "runConfig", false)));
+    return !(RunConfigurationDeclaration_Behavior.call_isForeign_5236594288019752588(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement", false, new String[]{})).first(), "runConfig", false)));
   }
 
   public static boolean ifMacro_Condition_5694992420817274711(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -561,11 +561,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4446632417482790921(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration")).isNotEmpty();
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration")).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_4446632417482790936(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator")).union(ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator"))).isNotEmpty();
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator")).union(ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator"))).isNotEmpty();
   }
 
   public static SNode sourceNodeQuery_8294332872984074416(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -709,7 +709,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7840798570674946693(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(SNodeOperations.getModel(_context.getNode()), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration")).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(_context.getNode()), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "configType", false) == _context.getNode();
       }
@@ -777,7 +777,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_6913517247401390058(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration")).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return RunConfigurationDeclaration_Behavior.call_isForeign_5236594288019752588(it);
       }
@@ -789,7 +789,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4446632417482790900(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration")).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return RunConfigurationDeclaration_Behavior.call_isForeign_5236594288019752588(it);
       }
@@ -797,18 +797,18 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_3945544195318716748(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator")).union(ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator")));
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator")).union(ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator")));
   }
 
   public static void mappingScript_CodeBlock_1403054519076822739(final IOperationContext operationContext, final MappingScriptContext _context) {
-    Iterable<SNode> executeBlocks = ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getModel(), null)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> executeBlocks = ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), null)).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SNodeOperations.getDescendants(it, "jetbrains.mps.lang.plugin.structure.ParametrizedExecuteBlock", false, new String[]{});
       }
     });
-    for (SNode block : Sequence.<SNode>fromIterable(executeBlocks)) {
+    for (SNode block : Sequence.fromIterable(executeBlocks)) {
       if ((SLinkOperations.getTarget(block, "executeParameterQuery", true) != null) || (SLinkOperations.getTarget(SLinkOperations.getTarget(block, "executeParameterQuery", true), "parameterType", true) != null)) {
-        for (SNode parameter : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(block, "jetbrains.mps.lang.plugin.structure.Parameter_FunctionParameter", false, new String[]{}))) {
+        for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(block, "jetbrains.mps.lang.plugin.structure.Parameter_FunctionParameter", false, new String[]{}))) {
           SLinkOperations.setTarget(parameter, "userSpecifiedParameterType", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(block, "executeParameterQuery", true), "parameterType", true)), true);
         }
       }

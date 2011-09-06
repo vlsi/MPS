@@ -48,7 +48,7 @@ public class LowLevelVariableReference_Constraints extends BaseConstraintsDescri
             if (SPropertyOperations.getBoolean(evaluator, "isShowContext")) {
               return SLinkOperations.getTargets(evaluator, "variables", true);
             }
-            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(evaluator, "variables", true)).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SLinkOperations.getTargets(evaluator, "variables", true)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return !(SPropertyOperations.getBoolean(it, "isOutOfScope"));
               }

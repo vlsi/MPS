@@ -17,7 +17,7 @@ public class BeanExtensionPoint_Behavior {
   }
 
   public static Iterable<String> call_propertyNames_618741292999315209(SNode thisNode) {
-    return Sequence.<BeanProperty>fromIterable(BeanUtil.properties(SLinkOperations.getTarget(thisNode, "beanClass", false))).<String>select(new ISelector<BeanProperty, String>() {
+    return Sequence.fromIterable(BeanUtil.properties(SLinkOperations.getTarget(thisNode, "beanClass", false))).<String>select(new ISelector<BeanProperty, String>() {
       public String select(BeanProperty p) {
         return p.name();
       }
@@ -25,7 +25,7 @@ public class BeanExtensionPoint_Behavior {
   }
 
   public static BeanProperty call_property_6121364846593790761(SNode thisNode, final String name) {
-    return Sequence.<BeanProperty>fromIterable(BeanUtil.properties(SLinkOperations.getTarget(thisNode, "beanClass", false))).findFirst(new IWhereFilter<BeanProperty>() {
+    return Sequence.fromIterable(BeanUtil.properties(SLinkOperations.getTarget(thisNode, "beanClass", false))).findFirst(new IWhereFilter<BeanProperty>() {
       public boolean accept(BeanProperty p) {
         return eq_esf6t4_a0a0a0a0a0a0d(p.name(), name);
       }

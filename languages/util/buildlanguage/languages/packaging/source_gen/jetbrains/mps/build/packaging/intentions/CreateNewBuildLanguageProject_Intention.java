@@ -52,12 +52,12 @@ public class CreateNewBuildLanguageProject_Intention extends BaseIntention imple
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode project = SNodeFactoryOperations.createNewNode("jetbrains.mps.buildlanguage.structure.Project", null);
-    List<String> externalProps = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "input.dir", "output.dir", "deploy.dir");
-    for (String prop : ListSequence.<String>fromList(externalProps)) {
+    List<String> externalProps = ListSequence.fromListAndArray(new ArrayList<String>(), "input.dir", "output.dir", "deploy.dir");
+    for (String prop : ListSequence.fromList(externalProps)) {
       SNode property = SNodeFactoryOperations.createNewNode("jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration", null);
       SPropertyOperations.set(property, "name", prop);
       SLinkOperations.setTarget(property, "type", SNodeFactoryOperations.createNewNode("jetbrains.mps.buildlanguage.structure.FileType", null), true);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(project, "property", true)).addElement(property);
+      ListSequence.fromList(SLinkOperations.getTargets(project, "property", true)).addElement(property);
     }
     SModel model = editorContext.getModel();
     model.addRoot(project);

@@ -14,21 +14,21 @@ public class ITreePathExpression_Behavior {
   }
 
   public static SNode call_getTreePath_1213877496973(SNode thisNode) {
-    Iterable<SNode> nodes = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(thisNode, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> nodes = ListSequence.fromList(SNodeOperations.getDescendants(thisNode, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
       }
     });
     SNode exp = SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression");
-    while (Sequence.<SNode>fromIterable(nodes).isEmpty()) {
-      Iterable<SNode> varRefs = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(exp, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+    while (Sequence.fromIterable(nodes).isEmpty()) {
+      Iterable<SNode> varRefs = ListSequence.fromList(SNodeOperations.getDescendants(exp, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference");
         }
       });
-      if (Sequence.<SNode>fromIterable(varRefs).isNotEmpty()) {
-        SNode varDecl = SLinkOperations.getTarget(SNodeOperations.cast(Sequence.<SNode>fromIterable(varRefs).first(), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
-        nodes = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(varDecl, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+      if (Sequence.fromIterable(varRefs).isNotEmpty()) {
+        SNode varDecl = SLinkOperations.getTarget(SNodeOperations.cast(Sequence.fromIterable(varRefs).first(), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
+        nodes = ListSequence.fromList(SNodeOperations.getDescendants(varDecl, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
           }
@@ -38,7 +38,7 @@ public class ITreePathExpression_Behavior {
         break;
       }
     }
-    SNode tpae = Sequence.<SNode>fromIterable(nodes).first();
+    SNode tpae = Sequence.fromIterable(nodes).first();
     return SLinkOperations.getTarget(SNodeOperations.cast(tpae, "jetbrains.mps.ypath.structure.TreePathAdapterExpression"), "treepathAspect", false);
   }
 }

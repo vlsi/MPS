@@ -42,7 +42,7 @@ public class SuperSource_Constraints extends BaseConstraintsDescriptor {
       return SConceptOperations.isSubConceptOf(_context.getChildConcept(), "jetbrains.mps.gwt.client.structure.PatternHolder");
     }
     if (SLinkOperations.findLinkDeclaration("jetbrains.mps.gwt.client.structure.PatternFilter", "attr") == _context.getLink()) {
-      return ListSequence.<SNode>fromList(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.CaseSensitive"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.DefaultExcludes"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Includes"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Excludes"))).contains(_context.getChildConcept());
+      return ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.CaseSensitive"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.DefaultExcludes"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Includes"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Excludes"))).contains(_context.getChildConcept());
     }
     if (SLinkOperations.findLinkDeclaration("jetbrains.mps.gwt.client.structure.PatternFilter", "path") == _context.getLink()) {
       return SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Path") == _context.getChildConcept();

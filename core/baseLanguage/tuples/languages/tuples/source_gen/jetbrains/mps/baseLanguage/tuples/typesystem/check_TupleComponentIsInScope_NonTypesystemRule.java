@@ -22,14 +22,14 @@ public class check_TupleComponentIsInScope_NonTypesystemRule extends AbstractNon
   }
 
   public void applyRule(final SNode namedTupleLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> tupleComponents = ListSequence.<SNode>fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(namedTupleLiteral, "tupleDeclaration", false))).reversedList().<SNode>translate(new ITranslator2<SNode, SNode>() {
+    List<SNode> tupleComponents = ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(namedTupleLiteral, "tupleDeclaration", false))).reversedList().<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode ntd) {
         return SLinkOperations.getTargets(ntd, "component", true);
       }
     }).toListSequence();
     for (SNode ref : SLinkOperations.getTargets(namedTupleLiteral, "componentRef", true)) {
       SNode tupleComponent = SLinkOperations.getTarget(ref, "componentDeclaration", false);
-      if (!(ListSequence.<SNode>fromList(tupleComponents).contains(tupleComponent))) {
+      if (!(ListSequence.fromList(tupleComponents).contains(tupleComponent))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ref, "tuple component is out of scope", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "8197465398807016917", null, errorTarget);
       }

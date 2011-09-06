@@ -21,6 +21,6 @@ public class AddExceptionToMethodSignature_QuickFix extends QuickFix_Runtime {
       return;
     }
     SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodDecl, "throwsItem", true)).addElement(SNodeOperations.cast(SNodeOperations.copyNode(((SNode) AddExceptionToMethodSignature_QuickFix.this.getField("throwableType")[0])), "jetbrains.mps.baseLanguage.structure.Type"));
+    ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "throwsItem", true)).addElement(SNodeOperations.cast(SNodeOperations.copyNode(((SNode) AddExceptionToMethodSignature_QuickFix.this.getField("throwableType")[0])), "jetbrains.mps.baseLanguage.structure.Type"));
   }
 }

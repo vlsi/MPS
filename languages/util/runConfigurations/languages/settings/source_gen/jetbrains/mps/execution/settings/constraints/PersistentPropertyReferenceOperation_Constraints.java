@@ -46,7 +46,7 @@ public class PersistentPropertyReferenceOperation_Constraints extends BaseConstr
             SNode instance = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
             SNode propertyHolderType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.execution.settings.structure.PersistentConfigurationType"), false);
             if ((propertyHolderType == null) || (SLinkOperations.getTarget(propertyHolderType, "persistentConfiguration", false) == null)) {
-              return Sequence.<SNode>fromIterable(Collections.<SNode>emptyList());
+              return Sequence.fromIterable(Collections.<SNode>emptyList());
             }
             return SLinkOperations.getTargets(SLinkOperations.getTarget(propertyHolderType, "persistentConfiguration", false), "persistentProperty", true);
           }

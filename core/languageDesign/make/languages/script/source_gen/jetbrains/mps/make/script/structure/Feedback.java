@@ -33,11 +33,11 @@ public enum Feedback {
   }
 
   public static List<Feedback> getConstants() {
-    List<Feedback> list = ListSequence.<Feedback>fromList(new LinkedList<Feedback>());
-    ListSequence.<Feedback>fromList(list).addElement(Feedback.info);
-    ListSequence.<Feedback>fromList(list).addElement(Feedback.warning);
-    ListSequence.<Feedback>fromList(list).addElement(Feedback.error);
-    ListSequence.<Feedback>fromList(list).addElement(Feedback.message);
+    List<Feedback> list = ListSequence.fromList(new LinkedList<Feedback>());
+    ListSequence.fromList(list).addElement(Feedback.info);
+    ListSequence.fromList(list).addElement(Feedback.warning);
+    ListSequence.fromList(list).addElement(Feedback.error);
+    ListSequence.fromList(list).addElement(Feedback.message);
     return list;
   }
 

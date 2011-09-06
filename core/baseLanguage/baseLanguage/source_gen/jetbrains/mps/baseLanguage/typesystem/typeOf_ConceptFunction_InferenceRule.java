@@ -39,7 +39,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
       Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(func, "body", true));
       // should return subtypes of the 'expected type' 
       // if 'expected type' is null - should still return some value (of any type) 
-      for (SNode returnStatement : Sequence.<SNode>fromIterable(returnStatements)) {
+      for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();

@@ -68,7 +68,7 @@ public class VariableReferenceUtil {
 
   @CheckingMethod
   public static void checkField(final TypeCheckingContext typeCheckingContext, SNode field, Iterable<SNode> references) {
-    if (Sequence.<SNode>fromIterable(references).isEmpty()) {
+    if (Sequence.fromIterable(references).isEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(field, "Field is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7581428506283755675", null, errorTarget);

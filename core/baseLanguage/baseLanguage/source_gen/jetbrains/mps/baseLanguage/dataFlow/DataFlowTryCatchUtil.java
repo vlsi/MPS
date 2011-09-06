@@ -29,11 +29,11 @@ public class DataFlowTryCatchUtil {
     for (SNode catchClause : catchClauses) {
       SNode caughtType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new DataFlowTryCatchUtil.QuotationClass_l1x7gt_a1a0a0b0d0a().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new DataFlowTryCatchUtil.QuotationClass_l1x7gt_a1a0a0b0d0a_0().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(new DataFlowTryCatchUtil.QuotationClass_l1x7gt_a0a0a1a3a0().createNode(), caughtType)) {
-        ListSequence.<SNode>fromList(result).addElement(catchClause);
+        ListSequence.fromList(result).addElement(catchClause);
       } else {
         for (SNode throwed : uncaughtThrowables) {
           if (TypeChecker.getInstance().getSubtypingManager().isSubtype(new DataFlowTryCatchUtil.QuotationClass_l1x7gt_a0a0a0a0a1a3a0().createNode(throwed), caughtType)) {
-            ListSequence.<SNode>fromList(result).addElement(catchClause);
+            ListSequence.fromList(result).addElement(catchClause);
           }
         }
       }

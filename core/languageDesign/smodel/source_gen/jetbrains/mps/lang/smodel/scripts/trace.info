@@ -6,10 +6,10 @@
     <nodeInfo nodeId="1239475791620" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="33" startPosition="41" endLine="34" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239475791620" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="37" startPosition="59" endLine="38" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239475791626" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="42" startPosition="142" endLine="43" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239572610776" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="45" startPosition="183" endLine="46" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239572610776" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="45" startPosition="176" endLine="46" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239572631958" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="47" startPosition="9" endLine="48" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239475791637" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="49" startPosition="34" endLine="50" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239572595419" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="52" startPosition="149" endLine="53" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239572595419" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="52" startPosition="142" endLine="53" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239475791647" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="54" startPosition="9" endLine="55" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239475791657" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="56" startPosition="102" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239475791665" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="59" startPosition="829" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -29,7 +29,7 @@
     <nodeInfo nodeId="1239475791620" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="109" startPosition="41" endLine="110" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239475791620" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="113" startPosition="59" endLine="114" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1737294499102102580" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="118" startPosition="148" endLine="119" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1737294499102102584" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="121" startPosition="183" endLine="122" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1737294499102102584" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="121" startPosition="176" endLine="122" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1737294499102102594" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="123" startPosition="9" endLine="124" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1737294499102102605" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="125" startPosition="111" endLine="126" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1737294499102102624" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="128" startPosition="389" endLine="129" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -40,7 +40,7 @@
     <nodeInfo nodeId="1239475791620" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="147" startPosition="41" endLine="148" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239475791620" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="151" startPosition="59" endLine="152" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1737294499102102648" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="156" startPosition="148" endLine="157" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1737294499102102652" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="159" startPosition="183" endLine="160" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1737294499102102652" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="159" startPosition="176" endLine="160" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1737294499102102662" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="161" startPosition="9" endLine="162" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1737294499102102673" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="163" startPosition="111" endLine="164" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1737294499102102692" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="166" startPosition="389" endLine="167" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -196,9 +196,9 @@
     <scopeInfo nodeId="1239475791620" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="33" startPosition="41" endLine="34" endPosition="48" />
     <scopeInfo nodeId="1239475791620" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="37" startPosition="59" endLine="38" endPosition="69" />
     <scopeInfo nodeId="1239475791625" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="42" startPosition="142" endLine="43" endPosition="23" />
-    <scopeInfo nodeId="1239572610775" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="45" startPosition="183" endLine="46" endPosition="23" />
+    <scopeInfo nodeId="1239572610775" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="45" startPosition="176" endLine="46" endPosition="23" />
     <scopeInfo nodeId="1239475791636" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="49" startPosition="34" endLine="50" endPosition="23" />
-    <scopeInfo nodeId="1239572595418" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="52" startPosition="149" endLine="53" endPosition="23" />
+    <scopeInfo nodeId="1239572595418" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="52" startPosition="142" endLine="53" endPosition="23" />
     <scopeInfo nodeId="1239475791656" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="56" startPosition="102" endLine="57" endPosition="22" />
     <scopeInfo nodeId="1239475791664" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="59" startPosition="829" endLine="60" endPosition="22" />
     <scopeInfo nodeId="1239475791727" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="69" startPosition="140" endLine="70" endPosition="87" />
@@ -213,7 +213,7 @@
     <scopeInfo nodeId="1239475791620" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="109" startPosition="41" endLine="110" endPosition="38" />
     <scopeInfo nodeId="1239475791620" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="113" startPosition="59" endLine="114" endPosition="74" />
     <scopeInfo nodeId="1737294499102102579" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="118" startPosition="148" endLine="119" endPosition="23" />
-    <scopeInfo nodeId="1737294499102102583" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="121" startPosition="183" endLine="122" endPosition="23" />
+    <scopeInfo nodeId="1737294499102102583" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="121" startPosition="176" endLine="122" endPosition="23" />
     <scopeInfo nodeId="1737294499102102604" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="125" startPosition="111" endLine="126" endPosition="23" />
     <scopeInfo nodeId="1737294499102102623" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="128" startPosition="389" endLine="129" endPosition="23" />
     <scopeInfo nodeId="1737294499102102562" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="134" startPosition="52" endLine="135" endPosition="99" />
@@ -222,7 +222,7 @@
     <scopeInfo nodeId="1239475791620" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="147" startPosition="41" endLine="148" endPosition="39" />
     <scopeInfo nodeId="1239475791620" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="151" startPosition="59" endLine="152" endPosition="74" />
     <scopeInfo nodeId="1737294499102102647" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="156" startPosition="148" endLine="157" endPosition="23" />
-    <scopeInfo nodeId="1737294499102102651" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="159" startPosition="183" endLine="160" endPosition="23" />
+    <scopeInfo nodeId="1737294499102102651" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="159" startPosition="176" endLine="160" endPosition="23" />
     <scopeInfo nodeId="1737294499102102672" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="163" startPosition="111" endLine="164" endPosition="23" />
     <scopeInfo nodeId="1737294499102102691" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="166" startPosition="389" endLine="167" endPosition="23" />
     <scopeInfo nodeId="1737294499102102630" fileName="SModelLanguageEnhancements_MigrationScript.java" startLine="172" startPosition="52" endLine="173" endPosition="100" />

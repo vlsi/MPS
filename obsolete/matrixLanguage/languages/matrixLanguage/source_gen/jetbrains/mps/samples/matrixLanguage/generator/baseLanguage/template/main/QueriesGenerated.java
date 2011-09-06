@@ -228,9 +228,9 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_8124707847641067557(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> possibleScalarTypes = new ArrayList<SNode>();
-    for (SNode root : ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), null))) {
+    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), null))) {
       for (SNode t : SNodeOperations.getDescendants(root, "jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral", false, new String[]{})) {
-        ListSequence.<SNode>fromList(possibleScalarTypes).addElement(SLinkOperations.getTarget(t, "scalarType", true));
+        ListSequence.fromList(possibleScalarTypes).addElement(SLinkOperations.getTarget(t, "scalarType", true));
       }
     }
     return possibleScalarTypes;

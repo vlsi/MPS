@@ -37,15 +37,15 @@ public enum RoundingMode {
   }
 
   public static List<RoundingMode> getConstants() {
-    List<RoundingMode> list = ListSequence.<RoundingMode>fromList(new LinkedList<RoundingMode>());
-    ListSequence.<RoundingMode>fromList(list).addElement(RoundingMode.CEILING);
-    ListSequence.<RoundingMode>fromList(list).addElement(RoundingMode.DOWN);
-    ListSequence.<RoundingMode>fromList(list).addElement(RoundingMode.FLOOR);
-    ListSequence.<RoundingMode>fromList(list).addElement(RoundingMode.HALF_DOWN);
-    ListSequence.<RoundingMode>fromList(list).addElement(RoundingMode.HALF_EVEN);
-    ListSequence.<RoundingMode>fromList(list).addElement(RoundingMode.HALF_UP);
-    ListSequence.<RoundingMode>fromList(list).addElement(RoundingMode.UNNECCESARY);
-    ListSequence.<RoundingMode>fromList(list).addElement(RoundingMode.UP);
+    List<RoundingMode> list = ListSequence.fromList(new LinkedList<RoundingMode>());
+    ListSequence.fromList(list).addElement(RoundingMode.CEILING);
+    ListSequence.fromList(list).addElement(RoundingMode.DOWN);
+    ListSequence.fromList(list).addElement(RoundingMode.FLOOR);
+    ListSequence.fromList(list).addElement(RoundingMode.HALF_DOWN);
+    ListSequence.fromList(list).addElement(RoundingMode.HALF_EVEN);
+    ListSequence.fromList(list).addElement(RoundingMode.HALF_UP);
+    ListSequence.fromList(list).addElement(RoundingMode.UNNECCESARY);
+    ListSequence.fromList(list).addElement(RoundingMode.UP);
     return list;
   }
 

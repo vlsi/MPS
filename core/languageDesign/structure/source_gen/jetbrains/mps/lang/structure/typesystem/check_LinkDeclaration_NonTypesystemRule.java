@@ -33,7 +33,7 @@ public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesyst
     }
     SNode declaringConcept = SNodeOperations.getAncestor(linkToCheck, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
     List<SNode> supers = SConceptOperations.getDirectSuperConcepts(declaringConcept, false);
-    Iterable<SNode> linksInSupers = ListSequence.<SNode>fromList(supers).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> linksInSupers = ListSequence.fromList(supers).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode concept) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -52,7 +52,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 4:
-                      this._4_link_it = ListSequence.<SNode>fromList(_3_links).iterator();
+                      this._4_link_it = ListSequence.fromList(_3_links).iterator();
                     case 5:
                       if (!(this._4_link_it.hasNext())) {
                         this.__CP__ = 1;
@@ -83,7 +83,7 @@ __switch__:
         };
       }
     });
-    for (SNode link : Sequence.<SNode>fromIterable(linksInSupers)) {
+    for (SNode link : Sequence.fromIterable(linksInSupers)) {
       if (SPropertyOperations.getString(linkToCheck, "role").equals(SPropertyOperations.getString(link, "role")) && SLinkOperations.getTarget(linkToCheck, "specializedLink", false) != link) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

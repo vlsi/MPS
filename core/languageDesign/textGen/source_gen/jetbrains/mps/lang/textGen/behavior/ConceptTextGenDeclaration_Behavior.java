@@ -24,7 +24,7 @@ public class ConceptTextGenDeclaration_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> roots = SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
     for (SNode langTextGen : roots) {
-      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(langTextGen, "operation", true)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(langTextGen, "operation", true)));
     }
     return result;
   }

@@ -40,9 +40,9 @@ public class LanguageChecker extends BaseEditorChecker implements INodeChecker {
   private static Logger LOG = Logger.getLogger(LanguageChecker.class);
 
   private boolean myMessagesChanged = false;
-  private Set<AbstractConstraintsChecker> myRules = SetSequence.<AbstractConstraintsChecker>fromSet(new HashSet<AbstractConstraintsChecker>());
-  private Map<SNodePointer, LanguageErrorsComponent> myNodePointersToComponents = MapSequence.<SNodePointer,LanguageErrorsComponent>fromMap(new HashMap<SNodePointer, LanguageErrorsComponent>());
-  private Set<EditorComponent> myEditorComponents = SetSequence.<EditorComponent>fromSet(new HashSet<EditorComponent>());
+  private Set<AbstractConstraintsChecker> myRules = SetSequence.fromSet(new HashSet<AbstractConstraintsChecker>());
+  private Map<SNodePointer, LanguageErrorsComponent> myNodePointersToComponents = MapSequence.fromMap(new HashMap<SNodePointer, LanguageErrorsComponent>());
+  private Set<EditorComponent> myEditorComponents = SetSequence.fromSet(new HashSet<EditorComponent>());
   private EditorComponent.EditorDisposeListener myDisposeListener = new EditorComponent.EditorDisposeListener() {
     public void editorWillBeDisposed(EditorComponent editorComponent) {
       SetSequence.fromSet(myEditorComponents).removeElement(editorComponent);
@@ -66,7 +66,7 @@ public class LanguageChecker extends BaseEditorChecker implements INodeChecker {
       clearForModel(model.getSModelReference());
     }
   };
-  private Set<SModelDescriptor> myListenedModels = SetSequence.<SModelDescriptor>fromSet(new HashSet<SModelDescriptor>());
+  private Set<SModelDescriptor> myListenedModels = SetSequence.fromSet(new HashSet<SModelDescriptor>());
 
   public LanguageChecker() {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
@@ -85,7 +85,7 @@ public class LanguageChecker extends BaseEditorChecker implements INodeChecker {
       component.removeDisposeListener(myDisposeListener);
     }
     SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
-    for (SModelDescriptor modelDescriptor : SetSequence.<SModelDescriptor>fromSetWithValues(new HashSet<SModelDescriptor>(), myListenedModels)) {
+    for (SModelDescriptor modelDescriptor : SetSequence.fromSetWithValues(new HashSet<SModelDescriptor>(), myListenedModels)) {
       removeModelListener(modelDescriptor);
     }
     super.doDispose();
@@ -97,30 +97,30 @@ public class LanguageChecker extends BaseEditorChecker implements INodeChecker {
   }
 
   private void removeModelListener(SModelDescriptor modelDescriptor) {
-    if (SetSequence.<SModelDescriptor>fromSet(myListenedModels).contains(modelDescriptor)) {
+    if (SetSequence.fromSet(myListenedModels).contains(modelDescriptor)) {
       modelDescriptor.removeModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).removeElement(modelDescriptor);
     }
   }
 
   private void addModelListener(SModelDescriptor modelDescriptor) {
-    if (!(SetSequence.<SModelDescriptor>fromSet(myListenedModels).contains(modelDescriptor))) {
+    if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
       modelDescriptor.addModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
     }
   }
 
   private void clearForModel(SModelReference modelReference) {
-    Set<SNodePointer> sNodePointers2Remove = SetSequence.<SNodePointer>fromSet(new HashSet<SNodePointer>());
-    for (SNodePointer sNodePointer : SetSequence.<SNodePointer>fromSetWithValues(new HashSet<SNodePointer>(), MapSequence.fromMap(myNodePointersToComponents).keySet())) {
+    Set<SNodePointer> sNodePointers2Remove = SetSequence.fromSet(new HashSet<SNodePointer>());
+    for (SNodePointer sNodePointer : SetSequence.fromSetWithValues(new HashSet<SNodePointer>(), MapSequence.fromMap(myNodePointersToComponents).keySet())) {
       if (sNodePointer.getModelReference().equals(modelReference)) {
-        MapSequence.<SNodePointer,LanguageErrorsComponent>fromMap(myNodePointersToComponents).get(sNodePointer).dispose();
+        MapSequence.fromMap(myNodePointersToComponents).get(sNodePointer).dispose();
         MapSequence.fromMap(myNodePointersToComponents).removeKey(sNodePointer);
         SetSequence.fromSet(sNodePointers2Remove).addElement(sNodePointer);
       }
     }
-    for (EditorComponent component : SetSequence.<EditorComponent>fromSetWithValues(new HashSet<EditorComponent>(), myEditorComponents)) {
-      if (SetSequence.<SNodePointer>fromSet(sNodePointers2Remove).contains(component.getEditedNodePointer())) {
+    for (EditorComponent component : SetSequence.fromSetWithValues(new HashSet<EditorComponent>(), myEditorComponents)) {
+      if (SetSequence.fromSet(sNodePointers2Remove).contains(component.getEditedNodePointer())) {
         component.removeDisposeListener(myDisposeListener);
         SetSequence.fromSet(myEditorComponents).removeElement(component);
       }
@@ -148,7 +148,7 @@ public class LanguageChecker extends BaseEditorChecker implements INodeChecker {
     SNode sNode = editorComponent.getEditedNode();
     SNodePointer sNodePointer = editorComponent.getEditedNodePointer();
 
-    Set<EditorMessage> result = SetSequence.<EditorMessage>fromSet(new HashSet<EditorMessage>());
+    Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     if (sNode == null) {
       LOG.error("edited node is null");
       return result;
@@ -166,12 +166,12 @@ public class LanguageChecker extends BaseEditorChecker implements INodeChecker {
       return result;
     }
 
-    LanguageErrorsComponent errorsComponent = MapSequence.<SNodePointer,LanguageErrorsComponent>fromMap(myNodePointersToComponents).get(sNodePointer);
+    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myNodePointersToComponents).get(sNodePointer);
     if (errorsComponent == null) {
       errorsComponent = new LanguageErrorsComponent(sNode);
-      MapSequence.<SNodePointer,LanguageErrorsComponent>fromMap(myNodePointersToComponents).put(sNodePointer, errorsComponent);
+      MapSequence.fromMap(myNodePointersToComponents).put(sNodePointer, errorsComponent);
     }
-    if (!(editorComponent instanceof InspectorEditorComponent) && !(SetSequence.<EditorComponent>fromSet(myEditorComponents).contains(editorComponent))) {
+    if (!(editorComponent instanceof InspectorEditorComponent) && !(SetSequence.fromSet(myEditorComponents).contains(editorComponent))) {
       SetSequence.fromSet(myEditorComponents).addElement(editorComponent);
       editorComponent.addDisposeListener(myDisposeListener);
     }
@@ -216,7 +216,7 @@ public class LanguageChecker extends BaseEditorChecker implements INodeChecker {
     if (sNodePointer == null) {
       return;
     }
-    LanguageErrorsComponent errorsComponent = MapSequence.<SNodePointer,LanguageErrorsComponent>fromMap(myNodePointersToComponents).get(sNodePointer);
+    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myNodePointersToComponents).get(sNodePointer);
     if (errorsComponent == null) {
       return;
     }

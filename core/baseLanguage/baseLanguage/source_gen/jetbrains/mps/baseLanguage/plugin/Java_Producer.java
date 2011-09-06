@@ -24,10 +24,10 @@ public class Java_Producer {
   }
 
   public static List<RuntimeConfigurationProducer> getProducers(ConfigurationType configurationType) {
-    List<RuntimeConfigurationProducer> creators = ListSequence.<RuntimeConfigurationProducer>fromList(new ArrayList<RuntimeConfigurationProducer>());
-    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new Java_Producer.ProducerPart_NodeClassConcept_d1i8dk_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new Java_Producer.ProducerPart_NodeStaticMethodDeclaration_d1i8dk_b(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new Java_Producer.ProducerPart_NodeIMainClass_d1i8dk_c(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    List<RuntimeConfigurationProducer> creators = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
+    ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_NodeClassConcept_d1i8dk_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_NodeStaticMethodDeclaration_d1i8dk_b(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_NodeIMainClass_d1i8dk_c(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     return creators;
   }
 

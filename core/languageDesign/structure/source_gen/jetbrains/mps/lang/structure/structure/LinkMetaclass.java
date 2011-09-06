@@ -31,9 +31,9 @@ public enum LinkMetaclass {
   }
 
   public static List<LinkMetaclass> getConstants() {
-    List<LinkMetaclass> list = ListSequence.<LinkMetaclass>fromList(new LinkedList<LinkMetaclass>());
-    ListSequence.<LinkMetaclass>fromList(list).addElement(LinkMetaclass.reference);
-    ListSequence.<LinkMetaclass>fromList(list).addElement(LinkMetaclass.aggregation);
+    List<LinkMetaclass> list = ListSequence.fromList(new LinkedList<LinkMetaclass>());
+    ListSequence.fromList(list).addElement(LinkMetaclass.reference);
+    ListSequence.fromList(list).addElement(LinkMetaclass.aggregation);
     return list;
   }
 

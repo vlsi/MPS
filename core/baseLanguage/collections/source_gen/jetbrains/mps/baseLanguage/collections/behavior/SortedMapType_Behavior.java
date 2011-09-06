@@ -30,8 +30,8 @@ public class SortedMapType_Behavior {
 
   public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(result).addElement(new SortedMapType_Behavior.QuotationClass_zek8do_a0a0b0b().createNode(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
-    ListSequence.<SNode>fromList(result).addSequence(Sequence.<SNode>fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
+    ListSequence.fromList(result).addElement(new SortedMapType_Behavior.QuotationClass_zek8do_a0a0b0b().createNode(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
+    ListSequence.fromList(result).addSequence(Sequence.fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
     return result;
   }
 

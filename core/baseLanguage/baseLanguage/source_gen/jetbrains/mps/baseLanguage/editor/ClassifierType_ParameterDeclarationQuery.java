@@ -17,17 +17,17 @@ public class ClassifierType_ParameterDeclarationQuery extends ParametersInformat
   }
 
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty()) {
-      return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(node, "classifier", false));
+    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty()) {
+      return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(node, "classifier", false));
     } else {
-      return ListSequence.<SNode>fromList(new ArrayList<SNode>());
+      return ListSequence.fromList(new ArrayList<SNode>());
     }
   }
 
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(parameterObject, "typeVariableDeclaration", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(parameterObject, "typeVariableDeclaration", true)).isNotEmpty()) {
       SNode argument = editorContext.getSelectedNode();
-      while (argument != null && !(SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.Type") && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).contains(SNodeOperations.cast(argument, "jetbrains.mps.baseLanguage.structure.Type")))) {
+      while (argument != null && !(SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.Type") && ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).contains(SNodeOperations.cast(argument, "jetbrains.mps.baseLanguage.structure.Type")))) {
         argument = SNodeOperations.getParent(argument);
       }
       for (SNode param : SLinkOperations.getTargets(parameterObject, "typeVariableDeclaration", true)) {

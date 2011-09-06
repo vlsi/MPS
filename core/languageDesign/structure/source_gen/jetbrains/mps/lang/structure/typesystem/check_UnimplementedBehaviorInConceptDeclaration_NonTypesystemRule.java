@@ -31,7 +31,7 @@ public class check_UnimplementedBehaviorInConceptDeclaration_NonTypesystemRule e
     if (SNodeOperations.isInstanceOf(abstractConceptDeclaration, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
       return;
     }
-    if (!(ListSequence.<SNode>fromList(methodDeclarations).isEmpty())) {
+    if (!(ListSequence.fromList(methodDeclarations).isEmpty())) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(abstractConceptDeclaration, "Concept " + SPropertyOperations.getString(abstractConceptDeclaration, "name") + " doesn't have behavior implementing " + methodDeclarations, "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "8258695653169430090", null, errorTarget);

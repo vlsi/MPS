@@ -30,7 +30,7 @@ public class BuildGeneratorUtil {
     final SModelFqName newModelFQName = SModelFqName.fromString(modelName);
     List<SModelDescriptor> ownModelDescriptors = solution.getOwnModelDescriptors();
     final Wrappers._T<SModelDescriptor> modelDescriptor = new Wrappers._T<SModelDescriptor>(null);
-    for (SModelDescriptor descriptor : ListSequence.<SModelDescriptor>fromList(ownModelDescriptors)) {
+    for (SModelDescriptor descriptor : ListSequence.fromList(ownModelDescriptors)) {
       if (descriptor.getSModelReference().getSModelFqName().equals(newModelFQName)) {
         modelDescriptor.value = descriptor;
         break;

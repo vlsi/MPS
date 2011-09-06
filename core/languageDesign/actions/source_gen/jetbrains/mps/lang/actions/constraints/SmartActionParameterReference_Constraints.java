@@ -43,7 +43,7 @@ public class SmartActionParameterReference_Constraints extends BaseConstraintsDe
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode ancestor = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.actions.structure.GenerateCodeAction", false, false);
             if ((ancestor == null)) {
-              return Sequence.<SNode>fromIterable(Collections.<SNode>emptyList());
+              return Sequence.fromIterable(Collections.<SNode>emptyList());
             }
             return SLinkOperations.getTargets(ancestor, "smartActionParameter", true);
           }

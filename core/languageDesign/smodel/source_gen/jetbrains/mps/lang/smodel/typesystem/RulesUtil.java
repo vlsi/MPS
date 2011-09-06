@@ -159,8 +159,8 @@ public class RulesUtil {
   public static boolean checkOpParameters_generic(final TypeCheckingContext typeCheckingContext, SNode op) {
     boolean noProblem = true;
     List<SNode> applicableParmConcepts = SLinkOperations.getConceptLinkTargets(op, "applicableParameter");
-    for (SNode parm : ListSequence.<SNode>fromList(SLinkOperations.getTargets(op, "parameter", true))) {
-      if (!(ListSequence.<SNode>fromList(applicableParmConcepts).contains(SNodeOperations.getConceptDeclaration(parm)))) {
+    for (SNode parm : ListSequence.fromList(SLinkOperations.getTargets(op, "parameter", true))) {
+      if (!(ListSequence.fromList(applicableParmConcepts).contains(SNodeOperations.getConceptDeclaration(parm)))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parm, "not applicable here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1178302007667", null, errorTarget);
@@ -248,7 +248,7 @@ public class RulesUtil {
       } else {
         List<SNode> concepts = new ArrayList<SNode>();
         for (SNode conceptReference : SLinkOperations.getTargets(opParmList, "concept", true)) {
-          ListSequence.<SNode>fromList(concepts).addElement(SLinkOperations.getTarget(conceptReference, "concept", false));
+          ListSequence.fromList(concepts).addElement(SLinkOperations.getTarget(conceptReference, "concept", false));
         }
         {
           SNode _nodeToCheck_1029348928467 = null;
@@ -280,81 +280,81 @@ public class RulesUtil {
   }
 
   public static SNode leastCommonSuperconcept(List<SNode> concepts) {
-    Map<SNode, Set<SNode>> subTypesToSuperTypes = MapSequence.<SNode,Set<SNode>>fromMap(new HashMap<SNode, Set<SNode>>());
-    Set<SNode> keyset = SetSequence.<SNode>fromSet(new HashSet<SNode>());
-    Set<SNode> allTypes = SetSequence.<SNode>fromSet(new HashSet<SNode>());
-    Set<SNode> frontier = SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), concepts);
-    Set<SNode> newFrontier = SetSequence.<SNode>fromSet(new HashSet<SNode>());
-    while (!(SetSequence.<SNode>fromSet(frontier).isEmpty())) {
+    Map<SNode, Set<SNode>> subTypesToSuperTypes = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
+    Set<SNode> keyset = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> allTypes = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> frontier = SetSequence.fromSetWithValues(new HashSet<SNode>(), concepts);
+    Set<SNode> newFrontier = SetSequence.fromSet(new HashSet<SNode>());
+    while (!(SetSequence.fromSet(frontier).isEmpty())) {
       for (SNode concept : frontier) {
-        if (SetSequence.<SNode>fromSet(keyset).contains(concept)) {
+        if (SetSequence.fromSet(keyset).contains(concept)) {
           continue;
         }
         List<SNode> supertypes = AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(concept);
-        Set<SNode> set = MapSequence.<SNode,Set<SNode>>fromMap(subTypesToSuperTypes).get(concept);
+        Set<SNode> set = MapSequence.fromMap(subTypesToSuperTypes).get(concept);
         if (set == null) {
-          set = SetSequence.<SNode>fromSet(new HashSet<SNode>());
-          MapSequence.<SNode,Set<SNode>>fromMap(subTypesToSuperTypes).put(concept, set);
+          set = SetSequence.fromSet(new HashSet<SNode>());
+          MapSequence.fromMap(subTypesToSuperTypes).put(concept, set);
         }
-        SetSequence.fromSet(set).addSequence(ListSequence.<SNode>fromList(supertypes));
+        SetSequence.fromSet(set).addSequence(ListSequence.fromList(supertypes));
         SetSequence.fromSet(keyset).addElement(concept);
-        SetSequence.fromSet(newFrontier).addSequence(ListSequence.<SNode>fromList(supertypes));
-        SetSequence.fromSet(allTypes).addSequence(ListSequence.<SNode>fromList(supertypes));
-        ListSequence.<SNode>fromList(supertypes).addElement(concept);
+        SetSequence.fromSet(newFrontier).addSequence(ListSequence.fromList(supertypes));
+        SetSequence.fromSet(allTypes).addSequence(ListSequence.fromList(supertypes));
+        ListSequence.fromList(supertypes).addElement(concept);
       }
       frontier = newFrontier;
-      newFrontier = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+      newFrontier = SetSequence.fromSet(new HashSet<SNode>());
     }
     // transitive closure 
     for (SNode node2 : allTypes) {
       for (SNode node1 : allTypes) {
         for (SNode node3 : allTypes) {
-          Set<SNode> supertypes1 = MapSequence.<SNode,Set<SNode>>fromMap(subTypesToSuperTypes).get(node1);
+          Set<SNode> supertypes1 = MapSequence.fromMap(subTypesToSuperTypes).get(node1);
           if (supertypes1 == null) {
             continue;
           }
-          Set<SNode> supertypes2 = MapSequence.<SNode,Set<SNode>>fromMap(subTypesToSuperTypes).get(node2);
+          Set<SNode> supertypes2 = MapSequence.fromMap(subTypesToSuperTypes).get(node2);
           if (supertypes2 == null) {
             continue;
           }
-          if (SetSequence.<SNode>fromSet(supertypes1).contains(node2) && SetSequence.<SNode>fromSet(supertypes2).contains(node3)) {
+          if (SetSequence.fromSet(supertypes1).contains(node2) && SetSequence.fromSet(supertypes2).contains(node3)) {
             SetSequence.fromSet(supertypes1).addElement(node3);
           }
         }
       }
     }
-    Set<SNode> result = SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), concepts);
-    while (SetSequence.<SNode>fromSet(result).count() >= 2) {
-      Iterator<SNode> iterator = SetSequence.<SNode>fromSet(result).iterator();
+    Set<SNode> result = SetSequence.fromSetWithValues(new HashSet<SNode>(), concepts);
+    while (SetSequence.fromSet(result).count() >= 2) {
+      Iterator<SNode> iterator = SetSequence.fromSet(result).iterator();
       SNode a = iterator.next();
       SNode b = iterator.next();
       SetSequence.fromSet(result).removeElement(a);
       SetSequence.fromSet(result).removeElement(b);
       SetSequence.fromSet(result).addElement(leastCommonSuperconcept(a, b, subTypesToSuperTypes));
     }
-    if (SetSequence.<SNode>fromSet(result).isEmpty()) {
+    if (SetSequence.fromSet(result).isEmpty()) {
       return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
     }
-    return SetSequence.<SNode>fromSet(result).first();
+    return SetSequence.fromSet(result).first();
   }
 
   private static SNode leastCommonSuperconcept(SNode a, SNode b, Map<SNode, Set<SNode>> subTypesToSuperTypes) {
     if (a == b) {
       return a;
     }
-    Set<SNode> superTypesA = MapSequence.<SNode,Set<SNode>>fromMap(subTypesToSuperTypes).get(a);
+    Set<SNode> superTypesA = MapSequence.fromMap(subTypesToSuperTypes).get(a);
     superTypesA = (superTypesA == null ?
-      SetSequence.<SNode>fromSet(new HashSet<SNode>()) :
-      SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), superTypesA)
+      SetSequence.fromSet(new HashSet<SNode>()) :
+      SetSequence.fromSetWithValues(new HashSet<SNode>(), superTypesA)
     );
-    Set<SNode> superTypesB = MapSequence.<SNode,Set<SNode>>fromMap(subTypesToSuperTypes).get(b);
+    Set<SNode> superTypesB = MapSequence.fromMap(subTypesToSuperTypes).get(b);
     superTypesB = (superTypesB == null ?
-      SetSequence.<SNode>fromSet(new HashSet<SNode>()) :
-      SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), superTypesB)
+      SetSequence.fromSet(new HashSet<SNode>()) :
+      SetSequence.fromSetWithValues(new HashSet<SNode>(), superTypesB)
     );
     SetSequence.fromSet(superTypesA).addElement(a);
     SetSequence.fromSet(superTypesB).addElement(b);
-    for (SNode superTypeA : SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), superTypesA)) {
+    for (SNode superTypeA : SetSequence.fromSetWithValues(new HashSet<SNode>(), superTypesA)) {
       boolean matches = false;
       for (SNode superTypeB : superTypesB) {
         if (superTypeA == superTypeB) {
@@ -367,11 +367,11 @@ public class RulesUtil {
       }
     }
     Set<SNode> commonSupertypes = superTypesA;
-    for (SNode commonSupertype : SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), commonSupertypes)) {
-      if (!(SetSequence.<SNode>fromSet(commonSupertypes).contains(commonSupertype))) {
+    for (SNode commonSupertype : SetSequence.fromSetWithValues(new HashSet<SNode>(), commonSupertypes)) {
+      if (!(SetSequence.fromSet(commonSupertypes).contains(commonSupertype))) {
         continue;
       }
-      Set<SNode> superTypes = MapSequence.<SNode,Set<SNode>>fromMap(subTypesToSuperTypes).get(commonSupertype);
+      Set<SNode> superTypes = MapSequence.fromMap(subTypesToSuperTypes).get(commonSupertype);
       if (superTypes != null) {
         for (SNode superType : superTypes) {
           if (superType != commonSupertype) {
@@ -380,10 +380,10 @@ public class RulesUtil {
         }
       }
     }
-    if (SetSequence.<SNode>fromSet(commonSupertypes).count() != 1) {
+    if (SetSequence.fromSet(commonSupertypes).count() != 1) {
       return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
     }
-    return SetSequence.<SNode>fromSet(commonSupertypes).first();
+    return SetSequence.fromSet(commonSupertypes).first();
   }
 
   public static class QuotationClass_yxkngc_a1a0a0e0a {

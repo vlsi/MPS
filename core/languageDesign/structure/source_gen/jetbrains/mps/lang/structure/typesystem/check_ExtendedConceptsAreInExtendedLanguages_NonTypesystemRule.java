@@ -34,7 +34,7 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
       if (conceptLanguage == null) {
         continue;
       }
-      if (conceptLanguage != language && !(ListSequence.<Language>fromList(extendedLanguages).contains(conceptLanguage))) {
+      if (conceptLanguage != language && !(ListSequence.fromList(extendedLanguages).contains(conceptLanguage))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cd, "language " + conceptLanguage.getModuleFqName() + " of concept " + SPropertyOperations.getString(superConcept, "name") + " is not extended by " + language.getModuleFqName(), "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1235136520823", null, errorTarget);

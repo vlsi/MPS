@@ -86,8 +86,8 @@ public class BeanPropertyView_Constraints extends BaseConstraintsDescriptor {
         {
           String gn = BeanPropertyView_Behavior.call_setterName_8381258131358762400(node);
           for (SNode imd : SLinkOperations.getTargets(SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(node, "getter", false)), "jetbrains.mps.baseLanguage.structure.Classifier"), "method", true)) {
-            if (SPropertyOperations.getString(imd, "name").equals(gn) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(imd, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && ListSequence.<SNode>fromList(SLinkOperations.getTargets(imd, "parameter", true)).count() == 1) {
-              return MatchingUtil.matchNodes(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(imd, "parameter", true)).first(), "type", true), SLinkOperations.getTarget(SLinkOperations.getTarget(node, "getter", false), "returnType", true));
+            if (SPropertyOperations.getString(imd, "name").equals(gn) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(imd, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && ListSequence.fromList(SLinkOperations.getTargets(imd, "parameter", true)).count() == 1) {
+              return MatchingUtil.matchNodes(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(imd, "parameter", true)).first(), "type", true), SLinkOperations.getTarget(SLinkOperations.getTarget(node, "getter", false), "returnType", true));
             }
           }
           return false;
@@ -137,9 +137,9 @@ public class BeanPropertyView_Constraints extends BaseConstraintsDescriptor {
               throw new NullPointerException();
             } catch (NullPointerException e) {
             }
-            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(bt, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "method", true)).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(bt, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "method", true)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode m) {
-                if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(m, "parameter", true)).isNotEmpty()) {
+                if (ListSequence.fromList(SLinkOperations.getTargets(m, "parameter", true)).isNotEmpty()) {
                   return false;
                 }
                 if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(m, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {

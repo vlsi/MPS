@@ -26,7 +26,7 @@ public class ModuleData implements NodeData {
   }
 
   public List<NodeData> getChildren() {
-    return ListSequence.<NodeData>fromList(new ArrayList<NodeData>());
+    return ListSequence.fromList(new ArrayList<NodeData>());
   }
 
   public Icon getIcon(boolean expanded) {

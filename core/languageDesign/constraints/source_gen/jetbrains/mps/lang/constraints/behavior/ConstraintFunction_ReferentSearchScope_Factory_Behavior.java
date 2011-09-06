@@ -34,7 +34,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
       return false;
     }
     SNode sequenceType = new ConstraintFunction_ReferentSearchScope_Factory_Behavior.QuotationClass_q6xvx3_a0a1a2().createNode();
-    for (SNode returnStatement : Sequence.<SNode>fromIterable(RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(thisNode, "body", true)))) {
+    for (SNode returnStatement : Sequence.fromIterable(RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(thisNode, "body", true)))) {
       if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(returnStatement, "expression", true)), sequenceType))) {
         return false;
       }

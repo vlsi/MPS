@@ -6,10 +6,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.util.LoggingGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
@@ -23,11 +23,11 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1169464530672(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.getParent(_context.getNode()) == null && ListSequence.<SNode>fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false, new String[]{})).isNotEmpty() && !(LoggingGenerationUtil.isDesignTimeModel(_context.getOriginalInputModel()));
+    return SNodeOperations.getParent(_context.getNode()) == null && ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false, new String[]{})).isNotEmpty() && !(LoggingGenerationUtil.isDesignTimeModel(_context.getOriginalInputModel()));
   }
 
   public static boolean baseMappingRule_Condition_1232620727244(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.getParent(_context.getNode()) == null && ListSequence.<SNode>fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false, new String[]{})).isNotEmpty() && LoggingGenerationUtil.isDesignTimeModel(_context.getOriginalInputModel());
+    return SNodeOperations.getParent(_context.getNode()) == null && ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false, new String[]{})).isNotEmpty() && LoggingGenerationUtil.isDesignTimeModel(_context.getOriginalInputModel());
   }
 
   public static boolean baseMappingRule_Condition_1232620749768(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -69,11 +69,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1210169044888(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.<SNode>fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last(), "logFieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last(), "logFieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1210169054074(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.<SNode>fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last(), "logFieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last(), "logFieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1169471975875(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -95,7 +95,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1905403632719481969(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.<SNode>fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last(), "logFieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last(), "logFieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1232620814929(final IOperationContext operationContext, final ReferenceMacroContext _context) {

@@ -9,7 +9,7 @@
     <nodeInfo nodeId="6302815655306166930" fileName="RemoveConditions_Intention.java" startLine="36" startPosition="85" endLine="37" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="41" startPosition="58" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="43" startPosition="5" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6302815655306166940" fileName="RemoveConditions_Intention.java" startLine="47" startPosition="90" endLine="48" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6302815655306166940" fileName="RemoveConditions_Intention.java" startLine="47" startPosition="90" endLine="48" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6302815655306167016" fileName="RemoveConditions_Intention.java" startLine="51" startPosition="76" endLine="52" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="55" startPosition="37" endLine="56" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="16" startPosition="84" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveConditions_Intention#()V" />
@@ -30,7 +30,7 @@
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="32" startPosition="44" endLine="33" endPosition="16" />
     <scopeInfo nodeId="6302815655306137099" fileName="RemoveConditions_Intention.java" startLine="36" startPosition="85" endLine="37" endPosition="31" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="41" startPosition="58" endLine="42" endPosition="19" />
-    <scopeInfo nodeId="6302815655306166933" fileName="RemoveConditions_Intention.java" startLine="47" startPosition="90" endLine="48" endPosition="290" />
+    <scopeInfo nodeId="6302815655306166933" fileName="RemoveConditions_Intention.java" startLine="47" startPosition="90" endLine="48" endPosition="283" />
     <scopeInfo nodeId="6302815655306137101" fileName="RemoveConditions_Intention.java" startLine="51" startPosition="76" endLine="52" endPosition="221" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="55" startPosition="37" endLine="56" endPosition="61" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="16" startPosition="84" endLine="18" endPosition="3" />

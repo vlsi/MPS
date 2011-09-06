@@ -54,7 +54,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     List<SNode> fields = SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true);
-    if (ListSequence.<SNode>fromList(fields).isEmpty()) {
+    if (ListSequence.fromList(fields).isEmpty()) {
       return false;
     }
     boolean allSettersImplemented = true;
@@ -62,7 +62,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
     for (SNode fieldDeclaration : fields) {
       final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(fieldDeclaration, project);
       boolean fieldHasSetter = false;
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
+      if (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
           return setterName.equals(SPropertyOperations.getString(method, "name"));
         }
@@ -83,9 +83,9 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
     for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
       final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, ideaProject);
       boolean setterIsAbsent = true;
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
+      if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
-          return setterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1;
+          return setterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1;
         }
       })) {
         setterIsAbsent = false;
@@ -97,7 +97,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
       String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, ideaProject);
       SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
       SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
-      SNode added = ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateSetter_Intention.QuotationClass_hfod7k_a0a0a8a3a7().createNode(fieldReference, SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
+      SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateSetter_Intention.QuotationClass_hfod7k_a0a0a8a3a7().createNode(fieldReference, SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
       lastAdded = added;
     }
     if (lastAdded != null) {

@@ -20,8 +20,8 @@ public class ExtractStatementListExpression_Behavior {
 
   public static List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
     List<SNode> elems = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(elems).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "stmts", true), "statement", true)));
-    ListSequence.<SNode>fromList(elems).addElement(SLinkOperations.getTarget(thisNode, "innerExpr", true));
+    ListSequence.fromList(elems).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "stmts", true), "statement", true)));
+    ListSequence.fromList(elems).addElement(SLinkOperations.getTarget(thisNode, "innerExpr", true));
     return elems;
   }
 

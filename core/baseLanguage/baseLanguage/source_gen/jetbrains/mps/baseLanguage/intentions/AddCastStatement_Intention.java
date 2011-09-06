@@ -55,11 +55,11 @@ public class AddCastStatement_Intention extends BaseIntention implements Intenti
     SNode declaration = SLinkOperations.getTarget(castVariable, "localVariableDeclaration", true);
     SLinkOperations.setTarget(declaration, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOfExpression, "classType", true)), true);
     List<String> variableSuffixes = Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(instanceOfExpression, "classType", true));
-    SPropertyOperations.set(declaration, "name", ListSequence.<String>fromList(variableSuffixes).first());
+    SPropertyOperations.set(declaration, "name", ListSequence.fromList(variableSuffixes).first());
     SNode castExpression = SNodeFactoryOperations.setNewChild(declaration, "initializer", "jetbrains.mps.baseLanguage.structure.CastExpression");
     SLinkOperations.setTarget(castExpression, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOfExpression, "classType", true)), true);
     SLinkOperations.setTarget(castExpression, "expression", SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOfExpression, "leftExpression", true)), true);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "ifTrue", true), "statement", true)).insertElement(0, castVariable);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "ifTrue", true), "statement", true)).insertElement(0, castVariable);
   }
 
   public String getLocationString() {

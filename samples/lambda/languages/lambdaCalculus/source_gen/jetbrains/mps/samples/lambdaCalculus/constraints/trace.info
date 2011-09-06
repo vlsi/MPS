@@ -8,7 +8,7 @@
     <nodeInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7125334522320417177" fileName="VariableReference_Constraints.java" startLine="44" startPosition="142" endLine="45" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7125334522320417186" fileName="VariableReference_Constraints.java" startLine="45" startPosition="160" endLine="46" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7125334522320417194" fileName="VariableReference_Constraints.java" startLine="47" startPosition="38" endLine="48" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7125334522320417194" fileName="VariableReference_Constraints.java" startLine="47" startPosition="38" endLine="48" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7125334522320417204" fileName="VariableReference_Constraints.java" startLine="49" startPosition="13" endLine="50" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="54" startPosition="61" endLine="55" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="59" startPosition="7" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -23,7 +23,7 @@
     <nodeInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="29" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
     <scopeInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="26" startPosition="42" endLine="27" endPosition="78" />
     <scopeInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" />
-    <scopeInfo nodeId="7125334522320417193" fileName="VariableReference_Constraints.java" startLine="47" startPosition="38" endLine="48" endPosition="161" />
+    <scopeInfo nodeId="7125334522320417193" fileName="VariableReference_Constraints.java" startLine="47" startPosition="38" endLine="48" endPosition="147" />
     <scopeInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="54" startPosition="61" endLine="55" endPosition="58" />
     <scopeInfo nodeId="4022026349915821207" fileName="VariableReference_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="7125334522320417192" fileName="VariableReference_Constraints.java" startLine="46" startPosition="56" endLine="49" endPosition="13">

@@ -102,7 +102,7 @@
     <nodeInfo nodeId="2248628811136079927" fileName="PatternVariableReference_Constraints.java" startLine="50" startPosition="83" endLine="51" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2248628811136079927" fileName="PatternVariableReference_Constraints.java" startLine="54" startPosition="44" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2248628811136243826" fileName="PatternVariableReference_Constraints.java" startLine="63" startPosition="142" endLine="64" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2248628811136243868" fileName="PatternVariableReference_Constraints.java" startLine="66" startPosition="79" endLine="67" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2248628811136243868" fileName="PatternVariableReference_Constraints.java" startLine="66" startPosition="79" endLine="67" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2248628811136243851" fileName="PatternVariableReference_Constraints.java" startLine="69" startPosition="13" endLine="70" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2248628811136079927" fileName="PatternVariableReference_Constraints.java" startLine="74" startPosition="61" endLine="75" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2248628811136079927" fileName="PatternVariableReference_Constraints.java" startLine="79" startPosition="7" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -125,7 +125,7 @@
     <scopeInfo nodeId="2248628811136079927" fileName="PatternVariableReference_Constraints.java" startLine="34" startPosition="43" endLine="35" endPosition="16" />
     <scopeInfo nodeId="2248628811136079927" fileName="PatternVariableReference_Constraints.java" startLine="42" startPosition="51" endLine="43" endPosition="67" />
     <scopeInfo nodeId="2248628811136079927" fileName="PatternVariableReference_Constraints.java" startLine="54" startPosition="44" endLine="55" endPosition="20" />
-    <scopeInfo nodeId="2248628811136243855" fileName="PatternVariableReference_Constraints.java" startLine="66" startPosition="79" endLine="67" endPosition="77" />
+    <scopeInfo nodeId="2248628811136243855" fileName="PatternVariableReference_Constraints.java" startLine="66" startPosition="79" endLine="67" endPosition="70" />
     <scopeInfo nodeId="2248628811136079927" fileName="PatternVariableReference_Constraints.java" startLine="74" startPosition="61" endLine="75" endPosition="58" />
     <scopeInfo nodeId="2248628811136240169" fileName="PatternVariableReference_Constraints.java" startLine="83" startPosition="121" endLine="84" endPosition="145" />
     <scopeInfo nodeId="2248628811136079927" fileName="PatternVariableReference_Constraints.java" startLine="28" startPosition="0" endLine="31" endPosition="3" />

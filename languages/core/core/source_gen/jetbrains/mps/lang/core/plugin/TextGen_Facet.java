@@ -21,8 +21,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.make.delta.IDelta;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
@@ -53,12 +53,12 @@ import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class TextGen_Facet extends IFacet.Stub {
-  private List<ITarget> targets = ListSequence.<ITarget>fromList(new ArrayList<ITarget>());
+  private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.lang.core.TextGen");
 
   public TextGen_Facet() {
-    ListSequence.<ITarget>fromList(targets).addElement(new TextGen_Facet.Target_textGen());
-    ListSequence.<ITarget>fromList(targets).addElement(new TextGen_Facet.Target_textGenToMemory());
+    ListSequence.fromList(targets).addElement(new TextGen_Facet.Target_textGen());
+    ListSequence.fromList(targets).addElement(new TextGen_Facet.Target_textGenToMemory());
   }
 
   public Iterable<ITarget> targets() {
@@ -100,8 +100,8 @@ public class TextGen_Facet extends IFacet.Stub {
           Iterable<IResource> _output_21gswx_a0a = null;
           switch (0) {
             case 0:
-              monitor.currentProgress().beginWork("Writing", Sequence.<IResource>fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
-              for (IResource resource : Sequence.<IResource>fromIterable(input)) {
+              monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
+              for (IResource resource : Sequence.fromIterable(input)) {
                 final GResource gres = (GResource) resource;
                 monitor.currentProgress().advanceWork("Writing", 50, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
                 if (!(gres.status().isOk())) {
@@ -122,12 +122,12 @@ public class TextGen_Facet extends IFacet.Stub {
                   };
                 }
 
-                Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedFilesDelta(Sequence.<SModelDescriptor>fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
+                Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedFilesDelta(Sequence.fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
                   public boolean accept(SModelDescriptor smd) {
                     return !(GeneratorManager.isDoNotGenerate(smd));
                   }
                 }), gres.module(), getFile);
-                Iterable<IDelta> retainedCachesDelta = RetainedUtil.retainedCachesDelta(Sequence.<SModelDescriptor>fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
+                Iterable<IDelta> retainedCachesDelta = RetainedUtil.retainedCachesDelta(Sequence.fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
                   public boolean accept(SModelDescriptor smd) {
                     return !(GeneratorManager.isDoNotGenerate(smd));
                   }
@@ -187,7 +187,7 @@ public class TextGen_Facet extends IFacet.Stub {
                   }
                 });
                 monitor.currentProgress().advanceWork("Writing", 50);
-                _output_21gswx_a0a = Sequence.<IResource>fromIterable(_output_21gswx_a0a).concat(Sequence.<IResource>fromIterable(Sequence.<IResource>singleton(new TResource(gres.module(), Sequence.<IDelta>fromIterable(javaStreamHandler.delta()).concat(Sequence.<IDelta>fromIterable(retainedFilesDelta)).concat(Sequence.<IDelta>fromIterable(retainedCachesDelta))))));
+                _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module(), Sequence.fromIterable(javaStreamHandler.delta()).concat(Sequence.fromIterable(retainedFilesDelta)).concat(Sequence.fromIterable(retainedCachesDelta))))));
               }
               monitor.currentProgress().finishWork("Writing");
             default:
@@ -304,15 +304,15 @@ public class TextGen_Facet extends IFacet.Stub {
           Iterable<IResource> _output_21gswx_a0b = null;
           switch (0) {
             case 0:
-              for (IResource resource : Sequence.<IResource>fromIterable(input)) {
+              for (IResource resource : Sequence.fromIterable(input)) {
                 final GResource gres = (GResource) resource;
-                final Map<String, Object> texts = MapSequence.<String,Object>fromMap(new HashMap<String, Object>());
+                final Map<String, Object> texts = MapSequence.fromMap(new HashMap<String, Object>());
                 final Wrappers._T<SModel> sModel = new Wrappers._T<SModel>();
                 final Wrappers._boolean errors = new Wrappers._boolean(false);
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
                     sModel.value = gres.status().getOutputModel();
-                    for (SNode root : Sequence.<SNode>fromIterable(sModel.value.roots()).where(new IWhereFilter<SNode>() {
+                    for (SNode root : Sequence.fromIterable(sModel.value.roots()).where(new IWhereFilter<SNode>() {
                       public boolean accept(SNode rt) {
                         return rt.getName() != null;
                       }
@@ -331,14 +331,14 @@ public class TextGen_Facet extends IFacet.Stub {
                         root.getName() + "." + ext :
                         root.getName()
                       ));
-                      MapSequence.<String,Object>fromMap(texts).put(fname, tgr.getResult());
+                      MapSequence.fromMap(texts).put(fname, tgr.getResult());
                     }
                   }
                 });
                 if (errors.value) {
                   return new IResult.FAILURE(_output_21gswx_a0b);
                 }
-                _output_21gswx_a0b = Sequence.<IResource>fromIterable(_output_21gswx_a0b).concat(Sequence.<IResource>fromIterable(Sequence.<IResource>singleton(new FResource(JavaNameUtil.packageName(sModel.value), texts, gres.module(), gres.model()))));
+                _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new FResource(JavaNameUtil.packageName(sModel.value), texts, gres.module(), gres.model()))));
               }
             default:
               return new IResult.SUCCESS(_output_21gswx_a0b);
@@ -406,9 +406,9 @@ public class TextGen_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
         if (properties.hasProperties(name)) {
           TextGen_Facet.Target_textGen.Parameters props = properties.properties(name, TextGen_Facet.Target_textGen.Parameters.class);
-          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.pathToFile", null);
-          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.failIfNoTextgen", String.valueOf(props.failIfNoTextgen()));
-          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo", String.valueOf(props.generateDebugInfo()));
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.pathToFile", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.failIfNoTextgen", String.valueOf(props.failIfNoTextgen()));
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo", String.valueOf(props.generateDebugInfo()));
         }
       }
     }
@@ -422,10 +422,10 @@ public class TextGen_Facet extends IFacet.Stub {
             props.pathToFile(null);
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.failIfNoTextgen")) {
-            props.failIfNoTextgen(Boolean.valueOf(MapSequence.<String,String>fromMap(store).get("jetbrains.mps.lang.core.TextGen.textGen.failIfNoTextgen")));
+            props.failIfNoTextgen(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.TextGen.textGen.failIfNoTextgen")));
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo")) {
-            props.generateDebugInfo(Boolean.valueOf(MapSequence.<String,String>fromMap(store).get("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo")));
+            props.generateDebugInfo(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo")));
           }
         }
       } catch (RuntimeException re) {

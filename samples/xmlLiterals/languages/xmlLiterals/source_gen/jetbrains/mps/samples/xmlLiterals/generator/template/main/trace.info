@@ -46,8 +46,8 @@
     <scopeInfo nodeId="7417816926334599976" fileName="QueriesGenerated.java" startLine="79" startPosition="150" endLine="80" endPosition="62" />
   </root>
   <root nodeId="7417816926334600007">
-    <nodeInfo nodeId="7946777123643247151" fileName="QueriesGenerated.java" startLine="83" startPosition="150" endLine="84" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="7946777123643247150" fileName="QueriesGenerated.java" startLine="83" startPosition="150" endLine="84" endPosition="110" />
+    <nodeInfo nodeId="7946777123643247151" fileName="QueriesGenerated.java" startLine="83" startPosition="150" endLine="84" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7946777123643247150" fileName="QueriesGenerated.java" startLine="83" startPosition="150" endLine="84" endPosition="103" />
   </root>
   <root nodeId="7417816926334629386">
     <nodeInfo nodeId="8029260578618732537" fileName="QueriesGenerated.java" startLine="43" startPosition="154" endLine="44" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

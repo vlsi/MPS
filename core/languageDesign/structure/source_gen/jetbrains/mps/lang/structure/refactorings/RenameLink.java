@@ -64,14 +64,14 @@ public class RenameLink extends BaseLoggableRefactoring {
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    List<SModel> result = ListSequence.<SModel>fromList(new ArrayList<SModel>());
+    List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
     Language sourceLanguage = Language.getLanguageFor(refactoringContext.getSelectedModel());
     if (sourceLanguage == null) {
       return result;
     }
     Map<IModule, List<SModel>> modelMap = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedProject(), sourceLanguage);
-    for (List<SModel> modelList : Sequence.<List<SModel>>fromIterable(modelMap.values())) {
-      ListSequence.<SModel>fromList(result).addSequence(ListSequence.<SModel>fromList(modelList));
+    for (List<SModel> modelList : Sequence.fromIterable(modelMap.values())) {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(modelList));
     }
     return result;
   }

@@ -51,7 +51,7 @@ public class AddMainMethod_Intention extends BaseIntention implements Intention 
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode methodNode = new AddMainMethod_Intention.QuotationClass_gghypg_a0a0a7().createNode();
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "staticMethod", true)).addElement(methodNode);
+    ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).addElement(methodNode);
     editorContext.select(methodNode);
   }
 

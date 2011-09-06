@@ -24,7 +24,7 @@ public class TestOutputComponent implements TestView {
   private TestRunState myState;
 
   public TestOutputComponent(Project project, JComponent parentComponent, ConsoleView console, TestRunState state) {
-    this.myMessages = ListSequence.<TestOutputComponent.Message>fromList(new ArrayList<TestOutputComponent.Message>());
+    this.myMessages = ListSequence.fromList(new ArrayList<TestOutputComponent.Message>());
     this.myConsoleView = console;
     this.myComponent = this.myConsoleView.getComponent();
     this.myState = state;
@@ -72,7 +72,7 @@ public class TestOutputComponent implements TestView {
       this.myFilterClass = filterClass;
       this.myFilterMethod = filterMethod;
       this.myConsoleView.clear();
-      for (TestOutputComponent.Message message : ListSequence.<TestOutputComponent.Message>fromList(this.myMessages)) {
+      for (TestOutputComponent.Message message : ListSequence.fromList(this.myMessages)) {
         this.append(message);
       }
     }
@@ -80,18 +80,18 @@ public class TestOutputComponent implements TestView {
 
   public void appendWithParameters(String testClass, String testMethod, String text, Key type) {
     TestOutputComponent.Message newMessage = new TestOutputComponent.Message(testClass, testMethod, text, type);
-    ListSequence.<TestOutputComponent.Message>fromList(this.myMessages).addElement(newMessage);
+    ListSequence.fromList(this.myMessages).addElement(newMessage);
     this.append(newMessage);
   }
 
   public void append(String message, Key type) {
     TestOutputComponent.Message newMessage = new TestOutputComponent.Message(this.getCurrentClassName(), this.getCurrentMethodName(), message, type);
-    ListSequence.<TestOutputComponent.Message>fromList(this.myMessages).addElement(newMessage);
+    ListSequence.fromList(this.myMessages).addElement(newMessage);
     this.append(newMessage);
   }
 
   public void clear() {
-    this.myMessages = ListSequence.<TestOutputComponent.Message>fromList(new ArrayList<TestOutputComponent.Message>());
+    this.myMessages = ListSequence.fromList(new ArrayList<TestOutputComponent.Message>());
     this.myConsoleView.clear();
   }
 

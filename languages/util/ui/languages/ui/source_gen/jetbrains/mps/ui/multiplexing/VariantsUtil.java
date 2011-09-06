@@ -25,26 +25,26 @@ public class VariantsUtil {
   }
 
   public static boolean hasGenerateVariants(final SNode _this) {
-    SNode ann = ListSequence.<SNode>fromList(SLinkOperations.getTargets(_this, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode ann = ListSequence.fromList(SLinkOperations.getTargets(_this, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ai) {
         return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0a().createNode(), "classifier", false);
       }
     });
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(ann, "value", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).isNotEmpty();
   }
 
   public static boolean hasGenerateVariant(final SNode _this, final String variant) {
-    SNode ann = ListSequence.<SNode>fromList(SLinkOperations.getTargets(_this, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode ann = ListSequence.fromList(SLinkOperations.getTargets(_this, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ai) {
         return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0b().createNode(), "classifier", false);
       }
     });
-    SNode val = SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(ann, "value", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode val = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode v) {
         return "value".equals(SPropertyOperations.getString(SLinkOperations.getTarget(v, "key", false), "name"));
       }
     }), "value", true);
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(val, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(val, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return variant.equalsIgnoreCase(SPropertyOperations.getString(SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value"));
       }
@@ -52,17 +52,17 @@ public class VariantsUtil {
   }
 
   public static Iterable<String> generateVariants(final SNode _this) {
-    SNode ann = ListSequence.<SNode>fromList(SLinkOperations.getTargets(_this, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode ann = ListSequence.fromList(SLinkOperations.getTargets(_this, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ai) {
         return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0c().createNode(), "classifier", false);
       }
     });
-    SNode val = SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(ann, "value", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode val = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode v) {
         return "value".equals(SPropertyOperations.getString(SLinkOperations.getTarget(v, "key", false), "name"));
       }
     }), "value", true);
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(val, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true)).<String>select(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(val, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true)).<String>select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
       }
@@ -78,12 +78,12 @@ public class VariantsUtil {
   }
 
   public static boolean isWithinVariant(final SNode _this, String variant) {
-    SNode ann = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(SNodeOperations.getContainingRoot(_this), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode ann = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SNodeOperations.getContainingRoot(_this), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ai) {
         return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0f().createNode(), "classifier", false);
       }
     });
-    SNode val = SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(ann, "value", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode val = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode v) {
         return "value".equals(SPropertyOperations.getString(SLinkOperations.getTarget(v, "key", false), "name"));
       }
@@ -92,12 +92,12 @@ public class VariantsUtil {
   }
 
   public static String withinVariant(final SNode _this) {
-    SNode ann = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(SNodeOperations.getContainingRoot(_this), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode ann = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SNodeOperations.getContainingRoot(_this), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ai) {
         return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0g().createNode(), "classifier", false);
       }
     });
-    SNode val = SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(ann, "value", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode val = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode v) {
         return "value".equals(SPropertyOperations.getString(SLinkOperations.getTarget(v, "key", false), "name"));
       }

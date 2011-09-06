@@ -21,7 +21,7 @@ public class MatchVariableReferenceReplacement_Behavior {
   public static String virtual_toString_3796137614137538905(SNode thisNode, SNode search) {
     List<SNode> vars = new ArrayList<SNode>();
     Regexp_Behavior.call_getString_1222432436326(search, vars);
-    return "$" + (ListSequence.<SNode>fromList(vars).indexOf(SLinkOperations.getTarget(thisNode, "match", false)) + 1);
+    return "$" + (ListSequence.fromList(vars).indexOf(SLinkOperations.getTarget(thisNode, "match", false)) + 1);
   }
 
   public static String call_toString_3796137614137539495(SNode thisNode, SNode search) {

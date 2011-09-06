@@ -67,7 +67,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TypeClause_1185801400389(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -91,35 +91,35 @@ public class QueriesGenerated {
           }
         }
       };
-      ListSequence.<INodeSubstituteAction>fromList(result).addSequence(ListSequence.<INodeSubstituteAction>fromList(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
     }
     return result;
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1201875763403(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Node_TypeOperation");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.<INodeSubstituteAction>fromList(result).addSequence(ListSequence.<INodeSubstituteAction>fromList(defaultActions));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
     }
     {
       SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.<INodeSubstituteAction>fromList(result).addSequence(ListSequence.<INodeSubstituteAction>fromList(defaultActions));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
     }
     return result;
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1175609466956(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
       Calculable calculable = new Calculable() {
         public Object calculate() {
           List<SNode> subconcepts = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), _context.getModel(), operationContext.getScope());
           final IScope scope = operationContext.getScope();
-          return ListSequence.<SNode>fromList(subconcepts).where(new IWhereFilter<SNode>() {
+          return ListSequence.fromList(subconcepts).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutableConcept_1213877394594(it, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), scope);
             }
@@ -129,7 +129,7 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.<INodeSubstituteAction>fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
             SNode statement = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.Statement", false, false);

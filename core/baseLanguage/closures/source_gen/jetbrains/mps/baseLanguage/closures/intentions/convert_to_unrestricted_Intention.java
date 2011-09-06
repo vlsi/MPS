@@ -52,12 +52,12 @@ public class convert_to_unrestricted_Intention extends BaseIntention implements 
     SNode uft = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType");
     List<SNode> ptypes = SLinkOperations.getTargets(node, "parameterType", true);
     for (SNode pt : ptypes) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(uft, "parameterType", true)).addElement(SNodeOperations.detachNode(pt));
+      ListSequence.fromList(SLinkOperations.getTargets(uft, "parameterType", true)).addElement(SNodeOperations.detachNode(pt));
     }
     SLinkOperations.setTarget(uft, "resultType", SNodeOperations.detachNode(SLinkOperations.getTarget(node, "resultType", true)), true);
     List<SNode> ttypes = SLinkOperations.getTargets(node, "throwsType", true);
     for (SNode tt : ttypes) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(uft, "throwsType", true)).addElement(SNodeOperations.detachNode(tt));
+      ListSequence.fromList(SLinkOperations.getTargets(uft, "throwsType", true)).addElement(SNodeOperations.detachNode(tt));
     }
   }
 

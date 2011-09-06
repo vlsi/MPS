@@ -133,7 +133,7 @@
     <nodeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="22" startPosition="62" endLine="23" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1180689261562" fileName="ClassPathItemTreePath.java" startLine="27" startPosition="62" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="1180689321547" fileName="ClassPathItemTreePath.java" startLine="34" startPosition="51" endLine="35" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180689348970" fileName="ClassPathItemTreePath.java" startLine="36" startPosition="14" endLine="37" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1180689348970" fileName="ClassPathItemTreePath.java" startLine="36" startPosition="14" endLine="37" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="42" startPosition="84" endLine="43" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
     <nodeInfo nodeId="1180689388535" fileName="ClassPathItemTreePath.java" startLine="48" startPosition="48" endLine="49" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="53" startPosition="29" endLine="54" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -173,7 +173,7 @@
     <scopeInfo nodeId="1180689174637" fileName="ClassPathItemTreePath.java" startLine="22" startPosition="62" endLine="23" endPosition="54" />
     <scopeInfo nodeId="1180689174643" fileName="ClassPathItemTreePath.java" startLine="27" startPosition="62" endLine="28" endPosition="48" />
     <scopeInfo nodeId="1180689310304" fileName="ClassPathItemTreePath.java" startLine="34" startPosition="51" endLine="35" endPosition="61" />
-    <scopeInfo nodeId="1180689347544" fileName="ClassPathItemTreePath.java" startLine="36" startPosition="14" endLine="37" endPosition="86" />
+    <scopeInfo nodeId="1180689347544" fileName="ClassPathItemTreePath.java" startLine="36" startPosition="14" endLine="37" endPosition="70" />
     <scopeInfo nodeId="1180689381288" fileName="ClassPathItemTreePath.java" startLine="48" startPosition="48" endLine="49" endPosition="52" />
     <scopeInfo nodeId="1180689381286" fileName="ClassPathItemTreePath.java" startLine="53" startPosition="29" endLine="54" endPosition="73" />
     <scopeInfo nodeId="1180689378236" fileName="ClassPathItemTreePath.java" startLine="66" startPosition="48" endLine="67" endPosition="47" />

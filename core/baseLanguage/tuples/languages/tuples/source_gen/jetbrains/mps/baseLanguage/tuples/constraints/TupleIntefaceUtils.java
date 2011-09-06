@@ -20,31 +20,31 @@ public class TupleIntefaceUtils {
   }
 
   public static boolean isTupleInterface(SNode ifc) {
-    return ListSequence.<TupleIntefaceUtils.Property>fromList(analyzeTupleInterface(ifc)).isNotEmpty();
+    return ListSequence.fromList(analyzeTupleInterface(ifc)).isNotEmpty();
   }
 
   public static List<TupleIntefaceUtils.Property> analyzeTupleInterface(SNode ifc) {
-    List<TupleIntefaceUtils.Property> accessors = ListSequence.<TupleIntefaceUtils.Property>fromList(new ArrayList<TupleIntefaceUtils.Property>());
-    List<TupleIntefaceUtils.Property> mutators = ListSequence.<TupleIntefaceUtils.Property>fromList(new ArrayList<TupleIntefaceUtils.Property>());
+    List<TupleIntefaceUtils.Property> accessors = ListSequence.fromList(new ArrayList<TupleIntefaceUtils.Property>());
+    List<TupleIntefaceUtils.Property> mutators = ListSequence.fromList(new ArrayList<TupleIntefaceUtils.Property>());
     int ignored = 0;
-    for (SNode method : ListSequence.<SNode>fromList(SLinkOperations.getTargets(ifc, "method", true))) {
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 0 && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-        ListSequence.<TupleIntefaceUtils.Property>fromList(accessors).addElement(new TupleIntefaceUtils.Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
-      } else if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && MatchingUtil.matchNodes(SLinkOperations.getTarget(method, "returnType", true), ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).toListSequence().first())) {
-        ListSequence.<TupleIntefaceUtils.Property>fromList(mutators).addElement(new TupleIntefaceUtils.Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
-      } else if ("equals".equals(SPropertyOperations.getString(method, "name")) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.BooleanType")) {
+    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(ifc, "method", true))) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 0 && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+        ListSequence.fromList(accessors).addElement(new TupleIntefaceUtils.Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
+      } else if (ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && MatchingUtil.matchNodes(SLinkOperations.getTarget(method, "returnType", true), ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).toListSequence().first())) {
+        ListSequence.fromList(mutators).addElement(new TupleIntefaceUtils.Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
+      } else if ("equals".equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.BooleanType")) {
         ignored++;
-      } else if ("hashCode".equals(SPropertyOperations.getString(method, "name")) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 0 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.IntegerType")) {
+      } else if ("hashCode".equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 0 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.IntegerType")) {
         ignored++;
       }
     }
     List<TupleIntefaceUtils.Property> result = null;
-    IEnumerator<TupleIntefaceUtils.Property> ait = ListSequence.<TupleIntefaceUtils.Property>fromList(accessors).sort(new ISelector<TupleIntefaceUtils.Property, Comparable<?>>() {
+    IEnumerator<TupleIntefaceUtils.Property> ait = ListSequence.fromList(accessors).sort(new ISelector<TupleIntefaceUtils.Property, Comparable<?>>() {
       public Comparable<?> select(TupleIntefaceUtils.Property p) {
         return p.name();
       }
     }, true).enumerator();
-    IEnumerator<TupleIntefaceUtils.Property> mit = ListSequence.<TupleIntefaceUtils.Property>fromList(mutators).sort(new ISelector<TupleIntefaceUtils.Property, Comparable<?>>() {
+    IEnumerator<TupleIntefaceUtils.Property> mit = ListSequence.fromList(mutators).sort(new ISelector<TupleIntefaceUtils.Property, Comparable<?>>() {
       public Comparable<?> select(TupleIntefaceUtils.Property p) {
         return p.name();
       }
@@ -52,7 +52,7 @@ public class TupleIntefaceUtils {
     boolean hasMutators = mit.moveNext();
     while (ait.moveNext()) {
       if (result == null) {
-        result = ListSequence.<TupleIntefaceUtils.Property>fromList(new ArrayList<TupleIntefaceUtils.Property>());
+        result = ListSequence.fromList(new ArrayList<TupleIntefaceUtils.Property>());
       }
       while (hasMutators && ait.current().name().compareTo(mit.current().name()) < 0) {
         hasMutators = mit.moveNext();
@@ -63,7 +63,7 @@ public class TupleIntefaceUtils {
         }
         ait.current().isfinal(false);
       }
-      ListSequence.<TupleIntefaceUtils.Property>fromList(result).addElement(ait.current());
+      ListSequence.fromList(result).addElement(ait.current());
     }
     if (mit.moveNext()) {
       return null;

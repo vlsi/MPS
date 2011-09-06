@@ -31,9 +31,9 @@ public enum SelectPosition {
   }
 
   public static List<SelectPosition> getConstants() {
-    List<SelectPosition> list = ListSequence.<SelectPosition>fromList(new LinkedList<SelectPosition>());
-    ListSequence.<SelectPosition>fromList(list).addElement(SelectPosition.before);
-    ListSequence.<SelectPosition>fromList(list).addElement(SelectPosition.after);
+    List<SelectPosition> list = ListSequence.fromList(new LinkedList<SelectPosition>());
+    ListSequence.fromList(list).addElement(SelectPosition.before);
+    ListSequence.fromList(list).addElement(SelectPosition.after);
     return list;
   }
 

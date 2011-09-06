@@ -19,7 +19,7 @@ public class CustomOperatorUsage_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> containers = SModelOperations.getRootsIncludingImported(model, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer");
     for (SNode container : containers) {
-      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(container, "customOperators", true)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(container, "customOperators", true)));
     }
     return result;
   }

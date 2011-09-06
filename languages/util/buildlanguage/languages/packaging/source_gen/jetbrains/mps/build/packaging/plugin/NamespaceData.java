@@ -11,7 +11,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 
 public class NamespaceData implements NodeData {
   private String myText;
-  private final List<NodeData> myData = ListSequence.<NodeData>fromList(new LinkedList<NodeData>());
+  private final List<NodeData> myData = ListSequence.fromList(new LinkedList<NodeData>());
   private NodeData myParent;
 
   public NamespaceData(String text) {
@@ -27,7 +27,7 @@ public class NamespaceData implements NodeData {
   }
 
   public List<NodeData> getChildren() {
-    return ListSequence.<NodeData>fromListWithValues(new ArrayList<NodeData>(), this.myData);
+    return ListSequence.fromListWithValues(new ArrayList<NodeData>(), this.myData);
   }
 
   public Icon getIcon(boolean expanded) {
@@ -42,7 +42,7 @@ public class NamespaceData implements NodeData {
   }
 
   public void addChildren(NodeData nodeData) {
-    ListSequence.<NodeData>fromList(this.myData).addElement(nodeData);
+    ListSequence.fromList(this.myData).addElement(nodeData);
   }
 
   public NodeData getParent() {

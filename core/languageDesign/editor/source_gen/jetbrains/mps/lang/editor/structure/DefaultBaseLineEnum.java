@@ -32,10 +32,10 @@ public enum DefaultBaseLineEnum {
   }
 
   public static List<DefaultBaseLineEnum> getConstants() {
-    List<DefaultBaseLineEnum> list = ListSequence.<DefaultBaseLineEnum>fromList(new LinkedList<DefaultBaseLineEnum>());
-    ListSequence.<DefaultBaseLineEnum>fromList(list).addElement(DefaultBaseLineEnum.first_cell_baseline);
-    ListSequence.<DefaultBaseLineEnum>fromList(list).addElement(DefaultBaseLineEnum.collection_center);
-    ListSequence.<DefaultBaseLineEnum>fromList(list).addElement(DefaultBaseLineEnum.last_cell_baseline);
+    List<DefaultBaseLineEnum> list = ListSequence.fromList(new LinkedList<DefaultBaseLineEnum>());
+    ListSequence.fromList(list).addElement(DefaultBaseLineEnum.first_cell_baseline);
+    ListSequence.fromList(list).addElement(DefaultBaseLineEnum.collection_center);
+    ListSequence.fromList(list).addElement(DefaultBaseLineEnum.last_cell_baseline);
     return list;
   }
 

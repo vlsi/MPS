@@ -82,12 +82,12 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<SNode> res = ListSequence.<SNode>fromList(new LinkedList<SNode>());
-      ListSequence.<SNode>fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp"));
-      ListSequence.<SNode>fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp"));
-      ListSequence.<SNode>fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp"));
-      ListSequence.<SNode>fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp"));
-      ListSequence.<SNode>fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"));
+      List<SNode> res = ListSequence.fromList(new LinkedList<SNode>());
+      ListSequence.fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp"));
+      ListSequence.fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp"));
+      ListSequence.fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp"));
+      ListSequence.fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp"));
+      ListSequence.fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"));
       return res;
     }
 

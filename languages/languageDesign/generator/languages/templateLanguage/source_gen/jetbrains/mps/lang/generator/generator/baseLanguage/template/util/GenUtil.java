@@ -20,14 +20,14 @@ public class GenUtil {
   }
 
   public static String getVar(TemplateQueryContext context, SNode node, int skipMacro) {
-    List<SNode> macros = ListSequence.<SNode>fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
+    List<SNode> macros = ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.NodeMacro");
       }
     }).toListSequence();
-    SNode real = (ListSequence.<SNode>fromList(macros).count() <= skipMacro ?
+    SNode real = (ListSequence.fromList(macros).count() <= skipMacro ?
       node :
-      ListSequence.<SNode>fromList(macros).getElement(skipMacro)
+      ListSequence.fromList(macros).getElement(skipMacro)
     );
     return (String) context.getTransientObject(MultiTuple.<String,SNode>from(KEY, real));
   }

@@ -20,8 +20,8 @@ public class typeof_QueryBlock_InferenceRule extends AbstractInferenceRule_Runti
   }
 
   public void applyRule(final SNode block, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")).removeSequence(ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")));
-    ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")).addElement(new typeof_QueryBlock_InferenceRule.QuotationClass_ay8ev8_a0a0b0a().createNode(SLinkOperations.getTarget(block, "paramType", true), typeCheckingContext));
+    ListSequence.fromList(SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")).removeSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")));
+    ListSequence.fromList(SLinkOperations.getConceptLinkTargets(block, "conceptFunctionReturnType")).addElement(new typeof_QueryBlock_InferenceRule.QuotationClass_ay8ev8_a0a0b0a().createNode(SLinkOperations.getTarget(block, "paramType", true), typeCheckingContext));
   }
 
   public String getApplicableConceptFQName() {

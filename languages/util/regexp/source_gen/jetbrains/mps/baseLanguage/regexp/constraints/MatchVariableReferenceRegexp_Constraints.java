@@ -61,9 +61,9 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
             while (SNodeOperations.getParent(top) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(top), "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) {
               top = SNodeOperations.getParent(top);
             }
-            ListSequence.<SNode>fromList(matches).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", true, new String[]{})));
+            ListSequence.fromList(matches).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", true, new String[]{})));
             if (SNodeOperations.isInstanceOf(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp")) {
-              ListSequence.<SNode>fromList(matches).addElement(SNodeOperations.cast(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"));
+              ListSequence.fromList(matches).addElement(SNodeOperations.cast(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"));
             }
             return matches;
           }

@@ -69,7 +69,7 @@ public class CreateMethodDeclaration_Intention extends BaseIntention implements 
     if (!(isSameClassifier)) {
       SLinkOperations.setTarget(method, "visibility", new CreateMethodDeclaration_Intention.QuotationClass_qv3pxx_a2a0a7a7().createNode(), true);
     }
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "method", true)).addElement(method);
+    ListSequence.fromList(SLinkOperations.getTargets(classifier, "method", true)).addElement(method);
     SNodeOperations.replaceWithAnother(node, new CreateMethodDeclaration_Intention.QuotationClass_qv3pxx_a1a9a7().createNode(method));
     if (isSameClassifier) {
       editorContext.selectWRTFocusPolicy(method);

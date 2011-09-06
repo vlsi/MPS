@@ -11,7 +11,7 @@ public class _ImageAlignment_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<_ImageAlignment_Enum> constants = ListSequence.<_ImageAlignment_Enum>fromList(_ImageAlignment_Enum.getConstants()).iterator();
+    Iterator<_ImageAlignment_Enum> constants = ListSequence.fromList(_ImageAlignment_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _ImageAlignment_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class _ImageAlignment_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<_ImageAlignment_Enum> constants = ListSequence.<_ImageAlignment_Enum>fromList(_ImageAlignment_Enum.getConstants()).iterator();
+    Iterator<_ImageAlignment_Enum> constants = ListSequence.fromList(_ImageAlignment_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _ImageAlignment_Enum constant = constants.next();
       if (value.equals(constant.getName())) {

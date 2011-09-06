@@ -19,17 +19,17 @@ public class InterfaceConceptDeclaration_Behavior {
   public static List<SNode> virtual_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode interfaceConceptReference : SLinkOperations.getTargets(thisNode, "extends", true)) {
-      ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(interfaceConceptReference, "intfc", false));
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(interfaceConceptReference, "intfc", false));
     }
     return result;
   }
 
   public static List<SNode> call_getAllMethodsInPriorityOrder_9106339407519386413(SNode thisNode) {
-    List<SNode> methods = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    List<SNode> methods = ListSequence.fromList(new ArrayList<SNode>());
 
-    ListSequence.<SNode>fromList(methods).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "method", true)));
+    ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "method", true)));
 
-    for (SNode extendsInterface : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "extends", true)).where(new IWhereFilter<SNode>() {
+    for (SNode extendsInterface : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extends", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "intfc", false) != null);
       }
@@ -39,7 +39,7 @@ public class InterfaceConceptDeclaration_Behavior {
       }
     })) {
       // todo: equal methods in different interfaces check! 
-      ListSequence.<SNode>fromList(methods).addSequence(ListSequence.<SNode>fromList(InterfaceConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386413(extendsInterface)));
+      ListSequence.fromList(methods).addSequence(ListSequence.fromList(InterfaceConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386413(extendsInterface)));
     }
 
     return methods;

@@ -7,8 +7,8 @@ import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 import java.util.List;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -39,7 +39,7 @@ public class ChangeMethodSignature extends BaseRefactoring {
     dialog.showDialog();
     dialog.pack();
     refactoringContext.setParameter("myRefactorings", dialog.getAllRefactorings());
-    if (ListSequence.<ChangeMethodSignatureRefactoring>fromList(((List<ChangeMethodSignatureRefactoring>) refactoringContext.getParameter("myRefactorings"))).isEmpty()) {
+    if (ListSequence.fromList(((List<ChangeMethodSignatureRefactoring>) refactoringContext.getParameter("myRefactorings"))).isEmpty()) {
       return false;
     } else {
       return true;
@@ -47,18 +47,18 @@ public class ChangeMethodSignature extends BaseRefactoring {
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    for (ChangeMethodSignatureRefactoring ref : ListSequence.<ChangeMethodSignatureRefactoring>fromList(((List<ChangeMethodSignatureRefactoring>) refactoringContext.getParameter("myRefactorings")))) {
+    for (ChangeMethodSignatureRefactoring ref : ListSequence.fromList(((List<ChangeMethodSignatureRefactoring>) refactoringContext.getParameter("myRefactorings")))) {
       ref.doRefactoring();
     }
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SearchResults<SNode> allResults = new SearchResults();
-    for (ChangeMethodSignatureRefactoring ref : ListSequence.<ChangeMethodSignatureRefactoring>fromList(((List<ChangeMethodSignatureRefactoring>) refactoringContext.getParameter("myRefactorings")))) {
+    for (ChangeMethodSignatureRefactoring ref : ListSequence.fromList(((List<ChangeMethodSignatureRefactoring>) refactoringContext.getParameter("myRefactorings")))) {
       SearchResults<SNode> curResults = FindUtils.getSearchResults(new EmptyProgressIndicator(), ref.getDeclaration(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
       List<SNode> usages = new ArrayList<SNode>();
-      for (SearchResult<SNode> result : ListSequence.<SearchResult<SNode>>fromList(curResults.getSearchResults())) {
-        ListSequence.<SNode>fromList(usages).addElement(result.getObject());
+      for (SearchResult<SNode> result : ListSequence.fromList(curResults.getSearchResults())) {
+        ListSequence.fromList(usages).addElement(result.getObject());
       }
       ref.setUsages(usages);
       allResults.addAll(curResults);

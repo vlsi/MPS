@@ -335,7 +335,7 @@ public class UIObject_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_c5f0a4_c3e0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        SNode bt = Sequence.<SNode>fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(node)).skip(1).<SNode>select(new ISelector<SNode, SNode>() {
+        SNode bt = Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(node)).skip(1).<SNode>select(new ISelector<SNode, SNode>() {
           public SNode select(SNode o) {
             return SLinkOperations.getTarget(o, "belongsTo", false);
           }
@@ -536,7 +536,7 @@ public class UIObject_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_c5f0a4_a3e0(SNode node, EditorContext editorContext, IScope scope) {
     SNode mbt = UIObject_Behavior.call_mustBelongTo_1719339442171055203(node);
-    return (mbt != null) && ((SLinkOperations.getTarget(node, "belongsTo", false) == null) || !(Sequence.<SNode>fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(node, "belongsTo", false))).contains(mbt)));
+    return (mbt != null) && ((SLinkOperations.getTarget(node, "belongsTo", false) == null) || !(Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(node, "belongsTo", false))).contains(mbt)));
   }
 
   public static class _Inline_c5f0a4_a2a0 extends InlineCellProvider {

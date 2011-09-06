@@ -43,7 +43,7 @@ public class LabelPosition_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> labels = new ArrayList<SNode>();
             SNode builder = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration", true, false);
-            ListSequence.<SNode>fromList(labels).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(builder, "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement", true, new String[]{})));
+            ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(builder, "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement", true, new String[]{})));
             return labels;
           }
 

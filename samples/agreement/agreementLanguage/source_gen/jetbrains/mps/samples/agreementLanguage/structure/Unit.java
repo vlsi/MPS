@@ -32,10 +32,10 @@ public enum Unit {
   }
 
   public static List<Unit> getConstants() {
-    List<Unit> list = ListSequence.<Unit>fromList(new LinkedList<Unit>());
-    ListSequence.<Unit>fromList(list).addElement(Unit.USD_KWH);
-    ListSequence.<Unit>fromList(list).addElement(Unit.USD);
-    ListSequence.<Unit>fromList(list).addElement(Unit.KWH);
+    List<Unit> list = ListSequence.fromList(new LinkedList<Unit>());
+    ListSequence.fromList(list).addElement(Unit.USD_KWH);
+    ListSequence.fromList(list).addElement(Unit.USD);
+    ListSequence.fromList(list).addElement(Unit.KWH);
     return list;
   }
 

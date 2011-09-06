@@ -24,7 +24,7 @@ public class IMacroHolder_Behavior {
   }
 
   public static SNode call_findMacroForReference_1234972707641(SNode thisNode, SNode macroReference) {
-    for (SNode macro : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "macro", true))) {
+    for (SNode macro : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "macro", true))) {
       if (SPropertyOperations.getString(macroReference, "name").equals(SPropertyOperations.getString(macro, "name"))) {
         return macro;
       }
@@ -33,11 +33,11 @@ public class IMacroHolder_Behavior {
   }
 
   public static List<String> virtual_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
-    List<String> names = ListSequence.<String>fromListAndArray(new ArrayList<String>(), Layout_Behavior.getMPSHomeName_1226508944077());
+    List<String> names = ListSequence.fromListAndArray(new ArrayList<String>(), Layout_Behavior.getMPSHomeName_1226508944077());
     if (addBasedir) {
-      ListSequence.<String>fromList(names).addElement(Layout_Behavior.getBasedirName_1226509010730());
+      ListSequence.fromList(names).addElement(Layout_Behavior.getBasedirName_1226509010730());
     }
-    ListSequence.<String>fromList(names).addSequence(SetSequence.<String>fromSet(PathMacros.getInstance().getUserMacroNames()));
+    ListSequence.fromList(names).addSequence(SetSequence.fromSet(PathMacros.getInstance().getUserMacroNames()));
     return names;
   }
 

@@ -22,14 +22,14 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_2879868312063092085(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.OrPattern");
-      ListSequence.<INodeSubstituteAction>fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode orPattern = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.pattern.structure.OrPattern", null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), orPattern);
-          return SLinkOperations.setTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(orPattern, "clause", true)).first(), "patternNode", _context.getSourceNode(), true);
+          return SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(orPattern, "clause", true)).first(), "patternNode", _context.getSourceNode(), true);
         }
 
         public String getMatchingText(String pattern) {

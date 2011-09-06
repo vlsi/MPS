@@ -11,7 +11,7 @@
     <nodeInfo nodeId="3064888218669923992" fileName="LanguageDescriptor_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3064888218669924000" fileName="LanguageDescriptor_Behavior.java" startLine="34" startPosition="20" endLine="35" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3064888218669924012" fileName="LanguageDescriptor_Behavior.java" startLine="35" startPosition="131" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3064888218669924017" fileName="LanguageDescriptor_Behavior.java" startLine="37" startPosition="5" endLine="38" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3064888218669924017" fileName="LanguageDescriptor_Behavior.java" startLine="37" startPosition="5" endLine="38" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3064888218669919289" fileName="LanguageDescriptor_Behavior.java" startLine="19" startPosition="42" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="3064888218669923985" fileName="LanguageDescriptor_Behavior.java" startLine="29" startPosition="48" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3064888218669923957" fileName="LanguageDescriptor_Behavior.java" startLine="24" startPosition="207" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -22,7 +22,7 @@
     <scopeInfo nodeId="3064888218669923958" fileName="LanguageDescriptor_Behavior.java" startLine="25" startPosition="20" endLine="27" endPosition="18" />
     <scopeInfo nodeId="3064888218669923999" fileName="LanguageDescriptor_Behavior.java" startLine="34" startPosition="20" endLine="36" endPosition="18" />
     <scopeInfo nodeId="3064888218669919289" fileName="LanguageDescriptor_Behavior.java" startLine="19" startPosition="42" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="3064888218669923943" fileName="LanguageDescriptor_Behavior.java" startLine="23" startPosition="152" endLine="38" endPosition="86">
+    <scopeInfo nodeId="3064888218669923943" fileName="LanguageDescriptor_Behavior.java" startLine="23" startPosition="152" endLine="38" endPosition="79">
       <varInfo nodeId="3064888218669923979" varName="ts" />
       <varInfo nodeId="3064888218669923946" varName="l" />
       <varInfo nodeId="3064888218669923993" varName="m" />

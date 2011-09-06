@@ -23,7 +23,7 @@ public class BeanUtil {
 
   public static boolean isBean(final SNode _this) {
     final SNode attrAnn = SLinkOperations.getTarget(new BeanUtil.QuotationClass_bgndvd_a0a0a0a().createNode(), "annotation", false);
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_this, "field", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_this, "field", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "annotation", true);
       }
@@ -40,9 +40,9 @@ public class BeanUtil {
 
   public static Iterable<BeanProperty> properties(final SNode _this) {
     final SNode attrAnn = SLinkOperations.getTarget(new BeanUtil.QuotationClass_bgndvd_a0a0a0b().createNode(), "annotation", false);
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_this, "field", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_this, "field", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode fd) {
-        return ListSequence.<SNode>fromList(SLinkOperations.getTargets(fd, "annotation", true)).<SNode>select(new ISelector<SNode, SNode>() {
+        return ListSequence.fromList(SLinkOperations.getTargets(fd, "annotation", true)).<SNode>select(new ISelector<SNode, SNode>() {
           public SNode select(SNode ai) {
             return SLinkOperations.getTarget(ai, "annotation", false);
           }

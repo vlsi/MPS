@@ -27,9 +27,9 @@ public class check_ClassifierOverridingMethods_NonTypesystemRule extends Abstrac
 
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     OverridingMethodsFinder finder = new OverridingMethodsFinder(classifier);
-    for (SNode overridingMethod : SetSequence.<SNode>fromSet(finder.getOverridingMethods())) {
+    for (SNode overridingMethod : SetSequence.fromSet(finder.getOverridingMethods())) {
       Set<Tuples._2<SNode, SNode>> overridenMethods = finder.getOverridenMethods(overridingMethod);
-      for (Iterator<Tuples._2<SNode, SNode>> it = SetSequence.<Tuples._2<SNode, SNode>>fromSet(overridenMethods).iterator(); it.hasNext();) {
+      for (Iterator<Tuples._2<SNode, SNode>> it = SetSequence.fromSet(overridenMethods).iterator(); it.hasNext();) {
         SNode overridenMethod = it.next()._0();
         SNode returnType = SLinkOperations.getTarget(overridenMethod, "returnType", true);
         SNode ancestor = SNodeOperations.cast(SNodeOperations.getParent(overridenMethod), "jetbrains.mps.baseLanguage.structure.Classifier");

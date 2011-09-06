@@ -11,7 +11,7 @@ public class GeneratorMessageType_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<GeneratorMessageType> constants = ListSequence.<GeneratorMessageType>fromList(GeneratorMessageType.getConstants()).iterator();
+    Iterator<GeneratorMessageType> constants = ListSequence.fromList(GeneratorMessageType.getConstants()).iterator();
     while (constants.hasNext()) {
       GeneratorMessageType constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class GeneratorMessageType_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<GeneratorMessageType> constants = ListSequence.<GeneratorMessageType>fromList(GeneratorMessageType.getConstants()).iterator();
+    Iterator<GeneratorMessageType> constants = ListSequence.fromList(GeneratorMessageType.getConstants()).iterator();
     while (constants.hasNext()) {
       GeneratorMessageType constant = constants.next();
       if (value.equals(constant.getName())) {

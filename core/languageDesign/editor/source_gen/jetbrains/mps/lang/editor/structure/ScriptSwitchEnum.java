@@ -32,10 +32,10 @@ public enum ScriptSwitchEnum {
   }
 
   public static List<ScriptSwitchEnum> getConstants() {
-    List<ScriptSwitchEnum> list = ListSequence.<ScriptSwitchEnum>fromList(new LinkedList<ScriptSwitchEnum>());
-    ListSequence.<ScriptSwitchEnum>fromList(list).addElement(ScriptSwitchEnum.plain_text);
-    ListSequence.<ScriptSwitchEnum>fromList(list).addElement(ScriptSwitchEnum.superscript);
-    ListSequence.<ScriptSwitchEnum>fromList(list).addElement(ScriptSwitchEnum.subscript);
+    List<ScriptSwitchEnum> list = ListSequence.fromList(new LinkedList<ScriptSwitchEnum>());
+    ListSequence.fromList(list).addElement(ScriptSwitchEnum.plain_text);
+    ListSequence.fromList(list).addElement(ScriptSwitchEnum.superscript);
+    ListSequence.fromList(list).addElement(ScriptSwitchEnum.subscript);
     return list;
   }
 

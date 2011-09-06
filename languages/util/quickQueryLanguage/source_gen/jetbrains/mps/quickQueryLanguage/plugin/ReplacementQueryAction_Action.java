@@ -46,17 +46,17 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
           node = null;
         }
       }
-      MapSequence.<String,Object>fromMap(_params).put("node", node);
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("langModule", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.<String,Object>fromMap(_params).get("langModule") == null) {
+    MapSequence.fromMap(_params).put("langModule", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("langModule") == null) {
       return false;
     }
     return true;
@@ -64,9 +64,9 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ReplaceDialog dialog = new ReplaceDialog(new FindInstancesContext(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context"))), (Language) ((IModule) MapSequence.<String,Object>fromMap(_params).get("langModule")));
-      if ((((SNode) MapSequence.<String,Object>fromMap(_params).get("node")) != null)) {
-        dialog.setConceptDeclaration(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")));
+      ReplaceDialog dialog = new ReplaceDialog(new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((IModule) MapSequence.fromMap(_params).get("langModule")));
+      if ((((SNode) MapSequence.fromMap(_params).get("node")) != null)) {
+        dialog.setConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
       }
       dialog.showDialog();
     } catch (Throwable t) {

@@ -13,20 +13,20 @@ public class ExtractMethodFactory {
   }
 
   public static ExtractMethodRefactoringParameters createParameters(List<SNode> nodes) {
-    SNode first = ListSequence.<SNode>fromList(nodes).first();
+    SNode first = ListSequence.fromList(nodes).first();
     if (SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Expression") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(first), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       List<SNode> newNodes = new ArrayList<SNode>();
-      ListSequence.<SNode>fromList(newNodes).addElement(SNodeOperations.getParent(first));
+      ListSequence.fromList(newNodes).addElement(SNodeOperations.getParent(first));
       return new ExtractMethodRefactoringParameters(newNodes);
     }
     return new ExtractMethodRefactoringParameters(nodes);
   }
 
   public static ExtractMethodRefactoring createRefactoring(ExtractMethodRefactoringParameters parameteres) {
-    if (SNodeOperations.isInstanceOf(ListSequence.<SNode>fromList(parameteres.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Expression")) {
+    if (SNodeOperations.isInstanceOf(ListSequence.fromList(parameteres.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Expression")) {
       return new ExtractMethodFromExpressionRefactoring(parameteres);
     }
-    if (ListSequence.<SNode>fromList(parameteres.getAnalyzer().getOutputVariables()).count() > 0) {
+    if (ListSequence.fromList(parameteres.getAnalyzer().getOutputVariables()).count() > 0) {
       return new ExtractMethodWithOutputVariable(parameteres);
     }
     SNode containerType = parameteres.getAnalyzer().getExtractMethodReafactoringProcessor().getContainerReturnType();
@@ -40,9 +40,9 @@ public class ExtractMethodFactory {
   }
 
   public static boolean isRefactoringAvailable(List<SNode> nodes) {
-    SNode first = ListSequence.<SNode>fromList(nodes).first();
+    SNode first = ListSequence.fromList(nodes).first();
     boolean hasProperContainer = (SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) != null) || (SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false) != null);
-    return ((ListSequence.<SNode>fromList(nodes).count() == 1 && SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Expression")) || SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Statement")) && hasProperContainer;
+    return ((ListSequence.fromList(nodes).count() == 1 && SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Expression")) || SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Statement")) && hasProperContainer;
   }
 
   public static String getErrors(List<SNode> nodes) {
@@ -51,11 +51,11 @@ public class ExtractMethodFactory {
       return "There is multiple exit points.";
     }
     if (!(analyzer.hasExitPoints())) {
-      if (ListSequence.<SNode>fromList(analyzer.getOutputVariables()).count() > 1) {
+      if (ListSequence.fromList(analyzer.getOutputVariables()).count() > 1) {
         return "Too many output variables.";
       }
     } else {
-      if (ListSequence.<SNode>fromList(analyzer.getOutputVariables()).count() > 0) {
+      if (ListSequence.fromList(analyzer.getOutputVariables()).count() > 0) {
         return "Too many output variables.";
       }
       if (!(analyzer.isReturnExpressionsNotChangedInStatements() || analyzer.isAlwaysReturns())) {

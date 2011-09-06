@@ -23,7 +23,7 @@ public class ClassStaticContainerProcessor extends AbstractStaticContainerProces
     SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
     SLinkOperations.setTarget(call, "classConcept", SNodeOperations.cast(this.myStaticContainer, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
     SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(arguments));
+    ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addSequence(ListSequence.fromList(arguments));
     return call;
   }
 }

@@ -25,7 +25,7 @@ public class typeof_UIObjectStatement_InferenceRule extends AbstractInferenceRul
   public void applyRule(final SNode uios, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode abt = UIObject_Behavior.call_actuallyBelongsTo_1719339442171687163(SLinkOperations.getTarget(uios, "uiObject", false));
     if (UIObjectStatement_Behavior.call_hasOwner_8923564134258699721(uios)) {
-      if (!(Sequence.<SNode>fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(UIObjectStatement_Behavior.call_getContext_8923564134258876765(uios), "uiObject", false))).contains(abt))) {
+      if (!(Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(UIObjectStatement_Behavior.call_getContext_8923564134258876765(uios), "uiObject", false))).contains(abt))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(uios, "Wrong context", "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "8923564134259416738", null, errorTarget);
       }

@@ -5,8 +5,8 @@ package jetbrains.mps.ui.generator.template.meta;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_7930737280446985751(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "constraint", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "constraint", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode c) {
         return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(c, "jetbrains.mps.ui.modeling.structure.AspectParameterRef"), "parameterDecl", false), "aspectDef", false);
       }
@@ -37,7 +37,7 @@ public class QueriesGenerated {
       public boolean accept(SNode def) {
         return (def != null) && !(SPropertyOperations.getBoolean(def, "optional"));
       }
-    }).subtract(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.internal.structure.ContextBindingWrapper", false, false), "childAspect", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    }).subtract(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.internal.structure.ContextBindingWrapper", false, false), "childAspect", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode ca) {
         return SLinkOperations.getTarget(ca, "definition", false);
       }
@@ -50,7 +50,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_8568902829141717126(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     final SNode local = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0b().createNode(), "classifier", false);
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "classifier", false)) != SNodeOperations.getModel(_context.getNode()) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "annotation", true)).any(new IWhereFilter<SNode>() {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "classifier", false)) != SNodeOperations.getModel(_context.getNode()) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "annotation", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode a) {
         return SLinkOperations.getTarget(a, "annotation", false) == local;
       }
@@ -59,7 +59,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_600037073069865905(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     final SNode local = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0c().createNode(), "classifier", false);
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "classifier", false)) != SNodeOperations.getModel(_context.getNode()) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "annotation", true)).any(new IWhereFilter<SNode>() {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "classifier", false)) != SNodeOperations.getModel(_context.getNode()) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "annotation", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode a) {
         return SLinkOperations.getTarget(a, "annotation", false) == local;
       }
@@ -68,7 +68,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_2459884175396346605(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     final SNode local = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0d().createNode(), "classifier", false);
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false)) != SNodeOperations.getModel(_context.getNode()) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "annotation", true)).any(new IWhereFilter<SNode>() {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false)) != SNodeOperations.getModel(_context.getNode()) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "annotation", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode a) {
         return SLinkOperations.getTarget(a, "annotation", false) == local;
       }
@@ -100,7 +100,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8504596698668712497(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "auxObjectTemplate", false), "factory", true), "body", true), "statement", true)).count() == 1;
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "auxObjectTemplate", false), "factory", true), "body", true), "statement", true)).count() == 1;
   }
 
   public static SNode sourceNodeQuery_6927073291915224712(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -133,7 +133,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5572604531249753671(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     final SNode def = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parameterDecl", false), "aspectDef", false);
-    return SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.internal.structure.ContextBindingWrapper", false, false), "childAspect", true)).findFirst(new IWhereFilter<SNode>() {
+    return SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.internal.structure.ContextBindingWrapper", false, false), "childAspect", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ca) {
         return SLinkOperations.getTarget(ca, "definition", false) == def;
       }
@@ -165,7 +165,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8504596698668712539(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.as(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "auxObjectTemplate", false), "factory", true), "body", true), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true));
+    return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "auxObjectTemplate", false), "factory", true), "body", true), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true));
   }
 
   public static SNode sourceNodeQuery_8504596698668712560(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

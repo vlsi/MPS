@@ -25,7 +25,7 @@ public class checkThrowedByThrowIsCaught_NonTypesystemRule extends AbstractNonTy
       return;
     }
     SNode throwableType = TypeChecker.getInstance().getTypeOf(throwable);
-    Set<SNode> throwables = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+    Set<SNode> throwables = SetSequence.fromSet(new HashSet<SNode>());
     if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(throwable), "jetbrains.mps.baseLanguage.structure.Type")) {
       SetSequence.fromSet(throwables).addElement(SNodeOperations.cast(throwableType, "jetbrains.mps.baseLanguage.structure.Type"));
     }

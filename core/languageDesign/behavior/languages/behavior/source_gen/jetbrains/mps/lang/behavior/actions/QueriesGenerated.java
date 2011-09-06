@@ -49,7 +49,7 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1238617792506(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
@@ -63,7 +63,7 @@ public class QueriesGenerated {
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.<INodeSubstituteAction>fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode expr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
                 SNodeFactoryOperations.setNewChild(expr, "operand", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression");
@@ -81,10 +81,10 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_SuperNodeExpression_7448026190102456640(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
-      ListSequence.<INodeSubstituteAction>fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode result = SuperNodeExpression_Behavior.call_getSuperConcept_7448026190102457310(_context.getSourceNode());
           if (result == null) {

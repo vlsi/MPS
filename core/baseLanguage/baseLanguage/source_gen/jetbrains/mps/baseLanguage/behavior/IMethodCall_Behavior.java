@@ -36,7 +36,7 @@ public class IMethodCall_Behavior {
   }
 
   public static Object[] call_getActualArguments_1219275428261(SNode thisNode, final IModule module) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)).<Object>select(new ISelector<SNode, Object>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)).<Object>select(new ISelector<SNode, Object>() {
       public Object select(SNode it) {
         return Expression_Behavior.call_eval_1213877519769(it, module);
       }
@@ -48,8 +48,8 @@ public class IMethodCall_Behavior {
     if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall", "actualArgument")) {
       SNode method = SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false);
       int i = SNodeOperations.getIndexInParent(expression);
-      if (i < ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).count()) {
-        SNode parameterDeclaration = ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(i);
+      if (i < ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count()) {
+        SNode parameterDeclaration = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(i);
         SNode rawType = SNodeOperations.copyNode(SLinkOperations.getTarget(parameterDeclaration, "type", true));
         SNode instanceType = IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode);
         if ((instanceType == null)) {
@@ -82,12 +82,12 @@ public class IMethodCall_Behavior {
 
   public static SNode call_getConcreteType_8008512149545161843(SNode thisNode, SNode typeVariableReference, SNode coercedClt, SNode methodClassifier) {
     List<SNode> parameters = SLinkOperations.getTargets(coercedClt, "parameter", true);
-    if (ListSequence.<SNode>fromList(parameters).isEmpty()) {
+    if (ListSequence.fromList(parameters).isEmpty()) {
       return new IMethodCall_Behavior.QuotationClass_fq0410_a0a0b0d().createNode();
     }
     SNode concreteType;
     if (SNodeOperations.getParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false)) == methodClassifier) {
-      concreteType = SNodeOperations.copyNode(ListSequence.<SNode>fromList(parameters).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false))));
+      concreteType = SNodeOperations.copyNode(ListSequence.fromList(parameters).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false))));
     } else {
       concreteType = new IMethodCall_Behavior.QuotationClass_fq0410_a0a0a0d0d().createNode();
     }
@@ -108,8 +108,8 @@ public class IMethodCall_Behavior {
     if ((instanceType == null)) {
       return result;
     }
-    Iterator<SNode> typeParms = ListSequence.<SNode>fromList(SLinkOperations.getTargets(instanceType, "parameter", true)).iterator();
-    Iterator<SNode> typeVars = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(instanceType, "classifier", false), "typeVariableDeclaration", true)).iterator();
+    Iterator<SNode> typeParms = ListSequence.fromList(SLinkOperations.getTargets(instanceType, "parameter", true)).iterator();
+    Iterator<SNode> typeVars = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(instanceType, "classifier", false), "typeVariableDeclaration", true)).iterator();
     while (typeParms.hasNext() && typeVars.hasNext()) {
       result.put(typeVars.next(), typeParms.next());
     }
@@ -172,11 +172,11 @@ public class IMethodCall_Behavior {
         }
         {
           String childRole_IMethodCall_Behavior_fq0410_ = "parameter";
-          this.patternVar_param = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+          this.patternVar_param = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignore = null;
           for (SNode childVar : nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getChildren(childRole_IMethodCall_Behavior_fq0410_)) {
             patternVar_ignore = childVar;
-            ListSequence.<SNode>fromList(this.patternVar_param).addElement(childVar);
+            ListSequence.fromList(this.patternVar_param).addElement(childVar);
           }
         }
       }

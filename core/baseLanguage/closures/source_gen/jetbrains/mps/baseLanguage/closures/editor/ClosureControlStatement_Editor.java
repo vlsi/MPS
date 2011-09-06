@@ -204,15 +204,15 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_2saq3j_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "controlClosure", true), "parameter", true)).count() > 0 || ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualParameter", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "controlClosure", true), "parameter", true)).count() > 0 || ListSequence.fromList(SLinkOperations.getTargets(node, "actualParameter", true)).count() > 0;
   }
 
   private static boolean renderingCondition_2saq3j_a2b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualParameter", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "actualParameter", true)).count() > 0;
   }
 
   private static boolean renderingCondition_2saq3j_a0c1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "controlClosure", true), "parameter", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "controlClosure", true), "parameter", true)).count() > 0;
   }
 
   public static class _Inline_2saq3j_a0a extends InlineCellProvider {

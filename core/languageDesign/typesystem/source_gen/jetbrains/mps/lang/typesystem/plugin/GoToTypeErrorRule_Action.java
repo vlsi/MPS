@@ -27,7 +27,7 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IErrorReporter error = ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getErrorReporterFor(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getSelectedCell());
+    IErrorReporter error = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getErrorReporterFor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell());
     return !(error == null || error.getRuleId() == null || error.getRuleModel() == null || !(error.getAdditionalRulesIds().isEmpty()));
   }
 
@@ -47,16 +47,16 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("operationContext") == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
@@ -64,8 +64,8 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IErrorReporter error = ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getErrorReporterFor(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getSelectedCell());
-      GoToTypeErrorRuleUtil.goToRuleById(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")), new Pair<String, String>(error.getRuleModel(), error.getRuleId()));
+      IErrorReporter error = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getErrorReporterFor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell());
+      GoToTypeErrorRuleUtil.goToRuleById(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), new Pair<String, String>(error.getRuleModel(), error.getRuleId()));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToTypeErrorRule", t);
     }

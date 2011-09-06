@@ -42,7 +42,7 @@ public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigra
           return false;
         }
         SNode declarationClassifier = SNodeOperations.getAncestor(declaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-        if (!(classifier == declarationClassifier || ListSequence.<SNode>fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
+        if (!(classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
           return false;
         }
         int constraint = IClassifiersSearchScope.INSTANCE_METHOD;
@@ -60,7 +60,7 @@ public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigra
       public void doUpdateInstanceNode(SNode node) {
         SNode methodCall = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall");
         SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)));
+        ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)));
       }
 
       public boolean isShowAsIntention() {

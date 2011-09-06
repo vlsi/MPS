@@ -39,12 +39,12 @@ public class Executor_TabDescriptor extends EditorTabDescriptor {
   }
 
   public List<SNode> getNodes(SNode node) {
-    List<SNode> list = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
     SNode n = getNode(node);
     if (n == null) {
       return list;
     }
-    ListSequence.<SNode>fromList(list).addElement(n);
+    ListSequence.fromList(list).addElement(n);
     return list;
   }
 
@@ -54,7 +54,7 @@ public class Executor_TabDescriptor extends EditorTabDescriptor {
 
   public SNode getNode(SNode node) {
     final SNode nodeFinal = node;
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor")).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "configuration", false) == nodeFinal;
       }
@@ -62,7 +62,7 @@ public class Executor_TabDescriptor extends EditorTabDescriptor {
   }
 
   public List<SNode> getConcepts(final SNode node) {
-    return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), ModelAccess.instance().runReadAction(new Computable<SNode>() {
       public SNode compute() {
         return SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor");
       }

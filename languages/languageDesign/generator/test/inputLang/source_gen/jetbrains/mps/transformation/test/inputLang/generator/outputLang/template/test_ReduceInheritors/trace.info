@@ -333,7 +333,7 @@
     <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="101" startPosition="9" endLine="104" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="117" startPosition="9" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplateNode#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="8417539822878729234" fileName="QueriesGenerated.java" startLine="44" startPosition="219" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8417539822878729234" fileName="QueriesGenerated.java" startLine="44" startPosition="212" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="8417539822878724200" fileName="QueriesGenerated.java" startLine="43" startPosition="155" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="94" startPosition="40" endLine="101" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="108" startPosition="145" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -374,7 +374,7 @@
     <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="95" startPosition="13" endLine="98" endPosition="170" />
     <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="101" startPosition="9" endLine="104" endPosition="9" />
     <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="8417539822878729234" fileName="QueriesGenerated.java" startLine="44" startPosition="219" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="8417539822878729234" fileName="QueriesGenerated.java" startLine="44" startPosition="212" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="109" startPosition="13" endLine="113" endPosition="0" />
     <scopeInfo nodeId="8417539822878722926" fileName="QueriesGenerated.java" startLine="43" startPosition="155" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="48" startPosition="15" endLine="54" endPosition="13" />
@@ -389,7 +389,7 @@
     <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="37" startPosition="9" endLine="122" endPosition="7" />
     <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="35" startPosition="158" endLine="127" endPosition="46" />
     <scopeInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="34" startPosition="0" endLine="129" endPosition="0" />
-    <unitInfo nodeId="8417539822878729234" fileName="QueriesGenerated.java" startLine="44" startPosition="189" endLine="48" endPosition="5" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.QueriesGenerated$1" />
+    <unitInfo nodeId="8417539822878729234" fileName="QueriesGenerated.java" startLine="44" startPosition="182" endLine="48" endPosition="5" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.QueriesGenerated$1" />
     <unitInfo nodeId="1206460153890" fileName="TemplateOutputRoot.java" startLine="18" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateOutputRoot" />
   </root>
   <root nodeId="8417539822878724212">

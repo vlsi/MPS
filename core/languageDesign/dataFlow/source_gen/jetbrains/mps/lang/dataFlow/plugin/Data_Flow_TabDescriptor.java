@@ -52,12 +52,12 @@ public class Data_Flow_TabDescriptor extends EditorTabDescriptor {
   }
 
   public List<SNode> getNodes(SNode node) {
-    List<SNode> list = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
     SNode n = getNode(node);
     if (n == null) {
       return list;
     }
-    ListSequence.<SNode>fromList(list).addElement(n);
+    ListSequence.fromList(list).addElement(n);
     return list;
   }
 
@@ -67,14 +67,14 @@ public class Data_Flow_TabDescriptor extends EditorTabDescriptor {
 
   public SNode getNode(SNode node) {
     List<SNode> nodes = AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_1567570417158062208(node, LanguageAspect.DATA_FLOW);
-    return (ListSequence.<SNode>fromList(nodes).isEmpty() ?
+    return (ListSequence.fromList(nodes).isEmpty() ?
       null :
-      ListSequence.<SNode>fromList(nodes).first()
+      ListSequence.fromList(nodes).first()
     );
   }
 
   public List<SNode> getConcepts(final SNode node) {
-    return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"));
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"));
   }
 
   public SNode createNode(final SNode node, final SNode concept) {

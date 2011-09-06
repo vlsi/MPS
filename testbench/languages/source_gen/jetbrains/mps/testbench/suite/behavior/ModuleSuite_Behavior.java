@@ -46,7 +46,7 @@ public class ModuleSuite_Behavior {
   }
 
   public static Iterable<SNode> call_getNotMutedTests_8605005254686521789(SNode thisNode) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "testRef", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testRef", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "muted"));
       }

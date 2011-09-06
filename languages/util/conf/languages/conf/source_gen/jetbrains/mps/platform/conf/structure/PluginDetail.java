@@ -33,11 +33,11 @@ public enum PluginDetail {
   }
 
   public static List<PluginDetail> getConstants() {
-    List<PluginDetail> list = ListSequence.<PluginDetail>fromList(new LinkedList<PluginDetail>());
-    ListSequence.<PluginDetail>fromList(list).addElement(PluginDetail.description);
-    ListSequence.<PluginDetail>fromList(list).addElement(PluginDetail.changeNotes);
-    ListSequence.<PluginDetail>fromList(list).addElement(PluginDetail.resourceBundle);
-    ListSequence.<PluginDetail>fromList(list).addElement(PluginDetail.category);
+    List<PluginDetail> list = ListSequence.fromList(new LinkedList<PluginDetail>());
+    ListSequence.fromList(list).addElement(PluginDetail.description);
+    ListSequence.fromList(list).addElement(PluginDetail.changeNotes);
+    ListSequence.fromList(list).addElement(PluginDetail.resourceBundle);
+    ListSequence.fromList(list).addElement(PluginDetail.category);
     return list;
   }
 

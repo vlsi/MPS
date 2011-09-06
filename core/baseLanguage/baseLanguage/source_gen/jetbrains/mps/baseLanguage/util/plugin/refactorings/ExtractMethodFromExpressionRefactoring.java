@@ -18,7 +18,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 
   /*package*/ ExtractMethodFromExpressionRefactoring(ExtractMethodRefactoringParameters params) {
     super(params);
-    this.myExpression = SNodeOperations.cast(ListSequence.<SNode>fromList(params.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Expression");
+    this.myExpression = SNodeOperations.cast(ListSequence.fromList(params.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
   protected SNode createMethodBody() {
@@ -26,11 +26,11 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
     if (SNodeOperations.isInstanceOf(this.getMethodType(), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
       SLinkOperations.setTarget(expressionStatement, "expression", SNodeOperations.cast(CopyUtil.copy(this.myExpression), "jetbrains.mps.baseLanguage.structure.Expression"), true);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(expressionStatement);
+      ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(expressionStatement);
     } else {
       SNode ret = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
       SLinkOperations.setTarget(ret, "expression", SNodeOperations.cast(CopyUtil.copy(this.myExpression), "jetbrains.mps.baseLanguage.structure.Expression"), true);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(ret);
+      ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(ret);
     }
     return body;
   }
@@ -38,7 +38,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
   public void replaceMatch(final MethodMatch match, final SNode methodDeclaration) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        SNodeOperations.replaceWithAnother(ListSequence.<SNode>fromList(match.getNodes()).first(), ExtractMethodFromExpressionRefactoring.this.createMethodCall(match, methodDeclaration));
+        SNodeOperations.replaceWithAnother(ListSequence.fromList(match.getNodes()).first(), ExtractMethodFromExpressionRefactoring.this.createMethodCall(match, methodDeclaration));
       }
     });
   }

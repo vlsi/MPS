@@ -28,7 +28,7 @@ public class IConceptAspect_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     SNode node = IConceptAspect_Behavior.call_getBaseConcept_2621449412040133768(thisNode);
     if ((node != null)) {
-      ListSequence.<SNode>fromList(result).addElement(IConceptAspect_Behavior.call_getBaseConcept_2621449412040133768(thisNode));
+      ListSequence.fromList(result).addElement(IConceptAspect_Behavior.call_getBaseConcept_2621449412040133768(thisNode));
     }
     return result;
   }

@@ -1199,9 +1199,9 @@
     <nodeInfo nodeId="505095865854384112" fileName="JobDeclaration_Editor.java" startLine="202" startPosition="72" endLine="203" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="505095865854384112" fileName="JobDeclaration_Editor.java" startLine="203" startPosition="78" endLine="204" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="505095865854384112" fileName="JobDeclaration_Editor.java" startLine="205" startPosition="10" endLine="206" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="127305800529604612" fileName="JobDeclaration_Editor.java" startLine="209" startPosition="111" endLine="210" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="127305800529604649" fileName="JobDeclaration_Editor.java" startLine="213" startPosition="112" endLine="214" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="127305800529604630" fileName="JobDeclaration_Editor.java" startLine="217" startPosition="111" endLine="218" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="127305800529604612" fileName="JobDeclaration_Editor.java" startLine="209" startPosition="111" endLine="210" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="127305800529604649" fileName="JobDeclaration_Editor.java" startLine="213" startPosition="112" endLine="214" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="127305800529604630" fileName="JobDeclaration_Editor.java" startLine="217" startPosition="111" endLine="218" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1977954644795396337" fileName="JobDeclaration_Editor.java" startLine="221" startPosition="111" endLine="222" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1977954644795396351" fileName="JobDeclaration_Editor.java" startLine="225" startPosition="112" endLine="226" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1977954644795396366" fileName="JobDeclaration_Editor.java" startLine="229" startPosition="111" endLine="230" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1308,9 +1308,9 @@
     <scopeInfo nodeId="505095865854384112" fileName="JobDeclaration_Editor.java" startLine="91" startPosition="5" endLine="92" endPosition="81" />
     <scopeInfo nodeId="505095865854384112" fileName="JobDeclaration_Editor.java" startLine="102" startPosition="5" endLine="103" endPosition="85" />
     <scopeInfo nodeId="505095865854384112" fileName="JobDeclaration_Editor.java" startLine="159" startPosition="108" endLine="160" endPosition="46" />
-    <scopeInfo nodeId="127305800529604611" fileName="JobDeclaration_Editor.java" startLine="209" startPosition="111" endLine="210" endPosition="102" />
-    <scopeInfo nodeId="127305800529604648" fileName="JobDeclaration_Editor.java" startLine="213" startPosition="112" endLine="214" endPosition="102" />
-    <scopeInfo nodeId="127305800529604629" fileName="JobDeclaration_Editor.java" startLine="217" startPosition="111" endLine="218" endPosition="102" />
+    <scopeInfo nodeId="127305800529604611" fileName="JobDeclaration_Editor.java" startLine="209" startPosition="111" endLine="210" endPosition="95" />
+    <scopeInfo nodeId="127305800529604648" fileName="JobDeclaration_Editor.java" startLine="213" startPosition="112" endLine="214" endPosition="95" />
+    <scopeInfo nodeId="127305800529604629" fileName="JobDeclaration_Editor.java" startLine="217" startPosition="111" endLine="218" endPosition="95" />
     <scopeInfo nodeId="1977954644795396336" fileName="JobDeclaration_Editor.java" startLine="221" startPosition="111" endLine="222" endPosition="69" />
     <scopeInfo nodeId="1977954644795396350" fileName="JobDeclaration_Editor.java" startLine="225" startPosition="112" endLine="226" endPosition="69" />
     <scopeInfo nodeId="1977954644795396365" fileName="JobDeclaration_Editor.java" startLine="229" startPosition="111" endLine="230" endPosition="69" />

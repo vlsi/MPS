@@ -62,7 +62,7 @@ public class GWTModule_Constraints extends BaseConstraintsDescriptor {
 
   public static boolean static_canBeAParent(final IOperationContext operationContext, final CanBeAParentContext _context) {
     if (SLinkOperations.findLinkDeclaration("jetbrains.mps.gwt.client.structure.GWTModule", "element") == _context.getLink()) {
-      return ListSequence.<SNode>fromList(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.EntryPoint"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Inherits"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Public"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Source"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.SuperSource"))).contains(_context.getChildConcept());
+      return ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.EntryPoint"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Inherits"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Public"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Source"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.SuperSource"))).contains(_context.getChildConcept());
     }
     return true;
   }

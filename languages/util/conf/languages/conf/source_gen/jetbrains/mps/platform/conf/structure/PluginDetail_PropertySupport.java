@@ -11,7 +11,7 @@ public class PluginDetail_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<PluginDetail> constants = ListSequence.<PluginDetail>fromList(PluginDetail.getConstants()).iterator();
+    Iterator<PluginDetail> constants = ListSequence.fromList(PluginDetail.getConstants()).iterator();
     while (constants.hasNext()) {
       PluginDetail constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class PluginDetail_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<PluginDetail> constants = ListSequence.<PluginDetail>fromList(PluginDetail.getConstants()).iterator();
+    Iterator<PluginDetail> constants = ListSequence.fromList(PluginDetail.getConstants()).iterator();
     while (constants.hasNext()) {
       PluginDetail constant = constants.next();
       if (value.equals(constant.getName())) {

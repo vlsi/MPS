@@ -14,11 +14,11 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Variants {
-  private static List<_FunctionTypes._void_P1_E0<? super Variants>> REGS = ListSequence.<_FunctionTypes._void_P1_E0<? super Variants>>fromList(new LinkedList<_FunctionTypes._void_P1_E0<? super Variants>>());
+  private static List<_FunctionTypes._void_P1_E0<? super Variants>> REGS = ListSequence.fromList(new LinkedList<_FunctionTypes._void_P1_E0<? super Variants>>());
   private static Variants INSTANCE = null;
   private static boolean DISPOSED = false;
 
-  private List<Tuples._2<String, Language>> variantLanguages = ListSequence.<Tuples._2<String, Language>>fromList(new ArrayList<Tuples._2<String, Language>>());
+  private List<Tuples._2<String, Language>> variantLanguages = ListSequence.fromList(new ArrayList<Tuples._2<String, Language>>());
 
   /*package*/ Variants() {
     synchronized (Variants.class) {
@@ -27,12 +27,12 @@ public class Variants {
   }
 
   public void addVariant(String var, Language lang) {
-    ListSequence.<Tuples._2<String, Language>>fromList(variantLanguages).addElement(MultiTuple.<String,Language>from(var, lang));
+    ListSequence.fromList(variantLanguages).addElement(MultiTuple.<String,Language>from(var, lang));
   }
 
   private void runRegistrations(List<_FunctionTypes._void_P1_E0<? super Variants>> regs) {
-    while (ListSequence.<_FunctionTypes._void_P1_E0<? super Variants>>fromList(regs).isNotEmpty()) {
-      ListSequence.<_FunctionTypes._void_P1_E0<? super Variants>>fromList(regs).removeElementAt(0).invoke(this);
+    while (ListSequence.fromList(regs).isNotEmpty()) {
+      ListSequence.fromList(regs).removeElementAt(0).invoke(this);
     }
   }
 
@@ -43,14 +43,14 @@ public class Variants {
   }
 
   /*package*/ void dispose() {
-    ListSequence.<Tuples._2<String, Language>>fromList(variantLanguages).clear();
+    ListSequence.fromList(variantLanguages).clear();
     synchronized (Variants.class) {
       INSTANCE = null;
     }
   }
 
   public static Iterable<String> availableVariants() {
-    return ListSequence.<Tuples._2<String, Language>>fromList(getInstance().variantLanguages).<String>select(new ISelector<Tuples._2<String, Language>, String>() {
+    return ListSequence.fromList(getInstance().variantLanguages).<String>select(new ISelector<Tuples._2<String, Language>, String>() {
       public String select(Tuples._2<String, Language> t) {
         return t._0();
       }
@@ -58,7 +58,7 @@ public class Variants {
   }
 
   public static Language languageToGenerate(final String variant) {
-    return ListSequence.<Tuples._2<String, Language>>fromList(getInstance().variantLanguages).findFirst(new IWhereFilter<Tuples._2<String, Language>>() {
+    return ListSequence.fromList(getInstance().variantLanguages).findFirst(new IWhereFilter<Tuples._2<String, Language>>() {
       public boolean accept(Tuples._2<String, Language> t) {
         return t._0().equals(variant);
       }
@@ -66,7 +66,7 @@ public class Variants {
   }
 
   public static void register(_FunctionTypes._void_P1_E0<? super Variants> regBlock) {
-    ListSequence.<_FunctionTypes._void_P1_E0<? super Variants>>fromList(REGS).addElement(regBlock);
+    ListSequence.fromList(REGS).addElement(regBlock);
     synchronized (Variants.class) {
       if (INSTANCE != null) {
         INSTANCE.runRegistrations(REGS);

@@ -22,7 +22,7 @@ public class NamedTuple_subtypeOf_extended_SubtypingRule extends SubtypingRule_R
 
   public List<SNode> getSubOrSuperTypes(SNode ntt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ntt, "classifier", false), "extended", true), "classifier", false) != null)) {
-      return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), new NamedTuple_subtypeOf_extended_SubtypingRule.QuotationClass_xrnhlx_a1a0a0a0().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ntt, "classifier", false), "extended", true), "classifier", false), typeCheckingContext));
+      return ListSequence.fromListAndArray(new ArrayList<SNode>(), new NamedTuple_subtypeOf_extended_SubtypingRule.QuotationClass_xrnhlx_a1a0a0a0().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ntt, "classifier", false), "extended", true), "classifier", false), typeCheckingContext));
     }
     return null;
   }

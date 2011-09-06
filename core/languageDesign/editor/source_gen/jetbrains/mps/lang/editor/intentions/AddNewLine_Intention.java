@@ -51,7 +51,7 @@ public class AddNewLine_Intention extends BaseIntention implements Intention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode newLine = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", null);
     SPropertyOperations.set(newLine, "flag", "" + (true));
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "styleItem", true)).addElement(newLine);
+    ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)).addElement(newLine);
   }
 
   public String getLocationString() {

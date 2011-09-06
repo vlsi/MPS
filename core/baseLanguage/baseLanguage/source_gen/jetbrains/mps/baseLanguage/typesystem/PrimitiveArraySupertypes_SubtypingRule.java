@@ -30,7 +30,7 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       return Arrays.asList(new PrimitiveArraySupertypes_SubtypingRule.QuotationClass_l6pagy_a0a0a1a0().createNode(typeCheckingContext), new PrimitiveArraySupertypes_SubtypingRule.QuotationClass_l6pagy_a1a0a1a0().createNode(typeCheckingContext), new PrimitiveArraySupertypes_SubtypingRule.QuotationClass_l6pagy_a2a0a1a0().createNode(typeCheckingContext));
     }
-    return ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    return ListSequence.fromList(new ArrayList<SNode>());
   }
 
   public String getApplicableConceptFQName() {

@@ -16,17 +16,17 @@ public class BaseLanguage_ProjectPlugin extends BaseProjectPlugin {
   }
 
   public List<BaseGeneratedTool> initAllTools(Project project) {
-    List<BaseGeneratedTool> tools = ListSequence.<BaseGeneratedTool>fromList(new ArrayList<BaseGeneratedTool>());
-    ListSequence.<BaseGeneratedTool>fromList(tools).addElement(new TodoViewer_Tool(project));
+    List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
+    ListSequence.fromList(tools).addElement(new TodoViewer_Tool(project));
     return tools;
   }
 
   public List<BaseCustomProjectPlugin> initCustomParts(Project project) {
-    List<BaseCustomProjectPlugin> res = ListSequence.<BaseCustomProjectPlugin>fromList(new ArrayList<BaseCustomProjectPlugin>());
+    List<BaseCustomProjectPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomProjectPlugin>());
     MPSProject mpsProject = project.getComponent(MPSProject.class);
     {
       BaseCustomProjectPlugin plugin = new BaseLanguageCustomPlugin_CustomProjectPlugin();
-      ListSequence.<BaseCustomProjectPlugin>fromList(res).addElement(plugin);
+      ListSequence.fromList(res).addElement(plugin);
       plugin.init(mpsProject);
     }
     return res;

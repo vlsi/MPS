@@ -47,7 +47,7 @@ public class Node_GetReferentSearchScopeOperation_Constraints extends BaseConstr
             // reference links  
             SNode dotOperandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1213877508847(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"));
             List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(dotOperandConcept);
-            return ListSequence.<SNode>fromList(links).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference");
               }

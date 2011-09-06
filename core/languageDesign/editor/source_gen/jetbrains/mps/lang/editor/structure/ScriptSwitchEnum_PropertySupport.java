@@ -11,7 +11,7 @@ public class ScriptSwitchEnum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<ScriptSwitchEnum> constants = ListSequence.<ScriptSwitchEnum>fromList(ScriptSwitchEnum.getConstants()).iterator();
+    Iterator<ScriptSwitchEnum> constants = ListSequence.fromList(ScriptSwitchEnum.getConstants()).iterator();
     while (constants.hasNext()) {
       ScriptSwitchEnum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class ScriptSwitchEnum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<ScriptSwitchEnum> constants = ListSequence.<ScriptSwitchEnum>fromList(ScriptSwitchEnum.getConstants()).iterator();
+    Iterator<ScriptSwitchEnum> constants = ListSequence.fromList(ScriptSwitchEnum.getConstants()).iterator();
     while (constants.hasNext()) {
       ScriptSwitchEnum constant = constants.next();
       if (value.equals(constant.getName())) {

@@ -37,10 +37,10 @@ public class OverridingMethods_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    for (SNode classNode : ListSequence.<SNode>fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
-      for (SNode sMethod : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true))) {
+    for (SNode classNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
+      for (SNode sMethod : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true))) {
         if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(sMethod, node)) {
-          ListSequence.<SNode>fromList(_results).addElement(sMethod);
+          ListSequence.fromList(_results).addElement(sMethod);
         }
       }
     }

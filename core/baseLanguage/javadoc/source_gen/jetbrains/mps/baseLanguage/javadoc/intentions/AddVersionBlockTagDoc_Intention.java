@@ -42,7 +42,7 @@ public class AddVersionBlockTagDoc_Intention extends BaseIntention implements In
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "version", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "version", true)).isEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

@@ -34,12 +34,12 @@ public enum InequationPriority {
   }
 
   public static List<InequationPriority> getConstants() {
-    List<InequationPriority> list = ListSequence.<InequationPriority>fromList(new LinkedList<InequationPriority>());
-    ListSequence.<InequationPriority>fromList(list).addElement(InequationPriority._0);
-    ListSequence.<InequationPriority>fromList(list).addElement(InequationPriority._1);
-    ListSequence.<InequationPriority>fromList(list).addElement(InequationPriority._2);
-    ListSequence.<InequationPriority>fromList(list).addElement(InequationPriority._3);
-    ListSequence.<InequationPriority>fromList(list).addElement(InequationPriority.inf);
+    List<InequationPriority> list = ListSequence.fromList(new LinkedList<InequationPriority>());
+    ListSequence.fromList(list).addElement(InequationPriority._0);
+    ListSequence.fromList(list).addElement(InequationPriority._1);
+    ListSequence.fromList(list).addElement(InequationPriority._2);
+    ListSequence.fromList(list).addElement(InequationPriority._3);
+    ListSequence.fromList(list).addElement(InequationPriority.inf);
     return list;
   }
 

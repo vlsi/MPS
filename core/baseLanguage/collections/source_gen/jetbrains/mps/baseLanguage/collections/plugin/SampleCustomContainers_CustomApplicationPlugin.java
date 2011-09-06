@@ -26,7 +26,7 @@ public class SampleCustomContainers_CustomApplicationPlugin extends BaseCustomAp
         SModelDescriptor desc = GlobalScope.getInstance().getModelDescriptor(SModelFqName.fromString("jetbrains.mps.baseLanguage.collections.custom"));
         SModel mdl = desc.getSModel();
         if (mdl != null) {
-          ListSequence.<SNode>fromList(res).addSequence(ListSequence.<SNode>fromList(SModelOperations.getNodes(mdl, "jetbrains.mps.baseLanguage.collections.structure.CustomContainers")));
+          ListSequence.fromList(res).addSequence(ListSequence.fromList(SModelOperations.getNodes(mdl, "jetbrains.mps.baseLanguage.collections.structure.CustomContainers")));
         }
         return res;
       }

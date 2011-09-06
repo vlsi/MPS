@@ -11,33 +11,33 @@ public class TestNameMap<C, M> {
   private Map<String, Map<String, M>> classToMethodToMethodTest;
 
   public TestNameMap() {
-    this.classToTestCase = MapSequence.<String,C>fromMap(new HashMap<String, C>());
-    this.classToMethodToMethodTest = MapSequence.<String,Map<String, M>>fromMap(new HashMap<String, Map<String, M>>());
+    this.classToTestCase = MapSequence.fromMap(new HashMap<String, C>());
+    this.classToMethodToMethodTest = MapSequence.fromMap(new HashMap<String, Map<String, M>>());
   }
 
   public void put(ITestNodeWrapper testCaseNode, C testCase) {
-    MapSequence.<String,C>fromMap(this.classToTestCase).put(testCaseNode.getFqName(), testCase);
+    MapSequence.fromMap(this.classToTestCase).put(testCaseNode.getFqName(), testCase);
   }
 
   public C get(String testCaseName) {
-    return MapSequence.<String,C>fromMap(this.classToTestCase).get(testCaseName);
+    return MapSequence.fromMap(this.classToTestCase).get(testCaseName);
   }
 
   public void put(ITestNodeWrapper testCaseNode, ITestNodeWrapper testMethodNode, M testMethod) {
     String testCaseName = testCaseNode.getFqName();
-    Map<String, M> testMethods = MapSequence.<String,Map<String, M>>fromMap(this.classToMethodToMethodTest).get(testCaseName);
+    Map<String, M> testMethods = MapSequence.fromMap(this.classToMethodToMethodTest).get(testCaseName);
     if (testMethods == null) {
-      testMethods = MapSequence.<String,M>fromMap(new HashMap<String, M>());
-      MapSequence.<String,Map<String, M>>fromMap(this.classToMethodToMethodTest).put(testCaseName, testMethods);
+      testMethods = MapSequence.fromMap(new HashMap<String, M>());
+      MapSequence.fromMap(this.classToMethodToMethodTest).put(testCaseName, testMethods);
     }
-    MapSequence.<String,M>fromMap(testMethods).put(testMethodNode.getName(), testMethod);
+    MapSequence.fromMap(testMethods).put(testMethodNode.getName(), testMethod);
   }
 
   public M get(String testCaseName, String testMethodName) {
     M testMethod = null;
-    Map<String, M> testMethods = MapSequence.<String,Map<String, M>>fromMap(this.classToMethodToMethodTest).get(testCaseName);
+    Map<String, M> testMethods = MapSequence.fromMap(this.classToMethodToMethodTest).get(testCaseName);
     if (testMethods != null) {
-      testMethod = MapSequence.<String,M>fromMap(testMethods).get(testMethodName);
+      testMethod = MapSequence.fromMap(testMethods).get(testMethodName);
     }
     return testMethod;
   }

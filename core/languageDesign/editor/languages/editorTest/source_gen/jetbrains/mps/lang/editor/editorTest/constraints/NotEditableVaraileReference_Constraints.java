@@ -43,9 +43,9 @@ public class NotEditableVaraileReference_Constraints extends BaseConstraintsDesc
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
             for (SNode block : SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", true)) {
-              for (SNode child : ListSequence.<SNode>fromList(SNodeOperations.getChildren(block))) {
+              for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(block))) {
                 if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock")) {
-                  ListSequence.<SNode>fromList(result).addElement(SNodeOperations.cast(child, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock"));
+                  ListSequence.fromList(result).addElement(SNodeOperations.cast(child, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock"));
                 }
               }
             }

@@ -238,19 +238,19 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_1i2int_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
   }
 
   private static boolean renderingCondition_1i2int_a5a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_1i2int_a6a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty();
   }
 
   private static boolean renderingCondition_1i2int_a7a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() > 0;
   }
 
   private static boolean renderingCondition_1i2int_a8a(SNode node, EditorContext editorContext, IScope scope) {

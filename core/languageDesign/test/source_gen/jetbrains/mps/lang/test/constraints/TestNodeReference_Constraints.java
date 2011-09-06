@@ -47,8 +47,8 @@ public class TestNodeReference_Constraints extends BaseConstraintsDescriptor {
             SNode test = SNodeOperations.getAncestorWhereConceptInList(_context.getEnclosingNode(), new String[]{"jetbrains.mps.lang.test.structure.NodesTestCase", "jetbrains.mps.lang.test.structure.EditorTestCase"}, true, false);
             List<SNode> result = new ArrayList<SNode>();
             if (test != null) {
-              for (SNode node : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(test, "jetbrains.mps.lang.test.structure.TestNodeAnnotation", true, new String[]{}))) {
-                ListSequence.<SNode>fromList(result).addElement(node);
+              for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(test, "jetbrains.mps.lang.test.structure.TestNodeAnnotation", true, new String[]{}))) {
+                ListSequence.fromList(result).addElement(node);
               }
             }
             return result;

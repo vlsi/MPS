@@ -19,9 +19,9 @@ public class ContextUtil {
     SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(node, "exprUsage");
     if ((usage != null)) {
       if (topmost) {
-        return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
+        return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
       } else {
-        return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return Classifier_Behavior.call_isStatic_521412098689998668(it);
           }
@@ -30,7 +30,7 @@ public class ContextUtil {
     } else {
       SNode outclass = genContext.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
       if ((outclass != null)) {
-        return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(outclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", true)).last();
+        return ListSequence.fromList(SNodeOperations.getAncestors(outclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", true)).last();
       }
     }
     return null;
@@ -40,9 +40,9 @@ public class ContextUtil {
     SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(node, "inner", true), "methUsageExpr");
     if ((usage != null)) {
       if (topmost) {
-        return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
+        return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
       } else {
-        return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return Classifier_Behavior.call_isStatic_521412098689998668(it);
           }
@@ -51,7 +51,7 @@ public class ContextUtil {
     } else {
       SNode outclass = genContext.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
       if ((outclass != null)) {
-        return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(outclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", true)).last();
+        return ListSequence.fromList(SNodeOperations.getAncestors(outclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", true)).last();
       }
     }
     return null;
@@ -64,9 +64,9 @@ public class ContextUtil {
         return SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       }
       if (topmost) {
-        return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
+        return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
       } else {
-        return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return Classifier_Behavior.call_isStatic_521412098689998668(it);
           }
@@ -75,7 +75,7 @@ public class ContextUtil {
     } else {
       SNode outclass = genContext.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
       if ((outclass != null)) {
-        return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(outclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", true)).last();
+        return ListSequence.fromList(SNodeOperations.getAncestors(outclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", true)).last();
       }
     }
     return null;

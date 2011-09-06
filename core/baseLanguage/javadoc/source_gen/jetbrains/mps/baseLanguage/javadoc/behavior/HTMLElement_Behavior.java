@@ -24,7 +24,7 @@ public class HTMLElement_Behavior {
     SNode nodeToSelect = null;
     int caret = -1;
 
-    if (Sequence.<SNode>fromIterable(lines).count() == 0) {
+    if (Sequence.fromIterable(lines).count() == 0) {
       SNode prev = SNodeOperations.getPrevSibling(thisNode);
       if (StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
         caret = SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
@@ -34,19 +34,19 @@ public class HTMLElement_Behavior {
       return new NodeCaretPair(prev, caret);
     } else {
       //  Merging first line 
-      for (SNode part : ListSequence.<SNode>fromList(SLinkOperations.getTargets(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "line", true)).first(), "part", true))) {
+      for (SNode part : ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "line", true)).first(), "part", true))) {
         SNodeOperations.insertPrevSiblingChild(thisNode, part);
       }
-      SNodeOperations.deleteNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "line", true)).first());
+      SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "line", true)).first());
       if (isBeginning) {
-        nodeToSelect = ListSequence.<SNode>fromList(SLinkOperations.getTargets(line, "part", true)).getElement(index - 1);
-        caret = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(line, "part", true)).getElement(index - 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
+        nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(line, "part", true)).getElement(index - 1);
+        caret = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(line, "part", true)).getElement(index - 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
       }
       CommentLine_Behavior.call_tryMergeToRight_439148907936414403(line, index - 1);
 
       //  Merging other lines 
-      SNode lastElementLine = ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "line", true)).last();
-      for (SNode elementLine : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "line", true)).reversedList()) {
+      SNode lastElementLine = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "line", true)).last();
+      for (SNode elementLine : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "line", true)).reversedList()) {
         SNodeOperations.insertNextSiblingChild(line, elementLine);
       }
 
@@ -54,20 +54,20 @@ public class HTMLElement_Behavior {
         index = SNodeOperations.getIndexInParent(thisNode);
         SNodeOperations.deleteNode(thisNode);
         if (!(isBeginning)) {
-          nodeToSelect = ListSequence.<SNode>fromList(SLinkOperations.getTargets(line, "part", true)).getElement(index - 1);
-          caret = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(line, "part", true)).getElement(index - 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
+          nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(line, "part", true)).getElement(index - 1);
+          caret = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(line, "part", true)).getElement(index - 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
         }
         CommentLine_Behavior.call_tryMergeToRight_439148907936414403(line, index - 1);
       } else {
         //  Merging last line parts 
-        index = ListSequence.<SNode>fromList(SLinkOperations.getTargets(lastElementLine, "part", true)).count() - 1;
-        for (SNode linePart : ListSequence.<SNode>fromList(SNodeOperations.getNextSiblings(thisNode, false))) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(lastElementLine, "part", true)).addElement(SNodeOperations.cast(linePart, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"));
+        index = ListSequence.fromList(SLinkOperations.getTargets(lastElementLine, "part", true)).count() - 1;
+        for (SNode linePart : ListSequence.fromList(SNodeOperations.getNextSiblings(thisNode, false))) {
+          ListSequence.fromList(SLinkOperations.getTargets(lastElementLine, "part", true)).addElement(SNodeOperations.cast(linePart, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"));
         }
         SNodeOperations.deleteNode(thisNode);
         if (!(isBeginning)) {
-          nodeToSelect = ListSequence.<SNode>fromList(SLinkOperations.getTargets(lastElementLine, "part", true)).getElement(index);
-          caret = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(lastElementLine, "part", true)).getElement(index), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
+          nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(lastElementLine, "part", true)).getElement(index);
+          caret = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(lastElementLine, "part", true)).getElement(index), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
         }
         CommentLine_Behavior.call_tryMergeToRight_439148907936414403(lastElementLine, index);
       }

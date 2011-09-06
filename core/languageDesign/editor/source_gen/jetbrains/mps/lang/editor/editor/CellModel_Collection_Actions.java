@@ -36,11 +36,11 @@ public class CellModel_Collection_Actions {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
         SNode p = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
         List<SNode> children = SLinkOperations.getTargets(node, "childCellModel", true);
-        for (SNode child : ListSequence.<SNode>fromList(children)) {
+        for (SNode child : ListSequence.fromList(children)) {
           SNodeOperations.insertPrevSiblingChild(node, child);
         }
-      } else if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "childCellModel", true)).count() == 1) {
-        SNode cell = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "childCellModel", true)).first();
+      } else if (ListSequence.fromList(SLinkOperations.getTargets(node, "childCellModel", true)).count() == 1) {
+        SNode cell = ListSequence.fromList(SLinkOperations.getTargets(node, "childCellModel", true)).first();
         SNodeOperations.replaceWithAnother(node, cell);
         return;
       }

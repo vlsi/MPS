@@ -19,7 +19,7 @@ public class ModelRefactorings_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      for (IRefactoring refactoring : ListSequence.<IRefactoring>fromList(RefactoringUtil.getAllRefactorings())) {
+      for (IRefactoring refactoring : ListSequence.fromList(RefactoringUtil.getAllRefactorings())) {
         if (refactoring.getRefactoringTarget().getTarget() == IRefactoringTarget.TargetType.MODEL) {
           ModelRefactorings_ActionGroup.this.addParameterizedAction(new GenericRefactoringAction_Action(refactoring), PluginId.getId("jetbrains.mps.lang.refactoring"), refactoring);
         }

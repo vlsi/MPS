@@ -15,6 +15,6 @@ public class Testbench_StubDescriptor extends BaseLibStubDescriptor {
   }
 
   public List<String> getPaths() {
-    return ListSequence.<String>fromListWithValues(new ArrayList<String>(), CommonPaths.getTestbenchPaths());
+    return ListSequence.fromListWithValues(new ArrayList<String>(), CommonPaths.getTestbenchPaths());
   }
 }

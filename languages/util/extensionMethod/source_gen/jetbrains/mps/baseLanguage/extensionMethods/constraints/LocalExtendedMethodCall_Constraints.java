@@ -77,11 +77,11 @@ public class LocalExtendedMethodCall_Constraints extends BaseConstraintsDescript
             }
             int constraint = IClassifiersSearchScope.INSTANCE_METHOD;
 
-            Set<String> names = SetSequence.<String>fromSet(new HashSet<String>());
+            Set<String> names = SetSequence.fromSet(new HashSet<String>());
             while (classifier != null) {
               for (SNode method : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, _context.getEnclosingNode(), constraint)) {
-                if (!(SetSequence.<String>fromSet(names).contains(SPropertyOperations.getString(method, "name")))) {
-                  ListSequence.<SNode>fromList(result).addElement(method);
+                if (!(SetSequence.fromSet(names).contains(SPropertyOperations.getString(method, "name")))) {
+                  ListSequence.fromList(result).addElement(method);
                 }
               }
               for (SNode method : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, _context.getEnclosingNode(), constraint)) {

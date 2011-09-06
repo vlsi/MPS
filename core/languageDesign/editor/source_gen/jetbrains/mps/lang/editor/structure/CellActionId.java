@@ -31,9 +31,9 @@ public enum CellActionId {
   }
 
   public static List<CellActionId> getConstants() {
-    List<CellActionId> list = ListSequence.<CellActionId>fromList(new LinkedList<CellActionId>());
-    ListSequence.<CellActionId>fromList(list).addElement(CellActionId.RIGHT_TRANSFORM);
-    ListSequence.<CellActionId>fromList(list).addElement(CellActionId.DELETE);
+    List<CellActionId> list = ListSequence.fromList(new LinkedList<CellActionId>());
+    ListSequence.fromList(list).addElement(CellActionId.RIGHT_TRANSFORM);
+    ListSequence.fromList(list).addElement(CellActionId.DELETE);
     return list;
   }
 

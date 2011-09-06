@@ -53,24 +53,24 @@ public class AddMethodDocComment_Intention extends BaseIntention implements Inte
 
     AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", null));
     //  Method parameters 
-    for (SNode parameterDeclaration : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true))) {
+    for (SNode parameterDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
       SNode paramTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
       SLinkOperations.setTarget(paramTag, "parameter", new AddMethodDocComment_Intention.QuotationClass_en9z97_a2a1a4a5().createNode(parameterDeclaration), true);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), "param", true)).addElement(paramTag);
+      ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), "param", true)).addElement(paramTag);
     }
 
     //  Type variables 
-    for (SNode typeVariableDeclaration : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true))) {
+    for (SNode typeVariableDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true))) {
       SNode paramTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
       SLinkOperations.setTarget(paramTag, "parameter", new AddMethodDocComment_Intention.QuotationClass_en9z97_a2a1a7a5().createNode(typeVariableDeclaration), true);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), "param", true)).addElement(paramTag);
+      ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), "param", true)).addElement(paramTag);
     }
 
     //  Thrown exceptions 
-    for (SNode throwsItem : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsItem", true))) {
+    for (SNode throwsItem : ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true))) {
       SNode throwsTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", null);
       SLinkOperations.setTarget(throwsTag, "exceptionType", SNodeOperations.copyNode(throwsItem), true);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), "throwsTag", true)).addElement(throwsTag);
+      ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), "throwsTag", true)).addElement(throwsTag);
     }
 
     //  Return value 

@@ -18,7 +18,7 @@ public class VariableNameDeclaration_Behavior {
   }
 
   public static SNode getDefinedName_9034131902192956167(IScope scope, String name) {
-    for (SNode definedVar : ListSequence.<SNode>fromList(SConceptOperations.findConceptInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.VariableNameDeclaration"), scope))) {
+    for (SNode definedVar : ListSequence.fromList(SConceptOperations.findConceptInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.VariableNameDeclaration"), scope))) {
       if (StringUtils.isNotEmpty(SPropertyOperations.getString(definedVar, "name")) && SPropertyOperations.getString(definedVar, "name").equals(name)) {
         return definedVar;
       }
@@ -29,16 +29,16 @@ public class VariableNameDeclaration_Behavior {
   public static List<SNode> getDefinedBeforeNode_9034131902193864152(SNode node) {
     List<SNode> result = new ArrayList<SNode>();
     SNode script = SNodeOperations.getAncestor(node, "jetbrains.mps.bash.structure.ShellScript", false, false);
-    ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(script, "usedVars", true)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(script, "usedVars", true)));
     SNode to = SNodeOperations.getAncestor(node, "jetbrains.mps.bash.structure.InputLine", false, false);
-    for (SNode line : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(script, "commands", true), "lines", true))) {
+    for (SNode line : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(script, "commands", true), "lines", true))) {
       if (line == to) {
         break;
       }
-      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(line, "jetbrains.mps.bash.structure.VariableNameDeclaration", false, new String[]{})));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(line, "jetbrains.mps.bash.structure.VariableNameDeclaration", false, new String[]{})));
     }
     if ((SNodeOperations.getAncestor(node, "jetbrains.mps.bash.structure.ForCommand", false, false) != null)) {
-      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.bash.structure.ForCommand", false, false), "accord", true), "jetbrains.mps.bash.structure.VariableNameDeclaration", false, new String[]{})));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.bash.structure.ForCommand", false, false), "accord", true), "jetbrains.mps.bash.structure.VariableNameDeclaration", false, new String[]{})));
     }
     return result;
   }
@@ -46,15 +46,15 @@ public class VariableNameDeclaration_Behavior {
   public static List<SNode> getDefinedInShell_9034131902194381915(SNode node) {
     List<SNode> result = new ArrayList<SNode>();
     SNode script = SNodeOperations.getAncestor(node, "jetbrains.mps.bash.structure.ShellScript", false, false);
-    ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(script, "usedVars", true)));
-    for (SNode line : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(script, "commands", true), "lines", true))) {
-      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(line, "jetbrains.mps.bash.structure.VariableNameDeclaration", false, new String[]{})));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(script, "usedVars", true)));
+    for (SNode line : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(script, "commands", true), "lines", true))) {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(line, "jetbrains.mps.bash.structure.VariableNameDeclaration", false, new String[]{})));
     }
     return result;
   }
 
   public static SNode testName_9034131902194480300(SNode node, String name) {
-    for (SNode v : ListSequence.<SNode>fromList(VariableNameDeclaration_Behavior.getDefinedInShell_9034131902194381915(node))) {
+    for (SNode v : ListSequence.fromList(VariableNameDeclaration_Behavior.getDefinedInShell_9034131902194381915(node))) {
       if (StringUtils.isNotEmpty(SPropertyOperations.getString(v, "name")) && SPropertyOperations.getString(v, "name").equals(name)) {
         return v;
       }

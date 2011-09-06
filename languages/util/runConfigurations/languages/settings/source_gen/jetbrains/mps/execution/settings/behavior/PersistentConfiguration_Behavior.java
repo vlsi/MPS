@@ -45,7 +45,7 @@ public class PersistentConfiguration_Behavior {
   }
 
   public static List<SNode> call_getTemplateProperties_946964771156066510(SNode thisNode) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "persistentProperty", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "persistentProperty", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return PersistentPropertyDeclaration_Behavior.call_isTemplate_946964771156066860(it);
       }
@@ -53,7 +53,7 @@ public class PersistentConfiguration_Behavior {
   }
 
   public static List<SNode> call_getNonTemplateProperties_946964771156066530(SNode thisNode) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "persistentProperty", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "persistentProperty", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(PersistentPropertyDeclaration_Behavior.call_isTemplate_946964771156066860(it));
       }
@@ -67,7 +67,7 @@ public class PersistentConfiguration_Behavior {
   public static List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
     List<SNode> allMemebers = IClassifier_Behavior.callSuper_getMembers_1213877528020(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration", contextNode);
     if ((SNodeOperations.getAncestor(contextNode, "jetbrains.mps.execution.settings.structure.SettingsEditor", false, false) != null)) {
-      return ListSequence.<SNode>fromList(allMemebers).where(new IWhereFilter<SNode>() {
+      return ListSequence.fromList(allMemebers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod")) || !(SNodeOperations.isInstanceOf(IMember_Behavior.call_getVisiblity_1213877352965(it), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
         }

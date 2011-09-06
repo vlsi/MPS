@@ -26,25 +26,25 @@ public class TryCatchStatement_Behavior {
   }
 
   public static void collectUncatchedThrowables_4313092516462065508(Set<SNode> throwables, SNode body, List<SNode> catchClause, boolean ignoreMayBeThrowables) {
-    Set<SNode> thrownsFromBody = SetSequence.<SNode>fromSet(new HashSet());
+    Set<SNode> thrownsFromBody = SetSequence.fromSet(new HashSet());
     StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(body, thrownsFromBody, ignoreMayBeThrowables);
 
     // remove what we have catched 
-    for (SNode caatch : ListSequence.<SNode>fromList(catchClause)) {
+    for (SNode caatch : ListSequence.fromList(catchClause)) {
       SLinkOperations.getTarget(caatch, "throwable", true);
-      Set<SNode> toRemove = SetSequence.<SNode>fromSet(new HashSet());
-      for (SNode thrownFromBody : SetSequence.<SNode>fromSet(thrownsFromBody)) {
+      Set<SNode> toRemove = SetSequence.fromSet(new HashSet());
+      for (SNode thrownFromBody : SetSequence.fromSet(thrownsFromBody)) {
         SNode catchedType = SLinkOperations.getTarget(SLinkOperations.getTarget(caatch, "throwable", true), "type", true);
         if (TypeChecker.getInstance().getSubtypingManager().isSubtype(new TryCatchStatement_Behavior.QuotationClass_1bi1ep_a0a0b0c0e0d().createNode(thrownFromBody), catchedType)) {
           SetSequence.fromSet(toRemove).addElement(thrownFromBody);
         }
       }
-      SetSequence.fromSet(thrownsFromBody).removeSequence(SetSequence.<SNode>fromSet(toRemove));
+      SetSequence.fromSet(thrownsFromBody).removeSequence(SetSequence.fromSet(toRemove));
     }
-    SetSequence.fromSet(throwables).addSequence(SetSequence.<SNode>fromSet(thrownsFromBody));
+    SetSequence.fromSet(throwables).addSequence(SetSequence.fromSet(thrownsFromBody));
 
     // now collect what was thrown in catch blocks 
-    for (SNode caatch : ListSequence.<SNode>fromList(catchClause)) {
+    for (SNode caatch : ListSequence.fromList(catchClause)) {
       StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(caatch, "catchBody", true), throwables, ignoreMayBeThrowables);
     }
   }

@@ -40,17 +40,17 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
-    for (SNode implementor : ListSequence.<SNode>fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
-      ListSequence.<SNode>fromList(implementorsAndAncestorsList).addElement(implementor);
+    for (SNode implementor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
+      ListSequence.fromList(implementorsAndAncestorsList).addElement(implementor);
     }
-    for (SNode classNode : ListSequence.<SNode>fromList(implementorsAndAncestorsList).<SNode>select(new ISelector<SNode, SNode>() {
+    for (SNode classNode : ListSequence.fromList(implementorsAndAncestorsList).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       }
     })) {
-      for (SNode sMethod : ListSequence.<SNode>fromList(SLinkOperations.getTargets(classNode, "method", true))) {
+      for (SNode sMethod : ListSequence.fromList(SLinkOperations.getTargets(classNode, "method", true))) {
         if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(sMethod, node)) {
-          ListSequence.<SNode>fromList(_results).addElement(sMethod);
+          ListSequence.fromList(_results).addElement(sMethod);
         }
       }
     }

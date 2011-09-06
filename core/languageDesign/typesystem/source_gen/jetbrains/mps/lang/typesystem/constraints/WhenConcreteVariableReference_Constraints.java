@@ -47,7 +47,7 @@ public class WhenConcreteVariableReference_Constraints extends BaseConstraintsDe
             for (SNode whenConcreteStatement : whenConcreteStatements) {
               SNode variableDeclaration = SLinkOperations.getTarget(whenConcreteStatement, "argumentRepresentator", true);
               if (variableDeclaration != null) {
-                ListSequence.<SNode>fromList(declarations).addElement(variableDeclaration);
+                ListSequence.fromList(declarations).addElement(variableDeclaration);
               }
             }
             return declarations;

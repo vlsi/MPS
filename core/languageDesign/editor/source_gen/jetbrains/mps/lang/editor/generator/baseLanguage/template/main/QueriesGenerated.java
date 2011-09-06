@@ -556,11 +556,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1214320937729(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "tags", true)).isEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "tags", true)).isEmpty()) {
       return SPropertyOperations.getString_def(_context.getNode(), "tag", null);
     }
     String result = "";
-    for (SNode tagWrapper : ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "tags", true))) {
+    for (SNode tagWrapper : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "tags", true))) {
       if (StringUtils.isNotEmpty(result)) {
         result += SideTransformHintSubstituteActionsHelper.SIDE_TRANSFORM_TAG_SEPARATOR;
       }
@@ -721,7 +721,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1767562947360483792(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode generatedClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeListHandler");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(generatedClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(generatedClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1197580078127(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -775,7 +775,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1189585520115(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode itemClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(itemClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(itemClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1197582304040(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -789,12 +789,12 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_3710678335995670557(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode editorComponent = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefCell"), "editorComponent", true);
     SNode editorComponentClass = SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(editorComponent, "generatedClass"), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(editorComponentClass, "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(editorComponentClass, "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_2530139371362847285(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode generatedClass = SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass"), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1217443071855(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -803,7 +803,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1197568203627(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode generatedClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(generatedClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(generatedClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1197572720842(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -816,7 +816,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1197572060712(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode generatedClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(generatedClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(generatedClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1176478910892(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -835,7 +835,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1197572493147(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode generatedClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(generatedClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(generatedClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1197583926756(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -890,7 +890,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_7943820734261953492(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode generatedClass = SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass"), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1227109487647(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -972,7 +972,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_4531786690998911335(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     final String methodName = SConceptPropertyOperations.getString(_context.getNode(), "methodToGenerate");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)", "8394433674396727873"), "method", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)", "8394433674396727873"), "method", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_x583g4_a0a0a0a0a0b0fh(SPropertyOperations.getString(it, "name"), methodName);
       }
@@ -1005,7 +1005,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1210374656847891641(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode generatedClass = SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass"), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
   }
 
   public static boolean ifMacro_Condition_1168384460946(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1205,7 +1205,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1233150067223(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "separatorStyle", true), "styleItem", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "separatorStyle", true), "styleItem", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_6702281845925898107(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1285,7 +1285,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5170495790389308519(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "styleItem", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "styleItem", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_5170495790389308535(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1405,7 +1405,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1221060284674(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(_context.getNode(), "conceptFunctionReturnType")).first();
+    return ListSequence.fromList(SLinkOperations.getConceptLinkTargets(_context.getNode(), "conceptFunctionReturnType")).first();
   }
 
   public static SNode sourceNodeQuery_1176886006186(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

@@ -14,9 +14,9 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Set;
@@ -46,7 +46,7 @@ public class MethodDocReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.<SNode>fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")).removeWhere(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")).removeWhere(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IVisible") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true) == new MethodDocReference_Constraints.QuotationClass_8et2et_a0a0a0a0a0a0a0a0a1a0b0a1a0().createNode();
               }

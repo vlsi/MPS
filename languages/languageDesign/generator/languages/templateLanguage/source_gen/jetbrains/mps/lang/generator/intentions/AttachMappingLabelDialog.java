@@ -50,7 +50,7 @@ public class AttachMappingLabelDialog extends BaseDialog {
     c.fill = GridBagConstraints.HORIZONTAL;
     c.weightx = 1;
     c.gridx = 1;
-    final JComboBox nameCombo = new JComboBox(ListSequence.<String>fromList(this.myExistingLabels).toGenericArray(String.class));
+    final JComboBox nameCombo = new JComboBox(ListSequence.fromList(this.myExistingLabels).toGenericArray(String.class));
     nameCombo.setEditable(true);
     namePanel.add(nameCombo, c);
     nameCombo.addActionListener(new ActionListener() {
@@ -58,11 +58,11 @@ public class AttachMappingLabelDialog extends BaseDialog {
         AttachMappingLabelDialog.this.myResultLabelName = (String) nameCombo.getSelectedItem();
       }
     });
-    if (ListSequence.<String>fromList(this.myExistingLabels).isNotEmpty()) {
-      nameCombo.setSelectedItem(ListSequence.<String>fromList(this.myExistingLabels).first());
+    if (ListSequence.fromList(this.myExistingLabels).isNotEmpty()) {
+      nameCombo.setSelectedItem(ListSequence.fromList(this.myExistingLabels).first());
       JTextField textField = ((JTextField) nameCombo.getEditor().getEditorComponent());
       textField.setSelectionStart(0);
-      textField.setSelectionEnd(ListSequence.<String>fromList(this.myExistingLabels).first().length());
+      textField.setSelectionEnd(ListSequence.fromList(this.myExistingLabels).first().length());
     }
     return namePanel;
   }
@@ -90,7 +90,7 @@ public class AttachMappingLabelDialog extends BaseDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SNode mappingLabel = MappingLabelUtil.findOrCreateMappingLabelForName(AttachMappingLabelDialog.this.myTemplateNode, AttachMappingLabelDialog.this.myResultLabelName);
-        SNode existingMacro = ListSequence.<SNode>fromList(AttributeOperations.getAttributeList(AttachMappingLabelDialog.this.myTemplateNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro")))).last();
+        SNode existingMacro = ListSequence.fromList(AttributeOperations.getAttributeList(AttachMappingLabelDialog.this.myTemplateNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro")))).last();
         if (existingMacro != null) {
           SLinkOperations.setTarget(existingMacro, "mappingLabel", mappingLabel, false);
           return;

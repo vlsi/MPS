@@ -20,13 +20,13 @@ public class Ypath_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
-    List<BaseCustomApplicationPlugin> res = ListSequence.<BaseCustomApplicationPlugin>fromList(new ArrayList<BaseCustomApplicationPlugin>());
+    List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     addCustomPart(res, new DesignPartLoader_CustomApplicationPlugin());
     return res;
   }
 
   private void addCustomPart(List<BaseCustomApplicationPlugin> plugins, BaseCustomApplicationPlugin plugin) {
-    ListSequence.<BaseCustomApplicationPlugin>fromList(plugins).addElement(plugin);
+    ListSequence.fromList(plugins).addElement(plugin);
     plugin.init();
   }
 }

@@ -27,13 +27,13 @@ public class supertypes_of_typeVariableReference_SubtypingRule extends Subtyping
     SNode typeVariableDeclaration = SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false);
     List<SNode> supertypes = new ArrayList<SNode>();
     if ((SLinkOperations.getTarget(typeVariableDeclaration, "bound", true) != null)) {
-      ListSequence.<SNode>fromList(supertypes).addElement(SLinkOperations.getTarget(typeVariableDeclaration, "bound", true));
+      ListSequence.fromList(supertypes).addElement(SLinkOperations.getTarget(typeVariableDeclaration, "bound", true));
     }
     for (SNode bound : SLinkOperations.getTargets(typeVariableDeclaration, "auxBounds", true)) {
-      ListSequence.<SNode>fromList(supertypes).addElement(bound);
+      ListSequence.fromList(supertypes).addElement(bound);
     }
-    if (ListSequence.<SNode>fromList(supertypes).isEmpty()) {
-      ListSequence.<SNode>fromList(supertypes).addElement(new supertypes_of_typeVariableReference_SubtypingRule.QuotationClass_bsqhn5_a0a0a0e0a().createNode(typeCheckingContext));
+    if (ListSequence.fromList(supertypes).isEmpty()) {
+      ListSequence.fromList(supertypes).addElement(new supertypes_of_typeVariableReference_SubtypingRule.QuotationClass_bsqhn5_a0a0a0e0a().createNode(typeCheckingContext));
     }
     return supertypes;
   }

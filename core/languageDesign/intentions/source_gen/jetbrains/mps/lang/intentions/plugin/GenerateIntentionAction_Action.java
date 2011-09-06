@@ -33,7 +33,7 @@ public class GenerateIntentionAction_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setText(GenerateIntentionAction_Action.this.intention.getDescription(GenerateIntentionAction_Action.this.node, ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("context"))));
+      event.getPresentation().setText(GenerateIntentionAction_Action.this.intention.getDescription(GenerateIntentionAction_Action.this.node, ((EditorContext) MapSequence.fromMap(_params).get("context"))));
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "GenerateIntentionAction", t);
       this.disable(event.getPresentation());
@@ -44,8 +44,8 @@ public class GenerateIntentionAction_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
@@ -54,10 +54,10 @@ public class GenerateIntentionAction_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final IntentionContext intentionContext = new IntentionContext();
-      if (GenerateIntentionAction_Action.this.intention.executeUI(GenerateIntentionAction_Action.this.node, ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("context")), intentionContext)) {
+      if (GenerateIntentionAction_Action.this.intention.executeUI(GenerateIntentionAction_Action.this.node, ((EditorContext) MapSequence.fromMap(_params).get("context")), intentionContext)) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            GenerateIntentionAction_Action.this.intention.execute(GenerateIntentionAction_Action.this.node, ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("context")), intentionContext);
+            GenerateIntentionAction_Action.this.intention.execute(GenerateIntentionAction_Action.this.node, ((EditorContext) MapSequence.fromMap(_params).get("context")), intentionContext);
           }
         });
       }

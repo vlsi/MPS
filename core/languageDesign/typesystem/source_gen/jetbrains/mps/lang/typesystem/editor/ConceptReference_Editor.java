@@ -155,7 +155,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
         String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "concept", false), "name"));
         result = NameUtil.splitByCamels(name);
       } else {
-        result = ListSequence.<String>fromList(new ArrayList<String>());
+        result = ListSequence.fromList(new ArrayList<String>());
       }
       return result;
     }

@@ -11,7 +11,7 @@ public class Level_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<Level> constants = ListSequence.<Level>fromList(Level.getConstants()).iterator();
+    Iterator<Level> constants = ListSequence.fromList(Level.getConstants()).iterator();
     while (constants.hasNext()) {
       Level constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class Level_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<Level> constants = ListSequence.<Level>fromList(Level.getConstants()).iterator();
+    Iterator<Level> constants = ListSequence.fromList(Level.getConstants()).iterator();
     while (constants.hasNext()) {
       Level constant = constants.next();
       if (value.equals(constant.getName())) {

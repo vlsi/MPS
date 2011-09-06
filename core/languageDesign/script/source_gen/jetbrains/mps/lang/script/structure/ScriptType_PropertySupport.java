@@ -11,7 +11,7 @@ public class ScriptType_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<ScriptType> constants = ListSequence.<ScriptType>fromList(ScriptType.getConstants()).iterator();
+    Iterator<ScriptType> constants = ListSequence.fromList(ScriptType.getConstants()).iterator();
     while (constants.hasNext()) {
       ScriptType constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class ScriptType_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<ScriptType> constants = ListSequence.<ScriptType>fromList(ScriptType.getConstants()).iterator();
+    Iterator<ScriptType> constants = ListSequence.fromList(ScriptType.getConstants()).iterator();
     while (constants.hasNext()) {
       ScriptType constant = constants.next();
       if (value.equals(constant.getName())) {

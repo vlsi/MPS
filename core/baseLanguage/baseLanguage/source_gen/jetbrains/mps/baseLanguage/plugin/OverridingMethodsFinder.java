@@ -26,23 +26,23 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.LinkedHashSet;
 
 public class OverridingMethodsFinder {
-  private Map<SNode, Set<Tuples._2<SNode, SNode>>> myOverridingToOverridenMethodsMap = MapSequence.<SNode,Set<Tuples._2<SNode, SNode>>>fromMap(new HashMap<SNode, Set<Tuples._2<SNode, SNode>>>());
+  private Map<SNode, Set<Tuples._2<SNode, SNode>>> myOverridingToOverridenMethodsMap = MapSequence.fromMap(new HashMap<SNode, Set<Tuples._2<SNode, SNode>>>());
 
   public OverridingMethodsFinder(SNode container) {
     this(container, getInstanceMethods(container));
   }
 
   public OverridingMethodsFinder(SNode container, Iterable<SNode> methods) {
-    Map<String, Set<SNode>> nameToMethodsMap = MapSequence.<String,Set<SNode>>fromMap(new HashMap<String, Set<SNode>>());
-    for (SNode methodToCheck : Sequence.<SNode>fromIterable(methods).where(new IWhereFilter<SNode>() {
+    Map<String, Set<SNode>> nameToMethodsMap = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
+    for (SNode methodToCheck : Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return canOverride(it);
       }
     })) {
       SetSequence.fromSet(safeGet(nameToMethodsMap, SPropertyOperations.getString(methodToCheck, "name"))).addElement(methodToCheck);
     }
-    if (MapSequence.<String,Set<SNode>>fromMap(nameToMethodsMap).isNotEmpty()) {
-      collectOverridingMethodsInClassifierHierarchy(container, nameToMethodsMap, SetSequence.<SNode>fromSet(new HashSet<SNode>()));
+    if (MapSequence.fromMap(nameToMethodsMap).isNotEmpty()) {
+      collectOverridingMethodsInClassifierHierarchy(container, nameToMethodsMap, SetSequence.fromSet(new HashSet<SNode>()));
     }
   }
 
@@ -51,7 +51,7 @@ public class OverridingMethodsFinder {
   }
 
   public Set<Tuples._2<SNode, SNode>> getOverridenMethods(SNode overridingMethod) {
-    return MapSequence.<SNode,Set<Tuples._2<SNode, SNode>>>fromMap(this.myOverridingToOverridenMethodsMap).get(overridingMethod);
+    return MapSequence.fromMap(this.myOverridingToOverridenMethodsMap).get(overridingMethod);
   }
 
   private void collectOverridingMethodsInClassifierHierarchy(SNode classifier, final Map<String, Set<SNode>> nameToMethodsMap, final Set<SNode> visitedClassifiers) {
@@ -64,7 +64,7 @@ public class OverridingMethodsFinder {
       if (addIfNotContains(visitedClassifiers, superClass)) {
         collectOverridingMethods(superClass, nameToMethodsMap, visitedClassifiers);
       }
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(clazz, "implementedInterface", true)).<SNode>select(new ISelector<SNode, SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(clazz, "implementedInterface", true)).<SNode>select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, "classifier", false);
         }
@@ -84,7 +84,7 @@ public class OverridingMethodsFinder {
         }
       }
     } else if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)).<SNode>select(new ISelector<SNode, SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)).<SNode>select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, "classifier", false);
         }
@@ -101,47 +101,47 @@ public class OverridingMethodsFinder {
   }
 
   private void collectOverridingMethods(SNode classifier, Map<String, Set<SNode>> nameToMethodsMap, Set<SNode> visitedClassifiers) {
-    Map<String, Set<SNode>> methodNameToMethodMapCopy = MapSequence.<String,Set<SNode>>fromMap(new HashMap<String, Set<SNode>>());
-    for (String methodName : SetSequence.<String>fromSet(MapSequence.fromMap(nameToMethodsMap).keySet())) {
-      SetSequence.fromSet(safeGet(methodNameToMethodMapCopy, methodName)).addSequence(SetSequence.<SNode>fromSet(MapSequence.<String,Set<SNode>>fromMap(nameToMethodsMap).get(methodName)));
+    Map<String, Set<SNode>> methodNameToMethodMapCopy = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
+    for (String methodName : SetSequence.fromSet(MapSequence.fromMap(nameToMethodsMap).keySet())) {
+      SetSequence.fromSet(safeGet(methodNameToMethodMapCopy, methodName)).addSequence(SetSequence.fromSet(MapSequence.fromMap(nameToMethodsMap).get(methodName)));
     }
-    for (final SNode classifierMethod : ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "method", true)).where(new IWhereFilter<SNode>() {
+    for (final SNode classifierMethod : ListSequence.fromList(SLinkOperations.getTargets(classifier, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return canBeOverriden(it);
       }
     })) {
-      Set<SNode> similarMethods = MapSequence.<String,Set<SNode>>fromMap(methodNameToMethodMapCopy).get(SPropertyOperations.getString(classifierMethod, "name"));
+      Set<SNode> similarMethods = MapSequence.fromMap(methodNameToMethodMapCopy).get(SPropertyOperations.getString(classifierMethod, "name"));
       if (similarMethods == null) {
         continue;
       }
       List<SNode> overridingMethods = new ArrayList<SNode>();
-      for (SNode overridingMethod : SetSequence.<SNode>fromSet(similarMethods).where(new IWhereFilter<SNode>() {
+      for (SNode overridingMethod : SetSequence.fromSet(similarMethods).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(classifierMethod, it);
         }
       })) {
         SetSequence.fromSet(safeGet(this.myOverridingToOverridenMethodsMap, overridingMethod)).addElement(MultiTuple.<SNode,SNode>from(classifierMethod, classifier));
-        ListSequence.<SNode>fromList(overridingMethods).addElement(overridingMethod);
+        ListSequence.fromList(overridingMethods).addElement(overridingMethod);
       }
-      SetSequence.fromSet(similarMethods).removeSequence(ListSequence.<SNode>fromList(overridingMethods));
-      if (SetSequence.<SNode>fromSet(similarMethods).isEmpty()) {
+      SetSequence.fromSet(similarMethods).removeSequence(ListSequence.fromList(overridingMethods));
+      if (SetSequence.fromSet(similarMethods).isEmpty()) {
         MapSequence.fromMap(methodNameToMethodMapCopy).removeKey(SPropertyOperations.getString(classifierMethod, "name"));
       }
     }
-    if (!(MapSequence.<String,Set<SNode>>fromMap(methodNameToMethodMapCopy).isEmpty())) {
+    if (!(MapSequence.fromMap(methodNameToMethodMapCopy).isEmpty())) {
       collectOverridingMethodsInClassifierHierarchy(classifier, methodNameToMethodMapCopy, visitedClassifiers);
     }
   }
 
   public static Iterable<SNode> getInstanceMethods(final SNode containingClassifier) {
-    Iterable<SNode> result = Sequence.<SNode>fromClosure(new ISequenceClosure<SNode>() {
+    Iterable<SNode> result = Sequence.fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
         return SLinkOperations.getTargets(containingClassifier, "method", true);
       }
     });
     if (SNodeOperations.isInstanceOf(containingClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
-      for (SNode enumConstant : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(containingClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
-        result = Sequence.<SNode>fromIterable(result).concat(ListSequence.<SNode>fromList(SLinkOperations.getTargets(enumConstant, "method", true)));
+      for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(containingClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
+        result = Sequence.fromIterable(result).concat(ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "method", true)));
       }
     }
     return result;
@@ -157,13 +157,13 @@ public class OverridingMethodsFinder {
 
   public static <K, V> Set<V> safeGet(Map<K, Set<V>> map, K key) {
     if (!(MapSequence.fromMap(map).containsKey(key))) {
-      MapSequence.<K,Set<V>>fromMap(map).put(key, SetSequence.<V>fromSet(new LinkedHashSet<V>()));
+      MapSequence.fromMap(map).put(key, SetSequence.fromSet(new LinkedHashSet<V>()));
     }
-    return MapSequence.<K,Set<V>>fromMap(map).get(key);
+    return MapSequence.fromMap(map).get(key);
   }
 
   private static boolean addIfNotContains(Set<SNode> classifierSet, SNode classifier) {
-    if (!(SetSequence.<SNode>fromSet(classifierSet).contains(classifier))) {
+    if (!(SetSequence.fromSet(classifierSet).contains(classifier))) {
       SetSequence.fromSet(classifierSet).addElement(classifier);
       return true;
     }

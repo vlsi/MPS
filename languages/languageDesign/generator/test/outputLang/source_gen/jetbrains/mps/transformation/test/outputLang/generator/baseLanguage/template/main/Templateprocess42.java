@@ -40,8 +40,8 @@ public class Templateprocess42 implements TemplateDeclarationWeavingAware {
   }
 
   private Map<String, Object> getParametersAsMap() {
-    Map<String, Object> result = MapSequence.<String,Object>fromMap(new HashMap<String, Object>());
-    MapSequence.<String,Object>fromMap(result).put("node", myNode);
+    Map<String, Object> result = MapSequence.fromMap(new HashMap<String, Object>());
+    MapSequence.fromMap(result).put("node", myNode);
     return result;
   }
 

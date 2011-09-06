@@ -31,9 +31,9 @@ public enum Side {
   }
 
   public static List<Side> getConstants() {
-    List<Side> list = ListSequence.<Side>fromList(new LinkedList<Side>());
-    ListSequence.<Side>fromList(list).addElement(Side.right);
-    ListSequence.<Side>fromList(list).addElement(Side.left);
+    List<Side> list = ListSequence.fromList(new LinkedList<Side>());
+    ListSequence.fromList(list).addElement(Side.right);
+    ListSequence.fromList(list).addElement(Side.left);
     return list;
   }
 

@@ -23,7 +23,7 @@ public class check_EqualsMethodTypes_NonTypesystemRule extends AbstractNonTypesy
 
   public void applyRule(final SNode instanceMethodCallOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (instanceMethodCallOperation != null && SLinkOperations.getTarget(instanceMethodCallOperation, "baseMethodDeclaration", false) != null && "equals".equals(SPropertyOperations.getString(SLinkOperations.getTarget(instanceMethodCallOperation, "baseMethodDeclaration", false), "name"))) {
-      if (!(RulesFunctions_BaseLanguage.typesAreComparable(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(instanceMethodCallOperation)), TypeChecker.getInstance().getTypeOf(ListSequence.<SNode>fromList(SLinkOperations.getTargets(instanceMethodCallOperation, "actualArgument", true)).first())))) {
+      if (!(RulesFunctions_BaseLanguage.typesAreComparable(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(instanceMethodCallOperation)), TypeChecker.getInstance().getTypeOf(ListSequence.fromList(SLinkOperations.getTargets(instanceMethodCallOperation, "actualArgument", true)).first())))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(instanceMethodCallOperation, "equals() between objects of inconvertible types", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6293790355739144894", null, errorTarget);

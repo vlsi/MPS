@@ -28,9 +28,9 @@ public class LambdaAbstraction_Behavior {
   public static List<SNode> call_getAllVariables_5066394162984559815(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     // Is it OK to create lists recursively? 
-    ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "variable", true)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "variable", true)));
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "body", true), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction")) {
-      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(LambdaAbstraction_Behavior.call_getAllVariables_5066394162984559815(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "body", true), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction"))));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(LambdaAbstraction_Behavior.call_getAllVariables_5066394162984559815(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "body", true), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction"))));
     }
     return result;
   }

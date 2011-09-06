@@ -27,7 +27,7 @@ public class AbstractProjectComponent_Behavior {
   }
 
   public static File call_getHomeFile_1213877333764(SNode thisNode) {
-    return new File(IMacroHolder_Behavior.call_getPath_1234976932856(ListSequence.<SNode>fromList(SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.build.packaging.structure.Layout")).first()));
+    return new File(IMacroHolder_Behavior.call_getPath_1234976932856(ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.build.packaging.structure.Layout")).first()));
   }
 
   public static File call_getPath_1233752667763(SNode thisNode, SNode parentNode) {
@@ -55,10 +55,10 @@ public class AbstractProjectComponent_Behavior {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent") && !(AbstractProjectComponent_Behavior.call_included_1213877333807(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), config))) {
       return false;
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).isEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).isEmpty()) {
       return true;
     }
-    for (SNode ref : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "configuration", true))) {
+    for (SNode ref : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true))) {
       if (SLinkOperations.getTarget(ref, "configuration", false) == config) {
         return true;
       }
@@ -67,7 +67,7 @@ public class AbstractProjectComponent_Behavior {
   }
 
   public static List<SNode> virtual_getPostProcessingTasks_1213877333861(SNode thisNode) {
-    return ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    return ListSequence.fromList(new ArrayList<SNode>());
   }
 
   public static String call_getShortName_1213877333869(SNode thisNode, String name) {

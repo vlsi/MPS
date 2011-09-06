@@ -11,7 +11,7 @@ public class Feedback_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<Feedback> constants = ListSequence.<Feedback>fromList(Feedback.getConstants()).iterator();
+    Iterator<Feedback> constants = ListSequence.fromList(Feedback.getConstants()).iterator();
     while (constants.hasNext()) {
       Feedback constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class Feedback_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<Feedback> constants = ListSequence.<Feedback>fromList(Feedback.getConstants()).iterator();
+    Iterator<Feedback> constants = ListSequence.fromList(Feedback.getConstants()).iterator();
     while (constants.hasNext()) {
       Feedback constant = constants.next();
       if (value.equals(constant.getName())) {

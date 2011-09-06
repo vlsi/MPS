@@ -44,16 +44,16 @@ public class AddOperationParameter_Intention extends BaseIntention implements In
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty()) {
-      return ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(node, "applicableParameter")).isNotEmpty();
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty()) {
+      return ListSequence.fromList(SLinkOperations.getConceptLinkTargets(node, "applicableParameter")).isNotEmpty();
     }
     return false;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
     List<SNode> applicableParms = SLinkOperations.getConceptLinkTargets(node, "applicableParameter");
-    if (ListSequence.<SNode>fromList(applicableParms).count() == 1) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).addElement(SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(((SNode) ListSequence.<SNode>fromList(applicableParms).first())), null));
+    if (ListSequence.fromList(applicableParms).count() == 1) {
+      ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).addElement(SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(((SNode) ListSequence.fromList(applicableParms).first())), null));
     } else {
       SNodeFactoryOperations.addNewChild(node, "parameter", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter");
     }

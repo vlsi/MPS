@@ -38,8 +38,8 @@ public class StaticMethodCall_Behavior {
   public static void call_convertToLocal_3299924278393509387(SNode thisNode) {
     SNode localStaticMethodCall = SNodeFactoryOperations.replaceWithNewChild(thisNode, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall");
     SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), false);
-    for (SNode actualArgument : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true))) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)).addElement(actualArgument);
+    for (SNode actualArgument : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true))) {
+      ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)).addElement(actualArgument);
     }
   }
 }

@@ -82,24 +82,24 @@ public class StateMachine_Editor extends DefaultNodeEditor {
       public TableModel getTable(final SNode node, final EditorContext editorContext) {
         return new AbstractTableModel() {
           public int getColumnCount() {
-            return 1 + ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "events", true)).count();
+            return 1 + ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).count();
           }
 
           public int getRowCount() {
-            return 1 + ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "states", true)).count();
+            return 1 + ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).count();
           }
 
           public SNode getValueAt(int row, int column) {
             if (row == 0 && column > 0) {
-              return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "events", true)).getElement(column - 1);
+              return ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).getElement(column - 1);
             }
             if (column == 0 && row > 0) {
-              return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "states", true)).getElement(row - 1);
+              return ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).getElement(row - 1);
             }
             if (row > 0 && column > 0) {
-              SNode event = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "events", true)).getElement(column - 1);
-              SNode state = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "states", true)).getElement(row - 1);
-              for (SNode transition : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "transitions", true))) {
+              SNode event = ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).getElement(column - 1);
+              SNode state = ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).getElement(row - 1);
+              for (SNode transition : ListSequence.fromList(SLinkOperations.getTargets(node, "transitions", true))) {
                 if (SLinkOperations.getTarget(SLinkOperations.getTarget(transition, "trigger", true), "event", false) == event && SLinkOperations.getTarget(SLinkOperations.getTarget(transition, "fromState", true), "state", false) == state) {
                   return transition;
                 }
@@ -111,14 +111,14 @@ public class StateMachine_Editor extends DefaultNodeEditor {
           @Override
           public void createElement(int row, int column) {
             if (row > 0 && column > 0) {
-              SNode event = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "events", true)).getElement(column - 1);
-              SNode state = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "states", true)).getElement(row - 1);
+              SNode event = ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).getElement(column - 1);
+              SNode state = ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).getElement(row - 1);
               SNode transition = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Transition", null);
               SLinkOperations.setTarget(transition, "trigger", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.EventReference", null), true);
               SLinkOperations.setTarget(SLinkOperations.getTarget(transition, "trigger", true), "event", event, false);
               SLinkOperations.setTarget(transition, "fromState", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.StateReference", null), true);
               SLinkOperations.setTarget(SLinkOperations.getTarget(transition, "fromState", true), "state", state, false);
-              ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "transitions", true)).addElement(transition);
+              ListSequence.fromList(SLinkOperations.getTargets(node, "transitions", true)).addElement(transition);
             }
           }
 
@@ -127,7 +127,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             if (columnNumber <= 0) {
               return;
             }
-            ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "events", true)).insertElement(columnNumber - 1, SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Event", null));
+            ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).insertElement(columnNumber - 1, SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Event", null));
           }
 
           @Override
@@ -135,7 +135,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             if (rowNumber <= 0) {
               return;
             }
-            ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "states", true)).insertElement(rowNumber - 1, SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.State", null));
+            ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).insertElement(rowNumber - 1, SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.State", null));
           }
 
           @Override
@@ -143,8 +143,8 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             if (columnNumber <= 0) {
               return;
             }
-            SNode event = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "events", true)).removeElementAt(columnNumber - 1);
-            for (SNode transition : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "transitions", true))) {
+            SNode event = ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).removeElementAt(columnNumber - 1);
+            for (SNode transition : ListSequence.fromList(SLinkOperations.getTargets(node, "transitions", true))) {
               if (SLinkOperations.getTarget(SLinkOperations.getTarget(transition, "trigger", true), "event", false) == event) {
                 SNodeOperations.deleteNode(transition);
               }
@@ -180,18 +180,18 @@ public class StateMachine_Editor extends DefaultNodeEditor {
                       SNodeOperations.replaceWithAnother(oldChildNode, newChildNode);
                     } else {
                       if (row == 0) {
-                        SNodeOperations.insertPrevSiblingChild(ListSequence.<SNode>fromList(SLinkOperations.getTargets(stateMachine, "events", true)).getElement(column - 1), newChildNode);
+                        SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(stateMachine, "events", true)).getElement(column - 1), newChildNode);
                       }
                       if (column == 0) {
-                        SNodeOperations.insertPrevSiblingChild(ListSequence.<SNode>fromList(SLinkOperations.getTargets(stateMachine, "states", true)).getElement(row - 1), newChildNode);
+                        SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(stateMachine, "states", true)).getElement(row - 1), newChildNode);
                       }
                       if (column > 0 && row > 0) {
-                        ListSequence.<SNode>fromList(SLinkOperations.getTargets(stateMachine, "transitions", true)).addElement((SNode) newChildNode);
+                        ListSequence.fromList(SLinkOperations.getTargets(stateMachine, "transitions", true)).addElement((SNode) newChildNode);
                       }
                     }
                     if (row > 0 && column > 0) {
-                      SNode event = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "events", true)).getElement(column - 1);
-                      SNode state = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "states", true)).getElement(row - 1);
+                      SNode event = ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).getElement(column - 1);
+                      SNode state = ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).getElement(row - 1);
                       SNode transition = (SNode) newChildNode;
                       SLinkOperations.setTarget(transition, "trigger", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.EventReference", null), true);
                       SLinkOperations.setTarget(SLinkOperations.getTarget(transition, "trigger", true), "event", event, false);
@@ -210,8 +210,8 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             if (rowNumber <= 0) {
               return;
             }
-            SNode state = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "states", true)).removeElementAt(rowNumber - 1);
-            for (SNode transition : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "transitions", true))) {
+            SNode state = ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).removeElementAt(rowNumber - 1);
+            for (SNode transition : ListSequence.fromList(SLinkOperations.getTargets(node, "transitions", true))) {
               if (SLinkOperations.getTarget(SLinkOperations.getTarget(transition, "fromState", true), "state", false) == state) {
                 SNodeOperations.deleteNode(transition);
               } else if (SLinkOperations.getTarget(SLinkOperations.getTarget(transition, "toState", true), "state", false) == state) {

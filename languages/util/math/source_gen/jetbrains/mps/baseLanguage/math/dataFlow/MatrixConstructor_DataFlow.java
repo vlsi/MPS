@@ -14,7 +14,7 @@ public class MatrixConstructor_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode item : ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "components", true))) {
+    for (SNode item : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "components", true))) {
       _context.getBuilder().build((SNode) item);
     }
   }

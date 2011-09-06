@@ -77,21 +77,21 @@ public class MovePropertyUp extends BaseLoggableRefactoring {
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    List<SModel> result = ListSequence.<SModel>fromList(new ArrayList<SModel>());
+    List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
 
     Project project = refactoringContext.getSelectedProject();
     Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
     if (sourceLanguage != null) {
       Map<IModule, List<SModel>> models = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project, sourceLanguage);
-      for (List<SModel> list : Sequence.<List<SModel>>fromIterable(models.values())) {
-        ListSequence.<SModel>fromList(result).addSequence(ListSequence.<SModel>fromList((List<SModel>) list));
+      for (List<SModel> list : Sequence.fromIterable(models.values())) {
+        ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SModel>) list));
       }
     }
     Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getModelDescriptor());
     if (targetLanguage != null) {
       Map<IModule, List<SModel>> models = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project, targetLanguage);
-      for (List<SModel> list : Sequence.<List<SModel>>fromIterable(models.values())) {
-        ListSequence.<SModel>fromList(result).addSequence(ListSequence.<SModel>fromList((List<SModel>) list));
+      for (List<SModel> list : Sequence.fromIterable(models.values())) {
+        ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SModel>) list));
       }
     }
 

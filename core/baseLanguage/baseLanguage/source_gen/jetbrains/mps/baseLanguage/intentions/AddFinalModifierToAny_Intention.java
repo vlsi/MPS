@@ -47,7 +47,7 @@ public class AddFinalModifierToAny_Intention extends BaseIntention implements In
 
   public boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     // it should not be applicable inoside initializer 
-    SNode nodeUnderDecl = ListSequence.<SNode>fromList(SNodeOperations.getAncestors(childNode, null, true)).where(new IWhereFilter<SNode>() {
+    SNode nodeUnderDecl = ListSequence.fromList(SNodeOperations.getAncestors(childNode, null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getParent(it) == node;
       }

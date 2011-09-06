@@ -35,20 +35,20 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<Pair> res = ListSequence.<Pair>fromList(new ArrayList<Pair>());
-      ListSequence.<Pair>fromList(res).addElement(new Pair(null, null));
+      List<Pair> res = ListSequence.fromList(new ArrayList<Pair>());
+      ListSequence.fromList(res).addElement(new Pair(null, null));
       TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(node, "axis", "DESCENDANTS"));
       SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
       if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "operand", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
         SNode nodeType = SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "operand", true)), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true);
-        for (SNode feat : Sequence.<SNode>fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType))) {
+        for (SNode feat : Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType))) {
           if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
             if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-              for (SNode pw : ListSequence.<SNode>fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(SNodeOperations.cast(feat, "jetbrains.mps.ypath.structure.IParamFeature"), nodeType))) {
-                ListSequence.<Pair>fromList(res).addElement(new Pair<SNode, SNode>(feat, pw));
+              for (SNode pw : ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(SNodeOperations.cast(feat, "jetbrains.mps.ypath.structure.IParamFeature"), nodeType))) {
+                ListSequence.fromList(res).addElement(new Pair<SNode, SNode>(feat, pw));
               }
             } else {
-              ListSequence.<Pair>fromList(res).addElement(new Pair<SNode, Object>(feat, null));
+              ListSequence.fromList(res).addElement(new Pair<SNode, Object>(feat, null));
             }
           }
         }

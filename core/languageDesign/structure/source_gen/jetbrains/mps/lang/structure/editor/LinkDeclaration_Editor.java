@@ -345,14 +345,14 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
+      List<String> result = ListSequence.fromList(new ArrayList<String>());
       if (SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference")) {
-        for (SNode member : ListSequence.<SNode>fromList(SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality")))) {
-          ListSequence.<String>fromList(result).addElement(SEnumOperations.getEnumMemberValue(member));
+        for (SNode member : ListSequence.fromList(SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality")))) {
+          ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(member));
         }
       } else {
-        ListSequence.<String>fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "0..1")));
-        ListSequence.<String>fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "1")));
+        ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "0..1")));
+        ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "1")));
       }
       return result;
     }
@@ -363,10 +363,10 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> postfixes = ListSequence.<String>fromList(new ArrayList<String>());
+      List<String> postfixes = ListSequence.fromList(new ArrayList<String>());
       if ((SLinkOperations.getTarget(node, "target", false) != null)) {
         String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "target", false), "name"));
-        ListSequence.<String>fromList(postfixes).addSequence(ListSequence.<String>fromList(NameUtil.splitByCamels(name)));
+        ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(NameUtil.splitByCamels(name)));
       }
       return postfixes;
     }

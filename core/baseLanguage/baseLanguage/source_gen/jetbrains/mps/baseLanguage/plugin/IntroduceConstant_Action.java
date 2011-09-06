@@ -31,7 +31,7 @@ public class IntroduceConstant_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return IntroduceConstantRefactoring.isApplicable(((SNode) MapSequence.<String,Object>fromMap(_params).get("node"))) && !(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("component")).isReadOnly());
+    return IntroduceConstantRefactoring.isApplicable(((SNode) MapSequence.fromMap(_params).get("node"))) && !(((EditorComponent) MapSequence.fromMap(_params).get("component")).isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -54,21 +54,21 @@ public class IntroduceConstant_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.<String,Object>fromMap(_params).put("node", node);
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("component", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.<String,Object>fromMap(_params).get("component") == null) {
+    MapSequence.fromMap(_params).put("component", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("component") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
@@ -81,14 +81,14 @@ public class IntroduceConstant_Action extends GeneratedAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           refactoring.value = new IntroduceConstantRefactoring();
-          error.value = refactoring.value.init(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("component")));
+          error.value = refactoring.value.init(((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("component")));
         }
       });
       if (error.value == null) {
-        IntroduceConstantDialog dialog = new IntroduceConstantDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), refactoring.value, ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+        IntroduceConstantDialog dialog = new IntroduceConstantDialog(((Frame) MapSequence.fromMap(_params).get("frame")), refactoring.value, ((EditorContext) MapSequence.fromMap(_params).get("context")));
         dialog.showDialog();
       } else {
-        JOptionPane.showMessageDialog(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("component")), error.value, "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(((EditorComponent) MapSequence.fromMap(_params).get("component")), error.value, "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "IntroduceConstant", t);

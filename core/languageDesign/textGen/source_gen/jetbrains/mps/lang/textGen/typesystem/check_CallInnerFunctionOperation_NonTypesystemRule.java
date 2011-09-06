@@ -25,10 +25,10 @@ public class check_CallInnerFunctionOperation_NonTypesystemRule extends Abstract
     boolean b = true;
     List<SNode> parameterDeclarations = SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true);
     List<SNode> actualArguments = SLinkOperations.getTargets(innerMethodCall, "parameter", true);
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.<SNode>fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
-      b = ListSequence.<SNode>fromList(parameterDeclarations).count() - 1 <= ListSequence.<SNode>fromList(actualArguments).count();
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
+      b = ListSequence.fromList(parameterDeclarations).count() - 1 <= ListSequence.fromList(actualArguments).count();
     } else {
-      b = ListSequence.<SNode>fromList(parameterDeclarations).count() == ListSequence.<SNode>fromList(actualArguments).count();
+      b = ListSequence.fromList(parameterDeclarations).count() == ListSequence.fromList(actualArguments).count();
     }
     if (!(b)) {
       {
@@ -36,7 +36,7 @@ public class check_CallInnerFunctionOperation_NonTypesystemRule extends Abstract
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(innerMethodCall, "wrong number of parameters", "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1234279065022", null, errorTarget);
       }
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(baseMethodDeclaration, "typeVariableDeclaration", true)).count() > 0) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "typeVariableDeclaration", true)).count() > 0) {
       for (SNode actual : actualArguments) {
         typeCheckingContext.addDependencyForCurrent(actual);
       }

@@ -13,12 +13,12 @@ public class InternalNewExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("new ");
     BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), this);
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
       this.append("<");
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "parameter", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
             this.append(", ");
           }
         }
@@ -26,10 +26,10 @@ public class InternalNewExpression_TextGen extends SNodeTextGen {
       this.append(">");
     }
     this.append("(");
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "actualArgument", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
+        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
           this.append(", ");
         }
       }

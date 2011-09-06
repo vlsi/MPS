@@ -45,7 +45,7 @@ public class TypesystemIntentionArgument_Constraints extends BaseConstraintsDesc
             List<SNode> nodes = new ArrayList<SNode>();
             SNode helginsIntention = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.TypesystemIntention", true, false);
             if (helginsIntention != null) {
-              ListSequence.<SNode>fromList(nodes).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(helginsIntention, "quickFix", false), "quickFixArgument", true)));
+              ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(helginsIntention, "quickFix", false), "quickFixArgument", true)));
             }
             return nodes;
           }

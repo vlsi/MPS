@@ -11,7 +11,7 @@ public class AnnotationLinkStereotype_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<AnnotationLinkStereotype> constants = ListSequence.<AnnotationLinkStereotype>fromList(AnnotationLinkStereotype.getConstants()).iterator();
+    Iterator<AnnotationLinkStereotype> constants = ListSequence.fromList(AnnotationLinkStereotype.getConstants()).iterator();
     while (constants.hasNext()) {
       AnnotationLinkStereotype constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class AnnotationLinkStereotype_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<AnnotationLinkStereotype> constants = ListSequence.<AnnotationLinkStereotype>fromList(AnnotationLinkStereotype.getConstants()).iterator();
+    Iterator<AnnotationLinkStereotype> constants = ListSequence.fromList(AnnotationLinkStereotype.getConstants()).iterator();
     while (constants.hasNext()) {
       AnnotationLinkStereotype constant = constants.next();
       if (value.equals(constant.getName())) {

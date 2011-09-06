@@ -131,7 +131,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   }
 
   private static boolean renderingCondition_n84rmm_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
   private static class parameterListHandler_n84rmm_b1a extends RefNodeListHandler {

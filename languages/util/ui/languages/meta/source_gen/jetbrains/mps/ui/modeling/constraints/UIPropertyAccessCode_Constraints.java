@@ -60,7 +60,7 @@ public class UIPropertyAccessCode_Constraints extends BaseConstraintsDescriptor 
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "uiObject", false), "property", true)).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "uiObject", false), "property", true)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode p) {
                 return !(SNodeOperations.isInstanceOf(p, "jetbrains.mps.ui.modeling.structure.EditableUIProperty"));
               }

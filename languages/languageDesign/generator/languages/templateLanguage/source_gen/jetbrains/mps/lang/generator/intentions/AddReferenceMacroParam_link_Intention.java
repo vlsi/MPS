@@ -74,7 +74,7 @@ public class AddReferenceMacroParam_link_Intention extends BaseIntention impleme
     SLinkOperations.setTarget(dotExpression, "operand", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
     SNode expressionStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(referentValue, "body", true), "statement", true)).addElement(expressionStatement);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(referentValue, "body", true), "statement", true)).addElement(expressionStatement);
     SLinkOperations.setTarget(referenceMacro, "referentFunction", referentValue, true);
     // set caret 
     editorContext.selectAndSetCaret(referenceMacro, 2);
@@ -89,23 +89,23 @@ public class AddReferenceMacroParam_link_Intention extends BaseIntention impleme
     if (sourceNode == null) {
       return null;
     }
-    List<SNode> result = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode child : AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(sourceNode)) {
       if (SPropertyOperations.hasValue(child, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(child, "sourceCardinality", "1", "0..1")) {
-        ListSequence.<SNode>fromList(result).addElement(child);
+        ListSequence.fromList(result).addElement(child);
       }
     }
     return result;
   }
 
   public static List<Intention> instances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.<Intention>fromList(new ArrayList<Intention>());
+    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
     List<SNode> paramList = parameter(node, editorContext);
     if (paramList != null) {
       for (SNode param : paramList) {
         AddReferenceMacroParam_link_Intention intention = new AddReferenceMacroParam_link_Intention();
         intention.myParameter = param;
-        ListSequence.<Intention>fromList(list).addElement(intention);
+        ListSequence.fromList(list).addElement(intention);
       }
     }
     return list;

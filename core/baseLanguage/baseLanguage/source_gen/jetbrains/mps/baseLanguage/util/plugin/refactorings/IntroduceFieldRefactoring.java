@@ -37,25 +37,25 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
       SPropertyOperations.set(newDeclaration, "isFinal", "" + true);
     }
     SNode classConcept = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "field", true)).addElement(newDeclaration);
+    ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).addElement(newDeclaration);
     SNode assignStatement = new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a6a1().createNode(newDeclaration, SNodeOperations.copyNode(this.getExpression()));
     if (this.myFieldInitialization == FieldInitializationPlace.METHOD) {
       SNodeOperations.insertPrevSiblingChild(SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.Statement", false, false), SNodeOperations.copyNode(assignStatement));
     }
     if (this.myFieldInitialization == FieldInitializationPlace.CONSTRUCTOR) {
       SNode declaration = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-      for (SNode constructor : ListSequence.<SNode>fromList(SLinkOperations.getTargets(declaration, "constructor", true))) {
+      for (SNode constructor : ListSequence.fromList(SLinkOperations.getTargets(declaration, "constructor", true))) {
         List<SNode> statement = SLinkOperations.getTargets(SLinkOperations.getTarget(constructor, "body", true), "statement", true);
-        if (ListSequence.<SNode>fromList(statement).isNotEmpty()) {
-          SNodeOperations.insertPrevSiblingChild(ListSequence.<SNode>fromList(statement).first(), SNodeOperations.copyNode(assignStatement));
+        if (ListSequence.fromList(statement).isNotEmpty()) {
+          SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statement).first(), SNodeOperations.copyNode(assignStatement));
         } else {
-          ListSequence.<SNode>fromList(statement).addElement(SNodeOperations.copyNode(assignStatement));
+          ListSequence.fromList(statement).addElement(SNodeOperations.copyNode(assignStatement));
         }
       }
     }
     replaceNode(this.getExpression(), newDeclaration);
     if (myIsReplacingAll) {
-      for (SNode duplicate : ListSequence.<SNode>fromList(myDuplicates)) {
+      for (SNode duplicate : ListSequence.fromList(myDuplicates)) {
         replaceNode(duplicate, newDeclaration);
       }
     }
@@ -74,7 +74,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     final Wrappers._boolean result = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(IntroduceFieldRefactoring.this.getExpression(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", true, new String[]{})).isEmpty();
+        result.value = ListSequence.fromList(SNodeOperations.getDescendants(IntroduceFieldRefactoring.this.getExpression(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", true, new String[]{})).isEmpty();
       }
     });
     return result.value;

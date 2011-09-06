@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -17,6 +16,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -37,7 +37,7 @@ import jetbrains.mps.smodel.SNodeId;
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_6490356536635245644(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return (Language.getModelAspect(model.getModelDescriptor()) == LanguageAspect.CONSTRAINTS) && !(ListSequence.<SNode>fromList(SModelOperations.getRoots(model, null)).isEmpty());
+    return (Language.getModelAspect(model.getModelDescriptor()) == LanguageAspect.CONSTRAINTS) && !(ListSequence.fromList(SModelOperations.getRoots(model, null)).isEmpty());
 
   }
 
@@ -145,7 +145,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4623703450343115877(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode constraints = ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
+    SNode constraints = ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false) == _context.getNode();
       }
@@ -259,7 +259,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_3749568622064154251(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "property", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "property", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_3749568622064121413(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -280,7 +280,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_3749568622064121608(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "referent", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "referent", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_5979740912231475953(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -304,7 +304,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7093837644838477078(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false) == _context.getNode();
       }
@@ -312,7 +312,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4623703450343115772(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false) == _context.getNode();
       }
@@ -391,7 +391,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_3749568622064121229(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "property", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "property", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "propertyGetter", true) != null) || (SLinkOperations.getTarget(it, "propertySetter", true) != null) || (SLinkOperations.getTarget(it, "propertyValidator", true) != null);
       }
@@ -403,7 +403,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7093837644838476730(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SModelOperations.getNodes(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getNodes(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints");
       }

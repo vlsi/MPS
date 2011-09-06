@@ -83,7 +83,7 @@ public class AttachMappingLabel_Intention extends BaseIntention implements Inten
     }
     //  in in-line template with context 
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", false, false) != null) {
-      return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
+      return ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment"))) != null;
         }
@@ -91,7 +91,7 @@ public class AttachMappingLabel_Intention extends BaseIntention implements Inten
     }
     //  in template fragment - ok 
     if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
-      return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
+      return ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment"))) != null;
         }
@@ -109,7 +109,7 @@ public class AttachMappingLabel_Intention extends BaseIntention implements Inten
     } else {
       mappings = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
     }
-    final List<String> existingLabels = ListSequence.<SNode>fromList(mappings).<String>translate(new ITranslator2<SNode, String>() {
+    final List<String> existingLabels = ListSequence.fromList(mappings).<String>translate(new ITranslator2<SNode, String>() {
       public Iterable<String> translate(final SNode it) {
         return new Iterable<String>() {
           public Iterator<String> iterator() {
@@ -127,7 +127,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_label_it = ListSequence.<SNode>fromList(SLinkOperations.getTargets(it, "mappingLabel", true)).iterator();
+                      this._2_label_it = ListSequence.fromList(SLinkOperations.getTargets(it, "mappingLabel", true)).iterator();
                     case 3:
                       if (!(this._2_label_it.hasNext())) {
                         this.__CP__ = 1;

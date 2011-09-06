@@ -35,28 +35,28 @@ public class StaticMethodDeclaration_TextGen extends SNodeTextGen {
       this.append("synchronized ");
     }
     GenericDeclarationTextGen2.typeDeclarations(node, this);
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty()) {
       this.append(" ");
     }
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "returnType", true), this.getSNode());
     this.append(" ");
     this.append(SPropertyOperations.getString(node, "name"));
     this.append("(");
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "parameter", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
+        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
           this.append(", ");
         }
       }
     }
     this.append(")");
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty()) {
       this.append(" throws ");
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "throwsItem", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsItem", true)).last()) {
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).last()) {
             this.append(", ");
           }
         }

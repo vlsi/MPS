@@ -50,9 +50,9 @@ public class TestCollector {
         public List<SNode> invoke() {
           final SNode ignoreAnn = SLinkOperations.getTarget(new TestCollector.TestCaseCollector.QuotationClass_rpw6il_a0a0a0a0a2a0a().createNode(), "annotation", false);
 
-          return nodes.value = ListSequence.<SNode>fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")).where(new IWhereFilter<SNode>() {
+          return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode itc) {
-              return !(SPropertyOperations.getBoolean(SNodeOperations.as(itc, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) && !(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(itc, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "annotation", true)).any(new IWhereFilter<SNode>() {
+              return !(SPropertyOperations.getBoolean(SNodeOperations.as(itc, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) && !(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(itc, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "annotation", true)).any(new IWhereFilter<SNode>() {
                 public boolean accept(SNode cann) {
                   return SLinkOperations.getTarget(cann, "annotation", false) == ignoreAnn;
                 }
@@ -61,7 +61,7 @@ public class TestCollector {
           }).toListSequence();
         }
       }));
-      ListSequence.<SNode>fromList(nodes.value).visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(nodes.value).visitAll(new IVisitor<SNode>() {
         public void visit(final SNode itc) {
           into.invoke(new _FunctionTypes._return_P0_E0<SNode>() {
             public SNode invoke() {
@@ -108,13 +108,13 @@ public class TestCollector {
           final SNode testAnn = SLinkOperations.getTarget(new TestCollector.JUnit4TestCollector.QuotationClass_rpw6il_a0a0a0a0a2a0b().createNode(), "annotation", false);
           final SNode ignoreAnn = SLinkOperations.getTarget(new TestCollector.JUnit4TestCollector.QuotationClass_rpw6il_a0a0b0a0a2a0b().createNode(), "annotation", false);
 
-          return nodes.value = ListSequence.<SNode>fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
+          return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode cls) {
-              return !(SPropertyOperations.getBoolean(cls, "abstractClass")) && !(ListSequence.<SNode>fromList(SLinkOperations.getTargets(cls, "annotation", true)).any(new IWhereFilter<SNode>() {
+              return !(SPropertyOperations.getBoolean(cls, "abstractClass")) && !(ListSequence.fromList(SLinkOperations.getTargets(cls, "annotation", true)).any(new IWhereFilter<SNode>() {
                 public boolean accept(SNode cann) {
                   return SLinkOperations.getTarget(cann, "annotation", false) == ignoreAnn;
                 }
-              })) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(cls, "method", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+              })) && ListSequence.fromList(SLinkOperations.getTargets(cls, "method", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
                 public Iterable<SNode> translate(SNode m) {
                   return SLinkOperations.getTargets(m, "annotation", true);
                 }
@@ -127,7 +127,7 @@ public class TestCollector {
           }).toListSequence();
         }
       }));
-      ListSequence.<SNode>fromList(nodes.value).visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(nodes.value).visitAll(new IVisitor<SNode>() {
         public void visit(final SNode tc) {
           into.invoke(new _FunctionTypes._return_P0_E0<SNode>() {
             public SNode invoke() {
@@ -191,9 +191,9 @@ public class TestCollector {
         public List<SNode> invoke() {
           final SNode ignoreAnn = SLinkOperations.getTarget(new TestCollector.JUnit3TestCollector.QuotationClass_rpw6il_a0a0a0a0a2a0c().createNode(), "annotation", false);
 
-          return nodes.value = ListSequence.<SNode>fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
+          return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode cls) {
-              return !(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) && !(SPropertyOperations.getBoolean(cls, "abstractClass")) && !(ListSequence.<SNode>fromList(SLinkOperations.getTargets(cls, "annotation", true)).any(new IWhereFilter<SNode>() {
+              return !(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) && !(SPropertyOperations.getBoolean(cls, "abstractClass")) && !(ListSequence.fromList(SLinkOperations.getTargets(cls, "annotation", true)).any(new IWhereFilter<SNode>() {
                 public boolean accept(SNode cann) {
                   return SLinkOperations.getTarget(cann, "annotation", false) == ignoreAnn;
                 }
@@ -202,7 +202,7 @@ public class TestCollector {
           }).toListSequence();
         }
       }));
-      ListSequence.<SNode>fromList(nodes.value).visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(nodes.value).visitAll(new IVisitor<SNode>() {
         public void visit(final SNode tc) {
           into.invoke(new _FunctionTypes._return_P0_E0<SNode>() {
             public SNode invoke() {

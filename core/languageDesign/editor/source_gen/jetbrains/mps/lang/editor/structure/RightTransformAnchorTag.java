@@ -36,14 +36,14 @@ public enum RightTransformAnchorTag {
   }
 
   public static List<RightTransformAnchorTag> getConstants() {
-    List<RightTransformAnchorTag> list = ListSequence.<RightTransformAnchorTag>fromList(new LinkedList<RightTransformAnchorTag>());
-    ListSequence.<RightTransformAnchorTag>fromList(list).addElement(RightTransformAnchorTag.none);
-    ListSequence.<RightTransformAnchorTag>fromList(list).addElement(RightTransformAnchorTag.default_);
-    ListSequence.<RightTransformAnchorTag>fromList(list).addElement(RightTransformAnchorTag.ext_1);
-    ListSequence.<RightTransformAnchorTag>fromList(list).addElement(RightTransformAnchorTag.ext_2);
-    ListSequence.<RightTransformAnchorTag>fromList(list).addElement(RightTransformAnchorTag.ext_3);
-    ListSequence.<RightTransformAnchorTag>fromList(list).addElement(RightTransformAnchorTag.ext_4);
-    ListSequence.<RightTransformAnchorTag>fromList(list).addElement(RightTransformAnchorTag.ext_5);
+    List<RightTransformAnchorTag> list = ListSequence.fromList(new LinkedList<RightTransformAnchorTag>());
+    ListSequence.fromList(list).addElement(RightTransformAnchorTag.none);
+    ListSequence.fromList(list).addElement(RightTransformAnchorTag.default_);
+    ListSequence.fromList(list).addElement(RightTransformAnchorTag.ext_1);
+    ListSequence.fromList(list).addElement(RightTransformAnchorTag.ext_2);
+    ListSequence.fromList(list).addElement(RightTransformAnchorTag.ext_3);
+    ListSequence.fromList(list).addElement(RightTransformAnchorTag.ext_4);
+    ListSequence.fromList(list).addElement(RightTransformAnchorTag.ext_5);
     return list;
   }
 

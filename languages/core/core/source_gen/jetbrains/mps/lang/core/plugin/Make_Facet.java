@@ -27,12 +27,12 @@ import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class Make_Facet extends IFacet.Stub {
-  private List<ITarget> targets = ListSequence.<ITarget>fromList(new ArrayList<ITarget>());
+  private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.lang.core.Make");
 
   public Make_Facet() {
-    ListSequence.<ITarget>fromList(targets).addElement(new Make_Facet.Target_reconcile());
-    ListSequence.<ITarget>fromList(targets).addElement(new Make_Facet.Target_make());
+    ListSequence.fromList(targets).addElement(new Make_Facet.Target_reconcile());
+    ListSequence.fromList(targets).addElement(new Make_Facet.Target_make());
   }
 
   public Iterable<ITarget> targets() {
@@ -78,7 +78,7 @@ public class Make_Facet extends IFacet.Stub {
                 public void run() {
                   ModelAccess.instance().requireWrite(new Runnable() {
                     public void run() {
-                      new DeltaReconciler(Sequence.<IResource>fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
+                      new DeltaReconciler(Sequence.fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
                         public Iterable<IDelta> translate(IResource res) {
                           return ((IDeltaResource) res).delta();
                         }
@@ -87,7 +87,7 @@ public class Make_Facet extends IFacet.Stub {
                           return !(d instanceof IInternalDelta);
                         }
                       })).reconcileAll();
-                      new DeltaReconciler(Sequence.<IResource>fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
+                      new DeltaReconciler(Sequence.fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
                         public Iterable<IDelta> translate(IResource res) {
                           return ((IDeltaResource) res).delta();
                         }
@@ -101,7 +101,7 @@ public class Make_Facet extends IFacet.Stub {
                   });
                 }
               });
-              _output_pm9z_a0a = Sequence.<IResource>fromIterable(_output_pm9z_a0a).concat(Sequence.<IResource>fromIterable(input));
+              _output_pm9z_a0a = Sequence.fromIterable(_output_pm9z_a0a).concat(Sequence.fromIterable(input));
             default:
               return new IResult.SUCCESS(_output_pm9z_a0a);
           }

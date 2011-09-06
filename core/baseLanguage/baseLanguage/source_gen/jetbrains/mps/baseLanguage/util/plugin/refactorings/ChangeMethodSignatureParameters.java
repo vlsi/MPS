@@ -13,13 +13,13 @@ import jetbrains.mps.lang.pattern.util.MatchingUtil;
 public class ChangeMethodSignatureParameters {
   private SNode myMethod;
   private SNode myOldMethod;
-  private List<String> myParametersIds = ListSequence.<String>fromList(new ArrayList<String>());
+  private List<String> myParametersIds = ListSequence.fromList(new ArrayList<String>());
 
   public ChangeMethodSignatureParameters(SNode declaration) {
     this.myMethod = SNodeOperations.copyNode(declaration);
     this.myOldMethod = SNodeOperations.copyNode(declaration);
-    for (SNode param : ListSequence.<SNode>fromList(SLinkOperations.getTargets(this.myMethod, "parameter", true))) {
-      ListSequence.<String>fromList(this.myParametersIds).addElement(param.getId());
+    for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(this.myMethod, "parameter", true))) {
+      ListSequence.fromList(this.myParametersIds).addElement(param.getId());
     }
   }
 

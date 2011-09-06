@@ -407,7 +407,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
       public String getText() {
         StringBuilder sb = new StringBuilder("[ ");
         String sep = "";
-        for (SNode foo : Sequence.<SNode>fromIterable(IFeature_Behavior.call_getPartialOpposites_1213877499798(node))) {
+        for (SNode foo : Sequence.fromIterable(IFeature_Behavior.call_getPartialOpposites_1213877499798(node))) {
           sb.append(sep).append(SPropertyOperations.getString(foo, "name"));
           sep = ", ";
         }
@@ -565,7 +565,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.<Boolean>fromListAndArray(new ArrayList<Boolean>(), true, false);
+      return ListSequence.fromListAndArray(new ArrayList<Boolean>(), true, false);
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

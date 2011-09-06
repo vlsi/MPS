@@ -11,7 +11,7 @@ public class TargetDependencyQualifier_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<TargetDependencyQualifier> constants = ListSequence.<TargetDependencyQualifier>fromList(TargetDependencyQualifier.getConstants()).iterator();
+    Iterator<TargetDependencyQualifier> constants = ListSequence.fromList(TargetDependencyQualifier.getConstants()).iterator();
     while (constants.hasNext()) {
       TargetDependencyQualifier constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class TargetDependencyQualifier_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<TargetDependencyQualifier> constants = ListSequence.<TargetDependencyQualifier>fromList(TargetDependencyQualifier.getConstants()).iterator();
+    Iterator<TargetDependencyQualifier> constants = ListSequence.fromList(TargetDependencyQualifier.getConstants()).iterator();
     while (constants.hasNext()) {
       TargetDependencyQualifier constant = constants.next();
       if (value.equals(constant.getName())) {

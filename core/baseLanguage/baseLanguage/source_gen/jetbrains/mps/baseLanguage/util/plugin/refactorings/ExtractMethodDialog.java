@@ -223,7 +223,7 @@ public class ExtractMethodDialog extends BaseDialog {
         final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            refactoringModel.value = SNodeOperations.getModel(ListSequence.<SNode>fromList(ExtractMethodDialog.this.myParameters.getNodesToRefactor()).first());
+            refactoringModel.value = SNodeOperations.getModel(ListSequence.fromList(ExtractMethodDialog.this.myParameters.getNodesToRefactor()).first());
             model.value = refactoringModel.value.getModelDescriptor();
           }
         });

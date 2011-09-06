@@ -39,9 +39,9 @@ public class SurroundWithIfElse_Intention extends SurroundWithIntention implemen
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode ifStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
-    SNodeOperations.insertNextSiblingChild(ListSequence.<SNode>fromList(selectedNodes).last(), ifStatement);
-    for (SNode selectedNode : ListSequence.<SNode>fromList(selectedNodes)) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
+    SNodeOperations.insertNextSiblingChild(ListSequence.fromList(selectedNodes).last(), ifStatement);
+    for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
     }
     SNodeFactoryOperations.setNewChild(ifStatement, "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
     editorContext.select(SLinkOperations.getTarget(ifStatement, "condition", true));

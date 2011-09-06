@@ -25,10 +25,10 @@ public class CustomMPSApplication_Producer {
   }
 
   public static List<RuntimeConfigurationProducer> getProducers(ConfigurationType configurationType) {
-    List<RuntimeConfigurationProducer> creators = ListSequence.<RuntimeConfigurationProducer>fromList(new ArrayList<RuntimeConfigurationProducer>());
-    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new CustomMPSApplication_Producer.ProducerPart_NodeConfiguration_j54240_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new CustomMPSApplication_Producer.ProducerPart_NodeLayout_j54240_b(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new CustomMPSApplication_Producer.ProducerPart_NodeMPSBuild_j54240_c(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    List<RuntimeConfigurationProducer> creators = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
+    ListSequence.fromList(creators).addElement(new CustomMPSApplication_Producer.ProducerPart_NodeConfiguration_j54240_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.fromList(creators).addElement(new CustomMPSApplication_Producer.ProducerPart_NodeLayout_j54240_b(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.fromList(creators).addElement(new CustomMPSApplication_Producer.ProducerPart_NodeMPSBuild_j54240_c(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     return creators;
   }
 
@@ -49,7 +49,7 @@ public class CustomMPSApplication_Producer {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           layout.value = SNodeOperations.getAncestor(source, "jetbrains.mps.build.packaging.structure.Layout", false, true);
-          isApplicable.value = (layout.value != null) && (ListSequence.<SNode>fromList(SNodeOperations.getDescendants(layout.value, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() || ListSequence.<SNode>fromList(SNodeOperations.getDescendants(layout.value, "jetbrains.mps.build.custommps.structure.MPSDistribution", false, new String[]{})).isNotEmpty());
+          isApplicable.value = (layout.value != null) && (ListSequence.fromList(SNodeOperations.getDescendants(layout.value, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(layout.value, "jetbrains.mps.build.custommps.structure.MPSDistribution", false, new String[]{})).isNotEmpty());
           configurationId.value = source.getId();
         }
       });
@@ -83,7 +83,7 @@ public class CustomMPSApplication_Producer {
       final Wrappers._boolean isApplicable = new Wrappers._boolean();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          isApplicable.value = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(source, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() || ListSequence.<SNode>fromList(SNodeOperations.getDescendants(source, "jetbrains.mps.build.custommps.structure.MPSDistribution", false, new String[]{})).isNotEmpty();
+          isApplicable.value = ListSequence.fromList(SNodeOperations.getDescendants(source, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(source, "jetbrains.mps.build.custommps.structure.MPSDistribution", false, new String[]{})).isNotEmpty();
         }
       });
       if (!(isApplicable.value)) {
@@ -93,7 +93,7 @@ public class CustomMPSApplication_Producer {
       final Wrappers._T<String> configurationId = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          configurationId.value = ListSequence.<SNode>fromList(SLinkOperations.getTargets(source, "configuration", true)).first().getId();
+          configurationId.value = ListSequence.fromList(SLinkOperations.getTargets(source, "configuration", true)).first().getId();
         }
       });
 
@@ -128,7 +128,7 @@ public class CustomMPSApplication_Producer {
         public void run() {
           layout.value = SNodeOperations.getAncestor(source, "jetbrains.mps.build.packaging.structure.Layout", false, true);
           isApplicable.value = (layout.value != null);
-          configuration.value = ListSequence.<SNode>fromList(SLinkOperations.getTargets(layout.value, "configuration", true)).findFirst(new IWhereFilter<SNode>() {
+          configuration.value = ListSequence.fromList(SLinkOperations.getTargets(layout.value, "configuration", true)).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return AbstractProjectComponent_Behavior.call_included_1213877333807(source, it);
             }

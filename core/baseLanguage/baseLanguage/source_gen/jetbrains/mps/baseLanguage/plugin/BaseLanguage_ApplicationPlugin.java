@@ -74,20 +74,20 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
-    List<BaseCustomApplicationPlugin> res = ListSequence.<BaseCustomApplicationPlugin>fromList(new ArrayList<BaseCustomApplicationPlugin>());
+    List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     addCustomPart(res, new DebugInfoProvider_CustomApplicationPlugin());
     addCustomPart(res, new RunConfigurationsInitializer_CustomApplicationPlugin());
     return res;
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
-    List<BaseKeymapChanges> res = ListSequence.<BaseKeymapChanges>fromList(new ArrayList<BaseKeymapChanges>());
-    ListSequence.<BaseKeymapChanges>fromList(res).addElement(new Default_KeymapChanges());
+    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
+    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
     return res;
   }
 
   private void addCustomPart(List<BaseCustomApplicationPlugin> plugins, BaseCustomApplicationPlugin plugin) {
-    ListSequence.<BaseCustomApplicationPlugin>fromList(plugins).addElement(plugin);
+    ListSequence.fromList(plugins).addElement(plugin);
     plugin.init();
   }
 }

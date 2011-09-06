@@ -52,7 +52,7 @@ public class LayoutConstraintType_Constraints extends BaseConstraintsDescriptor 
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.<SNode>fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.LayoutConstraint"), _context.getModel(), operationContext.getScope())).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.LayoutConstraint"), _context.getModel(), operationContext.getScope())).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return !(SConceptPropertyOperations.getBoolean(it, "abstract"));
               }

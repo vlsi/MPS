@@ -35,7 +35,7 @@ public class AddRemoveNewLineForChildren_Intention extends BaseIntention impleme
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    if (ListSequence.<SNode>fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"))).isEmpty()) {
+    if (ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"))).isEmpty()) {
       return "Add New Line for Children";
     } else {
       return "Remove New Line for Children";
@@ -63,12 +63,12 @@ public class AddRemoveNewLineForChildren_Intention extends BaseIntention impleme
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    if (ListSequence.<SNode>fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"))).isEmpty()) {
+    if (ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"))).isEmpty()) {
       SNode styleItem = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem", null);
       SPropertyOperations.set(styleItem, "flag", "" + true);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "styleItem", true)).addElement(styleItem);
+      ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)).addElement(styleItem);
     } else {
-      SNodeOperations.deleteNode(ListSequence.<SNode>fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"))).first());
+      SNodeOperations.deleteNode(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"))).first());
     }
   }
 

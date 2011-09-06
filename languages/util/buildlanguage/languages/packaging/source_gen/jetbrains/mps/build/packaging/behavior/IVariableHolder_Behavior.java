@@ -19,7 +19,7 @@ public class IVariableHolder_Behavior {
 
   public static SNode call_findVariable_1234876428215(SNode thisNode, String name, String antName) {
     List<SNode> allVars = IVariableHolder_Behavior.call_getAllVariable_1234864693585(thisNode);
-    for (SNode var : ListSequence.<SNode>fromList(allVars)) {
+    for (SNode var : ListSequence.fromList(allVars)) {
       if (SPropertyOperations.getString(var, "name").equals(name) && SPropertyOperations.getString(var, "antName").equals(antName)) {
         return var;
       }

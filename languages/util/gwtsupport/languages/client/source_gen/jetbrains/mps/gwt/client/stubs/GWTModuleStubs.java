@@ -43,27 +43,27 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
   }
 
   protected Set<Language> getLanguagesToImport() {
-    Set<String> moduleIds = SetSequence.<String>fromSet(new HashSet<String>());
+    Set<String> moduleIds = SetSequence.fromSet(new HashSet<String>());
 
     moduleIds.add("954c4d77-e24b-4e49-a5a5-5476c966c092");
 
-    Iterable<Language> languages = SetSequence.<String>fromSet(moduleIds).<Language>select(new ISelector<String, Language>() {
+    Iterable<Language> languages = SetSequence.fromSet(moduleIds).<Language>select(new ISelector<String, Language>() {
       public Language select(String it) {
         return (Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(it));
       }
     });
 
     Set<Language> result = new HashSet<Language>();
-    result.addAll(Sequence.<Language>fromIterable(languages).toListSequence());
+    result.addAll(Sequence.fromIterable(languages).toListSequence());
     return result;
   }
 
   protected void updateModel(final StubLocation location, final SModel model, final StubSource source) {
     String pkg = model.getSModelFqName().getLongName();
     PathItem pi = GWTModulePathItem.getPathItem(location.getPath());
-    List<Tuples._3<String, String, SNode>> modlst = ListSequence.<Tuples._3<String, String, SNode>>fromList(new ArrayList<Tuples._3<String, String, SNode>>());
+    List<Tuples._3<String, String, SNode>> modlst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.gwt.client.structure.GWTModule", null);
-    for (String modres : ListSequence.<String>fromList(pi.resources(pkg))) {
+    for (String modres : ListSequence.fromList(pi.resources(pkg))) {
       SNodeId id = GWTModuleReader.createId(pi.baseName(modres));
       SNode module = (SNode) model.getNodeById(id);
       if ((module == null)) {
@@ -72,7 +72,7 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
         SPropertyOperations.set(module, "name", pi.baseName(modres));
         SModelOperations.addRootNode(model, module);
       }
-      ListSequence.<Tuples._3<String, String, SNode>>fromList(modlst).addElement(MultiTuple.<String,String,SNode>from(pkg, modres, module));
+      ListSequence.fromList(modlst).addElement(MultiTuple.<String,String,SNode>from(pkg, modres, module));
     }
     final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"), GWTModuleStubs.this, location);
     GWTModuleReader reader = new GWTModuleReader(new GWTModuleReader.Resolver() {
@@ -84,7 +84,7 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
         return descs.smodelRefWithId(pk);
       }
     });
-    for (Tuples._3<String, String, SNode> modpair : ListSequence.<Tuples._3<String, String, SNode>>fromList(modlst)) {
+    for (Tuples._3<String, String, SNode> modpair : ListSequence.fromList(modlst)) {
       InputStream is = null;
       try {
         is = pi.openResource(modpair._0(), modpair._1());

@@ -28,10 +28,10 @@ public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRul
     // DO NOT TOUCH THIS. CONCEPT MIGHT BE A TYPE VARIABLE 
     if (concept != null && SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept, false);
-      for (SNode superConcept : ListSequence.<SNode>fromList(superConcepts)) {
-        ListSequence.<SNode>fromList(list).addElement(new supertypesOf_SNodeType_SNodeType_SubtypingRule.QuotationClass_c3i5bo_a0a0a0b0d0a().createNode(superConcept, typeCheckingContext));
+      for (SNode superConcept : ListSequence.fromList(superConcepts)) {
+        ListSequence.fromList(list).addElement(new supertypesOf_SNodeType_SNodeType_SubtypingRule.QuotationClass_c3i5bo_a0a0a0b0d0a().createNode(superConcept, typeCheckingContext));
       }
-      ListSequence.<SNode>fromList(list).addElement(new supertypesOf_SNodeType_SNodeType_SubtypingRule.QuotationClass_c3i5bo_a0a0c0d0a().createNode(typeCheckingContext));
+      ListSequence.fromList(list).addElement(new supertypesOf_SNodeType_SNodeType_SubtypingRule.QuotationClass_c3i5bo_a0a0c0d0a().createNode(typeCheckingContext));
     }
     return list;
   }

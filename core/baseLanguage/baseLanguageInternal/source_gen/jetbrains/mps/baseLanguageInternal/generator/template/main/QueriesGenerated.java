@@ -178,10 +178,10 @@ public class QueriesGenerated {
     List<SNode> stlist = new ArrayList<SNode>();
     for (SNode exl : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression", false, new String[]{})) {
       if ((SLinkOperations.getTarget(exl, "stmts", true) != null)) {
-        ListSequence.<SNode>fromList(stlist).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(exl, "stmts", true), "statement", true)));
+        ListSequence.fromList(stlist).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(exl, "stmts", true), "statement", true)));
       }
     }
-    ListSequence.<SNode>fromList(stlist).addElement(_context.getNode());
+    ListSequence.fromList(stlist).addElement(_context.getNode());
     return stlist;
   }
 

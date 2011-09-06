@@ -15,7 +15,7 @@ public class CodeSnippet_TextGen extends SNodeTextGen {
     this.append("{{");
     this.increaseDepth();
     this.increaseDepth();
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "statement", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "statement", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
       }

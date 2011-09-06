@@ -35,7 +35,7 @@ public class IWillBeClassifier_Behavior {
 
   public static SNode virtual_resolve_4609636120081469956(SNode thisNode, SModel targetModel) {
     final String clsName = IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(thisNode);
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(targetModel, "jetbrains.mps.baseLanguage.structure.Classifier")).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getRoots(targetModel, "jetbrains.mps.baseLanguage.structure.Classifier")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode cls) {
         return clsName.equals(SPropertyOperations.getString(cls, "name"));
       }

@@ -28,7 +28,7 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
 
-    for (SNode child : ListSequence.<SNode>fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
+    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isAttribute(it));
       }
@@ -47,7 +47,7 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
       }
     }
 
-    for (SReference reference : Sequence.<SReference>fromIterable(SNodeOperations.getReferences(node))) {
+    for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
       SNode link = SLinkOperations.findLinkDeclaration(reference);
       if (link == null || !(SPropertyOperations.hasValue(link, "metaClass", "reference", "reference"))) {
         {
@@ -62,7 +62,7 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
       }
     }
 
-    for (String propname : SetSequence.<String>fromSet(node.getProperties().keySet())) {
+    for (String propname : SetSequence.fromSet(node.getProperties().keySet())) {
       // Skipping left/right_transform_hint properties - these are internal editor properties, 
       // can be attached to edited node while editing 
       if (SNodeEditorUtil.LEFT_TRANSFORM_HINT.equals(propname) || SNodeEditorUtil.RIGHT_TRANSFORM_HINT.equals(propname)) {

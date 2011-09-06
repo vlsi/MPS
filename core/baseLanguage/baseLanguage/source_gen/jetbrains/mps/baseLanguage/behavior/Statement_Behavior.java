@@ -24,7 +24,7 @@ public class Statement_Behavior {
   }
 
   public static Set<SNode> call_uncaughtThrowables_5412515780383108857(SNode thisNode, boolean ignoreMayBeThrowables) {
-    Set<SNode> result = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+    Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383134223(thisNode, result, ignoreMayBeThrowables);
     return result;
   }

@@ -5,7 +5,6 @@ package jetbrains.mps.debug.customViewers.generator.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,6 +16,7 @@ import jetbrains.mps.debug.customViewers.behavior.HighLevelCustomViewer_Behavior
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
@@ -37,7 +37,7 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_722903304966670752(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debug.customViewers.structure.CustomViewer")).isNotEmpty() || ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer")).isNotEmpty();
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debug.customViewers.structure.CustomViewer")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer")).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_8236382033128530265(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -93,11 +93,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_4089989733346844078(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "watchable", false), "watchable"), "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "watchable", false), "watchable"), "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_8275758777999533505(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "watchable", false), "watchable"), "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "watchable", false), "watchable"), "constructor", true)).first();
   }
 
   public static boolean ifMacro_Condition_4089989733346839759(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -225,7 +225,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5726067590290743628(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer")).union(ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debug.customViewers.structure.CustomViewer")));
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer")).union(ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debug.customViewers.structure.CustomViewer")));
   }
 
   public static void mapSrcMacro_post_mapper_721063219978405017(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
@@ -266,7 +266,7 @@ public class QueriesGenerated {
 
   public static void mapSrcMacro_post_mapper_8256349518541671180(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
     AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
-    ListSequence.<SNode>fromList(SNodeOperations.getDescendants(_context.getOutputNode(), null, false, new String[]{})).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SNodeOperations.getDescendants(_context.getOutputNode(), null, false, new String[]{})).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         AttributeOperations.createAndSetAttrbiute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
       }
@@ -278,9 +278,9 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_264293128390891135(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for (SNode classConcept : ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+    for (SNode classConcept : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
       if (eq_x583g4_a0a0a0a95(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a95().createNode(), "classifier", false)) && SPropertyOperations.getString(classConcept, "name").endsWith("_WrapperFactory")) {
-        for (SNode method : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(classConcept, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
+        for (SNode method : ListSequence.fromList(SNodeOperations.getDescendants(classConcept, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.customViewers.structure.ToProcessMethod"))) != null);
           }
@@ -295,9 +295,9 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_4599835250971319477(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for (SNode viewer : ListSequence.<SNode>fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer"))) {
+    for (SNode viewer : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer"))) {
       SNode valueProxyType = TransformationUtil.getValueProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(viewer));
-      for (SNode valueParameter : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(viewer, "jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter", false, new String[]{}))) {
+      for (SNode valueParameter : ListSequence.fromList(SNodeOperations.getDescendants(viewer, "jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter", false, new String[]{}))) {
         SLinkOperations.setTarget(valueParameter, "valueProxyType", SNodeOperations.copyNode(valueProxyType), true);
       }
     }

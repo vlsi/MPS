@@ -24,7 +24,7 @@ public class typeof_FunctionParameterDeclaration_InferenceRule extends AbstractI
     {
       SNode _nodeToCheck_1029348928467 = fpd;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5224413709453691456", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5224413709453691453", true), (SNode) ListSequence.<SNode>fromList(parms).getElement(SNodeOperations.getIndexInParent(fpd)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5224413709453691453", true), (SNode) ListSequence.fromList(parms).getElement(SNodeOperations.getIndexInParent(fpd)), _info_12389875345);
     }
   }
 

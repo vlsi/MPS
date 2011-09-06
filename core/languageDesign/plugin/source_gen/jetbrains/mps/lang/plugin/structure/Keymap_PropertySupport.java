@@ -11,7 +11,7 @@ public class Keymap_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<Keymap> constants = ListSequence.<Keymap>fromList(Keymap.getConstants()).iterator();
+    Iterator<Keymap> constants = ListSequence.fromList(Keymap.getConstants()).iterator();
     while (constants.hasNext()) {
       Keymap constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class Keymap_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<Keymap> constants = ListSequence.<Keymap>fromList(Keymap.getConstants()).iterator();
+    Iterator<Keymap> constants = ListSequence.fromList(Keymap.getConstants()).iterator();
     while (constants.hasNext()) {
       Keymap constant = constants.next();
       if (value.equals(constant.getName())) {

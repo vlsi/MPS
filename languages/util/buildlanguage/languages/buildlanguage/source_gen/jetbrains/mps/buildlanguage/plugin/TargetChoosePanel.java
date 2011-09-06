@@ -26,8 +26,8 @@ public class TargetChoosePanel extends ChildChoosePanel<SNode, SNode> {
           child.value = ((SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(node, "default", true), "targetDeclaration", false)).getId();
         } else {
           List<SNode> childrenNodes = getChildrenNodes(node);
-          if (childrenNodes != null && ListSequence.<SNode>fromList(childrenNodes).isNotEmpty()) {
-            child.value = ((SNode) ListSequence.<SNode>fromList(childrenNodes).first()).getId();
+          if (childrenNodes != null && ListSequence.fromList(childrenNodes).isNotEmpty()) {
+            child.value = ((SNode) ListSequence.fromList(childrenNodes).first()).getId();
           }
         }
       }

@@ -47,7 +47,7 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode contents = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.lang.plugin.structure.ModificationStatement"), "modifiedGroup", false), "contents", true);
             if (SNodeOperations.isInstanceOf(contents, "jetbrains.mps.lang.plugin.structure.ElementListContents")) {
-              return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(contents, "jetbrains.mps.lang.plugin.structure.ElementListContents"), "reference", true)).where(new IWhereFilter<SNode>() {
+              return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(contents, "jetbrains.mps.lang.plugin.structure.ElementListContents"), "reference", true)).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.GroupAnchor");
                 }
@@ -77,13 +77,13 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> actionGroupDeclarations = SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
             SNode groupDeclaration = SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", false, false);
-            List<SNode> thisGroupChildGroups = ((List<SNode>) ListSequence.<SNode>fromList(SNodeOperations.getDescendants(groupDeclaration, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+            List<SNode> thisGroupChildGroups = ((List<SNode>) ListSequence.fromList(SNodeOperations.getDescendants(groupDeclaration, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
               }
             }).toListSequence());
-            ListSequence.<SNode>fromList(thisGroupChildGroups).addElement(groupDeclaration);
-            return ListSequence.<SNode>fromList(actionGroupDeclarations).subtract(ListSequence.<SNode>fromList(thisGroupChildGroups)).toListSequence();
+            ListSequence.fromList(thisGroupChildGroups).addElement(groupDeclaration);
+            return ListSequence.fromList(actionGroupDeclarations).subtract(ListSequence.fromList(thisGroupChildGroups)).toListSequence();
           }
 
           @Override

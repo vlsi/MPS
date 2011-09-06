@@ -162,7 +162,7 @@ public enum TestNodeWrapperFactory {
 
   @Nullable
   public static ITestNodeWrapper tryToWrap(@NotNull SNode node) {
-    for (TestNodeWrapperFactory factory : Sequence.<TestNodeWrapperFactory>fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values()))) {
+    for (TestNodeWrapperFactory factory : Sequence.fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values()))) {
       if (factory.canWrap(node)) {
         return factory.wrap(node);
       }
@@ -171,7 +171,7 @@ public enum TestNodeWrapperFactory {
   }
 
   public static Iterable<SNode> getWrappedConcepts() {
-    return Sequence.<TestNodeWrapperFactory>fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values())).<SNode>select(new ISelector<TestNodeWrapperFactory, SNode>() {
+    return Sequence.fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values())).<SNode>select(new ISelector<TestNodeWrapperFactory, SNode>() {
       public SNode select(TestNodeWrapperFactory it) {
         return it.getWrappedConcept();
       }
@@ -179,7 +179,7 @@ public enum TestNodeWrapperFactory {
   }
 
   public static Iterable<SNode> getWrappedRootConcepts() {
-    return Sequence.<TestNodeWrapperFactory>fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values())).where(new IWhereFilter<TestNodeWrapperFactory>() {
+    return Sequence.fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values())).where(new IWhereFilter<TestNodeWrapperFactory>() {
       public boolean accept(TestNodeWrapperFactory it) {
         return it.isRoot();
       }

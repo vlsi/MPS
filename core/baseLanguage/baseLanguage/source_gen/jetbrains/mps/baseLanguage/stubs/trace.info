@@ -128,15 +128,15 @@
     <unitInfo nodeId="2076500701550114150" fileName="JavaStubsUtil.java" startLine="24" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.JavaStubsUtil" />
   </root>
   <root nodeId="2076500701550165036">
-    <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="26" startPosition="50" endLine="27" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="27" startPosition="79" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="26" startPosition="50" endLine="27" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="27" startPosition="71" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="28" startPosition="0" endLine="29" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="29" startPosition="58" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="32" startPosition="41" endLine="33" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="35" startPosition="7" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="36" startPosition="0" endLine="37" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="37" startPosition="51" endLine="38" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="38" startPosition="79" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="37" startPosition="51" endLine="38" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="38" startPosition="69" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2076500701550165048" fileName="AllMembersJavaStubs.java" startLine="42" startPosition="104" endLine="43" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2076500701550165055" fileName="AllMembersJavaStubs.java" startLine="44" startPosition="25" endLine="45" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2076500701550165106" fileName="AllMembersJavaStubs.java" startLine="46" startPosition="5" endLine="47" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -153,7 +153,7 @@
     <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="22" startPosition="67" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AllMembersJavaStubs#()V" />
     <nodeInfo nodeId="2076500701550165053" fileName="AllMembersJavaStubs.java" startLine="43" startPosition="72" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2076500701550165074" fileName="AllMembersJavaStubs.java" startLine="62" startPosition="70" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="31" startPosition="126" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljetbrains/mps/smodel/Language;" />
+    <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="31" startPosition="118" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljetbrains/mps/smodel/Language;" />
     <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelDescriptors#(Ljetbrains/mps/stubs/StubLocation;)Ljava/util/Set;" />
     <nodeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelfModuleId#()Ljava/lang/String;" />
     <nodeInfo nodeId="2076500701550165089" fileName="AllMembersJavaStubs.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageId#()Ljava/lang/String;" />
@@ -169,7 +169,7 @@
     <scopeInfo nodeId="2076500701550165078" fileName="AllMembersJavaStubs.java" startLine="63" startPosition="23" endLine="64" endPosition="52" />
     <scopeInfo nodeId="2076500701550165092" fileName="AllMembersJavaStubs.java" startLine="70" startPosition="33" endLine="71" endPosition="27" />
     <scopeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="22" startPosition="67" endLine="24" endPosition="3" />
-    <scopeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="31" startPosition="126" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="31" startPosition="118" endLine="35" endPosition="0" />
     <scopeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="2076500701550165089" fileName="AllMembersJavaStubs.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
@@ -183,7 +183,7 @@
     <scopeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="41" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="26" startPosition="50" endLine="39" endPosition="18" />
     <scopeInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="25" startPosition="0" endLine="41" endPosition="0" />
-    <unitInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="31" startPosition="95" endLine="35" endPosition="5" unitName="jetbrains.mps.baseLanguage.stubs.AllMembersJavaStubs$1" />
+    <unitInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="31" startPosition="87" endLine="35" endPosition="5" unitName="jetbrains.mps.baseLanguage.stubs.AllMembersJavaStubs$1" />
     <unitInfo nodeId="2076500701550165036" fileName="AllMembersJavaStubs.java" startLine="22" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.AllMembersJavaStubs" />
   </root>
   <root nodeId="2974122604715433683">
@@ -198,7 +198,7 @@
     <nodeInfo nodeId="625258459142332573" fileName="MPS_StubDescriptor.java" startLine="24" startPosition="26" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6294074310407508817" fileName="MPS_StubDescriptor.java" startLine="25" startPosition="40" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="625258459142332620" fileName="MPS_StubDescriptor.java" startLine="26" startPosition="0" endLine="27" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6324573423433975456" fileName="MPS_StubDescriptor.java" startLine="30" startPosition="34" endLine="31" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6324573423433975456" fileName="MPS_StubDescriptor.java" startLine="30" startPosition="34" endLine="31" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2974122604715433683" fileName="JavaStubs_MPS.java" startLine="15" startPosition="46" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaStubs_MPS#()V" />
     <nodeInfo nodeId="2974122604715433683" fileName="MPS_StubDescriptor.java" startLine="16" startPosition="63" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPS_StubDescriptor#()V" />
     <nodeInfo nodeId="2974122604715433683" fileName="JavaStubs_MPS.java" startLine="22" startPosition="244" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -208,7 +208,7 @@
     <scopeInfo nodeId="2974122604715433683" fileName="JavaStubs_MPS.java" startLine="16" startPosition="26" endLine="16" endPosition="26" />
     <scopeInfo nodeId="2974122604715433683" fileName="MPS_StubDescriptor.java" startLine="17" startPosition="31" endLine="18" endPosition="179" />
     <scopeInfo nodeId="2974122604715433683" fileName="JavaStubs_MPS.java" startLine="23" startPosition="38" endLine="24" endPosition="208" />
-    <scopeInfo nodeId="2974122604715433685" fileName="MPS_StubDescriptor.java" startLine="30" startPosition="34" endLine="31" endPosition="103" />
+    <scopeInfo nodeId="2974122604715433685" fileName="MPS_StubDescriptor.java" startLine="30" startPosition="34" endLine="31" endPosition="95" />
     <scopeInfo nodeId="2974122604715433683" fileName="JavaStubs_MPS.java" startLine="15" startPosition="46" endLine="17" endPosition="3" />
     <scopeInfo nodeId="2974122604715433683" fileName="MPS_StubDescriptor.java" startLine="16" startPosition="63" endLine="19" endPosition="3" />
     <scopeInfo nodeId="2974122604715433683" fileName="JavaStubs_MPS.java" startLine="22" startPosition="244" endLine="25" endPosition="5" />
@@ -224,7 +224,7 @@
   </root>
   <root nodeId="4381823297881500018">
     <nodeInfo nodeId="4381823297881500018" fileName="Testbench_StubDescriptor.java" startLine="13" startPosition="37" endLine="14" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4381823297881500021" fileName="Testbench_StubDescriptor.java" startLine="17" startPosition="34" endLine="18" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4381823297881500021" fileName="Testbench_StubDescriptor.java" startLine="17" startPosition="34" endLine="18" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4381823297881500018" fileName="JavaStubs_Testbench.java" startLine="19" startPosition="98" endLine="20" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4381823297881500018" fileName="JavaStubs_Testbench.java" startLine="20" startPosition="47" endLine="21" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4381823297881500018" fileName="JavaStubs_Testbench.java" startLine="21" startPosition="21" endLine="22" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -236,7 +236,7 @@
     <nodeInfo nodeId="4381823297881500018" fileName="JavaStubs_Testbench.java" startLine="18" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#(Ljetbrains/mps/stubs/StubLocation;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/stubs/StubSource;)V" />
     <scopeInfo nodeId="4381823297881500018" fileName="JavaStubs_Testbench.java" startLine="16" startPosition="32" endLine="16" endPosition="32" />
     <scopeInfo nodeId="4381823297881500018" fileName="Testbench_StubDescriptor.java" startLine="13" startPosition="37" endLine="14" endPosition="181" />
-    <scopeInfo nodeId="4381823297881500020" fileName="Testbench_StubDescriptor.java" startLine="17" startPosition="34" endLine="18" endPosition="109" />
+    <scopeInfo nodeId="4381823297881500020" fileName="Testbench_StubDescriptor.java" startLine="17" startPosition="34" endLine="18" endPosition="101" />
     <scopeInfo nodeId="4381823297881500018" fileName="JavaStubs_Testbench.java" startLine="23" startPosition="38" endLine="24" endPosition="208" />
     <scopeInfo nodeId="4381823297881500018" fileName="JavaStubs_Testbench.java" startLine="15" startPosition="52" endLine="17" endPosition="3" />
     <scopeInfo nodeId="4381823297881500018" fileName="Testbench_StubDescriptor.java" startLine="12" startPosition="69" endLine="15" endPosition="3" />
@@ -248,15 +248,15 @@
     <unitInfo nodeId="4381823297881500018" fileName="JavaStubs_Testbench.java" startLine="15" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.JavaStubs_Testbench" />
   </root>
   <root nodeId="5516999836374025628">
-    <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="27" startPosition="50" endLine="28" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="28" startPosition="79" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="27" startPosition="50" endLine="28" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="28" startPosition="71" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="29" startPosition="0" endLine="30" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="30" startPosition="58" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="33" startPosition="41" endLine="34" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="36" startPosition="7" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="37" startPosition="0" endLine="38" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="38" startPosition="51" endLine="39" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="39" startPosition="79" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="38" startPosition="51" endLine="39" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="39" startPosition="69" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5516999836375057048" fileName="JavaStubs.java" startLine="43" startPosition="104" endLine="44" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5516999836375057057" fileName="JavaStubs.java" startLine="45" startPosition="25" endLine="46" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5516999836374121118" fileName="JavaStubs.java" startLine="47" startPosition="5" endLine="48" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -270,7 +270,7 @@
     <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="23" startPosition="57" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaStubs#()V" />
     <nodeInfo nodeId="5516999836375057055" fileName="JavaStubs.java" startLine="44" startPosition="72" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3850727996422285390" fileName="JavaStubs.java" startLine="60" startPosition="70" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="32" startPosition="126" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljetbrains/mps/smodel/Language;" />
+    <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="32" startPosition="118" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljetbrains/mps/smodel/Language;" />
     <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelDescriptors#(Ljetbrains/mps/stubs/StubLocation;)Ljava/util/Set;" />
     <nodeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelfModuleId#()Ljava/lang/String;" />
     <nodeInfo nodeId="2470070441756629101" fileName="JavaStubs.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageId#()Ljava/lang/String;" />
@@ -286,7 +286,7 @@
     <scopeInfo nodeId="450238327190364621" fileName="JavaStubs.java" startLine="61" startPosition="23" endLine="62" endPosition="52" />
     <scopeInfo nodeId="2470070441756629104" fileName="JavaStubs.java" startLine="68" startPosition="36" endLine="69" endPosition="27" />
     <scopeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="23" startPosition="57" endLine="25" endPosition="3" />
-    <scopeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="32" startPosition="126" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="32" startPosition="118" endLine="36" endPosition="0" />
     <scopeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="2470070441756629101" fileName="JavaStubs.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
@@ -300,7 +300,7 @@
     <scopeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="58" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="27" startPosition="50" endLine="40" endPosition="18" />
     <scopeInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="26" startPosition="0" endLine="42" endPosition="0" />
-    <unitInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="32" startPosition="95" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.stubs.JavaStubs$1" />
+    <unitInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="32" startPosition="87" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.stubs.JavaStubs$1" />
     <unitInfo nodeId="5516999836374025628" fileName="JavaStubs.java" startLine="23" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
   </root>
   <root nodeId="8529737993487910782">
@@ -310,7 +310,7 @@
     <nodeInfo nodeId="625258459142344275" fileName="JDK_StubDescriptor.java" startLine="19" startPosition="49" endLine="20" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8529737993487910782" fileName="JavaStubs_JDK.java" startLine="20" startPosition="21" endLine="21" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8529737993487910782" fileName="JavaStubs_JDK.java" startLine="22" startPosition="38" endLine="23" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6021028498538120696" fileName="JDK_StubDescriptor.java" startLine="23" startPosition="34" endLine="24" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6021028498538120696" fileName="JDK_StubDescriptor.java" startLine="23" startPosition="34" endLine="24" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8529737993487910782" fileName="JavaStubs_JDK.java" startLine="14" startPosition="46" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaStubs_JDK#()V" />
     <nodeInfo nodeId="8529737993487910782" fileName="JDK_StubDescriptor.java" startLine="14" startPosition="63" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JDK_StubDescriptor#()V" />
     <nodeInfo nodeId="8529737993487910782" fileName="JavaStubs_JDK.java" startLine="21" startPosition="104" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -321,7 +321,7 @@
     <scopeInfo nodeId="8529737993487910782" fileName="JDK_StubDescriptor.java" startLine="15" startPosition="31" endLine="16" endPosition="169" />
     <scopeInfo nodeId="625258459142344272" fileName="JDK_StubDescriptor.java" startLine="19" startPosition="49" endLine="20" endPosition="76" />
     <scopeInfo nodeId="8529737993487910782" fileName="JavaStubs_JDK.java" startLine="22" startPosition="38" endLine="23" endPosition="208" />
-    <scopeInfo nodeId="8529737993487910784" fileName="JDK_StubDescriptor.java" startLine="23" startPosition="34" endLine="24" endPosition="102" />
+    <scopeInfo nodeId="8529737993487910784" fileName="JDK_StubDescriptor.java" startLine="23" startPosition="34" endLine="24" endPosition="94" />
     <scopeInfo nodeId="8529737993487910782" fileName="JavaStubs_JDK.java" startLine="14" startPosition="46" endLine="16" endPosition="3" />
     <scopeInfo nodeId="8529737993487910782" fileName="JDK_StubDescriptor.java" startLine="14" startPosition="63" endLine="17" endPosition="3" />
     <scopeInfo nodeId="8529737993487910782" fileName="JavaStubs_JDK.java" startLine="21" startPosition="104" endLine="24" endPosition="5" />

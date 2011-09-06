@@ -153,7 +153,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1977954644795311577(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "query", false), "QueryDefinition_class"), "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "query", false), "QueryDefinition_class"), "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1977954644795311593(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -188,13 +188,13 @@ public class QueriesGenerated {
     final SNode ipacls = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0nb().createNode(), "classifier", false);
     final SNode jobcls = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0b0nb().createNode(), "classifier", false);
     final SNode cfgcls = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0c0nb().createNode(), "classifier", false);
-    SNode imd = ListSequence.<SNode>fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false)).findFirst(new IWhereFilter<SNode>() {
+    SNode imd = ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode imd) {
         return Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(imd), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), jobcls) || Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(imd), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), cfgcls);
       }
     });
     return (imd != null ?
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(imd, "parameter", true)).findFirst(new IWhereFilter<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(imd, "parameter", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode p) {
           return ipacls == SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(p, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
         }

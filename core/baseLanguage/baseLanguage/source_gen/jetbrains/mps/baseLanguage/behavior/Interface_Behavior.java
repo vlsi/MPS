@@ -23,7 +23,7 @@ public class Interface_Behavior {
   }
 
   public static boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
-    if (SetSequence.<SNode>fromSet(visited).contains(thisNode)) {
+    if (SetSequence.fromSet(visited).contains(thisNode)) {
       LOG.error("circular hierarchy in interface " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
       return false;
     }
@@ -31,8 +31,8 @@ public class Interface_Behavior {
       return true;
     }
     SetSequence.fromSet(visited).addElement(thisNode);
-    for (SNode extended : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true))) {
-      Set<SNode> classifiers = SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), visited);
+    for (SNode extended : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true))) {
+      Set<SNode> classifiers = SetSequence.fromSetWithValues(new HashSet<SNode>(), visited);
       if (Classifier_Behavior.call_isDescendant_checkLoops_7165541881557222950(SLinkOperations.getTarget(extended, "classifier", false), nodeToCompare, classifiers)) {
         return true;
       }
@@ -41,13 +41,13 @@ public class Interface_Behavior {
   }
 
   public static boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
-    if (SetSequence.<SNode>fromSet(visited).contains(thisNode)) {
+    if (SetSequence.fromSet(visited).contains(thisNode)) {
       LOG.error("circular hierarchy in interface " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
       return false;
     }
     SetSequence.fromSet(visited).addElement(thisNode);
-    for (SNode extended : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true))) {
-      Set<SNode> classifiers = SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), visited);
+    for (SNode extended : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true))) {
+      Set<SNode> classifiers = SetSequence.fromSetWithValues(new HashSet<SNode>(), visited);
       if (!(Classifier_Behavior.call_checkLoops_3980490811621705349(SLinkOperations.getTarget(extended, "classifier", false), classifiers))) {
         return false;
       }

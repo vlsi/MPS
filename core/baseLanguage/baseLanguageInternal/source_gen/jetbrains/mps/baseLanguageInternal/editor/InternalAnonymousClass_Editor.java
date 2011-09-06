@@ -402,23 +402,23 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_lqrwoi_a2b0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "instanceInitializer", true) != null && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
+    return SLinkOperations.getTarget(node, "instanceInitializer", true) != null && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_lqrwoi_a3b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_lqrwoi_a4b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty() && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_lqrwoi_a5b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_lqrwoi_a6b0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty() && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty() && SLinkOperations.getTarget(node, "instanceInitializer", true) != null);
+    return !(ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty() && SLinkOperations.getTarget(node, "instanceInitializer", true) != null);
   }
 
   private static class typeParameterListHandler_lqrwoi_g0a extends RefNodeListHandler {

@@ -24,11 +24,11 @@ public class SConceptType_Behavior {
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    List<String> variableSuffixes = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "concept");
+    List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "concept");
     if ((SLinkOperations.getTarget(thisNode, "conceptDeclaraton", false) != null)) {
       String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "conceptDeclaraton", false), "name"));
-      for (String element : ListSequence.<String>fromList(NameUtil.splitByCamels(name))) {
-        ListSequence.<String>fromList(variableSuffixes).addElement(element + "Concept");
+      for (String element : ListSequence.fromList(NameUtil.splitByCamels(name))) {
+        ListSequence.fromList(variableSuffixes).addElement(element + "Concept");
       }
     }
     return variableSuffixes;

@@ -31,9 +31,9 @@ public enum Unit {
   }
 
   public static List<Unit> getConstants() {
-    List<Unit> list = ListSequence.<Unit>fromList(new LinkedList<Unit>());
-    ListSequence.<Unit>fromList(list).addElement(Unit.PIXEL);
-    ListSequence.<Unit>fromList(list).addElement(Unit.PERCENT);
+    List<Unit> list = ListSequence.fromList(new LinkedList<Unit>());
+    ListSequence.fromList(list).addElement(Unit.PIXEL);
+    ListSequence.fromList(list).addElement(Unit.PERCENT);
     return list;
   }
 

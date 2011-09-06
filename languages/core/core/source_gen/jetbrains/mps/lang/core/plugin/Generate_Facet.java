@@ -57,15 +57,15 @@ import jetbrains.mps.make.delta.IDeltaVisitor;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class Generate_Facet extends IFacet.Stub {
-  private List<ITarget> targets = ListSequence.<ITarget>fromList(new ArrayList<ITarget>());
+  private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.lang.core.Generate");
 
   public Generate_Facet() {
-    ListSequence.<ITarget>fromList(targets).addElement(new Generate_Facet.Target_checkParameters());
-    ListSequence.<ITarget>fromList(targets).addElement(new Generate_Facet.Target_checkDumbMode());
-    ListSequence.<ITarget>fromList(targets).addElement(new Generate_Facet.Target_configure());
-    ListSequence.<ITarget>fromList(targets).addElement(new Generate_Facet.Target_preloadModels());
-    ListSequence.<ITarget>fromList(targets).addElement(new Generate_Facet.Target_generate());
+    ListSequence.fromList(targets).addElement(new Generate_Facet.Target_checkParameters());
+    ListSequence.fromList(targets).addElement(new Generate_Facet.Target_checkDumbMode());
+    ListSequence.fromList(targets).addElement(new Generate_Facet.Target_configure());
+    ListSequence.fromList(targets).addElement(new Generate_Facet.Target_preloadModels());
+    ListSequence.fromList(targets).addElement(new Generate_Facet.Target_generate());
   }
 
   public Iterable<ITarget> targets() {
@@ -479,16 +479,16 @@ public class Generate_Facet extends IFacet.Stub {
           Iterable<IResource> _output_fi61u2_a0d = null;
           switch (0) {
             case 0:
-              int work = Sequence.<IResource>fromIterable(input).count() * 100;
+              int work = Sequence.fromIterable(input).count() * 100;
               if (work == 0) {
                 return new IResult.SUCCESS(_output_fi61u2_a0d);
               }
               monitor.currentProgress().beginWork("Pre-loading models", work, monitor.currentProgress().workLeft());
-              Sequence.<IResource>fromIterable(input).visitAll(new IVisitor<IResource>() {
+              Sequence.fromIterable(input).visitAll(new IVisitor<IResource>() {
                 public void visit(IResource mod) {
                   MResource mres = ((MResource) mod);
                   monitor.currentProgress().advanceWork("Pre-loading models", 100);
-                  Sequence.<SModelDescriptor>fromIterable(mres.models()).visitAll(new IVisitor<SModelDescriptor>() {
+                  Sequence.fromIterable(mres.models()).visitAll(new IVisitor<SModelDescriptor>() {
                     public void visit(final SModelDescriptor smd) {
                       if (smd instanceof DefaultSModelDescriptor) {
                         ModelAccess.instance().runReadAction(new Runnable() {
@@ -503,7 +503,7 @@ public class Generate_Facet extends IFacet.Stub {
                 }
               });
               monitor.currentProgress().finishWork("Pre-loading models");
-              _output_fi61u2_a0d = Sequence.<IResource>fromIterable(_output_fi61u2_a0d).concat(Sequence.<IResource>fromIterable(input));
+              _output_fi61u2_a0d = Sequence.fromIterable(_output_fi61u2_a0d).concat(Sequence.fromIterable(input));
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0d);
           }
@@ -589,8 +589,8 @@ public class Generate_Facet extends IFacet.Stub {
               IGenerationHandler gh = new MakeGenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource>() {
                 public Boolean invoke(GResource data) {
                   monitor.currentProgress().advanceWork("Generating", 1000);
-                  data.retainedModels(MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).get(data.module()));
-                  _output_fi61u2_a0e.value = Sequence.<IResource>fromIterable(_output_fi61u2_a0e.value).concat(Sequence.<IResource>fromIterable(Sequence.<IResource>singleton(data)));
+                  data.retainedModels(MapSequence.fromMap(retainedModels).get(data.module()));
+                  _output_fi61u2_a0e.value = Sequence.fromIterable(_output_fi61u2_a0e.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(data)));
                   return true;
                 }
               });
@@ -603,13 +603,13 @@ public class Generate_Facet extends IFacet.Stub {
                 }
               };
 
-              monitor.currentProgress().beginWork("Generating", Sequence.<IResource>fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
+              monitor.currentProgress().beginWork("Generating", Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
                 public Integer combine(Integer s, IResource it) {
-                  return s + Sequence.<SModelDescriptor>fromIterable(((MResource) it).models()).count() * 1000;
+                  return s + Sequence.fromIterable(((MResource) it).models()).count() * 1000;
                 }
               }) + 1000, monitor.currentProgress().workLeft());
               monitor.currentProgress().advanceWork("Generating", 1000);
-              List<SModelDescriptor> models = Sequence.<IResource>fromIterable(input).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
+              List<SModelDescriptor> models = Sequence.fromIterable(input).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
                 public Iterable<SModelDescriptor> translate(IResource in) {
                   return ((MResource) in).models();
                 }
@@ -621,7 +621,7 @@ public class Generate_Facet extends IFacet.Stub {
               if (!(generationOk)) {
                 return new IResult.FAILURE(_output_fi61u2_a0e.value);
               }
-              _output_fi61u2_a0e.value = Sequence.<IResource>fromIterable(_output_fi61u2_a0e.value).concat(Sequence.<IResource>fromIterable(Sequence.<IResource>singleton(new DResource(Sequence.<IDelta>singleton(new IInternalDelta() {
+              _output_fi61u2_a0e.value = Sequence.fromIterable(_output_fi61u2_a0e.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(Sequence.<IDelta>singleton(new IInternalDelta() {
                 public IDelta merge(IDelta toMerge) {
                   return this;
                 }
@@ -707,19 +707,19 @@ public class Generate_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters");
         if (properties.hasProperties(name)) {
           Generate_Facet.Target_checkParameters.Variables props = properties.properties(name, Generate_Facet.Target_checkParameters.Variables.class);
-          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.project", null);
-          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.operationContext", null);
-          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake", String.valueOf(props.cleanMake()));
-          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.pindGet", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.project", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.operationContext", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake", String.valueOf(props.cleanMake()));
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.pindGet", null);
         }
       }
       {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.configure");
         if (properties.hasProperties(name)) {
           Generate_Facet.Target_configure.Variables props = properties.properties(name, Generate_Facet.Target_configure.Variables.class);
-          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.saveTransient", String.valueOf(props.saveTransient()));
-          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.generationOptions", null);
-          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.parametersProvider", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.saveTransient", String.valueOf(props.saveTransient()));
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.generationOptions", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.parametersProvider", null);
         }
       }
     }
@@ -736,7 +736,7 @@ public class Generate_Facet extends IFacet.Stub {
             props.operationContext(null);
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")) {
-            props.cleanMake(Boolean.valueOf(MapSequence.<String,String>fromMap(store).get("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")));
+            props.cleanMake(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")));
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.pindGet")) {
             props.pindGet(null);
@@ -746,7 +746,7 @@ public class Generate_Facet extends IFacet.Stub {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.configure");
           Generate_Facet.Target_configure.Variables props = properties.properties(name, Generate_Facet.Target_configure.Variables.class);
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.configure.saveTransient")) {
-            props.saveTransient(Boolean.valueOf(MapSequence.<String,String>fromMap(store).get("jetbrains.mps.lang.core.Generate.configure.saveTransient")));
+            props.saveTransient(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.Generate.configure.saveTransient")));
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.configure.generationOptions")) {
             props.generationOptions(null);

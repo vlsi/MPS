@@ -20,8 +20,8 @@ public class MappingLabelUtil {
   public static SNode findOrCreateMappingLabelForName(SNode templateNode, String labelName) {
     SNode mappingLabel = null;
     List<SNode> mappingConfigurations = SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(templateNode), GlobalScope.getInstance(), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
-    for (SNode mc : ListSequence.<SNode>fromList(mappingConfigurations)) {
-      for (SNode ml : ListSequence.<SNode>fromList(SLinkOperations.getTargets(mc, "mappingLabel", true))) {
+    for (SNode mc : ListSequence.fromList(mappingConfigurations)) {
+      for (SNode ml : ListSequence.fromList(SLinkOperations.getTargets(mc, "mappingLabel", true))) {
         if (labelName.equals(SPropertyOperations.getString(ml, "name"))) {
           mappingLabel = ml;
           break;
@@ -32,14 +32,14 @@ public class MappingLabelUtil {
     if (mappingLabel == null) {
       SNode mc;
       List<SNode> localMCs = SModelOperations.getRoots(SNodeOperations.getModel(templateNode), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
-      if (ListSequence.<SNode>fromList(localMCs).isNotEmpty()) {
-        mc = ListSequence.<SNode>fromList(localMCs).where(new IWhereFilter<SNode>() {
+      if (ListSequence.fromList(localMCs).isNotEmpty()) {
+        mc = ListSequence.fromList(localMCs).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(it, "mappingLabel", true)).isNotEmpty();
+            return ListSequence.fromList(SLinkOperations.getTargets(it, "mappingLabel", true)).isNotEmpty();
           }
         }).first();
         if (mc == null) {
-          mc = ListSequence.<SNode>fromList(localMCs).first();
+          mc = ListSequence.fromList(localMCs).first();
         }
       } else {
         mc = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(templateNode), "jetbrains.mps.lang.generator.structure.MappingConfiguration", null);

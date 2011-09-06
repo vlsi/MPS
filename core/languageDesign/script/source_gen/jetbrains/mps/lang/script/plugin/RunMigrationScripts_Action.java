@@ -51,39 +51,39 @@ public class RunMigrationScripts_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
-    MapSequence.<String,Object>fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    MapSequence.fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IScope scope = AbstractMigrationScriptHelper.createMigrationScope(((List<SModelDescriptor>) MapSequence.<String,Object>fromMap(_params).get("models")), ((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")), RunMigrationScripts_Action.this.selectionOnly);
+      IScope scope = AbstractMigrationScriptHelper.createMigrationScope(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")), RunMigrationScripts_Action.this.selectionOnly);
       if (!(scope.getModelDescriptors().iterator().hasNext())) {
         return;
       }
       ScriptsActionGroupHelper.sortScripts(RunMigrationScripts_Action.this.scripts);
-      RunMigrationScriptsDialog dialog = new RunMigrationScriptsDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), RunMigrationScripts_Action.this.scripts, ScriptsActionGroupHelper.getSelectedScripts());
-      int x = ((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")).getX() + ((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")).getWidth() / 2 - dialog.getWidth() / 2;
-      int y = ((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")).getY() + ((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")).getHeight() / 2 - dialog.getHeight() / 2;
+      RunMigrationScriptsDialog dialog = new RunMigrationScriptsDialog(((Frame) MapSequence.fromMap(_params).get("frame")), RunMigrationScripts_Action.this.scripts, ScriptsActionGroupHelper.getSelectedScripts());
+      int x = ((Frame) MapSequence.fromMap(_params).get("frame")).getX() + ((Frame) MapSequence.fromMap(_params).get("frame")).getWidth() / 2 - dialog.getWidth() / 2;
+      int y = ((Frame) MapSequence.fromMap(_params).get("frame")).getY() + ((Frame) MapSequence.fromMap(_params).get("frame")).getHeight() / 2 - dialog.getHeight() / 2;
       dialog.setLocation(x, y);
       dialog.setVisible(true);
       if (dialog.isRunChecked()) {
-        AbstractMigrationScriptHelper.doRunScripts(dialog.getCheckedScripts(), scope, ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+        AbstractMigrationScriptHelper.doRunScripts(dialog.getCheckedScripts(), scope, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       } else if (dialog.isOpenSelected()) {
-        ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(dialog.getSelectedScripts().get(0), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(dialog.getSelectedScripts().get(0), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RunMigrationScripts", t);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="29" startPosition="76" endLine="51" endPosition="9" unitName="jetbrains.mpslite.actions.QueriesGenerated$1" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="29" startPosition="53" endLine="51" endPosition="9" unitName="jetbrains.mpslite.actions.QueriesGenerated$1" />
   <unitInfo fileName="QueriesGenerated.java" startLine="20" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mpslite.actions.QueriesGenerated" />
   <root nodeId="1237217075863">
     <nodeInfo nodeId="1237219447520" fileName="QueriesGenerated.java" startLine="30" startPosition="94" endLine="31" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -26,13 +26,13 @@ public class ProgramsLocationComponent_PreferencesComponent extends BaseProjectP
   public void loadState(Element state) {
     XmlSerializer.deserializeInto(this.myState, state);
     this.afterRead(this.getMPSProject());
-    for (BasePrefsPage page : ListSequence.<BasePrefsPage>fromList(this.getPages())) {
+    for (BasePrefsPage page : ListSequence.fromList(this.getPages())) {
       page.reset();
     }
   }
 
   public Element getState() {
-    for (BasePrefsPage page : ListSequence.<BasePrefsPage>fromList(this.getPages())) {
+    for (BasePrefsPage page : ListSequence.fromList(this.getPages())) {
       try {
         page.apply();
       } catch (ConfigurationException e) {
@@ -51,8 +51,8 @@ public class ProgramsLocationComponent_PreferencesComponent extends BaseProjectP
   }
 
   public List<BasePrefsPage> createPages() {
-    List<BasePrefsPage> result = ListSequence.<BasePrefsPage>fromList(new ArrayList<BasePrefsPage>());
-    ListSequence.<BasePrefsPage>fromList(result).addElement(new ProgramsLocationComponent_GDBLocation_PreferencesPage(this.getProject(), this));
+    List<BasePrefsPage> result = ListSequence.fromList(new ArrayList<BasePrefsPage>());
+    ListSequence.fromList(result).addElement(new ProgramsLocationComponent_GDBLocation_PreferencesPage(this.getProject(), this));
     return result;
   }
 

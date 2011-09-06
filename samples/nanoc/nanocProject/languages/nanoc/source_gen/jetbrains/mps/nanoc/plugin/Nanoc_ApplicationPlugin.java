@@ -20,7 +20,7 @@ public class Nanoc_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
-    List<BaseCustomApplicationPlugin> res = ListSequence.<BaseCustomApplicationPlugin>fromList(new ArrayList<BaseCustomApplicationPlugin>());
+    List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     addCustomPart(res, new CppDebuggerInitializer_CustomApplicationPlugin());
     addCustomPart(res, new DebugInfoProvider_CustomApplicationPlugin());
     addCustomPart(res, new RunConfigurationsInitializer_CustomApplicationPlugin());
@@ -28,7 +28,7 @@ public class Nanoc_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   private void addCustomPart(List<BaseCustomApplicationPlugin> plugins, BaseCustomApplicationPlugin plugin) {
-    ListSequence.<BaseCustomApplicationPlugin>fromList(plugins).addElement(plugin);
+    ListSequence.fromList(plugins).addElement(plugin);
     plugin.init();
   }
 }

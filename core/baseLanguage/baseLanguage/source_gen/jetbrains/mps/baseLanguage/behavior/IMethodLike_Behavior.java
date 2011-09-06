@@ -29,14 +29,14 @@ public class IMethodLike_Behavior {
 
   public static SNode call_getLastStatement_2432385533253965663(SNode thisNode, SNode statementList) {
     List<SNode> statements = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(statements).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList, "statement", true)));
-    while (SNodeOperations.getConceptDeclaration(ListSequence.<SNode>fromList(statements).last()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.getConceptDeclaration(ListSequence.<SNode>fromList(statements).last()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.RemarkStatement") || SNodeOperations.getConceptDeclaration(ListSequence.<SNode>fromList(statements).last()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment")) {
-      ListSequence.<SNode>fromList(statements).removeLastElement();
+    ListSequence.fromList(statements).addSequence(ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)));
+    while (SNodeOperations.getConceptDeclaration(ListSequence.fromList(statements).last()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.getConceptDeclaration(ListSequence.fromList(statements).last()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.RemarkStatement") || SNodeOperations.getConceptDeclaration(ListSequence.fromList(statements).last()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment")) {
+      ListSequence.fromList(statements).removeLastElement();
     }
-    SNode lastStatement = ListSequence.<SNode>fromList(statements).last();
+    SNode lastStatement = ListSequence.fromList(statements).last();
     if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
       SNode innerStatementList = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true);
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(innerStatementList, "statement", true)).isEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(innerStatementList, "statement", true)).isEmpty()) {
         return lastStatement;
       } else {
         return IMethodLike_Behavior.call_getLastStatement_2432385533253965663(thisNode, innerStatementList);

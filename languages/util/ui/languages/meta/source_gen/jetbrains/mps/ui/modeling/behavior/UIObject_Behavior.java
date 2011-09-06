@@ -21,7 +21,7 @@ public class UIObject_Behavior {
   }
 
   public static Iterable<SNode> call_allExtends_8115675450774407592(final SNode thisNode) {
-    return Sequence.<SNode>fromClosure(new ISequenceClosure<SNode>() {
+    return Sequence.fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -84,7 +84,7 @@ __switch__:
   }
 
   public static SNode call_mustBelongTo_1719339442171055203(SNode thisNode) {
-    return Sequence.<SNode>fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(thisNode)).skip(1).<SNode>select(new ISelector<SNode, SNode>() {
+    return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(thisNode)).skip(1).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode o) {
         return SLinkOperations.getTarget(o, "belongsTo", false);
       }
@@ -96,14 +96,14 @@ __switch__:
   }
 
   public static SNode virtual_findTemplate_3939571372331676060(SNode thisNode, SModel model, IScope scope) {
-    final List<SNode> ael = Sequence.<SNode>fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(thisNode)).toListSequence();
-    return ListSequence.<SNode>fromList(SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.ui.modeling.structure.UIObjectTemplate")).where(new IWhereFilter<SNode>() {
+    final List<SNode> ael = Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(thisNode)).toListSequence();
+    return ListSequence.fromList(SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.ui.modeling.structure.UIObjectTemplate")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode tpl) {
-        return ListSequence.<SNode>fromList(ael).contains(SLinkOperations.getTarget(tpl, "uiObject", false));
+        return ListSequence.fromList(ael).contains(SLinkOperations.getTarget(tpl, "uiObject", false));
       }
     }).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode tpl) {
-        return ListSequence.<SNode>fromList(ael).indexOf(SLinkOperations.getTarget(tpl, "uiObject", false));
+        return ListSequence.fromList(ael).indexOf(SLinkOperations.getTarget(tpl, "uiObject", false));
       }
     }, true).first();
   }

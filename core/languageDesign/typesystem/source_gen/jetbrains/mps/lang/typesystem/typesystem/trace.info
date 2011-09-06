@@ -3424,7 +3424,7 @@
     <nodeInfo nodeId="4258793651770337950" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="4258793651770372626" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="26" startPosition="42" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4258793651770337950" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="4258793651770372619" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="25" startPosition="63" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4258793651770372619" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="25" startPosition="56" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4258793651770370815" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="24" startPosition="109" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4258793651770337950" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="4258793651770337950" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="20" startPosition="62" endLine="20" endPosition="62" />
@@ -3439,8 +3439,8 @@
     <scopeInfo nodeId="4258793651770337950" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="4258793651770372620" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="26" startPosition="42" endLine="32" endPosition="9" />
     <scopeInfo nodeId="4258793651770337950" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="4258793651770370816" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="25" startPosition="63" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="4258793651770372619" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="25" startPosition="63" endLine="33" endPosition="7">
+    <scopeInfo nodeId="4258793651770370816" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="25" startPosition="56" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="4258793651770372619" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="25" startPosition="56" endLine="33" endPosition="7">
       <varInfo nodeId="4258793651770372622" varName="intention" />
     </scopeInfo>
     <scopeInfo nodeId="4258793651770337951" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="23" startPosition="138" endLine="34" endPosition="5">
@@ -3464,7 +3464,7 @@
     <nodeInfo nodeId="4258793651770372643" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="4258793651770372657" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="26" startPosition="42" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4258793651770372643" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="4258793651770372655" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="25" startPosition="63" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4258793651770372655" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="25" startPosition="56" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4258793651770372653" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="24" startPosition="100" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4258793651770372643" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="4258793651770372643" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="20" startPosition="62" endLine="20" endPosition="62" />
@@ -3479,8 +3479,8 @@
     <scopeInfo nodeId="4258793651770372643" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="4258793651770372656" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="26" startPosition="42" endLine="32" endPosition="9" />
     <scopeInfo nodeId="4258793651770372643" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="4258793651770372654" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="25" startPosition="63" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="4258793651770372655" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="25" startPosition="63" endLine="33" endPosition="7">
+    <scopeInfo nodeId="4258793651770372654" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="25" startPosition="56" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="4258793651770372655" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="25" startPosition="56" endLine="33" endPosition="7">
       <varInfo nodeId="4258793651770372665" varName="intention" />
     </scopeInfo>
     <scopeInfo nodeId="4258793651770372644" fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="23" startPosition="129" endLine="34" endPosition="5">
@@ -4083,7 +4083,7 @@
     <nodeInfo nodeId="9215127012916007419" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="19" startPosition="149" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule#()V" />
     <nodeInfo nodeId="9215127012916007461" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="31" startPosition="14" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9215127012916007475" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="35" startPosition="109" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9215127012916007489" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="39" startPosition="217" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9215127012916007489" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="39" startPosition="210" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9215127012916007419" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="9215127012916007419" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="52" startPosition="68" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9215127012916007419" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
@@ -4102,7 +4102,7 @@
     <scopeInfo nodeId="9215127012916007419" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="19" startPosition="149" endLine="21" endPosition="3" />
     <scopeInfo nodeId="9215127012916007489" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="40" startPosition="80" endLine="42" endPosition="302" />
     <scopeInfo nodeId="9215127012916007419" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="53" startPosition="5" endLine="55" endPosition="45" />
-    <scopeInfo nodeId="9215127012916007488" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="39" startPosition="217" endLine="43" endPosition="9" />
+    <scopeInfo nodeId="9215127012916007488" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="39" startPosition="210" endLine="43" endPosition="9" />
     <scopeInfo nodeId="9215127012916007419" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="9215127012916007419" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="52" startPosition="68" endLine="56" endPosition="5" />
     <scopeInfo nodeId="9215127012916007419" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />

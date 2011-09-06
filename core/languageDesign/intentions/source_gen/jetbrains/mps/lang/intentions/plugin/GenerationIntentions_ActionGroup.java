@@ -34,7 +34,7 @@ public class GenerationIntentions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GenerationIntentions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.intentions.plugin.GenerationIntentions_ActionGroup";
 
-  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.<Pair<ActionPlace, Condition<BaseAction>>>fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
+  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
 
   public GenerationIntentions_ActionGroup() {
     super("GenerationIntentions", ID);
@@ -54,19 +54,19 @@ public class GenerationIntentions_ActionGroup extends GeneratedActionGroup {
       query.setIntentionClass(GenerateIntention.class);
       query.setInstantiate(true);
 
-      List<Tuples._2<Intention, SNode>> groupItems = ListSequence.<Tuples._2<Intention, SNode>>fromList(new ArrayList<Tuples._2<Intention, SNode>>());
+      List<Tuples._2<Intention, SNode>> groupItems = ListSequence.fromList(new ArrayList<Tuples._2<Intention, SNode>>());
       SNode node = event.getData(MPSDataKeys.NODE);
       final EditorContext context = event.getData(MPSDataKeys.EDITOR_CONTEXT);
 
       Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, context);
-      for (Pair<Intention, SNode> pair : Sequence.<Pair<Intention, SNode>>fromIterable(intentions)) {
-        ListSequence.<Tuples._2<Intention, SNode>>fromList(groupItems).addElement(MultiTuple.<Intention,SNode>from(pair.getFirst(), pair.getSecond()));
+      for (Pair<Intention, SNode> pair : Sequence.fromIterable(intentions)) {
+        ListSequence.fromList(groupItems).addElement(MultiTuple.<Intention,SNode>from(pair.getFirst(), pair.getSecond()));
       }
-      if (ListSequence.<Tuples._2<Intention, SNode>>fromList(groupItems).isEmpty()) {
+      if (ListSequence.fromList(groupItems).isEmpty()) {
         return;
       }
 
-      ListSequence.<Tuples._2<Intention, SNode>>fromList(groupItems).sort(new Comparator<Tuples._2<Intention, SNode>>() {
+      ListSequence.fromList(groupItems).sort(new Comparator<Tuples._2<Intention, SNode>>() {
         public int compare(Tuples._2<Intention, SNode> a, Tuples._2<Intention, SNode> b) {
           return a._0().getDescription(a._1(), context).compareTo(b._0().getDescription(b._1(), context));
         }

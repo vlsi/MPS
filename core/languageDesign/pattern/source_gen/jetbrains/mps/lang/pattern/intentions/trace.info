@@ -315,7 +315,7 @@
     <nodeInfo nodeId="8297918475033170221" fileName="CreateOrPattern_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8297918475033129308" fileName="CreateOrPattern_Intention.java" startLine="51" startPosition="56" endLine="52" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8297918475033129314" fileName="CreateOrPattern_Intention.java" startLine="52" startPosition="115" endLine="53" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8297918475033129319" fileName="CreateOrPattern_Intention.java" startLine="53" startPosition="63" endLine="54" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8297918475033129319" fileName="CreateOrPattern_Intention.java" startLine="53" startPosition="63" endLine="54" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="57" startPosition="37" endLine="58" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="14" startPosition="83" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateOrPattern_Intention#()V" />
     <nodeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="38" startPosition="84" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -346,7 +346,7 @@
     <scopeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="38" startPosition="84" endLine="42" endPosition="16" />
-    <scopeInfo nodeId="8263735385373627212" fileName="CreateOrPattern_Intention.java" startLine="50" startPosition="76" endLine="54" endPosition="157">
+    <scopeInfo nodeId="8263735385373627212" fileName="CreateOrPattern_Intention.java" startLine="50" startPosition="76" endLine="54" endPosition="150">
       <varInfo nodeId="8297918475033170222" varName="currentNode" />
       <varInfo nodeId="8297918475033129309" varName="orPattern" />
     </scopeInfo>

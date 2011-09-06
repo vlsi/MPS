@@ -50,7 +50,7 @@ public class ImplementMethods_Intention extends BaseIntention implements Intenti
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(SLinkOperations.getTarget(node, "concept", false), GlobalScope.getInstance())).isNotEmpty();
+    return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(SLinkOperations.getTarget(node, "concept", false), GlobalScope.getInstance())).isNotEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

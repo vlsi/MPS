@@ -23,7 +23,7 @@ public class TemplateSwitch_Behavior {
   public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode mappingRule : SLinkOperations.getTargets(thisNode, "reductionMappingRule", true)) {
-      ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(mappingRule, "applicableConcept", false));
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(mappingRule, "applicableConcept", false));
     }
     return result;
   }
@@ -31,7 +31,7 @@ public class TemplateSwitch_Behavior {
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SNode rule = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", null);
     SLinkOperations.setTarget(rule, "applicableConcept", baseConcept, false);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "reductionMappingRule", true)).addElement(rule);
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "reductionMappingRule", true)).addElement(rule);
   }
 
   public static List<SNode> call_getBaseConceptCollection_8360039740498070955(SNode thisNode) {

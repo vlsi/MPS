@@ -27,9 +27,9 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNode;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -47,11 +47,11 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class Binaries_Facet extends IFacet.Stub {
-  private List<ITarget> targets = ListSequence.<ITarget>fromList(new ArrayList<ITarget>());
+  private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.lang.plugin.Binaries");
 
   public Binaries_Facet() {
-    ListSequence.<ITarget>fromList(targets).addElement(new Binaries_Facet.Target_copyBinaries());
+    ListSequence.fromList(targets).addElement(new Binaries_Facet.Target_copyBinaries());
   }
 
   public Iterable<ITarget> targets() {
@@ -93,11 +93,11 @@ public class Binaries_Facet extends IFacet.Stub {
           Iterable<IResource> _output_8acy7z_a0a = null;
           switch (0) {
             case 0:
-              final List<IDelta> deltaList = ListSequence.<IDelta>fromList(new ArrayList<IDelta>());
-              final Iterable<Tuples._2<IFile, IFile>> filesToCopy = Sequence.<IResource>fromIterable(input).<Tuples._2<IFile, IFile>>translate(new ITranslator2<IResource, Tuples._2<IFile, IFile>>() {
+              final List<IDelta> deltaList = ListSequence.fromList(new ArrayList<IDelta>());
+              final Iterable<Tuples._2<IFile, IFile>> filesToCopy = Sequence.fromIterable(input).<Tuples._2<IFile, IFile>>translate(new ITranslator2<IResource, Tuples._2<IFile, IFile>>() {
                 public Iterable<Tuples._2<IFile, IFile>> translate(IResource res) {
                   final IModule module = ((MResource) res).module();
-                  return Sequence.<SModelDescriptor>fromIterable(((MResource) res).models()).<Tuples._2<IFile, IFile>>translate(new ITranslator2<SModelDescriptor, Tuples._2<IFile, IFile>>() {
+                  return Sequence.fromIterable(((MResource) res).models()).<Tuples._2<IFile, IFile>>translate(new ITranslator2<SModelDescriptor, Tuples._2<IFile, IFile>>() {
                     public Iterable<Tuples._2<IFile, IFile>> translate(SModelDescriptor smd) {
                       SModel model = smd.getSModel();
                       String output = module.getOutputFor(smd);
@@ -111,8 +111,8 @@ public class Binaries_Facet extends IFacet.Stub {
                         );
                         final IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
                         final FilesDelta fd = new FilesDelta(outputDir);
-                        ListSequence.<IDelta>fromList(deltaList).addElement(fd);
-                        return ListSequence.<SNode>fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.plugin.structure.Resource")).where(new IWhereFilter<SNode>() {
+                        ListSequence.fromList(deltaList).addElement(fd);
+                        return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.plugin.structure.Resource")).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
                             return StringUtils.isNotEmpty(SPropertyOperations.getString(it, "path"));
                           }
@@ -137,13 +137,13 @@ public class Binaries_Facet extends IFacet.Stub {
                   });
                 }
               });
-              _output_8acy7z_a0a = Sequence.<IResource>fromIterable(_output_8acy7z_a0a).concat(Sequence.<IResource>fromIterable(Sequence.<IResource>singleton(new DResource(deltaList))));
+              _output_8acy7z_a0a = Sequence.fromIterable(_output_8acy7z_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(deltaList))));
 
               ThreadUtils.runInUIThreadAndWait(new Runnable() {
                 public void run() {
                   ModelAccess.instance().requireWrite(new Runnable() {
                     public void run() {
-                      Sequence.<Tuples._2<IFile, IFile>>fromIterable(filesToCopy).toListSequence().visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
+                      Sequence.fromIterable(filesToCopy).toListSequence().visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
                         public void visit(Tuples._2<IFile, IFile> ftc) {
                           IFileUtils.copyFileContent(ftc._0(), ftc._1());
                         }
@@ -244,7 +244,7 @@ public class Binaries_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.plugin.Binaries.copyBinaries");
         if (properties.hasProperties(name)) {
           Binaries_Facet.Target_copyBinaries.Parameters props = properties.properties(name, Binaries_Facet.Target_copyBinaries.Parameters.class);
-          MapSequence.<String,String>fromMap(store).put("jetbrains.mps.lang.plugin.Binaries.copyBinaries.pathToFile", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.plugin.Binaries.copyBinaries.pathToFile", null);
         }
       }
     }

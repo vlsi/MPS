@@ -42,7 +42,7 @@ public class AddTypeParameters_Intention extends BaseIntention implements Intent
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeArgument", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeArgument", true)).isEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

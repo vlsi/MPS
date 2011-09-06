@@ -31,13 +31,13 @@ public class ExecuteCommandPart_Behavior {
 
   public static List<SNode> call_getParameters_6129022259108621180(SNode thisNode) {
     if (CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(thisNode))) {
-      return ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "parameterDeclaration", true)).union(Sequence.<SNode>fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(thisNode), "debuggerParameter", true)))).toListSequence();
+      return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterDeclaration", true)).union(Sequence.fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(thisNode), "debuggerParameter", true)))).toListSequence();
     }
     return SLinkOperations.getTargets(thisNode, "parameterDeclaration", true);
   }
 
   public static List<SNode> call_getRequiredParameters_6129022259108621289(SNode thisNode) {
-    return ListSequence.<SNode>fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(thisNode)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration") && ExplicitCommandParameterDeclaration_Behavior.call_isRequired_856705193941282030(SNodeOperations.cast(it, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"));
       }
@@ -49,7 +49,7 @@ public class ExecuteCommandPart_Behavior {
   }
 
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
-    return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), new ExecuteCommandPart_Behavior.QuotationClass_qal9w4_a1a0a4().createNode());
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), new ExecuteCommandPart_Behavior.QuotationClass_qal9w4_a1a0a4().createNode());
   }
 
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {

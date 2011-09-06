@@ -150,7 +150,7 @@ public class _Line_Actions extends EditorCellKeyMap {
           SNode currentSibling = sibling;
           sibling = SNodeOperations.cast(SNodeOperations.getNextSibling(sibling), "jetbrains.mpslite.structure.LinePart");
           line.removeChild(currentSibling);
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(nextLine, "linePart", true)).addElement(currentSibling);
+          ListSequence.fromList(SLinkOperations.getTargets(nextLine, "linePart", true)).addElement(currentSibling);
         }
       }
     }

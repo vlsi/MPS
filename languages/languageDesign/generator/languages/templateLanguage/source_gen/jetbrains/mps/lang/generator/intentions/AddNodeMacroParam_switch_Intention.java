@@ -77,13 +77,13 @@ public class AddNodeMacroParam_switch_Intention extends BaseIntention implements
   }
 
   public static List<Intention> instances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.<Intention>fromList(new ArrayList<Intention>());
+    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
     List<SNode> paramList = parameter(node, editorContext);
     if (paramList != null) {
       for (SNode param : paramList) {
         AddNodeMacroParam_switch_Intention intention = new AddNodeMacroParam_switch_Intention();
         intention.myParameter = param;
-        ListSequence.<Intention>fromList(list).addElement(intention);
+        ListSequence.fromList(list).addElement(intention);
       }
     }
     return list;

@@ -238,7 +238,7 @@ public class MathTypeUtil {
           if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.StatementList")) {
             SNode bsStatementList = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.StatementList");
             List<SNode> statements = SLinkOperations.getTargets(bsStatementList, "statement", true);
-            if (ListSequence.<SNode>fromList(statements).last() == blockStatement) {
+            if (ListSequence.fromList(statements).last() == blockStatement) {
               parent = SNodeOperations.getParent(bsStatementList);
             }
           }

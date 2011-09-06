@@ -8,11 +8,10 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.configurations.lib.MultiConceptNode_Configuration;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -47,7 +46,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
 
   @NotNull
   private Java_Configuration.MyState myState = new Java_Configuration.MyState();
-  private MultiConceptNode_Configuration myNode = new MultiConceptNode_Configuration(Sequence.<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>fromIterable(Sequence.fromArray(ArrayUtils.asArray(MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from(ModelAccess.instance().runReadAction(new Computable<SNode>() {
+  private MultiConceptNode_Configuration myNode = new MultiConceptNode_Configuration(Sequence.fromIterable(Sequence.fromArray(ArrayUtils.asArray(MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from(ModelAccess.instance().runReadAction(new Computable<SNode>() {
     public SNode compute() {
       return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept");
     }
@@ -171,7 +170,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
   }
 
   public Object[] createMakeTask() {
-    return new Object[]{ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), this.getNode().getNode())};
+    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNode>(), this.getNode().getNode())};
   }
 
   public class MyState {

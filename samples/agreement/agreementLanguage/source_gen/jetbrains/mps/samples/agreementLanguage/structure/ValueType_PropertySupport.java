@@ -11,7 +11,7 @@ public class ValueType_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<ValueType> constants = ListSequence.<ValueType>fromList(ValueType.getConstants()).iterator();
+    Iterator<ValueType> constants = ListSequence.fromList(ValueType.getConstants()).iterator();
     while (constants.hasNext()) {
       ValueType constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class ValueType_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<ValueType> constants = ListSequence.<ValueType>fromList(ValueType.getConstants()).iterator();
+    Iterator<ValueType> constants = ListSequence.fromList(ValueType.getConstants()).iterator();
     while (constants.hasNext()) {
       ValueType constant = constants.next();
       if (value.equals(constant.getName())) {

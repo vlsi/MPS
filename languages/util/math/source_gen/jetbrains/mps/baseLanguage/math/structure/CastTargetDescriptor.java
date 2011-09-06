@@ -46,24 +46,24 @@ public enum CastTargetDescriptor {
   }
 
   public static List<CastTargetDescriptor> getConstants() {
-    List<CastTargetDescriptor> list = ListSequence.<CastTargetDescriptor>fromList(new LinkedList<CastTargetDescriptor>());
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor.unknown);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor.primitive__biginteger);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor.primitive__complex);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor.double__bigdecimal);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor.biginteger__bigdecimal);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor.double__bigcomplex);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor.biginteger__bigcomplex);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor.bigdecimal__bigcomplex);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor.complex__bigcomplex);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor._____matrix_integer_);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor._____matrix_long_);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor._____matrix_float_);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor._____matrix_double_);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor._____matrix_biginteger_);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor._____matrix_bigdecimal_);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor._____matrix_complex_);
-    ListSequence.<CastTargetDescriptor>fromList(list).addElement(CastTargetDescriptor._____matrix_bigcomplex_);
+    List<CastTargetDescriptor> list = ListSequence.fromList(new LinkedList<CastTargetDescriptor>());
+    ListSequence.fromList(list).addElement(CastTargetDescriptor.unknown);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor.primitive__biginteger);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor.primitive__complex);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor.double__bigdecimal);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor.biginteger__bigdecimal);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor.double__bigcomplex);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor.biginteger__bigcomplex);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor.bigdecimal__bigcomplex);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor.complex__bigcomplex);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor._____matrix_integer_);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor._____matrix_long_);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor._____matrix_float_);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor._____matrix_double_);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor._____matrix_biginteger_);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor._____matrix_bigdecimal_);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor._____matrix_complex_);
+    ListSequence.fromList(list).addElement(CastTargetDescriptor._____matrix_bigcomplex_);
     return list;
   }
 

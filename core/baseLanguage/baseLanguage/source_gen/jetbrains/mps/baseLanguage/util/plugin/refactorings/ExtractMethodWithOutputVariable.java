@@ -22,10 +22,10 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   /*package*/ ExtractMethodWithOutputVariable(ExtractMethodRefactoringParameters parameters) {
     super(parameters);
     List<SNode> output = this.myAnalyzer.getOutputVariables();
-    if (ListSequence.<SNode>fromList(output).isNotEmpty()) {
-      this.myOutputVariable = SNodeOperations.cast(ListSequence.<SNode>fromList(output).first(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+    if (ListSequence.fromList(output).isNotEmpty()) {
+      this.myOutputVariable = SNodeOperations.cast(ListSequence.fromList(output).first(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
     }
-    for (SNode statement : ListSequence.<SNode>fromList(this.myStatements)) {
+    for (SNode statement : ListSequence.fromList(this.myStatements)) {
       if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
         SNode tmp = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
         if (SLinkOperations.getTarget(tmp, "localVariableDeclaration", true) == this.myOutputVariable) {
@@ -38,7 +38,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   protected void modifyPartToExtract() {
     SNode returnStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
     SLinkOperations.setTarget(returnStatement, "expression", this.createReference(this.myOutputVariable), true);
-    ListSequence.<SNode>fromList(this.myStatements).addElement(returnStatement);
+    ListSequence.fromList(this.myStatements).addElement(returnStatement);
   }
 
   public SNode getMethodType() {
@@ -56,9 +56,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
         } else {
           SNode newStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
           SLinkOperations.setTarget(newStatement, "expression", new ExtractMethodWithOutputVariable.QuotationClass_n3576q_a0a1a0c0a0a0a2().createNode(ExtractMethodWithOutputVariable.this.myOutputVariable, methodCall), true);
-          SNodeOperations.insertPrevSiblingChild(ListSequence.<SNode>fromList(statements).first(), newStatement);
+          SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), newStatement);
         }
-        for (SNode statement : ListSequence.<SNode>fromList(statements)) {
+        for (SNode statement : ListSequence.fromList(statements)) {
           if (statement != ExtractMethodWithOutputVariable.this.myDeclarationStatement) {
             SNodeOperations.deleteNode(statement);
           }

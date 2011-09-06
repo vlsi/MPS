@@ -34,7 +34,7 @@ public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
       if (node instanceof CompositeClassPathItem) {
         return ((CompositeClassPathItem) node).getChildren();
       } else {
-        return ListSequence.<IClassPathItem>fromList(new ArrayList<IClassPathItem>());
+        return ListSequence.fromList(new ArrayList<IClassPathItem>());
       }
     }
   }

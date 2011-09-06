@@ -33,18 +33,18 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     List<SNode> derived = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(derived).addElement(node);
+    ListSequence.fromList(derived).addElement(node);
     // 
     int passed = 0;
-    while (ListSequence.<SNode>fromList(derived).count() != passed) {
-      SNode passingNode = ListSequence.<SNode>fromList(derived).getElement(passed);
+    while (ListSequence.fromList(derived).count() != passed) {
+      SNode passingNode = ListSequence.fromList(derived).getElement(passed);
       for (SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", passingNode, scope, indicator)) {
         if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
-          ListSequence.<SNode>fromList(derived).addElement(SNodeOperations.cast(SNodeOperations.getParent(nodeUsage), "jetbrains.mps.baseLanguage.structure.Interface"));
+          ListSequence.fromList(derived).addElement(SNodeOperations.cast(SNodeOperations.getParent(nodeUsage), "jetbrains.mps.baseLanguage.structure.Interface"));
         }
       }
       if (passingNode != node) {
-        ListSequence.<SNode>fromList(_results).addElement(passingNode);
+        ListSequence.fromList(_results).addElement(passingNode);
       }
       passed++;
     }

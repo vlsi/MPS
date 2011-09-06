@@ -28,13 +28,13 @@ public class FacetDeclaration_Behavior {
   }
 
   public static Iterable<SNode> call_allExtends_7854369758457864780(SNode thisNode) {
-    Set<SNode> result = SetSequence.<SNode>fromSet(new LinkedHashSet<SNode>());
-    Queue<SNode> queue = QueueSequence.<SNode>fromQueueAndArray(new LinkedList<SNode>(), thisNode);
-    while (QueueSequence.<SNode>fromQueue(queue).isNotEmpty()) {
+    Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
+    Queue<SNode> queue = QueueSequence.fromQueueAndArray(new LinkedList<SNode>(), thisNode);
+    while (QueueSequence.fromQueue(queue).isNotEmpty()) {
       SNode fd = QueueSequence.fromQueue(queue).removeFirstElement();
-      if (!(SetSequence.<SNode>fromSet(result).contains(fd))) {
+      if (!(SetSequence.fromSet(result).contains(fd))) {
         SetSequence.fromSet(result).addElement(fd);
-        QueueSequence.fromQueue(queue).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(fd, "extended", true)).<SNode>select(new ISelector<SNode, SNode>() {
+        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getTargets(fd, "extended", true)).<SNode>select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "facet", false);
           }
@@ -45,18 +45,18 @@ public class FacetDeclaration_Behavior {
   }
 
   public static Iterable<SNode> call_allRelated_8351679702044331818(SNode thisNode) {
-    Set<SNode> result = SetSequence.<SNode>fromSet(new LinkedHashSet<SNode>());
-    Queue<SNode> queue = QueueSequence.<SNode>fromQueueAndArray(new LinkedList<SNode>(), thisNode);
-    while (QueueSequence.<SNode>fromQueue(queue).isNotEmpty()) {
+    Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
+    Queue<SNode> queue = QueueSequence.fromQueueAndArray(new LinkedList<SNode>(), thisNode);
+    while (QueueSequence.fromQueue(queue).isNotEmpty()) {
       SNode fd = QueueSequence.fromQueue(queue).removeFirstElement();
-      if (!(SetSequence.<SNode>fromSet(result).contains(fd))) {
+      if (!(SetSequence.fromSet(result).contains(fd))) {
         SetSequence.fromSet(result).addElement(fd);
-        QueueSequence.fromQueue(queue).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(fd, "required", true)).<SNode>select(new ISelector<SNode, SNode>() {
+        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getTargets(fd, "required", true)).<SNode>select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "facet", false);
           }
         }));
-        QueueSequence.fromQueue(queue).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(fd, "optional", true)).<SNode>select(new ISelector<SNode, SNode>() {
+        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getTargets(fd, "optional", true)).<SNode>select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "facet", false);
           }

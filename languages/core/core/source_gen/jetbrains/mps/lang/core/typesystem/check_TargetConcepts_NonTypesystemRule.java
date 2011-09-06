@@ -27,7 +27,7 @@ public class check_TargetConcepts_NonTypesystemRule extends AbstractNonTypesyste
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     /*
-      for (SNode child : ListSequence.<SNode>fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
+      for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SNodeOperations.isAttribute(it));
         }
@@ -43,7 +43,7 @@ public class check_TargetConcepts_NonTypesystemRule extends AbstractNonTypesyste
         }
       }
 
-      for (SReference reference : Sequence.<SReference>fromIterable(SNodeOperations.getReferences(node))) {
+      for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
         SNode link = SLinkOperations.findLinkDeclaration(reference);
         if (link != null && SPropertyOperations.hasValue(link, "metaClass", "reference", "reference")) {
           SNode target = SLinkOperations.getTargetNode(reference);

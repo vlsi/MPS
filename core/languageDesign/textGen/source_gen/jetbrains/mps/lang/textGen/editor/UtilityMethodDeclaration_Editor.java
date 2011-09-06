@@ -241,7 +241,7 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
       if (nodeType != null) {
         result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
       } else {
-        result = ListSequence.<String>fromList(new ArrayList<String>());
+        result = ListSequence.fromList(new ArrayList<String>());
       }
       return result;
     }

@@ -45,7 +45,7 @@ public class SubstituteNodeBuilderVariableReference_Constraints extends BaseCons
             SNode builder = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", false, false);
             List<SNode> vars = new ArrayList<SNode>();
             if (builder != null) {
-              ListSequence.<SNode>fromList(vars).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(builder, "variable", true)));
+              ListSequence.fromList(vars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(builder, "variable", true)));
             }
             return vars;
           }

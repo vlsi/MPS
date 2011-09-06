@@ -45,7 +45,7 @@ public class AnnotationInstanceValue_Constraints extends BaseConstraintsDescript
             List<SNode> result = new ArrayList<SNode>();
             SNode parent = SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
             if (SLinkOperations.getTarget(parent, "annotation", false) != null) {
-              ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(parent, "annotation", false), "method", true)));
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(parent, "annotation", false), "method", true)));
             }
             return result;
           }

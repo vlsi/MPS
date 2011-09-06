@@ -19,12 +19,12 @@ public class AnnotationInstance_TextGen extends SNodeTextGen {
     }
     BaseLanguageTextGen.importPart(SLinkOperations.getTarget(node, "annotation", false), this);
     this.append(this.getReferentPresentation(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", "annotation")), true));
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {
       this.append("(");
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "value", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "value", true)).last()) {
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).last()) {
             this.append(", ");
           }
         }

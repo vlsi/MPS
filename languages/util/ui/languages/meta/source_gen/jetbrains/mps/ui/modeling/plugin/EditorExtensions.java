@@ -15,13 +15,13 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class EditorExtensions {
   private static Logger LOG = Logger.getLogger(EditorExtensions.class);
-  private static List<_FunctionTypes._void_P1_E0<? super EditorExtensions>> InitDelayedBlocks = ListSequence.<_FunctionTypes._void_P1_E0<? super EditorExtensions>>fromList(new LinkedList<_FunctionTypes._void_P1_E0<? super EditorExtensions>>());
-  private static List<_FunctionTypes._void_P1_E0<? super EditorExtensions>> DisposeDelayedBlocks = ListSequence.<_FunctionTypes._void_P1_E0<? super EditorExtensions>>fromList(new LinkedList<_FunctionTypes._void_P1_E0<? super EditorExtensions>>());
+  private static List<_FunctionTypes._void_P1_E0<? super EditorExtensions>> InitDelayedBlocks = ListSequence.fromList(new LinkedList<_FunctionTypes._void_P1_E0<? super EditorExtensions>>());
+  private static List<_FunctionTypes._void_P1_E0<? super EditorExtensions>> DisposeDelayedBlocks = ListSequence.fromList(new LinkedList<_FunctionTypes._void_P1_E0<? super EditorExtensions>>());
   private static EditorExtensions INSTANCE = null;
   private static boolean DISPOSED = false;
 
-  private List<IObjectsProvider<SNode, SNode>> uiObjectTemplateProviders = ListSequence.<IObjectsProvider<SNode, SNode>>fromList(new ArrayList<IObjectsProvider<SNode, SNode>>());
-  private List<IObjectsProvider<SNode, SNode>> eventHandlerTemplateProviders = ListSequence.<IObjectsProvider<SNode, SNode>>fromList(new ArrayList<IObjectsProvider<SNode, SNode>>());
+  private List<IObjectsProvider<SNode, SNode>> uiObjectTemplateProviders = ListSequence.fromList(new ArrayList<IObjectsProvider<SNode, SNode>>());
+  private List<IObjectsProvider<SNode, SNode>> eventHandlerTemplateProviders = ListSequence.fromList(new ArrayList<IObjectsProvider<SNode, SNode>>());
 
   /*package*/ EditorExtensions() {
     synchronized (EditorExtensions.class) {
@@ -30,23 +30,23 @@ public class EditorExtensions {
   }
 
   public void addUIObjectTemplateProvider(IObjectsProvider<SNode, SNode> prov) {
-    ListSequence.<IObjectsProvider<SNode, SNode>>fromList(this.uiObjectTemplateProviders).addElement(prov);
+    ListSequence.fromList(this.uiObjectTemplateProviders).addElement(prov);
   }
 
   public void removeUIObjectTemplateProvider(IObjectsProvider<SNode, SNode> prov) {
-    ListSequence.<IObjectsProvider<SNode, SNode>>fromList(this.uiObjectTemplateProviders).removeElement(prov);
+    ListSequence.fromList(this.uiObjectTemplateProviders).removeElement(prov);
   }
 
   public void addEventHandlerTemplateProvider(IObjectsProvider<SNode, SNode> prov) {
-    ListSequence.<IObjectsProvider<SNode, SNode>>fromList(this.eventHandlerTemplateProviders).addElement(prov);
+    ListSequence.fromList(this.eventHandlerTemplateProviders).addElement(prov);
   }
 
   public void removeEventHandlerTemplateProvider(IObjectsProvider<SNode, SNode> prov) {
-    ListSequence.<IObjectsProvider<SNode, SNode>>fromList(this.eventHandlerTemplateProviders).removeElement(prov);
+    ListSequence.fromList(this.eventHandlerTemplateProviders).removeElement(prov);
   }
 
   public Iterable<SNode> findAllUIObjectTemplates() {
-    return ListSequence.<IObjectsProvider<SNode, SNode>>fromList(this.uiObjectTemplateProviders).<SNode>translate(new ITranslator2<IObjectsProvider<SNode, SNode>, SNode>() {
+    return ListSequence.fromList(this.uiObjectTemplateProviders).<SNode>translate(new ITranslator2<IObjectsProvider<SNode, SNode>, SNode>() {
       public Iterable<SNode> translate(IObjectsProvider<SNode, SNode> prov) {
         return prov.getObjects();
       }
@@ -54,7 +54,7 @@ public class EditorExtensions {
   }
 
   public Iterable<SNode> findAllEventHandlerTemplates() {
-    return ListSequence.<IObjectsProvider<SNode, SNode>>fromList(this.eventHandlerTemplateProviders).<SNode>translate(new ITranslator2<IObjectsProvider<SNode, SNode>, SNode>() {
+    return ListSequence.fromList(this.eventHandlerTemplateProviders).<SNode>translate(new ITranslator2<IObjectsProvider<SNode, SNode>, SNode>() {
       public Iterable<SNode> translate(IObjectsProvider<SNode, SNode> prov) {
         return prov.getObjects();
       }
@@ -62,7 +62,7 @@ public class EditorExtensions {
   }
 
   public Iterable<Object> findTemplateCreatorsInfo() {
-    return ListSequence.<IObjectsProvider<SNode, SNode>>fromList(this.uiObjectTemplateProviders).<Object>select(new ISelector<IObjectsProvider<SNode, SNode>, Object>() {
+    return ListSequence.fromList(this.uiObjectTemplateProviders).<Object>select(new ISelector<IObjectsProvider<SNode, SNode>, Object>() {
       public Object select(IObjectsProvider<SNode, SNode> tc) {
         return tc.info();
       }
@@ -70,7 +70,7 @@ public class EditorExtensions {
   }
 
   public Iterable<Object> findEventHandlerTemplateCreatorsInfo() {
-    return ListSequence.<IObjectsProvider<SNode, SNode>>fromList(this.eventHandlerTemplateProviders).<Object>select(new ISelector<IObjectsProvider<SNode, SNode>, Object>() {
+    return ListSequence.fromList(this.eventHandlerTemplateProviders).<Object>select(new ISelector<IObjectsProvider<SNode, SNode>, Object>() {
       public Object select(IObjectsProvider<SNode, SNode> tc) {
         return tc.info();
       }
@@ -81,7 +81,7 @@ public class EditorExtensions {
     if (creatorInfo == null) {
       throw new NullPointerException();
     }
-    IObjectsProvider<SNode, SNode> tc = ListSequence.<IObjectsProvider<SNode, SNode>>fromList(this.uiObjectTemplateProviders).findFirst(new IWhereFilter<IObjectsProvider<SNode, SNode>>() {
+    IObjectsProvider<SNode, SNode> tc = ListSequence.fromList(this.uiObjectTemplateProviders).findFirst(new IWhereFilter<IObjectsProvider<SNode, SNode>>() {
       public boolean accept(IObjectsProvider<SNode, SNode> tc) {
         return creatorInfo.equals(tc.info());
       }
@@ -96,7 +96,7 @@ public class EditorExtensions {
     if (creatorInfo == null) {
       throw new NullPointerException();
     }
-    IObjectsProvider<SNode, SNode> tc = ListSequence.<IObjectsProvider<SNode, SNode>>fromList(this.eventHandlerTemplateProviders).findFirst(new IWhereFilter<IObjectsProvider<SNode, SNode>>() {
+    IObjectsProvider<SNode, SNode> tc = ListSequence.fromList(this.eventHandlerTemplateProviders).findFirst(new IWhereFilter<IObjectsProvider<SNode, SNode>>() {
       public boolean accept(IObjectsProvider<SNode, SNode> tc) {
         return creatorInfo.equals(tc.info());
       }
@@ -114,8 +114,8 @@ public class EditorExtensions {
   /*package*/ void dispose() {
     synchronized (EditorExtensions.class) {
       this.runAllOnDispose();
-      ListSequence.<IObjectsProvider<SNode, SNode>>fromList(this.uiObjectTemplateProviders).clear();
-      ListSequence.<IObjectsProvider<SNode, SNode>>fromList(this.eventHandlerTemplateProviders).clear();
+      ListSequence.fromList(this.uiObjectTemplateProviders).clear();
+      ListSequence.fromList(this.eventHandlerTemplateProviders).clear();
       INSTANCE = null;
       DISPOSED = true;
     }
@@ -123,16 +123,16 @@ public class EditorExtensions {
 
   private void runAllDelayed() {
     synchronized (EditorExtensions.class) {
-      while (ListSequence.<_FunctionTypes._void_P1_E0<? super EditorExtensions>>fromList(InitDelayedBlocks).isNotEmpty()) {
-        ListSequence.<_FunctionTypes._void_P1_E0<? super EditorExtensions>>fromList(InitDelayedBlocks).removeElementAt(0).invoke(this);
+      while (ListSequence.fromList(InitDelayedBlocks).isNotEmpty()) {
+        ListSequence.fromList(InitDelayedBlocks).removeElementAt(0).invoke(this);
       }
     }
   }
 
   private void runAllOnDispose() {
     synchronized (EditorExtensions.class) {
-      while (ListSequence.<_FunctionTypes._void_P1_E0<? super EditorExtensions>>fromList(DisposeDelayedBlocks).isNotEmpty()) {
-        ListSequence.<_FunctionTypes._void_P1_E0<? super EditorExtensions>>fromList(DisposeDelayedBlocks).removeElementAt(0).invoke(this);
+      while (ListSequence.fromList(DisposeDelayedBlocks).isNotEmpty()) {
+        ListSequence.fromList(DisposeDelayedBlocks).removeElementAt(0).invoke(this);
       }
     }
   }
@@ -142,7 +142,7 @@ public class EditorExtensions {
       if (INSTANCE == null && DISPOSED) {
         LOG.info("EditorExtensions.runDelayed called after dispose");
       } else {
-        ListSequence.<_FunctionTypes._void_P1_E0<? super EditorExtensions>>fromList(InitDelayedBlocks).addElement(block);
+        ListSequence.fromList(InitDelayedBlocks).addElement(block);
       }
       if (INSTANCE != null) {
         INSTANCE.runAllDelayed();
@@ -155,7 +155,7 @@ public class EditorExtensions {
       if (INSTANCE == null && DISPOSED) {
         LOG.info("EditorExtensions.runOnDispose called after dispose");
       } else {
-        ListSequence.<_FunctionTypes._void_P1_E0<? super EditorExtensions>>fromList(DisposeDelayedBlocks).addElement(block);
+        ListSequence.fromList(DisposeDelayedBlocks).addElement(block);
       }
     }
   }

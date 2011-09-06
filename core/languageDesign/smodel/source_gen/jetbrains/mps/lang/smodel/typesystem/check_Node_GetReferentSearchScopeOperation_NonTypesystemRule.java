@@ -32,7 +32,7 @@ public class check_Node_GetReferentSearchScopeOperation_NonTypesystemRule extend
       final SNode Concept_typevar_1226068687995 = typeCheckingContext.createNewRuntimeTypesVariable();
       SNode inputNodeConcept = RulesUtil.get_inputNodeConcept(op, false);
       List<SNode> declaredLinks = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(inputNodeConcept);
-      if (!(ListSequence.<SNode>fromList(declaredLinks).contains(linkDecl))) {
+      if (!(ListSequence.fromList(declaredLinks).contains(linkDecl))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226068688014", null, errorTarget);
       }

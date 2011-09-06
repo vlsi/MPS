@@ -14,7 +14,7 @@ public class AskExpression_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode parameter : ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true))) {
+    for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true))) {
       _context.getBuilder().emitWrite(parameter);
     }
   }

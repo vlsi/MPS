@@ -39,7 +39,7 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
 
   public static boolean isJUnit4TestMethod(SNode method) {
     if (!(BaseMethodDeclaration_Behavior.call_isAbstract_1232982539764(method)) && (SLinkOperations.getTarget(method, "visibility", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && (SPropertyOperations.getString(method, "name") != null)) {
-      SNode annotation = ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
+      SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return eq_lclll2_a0a0a0a0a0a0a0a0(check_lclll2_a0a0a0a0a0a0a(it), SLinkOperations.getTarget(new JUnit4MethodWrapper.QuotationClass_lclll2_a0a0a0a0a0a0a0a().createNode(), "annotation", false));
         }

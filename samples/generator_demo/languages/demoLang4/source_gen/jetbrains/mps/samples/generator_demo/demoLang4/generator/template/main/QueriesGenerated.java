@@ -7,9 +7,9 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -34,7 +34,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1228678752743(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
+    return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("text");
       }
@@ -46,7 +46,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1228678752860(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
+    return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("text");
       }
@@ -70,7 +70,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1228678752765(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
+    return (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("text");
       }
@@ -78,7 +78,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1228678752882(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
+    return (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("text");
       }
@@ -90,7 +90,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1228678752614(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("enabled");
       }
@@ -98,7 +98,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1228678752653(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("background");
       }

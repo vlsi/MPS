@@ -29,13 +29,13 @@ public class JUnit4TestCaseRef_Behavior {
     final SNode testAnn = SLinkOperations.getTarget(new JUnit4TestCaseRef_Behavior.QuotationClass_856esj_a0a0a0c().createNode(), "annotation", false);
     final SNode ignoreAnn = SLinkOperations.getTarget(new JUnit4TestCaseRef_Behavior.QuotationClass_856esj_a0a0b0c().createNode(), "annotation", false);
 
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "klass", false), "method", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "klass", false), "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode m) {
-        return ListSequence.<SNode>fromList(SLinkOperations.getTargets(m, "annotation", true)).any(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SLinkOperations.getTargets(m, "annotation", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode mann) {
             return SLinkOperations.getTarget(mann, "annotation", false) == testAnn;
           }
-        }) && !(ListSequence.<SNode>fromList(SLinkOperations.getTargets(m, "annotation", true)).any(new IWhereFilter<SNode>() {
+        }) && !(ListSequence.fromList(SLinkOperations.getTargets(m, "annotation", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode mann) {
             return SLinkOperations.getTarget(mann, "annotation", false) == ignoreAnn;
           }

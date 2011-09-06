@@ -19,24 +19,24 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
     }
     BaseLanguageTextGen.importPart(SLinkOperations.getTarget(node, "classifier", false), this);
     this.append(this.getReferentPresentation(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", "classifier")), true));
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
       this.append("<");
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "typeParameter", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).last()) {
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).last()) {
             this.append(", ");
           }
         }
       }
       this.append(">");
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
       this.append("(");
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "parameter", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
             this.append(", ");
           }
         }
@@ -44,17 +44,17 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
       this.append(")");
     } else {
       this.append("(");
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "actualArgument", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
             this.append(", ");
           }
         }
       }
       this.append(")");
     }
-    if ((SLinkOperations.getTarget(node, "instanceInitializer", true) == null) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "field", true)).isEmpty() && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "method", true)).isEmpty()) {
+    if ((SLinkOperations.getTarget(node, "instanceInitializer", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isEmpty()) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass"))) {
         return;
       } else {

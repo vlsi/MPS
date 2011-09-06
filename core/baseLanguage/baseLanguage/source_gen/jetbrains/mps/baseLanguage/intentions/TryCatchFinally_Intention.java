@@ -40,11 +40,11 @@ public class TryCatchFinally_Intention extends SurroundWithIntention implements 
     SNode tryStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TryStatement", null);
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(node, tryStatement);
-    for (SNode selectedNode : ListSequence.<SNode>fromList(selectedNodes)) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(tryStatement, "body", true), "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
+    for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(tryStatement, "body", true), "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
     }
     SNodeFactoryOperations.addNewChild(tryStatement, "catchClause", "jetbrains.mps.baseLanguage.structure.CatchClause");
-    editorContext.select(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(tryStatement, "catchClause", true)).first(), "throwable", true), "type", true));
+    editorContext.select(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(tryStatement, "catchClause", true)).first(), "throwable", true), "type", true));
   }
 
   public String getLocationString() {

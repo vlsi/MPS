@@ -48,12 +48,12 @@ public class GoToTypeErrorRule_InGroup_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("operationContext") == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
@@ -61,7 +61,7 @@ public class GoToTypeErrorRule_InGroup_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GoToTypeErrorRuleUtil.goToRuleById(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")), new Pair<String, String>(GoToTypeErrorRule_InGroup_Action.this.errorId.o1, GoToTypeErrorRule_InGroup_Action.this.errorId.o2));
+      GoToTypeErrorRuleUtil.goToRuleById(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), new Pair<String, String>(GoToTypeErrorRule_InGroup_Action.this.errorId.o1, GoToTypeErrorRule_InGroup_Action.this.errorId.o2));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToTypeErrorRule_InGroup", t);
     }

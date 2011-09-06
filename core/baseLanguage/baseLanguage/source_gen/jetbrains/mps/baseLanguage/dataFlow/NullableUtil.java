@@ -32,7 +32,7 @@ public class NullableUtil {
       getOrExpressions(SLinkOperations.getTarget(or, "leftExpression", true), result);
       getOrExpressions(SLinkOperations.getTarget(or, "rightExpression", true), result);
     }
-    ListSequence.<SNode>fromList(result).addElement(expression);
+    ListSequence.fromList(result).addElement(expression);
   }
 
   public static List<SNode> getAndConditions(SNode ifStatement) {
@@ -54,7 +54,7 @@ public class NullableUtil {
       getAndExpressions(SLinkOperations.getTarget(and, "leftExpression", true), result);
       getAndExpressions(SLinkOperations.getTarget(and, "rightExpression", true), result);
     }
-    ListSequence.<SNode>fromList(result).addElement(expression);
+    ListSequence.fromList(result).addElement(expression);
   }
 
   public static SNode getOtherThanNull(SNode equals) {

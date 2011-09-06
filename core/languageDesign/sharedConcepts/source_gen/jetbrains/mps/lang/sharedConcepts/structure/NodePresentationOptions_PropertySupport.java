@@ -11,7 +11,7 @@ public class NodePresentationOptions_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<NodePresentationOptions> constants = ListSequence.<NodePresentationOptions>fromList(NodePresentationOptions.getConstants()).iterator();
+    Iterator<NodePresentationOptions> constants = ListSequence.fromList(NodePresentationOptions.getConstants()).iterator();
     while (constants.hasNext()) {
       NodePresentationOptions constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class NodePresentationOptions_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<NodePresentationOptions> constants = ListSequence.<NodePresentationOptions>fromList(NodePresentationOptions.getConstants()).iterator();
+    Iterator<NodePresentationOptions> constants = ListSequence.fromList(NodePresentationOptions.getConstants()).iterator();
     while (constants.hasNext()) {
       NodePresentationOptions constant = constants.next();
       if (value.equals(constant.getName())) {

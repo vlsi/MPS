@@ -10,7 +10,7 @@
     <nodeInfo nodeId="5219429592916229029" fileName="ConvertToBeanBuilder_Intention.java" startLine="38" startPosition="76" endLine="39" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5219429592916229038" fileName="ConvertToBeanBuilder_Intention.java" startLine="39" startPosition="127" endLine="40" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5219429592916229046" fileName="ConvertToBeanBuilder_Intention.java" startLine="40" startPosition="124" endLine="41" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5219429592916237411" fileName="ConvertToBeanBuilder_Intention.java" startLine="42" startPosition="80" endLine="43" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5219429592916237411" fileName="ConvertToBeanBuilder_Intention.java" startLine="42" startPosition="80" endLine="43" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5219429592916237437" fileName="ConvertToBeanBuilder_Intention.java" startLine="44" startPosition="5" endLine="45" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5219429592916237427" fileName="ConvertToBeanBuilder_Intention.java" startLine="45" startPosition="65" endLine="46" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5219429592916516498" fileName="ConvertToBeanBuilder_Intention.java" startLine="46" startPosition="54" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -31,7 +31,7 @@
     <scopeInfo nodeId="5219429592916136228" fileName="ConvertToBeanBuilder_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" />
     <scopeInfo nodeId="5219429592916136228" fileName="ConvertToBeanBuilder_Intention.java" startLine="30" startPosition="44" endLine="31" endPosition="17" />
     <scopeInfo nodeId="5219429592916136230" fileName="ConvertToBeanBuilder_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="37" />
-    <scopeInfo nodeId="5219429592916237386" fileName="ConvertToBeanBuilder_Intention.java" startLine="42" startPosition="80" endLine="43" endPosition="112" />
+    <scopeInfo nodeId="5219429592916237386" fileName="ConvertToBeanBuilder_Intention.java" startLine="42" startPosition="80" endLine="43" endPosition="105" />
     <scopeInfo nodeId="5219429592916136228" fileName="ConvertToBeanBuilder_Intention.java" startLine="51" startPosition="37" endLine="52" endPosition="60" />
     <scopeInfo nodeId="5219429592916136228" fileName="ConvertToBeanBuilder_Intention.java" startLine="14" startPosition="88" endLine="16" endPosition="3" />
     <scopeInfo nodeId="5219429592916237385" fileName="ConvertToBeanBuilder_Intention.java" startLine="41" startPosition="136" endLine="44" endPosition="5">

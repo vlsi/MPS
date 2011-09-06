@@ -48,7 +48,7 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     for (String finderClass : GoToOverridingMethod_Action.this.finderClasses) {
-      if (FindUtils.getFinderByClassName(finderClass).isApplicable(((SNode) MapSequence.<String,Object>fromMap(_params).get("methodNode")))) {
+      if (FindUtils.getFinderByClassName(finderClass).isApplicable(((SNode) MapSequence.fromMap(_params).get("methodNode")))) {
         return true;
       }
     }
@@ -78,29 +78,29 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
           node = null;
         }
       }
-      MapSequence.<String,Object>fromMap(_params).put("methodNode", node);
+      MapSequence.fromMap(_params).put("methodNode", node);
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("methodNode") == null) {
+    if (MapSequence.fromMap(_params).get("methodNode") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorContext") == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -108,38 +108,38 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final List<String> finders = ListSequence.<String>fromList(new ArrayList<String>());
+      final List<String> finders = ListSequence.fromList(new ArrayList<String>());
       final String[] methodName = new String[1];
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          methodName[0] = SPropertyOperations.getString(((SNode) MapSequence.<String,Object>fromMap(_params).get("methodNode")), "name");
+          methodName[0] = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("methodNode")), "name");
           for (String finderClass : GoToOverridingMethod_Action.this.finderClasses) {
             GeneratedFinder finder = FindUtils.getFinderByClassName(finderClass);
-            if (finder.isApplicable(((SNode) MapSequence.<String,Object>fromMap(_params).get("methodNode")))) {
-              ListSequence.<String>fromList(finders).addElement(finderClass);
+            if (finder.isApplicable(((SNode) MapSequence.fromMap(_params).get("methodNode")))) {
+              ListSequence.fromList(finders).addElement(finderClass);
             }
           }
         }
       });
 
-      final Set<SNode> nodes = SetSequence.<SNode>fromSet(new HashSet<SNode>());
-      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), "Searching...", true) {
+      final Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
+      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
         public void run(@NotNull final ProgressIndicator p) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              for (String finder : ListSequence.<String>fromList(finders)) {
-                SetSequence.fromSet(nodes).addSequence(ListSequence.<SNode>fromList(FindUtils.executeFinder(finder, ((SNode) MapSequence.<String,Object>fromMap(_params).get("methodNode")), GlobalScope.getInstance(), p)));
+              for (String finder : ListSequence.fromList(finders)) {
+                SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finder, ((SNode) MapSequence.fromMap(_params).get("methodNode")), GlobalScope.getInstance(), p)));
               }
             }
           });
         }
       });
 
-      Rectangle cellBounds = ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("editorContext")).getSelectedCell().getBounds();
+      Rectangle cellBounds = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell().getBounds();
       Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
-      RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")), point);
+      RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
 
-      GoToHelper.showOverridingMethodsMenu(SetSequence.<SNode>fromSet(nodes).toListSequence(), relPoint, ((Project) MapSequence.<String,Object>fromMap(_params).get("project")), methodName[0]);
+      GoToHelper.showOverridingMethodsMenu(SetSequence.fromSet(nodes).toListSequence(), relPoint, ((Project) MapSequence.fromMap(_params).get("project")), methodName[0]);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToOverridingMethod", t);
     }

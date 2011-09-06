@@ -16,10 +16,10 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_EmitStatement_137546700134038988(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitStatement");
-      ListSequence.<INodeSubstituteAction>fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           return SLinkOperations.setTarget(_context.getSourceNode(), "position", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.InsertPosition", null), true);
         }

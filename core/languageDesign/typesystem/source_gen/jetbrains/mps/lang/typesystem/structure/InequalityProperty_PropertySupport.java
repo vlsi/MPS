@@ -11,7 +11,7 @@ public class InequalityProperty_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<InequalityProperty> constants = ListSequence.<InequalityProperty>fromList(InequalityProperty.getConstants()).iterator();
+    Iterator<InequalityProperty> constants = ListSequence.fromList(InequalityProperty.getConstants()).iterator();
     while (constants.hasNext()) {
       InequalityProperty constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class InequalityProperty_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<InequalityProperty> constants = ListSequence.<InequalityProperty>fromList(InequalityProperty.getConstants()).iterator();
+    Iterator<InequalityProperty> constants = ListSequence.fromList(InequalityProperty.getConstants()).iterator();
     while (constants.hasNext()) {
       InequalityProperty constant = constants.next();
       if (value.equals(constant.getName())) {

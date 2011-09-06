@@ -38,7 +38,7 @@ public class PropertyInstances_Finder extends GeneratedFinder {
       for (SNode instance : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, indicator)) {
         String property = instance.getProperty(role);
         if (property != null && !(property.equals(""))) {
-          ListSequence.<SNode>fromList(_results).addElement(instance);
+          ListSequence.fromList(_results).addElement(instance);
         }
       }
     }

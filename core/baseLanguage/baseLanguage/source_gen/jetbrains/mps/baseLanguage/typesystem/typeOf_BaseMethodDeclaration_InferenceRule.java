@@ -53,7 +53,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(bmd, "body", true));
     if (expectedRetType == null) {
       // shouldn't return any values 
-      for (SNode returnStatement : Sequence.<SNode>fromIterable(returnStatements)) {
+      for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
@@ -63,7 +63,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
       }
     } else {
       // should return subtypes of the 'expected type' 
-      for (SNode returnStatement : Sequence.<SNode>fromIterable(returnStatements)) {
+      for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();

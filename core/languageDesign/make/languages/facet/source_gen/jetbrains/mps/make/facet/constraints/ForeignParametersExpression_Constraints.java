@@ -44,11 +44,11 @@ public class ForeignParametersExpression_Constraints extends BaseConstraintsDesc
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             final SNode td = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false);
             SNode fd = SNodeOperations.cast(SNodeOperations.getParent(td), "jetbrains.mps.make.facet.structure.FacetDeclaration");
-            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(fd, "targetDeclaration", true)).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SLinkOperations.getTargets(fd, "targetDeclaration", true)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode sibl) {
                 return sibl != td;
               }
-            }).concat(ListSequence.<SNode>fromList(SLinkOperations.getTargets(fd, "required", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+            }).concat(ListSequence.fromList(SLinkOperations.getTargets(fd, "required", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode rfd) {
                 return SLinkOperations.getTargets(SLinkOperations.getTarget(rfd, "facet", false), "targetDeclaration", true);
               }

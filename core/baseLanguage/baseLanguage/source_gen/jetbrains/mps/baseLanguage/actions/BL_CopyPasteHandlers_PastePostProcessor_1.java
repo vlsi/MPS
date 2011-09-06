@@ -25,7 +25,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
 
   public void postProcesNode(SNode pastedNode) {
 
-    if (ListSequence.<SNode>fromList(SNodeOperations.getAncestors(pastedNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember", false)).where(new IWhereFilter<SNode>() {
+    if (ListSequence.fromList(SNodeOperations.getAncestors(pastedNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember", false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(ClassifierMember_Behavior.call_isStatic_8986964027630462944(it));
       }
@@ -52,11 +52,11 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
           null :
           SNodeOperations.getAncestor(clazz, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)
         )) {
-          ListSequence.<SNode>fromList(possibleClassConcepts).addElement(clazz);
+          ListSequence.fromList(possibleClassConcepts).addElement(clazz);
         }
 
-        for (SNode nextClassConcept : ListSequence.<SNode>fromList(possibleClassConcepts)) {
-          if (ListSequence.<SNode>fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(nextClassConcept, pastedNode, IClassifiersSearchScope.INSTANCE_FIELD)).<SNode>select(new ISelector<SNode, SNode>() {
+        for (SNode nextClassConcept : ListSequence.fromList(possibleClassConcepts)) {
+          if (ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(nextClassConcept, pastedNode, IClassifiersSearchScope.INSTANCE_FIELD)).<SNode>select(new ISelector<SNode, SNode>() {
             public SNode select(SNode it) {
               return SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
             }

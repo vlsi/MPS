@@ -11,14 +11,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StatementListUtil {
   public static List<SNode> selectStatementsUntilControlStatement(SNode slist) {
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(slist, "statement", true)).count() > 0) {
-      return selectStatementsUntilControlStatement(slist, ListSequence.<SNode>fromList(((List<SNode>) SLinkOperations.getTargets(slist, "statement", true))).getElement(0));
+    if (ListSequence.fromList(SLinkOperations.getTargets(slist, "statement", true)).count() > 0) {
+      return selectStatementsUntilControlStatement(slist, ListSequence.fromList(((List<SNode>) SLinkOperations.getTargets(slist, "statement", true))).getElement(0));
     }
-    return ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    return ListSequence.fromList(new ArrayList<SNode>());
   }
 
   public static List<SNode> selectStatementsUntilControlStatement(SNode slist, SNode start) {
-    List<SNode> res = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     boolean foundStart = false;
     for (SNode stmt : ((List<SNode>) SLinkOperations.getTargets(slist, "statement", true))) {
       if (stmt == start) {
@@ -29,7 +29,7 @@ public class StatementListUtil {
           break;
         }
         if (!(isIgnoredStatement(stmt))) {
-          ListSequence.<SNode>fromList(res).addElement(stmt);
+          ListSequence.fromList(res).addElement(stmt);
         }
       }
     }

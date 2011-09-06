@@ -12,7 +12,7 @@ public class ClassifierDocComment_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     DocCommentTextGen.docCommentStart(node, this);
 
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "param", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
       }

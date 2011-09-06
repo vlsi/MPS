@@ -21,6 +21,6 @@ public class JDK_StubDescriptor extends BaseLibStubDescriptor {
   }
 
   public List<String> getPaths() {
-    return ListSequence.<String>fromListWithValues(new ArrayList<String>(), CommonPaths.getJDKPath());
+    return ListSequence.fromListWithValues(new ArrayList<String>(), CommonPaths.getJDKPath());
   }
 }

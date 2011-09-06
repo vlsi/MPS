@@ -9,7 +9,7 @@
     <nodeInfo nodeId="1228735143622" fileName="TestNodeReference_Constraints.java" startLine="44" startPosition="143" endLine="45" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104844720" fileName="TestNodeReference_Constraints.java" startLine="46" startPosition="13" endLine="47" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213104844729" fileName="TestNodeReference_Constraints.java" startLine="47" startPosition="230" endLine="48" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104844749" fileName="TestNodeReference_Constraints.java" startLine="50" startPosition="179" endLine="51" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213104844749" fileName="TestNodeReference_Constraints.java" startLine="50" startPosition="172" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213172407587" fileName="TestNodeReference_Constraints.java" startLine="53" startPosition="13" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="58" startPosition="61" endLine="59" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="63" startPosition="7" endLine="64" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -27,7 +27,7 @@
     <scopeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="25" startPosition="42" endLine="26" endPosition="65" />
     <scopeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="34" startPosition="44" endLine="35" endPosition="20" />
     <scopeInfo nodeId="1228735143621" fileName="TestNodeReference_Constraints.java" startLine="44" startPosition="143" endLine="45" endPosition="44" />
-    <scopeInfo nodeId="1213104844748" fileName="TestNodeReference_Constraints.java" startLine="50" startPosition="179" endLine="51" endPosition="70" />
+    <scopeInfo nodeId="1213104844748" fileName="TestNodeReference_Constraints.java" startLine="50" startPosition="172" endLine="51" endPosition="63" />
     <scopeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="58" startPosition="61" endLine="59" endPosition="58" />
     <scopeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
     <scopeInfo nodeId="1213104844739" fileName="TestNodeReference_Constraints.java" startLine="49" startPosition="31" endLine="52" endPosition="15" />

@@ -11,7 +11,7 @@ public class UseInTest_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<UseInTest> constants = ListSequence.<UseInTest>fromList(UseInTest.getConstants()).iterator();
+    Iterator<UseInTest> constants = ListSequence.fromList(UseInTest.getConstants()).iterator();
     while (constants.hasNext()) {
       UseInTest constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class UseInTest_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<UseInTest> constants = ListSequence.<UseInTest>fromList(UseInTest.getConstants()).iterator();
+    Iterator<UseInTest> constants = ListSequence.fromList(UseInTest.getConstants()).iterator();
     while (constants.hasNext()) {
       UseInTest constant = constants.next();
       if (value.equals(constant.getName())) {

@@ -32,7 +32,7 @@ public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(invoke, "Must be within ClosureLiteral", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1199711581032", null, errorTarget);
     }
-    List<SNode> ptypes = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    List<SNode> ptypes = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
       final SNode ClosureFormalParamType_typevar_7073484723012007681 = typeCheckingContext.createNewRuntimeTypesVariable();
       {
@@ -40,7 +40,7 @@ public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "7073484723012007685", 0, null);
         typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.getRepresentative(ClosureFormalParamType_typevar_7073484723012007681), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "7073484723012007691", true), true, true, _info_12389875345);
       }
-      ListSequence.<SNode>fromList(ptypes).addElement(typeCheckingContext.getRepresentative(ClosureFormalParamType_typevar_7073484723012007681));
+      ListSequence.fromList(ptypes).addElement(typeCheckingContext.getRepresentative(ClosureFormalParamType_typevar_7073484723012007681));
     }
     final SNode ret_typevar_1225469708846 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
