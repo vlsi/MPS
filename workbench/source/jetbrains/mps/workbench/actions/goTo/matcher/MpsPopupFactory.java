@@ -18,22 +18,19 @@ package jetbrains.mps.workbench.actions.goTo.matcher;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.temp.IdeaItemProvider;
+import com.intellij.ide.util.gotoByName.temp.ItemProvider;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.workbench.actions.goTo.matcher.matchers.CompositeMatcher;
-import jetbrains.mps.workbench.actions.goTo.matcher.matchers.IdeaMatcher;
-import jetbrains.mps.workbench.actions.goTo.matcher.matchers.MPSMatcher;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 
 public abstract class MpsPopupFactory {
   private static final FakePsiContext CONTEXT = new FakePsiContext();
 
   public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m) {
-    return ChooseByNamePopup.createPopup(p, m, new MPSItemProvider(new IdeaMatcher(m, CONTEXT)), CONTEXT);
+    return ChooseByNamePopup.createPopup(p, m, new IdeaItemProvider(CONTEXT), CONTEXT);
   }
 
   public static ChooseByNamePopup createPackagePopup(Project p, ChooseByNameModel m) {
-    MPSItemProvider provider = allProvider(m);
-    return ChooseByNamePopup.createPopup(p, m, provider, CONTEXT);
+    return ChooseByNamePopup.createPopup(p, m, allProvider(), CONTEXT);
   }
 
   public static ChooseByNamePanel createPanelForNode(ChooseByNameModel model, boolean checkboxVisible) {
@@ -41,11 +38,10 @@ public abstract class MpsPopupFactory {
   }
 
   public static ChooseByNamePanel createPanelForPackage(ChooseByNameModel model, boolean checkboxVisible) {
-    MPSItemProvider provider = allProvider(model);
-    return new ChooseByNamePanel(model,checkboxVisible, provider);
+    return new ChooseByNamePanel(model,checkboxVisible, allProvider());
   }
 
-  private static MPSItemProvider allProvider(ChooseByNameModel m) {
-    return new MPSItemProvider(new CompositeMatcher(new MPSMatcher(m), new IdeaMatcher(m, CONTEXT)));
+  private static ItemProvider allProvider() {
+    return new CompositeItemProvider(new MPSItemProvider(CONTEXT), new IdeaItemProvider(CONTEXT));
   }
 }
