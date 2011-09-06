@@ -84,7 +84,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   protected ModelLoadResult initialLoad() {
     ModelLoadResult result = load(ModelLoadingState.ROOTS_LOADED);
-    tryFixingVersion();
+    tryFixingVersion(result.getModel().getSModelHeader());
     updateDiskTimestamp();
     return result;
   }
@@ -367,13 +367,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return file.lastModified();
   }
 
-  private void tryFixingVersion() {
+  private void tryFixingVersion(SModelHeader header) {
     if (getVersion() != -1) return;
 
     int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
-      getSModelHeader().setVersion(latestVersion);
+      header.setVersion(latestVersion);
       LOG.error("Version for model " + getSModelReference().getSModelFqName() + " was not set.");
     }
   }
