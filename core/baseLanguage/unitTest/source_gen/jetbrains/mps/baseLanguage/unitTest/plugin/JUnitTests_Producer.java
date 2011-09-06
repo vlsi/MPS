@@ -17,8 +17,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
@@ -35,9 +33,9 @@ public class JUnitTests_Producer {
     ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_IModule_f2w1m9_b(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_MPSProject_f2w1m9_c(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_Node_f2w1m9_d(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_NlistITestCase_f2w1m9_e(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_NlistITestMethod_f2w1m9_f(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_NodeINamedConcept_f2w1m9_g(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_Node_f2w1m9_e(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_NlistITestCase_f2w1m9_f(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_NlistITestMethod_f2w1m9_g(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     return creators;
   }
 
@@ -129,11 +127,44 @@ public class JUnitTests_Producer {
 
     protected JUnitTests_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
-      SNode testNode = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(source, Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts()).<String>select(new ISelector<SNode, String>() {
-        public String select(SNode it) {
-          return INamedConcept_Behavior.call_getFqName_1213877404258(it);
-        }
-      }).toGenericArray(String.class), true, true), "jetbrains.mps.lang.core.structure.INamedConcept");
+      SNode method = TestNodeWrapperFactory.findWrappableAncestor(source, false);
+      if (method == null) {
+        return null;
+      }
+      ITestNodeWrapper wrapper = TestNodeWrapperFactory.tryToWrap(method);
+      if (wrapper == null || wrapper.isTestCase()) {
+        return null;
+      }
+
+      JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), wrapper.getName());
+      configuration.setRunType(JUnitRunTypes2.METHOD);
+      configuration.setTestMethods(TestUtils.nodeToCloneableList(method));
+      return configuration;
+    }
+
+    @Override
+    public JUnitTests_Producer.ProducerPart_Node_f2w1m9_d clone() {
+      return (JUnitTests_Producer.ProducerPart_Node_f2w1m9_d) super.clone();
+    }
+  }
+
+  public static class ProducerPart_Node_f2w1m9_e extends BaseConfigCreator<SNode> {
+    public ProducerPart_Node_f2w1m9_e(ConfigurationType configurationType, String factoryName) {
+      super(configurationType, factoryName);
+    }
+
+    protected boolean isApplicable(Object source) {
+      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.lang.core.structure.BaseConcept");
+    }
+
+    protected JUnitTests_Configuration doCreateConfiguration(final SNode source) {
+      setSourceElement(new MPSPsiElement(source));
+      SNode method = TestNodeWrapperFactory.findWrappableAncestor(source, false);
+      if (method != null && TestNodeWrapperFactory.tryToWrap(method) != null) {
+        // we check if we are inside a test method; do not run the whole test case if we are 
+        return null;
+      }
+      SNode testNode = SNodeOperations.cast(TestNodeWrapperFactory.findWrappableAncestor(source, true), "jetbrains.mps.lang.core.structure.INamedConcept");
       if (testNode == null) {
         return null;
       }
@@ -150,13 +181,13 @@ public class JUnitTests_Producer {
     }
 
     @Override
-    public JUnitTests_Producer.ProducerPart_Node_f2w1m9_d clone() {
-      return (JUnitTests_Producer.ProducerPart_Node_f2w1m9_d) super.clone();
+    public JUnitTests_Producer.ProducerPart_Node_f2w1m9_e clone() {
+      return (JUnitTests_Producer.ProducerPart_Node_f2w1m9_e) super.clone();
     }
   }
 
-  public static class ProducerPart_NlistITestCase_f2w1m9_e extends BaseConfigCreator<List<SNode>> {
-    public ProducerPart_NlistITestCase_f2w1m9_e(ConfigurationType configurationType, String factoryName) {
+  public static class ProducerPart_NlistITestCase_f2w1m9_f extends BaseConfigCreator<List<SNode>> {
+    public ProducerPart_NlistITestCase_f2w1m9_f(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
 
@@ -192,13 +223,13 @@ public class JUnitTests_Producer {
     }
 
     @Override
-    public JUnitTests_Producer.ProducerPart_NlistITestCase_f2w1m9_e clone() {
-      return (JUnitTests_Producer.ProducerPart_NlistITestCase_f2w1m9_e) super.clone();
+    public JUnitTests_Producer.ProducerPart_NlistITestCase_f2w1m9_f clone() {
+      return (JUnitTests_Producer.ProducerPart_NlistITestCase_f2w1m9_f) super.clone();
     }
   }
 
-  public static class ProducerPart_NlistITestMethod_f2w1m9_f extends BaseConfigCreator<List<SNode>> {
-    public ProducerPart_NlistITestMethod_f2w1m9_f(ConfigurationType configurationType, String factoryName) {
+  public static class ProducerPart_NlistITestMethod_f2w1m9_g extends BaseConfigCreator<List<SNode>> {
+    public ProducerPart_NlistITestMethod_f2w1m9_g(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
 
@@ -223,36 +254,8 @@ public class JUnitTests_Producer {
     }
 
     @Override
-    public JUnitTests_Producer.ProducerPart_NlistITestMethod_f2w1m9_f clone() {
-      return (JUnitTests_Producer.ProducerPart_NlistITestMethod_f2w1m9_f) super.clone();
-    }
-  }
-
-  public static class ProducerPart_NodeINamedConcept_f2w1m9_g extends BaseConfigCreator<SNode> {
-    public ProducerPart_NodeINamedConcept_f2w1m9_g(ConfigurationType configurationType, String factoryName) {
-      super(configurationType, factoryName);
-    }
-
-    protected boolean isApplicable(Object source) {
-      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.lang.core.structure.INamedConcept");
-    }
-
-    protected JUnitTests_Configuration doCreateConfiguration(final SNode source) {
-      setSourceElement(new MPSPsiElement(source));
-      ITestNodeWrapper wrapper = TestNodeWrapperFactory.tryToWrap(source);
-      if (wrapper == null || wrapper.isTestCase()) {
-        return null;
-      }
-
-      JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), SPropertyOperations.getString(source, "name"));
-      configuration.setRunType(JUnitRunTypes2.METHOD);
-      configuration.setTestMethods(TestUtils.nodeToCloneableList(source));
-      return configuration;
-    }
-
-    @Override
-    public JUnitTests_Producer.ProducerPart_NodeINamedConcept_f2w1m9_g clone() {
-      return (JUnitTests_Producer.ProducerPart_NodeINamedConcept_f2w1m9_g) super.clone();
+    public JUnitTests_Producer.ProducerPart_NlistITestMethod_f2w1m9_g clone() {
+      return (JUnitTests_Producer.ProducerPart_NlistITestMethod_f2w1m9_g) super.clone();
     }
   }
 }
