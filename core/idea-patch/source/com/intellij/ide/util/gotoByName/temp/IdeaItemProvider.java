@@ -123,7 +123,7 @@ public class IdeaItemProvider implements ItemProvider {
   }
 
   public String getNamePattern(String pattern) {
-    myBase.transformPattern(pattern);
+    pattern = myBase.transformPattern(pattern);
 
     ChooseByNameModel model = myBase.getModel();
     final String[] separators = model.getSeparators();
