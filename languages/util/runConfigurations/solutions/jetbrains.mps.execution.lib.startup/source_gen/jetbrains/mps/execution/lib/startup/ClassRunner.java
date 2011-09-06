@@ -13,7 +13,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 import java.io.LineNumberReader;
 import java.io.FileReader;
-import java.util.Arrays;
 
 public class ClassRunner {
   public static final String CLASS_PREFIX = "c";
@@ -64,7 +63,7 @@ public class ClassRunner {
     // read 
     List<String> fileContents;
     try {
-      fileContents = readArguments(fileName, "(\\s)+");
+      fileContents = readArguments(fileName);
     } catch (IOException e) {
       System.err.println("Could not read file with arguments.");
       e.printStackTrace();
@@ -74,7 +73,7 @@ public class ClassRunner {
     List<URL> classPath = new ArrayList<URL>();
     if (classpathFileName != null && !(classpathFileName.isEmpty())) {
       try {
-        for (String cp : readArguments(classpathFileName, ":")) {
+        for (String cp : readArguments(classpathFileName)) {
           try {
             classPath.add(new File(cp).toURI().toURL());
           } catch (MalformedURLException e) {
@@ -107,7 +106,7 @@ public class ClassRunner {
 
   }
 
-  public static List<String> readArguments(String fileName, String split) throws IOException {
+  public static List<String> readArguments(String fileName) throws IOException {
     List<String> result = new ArrayList<String>();
     new File(fileName).deleteOnExit();
     LineNumberReader reader = new LineNumberReader(new FileReader(fileName));
@@ -119,7 +118,7 @@ public class ClassRunner {
       if (line.isEmpty()) {
         continue;
       }
-      result.addAll(Arrays.asList(line.split(split)));
+      result.add(line);
     }
     return result;
   }

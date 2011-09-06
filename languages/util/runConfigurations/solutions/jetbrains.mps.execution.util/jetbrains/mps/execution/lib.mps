@@ -39,6 +39,7 @@
   <import index="qkp2" modelUID="r:236bdcfa-29d1-4eb2-b71e-5029df588527(jetbrains.mps.execution.lib.startup)" version="-1" />
   <import index="1hm1" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution(MPS.Classpath/com.intellij.execution@java_stub)" version="-1" />
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="cv0j" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.api.commands(MPS.Classpath/jetbrains.mps.execution.api.commands@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -202,8 +203,23 @@
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="6224212010102509323">
                           <link role="member" roleId="tp4f.1205756909548" targetNodeId="6224212010102466697" resolveInfo="writeToTmpFile" />
-                          <node role="actualArgument" roleId="tp4f.1205770614681" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="6224212010102509324">
-                            <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="6129022259108656807" resolveInfo="programParameter" />
+                          <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1368011714272897755">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ProcessHandlerBuilder%dsplitCommandInParts(java%dlang%dString)%cjava%dlang%dIterable" resolveInfo="splitCommandInParts" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cv0j.~ProcessHandlerBuilder" resolveInfo="ProcessHandlerBuilder" />
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="3984579224224950420">
+                              <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3984579224224950424">
+                                <property name="value" nameId="tpee.1070475926801" value="" />
+                              </node>
+                              <node role="ifFalse" roleId="tpee.1163668934364" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="3984579224224950425">
+                                <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="6129022259108656807" resolveInfo="programParameter" />
+                              </node>
+                              <node role="condition" roleId="tpee.1163668914799" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="3984579224224950416">
+                                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3984579224224950419" />
+                                <node role="leftExpression" roleId="tpee.1081773367580" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="1368011714272897756">
+                                  <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="6129022259108656807" resolveInfo="programParameter" />
+                                </node>
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -219,8 +235,8 @@
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="6224212010102509330">
                           <link role="member" roleId="tp4f.1205756909548" targetNodeId="6224212010102466697" resolveInfo="writeToTmpFile" />
-                          <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6224212010102509332">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6129022259108656833" resolveInfo="classPathString" />
+                          <node role="actualArgument" roleId="tp4f.1205770614681" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="1368011714272897631">
+                            <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="6129022259108656813" resolveInfo="classPath" />
                           </node>
                         </node>
                       </node>
@@ -1593,15 +1609,25 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6224212010102466719">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6224212010102466720">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6224212010102466721">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6224212010102466714" resolveInfo="writer" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6224212010102466722">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintWriter%dappend(java%dlang%dCharSequence)%cjava%dio%dPrintWriter" resolveInfo="append" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6224212010102493179">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6224212010102466706" resolveInfo="text" />
+        <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="1368011714272897625">
+          <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="1368011714272897626">
+            <property name="name" nameId="tpck.1169194664001" value="line" />
+          </node>
+          <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1368011714272897629">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6224212010102466706" resolveInfo="text" />
+          </node>
+          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1368011714272897628">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6224212010102466719">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6224212010102466720">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6224212010102466721">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6224212010102466714" resolveInfo="writer" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6224212010102466722">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintWriter%dprintln(java%dlang%dString)%cvoid" resolveInfo="println" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1368011714272897630">
+                    <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1368011714272897626" resolveInfo="line" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -1639,7 +1665,10 @@
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6224212010102466706">
         <property name="name" nameId="tpck.1169194664001" value="text" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6224212010102466707" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1368011714272905174">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Iterable" resolveInfo="Iterable" />
+          <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="1368011714272905176" />
+        </node>
       </node>
       <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6224212010102493169">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fxg7.~FileNotFoundException" resolveInfo="FileNotFoundException" />
