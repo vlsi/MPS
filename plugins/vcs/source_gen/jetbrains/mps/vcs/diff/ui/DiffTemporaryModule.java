@@ -82,13 +82,13 @@ public class DiffTemporaryModule extends AbstractModule {
     if (reference.equals(myModel.getSModelReference())) {
       return myModel.getModelDescriptor();
     }
-    List<IScope> scopes = ListSequence.<IScope>fromList(new ArrayList<IScope>());
+    List<IScope> scopes = ListSequence.fromList(new ArrayList<IScope>());
     ProjectScope ps = myProject.getComponent(ProjectScope.class);
     if (ps != null) {
-      ListSequence.<IScope>fromList(scopes).addElement(ps);
+      ListSequence.fromList(scopes).addElement(ps);
     }
-    ListSequence.<IScope>fromList(scopes).addElement(GlobalScope.getInstance());
-    for (IScope scope : ListSequence.<IScope>fromList(scopes)) {
+    ListSequence.fromList(scopes).addElement(GlobalScope.getInstance());
+    for (IScope scope : ListSequence.fromList(scopes)) {
       SModelDescriptor md = scope.getModelDescriptor(reference);
       if (md != null) {
         return md;
@@ -96,7 +96,7 @@ public class DiffTemporaryModule extends AbstractModule {
     }
     // if we can't find model using full reference, try to find by fq-name 
     // this is needed for viewing diff on models saved before MPS 2.0 M5 
-    for (IScope scope : ListSequence.<IScope>fromList(scopes)) {
+    for (IScope scope : ListSequence.fromList(scopes)) {
       SModelDescriptor md = scope.getModelDescriptor(reference.getSModelFqName());
       if (md != null) {
         return md;
@@ -143,14 +143,14 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     protected Set<IModule> getInitialModules() {
-      Set<IModule> result = SetSequence.<IModule>fromSet(new HashSet<IModule>());
+      Set<IModule> result = SetSequence.fromSet(new HashSet<IModule>());
       SetSequence.fromSet(result).addElement(DiffTemporaryModule.this);
-      SetSequence.fromSet(result).addSequence(Sequence.<IModule>fromIterable(GlobalScope.getInstance().getVisibleModules()));
+      SetSequence.fromSet(result).addSequence(Sequence.fromIterable(GlobalScope.getInstance().getVisibleModules()));
       return result;
     }
 
     protected Set<Language> getInitialUsedLanguages() {
-      return SetSequence.<Language>fromSetWithValues(new HashSet<Language>(), GlobalScope.getInstance().getVisibleLanguages());
+      return SetSequence.fromSetWithValues(new HashSet<Language>(), GlobalScope.getInstance().getVisibleLanguages());
     }
 
     @Override

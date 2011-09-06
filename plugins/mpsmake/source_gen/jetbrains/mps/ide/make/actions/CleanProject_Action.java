@@ -49,16 +49,16 @@ public class CleanProject_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("ideaProject") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -66,9 +66,9 @@ public class CleanProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Set<IModule> modulesToBuild = SetSequence.<IModule>fromSet(new LinkedHashSet<IModule>());
-      SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.<IModule>fromList(((MPSProject) MapSequence.<String,Object>fromMap(_params).get("project")).getProjectModules(IModule.class)));
-      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.<String,Object>fromMap(_params).get("ideaProject")), "Cleaning", true) {
+      final Set<IModule> modulesToBuild = SetSequence.fromSet(new LinkedHashSet<IModule>());
+      SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(IModule.class)));
+      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Cleaning", true) {
         public void run(@NotNull final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {

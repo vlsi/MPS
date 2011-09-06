@@ -63,7 +63,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         IClassPathItem classPath = myEvaluationContext.getClassPathItem();
-        final Set<StubPath> pathsToAdd = SetSequence.<StubPath>fromSet(new HashSet<StubPath>());
+        final Set<StubPath> pathsToAdd = SetSequence.fromSet(new HashSet<StubPath>());
         classPath.accept(new EachClassPathItemVisitor() {
           @Override
           public void visit(JarFileClassPathItem item) {
@@ -201,26 +201,26 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       };
       Map<String, SNode> contextVariables = myEvaluationContext.getVariables(createClassifierType);
 
-      Map<String, SNode> declaredVariables = MapSequence.<String,SNode>fromMap(new LinkedHashMap<String, SNode>(16, (float) 0.75, false));
-      for (SNode var : ListSequence.<SNode>fromList(SLinkOperations.getTargets(evaluatorConcept, "variables", true))) {
-        MapSequence.<String,SNode>fromMap(declaredVariables).put(SPropertyOperations.getString(var, "name"), var);
+      Map<String, SNode> declaredVariables = MapSequence.fromMap(new LinkedHashMap<String, SNode>(16, (float) 0.75, false));
+      for (SNode var : ListSequence.fromList(SLinkOperations.getTargets(evaluatorConcept, "variables", true))) {
+        MapSequence.fromMap(declaredVariables).put(SPropertyOperations.getString(var, "name"), var);
       }
 
-      final Set<SNode> foundVars = SetSequence.<SNode>fromSet(new HashSet<SNode>());
-      for (String variable : SetSequence.<String>fromSet(MapSequence.fromMap(contextVariables).keySet())) {
+      final Set<SNode> foundVars = SetSequence.fromSet(new HashSet<SNode>());
+      for (String variable : SetSequence.fromSet(MapSequence.fromMap(contextVariables).keySet())) {
 
         String name = variable;
-        SNode lowLevelVarNode = MapSequence.<String,SNode>fromMap(declaredVariables).get(name);
+        SNode lowLevelVarNode = MapSequence.fromMap(declaredVariables).get(name);
 
         if (needUpdateVariables()) {
           // we should update variables if we are first time here or if we do not show context (i.e. in evaluation) 
           if (lowLevelVarNode == null) {
             lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", null);
             SPropertyOperations.set(lowLevelVarNode, "name", name);
-            ListSequence.<SNode>fromList(SLinkOperations.getTargets(evaluatorConcept, "variables", true)).addElement(lowLevelVarNode);
-            MapSequence.<String,SNode>fromMap(declaredVariables).put(name, lowLevelVarNode);
+            ListSequence.fromList(SLinkOperations.getTargets(evaluatorConcept, "variables", true)).addElement(lowLevelVarNode);
+            MapSequence.fromMap(declaredVariables).put(name, lowLevelVarNode);
           }
-          SNode deducedType = MapSequence.<String,SNode>fromMap(contextVariables).get(name);
+          SNode deducedType = MapSequence.fromMap(contextVariables).get(name);
           if (deducedType == null) {
             LOG.error("Could not deduce type for variable " + name);
             continue;
@@ -232,9 +232,9 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       }
 
       // now mark vars which are currently out of scope 
-      Sequence.<SNode>fromIterable(MapSequence.fromMap(declaredVariables).values()).visitAll(new IVisitor<SNode>() {
+      Sequence.fromIterable(MapSequence.fromMap(declaredVariables).values()).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SPropertyOperations.set(it, "isOutOfScope", "" + (!(SetSequence.<SNode>fromSet(foundVars).contains(it))));
+          SPropertyOperations.set(it, "isOutOfScope", "" + (!(SetSequence.fromSet(foundVars).contains(it))));
         }
       });
 

@@ -29,7 +29,7 @@ public class GoToPreviousChange_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setVisible(true);
-      event.getPresentation().setEnabled(EditorChangesHighlighter.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project"))).isPreviousChangeAvailable(((EditorContext) MapSequence.<String,Object>fromMap(_params).get("editorContext"))));
+      event.getPresentation().setEnabled(EditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).isPreviousChangeAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext"))));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "GoToPreviousChange", t);
@@ -42,12 +42,12 @@ public class GoToPreviousChange_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorContext") == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -55,7 +55,7 @@ public class GoToPreviousChange_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      EditorChangesHighlighter.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project"))).goToPreviousChange(((EditorContext) MapSequence.<String,Object>fromMap(_params).get("editorContext")));
+      EditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).goToPreviousChange(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToPreviousChange", t);

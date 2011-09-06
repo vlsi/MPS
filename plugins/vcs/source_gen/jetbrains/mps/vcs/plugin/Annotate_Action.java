@@ -25,7 +25,7 @@ public class Annotate_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return AnnotationHelper.isAnnotateable(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editor")));
+    return AnnotationHelper.isAnnotateable(((EditorComponent) MapSequence.fromMap(_params).get("editor")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -46,8 +46,8 @@ public class Annotate_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editor", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editor") == null) {
+    MapSequence.fromMap(_params).put("editor", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editor") == null) {
       return false;
     }
     return true;
@@ -55,7 +55,7 @@ public class Annotate_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      AnnotationHelper.annotate(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editor")));
+      AnnotationHelper.annotate(((EditorComponent) MapSequence.fromMap(_params).get("editor")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Annotate", t);

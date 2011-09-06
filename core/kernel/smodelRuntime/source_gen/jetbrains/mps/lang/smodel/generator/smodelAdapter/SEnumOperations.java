@@ -15,7 +15,7 @@ public class SEnumOperations {
   public static SNode getEnum(String modelUID, final String nodeName) {
     SModelReference ref = SModelReference.fromString(modelUID);
     SModel m = SModelRepository.getInstance().getModelDescriptor(ref).getSModel();
-    return (ListSequence.<SNode>fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")).where(new IWhereFilter<SNode>() {
+    return (ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(nodeName);
       }
@@ -40,7 +40,7 @@ public class SEnumOperations {
 
   public static SNode enumMemberForName(SNode enumm, final String name) {
     SNode enumNode = (SNode) enumm;
-    return ((SNode) ListSequence.<SNode>fromList(SLinkOperations.getTargets(enumNode, "member", true)).findFirst(new IWhereFilter<SNode>() {
+    return ((SNode) ListSequence.fromList(SLinkOperations.getTargets(enumNode, "member", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"), "call_getName_1240169660918", new Class[]{SNode.class})).equals(name);
       }
@@ -51,7 +51,7 @@ public class SEnumOperations {
     if (value == null) {
       return ((SNode) ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(enumm, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "call_getDefaultMember_1213877397785", new Class[]{SNode.class})));
     }
-    return ((SNode) ListSequence.<SNode>fromList(SLinkOperations.getTargets(enumm, "member", true)).findFirst(new IWhereFilter<SNode>() {
+    return ((SNode) ListSequence.fromList(SLinkOperations.getTargets(enumm, "member", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "internalValue").equals(value);
       }

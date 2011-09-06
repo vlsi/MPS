@@ -29,7 +29,7 @@ public class DebugInfo {
   private static final String UNSPECIFIED_ROOT = "";
 
   private SModel myModel;
-  private Map<String, DebugInfoRoot> myRoots = MapSequence.<String,DebugInfoRoot>fromMap(new HashMap<String, DebugInfoRoot>());
+  private Map<String, DebugInfoRoot> myRoots = MapSequence.fromMap(new HashMap<String, DebugInfoRoot>());
 
   public DebugInfo() {
   }
@@ -46,10 +46,10 @@ public class DebugInfo {
     if (rootId == null) {
       rootId = DebugInfo.UNSPECIFIED_ROOT;
     }
-    DebugInfoRoot infoRoot = MapSequence.<String,DebugInfoRoot>fromMap(myRoots).get(rootId);
+    DebugInfoRoot infoRoot = MapSequence.fromMap(myRoots).get(rootId);
     if (infoRoot == null) {
       infoRoot = new DebugInfoRoot(rootId);
-      MapSequence.<String,DebugInfoRoot>fromMap(myRoots).put(rootId, infoRoot);
+      MapSequence.fromMap(myRoots).put(rootId, infoRoot);
     }
     infoRoot.addPosition(position);
   }
@@ -58,10 +58,10 @@ public class DebugInfo {
     if (rootId == null) {
       rootId = DebugInfo.UNSPECIFIED_ROOT;
     }
-    DebugInfoRoot infoRoot = MapSequence.<String,DebugInfoRoot>fromMap(myRoots).get(rootId);
+    DebugInfoRoot infoRoot = MapSequence.fromMap(myRoots).get(rootId);
     if (infoRoot == null) {
       infoRoot = new DebugInfoRoot(rootId);
-      MapSequence.<String,DebugInfoRoot>fromMap(myRoots).put(rootId, infoRoot);
+      MapSequence.fromMap(myRoots).put(rootId, infoRoot);
     }
     infoRoot.addScopePosition(position);
   }
@@ -70,23 +70,23 @@ public class DebugInfo {
     if (rootId == null) {
       rootId = DebugInfo.UNSPECIFIED_ROOT;
     }
-    DebugInfoRoot infoRoot = MapSequence.<String,DebugInfoRoot>fromMap(myRoots).get(rootId);
+    DebugInfoRoot infoRoot = MapSequence.fromMap(myRoots).get(rootId);
     if (infoRoot == null) {
       infoRoot = new DebugInfoRoot(rootId);
-      MapSequence.<String,DebugInfoRoot>fromMap(myRoots).put(rootId, infoRoot);
+      MapSequence.fromMap(myRoots).put(rootId, infoRoot);
     }
     infoRoot.addUnitPosition(unitPosition);
   }
 
   public DebugInfoRoot getRootInfo(String rootId) {
-    return MapSequence.<String,DebugInfoRoot>fromMap(myRoots).get((rootId == null ?
+    return MapSequence.fromMap(myRoots).get((rootId == null ?
       DebugInfo.UNSPECIFIED_ROOT :
       rootId
     ));
   }
 
   public void replaceRoot(DebugInfoRoot root) {
-    MapSequence.<String,DebugInfoRoot>fromMap(myRoots).put(root.getRootId(), root);
+    MapSequence.fromMap(myRoots).put(root.getRootId(), root);
   }
 
   @Nullable
@@ -96,15 +96,15 @@ public class DebugInfo {
         return root.getPositions();
       }
     });
-    if (ListSequence.<TraceablePositionInfo>fromList(resultList).isEmpty()) {
+    if (ListSequence.fromList(resultList).isEmpty()) {
       return null;
     }
-    Iterable<TraceablePositionInfo> sorted = ListSequence.<TraceablePositionInfo>fromList(resultList).sort(new ISelector<TraceablePositionInfo, Comparable<?>>() {
+    Iterable<TraceablePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<TraceablePositionInfo, Comparable<?>>() {
       public Comparable<?> select(TraceablePositionInfo it) {
         return it;
       }
     }, true);
-    final TraceablePositionInfo firstPositionInfo = Sequence.<TraceablePositionInfo>fromIterable(sorted).first();
+    final TraceablePositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
     String nodeId = firstPositionInfo.getNodeId();
     // here we do some magic to fix the following bug: 
     // each node in base language owns a '\n' symbol in a previous line 
@@ -115,8 +115,8 @@ public class DebugInfo {
     // since 'some statement' takes lines 1-2 instead of just line 2 
     // TODO actually, this mega-hack might not work for other languages 
     // we should seriously consider fixing debug info generation instead 
-    if (Sequence.<TraceablePositionInfo>fromIterable(sorted).count() > 1 && firstPositionInfo.getStartLine() == line && firstPositionInfo.getLineDistance() > 0) {
-      nodeId = ListSequence.<TraceablePositionInfo>fromList(Sequence.<TraceablePositionInfo>fromIterable(sorted).toListSequence()).getElement(1).getNodeId();
+    if (Sequence.fromIterable(sorted).count() > 1 && firstPositionInfo.getStartLine() == line && firstPositionInfo.getLineDistance() > 0) {
+      nodeId = ListSequence.fromList(Sequence.fromIterable(sorted).toListSequence()).getElement(1).getNodeId();
     }
     // here we have another example of how not to write code 
     // this is a hack fixing MPS-8644 
@@ -129,18 +129,18 @@ public class DebugInfo {
     // 1. statement 
     // the solution is simple: 
     // among all node with same position we select the deepest 
-    if (Sequence.<TraceablePositionInfo>fromIterable(sorted).count() > 1) {
-      Iterable<TraceablePositionInfo> sameSpacePositions = Sequence.<TraceablePositionInfo>fromIterable(sorted).where(new IWhereFilter<TraceablePositionInfo>() {
+    if (Sequence.fromIterable(sorted).count() > 1) {
+      Iterable<TraceablePositionInfo> sameSpacePositions = Sequence.fromIterable(sorted).where(new IWhereFilter<TraceablePositionInfo>() {
         public boolean accept(TraceablePositionInfo it) {
           return firstPositionInfo.isOccupyTheSameSpace(it);
         }
       });
-      if (Sequence.<TraceablePositionInfo>fromIterable(sameSpacePositions).count() > 1) {
+      if (Sequence.fromIterable(sameSpacePositions).count() > 1) {
         SNode currentNode = model.getNodeById(firstPositionInfo.getNodeId());
         boolean finished = false;
         while (!(finished)) {
           finished = true;
-          for (TraceablePositionInfo otherPos : Sequence.<TraceablePositionInfo>fromIterable(sameSpacePositions)) {
+          for (TraceablePositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
             SNode otherNode = model.getNodeById(otherPos.getNodeId());
             if ((otherNode != null) && otherNode.isDescendantOf(currentNode, false)) {
               currentNode = otherNode;
@@ -163,10 +163,10 @@ public class DebugInfo {
         return root.getScopePositions();
       }
     });
-    if (ListSequence.<ScopePositionInfo>fromList(resultList).isEmpty()) {
+    if (ListSequence.fromList(resultList).isEmpty()) {
       return null;
     }
-    Iterable<ScopePositionInfo> sorted = ListSequence.<ScopePositionInfo>fromList(resultList).sort(new ISelector<ScopePositionInfo, Comparable<?>>() {
+    Iterable<ScopePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<ScopePositionInfo, Comparable<?>>() {
       public Comparable<?> select(ScopePositionInfo it) {
         return it;
       }
@@ -182,7 +182,7 @@ public class DebugInfo {
 
   @Nullable
   public TraceablePositionInfo getPositionForNode(String nodeId) {
-    for (TraceablePositionInfo element : Sequence.<DebugInfoRoot>fromIterable(MapSequence.fromMap(myRoots).values()).<TraceablePositionInfo>translate(new ITranslator2<DebugInfoRoot, TraceablePositionInfo>() {
+    for (TraceablePositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<TraceablePositionInfo>translate(new ITranslator2<DebugInfoRoot, TraceablePositionInfo>() {
       public Iterable<TraceablePositionInfo> translate(DebugInfoRoot it) {
         return it.getPositions();
       }
@@ -196,9 +196,9 @@ public class DebugInfo {
 
   @Nullable
   public UnitPositionInfo getUnitForNode(String nodeId) {
-    for (UnitPositionInfo element : Sequence.<DebugInfoRoot>fromIterable(MapSequence.fromMap(myRoots).values()).<UnitPositionInfo>translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
+    for (UnitPositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<UnitPositionInfo>translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
       public Iterable<UnitPositionInfo> translate(DebugInfoRoot it) {
-        return SetSequence.<UnitPositionInfo>fromSet(it.getUnitPositions()).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
+        return SetSequence.fromSet(it.getUnitPositions()).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
           public Comparable<?> select(UnitPositionInfo position) {
             return position.getStartLine();
           }
@@ -220,15 +220,15 @@ public class DebugInfo {
         return root.getUnitPositions();
       }
     });
-    if (ListSequence.<UnitPositionInfo>fromList(resultList).isEmpty()) {
+    if (ListSequence.fromList(resultList).isEmpty()) {
       return null;
     }
-    Iterable<UnitPositionInfo> sorted = ListSequence.<UnitPositionInfo>fromList(resultList).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
+    Iterable<UnitPositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
       public Comparable<?> select(UnitPositionInfo it) {
         return it;
       }
     }, true);
-    UnitPositionInfo firstPositionInfo = Sequence.<UnitPositionInfo>fromIterable(sorted).first();
+    UnitPositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
     return firstPositionInfo.getUnitName();
   }
 
@@ -240,15 +240,15 @@ public class DebugInfo {
         return root.getUnitPositions();
       }
     });
-    if (ListSequence.<UnitPositionInfo>fromList(resultList).isEmpty()) {
+    if (ListSequence.fromList(resultList).isEmpty()) {
       return null;
     }
-    Iterable<UnitPositionInfo> sorted = ListSequence.<UnitPositionInfo>fromList(resultList).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
+    Iterable<UnitPositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
       public Comparable<?> select(UnitPositionInfo it) {
         return it;
       }
     }, false);
-    UnitPositionInfo firstPositionInfo = Sequence.<UnitPositionInfo>fromIterable(sorted).first();
+    UnitPositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
     String id = firstPositionInfo.getNodeId();
     if (id == null) {
       return null;
@@ -257,10 +257,10 @@ public class DebugInfo {
   }
 
   private <T extends PositionInfo> List<T> getInfoForPosition(final String file, int line, final _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> getAllPositionsForRoot) {
-    List<T> resultList = ListSequence.<T>fromList(new ArrayList<T>());
-    for (T element : Sequence.<DebugInfoRoot>fromIterable(MapSequence.fromMap(myRoots).values()).where(new IWhereFilter<DebugInfoRoot>() {
+    List<T> resultList = ListSequence.fromList(new ArrayList<T>());
+    for (T element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).where(new IWhereFilter<DebugInfoRoot>() {
       public boolean accept(DebugInfoRoot it) {
-        return SetSequence.<String>fromSet(it.getFileNames()).contains(file);
+        return SetSequence.fromSet(it.getFileNames()).contains(file);
       }
     }).<T>translate(new ITranslator2<DebugInfoRoot, T>() {
       public Iterable<T> translate(DebugInfoRoot it) {
@@ -268,18 +268,18 @@ public class DebugInfo {
       }
     })) {
       if (element.isPositionInside(file, line)) {
-        ListSequence.<T>fromList(resultList).addElement(element);
+        ListSequence.fromList(resultList).addElement(element);
       }
     }
     return resultList;
   }
 
   public List<String> getRoots() {
-    return SetSequence.<String>fromSet(MapSequence.fromMap(myRoots).keySet()).toListSequence();
+    return SetSequence.fromSet(MapSequence.fromMap(myRoots).keySet()).toListSequence();
   }
 
   public Set<TraceablePositionInfo> getPositions(String rootId) {
-    DebugInfoRoot infoRoot = MapSequence.<String,DebugInfoRoot>fromMap(myRoots).get(rootId);
+    DebugInfoRoot infoRoot = MapSequence.fromMap(myRoots).get(rootId);
     return (infoRoot != null ?
       infoRoot.getPositions() :
       null
@@ -289,10 +289,10 @@ public class DebugInfo {
   public Element toXml() {
     Element root = new Element(DebugInfo.DEBUG_INFO);
     if (myRoots != null) {
-      String[] roots = SetSequence.<String>fromSet(MapSequence.fromMap(myRoots).keySet()).toGenericArray(String.class);
+      String[] roots = SetSequence.fromSet(MapSequence.fromMap(myRoots).keySet()).toGenericArray(String.class);
       Arrays.sort(roots);
       for (String id : roots) {
-        DebugInfoRoot dir = MapSequence.<String,DebugInfoRoot>fromMap(myRoots).get(id);
+        DebugInfoRoot dir = MapSequence.fromMap(myRoots).get(id);
         if (id.equals(DebugInfo.UNSPECIFIED_ROOT)) {
           dir.toXml(root);
         } else {
@@ -311,12 +311,12 @@ public class DebugInfo {
     try {
       DebugInfoRoot unspecified = DebugInfoRoot.fromXml(root, DebugInfo.UNSPECIFIED_ROOT);
       if (unspecified != null) {
-        MapSequence.<String,DebugInfoRoot>fromMap(info.myRoots).put(DebugInfo.UNSPECIFIED_ROOT, unspecified);
+        MapSequence.fromMap(info.myRoots).put(DebugInfo.UNSPECIFIED_ROOT, unspecified);
       }
 
       for (Element re : ((List<Element>) root.getChildren(DebugInfo.ROOT))) {
         String rootId = re.getAttributeValue(DebugInfo.ROOT_ID_ATTR);
-        MapSequence.<String,DebugInfoRoot>fromMap(info.myRoots).put(rootId, DebugInfoRoot.fromXml(re, rootId));
+        MapSequence.fromMap(info.myRoots).put(rootId, DebugInfoRoot.fromXml(re, rootId));
       }
     } catch (DataConversionException e) {
       throw new RuntimeException(e);

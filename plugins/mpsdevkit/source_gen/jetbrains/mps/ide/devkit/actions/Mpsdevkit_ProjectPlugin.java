@@ -14,11 +14,11 @@ public class Mpsdevkit_ProjectPlugin extends BaseProjectPlugin {
   }
 
   public List<BaseGeneratedTool> initAllTools(Project project) {
-    List<BaseGeneratedTool> tools = ListSequence.<BaseGeneratedTool>fromList(new ArrayList<BaseGeneratedTool>());
-    ListSequence.<BaseGeneratedTool>fromList(tools).addElement(new ModelRepository_Tool(project));
-    ListSequence.<BaseGeneratedTool>fromList(tools).addElement(new ModuleRepository_Tool(project));
-    ListSequence.<BaseGeneratedTool>fromList(tools).addElement(new NodeExplorer_Tool(project));
-    ListSequence.<BaseGeneratedTool>fromList(tools).addElement(new TraceTool_Tool(project));
+    List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
+    ListSequence.fromList(tools).addElement(new ModelRepository_Tool(project));
+    ListSequence.fromList(tools).addElement(new ModuleRepository_Tool(project));
+    ListSequence.fromList(tools).addElement(new NodeExplorer_Tool(project));
+    ListSequence.fromList(tools).addElement(new TraceTool_Tool(project));
     return tools;
   }
 }

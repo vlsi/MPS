@@ -38,8 +38,8 @@ public class NewAspectModel_Action extends GeneratedAction {
     try {
       event.getPresentation().setText(NameUtil.capitalize(NewAspectModel_Action.this.aspect.getName()) + " Aspect");
       event.getPresentation().setIcon(IconManager.getIconForAspect(NewAspectModel_Action.this.aspect));
-      if (((IModule) MapSequence.<String,Object>fromMap(_params).get("module")) instanceof Language) {
-        NewAspectModel_Action.this.setEnabledState(event.getPresentation(), NewAspectModel_Action.this.aspect.get(((Language) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")))) == null);
+      if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language) {
+        NewAspectModel_Action.this.setEnabledState(event.getPresentation(), NewAspectModel_Action.this.aspect.get(((Language) ((IModule) MapSequence.fromMap(_params).get("module")))) == null);
       } else {
         NewAspectModel_Action.this.setEnabledState(event.getPresentation(), false);
       }
@@ -55,12 +55,12 @@ public class NewAspectModel_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("ideaProject") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     return true;
@@ -68,11 +68,11 @@ public class NewAspectModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SModelDescriptor modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module"))));
+      final SModelDescriptor modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) ((IModule) MapSequence.fromMap(_params).get("module"))));
       // we need it since tree is updated later 
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          ProjectPane.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
+          ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
         }
       });
     } catch (Throwable t) {

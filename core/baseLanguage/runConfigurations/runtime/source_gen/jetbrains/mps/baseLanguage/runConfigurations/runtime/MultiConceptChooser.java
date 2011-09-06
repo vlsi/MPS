@@ -29,15 +29,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class MultiConceptChooser extends AbstractMainNodeChooser {
   @NotNull
-  private final List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargetConcepts = ListSequence.<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>fromList(new ArrayList<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>());
+  private final List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargetConcepts = ListSequence.fromList(new ArrayList<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>());
   private final GlobalFilteredScope myScope;
 
   public MultiConceptChooser(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>... targets) {
-    this(Sequence.<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>fromIterable(Sequence.fromArray(targets)).toListSequence());
+    this(Sequence.fromIterable(Sequence.fromArray(targets)).toListSequence());
   }
 
   public MultiConceptChooser(List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
-    ListSequence.<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>fromList(myTargetConcepts).addSequence(ListSequence.<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>fromList(targets).<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>select(new ISelector<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
+    ListSequence.fromList(myTargetConcepts).addSequence(ListSequence.fromList(targets).<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>select(new ISelector<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
       public Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> select(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         return MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from((it._0() == null ?
           ModelAccess.instance().runReadAction(new Computable<SNode>() {
@@ -50,7 +50,7 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
       }
     }));
 
-    final Iterable<IModule> modules = ListSequence.<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>fromList(myTargetConcepts).<IModule>select(new ISelector<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, IModule>() {
+    final Iterable<IModule> modules = ListSequence.fromList(myTargetConcepts).<IModule>select(new ISelector<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, IModule>() {
       public IModule select(final Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -71,15 +71,15 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
   }
 
   protected List<SNode> findToChooseFromOnInit(final FindUsagesManager manager, final FindUsagesManager.ProgressAdapter progressAdapter) {
-    return ListSequence.<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>fromList(myTargetConcepts).<SNode>translate(new ITranslator2<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, SNode>() {
+    return ListSequence.fromList(myTargetConcepts).<SNode>translate(new ITranslator2<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, SNode>() {
       public Iterable<SNode> translate(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         SNode targetConcept = it._0();
         final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
         Set<SNode> instances = manager.findInstances(targetConcept, myScope, progressAdapter, false);
         if (function == null) {
-          return ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), instances);
+          return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
         } else {
-          return ListSequence.<SNode>fromList(ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), instances)).where(new IWhereFilter<SNode>() {
+          return ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return function.invoke(it);
             }
@@ -94,9 +94,9 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
   }
 
   protected Iterable<SNode> findNodes(SModel model, final String fqName) {
-    return ListSequence.<SNode>fromList(SModelOperations.getNodes(model, null)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getNodes(model, null)).where(new IWhereFilter<SNode>() {
       public boolean accept(final SNode node) {
-        return ListSequence.<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>fromList(myTargetConcepts).findFirst(new IWhereFilter<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
+        return ListSequence.fromList(myTargetConcepts).findFirst(new IWhereFilter<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
           public boolean accept(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
             SNode targetConcept = it._0();
             _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();

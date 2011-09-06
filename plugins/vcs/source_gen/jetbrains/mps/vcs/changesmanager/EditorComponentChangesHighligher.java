@@ -57,7 +57,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   private static final Color TRANSPARENT_COLOR = new Color(0, 0, 0, 0);
 
   private EditorComponent myEditorComponent;
-  private final Map<OldChange, EditorComponentChangesHighligher.ChangeEditorMessage> myChangesMessages = MapSequence.<OldChange,EditorComponentChangesHighligher.ChangeEditorMessage>fromMap(new HashMap<OldChange, EditorComponentChangesHighligher.ChangeEditorMessage>());
+  private final Map<OldChange, EditorComponentChangesHighligher.ChangeEditorMessage> myChangesMessages = MapSequence.fromMap(new HashMap<OldChange, EditorComponentChangesHighligher.ChangeEditorMessage>());
   private ChangeListener myChangeListener;
   private ChangesFoldingAreaPainter myFoldingAreaPainter;
   private ModelChangesManager myModelChangesManager;
@@ -98,11 +98,11 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
           }
         });
         if (myChangeListener != null) {
-          for (OldChange change : ListSequence.<OldChange>fromList(myModelChangesManager.getChangeList())) {
+          for (OldChange change : ListSequence.fromList(myModelChangesManager.getChangeList())) {
             highlightChange(change);
           }
           synchronized (myChangesMessages) {
-            for (EditorComponentChangesHighligher.ChangeEditorMessage message : Sequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromIterable(MapSequence.fromMap(myChangesMessages).values())) {
+            for (EditorComponentChangesHighligher.ChangeEditorMessage message : Sequence.fromIterable(MapSequence.fromMap(myChangesMessages).values())) {
               getHighlightManager().mark(message);
             }
           }
@@ -194,7 +194,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
       if (myEditorComponent == null) {
         return null;
       }
-      MapSequence.<OldChange,EditorComponentChangesHighligher.ChangeEditorMessage>fromMap(myChangesMessages).put(change, message);
+      MapSequence.fromMap(myChangesMessages).put(change, message);
     }
     return message;
   }
@@ -202,7 +202,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   private EditorMessage unhighlightChange(@NotNull OldChange change) {
     EditorMessage message;
     synchronized (myChangesMessages) {
-      message = MapSequence.<OldChange,EditorComponentChangesHighligher.ChangeEditorMessage>fromMap(myChangesMessages).get(change);
+      message = MapSequence.fromMap(myChangesMessages).get(change);
       if (message == null || getHighlightManager() == null || message.getNode() == null) {
         return null;
       }
@@ -215,7 +215,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     synchronized (myDisposedLock) {
       myDisposed = true;
       try {
-        for (OldChange change : SetSequence.<OldChange>fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence()) {
+        for (OldChange change : SetSequence.fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence()) {
           unhighlightChange(change);
         }
         getHighlightManager().clearForOwner(this);
@@ -239,7 +239,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   @NotNull
   /*package*/ List<EditorComponentChangesHighligher.ChangeEditorMessage> getEditorMessages() {
     synchronized (myChangesMessages) {
-      return Sequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromIterable(MapSequence.fromMap(myChangesMessages).values()).toListSequence();
+      return Sequence.fromIterable(MapSequence.fromMap(myChangesMessages).values()).toListSequence();
     }
   }
 
@@ -254,7 +254,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
       return null;
     }
     final int topY = editorContext.getContextCell().getY();
-    return ListSequence.<ChangesFoldingAreaPainter.MessageGroup>fromList(myFoldingAreaPainter.getMessageGroups()).findLast(new IWhereFilter<ChangesFoldingAreaPainter.MessageGroup>() {
+    return ListSequence.fromList(myFoldingAreaPainter.getMessageGroups()).findLast(new IWhereFilter<ChangesFoldingAreaPainter.MessageGroup>() {
       public boolean accept(ChangesFoldingAreaPainter.MessageGroup mg) {
         return topY > mg.getY() + mg.getHeight();
       }
@@ -267,7 +267,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
       return null;
     }
     final int bottomY = editorContext.getContextCell().getY() + editorContext.getContextCell().getHeight();
-    return ListSequence.<ChangesFoldingAreaPainter.MessageGroup>fromList(myFoldingAreaPainter.getMessageGroups()).findFirst(new IWhereFilter<ChangesFoldingAreaPainter.MessageGroup>() {
+    return ListSequence.fromList(myFoldingAreaPainter.getMessageGroups()).findFirst(new IWhereFilter<ChangesFoldingAreaPainter.MessageGroup>() {
       public boolean accept(ChangesFoldingAreaPainter.MessageGroup mg) {
         return bottomY < mg.getY();
       }
@@ -278,7 +278,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     if (messageGroup == null) {
       return;
     }
-    EditorCell wholeCell = ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(messageGroup.getMessages()).first().getCell(myEditorComponent);
+    EditorCell wholeCell = ListSequence.fromList(messageGroup.getMessages()).first().getCell(myEditorComponent);
     EditorCell leafCell = wholeCell.findLeaf(wholeCell.getX(), wholeCell.getY());
     myEditorComponent.changeSelection(wholeCell);
     myEditorComponent.changeSelection(leafCell);
@@ -302,7 +302,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   public void rollbackChanges(@NotNull EditorContext editorContext) {
-    myModelChangesManager.rollbackChanges(ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(myFoldingAreaPainter.getCurrentMessageGroup().getMessages()).<OldChange>select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, OldChange>() {
+    myModelChangesManager.rollbackChanges(ListSequence.fromList(myFoldingAreaPainter.getCurrentMessageGroup().getMessages()).<OldChange>select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, OldChange>() {
       public OldChange select(EditorComponentChangesHighligher.ChangeEditorMessage msg) {
         return msg.getChange();
       }
@@ -317,7 +317,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   private static boolean hasChildrenWithDifferentNode(EditorCell cell) {
     if (cell instanceof EditorCell_Collection) {
       final EditorCell_Collection collectionCell = (EditorCell_Collection) cell;
-      return Sequence.<EditorCell>fromIterable(((Iterable<EditorCell>) collectionCell)).any(new IWhereFilter<EditorCell>() {
+      return Sequence.fromIterable(((Iterable<EditorCell>) collectionCell)).any(new IWhereFilter<EditorCell>() {
         public boolean accept(EditorCell child) {
           return child.getSNode() != collectionCell.getSNode();
         }
@@ -497,8 +497,8 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   private class MyChangeListener implements ChangeListener {
-    private List<EditorMessage> myAddedMessages = ListSequence.<EditorMessage>fromList(new ArrayList<EditorMessage>());
-    private List<EditorMessage> myRemovedMessages = ListSequence.<EditorMessage>fromList(new ArrayList<EditorMessage>());
+    private List<EditorMessage> myAddedMessages = ListSequence.fromList(new ArrayList<EditorMessage>());
+    private List<EditorMessage> myRemovedMessages = ListSequence.fromList(new ArrayList<EditorMessage>());
 
     public MyChangeListener() {
     }
@@ -506,16 +506,16 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     public void changeAdded(@NotNull OldChange change, @NotNull SModel model) {
       EditorMessage addedMessage = highlightChange(change);
       if (addedMessage != null) {
-        ListSequence.<EditorMessage>fromList(myRemovedMessages).removeElement(addedMessage);
-        ListSequence.<EditorMessage>fromList(myAddedMessages).addElement(addedMessage);
+        ListSequence.fromList(myRemovedMessages).removeElement(addedMessage);
+        ListSequence.fromList(myAddedMessages).addElement(addedMessage);
       }
     }
 
     public void changeRemoved(@NotNull OldChange change, @NotNull SModel model) {
       EditorMessage removedMessage = unhighlightChange(change);
       if (removedMessage != null) {
-        ListSequence.<EditorMessage>fromList(myRemovedMessages).addElement(removedMessage);
-        ListSequence.<EditorMessage>fromList(myAddedMessages).removeElement(removedMessage);
+        ListSequence.fromList(myRemovedMessages).addElement(removedMessage);
+        ListSequence.fromList(myAddedMessages).removeElement(removedMessage);
       }
     }
 
@@ -526,12 +526,12 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     }
 
     public void changeUpdateFinished() {
-      if (!(ListSequence.<EditorMessage>fromList(myAddedMessages).isEmpty()) || !(ListSequence.<EditorMessage>fromList(myRemovedMessages).isEmpty())) {
+      if (!(ListSequence.fromList(myAddedMessages).isEmpty()) || !(ListSequence.fromList(myRemovedMessages).isEmpty())) {
         NodeHighlightManager nodeHighlightManager = getHighlightManager();
-        for (EditorMessage removedMessage : ListSequence.<EditorMessage>fromList(myRemovedMessages)) {
+        for (EditorMessage removedMessage : ListSequence.fromList(myRemovedMessages)) {
           nodeHighlightManager.unmark(removedMessage);
         }
-        for (EditorMessage addedMessage : ListSequence.<EditorMessage>fromList(myAddedMessages)) {
+        for (EditorMessage addedMessage : ListSequence.fromList(myAddedMessages)) {
           nodeHighlightManager.mark(addedMessage);
         }
         nodeHighlightManager.repaintAndRebuildEditorMessages();
@@ -540,8 +540,8 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
             myFoldingAreaPainter.relayout();
           }
         });
-        ListSequence.<EditorMessage>fromList(myAddedMessages).clear();
-        ListSequence.<EditorMessage>fromList(myRemovedMessages).clear();
+        ListSequence.fromList(myAddedMessages).clear();
+        ListSequence.fromList(myRemovedMessages).clear();
       }
     }
   }

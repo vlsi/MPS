@@ -30,7 +30,7 @@ public class ChangeGroupBuilder {
   private DiffEditor myLeftEditor;
   private DiffEditor myRightEditor;
   private List<ChangeGroup> myChangeGroups = null;
-  private List<ChangeGroupInvalidateListener> myInvalidateListeners = ListSequence.<ChangeGroupInvalidateListener>fromList(new ArrayList<ChangeGroupInvalidateListener>());
+  private List<ChangeGroupInvalidateListener> myInvalidateListeners = ListSequence.fromList(new ArrayList<ChangeGroupInvalidateListener>());
 
   public ChangeGroupBuilder(@Nullable MergeContext mergeContext, @NotNull ChangeSet changeSet, @NotNull DiffEditor leftEditor, @NotNull DiffEditor rightEditor, boolean inspector) {
     myMergeContext = mergeContext;
@@ -58,9 +58,9 @@ public class ChangeGroupBuilder {
   }
 
   private void calculateChangeGroups() {
-    final Map<ModelChange, Bounds> left = MapSequence.<ModelChange,Bounds>fromMap(new HashMap<ModelChange, Bounds>());
-    final Map<ModelChange, Bounds> right = MapSequence.<ModelChange,Bounds>fromMap(new HashMap<ModelChange, Bounds>());
-    for (ModelChange change : ListSequence.<ModelChange>fromList(myChangeSet.getModelChanges())) {
+    final Map<ModelChange, Bounds> left = MapSequence.fromMap(new HashMap<ModelChange, Bounds>());
+    final Map<ModelChange, Bounds> right = MapSequence.fromMap(new HashMap<ModelChange, Bounds>());
+    for (ModelChange change : ListSequence.fromList(myChangeSet.getModelChanges())) {
       Bounds leftBounds = findBounds(myLeftEditor.getMessagesForChange(change), getLeftComponent());
       Bounds rightBounds = findBounds(myRightEditor.getMessagesForChange(change), getRightComponent());
 
@@ -68,44 +68,44 @@ public class ChangeGroupBuilder {
         continue;
       }
 
-      MapSequence.<ModelChange,Bounds>fromMap(left).put(change, leftBounds);
-      MapSequence.<ModelChange,Bounds>fromMap(right).put(change, rightBounds);
+      MapSequence.fromMap(left).put(change, leftBounds);
+      MapSequence.fromMap(right).put(change, rightBounds);
     }
     Set<ModelChange> changes = MapSequence.fromMap(left).keySet();
     DisjointSets<ModelChange> ds = new DisjointSets<ModelChange>(changes);
-    for (ModelChange a : SetSequence.<ModelChange>fromSet(changes)) {
-      for (ModelChange b : SetSequence.<ModelChange>fromSet(changes)) {
-        if (!((int) MapSequence.<ModelChange,Bounds>fromMap(left).get(a).end() - 1 < (int) MapSequence.<ModelChange,Bounds>fromMap(left).get(b).start() || (int) MapSequence.<ModelChange,Bounds>fromMap(left).get(b).end() - 1 < (int) MapSequence.<ModelChange,Bounds>fromMap(left).get(a).start())) {
+    for (ModelChange a : SetSequence.fromSet(changes)) {
+      for (ModelChange b : SetSequence.fromSet(changes)) {
+        if (!((int) MapSequence.fromMap(left).get(a).end() - 1 < (int) MapSequence.fromMap(left).get(b).start() || (int) MapSequence.fromMap(left).get(b).end() - 1 < (int) MapSequence.fromMap(left).get(a).start())) {
           ds.unite(a, b);
         }
-        if (!((int) MapSequence.<ModelChange,Bounds>fromMap(right).get(a).end() - 1 < (int) MapSequence.<ModelChange,Bounds>fromMap(right).get(b).start() || (int) MapSequence.<ModelChange,Bounds>fromMap(right).get(b).end() - 1 < (int) MapSequence.<ModelChange,Bounds>fromMap(right).get(a).start())) {
+        if (!((int) MapSequence.fromMap(right).get(a).end() - 1 < (int) MapSequence.fromMap(right).get(b).start() || (int) MapSequence.fromMap(right).get(b).end() - 1 < (int) MapSequence.fromMap(right).get(a).start())) {
           ds.unite(a, b);
         }
       }
     }
-    myChangeGroups = ListSequence.<ChangeGroup>fromList(new ArrayList<ChangeGroup>());
-    for (Set<ModelChange> s : Sequence.<Set<ModelChange>>fromIterable(ds.getSets())) {
-      Bounds lb = SetSequence.<ModelChange>fromSet(s).<Bounds>select(new ISelector<ModelChange, Bounds>() {
+    myChangeGroups = ListSequence.fromList(new ArrayList<ChangeGroup>());
+    for (Set<ModelChange> s : Sequence.fromIterable(ds.getSets())) {
+      Bounds lb = SetSequence.fromSet(s).<Bounds>select(new ISelector<ModelChange, Bounds>() {
         public Bounds select(ModelChange ch) {
-          return MapSequence.<ModelChange,Bounds>fromMap(left).get(ch);
+          return MapSequence.fromMap(left).get(ch);
         }
       }).reduceLeft(new ILeftCombinator<Bounds, Bounds>() {
         public Bounds combine(Bounds a, Bounds b) {
           return a.merge(b);
         }
       });
-      Bounds rb = SetSequence.<ModelChange>fromSet(s).<Bounds>select(new ISelector<ModelChange, Bounds>() {
+      Bounds rb = SetSequence.fromSet(s).<Bounds>select(new ISelector<ModelChange, Bounds>() {
         public Bounds select(ModelChange ch) {
-          return MapSequence.<ModelChange,Bounds>fromMap(right).get(ch);
+          return MapSequence.fromMap(right).get(ch);
         }
       }).reduceLeft(new ILeftCombinator<Bounds, Bounds>() {
         public Bounds combine(Bounds a, Bounds b) {
           return a.merge(b);
         }
       });
-      ListSequence.<ChangeGroup>fromList(myChangeGroups).addElement(new ChangeGroup(lb, rb, SetSequence.<ModelChange>fromSet(s).toListSequence(), myMergeContext));
+      ListSequence.fromList(myChangeGroups).addElement(new ChangeGroup(lb, rb, SetSequence.fromSet(s).toListSequence(), myMergeContext));
     }
-    myChangeGroups = ListSequence.<ChangeGroup>fromList(myChangeGroups).sort(new ISelector<ChangeGroup, Comparable<?>>() {
+    myChangeGroups = ListSequence.fromList(myChangeGroups).sort(new ISelector<ChangeGroup, Comparable<?>>() {
       public Comparable<?> select(ChangeGroup g) {
         return (int) g.getLeftBounds().start();
       }
@@ -113,11 +113,11 @@ public class ChangeGroupBuilder {
   }
 
   public void addInvalidateListener(@NotNull ChangeGroupInvalidateListener listener) {
-    ListSequence.<ChangeGroupInvalidateListener>fromList(myInvalidateListeners).addElement(listener);
+    ListSequence.fromList(myInvalidateListeners).addElement(listener);
   }
 
   public void removeInvalidateListener(@NotNull ChangeGroupInvalidateListener listener) {
-    ListSequence.<ChangeGroupInvalidateListener>fromList(myInvalidateListeners).removeElement(listener);
+    ListSequence.fromList(myInvalidateListeners).removeElement(listener);
   }
 
   public List<ChangeGroup> getChangeGroups() {
@@ -129,7 +129,7 @@ public class ChangeGroupBuilder {
 
   public void invalidate() {
     myChangeGroups = null;
-    ListSequence.<ChangeGroupInvalidateListener>fromList(myInvalidateListeners).visitAll(new IVisitor<ChangeGroupInvalidateListener>() {
+    ListSequence.fromList(myInvalidateListeners).visitAll(new IVisitor<ChangeGroupInvalidateListener>() {
       public void visit(ChangeGroupInvalidateListener it) {
         it.changeGroupsInvalidated();
       }
@@ -152,8 +152,8 @@ public class ChangeGroupBuilder {
 
   private static Bounds findBounds(Iterable<ChangeEditorMessage> messages, final EditorComponent editorComponent) {
     Bounds bounds = null;
-    if (Sequence.<ChangeEditorMessage>fromIterable(messages).isNotEmpty()) {
-      bounds = Sequence.<ChangeEditorMessage>fromIterable(messages).<Bounds>select(new ISelector<ChangeEditorMessage, Bounds>() {
+    if (Sequence.fromIterable(messages).isNotEmpty()) {
+      bounds = Sequence.fromIterable(messages).<Bounds>select(new ISelector<ChangeEditorMessage, Bounds>() {
         public Bounds select(ChangeEditorMessage m) {
           return m.getBounds(editorComponent);
         }

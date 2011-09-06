@@ -19,11 +19,11 @@ import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class Worker__Facet extends IFacet.Stub {
-  private List<ITarget> targets = ListSequence.<ITarget>fromList(new ArrayList<ITarget>());
+  private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("Worker_");
 
   public Worker__Facet() {
-    ListSequence.<ITarget>fromList(targets).addElement(new Worker__Facet.Target_work());
+    ListSequence.fromList(targets).addElement(new Worker__Facet.Target_work());
   }
 
   public Iterable<ITarget> targets() {

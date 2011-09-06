@@ -52,21 +52,21 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
         }
       }
       if (isNeedAddAnnotation) {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "annotation", true)).addElement(new OverrideClassMethodStrategy.QuotationClass_px9rr4_a0a0a0c0c0a().createNode());
+        ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).addElement(new OverrideClassMethodStrategy.QuotationClass_px9rr4_a0a0a0c0c0a().createNode());
       }
     }
 
-    Iterable<SNode> paramList = ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return new OverrideClassMethodStrategy.QuotationClass_px9rr4_a0a0a0a0e0a().createNode(it);
       }
     });
-    SNode superCallExpr = new OverrideClassMethodStrategy.QuotationClass_px9rr4_a0a5a0().createNode(sourceMethod, Sequence.<SNode>fromIterable(paramList).toListSequence());
+    SNode superCallExpr = new OverrideClassMethodStrategy.QuotationClass_px9rr4_a0a5a0().createNode(sourceMethod, Sequence.fromIterable(paramList).toListSequence());
 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new OverrideClassMethodStrategy.QuotationClass_px9rr4_a0a0a0h0a().createNode(superCallExpr));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new OverrideClassMethodStrategy.QuotationClass_px9rr4_a0a0a0h0a().createNode(superCallExpr));
     } else {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(superCallExpr));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(superCallExpr));
     }
   }
 

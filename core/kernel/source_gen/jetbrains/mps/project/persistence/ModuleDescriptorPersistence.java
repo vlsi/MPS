@@ -24,15 +24,15 @@ public class ModuleDescriptorPersistence {
   }
 
   public static void loadDependencies(ModuleDescriptor descriptor, Element root) {
-    descriptor.getDependencies().addAll(loadDependenciesList(ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "dependencies")).first()));
+    descriptor.getDependencies().addAll(loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(root, "dependencies")).first()));
 
-    descriptor.getUsedLanguages().addAll(ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "usedLanguages")).first(), "usedLanguage")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
+    descriptor.getUsedLanguages().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "usedLanguages")).first(), "usedLanguage")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
       public ModuleReference select(Element ul) {
         return ModuleReference.fromString(ul.getText());
       }
     }).toListSequence());
 
-    descriptor.getUsedDevkits().addAll(ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "usedDevKits")).first(), "usedDevKit")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
+    descriptor.getUsedDevkits().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "usedDevKits")).first(), "usedDevKit")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
       public ModuleReference select(Element udk) {
         return ModuleReference.fromString(udk.getText());
       }
@@ -40,7 +40,7 @@ public class ModuleDescriptorPersistence {
 
     if (descriptor instanceof LanguageDescriptor) {
       LanguageDescriptor ld = (LanguageDescriptor) descriptor;
-      ld.getRuntimeModules().addAll(loadDependenciesList(ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "runtime")).first()));
+      ld.getRuntimeModules().addAll(loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(root, "runtime")).first()));
     }
   }
 
@@ -54,7 +54,7 @@ public class ModuleDescriptorPersistence {
 
     if (!(descriptor.getUsedLanguages().isEmpty())) {
       final Element result_dxyzb6_a0a2a0a1 = new Element("usedLanguages");
-      for (ModuleReference langRef : ListSequence.<ModuleReference>fromList(descriptor.getUsedLanguages())) {
+      for (ModuleReference langRef : ListSequence.fromList(descriptor.getUsedLanguages())) {
         final Element result_dxyzb6_a0a0a0a2a0a1 = new Element("usedLanguage");
         final String result_dxyzb6_a0a0a0a0a2a0a1 = langRef.toString();
         result_dxyzb6_a0a0a0a2a0a1.setText(result_dxyzb6_a0a0a0a0a2a0a1);
@@ -65,7 +65,7 @@ public class ModuleDescriptorPersistence {
 
     if (!(descriptor.getUsedDevkits().isEmpty())) {
       final Element result_dxyzb6_a0a4a0a1 = new Element("usedDevKits");
-      for (ModuleReference dkRef : ListSequence.<ModuleReference>fromList(descriptor.getUsedDevkits())) {
+      for (ModuleReference dkRef : ListSequence.fromList(descriptor.getUsedDevkits())) {
         final Element result_dxyzb6_a0a0a0a4a0a1 = new Element("usedDevKit");
         final String result_dxyzb6_a0a0a0a0a4a0a1 = dkRef.toString();
         result_dxyzb6_a0a0a0a4a0a1.setText(result_dxyzb6_a0a0a0a0a4a0a1);
@@ -85,7 +85,7 @@ public class ModuleDescriptorPersistence {
   }
 
   public static List<Dependency> loadDependenciesList(Element depElement) {
-    return ListSequence.<Element>fromList(AttributeUtils.elementChildren(depElement, "dependency")).<Dependency>select(new ISelector<Element, Dependency>() {
+    return ListSequence.fromList(AttributeUtils.elementChildren(depElement, "dependency")).<Dependency>select(new ISelector<Element, Dependency>() {
       public Dependency select(final Element d) {
         return new _FunctionTypes._return_P0_E0<Dependency>() {
           public Dependency invoke() {
@@ -103,7 +103,7 @@ public class ModuleDescriptorPersistence {
 
   private static void saveDependencyList(Element depElement, List<Dependency> dependencies) {
     Element result_dxyzb6_a0a3 = depElement;
-    for (Dependency md : ListSequence.<Dependency>fromList(dependencies)) {
+    for (Dependency md : ListSequence.fromList(dependencies)) {
       final Element result_dxyzb6_a0a0a0a3 = new Element("dependency");
       final String result_dxyzb6_a0a0a0a0a3 = md.getModuleRef().toString();
       result_dxyzb6_a0a0a0a3.setText(result_dxyzb6_a0a0a0a0a3);
@@ -114,7 +114,7 @@ public class ModuleDescriptorPersistence {
   }
 
   public static List<ModelRoot> loadModelRoots(List<Element> modelRootElements, final IFile file, final Macros macros) {
-    return ListSequence.<Element>fromList(modelRootElements).<ModelRoot>select(new ISelector<Element, ModelRoot>() {
+    return ListSequence.fromList(modelRootElements).<ModelRoot>select(new ISelector<Element, ModelRoot>() {
       public ModelRoot select(Element mre) {
         return loadModelRoot(mre, file, macros);
       }
@@ -134,9 +134,9 @@ public class ModuleDescriptorPersistence {
         }
         final String result_dxyzb6_a3a0a0a5 = macros.expandPath(pathName, file);
         result_dxyzb6_a0a0a5.setPath(result_dxyzb6_a3a0a0a5);
-        if (ListSequence.<Element>fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).isNotEmpty()) {
+        if (ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).isNotEmpty()) {
           final ModelRootManager result_dxyzb6_a0a4a0a0a5 = new ModelRootManager();
-          Element manager = ListSequence.<Element>fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first();
+          Element manager = ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first();
           final String result_dxyzb6_a1a0a4a0a0a5 = AttributeUtils.stringWithDefault(manager.getAttributeValue("moduleId"), "");
           result_dxyzb6_a0a4a0a0a5.setModuleId(result_dxyzb6_a1a0a4a0a0a5);
           final String result_dxyzb6_a2a0a4a0a0a5 = AttributeUtils.stringWithDefault(manager.getAttributeValue("className"), "");
@@ -149,7 +149,7 @@ public class ModuleDescriptorPersistence {
   }
 
   public static List<ModelRoot> loadStubModelEntries(List<Element> stubModelEntryElements, final IFile file, final Macros macros) {
-    return ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(stubModelEntryElements).first(), "stubModelEntry")).<ModelRoot>select(new ISelector<Element, ModelRoot>() {
+    return ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(stubModelEntryElements).first(), "stubModelEntry")).<ModelRoot>select(new ISelector<Element, ModelRoot>() {
       public ModelRoot select(Element mre) {
         return loadModelEntry(mre, file, macros);
       }
@@ -163,9 +163,9 @@ public class ModuleDescriptorPersistence {
         final String result_dxyzb6_a0a0a0a7 = macros.expandPath(modelRootElement.getAttributeValue("path"), file);
         result_dxyzb6_a0a0a7.setPath(result_dxyzb6_a0a0a0a7);
         final ModelRootManager result_dxyzb6_a1a0a0a7 = new ModelRootManager();
-        final String result_dxyzb6_a0a1a0a0a7 = AttributeUtils.stringWithDefault(ListSequence.<Element>fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("moduleId"), "");
+        final String result_dxyzb6_a0a1a0a0a7 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("moduleId"), "");
         result_dxyzb6_a1a0a0a7.setModuleId(result_dxyzb6_a0a1a0a0a7);
-        final String result_dxyzb6_a1a1a0a0a7 = AttributeUtils.stringWithDefault(ListSequence.<Element>fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("className"), "");
+        final String result_dxyzb6_a1a1a0a0a7 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("className"), "");
         result_dxyzb6_a1a0a0a7.setClassName(result_dxyzb6_a1a1a0a0a7);
         result_dxyzb6_a0a0a7.setManager(result_dxyzb6_a1a0a0a7);
         return result_dxyzb6_a0a0a7;
@@ -175,7 +175,7 @@ public class ModuleDescriptorPersistence {
 
   public static void saveModelRoots(Element modelsElement, List<ModelRoot> modelRoots, IFile file, Macros macros) {
     Element result_dxyzb6_a0a8 = modelsElement;
-    for (ModelRoot root : ListSequence.<ModelRoot>fromList(modelRoots)) {
+    for (ModelRoot root : ListSequence.fromList(modelRoots)) {
       final Element result_dxyzb6_a0a0a0a8 = new Element("modelRoot");
       final String result_dxyzb6_a0a0a0a0a8 = macros.shrinkPath((root.getPath() == null ?
         "" :
@@ -201,7 +201,7 @@ public class ModuleDescriptorPersistence {
 
   public static void saveStubModelEntries(Element modelsElement, List<ModelRoot> modelRoots, IFile file, Macros macros) {
     Element result_dxyzb6_a0a9 = modelsElement;
-    for (ModelRoot root : ListSequence.<ModelRoot>fromList(modelRoots)) {
+    for (ModelRoot root : ListSequence.fromList(modelRoots)) {
       final Element result_dxyzb6_a0a0a0a9 = new Element("stubModelEntry");
       final String result_dxyzb6_a0a0a0a0a9 = macros.shrinkPath((root.getPath() == null ?
         "" :

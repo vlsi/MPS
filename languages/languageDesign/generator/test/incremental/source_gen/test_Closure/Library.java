@@ -9,20 +9,20 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Library {
-  public List<_FunctionTypes._return_P0_E0<? extends Tuples._2<Boolean, String>>> user = ListSequence.<_FunctionTypes._return_P0_E0<? extends Tuples._2<Boolean, String>>>fromList(new ArrayList<_FunctionTypes._return_P0_E0<? extends Tuples._2<Boolean, String>>>());
+  public List<_FunctionTypes._return_P0_E0<? extends Tuples._2<Boolean, String>>> user = ListSequence.fromList(new ArrayList<_FunctionTypes._return_P0_E0<? extends Tuples._2<Boolean, String>>>());
 
   public Library() {
   }
 
   public void invoke() {
-    for (_FunctionTypes._return_P0_E0<? extends Tuples._2<Boolean, String>> a : ListSequence.<_FunctionTypes._return_P0_E0<? extends Tuples._2<Boolean, String>>>fromList(user)) {
+    for (_FunctionTypes._return_P0_E0<? extends Tuples._2<Boolean, String>> a : ListSequence.fromList(user)) {
       Tuples._2<Boolean, String> res = a.invoke();
       System.out.println(res._1());
     }
   }
 
   public Tuples._2<Boolean, String> getFirst() {
-    return ListSequence.<_FunctionTypes._return_P0_E0<? extends Tuples._2<Boolean, String>>>fromList(user).first().invoke();
+    return ListSequence.fromList(user).first().invoke();
   }
 
   public void test1() {

@@ -38,20 +38,20 @@ public class MergeConfirmation {
   }
 
   private static int showMergeConfirmationIfNeeded(BaseDialog dialog, final MergeContext mergeContext, Iterable<ModelChange> allRelevantChanges) {
-    List<ModelChange> changes = Sequence.<ModelChange>fromIterable(allRelevantChanges).where(new IWhereFilter<ModelChange>() {
+    List<ModelChange> changes = Sequence.fromIterable(allRelevantChanges).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return !(mergeContext.isChangeResolved(ch));
       }
     }).toListSequence();
-    Iterable<ModelChange> conflictedChanges = ListSequence.<ModelChange>fromList(changes).where(new IWhereFilter<ModelChange>() {
+    Iterable<ModelChange> conflictedChanges = ListSequence.fromList(changes).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
-        return Sequence.<ModelChange>fromIterable(mergeContext.getConflictedWith(ch)).isNotEmpty();
+        return Sequence.fromIterable(mergeContext.getConflictedWith(ch)).isNotEmpty();
       }
     });
-    if (Sequence.<ModelChange>fromIterable(conflictedChanges).count() != 0) {
-      return showUnresolvedConflictsConfirmation(dialog, Sequence.<ModelChange>fromIterable(conflictedChanges).count());
-    } else if (ListSequence.<ModelChange>fromList(changes).count() != 0) {
-      return showUnresolvedChangesConfirmation(dialog, ListSequence.<ModelChange>fromList(changes).count());
+    if (Sequence.fromIterable(conflictedChanges).count() != 0) {
+      return showUnresolvedConflictsConfirmation(dialog, Sequence.fromIterable(conflictedChanges).count());
+    } else if (ListSequence.fromList(changes).count() != 0) {
+      return showUnresolvedChangesConfirmation(dialog, ListSequence.fromList(changes).count());
     }
     return SAVE_AS_IS;
   }

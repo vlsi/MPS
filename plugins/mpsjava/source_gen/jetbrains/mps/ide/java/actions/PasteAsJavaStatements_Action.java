@@ -28,7 +28,7 @@ public class PasteAsJavaStatements_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return (SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.<String,Object>fromMap(_params).get("anchorNode"))), "jetbrains.mps.baseLanguage.structure.StatementList", true, false) != null) && JavaPaster.areDataAvailableInClipboard();
+    return (SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("anchorNode"))), "jetbrains.mps.baseLanguage.structure.StatementList", true, false) != null) && JavaPaster.areDataAvailableInClipboard();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -49,12 +49,12 @@ public class PasteAsJavaStatements_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("operationContext") == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("anchorNode", event.getData(MPSDataKeys.NODE));
-    if (MapSequence.<String,Object>fromMap(_params).get("anchorNode") == null) {
+    MapSequence.fromMap(_params).put("anchorNode", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.fromMap(_params).get("anchorNode") == null) {
       return false;
     }
     return true;
@@ -62,7 +62,7 @@ public class PasteAsJavaStatements_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new JavaPaster().pasteJava(((SNode) MapSequence.<String,Object>fromMap(_params).get("anchorNode")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")), FeatureKind.STATEMENTS);
+      new JavaPaster().pasteJava(((SNode) MapSequence.fromMap(_params).get("anchorNode")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), FeatureKind.STATEMENTS);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "PasteAsJavaStatements", t);

@@ -38,7 +38,7 @@ public class NewLibDialogContentPane extends JPanel {
   private MPSProject myProject;
   private Library myResult;
   private NewLibDialog myDialog;
-  public List<AutoBinding> myBindings = ListSequence.<AutoBinding>fromList(new ArrayList<AutoBinding>());
+  public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
   private Events myEvents = new Events(null) {
     {
     }
@@ -84,7 +84,7 @@ public class NewLibDialogContentPane extends JPanel {
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
-      ListSequence.<AutoBinding>fromList(this.myBindings).addElement(binding);
+      ListSequence.fromList(this.myBindings).addElement(binding);
     }
     {
       Object sourceObject = myThis;
@@ -93,7 +93,7 @@ public class NewLibDialogContentPane extends JPanel {
       Property targetProperty = BeanProperty.create("path");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
-      ListSequence.<AutoBinding>fromList(this.myBindings).addElement(binding);
+      ListSequence.fromList(this.myBindings).addElement(binding);
     }
   }
 

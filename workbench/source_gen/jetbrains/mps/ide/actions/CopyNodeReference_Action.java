@@ -49,12 +49,12 @@ public class CopyNodeReference_Action extends GeneratedAction {
       if (nodes != null) {
       }
       if (error || nodes == null) {
-        MapSequence.<String,Object>fromMap(_params).put("nodes", null);
+        MapSequence.fromMap(_params).put("nodes", null);
       } else {
-        MapSequence.<String,Object>fromMap(_params).put("nodes", ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), nodes));
+        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("nodes") == null) {
+    if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
     return true;
@@ -63,7 +63,7 @@ public class CopyNodeReference_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       StringBuilder builder = new StringBuilder();
-      for (SNode node : ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes")))) {
+      for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
         builder.append(NameUtil.nodeFQName(node)).append("\n");
       }
       builder.deleteCharAt(builder.length() - 1);

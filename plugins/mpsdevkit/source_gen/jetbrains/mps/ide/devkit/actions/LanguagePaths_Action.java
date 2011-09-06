@@ -63,23 +63,23 @@ public class LanguagePaths_Action extends GeneratedAction {
       JScrollPane sp = ScrollPaneFactory.createScrollPane(mainp, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
       dialog.add(sp);
       mainp.setLayout(new BoxLayout(mainp, BoxLayout.Y_AXIS));
-      for (Language lang : ListSequence.<Language>fromList(languages)) {
+      for (Language lang : ListSequence.fromList(languages)) {
         List<ModelRoot> cp = ModelRootUtil.filterJava(lang.getModuleDescriptor().getStubModelEntries());
         List<ModelRoot> rcp = ModelRootUtil.filterJava(lang.getModuleDescriptor().getRuntimeStubModels());
 
         List<String> cpu = new ArrayList();
-        for (ModelRoot i : ListSequence.<ModelRoot>fromList(cp)) {
+        for (ModelRoot i : ListSequence.fromList(cp)) {
           cpu.add(i.getPath());
         }
-        for (ModelRoot i : ListSequence.<ModelRoot>fromList(rcp)) {
+        for (ModelRoot i : ListSequence.fromList(rcp)) {
           cpu.remove(i.getPath());
         }
 
         List<String> rcpu = new ArrayList();
-        for (ModelRoot i : ListSequence.<ModelRoot>fromList(rcp)) {
+        for (ModelRoot i : ListSequence.fromList(rcp)) {
           rcpu.add(i.getPath());
         }
-        for (ModelRoot i : ListSequence.<ModelRoot>fromList(cp)) {
+        for (ModelRoot i : ListSequence.fromList(cp)) {
           rcpu.remove(i.getPath());
         }
 

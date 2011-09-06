@@ -113,7 +113,7 @@ public abstract class SourceWrapper {
 
     @Override
     public List<SNode> getOurNodesFromClassifier(SNode classifier) {
-      return SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "method", true)).first(), "body", true), "statement", true);
+      return SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(classifier, "method", true)).first(), "body", true), "statement", true);
     }
   }
 
@@ -127,10 +127,10 @@ public abstract class SourceWrapper {
     @Override
     public List<SNode> getOurNodesFromClassifier(SNode classifier) {
       List<SNode> result = new ArrayList<SNode>();
-      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "method", true))).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "staticField", true))).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "staticInnerClassifiers", true)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "method", true))).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "staticField", true))).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "staticInnerClassifiers", true)));
       SNode classs = SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       if ((classs != null)) {
-        ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(classs, "field", true))).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(classs, "staticMethod", true)));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classs, "field", true))).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classs, "staticMethod", true)));
       }
       return result;
     }
@@ -182,7 +182,7 @@ public abstract class SourceWrapper {
     @Override
     public List<SNode> getOurNodesFromClassifier(SNode classifier) {
       List<SNode> result = new ArrayList<SNode>();
-      ListSequence.<SNode>fromList(result).addElement(classifier);
+      ListSequence.fromList(result).addElement(classifier);
       return result;
     }
   }

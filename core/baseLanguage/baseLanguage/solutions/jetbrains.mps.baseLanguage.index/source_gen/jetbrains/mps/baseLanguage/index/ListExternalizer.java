@@ -18,16 +18,16 @@ public class ListExternalizer<T> implements DataExternalizer<List<T>> {
   }
 
   public void save(DataOutput output, List<T> elements) throws IOException {
-    output.writeInt(ListSequence.<T>fromList(elements).count());
+    output.writeInt(ListSequence.fromList(elements).count());
     for (T element : elements) {
       myInnerExternalizer.save(output, element);
     }
   }
 
   public List<T> read(DataInput input) throws IOException {
-    List<T> result = ListSequence.<T>fromList(new ArrayList<T>());
+    List<T> result = ListSequence.fromList(new ArrayList<T>());
     for (int i = input.readInt(); i > 0; i--) {
-      ListSequence.<T>fromList(result).addElement(myInnerExternalizer.read(input));
+      ListSequence.fromList(result).addElement(myInnerExternalizer.read(input));
     }
     return result;
   }

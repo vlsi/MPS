@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.HashMap;
 
 public class NaiveSetOperations_Test extends TestCase {
-  private static Iterable<String> aabbcc = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+  private static Iterable<String> aabbcc = Sequence.fromClosure(new ISequenceClosure<String>() {
     public Iterable<String> iterable() {
       return new Iterable<String>() {
         public Iterator<String> iterator() {
@@ -65,7 +65,7 @@ __switch__:
       };
     }
   });
-  private static Iterable<String> aabbc = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+  private static Iterable<String> aabbc = Sequence.fromClosure(new ISequenceClosure<String>() {
     public Iterable<String> iterable() {
       return new Iterable<String>() {
         public Iterator<String> iterator() {
@@ -114,7 +114,7 @@ __switch__:
       };
     }
   });
-  private static Iterable<String> aabbcccdde = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+  private static Iterable<String> aabbcccdde = Sequence.fromClosure(new ISequenceClosure<String>() {
     public Iterable<String> iterable() {
       return new Iterable<String>() {
         public Iterator<String> iterator() {
@@ -183,7 +183,7 @@ __switch__:
       };
     }
   });
-  private static Iterable<String> ccaabbcc = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+  private static Iterable<String> ccaabbcc = Sequence.fromClosure(new ISequenceClosure<String>() {
     public Iterable<String> iterable() {
       return new Iterable<String>() {
         public Iterator<String> iterator() {
@@ -244,7 +244,7 @@ __switch__:
       };
     }
   });
-  private static Iterable<String> abc = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+  private static Iterable<String> abc = Sequence.fromClosure(new ISequenceClosure<String>() {
     public Iterable<String> iterable() {
       return new Iterable<String>() {
         public Iterator<String> iterator() {
@@ -285,7 +285,7 @@ __switch__:
       };
     }
   });
-  private static Iterable<String> cccdde = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+  private static Iterable<String> cccdde = Sequence.fromClosure(new ISequenceClosure<String>() {
     public Iterable<String> iterable() {
       return new Iterable<String>() {
         public Iterator<String> iterator() {
@@ -338,7 +338,7 @@ __switch__:
       };
     }
   });
-  private static Iterable<String> abcde = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+  private static Iterable<String> abcde = Sequence.fromClosure(new ISequenceClosure<String>() {
     public Iterable<String> iterable() {
       return new Iterable<String>() {
         public Iterator<String> iterator() {
@@ -387,7 +387,7 @@ __switch__:
       };
     }
   });
-  private static Iterable<String> aabb = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+  private static Iterable<String> aabb = Sequence.fromClosure(new ISequenceClosure<String>() {
     public Iterable<String> iterable() {
       return new Iterable<String>() {
         public Iterator<String> iterator() {
@@ -432,7 +432,7 @@ __switch__:
       };
     }
   });
-  private static Iterable<String> c = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+  private static Iterable<String> c = Sequence.fromClosure(new ISequenceClosure<String>() {
     public Iterable<String> iterable() {
       return new Iterable<String>() {
         public Iterator<String> iterator() {
@@ -465,7 +465,7 @@ __switch__:
       };
     }
   });
-  private static Iterable<String> cc = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+  private static Iterable<String> cc = Sequence.fromClosure(new ISequenceClosure<String>() {
     public Iterable<String> iterable() {
       return new Iterable<String>() {
         public Iterator<String> iterator() {
@@ -502,7 +502,7 @@ __switch__:
       };
     }
   });
-  private static Iterable<String> ccc = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+  private static Iterable<String> ccc = Sequence.fromClosure(new ISequenceClosure<String>() {
     public Iterable<String> iterable() {
       return new Iterable<String>() {
         public Iterator<String> iterator() {
@@ -545,32 +545,32 @@ __switch__:
   });
 
   public void test_union() throws Exception {
-    this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.<String>fromIterable(aabbcc).union(Sequence.<String>fromIterable(cccdde)));
-    this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.<String>fromIterable(cccdde).union(Sequence.<String>fromIterable(aabbcc)));
+    this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.fromIterable(aabbcc).union(Sequence.fromIterable(cccdde)));
+    this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.fromIterable(cccdde).union(Sequence.fromIterable(aabbcc)));
   }
 
   public void test_exclude() throws Exception {
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.<String>fromIterable(aabbcc).subtract(Sequence.<String>fromIterable(aabb)));
-    this.assertIterableEqualsIgnoreOrder(aabb, Sequence.<String>fromIterable(aabbcc).subtract(Sequence.<String>fromIterable(ccc)));
-    this.assertIterableEqualsIgnoreOrder(aabbc, Sequence.<String>fromIterable(aabbcc).subtract(Sequence.<String>fromIterable(c)));
-    this.assertIterableEqualsIgnoreOrder(abc, Sequence.<String>fromIterable(aabbcc).subtract(Sequence.<String>fromIterable(abc)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(aabb)));
+    this.assertIterableEqualsIgnoreOrder(aabb, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(ccc)));
+    this.assertIterableEqualsIgnoreOrder(aabbc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(c)));
+    this.assertIterableEqualsIgnoreOrder(abc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(abc)));
   }
 
   public void test_intersect() throws Exception {
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.<String>fromIterable(aabbcc).intersect(Sequence.<String>fromIterable(cccdde)));
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.<String>fromIterable(cccdde).intersect(Sequence.<String>fromIterable(aabbcc)));
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.<String>fromIterable(ccc).intersect(Sequence.<String>fromIterable(cc)));
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.<String>fromIterable(cc).intersect(Sequence.<String>fromIterable(ccc)));
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.<String>fromIterable(cc).intersect(Sequence.<String>fromIterable(ccaabbcc)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).intersect(Sequence.fromIterable(cccdde)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cccdde).intersect(Sequence.fromIterable(aabbcc)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(ccc).intersect(Sequence.fromIterable(cc)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cc).intersect(Sequence.fromIterable(ccc)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cc).intersect(Sequence.fromIterable(ccaabbcc)));
   }
 
   public void assertSameContents(Iterable<String> seq1, Iterable<String> seq2) {
-    Assert.assertSame(Sequence.<String>fromIterable(seq1).count(), Sequence.<String>fromIterable(seq2).count());
-    for (String x : Sequence.<String>fromIterable(seq1)) {
-      Assert.assertTrue(Sequence.<String>fromIterable(seq2).contains(x));
+    Assert.assertSame(Sequence.fromIterable(seq1).count(), Sequence.fromIterable(seq2).count());
+    for (String x : Sequence.fromIterable(seq1)) {
+      Assert.assertTrue(Sequence.fromIterable(seq2).contains(x));
     }
-    for (String y : Sequence.<String>fromIterable(seq2)) {
-      Assert.assertTrue(Sequence.<String>fromIterable(seq1).contains(y));
+    for (String y : Sequence.fromIterable(seq2)) {
+      Assert.assertTrue(Sequence.fromIterable(seq1).contains(y));
     }
   }
 

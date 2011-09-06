@@ -27,7 +27,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GoByReference_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.GoByReference_ActionGroup";
 
-  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.<Pair<ActionPlace, Condition<BaseAction>>>fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
+  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
 
   public GoByReference_ActionGroup() {
     super("Go by Reference", ID);
@@ -52,13 +52,13 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
       }
 
       List<SReference> refs = node.getReferences();
-      if (ListSequence.<SReference>fromList(refs).isEmpty()) {
+      if (ListSequence.fromList(refs).isEmpty()) {
         GoByReference_ActionGroup.this.add(new StringAction("No References"));
         return;
       }
 
       boolean onlyBad = true;
-      for (SReference ref : ListSequence.<SReference>fromList(refs)) {
+      for (SReference ref : ListSequence.fromList(refs)) {
         SNode targetNode = ref.getTargetNode();
         if (targetNode != null) {
           String text = "[" + ref.getRole() + "]" + targetNode.getDebugText();

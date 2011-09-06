@@ -39,7 +39,7 @@ public class AnnotationHelper {
 
   @Nullable
   private static AnnotationColumn findAnnotationColumn(@NotNull EditorComponent editorComponent) {
-    for (AbstractLeftColumn column : ListSequence.<AbstractLeftColumn>fromList(editorComponent.getLeftEditorHighlighter().getLeftColumns())) {
+    for (AbstractLeftColumn column : ListSequence.fromList(editorComponent.getLeftEditorHighlighter().getLeftColumns())) {
       if (column instanceof AnnotationColumn) {
         return ((AnnotationColumn) column);
       }

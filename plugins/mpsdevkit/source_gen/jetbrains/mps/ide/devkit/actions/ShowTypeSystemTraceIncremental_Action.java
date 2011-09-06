@@ -48,21 +48,21 @@ public class ShowTypeSystemTraceIncremental_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.<String,Object>fromMap(_params).put("node", node);
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -71,11 +71,11 @@ public class ShowTypeSystemTraceIncremental_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       TypeCheckingContext typeCheckingContext;
-      typeCheckingContext = ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getTypeCheckingContext();
+      typeCheckingContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getTypeCheckingContext();
       if (typeCheckingContext instanceof TypeCheckingContextNew) {
         TypeCheckingContextNew tcc = (TypeCheckingContextNew) typeCheckingContext;
-        TraceTool_Tool tool = ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(TraceTool_Tool.class);
-        tool.buildTrace(tcc, ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), ((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")), false);
+        TraceTool_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(TraceTool_Tool.class);
+        tool.buildTrace(tcc, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), false);
         tool.openToolLater(true);
       }
     } catch (Throwable t) {

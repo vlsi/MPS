@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import java.awt.Color;
 
 public class MPS13933<T> {
-  public List<T> myList = ListSequence.<T>fromList(new ArrayList<T>());
+  public List<T> myList = ListSequence.fromList(new ArrayList<T>());
 
   public MPS13933() {
   }
 
   public void addRow(List<T> list) {
-    ListSequence.<T>fromList(myList).addSequence(ListSequence.<T>fromList(list));
+    ListSequence.fromList(myList).addSequence(ListSequence.fromList(list));
   }
 
   public void doSmth() {
@@ -24,8 +24,8 @@ public class MPS13933<T> {
     new MPS13933<Color>() {
       @Override
       public void doSmth() {
-        addRow(ListSequence.<Color>fromListAndArray(new ArrayList<Color>(), null));
-        this.addRow(ListSequence.<Color>fromListAndArray(new ArrayList<Color>(), null));
+        addRow(ListSequence.fromListAndArray(new ArrayList<Color>(), null));
+        this.addRow(ListSequence.fromListAndArray(new ArrayList<Color>(), null));
       }
     };
   }

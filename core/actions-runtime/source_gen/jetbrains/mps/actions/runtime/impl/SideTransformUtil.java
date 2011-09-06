@@ -45,23 +45,23 @@ public class SideTransformUtil {
 
   public static Iterable<SNode> getApplicableActionsBuilders(final SNode node, Set<String> stringTags, final CellSide cellSide, final IOperationContext context) {
 
-    final Set<SNode> tags = SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), SetSequence.<String>fromSet(stringTags).<SNode>select(new ISelector<String, SNode>() {
+    final Set<SNode> tags = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(stringTags).<SNode>select(new ISelector<String, SNode>() {
       public SNode select(String it) {
         return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "SideTransformTag"), it);
       }
     }));
-    if (SetSequence.<SNode>fromSet(tags).isEmpty()) {
+    if (SetSequence.fromSet(tags).isEmpty()) {
       SetSequence.fromSet(tags).addElement(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "SideTransformTag"), "default_"));
     }
 
-    Iterable<SNode> result = Sequence.<SNode>fromIterable(Collections.<SNode>emptyList());
-    for (Language language : ListSequence.<Language>fromList(SModelOperations.getLanguages(SNodeOperations.getModel(node), context.getScope()))) {
+    Iterable<SNode> result = Sequence.fromIterable(Collections.<SNode>emptyList());
+    for (Language language : ListSequence.fromList(SModelOperations.getLanguages(SNodeOperations.getModel(node), context.getScope()))) {
       EditableSModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
       if (actionsModelDescriptor == null || actionsModelDescriptor.getSModel() == null) {
         continue;
       }
       SModel model = actionsModelDescriptor.getSModel();
-      result = Sequence.<SNode>fromIterable(result).concat(ListSequence.<SNode>fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(model, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions")).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      result = Sequence.fromIterable(result).concat(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(model, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions")).<SNode>translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "actionsBuilder", true);
         }
@@ -76,12 +76,12 @@ public class SideTransformUtil {
 
   public static List<INodeSubstituteAction> createActions(SNode node, Set<String> stringTags, CellSide cellSide, IOperationContext context) {
 
-    Set<SNode> conceptsToRemove = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+    Set<SNode> conceptsToRemove = SetSequence.fromSet(new HashSet<SNode>());
     List<SNode> removeByConditions = new ArrayList<SNode>();
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new LinkedList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new LinkedList<INodeSubstituteAction>());
 
-    for (SNode actionBuilder : Sequence.<SNode>fromIterable(getApplicableActionsBuilders(node, stringTags, cellSide, context))) {
-      SetSequence.fromSet(conceptsToRemove).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(actionBuilder, "jetbrains.mps.lang.actions.structure.RemovePart", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode actionBuilder : Sequence.fromIterable(getApplicableActionsBuilders(node, stringTags, cellSide, context))) {
+      SetSequence.fromSet(conceptsToRemove).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(actionBuilder, "jetbrains.mps.lang.actions.structure.RemovePart", false, new String[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (SLinkOperations.getTarget(it, "conceptToRemove", false) != null);
         }
@@ -90,20 +90,20 @@ public class SideTransformUtil {
           return SLinkOperations.getTarget(it, "conceptToRemove", false);
         }
       }));
-      ListSequence.<SNode>fromList(removeByConditions).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(actionBuilder, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", false, new String[]{})));
-      ListSequence.<INodeSubstituteAction>fromList(result).addSequence(ListSequence.<INodeSubstituteAction>fromList(invokeActionBuilder(actionBuilder, node, context)));
+      ListSequence.fromList(removeByConditions).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(actionBuilder, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", false, new String[]{})));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(invokeActionBuilder(actionBuilder, node, context)));
     }
 
     // remove with conditions 
-    for (SNode removeByCondition : ListSequence.<SNode>fromList(removeByConditions)) {
-      invokeRemoveByCondition(removeByCondition, ListSequence.<INodeSubstituteAction>fromList(result).iterator(), node, context);
+    for (SNode removeByCondition : ListSequence.fromList(removeByConditions)) {
+      invokeRemoveByCondition(removeByCondition, ListSequence.fromList(result).iterator(), node, context);
     }
 
     // remove with remove concept 
-    for (Iterator<INodeSubstituteAction> it = ListSequence.<INodeSubstituteAction>fromList(result).iterator(); it.hasNext();) {
+    for (Iterator<INodeSubstituteAction> it = ListSequence.fromList(result).iterator(); it.hasNext();) {
       INodeSubstituteAction action = it.next();
       SNode concept = SNodeOperations.cast(action.getOutputConcept(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
-      if (SetSequence.<SNode>fromSet(conceptsToRemove).contains(concept)) {
+      if (SetSequence.fromSet(conceptsToRemove).contains(concept)) {
         it.remove();
       } else if (!(ModelConstraintsManager.canBeAncestor(SNodeOperations.getParent(node), concept, context))) {
         it.remove();
@@ -114,7 +114,7 @@ public class SideTransformUtil {
   }
 
   private static boolean isApplicable(SNode node, Set<SNode> tags, CellSide cellSide, SNode actionsBuilder, IOperationContext context) {
-    if (!(SetSequence.<SNode>fromSet(tags).contains(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "SideTransformTag"), SPropertyOperations.getString_def(actionsBuilder, "transformTag", "default_RTransform"))))) {
+    if (!(SetSequence.fromSet(tags).contains(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "SideTransformTag"), SPropertyOperations.getString_def(actionsBuilder, "transformTag", "default_RTransform"))))) {
       return false;
     }
     if ((cellSide == CellSide.LEFT ?

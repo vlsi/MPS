@@ -24,7 +24,7 @@ public class SModelUtils {
 
   @NotNull
   public static List<SNodeId> getNodeIds(List<SNode> nodes) {
-    return ListSequence.<SNode>fromList(nodes).<SNodeId>select(new ISelector<SNode, SNodeId>() {
+    return ListSequence.fromList(nodes).<SNodeId>select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode node) {
         return node.getSNodeId();
       }
@@ -52,25 +52,25 @@ public class SModelUtils {
 
   @NotNull
   public static List<SNode> getPathToRoot(@NotNull SNode node) {
-    List<SNode> nodes = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    List<SNode> nodes = ListSequence.fromList(new ArrayList<SNode>());
     while (node != null) {
-      ListSequence.<SNode>fromList(nodes).addElement(node);
+      ListSequence.fromList(nodes).addElement(node);
       node = SNodeOperations.getParent(node);
     }
-    nodes = ListSequence.<SNode>fromList(nodes).reversedList();
+    nodes = ListSequence.fromList(nodes).reversedList();
     return nodes;
   }
 
   @NotNull
   public static List<SNode> getDominators(@NotNull List<SNode> nodes) {
-    List<SNode> dominators = ListSequence.<SNode>fromList(new ArrayList<SNode>());
-    for (final SNode minor : ListSequence.<SNode>fromList(nodes)) {
-      if (!(ListSequence.<SNode>fromList(nodes).any(new IWhereFilter<SNode>() {
+    List<SNode> dominators = ListSequence.fromList(new ArrayList<SNode>());
+    for (final SNode minor : ListSequence.fromList(nodes)) {
+      if (!(ListSequence.fromList(nodes).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode major) {
           return minor.isDescendantOf(major, false);
         }
       }))) {
-        ListSequence.<SNode>fromList(dominators).addElement(minor);
+        ListSequence.fromList(dominators).addElement(minor);
       }
     }
     return dominators;

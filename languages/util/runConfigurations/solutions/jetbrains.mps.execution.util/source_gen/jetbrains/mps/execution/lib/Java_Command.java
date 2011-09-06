@@ -43,7 +43,7 @@ public class Java_Command {
   private String myJrePath = Java_Command.getJdkHome();
   private String myProgramParameter;
   private String myVirtualMachineParameter;
-  private List<String> myClassPath = ListSequence.<String>fromList(new ArrayList<String>());
+  private List<String> myClassPath = ListSequence.fromList(new ArrayList<String>());
   private String myDebuggerSettings;
 
   public Java_Command() {
@@ -93,7 +93,7 @@ public class Java_Command {
 
   public ProcessHandler createProcess(String className) throws ExecutionException {
     String java = Java_Command.getJavaCommand(myJrePath);
-    String classPathString = IterableUtils.join(ListSequence.<String>fromList(myClassPath).<String>select(new ISelector<String, String>() {
+    String classPathString = IterableUtils.join(ListSequence.fromList(myClassPath).<String>select(new ISelector<String, String>() {
       public String select(String it) {
         return Java_Command.protect(it);
       }
@@ -105,7 +105,7 @@ public class Java_Command {
       try {
         String parametersFile = Java_Command.writeToTmpFile(myProgramParameter);
         String classPathFile = Java_Command.writeToTmpFile(classPathString);
-        String classRunnerClassPath = IterableUtils.join(ListSequence.<String>fromList(Java_Command.getClassRunnerClassPath()).<String>select(new ISelector<String, String>() {
+        String classRunnerClassPath = IterableUtils.join(ListSequence.fromList(Java_Command.getClassRunnerClassPath()).<String>select(new ISelector<String, String>() {
           public String select(String it) {
             return Java_Command.protect(it);
           }
@@ -166,9 +166,9 @@ public class Java_Command {
   }
 
   public static List<String> getClasspath(final IModule module, boolean withDependencies) {
-    List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
+    List<String> result = ListSequence.fromList(new ArrayList<String>());
     if (module.getClassesGen() != null) {
-      ListSequence.<String>fromList(result).addElement(module.getClassesGen().getAbsolutePath());
+      ListSequence.fromList(result).addElement(module.getClassesGen().getAbsolutePath());
     }
 
     final ClasspathStringCollector visitor = new ClasspathStringCollector(result);
@@ -195,7 +195,7 @@ public class Java_Command {
       }
     });
 
-    List<String> cp = ListSequence.<String>fromList(new ArrayList<String>());
+    List<String> cp = ListSequence.fromList(new ArrayList<String>());
     ClasspathStringCollector visitor = new ClasspathStringCollector(cp);
     module.value.getClassPathItem().accept(visitor);
     return visitor.getResultAndReInit();
@@ -227,21 +227,21 @@ public class Java_Command {
 
   public static List<String> getJavaHomes() {
     String systemJavaHome = SystemProperties.getJavaHome();
-    List<String> homes = ListSequence.<String>fromList(new LinkedList<String>());
+    List<String> homes = ListSequence.fromList(new LinkedList<String>());
     String systemJdkHome = systemJavaHome.substring(0, systemJavaHome.length() - "/jre".length());
     if (systemJavaHome.endsWith("jre") && new File(systemJdkHome + File.separator + "bin").exists()) {
-      ListSequence.<String>fromList(homes).addElement(systemJdkHome);
+      ListSequence.fromList(homes).addElement(systemJdkHome);
     }
     if (StringUtils.isNotEmpty(System.getenv("JAVA_HOME"))) {
-      ListSequence.<String>fromList(homes).addElement(System.getenv("JAVA_HOME"));
+      ListSequence.fromList(homes).addElement(System.getenv("JAVA_HOME"));
     }
-    ListSequence.<String>fromList(homes).addElement(systemJavaHome);
+    ListSequence.fromList(homes).addElement(systemJavaHome);
     return homes;
   }
 
   public static String getJdkHome() {
     List<String> homes = Java_Command.getJavaHomes();
-    for (String javaHome : ListSequence.<String>fromList(homes)) {
+    for (String javaHome : ListSequence.fromList(homes)) {
       if (new File(Java_Command.getJavaCommandUnprotected(javaHome)).exists()) {
         return javaHome;
       }

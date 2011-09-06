@@ -31,9 +31,9 @@ public class CheckModule_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        String whatToCheck = ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")).getClass().getSimpleName();
-        if (((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")).size() > 1) {
-          whatToCheck = ((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")).size() + " Modules";
+        String whatToCheck = ((IModule) MapSequence.fromMap(_params).get("module")).getClass().getSimpleName();
+        if (((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() > 1) {
+          whatToCheck = ((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() + " Modules";
         }
         event.getPresentation().setText("Check " + whatToCheck);
         event.getPresentation().setDescription("Check " + whatToCheck.toLowerCase() + " for structure and typesystem rules");
@@ -50,20 +50,20 @@ public class CheckModule_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
-    if (MapSequence.<String,Object>fromMap(_params).get("modules") == null) {
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    if (MapSequence.fromMap(_params).get("modules") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("operationContext") == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
     return true;
@@ -71,10 +71,10 @@ public class CheckModule_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")).size() > 1) {
-        ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModules(((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")), true);
+      if (((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() > 1) {
+        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModules(((List<IModule>) MapSequence.fromMap(_params).get("modules")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       } else {
-        ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModule(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")), true);
+        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModule(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

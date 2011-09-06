@@ -16,21 +16,21 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public abstract class GraphAnalyzer<V> {
-  private Map<V, GraphAnalyzer.Wrapper<V>> wrapMap = MapSequence.<V,GraphAnalyzer.Wrapper<V>>fromMap(new HashMap<V, GraphAnalyzer.Wrapper<V>>());
+  private Map<V, GraphAnalyzer.Wrapper<V>> wrapMap = MapSequence.fromMap(new HashMap<V, GraphAnalyzer.Wrapper<V>>());
   private _FunctionTypes._return_P1_E0<? extends Iterable<GraphAnalyzer.Wrapper<V>>, ? super GraphAnalyzer.Wrapper<V>> forward = new _FunctionTypes._return_P1_E0<ISequence<GraphAnalyzer.Wrapper<V>>, GraphAnalyzer.Wrapper<V>>() {
     public ISequence<GraphAnalyzer.Wrapper<V>> invoke(GraphAnalyzer.Wrapper<V> d) {
-      return Sequence.<V>fromIterable(forwardEdges(d.vertex)).<GraphAnalyzer.Wrapper<V>>select(new ISelector<V, GraphAnalyzer.Wrapper<V>>() {
+      return Sequence.fromIterable(forwardEdges(d.vertex)).<GraphAnalyzer.Wrapper<V>>select(new ISelector<V, GraphAnalyzer.Wrapper<V>>() {
         public GraphAnalyzer.Wrapper<V> select(V v) {
-          return MapSequence.<V,GraphAnalyzer.Wrapper<V>>fromMap(wrapMap).get(v);
+          return MapSequence.fromMap(wrapMap).get(v);
         }
       });
     }
   };
   private _FunctionTypes._return_P1_E0<? extends Iterable<GraphAnalyzer.Wrapper<V>>, ? super GraphAnalyzer.Wrapper<V>> backward = new _FunctionTypes._return_P1_E0<ISequence<GraphAnalyzer.Wrapper<V>>, GraphAnalyzer.Wrapper<V>>() {
     public ISequence<GraphAnalyzer.Wrapper<V>> invoke(GraphAnalyzer.Wrapper<V> d) {
-      return Sequence.<V>fromIterable(backwardEdges(d.vertex)).<GraphAnalyzer.Wrapper<V>>select(new ISelector<V, GraphAnalyzer.Wrapper<V>>() {
+      return Sequence.fromIterable(backwardEdges(d.vertex)).<GraphAnalyzer.Wrapper<V>>select(new ISelector<V, GraphAnalyzer.Wrapper<V>>() {
         public GraphAnalyzer.Wrapper<V> select(V v) {
-          return MapSequence.<V,GraphAnalyzer.Wrapper<V>>fromMap(wrapMap).get(v);
+          return MapSequence.fromMap(wrapMap).get(v);
         }
       });
     }
@@ -57,7 +57,7 @@ public abstract class GraphAnalyzer<V> {
 
   public Iterable<V> topologicalSort() {
     Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices());
-    return ListSequence.<GraphAnalyzer.Wrapper<V>>fromList(this.topoSort(ws)).<V>select(new ISelector<GraphAnalyzer.Wrapper<V>, V>() {
+    return ListSequence.fromList(this.topoSort(ws)).<V>select(new ISelector<GraphAnalyzer.Wrapper<V>, V>() {
       public V select(GraphAnalyzer.Wrapper<V> w) {
         return w.vertex;
       }
@@ -66,7 +66,7 @@ public abstract class GraphAnalyzer<V> {
 
   public Iterable<V> precursors(V v) {
     Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices());
-    return ListSequence.<GraphAnalyzer.Wrapper<V>>fromList(this.reachable(MapSequence.<V,GraphAnalyzer.Wrapper<V>>fromMap(wrapMap).get(v), ws, backward)).<V>select(new ISelector<GraphAnalyzer.Wrapper<V>, V>() {
+    return ListSequence.fromList(this.reachable(MapSequence.fromMap(wrapMap).get(v), ws, backward)).<V>select(new ISelector<GraphAnalyzer.Wrapper<V>, V>() {
       public V select(GraphAnalyzer.Wrapper<V> w) {
         return w.vertex;
       }
@@ -74,29 +74,29 @@ public abstract class GraphAnalyzer<V> {
   }
 
   private Iterable<GraphAnalyzer.Wrapper<V>> init(Iterable<V> vertices) {
-    return Sequence.<V>fromIterable(vertices).<GraphAnalyzer.Wrapper<V>>select(new ISelector<V, GraphAnalyzer.Wrapper<V>>() {
+    return Sequence.fromIterable(vertices).<GraphAnalyzer.Wrapper<V>>select(new ISelector<V, GraphAnalyzer.Wrapper<V>>() {
       public GraphAnalyzer.Wrapper<V> select(V v) {
         GraphAnalyzer.Wrapper<V> data = new GraphAnalyzer.Wrapper<V>(v);
-        MapSequence.<V,GraphAnalyzer.Wrapper<V>>fromMap(wrapMap).put(v, data);
+        MapSequence.fromMap(wrapMap).put(v, data);
         return data;
       }
     }).toListSequence();
   }
 
   private List<GraphAnalyzer.Wrapper<V>> topoSort(Iterable<GraphAnalyzer.Wrapper<V>> ws) {
-    final List<GraphAnalyzer.Wrapper<V>> res = ListSequence.<GraphAnalyzer.Wrapper<V>>fromList(new ArrayList<GraphAnalyzer.Wrapper<V>>());
+    final List<GraphAnalyzer.Wrapper<V>> res = ListSequence.fromList(new ArrayList<GraphAnalyzer.Wrapper<V>>());
     dfs(ws, new _FunctionTypes._void_P2_E0<GraphAnalyzer.Wrapper<V>, _FunctionTypes._void_P0_E0>() {
       public void invoke(GraphAnalyzer.Wrapper<V> w, _FunctionTypes._void_P0_E0 cont) {
         cont.invoke();
-        ListSequence.<GraphAnalyzer.Wrapper<V>>fromList(res).addElement(w);
+        ListSequence.fromList(res).addElement(w);
       }
     }, forward);
-    return ListSequence.<GraphAnalyzer.Wrapper<V>>fromList(res).reversedList();
+    return ListSequence.fromList(res).reversedList();
   }
 
   public List<GraphAnalyzer.Wrapper<V>> reachable(GraphAnalyzer.Wrapper<V> from, Iterable<GraphAnalyzer.Wrapper<V>> ws, _FunctionTypes._return_P1_E0<? extends Iterable<GraphAnalyzer.Wrapper<V>>, ? super GraphAnalyzer.Wrapper<V>> edges) {
-    final List<GraphAnalyzer.Wrapper<V>> res = ListSequence.<GraphAnalyzer.Wrapper<V>>fromList(new ArrayList<GraphAnalyzer.Wrapper<V>>());
-    Sequence.<GraphAnalyzer.Wrapper<V>>fromIterable(ws).visitAll(new IVisitor<GraphAnalyzer.Wrapper<V>>() {
+    final List<GraphAnalyzer.Wrapper<V>> res = ListSequence.fromList(new ArrayList<GraphAnalyzer.Wrapper<V>>());
+    Sequence.fromIterable(ws).visitAll(new IVisitor<GraphAnalyzer.Wrapper<V>>() {
       public void visit(GraphAnalyzer.Wrapper<V> w) {
         w.clear();
       }
@@ -104,20 +104,20 @@ public abstract class GraphAnalyzer<V> {
     dfsVisit(from, new _FunctionTypes._void_P2_E0<GraphAnalyzer.Wrapper<V>, _FunctionTypes._void_P0_E0>() {
       public void invoke(GraphAnalyzer.Wrapper<V> ww, _FunctionTypes._void_P0_E0 cont) {
         cont.invoke();
-        ListSequence.<GraphAnalyzer.Wrapper<V>>fromList(res).addElement(ww);
+        ListSequence.fromList(res).addElement(ww);
       }
     }, edges);
     return res;
   }
 
   private List<List<V>> collectCycles(Iterable<GraphAnalyzer.Wrapper<V>> ws, final boolean trivial) {
-    final List<List<V>> cycles = ListSequence.<List<V>>fromList(new ArrayList<List<V>>());
-    Sequence.<GraphAnalyzer.Wrapper<V>>fromIterable(ws).visitAll(new IVisitor<GraphAnalyzer.Wrapper<V>>() {
+    final List<List<V>> cycles = ListSequence.fromList(new ArrayList<List<V>>());
+    Sequence.fromIterable(ws).visitAll(new IVisitor<GraphAnalyzer.Wrapper<V>>() {
       public void visit(GraphAnalyzer.Wrapper<V> w) {
         w.clear();
       }
     });
-    Sequence.<GraphAnalyzer.Wrapper<V>>fromIterable(ws).where(new IWhereFilter<GraphAnalyzer.Wrapper<V>>() {
+    Sequence.fromIterable(ws).where(new IWhereFilter<GraphAnalyzer.Wrapper<V>>() {
       public boolean accept(GraphAnalyzer.Wrapper<V> w) {
         return !(w.entered);
       }
@@ -126,13 +126,13 @@ public abstract class GraphAnalyzer<V> {
         dfsVisit(w, new _FunctionTypes._void_P2_E0<GraphAnalyzer.Wrapper<V>, _FunctionTypes._void_P0_E0>() {
           public void invoke(GraphAnalyzer.Wrapper<V> ww, _FunctionTypes._void_P0_E0 cont) {
             cont.invoke();
-            if (w != ww || Sequence.<GraphAnalyzer.Wrapper<V>>fromIterable(backward.invoke(ww)).contains(ww)) {
+            if (w != ww || Sequence.fromIterable(backward.invoke(ww)).contains(ww)) {
               w.successor(ww);
             }
           }
         }, backward);
-        if (trivial || ListSequence.<GraphAnalyzer.Wrapper<V>>fromList(w.successors).isNotEmpty()) {
-          ListSequence.<List<V>>fromList(cycles).addElement(collectSuccessors(w, ListSequence.<V>fromListAndArray(new ArrayList<V>(), w.vertex)));
+        if (trivial || ListSequence.fromList(w.successors).isNotEmpty()) {
+          ListSequence.fromList(cycles).addElement(collectSuccessors(w, ListSequence.fromListAndArray(new ArrayList<V>(), w.vertex)));
         }
       }
     });
@@ -140,10 +140,10 @@ public abstract class GraphAnalyzer<V> {
   }
 
   private List<V> collectSuccessors(final GraphAnalyzer.Wrapper<V> w, final List<V> list) {
-    ListSequence.<GraphAnalyzer.Wrapper<V>>fromList(w.successors).visitAll(new IVisitor<GraphAnalyzer.Wrapper<V>>() {
+    ListSequence.fromList(w.successors).visitAll(new IVisitor<GraphAnalyzer.Wrapper<V>>() {
       public void visit(GraphAnalyzer.Wrapper<V> ww) {
         if (w != ww) {
-          ListSequence.<V>fromList(list).addElement(ww.vertex);
+          ListSequence.fromList(list).addElement(ww.vertex);
           collectSuccessors(ww, list);
         }
       }
@@ -152,12 +152,12 @@ public abstract class GraphAnalyzer<V> {
   }
 
   private void dfs(Iterable<GraphAnalyzer.Wrapper<V>> ws, final _FunctionTypes._void_P2_E0<? super GraphAnalyzer.Wrapper<V>, ? super _FunctionTypes._void_P0_E0> visitor, final _FunctionTypes._return_P1_E0<? extends Iterable<GraphAnalyzer.Wrapper<V>>, ? super GraphAnalyzer.Wrapper<V>> edges) {
-    Sequence.<GraphAnalyzer.Wrapper<V>>fromIterable(ws).visitAll(new IVisitor<GraphAnalyzer.Wrapper<V>>() {
+    Sequence.fromIterable(ws).visitAll(new IVisitor<GraphAnalyzer.Wrapper<V>>() {
       public void visit(GraphAnalyzer.Wrapper<V> w) {
         w.clear();
       }
     });
-    Sequence.<GraphAnalyzer.Wrapper<V>>fromIterable(ws).where(new IWhereFilter<GraphAnalyzer.Wrapper<V>>() {
+    Sequence.fromIterable(ws).where(new IWhereFilter<GraphAnalyzer.Wrapper<V>>() {
       public boolean accept(GraphAnalyzer.Wrapper<V> w) {
         return !(w.entered);
       }
@@ -172,7 +172,7 @@ public abstract class GraphAnalyzer<V> {
     w.enter();
     visitor.invoke(w, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        Sequence.<GraphAnalyzer.Wrapper<V>>fromIterable(edges.invoke(w)).where(new IWhereFilter<GraphAnalyzer.Wrapper<V>>() {
+        Sequence.fromIterable(edges.invoke(w)).where(new IWhereFilter<GraphAnalyzer.Wrapper<V>>() {
           public boolean accept(GraphAnalyzer.Wrapper<V> ww) {
             return !(ww.entered);
           }
@@ -190,14 +190,14 @@ public abstract class GraphAnalyzer<V> {
     private V vertex;
     private boolean entered = false;
     private boolean exited = false;
-    private List<GraphAnalyzer.Wrapper<V>> successors = ListSequence.<GraphAnalyzer.Wrapper<V>>fromList(new ArrayList<GraphAnalyzer.Wrapper<V>>());
+    private List<GraphAnalyzer.Wrapper<V>> successors = ListSequence.fromList(new ArrayList<GraphAnalyzer.Wrapper<V>>());
 
     private Wrapper(V v) {
       this.vertex = v;
     }
 
     private void successor(GraphAnalyzer.Wrapper<V> succ) {
-      ListSequence.<GraphAnalyzer.Wrapper<V>>fromList(this.successors).addElement(succ);
+      ListSequence.fromList(this.successors).addElement(succ);
     }
 
     private void enter() {

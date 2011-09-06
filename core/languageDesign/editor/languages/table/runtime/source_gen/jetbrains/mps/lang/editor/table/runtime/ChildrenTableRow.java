@@ -25,37 +25,37 @@ public class ChildrenTableRow extends AbstractTableRow {
   }
 
   public void removeCell(int index) {
-    SNodeOperations.deleteNode(ListSequence.<SNode>fromList(getChildren()).getElement(index));
+    SNodeOperations.deleteNode(ListSequence.fromList(getChildren()).getElement(index));
   }
 
   public void createNewCell(int index) {
-    assert index <= ListSequence.<SNode>fromList(getChildren()).count();
+    assert index <= ListSequence.fromList(getChildren()).count();
     SNode newCellNode = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myChildLinkDeclaration, "target", false)), null);
     insertNewCell(newCellNode, index);
   }
 
   protected void insertNewCell(SNode newCellNode, int index) {
     // subclasses may implement this method in a different way 
-    if (index == ListSequence.<SNode>fromList(getChildren()).count()) {
+    if (index == ListSequence.fromList(getChildren()).count()) {
       myParentNode.addChild(SPropertyOperations.getString(myChildLinkDeclaration, "role"), newCellNode);
     } else {
-      SNodeOperations.insertPrevSiblingChild(ListSequence.<SNode>fromList(getChildren()).getElement(index), newCellNode);
+      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(getChildren()).getElement(index), newCellNode);
     }
   }
 
   public int getColumnCount() {
-    return ListSequence.<SNode>fromList(getChildren()).count();
+    return ListSequence.fromList(getChildren()).count();
   }
 
   public SNode getCell(int index) {
-    return ListSequence.<SNode>fromList(getChildren()).getElement(index);
+    return ListSequence.fromList(getChildren()).getElement(index);
   }
 
   protected List<SNode> filterChildren(List<SNode> children) {
     // Dummy filter subclasses may implement some filtering here. 
     // Returned list can contain nulls representing not existing cells. 
     List<SNode> result = new ArrayList<SNode>();
-    return ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(children));
+    return ListSequence.fromList(result).addSequence(ListSequence.fromList(children));
   }
 
   private List<SNode> getChildren() {

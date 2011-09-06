@@ -15,17 +15,17 @@ import java.util.ArrayList;
 
 public class SimpleOperations1 extends TestCase {
   public void test_S1() {
-    Iterable<Object> S = Sequence.<Object>fromIterable(Collections.<Object>emptyList());
-    Assert.assertEquals(null, Sequence.<Object>fromIterable(S).first());
-    Assert.assertEquals(null, Sequence.<Object>fromIterable(S).first());
-    Assert.assertEquals(null, Sequence.<Object>fromIterable(S).last());
-    Assert.assertEquals(null, Sequence.<Object>fromIterable(S).last());
-    Assert.assertEquals(true, Sequence.<Object>fromIterable(S).isEmpty());
-    Assert.assertEquals(-1, Sequence.<Object>fromIterable(S).indexOf("0"));
+    Iterable<Object> S = Sequence.fromIterable(Collections.<Object>emptyList());
+    Assert.assertEquals(null, Sequence.fromIterable(S).first());
+    Assert.assertEquals(null, Sequence.fromIterable(S).first());
+    Assert.assertEquals(null, Sequence.fromIterable(S).last());
+    Assert.assertEquals(null, Sequence.fromIterable(S).last());
+    Assert.assertEquals(true, Sequence.fromIterable(S).isEmpty());
+    Assert.assertEquals(-1, Sequence.fromIterable(S).indexOf("0"));
   }
 
   public void test_S2() {
-    Iterable<String> S = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+    Iterable<String> S = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
         return new Iterable<String>() {
           public Iterator<String> iterator() {
@@ -66,19 +66,19 @@ __switch__:
         };
       }
     });
-    Assert.assertEquals("0", Sequence.<String>fromIterable(S).first());
-    Assert.assertEquals("0", Sequence.<String>fromIterable(S).first());
-    Assert.assertEquals("2", Sequence.<String>fromIterable(S).last());
-    Assert.assertEquals("2", Sequence.<String>fromIterable(S).last());
-    Assert.assertEquals(false, Sequence.<String>fromIterable(S).isEmpty());
-    Assert.assertEquals(0, Sequence.<String>fromIterable(S).indexOf("0"));
-    Assert.assertEquals(1, Sequence.<String>fromIterable(S).indexOf("1"));
-    Assert.assertEquals(2, Sequence.<String>fromIterable(S).indexOf("2"));
-    Assert.assertEquals(-1, Sequence.<String>fromIterable(S).indexOf("3"));
+    Assert.assertEquals("0", Sequence.fromIterable(S).first());
+    Assert.assertEquals("0", Sequence.fromIterable(S).first());
+    Assert.assertEquals("2", Sequence.fromIterable(S).last());
+    Assert.assertEquals("2", Sequence.fromIterable(S).last());
+    Assert.assertEquals(false, Sequence.fromIterable(S).isEmpty());
+    Assert.assertEquals(0, Sequence.fromIterable(S).indexOf("0"));
+    Assert.assertEquals(1, Sequence.fromIterable(S).indexOf("1"));
+    Assert.assertEquals(2, Sequence.fromIterable(S).indexOf("2"));
+    Assert.assertEquals(-1, Sequence.fromIterable(S).indexOf("3"));
   }
 
   public void test_S3() {
-    Iterable<String> S = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+    Iterable<String> S = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
         return new Iterable<String>() {
           public Iterator<String> iterator() {
@@ -120,32 +120,32 @@ __switch__:
       }
     });
     int count = 0;
-    for (String s : Sequence.<String>fromIterable(S)) {
+    for (String s : Sequence.fromIterable(S)) {
       Assert.assertEquals("" + count, s);
       count++;
-      Assert.assertEquals("0", Sequence.<String>fromIterable(S).first());
-      Assert.assertEquals("2", Sequence.<String>fromIterable(S).last());
-      Assert.assertEquals(false, Sequence.<String>fromIterable(S).isEmpty());
+      Assert.assertEquals("0", Sequence.fromIterable(S).first());
+      Assert.assertEquals("2", Sequence.fromIterable(S).last());
+      Assert.assertEquals(false, Sequence.fromIterable(S).isEmpty());
     }
   }
 
   public void test_L1() {
-    List<String> L = ListSequence.<String>fromList(new ArrayList<String>());
-    Assert.assertEquals(null, ListSequence.<String>fromList(L).first());
-    Assert.assertEquals(null, ListSequence.<String>fromList(L).first());
-    Assert.assertEquals(null, ListSequence.<String>fromList(L).last());
-    Assert.assertEquals(null, ListSequence.<String>fromList(L).last());
-    Assert.assertEquals(0, ListSequence.<String>fromList(L).count());
-    Assert.assertEquals(true, ListSequence.<String>fromList(L).isEmpty());
+    List<String> L = ListSequence.fromList(new ArrayList<String>());
+    Assert.assertEquals(null, ListSequence.fromList(L).first());
+    Assert.assertEquals(null, ListSequence.fromList(L).first());
+    Assert.assertEquals(null, ListSequence.fromList(L).last());
+    Assert.assertEquals(null, ListSequence.fromList(L).last());
+    Assert.assertEquals(0, ListSequence.fromList(L).count());
+    Assert.assertEquals(true, ListSequence.fromList(L).isEmpty());
   }
 
   public void test_L2() {
-    List<String> L = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "0", "1", "2");
-    Assert.assertEquals("0", ListSequence.<String>fromList(L).first());
-    Assert.assertEquals("0", ListSequence.<String>fromList(L).first());
-    Assert.assertEquals("2", ListSequence.<String>fromList(L).last());
-    Assert.assertEquals("2", ListSequence.<String>fromList(L).last());
-    Assert.assertEquals(3, ListSequence.<String>fromList(L).count());
-    Assert.assertEquals(false, ListSequence.<String>fromList(L).isEmpty());
+    List<String> L = ListSequence.fromListAndArray(new ArrayList<String>(), "0", "1", "2");
+    Assert.assertEquals("0", ListSequence.fromList(L).first());
+    Assert.assertEquals("0", ListSequence.fromList(L).first());
+    Assert.assertEquals("2", ListSequence.fromList(L).last());
+    Assert.assertEquals("2", ListSequence.fromList(L).last());
+    Assert.assertEquals(3, ListSequence.fromList(L).count());
+    Assert.assertEquals(false, ListSequence.fromList(L).isEmpty());
   }
 }

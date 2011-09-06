@@ -52,7 +52,7 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
   };
   private ClassLoaderManager myClassLoaderManager;
-  private Map<String, Constructor> myCachedEditors = MapSequence.<String,Constructor>fromMap(new HashMap<String, Constructor>());
+  private Map<String, Constructor> myCachedEditors = MapSequence.fromMap(new HashMap<String, Constructor>());
 
   public EditorsFinderManager(ClassLoaderManager classLoaderManager) {
     myClassLoaderManager = classLoaderManager;
@@ -80,7 +80,7 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
     String key = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
     if (MapSequence.fromMap(myCachedEditors).containsKey(key)) {
-      Constructor constructor = MapSequence.<String,Constructor>fromMap(myCachedEditors).get(key);
+      Constructor constructor = MapSequence.fromMap(myCachedEditors).get(key);
       if (constructor != null) {
         try {
           return (INodeEditor) constructor.newInstance();
@@ -96,12 +96,12 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
     INodeEditor result = findEditor(node);
     if (result == null) {
-      MapSequence.<String,Constructor>fromMap(myCachedEditors).put(key, null);
+      MapSequence.fromMap(myCachedEditors).put(key, null);
     } else {
       try {
         Constructor c = result.getClass().getConstructor();
         c.setAccessible(true);
-        MapSequence.<String,Constructor>fromMap(myCachedEditors).put(key, c);
+        MapSequence.fromMap(myCachedEditors).put(key, c);
       } catch (NoSuchMethodException e) {
         LOG.error(e);
         return new DefaultNodeEditor();
@@ -125,12 +125,12 @@ public class EditorsFinderManager implements ApplicationComponent {
           // todo what is this special case for? 
           return new EditorsFinderManager.DefaultInterfaceEditor();
         }
-        final Queue<SNode> conceptQueue = QueueSequence.<SNode>fromQueue(new LinkedList<SNode>());
-        Set<SNode> processedConcepts = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+        final Queue<SNode> conceptQueue = QueueSequence.fromQueue(new LinkedList<SNode>());
+        Set<SNode> processedConcepts = SetSequence.fromSet(new HashSet<SNode>());
         QueueSequence.fromQueue(conceptQueue).addLastElement(nodeConcept);
-        while (!(QueueSequence.<SNode>fromQueue(conceptQueue).isEmpty())) {
+        while (!(QueueSequence.fromQueue(conceptQueue).isEmpty())) {
           SNode abstractConceptDeclaration = QueueSequence.fromQueue(conceptQueue).removeFirstElement();
-          if (SetSequence.<SNode>fromSet(processedConcepts).contains(abstractConceptDeclaration)) {
+          if (SetSequence.fromSet(processedConcepts).contains(abstractConceptDeclaration)) {
             continue;
           } else {
             SetSequence.fromSet(processedConcepts).addElement(abstractConceptDeclaration);
@@ -144,13 +144,13 @@ public class EditorsFinderManager implements ApplicationComponent {
             if (SLinkOperations.getTarget(conceptDeclaration, "extends", false) != null && SLinkOperations.getTarget(conceptDeclaration, "extends", false) != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")) {
               QueueSequence.fromQueue(conceptQueue).addLastElement(SLinkOperations.getTarget(conceptDeclaration, "extends", false));
             }
-            ListSequence.<SNode>fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).visitAll(new IVisitor<SNode>() {
+            ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).visitAll(new IVisitor<SNode>() {
               public void visit(SNode it) {
                 QueueSequence.fromQueue(conceptQueue).addLastElement(SLinkOperations.getTarget(it, "intfc", false));
               }
             });
           } else if (SNodeOperations.isInstanceOf(abstractConceptDeclaration, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
-            ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(abstractConceptDeclaration, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"), "implements", true)).visitAll(new IVisitor<SNode>() {
+            ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(abstractConceptDeclaration, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"), "implements", true)).visitAll(new IVisitor<SNode>() {
               public void visit(SNode it) {
                 QueueSequence.fromQueue(conceptQueue).addLastElement(SLinkOperations.getTarget(it, "intfc", false));
               }

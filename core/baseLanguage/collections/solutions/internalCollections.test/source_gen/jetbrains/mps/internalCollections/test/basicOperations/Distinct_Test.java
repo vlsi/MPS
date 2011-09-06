@@ -22,11 +22,11 @@ public class Distinct_Test extends Util_Test {
 
   public void test_distinctOperation() throws Exception {
     Iterable<Integer> input = Arrays.asList(1, 2, 3, 2, 1, 3);
-    this.assertIterableEquals(Arrays.asList(1, 2, 3), Sequence.<Integer>fromIterable(input).distinct());
+    this.assertIterableEquals(Arrays.asList(1, 2, 3), Sequence.fromIterable(input).distinct());
   }
 
   public void test_nextWithoutHasNext() throws Exception {
-    Iterator<Integer> it = ListSequence.<Integer>fromList(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 2, 3)).distinct().iterator();
+    Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 2, 3)).distinct().iterator();
     Assert.assertSame(1, it.next());
     Assert.assertSame(2, it.next());
     Assert.assertSame(3, it.next());
@@ -40,7 +40,7 @@ public class Distinct_Test extends Util_Test {
   }
 
   public void test_distinctLazy() throws Exception {
-    Iterable<Integer> seq = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -118,6 +118,6 @@ __switch__:
         };
       }
     });
-    assertIterableEquals(input10(), Sequence.<Integer>fromIterable(seq).distinct().take(10));
+    assertIterableEquals(input10(), Sequence.fromIterable(seq).distinct().take(10));
   }
 }

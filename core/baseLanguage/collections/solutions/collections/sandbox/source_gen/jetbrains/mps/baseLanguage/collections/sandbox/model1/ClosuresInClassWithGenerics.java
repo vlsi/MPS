@@ -9,7 +9,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 /*package*/ class ClosuresInClassWithGenerics<T1, T2> {
   /*package*/ void aaa() {
-    Iterable<T2> ss = Sequence.<T2>fromClosure(new ISequenceClosure<T2>() {
+    Iterable<T2> ss = Sequence.fromClosure(new ISequenceClosure<T2>() {
       public Iterable<T2> iterable() {
         return new Iterable<T2>() {
           public Iterator<T2> iterator() {

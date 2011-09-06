@@ -38,7 +38,7 @@
     <nodeInfo nodeId="1224754189082" fileName="Demo.java" startLine="109" startPosition="31" endLine="110" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224754189141" fileName="Demo.java" startLine="117" startPosition="41" endLine="118" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224754189114" fileName="Demo.java" startLine="121" startPosition="41" endLine="122" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224669085698" fileName="Demo.java" startLine="124" startPosition="7" endLine="125" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224669085698" fileName="Demo.java" startLine="124" startPosition="7" endLine="125" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1202128928368" fileName="Demo.java" startLine="47" startPosition="42" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
     <nodeInfo nodeId="1224754189137" fileName="Demo.java" startLine="116" startPosition="42" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
     <nodeInfo nodeId="1224754189110" fileName="Demo.java" startLine="120" startPosition="58" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
@@ -60,9 +60,9 @@
     <nodeInfo nodeId="1202118032635" fileName="Demo.java" startLine="16" startPosition="59" endLine="45" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1202129396703" fileName="Demo.java" startLine="52" startPosition="56" endLine="81" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224754189082" fileName="Demo.java" startLine="85" startPosition="60" endLine="114" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1202118032635" fileName="Demo.java" startLine="15" startPosition="97" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Integer;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1202118032635" fileName="Demo.java" startLine="15" startPosition="88" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Integer;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1202129396703" fileName="Demo.java" startLine="51" startPosition="78" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Integer;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1224754189082" fileName="Demo.java" startLine="84" startPosition="97" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Integer;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1224754189082" fileName="Demo.java" startLine="84" startPosition="88" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Integer;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1202134727330" fileName="Demo.java" startLine="83" startPosition="7" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1202117999935" fileName="Demo.java" startLine="14" startPosition="26" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1202117947839" fileName="Demo.java" startLine="12" startPosition="19" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
@@ -105,10 +105,10 @@
     <scopeInfo nodeId="1202118032635" fileName="Demo.java" startLine="16" startPosition="59" endLine="45" endPosition="10" />
     <scopeInfo nodeId="1202129396703" fileName="Demo.java" startLine="52" startPosition="56" endLine="81" endPosition="10" />
     <scopeInfo nodeId="1224754189082" fileName="Demo.java" startLine="85" startPosition="60" endLine="114" endPosition="10" />
-    <scopeInfo nodeId="1202118032635" fileName="Demo.java" startLine="15" startPosition="97" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1202118032635" fileName="Demo.java" startLine="15" startPosition="88" endLine="47" endPosition="0" />
     <scopeInfo nodeId="1202129396703" fileName="Demo.java" startLine="51" startPosition="78" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1224754189082" fileName="Demo.java" startLine="84" startPosition="97" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="1202117947842" fileName="Demo.java" startLine="13" startPosition="42" endLine="125" endPosition="48">
+    <scopeInfo nodeId="1224754189082" fileName="Demo.java" startLine="84" startPosition="88" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="1202117947842" fileName="Demo.java" startLine="13" startPosition="42" endLine="125" endPosition="39">
       <varInfo nodeId="1202117990534" varName="seq" />
     </scopeInfo>
     <scopeInfo nodeId="1202117947839" fileName="Demo.java" startLine="12" startPosition="19" endLine="127" endPosition="0">
@@ -123,9 +123,9 @@
     <unitInfo nodeId="1202118032635" fileName="Demo.java" startLine="17" startPosition="19" endLine="45" endPosition="9" unitName="demo.Demo$2" />
     <unitInfo nodeId="1202129396703" fileName="Demo.java" startLine="53" startPosition="19" endLine="81" endPosition="9" unitName="demo.Demo$4" />
     <unitInfo nodeId="1224754189082" fileName="Demo.java" startLine="86" startPosition="19" endLine="114" endPosition="9" unitName="demo.Demo$5" />
-    <unitInfo nodeId="1202118032635" fileName="Demo.java" startLine="15" startPosition="63" endLine="47" endPosition="5" unitName="demo.Demo$1" />
+    <unitInfo nodeId="1202118032635" fileName="Demo.java" startLine="15" startPosition="54" endLine="47" endPosition="5" unitName="demo.Demo$1" />
     <unitInfo nodeId="1202129396703" fileName="Demo.java" startLine="51" startPosition="37" endLine="83" endPosition="5" unitName="demo.Demo$3" />
-    <unitInfo nodeId="1224754189082" fileName="Demo.java" startLine="84" startPosition="63" endLine="116" endPosition="5" unitName="demo.Demo$4" />
+    <unitInfo nodeId="1224754189082" fileName="Demo.java" startLine="84" startPosition="54" endLine="116" endPosition="5" unitName="demo.Demo$4" />
     <unitInfo nodeId="1202117945910" fileName="Demo.java" startLine="12" startPosition="0" endLine="128" endPosition="0" unitName="demo.Demo" />
   </root>
 </debugInfo>

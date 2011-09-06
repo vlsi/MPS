@@ -19,11 +19,11 @@ import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class Maker__Facet extends IFacet.Stub {
-  private List<ITarget> targets = ListSequence.<ITarget>fromList(new ArrayList<ITarget>());
+  private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("Maker_");
 
   public Maker__Facet() {
-    ListSequence.<ITarget>fromList(targets).addElement(new Maker__Facet.Target_Make());
+    ListSequence.fromList(targets).addElement(new Maker__Facet.Target_Make());
   }
 
   public Iterable<ITarget> targets() {

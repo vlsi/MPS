@@ -34,7 +34,7 @@ public class Model {
     List<SNode> roots1 = SModelOperations.getRoots(model, null);
     SModelOperations.getRootsIncludingImported(model, scope, null);
     List<SNode> roots2 = SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    Iterable<SNode> roots3 = ListSequence.<SNode>fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> roots3 = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode c) {
         return SPropertyOperations.hasValue(c, "name", "Utils");
       }
@@ -48,7 +48,7 @@ public class Model {
   public void nodes_access_1(SModel model) {
     List<SNode> nodes1 = SModelOperations.getNodes(model, null);
     List<SNode> nodes2 = SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    Iterable<SNode> nodes3 = ListSequence.<SNode>fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> nodes3 = ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode c) {
         return SPropertyOperations.hasValue(c, "name", "Utils");
       }

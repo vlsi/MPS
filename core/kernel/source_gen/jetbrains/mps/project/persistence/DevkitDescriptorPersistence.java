@@ -38,19 +38,19 @@ public class DevkitDescriptorPersistence {
 
           ModuleDescriptorPersistence.loadDependencies(result_raojav_a0a0c0a0a, root);
 
-          for (Element exportedLang : ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "exported-language"))) {
+          for (Element exportedLang : ListSequence.fromList(AttributeUtils.elementChildren(root, "exported-language"))) {
             result_raojav_a0a0c0a0a.getExportedLanguages().add(ModuleReference.fromString(exportedLang.getAttributeValue("name")));
           }
 
-          for (Element xde : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "extendedDevKits")).first(), "extendedDevKit"))) {
+          for (Element xde : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "extendedDevKits")).first(), "extendedDevKit"))) {
             result_raojav_a0a0c0a0a.getExtendedDevkits().add(ModuleReference.fromString(xde.getText()));
           }
 
-          for (Element xse : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "exported-solutions")).first(), "exported-solution"))) {
+          for (Element xse : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "exported-solutions")).first(), "exported-solution"))) {
             result_raojav_a0a0c0a0a.getExportedSolutions().add(ModuleReference.fromString(xse.getText()));
           }
 
-          for (Element entryElement : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "classPath")).first(), "entry")).concat(ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "runtimeClassPath")).first(), "entry")))) {
+          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "runtimeClassPath")).first(), "entry")))) {
             // runtimeClassPath is left for compatibility 
             ModelRoot entry = new ModelRoot();
             entry.setPath(MacrosFactory.devkitMacros().expandPath(entryElement.getAttributeValue("path"), file));
@@ -82,7 +82,7 @@ public class DevkitDescriptorPersistence {
 
         ModuleDescriptorPersistence.saveDependencies(result_raojav_a0a0a0b, descriptor);
 
-        for (ModuleReference lang : ListSequence.<ModuleReference>fromList(descriptor.getExportedLanguages())) {
+        for (ModuleReference lang : ListSequence.fromList(descriptor.getExportedLanguages())) {
           final Element result_raojav_a0a6a0a0a0b = new Element("exported-language");
           final String result_raojav_a0a0a6a0a0a0b = lang.toString();
           result_raojav_a0a6a0a0a0b.setAttribute("name", "" + result_raojav_a0a0a6a0a0a0b);
@@ -91,7 +91,7 @@ public class DevkitDescriptorPersistence {
 
         if (!(descriptor.getExtendedDevkits().isEmpty())) {
           final Element result_raojav_a0a8a0a0a0b = new Element("extendedDevKits");
-          for (ModuleReference ref : ListSequence.<ModuleReference>fromList(descriptor.getExtendedDevkits())) {
+          for (ModuleReference ref : ListSequence.fromList(descriptor.getExtendedDevkits())) {
             final Element result_raojav_a0a0a0a8a0a0a0b = new Element("extendedDevKit");
             final String result_raojav_a0a0a0a0a8a0a0a0b = ref.toString();
             result_raojav_a0a0a0a8a0a0a0b.setText(result_raojav_a0a0a0a0a8a0a0a0b);
@@ -102,7 +102,7 @@ public class DevkitDescriptorPersistence {
 
         if (!(descriptor.getExportedSolutions().isEmpty())) {
           final Element result_raojav_a0a01a0a0a0b = new Element("exported-solutions");
-          for (ModuleReference ref : ListSequence.<ModuleReference>fromList(descriptor.getExportedSolutions())) {
+          for (ModuleReference ref : ListSequence.fromList(descriptor.getExportedSolutions())) {
             final Element result_raojav_a0a0a0a01a0a0a0b = new Element("exported-solution");
             final String result_raojav_a0a0a0a0a01a0a0a0b = ref.toString();
             result_raojav_a0a0a0a01a0a0a0b.setText(result_raojav_a0a0a0a0a01a0a0a0b);

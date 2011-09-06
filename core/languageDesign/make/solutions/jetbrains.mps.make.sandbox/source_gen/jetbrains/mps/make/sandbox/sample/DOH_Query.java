@@ -25,11 +25,11 @@ public class DOH_Query implements IQuery<what_Option> {
   }
 
   public Iterable<what_Option> options() {
-    return Sequence.<what_Option>fromIterable(Sequence.fromArray(what_Option.class.getEnumConstants())).cut(1);
+    return Sequence.fromIterable(Sequence.fromArray(what_Option.class.getEnumConstants())).cut(1);
   }
 
   public what_Option voidOption() {
-    return Sequence.<what_Option>fromIterable(Sequence.fromArray(what_Option.class.getEnumConstants())).last();
+    return Sequence.fromIterable(Sequence.fromArray(what_Option.class.getEnumConstants())).last();
   }
 
   public what_Option defaultOption() {

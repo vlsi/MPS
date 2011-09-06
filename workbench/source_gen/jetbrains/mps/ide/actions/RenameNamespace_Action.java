@@ -32,7 +32,7 @@ public class RenameNamespace_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("treeNode")) instanceof NamespaceTextNode && RenameNamespace_Action.this.getProjectPane(_params) != null && !(((NamespaceTextNode) ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("treeNode"))).isFinalName());
+    return ((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof NamespaceTextNode && RenameNamespace_Action.this.getProjectPane(_params) != null && !(((NamespaceTextNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).isFinalName());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -53,20 +53,20 @@ public class RenameNamespace_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("ideaProject") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
-    if (MapSequence.<String,Object>fromMap(_params).get("treeNode") == null) {
+    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }
     return true;
@@ -74,16 +74,16 @@ public class RenameNamespace_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NamespaceTextNode node = ((NamespaceTextNode) ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("treeNode")));
-      String newFolder = JOptionPane.showInputDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "Enter New Folder", node.getName());
+      NamespaceTextNode node = ((NamespaceTextNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode")));
+      String newFolder = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter New Folder", node.getName());
       if (newFolder == null) {
         return;
       }
       if (newFolder.equals("")) {
         newFolder = null;
       }
-      for (IModule module : ListSequence.<IModule>fromList(node.getModulesUnder())) {
-        ((MPSProject) MapSequence.<String,Object>fromMap(_params).get("project")).setFolderFor(module, newFolder);
+      for (IModule module : ListSequence.fromList(node.getModulesUnder())) {
+        ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(module, newFolder);
       }
       RenameNamespace_Action.this.getProjectPane(_params).rebuild();
     } catch (Throwable t) {
@@ -94,6 +94,6 @@ public class RenameNamespace_Action extends GeneratedAction {
   }
 
   private ProjectPane getProjectPane(final Map<String, Object> _params) {
-    return ProjectPane.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("ideaProject")));
+    return ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
   }
 }

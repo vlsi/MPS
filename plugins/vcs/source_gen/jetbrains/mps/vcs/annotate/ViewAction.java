@@ -20,7 +20,7 @@ import com.intellij.ide.util.PropertiesComponent;
   private String myKey;
 
   public ViewAction(AnnotationColumn column, String key) {
-    super(MapSequence.<String,String>fromMap(KEYS_TO_TITLES).get(key));
+    super(MapSequence.fromMap(KEYS_TO_TITLES).get(key));
     myKey = key;
     myColumn = column;
   }

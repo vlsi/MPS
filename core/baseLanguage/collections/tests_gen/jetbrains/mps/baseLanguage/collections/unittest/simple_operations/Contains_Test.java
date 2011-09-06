@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Contains_Test extends TestCase {
   public void test_test1() throws Exception {
-    Iterable<Integer> intS = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> intS = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -55,16 +55,16 @@ __switch__:
         };
       }
     });
-    Assert.assertTrue(Sequence.<Integer>fromIterable(intS).contains(10));
-    Assert.assertFalse(Sequence.<Integer>fromIterable(intS).contains(15));
+    Assert.assertTrue(Sequence.fromIterable(intS).contains(10));
+    Assert.assertFalse(Sequence.fromIterable(intS).contains(15));
   }
 
   public void test_test2() throws Exception {
-    List<Integer> intL = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 10, 20, 30);
-    Assert.assertTrue(ListSequence.<Integer>fromList(intL).contains(10));
-    Assert.assertFalse(ListSequence.<Integer>fromList(intL).contains(15));
+    List<Integer> intL = ListSequence.fromListAndArray(new ArrayList<Integer>(), 10, 20, 30);
+    Assert.assertTrue(ListSequence.fromList(intL).contains(10));
+    Assert.assertFalse(ListSequence.fromList(intL).contains(15));
     // null test 
     intL = null;
-    Assert.assertFalse(ListSequence.<Integer>fromList(intL).contains(15));
+    Assert.assertFalse(ListSequence.fromList(intL).contains(15));
   }
 }

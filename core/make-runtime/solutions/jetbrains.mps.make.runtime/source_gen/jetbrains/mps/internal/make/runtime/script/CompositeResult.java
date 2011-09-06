@@ -12,21 +12,21 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.resources.IResource;
 
 public class CompositeResult implements IResult {
-  private Map<ITarget.Name, IResult> results = MapSequence.<ITarget.Name,IResult>fromMap(new LinkedHashMap<ITarget.Name, IResult>(16, (float) 0.75, false));
+  private Map<ITarget.Name, IResult> results = MapSequence.fromMap(new LinkedHashMap<ITarget.Name, IResult>(16, (float) 0.75, false));
 
   public CompositeResult() {
   }
 
   public void addResult(ITarget.Name target, IResult res) {
-    MapSequence.<ITarget.Name,IResult>fromMap(results).put(target, res);
+    MapSequence.fromMap(results).put(target, res);
   }
 
   public IResult getResult(ITarget.Name target) {
-    return MapSequence.<ITarget.Name,IResult>fromMap(results).get(target);
+    return MapSequence.fromMap(results).get(target);
   }
 
   public boolean isSucessful() {
-    return Sequence.<IResult>fromIterable(MapSequence.fromMap(results).values()).all(new IWhereFilter<IResult>() {
+    return Sequence.fromIterable(MapSequence.fromMap(results).values()).all(new IWhereFilter<IResult>() {
       public boolean accept(IResult r) {
         return r.isSucessful();
       }
@@ -34,9 +34,9 @@ public class CompositeResult implements IResult {
   }
 
   public Iterable<IResource> output() {
-    if (MapSequence.<ITarget.Name,IResult>fromMap(results).isEmpty()) {
+    if (MapSequence.fromMap(results).isEmpty()) {
       return null;
     }
-    return Sequence.<IResult>fromIterable(MapSequence.fromMap(results).values()).last().output();
+    return Sequence.fromIterable(MapSequence.fromMap(results).values()).last().output();
   }
 }

@@ -56,14 +56,14 @@ public class SolutionDescriptorPersistence {
             result_8ckma3_a0a0g0c0a.setOutputPath(result_8ckma3_a0a7a0a0g0c0a);
           }
 
-          result_8ckma3_a0a0g0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(solutionElement, "models")).first(), "modelRoot"), file, macros));
+          result_8ckma3_a0a0g0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "models")).first(), "modelRoot"), file, macros));
 
-          if (ListSequence.<Element>fromList(AttributeUtils.elementChildren(solutionElement, "stubModelEntries")).isNotEmpty()) {
+          if (ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "stubModelEntries")).isNotEmpty()) {
             result_8ckma3_a0a0g0c0a.getStubModelEntries().addAll(ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(solutionElement, "stubModelEntries"), file, macros));
           }
 
           ModuleDescriptorPersistence.loadDependencies(result_8ckma3_a0a0g0c0a, solutionElement);
-          for (Element entryElement : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(solutionElement, "classPath")).first(), "entry")).concat(ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(solutionElement, "runtimeClassPath")).first(), "entry")))) {
+          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "runtimeClassPath")).first(), "entry")))) {
             // runtime classpath left for compatibility 
             ModelRoot entry = new ModelRoot();
             entry.setPath(macros.expandPath(entryElement.getAttributeValue("path"), file));
@@ -71,7 +71,7 @@ public class SolutionDescriptorPersistence {
             result_8ckma3_a0a0g0c0a.getStubModelEntries().add(entry);
           }
 
-          for (Element entryElement : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(solutionElement, "sourcePath")).first(), "source"))) {
+          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "sourcePath")).first(), "source"))) {
             result_8ckma3_a0a0g0c0a.getSourcePaths().add(macros.expandPath(entryElement.getAttributeValue("path"), file));
           }
           return result_8ckma3_a0a0g0c0a;
@@ -127,7 +127,7 @@ public class SolutionDescriptorPersistence {
 
 
         final Element result_8ckma3_a11a0a0d0b = new Element("sourcePath");
-        for (String p : ListSequence.<String>fromList(descriptor.getSourcePaths())) {
+        for (String p : ListSequence.fromList(descriptor.getSourcePaths())) {
           final Element result_8ckma3_a0a0a11a0a0d0b = new Element("source");
           final String result_8ckma3_a0a0a0a11a0a0d0b = macros.shrinkPath(p, file);
           result_8ckma3_a0a0a11a0a0d0b.setAttribute("path", "" + result_8ckma3_a0a0a0a11a0a0d0b);

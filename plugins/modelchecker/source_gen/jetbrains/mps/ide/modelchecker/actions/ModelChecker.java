@@ -42,7 +42,7 @@ public class ModelChecker {
       public void run() {
         SModel model = modelDescriptor.getSModel();
 
-        for (SpecificChecker specificChecker : ListSequence.<SpecificChecker>fromList(specificCheckers.value)) {
+        for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers.value)) {
           List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, myProgressContext, myOperationContext);
           myResults.getSearchResults().addAll(specificCheckerResults);
           if (isCancelled()) {

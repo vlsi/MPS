@@ -219,7 +219,7 @@ public class ReferentsCreator {
         for (TypeParameter typeParameter : typeParameters) {
           SNode typeVariableDeclaration = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", null);
           SPropertyOperations.set(typeVariableDeclaration, "name", new String(typeParameter.name));
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).addElement(typeVariableDeclaration);
+          ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).addElement(typeVariableDeclaration);
         }
       }
       return true;
@@ -298,7 +298,7 @@ public class ReferentsCreator {
             SReference newRef = SReference.create("classifier", anonymousClass, classifierRef.getTargetSModelReference(), classifierRef.getTargetNodeId(), new String(superClassBinding.sourceName));
             anonymousClass.addReference(newRef);
             for (SNode t : SLinkOperations.getTargets(superClass, "parameter", true)) {
-              ListSequence.<SNode>fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).addElement(SNodeOperations.copyNode(t));
+              ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).addElement(SNodeOperations.copyNode(t));
             }
           }
         } else {
@@ -322,11 +322,11 @@ public class ReferentsCreator {
             SNode superInterface = SNodeOperations.cast(createType(superInterfaceBinding), "jetbrains.mps.baseLanguage.structure.ClassifierType");
             if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
               SNode classConcept = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-              ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "implementedInterface", true)).addElement(superInterface);
+              ListSequence.fromList(SLinkOperations.getTargets(classConcept, "implementedInterface", true)).addElement(superInterface);
             }
             if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
               SNode intfc = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Interface");
-              ListSequence.<SNode>fromList(SLinkOperations.getTargets(intfc, "extendedInterface", true)).addElement(superInterface);
+              ListSequence.fromList(SLinkOperations.getTargets(intfc, "extendedInterface", true)).addElement(superInterface);
             }
           }
           if (binding instanceof MemberTypeBinding) {
@@ -335,7 +335,7 @@ public class ReferentsCreator {
             SourceTypeBinding enclosingClass = memberTypeBinding.enclosingType;
             SNode enclosingClassifier = SNodeOperations.cast(myReferentsCreator.myBindingMap.get(enclosingClass), "jetbrains.mps.baseLanguage.structure.Classifier");
             SPropertyOperations.set(classifier, "nonStatic", "" + !(memberTypeBinding.isStatic()));
-            ListSequence.<SNode>fromList(SLinkOperations.getTargets(enclosingClassifier, "staticInnerClassifiers", true)).addElement(classifier);
+            ListSequence.fromList(SLinkOperations.getTargets(enclosingClassifier, "staticInnerClassifiers", true)).addElement(classifier);
           }
         }
         TypeParameter[] typeParameters = typeDeclaration.typeParameters;
@@ -363,7 +363,7 @@ public class ReferentsCreator {
         SLinkOperations.setTarget(typeVar, "bound", createType(typeVariableBinding.firstBound), true);
       }
       for (TypeBinding auxBoundBinding : typeVariableBinding.otherUpperBounds()) {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(typeVar, "auxBounds", true)).addElement(SNodeOperations.cast(createType(auxBoundBinding), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+        ListSequence.fromList(SLinkOperations.getTargets(typeVar, "auxBounds", true)).addElement(SNodeOperations.cast(createType(auxBoundBinding), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
       }
       boolean isExtends = (typeVariableBinding.superclass != null && typeVariableBinding.firstBound == typeVariableBinding.superclass) || (typeVariableBinding.superInterfaces != null && typeVariableBinding.superInterfaces != Binding.NO_SUPERINTERFACES);
       SPropertyOperations.set(typeVar, "extends", "" + isExtends);
@@ -403,7 +403,7 @@ public class ReferentsCreator {
       SNode enumClass = SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass");
       SNode enumConstant = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", null);
       SPropertyOperations.set(enumConstant, "name", new String(binding.name));
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(enumClass, "enumConstant", true)).addElement(enumConstant);
+      ListSequence.fromList(SLinkOperations.getTargets(enumClass, "enumConstant", true)).addElement(enumConstant);
       myReferentsCreator.myBindingMap.put(binding, enumConstant);
       return enumConstant;
     }
@@ -420,12 +420,12 @@ public class ReferentsCreator {
           SPropertyOperations.set(fieldDeclaration, "isVolatile", "" + binding.isVolatile());
         }
         assert (SNodeOperations.isInstanceOf(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true)).addElement(fieldDeclaration);
+        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true)).addElement(fieldDeclaration);
         field = fieldDeclaration;
       } else {
         SNode staticFieldDeclaration = SModelOperations.createNewNode(myReferentsCreator.myCurrentModel, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", null);
         field = staticFieldDeclaration;
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(enclosingClassifier, "staticField", true)).addElement(staticFieldDeclaration);
+        ListSequence.fromList(SLinkOperations.getTargets(enclosingClassifier, "staticField", true)).addElement(staticFieldDeclaration);
       }
       if (binding != null) {
         SPropertyOperations.set(field, "isFinal", "" + binding.isFinal());
@@ -476,7 +476,7 @@ public class ReferentsCreator {
         processMethodTypeParameters(ctorDecl, constructorDeclaration);
         mapParameters(constructorDeclaration, ctorDecl);
         if (!(SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "constructor", true)).addElement(constructorDeclaration);
+          ListSequence.fromList(SLinkOperations.getTargets(classConcept, "constructor", true)).addElement(constructorDeclaration);
         }
         return true;
       } catch (Throwable e) {
@@ -505,7 +505,7 @@ public class ReferentsCreator {
         SLinkOperations.setTarget(staticMethodDeclaration, "visibility", getMethodVisibility(b), true);
         if (SNodeOperations.isInstanceOf(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
           SNode classConcept = SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "staticMethod", true)).addElement(staticMethodDeclaration);
+          ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticMethod", true)).addElement(staticMethodDeclaration);
         }
         result = staticMethodDeclaration;
       } else {
@@ -517,7 +517,7 @@ public class ReferentsCreator {
           SPropertyOperations.set(instanceMethodDeclaration, "isAbstract", "" + b.isAbstract());
           SLinkOperations.setTarget(instanceMethodDeclaration, "visibility", getMethodVisibility(b), true);
         }
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(enclosingClassifier, "method", true)).addElement(instanceMethodDeclaration);
+        ListSequence.fromList(SLinkOperations.getTargets(enclosingClassifier, "method", true)).addElement(instanceMethodDeclaration);
         result = instanceMethodDeclaration;
       }
       if (b != null) {
@@ -536,7 +536,7 @@ public class ReferentsCreator {
           SNode typeVariableDeclaration = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", null);
           SPropertyOperations.set(typeVariableDeclaration, "name", new String(typeParameter.name));
           setTypeVariableBounds(typeParameter, typeVariableDeclaration);
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(newMethod, "typeVariableDeclaration", true)).addElement(typeVariableDeclaration);
+          ListSequence.fromList(SLinkOperations.getTargets(newMethod, "typeVariableDeclaration", true)).addElement(typeVariableDeclaration);
         }
       }
     }
@@ -571,7 +571,7 @@ public class ReferentsCreator {
       SPropertyOperations.set(result, "name", new String(binding.name));
       SLinkOperations.setTarget(result, "type", type, true);
       SPropertyOperations.set(result, "isFinal", "" + binding.isFinal());
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(enclosingMethod, "parameter", true)).addElement(result);
+      ListSequence.fromList(SLinkOperations.getTargets(enclosingMethod, "parameter", true)).addElement(result);
       myReferentsCreator.myBindingMap.put(binding, result);
       return result;
     }

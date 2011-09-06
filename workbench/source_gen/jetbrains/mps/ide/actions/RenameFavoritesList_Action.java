@@ -31,7 +31,7 @@ public class RenameFavoritesList_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return FavoritesUtil.isActiveFavorites(((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
+    return FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -52,8 +52,8 @@ public class RenameFavoritesList_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -61,13 +61,13 @@ public class RenameFavoritesList_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
+      FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.fromMap(_params).get("project")));
       String oldName = pane.getSubId();
       String newName = Messages.showInputDialog("Input favorites list new name", "New Name For Favorites List", Messages.getQuestionIcon(), oldName, null);
       if (newName == null || StringUtils.isEmpty(newName)) {
         return;
       }
-      MPSFavoritesManager favoritesManager = ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
+      MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
       if (favoritesManager == null) {
         return;
       }

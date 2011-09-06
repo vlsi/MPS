@@ -12,7 +12,7 @@ import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class GGG_Facet extends IFacet.Stub {
-  private List<ITarget> targets = ListSequence.<ITarget>fromList(new ArrayList<ITarget>());
+  private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("GGG");
 
   public GGG_Facet() {

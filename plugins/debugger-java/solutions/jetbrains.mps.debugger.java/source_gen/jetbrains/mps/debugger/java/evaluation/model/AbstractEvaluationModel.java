@@ -71,9 +71,9 @@ public abstract class AbstractEvaluationModel {
   protected final IOperationContext myContext;
   protected final EditableSModelDescriptor myAuxModel;
   protected final EvaluationAuxModule myAuxModule;
-  private final List<Language> myLanguages = ListSequence.<Language>fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation"), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.privateMembers"));
+  private final List<Language> myLanguages = ListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation"), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.privateMembers"));
   protected SNode myEvaluator;
-  private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.<_FunctionTypes._void_P1_E0<? super SNode>>fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
+  private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
   protected final EvaluationContext myEvaluationContext;
   protected final boolean myShowContext;
 
@@ -144,7 +144,7 @@ public abstract class AbstractEvaluationModel {
   }
 
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
-    ListSequence.<_FunctionTypes._void_P1_E0<? super SNode>>fromList(myGenerationListeners).addElement(listener);
+    ListSequence.fromList(myGenerationListeners).addElement(listener);
   }
 
   public boolean isDeveloperMode() {
@@ -165,11 +165,11 @@ public abstract class AbstractEvaluationModel {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
         List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(myEvaluator, "evaluatedStatements", true), "statement", true);
-        if (ListSequence.<SNode>fromList(statements).isEmpty()) {
+        if (ListSequence.fromList(statements).isEmpty()) {
           return "empty statement";
         }
-        SNode lastStatement = ListSequence.<SNode>fromList(statements).last();
-        String suffix = ((ListSequence.<SNode>fromList(statements).count() > 1 ?
+        SNode lastStatement = ListSequence.fromList(statements).last();
+        String suffix = ((ListSequence.fromList(statements).count() > 1 ?
           "..." :
           ""
         ));
@@ -214,7 +214,7 @@ public abstract class AbstractEvaluationModel {
       return SConceptPropertyOperations.getString(operation, "alias");
     }
     if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-      return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "name") + "(" + ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).foldLeft("", new ILeftCombinator<SNode, String>() {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "name") + "(" + ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).foldLeft("", new ILeftCombinator<SNode, String>() {
         public String combine(String s, SNode it) {
           return ((StringUtils.isEmpty(s) ?
             "" :
@@ -344,7 +344,7 @@ public abstract class AbstractEvaluationModel {
           try {
             new Transformator(evaluator, true).transformEvaluator();
             if (AbstractEvaluationModel.IS_DEVELOPER_MODE) {
-              for (_FunctionTypes._void_P1_E0<? super SNode> listener : ListSequence.<_FunctionTypes._void_P1_E0<? super SNode>>fromList(myGenerationListeners)) {
+              for (_FunctionTypes._void_P1_E0<? super SNode> listener : ListSequence.fromList(myGenerationListeners)) {
                 listener.invoke(evaluator);
               }
             }

@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.StopIteratingException;
   }
 
   /*package*/ static void main(String[] args) {
-    Iterable<Integer> nums = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -66,7 +66,7 @@ __switch__:
     System.out.println("from infinite sequence take first 10 numbers,");
     System.out.println("ignore odd numbers,");
     System.out.println("print even numbers");
-    Sequence.<Integer>fromIterable(nums).visitAll(new IVisitor<Integer>() {
+    Sequence.fromIterable(nums).visitAll(new IVisitor<Integer>() {
       public void visit(Integer n) {
 __skip__:
         do {

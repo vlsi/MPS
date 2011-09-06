@@ -33,7 +33,7 @@ public class AddToNewFavoritesList_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (FavoritesUtil.isActiveFavorites(((Project) MapSequence.<String,Object>fromMap(_params).get("project")))) {
+      if (FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")))) {
         event.getPresentation().setText("Send to New Favorites List");
       }
     } catch (Throwable t) {
@@ -48,12 +48,12 @@ public class AddToNewFavoritesList_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("treeNodes", event.getData(MPSDataKeys.LOGICAL_VIEW_NODES));
-    if (MapSequence.<String,Object>fromMap(_params).get("treeNodes") == null) {
+    MapSequence.fromMap(_params).put("treeNodes", event.getData(MPSDataKeys.LOGICAL_VIEW_NODES));
+    if (MapSequence.fromMap(_params).get("treeNodes") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -61,8 +61,8 @@ public class AddToNewFavoritesList_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MPSFavoritesManager favoritesManager = ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
-      final String name = Messages.showInputDialog(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), "Input new favorites list name", "Add New Favorites List", Messages.getInformationIcon(), "Unnamed", new InputValidator() {
+      MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
+      final String name = Messages.showInputDialog(((Project) MapSequence.fromMap(_params).get("project")), "Input new favorites list name", "Add New Favorites List", Messages.getInformationIcon(), "Unnamed", new InputValidator() {
         public boolean checkInput(String p0) {
           return true;
         }
@@ -72,8 +72,8 @@ public class AddToNewFavoritesList_Action extends GeneratedAction {
         }
       });
       favoritesManager.addNewFavoritesList(name);
-      FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
-      List<Object> toMove = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.<String,Object>fromMap(_params).get("treeNodes")));
+      FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.fromMap(_params).get("project")));
+      List<Object> toMove = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")));
       if (pane != null) {
         favoritesManager.removeRoots(pane.getSubId(), toMove);
       }

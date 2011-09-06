@@ -102,12 +102,12 @@ public abstract class AbstractProgressStrategy {
 
     public String fullName() {
       List<String> names = this.namePath();
-      return IterableUtils.join(ListSequence.<String>fromList(names).reversedList(), "/");
+      return IterableUtils.join(ListSequence.fromList(names).reversedList(), "/");
     }
 
     public String namePrefix() {
       List<String> names = this.namePath();
-      return IterableUtils.join(ListSequence.<String>fromList(names).reversedList().cut(1), "/");
+      return IterableUtils.join(ListSequence.fromList(names).reversedList().cut(1), "/");
     }
 
     public double doneRatio() {
@@ -130,10 +130,10 @@ public abstract class AbstractProgressStrategy {
     }
 
     private List<String> namePath() {
-      List<String> names = ListSequence.<String>fromList(new ArrayList<String>());
+      List<String> names = ListSequence.fromList(new ArrayList<String>());
       AbstractProgressStrategy.Work wrk = this;
       while (wrk != null) {
-        ListSequence.<String>fromList(names).addElement(wrk.name);
+        ListSequence.fromList(names).addElement(wrk.name);
         wrk = wrk.prev;
       }
       return names;

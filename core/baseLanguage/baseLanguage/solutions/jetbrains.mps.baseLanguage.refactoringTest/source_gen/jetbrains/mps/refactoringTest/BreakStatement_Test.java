@@ -9,8 +9,8 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 @MPSLaunch
@@ -43,22 +43,22 @@ public class BreakStatement_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_noBreaks() throws Exception {
       this.addNodeById("1230052480264");
-      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480270"), "jetbrains.mps.baseLanguage.structure.WhileStatement"))));
+      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480270"), "jetbrains.mps.baseLanguage.structure.WhileStatement"))));
     }
 
     public void test_oneBreak() throws Exception {
       this.addNodeById("1230052480264");
-      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480275"), "jetbrains.mps.baseLanguage.structure.IfStatement"))));
+      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480275"), "jetbrains.mps.baseLanguage.structure.IfStatement"))));
     }
 
     public void test_oneContionue() throws Exception {
       this.addNodeById("1230052480264");
-      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480282"), "jetbrains.mps.baseLanguage.structure.IfStatement"))));
+      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480282"), "jetbrains.mps.baseLanguage.structure.IfStatement"))));
     }
 
     public void test_breakAndContinue() throws Exception {
       this.addNodeById("1230052480264");
-      Assert.assertTrue(ExtractMethodFactory.getErrors(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480275"), "jetbrains.mps.baseLanguage.structure.IfStatement"), SNodeOperations.cast(this.getNodeById("1230052480282"), "jetbrains.mps.baseLanguage.structure.IfStatement"))) != null);
+      Assert.assertTrue(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480275"), "jetbrains.mps.baseLanguage.structure.IfStatement"), SNodeOperations.cast(this.getNodeById("1230052480282"), "jetbrains.mps.baseLanguage.structure.IfStatement"))) != null);
     }
   }
 }

@@ -40,12 +40,12 @@ public class CellProperties_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
-    if (MapSequence.<String,Object>fromMap(_params).get("cell") == null) {
+    MapSequence.fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("cell") == null) {
       return false;
     }
     return true;
@@ -53,7 +53,7 @@ public class CellProperties_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new CellPropertiesWindow(((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell")), ((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")));
+      new CellPropertiesWindow(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((Frame) MapSequence.fromMap(_params).get("frame")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "CellProperties", t);

@@ -40,7 +40,7 @@ public class CopyPasteManager extends AbstractManager implements ApplicationComp
     if (preProcessor != null && sourceNode != null) {
       preProcessor.preProcesNode(copy, sourceNode);
     } else {
-      ListSequence.<SNode>fromList(SNodeOperations.getChildren(copy)).visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SNodeOperations.getChildren(copy)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           preProcessNode(it, newNodesToSourceNodes);
         }
@@ -53,7 +53,7 @@ public class CopyPasteManager extends AbstractManager implements ApplicationComp
     if (postProcessor != null) {
       postProcessor.postProcesNode(node);
     } else {
-      ListSequence.<SNode>fromList(SNodeOperations.getChildren(node)).visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SNodeOperations.getChildren(node)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           postProcessNode(it);
         }
@@ -63,7 +63,7 @@ public class CopyPasteManager extends AbstractManager implements ApplicationComp
 
   public CopyPreProcessor getPreProcessor(SNode concept) {
     load();
-    AbstractManager.Descriptor<CopyPreProcessor> descriptor = MapSequence.<SNode,AbstractManager.Descriptor<CopyPreProcessor>>fromMap(myPreProcessors).get(concept);
+    AbstractManager.Descriptor<CopyPreProcessor> descriptor = MapSequence.fromMap(myPreProcessors).get(concept);
     return (descriptor == null ?
       (CopyPreProcessor) null :
       descriptor.getInstance()
@@ -72,7 +72,7 @@ public class CopyPasteManager extends AbstractManager implements ApplicationComp
 
   private PastePostProcessor getPostProcessor(SNode concept) {
     load();
-    AbstractManager.Descriptor<PastePostProcessor> descriptor = MapSequence.<SNode,AbstractManager.Descriptor<PastePostProcessor>>fromMap(myPostProcessors).get(concept);
+    AbstractManager.Descriptor<PastePostProcessor> descriptor = MapSequence.fromMap(myPostProcessors).get(concept);
     return (descriptor == null ?
       (PastePostProcessor) null :
       descriptor.getInstance()
@@ -83,8 +83,8 @@ public class CopyPasteManager extends AbstractManager implements ApplicationComp
     if (myLoaded) {
       return;
     }
-    myPostProcessors = MapSequence.<SNode,AbstractManager.Descriptor<PastePostProcessor>>fromMap(new HashMap<SNode, AbstractManager.Descriptor<PastePostProcessor>>());
-    myPreProcessors = MapSequence.<SNode,AbstractManager.Descriptor<CopyPreProcessor>>fromMap(new HashMap<SNode, AbstractManager.Descriptor<CopyPreProcessor>>());
+    myPostProcessors = MapSequence.fromMap(new HashMap<SNode, AbstractManager.Descriptor<PastePostProcessor>>());
+    myPreProcessors = MapSequence.fromMap(new HashMap<SNode, AbstractManager.Descriptor<CopyPreProcessor>>());
     for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
       SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
       if (actionsModelDescriptor == null) {
@@ -96,11 +96,11 @@ public class CopyPasteManager extends AbstractManager implements ApplicationComp
         }
       });
       for (SNode root : roots) {
-        for (SNode preProcessor : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(root, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), "preProcessor", true))) {
-          MapSequence.<SNode,AbstractManager.Descriptor<CopyPreProcessor>>fromMap(myPreProcessors).put(SLinkOperations.getTarget(preProcessor, "concept", false), new AbstractManager.Descriptor<CopyPreProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(preProcessor, "jetbrains.mps.lang.actions.structure.CopyPreProcessor"), "call_getClassName_5948027493682347861", new Class[]{SNode.class})), language, LOG));
+        for (SNode preProcessor : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(root, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), "preProcessor", true))) {
+          MapSequence.fromMap(myPreProcessors).put(SLinkOperations.getTarget(preProcessor, "concept", false), new AbstractManager.Descriptor<CopyPreProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(preProcessor, "jetbrains.mps.lang.actions.structure.CopyPreProcessor"), "call_getClassName_5948027493682347861", new Class[]{SNode.class})), language, LOG));
         }
-        for (SNode postProcessor : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(root, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), "postProcessor", true))) {
-          MapSequence.<SNode,AbstractManager.Descriptor<PastePostProcessor>>fromMap(myPostProcessors).put(SLinkOperations.getTarget(postProcessor, "concept", false), new AbstractManager.Descriptor<PastePostProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(postProcessor, "jetbrains.mps.lang.actions.structure.PastePostProcessor"), "call_getClassName_5457641811177522085", new Class[]{SNode.class})), language, LOG));
+        for (SNode postProcessor : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(root, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), "postProcessor", true))) {
+          MapSequence.fromMap(myPostProcessors).put(SLinkOperations.getTarget(postProcessor, "concept", false), new AbstractManager.Descriptor<PastePostProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(postProcessor, "jetbrains.mps.lang.actions.structure.PastePostProcessor"), "call_getClassName_5457641811177522085", new Class[]{SNode.class})), language, LOG));
         }
 
       }

@@ -167,7 +167,7 @@ public class RefactoringContext {
       myMoveMap.put(new StructureModificationData.FullNodeId(key), new StructureModificationData.FullNodeId(target));
       myCachesAreUpToDate = false;
 
-      ListSequence.<StructureModification.Entry>fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new SNodePointer(key), new SNodePointer(target)));
+      ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new SNodePointer(key), new SNodePointer(target)));
     }
     for (SNode node : sourceNodes) {
       node.delete();
@@ -179,7 +179,7 @@ public class RefactoringContext {
     myMoveMap.put(new StructureModificationData.FullNodeId(whatNode), new StructureModificationData.FullNodeId(withNode));
     myCachesAreUpToDate = false;
 
-    ListSequence.<StructureModification.Entry>fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new SNodePointer(whatNode), new SNodePointer(withNode)));
+    ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new SNodePointer(whatNode), new SNodePointer(withNode)));
     whatNode.delete();
   }
 
@@ -204,7 +204,7 @@ public class RefactoringContext {
       myMoveMap.put(new StructureModificationData.FullNodeId(key), new StructureModificationData.FullNodeId(target));
       myCachesAreUpToDate = false;
 
-      ListSequence.<StructureModification.Entry>fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new SNodePointer(key), new SNodePointer(target)));
+      ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new SNodePointer(key), new SNodePointer(target)));
     }
     for (SNode node : sourceNodes) {
       node.delete();
@@ -282,7 +282,7 @@ public class RefactoringContext {
       }
 
       if (!(newFeatureName.equals(oldFeatureName))) {
-        ListSequence.<StructureModification.Entry>fromList(myLoggedData.getData()).addElement(new StructureModification.RenameNode(new SNodePointer(feature), renameType, newFeatureName, oldFeatureName));
+        ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.RenameNode(new SNodePointer(feature), renameType, newFeatureName, oldFeatureName));
       } else
       if (kind == StructureModificationData.ConceptFeatureKind.CONCEPT && !(oldConceptFQName.equals(newConceptFQName))) {
       }
@@ -291,14 +291,14 @@ public class RefactoringContext {
 
   public void changeModelName(SModelDescriptor model, String newName) {
     if (LanguageAspect.STRUCTURE.is(model)) {
-      for (SNode concept : ListSequence.<SNode>fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) model.getSModel()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+      for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) model.getSModel()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
         this.changeFeatureName(concept, NameUtil.longNameFromNamespaceAndShortName(newName, SPropertyOperations.getString(concept, "name")), SPropertyOperations.getString(concept, "name"));
       }
     }
 
     SModelReference oldModelRef = model.getSModelReference();
     model.rename(SModelFqName.fromString(newName), false);
-    ListSequence.<StructureModification.Entry>fromList(myLoggedData.getData()).addElement(new StructureModification.RenameModel(oldModelRef, model.getSModelReference()));
+    ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.RenameModel(oldModelRef, model.getSModelReference()));
   }
 
   public void updateByDefault(SModel model) {

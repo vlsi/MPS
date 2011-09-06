@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
   }
 
   /*package*/ static void main(String[] args) {
-    Iterable<Integer> nums = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -69,7 +69,7 @@ __switch__:
     System.out.println("where num is even,");
     System.out.println("produce string");
     final Wrappers._int count = new Wrappers._int(0);
-    Iterable<String> strings = Sequence.<Integer>fromIterable(nums).where(new IWhereFilter<Integer>() {
+    Iterable<String> strings = Sequence.fromIterable(nums).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer n) {
         return n % 2 == 0;
       }
@@ -80,7 +80,7 @@ __switch__:
       }
     });
     System.out.println("count (before):" + count.value);
-    for (String s : Sequence.<String>fromIterable(strings)) {
+    for (String s : Sequence.fromIterable(strings)) {
       System.out.println(s);
     }
     System.out.println("count (after):" + count.value);

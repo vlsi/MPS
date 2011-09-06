@@ -58,7 +58,7 @@ public class SelectTest_Test extends Util_Test {
   }
 
   public void test_selectOperation() throws Exception {
-    this.assertIterableEquals(this.expectEven10(), Sequence.<Integer>fromIterable(this.input5()).<Integer>select(new ISelector<Integer, Integer>() {
+    this.assertIterableEquals(this.expectEven10(), Sequence.fromIterable(this.input5()).<Integer>select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it * 2;
       }
@@ -68,11 +68,11 @@ public class SelectTest_Test extends Util_Test {
         return it * 2;
       }
     };
-    this.assertIterableEquals(this.expectEven10(), Sequence.<Integer>fromIterable(this.input5()).<Integer>select(cl));
+    this.assertIterableEquals(this.expectEven10(), Sequence.fromIterable(this.input5()).<Integer>select(cl));
   }
 
   public void test_legacySelector() throws Exception {
-    Iterable<Integer> test = Sequence.<Integer>fromIterable(this.input5()).<Integer>select(new ISelector<Integer, Integer>() {
+    Iterable<Integer> test = Sequence.fromIterable(this.input5()).<Integer>select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it * 2;
       }
@@ -81,8 +81,8 @@ public class SelectTest_Test extends Util_Test {
   }
 
   public void test_selectMany() throws Exception {
-    final List<Integer> list = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
-    Iterable<Integer> test = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
+    final List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
+    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -115,21 +115,21 @@ __switch__:
         };
       }
     });
-    Sequence.<Integer>fromIterable(test).<List<Integer>>select(new ISelector<Integer, List<Integer>>() {
+    Sequence.fromIterable(test).<List<Integer>>select(new ISelector<Integer, List<Integer>>() {
       public List<Integer> select(Integer it) {
         return list;
       }
     });
-    Iterable<List<Integer>> result = Sequence.<Integer>fromIterable(test).<List<Integer>>select(new ISelector<Integer, List<Integer>>() {
+    Iterable<List<Integer>> result = Sequence.fromIterable(test).<List<Integer>>select(new ISelector<Integer, List<Integer>>() {
       public List<Integer> select(Integer it) {
         return list;
       }
     });
-    Assert.assertEquals(list, Sequence.<List<Integer>>fromIterable(result).first());
+    Assert.assertEquals(list, Sequence.fromIterable(result).first());
   }
 
   public void test_nextWithoutHasNext() throws Exception {
-    this.assertIteratorYields(ListSequence.<Integer>fromList(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).<Integer>select(new ISelector<Integer, Integer>() {
+    this.assertIteratorYields(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).<Integer>select(new ISelector<Integer, Integer>() {
       public Integer select(Integer i) {
         return i * 2;
       }
@@ -137,21 +137,21 @@ __switch__:
   }
 
   public void test_selectAdvancesTooEarly() throws Exception {
-    final List<Integer> test = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9);
-    final List<Integer> plusten = ListSequence.<Integer>fromList(new ArrayList<Integer>());
+    final List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9);
+    final List<Integer> plusten = ListSequence.fromList(new ArrayList<Integer>());
     final Wrappers._int idx = new Wrappers._int(0);
-    ListSequence.<Integer>fromList(test).<Integer>select(new ISelector<Integer, Integer>() {
+    ListSequence.fromList(test).<Integer>select(new ISelector<Integer, Integer>() {
       public Integer select(Integer i) {
         return i;
       }
     }).visitAll(new IVisitor<Integer>() {
       public void visit(Integer i) {
-        if (++idx.value < ListSequence.<Integer>fromList(test).count()) {
-          ListSequence.<Integer>fromList(test).setElement(idx.value, ListSequence.<Integer>fromList(test).getElement(idx.value) - idx.value);
+        if (++idx.value < ListSequence.fromList(test).count()) {
+          ListSequence.fromList(test).setElement(idx.value, ListSequence.fromList(test).getElement(idx.value) - idx.value);
         }
-        ListSequence.<Integer>fromList(plusten).addElement(i + 10);
+        ListSequence.fromList(plusten).addElement(i + 10);
       }
     });
-    Assert.assertEquals(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 11, 11, 11, 11, 11, 11, 11, 11, 11), plusten);
+    Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<Integer>(), 11, 11, 11, 11, 11, 11, 11, 11, 11), plusten);
   }
 }

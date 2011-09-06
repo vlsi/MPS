@@ -17,20 +17,20 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class StructureModification {
-  private Map<SModelReference, Integer> myDependencies = MapSequence.<SModelReference,Integer>fromMap(new HashMap<SModelReference, Integer>());
-  private List<StructureModification.Entry> myModificationList = ListSequence.<StructureModification.Entry>fromList(new ArrayList<StructureModification.Entry>());
+  private Map<SModelReference, Integer> myDependencies = MapSequence.fromMap(new HashMap<SModelReference, Integer>());
+  private List<StructureModification.Entry> myModificationList = ListSequence.fromList(new ArrayList<StructureModification.Entry>());
 
   public StructureModification() {
   }
 
   public void addDependencyModel(SModelReference modelRef, int version) {
-    MapSequence.<SModelReference,Integer>fromMap(myDependencies).put(modelRef, version);
+    MapSequence.fromMap(myDependencies).put(modelRef, version);
   }
 
   public void addDependencyModel(SModelReference modelRef) {
     if (!(MapSequence.fromMap(myDependencies).containsKey(modelRef))) {
       EditableSModelDescriptor model = as_hr78sn_a0a0a0a1(SModelRepository.getInstance().getModelDescriptor(modelRef), EditableSModelDescriptor.class);
-      MapSequence.<SModelReference,Integer>fromMap(myDependencies).put(modelRef, (model == null ?
+      MapSequence.fromMap(myDependencies).put(modelRef, (model == null ?
         -1 :
         model.getVersion()
       ));
@@ -51,7 +51,7 @@ public class StructureModification {
 
   public boolean apply(final ModelLinkMap linkMap) {
     final Wrappers._boolean updated = new Wrappers._boolean(false);
-    ListSequence.<StructureModification.Entry>fromList(myModificationList).visitAll(new IVisitor<StructureModification.Entry>() {
+    ListSequence.fromList(myModificationList).visitAll(new IVisitor<StructureModification.Entry>() {
       public void visit(StructureModification.Entry it) {
         updated.value |= it.apply(linkMap);
       }

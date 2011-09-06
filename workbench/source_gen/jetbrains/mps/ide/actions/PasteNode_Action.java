@@ -43,7 +43,7 @@ public class PasteNode_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("contextModel")) instanceof EditableSModelDescriptor && PasteNode_Action.this.canPasteNodes(_params);
+    return ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModelDescriptor && PasteNode_Action.this.canPasteNodes(_params);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -64,20 +64,20 @@ public class PasteNode_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("pack", event.getData(MPSDataKeys.VIRTUAL_PACKAGE));
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("pack", event.getData(MPSDataKeys.VIRTUAL_PACKAGE));
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("contextModel", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    if (MapSequence.<String,Object>fromMap(_params).get("contextModel") == null) {
+    MapSequence.fromMap(_params).put("contextModel", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.fromMap(_params).get("contextModel") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
     return true;
   }
 
@@ -85,12 +85,12 @@ public class PasteNode_Action extends GeneratedAction {
     try {
       PasteNodeData pasteNodeData = PasteNode_Action.this.getPasteData(_params);
       if (pasteNodeData == null || pasteNodeData.getNodes().isEmpty()) {
-        pasteNodeData = CopyPasteUtil.getConvertedFromClipboard(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("contextModel")).getSModel());
+        pasteNodeData = CopyPasteUtil.getConvertedFromClipboard(((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel());
         if (pasteNodeData == null) {
           return;
         }
       }
-      boolean successfull = CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("contextModel")).getSModel(), pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+      boolean successfull = CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel(), pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       if (!(successfull)) {
         return;
       }
@@ -101,27 +101,27 @@ public class PasteNode_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          if (((SNode) MapSequence.<String,Object>fromMap(_params).get("node")) == null) {
+          if (((SNode) MapSequence.fromMap(_params).get("node")) == null) {
             NodePaster paster = new NodePaster(pasteNodes);
             if (!(paster.canPasteAsRoots())) {
               return;
             }
-            paster.pasteAsRoots(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("contextModel")).getSModel(), ((String) MapSequence.<String,Object>fromMap(_params).get("pack")));
+            paster.pasteAsRoots(((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel(), ((String) MapSequence.fromMap(_params).get("pack")));
           } else {
             NodePaster paster = new NodePaster(pasteNodes);
-            if (!(paster.canPaste(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), PasteEnv.PROJECT_TREE))) {
+            if (!(paster.canPaste(((SNode) MapSequence.fromMap(_params).get("node")), PasteEnv.PROJECT_TREE))) {
               return;
             }
-            paster.paste(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), PasteEnv.PROJECT_TREE);
+            paster.paste(((SNode) MapSequence.fromMap(_params).get("node")), PasteEnv.PROJECT_TREE);
           }
-          Resolver.resolveReferences(refsToResolve, ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+          Resolver.resolveReferences(refsToResolve, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
           // make sure editor will be open 
           SNode root = pasteNodes.get(0).getContainingRoot();
           assert root != null;
-          ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getComponent(MPSEditorOpener.class).editNode(root, ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+          ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(MPSEditorOpener.class).editNode(root, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-              ProjectPane.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project"))).selectNode(pasteNodes.get(0), false);
+              ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectNode(pasteNodes.get(0), false);
             }
           });
         }
@@ -137,13 +137,13 @@ public class PasteNode_Action extends GeneratedAction {
     final Wrappers._T<PasteNodeData> result = new Wrappers._T<PasteNodeData>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = CopyPasteUtil.getPasteNodeDataFromClipboard(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("contextModel")).getSModel());
+        result.value = CopyPasteUtil.getPasteNodeDataFromClipboard(((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel());
       }
     });
     return result.value;
   }
 
   private boolean canPasteNodes(final Map<String, Object> _params) {
-    return CopyPasteUtil.canPasteNodes(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("contextModel")).getSModel(), ((SNode) MapSequence.<String,Object>fromMap(_params).get("node")));
+    return CopyPasteUtil.canPasteNodes(((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel(), ((SNode) MapSequence.fromMap(_params).get("node")));
   }
 }

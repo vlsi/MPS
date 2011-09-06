@@ -31,18 +31,18 @@ public class ChangeSignatureOfStaticMethod_Test extends BaseTransformationTest {
       this.addNodeById("1230052903079");
       this.addNodeById("1230052903110");
       ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("1230052903099"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
-      SNode p1 = ListSequence.<SNode>fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).first();
-      SNode p0 = ListSequence.<SNode>fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).getElement(1);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).clear();
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(p0);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(p1);
+      SNode p1 = ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).first();
+      SNode p0 = ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).getElement(1);
+      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).clear();
+      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(p0);
+      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(p1);
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052903099"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
-      List<SNode> ussages = ListSequence.<SNode>fromList(new ArrayList<SNode>());
-      ListSequence.<SNode>fromList(ussages).addElement(SNodeOperations.cast(this.getNodeById("1230052903086"), "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall"));
-      ListSequence.<SNode>fromList(ussages).addElement(SNodeOperations.cast(this.getNodeById("1230052903093"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
+      List<SNode> ussages = ListSequence.fromList(new ArrayList<SNode>());
+      ListSequence.fromList(ussages).addElement(SNodeOperations.cast(this.getNodeById("1230052903086"), "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall"));
+      ListSequence.fromList(ussages).addElement(SNodeOperations.cast(this.getNodeById("1230052903093"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
       ref.setUsages(ussages);
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903080"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903111"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903080"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903111"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }
 }

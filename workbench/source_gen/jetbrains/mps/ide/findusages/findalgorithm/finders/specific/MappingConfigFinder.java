@@ -33,7 +33,7 @@ public class MappingConfigFinder implements IFinder {
     List<SNode> mappingConfigs = (List<SNode>) GenerationFacade.getOwnMappings(myGenerator);
     List<SNode> nodesToCheck = new ArrayList<SNode>();
     for (SNode mappingConfig : mappingConfigs) {
-      for (SNode rule : ListSequence.<SNode>fromList(SNodeOperations.getChildren(mappingConfig)).where(new IWhereFilter<SNode>() {
+      for (SNode rule : ListSequence.fromList(SNodeOperations.getChildren(mappingConfig)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.BaseMappingRule");
         }

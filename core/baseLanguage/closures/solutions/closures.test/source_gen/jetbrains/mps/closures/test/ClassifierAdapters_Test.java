@@ -192,8 +192,8 @@ __switch__:
   }
 
   public void test_closureLiteralAsComparator() throws Exception {
-    List<Integer> list = ListSequence.<Integer>fromList(new ArrayList<Integer>());
-    ListSequence.<Integer>fromList(list).addSequence(ListSequence.<Integer>fromList(Arrays.asList(new Integer[]{4, 3, 5, 1, 2})));
+    List<Integer> list = ListSequence.fromList(new ArrayList<Integer>());
+    ListSequence.fromList(list).addSequence(ListSequence.fromList(Arrays.asList(new Integer[]{4, 3, 5, 1, 2})));
     // =================================================================== 
     // The following is a hack! 
     // In reality we could only substitute an interface that has a single method. 
@@ -385,7 +385,7 @@ __switch__:
   }
 
   public void test_translate() throws Exception {
-    Iterable<_FunctionTypes._return_P0_E0<? extends String>> seq = Sequence.<_FunctionTypes._return_P0_E0<? extends String>>fromClosure(new ISequenceClosure<_FunctionTypes._return_P0_E0<? extends String>>() {
+    Iterable<_FunctionTypes._return_P0_E0<? extends String>> seq = Sequence.fromClosure(new ISequenceClosure<_FunctionTypes._return_P0_E0<? extends String>>() {
       public Iterable<_FunctionTypes._return_P0_E0<? extends String>> iterable() {
         return new Iterable<_FunctionTypes._return_P0_E0<? extends String>>() {
           public Iterator<_FunctionTypes._return_P0_E0<? extends String>> iterator() {
@@ -422,13 +422,13 @@ __switch__:
         };
       }
     });
-    Iterable<String> res = Sequence.<_FunctionTypes._return_P0_E0<? extends String>>fromIterable(seq).<String>translate(new ITranslator2<_FunctionTypes._return_P0_E0<? extends String>, String>() {
+    Iterable<String> res = Sequence.fromIterable(seq).<String>translate(new ITranslator2<_FunctionTypes._return_P0_E0<? extends String>, String>() {
       public Iterable<String> translate(_FunctionTypes._return_P0_E0<? extends String> s) {
         return Sequence.<String>singleton(s.invoke());
       }
     });
-    Assert.assertSame(1, Sequence.<String>fromIterable(res).count());
-    Assert.assertEquals("ABC", Sequence.<String>fromIterable(res).first());
+    Assert.assertSame(1, Sequence.fromIterable(res).count());
+    Assert.assertEquals("ABC", Sequence.fromIterable(res).first());
   }
 
   public void test_mps9190() throws Exception {

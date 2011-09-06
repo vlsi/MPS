@@ -47,7 +47,7 @@ public class Script implements IScript {
   private ITarget.Name startingTarget;
   private ITarget.Name finalTarget;
   private TargetRange targetRange;
-  private List<ValidationError> errors = ListSequence.<ValidationError>fromList(new ArrayList<ValidationError>());
+  private List<ValidationError> errors = ListSequence.fromList(new ArrayList<ValidationError>());
   private boolean validated = false;
 
   public Script(TargetRange targetRange, ITarget.Name defaultTargetName) {
@@ -62,7 +62,7 @@ public class Script implements IScript {
   }
 
   public void validate() {
-    ListSequence.<ValidationError>fromList(errors).clear();
+    ListSequence.fromList(errors).clear();
     if (startingTarget != null && !(targetRange.hasTarget(startingTarget))) {
       LOG.error("unknown starting target: " + startingTarget);
       error(startingTarget, "unknown starting target: " + startingTarget);
@@ -75,7 +75,7 @@ public class Script implements IScript {
       LOG.error("cycle(s) detected: " + targetRange.cycles());
       error(this, "cycle(s) detected: " + targetRange.cycles());
     }
-    if (startingTarget != null && !(Sequence.<ITarget>fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).<ITarget.Name>select(new ISelector<ITarget, ITarget.Name>() {
+    if (startingTarget != null && !(Sequence.fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).<ITarget.Name>select(new ISelector<ITarget, ITarget.Name>() {
       public ITarget.Name select(ITarget t) {
         return t.getName();
       }
@@ -91,7 +91,7 @@ public class Script implements IScript {
   }
 
   public boolean isValid() {
-    return validated && ListSequence.<ValidationError>fromList(errors).isEmpty();
+    return validated && ListSequence.fromList(errors).isEmpty();
   }
 
   public Iterable<ITarget> allTargets() {
@@ -118,7 +118,7 @@ public class Script implements IScript {
   }
 
   private void error(Object o, String message) {
-    ListSequence.<ValidationError>fromList(this.errors).addElement(new ValidationError(o, message));
+    ListSequence.fromList(this.errors).addElement(new ValidationError(o, message));
   }
 
   public IResult execute(IScriptController controller, Iterable<? extends IResource> scriptInput) {
@@ -129,7 +129,7 @@ public class Script implements IScript {
     }
 
     final Wrappers._T<ITarget.Name> waitFor = new Wrappers._T<ITarget.Name>(startingTarget);
-    Iterable<ITarget> toExecute = Sequence.<ITarget>fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).<ITarget>translate(new ITranslator2<ITarget, ITarget>() {
+    Iterable<ITarget> toExecute = Sequence.fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).<ITarget>translate(new ITranslator2<ITarget, ITarget>() {
       public Iterable<ITarget> translate(final ITarget tn) {
         return new Iterable<ITarget>() {
           public Iterator<ITarget> iterator() {
@@ -216,7 +216,7 @@ __switch__:
     ctl.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
       public void invoke(final IJobMonitor monit) {
         String scriptName = "Script";
-        int work = Sequence.<ITarget>fromIterable(toExecute).foldLeft(0, new ILeftCombinator<ITarget, Integer>() {
+        int work = Sequence.fromIterable(toExecute).foldLeft(0, new ILeftCombinator<ITarget, Integer>() {
           public Integer combine(Integer s, ITarget it) {
             return s + ((it.requiresInput() || it.producesOutput() ?
               1000 :
@@ -226,11 +226,11 @@ __switch__:
         });
         monit.currentProgress().beginWork(scriptName, work, monit.currentProgress().workLeft());
 
-        for (final ITarget trg : Sequence.<ITarget>fromIterable(toExecute)) {
+        for (final ITarget trg : Sequence.fromIterable(toExecute)) {
           LOG.debug("Executing " + trg.getName());
           try {
             Iterable<ITarget> impre = targetRange.immediatePrecursors(trg.getName());
-            Iterable<IResource> preInput = Sequence.<ITarget>fromIterable(impre).<IResult>select(new ISelector<ITarget, IResult>() {
+            Iterable<IResource> preInput = Sequence.fromIterable(impre).<IResult>select(new ISelector<ITarget, IResult>() {
               public IResult select(ITarget t) {
                 return results.getResult(t.getName());
               }
@@ -239,14 +239,14 @@ __switch__:
                 return r.output();
               }
             });
-            Iterable<IResource> rawInput = (Iterable<IResource>) Sequence.fromIterable(((Sequence.<ITarget>fromIterable(impre).isEmpty() ?
+            Iterable<IResource> rawInput = (Iterable<IResource>) Sequence.fromIterable(((Sequence.fromIterable(impre).isEmpty() ?
               scriptInput :
               preInput
             ))).distinct().toListSequence();
             LOG.debug("Raw input: " + rawInput);
-            Iterable<IResource> input = (Iterable<IResource>) Sequence.<IResource>fromIterable(rawInput).where(new IWhereFilter<IResource>() {
+            Iterable<IResource> input = (Iterable<IResource>) Sequence.fromIterable(rawInput).where(new IWhereFilter<IResource>() {
               public boolean accept(final IResource res) {
-                return Sequence.<Class<? extends IResource>>fromIterable(trg.expectedInput()).any(new IWhereFilter<Class<? extends IResource>>() {
+                return Sequence.fromIterable(trg.expectedInput()).any(new IWhereFilter<Class<? extends IResource>>() {
                   public boolean accept(Class<? extends IResource> ifc) {
                     return ifc.isInstance(res);
                   }
@@ -256,7 +256,7 @@ __switch__:
             LOG.debug("Input: " + input);
 
             if (trg.requiresInput()) {
-              if (Sequence.<IResource>fromIterable(input).isEmpty()) {
+              if (Sequence.fromIterable(input).isEmpty()) {
                 LOG.debug("No input. Stopping");
                 monit.reportFeedback(new IFeedback.ERROR("Error executing target " + trg.getName() + " : no input. Stopping"));
                 results.addResult(trg.getName(), new IResult.FAILURE(null));
@@ -270,7 +270,7 @@ __switch__:
             ));
 
             IJob job = trg.createJob();
-            IResult jr = job.execute(Sequence.<IResource>fromIterable(input).where(new IWhereFilter<IResource>() {
+            IResult jr = job.execute(Sequence.fromIterable(input).where(new IWhereFilter<IResource>() {
               public boolean accept(IResource it) {
                 return !(monit.stopRequested());
               }
@@ -278,7 +278,7 @@ __switch__:
             if (!(trg.producesOutput())) {
               // ignore the output 
               jr = new Script.SubsOutputResult(jr, (trg.requiresInput() ?
-                Sequence.<IResource>fromIterable(rawInput).subtract(Sequence.<IResource>fromIterable(input)) :
+                Sequence.fromIterable(rawInput).subtract(Sequence.fromIterable(input)) :
                 rawInput
               ));
             }
@@ -317,7 +317,7 @@ __switch__:
   private void configureTargets(IScriptController ctl, final Iterable<ITarget> toExecute, final Script.ParametersPool pool, final CompositeResult results) {
     ctl.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
       public void invoke(IConfigMonitor cmon) {
-        for (ITarget trg : Sequence.<ITarget>fromIterable(toExecute)) {
+        for (ITarget trg : Sequence.fromIterable(toExecute)) {
           try {
             LOG.debug("Configuring " + trg.getName());
             IConfig cfg = trg.createConfig();
@@ -339,7 +339,7 @@ __switch__:
   }
 
   private class ParametersPool implements IPropertiesPool {
-    private Map<ITarget.Name, Object> cache = MapSequence.<ITarget.Name,Object>fromMap(new HashMap<ITarget.Name, Object>());
+    private Map<ITarget.Name, Object> cache = MapSequence.fromMap(new HashMap<ITarget.Name, Object>());
     private Map<ITarget.Name, Object> copyFrom;
 
     public ParametersPool() {
@@ -349,15 +349,15 @@ __switch__:
       if (!(MapSequence.fromMap(cache).containsKey(target))) {
         if (targetRange.hasTarget(target)) {
           T vars = (MapSequence.fromMap(copyFrom).containsKey(target) ?
-            targetRange.getTarget(target).createParameters(cls, (T) MapSequence.<ITarget.Name,Object>fromMap(copyFrom).get(target)) :
+            targetRange.getTarget(target).createParameters(cls, (T) MapSequence.fromMap(copyFrom).get(target)) :
             targetRange.getTarget(target).createParameters(cls)
           );
-          MapSequence.<ITarget.Name,Object>fromMap(cache).put(target, vars);
+          MapSequence.fromMap(cache).put(target, vars);
         } else {
           return null;
         }
       }
-      return cls.cast(MapSequence.<ITarget.Name,Object>fromMap(cache).get(target));
+      return cls.cast(MapSequence.fromMap(cache).get(target));
     }
 
     public boolean hasProperties(ITarget.Name target) {
@@ -374,7 +374,7 @@ __switch__:
   private class PropertiesWithBackstore implements IPropertiesPool {
     private final IPropertiesPool transProps;
     private final IPropertiesPool persProps = new Script.ParametersPool();
-    private final Set<IFacet.Name> loadedFacets = SetSequence.<IFacet.Name>fromSet(new HashSet<IFacet.Name>());
+    private final Set<IFacet.Name> loadedFacets = SetSequence.fromSet(new HashSet<IFacet.Name>());
     private final IPropertiesIO propio;
     private Map<String, String> rawProps;
 
@@ -415,7 +415,7 @@ __switch__:
     }
 
     private void loadProperties(IFacet.Name facetName) {
-      if (!(SetSequence.<IFacet.Name>fromSet(loadedFacets).contains(facetName))) {
+      if (!(SetSequence.fromSet(loadedFacets).contains(facetName))) {
         IFacet fct = FacetRegistry.getInstance().lookup(facetName);
         if (fct != null) {
           IPropertiesPersistence pp = fct.propertiesPersistence();
@@ -429,7 +429,7 @@ __switch__:
   }
 
   private class PropertiesAccessor implements IPropertiesAccessor {
-    private Map<Object, IPropertiesPool> allProperties = MapSequence.<Object,IPropertiesPool>fromMap(new HashMap<Object, IPropertiesPool>());
+    private Map<Object, IPropertiesPool> allProperties = MapSequence.fromMap(new HashMap<Object, IPropertiesPool>());
     private final IPropertiesPool transProps;
 
     public PropertiesAccessor(IPropertiesPool transProps) {
@@ -447,9 +447,9 @@ __switch__:
       IPropertiesIO pio = ((IResourceWithProperties) res).getProperties();
       if (!(MapSequence.fromMap(allProperties).containsKey(pio.getKey()))) {
         Script.PropertiesWithBackstore props = new Script.PropertiesWithBackstore(transProps, pio);
-        MapSequence.<Object,IPropertiesPool>fromMap(allProperties).put(pio.getKey(), props);
+        MapSequence.fromMap(allProperties).put(pio.getKey(), props);
       }
-      return MapSequence.<Object,IPropertiesPool>fromMap(allProperties).get(pio.getKey());
+      return MapSequence.fromMap(allProperties).get(pio.getKey());
     }
   }
 

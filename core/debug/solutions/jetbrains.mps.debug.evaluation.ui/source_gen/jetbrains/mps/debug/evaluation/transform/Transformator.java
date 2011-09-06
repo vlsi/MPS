@@ -44,14 +44,14 @@ public class Transformator {
     if (insideEvaluation) {
       myModel = SNodeOperations.getModel(node);
 
-      SNode evaluateMethod = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, new String[]{})).findFirst(new IWhereFilter<SNode>() {
+      SNode evaluateMethod = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, new String[]{})).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(it, "name").equals("evaluate");
         }
       });
-      myWhatToEvaluate = ListSequence.<SNode>fromList(SModelOperations.getNodes(myModel, "jetbrains.mps.baseLanguage.structure.ClassConcept")).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      myWhatToEvaluate = ListSequence.fromList(SModelOperations.getNodes(myModel, "jetbrains.mps.baseLanguage.structure.ClassConcept")).<SNode>translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode root) {
-          return ListSequence.<SNode>fromList(SNodeOperations.getDescendants(root, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+          return ListSequence.fromList(SNodeOperations.getDescendants(root, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode node) {
               return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation"))) != null);
             }
@@ -59,7 +59,7 @@ public class Transformator {
         }
       }).first();
       if (!(myWhatToEvaluate.isDescendantOf(evaluateMethod, false))) {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(evaluateMethod, "body", true), "statement", true)).addElement(SNodeOperations.cast(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.Statement"));
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(evaluateMethod, "body", true), "statement", true)).addElement(SNodeOperations.cast(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.Statement"));
       }
     } else {
       myModel = SNodeOperations.getModel(node);
@@ -112,14 +112,14 @@ public class Transformator {
 
   private void postprocess() {
     // clean annotations 
-    for (SNode node : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, null, false, new String[]{}))) {
+    for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, null, false, new String[]{}))) {
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation"))) != null)) {
         SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation"))));
       }
     }
 
     // clean rtypes and ltypes 
-    for (SNode node : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, null, false, new String[]{}))) {
+    for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, null, false, new String[]{}))) {
       if (node.getChild(LTYPE) != null) {
         node.removeChild(node.getChild(LTYPE));
       }
@@ -132,7 +132,7 @@ public class Transformator {
     }
 
     // remove low-level vars 
-    for (SNode var : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(myWhatToEvaluate), "jetbrains.mps.debug.evaluation.structure.LowLevelVariable", false, new String[]{}))) {
+    for (SNode var : ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(myWhatToEvaluate), "jetbrains.mps.debug.evaluation.structure.LowLevelVariable", false, new String[]{}))) {
       SNodeOperations.deleteNode(var);
     }
   }
@@ -143,13 +143,13 @@ public class Transformator {
     normalizeAllDotExpressions(myWhatToEvaluate);
 
     // add unprocessed annotations to everything 
-    for (SNode node : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, null, false, new String[]{}))) {
+    for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, null, false, new String[]{}))) {
       AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
     }
 
     // here we must calculate type for all binary operations and remeber it 
     // so when we replace binary ops we knew to which type we should cast 
-    for (SNode binaryOperation : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BinaryOperation", false, new String[]{}))) {
+    for (SNode binaryOperation : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BinaryOperation", false, new String[]{}))) {
       SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true));
       SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true));
       binaryOperation.addChild(Transformator.LTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(ltype)));
@@ -157,13 +157,13 @@ public class Transformator {
     }
 
     // we also calculate types for all array access operations 
-    for (SNode arrayAccess : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", false, new String[]{}))) {
+    for (SNode arrayAccess : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", false, new String[]{}))) {
       SNode ltype = TypeChecker.getInstance().getTypeOf(arrayAccess);
       arrayAccess.addChild(Transformator.LTYPE, SNodeOperations.copyNode(ltype));
     }
 
     // and for all assignments 
-    for (SNode baseAssignment : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode baseAssignment : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
       }
@@ -173,7 +173,7 @@ public class Transformator {
     }
 
     // and for all ternary operators 
-    for (SNode ternaryOperator : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", false, new String[]{}))) {
+    for (SNode ternaryOperator : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", false, new String[]{}))) {
       ternaryOperator.addChild(Transformator.LTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ternaryOperator, "ifTrue", true)))));
       ternaryOperator.addChild(Transformator.RTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ternaryOperator, "ifFalse", true)))));
       ternaryOperator.addChild(Transformator.CTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ternaryOperator, "condition", true)))));
@@ -184,7 +184,7 @@ public class Transformator {
 
     SNode evaluateMethod = SNodeOperations.getAncestor(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
     // find return statements 
-    for (SNode returnStatement : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(evaluateMethod, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{}))) {
+    for (SNode returnStatement : ListSequence.fromList(SNodeOperations.getDescendants(evaluateMethod, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{}))) {
       SNode expression = SLinkOperations.getTarget(returnStatement, "expression", true);
       TransformationUtil.replaceReturnedExpressionIfNeeded(expression);
     }
@@ -198,7 +198,7 @@ public class Transformator {
   }
 
   private void replaceConstructors() {
-    for (SNode newExpression : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.GenericNewExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode newExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.GenericNewExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it) && TransformationUtil.isUnprocessed(SLinkOperations.getTarget(it, "creator", true));
       }
@@ -219,7 +219,7 @@ public class Transformator {
           fqNameNode = TransformationUtil.createStringLiteral(SConceptPropertyOperations.getString(componentType, "alias"));
         }
         // todo multi-array 
-        SNode size = SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreator"), "dimensionExpression", true)).first(), "expression", true);
+        SNode size = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreator"), "dimensionExpression", true)).first(), "expression", true);
 
         TransformationUtil.replaceArrayConstructor(newExpression, fqNameNode, size);
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer")) {
@@ -236,12 +236,12 @@ public class Transformator {
       }
     }
 
-    for (SNode newExpression : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode newExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
-      TransformationUtil.replaceConstructor(newExpression, TransformationUtil.createStringLiteral(SPropertyOperations.getString(newExpression, "fqClassName")), TransformationUtil.createStringLiteral(TransformationUtil.getJniSignature(ListSequence.<SNode>fromList(SLinkOperations.getTargets(newExpression, "actualArgument", true)).<SNode>select(new ISelector<SNode, SNode>() {
+      TransformationUtil.replaceConstructor(newExpression, TransformationUtil.createStringLiteral(SPropertyOperations.getString(newExpression, "fqClassName")), TransformationUtil.createStringLiteral(TransformationUtil.getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(newExpression, "actualArgument", true)).<SNode>select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(it), "jetbrains.mps.baseLanguage.structure.Type");
         }
@@ -250,21 +250,21 @@ public class Transformator {
   }
 
   private void replaceThis() {
-    for (SNode thisExpression : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.IThisExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode thisExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.IThisExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
       TransformationUtil.replaceThisExpression(thisExpression);
     }
-    for (SNode thisExpression : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode thisExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
       TransformationUtil.replaceThisExpression(thisExpression);
     }
-    for (SNode thisExpression : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode thisExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -274,7 +274,7 @@ public class Transformator {
   }
 
   private void replaceSupers() {
-    for (SNode superMethodCall : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode superMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -287,7 +287,7 @@ public class Transformator {
   }
 
   private void replaceLowLevelVariableReferences() {
-    for (SNode variableRef : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BaseVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode variableRef : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BaseVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -300,7 +300,7 @@ public class Transformator {
       }
     }
 
-    for (SNode variableRef : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode variableRef : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -310,7 +310,7 @@ public class Transformator {
   }
 
   private void replaceAssignmentsWithBinaryOperations() {
-    for (SNode baseAssignment : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode baseAssignment : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
       }
@@ -320,7 +320,7 @@ public class Transformator {
   }
 
   private void replaceClassExpressions() {
-    for (SNode classifierClassExpression : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode classifierClassExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -328,7 +328,7 @@ public class Transformator {
       SNode classFqNameNode = TransformationUtil.createClassFqNameNode(myModel, SLinkOperations.getTarget(classifierClassExpression, "classifier", false));
       TransformationUtil.replaceClassExpression(classifierClassExpression, classFqNameNode);
     }
-    for (SNode classExpression : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode classExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -339,7 +339,7 @@ public class Transformator {
 
   private void replaceLocalMemberReferences() {
     // convert local static method calls to qualified static method calls 
-    for (SNode localStaticMethodCall : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode localStaticMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -347,24 +347,24 @@ public class Transformator {
       SNode staticMethodCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(staticMethodCall, "classConcept", SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(localStaticMethodCall, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
       SLinkOperations.setTarget(staticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(localStaticMethodCall, "baseMethodDeclaration", false), false);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(staticMethodCall, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)));
+      ListSequence.fromList(SLinkOperations.getTargets(staticMethodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)));
       AttributeOperations.createAndSetAttrbiute(staticMethodCall, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
       SNodeOperations.replaceWithAnother(localStaticMethodCall, staticMethodCall);
     }
     // convert local instance method calls to qualified instance method calls 
-    for (SNode localInstanceMethodCall : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode localInstanceMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
       SNode instanceMethodCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
       SLinkOperations.setTarget(instanceMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(localInstanceMethodCall, "baseMethodDeclaration", false), false);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(instanceMethodCall, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(localInstanceMethodCall, "actualArgument", true)));
+      ListSequence.fromList(SLinkOperations.getTargets(instanceMethodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(localInstanceMethodCall, "actualArgument", true)));
       AttributeOperations.createAndSetAttrbiute(instanceMethodCall, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
       SNodeOperations.replaceWithAnother(localInstanceMethodCall, new Transformator.QuotationClass_rxfadt_a0a0e0d0l().createNode(instanceMethodCall, TransformationUtil.createThisNodeReplacement()));
     }
     // convert local static field references to static field references 
-    for (SNode localStaticFieldReference : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode localStaticFieldReference : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -376,7 +376,7 @@ public class Transformator {
       SNodeOperations.replaceWithAnother(localStaticFieldReference, staticFieldReference);
     }
     // convert local instance field references to fied reference operations 
-    for (SNode localInstanceFieldReference : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode localInstanceFieldReference : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -390,7 +390,7 @@ public class Transformator {
 
   private boolean replaceLocalVariableDeclarations() {
     boolean finished = true;
-    for (SNode variableDeclaration : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode variableDeclaration : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it) && (SLinkOperations.getTarget(it, "initializer", true) != null);
       }
@@ -402,7 +402,7 @@ public class Transformator {
 
   public boolean replaceForeachVariable() {
     boolean finished = true;
-    for (SNode foreachStatement : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ForeachStatement", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode foreachStatement : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ForeachStatement", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -417,7 +417,7 @@ public class Transformator {
 
   private boolean replaceAssignments() {
     boolean finished = true;
-    for (SNode assignment : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode assignment : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -431,7 +431,7 @@ public class Transformator {
     boolean finished = true;
     {
       SNode notExpression;
-      Iterator<SNode> notExpression_iterator = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.NotExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      Iterator<SNode> notExpression_iterator = ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.NotExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return TransformationUtil.isUnprocessed(it);
         }
@@ -452,7 +452,7 @@ public class Transformator {
 
   private boolean replaceBinaryOperations() {
     boolean finished = true;
-    for (SNode binaryOperation : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BinaryOperation", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode binaryOperation : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BinaryOperation", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -492,7 +492,7 @@ public class Transformator {
 
   public boolean replaceTernaryOperators() {
     boolean finished = true;
-    for (SNode ternaryOperator : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode ternaryOperator : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -513,7 +513,7 @@ public class Transformator {
 
   private boolean replaceInternalStaticFieldReferences() {
     boolean finished = true;
-    for (SNode staticFieldReference : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", false, new String[]{}))) {
+    for (SNode staticFieldReference : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", false, new String[]{}))) {
       TransformationUtil.replaceStaticFieldReference(staticFieldReference, SPropertyOperations.getString(staticFieldReference, "fieldName"), null, TransformationUtil.createStringLiteral(SPropertyOperations.getString(staticFieldReference, "fqClassName")));
       finished = false;
     }
@@ -522,7 +522,7 @@ public class Transformator {
 
   private boolean replaceStaticFieldReferences() {
     boolean finished = true;
-    for (SNode staticFieldReference : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode staticFieldReference : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -536,7 +536,7 @@ public class Transformator {
 
   private boolean replaceInternalPartialFieldReferences() {
     boolean finished = true;
-    for (SNode fieldReference : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode fieldReference : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -549,7 +549,7 @@ public class Transformator {
 
   private boolean replaceFieldReferenceOperations() {
     boolean finished = true;
-    for (SNode fieldReferenceOperation : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode fieldReferenceOperation : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -564,12 +564,12 @@ public class Transformator {
 
   private boolean replaceInternalStaticMethodCalls() {
     boolean finished = true;
-    for (SNode staticMethodCall : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode staticMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
-      TransformationUtil.replaceStaticMethodCall(staticMethodCall, TransformationUtil.createStringLiteral(SPropertyOperations.getString(staticMethodCall, "fqClassName")), SPropertyOperations.getString(staticMethodCall, "methodName"), TransformationUtil.getJniSignature(ListSequence.<SNode>fromList(SLinkOperations.getTargets(staticMethodCall, "actualArgument", true)).<SNode>select(new ISelector<SNode, SNode>() {
+      TransformationUtil.replaceStaticMethodCall(staticMethodCall, TransformationUtil.createStringLiteral(SPropertyOperations.getString(staticMethodCall, "fqClassName")), SPropertyOperations.getString(staticMethodCall, "methodName"), TransformationUtil.getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(staticMethodCall, "actualArgument", true)).<SNode>select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(it), "jetbrains.mps.baseLanguage.structure.Type");
         }
@@ -581,7 +581,7 @@ public class Transformator {
 
   private boolean replaceStaticMethodCalls() {
     boolean finished = true;
-    for (SNode staticMethodCall : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.StaticMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode staticMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.StaticMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -595,12 +595,12 @@ public class Transformator {
 
   private boolean replaceInternalPartialInstanceMethodCalls() {
     boolean finished = true;
-    for (SNode methodCall : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode methodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
-      TransformationUtil.replaceMethodCall(methodCall, SLinkOperations.getTarget(methodCall, "instance", true), methodCall, SPropertyOperations.getString(methodCall, "methodName"), TransformationUtil.getJniSignature(ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).<SNode>select(new ISelector<SNode, SNode>() {
+      TransformationUtil.replaceMethodCall(methodCall, SLinkOperations.getTarget(methodCall, "instance", true), methodCall, SPropertyOperations.getString(methodCall, "methodName"), TransformationUtil.getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).<SNode>select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(it), "jetbrains.mps.baseLanguage.structure.Type");
         }
@@ -612,7 +612,7 @@ public class Transformator {
 
   private boolean replaceInstanceMethodCalls() {
     boolean finished = true;
-    for (SNode methodCall : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode methodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -630,7 +630,7 @@ public class Transformator {
   }
 
   private void replaceInstanceofs() {
-    for (SNode instanceofExpression : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode instanceofExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -643,7 +643,7 @@ public class Transformator {
 
   private boolean replaceArrayOperations() {
     boolean finished = true;
-    for (SNode arrayAccess : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode arrayAccess : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -657,7 +657,7 @@ public class Transformator {
         finished = false;
       }
     }
-    for (SNode arrayLength : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode arrayLength : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
@@ -671,7 +671,7 @@ public class Transformator {
   }
 
   private static void normalizeAllDotExpressions(SNode root) {
-    ListSequence.<SNode>fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.baseLanguage.structure.DotExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.baseLanguage.structure.DotExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), "jetbrains.mps.baseLanguage.structure.DotExpression"));
       }
@@ -683,10 +683,10 @@ public class Transformator {
   }
 
   private static void normalizeDotExpression(SNode dotExpression) {
-    List<SNode> order = getOrder(dotExpression, ListSequence.<SNode>fromList(new ArrayList<SNode>()));
+    List<SNode> order = getOrder(dotExpression, ListSequence.fromList(new ArrayList<SNode>()));
     final Wrappers._T<SNode> normalizedDotExpression = new Wrappers._T<SNode>(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null));
     final Wrappers._boolean firstTime = new Wrappers._boolean(true);
-    ListSequence.<SNode>fromList(order).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(order).visitAll(new IVisitor<SNode>() {
       public void visit(SNode node) {
         if (firstTime.value) {
           // we are at the first node in the order 
@@ -705,7 +705,7 @@ public class Transformator {
 
   private static List<SNode> getOrder(SNode node, List<SNode> order) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
-      ListSequence.<SNode>fromList(order).addElement(node);
+      ListSequence.fromList(order).addElement(node);
     } else {
       getOrder(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), order);
       getOrder(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), order);

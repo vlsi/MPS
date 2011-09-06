@@ -75,12 +75,12 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         List<SNode> constructors = SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "constructor", true);
         if (constructors.size() == 1) {
-          return ListSequence.<SNode>fromList(constructors).first();
+          return ListSequence.fromList(constructors).first();
         } else
         if (constructors.size() > 1) {
           constructors = (List<SNode>) MethodResolveUtil.selectByParmCount(constructors, myActualArgs);
           if (constructors.size() == 1) {
-            return ListSequence.<SNode>fromList(constructors).first();
+            return ListSequence.fromList(constructors).first();
           } else {
             Iterator<SNode> typeParms = (Iterator<SNode>) myTypeParms.iterator();
             Iterator<SNode> typeVars = (Iterator<SNode>) SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true).iterator();

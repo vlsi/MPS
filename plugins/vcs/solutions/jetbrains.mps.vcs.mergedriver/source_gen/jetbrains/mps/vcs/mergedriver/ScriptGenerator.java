@@ -38,9 +38,9 @@ import com.intellij.openapi.ui.Messages;
       if (dryRun) {
         if (scriptFile.exists()) {
           List<String> linesInFile = StringsIO.readLines(scriptFile);
-          if (ListSequence.<String>fromList(linesInFile).count() == lines.length) {
+          if (ListSequence.fromList(linesInFile).count() == lines.length) {
             for (int i = 0; i < lines.length; i++) {
-              if (neq_7mp2j8_a0a0a0b0a0a0c0a(ListSequence.<String>fromList(linesInFile).getElement(i), lines[i])) {
+              if (neq_7mp2j8_a0a0a0b0a0a0c0a(ListSequence.fromList(linesInFile).getElement(i), lines[i])) {
                 return AbstractInstaller.State.OUTDATED;
               }
             }

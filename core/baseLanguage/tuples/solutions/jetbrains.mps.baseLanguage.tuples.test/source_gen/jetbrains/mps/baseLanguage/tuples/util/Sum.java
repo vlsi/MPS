@@ -9,9 +9,9 @@ import java.util.HashMap;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class Sum {
-  public Map<Integer, Tuples._2<Integer, Integer>> map = MapSequence.<Integer,Tuples._2<Integer, Integer>>fromMap(new HashMap<Integer, Tuples._2<Integer, Integer>>());
+  public Map<Integer, Tuples._2<Integer, Integer>> map = MapSequence.fromMap(new HashMap<Integer, Tuples._2<Integer, Integer>>());
 
   public Sum() {
-    MapSequence.<Integer,Tuples._2<Integer, Integer>>fromMap(map).put(42, MultiTuple.<Integer,Integer>from(5, 37));
+    MapSequence.fromMap(map).put(42, MultiTuple.<Integer,Integer>from(5, 37));
   }
 }

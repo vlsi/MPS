@@ -34,7 +34,7 @@ public class Foo {
   }
 
   public Iterable<Object> abc(final int j) {
-    return Sequence.<Object>fromClosure(new ISequenceClosure<Integer>() {
+    return Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -86,7 +86,7 @@ __switch__:
   }
 
   public static void main(String[] args) {
-    final Iterable<Integer> seq = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
+    final Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -197,47 +197,47 @@ __switch__:
   public static Iterable<String> getSeq() {
     boolean b = true;
     if (b) {
-      return Sequence.<String>fromIterable(Collections.<String>emptyList());
-      Sequence.<String>fromIterable(Collections.<String>emptyList());
+      return Sequence.fromIterable(Collections.<String>emptyList());
+      Sequence.fromIterable(Collections.<String>emptyList());
     } else if (b || b) {
-      return SetSequence.<String>fromSet(new HashSet<String>());
+      return SetSequence.fromSet(new HashSet<String>());
     } else if (!(b)) {
-      return ListSequence.<String>fromList(new ArrayList<String>());
+      return ListSequence.fromList(new ArrayList<String>());
     } else {
-      return SortedSetSequence.<String>fromSet(new TreeSet<String>());
+      return SortedSetSequence.fromSet(new TreeSet<String>());
     }
   }
 
   public static List<String> getList() {
     boolean b = true;
     if (b) {
-      return ListSequence.<String>fromList(new LinkedList<String>());
+      return ListSequence.fromList(new LinkedList<String>());
     } else {
-      return ListSequence.<String>fromList(new ArrayList<String>());
+      return ListSequence.fromList(new ArrayList<String>());
     }
   }
 
   public static Set<String> getSet() {
     boolean b = true;
     if (b) {
-      return SetSequence.<String>fromSet(new TreeSet<String>());
+      return SetSequence.fromSet(new TreeSet<String>());
     } else {
-      return SetSequence.<String>fromSet(new HashSet<String>());
+      return SetSequence.fromSet(new HashSet<String>());
     }
   }
 
   public static void asd() {
     List<Integer> l = null;
-    ListSequence.<Integer>fromList(l).addSequence(ListSequence.<Integer>fromList(l));
-    ListSequence.<Integer>fromList(l).insertElement(0, 1);
-    Queue<Integer> q = QueueSequence.<Integer>fromQueue(new PriorityQueue<Integer>());
-    QueueSequence.fromQueue(q).addSequence(ListSequence.<Integer>fromList(l));
-    QueueSequence.fromQueue(q).addSequence(QueueSequence.<Integer>fromQueue(q));
-    Deque<Integer> d = DequeSequence.<Integer>fromDeque(new LinkedList<Integer>());
-    DequeSequence.fromDeque(d).addSequence(DequeSequence.<Integer>fromDeque(d));
+    ListSequence.fromList(l).addSequence(ListSequence.fromList(l));
+    ListSequence.fromList(l).insertElement(0, 1);
+    Queue<Integer> q = QueueSequence.fromQueue(new PriorityQueue<Integer>());
+    QueueSequence.fromQueue(q).addSequence(ListSequence.fromList(l));
+    QueueSequence.fromQueue(q).addSequence(QueueSequence.fromQueue(q));
+    Deque<Integer> d = DequeSequence.fromDeque(new LinkedList<Integer>());
+    DequeSequence.fromDeque(d).addSequence(DequeSequence.fromDeque(d));
     DequeSequence.fromDeque(d).addFirstElement(1);
     DequeSequence.fromDeque(d).addLastElement(1);
-    Deque<Integer> s = DequeSequence.<Integer>fromDeque(new LinkedList<Integer>());
+    Deque<Integer> s = DequeSequence.fromDeque(new LinkedList<Integer>());
     DequeSequence.fromDeque(s).addFirstElement(1);
     DequeSequence.fromDeque(s).popElement();
     DequeSequence.fromDeque(s).pushElement(1);
@@ -250,9 +250,9 @@ __switch__:
   }
 
   public static void asdqe() {
-    List<String> ll = ListSequence.<String>fromList(new ArrayList<String>());
-    Iterator<String> mit = ListSequence.<String>fromList(ll).iterator();
-    for (Iterator<String> mm = ListSequence.<String>fromList(ll).iterator(); mm.hasNext();) {
+    List<String> ll = ListSequence.fromList(new ArrayList<String>());
+    Iterator<String> mit = ListSequence.fromList(ll).iterator();
+    for (Iterator<String> mm = ListSequence.fromList(ll).iterator(); mm.hasNext();) {
 
     }
 

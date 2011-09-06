@@ -43,8 +43,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 public class ModelDifferenceDialog extends BaseDialog {
   private Project myProject;
   private ChangeSet myChangeSet;
-  private Map<SNodeId, List<ModelChange>> myRootToChanges = MapSequence.<SNodeId,List<ModelChange>>fromMap(new HashMap<SNodeId, List<ModelChange>>());
-  private List<ModelChange> myMetadataChanges = ListSequence.<ModelChange>fromList(new ArrayList<ModelChange>());
+  private Map<SNodeId, List<ModelChange>> myRootToChanges = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
+  private List<ModelChange> myMetadataChanges = ListSequence.fromList(new ArrayList<ModelChange>());
   private ModelDifferenceDialog.ModelDifferenceTree myTree;
   private JPanel myPanel = new JPanel(new BorderLayout());
   private boolean myRootsDialogInvoked = false;
@@ -75,15 +75,15 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   private void fillRootToChange() {
     MapSequence.fromMap(myRootToChanges).clear();
-    for (ModelChange c : ListSequence.<ModelChange>fromList(myChangeSet.getModelChanges())) {
+    for (ModelChange c : ListSequence.fromList(myChangeSet.getModelChanges())) {
       SNodeId id = c.getRootId();
       if (id == null) {
-        ListSequence.<ModelChange>fromList(myMetadataChanges).addElement(c);
+        ListSequence.fromList(myMetadataChanges).addElement(c);
       } else {
         if (!(MapSequence.fromMap(myRootToChanges).containsKey(id))) {
-          MapSequence.<SNodeId,List<ModelChange>>fromMap(myRootToChanges).put(id, ListSequence.<ModelChange>fromList(new ArrayList<ModelChange>()));
+          MapSequence.fromMap(myRootToChanges).put(id, ListSequence.fromList(new ArrayList<ModelChange>()));
         }
-        ListSequence.<ModelChange>fromList(MapSequence.<SNodeId,List<ModelChange>>fromMap(myRootToChanges).get(id)).addElement(c);
+        ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(id)).addElement(c);
       }
     }
   }
@@ -122,8 +122,8 @@ public class ModelDifferenceDialog extends BaseDialog {
   public void invokeRootDifference(final SNodeId rootId) {
     if (rootId == null) {
       StringBuilder sb = new StringBuilder();
-      for (ModelChange mc : ListSequence.<ModelChange>fromList(myMetadataChanges)) {
-        if (mc != ListSequence.<ModelChange>fromList(myMetadataChanges).first()) {
+      for (ModelChange mc : ListSequence.fromList(myMetadataChanges)) {
+        if (mc != ListSequence.fromList(myMetadataChanges).first()) {
           sb.append("\n");
         }
         sb.append(mc);
@@ -158,7 +158,7 @@ public class ModelDifferenceDialog extends BaseDialog {
   }
 
   public List<ModelChange> getChangesForRoot(SNodeId rootId) {
-    return MapSequence.<SNodeId,List<ModelChange>>fromMap(myRootToChanges).get(rootId);
+    return MapSequence.fromMap(myRootToChanges).get(rootId);
   }
 
   @Override
@@ -178,7 +178,7 @@ public class ModelDifferenceDialog extends BaseDialog {
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {
       ChangeType compositeChangeType = ChangeType.CHANGE;
       if (rootTreeNode.getRootId() != null) {
-        ModelChange firstChange = ListSequence.<ModelChange>fromList(MapSequence.<SNodeId,List<ModelChange>>fromMap(myRootToChanges).get(rootTreeNode.getRootId())).first();
+        ModelChange firstChange = ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(rootTreeNode.getRootId())).first();
         if (firstChange instanceof AddRootChange || firstChange instanceof DeleteRootChange) {
           compositeChangeType = firstChange.getType();
         }
@@ -191,9 +191,9 @@ public class ModelDifferenceDialog extends BaseDialog {
     }
 
     protected Iterable<SNodeId> getAffectedRoots() {
-      return (ListSequence.<ModelChange>fromList(myMetadataChanges).isEmpty() ?
+      return (ListSequence.fromList(myMetadataChanges).isEmpty() ?
         MapSequence.fromMap(myRootToChanges).keySet() :
-        SetSequence.<SNodeId>fromSet(MapSequence.fromMap(myRootToChanges).keySet()).concat(ListSequence.<SNodeId>fromList(ListSequence.<SNodeId>fromListAndArray(new ArrayList<SNodeId>(), null)))
+        SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNodeId>(), null)))
       );
     }
   }

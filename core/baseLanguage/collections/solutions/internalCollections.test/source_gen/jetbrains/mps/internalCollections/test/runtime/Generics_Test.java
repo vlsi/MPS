@@ -12,26 +12,26 @@ public class Generics_Test extends TestCase {
     MPS13933<String> o1 = new MPS13933<String>() {
       @Override
       public void doSmth() {
-        addRow(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "foo", "bar"));
+        addRow(ListSequence.fromListAndArray(new ArrayList<String>(), "foo", "bar"));
       }
     };
     o1.doSmth();
-    Assert.assertEquals(ListSequence.<String>fromListAndArray(new ArrayList<String>(), "foo", "bar"), o1.myList);
+    Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<String>(), "foo", "bar"), o1.myList);
     MPS13933<Integer> o2 = new MPS13933<Integer>() {
       @Override
       public void doSmth() {
-        this.addRow(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 333, 444));
+        this.addRow(ListSequence.fromListAndArray(new ArrayList<Integer>(), 333, 444));
       }
     };
     o2.doSmth();
-    Assert.assertEquals(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 333, 444), o2.myList);
+    Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<Integer>(), 333, 444), o2.myList);
   }
 
   public void test_mps13933_raw() throws Exception {
     MPS13933 o1 = new MPS13933() {
       @Override
       public void doSmth() {
-        addRow(ListSequence.<Object>fromListAndArray(new ArrayList(), "foo", "bar"));
+        addRow(ListSequence.fromListAndArray(new ArrayList(), "foo", "bar"));
       }
     };
     o1.doSmth();

@@ -25,11 +25,11 @@ public class Askfoo_Query implements IQuery<Bar_Option> {
   }
 
   public Iterable<Bar_Option> options() {
-    return Sequence.<Bar_Option>fromIterable(Sequence.fromArray(Bar_Option.class.getEnumConstants())).cut(1);
+    return Sequence.fromIterable(Sequence.fromArray(Bar_Option.class.getEnumConstants())).cut(1);
   }
 
   public Bar_Option voidOption() {
-    return Sequence.<Bar_Option>fromIterable(Sequence.fromArray(Bar_Option.class.getEnumConstants())).last();
+    return Sequence.fromIterable(Sequence.fromArray(Bar_Option.class.getEnumConstants())).last();
   }
 
   public Bar_Option defaultOption() {

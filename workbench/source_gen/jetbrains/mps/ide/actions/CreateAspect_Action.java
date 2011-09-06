@@ -46,8 +46,8 @@ public class CreateAspect_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("group", event.getData(MPSDataKeys.EDITOR_CREATE_GROUP));
-    if (MapSequence.<String,Object>fromMap(_params).get("group") == null) {
+    MapSequence.fromMap(_params).put("group", event.getData(MPSDataKeys.EDITOR_CREATE_GROUP));
+    if (MapSequence.fromMap(_params).get("group") == null) {
       return false;
     }
     return true;
@@ -59,11 +59,11 @@ public class CreateAspect_Action extends GeneratedAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
 
-          if (((ActionGroup) MapSequence.<String,Object>fromMap(_params).get("group")) != null) {
+          if (((ActionGroup) MapSequence.fromMap(_params).get("group")) != null) {
             Presentation pres = new Presentation();
             AnActionEvent e = new AnActionEvent(event.getInputEvent(), event.getDataContext(), ActionPlaces.UNKNOWN, pres, ActionManager.getInstance(), 0);
-            ActionUtils.updateGroup(((ActionGroup) MapSequence.<String,Object>fromMap(_params).get("group")), e);
-            popup.value = JBPopupFactory.getInstance().createActionGroupPopup("New", ((ActionGroup) MapSequence.<String,Object>fromMap(_params).get("group")), event.getDataContext(), JBPopupFactory.ActionSelectionAid.SPEEDSEARCH, false);
+            ActionUtils.updateGroup(((ActionGroup) MapSequence.fromMap(_params).get("group")), e);
+            popup.value = JBPopupFactory.getInstance().createActionGroupPopup("New", ((ActionGroup) MapSequence.fromMap(_params).get("group")), event.getDataContext(), JBPopupFactory.ActionSelectionAid.SPEEDSEARCH, false);
           }
         }
       });

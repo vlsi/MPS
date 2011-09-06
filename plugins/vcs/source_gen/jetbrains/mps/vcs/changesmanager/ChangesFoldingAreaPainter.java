@@ -73,7 +73,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     if (clipBounds.x + clipBounds.width < -AREA_WIDTH - 1 || 0 < clipBounds.x) {
       return;
     }
-    for (ChangesFoldingAreaPainter.MessageGroup messageGroup : ListSequence.<ChangesFoldingAreaPainter.MessageGroup>fromList(myMessageGroups)) {
+    for (ChangesFoldingAreaPainter.MessageGroup messageGroup : ListSequence.fromList(myMessageGroups)) {
       int y = messageGroup.getY();
       g.setColor(messageGroup.getColor());
       if (messageGroup instanceof ChangesFoldingAreaPainter.ThinMessageGroup) {
@@ -129,15 +129,15 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   }
 
   private void initMessageGroups() {
-    myMessageGroups = ListSequence.<ChangesFoldingAreaPainter.MessageGroup>fromList(new ArrayList<ChangesFoldingAreaPainter.MessageGroup>());
+    myMessageGroups = ListSequence.fromList(new ArrayList<ChangesFoldingAreaPainter.MessageGroup>());
     final EditorComponent editorComponent = getEditorComponent();
-    List<EditorComponentChangesHighligher.ChangeEditorMessage> messagesWithCells = ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(myEditorComponentChangesHighligher.getEditorMessages()).where(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
+    List<EditorComponentChangesHighligher.ChangeEditorMessage> messagesWithCells = ListSequence.fromList(myEditorComponentChangesHighligher.getEditorMessages()).where(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
       public boolean accept(EditorComponentChangesHighligher.ChangeEditorMessage m) {
         return m.getCell(editorComponent) != null;
       }
     }).toListSequence();
 
-    messagesWithCells = ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(messagesWithCells).sort(new Comparator<EditorComponentChangesHighligher.ChangeEditorMessage>() {
+    messagesWithCells = ListSequence.fromList(messagesWithCells).sort(new Comparator<EditorComponentChangesHighligher.ChangeEditorMessage>() {
       public int compare(EditorComponentChangesHighligher.ChangeEditorMessage aMsg, EditorComponentChangesHighligher.ChangeEditorMessage bMsg) {
         Rectangle a = getMessageBounds(editorComponent, aMsg);
         Rectangle b = getMessageBounds(editorComponent, bMsg);
@@ -153,21 +153,21 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
       }
     }, true).toListSequence();
 
-    List<EditorComponentChangesHighligher.ChangeEditorMessage> currentGroupMessages = ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(new ArrayList<EditorComponentChangesHighligher.ChangeEditorMessage>());
+    List<EditorComponentChangesHighligher.ChangeEditorMessage> currentGroupMessages = ListSequence.fromList(new ArrayList<EditorComponentChangesHighligher.ChangeEditorMessage>());
     double currentMaxY = 0;
-    for (EditorComponentChangesHighligher.ChangeEditorMessage message : ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(messagesWithCells)) {
+    for (EditorComponentChangesHighligher.ChangeEditorMessage message : ListSequence.fromList(messagesWithCells)) {
       Rectangle cellBounds = getMessageBounds(editorComponent, message);
-      if (ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(currentGroupMessages).isNotEmpty()) {
+      if (ListSequence.fromList(currentGroupMessages).isNotEmpty()) {
         if (currentMaxY < cellBounds.getMinY()) {
-          ListSequence.<ChangesFoldingAreaPainter.MessageGroup>fromList(myMessageGroups).addElement(createMessageGroup(currentGroupMessages));
-          ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(currentGroupMessages).clear();
+          ListSequence.fromList(myMessageGroups).addElement(createMessageGroup(currentGroupMessages));
+          ListSequence.fromList(currentGroupMessages).clear();
         }
       }
-      ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(currentGroupMessages).addElement(message);
+      ListSequence.fromList(currentGroupMessages).addElement(message);
       currentMaxY = Math.max(currentMaxY, cellBounds.getMaxY());
     }
-    if (ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(currentGroupMessages).isNotEmpty()) {
-      ListSequence.<ChangesFoldingAreaPainter.MessageGroup>fromList(myMessageGroups).addElement(createMessageGroup(currentGroupMessages));
+    if (ListSequence.fromList(currentGroupMessages).isNotEmpty()) {
+      ListSequence.fromList(myMessageGroups).addElement(createMessageGroup(currentGroupMessages));
     }
   }
 
@@ -175,7 +175,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   private ChangesFoldingAreaPainter.MessageGroup findMessageGroupUnder(@NotNull final Point p) {
     double localX = p.getX() - getLeftHighlighter().getFoldingLineX();
     if (localX >= -ChangesFoldingAreaPainter.AREA_WIDTH && localX < 0) {
-      return ListSequence.<ChangesFoldingAreaPainter.MessageGroup>fromList(myMessageGroups).findFirst(new IWhereFilter<ChangesFoldingAreaPainter.MessageGroup>() {
+      return ListSequence.fromList(myMessageGroups).findFirst(new IWhereFilter<ChangesFoldingAreaPainter.MessageGroup>() {
         public boolean accept(ChangesFoldingAreaPainter.MessageGroup mg) {
           return mg.getY() <= p.getY() && mg.getY() + mg.getHeight() >= p.getY();
         }
@@ -192,7 +192,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     _FunctionTypes._void_P1_E0<? super Boolean> setHighlighted = new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean highlighted) {
         if (myCurrentMessageGroup != null) {
-          for (EditorComponentChangesHighligher.ChangeEditorMessage message : ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(myCurrentMessageGroup.getMessages())) {
+          for (EditorComponentChangesHighligher.ChangeEditorMessage message : ListSequence.fromList(myCurrentMessageGroup.getMessages())) {
             message.setHighlighted(highlighted);
           }
         }
@@ -287,7 +287,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   @NotNull
   public ChangesFoldingAreaPainter.MessageGroup createMessageGroup(@NotNull List<EditorComponentChangesHighligher.ChangeEditorMessage> messages) {
     final EditorComponent editorComponent = getEditorComponent();
-    if (ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(messages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
+    if (ListSequence.fromList(messages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
       public boolean accept(EditorComponentChangesHighligher.ChangeEditorMessage m) {
         return m.isThinDeletedMessage(editorComponent);
       }
@@ -306,16 +306,16 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   }
 
   public class MessageGroup {
-    private List<EditorComponentChangesHighligher.ChangeEditorMessage> myMessages = ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(new ArrayList<EditorComponentChangesHighligher.ChangeEditorMessage>());
+    private List<EditorComponentChangesHighligher.ChangeEditorMessage> myMessages = ListSequence.fromList(new ArrayList<EditorComponentChangesHighligher.ChangeEditorMessage>());
     private int myY = 0;
     private int myHeight = 0;
 
     private MessageGroup(@NotNull List<EditorComponentChangesHighligher.ChangeEditorMessage> messages) {
       // messages should be sorted by y, then by x, then by height 
-      myMessages = ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromListWithValues(new ArrayList<EditorComponentChangesHighligher.ChangeEditorMessage>(), messages);
+      myMessages = ListSequence.fromListWithValues(new ArrayList<EditorComponentChangesHighligher.ChangeEditorMessage>(), messages);
       final EditorComponent editorComponent = getEditorComponent();
-      myY = getMessageBounds(editorComponent, ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(messages).first()).y;
-      int bottomY = ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(messages).foldLeft(0, new ILeftCombinator<EditorComponentChangesHighligher.ChangeEditorMessage, Integer>() {
+      myY = getMessageBounds(editorComponent, ListSequence.fromList(messages).first()).y;
+      int bottomY = ListSequence.fromList(messages).foldLeft(0, new ILeftCombinator<EditorComponentChangesHighligher.ChangeEditorMessage, Integer>() {
         public Integer combine(Integer by, EditorComponentChangesHighligher.ChangeEditorMessage msg) {
           return Math.max(by, (int) getMessageBounds(editorComponent, msg).getMaxY());
         }
@@ -337,13 +337,13 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     }
 
     private OldChangeType getUnitedChangeType() {
-      if (ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(myMessages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
+      if (ListSequence.fromList(myMessages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
         public boolean accept(EditorComponentChangesHighligher.ChangeEditorMessage m) {
           return m.getChange().getChangeType() == OldChangeType.ADD;
         }
       })) {
         return OldChangeType.ADD;
-      } else if (ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(myMessages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
+      } else if (ListSequence.fromList(myMessages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
         public boolean accept(EditorComponentChangesHighligher.ChangeEditorMessage m) {
           return m.getChange().getChangeType() == OldChangeType.DELETE;
         }
@@ -360,8 +360,8 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     }
 
     public String getToolTipText() {
-      if (ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(myMessages).count() == 1) {
-        OldChange change = ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(myMessages).first().getChange();
+      if (ListSequence.fromList(myMessages).count() == 1) {
+        OldChange change = ListSequence.fromList(myMessages).first().getChange();
         if (change instanceof SetNodeChange && change.getChangeType() == OldChangeType.CHANGE || change instanceof SubstituteNodeChange) {
           return "Replaced node in '" + ((NewNodeChange) change).getNodeRole() + "' role";
         } else if (change instanceof NewNodeChange) {
@@ -378,11 +378,11 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
         OldChangeType unitedChangeType = getUnitedChangeType();
         switch (unitedChangeType) {
           case ADD:
-            return "Added " + ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(myMessages).count() + " nodes";
+            return "Added " + ListSequence.fromList(myMessages).count() + " nodes";
           case DELETE:
-            return "Deleted " + ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(myMessages).count() + " nodes";
+            return "Deleted " + ListSequence.fromList(myMessages).count() + " nodes";
           default:
-            return ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(myMessages).count() + " changes";
+            return ListSequence.fromList(myMessages).count() + " changes";
         }
       }
     }
@@ -394,18 +394,18 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     public ThinMessageGroup(@NotNull List<EditorComponentChangesHighligher.ChangeEditorMessage> messages) {
       super(messages);
       final EditorComponent editorComponent = getEditorComponent();
-      assert ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(messages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
+      assert ListSequence.fromList(messages).all(new IWhereFilter<EditorComponentChangesHighligher.ChangeEditorMessage>() {
         public boolean accept(EditorComponentChangesHighligher.ChangeEditorMessage m) {
           return m.isThinDeletedMessage(editorComponent);
         }
       });
-      Set<Integer> ys = SetSequence.<Integer>fromSetWithValues(new HashSet<Integer>(), ListSequence.<EditorComponentChangesHighligher.ChangeEditorMessage>fromList(messages).<Integer>select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, Integer>() {
+      Set<Integer> ys = SetSequence.fromSetWithValues(new HashSet<Integer>(), ListSequence.fromList(messages).<Integer>select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, Integer>() {
         public Integer select(EditorComponentChangesHighligher.ChangeEditorMessage m) {
           return m.getY(editorComponent);
         }
       }));
-      assert SetSequence.<Integer>fromSet(ys).count() == 1;
-      myY = SetSequence.<Integer>fromSet(ys).first() - ChangesFoldingAreaPainter.ARROW_HEIGHT / 2;
+      assert SetSequence.fromSet(ys).count() == 1;
+      myY = SetSequence.fromSet(ys).first() - ChangesFoldingAreaPainter.ARROW_HEIGHT / 2;
     }
 
     @NotNull

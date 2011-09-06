@@ -50,8 +50,8 @@ public class FindDuplicatedStubs_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -59,30 +59,30 @@ public class FindDuplicatedStubs_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Map<String, List<SModelReference>> n2m = MapSequence.<String,List<SModelReference>>fromMap(new HashMap<String, List<SModelReference>>());
-      Iterable<SModelDescriptor> models = ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(ProjectScope.class).getModelDescriptors();
-      Sequence.<SModelDescriptor>fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
+      final Map<String, List<SModelReference>> n2m = MapSequence.fromMap(new HashMap<String, List<SModelReference>>());
+      Iterable<SModelDescriptor> models = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectScope.class).getModelDescriptors();
+      Sequence.fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor it) {
           return SModelStereotype.isStubModelStereotype(it.getStereotype());
         }
       }).visitAll(new IVisitor<SModelDescriptor>() {
         public void visit(SModelDescriptor it) {
-          List<SModelReference> refs = MapSequence.<String,List<SModelReference>>fromMap(n2m).get(it.getLongName());
+          List<SModelReference> refs = MapSequence.fromMap(n2m).get(it.getLongName());
           if (refs == null) {
-            MapSequence.<String,List<SModelReference>>fromMap(n2m).put(it.getLongName(), ListSequence.<SModelReference>fromList(new ArrayList<SModelReference>()));
+            MapSequence.fromMap(n2m).put(it.getLongName(), ListSequence.fromList(new ArrayList<SModelReference>()));
           }
-          ListSequence.<SModelReference>fromList(MapSequence.<String,List<SModelReference>>fromMap(n2m).get(it.getLongName())).addElement(it.getSModelReference());
+          ListSequence.fromList(MapSequence.fromMap(n2m).get(it.getLongName())).addElement(it.getSModelReference());
         }
       });
 
-      MapSequence.<String,List<SModelReference>>fromMap(n2m).where(new IWhereFilter<IMapping<String, List<SModelReference>>>() {
+      MapSequence.fromMap(n2m).where(new IWhereFilter<IMapping<String, List<SModelReference>>>() {
         public boolean accept(IMapping<String, List<SModelReference>> it) {
-          return ListSequence.<SModelReference>fromList(it.value()).count() > 1;
+          return ListSequence.fromList(it.value()).count() > 1;
         }
       }).visitAll(new IVisitor<IMapping<String, List<SModelReference>>>() {
         public void visit(IMapping<String, List<SModelReference>> it) {
           System.out.print(it.key() + ":\n");
-          ListSequence.<SModelReference>fromList(it.value()).visitAll(new IVisitor<SModelReference>() {
+          ListSequence.fromList(it.value()).visitAll(new IVisitor<SModelReference>() {
             public void visit(SModelReference el) {
               System.out.print("  " + el + ":\n");
             }

@@ -27,20 +27,20 @@ public class TestRunner {
       if ("-c".equals(argv[i])) {
         i++;
         String className = argv[i];
-        ListSequence.<Request>fromList(requests).addElement(this.createClassRequest(className));
+        ListSequence.fromList(requests).addElement(this.createClassRequest(className));
       } else if ("-m".equals(argv[i])) {
         i++;
         String s = argv[i];
         int index = s.lastIndexOf('.');
         String testCase = s.substring(0, index);
         String method = s.substring(index + 1);
-        ListSequence.<Request>fromList(requests).addElement(this.createMethodRequest(testCase, method));
+        ListSequence.fromList(requests).addElement(this.createMethodRequest(testCase, method));
       } else if ("-f".equals(argv[i])) {
         i++;
         String filename = argv[i];
         new File(filename).deleteOnExit();
         LineNumberReader reader = new LineNumberReader(new FileReader(filename));
-        List<String> fileContents = ListSequence.<String>fromList(new ArrayList<String>());
+        List<String> fileContents = ListSequence.fromList(new ArrayList<String>());
         while (true) {
           String line = reader.readLine();
           if (line == null) {
@@ -49,9 +49,9 @@ public class TestRunner {
           if (StringUtils.isEmpty(line)) {
             continue;
           }
-          ListSequence.<String>fromList(fileContents).addElement(line);
+          ListSequence.fromList(fileContents).addElement(line);
         }
-        loadTests(ListSequence.<String>fromList(fileContents).toGenericArray(String.class), requests);
+        loadTests(ListSequence.fromList(fileContents).toGenericArray(String.class), requests);
       }
     }
   }
@@ -74,10 +74,10 @@ public class TestRunner {
     System.setErr(new PrintStream(err));
     core.addListener(new TestRunner.MyRunListener(out, err));
 
-    List<Request> requests = ListSequence.<Request>fromList(new ArrayList<Request>());
+    List<Request> requests = ListSequence.fromList(new ArrayList<Request>());
     loadTests(args, requests);
 
-    for (Request request : ListSequence.<Request>fromList(requests)) {
+    for (Request request : ListSequence.fromList(requests)) {
       core.run(request);
     }
   }

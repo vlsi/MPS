@@ -28,8 +28,8 @@ public class RootNodeFileStatusManager extends AbstractProjectComponent {
   protected static Log log = LogFactory.getLog(RootNodeFileStatusManager.class);
 
   private ChangesManager myChangesManager;
-  private final List<NodeFileStatusListener> myNodeFileStatusListeners = ListSequence.<NodeFileStatusListener>fromList(new ArrayList<NodeFileStatusListener>());
-  private final Map<SNodePointer, FileStatus> myFileStatusMap = MapSequence.<SNodePointer,FileStatus>fromMap(new HashMap<SNodePointer, FileStatus>());
+  private final List<NodeFileStatusListener> myNodeFileStatusListeners = ListSequence.fromList(new ArrayList<NodeFileStatusListener>());
+  private final Map<SNodePointer, FileStatus> myFileStatusMap = MapSequence.fromMap(new HashMap<SNodePointer, FileStatus>());
 
   public RootNodeFileStatusManager(@NotNull Project project, @NotNull ChangesManager changesManager) {
     super(project);
@@ -40,19 +40,19 @@ public class RootNodeFileStatusManager extends AbstractProjectComponent {
   }
 
   public void projectClosed() {
-    ListSequence.<NodeFileStatusListener>fromList(myNodeFileStatusListeners).clear();
+    ListSequence.fromList(myNodeFileStatusListeners).clear();
     MapSequence.fromMap(myFileStatusMap).clear();
   }
 
   public void addNodeFileStatusListener(@NotNull NodeFileStatusListener listener) {
     synchronized (myNodeFileStatusListeners) {
-      ListSequence.<NodeFileStatusListener>fromList(myNodeFileStatusListeners).addElement(listener);
+      ListSequence.fromList(myNodeFileStatusListeners).addElement(listener);
     }
   }
 
   public void removeNodeFileStatusListener(@NotNull NodeFileStatusListener listener) {
     synchronized (myNodeFileStatusListeners) {
-      ListSequence.<NodeFileStatusListener>fromList(myNodeFileStatusListeners).removeElement(listener);
+      ListSequence.fromList(myNodeFileStatusListeners).removeElement(listener);
     }
   }
 
@@ -68,7 +68,7 @@ public class RootNodeFileStatusManager extends AbstractProjectComponent {
         calcStatus(nodePointer.value);
         ModelAccess.instance().runReadInEDT(new Runnable() {
           public void run() {
-            for (NodeFileStatusListener listener : ListSequence.<NodeFileStatusListener>fromListWithValues(new ArrayList<NodeFileStatusListener>(), myNodeFileStatusListeners)) {
+            for (NodeFileStatusListener listener : ListSequence.fromListWithValues(new ArrayList<NodeFileStatusListener>(), myNodeFileStatusListeners)) {
               try {
                 listener.fileStatusChanged(node);
               } catch (Throwable t) {
@@ -107,7 +107,7 @@ public class RootNodeFileStatusManager extends AbstractProjectComponent {
       }
     });
     synchronized (myFileStatusMap) {
-      MapSequence.<SNodePointer,FileStatus>fromMap(myFileStatusMap).put(root, status.value);
+      MapSequence.fromMap(myFileStatusMap).put(root, status.value);
     }
   }
 
@@ -136,7 +136,7 @@ public class RootNodeFileStatusManager extends AbstractProjectComponent {
       }
     });
     synchronized (myFileStatusMap) {
-      return MapSequence.<SNodePointer,FileStatus>fromMap(myFileStatusMap).get(nodePointer.value);
+      return MapSequence.fromMap(myFileStatusMap).get(nodePointer.value);
     }
   }
 

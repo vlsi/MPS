@@ -21,7 +21,7 @@ import javax.swing.event.ChangeEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class DiffEditorsGroup {
-  private List<DiffEditor> myDiffEditors = ListSequence.<DiffEditor>fromList(new ArrayList<DiffEditor>());
+  private List<DiffEditor> myDiffEditors = ListSequence.fromList(new ArrayList<DiffEditor>());
   private DiffEditorsGroup.MyCellSelectionListener myCellSelectionListener = new DiffEditorsGroup.MyCellSelectionListener();
   private boolean myViewportSetInProgress = false;
 
@@ -29,7 +29,7 @@ public class DiffEditorsGroup {
   }
 
   public void add(DiffEditor diffEditor) {
-    ListSequence.<DiffEditor>fromList(myDiffEditors).addElement(diffEditor);
+    ListSequence.fromList(myDiffEditors).addElement(diffEditor);
     diffEditor.getMainEditor().getSelectionManager().addSelectionListener(myCellSelectionListener);
     diffEditor.getMainEditor().getViewport().addChangeListener(new DiffEditorsGroup.MyViewportChangeListener(diffEditor));
   }
@@ -126,7 +126,7 @@ public class DiffEditorsGroup {
         public void run() {
           SNodeId selectionId = check_s6qw4f_a0a0a0a0a(check_s6qw4f_a0a0a0a0a0(newSelection.getEditorCell()));
           if (selectionId != null) {
-            for (DiffEditor diffEditor : ListSequence.<DiffEditor>fromList(myDiffEditors)) {
+            for (DiffEditor diffEditor : ListSequence.fromList(myDiffEditors)) {
               diffEditor.inspect(check_s6qw4f_a0a0a0a1a0a0a0(check_s6qw4f_a0a0a0a0b0a0a0a(diffEditor.getMainEditor().getEditedNode()), selectionId));
             }
           }
@@ -147,7 +147,7 @@ public class DiffEditorsGroup {
         return;
       }
       myViewportSetInProgress = true;
-      ListSequence.<DiffEditor>fromList(myDiffEditors).visitAll(new IVisitor<DiffEditor>() {
+      ListSequence.fromList(myDiffEditors).visitAll(new IVisitor<DiffEditor>() {
         public void visit(DiffEditor other) {
           synchronizeViewWithOther(myDiffEditor.getMainEditor(), other.getMainEditor());
         }

@@ -53,8 +53,8 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
@@ -72,9 +72,9 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
       }
       try {
         FileUtil.copyFileChecked(pluginFile, targetDir);
-        JOptionPane.showMessageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "Plugin Installed\nYou should restart IDEA before using plugin");
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Plugin Installed\nYou should restart IDEA before using plugin");
       } catch (IOException e) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "Failed to install plugin : " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Failed to install plugin : " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -106,17 +106,17 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
       "IntelliJIdea" :
       ".IntelliJIdea"
     );
-    List<VirtualFile> existingIdeaConfigs = ListSequence.<VirtualFile>fromList(new ArrayList<VirtualFile>());
+    List<VirtualFile> existingIdeaConfigs = ListSequence.fromList(new ArrayList<VirtualFile>());
     for (VirtualFile child : ideaConfigRoot.getChildren()) {
       if (child.isDirectory() && child.getName().startsWith(ideaConfigFolderPrefix)) {
-        ListSequence.<VirtualFile>fromList(existingIdeaConfigs).addElement(child);
+        ListSequence.fromList(existingIdeaConfigs).addElement(child);
       }
     }
-    if (ListSequence.<VirtualFile>fromList(existingIdeaConfigs).count() == 0) {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "IntelliJ IDEA installation was not found", "Cannot install plugin", JOptionPane.ERROR_MESSAGE);
+    if (ListSequence.fromList(existingIdeaConfigs).count() == 0) {
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "IntelliJ IDEA installation was not found", "Cannot install plugin", JOptionPane.ERROR_MESSAGE);
       return null;
-    } else if (ListSequence.<VirtualFile>fromList(existingIdeaConfigs).count() == 1) {
-      return VirtualFileUtils.toFile(ListSequence.<VirtualFile>fromList(existingIdeaConfigs).first());
+    } else if (ListSequence.fromList(existingIdeaConfigs).count() == 1) {
+      return VirtualFileUtils.toFile(ListSequence.fromList(existingIdeaConfigs).first());
     }
 
     FileChooserDescriptor descriptor = new FileChooserDescriptor(false, true, false, false, false, false) {
@@ -133,7 +133,7 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
 
     String oldShowHiddenValue = PropertiesComponent.getInstance().getValue("FileChooser.showHiddens");
     PropertiesComponent.getInstance().setValue("FileChooser.showHiddens", Boolean.TRUE.toString());
-    FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, ((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")));
+    FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, ((Frame) MapSequence.fromMap(_params).get("frame")));
     VirtualFile[] files = dialog.choose(ideaConfigRoot, null);
     PropertiesComponent.getInstance().setValue("FileChooser.showHiddens", oldShowHiddenValue);
     assert files.length <= 1;

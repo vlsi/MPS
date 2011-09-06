@@ -39,8 +39,8 @@ public class UpgradeModelPersistenceGlobally_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("mainFrame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("mainFrame") == null) {
+    MapSequence.fromMap(_params).put("mainFrame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("mainFrame") == null) {
       return false;
     }
     return true;
@@ -49,7 +49,7 @@ public class UpgradeModelPersistenceGlobally_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       PersistenceUpdater persistenceUpdater = new PersistenceUpdater();
-      persistenceUpdater.upgradePersistenceInAllVisibleModels(((Frame) MapSequence.<String,Object>fromMap(_params).get("mainFrame")));
+      persistenceUpdater.upgradePersistenceInAllVisibleModels(((Frame) MapSequence.fromMap(_params).get("mainFrame")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "UpgradeModelPersistenceGlobally", t);

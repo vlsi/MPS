@@ -10,13 +10,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 /*package*/ class C1 {
   /*package*/ void bbb() {
-    List<String> ls1 = ListSequence.<String>fromList(new ArrayList<String>());
-    List<String> ls2 = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "aaa", "ddd");
-    List<Map<String, String>> ls3 = ListSequence.<Map<String, String>>fromList(new ArrayList<Map<String, String>>());
+    List<String> ls1 = ListSequence.fromList(new ArrayList<String>());
+    List<String> ls2 = ListSequence.fromListAndArray(new ArrayList<String>(), "aaa", "ddd");
+    List<Map<String, String>> ls3 = ListSequence.fromList(new ArrayList<Map<String, String>>());
     Iterable<String> ss = null;
-    ListSequence.<String>fromList(ls2).addElement("aaa");
-    ListSequence.<String>fromList(ls2).addSequence(ListSequence.<String>fromList(ls1));
-    String first = Sequence.<String>fromIterable(ss).first();
+    ListSequence.fromList(ls2).addElement("aaa");
+    ListSequence.fromList(ls2).addSequence(ListSequence.fromList(ls1));
+    String first = Sequence.fromIterable(ss).first();
   }
 
   public void ccc(boolean b) {

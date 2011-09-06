@@ -44,16 +44,16 @@ public class ShowStructure_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("fileEditor", event.getData(MPSDataKeys.FILE_EDITOR));
-    if (MapSequence.<String,Object>fromMap(_params).get("fileEditor") == null) {
+    MapSequence.fromMap(_params).put("fileEditor", event.getData(MPSDataKeys.FILE_EDITOR));
+    if (MapSequence.fromMap(_params).get("fileEditor") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("file", event.getData(MPSDataKeys.VIRTUAL_FILE));
-    if (MapSequence.<String,Object>fromMap(_params).get("file") == null) {
+    MapSequence.fromMap(_params).put("file", event.getData(MPSDataKeys.VIRTUAL_FILE));
+    if (MapSequence.fromMap(_params).get("file") == null) {
       return false;
     }
     return true;
@@ -61,16 +61,16 @@ public class ShowStructure_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final StructureViewBuilder structureViewBuilder = ((FileEditor) MapSequence.<String,Object>fromMap(_params).get("fileEditor")).getStructureViewBuilder();
+      final StructureViewBuilder structureViewBuilder = ((FileEditor) MapSequence.fromMap(_params).get("fileEditor")).getStructureViewBuilder();
       if (structureViewBuilder == null) {
         return;
       }
 
-      StructureView structureView = structureViewBuilder.createStructureView(((FileEditor) MapSequence.<String,Object>fromMap(_params).get("fileEditor")), ((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
-      DialogWrapper dialog = new FileStructureDialog(structureView.getTreeModel(), ((Project) MapSequence.<String,Object>fromMap(_params).get("project")), structureView, true);
+      StructureView structureView = structureViewBuilder.createStructureView(((FileEditor) MapSequence.fromMap(_params).get("fileEditor")), ((Project) MapSequence.fromMap(_params).get("project")));
+      DialogWrapper dialog = new FileStructureDialog(structureView.getTreeModel(), ((Project) MapSequence.fromMap(_params).get("project")), structureView, true);
       if (dialog != null) {
-        if (((VirtualFile) MapSequence.<String,Object>fromMap(_params).get("file")) != null) {
-          dialog.setTitle(((VirtualFile) MapSequence.<String,Object>fromMap(_params).get("file")).getPresentableUrl());
+        if (((VirtualFile) MapSequence.fromMap(_params).get("file")) != null) {
+          dialog.setTitle(((VirtualFile) MapSequence.fromMap(_params).get("file")).getPresentableUrl());
         }
         dialog.show();
       }

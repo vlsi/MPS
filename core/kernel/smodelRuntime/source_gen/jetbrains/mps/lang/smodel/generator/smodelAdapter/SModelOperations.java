@@ -176,10 +176,10 @@ public class SModelOperations {
       if (m == null) {
         return null;
       }
-      SNode l = ListSequence.<SNode>fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Language")).first();
+      SNode l = ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Language")).first();
       return (l == null ?
         null :
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(l, "generator", true)).findFirst(new IWhereFilter<SNode>() {
+        ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return eq_kkj9n5_a0a0a0a0a0a4a1a01(SPropertyOperations.getString(it, "uuid"), module.getModuleReference().getModuleId().toString());
           }
@@ -189,7 +189,7 @@ public class SModelOperations {
       SModel m = ProjectStructureModule.getInstance().getModelByModule(module);
       return (m == null ?
         null :
-        ListSequence.<SNode>fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Module")).first()
+        ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Module")).first()
       );
     }
   }

@@ -30,7 +30,7 @@ public class RebuildSelectedModels_Action extends GeneratedAction {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
     }
-    String text = new MakeActionParameters(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), ((List<SModelDescriptor>) MapSequence.<String,Object>fromMap(_params).get("models")), ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("cmodel")), null, null).actionText(true);
+    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")), ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")), null, null).actionText(true);
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
@@ -56,18 +56,18 @@ public class RebuildSelectedModels_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
-    MapSequence.<String,Object>fromMap(_params).put("cmodel", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    MapSequence.fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
+    MapSequence.fromMap(_params).put("cmodel", event.getData(MPSDataKeys.CONTEXT_MODEL));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MakeActionImpl(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), ((List<SModelDescriptor>) MapSequence.<String,Object>fromMap(_params).get("models")), ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("cmodel")), null, null), true).executeAction();
+      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")), ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")), null, null), true).executeAction();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RebuildSelectedModels", t);

@@ -40,12 +40,12 @@ public class ShowModuleDependencies_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
@@ -53,8 +53,8 @@ public class ShowModuleDependencies_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      DependencyViewer viewer = ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(DependencyViewer.class);
-      viewer.setModule(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")));
+      DependencyViewer viewer = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(DependencyViewer.class);
+      viewer.setModule(((IModule) MapSequence.fromMap(_params).get("module")));
       viewer.openToolLater(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

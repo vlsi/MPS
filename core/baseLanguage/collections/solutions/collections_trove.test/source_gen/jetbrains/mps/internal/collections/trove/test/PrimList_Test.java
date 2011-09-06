@@ -24,12 +24,12 @@ import java.lang.management.ManagementFactory;
 
 public class PrimList_Test extends TestCase {
   public void test_primLists() throws Exception {
-    List<Byte> lb = ListSequence.<Byte>fromListAndArray(new TByteArrayListDecorator(new TByteArrayList()), (byte) 13);
-    List<Double> ld = ListSequence.<Double>fromList(new TDoubleArrayListDecorator(new TDoubleArrayList()));
-    List<Float> lf = ListSequence.<Float>fromList(new TFloatArrayListDecorator(new TFloatArrayList()));
-    List<Integer> li = ListSequence.<Integer>fromList(new TIntArrayListDecorator(new TIntArrayList()));
-    List<Long> ll = ListSequence.<Long>fromList(new TLongArrayListDecorator(new TLongArrayList()));
-    List<Short> ls = ListSequence.<Short>fromList(new TShortArrayListDecorator(new TShortArrayList()));
+    List<Byte> lb = ListSequence.fromListAndArray(new TByteArrayListDecorator(new TByteArrayList()), (byte) 13);
+    List<Double> ld = ListSequence.fromList(new TDoubleArrayListDecorator(new TDoubleArrayList()));
+    List<Float> lf = ListSequence.fromList(new TFloatArrayListDecorator(new TFloatArrayList()));
+    List<Integer> li = ListSequence.fromList(new TIntArrayListDecorator(new TIntArrayList()));
+    List<Long> ll = ListSequence.fromList(new TLongArrayListDecorator(new TLongArrayList()));
+    List<Short> ls = ListSequence.fromList(new TShortArrayListDecorator(new TShortArrayList()));
     Assert.assertNotNull(lb);
     Assert.assertNotNull(ld);
     Assert.assertNotNull(lf);
@@ -39,31 +39,31 @@ public class PrimList_Test extends TestCase {
   }
 
   public void test_byteList() throws Exception {
-    List<Byte> lb = ListSequence.<Byte>fromList(new TByteArrayListDecorator(new TByteArrayList()));
-    ListSequence.<Byte>fromList(lb).addElement((byte) 0);
-    ListSequence.<Byte>fromList(lb).addElement((byte) -1);
-    ListSequence.<Byte>fromList(lb).addElement((byte) 256);
-    Assert.assertSame(3, ListSequence.<Byte>fromList(lb).count());
-    Assert.assertSame(ListSequence.<Byte>fromList(lb).getElement(0), ListSequence.<Byte>fromList(lb).getElement(2));
+    List<Byte> lb = ListSequence.fromList(new TByteArrayListDecorator(new TByteArrayList()));
+    ListSequence.fromList(lb).addElement((byte) 0);
+    ListSequence.fromList(lb).addElement((byte) -1);
+    ListSequence.fromList(lb).addElement((byte) 256);
+    Assert.assertSame(3, ListSequence.fromList(lb).count());
+    Assert.assertSame(ListSequence.fromList(lb).getElement(0), ListSequence.fromList(lb).getElement(2));
   }
 
   public void test_intList() throws Exception {
-    List<Integer> liPrim = ListSequence.<Integer>fromList(new TIntArrayListDecorator(new TIntArrayList()));
-    List<Integer> liBox = ListSequence.<Integer>fromList(new ArrayList<Integer>());
+    List<Integer> liPrim = ListSequence.fromList(new TIntArrayListDecorator(new TIntArrayList()));
+    List<Integer> liBox = ListSequence.fromList(new ArrayList<Integer>());
     long mem1 = this.getUsedMem();
     for (int i = 100000; i < 200000; i++) {
-      ListSequence.<Integer>fromList(liPrim).addElement(i);
+      ListSequence.fromList(liPrim).addElement(i);
     }
     long mem2 = this.getUsedMem();
-    Assert.assertEquals((int) 100000, (int) ListSequence.<Integer>fromList(liPrim).count());
-    ListSequence.<Integer>fromList(liPrim).clear();
+    Assert.assertEquals((int) 100000, (int) ListSequence.fromList(liPrim).count());
+    ListSequence.fromList(liPrim).clear();
     long mem3 = this.getUsedMem();
     for (int i = 200000; i < 300000; i++) {
-      ListSequence.<Integer>fromList(liBox).addElement(i);
+      ListSequence.fromList(liBox).addElement(i);
     }
     long mem4 = this.getUsedMem();
     Assert.assertTrue(2.5 * (mem2 - mem1) < (mem4 - mem3));
-    Assert.assertEquals((int) 100000, (int) ListSequence.<Integer>fromList(liBox).count());
+    Assert.assertEquals((int) 100000, (int) ListSequence.fromList(liBox).count());
   }
 
   private long getUsedMem() {

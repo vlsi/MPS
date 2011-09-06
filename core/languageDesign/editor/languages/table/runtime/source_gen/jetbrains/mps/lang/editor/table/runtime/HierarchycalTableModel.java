@@ -23,20 +23,20 @@ public class HierarchycalTableModel extends AbstractTableModel {
   public HierarchycalTableModel(@NotNull SNode tableNode, @NotNull SNode rowsLinkDeclaration, @NotNull SNode cellsLinkDeclaration) {
     myTableNode = tableNode;
     myRowsLinkDeclaration = rowsLinkDeclaration;
-    assert ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(myTableNode))).contains(myRowsLinkDeclaration);
+    assert ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(myTableNode))).contains(myRowsLinkDeclaration);
     myColumnsLinkDeclaration = cellsLinkDeclaration;
-    assert ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(myRowsLinkDeclaration, "target", false))).contains(myColumnsLinkDeclaration);
-    myRowCount = ListSequence.<SNode>fromList(getRows()).count();
-    myColumnCount = ListSequence.<SNode>fromList(getColumns(ListSequence.<SNode>fromList(getRows()).first())).count();
-    for (SNode row : ListSequence.<SNode>fromList(getRows())) {
-      assert myColumnCount == ListSequence.<SNode>fromList(getColumns(row)).count();
+    assert ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(myRowsLinkDeclaration, "target", false))).contains(myColumnsLinkDeclaration);
+    myRowCount = ListSequence.fromList(getRows()).count();
+    myColumnCount = ListSequence.fromList(getColumns(ListSequence.fromList(getRows()).first())).count();
+    for (SNode row : ListSequence.fromList(getRows())) {
+      assert myColumnCount == ListSequence.fromList(getColumns(row)).count();
     }
   }
 
   public SNode getValueAt(int row, int column) {
     assert row >= 0;
     assert column >= 0;
-    return ListSequence.<SNode>fromList(getColumns(ListSequence.<SNode>fromList(getRows()).getElement(row))).getElement(column);
+    return ListSequence.fromList(getColumns(ListSequence.fromList(getRows()).getElement(row))).getElement(column);
   }
 
   public int getRowCount() {
@@ -63,14 +63,14 @@ public class HierarchycalTableModel extends AbstractTableModel {
 
   @Override
   public void deleteColumn(int columnNumber) {
-    for (SNode row : ListSequence.<SNode>fromList(getRows())) {
+    for (SNode row : ListSequence.fromList(getRows())) {
       deleteElementAt(getColumns(row), columnNumber);
     }
   }
 
   @Override
   public void insertColumn(int columnNumber) {
-    for (SNode row : ListSequence.<SNode>fromList(getRows())) {
+    for (SNode row : ListSequence.fromList(getRows())) {
       SNode newColumn = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myColumnsLinkDeclaration, "target", false)), null);
       Utils.insertElementAt(getColumns(row), newColumn, columnNumber);
     }
@@ -81,8 +81,8 @@ public class HierarchycalTableModel extends AbstractTableModel {
   }
 
   protected void deleteElementAt(List<SNode> list, int index) {
-    assert index >= 0 && index < ListSequence.<SNode>fromList(list).count();
-    ListSequence.<SNode>fromList(list).removeElementAt(index);
+    assert index >= 0 && index < ListSequence.fromList(list).count();
+    ListSequence.fromList(list).removeElementAt(index);
   }
 
   private List<SNode> getRows() {

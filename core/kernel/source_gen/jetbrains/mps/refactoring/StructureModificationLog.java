@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class StructureModificationLog {
-  private List<StructureModification> myDataList = ListSequence.<StructureModification>fromList(new ArrayList<StructureModification>());
+  private List<StructureModification> myDataList = ListSequence.fromList(new ArrayList<StructureModification>());
 
   public StructureModificationLog() {
   }
@@ -19,13 +19,13 @@ public class StructureModificationLog {
   }
 
   public void addStructureModification(StructureModification data) {
-    ListSequence.<StructureModification>fromList(myDataList).addElement(data);
+    ListSequence.fromList(myDataList).addElement(data);
   }
 
   public int getLatestVersion(SModelReference modelRef) {
-    if (ListSequence.<StructureModification>fromList(myDataList).count() == 0) {
+    if (ListSequence.fromList(myDataList).count() == 0) {
       return -1;
     }
-    return MapSequence.<SModelReference,Integer>fromMap(ListSequence.<StructureModification>fromList(myDataList).last().getDependencies()).get(modelRef) + 1;
+    return MapSequence.fromMap(ListSequence.fromList(myDataList).last().getDependencies()).get(modelRef) + 1;
   }
 }

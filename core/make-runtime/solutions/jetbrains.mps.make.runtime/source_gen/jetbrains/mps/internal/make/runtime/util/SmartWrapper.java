@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.regex.Pattern;
 
 public class SmartWrapper<T> {
-  private static Map<String, String> WRAPPERS_CACHE = MapSequence.<String,String>fromMap(new HashMap<String, String>());
+  private static Map<String, String> WRAPPERS_CACHE = MapSequence.fromMap(new HashMap<String, String>());
   private static Pattern PATTERN = Pattern.compile(".+\\.(.+)$");
 
   private final T towrap;
@@ -28,11 +28,11 @@ public class SmartWrapper<T> {
   private String getWrapperName() {
     String name = getClass().getName();
     if (MapSequence.fromMap(WRAPPERS_CACHE).containsKey(name)) {
-      return MapSequence.<String,String>fromMap(WRAPPERS_CACHE).get(name);
+      return MapSequence.fromMap(WRAPPERS_CACHE).get(name);
     }
     String sn = PATTERN.matcher(name).replaceAll("$1");
     String toCache = sn.replace("$", ".");
-    MapSequence.<String,String>fromMap(WRAPPERS_CACHE).put(name, toCache);
+    MapSequence.fromMap(WRAPPERS_CACHE).put(name, toCache);
     return toCache;
   }
 

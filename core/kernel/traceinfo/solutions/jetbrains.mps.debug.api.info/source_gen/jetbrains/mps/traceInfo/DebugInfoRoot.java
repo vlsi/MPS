@@ -24,7 +24,7 @@ public class DebugInfoRoot {
   private Set<TraceablePositionInfo> myPositions;
   private Set<ScopePositionInfo> myScopePositions;
   private Set<UnitPositionInfo> myUnitPositions;
-  private final Set<String> myFileNames = SetSequence.<String>fromSet(new HashSet<String>());
+  private final Set<String> myFileNames = SetSequence.fromSet(new HashSet<String>());
 
   public DebugInfoRoot(String rootId) {
     myRootId = rootId;
@@ -32,7 +32,7 @@ public class DebugInfoRoot {
 
   public void addPosition(TraceablePositionInfo position) {
     if (myPositions == null) {
-      myPositions = SetSequence.<TraceablePositionInfo>fromSet(new TreeSet<TraceablePositionInfo>());
+      myPositions = SetSequence.fromSet(new TreeSet<TraceablePositionInfo>());
     }
     SetSequence.fromSet(myFileNames).addElement(position.getFileName());
     SetSequence.fromSet(myPositions).addElement(position);
@@ -40,7 +40,7 @@ public class DebugInfoRoot {
 
   public void addScopePosition(ScopePositionInfo position) {
     if (myScopePositions == null) {
-      myScopePositions = SetSequence.<ScopePositionInfo>fromSet(new TreeSet<ScopePositionInfo>());
+      myScopePositions = SetSequence.fromSet(new TreeSet<ScopePositionInfo>());
     }
     SetSequence.fromSet(myFileNames).addElement(position.getFileName());
     SetSequence.fromSet(myScopePositions).addElement(position);
@@ -48,7 +48,7 @@ public class DebugInfoRoot {
 
   public void addUnitPosition(UnitPositionInfo unitPosition) {
     if (myUnitPositions == null) {
-      myUnitPositions = SetSequence.<UnitPositionInfo>fromSet(new TreeSet<UnitPositionInfo>());
+      myUnitPositions = SetSequence.fromSet(new TreeSet<UnitPositionInfo>());
     }
     SetSequence.fromSet(myFileNames).addElement(unitPosition.getFileName());
     SetSequence.fromSet(myUnitPositions).addElement(unitPosition);
@@ -76,7 +76,7 @@ public class DebugInfoRoot {
 
   public void toXml(Element container) {
     if (myPositions != null) {
-      for (PositionInfo position : SetSequence.<TraceablePositionInfo>fromSet(myPositions).toListSequence().sort(new Comparator<TraceablePositionInfo>() {
+      for (PositionInfo position : SetSequence.fromSet(myPositions).toListSequence().sort(new Comparator<TraceablePositionInfo>() {
         public int compare(TraceablePositionInfo a, TraceablePositionInfo b) {
           return a.compareTo(b);
         }
@@ -87,7 +87,7 @@ public class DebugInfoRoot {
       }
     }
     if (myScopePositions != null) {
-      for (ScopePositionInfo position : SetSequence.<ScopePositionInfo>fromSet(myScopePositions).toListSequence().sort(new Comparator<ScopePositionInfo>() {
+      for (ScopePositionInfo position : SetSequence.fromSet(myScopePositions).toListSequence().sort(new Comparator<ScopePositionInfo>() {
         public int compare(ScopePositionInfo a, ScopePositionInfo b) {
           return a.compareTo(b);
         }
@@ -98,7 +98,7 @@ public class DebugInfoRoot {
       }
     }
     if (myUnitPositions != null) {
-      for (UnitPositionInfo position : SetSequence.<UnitPositionInfo>fromSet(myUnitPositions).toListSequence().sort(new Comparator<UnitPositionInfo>() {
+      for (UnitPositionInfo position : SetSequence.fromSet(myUnitPositions).toListSequence().sort(new Comparator<UnitPositionInfo>() {
         public int compare(UnitPositionInfo a, UnitPositionInfo b) {
           return a.compareTo(b);
         }

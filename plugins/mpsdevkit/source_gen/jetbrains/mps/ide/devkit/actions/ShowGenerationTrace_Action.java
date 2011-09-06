@@ -11,8 +11,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.devkit.generator.GenerationTracer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -37,10 +37,10 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
       {
         GenerationTracer tracer = ShowGenerationTrace_Action.this.getGenTracer(_params);
         event.getPresentation().setVisible(tracer.hasTracingData());
-        if (ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes"))).isEmpty()) {
+        if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).isEmpty()) {
           event.getPresentation().setEnabled(false);
         } else {
-          boolean hasTraceInputData = tracer.hasTraceInputData(SNodeOperations.getModel(ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes"))).first()).getSModelReference());
+          boolean hasTraceInputData = tracer.hasTraceInputData(SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first()).getSModelReference());
           event.getPresentation().setEnabled(hasTraceInputData);
         }
       }
@@ -62,20 +62,20 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
       if (nodes != null) {
       }
       if (error || nodes == null) {
-        MapSequence.<String,Object>fromMap(_params).put("nodes", null);
+        MapSequence.fromMap(_params).put("nodes", null);
       } else {
-        MapSequence.<String,Object>fromMap(_params).put("nodes", ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), nodes));
+        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("nodes") == null) {
+    if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
@@ -84,8 +84,8 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       GenerationTracer tracer = ShowGenerationTrace_Action.this.getGenTracer(_params);
-      if (!(tracer.showTraceInputData(ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes"))).first()))) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "No tracing data available");
+      if (!(tracer.showTraceInputData(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first()))) {
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "No tracing data available");
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -95,6 +95,6 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
   }
 
   private GenerationTracer getGenTracer(final Map<String, Object> _params) {
-    return (GenerationTracer) ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(IGenerationTracer.class);
+    return (GenerationTracer) ((Project) MapSequence.fromMap(_params).get("project")).getComponent(IGenerationTracer.class);
   }
 }

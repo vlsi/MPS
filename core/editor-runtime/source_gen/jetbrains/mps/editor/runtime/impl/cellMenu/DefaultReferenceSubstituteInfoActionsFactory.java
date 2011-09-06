@@ -55,7 +55,7 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
     EditorComponent editor = mySubstituteInfo.getEditorContext().getNodeEditorComponent();
     EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(myLinkDeclaration, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_getGenuineRole_1213877254542", new Class[]{SNode.class})));
 
-    if (referenceCell != null && referenceCell.getContainingBigCell().getFirstLeaf() == referenceCell && ReferenceConceptUtil.getCharacteristicReference(SNodeOperations.getConceptDeclaration(mySourceNode)) == myLinkDeclaration && SNodeOperations.getParent(mySourceNode) != null && ListSequence.<SNode>fromList(SNodeOperations.getChildren(mySourceNode)).isEmpty()) {
+    if (referenceCell != null && referenceCell.getContainingBigCell().getFirstLeaf() == referenceCell && ReferenceConceptUtil.getCharacteristicReference(SNodeOperations.getConceptDeclaration(mySourceNode)) == myLinkDeclaration && SNodeOperations.getParent(mySourceNode) != null && ListSequence.fromList(SNodeOperations.getChildren(mySourceNode)).isEmpty()) {
       SNode parent = SNodeOperations.getParent(mySourceNode);
       String role = SNodeOperations.getContainingLinkRole(mySourceNode);
       SNode roleLink = SNodeOperations.cast(parent.getLinkDeclaration(role), "jetbrains.mps.lang.structure.structure.LinkDeclaration");

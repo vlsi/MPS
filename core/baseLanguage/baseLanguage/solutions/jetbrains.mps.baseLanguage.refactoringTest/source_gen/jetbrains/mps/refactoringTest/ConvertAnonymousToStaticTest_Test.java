@@ -11,8 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNode;
 
 @MPSLaunch
 public class ConvertAnonymousToStaticTest_Test extends BaseTransformationTest {
@@ -29,7 +29,7 @@ public class ConvertAnonymousToStaticTest_Test extends BaseTransformationTest {
       this.addNodeById("2230400082818031597");
       this.addNodeById("2230400082818059858");
       new ConvertAnonymousRefactoring(SNodeOperations.cast(this.getNodeById("2230400082818031604"), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "MyIStatic").doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2230400082818031598"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2230400082818059859"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2230400082818031598"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2230400082818059859"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }
 }

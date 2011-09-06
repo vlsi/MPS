@@ -38,15 +38,15 @@ public class MethodResolveUtil {
 
   public static Pair<List<SNode>, Boolean> selectByParmCountReportNoGoodMethodNode(List<SNode> methods, List<SNode> actualArgs) {
     int minParmCountDiff = Integer.MAX_VALUE;
-    int[] parmCountDiffs = new int[ListSequence.<SNode>fromList(methods).count()];
-    boolean[] varargs = new boolean[ListSequence.<SNode>fromList(methods).count()];
+    int[] parmCountDiffs = new int[ListSequence.fromList(methods).count()];
+    boolean[] varargs = new boolean[ListSequence.fromList(methods).count()];
     int index = 0;
     for (SNode method : methods) {
       int parmCountDiff;
-      int count = ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).count();
-      int actualArgsCount = ListSequence.<SNode>fromList(actualArgs).count();
+      int count = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count();
+      int actualArgsCount = ListSequence.fromList(actualArgs).count();
       boolean vararg = false;
-      if (count > 0 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
+      if (count > 0 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
         vararg = true;
         parmCountDiff = Math.max(0, (count - 1) - actualArgsCount);
       } else {
@@ -60,11 +60,11 @@ public class MethodResolveUtil {
     List<SNode> result = new ArrayList<SNode>();
     for (int i = 0; i < parmCountDiffs.length; i++) {
       if (minParmCountDiff == parmCountDiffs[i]) {
-        SNode method = ListSequence.<SNode>fromList(methods).getElement(i);
+        SNode method = ListSequence.fromList(methods).getElement(i);
         if (varargs[i]) {
-          ListSequence.<SNode>fromList(result).addElement(method);
+          ListSequence.fromList(result).addElement(method);
         } else {
-          ListSequence.<SNode>fromList(result).insertElement(0, method);
+          ListSequence.fromList(result).insertElement(0, method);
         }
         if (minParmCountDiff > 0) {
           good = false;
@@ -154,7 +154,7 @@ public class MethodResolveUtil {
         indexOfArg++;
       }
     }
-    return new Pair<SNode, Boolean>(ListSequence.<SNode>fromList(candidates).first(), good);
+    return new Pair<SNode, Boolean>(ListSequence.fromList(candidates).first(), good);
   }
 
   private static List<SNode> selectByParameterTypeNode(@Nullable SNode typeOfArg, int indexOfArg, List<SNode> candidates, final Map<SNode, SNode> typeByTypeVar, boolean mostSpecific) {
@@ -164,29 +164,29 @@ public class MethodResolveUtil {
     for (SNode candidate : candidates) {
       boolean varArg = false;
       List<SNode> params = SLinkOperations.getTargets(candidate, "parameter", true);
-      SNode type = SLinkOperations.getTarget(ListSequence.<SNode>fromList(params).last(), "type", true);
+      SNode type = SLinkOperations.getTarget(ListSequence.fromList(params).last(), "type", true);
       if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
-        if (ListSequence.<SNode>fromList(params).count() - 1 <= indexOfArg) {
+        if (ListSequence.fromList(params).count() - 1 <= indexOfArg) {
           varArg = true;
         }
       } else {
-        if (ListSequence.<SNode>fromList(params).count() <= indexOfArg) {
+        if (ListSequence.fromList(params).count() <= indexOfArg) {
           continue;
         }
       }
       List<SNode> methodTypeVariableDecls = SLinkOperations.getTargets(candidate, "typeVariableDeclaration", true);
-      for (SNode tvd : ListSequence.<SNode>fromList(methodTypeVariableDecls)) {
+      for (SNode tvd : ListSequence.fromList(methodTypeVariableDecls)) {
         typeByTypeVar.put(tvd, SModelOperations.createNewNode(((SModel) AuxilaryRuntimeModel.getDescriptor().getSModel()), "jetbrains.mps.baseLanguage.structure.WildCardType", null));
       }
       SNode typeOfParam = (varArg ?
         SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true) :
-        SLinkOperations.getTarget(ListSequence.<SNode>fromList(params).getElement(indexOfArg), "type", true)
+        SLinkOperations.getTarget(ListSequence.fromList(params).getElement(indexOfArg), "type", true)
       );
       if ((typeOfParam == null)) {
         continue;
       }
       typeOfParam = GenericTypesUtil.getTypeWithResolvedTypeVars(typeOfParam, typeByTypeVar);
-      ListSequence.<SNode>fromList(methodTypeVariableDecls).visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(methodTypeVariableDecls).visitAll(new IVisitor<SNode>() {
         public void visit(SNode tvd) {
           typeByTypeVar.remove(tvd);
         }
@@ -214,12 +214,12 @@ public class MethodResolveUtil {
   }
 
   public static Map<SNode, SNode> getTypesByTypeVars(SNode classifier, List<SNode> typeParameters) {
-    Map<SNode, SNode> typeByTypeVar = MapSequence.<SNode,SNode>fromMap(new java.util.HashMap<SNode, SNode>());
-    for (IMapping<SNode, SNode> elem : MapSequence.<SNode,SNode>fromMap(ClassifierAndSuperClassifiersCache.getInstance(classifier).getTypeByTypeVariableMap())) {
+    Map<SNode, SNode> typeByTypeVar = MapSequence.fromMap(new java.util.HashMap<SNode, SNode>());
+    for (IMapping<SNode, SNode> elem : MapSequence.fromMap(ClassifierAndSuperClassifiersCache.getInstance(classifier).getTypeByTypeVariableMap())) {
       typeByTypeVar.put(elem.key(), elem.value());
     }
-    Iterator<SNode> typeParms = ListSequence.<SNode>fromList(typeParameters).iterator();
-    for (SNode typeVar : ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true))) {
+    Iterator<SNode> typeParms = ListSequence.fromList(typeParameters).iterator();
+    for (SNode typeVar : ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true))) {
       if (!(typeParms.hasNext())) {
         break;
       }
@@ -227,7 +227,7 @@ public class MethodResolveUtil {
       if ((typeParm == null) || SLinkOperations.getTarget(SNodeOperations.as(typeParm, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false) == typeVar) {
         continue;
       }
-      MapSequence.<SNode,SNode>fromMap(typeByTypeVar).put(typeVar, SNodeOperations.cast(typeParm, "jetbrains.mps.baseLanguage.structure.Type"));
+      MapSequence.fromMap(typeByTypeVar).put(typeVar, SNodeOperations.cast(typeParm, "jetbrains.mps.baseLanguage.structure.Type"));
     }
     return typeByTypeVar;
   }

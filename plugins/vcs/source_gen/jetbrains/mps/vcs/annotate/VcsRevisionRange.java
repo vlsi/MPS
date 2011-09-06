@@ -21,7 +21,7 @@ public class VcsRevisionRange extends BaseGroup {
   private FileAnnotation myFileAnnotation;
   private VcsRevisionRange.HiglightAction myBeforeAction;
   private VcsRevisionRange.HiglightAction myAfterAction;
-  private Map<VcsRevisionNumber, VcsFileRevision> myRevisionNumberToRevision = MapSequence.<VcsRevisionNumber,VcsFileRevision>fromMap(new HashMap<VcsRevisionNumber, VcsFileRevision>());
+  private Map<VcsRevisionNumber, VcsFileRevision> myRevisionNumberToRevision = MapSequence.fromMap(new HashMap<VcsRevisionNumber, VcsFileRevision>());
 
   public VcsRevisionRange(AnnotationColumn column, FileAnnotation fileAnnotation) {
     super("Revision Range");
@@ -29,9 +29,9 @@ public class VcsRevisionRange extends BaseGroup {
     myFileAnnotation = fileAnnotation;
     myBeforeAction = new VcsRevisionRange.HiglightAction(true);
     myAfterAction = new VcsRevisionRange.HiglightAction(false);
-    myRevisionNumberToRevision = MapSequence.<VcsRevisionNumber,VcsFileRevision>fromMap(new HashMap<VcsRevisionNumber, VcsFileRevision>());
-    for (VcsFileRevision rev : ListSequence.<VcsFileRevision>fromList(myFileAnnotation.getRevisions())) {
-      MapSequence.<VcsRevisionNumber,VcsFileRevision>fromMap(myRevisionNumberToRevision).put(rev.getRevisionNumber(), rev);
+    myRevisionNumberToRevision = MapSequence.fromMap(new HashMap<VcsRevisionNumber, VcsFileRevision>());
+    for (VcsFileRevision rev : ListSequence.fromList(myFileAnnotation.getRevisions())) {
+      MapSequence.fromMap(myRevisionNumberToRevision).put(rev.getRevisionNumber(), rev);
     }
     setPopup(false);
     add(myBeforeAction);
@@ -46,7 +46,7 @@ public class VcsRevisionRange extends BaseGroup {
   }
 
   public boolean isFileLineHighlighted(int fileLine) {
-    VcsFileRevision revision = MapSequence.<VcsRevisionNumber,VcsFileRevision>fromMap(myRevisionNumberToRevision).get(myFileAnnotation.getLineRevisionNumber(fileLine));
+    VcsFileRevision revision = MapSequence.fromMap(myRevisionNumberToRevision).get(myFileAnnotation.getLineRevisionNumber(fileLine));
     if (myBeforeAction.myRevision != null || myAfterAction.myRevision != null) {
       return myBeforeAction.isHiglighted(revision) && myAfterAction.isHiglighted(revision);
     } else {
@@ -70,7 +70,7 @@ public class VcsRevisionRange extends BaseGroup {
     public HiglightAction(boolean before) {
       myBefore = before;
       if (!(before)) {
-        myRevision = ListSequence.<VcsFileRevision>fromList(myColumn.getRevisions()).first();
+        myRevision = ListSequence.fromList(myColumn.getRevisions()).first();
       }
     }
 
@@ -88,7 +88,7 @@ public class VcsRevisionRange extends BaseGroup {
         String.format("%s (%s)", text, revisionToString(myRevision))
       ));
       event.getPresentation().setDescription(description);
-      event.getPresentation().setEnabled(ListSequence.<VcsFileRevision>fromList(myColumn.getRevisions()).isNotEmpty());
+      event.getPresentation().setEnabled(ListSequence.fromList(myColumn.getRevisions()).isNotEmpty());
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> _params) {

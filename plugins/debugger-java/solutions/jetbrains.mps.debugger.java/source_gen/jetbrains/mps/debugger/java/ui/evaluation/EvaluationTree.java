@@ -39,7 +39,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 /*package*/ class EvaluationTree extends MPSTree implements DataProvider {
   private String myClassFqName;
   private ThreadReference myThreadReference;
-  private Map<AbstractEvaluationModel, EvaluationTree.EvaluationState> myStates = MapSequence.<AbstractEvaluationModel,EvaluationTree.EvaluationState>fromMap(new HashMap<AbstractEvaluationModel, EvaluationTree.EvaluationState>());
+  private Map<AbstractEvaluationModel, EvaluationTree.EvaluationState> myStates = MapSequence.fromMap(new HashMap<AbstractEvaluationModel, EvaluationTree.EvaluationState>());
 
   public EvaluationTree() {
     super();
@@ -55,7 +55,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 
   /*package*/ void addModel(AbstractEvaluationModel model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
-    MapSequence.<AbstractEvaluationModel,EvaluationTree.EvaluationState>fromMap(myStates).put(model, new EvaluationTree.InitializedState());
+    MapSequence.fromMap(myStates).put(model, new EvaluationTree.InitializedState());
   }
 
   /*package*/ void removeModel(AbstractEvaluationModel model) {
@@ -65,29 +65,29 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 
   /*package*/ void setResultProxy(IValueProxy valueProxy, AbstractEvaluationModel model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
-    MapSequence.<AbstractEvaluationModel,EvaluationTree.EvaluationState>fromMap(myStates).put(model, new EvaluationTree.ResultState(model.getPresentation(), valueProxy, myClassFqName, myThreadReference));
+    MapSequence.fromMap(myStates).put(model, new EvaluationTree.ResultState(model.getPresentation(), valueProxy, myClassFqName, myThreadReference));
   }
 
   /*package*/ void setError(@NotNull String text, AbstractEvaluationModel model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
-    MapSequence.<AbstractEvaluationModel,EvaluationTree.EvaluationState>fromMap(myStates).put(model, new EvaluationTree.FailureState(text));
+    MapSequence.fromMap(myStates).put(model, new EvaluationTree.FailureState(text));
   }
 
   /*package*/ void setError(@NotNull Throwable error, AbstractEvaluationModel model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
-    MapSequence.<AbstractEvaluationModel,EvaluationTree.EvaluationState>fromMap(myStates).put(model, new EvaluationTree.FailureState(error));
+    MapSequence.fromMap(myStates).put(model, new EvaluationTree.FailureState(error));
   }
 
   /*package*/ void setEvaluating(AbstractEvaluationModel model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
-    MapSequence.<AbstractEvaluationModel,EvaluationTree.EvaluationState>fromMap(myStates).put(model, new EvaluationTree.EvaluationInProgressState());
+    MapSequence.fromMap(myStates).put(model, new EvaluationTree.EvaluationInProgressState());
   }
 
   @Override
   protected MPSTreeNode rebuild() {
     MPSTreeNode rootTreeNode = new TextTreeNode("Evaluation Result");
-    for (AbstractEvaluationModel model : SetSequence.<AbstractEvaluationModel>fromSet(MapSequence.fromMap(myStates).keySet())) {
-      MapSequence.<AbstractEvaluationModel,EvaluationTree.EvaluationState>fromMap(myStates).get(model).rebuild(rootTreeNode, model);
+    for (AbstractEvaluationModel model : SetSequence.fromSet(MapSequence.fromMap(myStates).keySet())) {
+      MapSequence.fromMap(myStates).get(model).rebuild(rootTreeNode, model);
     }
     return rootTreeNode;
   }
@@ -256,7 +256,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
   }
 
   private class ErrorTreeNode extends TextTreeNode implements EvaluationTree.EvaluationModelNode {
-    private final List<String> myExtendedMessage = ListSequence.<String>fromList(new ArrayList<String>());
+    private final List<String> myExtendedMessage = ListSequence.fromList(new ArrayList<String>());
     private final AbstractEvaluationModel myModel;
 
     public ErrorTreeNode(AbstractEvaluationModel model, @NotNull String text, String... extendedMessage) {
@@ -264,7 +264,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
       myModel = model;
       if (extendedMessage != null && extendedMessage.length > 0) {
         for (int i = 0; i < extendedMessage.length; i++) {
-          ListSequence.<String>fromList(myExtendedMessage).addElement(extendedMessage[i]);
+          ListSequence.fromList(myExtendedMessage).addElement(extendedMessage[i]);
         }
       }
 
@@ -280,7 +280,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 
     @Override
     public boolean isLeaf() {
-      return ListSequence.<String>fromList(myExtendedMessage).count() == 0;
+      return ListSequence.fromList(myExtendedMessage).count() == 0;
     }
 
     @Override
@@ -293,7 +293,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 
     @Override
     protected void doInit() {
-      for (String messagePart : ListSequence.<String>fromList(myExtendedMessage)) {
+      for (String messagePart : ListSequence.fromList(myExtendedMessage)) {
         TextTreeNode node = new TextTreeNode(messagePart) {
           @Override
           public boolean isLeaf() {
@@ -310,7 +310,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
       DefaultActionGroup defaultActionGroup = new DefaultActionGroup();
       defaultActionGroup.add(new AnAction("Copy Stacktrace To Clipboard") {
         public void actionPerformed(AnActionEvent event) {
-          CopyPasteUtil.copyTextToClipboard(getText() + ListSequence.<String>fromList(myExtendedMessage).foldLeft("", new ILeftCombinator<String, String>() {
+          CopyPasteUtil.copyTextToClipboard(getText() + ListSequence.fromList(myExtendedMessage).foldLeft("", new ILeftCombinator<String, String>() {
             public String combine(String s, String it) {
               return s + "\n" + it;
             }

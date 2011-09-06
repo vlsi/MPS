@@ -47,16 +47,16 @@ public class NewLibrary_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("ideaProject") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
@@ -64,8 +64,8 @@ public class NewLibrary_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NewLibDialog dialog = new NewLibDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")));
-      dialog.setProject(((MPSProject) MapSequence.<String,Object>fromMap(_params).get("project")));
+      NewLibDialog dialog = new NewLibDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
+      dialog.setProject(((MPSProject) MapSequence.fromMap(_params).get("project")));
       dialog.showDialog();
       final Library s = dialog.getResult();
       if (s == null) {
@@ -73,10 +73,10 @@ public class NewLibrary_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          ((MPSProject) MapSequence.<String,Object>fromMap(_params).get("project")).setFolderFor(s, NewLibrary_Action.this.folder);
+          ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(s, NewLibrary_Action.this.folder);
         }
       });
-      ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("ideaProject")));
+      ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
       projectPane.rebuildTree();
       projectPane.selectModule(s, false);
     } catch (Throwable t) {

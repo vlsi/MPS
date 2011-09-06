@@ -53,7 +53,7 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
       if (!(matchNeeded)) {
         return true;
       }
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), new PatternOrPattern2_Test.TestBody.QuotationClass_49ctdq_a1a0g0b0().createNode()), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("patternVar_s"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternOrPattern2_Test.TestBody.QuotationClass_49ctdq_a1a0g0b0().createNode()), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("patternVar_s"))));
       return true;
     }
 

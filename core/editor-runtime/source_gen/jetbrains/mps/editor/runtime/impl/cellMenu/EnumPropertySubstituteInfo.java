@@ -24,10 +24,10 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   protected List<INodeSubstituteAction> createActions() {
-    List<INodeSubstituteAction> actions = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> actions = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     SNode enumDataType = (SNode) SLinkOperations.getTarget(myPropertyDeclaration, "dataType", false);
     for (final SNode enumMemberDeclaration : SLinkOperations.getTargets(enumDataType, "member", true)) {
-      ListSequence.<INodeSubstituteAction>fromList(actions).addElement(new AbstractNodeSubstituteAction(null, enumMemberDeclaration, myNode) {
+      ListSequence.fromList(actions).addElement(new AbstractNodeSubstituteAction(null, enumMemberDeclaration, myNode) {
         @Override
         public String getMatchingText(String pattern) {
           return SPropertyOperations.getString(enumMemberDeclaration, "externalValue");

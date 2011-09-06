@@ -6,8 +6,8 @@
     <nodeInfo nodeId="1196720899942" fileName="TestFeatures_Test.java" startLine="21" startPosition="38" endLine="22" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196720899950" fileName="TestFeatures_Test.java" startLine="22" startPosition="146" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196720899955" fileName="TestFeatures_Test.java" startLine="23" startPosition="63" endLine="24" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196720899963" fileName="TestFeatures_Test.java" startLine="24" startPosition="153" endLine="25" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196720899968" fileName="TestFeatures_Test.java" startLine="25" startPosition="73" endLine="26" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196720899963" fileName="TestFeatures_Test.java" startLine="24" startPosition="153" endLine="25" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196720899968" fileName="TestFeatures_Test.java" startLine="25" startPosition="67" endLine="26" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196720899978" fileName="TestFeatures_Test.java" startLine="26" startPosition="220" endLine="27" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196720899983" fileName="TestFeatures_Test.java" startLine="27" startPosition="62" endLine="28" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196720899991" fileName="TestFeatures_Test.java" startLine="28" startPosition="142" endLine="29" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -16,14 +16,14 @@
     <nodeInfo nodeId="1196720900018" fileName="TestFeatures_Test.java" startLine="34" startPosition="87" endLine="35" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196720900027" fileName="TestFeatures_Test.java" startLine="38" startPosition="48" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196720900031" fileName="TestFeatures_Test.java" startLine="39" startPosition="43" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196720900037" fileName="TestFeatures_Test.java" startLine="41" startPosition="55" endLine="42" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196720900037" fileName="TestFeatures_Test.java" startLine="41" startPosition="49" endLine="42" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196720900044" fileName="TestFeatures_Test.java" startLine="42" startPosition="45" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196720900050" fileName="TestFeatures_Test.java" startLine="44" startPosition="5" endLine="45" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196720900035" fileName="TestFeatures_Test.java" startLine="40" startPosition="20" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1196720900003" fileName="TestFeatures_Test.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parse#(Ljava/lang/String;)Lorg/w3c/dom/Document;" />
     <nodeInfo nodeId="1196720900025" fileName="TestFeatures_Test.java" startLine="37" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#(Ljava/lang/Iterable;)Ljava/lang/String;" />
     <nodeInfo nodeId="1196720899934" fileName="TestFeatures_Test.java" startLine="19" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nodesAndAttributes#()V" />
-    <scopeInfo nodeId="1196720900036" fileName="TestFeatures_Test.java" startLine="41" startPosition="55" endLine="43" endPosition="17" />
+    <scopeInfo nodeId="1196720900036" fileName="TestFeatures_Test.java" startLine="41" startPosition="49" endLine="43" endPosition="17" />
     <scopeInfo nodeId="1196720900004" fileName="TestFeatures_Test.java" startLine="32" startPosition="54" endLine="35" endPosition="15">
       <varInfo nodeId="1196720900006" varName="is" />
       <varInfo nodeId="1196720900012" varName="doc" />
@@ -59,14 +59,14 @@
     <nodeInfo nodeId="1196720900105" fileName="GenericFeatures_Test.java" startLine="27" startPosition="87" endLine="28" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196720900114" fileName="GenericFeatures_Test.java" startLine="31" startPosition="48" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196720900118" fileName="GenericFeatures_Test.java" startLine="32" startPosition="43" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196720900124" fileName="GenericFeatures_Test.java" startLine="34" startPosition="55" endLine="35" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196720900124" fileName="GenericFeatures_Test.java" startLine="34" startPosition="49" endLine="35" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196720900131" fileName="GenericFeatures_Test.java" startLine="35" startPosition="45" endLine="36" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196720900137" fileName="GenericFeatures_Test.java" startLine="37" startPosition="5" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196720900122" fileName="GenericFeatures_Test.java" startLine="33" startPosition="20" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1196720900060" fileName="GenericFeatures_Test.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_generic#()V" />
     <nodeInfo nodeId="1196720900090" fileName="GenericFeatures_Test.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parse#(Ljava/lang/String;)Lorg/w3c/dom/Document;" />
     <nodeInfo nodeId="1196720900112" fileName="GenericFeatures_Test.java" startLine="30" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#(Ljava/lang/Iterable;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1196720900123" fileName="GenericFeatures_Test.java" startLine="34" startPosition="55" endLine="36" endPosition="17" />
+    <scopeInfo nodeId="1196720900123" fileName="GenericFeatures_Test.java" startLine="34" startPosition="49" endLine="36" endPosition="17" />
     <scopeInfo nodeId="1196720900061" fileName="GenericFeatures_Test.java" startLine="19" startPosition="47" endLine="22" endPosition="61">
       <varInfo nodeId="1196720900063" varName="doc" />
       <varInfo nodeId="1196720900069" varName="foo" />
@@ -192,7 +192,7 @@
     <nodeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="166" startPosition="41" endLine="167" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="168" startPosition="30" endLine="169" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="171" startPosition="33" endLine="172" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196720900193" fileName="DOMF.java" startLine="178" startPosition="9" endLine="179" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196720900193" fileName="DOMF.java" startLine="178" startPosition="9" endLine="179" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196720900238" fileName="DOMF.java" startLine="183" startPosition="71" endLine="184" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="thisNode" />
     <nodeInfo nodeId="1196720900238" fileName="DOMF.java" startLine="184" startPosition="26" endLine="185" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="param" />
     <nodeInfo nodeId="1196720900238" fileName="DOMF.java" startLine="187" startPosition="55" endLine="188" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -274,7 +274,7 @@
     <nodeInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="24" startPosition="41" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
     <nodeInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="23" startPosition="44" endLine="60" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876789614" fileName="DOMF.java" startLine="201" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="22" startPosition="74" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="22" startPosition="66" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1196720900257" fileName="DOMF_Design.java" startLine="21" startPosition="59" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876789358" fileName="DOMF.java" startLine="58" startPosition="22" endLine="100" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="128" startPosition="22" endLine="170" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
@@ -286,7 +286,7 @@
     <nodeInfo nodeId="1227876789614" fileName="DOMF.java" startLine="195" startPosition="42" endLine="241" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876789358" fileName="DOMF.java" startLine="55" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
     <nodeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="125" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="1227876789614" fileName="DOMF.java" startLine="194" startPosition="70" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1227876789614" fileName="DOMF.java" startLine="194" startPosition="64" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1196720900285" fileName="DOMF.java" startLine="193" startPosition="86" endLine="243" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876789358" fileName="DOMF.java" startLine="50" startPosition="46" endLine="104" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="120" startPosition="46" endLine="174" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -295,8 +295,8 @@
     <nodeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="119" startPosition="39" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
     <nodeInfo nodeId="1227876789358" fileName="DOMF.java" startLine="48" startPosition="42" endLine="106" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="118" startPosition="42" endLine="176" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876789358" fileName="DOMF.java" startLine="47" startPosition="70" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="117" startPosition="84" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1227876789358" fileName="DOMF.java" startLine="47" startPosition="64" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="117" startPosition="78" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1196720900204" fileName="DOMF.java" startLine="46" startPosition="57" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196720900158" fileName="DOMF.java" startLine="116" startPosition="57" endLine="178" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196720900148" fileName="DOMF.java" startLine="44" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sequence#()Ljava/lang/Iterable;" />
@@ -410,7 +410,7 @@
     <scopeInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="24" startPosition="41" endLine="60" endPosition="0" />
     <scopeInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="23" startPosition="44" endLine="60" endPosition="12" />
     <scopeInfo nodeId="1227876789614" fileName="DOMF.java" startLine="201" startPosition="0" endLine="239" endPosition="0" />
-    <scopeInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="22" startPosition="74" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="22" startPosition="66" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1196720900256" fileName="DOMF_Design.java" startLine="21" startPosition="59" endLine="62" endPosition="9" />
     <scopeInfo nodeId="1227876789358" fileName="DOMF.java" startLine="58" startPosition="22" endLine="100" endPosition="21" />
     <scopeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="128" startPosition="22" endLine="170" endPosition="21" />
@@ -422,7 +422,7 @@
     <scopeInfo nodeId="1227876789614" fileName="DOMF.java" startLine="195" startPosition="42" endLine="241" endPosition="12" />
     <scopeInfo nodeId="1227876789358" fileName="DOMF.java" startLine="55" startPosition="0" endLine="104" endPosition="0" />
     <scopeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="125" startPosition="0" endLine="174" endPosition="0" />
-    <scopeInfo nodeId="1227876789614" fileName="DOMF.java" startLine="194" startPosition="70" endLine="243" endPosition="0" />
+    <scopeInfo nodeId="1227876789614" fileName="DOMF.java" startLine="194" startPosition="64" endLine="243" endPosition="0" />
     <scopeInfo nodeId="1196720900275" fileName="DOMF.java" startLine="192" startPosition="38" endLine="243" endPosition="9">
       <varInfo nodeId="1196720900277" varName="els" />
     </scopeInfo>
@@ -433,12 +433,12 @@
     <scopeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="119" startPosition="39" endLine="176" endPosition="0" />
     <scopeInfo nodeId="1227876789358" fileName="DOMF.java" startLine="48" startPosition="42" endLine="106" endPosition="12" />
     <scopeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="118" startPosition="42" endLine="176" endPosition="12" />
-    <scopeInfo nodeId="1227876789358" fileName="DOMF.java" startLine="47" startPosition="70" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="117" startPosition="84" endLine="178" endPosition="0" />
+    <scopeInfo nodeId="1227876789358" fileName="DOMF.java" startLine="47" startPosition="64" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="1227876789452" fileName="DOMF.java" startLine="117" startPosition="78" endLine="178" endPosition="0" />
     <scopeInfo nodeId="1196720900198" fileName="DOMF.java" startLine="45" startPosition="38" endLine="108" endPosition="9">
       <varInfo nodeId="1196720900200" varName="cns" />
     </scopeInfo>
-    <scopeInfo nodeId="1196720900152" fileName="DOMF.java" startLine="115" startPosition="23" endLine="179" endPosition="54">
+    <scopeInfo nodeId="1196720900152" fileName="DOMF.java" startLine="115" startPosition="23" endLine="179" endPosition="48">
       <varInfo nodeId="1196720900154" varName="cns" />
       <varInfo nodeId="1196720900159" varName="seq" />
     </scopeInfo>
@@ -451,16 +451,16 @@
     <unitInfo nodeId="1196720900145" fileName="DOMF.java" startLine="280" startPosition="0" endLine="307" endPosition="0" unitName="ypath.traversalTests.DOMF$Desc_Feature_child" />
     <unitInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="26" startPosition="25" endLine="58" endPosition="15" unitName="ypath.traversalTests.DOMF_Design$3" />
     <unitInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="24" startPosition="21" endLine="60" endPosition="11" unitName="ypath.traversalTests.DOMF_Design$2" />
-    <unitInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="22" startPosition="46" endLine="62" endPosition="7" unitName="ypath.traversalTests.DOMF_Design$1" />
+    <unitInfo nodeId="1227876790611" fileName="DOMF_Design.java" startLine="22" startPosition="38" endLine="62" endPosition="7" unitName="ypath.traversalTests.DOMF_Design$1" />
     <unitInfo nodeId="1227876789614" fileName="DOMF.java" startLine="198" startPosition="25" endLine="239" endPosition="15" unitName="ypath.traversalTests.DOMF$3" />
     <unitInfo nodeId="1227876789614" fileName="DOMF.java" startLine="196" startPosition="21" endLine="241" endPosition="11" unitName="ypath.traversalTests.DOMF$2" />
-    <unitInfo nodeId="1227876789614" fileName="DOMF.java" startLine="194" startPosition="44" endLine="243" endPosition="7" unitName="ypath.traversalTests.DOMF$1" />
+    <unitInfo nodeId="1227876789614" fileName="DOMF.java" startLine="194" startPosition="38" endLine="243" endPosition="7" unitName="ypath.traversalTests.DOMF$1" />
     <unitInfo nodeId="1227876789358" fileName="DOMF.java" startLine="51" startPosition="25" endLine="104" endPosition="15" unitName="ypath.traversalTests.DOMF$3" />
     <unitInfo nodeId="1227876789452" fileName="DOMF.java" startLine="121" startPosition="25" endLine="174" endPosition="15" unitName="ypath.traversalTests.DOMF$4" />
     <unitInfo nodeId="1227876789358" fileName="DOMF.java" startLine="49" startPosition="21" endLine="106" endPosition="11" unitName="ypath.traversalTests.DOMF$2" />
     <unitInfo nodeId="1227876789452" fileName="DOMF.java" startLine="119" startPosition="21" endLine="176" endPosition="11" unitName="ypath.traversalTests.DOMF$3" />
-    <unitInfo nodeId="1227876789358" fileName="DOMF.java" startLine="47" startPosition="44" endLine="108" endPosition="7" unitName="ypath.traversalTests.DOMF$1" />
-    <unitInfo nodeId="1227876789452" fileName="DOMF.java" startLine="117" startPosition="58" endLine="178" endPosition="7" unitName="ypath.traversalTests.DOMF$2" />
+    <unitInfo nodeId="1227876789358" fileName="DOMF.java" startLine="47" startPosition="38" endLine="108" endPosition="7" unitName="ypath.traversalTests.DOMF$1" />
+    <unitInfo nodeId="1227876789452" fileName="DOMF.java" startLine="117" startPosition="52" endLine="178" endPosition="7" unitName="ypath.traversalTests.DOMF$2" />
     <unitInfo nodeId="1196720900145" fileName="DOMF_Design.java" startLine="20" startPosition="0" endLine="91" endPosition="0" unitName="ypath.traversalTests.DOMF_Design$Design_Feature_child" />
     <unitInfo nodeId="1196720900238" fileName="DOMF.java" startLine="183" startPosition="0" endLine="254" endPosition="0" unitName="ypath.traversalTests.DOMF$Feature_child" />
     <unitInfo nodeId="1196720900145" fileName="DOMF_Design.java" startLine="19" startPosition="0" endLine="92" endPosition="0" unitName="ypath.traversalTests.DOMF_Design" />

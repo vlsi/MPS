@@ -37,12 +37,12 @@ public class MakeNamespace_Action extends GeneratedAction {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
     }
-    for (TreeNode selectedNode : ((List<TreeNode>) MapSequence.<String,Object>fromMap(_params).get("ppNodes"))) {
+    for (TreeNode selectedNode : ((List<TreeNode>) MapSequence.fromMap(_params).get("ppNodes"))) {
       if (!(selectedNode instanceof NamespaceTextNode)) {
         return false;
       }
     }
-    String text = new MakeActionParameters(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), null, null, MakeNamespace_Action.this.selectedModules(_params), null).actionText(MakeNamespace_Action.this.cleanMake);
+    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, MakeNamespace_Action.this.selectedModules(_params), null).actionText(MakeNamespace_Action.this.cleanMake);
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
@@ -68,16 +68,16 @@ public class MakeNamespace_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("ppNodes", event.getData(MPSDataKeys.LOGICAL_VIEW_NODES));
-    if (MapSequence.<String,Object>fromMap(_params).get("ppNodes") == null) {
+    MapSequence.fromMap(_params).put("ppNodes", event.getData(MPSDataKeys.LOGICAL_VIEW_NODES));
+    if (MapSequence.fromMap(_params).get("ppNodes") == null) {
       return false;
     }
     return true;
@@ -85,7 +85,7 @@ public class MakeNamespace_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MakeActionImpl(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), null, null, MakeNamespace_Action.this.selectedModules(_params), null), MakeNamespace_Action.this.cleanMake).executeAction();
+      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, MakeNamespace_Action.this.selectedModules(_params), null), MakeNamespace_Action.this.cleanMake).executeAction();
 
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -106,8 +106,8 @@ public class MakeNamespace_Action extends GeneratedAction {
 
   private List<IModule> selectedModules(final Map<String, Object> _params) {
     List<IModule> models = new ArrayList<IModule>();
-    for (TreeNode ppNode : ListSequence.<TreeNode>fromList(((List<TreeNode>) MapSequence.<String,Object>fromMap(_params).get("ppNodes")))) {
-      for (IModule module : ListSequence.<IModule>fromList(((NamespaceTextNode) ppNode).getModulesUnder())) {
+    for (TreeNode ppNode : ListSequence.fromList(((List<TreeNode>) MapSequence.fromMap(_params).get("ppNodes")))) {
+      for (IModule module : ListSequence.fromList(((NamespaceTextNode) ppNode).getModulesUnder())) {
         models.add(module);
       }
     }

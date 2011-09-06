@@ -10,20 +10,20 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class MPS7408 {
-  /*package*/ List<Tuples._2<_FunctionTypes._return_P0_E0<? extends Boolean>, _FunctionTypes._void_P0_E0>> jobs = ListSequence.<Tuples._2<_FunctionTypes._return_P0_E0<? extends Boolean>, _FunctionTypes._void_P0_E0>>fromList(new ArrayList<Tuples._2<_FunctionTypes._return_P0_E0<? extends Boolean>, _FunctionTypes._void_P0_E0>>());
+  /*package*/ List<Tuples._2<_FunctionTypes._return_P0_E0<? extends Boolean>, _FunctionTypes._void_P0_E0>> jobs = ListSequence.fromList(new ArrayList<Tuples._2<_FunctionTypes._return_P0_E0<? extends Boolean>, _FunctionTypes._void_P0_E0>>());
 
   public MPS7408() {
   }
 
   public void waitFor(Tuples._2<_FunctionTypes._return_P0_E0<? extends Boolean>, _FunctionTypes._void_P0_E0> j) {
     synchronized (this.jobs) {
-      ListSequence.<Tuples._2<_FunctionTypes._return_P0_E0<? extends Boolean>, _FunctionTypes._void_P0_E0>>fromList(this.jobs).addElement(j);
+      ListSequence.fromList(this.jobs).addElement(j);
     }
   }
 
   public void waitFor2(_FunctionTypes._return_P0_E0<? extends Boolean> cond, _FunctionTypes._void_P0_E0 run) {
     synchronized (this.jobs) {
-      ListSequence.<Tuples._2<_FunctionTypes._return_P0_E0<? extends Boolean>, _FunctionTypes._void_P0_E0>>fromList(this.jobs).addElement(MultiTuple.<_FunctionTypes._return_P0_E0<? extends Boolean>,_FunctionTypes._void_P0_E0>from(cond, run));
+      ListSequence.fromList(this.jobs).addElement(MultiTuple.<_FunctionTypes._return_P0_E0<? extends Boolean>,_FunctionTypes._void_P0_E0>from(cond, run));
     }
   }
 }

@@ -45,12 +45,12 @@ public class RecompileProject_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("ideaProject") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -58,9 +58,9 @@ public class RecompileProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Set<IModule> modules = SetSequence.<IModule>fromSet(new LinkedHashSet<IModule>());
-      SetSequence.fromSet(modules).addSequence(ListSequence.<IModule>fromList(((MPSProject) MapSequence.<String,Object>fromMap(_params).get("project")).getProjectModules(IModule.class)));
-      ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.<String,Object>fromMap(_params).get("ideaProject")), "Compiling", modules, true));
+      final Set<IModule> modules = SetSequence.fromSet(new LinkedHashSet<IModule>());
+      SetSequence.fromSet(modules).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(IModule.class)));
+      ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Compiling", modules, true));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RecompileProject", t);

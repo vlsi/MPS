@@ -19,9 +19,9 @@ public class SemanticDowncast {
   }
 
   public void countChildren(SNode methodCall) {
-    int count_verbose_not_efficient = ListSequence.<SNode>fromList(((List<SNode>) SLinkOperations.getTargets(methodCall, "actualArgument", true))).count();
-    int count_not_efficient = ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).count();
+    int count_verbose_not_efficient = ListSequence.fromList(((List<SNode>) SLinkOperations.getTargets(methodCall, "actualArgument", true))).count();
+    int count_not_efficient = ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).count();
     int count_not_efficient2 = SLinkOperations.getTargets(methodCall, "actualArgument", true).size();
-    int count_best = ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).count();
+    int count_best = ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).count();
   }
 }

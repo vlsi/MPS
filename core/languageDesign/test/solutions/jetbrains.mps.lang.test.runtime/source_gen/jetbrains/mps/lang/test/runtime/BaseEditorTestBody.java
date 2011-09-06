@@ -83,10 +83,10 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   private CellReference findCellReference(SNode node) {
     List<SNode> annotations = SNodeOperations.getDescendants(node, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", false, new String[]{});
-    if (ListSequence.<SNode>fromList(annotations).isEmpty()) {
+    if (ListSequence.fromList(annotations).isEmpty()) {
       return null;
     }
-    return new CellReference(this.getNodeById(SNodeOperations.getParent(ListSequence.<SNode>fromList(annotations).first()).getId()), ListSequence.<SNode>fromList(annotations).first(), this.myMap);
+    return new CellReference(this.getNodeById(SNodeOperations.getParent(ListSequence.fromList(annotations).first()).getId()), ListSequence.fromList(annotations).first(), this.myMap);
   }
 
   public void checkAssertion() throws Throwable {
@@ -98,8 +98,8 @@ public class BaseEditorTestBody extends BaseTestBody {
             public void run() {
               try {
                 SNode editedNode = BaseEditorTestBody.this.myEditor.getCurrentlyEditedNode().getNode();
-                Map<SNode, SNode> map = MapSequence.<SNode,SNode>fromMap(new HashMap<SNode, SNode>());
-                Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), editedNode), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), BaseEditorTestBody.this.myResult), (Map) map));
+                Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
+                Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), editedNode), ListSequence.fromListAndArray(new ArrayList<SNode>(), BaseEditorTestBody.this.myResult), (Map) map));
                 if (BaseEditorTestBody.this.myFinish != null) {
                   BaseEditorTestBody.this.myFinish.assertEditor(BaseEditorTestBody.this.myEditor, map);
                 }
@@ -142,7 +142,7 @@ public class BaseEditorTestBody extends BaseTestBody {
             query.setInstantiate(true);
             query.setCurrentNodeOnly(true);
             Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, editor.getEditorContext());
-            for (Pair<Intention, SNode> intention : Sequence.<Pair<Intention, SNode>>fromIterable(intentions)) {
+            for (Pair<Intention, SNode> intention : Sequence.fromIterable(intentions)) {
               if (intention.first.getClass().getCanonicalName().equals(name)) {
                 intention.first.execute(intention.second, editor.getEditorContext());
               }
@@ -185,7 +185,7 @@ public class BaseEditorTestBody extends BaseTestBody {
   public static void pressKeys(final EditorComponent editorComponent, final List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
-        for (String code : ListSequence.<String>fromList(keyStrokes)) {
+        for (String code : ListSequence.fromList(keyStrokes)) {
           KeyStroke stroke = KeyStroke.getKeyStroke(code);
           editorComponent.processKeyPressed(new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));
           editorComponent.processKeyReleased(new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));

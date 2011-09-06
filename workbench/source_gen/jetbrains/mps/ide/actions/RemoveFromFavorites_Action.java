@@ -30,10 +30,10 @@ public class RemoveFromFavorites_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (((List<TreeNode>) MapSequence.<String,Object>fromMap(_params).get("treeNodes")).isEmpty()) {
+    if (((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")).isEmpty()) {
       return false;
     }
-    return FavoritesUtil.isActiveFavorites(((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
+    return FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -54,12 +54,12 @@ public class RemoveFromFavorites_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("treeNodes", event.getData(MPSDataKeys.LOGICAL_VIEW_NODES));
-    if (MapSequence.<String,Object>fromMap(_params).get("treeNodes") == null) {
+    MapSequence.fromMap(_params).put("treeNodes", event.getData(MPSDataKeys.LOGICAL_VIEW_NODES));
+    if (MapSequence.fromMap(_params).get("treeNodes") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -67,12 +67,12 @@ public class RemoveFromFavorites_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<Object> objects = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.<String,Object>fromMap(_params).get("treeNodes")));
-      MPSFavoritesManager favoritesManager = ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
+      List<Object> objects = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")));
+      MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
       if (favoritesManager == null) {
         return;
       }
-      ProjectView projectView = ProjectView.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
+      ProjectView projectView = ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
       FavoritesProjectPane pane = (FavoritesProjectPane) projectView.getCurrentProjectViewPane();
       String name = pane.getSubId();
       favoritesManager.removeRoots(name, objects);
