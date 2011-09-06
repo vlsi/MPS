@@ -37,7 +37,7 @@ public class PriorityCheckTest_Test extends BaseTransformationTest {
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("3852894662483449704"), "jetbrains.mps.baseLanguage.structure.PlusExpression"), op);
       SLinkOperations.setTarget(op, "rightExpression", SNodeOperations.cast(this.getNodeById("3852894662483449704"), "jetbrains.mps.baseLanguage.structure.PlusExpression"), true);
       ParenthesisUtil.checkOperationWRTPriority(op);
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483449711"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483449702"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483449711"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483449702"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
     }
   }
 }

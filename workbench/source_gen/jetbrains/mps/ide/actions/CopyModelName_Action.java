@@ -39,8 +39,8 @@ public class CopyModelName_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
-    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
@@ -48,7 +48,7 @@ public class CopyModelName_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      CopyPasteUtil.copyTextToClipboard(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getLongName());
+      CopyPasteUtil.copyTextToClipboard(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getLongName());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "CopyModelName", t);

@@ -25,7 +25,7 @@ public class StaticBehaviorMethodWithParameters_completion_Test extends BaseTran
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("7075734325385964912", "7075734325385964943");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.<String>fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
     }
   }
 }

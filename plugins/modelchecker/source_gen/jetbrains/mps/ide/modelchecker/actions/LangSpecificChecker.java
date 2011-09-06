@@ -24,14 +24,14 @@ public class LangSpecificChecker extends SpecificChecker {
   }
 
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
-    List<SearchResult<ModelCheckerIssue>> results = ListSequence.<SearchResult<ModelCheckerIssue>>fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
-    for (SNode rootNode : ListSequence.<SNode>fromList(SModelOperations.getRoots(model, null))) {
+    List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
+    for (SNode rootNode : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
       if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for constraints & scopes..."))) {
         break;
       }
       for (INodeChecker checker : myLanguageCheckers) {
         Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, operationContext);
-        for (IErrorReporter errorReporter : SetSequence.<IErrorReporter>fromSet(iErrorReporters)) {
+        for (IErrorReporter errorReporter : SetSequence.fromSet(iErrorReporters)) {
           addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), "constraints", null);
         }
       }

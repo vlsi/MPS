@@ -26,8 +26,8 @@ public class SurrondByParensesis_Test extends BaseTransformationTest {
       final IEditor editor = TestBody.this.initEditor("1241100704753", "1241100756809");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "(");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.<String>fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.<String>fromListAndArray(new ArrayList<String>(), " ENTER"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }

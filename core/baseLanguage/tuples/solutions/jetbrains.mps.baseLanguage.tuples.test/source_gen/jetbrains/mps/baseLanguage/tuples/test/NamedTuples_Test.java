@@ -56,7 +56,7 @@ public class NamedTuples_Test extends TestCase {
 
   public void test_sequenceOfTuples() throws Exception {
     Iterable<Data> seq = this.getSequence();
-    for (Data tpl : Sequence.<Data>fromIterable(seq)) {
+    for (Data tpl : Sequence.fromIterable(seq)) {
       Assert.assertTrue("abc".equalsIgnoreCase(tpl.foo()));
       Assert.assertTrue("xyz".equalsIgnoreCase(tpl.bar()));
     }
@@ -98,7 +98,7 @@ public class NamedTuples_Test extends TestCase {
 
   public void test_filter() throws Exception {
     Iterable<Data> seq = this.getSequence();
-    Sequence.<Data>fromIterable(seq).any(new IWhereFilter<Data>() {
+    Sequence.fromIterable(seq).any(new IWhereFilter<Data>() {
       public boolean accept(Data it) {
         return it.foo() == it.bar();
       }
@@ -134,11 +134,11 @@ public class NamedTuples_Test extends TestCase {
   }
 
   public void test_listOfTuples() throws Exception {
-    List<Pair<String, Long>> lot = ListSequence.<Pair<String, Long>>fromList(new ArrayList<Pair<String, Long>>());
-    ListSequence.<Pair<String, Long>>fromList(lot).addElement(new Pair<String, Long>("A", 1L));
-    ListSequence.<Pair<String, Long>>fromList(lot).addElement(new Pair<String, Long>("B", 2L));
-    Assert.assertSame(2, ListSequence.<Pair<String, Long>>fromList(lot).count());
-    Assert.assertEquals("B", ListSequence.<Pair<String, Long>>fromList(lot).getElement(1).first());
+    List<Pair<String, Long>> lot = ListSequence.fromList(new ArrayList<Pair<String, Long>>());
+    ListSequence.fromList(lot).addElement(new Pair<String, Long>("A", 1L));
+    ListSequence.fromList(lot).addElement(new Pair<String, Long>("B", 2L));
+    Assert.assertSame(2, ListSequence.fromList(lot).count());
+    Assert.assertEquals("B", ListSequence.fromList(lot).getElement(1).first());
   }
 
   public void test_arrayOfTuples() throws Exception {
@@ -187,7 +187,7 @@ public class NamedTuples_Test extends TestCase {
   }
 
   public String getString(Pair<String, String>... tuples) {
-    return IterableUtils.join(Sequence.<Pair<String, String>>fromIterable(Sequence.fromArray(tuples)).<String>select(new ISelector<Pair<String, String>, String>() {
+    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).<String>select(new ISelector<Pair<String, String>, String>() {
       public String select(Pair<String, String> t) {
         return t.first() + "=" + t.second();
       }
@@ -195,7 +195,7 @@ public class NamedTuples_Test extends TestCase {
   }
 
   public String getString(GlobalSharedPair<String, String>... tuples) {
-    return IterableUtils.join(Sequence.<GlobalSharedPair<String, String>>fromIterable(Sequence.fromArray(tuples)).<String>select(new ISelector<GlobalSharedPair<String, String>, String>() {
+    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).<String>select(new ISelector<GlobalSharedPair<String, String>, String>() {
       public String select(GlobalSharedPair<String, String> t) {
         return t.first() + "=" + t.second();
       }
@@ -207,7 +207,7 @@ public class NamedTuples_Test extends TestCase {
   }
 
   public Iterable<Data> getSequence() {
-    return Sequence.<Data>fromClosure(new ISequenceClosure<Data>() {
+    return Sequence.fromClosure(new ISequenceClosure<Data>() {
       public Iterable<Data> iterable() {
         return new Iterable<Data>() {
           public Iterator<Data> iterator() {

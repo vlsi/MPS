@@ -18,17 +18,17 @@ import java.util.HashSet;
 public class Iterator_Test extends Util_Test {
   public void test__null() throws Exception {
     Iterable<Integer> test = null;
-    Assert.assertFalse(Sequence.<Integer>fromIterable(test).iterator() == null);
-    Assert.assertFalse(Sequence.<Integer>fromIterable(test).iterator().hasNext());
-    Assert.assertFalse(Sequence.<Integer>fromIterable(test).enumerator().moveNext());
+    Assert.assertFalse(Sequence.fromIterable(test).iterator() == null);
+    Assert.assertFalse(Sequence.fromIterable(test).iterator().hasNext());
+    Assert.assertFalse(Sequence.fromIterable(test).enumerator().moveNext());
     try {
-      Sequence.<Integer>fromIterable(test).iterator().next();
+      Sequence.fromIterable(test).iterator().next();
       Assert.fail();
     } catch (NoSuchElementException e) {
       // expected exception 
     }
     try {
-      Sequence.<Integer>fromIterable(test).enumerator().current();
+      Sequence.fromIterable(test).enumerator().current();
       Assert.fail();
     } catch (NoSuchElementException e) {
       // expected exception 
@@ -37,7 +37,7 @@ public class Iterator_Test extends Util_Test {
 
   public void test_singleton() throws Exception {
     Iterable<Integer> test = Sequence.<Integer>singleton(42);
-    Iterator<Integer> is = Sequence.<Integer>fromIterable(test).iterator();
+    Iterator<Integer> is = Sequence.fromIterable(test).iterator();
     Assert.assertTrue(is.hasNext());
     Assert.assertSame(42, is.next());
     Assert.assertFalse(is.hasNext());
@@ -47,7 +47,7 @@ public class Iterator_Test extends Util_Test {
     } catch (NoSuchElementException e) {
       // expected exception 
     }
-    IEnumerator<Integer> is2 = Sequence.<Integer>fromIterable(test).enumerator();
+    IEnumerator<Integer> is2 = Sequence.fromIterable(test).enumerator();
     Assert.assertTrue(is2.moveNext());
     Assert.assertSame(42, is2.current());
     Assert.assertFalse(is2.moveNext());
@@ -62,12 +62,12 @@ public class Iterator_Test extends Util_Test {
   public void test_iterating() throws Exception {
     Iterable<String> test = this.inputABC();
     String res = "";
-    for (Iterator<String> itr = Sequence.<String>fromIterable(test).iterator(); itr.hasNext();) {
+    for (Iterator<String> itr = Sequence.fromIterable(test).iterator(); itr.hasNext();) {
       res = res + itr.next();
     }
     Assert.assertEquals("ABC", res);
     res = "";
-    for (IEnumerator<String> enm = Sequence.<String>fromIterable(test).enumerator(); enm.moveNext();) {
+    for (IEnumerator<String> enm = Sequence.fromIterable(test).enumerator(); enm.moveNext();) {
       res = res + enm.current();
       res = res + enm.current();
     }
@@ -75,17 +75,17 @@ public class Iterator_Test extends Util_Test {
   }
 
   public void test_containerIterator() throws Exception {
-    List<Integer> list = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
-    for (Iterator<Integer> cit = ListSequence.<Integer>fromList(list).iterator(); cit.hasNext();) {
+    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
+    for (Iterator<Integer> cit = ListSequence.fromList(list).iterator(); cit.hasNext();) {
       cit.next();
       cit.remove();
     }
-    Assert.assertTrue(ListSequence.<Integer>fromList(list).isEmpty());
-    Set<Integer> set = SetSequence.<Integer>fromSetAndArray(new HashSet<Integer>(), 1, 2, 3);
-    for (Iterator<Integer> cit = SetSequence.<Integer>fromSet(set).iterator(); cit.hasNext();) {
+    Assert.assertTrue(ListSequence.fromList(list).isEmpty());
+    Set<Integer> set = SetSequence.fromSetAndArray(new HashSet<Integer>(), 1, 2, 3);
+    for (Iterator<Integer> cit = SetSequence.fromSet(set).iterator(); cit.hasNext();) {
       cit.next();
       cit.remove();
     }
-    Assert.assertTrue(SetSequence.<Integer>fromSet(set).isEmpty());
+    Assert.assertTrue(SetSequence.fromSet(set).isEmpty());
   }
 }

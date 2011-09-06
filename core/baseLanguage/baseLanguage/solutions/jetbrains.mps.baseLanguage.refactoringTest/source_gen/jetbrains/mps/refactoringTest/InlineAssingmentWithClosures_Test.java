@@ -11,8 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNode;
 
 @MPSLaunch
 public class InlineAssingmentWithClosures_Test extends BaseTransformationTest {
@@ -29,7 +29,7 @@ public class InlineAssingmentWithClosures_Test extends BaseTransformationTest {
       this.addNodeById("9118878263582085119");
       InlineVariableRefactoring ref = InlineVariableRefactoring.createRefactoring(SNodeOperations.cast(this.getNodeById("9118878263582085084"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("9118878263582085078"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("9118878263582085124"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("9118878263582085078"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("9118878263582085124"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }
 }

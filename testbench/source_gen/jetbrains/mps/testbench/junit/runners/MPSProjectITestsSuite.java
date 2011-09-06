@@ -31,21 +31,21 @@ public class MPSProjectITestsSuite extends Suite {
   private static String PROPERTY_MODEL_NAME = "mps.junit.projectSuite.modelLongName";
   private static String PROPERTY_TESTCLASS_NAME = "mps.junit.projectSuite.testClassName";
 
-  private List<Runner> myRunners = ListSequence.<Runner>fromList(new ArrayList<Runner>());
+  private List<Runner> myRunners = ListSequence.fromList(new ArrayList<Runner>());
 
   public MPSProjectITestsSuite(Class<?> klass, RunnerBuilder builder) throws Throwable {
     super(klass, Collections.<Runner>emptyList());
-    for (Class<?> parameter : ListSequence.<Class<?>>fromList(getUnitTestClasses(getTestClass()))) {
-      ListSequence.<Runner>fromList(myRunners).addElement(builder.runnerForClass(parameter));
+    for (Class<?> parameter : ListSequence.fromList(getUnitTestClasses(getTestClass()))) {
+      ListSequence.fromList(myRunners).addElement(builder.runnerForClass(parameter));
     }
   }
 
   private List<Class<?>> getUnitTestClasses(org.junit.runners.model.TestClass klass) throws InitializationError {
-    List<Class<?>> result = ListSequence.<Class<?>>fromList(new ArrayList<Class<?>>());
-    for (Tuples._2<String, IModule> testClassDescriptor : ListSequence.<Tuples._2<String, IModule>>fromList(getTestClassDescriptors(klass))) {
+    List<Class<?>> result = ListSequence.fromList(new ArrayList<Class<?>>());
+    for (Tuples._2<String, IModule> testClassDescriptor : ListSequence.fromList(getTestClassDescriptors(klass))) {
       Class testClass = testClassDescriptor._1().getClass(testClassDescriptor._0());
       if (testClass != null) {
-        ListSequence.<Class<?>>fromList(result).addElement(testClass);
+        ListSequence.fromList(result).addElement(testClass);
       } else {
         throw new InitializationError("Unable to load class for ITestCase by fq name: " + testClassDescriptor._0() + " from module: " + testClassDescriptor._1().getModuleFqName());
       }
@@ -57,19 +57,19 @@ public class MPSProjectITestsSuite extends Suite {
     final List<SModelDescriptor> modelDescriptors = getModelDescriptors(klass);
     String testClassName = getTestClassName(klass);
     if (testClassName != null) {
-      if (ListSequence.<SModelDescriptor>fromList(modelDescriptors).isEmpty()) {
+      if (ListSequence.fromList(modelDescriptors).isEmpty()) {
         throw new InitializationError("Unable to locate class: " + testClassName + " - no model descriptors found (model or module was not specified)");
       }
-      return Collections.singletonList(MultiTuple.<String,IModule>from(testClassName, ListSequence.<SModelDescriptor>fromList(modelDescriptors).first().getModule()));
+      return Collections.singletonList(MultiTuple.<String,IModule>from(testClassName, ListSequence.fromList(modelDescriptors).first().getModule()));
     }
 
-    final List<Tuples._2<String, IModule>> testClassDescriptors = ListSequence.<Tuples._2<String, IModule>>fromList(new ArrayList<Tuples._2<String, IModule>>());
+    final List<Tuples._2<String, IModule>> testClassDescriptors = ListSequence.fromList(new ArrayList<Tuples._2<String, IModule>>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModelDescriptor modelDescriptor : ListSequence.<SModelDescriptor>fromList(modelDescriptors)) {
+        for (SModelDescriptor modelDescriptor : ListSequence.fromList(modelDescriptors)) {
           SModel sModel = modelDescriptor.getSModel();
-          for (SNode testCase : ListSequence.<SNode>fromList(SModelOperations.getRoots(sModel, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-            ListSequence.<Tuples._2<String, IModule>>fromList(testClassDescriptors).addElement(MultiTuple.<String,IModule>from(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(testCase, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getClassName_1216136193905", new Class[]{SNode.class})), modelDescriptor.getModule()));
+          for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(sModel, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
+            ListSequence.fromList(testClassDescriptors).addElement(MultiTuple.<String,IModule>from(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(testCase, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getClassName_1216136193905", new Class[]{SNode.class})), modelDescriptor.getModule()));
           }
         }
       }
@@ -82,7 +82,7 @@ public class MPSProjectITestsSuite extends Suite {
 
     String moduleUUID = getModuleUUID(klass);
     if (moduleUUID != null) {
-      for (IModule module : ListSequence.<IModule>fromList(mpsProject.getModules())) {
+      for (IModule module : ListSequence.fromList(mpsProject.getModules())) {
         if (moduleUUID.equals(module.getModuleDescriptor().getUUID())) {
           return module.getOwnModelDescriptors();
         }
@@ -92,7 +92,7 @@ public class MPSProjectITestsSuite extends Suite {
 
     String modelLongName = getModelLongName(klass);
     if (modelLongName != null) {
-      for (SModelDescriptor modelDescriptor : ListSequence.<SModelDescriptor>fromList(mpsProject.getProjectModels())) {
+      for (SModelDescriptor modelDescriptor : ListSequence.fromList(mpsProject.getProjectModels())) {
         if (modelLongName.equals(modelDescriptor.getLongName())) {
           return Collections.singletonList(modelDescriptor);
         }

@@ -31,29 +31,29 @@ public class PathItemsReloadableCache {
             ClassLoaderManager.getInstance().removeReloadHandler(this);
           }
         });
-        this.cache = MapSequence.<String,PathItem>fromMap(new HashMap<String, PathItem>());
+        this.cache = MapSequence.fromMap(new HashMap<String, PathItem>());
       }
-      PathItem pi = MapSequence.<String,PathItem>fromMap(cache).get(path);
+      PathItem pi = MapSequence.fromMap(cache).get(path);
       if (pi == null) {
         try {
           pi = pathItemClass.getDeclaredConstructor(String.class).newInstance(path);
         } catch (Exception checked) {
           throw new PathItemsReloadableCache.CantCreatePathItemException("Exception while creating path item.\n" + "Path: " + path + "\nPath item class: " + pathItemClass, checked);
         }
-        MapSequence.<String,PathItem>fromMap(cache).put(path, pi);
+        MapSequence.fromMap(cache).put(path, pi);
       }
       return pi;
     }
   }
 
   public static PathItemsReloadableCache getInstance(Class<? extends PathItem> cls) {
-    PathItemsReloadableCache inst = MapSequence.<Object,PathItemsReloadableCache>fromMap(Instances).get(cls);
+    PathItemsReloadableCache inst = MapSequence.fromMap(Instances).get(cls);
     if (inst == null) {
       synchronized (Instances) {
-        inst = MapSequence.<Object,PathItemsReloadableCache>fromMap(Instances).get(cls);
+        inst = MapSequence.fromMap(Instances).get(cls);
         if (inst == null) {
           inst = new PathItemsReloadableCache(cls);
-          MapSequence.<Object,PathItemsReloadableCache>fromMap(Instances).put(cls, inst);
+          MapSequence.fromMap(Instances).put(cls, inst);
         }
       }
     }

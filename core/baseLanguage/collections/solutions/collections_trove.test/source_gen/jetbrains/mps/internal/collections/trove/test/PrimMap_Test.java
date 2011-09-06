@@ -30,32 +30,32 @@ import gnu.trove.TShortShortHashMap;
 public class PrimMap_Test extends Util_Test {
   public void test_byteByte() throws Exception {
     Map<Byte, Byte> mbb = MapSequence.fromMap(new TByteByteHashMapDecorator(new TByteByteHashMap()));
-    MapSequence.<Byte,Byte>fromMap(mbb).put((byte) 1, (byte) 2);
-    Assert.assertSame(1, MapSequence.<Byte,Byte>fromMap(mbb).count());
+    MapSequence.fromMap(mbb).put((byte) 1, (byte) 2);
+    Assert.assertSame(1, MapSequence.fromMap(mbb).count());
   }
 
   public void test_byteObject() throws Exception {
     Map<Byte, Object> mbo = MapSequence.fromMap(new TByteObjectHashMapDecorator(new TByteObjectHashMap<Object>()));
-    MapSequence.<Byte,Object>fromMap(mbo).put((byte) 255, this);
-    Assert.assertSame(1, MapSequence.<Byte,Object>fromMap(mbo).count());
+    MapSequence.fromMap(mbo).put((byte) 255, this);
+    Assert.assertSame(1, MapSequence.fromMap(mbo).count());
   }
 
   public void test_doubleDouble() throws Exception {
     Map<Double, Double> mdd = MapSequence.fromMap(new TDoubleDoubleHashMapDecorator(new TDoubleDoubleHashMap()));
     Map<Double, Double> mdd2 = MapSequence.fromMap(new TObjectDoubleHashMapDecorator(new TObjectDoubleHashMap<Double>()));
     Map<Double, Double> mdd3 = MapSequence.fromMap(new TDoubleObjectHashMapDecorator(new TDoubleObjectHashMap<Double>()));
-    MapSequence.<Double,Double>fromMap(mdd).put(3.1415, 2.71828);
-    Assert.assertSame(1, MapSequence.<Double,Double>fromMap(mdd).count());
+    MapSequence.fromMap(mdd).put(3.1415, 2.71828);
+    Assert.assertSame(1, MapSequence.fromMap(mdd).count());
     MapSequence.fromMap(mdd2).putAll(mdd);
     Assert.assertEquals(mdd2, mdd);
-    MapSequence.<Double,Double>fromMap(mdd3).put(SetSequence.<Double>fromSet(MapSequence.fromMap(mdd).keySet()).first(), Sequence.<Double>fromIterable(MapSequence.fromMap(mdd).values()).first());
+    MapSequence.fromMap(mdd3).put(SetSequence.fromSet(MapSequence.fromMap(mdd).keySet()).first(), Sequence.fromIterable(MapSequence.fromMap(mdd).values()).first());
     Assert.assertEquals(mdd3, mdd);
   }
 
   public void test_floatFloat() throws Exception {
     Map<Float, Float> mff = MapSequence.fromMap(new TFloatFloatHashMapDecorator(new TFloatFloatHashMap()));
-    MapSequence.<Float,Float>fromMap(mff).put((float) 1.0, (float) 2.0);
-    MapSequence.<Float,Float>fromMap(mff).put((float) 2.0, (float) 1.0);
+    MapSequence.fromMap(mff).put((float) 1.0, (float) 2.0);
+    MapSequence.fromMap(mff).put((float) 2.0, (float) 1.0);
     this.assertIterableEqualsIgnoreOrder(MapSequence.fromMap(mff).keySet(), MapSequence.fromMap(mff).values());
   }
 
@@ -63,23 +63,23 @@ public class PrimMap_Test extends Util_Test {
     Map<Integer, Integer> mii = MapSequence.fromMap(new TIntIntHashMapDecorator(new TIntIntHashMap()));
     for (int x = 0; x < 1 << 8; x++) {
       for (int y = 0; y < 1 << 8; y++) {
-        MapSequence.<Integer,Integer>fromMap(mii).put((y << 8) + x, x * y);
+        MapSequence.fromMap(mii).put((y << 8) + x, x * y);
       }
     }
-    Assert.assertEquals((Integer) (1 << 16), (Integer) MapSequence.<Integer,Integer>fromMap(mii).count());
-    Assert.assertEquals((Integer) (42 * 13), (Integer) MapSequence.<Integer,Integer>fromMap(mii).get((42 << 8) + 13));
-    Assert.assertEquals((Integer) (42 * 13), (Integer) MapSequence.<Integer,Integer>fromMap(mii).get((13 << 8) + 42));
+    Assert.assertEquals((Integer) (1 << 16), (Integer) MapSequence.fromMap(mii).count());
+    Assert.assertEquals((Integer) (42 * 13), (Integer) MapSequence.fromMap(mii).get((42 << 8) + 13));
+    Assert.assertEquals((Integer) (42 * 13), (Integer) MapSequence.fromMap(mii).get((13 << 8) + 42));
   }
 
   public void test_longLong() throws Exception {
     Map<Long, Long> mll = MapSequence.fromMap(new TLongLongHashMapDecorator(new TLongLongHashMap()));
-    MapSequence.<Long,Long>fromMap(mll).put(1L, 2L);
-    Assert.assertSame(2L, MapSequence.<Long,Long>fromMap(mll).get(1L));
+    MapSequence.fromMap(mll).put(1L, 2L);
+    Assert.assertSame(2L, MapSequence.fromMap(mll).get(1L));
   }
 
   public void test_shortShort() throws Exception {
     Map<Short, Short> mss = MapSequence.fromMap(new TShortShortHashMapDecorator(new TShortShortHashMap()));
-    MapSequence.<Short,Short>fromMap(mss).put((short) 2, (short) 1);
-    Assert.assertSame((short) 1, MapSequence.<Short,Short>fromMap(mss).get((short) 2));
+    MapSequence.fromMap(mss).put((short) 2, (short) 1);
+    Assert.assertSame((short) 1, MapSequence.fromMap(mss).get((short) 2));
   }
 }

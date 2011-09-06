@@ -12,6 +12,6 @@ public class BrokenReferencesFinder extends ModelCheckerIssueFinder {
 
   @Override
   protected List<SpecificChecker> getSpecificCheckers() {
-    return ListSequence.<SpecificChecker>fromListAndArray(new ArrayList<SpecificChecker>(), new UnresolvedReferencesChecker());
+    return ListSequence.fromListAndArray(new ArrayList<SpecificChecker>(), new UnresolvedReferencesChecker());
   }
 }

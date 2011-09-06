@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class ReduceFold_Test extends Util_Test {
   public void test_reduceLeft() throws Exception {
     Iterable<Integer> in = this.input10();
-    Assert.assertSame(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10, Sequence.<Integer>fromIterable(in).reduceLeft(new ILeftCombinator<Integer, Integer>() {
+    Assert.assertSame(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10, Sequence.fromIterable(in).reduceLeft(new ILeftCombinator<Integer, Integer>() {
       public Integer combine(Integer a, Integer b) {
         return a + b;
       }
@@ -26,20 +26,20 @@ public class ReduceFold_Test extends Util_Test {
         return a + b;
       }
     };
-    Assert.assertSame(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10, Sequence.<Integer>fromIterable(in).reduceLeft(cl));
-    Assert.assertSame(1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10, Sequence.<Integer>fromIterable(in).reduceLeft(new ILeftCombinator<Integer, Integer>() {
+    Assert.assertSame(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10, Sequence.fromIterable(in).reduceLeft(cl));
+    Assert.assertSame(1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10, Sequence.fromIterable(in).reduceLeft(new ILeftCombinator<Integer, Integer>() {
       public Integer combine(Integer a, Integer b) {
         return a - b;
       }
     }));
     Iterable<Integer> single = Sequence.<Integer>singleton(42);
-    Assert.assertSame(42, Sequence.<Integer>fromIterable(single).reduceLeft(new ILeftCombinator<Integer, Integer>() {
+    Assert.assertSame(42, Sequence.fromIterable(single).reduceLeft(new ILeftCombinator<Integer, Integer>() {
       public Integer combine(Integer a, Integer b) {
         return a + b;
       }
     }));
-    Iterable<Integer> empty = Sequence.<Integer>fromIterable(Collections.<Integer>emptyList());
-    Assert.assertNull(Sequence.<Integer>fromIterable(empty).reduceLeft(new ILeftCombinator<Integer, Integer>() {
+    Iterable<Integer> empty = Sequence.fromIterable(Collections.<Integer>emptyList());
+    Assert.assertNull(Sequence.fromIterable(empty).reduceLeft(new ILeftCombinator<Integer, Integer>() {
       public Integer combine(Integer a, Integer b) {
         int i = 0;
         if (i == 0) {
@@ -52,7 +52,7 @@ public class ReduceFold_Test extends Util_Test {
 
   public void test_reduceRight() throws Exception {
     Iterable<Integer> in = this.input10();
-    Assert.assertSame(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10, Sequence.<Integer>fromIterable(in).reduceRight(new IRightCombinator<Integer, Integer>() {
+    Assert.assertSame(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10, Sequence.fromIterable(in).reduceRight(new IRightCombinator<Integer, Integer>() {
       public Integer combine(Integer a, Integer b) {
         return a + b;
       }
@@ -62,20 +62,20 @@ public class ReduceFold_Test extends Util_Test {
         return a + b;
       }
     };
-    Assert.assertSame(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10, Sequence.<Integer>fromIterable(in).reduceRight(cl));
-    Assert.assertSame(1 - (2 - (3 - (4 - (5 - (6 - (7 - (8 - (9 - 10)))))))), Sequence.<Integer>fromIterable(in).reduceRight(new IRightCombinator<Integer, Integer>() {
+    Assert.assertSame(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10, Sequence.fromIterable(in).reduceRight(cl));
+    Assert.assertSame(1 - (2 - (3 - (4 - (5 - (6 - (7 - (8 - (9 - 10)))))))), Sequence.fromIterable(in).reduceRight(new IRightCombinator<Integer, Integer>() {
       public Integer combine(Integer a, Integer b) {
         return a - b;
       }
     }));
     Iterable<Integer> single = Sequence.<Integer>singleton(42);
-    Assert.assertSame(42, Sequence.<Integer>fromIterable(single).reduceRight(new IRightCombinator<Integer, Integer>() {
+    Assert.assertSame(42, Sequence.fromIterable(single).reduceRight(new IRightCombinator<Integer, Integer>() {
       public Integer combine(Integer b, Integer a) {
         return b + a;
       }
     }));
-    Iterable<Integer> empty = Sequence.<Integer>fromIterable(Collections.<Integer>emptyList());
-    Assert.assertNull(Sequence.<Integer>fromIterable(empty).reduceRight(new IRightCombinator<Integer, Integer>() {
+    Iterable<Integer> empty = Sequence.fromIterable(Collections.<Integer>emptyList());
+    Assert.assertNull(Sequence.fromIterable(empty).reduceRight(new IRightCombinator<Integer, Integer>() {
       public Integer combine(Integer b, Integer a) {
         int i = 0;
         if (i == 0) {
@@ -88,7 +88,7 @@ public class ReduceFold_Test extends Util_Test {
 
   public void test_foldLeft() throws Exception {
     Iterable<Integer> in = this.input10();
-    Assert.assertEquals("12345678910", Sequence.<Integer>fromIterable(in).foldLeft("", new ILeftCombinator<Integer, String>() {
+    Assert.assertEquals("12345678910", Sequence.fromIterable(in).foldLeft("", new ILeftCombinator<Integer, String>() {
       public String combine(String s, Integer it) {
         return "" + s + it;
       }
@@ -98,15 +98,15 @@ public class ReduceFold_Test extends Util_Test {
         return "" + s + it;
       }
     };
-    Assert.assertEquals("12345678910", Sequence.<Integer>fromIterable(in).foldLeft("", cl));
+    Assert.assertEquals("12345678910", Sequence.fromIterable(in).foldLeft("", cl));
     Iterable<Integer> single = Sequence.<Integer>singleton(42);
-    Assert.assertEquals("bar42", Sequence.<Integer>fromIterable(single).foldLeft("bar", new ILeftCombinator<Integer, String>() {
+    Assert.assertEquals("bar42", Sequence.fromIterable(single).foldLeft("bar", new ILeftCombinator<Integer, String>() {
       public String combine(String s, Integer it) {
         return "" + s + it;
       }
     }));
-    Iterable<Integer> empty = Sequence.<Integer>fromIterable(Collections.<Integer>emptyList());
-    Assert.assertEquals("ack", Sequence.<Integer>fromIterable(empty).foldLeft("ack", new ILeftCombinator<Integer, String>() {
+    Iterable<Integer> empty = Sequence.fromIterable(Collections.<Integer>emptyList());
+    Assert.assertEquals("ack", Sequence.fromIterable(empty).foldLeft("ack", new ILeftCombinator<Integer, String>() {
       public String combine(String s, Integer it) {
         int i = 0;
         if (i == 0) {
@@ -119,7 +119,7 @@ public class ReduceFold_Test extends Util_Test {
 
   public void test_foldRight() throws Exception {
     Iterable<Integer> in = this.input10();
-    Assert.assertEquals("10987654321", Sequence.<Integer>fromIterable(in).foldRight("", new IRightCombinator<Integer, String>() {
+    Assert.assertEquals("10987654321", Sequence.fromIterable(in).foldRight("", new IRightCombinator<Integer, String>() {
       public String combine(Integer it, String s) {
         return "" + s + it;
       }
@@ -129,15 +129,15 @@ public class ReduceFold_Test extends Util_Test {
         return "" + s + it;
       }
     };
-    Assert.assertEquals("10987654321", Sequence.<Integer>fromIterable(in).foldRight("", cl));
+    Assert.assertEquals("10987654321", Sequence.fromIterable(in).foldRight("", cl));
     Iterable<Integer> single = Sequence.<Integer>singleton(42);
-    Assert.assertEquals("bar42", Sequence.<Integer>fromIterable(single).foldRight("bar", new IRightCombinator<Integer, String>() {
+    Assert.assertEquals("bar42", Sequence.fromIterable(single).foldRight("bar", new IRightCombinator<Integer, String>() {
       public String combine(Integer it, String s) {
         return s + it;
       }
     }));
-    Iterable<Integer> empty = Sequence.<Integer>fromIterable(Collections.<Integer>emptyList());
-    Assert.assertEquals("ack", Sequence.<Integer>fromIterable(empty).foldRight("ack", new IRightCombinator<Integer, String>() {
+    Iterable<Integer> empty = Sequence.fromIterable(Collections.<Integer>emptyList());
+    Assert.assertEquals("ack", Sequence.fromIterable(empty).foldRight("ack", new IRightCombinator<Integer, String>() {
       public String combine(Integer it, String s) {
         int i = 0;
         if (i == 0) {
@@ -149,8 +149,8 @@ public class ReduceFold_Test extends Util_Test {
   }
 
   public void test_mps10786() throws Exception {
-    List<IntHolder> input = ListSequence.<IntHolder>fromListAndArray(new ArrayList<IntHolder>(), new IntHolder(3), new IntHolder(5));
-    int res = ListSequence.<IntHolder>fromList(input).<Integer>select(new ISelector<IntHolder, Integer>() {
+    List<IntHolder> input = ListSequence.fromListAndArray(new ArrayList<IntHolder>(), new IntHolder(3), new IntHolder(5));
+    int res = ListSequence.fromList(input).<Integer>select(new ISelector<IntHolder, Integer>() {
       public Integer select(IntHolder it) {
         return it.getInt();
       }

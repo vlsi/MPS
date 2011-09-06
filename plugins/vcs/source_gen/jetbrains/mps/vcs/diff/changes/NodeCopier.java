@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 
 public class NodeCopier {
-  private Map<SNodeId, SNodeId> myIdReplacementCache = MapSequence.<SNodeId,SNodeId>fromMap(new HashMap<SNodeId, SNodeId>());
+  private Map<SNodeId, SNodeId> myIdReplacementCache = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>());
   private SModel myModel;
 
   public NodeCopier(SModel model) {
@@ -27,18 +27,18 @@ public class NodeCopier {
   }
 
   public SNodeId getReplacementId(SNodeId originalId) {
-    return MapSequence.<SNodeId,SNodeId>fromMap(myIdReplacementCache).get(originalId);
+    return MapSequence.fromMap(myIdReplacementCache).get(originalId);
   }
 
   public SNode copyNode(SNode sourceNode) {
     SNode copy = CopyUtil.copyAndPreserveId(sourceNode);
-    for (SNode node : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(copy, null, true, new String[]{}))) {
+    for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(copy, null, true, new String[]{}))) {
       SNodeId nodeId = node.getSNodeId();
       if (myModel.getNodeById(nodeId) != null) {
         SNodeId replacedId = SModel.generateUniqueId();
         node.setId(replacedId);
         if (!(MapSequence.fromMap(myIdReplacementCache).containsKey(nodeId))) {
-          MapSequence.<SNodeId,SNodeId>fromMap(myIdReplacementCache).put(nodeId, replacedId);
+          MapSequence.fromMap(myIdReplacementCache).put(nodeId, replacedId);
         }
       }
     }
@@ -50,7 +50,7 @@ public class NodeCopier {
     if (affectOthers) {
       evictOtherDuplicates();
       softRestoreIds();
-      assert Sequence.<SNodeId>fromIterable(MapSequence.fromMap(myIdReplacementCache).values()).all(new IWhereFilter<SNodeId>() {
+      assert Sequence.fromIterable(MapSequence.fromMap(myIdReplacementCache).values()).all(new IWhereFilter<SNodeId>() {
         public boolean accept(SNodeId id) {
           return id == null;
         }
@@ -74,18 +74,18 @@ public class NodeCopier {
   }
 
   private void softRestoreIds() {
-    for (SNodeId id : SetSequence.<SNodeId>fromSet(MapSequence.fromMap(myIdReplacementCache).keySet())) {
-      if (MapSequence.<SNodeId,SNodeId>fromMap(myIdReplacementCache).get(id) != null && myModel.getNodeById(id) == null) {
+    for (SNodeId id : SetSequence.fromSet(MapSequence.fromMap(myIdReplacementCache).keySet())) {
+      if (MapSequence.fromMap(myIdReplacementCache).get(id) != null && myModel.getNodeById(id) == null) {
         // node id is free now! 
-        setId(myModel.getNodeById(MapSequence.<SNodeId,SNodeId>fromMap(myIdReplacementCache).get(id)), id);
+        setId(myModel.getNodeById(MapSequence.fromMap(myIdReplacementCache).get(id)), id);
 
-        MapSequence.<SNodeId,SNodeId>fromMap(myIdReplacementCache).put(id, null);
+        MapSequence.fromMap(myIdReplacementCache).put(id, null);
       }
     }
   }
 
   private void evictOtherDuplicates() {
-    for (SNodeId id : SetSequence.<SNodeId>fromSet(MapSequence.fromMap(myIdReplacementCache).keySet())) {
+    for (SNodeId id : SetSequence.fromSet(MapSequence.fromMap(myIdReplacementCache).keySet())) {
       SNode toBeEvicted = myModel.getNodeById(id);
       assert toBeEvicted != null;
       setId(toBeEvicted, SModel.generateUniqueId());
@@ -93,10 +93,10 @@ public class NodeCopier {
   }
 
   public Map<SNodeId, SNodeId> getState() {
-    final Map<SNodeId, SNodeId> state = MapSequence.<SNodeId,SNodeId>fromMap(new HashMap<SNodeId, SNodeId>(MapSequence.<SNodeId,SNodeId>fromMap(myIdReplacementCache).count()));
-    MapSequence.<SNodeId,SNodeId>fromMap(myIdReplacementCache).visitAll(new IVisitor<IMapping<SNodeId, SNodeId>>() {
+    final Map<SNodeId, SNodeId> state = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>(MapSequence.fromMap(myIdReplacementCache).count()));
+    MapSequence.fromMap(myIdReplacementCache).visitAll(new IVisitor<IMapping<SNodeId, SNodeId>>() {
       public void visit(IMapping<SNodeId, SNodeId> m) {
-        MapSequence.<SNodeId,SNodeId>fromMap(state).put(m.key(), m.value());
+        MapSequence.fromMap(state).put(m.key(), m.value());
       }
     });
     return state;
@@ -108,7 +108,7 @@ public class NodeCopier {
   }
 
   public boolean hasIdsToRestore() {
-    return Sequence.<SNodeId>fromIterable(MapSequence.fromMap(myIdReplacementCache).values()).any(new IWhereFilter<SNodeId>() {
+    return Sequence.fromIterable(MapSequence.fromMap(myIdReplacementCache).values()).any(new IWhereFilter<SNodeId>() {
       public boolean accept(SNodeId id) {
         return id != null;
       }

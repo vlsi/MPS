@@ -31,40 +31,40 @@ public class ModulesClusterizer {
   }
 
   public Iterable<? extends Iterable<IResource>> clusterize(Iterable<IResource> res) {
-    final Iterable<IResource> mres = Sequence.<IResource>fromIterable(res).where(new IWhereFilter<IResource>() {
+    final Iterable<IResource> mres = Sequence.fromIterable(res).where(new IWhereFilter<IResource>() {
       public boolean accept(IResource r) {
         return r instanceof IMResource;
       }
     }).toListSequence();
-    Iterable<IModule> mods = Sequence.<IResource>fromIterable(mres).<IModule>select(new ISelector<IResource, IModule>() {
+    Iterable<IModule> mods = Sequence.fromIterable(mres).<IModule>select(new ISelector<IResource, IModule>() {
       public IModule select(IResource r) {
         return ((IMResource) r).module();
       }
     });
-    List<IResource> rest = Sequence.<IResource>fromIterable(res).subtract(Sequence.<IResource>fromIterable(mres)).toListSequence();
+    List<IResource> rest = Sequence.fromIterable(res).subtract(Sequence.fromIterable(mres)).toListSequence();
     ModulesCluster clst = new ModulesCluster(mods);
     clst.collectRequired(mods);
     return Sequence.fromIterable(clst.buildOrder()).<List<IResource>>select(new ISelector<Iterable<IModule>, IListSequence<IResource>>() {
       public IListSequence<IResource> select(final Iterable<IModule> cl) {
-        return Sequence.<IResource>fromIterable(mres).where(new IWhereFilter<IResource>() {
+        return Sequence.fromIterable(mres).where(new IWhereFilter<IResource>() {
           public boolean accept(IResource r) {
-            return Sequence.<IModule>fromIterable(cl).contains(((IMResource) r).module());
+            return Sequence.fromIterable(cl).contains(((IMResource) r).module());
           }
         }).toListSequence();
       }
-    }).concat(Sequence.<List<IResource>>fromIterable((ListSequence.<IResource>fromList(rest).isNotEmpty() ?
+    }).concat(Sequence.fromIterable((ListSequence.fromList(rest).isNotEmpty() ?
       Sequence.<List<IResource>>singleton(rest) :
       null
     ))).toListSequence();
   }
 
   public Iterable<String> allUsedLangNamespaces(Iterable<IResource> cluster) {
-    Iterable<IResource> mres = Sequence.<IResource>fromIterable(cluster).where(new IWhereFilter<IResource>() {
+    Iterable<IResource> mres = Sequence.fromIterable(cluster).where(new IWhereFilter<IResource>() {
       public boolean accept(IResource r) {
         return r instanceof IMResource;
       }
     }).toListSequence();
-    Iterable<IModule> mods = Sequence.<IResource>fromIterable(mres).<IModule>select(new ISelector<IResource, IModule>() {
+    Iterable<IModule> mods = Sequence.fromIterable(mres).<IModule>select(new ISelector<IResource, IModule>() {
       public IModule select(IResource r) {
         return ((IMResource) r).module();
       }
@@ -73,30 +73,30 @@ public class ModulesClusterizer {
   }
 
   private Iterable<String> allNamespaces(Iterable<IModule> modules) {
-    Set<String> namespaces = SetSequence.<String>fromSet(new HashSet<String>());
-    Set<TemplateModule> seen = SetSequence.<TemplateModule>fromSet(new HashSet<TemplateModule>());
-    Queue<String> nsq = QueueSequence.<String>fromQueue(new LinkedList<String>());
+    Set<String> namespaces = SetSequence.fromSet(new HashSet<String>());
+    Set<TemplateModule> seen = SetSequence.fromSet(new HashSet<TemplateModule>());
+    Queue<String> nsq = QueueSequence.fromQueue(new LinkedList<String>());
     for (IModule mod : modules) {
       Iterable<Language> langs = mod.getDependenciesManager().getAllUsedLanguages();
-      QueueSequence.fromQueue(nsq).addSequence(Sequence.<Language>fromIterable(langs).<String>select(new ISelector<Language, String>() {
+      QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(langs).<String>select(new ISelector<Language, String>() {
         public String select(Language it) {
           return it.getModuleDescriptor().getNamespace();
         }
       }));
-      while (QueueSequence.<String>fromQueue(nsq).isNotEmpty()) {
+      while (QueueSequence.fromQueue(nsq).isNotEmpty()) {
         String ns = QueueSequence.fromQueue(nsq).removeFirstElement();
         LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(ns);
         if (lr == null) {
           LOG.debug("language not found for namespace " + ns);
           continue;
         }
-        if (!(SetSequence.<String>fromSet(namespaces).contains(ns))) {
+        if (!(SetSequence.fromSet(namespaces).contains(ns))) {
           SetSequence.fromSet(namespaces).addElement(ns);
           Collection<TemplateModule> gens = lr.getGenerators();
           if (gens != null) {
             for (TemplateModule tm : gens) {
-              if (!(SetSequence.<TemplateModule>fromSet(seen).contains(tm))) {
-                QueueSequence.fromQueue(nsq).addSequence(Sequence.<String>fromIterable(tm.getUsedLanguages()));
+              if (!(SetSequence.fromSet(seen).contains(tm))) {
+                QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(tm.getUsedLanguages()));
                 SetSequence.fromSet(seen).addElement(tm);
               }
             }
@@ -104,6 +104,6 @@ public class ModulesClusterizer {
         }
       }
     }
-    return SetSequence.<String>fromSet(namespaces).toListSequence();
+    return SetSequence.fromSet(namespaces).toListSequence();
   }
 }

@@ -11,8 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNode;
 
 @MPSLaunch
 public class MoveStaticFieldWithUsageTest_Test extends BaseTransformationTest {
@@ -32,7 +32,7 @@ public class MoveStaticFieldWithUsageTest_Test extends BaseTransformationTest {
       MoveStaticFieldRefactoring refactoring = new MoveStaticFieldRefactoring(SNodeOperations.cast(this.getNodeById("8495840634675243980"), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), SNodeOperations.cast(this.getNodeById("8495840634675243991"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       refactoring.doRefactoring();
       refactoring.replaceSingleUsage(SNodeOperations.cast(this.getNodeById("8495840634675645880"), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"));
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8495840634675243979"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("8495840634675243991"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8495840634675645396"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("8495840634675299897"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8495840634675243979"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("8495840634675243991"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8495840634675645396"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("8495840634675299897"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }
 }

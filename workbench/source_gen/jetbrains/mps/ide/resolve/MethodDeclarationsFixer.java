@@ -181,13 +181,13 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     jetbrains.mps.util.Pair<List<SNode>, Boolean> parmCountPair = MethodResolveUtil.selectByVisibilityReportNoGoodMethodNode(candidates, methodCallNode);
     List<SNode> methodDeclarationsGoodParams = parmCountPair.o1;
     if (methodDeclarationsGoodParams.size() == 1) {
-      newTarget = ListSequence.<SNode>fromList(methodDeclarationsGoodParams).first();
+      newTarget = ListSequence.fromList(methodDeclarationsGoodParams).first();
       good = parmCountPair.o2;
     } else {
       parmCountPair = MethodResolveUtil.selectByParmCountReportNoGoodMethodNode(methodDeclarationsGoodParams, actualArgs);
       methodDeclarationsGoodParams = parmCountPair.o1;
       if (methodDeclarationsGoodParams.size() == 1) {
-        newTarget = ListSequence.<SNode>fromList(methodDeclarationsGoodParams).first();
+        newTarget = ListSequence.fromList(methodDeclarationsGoodParams).first();
         good = parmCountPair.o2;
       } else {
         jetbrains.mps.util.Pair<SNode, Boolean> parmTypesPair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);

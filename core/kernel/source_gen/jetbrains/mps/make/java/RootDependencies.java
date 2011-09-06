@@ -31,10 +31,10 @@ public class RootDependencies implements Comparable<RootDependencies> {
     this.myClassName = InternUtil.intern(nodeName);
     this.myFileName = InternUtil.intern(fileName);
     if (dependNodes != null) {
-      ListSequence.<String>fromList(this.myDependNodes).addSequence(ListSequence.<String>fromList(dependNodes));
+      ListSequence.fromList(this.myDependNodes).addSequence(ListSequence.fromList(dependNodes));
     }
     if (extendsNodes != null) {
-      ListSequence.<String>fromList(this.myExtendsNodes).addSequence(ListSequence.<String>fromList(extendsNodes));
+      ListSequence.fromList(this.myExtendsNodes).addSequence(ListSequence.fromList(extendsNodes));
     }
   }
 
@@ -50,11 +50,11 @@ public class RootDependencies implements Comparable<RootDependencies> {
       }
       if (e.getAttribute(DEPEND_CLASS_NAME) != null) {
         String d = e.getAttribute(DEPEND_CLASS_NAME).getValue();
-        ListSequence.<String>fromList(this.myDependNodes).addElement(d);
+        ListSequence.fromList(this.myDependNodes).addElement(d);
       }
       if (e.getAttribute(EXTENDS_CLASS_NAME) != null) {
         String ext = e.getAttribute(EXTENDS_CLASS_NAME).getValue();
-        ListSequence.<String>fromList(this.myExtendsNodes).addElement(ext);
+        ListSequence.fromList(this.myExtendsNodes).addElement(ext);
       }
     }
   }
@@ -85,11 +85,11 @@ public class RootDependencies implements Comparable<RootDependencies> {
   }
 
   /*package*/ void addDependNode(String s) {
-    ListSequence.<String>fromList(myDependNodes).addElement(s);
+    ListSequence.fromList(myDependNodes).addElement(s);
   }
 
   /*package*/ void addExtendsNode(String s) {
-    ListSequence.<String>fromList(myExtendsNodes).addElement(s);
+    ListSequence.fromList(myExtendsNodes).addElement(s);
   }
 
   /*package*/ void setFileName(String fileName) {

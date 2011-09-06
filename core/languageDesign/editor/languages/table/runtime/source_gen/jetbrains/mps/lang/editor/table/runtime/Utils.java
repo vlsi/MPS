@@ -12,11 +12,11 @@ public class Utils {
   }
 
   public static void insertElementAt(List<SNode> list, SNode newElement, int index) {
-    assert index >= 0 && index <= ListSequence.<SNode>fromList(list).count();
-    if (ListSequence.<SNode>fromList(list).count() == 0 || index == ListSequence.<SNode>fromList(list).count()) {
-      ListSequence.<SNode>fromList(list).addElement(newElement);
+    assert index >= 0 && index <= ListSequence.fromList(list).count();
+    if (ListSequence.fromList(list).count() == 0 || index == ListSequence.fromList(list).count()) {
+      ListSequence.fromList(list).addElement(newElement);
     } else {
-      SNodeOperations.insertPrevSiblingChild(ListSequence.<SNode>fromList(list).getElement(index), newElement);
+      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(list).getElement(index), newElement);
     }
   }
 }

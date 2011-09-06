@@ -13,89 +13,89 @@ import jetbrains.mps.internal.collections.runtime.DequeSequence;
 
 public class QueueDequeStack_Test extends TestCase {
   public void test_queue() throws Exception {
-    Queue<Integer> q = QueueSequence.<Integer>fromQueue(new LinkedList<Integer>());
+    Queue<Integer> q = QueueSequence.fromQueue(new LinkedList<Integer>());
     QueueSequence.fromQueue(q).addLastElement(1);
     QueueSequence.fromQueue(q).addLastElement(2);
     QueueSequence.fromQueue(q).addLastElement(3);
-    Queue<Integer> q2 = QueueSequence.<Integer>fromQueueAndArray(new LinkedList<Integer>(), 1, 2, 3);
+    Queue<Integer> q2 = QueueSequence.fromQueueAndArray(new LinkedList<Integer>(), 1, 2, 3);
     Assert.assertTrue(eq_5js43w_a0a5a0(q, q2));
-    Assert.assertSame(1, QueueSequence.<Integer>fromQueue(q).first());
+    Assert.assertSame(1, QueueSequence.fromQueue(q).first());
     Assert.assertSame(1, QueueSequence.fromQueue(q).removeFirstElement());
-    Assert.assertSame(2, QueueSequence.<Integer>fromQueue(q).first());
-    Assert.assertSame(3, QueueSequence.<Integer>fromQueue(q).last());
+    Assert.assertSame(2, QueueSequence.fromQueue(q).first());
+    Assert.assertSame(3, QueueSequence.fromQueue(q).last());
     Assert.assertSame(2, QueueSequence.fromQueue(q).removeFirstElement());
     Assert.assertSame(3, QueueSequence.fromQueue(q).removeFirstElement());
-    Assert.assertTrue(QueueSequence.<Integer>fromQueue(q).isEmpty());
+    Assert.assertTrue(QueueSequence.fromQueue(q).isEmpty());
   }
 
   public void test_priorityQueue() throws Exception {
-    Queue<Integer> q = QueueSequence.<Integer>fromQueue(new PriorityQueue<Integer>());
+    Queue<Integer> q = QueueSequence.fromQueue(new PriorityQueue<Integer>());
     QueueSequence.fromQueue(q).addLastElement(3);
     QueueSequence.fromQueue(q).addLastElement(2);
     QueueSequence.fromQueue(q).addLastElement(1);
-    Assert.assertSame(1, QueueSequence.<Integer>fromQueue(q).first());
+    Assert.assertSame(1, QueueSequence.fromQueue(q).first());
     Assert.assertSame(1, QueueSequence.fromQueue(q).removeFirstElement());
-    Assert.assertSame(2, QueueSequence.<Integer>fromQueue(q).first());
-    Assert.assertSame(3, QueueSequence.<Integer>fromQueue(q).last());
+    Assert.assertSame(2, QueueSequence.fromQueue(q).first());
+    Assert.assertSame(3, QueueSequence.fromQueue(q).last());
     Assert.assertSame(2, QueueSequence.fromQueue(q).removeFirstElement());
     Assert.assertSame(3, QueueSequence.fromQueue(q).removeFirstElement());
-    Assert.assertTrue(QueueSequence.<Integer>fromQueue(q).isEmpty());
+    Assert.assertTrue(QueueSequence.fromQueue(q).isEmpty());
   }
 
   public void test_stack() throws Exception {
-    Deque<Integer> s = DequeSequence.<Integer>fromDeque(new LinkedList<Integer>());
+    Deque<Integer> s = DequeSequence.fromDeque(new LinkedList<Integer>());
     DequeSequence.fromDeque(s).addFirstElement(1);
     DequeSequence.fromDeque(s).addFirstElement(2);
     DequeSequence.fromDeque(s).addFirstElement(3);
-    Assert.assertSame(3, DequeSequence.<Integer>fromDeque(s).first());
+    Assert.assertSame(3, DequeSequence.fromDeque(s).first());
     Assert.assertSame(3, DequeSequence.fromDeque(s).removeFirstElement());
-    Assert.assertSame(2, DequeSequence.<Integer>fromDeque(s).first());
-    Assert.assertSame(1, DequeSequence.<Integer>fromDeque(s).last());
+    Assert.assertSame(2, DequeSequence.fromDeque(s).first());
+    Assert.assertSame(1, DequeSequence.fromDeque(s).last());
     Assert.assertSame(2, DequeSequence.fromDeque(s).removeFirstElement());
     Assert.assertSame(1, DequeSequence.fromDeque(s).removeFirstElement());
-    Assert.assertTrue(DequeSequence.<Integer>fromDeque(s).isEmpty());
+    Assert.assertTrue(DequeSequence.fromDeque(s).isEmpty());
   }
 
   public void test_stackClassic() throws Exception {
-    Deque<Integer> s = DequeSequence.<Integer>fromDeque(new LinkedList<Integer>());
+    Deque<Integer> s = DequeSequence.fromDeque(new LinkedList<Integer>());
     DequeSequence.fromDeque(s).pushElement(1);
     DequeSequence.fromDeque(s).pushElement(2);
     DequeSequence.fromDeque(s).pushElement(3);
-    Assert.assertSame(3, DequeSequence.<Integer>fromDeque(s).first());
+    Assert.assertSame(3, DequeSequence.fromDeque(s).first());
     Assert.assertSame(3, DequeSequence.fromDeque(s).peekElement());
     Assert.assertSame(3, DequeSequence.fromDeque(s).popElement());
-    Assert.assertSame(2, DequeSequence.<Integer>fromDeque(s).first());
+    Assert.assertSame(2, DequeSequence.fromDeque(s).first());
     Assert.assertSame(2, DequeSequence.fromDeque(s).peekElement());
-    Assert.assertSame(1, DequeSequence.<Integer>fromDeque(s).last());
+    Assert.assertSame(1, DequeSequence.fromDeque(s).last());
     Assert.assertSame(2, DequeSequence.fromDeque(s).popElement());
     Assert.assertSame(1, DequeSequence.fromDeque(s).popElement());
-    Assert.assertTrue(DequeSequence.<Integer>fromDeque(s).isEmpty());
+    Assert.assertTrue(DequeSequence.fromDeque(s).isEmpty());
   }
 
   public void test_deque() throws Exception {
-    Deque<Integer> d = DequeSequence.<Integer>fromDeque(new LinkedList<Integer>());
+    Deque<Integer> d = DequeSequence.fromDeque(new LinkedList<Integer>());
     DequeSequence.fromDeque(d).addFirstElement(1);
     DequeSequence.fromDeque(d).addFirstElement(2);
     DequeSequence.fromDeque(d).addFirstElement(3);
-    Assert.assertSame(3, DequeSequence.<Integer>fromDeque(d).first());
+    Assert.assertSame(3, DequeSequence.fromDeque(d).first());
     Assert.assertSame(3, DequeSequence.fromDeque(d).removeFirstElement());
     DequeSequence.fromDeque(d).addLastElement(4);
     DequeSequence.fromDeque(d).addLastElement(5);
     DequeSequence.fromDeque(d).addLastElement(6);
-    Assert.assertSame(2, DequeSequence.<Integer>fromDeque(d).first());
+    Assert.assertSame(2, DequeSequence.fromDeque(d).first());
     Assert.assertSame(2, DequeSequence.fromDeque(d).peekElement());
-    Assert.assertSame(6, DequeSequence.<Integer>fromDeque(d).last());
+    Assert.assertSame(6, DequeSequence.fromDeque(d).last());
     Assert.assertSame(6, DequeSequence.fromDeque(d).removeLastElement());
     Assert.assertSame(2, DequeSequence.fromDeque(d).removeFirstElement());
-    Assert.assertSame(1, DequeSequence.<Integer>fromDeque(d).first());
+    Assert.assertSame(1, DequeSequence.fromDeque(d).first());
     Assert.assertSame(1, DequeSequence.fromDeque(d).peekElement());
     Assert.assertSame(1, DequeSequence.fromDeque(d).removeFirstElement());
-    Assert.assertSame(4, DequeSequence.<Integer>fromDeque(d).first());
+    Assert.assertSame(4, DequeSequence.fromDeque(d).first());
     Assert.assertSame(4, DequeSequence.fromDeque(d).peekElement());
     Assert.assertSame(4, DequeSequence.fromDeque(d).removeFirstElement());
-    Assert.assertSame(5, DequeSequence.<Integer>fromDeque(d).last());
+    Assert.assertSame(5, DequeSequence.fromDeque(d).last());
     Assert.assertSame(5, DequeSequence.fromDeque(d).removeLastElement());
-    Assert.assertTrue(DequeSequence.<Integer>fromDeque(d).isEmpty());
+    Assert.assertTrue(DequeSequence.fromDeque(d).isEmpty());
   }
 
   private static boolean eq_5js43w_a0a5a0(Object a, Object b) {

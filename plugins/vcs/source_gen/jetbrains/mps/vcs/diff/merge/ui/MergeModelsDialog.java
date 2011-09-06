@@ -64,7 +64,7 @@ public class MergeModelsDialog extends BaseDialog {
   private boolean myApplyChanges = false;
   private boolean myRootsDialogInvoked = false;
   private String[] myContentTitles;
-  private Set<ModelChange> myAppliedMetadataChanges = SetSequence.<ModelChange>fromSet(new HashSet<ModelChange>());
+  private Set<ModelChange> myAppliedMetadataChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private ActionToolbar myToolbar;
 
   public MergeModelsDialog(SModel baseModel, SModel mineModel, SModel repositoryModel, DiffRequest request) {
@@ -143,15 +143,15 @@ public class MergeModelsDialog extends BaseDialog {
 
   private void invokeMergeMetadata() {
     List<ModelChange> allChanges = myMergeContext.getMetadataChanges();
-    assert ListSequence.<ModelChange>fromList(allChanges).isNotEmpty();
+    assert ListSequence.fromList(allChanges).isNotEmpty();
     boolean allResolved = false;
     Iterable<ModelChange> interestingChanges;
-    if (ListSequence.<ModelChange>fromList(allChanges).any(new IWhereFilter<ModelChange>() {
+    if (ListSequence.fromList(allChanges).any(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return myMergeContext.isChangeResolved(ch);
       }
     })) {
-      assert ListSequence.<ModelChange>fromList(allChanges).all(new IWhereFilter<ModelChange>() {
+      assert ListSequence.fromList(allChanges).all(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return myMergeContext.isChangeResolved(ch);
         }
@@ -161,27 +161,27 @@ public class MergeModelsDialog extends BaseDialog {
     } else {
       interestingChanges = allChanges;
     }
-    Iterable<ModelChange> mine = Sequence.<ModelChange>fromIterable(interestingChanges).where(new IWhereFilter<ModelChange>() {
+    Iterable<ModelChange> mine = Sequence.fromIterable(interestingChanges).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return myMergeContext.isMyChange(ch);
       }
     });
-    Iterable<ModelChange> repository = Sequence.<ModelChange>fromIterable(interestingChanges).where(new IWhereFilter<ModelChange>() {
+    Iterable<ModelChange> repository = Sequence.fromIterable(interestingChanges).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return !(myMergeContext.isMyChange(ch));
       }
     });
 
     StringBuilder sb = new StringBuilder();
-    if (Sequence.<ModelChange>fromIterable(mine).isNotEmpty()) {
+    if (Sequence.fromIterable(mine).isNotEmpty()) {
       sb.append("\n\n    ").append(myContentTitles[0]);
-      for (ModelChange ch : Sequence.<ModelChange>fromIterable(mine)) {
+      for (ModelChange ch : Sequence.fromIterable(mine)) {
         sb.append("\n").append(ch.toString());
       }
     }
-    if (Sequence.<ModelChange>fromIterable(repository).isNotEmpty()) {
+    if (Sequence.fromIterable(repository).isNotEmpty()) {
       sb.append("\n\n    ").append(myContentTitles[2]);
-      for (ModelChange ch : Sequence.<ModelChange>fromIterable(repository)) {
+      for (ModelChange ch : Sequence.fromIterable(repository)) {
         sb.append("\n").append(ch.toString());
       }
     }
@@ -197,7 +197,7 @@ public class MergeModelsDialog extends BaseDialog {
       if (ans == Messages.YES) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            SetSequence.fromSet(myAppliedMetadataChanges).addSequence(ListSequence.<ModelChange>fromList(myMergeContext.getMetadataChanges()));
+            SetSequence.fromSet(myAppliedMetadataChanges).addSequence(ListSequence.fromList(myMergeContext.getMetadataChanges()));
             myMergeContext.applyChanges(myMergeContext.getMetadataChanges());
             rebuildLater();
           }
@@ -229,23 +229,23 @@ public class MergeModelsDialog extends BaseDialog {
   }
 
   public void acceptVersionForSelectedRoots(boolean mine) {
-    final List<ModelChange> changesToApply = ListSequence.<ModelChange>fromList(new ArrayList<ModelChange>());
-    final List<ModelChange> changesToExclude = ListSequence.<ModelChange>fromList(new ArrayList<ModelChange>());
-    for (DiffModelTree.RootTreeNode rtn : Sequence.<DiffModelTree.RootTreeNode>fromIterable(Sequence.fromArray(myMergeTree.getSelectedNodes(DiffModelTree.RootTreeNode.class, null)))) {
+    final List<ModelChange> changesToApply = ListSequence.fromList(new ArrayList<ModelChange>());
+    final List<ModelChange> changesToExclude = ListSequence.fromList(new ArrayList<ModelChange>());
+    for (DiffModelTree.RootTreeNode rtn : Sequence.fromIterable(Sequence.fromArray(myMergeTree.getSelectedNodes(DiffModelTree.RootTreeNode.class, null)))) {
       SNodeId root = rtn.getRootId();
       List<ModelChange> changes = (root == null ?
         myMergeContext.getMetadataChanges() :
         myMergeContext.getChangesForRoot(root)
       );
-      for (ModelChange change : ListSequence.<ModelChange>fromList(changes)) {
+      for (ModelChange change : ListSequence.fromList(changes)) {
         if (!(myMergeContext.isChangeResolved(change))) {
           if (mine == myMergeContext.isMyChange(change)) {
-            ListSequence.<ModelChange>fromList(changesToApply).addElement(change);
+            ListSequence.fromList(changesToApply).addElement(change);
             if (root == null) {
               SetSequence.fromSet(myAppliedMetadataChanges).addElement(change);
             }
           } else {
-            ListSequence.<ModelChange>fromList(changesToExclude).addElement(change);
+            ListSequence.fromList(changesToExclude).addElement(change);
           }
         }
       }
@@ -309,27 +309,27 @@ public class MergeModelsDialog extends BaseDialog {
 
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {
       List<ModelChange> changes = (rootTreeNode.getRootId() == null ?
-        ListSequence.<ModelChange>fromList(myMergeContext.getMetadataChanges()).<ModelChange>select(new ISelector<ModelChange, ModelChange>() {
+        ListSequence.fromList(myMergeContext.getMetadataChanges()).<ModelChange>select(new ISelector<ModelChange, ModelChange>() {
           public ModelChange select(ModelChange ch) {
             return (ModelChange) ch;
           }
         }).toListSequence() :
         myMergeContext.getChangesForRoot(rootTreeNode.getRootId())
       );
-      changes = ListSequence.<ModelChange>fromList(changes).where(new IWhereFilter<ModelChange>() {
+      changes = ListSequence.fromList(changes).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return !(myMergeContext.isChangeResolved(ch));
         }
       }).toListSequence();
 
-      int conflictedCount = ListSequence.<ModelChange>fromList(changes).where(new IWhereFilter<ModelChange>() {
+      int conflictedCount = ListSequence.fromList(changes).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
-          return Sequence.<ModelChange>fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
+          return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
         }
       }).count();
-      int nonConflictedCount = ListSequence.<ModelChange>fromList(changes).count() - conflictedCount;
+      int nonConflictedCount = ListSequence.fromList(changes).count() - conflictedCount;
       ChangeType compositeChangeType = null;
-      rootTreeNode.setTooltipText(generateUnresolvedChangesText(ListSequence.<ModelChange>fromList(changes).count(), conflictedCount));
+      rootTreeNode.setTooltipText(generateUnresolvedChangesText(ListSequence.fromList(changes).count(), conflictedCount));
       if (conflictedCount != 0) {
         compositeChangeType = ChangeType.CONFLICTED;
         rootTreeNode.setAdditionalText("with conflicts");
@@ -340,15 +340,15 @@ public class MergeModelsDialog extends BaseDialog {
           }
         } else {
           compositeChangeType = ChangeType.CHANGE;
-          if (ListSequence.<ModelChange>fromList(changes).all(new IWhereFilter<ModelChange>() {
+          if (ListSequence.fromList(changes).all(new IWhereFilter<ModelChange>() {
             public boolean accept(ModelChange ch) {
               return ch instanceof AddRootChange || ch instanceof DeleteRootChange;
             }
           })) {
-            compositeChangeType = ListSequence.<ModelChange>fromList(changes).first().getType();
+            compositeChangeType = ListSequence.fromList(changes).first().getType();
           }
 
-          int myChangesCount = ListSequence.<ModelChange>fromList(changes).where(new IWhereFilter<ModelChange>() {
+          int myChangesCount = ListSequence.fromList(changes).where(new IWhereFilter<ModelChange>() {
             public boolean accept(ModelChange ch) {
               return myMergeContext.isMyChange(ch);
             }

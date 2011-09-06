@@ -24,14 +24,14 @@ public class ModuleChecker {
     // TODO:  Provide the full list of errors when usages view framework supports multiple 
     // TODO:  search results for one module 
     List<String> errors = ModuleValidatorFactory.createValidator(module).getErrors();
-    if (!(ListSequence.<String>fromList(errors).isEmpty())) {
-      String extraMessage = ListSequence.<String>fromList(errors).getElement(0);
-      if (ListSequence.<String>fromList(errors).count() == 2) {
-        extraMessage += "; " + ListSequence.<String>fromList(errors).getElement(1);
-      } else if (ListSequence.<String>fromList(errors).count() > 2) {
+    if (!(ListSequence.fromList(errors).isEmpty())) {
+      String extraMessage = ListSequence.fromList(errors).getElement(0);
+      if (ListSequence.fromList(errors).count() == 2) {
+        extraMessage += "; " + ListSequence.fromList(errors).getElement(1);
+      } else if (ListSequence.fromList(errors).count() > 2) {
         extraMessage += "; ...";
       }
-      myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, module.getModuleFqName() + ": " + NameUtil.formatNumericalString(ListSequence.<String>fromList(errors).count(), "unresolved dependency") + " (" + extraMessage + "; see module properties)", null, ModelChecker.SEVERITY_ERROR, "Module properties"));
+      myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, module.getModuleFqName() + ": " + NameUtil.formatNumericalString(ListSequence.fromList(errors).count(), "unresolved dependency") + " (" + extraMessage + "; see module properties)", null, ModelChecker.SEVERITY_ERROR, "Module properties"));
     }
   }
 

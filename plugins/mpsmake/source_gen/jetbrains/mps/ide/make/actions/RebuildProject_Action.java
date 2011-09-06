@@ -47,12 +47,12 @@ public class RebuildProject_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("mpsProject") == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     return true;
@@ -60,7 +60,7 @@ public class RebuildProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MakeActionImpl(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), null, null, ((MPSProject) MapSequence.<String,Object>fromMap(_params).get("mpsProject")).getModules(), null), true).executeAction();
+      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules(), null), true).executeAction();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RebuildProject", t);

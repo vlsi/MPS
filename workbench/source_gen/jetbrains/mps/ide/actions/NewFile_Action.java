@@ -48,12 +48,12 @@ public class NewFile_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("selectedFile", event.getData(MPSDataKeys.VIRTUAL_FILE));
-    if (MapSequence.<String,Object>fromMap(_params).get("selectedFile") == null) {
+    MapSequence.fromMap(_params).put("selectedFile", event.getData(MPSDataKeys.VIRTUAL_FILE));
+    if (MapSequence.fromMap(_params).get("selectedFile") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -61,9 +61,9 @@ public class NewFile_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final VirtualFile dir = (((VirtualFile) MapSequence.<String,Object>fromMap(_params).get("selectedFile")).isDirectory() ?
-        ((VirtualFile) MapSequence.<String,Object>fromMap(_params).get("selectedFile")) :
-        ((VirtualFile) MapSequence.<String,Object>fromMap(_params).get("selectedFile")).getParent()
+      final VirtualFile dir = (((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory() ?
+        ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")) :
+        ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent()
       );
       final VirtualFile[] result = new VirtualFile[1];
       InputValidator validator = new InputValidator() {
@@ -89,12 +89,12 @@ public class NewFile_Action extends GeneratedAction {
           return true;
         }
       };
-      Messages.showInputDialog(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), IdeBundle.message("prompt.enter.new.file.name"), IdeBundle.message("title.new.file"), Messages.getQuestionIcon(), "", validator);
+      Messages.showInputDialog(((Project) MapSequence.fromMap(_params).get("project")), IdeBundle.message("prompt.enter.new.file.name"), IdeBundle.message("title.new.file"), Messages.getQuestionIcon(), "", validator);
       if (result[0] != null) {
-        ProjectView.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project"))).refresh();
+        ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).refresh();
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
-            ProjectView.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project"))).getProjectViewPaneById(FileViewProjectPane.ID).select(null, result[0], true);
+            ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getProjectViewPaneById(FileViewProjectPane.ID).select(null, result[0], true);
           }
         });
       }

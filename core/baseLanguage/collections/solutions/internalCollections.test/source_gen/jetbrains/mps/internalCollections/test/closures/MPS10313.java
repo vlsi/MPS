@@ -17,11 +17,11 @@ public class MPS10313<T> {
   }
 
   protected boolean tableIsSame(List<? extends List<T>> values) {
-    if (ListSequence.<List<T>>fromList(myValues).count() != ListSequence.fromList(values).count()) {
+    if (ListSequence.fromList(myValues).count() != ListSequence.fromList(values).count()) {
       return false;
     }
     for (int i = 0; i < ListSequence.fromList(values).count(); i++) {
-      if (!(ListSequence.<T>fromList(ListSequence.fromList(values).getElement(i)).containsSequence(ListSequence.<T>fromList(ListSequence.<List<T>>fromList(myValues).getElement(i))) && ListSequence.<T>fromList(ListSequence.<List<T>>fromList(myValues).getElement(i)).containsSequence(ListSequence.<T>fromList(ListSequence.fromList(values).getElement(i))))) {
+      if (!(ListSequence.fromList(ListSequence.fromList(values).getElement(i)).containsSequence(ListSequence.fromList(ListSequence.fromList(myValues).getElement(i))) && ListSequence.fromList(ListSequence.fromList(myValues).getElement(i)).containsSequence(ListSequence.fromList(ListSequence.fromList(values).getElement(i))))) {
         return false;
       }
     }
@@ -29,9 +29,9 @@ public class MPS10313<T> {
   }
 
   protected boolean listIsSame(List<T> values) {
-    return tableIsSame(ListSequence.<T>fromList(values).<List<T>>select(new ISelector<T, IListSequence<T>>() {
+    return tableIsSame(ListSequence.fromList(values).<List<T>>select(new ISelector<T, IListSequence<T>>() {
       public IListSequence<T> select(T it) {
-        return ListSequence.<T>fromListAndArray(new ArrayList<T>(), it);
+        return ListSequence.fromListAndArray(new ArrayList<T>(), it);
       }
     }).toListSequence());
   }
@@ -40,21 +40,21 @@ public class MPS10313<T> {
   }
 
   public void test1() {
-    takesListOfExtendsListsOfT(Sequence.<List<T>>fromIterable(Sequence.<List<T>>fromIterable(Collections.<List<T>>emptyList())).toListSequence());
+    takesListOfExtendsListsOfT(Sequence.fromIterable(Sequence.fromIterable(Collections.<List<T>>emptyList())).toListSequence());
   }
 
   public void takesListOfExtendsListsOfFoo(List<? extends List<MPS10313.Foo>> foos) {
   }
 
   public void test2() {
-    takesListOfExtendsListsOfFoo(Sequence.<List<MPS10313.Foo>>fromIterable(Sequence.<List<MPS10313.Foo>>fromIterable(Collections.<List<MPS10313.Foo>>emptyList())).toListSequence());
+    takesListOfExtendsListsOfFoo(Sequence.fromIterable(Sequence.fromIterable(Collections.<List<MPS10313.Foo>>emptyList())).toListSequence());
   }
 
   public void takesListOfExtendsFoo(List<? extends MPS10313.Foo> foos) {
   }
 
   public void test3() {
-    takesListOfExtendsFoo(Sequence.<MPS10313.Bar>fromIterable(Sequence.<MPS10313.Bar>fromIterable(Collections.<MPS10313.Bar>emptyList())).toListSequence());
+    takesListOfExtendsFoo(Sequence.fromIterable(Sequence.fromIterable(Collections.<MPS10313.Bar>emptyList())).toListSequence());
   }
 
   public static class Foo {

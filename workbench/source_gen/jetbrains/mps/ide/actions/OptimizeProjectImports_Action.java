@@ -49,20 +49,20 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("mpsProject") == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -73,15 +73,15 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
       final Wrappers._T<String> report = new Wrappers._T<String>();
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          report.value = new OptimizeImportsHelper(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context"))).optimizeProjectImports(((MPSProject) MapSequence.<String,Object>fromMap(_params).get("mpsProject")));
-          for (IModule module : ListSequence.<IModule>fromList(((MPSProject) MapSequence.<String,Object>fromMap(_params).get("mpsProject")).getModules())) {
+          report.value = new OptimizeImportsHelper(((IOperationContext) MapSequence.fromMap(_params).get("context"))).optimizeProjectImports(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+          for (IModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules())) {
             module.save();
           }
           SModelRepository.getInstance().saveAll();
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         }
       });
-      Messages.showMessageDialog(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), report.value, "Optimize Imports", Messages.getInformationIcon());
+      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), report.value, "Optimize Imports", Messages.getInformationIcon());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "OptimizeProjectImports", t);

@@ -109,19 +109,19 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private static final Color ANNOTATION_COLOR = new Color(0, 0, 128);
 
   private Font myFont = EditorSettings.getInstance().getDefaultEditorFont();
-  private List<AnnotationAspectSubcolumn> myAspectSubcolumns = ListSequence.<AnnotationAspectSubcolumn>fromList(new ArrayList<AnnotationAspectSubcolumn>());
+  private List<AnnotationAspectSubcolumn> myAspectSubcolumns = ListSequence.fromList(new ArrayList<AnnotationAspectSubcolumn>());
   private List<Integer> myPseudoLinesY;
   private List<Integer> myPseudoLinesToFileLines;
   private int mySubcolumnInterval;
-  private Map<String, Color> myAuthorsToColors = MapSequence.<String,Color>fromMap(new HashMap<String, Color>());
+  private Map<String, Color> myAuthorsToColors = MapSequence.fromMap(new HashMap<String, Color>());
   private FileAnnotation myFileAnnotation;
-  private Map<VcsRevisionNumber, VcsFileRevision> myRevisionNumberToRevision = MapSequence.<VcsRevisionNumber,VcsFileRevision>fromMap(new HashMap<VcsRevisionNumber, VcsFileRevision>());
+  private Map<VcsRevisionNumber, VcsFileRevision> myRevisionNumberToRevision = MapSequence.fromMap(new HashMap<VcsRevisionNumber, VcsFileRevision>());
   private LineAnnotationAspect myAuthorAnnotationAspect;
   private AbstractVcs myVcs;
   private VirtualFile myModelVirtualFile;
   private EditableSModelDescriptor myModelDescriptor;
   private List<LineContent> myFileLineToContent;
-  private Map<OldChange, LineContent> myChangesToLineContents = MapSequence.<OldChange,LineContent>fromMap(new HashMap<OldChange, LineContent>());
+  private Map<OldChange, LineContent> myChangesToLineContents = MapSequence.fromMap(new HashMap<OldChange, LineContent>());
   private Set<Integer> myCurrentPseudoLines = null;
   private VcsRevisionRange myRevisionRange;
   private ViewActionGroup myViewActionGroup;
@@ -132,57 +132,57 @@ public class AnnotationColumn extends AbstractLeftColumn {
 
   public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, AbstractVcs vcs, VirtualFile modelVirtualFile) {
     super(leftEditorHighlighter);
-    Set<SNodeId> descendantIds = SetSequence.<SNodeId>fromSetWithValues(new HashSet<SNodeId>(), ListSequence.<SNode>fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).<SNodeId>select(new ISelector<SNode, SNodeId>() {
+    Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).<SNodeId>select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getSNodeId();
       }
     }));
     SModel model = SNodeOperations.getModel(root);
     myFileAnnotation = fileAnnotation;
-    for (VcsFileRevision rev : ListSequence.<VcsFileRevision>fromList(fileAnnotation.getRevisions())) {
-      MapSequence.<VcsRevisionNumber,VcsFileRevision>fromMap(myRevisionNumberToRevision).put(rev.getRevisionNumber(), rev);
+    for (VcsFileRevision rev : ListSequence.fromList(fileAnnotation.getRevisions())) {
+      MapSequence.fromMap(myRevisionNumberToRevision).put(rev.getRevisionNumber(), rev);
     }
     myFileLineToContent = ModelPersistence.getLineToContentMap(myFileAnnotation.getAnnotatedContent());
     if (myFileLineToContent == null) {
       return;
     }
     myFileAnnotation.addListener(myAnnotationListener);
-    myAuthorAnnotationAspect = Sequence.<LineAnnotationAspect>fromIterable(Sequence.fromArray(myFileAnnotation.getAspects())).findFirst(new IWhereFilter<LineAnnotationAspect>() {
+    myAuthorAnnotationAspect = Sequence.fromIterable(Sequence.fromArray(myFileAnnotation.getAspects())).findFirst(new IWhereFilter<LineAnnotationAspect>() {
       public boolean accept(LineAnnotationAspect a) {
         return LineAnnotationAspect.AUTHOR.equals(a.getId());
       }
     });
-    Map<SNodeId, Integer> nodeIdToFileLine = MapSequence.<SNodeId,Integer>fromMap(new HashMap<SNodeId, Integer>());
-    for (int line = 0; line < ListSequence.<LineContent>fromList(myFileLineToContent).count(); line++) {
+    Map<SNodeId, Integer> nodeIdToFileLine = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
+    for (int line = 0; line < ListSequence.fromList(myFileLineToContent).count(); line++) {
       SNode node = null;
-      SNodeId id = check_5mnya_a0b0k0a(ListSequence.<LineContent>fromList(myFileLineToContent).getElement(line));
-      if (id != null && SetSequence.<SNodeId>fromSet(descendantIds).contains(id)) {
+      SNodeId id = check_5mnya_a0b0k0a(ListSequence.fromList(myFileLineToContent).getElement(line));
+      if (id != null && SetSequence.fromSet(descendantIds).contains(id)) {
         node = model.getNodeById(id);
       }
       if (node == null) {
         continue;
       }
       if (MapSequence.fromMap(nodeIdToFileLine).containsKey(id)) {
-        MapSequence.<SNodeId,Integer>fromMap(nodeIdToFileLine).put(id, getFileLineWithMaxRevision(MapSequence.<SNodeId,Integer>fromMap(nodeIdToFileLine).get(id), line));
+        MapSequence.fromMap(nodeIdToFileLine).put(id, getFileLineWithMaxRevision(MapSequence.fromMap(nodeIdToFileLine).get(id), line));
       } else {
-        MapSequence.<SNodeId,Integer>fromMap(nodeIdToFileLine).put(id, line);
+        MapSequence.fromMap(nodeIdToFileLine).put(id, line);
       }
     }
-    ListSequence.<AnnotationAspectSubcolumn>fromList(myAspectSubcolumns).addSequence(Sequence.<LineAnnotationAspect>fromIterable(Sequence.fromArray(fileAnnotation.getAspects())).<AnnotationAspectSubcolumn>select(new ISelector<LineAnnotationAspect, AnnotationAspectSubcolumn>() {
+    ListSequence.fromList(myAspectSubcolumns).addSequence(Sequence.fromIterable(Sequence.fromArray(fileAnnotation.getAspects())).<AnnotationAspectSubcolumn>select(new ISelector<LineAnnotationAspect, AnnotationAspectSubcolumn>() {
       public AnnotationAspectSubcolumn select(LineAnnotationAspect a) {
         return new AnnotationAspectSubcolumn(AnnotationColumn.this, a);
       }
     }));
-    ListSequence.<AnnotationAspectSubcolumn>fromList(myAspectSubcolumns).addElement(new CommitNumberSubcolumn(this, myFileAnnotation));
-    for (VcsFileRevision revision : ListSequence.<VcsFileRevision>fromList(myFileAnnotation.getRevisions())) {
+    ListSequence.fromList(myAspectSubcolumns).addElement(new CommitNumberSubcolumn(this, myFileAnnotation));
+    for (VcsFileRevision revision : ListSequence.fromList(myFileAnnotation.getRevisions())) {
       String author = revision.getAuthor();
       if (!(MapSequence.fromMap(myAuthorsToColors).containsKey(author))) {
-        MapSequence.<String,Color>fromMap(myAuthorsToColors).put(author, AnnotationColors.BG_COLORS[MapSequence.<String,Color>fromMap(myAuthorsToColors).count() % AnnotationColors.BG_COLORS.length]);
+        MapSequence.fromMap(myAuthorsToColors).put(author, AnnotationColors.BG_COLORS[MapSequence.fromMap(myAuthorsToColors).count() % AnnotationColors.BG_COLORS.length]);
       }
     }
     myViewActionGroup = new ViewActionGroup(this, myAspectSubcolumns);
     myRevisionRange = new VcsRevisionRange(this, myFileAnnotation);
-    ListSequence.<AnnotationAspectSubcolumn>fromList(myAspectSubcolumns).addElement(new HighlightRevisionSubcolumn(this, myRevisionRange));
+    ListSequence.fromList(myAspectSubcolumns).addElement(new HighlightRevisionSubcolumn(this, myRevisionRange));
     myModelVirtualFile = modelVirtualFile;
     myModelDescriptor = (EditableSModelDescriptor) model.getModelDescriptor();
     myVcs = vcs;
@@ -190,7 +190,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     changesManager.getCommandQueue().runTask(new Runnable() {
       public void run() {
         ModelChangesManager modelChangesManager = changesManager.getModelChangesManager(myModelDescriptor);
-        ListSequence.<OldChange>fromList(modelChangesManager.getChangeList()).visitAll(new IVisitor<OldChange>() {
+        ListSequence.fromList(modelChangesManager.getChangeList()).visitAll(new IVisitor<OldChange>() {
           public void visit(OldChange ch) {
             saveChange(ch);
           }
@@ -204,20 +204,20 @@ public class AnnotationColumn extends AbstractLeftColumn {
 
   private void saveChange(OldChange ch) {
     if (ch instanceof OldSetPropertyChange) {
-      MapSequence.<OldChange,LineContent>fromMap(myChangesToLineContents).put(ch, new PropertyLineContent(ch.getAffectedNodeId(), ((OldSetPropertyChange) ch).getProperty()));
+      MapSequence.fromMap(myChangesToLineContents).put(ch, new PropertyLineContent(ch.getAffectedNodeId(), ((OldSetPropertyChange) ch).getProperty()));
     } else if (ch instanceof OldSetReferenceChange) {
-      MapSequence.<OldChange,LineContent>fromMap(myChangesToLineContents).put(ch, new ReferenceLineContent(ch.getAffectedNodeId(), ((OldSetReferenceChange) ch).getRole()));
+      MapSequence.fromMap(myChangesToLineContents).put(ch, new ReferenceLineContent(ch.getAffectedNodeId(), ((OldSetReferenceChange) ch).getRole()));
     } else if (ch.getAffectedNodeId() != null) {
-      MapSequence.<OldChange,LineContent>fromMap(myChangesToLineContents).put(ch, new NodeLineContent(ch.getAffectedNodeId()));
+      MapSequence.fromMap(myChangesToLineContents).put(ch, new NodeLineContent(ch.getAffectedNodeId()));
     }
   }
 
   private void calculateCurrentPseudoLinesLater() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        myCurrentPseudoLines = SetSequence.<Integer>fromSet(new HashSet<Integer>());
-        for (LineContent lineContent : Sequence.<LineContent>fromIterable(MapSequence.fromMap(myChangesToLineContents).values())) {
-          SetSequence.fromSet(myCurrentPseudoLines).addSequence(Sequence.<Integer>fromIterable(getPseudoLinesForContent(lineContent)));
+        myCurrentPseudoLines = SetSequence.fromSet(new HashSet<Integer>());
+        for (LineContent lineContent : Sequence.fromIterable(MapSequence.fromMap(myChangesToLineContents).values())) {
+          SetSequence.fromSet(myCurrentPseudoLines).addSequence(Sequence.fromIterable(getPseudoLinesForContent(lineContent)));
         }
         getLeftEditorHighlighter().repaint();
       }
@@ -231,28 +231,28 @@ public class AnnotationColumn extends AbstractLeftColumn {
   public void paint(Graphics graphics) {
     graphics.setFont(myFont);
     EditorComponent.turnOnAliasingIfPossible((Graphics2D) graphics);
-    Map<AnnotationAspectSubcolumn, Integer> subcolumnToX = MapSequence.<AnnotationAspectSubcolumn,Integer>fromMap(new HashMap<AnnotationAspectSubcolumn, Integer>());
+    Map<AnnotationAspectSubcolumn, Integer> subcolumnToX = MapSequence.fromMap(new HashMap<AnnotationAspectSubcolumn, Integer>());
     int x = getX() + 1;
-    for (AnnotationAspectSubcolumn subcolumn : ListSequence.<AnnotationAspectSubcolumn>fromList(myAspectSubcolumns)) {
-      MapSequence.<AnnotationAspectSubcolumn,Integer>fromMap(subcolumnToX).put(subcolumn, x);
+    for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
+      MapSequence.fromMap(subcolumnToX).put(subcolumn, x);
       if (subcolumn.isEnabled() || myShowAdditionalInfo) {
         x += subcolumn.getWidth() + mySubcolumnInterval;
       }
     }
-    for (int pseudoLine = 0; pseudoLine < ListSequence.<Integer>fromList(myPseudoLinesY).count(); pseudoLine++) {
-      if (SetSequence.<Integer>fromSet(myCurrentPseudoLines).contains(pseudoLine)) {
+    for (int pseudoLine = 0; pseudoLine < ListSequence.fromList(myPseudoLinesY).count(); pseudoLine++) {
+      if (SetSequence.fromSet(myCurrentPseudoLines).contains(pseudoLine)) {
         continue;
       }
 
-      int fileLine = ListSequence.<Integer>fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
-      int height = (pseudoLine == ListSequence.<Integer>fromList(myPseudoLinesY).count() - 1 ?
-        getEditorComponent().getHeight() - ListSequence.<Integer>fromList(myPseudoLinesY).last() :
-        ListSequence.<Integer>fromList(myPseudoLinesY).getElement(pseudoLine + 1) - ListSequence.<Integer>fromList(myPseudoLinesY).getElement(pseudoLine)
+      int fileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
+      int height = (pseudoLine == ListSequence.fromList(myPseudoLinesY).count() - 1 ?
+        getEditorComponent().getHeight() - ListSequence.fromList(myPseudoLinesY).last() :
+        ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine + 1) - ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine)
       );
       if (myAuthorAnnotationAspect != null && ViewAction.isSet(ViewAction.COLORS)) {
         String author = myAuthorAnnotationAspect.getValue(fileLine);
-        graphics.setColor(MapSequence.<String,Color>fromMap(myAuthorsToColors).get(author));
-        graphics.fillRect(getX(), ListSequence.<Integer>fromList(myPseudoLinesY).getElement(pseudoLine), getWidth(), height);
+        graphics.setColor(MapSequence.fromMap(myAuthorsToColors).get(author));
+        graphics.fillRect(getX(), ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine), getWidth(), height);
       }
 
       graphics.setColor(ANNOTATION_COLOR);
@@ -265,23 +265,23 @@ public class AnnotationColumn extends AbstractLeftColumn {
       if (height < metrics.getHeight()) {
         continue;
       }
-      for (AnnotationAspectSubcolumn subcolumn : ListSequence.<AnnotationAspectSubcolumn>fromList(myAspectSubcolumns).where(new IWhereFilter<AnnotationAspectSubcolumn>() {
+      for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns).where(new IWhereFilter<AnnotationAspectSubcolumn>() {
         public boolean accept(AnnotationAspectSubcolumn s) {
           return myShowAdditionalInfo || s.isEnabled();
         }
       })) {
         String text = subcolumn.getTextForFileLine(fileLine);
-        int textX = MapSequence.<AnnotationAspectSubcolumn,Integer>fromMap(subcolumnToX).get(subcolumn);
+        int textX = MapSequence.fromMap(subcolumnToX).get(subcolumn);
         if (subcolumn.isRightAligned()) {
           textX += subcolumn.getWidth() - metrics.stringWidth(text);
         }
-        graphics.drawString(text, textX, metrics.getAscent() + ListSequence.<Integer>fromList(myPseudoLinesY).getElement(pseudoLine));
+        graphics.drawString(text, textX, metrics.getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine));
       }
     }
   }
 
   public int getWidth() {
-    return ListSequence.<AnnotationAspectSubcolumn>fromList(myAspectSubcolumns).<Integer>select(new ISelector<AnnotationAspectSubcolumn, Integer>() {
+    return ListSequence.fromList(myAspectSubcolumns).<Integer>select(new ISelector<AnnotationAspectSubcolumn, Integer>() {
       public Integer select(AnnotationAspectSubcolumn s) {
         return (s.isEnabled() || myShowAdditionalInfo ?
           s.getWidth() :
@@ -322,7 +322,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private Iterable<Integer> getPseudoLinesForContent(@Nullable LineContent content) {
     EditorCell cell = findCellForContent(content);
     if (cell == null) {
-      return Sequence.<Integer>fromIterable(Collections.<Integer>emptyList());
+      return Sequence.fromIterable(Collections.<Integer>emptyList());
     }
     final int startPseudoLine = Collections.binarySearch(myPseudoLinesY, cell.getY());
     final Wrappers._int endPseudoLine = new Wrappers._int(Collections.binarySearch(myPseudoLinesY, cell.getY() + cell.getHeight()));
@@ -386,39 +386,39 @@ __switch__:
     if (editor == null || editor.isDisposed() || editor.getGraphics() == null) {
       return;
     }
-    Iterable<EditorCell> nonTrivialCells = Sequence.<EditorCell>fromIterable(EditorUtils.getCellDescendants(editor.getRootCell())).where(new IWhereFilter<EditorCell>() {
+    Iterable<EditorCell> nonTrivialCells = Sequence.fromIterable(EditorUtils.getCellDescendants(editor.getRootCell())).where(new IWhereFilter<EditorCell>() {
       public boolean accept(EditorCell cell) {
         return cell.getWidth() * cell.getHeight() != 0;
       }
     });
-    Set<Integer> yCoordinatesSet = SetSequence.<Integer>fromSetWithValues(new HashSet<Integer>(), Sequence.<EditorCell>fromIterable(nonTrivialCells).<Integer>select(new ISelector<EditorCell, Integer>() {
+    Set<Integer> yCoordinatesSet = SetSequence.fromSetWithValues(new HashSet<Integer>(), Sequence.fromIterable(nonTrivialCells).<Integer>select(new ISelector<EditorCell, Integer>() {
       public Integer select(EditorCell cell) {
         return cell.getY();
       }
     }));
-    myPseudoLinesY = SetSequence.<Integer>fromSet(yCoordinatesSet).sort(new ISelector<Integer, Comparable<?>>() {
+    myPseudoLinesY = SetSequence.fromSet(yCoordinatesSet).sort(new ISelector<Integer, Comparable<?>>() {
       public Comparable<?> select(Integer y) {
         return y;
       }
     }, true).toListSequence();
-    myPseudoLinesToFileLines = ListSequence.<Integer>fromList(new ArrayList<Integer>());
-    ListSequence.<Integer>fromList(myPseudoLinesY).visitAll(new IVisitor<Integer>() {
+    myPseudoLinesToFileLines = ListSequence.fromList(new ArrayList<Integer>());
+    ListSequence.fromList(myPseudoLinesY).visitAll(new IVisitor<Integer>() {
       public void visit(Integer t) {
-        ListSequence.<Integer>fromList(myPseudoLinesToFileLines).addElement(-1);
+        ListSequence.fromList(myPseudoLinesToFileLines).addElement(-1);
       }
     });
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (int fileLine = 0; fileLine < ListSequence.<LineContent>fromList(myFileLineToContent).count(); fileLine++) {
-          for (int pseudoLine : Sequence.<Integer>fromIterable(getPseudoLinesForContent(ListSequence.<LineContent>fromList(myFileLineToContent).getElement(fileLine)))) {
-            int currentFileLine = ListSequence.<Integer>fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
-            ListSequence.<Integer>fromList(myPseudoLinesToFileLines).setElement(pseudoLine, getFileLineWithMaxRevision(currentFileLine, fileLine));
+        for (int fileLine = 0; fileLine < ListSequence.fromList(myFileLineToContent).count(); fileLine++) {
+          for (int pseudoLine : Sequence.fromIterable(getPseudoLinesForContent(ListSequence.fromList(myFileLineToContent).getElement(fileLine)))) {
+            int currentFileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
+            ListSequence.fromList(myPseudoLinesToFileLines).setElement(pseudoLine, getFileLineWithMaxRevision(currentFileLine, fileLine));
           }
         }
       }
     });
     FontMetrics metrics = editor.getGraphics().getFontMetrics(myFont);
-    for (AnnotationAspectSubcolumn aspectSubcolumn : ListSequence.<AnnotationAspectSubcolumn>fromList(myAspectSubcolumns)) {
+    for (AnnotationAspectSubcolumn aspectSubcolumn : ListSequence.fromList(myAspectSubcolumns)) {
       aspectSubcolumn.computeWidth(metrics, myPseudoLinesToFileLines);
     }
     mySubcolumnInterval = metrics.stringWidth(" ");
@@ -478,7 +478,7 @@ __switch__:
     if (pseudoLine < 0) {
       pseudoLine = -pseudoLine - 2;
     }
-    if (pseudoLine < 0 || pseudoLine >= ListSequence.<Integer>fromList(myPseudoLinesToFileLines).count()) {
+    if (pseudoLine < 0 || pseudoLine >= ListSequence.fromList(myPseudoLinesToFileLines).count()) {
       return -1;
     }
     return pseudoLine;
@@ -489,38 +489,38 @@ __switch__:
     if (pseudoLine == -1) {
       return -1;
     } else {
-      if (SetSequence.<Integer>fromSet(myCurrentPseudoLines).contains(pseudoLine)) {
+      if (SetSequence.fromSet(myCurrentPseudoLines).contains(pseudoLine)) {
         return -1;
       }
-      return ListSequence.<Integer>fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
+      return ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
     }
   }
 
   @Override
   public JPopupMenu getPopupMenu(MouseEvent event) {
-    List<AnAction> actions = ListSequence.<AnAction>fromList(new ArrayList<AnAction>());
+    List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
     final int fileLine = findFileLineByY(event.getY());
-    ListSequence.<AnAction>fromList(actions).addElement(new BaseAction("Close Annotations") {
+    ListSequence.fromList(actions).addElement(new BaseAction("Close Annotations") {
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         close();
       }
     });
-    ListSequence.<AnAction>fromList(actions).addElement(Separator.getInstance());
-    ListSequence.<AnAction>fromList(actions).addElement(myViewActionGroup);
+    ListSequence.fromList(actions).addElement(Separator.getInstance());
+    ListSequence.fromList(actions).addElement(myViewActionGroup);
     if (fileLine != -1) {
-      ListSequence.<AnAction>fromList(actions).addElement(new AnnotationColumn.ShowDiffFromAnnotationAction(fileLine));
-      ListSequence.<AnAction>fromList(actions).addElement(new BaseAction("Copy revision number") {
+      ListSequence.fromList(actions).addElement(new AnnotationColumn.ShowDiffFromAnnotationAction(fileLine));
+      ListSequence.fromList(actions).addElement(new BaseAction("Copy revision number") {
         protected void doExecute(AnActionEvent e, Map<String, Object> params) {
           String asString = myFileAnnotation.getLineRevisionNumber(fileLine).asString();
           CopyPasteManager.getInstance().setContents(new TextTransferrable(asString, asString));
         }
       });
     }
-    ListSequence.<AnAction>fromList(actions).addElement(Separator.getInstance());
-    ListSequence.<AnAction>fromList(actions).addElement(myRevisionRange);
-    ListSequence.<AnAction>fromList(actions).addElement(new ShowAdditionalInfoAction(this));
+    ListSequence.fromList(actions).addElement(Separator.getInstance());
+    ListSequence.fromList(actions).addElement(myRevisionRange);
+    ListSequence.fromList(actions).addElement(new ShowAdditionalInfoAction(this));
 
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(ListSequence.<AnAction>fromList(actions).toGenericArray(AnAction.class));
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(ListSequence.fromList(actions).toGenericArray(AnAction.class));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, actionGroup).getComponent();
   }
 
@@ -540,8 +540,8 @@ __switch__:
       return b;
     }
     int c = aRevision.compareTo(bRevision);
-    if (MapSequence.<VcsRevisionNumber,VcsFileRevision>fromMap(myRevisionNumberToRevision).get(aRevision) != null && MapSequence.<VcsRevisionNumber,VcsFileRevision>fromMap(myRevisionNumberToRevision).get(bRevision) != null) {
-      c = MapSequence.<VcsRevisionNumber,VcsFileRevision>fromMap(myRevisionNumberToRevision).get(aRevision).getRevisionDate().compareTo(MapSequence.<VcsRevisionNumber,VcsFileRevision>fromMap(myRevisionNumberToRevision).get(bRevision).getRevisionDate());
+    if (MapSequence.fromMap(myRevisionNumberToRevision).get(aRevision) != null && MapSequence.fromMap(myRevisionNumberToRevision).get(bRevision) != null) {
+      c = MapSequence.fromMap(myRevisionNumberToRevision).get(aRevision).getRevisionDate().compareTo(MapSequence.fromMap(myRevisionNumberToRevision).get(bRevision).getRevisionDate());
     }
     if (c < 0) {
       return b;
@@ -671,20 +671,20 @@ __switch__:
                 VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot load data for showing diff", MessageType.ERROR);
                 return;
               }
-              List<Change> changes = Sequence.<Change>fromIterable(((Iterable<Change>) cl.getChanges())).sort(new ISelector<Change, Comparable<?>>() {
+              List<Change> changes = Sequence.fromIterable(((Iterable<Change>) cl.getChanges())).sort(new ISelector<Change, Comparable<?>>() {
                 public Comparable<?> select(Change c) {
                   return ChangesUtil.getFilePath(c).getName().toLowerCase();
                 }
               }, true).toListSequence();
               final File ioFile = targetPath.getIOFile();
-              Change change = ListSequence.<Change>fromList(changes).findFirst(new IWhereFilter<Change>() {
+              Change change = ListSequence.fromList(changes).findFirst(new IWhereFilter<Change>() {
                 public boolean accept(Change c) {
                   return c.getAfterRevision() != null && c.getAfterRevision().getFile().getIOFile().equals(ioFile);
                 }
               });
               if (change != null) {
                 final String name = ioFile.getName();
-                change = ListSequence.<Change>fromList(changes).findFirst(new IWhereFilter<Change>() {
+                change = ListSequence.fromList(changes).findFirst(new IWhereFilter<Change>() {
                   public boolean accept(Change c) {
                     return c.getAfterRevision() != null && c.getAfterRevision().getFile().getName().equals(name);
                   }
@@ -716,7 +716,7 @@ __switch__:
                 final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
                 ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
                   public SNode invoke() {
-                    SNodeId nodeId = check_5mnya_a0a0a91a8a2a0a0a0a1a1a0c(ListSequence.<LineContent>fromList(myFileLineToContent).getElement(myFileLine));
+                    SNodeId nodeId = check_5mnya_a0a0a91a8a2a0a0a0a1a1a0c(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
                     node.value = afterModel.getNodeById(nodeId);
                     if ((node.value == null)) {
                       node.value = beforeModel.value.getNodeById(nodeId);

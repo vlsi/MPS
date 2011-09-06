@@ -135,8 +135,8 @@ public class JavaConverterTreeBuilder {
   private TypeDeclaration myCurrentTypeDeclaration;
   private SNode myCurrentMethod;
   private TypesProvider myTypesProvider;
-  public List<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>> myBlocks = ListSequence.<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>fromList(new ArrayList<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>());
-  public Map<SNode, Integer> myPositions = MapSequence.<SNode,Integer>fromMap(new HashMap<SNode, Integer>());
+  public List<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>> myBlocks = ListSequence.fromList(new ArrayList<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>());
+  public Map<SNode, Integer> myPositions = MapSequence.fromMap(new HashMap<SNode, Integer>());
 
   public JavaConverterTreeBuilder() {
   }
@@ -176,7 +176,7 @@ public class JavaConverterTreeBuilder {
     } else {
       statement = SNodeOperations.cast(dispatchRefl("processStatement", x), "jetbrains.mps.baseLanguage.structure.Statement");
     }
-    MapSequence.<SNode,Integer>fromMap(myPositions).put(statement, x.sourceEnd());
+    MapSequence.fromMap(myPositions).put(statement, x.sourceEnd());
     return statement;
   }
 
@@ -201,7 +201,7 @@ public class JavaConverterTreeBuilder {
       for (int i = 0, n = statements.length; i < n; ++i) {
         SNode statement = processStatementRefl(statements[i]);
         if ((statement != null)) {
-          ListSequence.<SNode>fromList(expressionStatements).addElement(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+          ListSequence.fromList(expressionStatements).addElement(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
         }
       }
     }
@@ -289,12 +289,12 @@ public class JavaConverterTreeBuilder {
       List<SNode> initializers = new ArrayList<SNode>();
       if (x.initializer.expressions != null) {
         for (Expression expression : x.initializer.expressions) {
-          ListSequence.<SNode>fromList(initializers).addElement(processExpressionRefl(expression));
+          ListSequence.fromList(initializers).addElement(processExpressionRefl(expression));
         }
       }
       SNode arrayCreator = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", null);
       for (SNode initializer : initializers) {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(arrayCreator, "initValue", true)).addElement(initializer);
+        ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "initValue", true)).addElement(initializer);
       }
       SLinkOperations.setTarget(arrayCreator, "componentType", SNodeOperations.copyNode(SLinkOperations.getTarget(arrayType, "componentType", true)), true);
       SNode genericNewExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
@@ -304,15 +304,15 @@ public class JavaConverterTreeBuilder {
       List<SNode> dims = new ArrayList<SNode>();
       for (Expression dimension : x.dimensions) {
         if (dimension == null) {
-          ListSequence.<SNode>fromList(dims).addElement(null);
+          ListSequence.fromList(dims).addElement(null);
         } else {
-          ListSequence.<SNode>fromList(dims).addElement(processExpressionRefl(dimension));
+          ListSequence.fromList(dims).addElement(processExpressionRefl(dimension));
         }
       }
       SNode arrayCreator = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ArrayCreator", null);
       for (SNode dim : dims) {
         SNode dimensionExpression = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.DimensionExpression", null);
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).addElement(dimensionExpression);
+        ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).addElement(dimensionExpression);
         if (dim != null) {
           SLinkOperations.setTarget(dimensionExpression, "expression", dim, true);
         }
@@ -332,12 +332,12 @@ public class JavaConverterTreeBuilder {
     List<SNode> initializers = new ArrayList<SNode>();
     if (x.expressions != null) {
       for (Expression expression : x.expressions) {
-        ListSequence.<SNode>fromList(initializers).addElement(processExpressionRefl(expression));
+        ListSequence.fromList(initializers).addElement(processExpressionRefl(expression));
       }
     }
     SNode arrayLiteral = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ArrayLiteral", null);
     for (SNode initializer : initializers) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(arrayLiteral, "item", true)).addElement(initializer);
+      ListSequence.fromList(SLinkOperations.getTargets(arrayLiteral, "item", true)).addElement(initializer);
     }
     return arrayLiteral;
   }
@@ -584,7 +584,7 @@ public class JavaConverterTreeBuilder {
         } else {
           valueNode.addReference(myTypesProvider.createMethodReference(pair.binding, "key", valueNode));
         }
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(annotationInstance, "value", true)).addElement(value);
+        ListSequence.fromList(SLinkOperations.getTargets(annotationInstance, "value", true)).addElement(value);
       }
     }
     return annotationInstance;
@@ -607,7 +607,7 @@ public class JavaConverterTreeBuilder {
       } else {
         valueNode.addReference(myTypesProvider.createMethodReference(pair.binding, "key", valueNode));
       }
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(annotationInstance, "value", true)).addElement(value);
+      ListSequence.fromList(SLinkOperations.getTargets(annotationInstance, "value", true)).addElement(value);
     }
     return annotationInstance;
   }
@@ -845,7 +845,7 @@ public class JavaConverterTreeBuilder {
       TypeBinding[] typeArguments = ptb.arguments;
       if (typeArguments != null) {
         for (TypeBinding typeBinding : typeArguments) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(classCreator, "typeParameter", true)).addElement(createType(typeBinding));
+          ListSequence.fromList(SLinkOperations.getTargets(classCreator, "typeParameter", true)).addElement(createType(typeBinding));
         }
       }
     }
@@ -896,7 +896,7 @@ public class JavaConverterTreeBuilder {
     }
     for (Expression arg : args) {
       SNode expression = processExpressionRefl(arg);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addElement(expression);
+      ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addElement(expression);
     }
   }
 
@@ -1037,7 +1037,7 @@ public class JavaConverterTreeBuilder {
     addBlock(statementList, x.sourceStart(), x.sourceEnd());
     SLinkOperations.setTarget(blockStatement, "statements", statementList, true);
     for (SNode statement : processStatements(x.statements)) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(statement);
+      ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(statement);
     }
     return blockStatement;
   }
@@ -1139,7 +1139,7 @@ public class JavaConverterTreeBuilder {
               SNodeOperations.detachNode(inititalizer);
               SLinkOperations.setTarget(additionalForLoopVariable, "initializer", inititalizer, true);
             }
-            ListSequence.<SNode>fromList(SLinkOperations.getTargets(forStatement, "additionalVar", true)).addElement(additionalForLoopVariable);
+            ListSequence.fromList(SLinkOperations.getTargets(forStatement, "additionalVar", true)).addElement(additionalForLoopVariable);
           }
         }
       }
@@ -1151,7 +1151,7 @@ public class JavaConverterTreeBuilder {
       for (SNode expressionStatement : incr) {
         SNode expression = SLinkOperations.getTarget(expressionStatement, "expression", true);
         SNodeOperations.detachNode(expression);
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(forStatement, "iteration", true)).addElement(expression);
+        ListSequence.fromList(SLinkOperations.getTargets(forStatement, "iteration", true)).addElement(expression);
       }
     }
     SNode loopBody = processStatementRefl(x.action);
@@ -1210,7 +1210,7 @@ public class JavaConverterTreeBuilder {
           } else {
             SNode switchCase = processCaseStatement((CaseStatement) stmt);
             if ((switchCase != null)) {
-              ListSequence.<SNode>fromList(SLinkOperations.getTargets(result, "case", true)).addElement(switchCase);
+              ListSequence.fromList(SLinkOperations.getTargets(result, "case", true)).addElement(switchCase);
             }
             currentSwitchCase = ((switchCase == null) ?
               null :
@@ -1219,7 +1219,7 @@ public class JavaConverterTreeBuilder {
           }
         } else
         if ((currentSwitchCase != null)) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(currentSwitchCase, "statement", true)).addElement(processStatementRefl(stmt));
+          ListSequence.fromList(SLinkOperations.getTargets(currentSwitchCase, "statement", true)).addElement(processStatementRefl(stmt));
         }
       }
     }
@@ -1250,19 +1250,19 @@ public class JavaConverterTreeBuilder {
     if (x.catchBlocks != null) {
       for (int i = 0, c = x.catchArguments.length; i < c; ++i) {
         SNode local = SNodeOperations.cast(myTypesProvider.getRaw(x.catchArguments[i].binding), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-        ListSequence.<SNode>fromList(catchArgs).addElement(local);
+        ListSequence.fromList(catchArgs).addElement(local);
       }
       for (int i = 0, c = x.catchBlocks.length; i < c; ++i) {
-        ListSequence.<SNode>fromList(catchBlocks).addElement(processStatementRefl(x.catchBlocks[i]));
+        ListSequence.fromList(catchBlocks).addElement(processStatementRefl(x.catchBlocks[i]));
       }
     }
     if ((finallyBlock != null)) {
       SNode tryStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.TryStatement", null);
       for (int i = 0; i < catchBlocks.size(); i++) {
-        SNode catchBlock = ListSequence.<SNode>fromList(catchBlocks).getElement(i);
-        SNode lvd = ListSequence.<SNode>fromList(catchArgs).getElement(i);
+        SNode catchBlock = ListSequence.fromList(catchBlocks).getElement(i);
+        SNode lvd = ListSequence.fromList(catchArgs).getElement(i);
         SNode catchClause = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.CatchClause", null);
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(tryStatement, "catchClause", true)).addElement(catchClause);
+        ListSequence.fromList(SLinkOperations.getTargets(tryStatement, "catchClause", true)).addElement(catchClause);
         SLinkOperations.setTarget(catchClause, "catchBody", getStatementListFromStatement(catchBlock, x.catchBlocks[i]), true);
         SLinkOperations.setTarget(catchClause, "throwable", lvd, true);
       }
@@ -1272,10 +1272,10 @@ public class JavaConverterTreeBuilder {
     } else {
       SNode tryCatchStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.TryCatchStatement", null);
       for (int i = 0; i < catchBlocks.size(); i++) {
-        SNode catchBlock = ListSequence.<SNode>fromList(catchBlocks).getElement(i);
-        SNode lvd = ListSequence.<SNode>fromList(catchArgs).getElement(i);
+        SNode catchBlock = ListSequence.fromList(catchBlocks).getElement(i);
+        SNode lvd = ListSequence.fromList(catchArgs).getElement(i);
         SNode catchClause = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.CatchClause", null);
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).addElement(catchClause);
+        ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).addElement(catchClause);
         SLinkOperations.setTarget(catchClause, "catchBody", getStatementListFromStatement(catchBlock, x.catchBlocks[i]), true);
         SLinkOperations.setTarget(catchClause, "throwable", lvd, true);
       }
@@ -1365,7 +1365,7 @@ public class JavaConverterTreeBuilder {
     SNode method = SNodeOperations.cast(myTypesProvider.getRaw(b), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
     for (ReferenceBinding referenceBinding : b.thrownExceptions) {
       SNode exceptionType = SNodeOperations.cast(myTypesProvider.createType(referenceBinding), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addElement(exceptionType);
+      ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addElement(exceptionType);
     }
   }
 
@@ -1412,7 +1412,7 @@ public class JavaConverterTreeBuilder {
         SLinkOperations.setTarget(method, "body", methodBody, true);
       }
       for (SNode statement : processStatements(x.statements)) {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodBody, "statement", true)).addElement(statement);
+        ListSequence.fromList(SLinkOperations.getTargets(methodBody, "statement", true)).addElement(statement);
       }
       addMethodParametersAnnotations(x);
       addMethodAnnotations(method, x);
@@ -1439,10 +1439,10 @@ public class JavaConverterTreeBuilder {
         SLinkOperations.setTarget(ctor, "body", body, true);
       }
       if ((superOrThisCall != null)) {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(superOrThisCall);
+        ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(superOrThisCall);
       }
       for (SNode statement : processStatements(x.statements)) {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(statement);
+        ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(statement);
       }
       addMethodParametersAnnotations(x);
       addMethodAnnotations(ctor, x);
@@ -1471,7 +1471,7 @@ public class JavaConverterTreeBuilder {
     if (initializer.block != null && initializer.block.statements != null) {
       List<SNode> stmts = processStatements(initializer.block.statements);
       for (SNode statement : stmts) {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(statement);
+        ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(statement);
       }
     }
   }
@@ -1510,7 +1510,7 @@ public class JavaConverterTreeBuilder {
           SNode enumClassConstantBody = SNodeOperations.cast(myTypesProvider.getRaw(anonymousEnumClass.binding), "jetbrains.mps.baseLanguage.structure.EnumClass");
           for (SNode imd : SLinkOperations.getTargets(enumClassConstantBody, "method", true)) {
             SNodeOperations.detachNode(imd);
-            ListSequence.<SNode>fromList(SLinkOperations.getTargets(enumConstant, "method", true)).addElement(imd);
+            ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "method", true)).addElement(imd);
           }
           for (AbstractMethodDeclaration m : anonymousEnumClass.methods) {
             if (m instanceof ConstructorDeclaration) {
@@ -1526,7 +1526,7 @@ public class JavaConverterTreeBuilder {
         Expression[] arguments = initializer.arguments;
         if (arguments != null) {
           for (Expression arg : arguments) {
-            ListSequence.<SNode>fromList(SLinkOperations.getTargets(enumConstant, "actualArgument", true)).addElement(processExpressionRefl(arg));
+            ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "actualArgument", true)).addElement(processExpressionRefl(arg));
           }
         }
         addEnumConstAnnotations(enumConstant, declaration);
@@ -1571,7 +1571,7 @@ public class JavaConverterTreeBuilder {
 
   private void addAnnotation(SNode hasAnnotation, Annotation annotation) {
     SNode annotationInstance = SNodeOperations.cast(processExpressionRefl(annotation), "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(hasAnnotation, "annotation", true)).addElement(annotationInstance);
+    ListSequence.fromList(SLinkOperations.getTargets(hasAnnotation, "annotation", true)).addElement(annotationInstance);
   }
 
   private void addClassifierJavadoc(SNode node, Javadoc javadoc) {
@@ -1612,10 +1612,10 @@ public class JavaConverterTreeBuilder {
     for (int[] comment : comments) {
       if (comment[0] == javadoc.sourceStart) {
         List<String> lines = CommentHelper.processJavadoc(CommentHelper.splitString(content, lineends, comment[0], comment[1] + 1));
-        for (String text : ListSequence.<String>fromList(lines)) {
+        for (String text : ListSequence.fromList(lines)) {
           SNode commentLine = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", null);
-          SPropertyOperations.set(SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(commentLine, "part", true)).getElement(0), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", text);
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(doc, "body", true)).addElement(commentLine);
+          SPropertyOperations.set(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).getElement(0), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", text);
+          ListSequence.fromList(SLinkOperations.getTargets(doc, "body", true)).addElement(commentLine);
         }
         break;
       }
@@ -1651,11 +1651,11 @@ public class JavaConverterTreeBuilder {
   }
 
   private void addBlock(SNode node, int start, int end) {
-    ListSequence.<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(node, getCUD(), Math.abs(start), Math.abs(end)));
+    ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(node, getCUD(), Math.abs(start), Math.abs(end)));
   }
 
   private Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> getBlock(final SNode node) {
-    return ListSequence.<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>fromList(myBlocks).findFirst(new IWhereFilter<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>() {
+    return ListSequence.fromList(myBlocks).findFirst(new IWhereFilter<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>() {
       public boolean accept(Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> it) {
         return it._0() == node;
       }
@@ -1686,7 +1686,7 @@ public class JavaConverterTreeBuilder {
       result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
       addBlock(result, x.sourceStart(), x.sourceEnd());
       if ((possibleBlock != null)) {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(result, "statement", true)).addElement(possibleBlock);
+        ListSequence.fromList(SLinkOperations.getTargets(result, "statement", true)).addElement(possibleBlock);
       }
     }
     return result;

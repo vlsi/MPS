@@ -9,12 +9,12 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNode;
 
 @MPSLaunch
 public class RemoveParameter_Test extends BaseTransformationTest {
@@ -30,10 +30,10 @@ public class RemoveParameter_Test extends BaseTransformationTest {
       this.addNodeById("1230052944082");
       this.addNodeById("1230052944093");
       ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("1230052944084"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).clear();
+      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).clear();
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052944084"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052944083"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052944094"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052944083"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052944094"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }
 }

@@ -26,7 +26,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NamespaceInternalActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.NamespaceInternalActions_ActionGroup";
 
-  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.<Pair<ActionPlace, Condition<BaseAction>>>fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
+  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
 
   public NamespaceInternalActions_ActionGroup() {
     super("NamespaceInternalActions", ID);
@@ -50,8 +50,8 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
           return;
         }
       }
-      if (ListSequence.<TreeNode>fromList(selectedNodes).count() == 1) {
-        NamespaceTextNode node = (NamespaceTextNode) ListSequence.<TreeNode>fromList(selectedNodes).first();
+      if (ListSequence.fromList(selectedNodes).count() == 1) {
+        NamespaceTextNode node = (NamespaceTextNode) ListSequence.fromList(selectedNodes).first();
         DefaultActionGroup newGroup = node.createNewGroup();
         if (newGroup != null) {
           NamespaceInternalActions_ActionGroup.this.add(newGroup);
@@ -59,7 +59,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
         }
       }
       NamespaceInternalActions_ActionGroup.this.add(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup")));
-      if (ListSequence.<TreeNode>fromList(selectedNodes).count() == 1) {
+      if (ListSequence.fromList(selectedNodes).count() == 1) {
         NamespaceInternalActions_ActionGroup.this.addSeparator();
         NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action");
       }

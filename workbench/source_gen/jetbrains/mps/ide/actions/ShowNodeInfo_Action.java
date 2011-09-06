@@ -44,20 +44,20 @@ public class ShowNodeInfo_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editor", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editor") == null) {
+    MapSequence.fromMap(_params).put("editor", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editor") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
-    if (MapSequence.<String,Object>fromMap(_params).get("cell") == null) {
+    MapSequence.fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("cell") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
@@ -65,14 +65,14 @@ public class ShowNodeInfo_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Point point = new Point(((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell")).getX() + ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell")).getWidth(), ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell")).getY());
-      SwingUtilities.convertPointToScreen(point, ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editor")));
+      final Point point = new Point(((EditorCell) MapSequence.fromMap(_params).get("cell")).getX() + ((EditorCell) MapSequence.fromMap(_params).get("cell")).getWidth(), ((EditorCell) MapSequence.fromMap(_params).get("cell")).getY());
+      SwingUtilities.convertPointToScreen(point, ((EditorComponent) MapSequence.fromMap(_params).get("editor")));
       // Displaying this action in .invokeLater call to let popup menu be disposed first ( <node> will be diposed immediately by corresponding events otherwise) 
-      final Frame frame = ((Frame) MapSequence.<String,Object>fromMap(_params).get("frame"));
-      final SNode node = ((SNode) MapSequence.<String,Object>fromMap(_params).get("node"));
+      final Frame frame = ((Frame) MapSequence.fromMap(_params).get("frame"));
+      final SNode node = ((SNode) MapSequence.fromMap(_params).get("node"));
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          new NodeInformationDialog(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editor")), frame, point, node).setVisible(true);
+          new NodeInformationDialog(((EditorComponent) MapSequence.fromMap(_params).get("editor")), frame, point, node).setVisible(true);
         }
       });
     } catch (Throwable t) {

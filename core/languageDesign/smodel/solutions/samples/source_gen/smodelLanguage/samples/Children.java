@@ -16,11 +16,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class Children {
   public void accessToChildren_1(SNode statementList) {
     BaseConcept_Behavior.call_getPresentation_1213877396640(statementList);
-    int count1 = ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList, "statement", true)).count();
+    int count1 = ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).count();
     List<SNode> statements = SLinkOperations.getTargets(statementList, "statement", true);
-    int count2 = ListSequence.<SNode>fromList(statements).count();
+    int count2 = ListSequence.fromList(statements).count();
     int count3 = ((List<SNode>) statements).size();
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList, "statement", true)).clear();
+    ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).clear();
   }
 
   public void accessToChildren_2(SNode statementList1, SNode statementList2) {
@@ -28,16 +28,16 @@ public class Children {
     SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.IfStatement");
     SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");
     for (SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(SNodeOperations.copyNode(statement));
+      ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(SNodeOperations.copyNode(statement));
     }
     for (SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(SNodeOperations.copyNode(statement));
+      ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(SNodeOperations.copyNode(statement));
     }
     for (SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(SNodeOperations.copyNode(statement));
+      ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(SNodeOperations.copyNode(statement));
     }
-    for (SNode statement : ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList2, "statement", true))) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(ListSequence.<SNode>fromList(SLinkOperations.getTargets(statementList2, "statement", true)).first());
+    for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true))) {
+      ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).first());
     }
   }
 
@@ -45,7 +45,7 @@ public class Children {
     List<SNode> children1 = SNodeOperations.getDescendants(SLinkOperations.getTarget(statement, "expression", true), null, false, new String[]{});
     List<SNode> children2 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{});
     List<SNode> children3 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", true, new String[]{});
-    Iterable<SNode> children4 = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> children4 = ListSequence.fromList(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "value") == true;
       }

@@ -43,7 +43,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
 
   public Component getTableCellRendererComponent(JTable table, final Object value, boolean isSelected, boolean hasFocus, int row, int column) {
     if (MapSequence.fromMap(myRenderersCache).containsKey(value)) {
-      return MapSequence.<Object,Component>fromMap(myRenderersCache).get(value);
+      return MapSequence.fromMap(myRenderersCache).get(value);
     }
     final boolean[] incomplete = new boolean[]{false};
     MPSTree tree = new MPSTree() {
@@ -85,7 +85,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
       new DottedBorder(new Insets(1, 1, 1, 1), Color.BLACK) :
       new EmptyBorder(1, 1, 1, 1)
     ));
-    MapSequence.<Object,Component>fromMap(myRenderersCache).put(value, tree);
+    MapSequence.fromMap(myRenderersCache).put(value, tree);
     return tree;
   }
 

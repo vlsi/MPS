@@ -34,7 +34,7 @@ public class NewSubModel_Action extends GeneratedAction {
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     boolean correctStereotype = false;
-    String stereotype = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getStereotype();
+    String stereotype = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getStereotype();
     for (String availableStereotype : SModelStereotype.values) {
       if (stereotype.equals(availableStereotype)) {
         correctStereotype = true;
@@ -62,16 +62,16 @@ public class NewSubModel_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("ideaProject") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
@@ -80,22 +80,22 @@ public class NewSubModel_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
-      final IModule localModule = (((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getModule() != null ?
-        ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getModule() :
-        ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getModule()
+      final IModule localModule = (((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule() != null ?
+        ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule() :
+        ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule()
       );
-      final String namespace = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getLongName();
+      final String namespace = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getLongName();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          String stereotype = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getStereotype();
-          dialog.value = new NewModelDialog(localModule, namespace, ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), stereotype, true);
+          String stereotype = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getStereotype();
+          dialog.value = new NewModelDialog(localModule, namespace, ((IOperationContext) MapSequence.fromMap(_params).get("context")), stereotype, true);
         }
       });
       dialog.value.showDialog();
       SModelDescriptor result = dialog.value.getResult();
       if (result != null) {
         SModelDescriptor modelDescriptor = result;
-        ProjectPane.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
+        ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

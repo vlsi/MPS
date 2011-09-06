@@ -34,11 +34,11 @@ public class StringsIO {
   }
 
   public static List<String> readLines(InputStream input) {
-    List<String> lines = ListSequence.<String>fromList(new ArrayList<String>());
+    List<String> lines = ListSequence.fromList(new ArrayList<String>());
     Scanner sc = new Scanner(input);
     while (sc.hasNextLine()) {
       String line = sc.nextLine();
-      ListSequence.<String>fromList(lines).addElement(line);
+      ListSequence.fromList(lines).addElement(line);
     }
     sc.close();
     return lines;
@@ -50,7 +50,7 @@ public class StringsIO {
 
   public static void writeLines(OutputStream output, Iterable<String> lines) {
     PrintWriter out = new PrintWriter(output);
-    for (String line : Sequence.<String>fromIterable(lines)) {
+    for (String line : Sequence.fromIterable(lines)) {
       out.println(line);
     }
     out.close();

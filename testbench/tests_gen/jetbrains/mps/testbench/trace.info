@@ -310,8 +310,8 @@
     <nodeInfo nodeId="8981027491094736558" fileName="ProjectTestHelper.java" startLine="162" startPosition="59" endLine="163" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" />
     <nodeInfo nodeId="8981027491094734791" fileName="ProjectTestHelper.java" startLine="163" startPosition="34" endLine="164" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" />
     <nodeInfo nodeId="6078875650364604224" fileName="ProjectTestHelper.java" startLine="164" startPosition="33" endLine="165" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="tmpPath" />
-    <nodeInfo nodeId="3416062119153932762" fileName="ProjectTestHelper.java" startLine="165" startPosition="27" endLine="166" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="path2tmp" />
-    <nodeInfo nodeId="7352662836539749211" fileName="ProjectTestHelper.java" startLine="166" startPosition="109" endLine="167" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageHandler" />
+    <nodeInfo nodeId="3416062119153932762" fileName="ProjectTestHelper.java" startLine="165" startPosition="27" endLine="166" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="path2tmp" />
+    <nodeInfo nodeId="7352662836539749211" fileName="ProjectTestHelper.java" startLine="166" startPosition="94" endLine="167" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageHandler" />
     <nodeInfo nodeId="8981027491094734803" fileName="ProjectTestHelper.java" startLine="169" startPosition="55" endLine="170" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8981027491094736563" fileName="ProjectTestHelper.java" startLine="170" startPosition="27" endLine="171" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6078875650364604150" fileName="ProjectTestHelper.java" startLine="171" startPosition="29" endLine="172" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -344,43 +344,43 @@
     <nodeInfo nodeId="7352662836539759282" fileName="ProjectTestHelper.java" startLine="227" startPosition="47" endLine="228" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7352662836539757580" fileName="ProjectTestHelper.java" startLine="231" startPosition="39" endLine="232" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7352662836539757584" fileName="ProjectTestHelper.java" startLine="235" startPosition="38" endLine="236" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3416062119153995139" fileName="ProjectTestHelper.java" startLine="239" startPosition="32" endLine="240" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153995139" fileName="ProjectTestHelper.java" startLine="239" startPosition="32" endLine="240" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3416062119153932878" fileName="ProjectTestHelper.java" startLine="241" startPosition="88" endLine="242" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3416062119153932888" fileName="ProjectTestHelper.java" startLine="242" startPosition="40" endLine="243" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3416062119153932897" fileName="ProjectTestHelper.java" startLine="244" startPosition="89" endLine="245" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153933004" fileName="ProjectTestHelper.java" startLine="246" startPosition="58" endLine="247" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153932940" fileName="ProjectTestHelper.java" startLine="248" startPosition="38" endLine="249" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153932965" fileName="ProjectTestHelper.java" startLine="250" startPosition="38" endLine="251" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153933030" fileName="ProjectTestHelper.java" startLine="252" startPosition="16" endLine="253" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153933004" fileName="ProjectTestHelper.java" startLine="246" startPosition="58" endLine="247" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153932940" fileName="ProjectTestHelper.java" startLine="248" startPosition="38" endLine="249" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153932965" fileName="ProjectTestHelper.java" startLine="250" startPosition="38" endLine="251" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153933030" fileName="ProjectTestHelper.java" startLine="252" startPosition="16" endLine="253" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3416062119153995155" fileName="ProjectTestHelper.java" startLine="255" startPosition="7" endLine="256" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7216969004037110172" fileName="ProjectTestHelper.java" startLine="260" startPosition="60" endLine="261" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7216969004037110172" fileName="ProjectTestHelper.java" startLine="260" startPosition="60" endLine="261" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6078875650364605934" fileName="ProjectTestHelper.java" startLine="262" startPosition="7" endLine="263" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153932780" fileName="ProjectTestHelper.java" startLine="271" startPosition="9" endLine="272" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6078875650364604242" fileName="ProjectTestHelper.java" startLine="272" startPosition="66" endLine="273" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3416062119153932780" fileName="ProjectTestHelper.java" startLine="271" startPosition="9" endLine="272" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6078875650364604242" fileName="ProjectTestHelper.java" startLine="272" startPosition="51" endLine="273" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3416062119153994869" fileName="ProjectTestHelper.java" startLine="276" startPosition="81" endLine="277" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3416062119153994911" fileName="ProjectTestHelper.java" startLine="277" startPosition="64" endLine="278" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6648299012528511857" fileName="ProjectTestHelper.java" startLine="282" startPosition="42" endLine="283" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3416062119153994975" fileName="ProjectTestHelper.java" startLine="284" startPosition="13" endLine="285" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153994975" fileName="ProjectTestHelper.java" startLine="284" startPosition="13" endLine="285" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6648299012528511861" fileName="ProjectTestHelper.java" startLine="290" startPosition="42" endLine="291" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3416062119153995015" fileName="ProjectTestHelper.java" startLine="292" startPosition="13" endLine="293" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153995015" fileName="ProjectTestHelper.java" startLine="292" startPosition="13" endLine="293" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1901124280489778756" fileName="ProjectTestHelper.java" startLine="298" startPosition="40" endLine="299" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1901124280489778757" fileName="ProjectTestHelper.java" startLine="300" startPosition="9" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3416062119153995050" fileName="ProjectTestHelper.java" startLine="301" startPosition="0" endLine="302" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3416062119153995056" fileName="ProjectTestHelper.java" startLine="302" startPosition="42" endLine="303" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5378512516364166440" fileName="ProjectTestHelper.java" startLine="305" startPosition="39" endLine="306" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3416062119153995068" fileName="ProjectTestHelper.java" startLine="306" startPosition="55" endLine="307" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153995078" fileName="ProjectTestHelper.java" startLine="308" startPosition="49" endLine="309" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153995078" fileName="ProjectTestHelper.java" startLine="308" startPosition="49" endLine="309" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7984465977408064212" fileName="ProjectTestHelper.java" startLine="311" startPosition="18" endLine="312" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153995103" fileName="ProjectTestHelper.java" startLine="314" startPosition="16" endLine="315" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416062119153994301" fileName="ProjectTestHelper.java" startLine="320" startPosition="48" endLine="321" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153941740" fileName="ProjectTestHelper.java" startLine="321" startPosition="83" endLine="322" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153995103" fileName="ProjectTestHelper.java" startLine="314" startPosition="16" endLine="315" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153994301" fileName="ProjectTestHelper.java" startLine="320" startPosition="48" endLine="321" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3416062119153941740" fileName="ProjectTestHelper.java" startLine="321" startPosition="75" endLine="322" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3416062119153941748" fileName="ProjectTestHelper.java" startLine="323" startPosition="11" endLine="324" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5378512516364166404" fileName="ProjectTestHelper.java" startLine="324" startPosition="51" endLine="325" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3416062119153994349" fileName="ProjectTestHelper.java" startLine="326" startPosition="48" endLine="327" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153994349" fileName="ProjectTestHelper.java" startLine="326" startPosition="48" endLine="327" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3416062119153994325" fileName="ProjectTestHelper.java" startLine="329" startPosition="31" endLine="330" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3416062119153994274" fileName="ProjectTestHelper.java" startLine="333" startPosition="15" endLine="334" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3416062119153994359" fileName="ProjectTestHelper.java" startLine="338" startPosition="7" endLine="339" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4128185861943385985" fileName="ProjectTestHelper.java" startLine="343" startPosition="164" endLine="344" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4128185861943385985" fileName="ProjectTestHelper.java" startLine="343" startPosition="152" endLine="344" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4128185861943386030" fileName="ProjectTestHelper.java" startLine="344" startPosition="70" endLine="345" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4128185861943386020" fileName="ProjectTestHelper.java" startLine="347" startPosition="32" endLine="348" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4128185861943386047" fileName="ProjectTestHelper.java" startLine="349" startPosition="18" endLine="350" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -416,7 +416,7 @@
     <nodeInfo nodeId="7216969004037110160" fileName="ProjectTestHelper.java" startLine="259" startPosition="40" endLine="262" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6648299012528511844" fileName="ProjectTestHelper.java" startLine="281" startPosition="40" endLine="284" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6648299012528511859" fileName="ProjectTestHelper.java" startLine="289" startPosition="40" endLine="292" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1901124280489778745" fileName="ProjectTestHelper.java" startLine="297" startPosition="114" endLine="300" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1901124280489778745" fileName="ProjectTestHelper.java" startLine="297" startPosition="98" endLine="300" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3243693673213719690" fileName="ProjectTestHelper.java" startLine="307" startPosition="71" endLine="310" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5378512516364166418" fileName="ProjectTestHelper.java" startLine="325" startPosition="20" endLine="328" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="8597743085639790198" fileName="ProjectTestHelper.java" startLine="399" startPosition="0" endLine="402" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
@@ -427,10 +427,10 @@
     <nodeInfo nodeId="7352662836539759740" fileName="ProjectTestHelper.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildWarns#(Ljetbrains/mps/testbench/ProjectTestHelper/Token;)Ljava/util/List;" />
     <nodeInfo nodeId="8597743085639790333" fileName="ProjectTestHelper.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDiffReport#(Ljetbrains/mps/testbench/ProjectTestHelper/Token;)Ljava/util/List;" />
     <nodeInfo nodeId="2892614774105532290" fileName="ProjectTestHelper.java" startLine="120" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultScriptBuilder#()Ljetbrains/mps/make/script/ScriptBuilder;" />
-    <nodeInfo nodeId="3767231643656643804" fileName="ProjectTestHelper.java" startLine="126" startPosition="133" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/IModule;)Z" />
+    <nodeInfo nodeId="3767231643656643804" fileName="ProjectTestHelper.java" startLine="126" startPosition="115" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/IModule;)Z" />
     <nodeInfo nodeId="3767231643656643813" fileName="ProjectTestHelper.java" startLine="130" startPosition="64" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3730996872184513713" fileName="ProjectTestHelper.java" startLine="142" startPosition="231" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="3037398679707992881" fileName="ProjectTestHelper.java" startLine="150" startPosition="140" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
+    <nodeInfo nodeId="3730996872184513713" fileName="ProjectTestHelper.java" startLine="142" startPosition="195" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
+    <nodeInfo nodeId="3037398679707992881" fileName="ProjectTestHelper.java" startLine="150" startPosition="122" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
     <nodeInfo nodeId="9143630131837001987" fileName="ProjectTestHelper.java" startLine="194" startPosition="72" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
     <nodeInfo nodeId="7216969004037112976" fileName="ProjectTestHelper.java" startLine="201" startPosition="72" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
     <nodeInfo nodeId="7352662836539757550" fileName="ProjectTestHelper.java" startLine="230" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildErrors#()Ljava/util/List;" />
@@ -450,12 +450,12 @@
     <nodeInfo nodeId="3416062119153994287" fileName="ProjectTestHelper.java" startLine="331" startPosition="17" endLine="337" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3037398679707966819" fileName="ProjectTestHelper.java" startLine="140" startPosition="25" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6078875650364605976" fileName="ProjectTestHelper.java" startLine="172" startPosition="18" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3416062119153994971" fileName="ProjectTestHelper.java" startLine="280" startPosition="127" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3416062119153995013" fileName="ProjectTestHelper.java" startLine="288" startPosition="127" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3416062119153994971" fileName="ProjectTestHelper.java" startLine="280" startPosition="111" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3416062119153995013" fileName="ProjectTestHelper.java" startLine="288" startPosition="111" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="4128185861943386001" fileName="ProjectTestHelper.java" startLine="345" startPosition="27" endLine="352" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8597743085639790691" fileName="ProjectTestHelper.java" startLine="369" startPosition="19" endLine="376" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8597743085639790474" fileName="ProjectTestHelper.java" startLine="95" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMacro#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3416062119153994957" fileName="ProjectTestHelper.java" startLine="279" startPosition="114" endLine="287" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3416062119153994957" fileName="ProjectTestHelper.java" startLine="279" startPosition="98" endLine="287" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3416062119153995006" fileName="ProjectTestHelper.java" startLine="287" startPosition="11" endLine="295" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3767231643656643796" fileName="ProjectTestHelper.java" startLine="125" startPosition="71" endLine="134" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3416062119153995066" fileName="ProjectTestHelper.java" startLine="304" startPosition="57" endLine="313" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -468,7 +468,7 @@
     <nodeInfo nodeId="3767231643656643792" fileName="ProjectTestHelper.java" startLine="124" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="withGenerators#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="8597743085639790160" fileName="ProjectTestHelper.java" startLine="168" startPosition="0" endLine="181" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PrivToken#(Ljetbrains/mps/project/IModule;Lcom/intellij/openapi/project/Project;)V" />
     <nodeInfo nodeId="3416062119153995064" fileName="ProjectTestHelper.java" startLine="303" startPosition="42" endLine="316" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3416062119153932828" fileName="ProjectTestHelper.java" startLine="240" startPosition="82" endLine="255" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3416062119153932828" fileName="ProjectTestHelper.java" startLine="240" startPosition="74" endLine="255" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3416062119153941762" fileName="ProjectTestHelper.java" startLine="322" startPosition="31" endLine="338" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="8597743085639790508" fileName="ProjectTestHelper.java" startLine="103" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
     <nodeInfo nodeId="6078875650364604217" fileName="ProjectTestHelper.java" startLine="258" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tmpFile#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
@@ -526,18 +526,18 @@
     <scopeInfo nodeId="7352662836539757556" fileName="ProjectTestHelper.java" startLine="231" startPosition="39" endLine="232" endPosition="52" />
     <scopeInfo nodeId="7352662836539757574" fileName="ProjectTestHelper.java" startLine="235" startPosition="38" endLine="236" endPosition="54" />
     <scopeInfo nodeId="3416062119153932846" fileName="ProjectTestHelper.java" startLine="244" startPosition="89" endLine="245" endPosition="38" />
-    <scopeInfo nodeId="3416062119153932981" fileName="ProjectTestHelper.java" startLine="246" startPosition="58" endLine="247" endPosition="98" />
-    <scopeInfo nodeId="3416062119153932931" fileName="ProjectTestHelper.java" startLine="248" startPosition="38" endLine="249" endPosition="78" />
-    <scopeInfo nodeId="3416062119153932956" fileName="ProjectTestHelper.java" startLine="250" startPosition="38" endLine="251" endPosition="78" />
-    <scopeInfo nodeId="3416062119153933029" fileName="ProjectTestHelper.java" startLine="252" startPosition="16" endLine="253" endPosition="112" />
-    <scopeInfo nodeId="7216969004037110161" fileName="ProjectTestHelper.java" startLine="260" startPosition="60" endLine="261" endPosition="110" />
+    <scopeInfo nodeId="3416062119153932981" fileName="ProjectTestHelper.java" startLine="246" startPosition="58" endLine="247" endPosition="90" />
+    <scopeInfo nodeId="3416062119153932931" fileName="ProjectTestHelper.java" startLine="248" startPosition="38" endLine="249" endPosition="70" />
+    <scopeInfo nodeId="3416062119153932956" fileName="ProjectTestHelper.java" startLine="250" startPosition="38" endLine="251" endPosition="70" />
+    <scopeInfo nodeId="3416062119153933029" fileName="ProjectTestHelper.java" startLine="252" startPosition="16" endLine="253" endPosition="104" />
+    <scopeInfo nodeId="7216969004037110161" fileName="ProjectTestHelper.java" startLine="260" startPosition="60" endLine="261" endPosition="95" />
     <scopeInfo nodeId="6648299012528511845" fileName="ProjectTestHelper.java" startLine="282" startPosition="42" endLine="283" endPosition="21" />
     <scopeInfo nodeId="6648299012528511860" fileName="ProjectTestHelper.java" startLine="290" startPosition="42" endLine="291" endPosition="21" />
     <scopeInfo nodeId="1901124280489778746" fileName="ProjectTestHelper.java" startLine="298" startPosition="40" endLine="299" endPosition="19" />
-    <scopeInfo nodeId="3243693673213719691" fileName="ProjectTestHelper.java" startLine="308" startPosition="49" endLine="309" endPosition="177" />
+    <scopeInfo nodeId="3243693673213719691" fileName="ProjectTestHelper.java" startLine="308" startPosition="49" endLine="309" endPosition="161" />
     <scopeInfo nodeId="7984465977408064211" fileName="ProjectTestHelper.java" startLine="311" startPosition="18" endLine="312" endPosition="42" />
-    <scopeInfo nodeId="3416062119153995102" fileName="ProjectTestHelper.java" startLine="314" startPosition="16" endLine="315" endPosition="114" />
-    <scopeInfo nodeId="5378512516364166420" fileName="ProjectTestHelper.java" startLine="326" startPosition="48" endLine="327" endPosition="65" />
+    <scopeInfo nodeId="3416062119153995102" fileName="ProjectTestHelper.java" startLine="314" startPosition="16" endLine="315" endPosition="106" />
+    <scopeInfo nodeId="5378512516364166420" fileName="ProjectTestHelper.java" startLine="326" startPosition="48" endLine="327" endPosition="57" />
     <scopeInfo nodeId="3416062119153941757" fileName="ProjectTestHelper.java" startLine="329" startPosition="0" endLine="330" endPosition="28">
       <varInfo nodeId="3416062119153941758" varName="e" />
     </scopeInfo>
@@ -582,16 +582,16 @@
       <varInfo nodeId="8597743085639790337" varName="tok" />
     </scopeInfo>
     <scopeInfo nodeId="2892614774105532290" fileName="ProjectTestHelper.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="3767231643656643804" fileName="ProjectTestHelper.java" startLine="126" startPosition="133" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="3767231643656643804" fileName="ProjectTestHelper.java" startLine="126" startPosition="115" endLine="130" endPosition="0" />
     <scopeInfo nodeId="3767231643656643813" fileName="ProjectTestHelper.java" startLine="130" startPosition="64" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="3730996872184513713" fileName="ProjectTestHelper.java" startLine="142" startPosition="231" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="3037398679707992881" fileName="ProjectTestHelper.java" startLine="150" startPosition="140" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="3730996872184513713" fileName="ProjectTestHelper.java" startLine="142" startPosition="195" endLine="146" endPosition="0" />
+    <scopeInfo nodeId="3037398679707992881" fileName="ProjectTestHelper.java" startLine="150" startPosition="122" endLine="154" endPosition="0" />
     <scopeInfo nodeId="9143630131837001987" fileName="ProjectTestHelper.java" startLine="194" startPosition="72" endLine="198" endPosition="0" />
     <scopeInfo nodeId="7216969004037112976" fileName="ProjectTestHelper.java" startLine="201" startPosition="72" endLine="205" endPosition="0" />
     <scopeInfo nodeId="7352662836539757550" fileName="ProjectTestHelper.java" startLine="230" startPosition="0" endLine="234" endPosition="0" />
     <scopeInfo nodeId="7352662836539757568" fileName="ProjectTestHelper.java" startLine="234" startPosition="0" endLine="238" endPosition="0" />
-    <scopeInfo nodeId="3416062119153994972" fileName="ProjectTestHelper.java" startLine="281" startPosition="40" endLine="285" endPosition="94" />
-    <scopeInfo nodeId="3416062119153995014" fileName="ProjectTestHelper.java" startLine="289" startPosition="40" endLine="293" endPosition="94" />
+    <scopeInfo nodeId="3416062119153994972" fileName="ProjectTestHelper.java" startLine="281" startPosition="40" endLine="285" endPosition="86" />
+    <scopeInfo nodeId="3416062119153995014" fileName="ProjectTestHelper.java" startLine="289" startPosition="40" endLine="293" endPosition="86" />
     <scopeInfo nodeId="3416062119153994288" fileName="ProjectTestHelper.java" startLine="332" startPosition="25" endLine="336" endPosition="11" />
     <scopeInfo nodeId="8597743085639790187" fileName="ProjectTestHelper.java" startLine="386" startPosition="0" endLine="390" endPosition="0" />
     <scopeInfo nodeId="8597743085639790191" fileName="ProjectTestHelper.java" startLine="390" startPosition="0" endLine="394" endPosition="0" />
@@ -618,8 +618,8 @@
       <varInfo nodeId="5031229775986953937" varName="scr" />
       <varInfo nodeId="5031229775986953946" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153994971" fileName="ProjectTestHelper.java" startLine="280" startPosition="127" endLine="287" endPosition="0" />
-    <scopeInfo nodeId="3416062119153995013" fileName="ProjectTestHelper.java" startLine="288" startPosition="127" endLine="295" endPosition="0" />
+    <scopeInfo nodeId="3416062119153994971" fileName="ProjectTestHelper.java" startLine="280" startPosition="111" endLine="287" endPosition="0" />
+    <scopeInfo nodeId="3416062119153995013" fileName="ProjectTestHelper.java" startLine="288" startPosition="111" endLine="295" endPosition="0" />
     <scopeInfo nodeId="4128185861943386001" fileName="ProjectTestHelper.java" startLine="345" startPosition="27" endLine="352" endPosition="9">
       <varInfo nodeId="4128185861943386004" varName="f" />
     </scopeInfo>
@@ -630,7 +630,7 @@
     <scopeInfo nodeId="8597743085639790690" fileName="ProjectTestHelper.java" startLine="369" startPosition="19" endLine="377" endPosition="16" />
     <scopeInfo nodeId="3767231643656643795" fileName="ProjectTestHelper.java" startLine="125" startPosition="71" endLine="134" endPosition="8" />
     <scopeInfo nodeId="3416062119153995065" fileName="ProjectTestHelper.java" startLine="304" startPosition="57" endLine="313" endPosition="11" />
-    <scopeInfo nodeId="4128185861943385957" fileName="ProjectTestHelper.java" startLine="343" startPosition="164" endLine="352" endPosition="9">
+    <scopeInfo nodeId="4128185861943385957" fileName="ProjectTestHelper.java" startLine="343" startPosition="152" endLine="352" endPosition="9">
       <varInfo nodeId="4128185861943385986" varName="dir" />
     </scopeInfo>
     <scopeInfo nodeId="3037398679707966653" fileName="ProjectTestHelper.java" startLine="139" startPosition="57" endLine="149" endPosition="0" />
@@ -660,10 +660,10 @@
       <varInfo nodeId="3416062119153932771" varName="tmp" />
     </scopeInfo>
     <scopeInfo nodeId="4128185861943385945" fileName="ProjectTestHelper.java" startLine="342" startPosition="28" endLine="356" endPosition="33" />
-    <scopeInfo nodeId="3416062119153932828" fileName="ProjectTestHelper.java" startLine="240" startPosition="82" endLine="255" endPosition="7">
+    <scopeInfo nodeId="3416062119153932828" fileName="ProjectTestHelper.java" startLine="240" startPosition="74" endLine="255" endPosition="7">
       <varInfo nodeId="3416062119153932830" varName="p2t" />
     </scopeInfo>
-    <scopeInfo nodeId="3416062119153994948" fileName="ProjectTestHelper.java" startLine="279" startPosition="114" endLine="295" endPosition="11" />
+    <scopeInfo nodeId="3416062119153994948" fileName="ProjectTestHelper.java" startLine="279" startPosition="98" endLine="295" endPosition="11" />
     <scopeInfo nodeId="8597743085639790508" fileName="ProjectTestHelper.java" startLine="103" startPosition="0" endLine="120" endPosition="0" />
     <scopeInfo nodeId="3037398679707959932" fileName="ProjectTestHelper.java" startLine="137" startPosition="97" endLine="154" endPosition="25">
       <varInfo nodeId="3037398679707966203" varName="models" />
@@ -681,7 +681,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4128185861943385942" fileName="ProjectTestHelper.java" startLine="341" startPosition="0" endLine="358" endPosition="0" />
     <scopeInfo nodeId="8597743085639790682" fileName="ProjectTestHelper.java" startLine="367" startPosition="38" endLine="384" endPosition="7" />
-    <scopeInfo nodeId="3416062119153995039" fileName="ProjectTestHelper.java" startLine="297" startPosition="114" endLine="316" endPosition="9">
+    <scopeInfo nodeId="3416062119153995039" fileName="ProjectTestHelper.java" startLine="297" startPosition="98" endLine="316" endPosition="9">
       <varInfo nodeId="3416062119153995057" varName="rnext" />
       <varInfo nodeId="3416062119153995051" varName="onext" />
     </scopeInfo>
@@ -722,15 +722,15 @@
       <varInfo nodeId="9143630131836949542" varName="isParallel" />
     </scopeInfo>
     <scopeInfo nodeId="8597743085639790165" fileName="ProjectTestHelper.java" startLine="182" startPosition="0" endLine="230" endPosition="0" />
-    <unitInfo nodeId="3767231643656643804" fileName="ProjectTestHelper.java" startLine="126" startPosition="108" endLine="130" endPosition="5" unitName="jetbrains.mps.testbench.ProjectTestHelper$1" />
+    <unitInfo nodeId="3767231643656643804" fileName="ProjectTestHelper.java" startLine="126" startPosition="90" endLine="130" endPosition="5" unitName="jetbrains.mps.testbench.ProjectTestHelper$1" />
     <unitInfo nodeId="3767231643656643813" fileName="ProjectTestHelper.java" startLine="130" startPosition="30" endLine="134" endPosition="5" unitName="jetbrains.mps.testbench.ProjectTestHelper$2" />
-    <unitInfo nodeId="3730996872184513713" fileName="ProjectTestHelper.java" startLine="142" startPosition="197" endLine="146" endPosition="11" unitName="jetbrains.mps.testbench.ProjectTestHelper$4" />
-    <unitInfo nodeId="3037398679707992881" fileName="ProjectTestHelper.java" startLine="150" startPosition="106" endLine="154" endPosition="5" unitName="jetbrains.mps.testbench.ProjectTestHelper$4" />
+    <unitInfo nodeId="3730996872184513713" fileName="ProjectTestHelper.java" startLine="142" startPosition="161" endLine="146" endPosition="11" unitName="jetbrains.mps.testbench.ProjectTestHelper$4" />
+    <unitInfo nodeId="3037398679707992881" fileName="ProjectTestHelper.java" startLine="150" startPosition="88" endLine="154" endPosition="5" unitName="jetbrains.mps.testbench.ProjectTestHelper$4" />
     <unitInfo nodeId="8597743085639790149" fileName="ProjectTestHelper.java" startLine="157" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.testbench.ProjectTestHelper$Token" />
     <unitInfo nodeId="9143630131837001987" fileName="ProjectTestHelper.java" startLine="194" startPosition="25" endLine="198" endPosition="11" unitName="jetbrains.mps.testbench.ProjectTestHelper$2" />
     <unitInfo nodeId="7216969004037112976" fileName="ProjectTestHelper.java" startLine="201" startPosition="25" endLine="205" endPosition="11" unitName="jetbrains.mps.testbench.ProjectTestHelper$2" />
-    <unitInfo nodeId="3416062119153994971" fileName="ProjectTestHelper.java" startLine="280" startPosition="107" endLine="287" endPosition="9" unitName="jetbrains.mps.testbench.ProjectTestHelper$3" />
-    <unitInfo nodeId="3416062119153995013" fileName="ProjectTestHelper.java" startLine="288" startPosition="107" endLine="295" endPosition="9" unitName="jetbrains.mps.testbench.ProjectTestHelper$4" />
+    <unitInfo nodeId="3416062119153994971" fileName="ProjectTestHelper.java" startLine="280" startPosition="91" endLine="287" endPosition="9" unitName="jetbrains.mps.testbench.ProjectTestHelper$3" />
+    <unitInfo nodeId="3416062119153995013" fileName="ProjectTestHelper.java" startLine="288" startPosition="91" endLine="295" endPosition="9" unitName="jetbrains.mps.testbench.ProjectTestHelper$4" />
     <unitInfo nodeId="3037398679707966653" fileName="ProjectTestHelper.java" startLine="139" startPosition="45" endLine="149" endPosition="5" unitName="jetbrains.mps.testbench.ProjectTestHelper$3" />
     <unitInfo nodeId="2120492242099858651" fileName="ProjectTestHelper.java" startLine="216" startPosition="43" endLine="226" endPosition="7" unitName="jetbrains.mps.testbench.ProjectTestHelper$2" />
     <unitInfo nodeId="9143630131837001683" fileName="ProjectTestHelper.java" startLine="190" startPosition="40" endLine="211" endPosition="7" unitName="jetbrains.mps.testbench.ProjectTestHelper$1" />

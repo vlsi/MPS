@@ -34,8 +34,8 @@ public class DeploymentDescriptorPersistence {
           final String result_wu2j1h_a2a0a0d0c0a = rootElement.getAttributeValue("type");
           result_wu2j1h_a0a0d0c0a.setType(result_wu2j1h_a2a0a0d0c0a);
 
-          for (Element a : ListSequence.<Element>fromList(AttributeUtils.elementChildren(rootElement, "dependencies"))) {
-            for (final Element module : ListSequence.<Element>fromList(AttributeUtils.elementChildren(a, "module"))) {
+          for (Element a : ListSequence.fromList(AttributeUtils.elementChildren(rootElement, "dependencies"))) {
+            for (final Element module : ListSequence.fromList(AttributeUtils.elementChildren(a, "module"))) {
               result_wu2j1h_a0a0d0c0a.getDependencies().add(new _FunctionTypes._return_P0_E0<Dependency>() {
                 public Dependency invoke() {
                   final Dependency result_wu2j1h_a0a0a0a0a4a0a0d0c0a = new Dependency();
@@ -49,15 +49,15 @@ public class DeploymentDescriptorPersistence {
             }
           }
 
-          for (Element b : ListSequence.<Element>fromList(AttributeUtils.elementChildren(rootElement, "runtime"))) {
+          for (Element b : ListSequence.fromList(AttributeUtils.elementChildren(rootElement, "runtime"))) {
             result_wu2j1h_a0a0d0c0a.getRuntimeJars().add(b.getAttributeValue("jar"));
           }
-          for (Element b : ListSequence.<Element>fromList(AttributeUtils.elementChildren(rootElement, "library"))) {
+          for (Element b : ListSequence.fromList(AttributeUtils.elementChildren(rootElement, "library"))) {
             result_wu2j1h_a0a0d0c0a.getLibraries().add(b.getAttributeValue("jar"));
           }
 
-          if (ListSequence.<Element>fromList(AttributeUtils.elementChildren(rootElement, "sources")).isNotEmpty()) {
-            Element t = ListSequence.<Element>fromList(AttributeUtils.elementChildren(rootElement, "sources")).first();
+          if (ListSequence.fromList(AttributeUtils.elementChildren(rootElement, "sources")).isNotEmpty()) {
+            Element t = ListSequence.fromList(AttributeUtils.elementChildren(rootElement, "sources")).first();
 
             final String result_wu2j1h_a2a9a0a0d0c0a = t.getAttributeValue("jar");
             result_wu2j1h_a0a0d0c0a.setSourcesJar(result_wu2j1h_a2a9a0a0d0c0a);

@@ -71,7 +71,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
         return false;
       }
       Object[] parameters = (Object[]) method.invoke(runConfiguration);
-      Method configureMethod = Sequence.<Method>fromIterable(Sequence.fromArray(task.getClass().getMethods())).findFirst(new IWhereFilter<Method>() {
+      Method configureMethod = Sequence.fromIterable(Sequence.fromArray(task.getClass().getMethods())).findFirst(new IWhereFilter<Method>() {
         public boolean accept(Method it) {
           return eq_xh6sei_a0a0a0a0a0a3a0a5(it.getName(), getConfigureMethodName());
         }

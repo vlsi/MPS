@@ -29,33 +29,33 @@ import gnu.trove.TShortHashSet;
 
 public class PrimSet_Test extends Util_Test {
   public void test_byteSet() throws Exception {
-    Set<Byte> bs = SetSequence.<Byte>fromSet(new TByteHashSetDecorator(new TByteHashSet()));
+    Set<Byte> bs = SetSequence.fromSet(new TByteHashSetDecorator(new TByteHashSet()));
     SetSequence.fromSet(bs).addElement((byte) 192);
     SetSequence.fromSet(bs).addElement((byte) 168);
     SetSequence.fromSet(bs).addElement((byte) 1);
     SetSequence.fromSet(bs).addElement((byte) 1);
-    Assert.assertSame(3, SetSequence.<Byte>fromSet(bs).count());
-    Assert.assertEquals(SetSequence.<Byte>fromSetAndArray(new HashSet<Byte>(), (byte) 192, (byte) 168, (byte) 1), bs);
+    Assert.assertSame(3, SetSequence.fromSet(bs).count());
+    Assert.assertEquals(SetSequence.fromSetAndArray(new HashSet<Byte>(), (byte) 192, (byte) 168, (byte) 1), bs);
   }
 
   public void test_doubleSet() throws Exception {
-    Set<Double> ds = SetSequence.<Double>fromSetAndArray(new TDoubleHashSetDecorator(new TDoubleHashSet()), 1.1, 2.2, 3.3, 2.2, 1.1);
-    Assert.assertSame(3, SetSequence.<Double>fromSet(ds).count());
-    Assert.assertEquals(SetSequence.<Double>fromSetAndArray(new HashSet<Double>(), 3.3, 2.2, 1.1), ds);
+    Set<Double> ds = SetSequence.fromSetAndArray(new TDoubleHashSetDecorator(new TDoubleHashSet()), 1.1, 2.2, 3.3, 2.2, 1.1);
+    Assert.assertSame(3, SetSequence.fromSet(ds).count());
+    Assert.assertEquals(SetSequence.fromSetAndArray(new HashSet<Double>(), 3.3, 2.2, 1.1), ds);
   }
 
   public void test_floatSet() throws Exception {
-    Set<Float> fs = SetSequence.<Float>fromSet(new TFloatHashSetDecorator(new TFloatHashSet()));
-    Set<Float> exp = SetSequence.<Float>fromSetAndArray(new HashSet<Float>(), 5.5f, 6.6f, 7.7f, 8.8f, 9.9f);
-    SetSequence.fromSet(fs).addSequence(SetSequence.<Float>fromSet(exp));
-    SetSequence.fromSet(fs).addSequence(SetSequence.<Float>fromSet(exp));
-    Assert.assertSame(5, SetSequence.<Float>fromSet(fs).count());
+    Set<Float> fs = SetSequence.fromSet(new TFloatHashSetDecorator(new TFloatHashSet()));
+    Set<Float> exp = SetSequence.fromSetAndArray(new HashSet<Float>(), 5.5f, 6.6f, 7.7f, 8.8f, 9.9f);
+    SetSequence.fromSet(fs).addSequence(SetSequence.fromSet(exp));
+    SetSequence.fromSet(fs).addSequence(SetSequence.fromSet(exp));
+    Assert.assertSame(5, SetSequence.fromSet(fs).count());
     Assert.assertEquals(exp, fs);
   }
 
   public void test_intSet() throws Exception {
-    Set<Integer> is = SetSequence.<Integer>fromSet(new TIntHashSetDecorator(new TIntHashSet()));
-    SetSequence.fromSet(is).addSequence(Sequence.<Integer>fromIterable(Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
+    Set<Integer> is = SetSequence.fromSet(new TIntHashSetDecorator(new TIntHashSet()));
+    SetSequence.fromSet(is).addSequence(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -109,13 +109,13 @@ __switch__:
   }
 
   public void test_longSet() throws Exception {
-    final Set<Long> ls = SetSequence.<Long>fromSet(new TLongHashSetDecorator(new TLongHashSet()));
-    Sequence.<Long>fromIterable(ArrayUtils.fromLongArray(new long[]{5, 4, 3, 2, 1, 2, 3, 4, 5})).visitAll(new IVisitor<Long>() {
+    final Set<Long> ls = SetSequence.fromSet(new TLongHashSetDecorator(new TLongHashSet()));
+    Sequence.fromIterable(ArrayUtils.fromLongArray(new long[]{5, 4, 3, 2, 1, 2, 3, 4, 5})).visitAll(new IVisitor<Long>() {
       public void visit(Long i) {
         SetSequence.fromSet(ls).addElement(i);
       }
     });
-    this.assertIterableEqualsAsSet(this.input5(), SetSequence.<Long>fromSet(ls).<Integer>select(new ISelector<Long, Integer>() {
+    this.assertIterableEqualsAsSet(this.input5(), SetSequence.fromSet(ls).<Integer>select(new ISelector<Long, Integer>() {
       public Integer select(Long l) {
         return (int) (long) l;
       }
@@ -123,9 +123,9 @@ __switch__:
   }
 
   public void test_shortSet() throws Exception {
-    Set<Short> shs = SetSequence.<Short>fromSet(new TShortHashSetDecorator(new TShortHashSet()));
+    Set<Short> shs = SetSequence.fromSet(new TShortHashSetDecorator(new TShortHashSet()));
     SetSequence.fromSet(shs).addElement((short) 65535);
     SetSequence.fromSet(shs).addElement((short) -1);
-    Assert.assertSame(1, SetSequence.<Short>fromSet(shs).count());
+    Assert.assertSame(1, SetSequence.fromSet(shs).count());
   }
 }

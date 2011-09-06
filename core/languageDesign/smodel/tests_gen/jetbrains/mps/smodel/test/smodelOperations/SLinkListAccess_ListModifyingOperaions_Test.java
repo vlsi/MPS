@@ -111,147 +111,147 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       this.addNodeById("2282909602806423211");
       SNode newChild = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
       Assert.assertNull(SNodeOperations.getParent(newChild));
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).addElement(newChild);
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).contains(newChild));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).addElement(newChild);
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).contains(newChild));
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), SNodeOperations.getParent(newChild));
     }
 
     public void test_addAll() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      List<SNode> addition = ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null), SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null));
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).addSequence(ListSequence.<SNode>fromList(addition));
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).containsSequence(ListSequence.<SNode>fromList(addition)));
+      List<SNode> addition = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null), SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).addSequence(ListSequence.fromList(addition));
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).containsSequence(ListSequence.fromList(addition)));
     }
 
     public void test_addFirst() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      SNode added = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).insertElement(0, SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null));
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(added));
-      Assert.assertEquals(0, ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).indexOf(added));
+      SNode added = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).insertElement(0, SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null));
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(added));
+      Assert.assertEquals(0, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).indexOf(added));
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), SNodeOperations.getParent(added));
     }
 
     public void test_addLast() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      SNode added = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null));
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(added));
-      Assert.assertEquals(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() - 1, ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).indexOf(added));
+      SNode added = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null));
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(added));
+      Assert.assertEquals(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() - 1, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).indexOf(added));
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), SNodeOperations.getParent(added));
     }
 
     public void test_removeFromOriginalContainerOnAdd() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806423212"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 0);
-      SNode toBeMoved = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806423212"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).first();
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806423212"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 0);
+      SNode toBeMoved = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806423212"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).first();
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2282909602806423212"), "jetbrains.mps.lang.smodelTests.structure.Root"), SNodeOperations.getParent(toBeMoved));
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).addElement(toBeMoved);
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).contains(toBeMoved));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).addElement(toBeMoved);
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).contains(toBeMoved));
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), SNodeOperations.getParent(toBeMoved));
-      Assert.assertFalse(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806423212"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toBeMoved));
+      Assert.assertFalse(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806423212"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toBeMoved));
     }
 
     public void test_remove() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 0);
-      SNode toBeRemoved = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).first();
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 0);
+      SNode toBeRemoved = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).first();
       Assert.assertNotNull(toBeRemoved);
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), SNodeOperations.getParent(toBeRemoved));
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeElement(toBeRemoved);
-      Assert.assertFalse(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toBeRemoved));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeElement(toBeRemoved);
+      Assert.assertFalse(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toBeRemoved));
       Assert.assertNull(SNodeOperations.getParent(toBeRemoved));
     }
 
     public void test_removeAll() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      Iterable<SNode> existingChildren = Sequence.fromArray(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).toGenericArray(SNode.class));
-      Assert.assertTrue(Sequence.<SNode>fromIterable(existingChildren).count() > 1);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeSequence(Sequence.<SNode>fromIterable(existingChildren));
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).isEmpty());
+      Iterable<SNode> existingChildren = Sequence.fromArray(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).toGenericArray(SNode.class));
+      Assert.assertTrue(Sequence.fromIterable(existingChildren).count() > 1);
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeSequence(Sequence.fromIterable(existingChildren));
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).isEmpty());
     }
 
     public void test_removeFirst() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 1);
-      SNode toBeRemoved = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).first();
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeElementAt(0);
-      Assert.assertFalse(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toBeRemoved));
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 1);
+      SNode toBeRemoved = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).first();
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeElementAt(0);
+      Assert.assertFalse(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toBeRemoved));
     }
 
     public void test_removeLast() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 1);
-      SNode toBeRemoved = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).last();
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeLastElement();
-      Assert.assertFalse(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toBeRemoved));
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 1);
+      SNode toBeRemoved = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).last();
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeLastElement();
+      Assert.assertFalse(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toBeRemoved));
     }
 
     public void test_removeAt() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 1);
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 1);
       int index = 1;
-      SNode elementAt_1 = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).getElement(index);
-      SNode removed = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeElementAt(index);
-      Assert.assertFalse(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(removed));
+      SNode elementAt_1 = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).getElement(index);
+      SNode removed = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeElementAt(index);
+      Assert.assertFalse(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(removed));
       Assert.assertEquals(elementAt_1, removed);
     }
 
     public void test_removeWhere() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      int initialSize = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count();
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(SNodeOperations.cast(this.getNodeById("2282909602806391310"), "jetbrains.mps.lang.smodelTests.structure.Child")));
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeWhere(new IWhereFilter<SNode>() {
+      int initialSize = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count();
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(SNodeOperations.cast(this.getNodeById("2282909602806391310"), "jetbrains.mps.lang.smodelTests.structure.Child")));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeWhere(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(it, "name").equals(SPropertyOperations.getString(SNodeOperations.cast(TestBody.this.getNodeById("2282909602806391310"), "jetbrains.mps.lang.smodelTests.structure.Child"), "name"));
         }
       });
-      Assert.assertEquals(initialSize - 1, ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count());
-      Assert.assertFalse(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(SNodeOperations.cast(this.getNodeById("2282909602806391310"), "jetbrains.mps.lang.smodelTests.structure.Child")));
+      Assert.assertEquals(initialSize - 1, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count());
+      Assert.assertFalse(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(SNodeOperations.cast(this.getNodeById("2282909602806391310"), "jetbrains.mps.lang.smodelTests.structure.Child")));
       Assert.assertNull(SNodeOperations.getParent(SNodeOperations.cast(this.getNodeById("2282909602806391310"), "jetbrains.mps.lang.smodelTests.structure.Child")));
     }
 
     public void test_insert() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 1);
-      int initialSize = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count();
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 1);
+      int initialSize = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count();
       SNode toInsert = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
       int index = 1;
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).insertElement(index, toInsert);
-      Assert.assertEquals(initialSize + 1, ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count());
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toInsert));
-      Assert.assertEquals(index, ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).indexOf(toInsert));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).insertElement(index, toInsert);
+      Assert.assertEquals(initialSize + 1, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count());
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toInsert));
+      Assert.assertEquals(index, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).indexOf(toInsert));
     }
 
     public void test_set() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 1);
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 1);
       int index = 1;
-      SNode oldChild = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).getElement(index);
+      SNode oldChild = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).getElement(index);
       SNode newChild = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).setElement(index, newChild);
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(newChild));
-      Assert.assertEquals(index, ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).indexOf(newChild));
-      Assert.assertFalse(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(oldChild));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).setElement(index, newChild);
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(newChild));
+      Assert.assertEquals(index, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).indexOf(newChild));
+      Assert.assertFalse(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(oldChild));
       Assert.assertNull(SNodeOperations.getParent(oldChild));
     }
 
     public void test_clear() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 0);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).clear();
-      Assert.assertTrue(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).isEmpty());
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 0);
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).clear();
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).isEmpty());
     }
   }
 }

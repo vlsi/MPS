@@ -5,7 +5,7 @@
     <nodeInfo nodeId="1199470845196" fileName="TestLabel.java" startLine="17" startPosition="23" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1199467319328" fileName="TestLabel.java" startLine="16" startPosition="39" endLine="19" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1199467259811" fileName="TestLabel.java" startLine="13" startPosition="10" endLine="20" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1199469569303" fileName="TestLabel.java" startLine="11" startPosition="99" endLine="21" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="1199469569303" fileName="TestLabel.java" startLine="11" startPosition="90" endLine="21" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
     <nodeInfo nodeId="1199469405203" fileName="TestLabel.java" startLine="9" startPosition="42" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1199467217249" fileName="TestLabel.java" startLine="8" startPosition="24" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="1199467319329" fileName="TestLabel.java" startLine="17" startPosition="23" endLine="18" endPosition="27" />
@@ -14,7 +14,7 @@
       <varInfo nodeId="1199467259812" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1199469569305" fileName="TestLabel.java" startLine="13" startPosition="10" endLine="20" endPosition="9" />
-    <scopeInfo nodeId="1199469405206" fileName="TestLabel.java" startLine="11" startPosition="99" endLine="21" endPosition="21" />
+    <scopeInfo nodeId="1199469405206" fileName="TestLabel.java" startLine="11" startPosition="90" endLine="21" endPosition="21" />
     <scopeInfo nodeId="1199467217252" fileName="TestLabel.java" startLine="9" startPosition="42" endLine="22" endPosition="5" />
     <scopeInfo nodeId="1199469405203" fileName="TestLabel.java" startLine="9" startPosition="42" endLine="22" endPosition="5" />
     <scopeInfo nodeId="1199467217249" fileName="TestLabel.java" startLine="8" startPosition="24" endLine="24" endPosition="0">

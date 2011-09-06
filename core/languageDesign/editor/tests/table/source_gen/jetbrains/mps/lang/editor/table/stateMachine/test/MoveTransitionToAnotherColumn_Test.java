@@ -25,9 +25,9 @@ public class MoveTransitionToAnotherColumn_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("6170050146384285884", "6767735723023410238");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.<String>fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
       BaseEditorTestBody.typeString(editorComponent, "another");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.<String>fromListAndArray(new ArrayList<String>(), " ENTER"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }

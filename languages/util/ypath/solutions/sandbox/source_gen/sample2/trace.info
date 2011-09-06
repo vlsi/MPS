@@ -120,7 +120,7 @@
     <nodeInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="36" startPosition="44" endLine="61" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="35" startPosition="37" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
     <nodeInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="34" startPosition="40" endLine="63" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="33" startPosition="94" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="33" startPosition="88" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1179163652404" fileName="FileDemo.java" startLine="32" startPosition="5" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1168894268794" fileName="FileDemo.java" startLine="15" startPosition="23" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="52" startPosition="27" endLine="52" endPosition="27" />
@@ -154,7 +154,7 @@
     <scopeInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="36" startPosition="44" endLine="61" endPosition="14" />
     <scopeInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="35" startPosition="37" endLine="63" endPosition="0" />
     <scopeInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="34" startPosition="40" endLine="63" endPosition="10" />
-    <scopeInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="33" startPosition="94" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="33" startPosition="88" endLine="65" endPosition="0" />
     <scopeInfo nodeId="1168894268796" fileName="FileDemo.java" startLine="16" startPosition="42" endLine="69" endPosition="147">
       <varInfo nodeId="1168894296987" varName="f" />
       <varInfo nodeId="1179163652405" varName="sequenceOfFiles" />
@@ -166,7 +166,7 @@
     </scopeInfo>
     <unitInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="37" startPosition="23" endLine="61" endPosition="13" unitName="sample2.FileDemo$3" />
     <unitInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="35" startPosition="19" endLine="63" endPosition="9" unitName="sample2.FileDemo$2" />
-    <unitInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="33" startPosition="68" endLine="65" endPosition="5" unitName="sample2.FileDemo$1" />
+    <unitInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="33" startPosition="62" endLine="65" endPosition="5" unitName="sample2.FileDemo$1" />
     <unitInfo nodeId="1168894188335" fileName="FileDemo.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="sample2.FileDemo" />
   </root>
 </debugInfo>

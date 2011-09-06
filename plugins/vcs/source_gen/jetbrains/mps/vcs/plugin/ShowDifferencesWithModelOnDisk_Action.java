@@ -35,7 +35,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("modelDescriptor")) instanceof EditableSModelDescriptor;
+    return ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")) instanceof EditableSModelDescriptor;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -56,20 +56,20 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("modelDescriptor", event.getData(MPSDataKeys.MODEL));
-    if (MapSequence.<String,Object>fromMap(_params).get("modelDescriptor") == null) {
+    MapSequence.fromMap(_params).put("modelDescriptor", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("operationContext") == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -77,14 +77,14 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SModel memory = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("modelDescriptor")).getSModel();
-      final SModel disk = ModelPersistence.readModel(((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("modelDescriptor"))).getModelFile(), false);
+      final SModel memory = ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")).getSModel();
+      final SModel disk = ModelPersistence.readModel(((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))).getModelFile(), false);
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           if (ModelDiffTool.isNewDiffEnabled()) {
-            new ModelDifferenceDialog(disk, memory, new SimpleDiffRequest(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), "Disk", "Memory")).showDialog();
+            new ModelDifferenceDialog(disk, memory, new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), "Disk", "Memory")).showDialog();
           } else {
-            new OldModelDifferenceDialog(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")), ((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), disk, memory, "Model Difference Between Disk and Memory", true, new String[]{"Disk", "Memory"}).showDialog();
+            new OldModelDifferenceDialog(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((Frame) MapSequence.fromMap(_params).get("frame")), disk, memory, "Model Difference Between Disk and Memory", true, new String[]{"Disk", "Memory"}).showDialog();
           }
 
         }

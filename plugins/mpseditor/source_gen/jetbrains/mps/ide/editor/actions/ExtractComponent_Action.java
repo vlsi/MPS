@@ -28,7 +28,7 @@ public class ExtractComponent_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return !(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).isReadOnly());
+    return !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -56,17 +56,17 @@ public class ExtractComponent_Action extends GeneratedAction {
           node = null;
         }
       }
-      MapSequence.<String,Object>fromMap(_params).put("node", node);
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorContext") == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
@@ -74,7 +74,7 @@ public class ExtractComponent_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ExtractComponentUtil.extractComponent(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("editorContext")));
+      ExtractComponentUtil.extractComponent(((SNode) MapSequence.fromMap(_params).get("node")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ExtractComponent", t);

@@ -36,7 +36,7 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IModule module = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getModule();
+    IModule module = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule();
     if (module == null) {
       return false;
     }
@@ -61,16 +61,16 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
-    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
@@ -78,11 +78,11 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IModule module = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getModule();
+      IModule module = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule();
       TreeFileChooser treeFileChooser = new TreeFileChooser();
       treeFileChooser.setDirectoriesAreAlwaysVisible(true);
       treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-      final SModel sModel = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getSModel();
+      final SModel sModel = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel();
       treeFileChooser.setFileFilter(new IFileFilter() {
         public boolean accept(IFile file) {
           return JavaCompiler.checkBaseModelMatchesSourceDirectory(sModel, new File(file.getPath()));
@@ -108,9 +108,9 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
       if (initial != null) {
         treeFileChooser.setInitialFile(FileSystem.getInstance().getFileByPath(initial.getAbsolutePath()));
       }
-      IFile result = treeFileChooser.showDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")));
+      IFile result = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
       if (result != null) {
-        JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), module, new File(result.getPath()), false, sModel);
+        JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), module, new File(result.getPath()), false, sModel);
         javaCompiler.compile();
       }
     } catch (Throwable t) {

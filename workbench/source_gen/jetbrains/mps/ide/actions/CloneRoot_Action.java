@@ -55,24 +55,24 @@ public class CloneRoot_Action extends GeneratedAction {
       if (nodes != null) {
       }
       if (error || nodes == null) {
-        MapSequence.<String,Object>fromMap(_params).put("nodes", null);
+        MapSequence.fromMap(_params).put("nodes", null);
       } else {
-        MapSequence.<String,Object>fromMap(_params).put("nodes", ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), nodes));
+        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("nodes") == null) {
+    if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("ideaProject") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
@@ -80,14 +80,14 @@ public class CloneRoot_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (SNode node : ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes")))) {
+      for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
         SNode root = SNodeOperations.getContainingRoot(node);
         final SNode copy = SNodeOperations.copyNode(root);
         SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);
-        ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(copy, ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(copy, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
-            ProjectPane.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("ideaProject"))).selectNode(copy, false);
+            ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectNode(copy, false);
           }
         });
       }

@@ -25,7 +25,7 @@ public class CompleteEmptyCell_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("3676708844864308451", "7668835185988064522");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.<String>fromListAndArray(new ArrayList<String>(), "ctrl SPACE", " ENTER"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE", " ENTER"));
     }
   }
 }

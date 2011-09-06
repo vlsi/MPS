@@ -35,7 +35,7 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
       public void onFrameActivated() {
         ModelAccess.instance().runReadInEDT(new Runnable() {
           public void run() {
-            Set<SModel> models = SetSequence.<SModel>fromSet(new HashSet<SModel>());
+            Set<SModel> models = SetSequence.fromSet(new HashSet<SModel>());
             for (Project project : ProjectManager.getInstance().getOpenProjects()) {
               for (VirtualFile vf : FileEditorManager.getInstance(project).getSelectedFiles()) {
                 if (vf instanceof MPSNodeVirtualFile) {
@@ -52,7 +52,7 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
             }
 
             RefreshSession session = RefreshQueue.getInstance().createSession(true, true, null);
-            for (SModel model : SetSequence.<SModel>fromSet(models)) {
+            for (SModel model : SetSequence.fromSet(models)) {
               SModelDescriptor descriptor = model.getModelDescriptor();
               if (descriptor instanceof EditableSModelDescriptor) {
                 IFile modelFile = ((EditableSModelDescriptor) descriptor).getModelFile();

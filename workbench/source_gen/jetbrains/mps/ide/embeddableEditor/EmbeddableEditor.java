@@ -39,7 +39,6 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.resources.CResource;
-import jetbrains.mps.make.resources.IResource;
 import javax.swing.SwingUtilities;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.compiler.IClassesData;
@@ -171,7 +170,7 @@ public class EmbeddableEditor {
           try {
             IResult result = future.get();
             if (result.isSucessful()) {
-              final CResource out = (CResource) Sequence.<IResource>fromIterable(result.output()).first();
+              final CResource out = (CResource) Sequence.fromIterable(result.output()).first();
               SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
                   processClassesData(out.classes());
@@ -209,7 +208,7 @@ public class EmbeddableEditor {
         return result;
       }
     };
-    boolean successful = GeneratorUIFacade.getInstance().generateModels(myContext, ListSequence.<SModelDescriptor>fromListAndArray(new ArrayList<SModelDescriptor>(), myModel), handler, true, true);
+    boolean successful = GeneratorUIFacade.getInstance().generateModels(myContext, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), myModel), handler, true, true);
     return new GenerationResult(myRootNode, myContext, myModel, handler, successful);
   }
 

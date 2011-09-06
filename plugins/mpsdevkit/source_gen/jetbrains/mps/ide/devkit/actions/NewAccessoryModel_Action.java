@@ -34,7 +34,7 @@ public class NewAccessoryModel_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setText(((((TreeNode) MapSequence.<String,Object>fromMap(_params).get("treeNode")) instanceof ProjectModuleTreeNode ?
+      event.getPresentation().setText(((((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof ProjectModuleTreeNode ?
         "" :
         "New "
       )) + "Accesory Model");
@@ -50,24 +50,24 @@ public class NewAccessoryModel_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
-    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
-    if (MapSequence.<String,Object>fromMap(_params).get("treeNode") == null) {
+    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }
     return true;
@@ -75,8 +75,8 @@ public class NewAccessoryModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Language language = ((Language) ((IModule) MapSequence.<String,Object>fromMap(_params).get("module")));
-      NewModelDialog d = new NewModelDialog(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), language.getModuleFqName() + ".", ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), SModelStereotype.NONE, true);
+      final Language language = ((Language) ((IModule) MapSequence.fromMap(_params).get("module")));
+      NewModelDialog d = new NewModelDialog(((IModule) MapSequence.fromMap(_params).get("module")), language.getModuleFqName() + ".", ((IOperationContext) MapSequence.fromMap(_params).get("context")), SModelStereotype.NONE, true);
       d.showDialog();
       final SModelDescriptor result = d.getResult();
 

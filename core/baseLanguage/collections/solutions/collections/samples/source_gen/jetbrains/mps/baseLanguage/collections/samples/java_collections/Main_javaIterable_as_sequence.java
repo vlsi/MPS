@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     }
     System.out.println("java-iterable as sequence");
     Iterable<Integer> sequence = javaIterable;
-    for (Integer n : Sequence.<Integer>fromIterable(sequence)) {
+    for (Integer n : Sequence.fromIterable(sequence)) {
       System.out.println(n);
     }
   }

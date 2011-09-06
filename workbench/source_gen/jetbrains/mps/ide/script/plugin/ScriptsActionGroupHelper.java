@@ -60,7 +60,7 @@ public class ScriptsActionGroupHelper {
   public static List<SNode> getMigrationScripts(List<Language> languages) {
     List<SNode> migrationScripts = new ArrayList<SNode>();
     for (Language language : languages) {
-      ListSequence.<SNode>fromList(migrationScripts).addSequence(ListSequence.<SNode>fromList(MigrationScriptUtil.getMigrationScripts(language)));
+      ListSequence.fromList(migrationScripts).addSequence(ListSequence.fromList(MigrationScriptUtil.getMigrationScripts(language)));
     }
     return migrationScripts;
   }
@@ -75,7 +75,7 @@ public class ScriptsActionGroupHelper {
       if (!(byCategory.containsKey(cat))) {
         byCategory.put(cat, new ArrayList<SNode>());
       }
-      ListSequence.<SNode>fromList(byCategory.get(cat)).addElement(migrationScript);
+      ListSequence.fromList(byCategory.get(cat)).addElement(migrationScript);
     }
     Set<String> sorted = new TreeSet<String>(new Comparator<String>() {
       public int compare(String o1, String o2) {
@@ -109,7 +109,7 @@ public class ScriptsActionGroupHelper {
       if (!(byBuild.containsKey(build))) {
         byBuild.put(build, new ArrayList<SNode>());
       }
-      ListSequence.<SNode>fromList(byBuild.get(build)).addElement(migrationScript);
+      ListSequence.fromList(byBuild.get(build)).addElement(migrationScript);
     }
     Set<String> sorted = new TreeSet<String>(byBuild.keySet());
     for (String build : sorted) {
@@ -124,7 +124,7 @@ public class ScriptsActionGroupHelper {
 
   public static void populateByLanguageGroup(Language language, BaseGroup ownerGroup, boolean applyToSelection) {
     List<SNode> migrationScripts = MigrationScriptUtil.getMigrationScripts(language);
-    if (ListSequence.<SNode>fromList(migrationScripts).isEmpty()) {
+    if (ListSequence.fromList(migrationScripts).isEmpty()) {
       return;
     }
     BaseGroup languageScriptsGroup = new BaseGroup(language.getModuleFqName(), "");

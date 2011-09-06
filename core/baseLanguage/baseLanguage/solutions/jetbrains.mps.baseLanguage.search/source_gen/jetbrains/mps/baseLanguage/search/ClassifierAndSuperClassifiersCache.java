@@ -144,15 +144,15 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     }
 
     protected void init() {
-      this.myTypeByTypeVariable = MapSequence.<SNode,SNode>fromMap(new HashMap<SNode, SNode>());
+      this.myTypeByTypeVariable = MapSequence.fromMap(new HashMap<SNode, SNode>());
       this.myClassifiers = ClassifierAndSuperClassifiersCache.ClassifiersDataSet.getImplementedAndExtended(this.myTopClassifier, this.myTypeByTypeVariable);
-      this.myDependsOnNodes = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+      this.myDependsOnNodes = SetSequence.fromSet(new HashSet<SNode>());
       for (SNode classifier : this.myClassifiers) {
         SetSequence.fromSet(this.myDependsOnNodes).addElement(classifier);
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
           for (SNode type : SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass")), "typeParameter", true)) {
             SetSequence.fromSet(this.myDependsOnNodes).addElement(type);
-            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.<SNode>fromList(type.getDescendants()));
+            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(type.getDescendants()));
           }
         } else {
           for (SNode typeVariableDecl : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
@@ -163,17 +163,17 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
           SNode classifierType0 = SLinkOperations.getTarget((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "superclass", true);
           if (classifierType0 != null) {
             SetSequence.fromSet(this.myDependsOnNodes).addElement(classifierType0);
-            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.<SNode>fromList(classifierType0.getDescendants()));
+            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(classifierType0.getDescendants()));
           }
           for (SNode classifierType1 : SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "implementedInterface", true)) {
             SetSequence.fromSet(this.myDependsOnNodes).addElement(classifierType1);
-            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.<SNode>fromList(classifierType1.getDescendants()));
+            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(classifierType1.getDescendants()));
           }
         } else
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
           for (SNode classifierType : SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Interface")), "extendedInterface", true)) {
             SetSequence.fromSet(this.myDependsOnNodes).addElement(classifierType);
-            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.<SNode>fromList(classifierType.getDescendants()));
+            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(classifierType.getDescendants()));
           }
         }
       }
@@ -203,12 +203,12 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     }
 
     private static List<SNode> getImplementedAndExtended(SNode classifier, Map<SNode, SNode> typeByTypeVar) {
-      Set<SNode> set = SetSequence.<SNode>fromSet(new LinkedHashSet<SNode>());
+      Set<SNode> set = SetSequence.fromSet(new LinkedHashSet<SNode>());
       ClassifierAndSuperClassifiersCache.ClassifiersDataSet.collectImplementedAndExtended(classifier, set, null, typeByTypeVar);
       List<SNode> result = new ArrayList<SNode>();
-      ListSequence.<SNode>fromList(result).addSequence(SetSequence.<SNode>fromSet(set));
+      ListSequence.fromList(result).addSequence(SetSequence.fromSet(set));
       SNode objectClass = SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
-      if (objectClass != null && !(SetSequence.<SNode>fromSet(set).contains(objectClass))) {
+      if (objectClass != null && !(SetSequence.fromSet(set).contains(objectClass))) {
         int indexOfFirstInterface = 0;
         for (SNode classifierInResult : set) {
           if (SNodeOperations.isInstanceOf(classifierInResult, "jetbrains.mps.baseLanguage.structure.Interface")) {
@@ -229,18 +229,18 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
       if ((classifier == null)) {
         return;
       }
-      if (SetSequence.<SNode>fromSet(result).contains(classifier)) {
+      if (SetSequence.fromSet(result).contains(classifier)) {
         return;
       }
       SetSequence.fromSet(result).addElement(classifier);
-      if (typeParms != null && ListSequence.<SNode>fromList(typeParms).count() > 0) {
-        Iterator<SNode> typeVars = ListSequence.<SNode>fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).iterator();
+      if (typeParms != null && ListSequence.fromList(typeParms).count() > 0) {
+        Iterator<SNode> typeVars = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).iterator();
         for (SNode typeParm : typeParms) {
           if (!(typeVars.hasNext())) {
             break;
           }
           SNode typeVar = typeVars.next();
-          MapSequence.<SNode,SNode>fromMap(typeByTypeVar).put(typeVar, typeParm);
+          MapSequence.fromMap(typeByTypeVar).put(typeVar, typeParm);
         }
       }
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
@@ -281,13 +281,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     public List<SNode> getMethods() {
       List<SNode> result = new ArrayList<SNode>();
       for (List<SNode> list : MapSequence.fromMap(this.myMethodsByName).values()) {
-        ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(list));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(list));
       }
       return result;
     }
 
     public List<SNode> getOverriddenMethods(SNode method) {
-      List<SNode> list = MapSequence.<SNode,List<SNode>>fromMap(this.myOverriddenMethods).get(method);
+      List<SNode> list = MapSequence.fromMap(this.myOverriddenMethods).get(method);
       if (list != null) {
         return list;
       }
@@ -296,7 +296,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
     @Nullable
     public List<SNode> getMethodsByName(String methodName) {
-      return MapSequence.<String,List<SNode>>fromMap(myMethodsByName).get((methodName == null ?
+      return MapSequence.fromMap(myMethodsByName).get((methodName == null ?
         "" :
         methodName
       ));
@@ -315,8 +315,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
           allMethods.addAll(SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "staticMethod", true));
         }
       }
-      this.myMethodsByName = MapSequence.<String,List<SNode>>fromMap(new HashMap<String, List<SNode>>());
-      this.myOverriddenMethods = MapSequence.<SNode,List<SNode>>fromMap(new HashMap<SNode, List<SNode>>());
+      this.myMethodsByName = MapSequence.fromMap(new HashMap<String, List<SNode>>());
+      this.myOverriddenMethods = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
 forEachInAllMethods:
       for (SNode currMethod : allMethods) {
         if (SNodeOperations.isInstanceOf(currMethod, "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration")) {
@@ -329,20 +329,20 @@ forEachInAllMethods:
         if (!(MapSequence.fromMap(this.myMethodsByName).containsKey(name))) {
           List<SNode> methods = new ArrayList<SNode>();
           methods.add(currMethod);
-          MapSequence.<String,List<SNode>>fromMap(myMethodsByName).put(name, methods);
-          MapSequence.<SNode,List<SNode>>fromMap(myOverriddenMethods).put(currMethod, new ArrayList<SNode>());
+          MapSequence.fromMap(myMethodsByName).put(name, methods);
+          MapSequence.fromMap(myOverriddenMethods).put(currMethod, new ArrayList<SNode>());
         } else {
-          int currMethodParmCount = ListSequence.<SNode>fromList(SLinkOperations.getTargets(currMethod, "parameter", true)).count();
+          int currMethodParmCount = ListSequence.fromList(SLinkOperations.getTargets(currMethod, "parameter", true)).count();
           List<SNode> equalParmCountMethods = new ArrayList<SNode>();
-          List<SNode> methods = MapSequence.<String,List<SNode>>fromMap(this.myMethodsByName).get(name);
+          List<SNode> methods = MapSequence.fromMap(this.myMethodsByName).get(name);
           for (SNode method : methods) {
-            if ((SNodeOperations.getParent(currMethod) != SNodeOperations.getParent(method)) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == currMethodParmCount) {
+            if ((SNodeOperations.getParent(currMethod) != SNodeOperations.getParent(method)) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == currMethodParmCount) {
               equalParmCountMethods.add(method);
             }
           }
           if (equalParmCountMethods.size() > 0) {
             if (currMethodParmCount == 0) {
-              ListSequence.<SNode>fromList(MapSequence.<SNode,List<SNode>>fromMap(myOverriddenMethods).get(ListSequence.<SNode>fromList(equalParmCountMethods).first())).addElement(currMethod);
+              ListSequence.fromList(MapSequence.fromMap(myOverriddenMethods).get(ListSequence.fromList(equalParmCountMethods).first())).addElement(currMethod);
               continue forEachInAllMethods;
             }
             Map<SNode, SNode> typeByTypeVar = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getTypeByTypeVariableMap();
@@ -350,16 +350,16 @@ forEachInAllMethods:
             for (SNode otherMethod : equalParmCountMethods) {
               String otherParms = this.createMethodParameterTypesString(otherMethod, typeByTypeVar);
               if (otherParms.equals(currentParms)) {
-                MapSequence.<SNode,List<SNode>>fromMap(this.myOverriddenMethods).get(otherMethod).add(currMethod);
+                MapSequence.fromMap(this.myOverriddenMethods).get(otherMethod).add(currMethod);
                 continue forEachInAllMethods;
               }
             }
           }
-          ListSequence.<SNode>fromList(MapSequence.<String,List<SNode>>fromMap(myMethodsByName).get(name)).addElement(currMethod);
-          MapSequence.<SNode,List<SNode>>fromMap(myOverriddenMethods).put(currMethod, new ArrayList<SNode>());
+          ListSequence.fromList(MapSequence.fromMap(myMethodsByName).get(name)).addElement(currMethod);
+          MapSequence.fromMap(myOverriddenMethods).put(currMethod, new ArrayList<SNode>());
         }
       }
-      this.myDependsOnNodes = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+      this.myDependsOnNodes = SetSequence.fromSet(new HashSet<SNode>());
       for (SNode classifier : classifiers) {
         SetSequence.fromSet(this.myDependsOnNodes).addElement(classifier);
       }
@@ -371,7 +371,7 @@ forEachInAllMethods:
             continue;
           }
           SetSequence.fromSet(myDependsOnNodes).addElement(type);
-          SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.<SNode>fromList(type.getDescendants()));
+          SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.fromList(type.getDescendants()));
         }
       }
     }
@@ -444,20 +444,20 @@ forEachInAllMethods:
 
     public List<SNode> getFields() {
       List<SNode> result = new ArrayList<SNode>();
-      ListSequence.<SNode>fromList(result).addSequence(Sequence.<SNode>fromIterable(MapSequence.fromMap(myFieldsByName).values()));
-      ListSequence.<SNode>fromList(result).addSequence(Sequence.<SNode>fromIterable(MapSequence.fromMap(myStaticFieldsByName).values()));
+      ListSequence.fromList(result).addSequence(Sequence.fromIterable(MapSequence.fromMap(myFieldsByName).values()));
+      ListSequence.fromList(result).addSequence(Sequence.fromIterable(MapSequence.fromMap(myStaticFieldsByName).values()));
       return result;
     }
 
     public SNode getFieldByName(String name) {
-      return MapSequence.<String,SNode>fromMap(myFieldsByName).get((name == null ?
+      return MapSequence.fromMap(myFieldsByName).get((name == null ?
         "" :
         name
       ));
     }
 
     public SNode getStaticFieldByName(String name) {
-      return MapSequence.<String,SNode>fromMap(myStaticFieldsByName).get((name == null ?
+      return MapSequence.fromMap(myStaticFieldsByName).get((name == null ?
         "" :
         name
       ));
@@ -468,8 +468,8 @@ forEachInAllMethods:
     }
 
     protected void init() {
-      this.myFieldsByName = MapSequence.<String,SNode>fromMap(new HashMap<String, SNode>());
-      this.myStaticFieldsByName = MapSequence.<String,SNode>fromMap(new HashMap<String, SNode>());
+      this.myFieldsByName = MapSequence.fromMap(new HashMap<String, SNode>());
+      this.myStaticFieldsByName = MapSequence.fromMap(new HashMap<String, SNode>());
       List<SNode> allFields = new ArrayList<SNode>();
       List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifiers();
       for (SNode classifier : classifiers) {
@@ -481,26 +481,26 @@ forEachInAllMethods:
             name = "";
           }
           if (!(MapSequence.fromMap(myStaticFieldsByName).containsKey(name))) {
-            MapSequence.<String,SNode>fromMap(myStaticFieldsByName).put(name, staticField);
+            MapSequence.fromMap(myStaticFieldsByName).put(name, staticField);
           }
         }
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
           List<SNode> fields = SLinkOperations.getTargets((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "field", true);
-          ListSequence.<SNode>fromList(allFields).addSequence(ListSequence.<SNode>fromList(fields));
+          ListSequence.fromList(allFields).addSequence(ListSequence.fromList(fields));
           for (SNode field : fields) {
             String name = SPropertyOperations.getString(field, "name");
             if (name == null) {
               name = "";
             }
             if (!(MapSequence.fromMap(myFieldsByName).containsKey(name))) {
-              MapSequence.<String,SNode>fromMap(myFieldsByName).put(name, field);
+              MapSequence.fromMap(myFieldsByName).put(name, field);
             }
           }
         }
       }
-      myDependsOnNodes = SetSequence.<SNode>fromSet(new HashSet<SNode>());
-      SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.<SNode>fromList(classifiers));
-      SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.<SNode>fromList(allFields));
+      myDependsOnNodes = SetSequence.fromSet(new HashSet<SNode>());
+      SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.fromList(classifiers));
+      SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.fromList(allFields));
     }
 
     public void childAdded(SModelChildEvent event) {

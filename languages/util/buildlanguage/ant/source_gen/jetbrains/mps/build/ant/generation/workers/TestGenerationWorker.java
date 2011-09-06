@@ -598,8 +598,8 @@ public class TestGenerationWorker extends MpsWorker {
   }
 
   /*package*/ class MyMessageHandler implements IMessageHandler {
-    private final List<String> myGenerationErrors = ListSequence.<String>fromList(new ArrayList<String>());
-    private final List<String> myGenerationWarnings = ListSequence.<String>fromList(new ArrayList<String>());
+    private final List<String> myGenerationErrors = ListSequence.fromList(new ArrayList<String>());
+    private final List<String> myGenerationWarnings = ListSequence.fromList(new ArrayList<String>());
 
     /*package*/ MyMessageHandler() {
     }

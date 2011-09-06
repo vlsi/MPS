@@ -30,7 +30,7 @@ public class FastFindNodeUsages_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return new FindUsagesHelper(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), false).isApplicable();
+    return new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).isApplicable();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -55,26 +55,26 @@ public class FastFindNodeUsages_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.<String,Object>fromMap(_params).put("node", node);
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
@@ -82,7 +82,7 @@ public class FastFindNodeUsages_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new FindUsagesHelper(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), false).invoke(((EditorCell) MapSequence.<String,Object>fromMap(_params).get("cell")), ((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), ((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")));
+      new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "FastFindNodeUsages", t);

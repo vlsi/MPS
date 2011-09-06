@@ -9,8 +9,8 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch;
@@ -30,15 +30,15 @@ public class SimpleFindForExtractFromExpression_Test extends BaseTransformationT
     public void test_SimpleFindForExtractFromExpressionTest() throws Exception {
       this.addNodeById("8556882668095192253");
       this.addNodeById("8556882668095202132");
-      ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8556882668095192263"), "jetbrains.mps.baseLanguage.structure.DotExpression")));
+      ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8556882668095192263"), "jetbrains.mps.baseLanguage.structure.DotExpression")));
       params.setName("print");
       ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       SNode res = ref.doRefactor();
-      for (MethodMatch match : ListSequence.<MethodMatch>fromList(ref.getMatches())) {
+      for (MethodMatch match : ListSequence.fromList(ref.getMatches())) {
         ExtractMethodRefactoring matchRef = ExtractMethodFactory.createRefactoring(ExtractMethodFactory.createParameters(match.getNodes()));
         matchRef.replaceMatch(match, res);
       }
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8556882668095192257"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8556882668095202133"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8556882668095192257"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8556882668095202133"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }
 }

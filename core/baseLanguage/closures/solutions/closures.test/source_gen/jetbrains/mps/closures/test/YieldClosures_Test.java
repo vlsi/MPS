@@ -23,18 +23,18 @@ public class YieldClosures_Test extends ClosuresBase_Test {
   public void test_ifStatement() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
-        ListSequence.<Integer>fromList(exp).addElement(1);
+        ListSequence.fromList(exp).addElement(1);
         if (true) {
-          ListSequence.<Integer>fromList(exp).addElement(2);
+          ListSequence.fromList(exp).addElement(2);
         }
         if (0 == 1) {
-          ListSequence.<Integer>fromList(exp).addElement(3);
+          ListSequence.fromList(exp).addElement(3);
         } else {
-          ListSequence.<Integer>fromList(exp).addElement(4);
+          ListSequence.fromList(exp).addElement(4);
         }
-        ListSequence.<Integer>fromList(exp).addElement(5);
+        ListSequence.fromList(exp).addElement(5);
         if (0 == 1) {
-          ListSequence.<Integer>fromList(exp).addElement(6);
+          ListSequence.fromList(exp).addElement(6);
         }
       }
     }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
@@ -129,18 +129,18 @@ __switch__:
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
         int i = 3;
-        ListSequence.<Integer>fromList(exp).addElement(i);
+        ListSequence.fromList(exp).addElement(i);
         while (i > 0) {
           int j = 1;
-          ListSequence.<Integer>fromList(exp).addElement(j);
+          ListSequence.fromList(exp).addElement(j);
           while (j <= 3) {
-            ListSequence.<Integer>fromList(exp).addElement(i * j);
+            ListSequence.fromList(exp).addElement(i * j);
             j++;
           }
-          ListSequence.<Integer>fromList(exp).addElement(j);
+          ListSequence.fromList(exp).addElement(j);
           i--;
         }
-        ListSequence.<Integer>fromList(exp).addElement(i);
+        ListSequence.fromList(exp).addElement(i);
         // must not return anything 
       }
     }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
@@ -233,21 +233,21 @@ __switch__:
   public void test_doWhileStatement() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
-        ListSequence.<Integer>fromList(exp).addElement(-1);
+        ListSequence.fromList(exp).addElement(-1);
         int i = 3;
-        ListSequence.<Integer>fromList(exp).addElement(i);
+        ListSequence.fromList(exp).addElement(i);
         do {
           int j = i;
-          ListSequence.<Integer>fromList(exp).addElement(j);
+          ListSequence.fromList(exp).addElement(j);
           do {
-            ListSequence.<Integer>fromList(exp).addElement(j * i);
+            ListSequence.fromList(exp).addElement(j * i);
             j--;
-            ListSequence.<Integer>fromList(exp).addElement(j + i);
+            ListSequence.fromList(exp).addElement(j + i);
           } while (j > 0);
           i--;
         } while (i > 0);
         i = 0;
-        ListSequence.<Integer>fromList(exp).addElement(i);
+        ListSequence.fromList(exp).addElement(i);
         // must not return value 
       }
     }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
@@ -353,8 +353,8 @@ __switch__:
       public void invoke(List<Integer> exp) {
         for (int i = 0; i < 3; i++) {
           for (int j = 0; j < 3; j++) {
-            ListSequence.<Integer>fromList(exp).addElement(i);
-            ListSequence.<Integer>fromList(exp).addElement(j);
+            ListSequence.fromList(exp).addElement(i);
+            ListSequence.fromList(exp).addElement(j);
           }
         }
       }
@@ -437,12 +437,12 @@ __switch__:
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
         for (int i : data1) {
-          ListSequence.<Integer>fromList(exp).addElement(i);
+          ListSequence.fromList(exp).addElement(i);
           for (int j : data2) {
-            ListSequence.<Integer>fromList(exp).addElement(j);
-            ListSequence.<Integer>fromList(exp).addElement(i + j);
+            ListSequence.fromList(exp).addElement(j);
+            ListSequence.fromList(exp).addElement(i + j);
           }
-          ListSequence.<Integer>fromList(exp).addElement(i * i);
+          ListSequence.fromList(exp).addElement(i * i);
         }
       }
     }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
@@ -533,7 +533,7 @@ __switch__:
             }
             if (i < j) {
               a = a + i + j;
-              ListSequence.<Integer>fromList(exp).addElement(a);
+              ListSequence.fromList(exp).addElement(a);
             }
           }
         }
@@ -636,14 +636,14 @@ __switch__:
         for (Fruits fr : Arrays.asList(new Fruits[]{Fruits.APPLES, Fruits.ORANGES, Fruits.CARS})) {
           switch (fr) {
             case APPLES:
-              ListSequence.<Integer>fromList(exp).addElement(1);
-              ListSequence.<Integer>fromList(exp).addElement(2);
+              ListSequence.fromList(exp).addElement(1);
+              ListSequence.fromList(exp).addElement(2);
               // fall through 
             case ORANGES:
-              ListSequence.<Integer>fromList(exp).addElement(3);
+              ListSequence.fromList(exp).addElement(3);
               break;
             default:
-              ListSequence.<Integer>fromList(exp).addElement(-1);
+              ListSequence.fromList(exp).addElement(-1);
               break;
           }
         }
@@ -746,15 +746,15 @@ __switch__:
       public void invoke(List<Integer> exp) {
         for (int i = 1; i <= 10; i++) {
           if (i % 2 == 0) {
-            ListSequence.<Integer>fromList(exp).addElement(i * 10);
+            ListSequence.fromList(exp).addElement(i * 10);
           } else if (i % 3 == 0) {
-            ListSequence.<Integer>fromList(exp).addElement(i * 100);
+            ListSequence.fromList(exp).addElement(i * 100);
           } else if (i % 5 == 0) {
-            ListSequence.<Integer>fromList(exp).addElement(i * 1000);
+            ListSequence.fromList(exp).addElement(i * 1000);
           } else {
-            ListSequence.<Integer>fromList(exp).addElement(i * 10000);
+            ListSequence.fromList(exp).addElement(i * 10000);
             if (true) {
-              ListSequence.<Integer>fromList(exp).addElement(i * 100000);
+              ListSequence.fromList(exp).addElement(i * 100000);
             }
           }
         }
@@ -871,16 +871,16 @@ __switch__:
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
         if (cond1) {
-          ListSequence.<Integer>fromList(exp).addElement(13);
+          ListSequence.fromList(exp).addElement(13);
         } else {
-          List<Integer> ll = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 21, 34, 55, 89);
+          List<Integer> ll = ListSequence.fromListAndArray(new ArrayList<Integer>(), 21, 34, 55, 89);
           if (cond2) {
-            ll = ListSequence.<Integer>fromList(ll).reversedList();
+            ll = ListSequence.fromList(ll).reversedList();
           } else {
             ll = ll;
           }
           for (Integer ii : ll) {
-            ListSequence.<Integer>fromList(exp).addSequence(ListSequence.<Integer>fromList(ll).subListSequence(ListSequence.<Integer>fromList(ll).indexOf(ii), ListSequence.<Integer>fromList(ll).count()));
+            ListSequence.fromList(exp).addSequence(ListSequence.fromList(ll).subListSequence(ListSequence.fromList(ll).indexOf(ii), ListSequence.fromList(ll).count()));
           }
         }
       }
@@ -915,7 +915,7 @@ __switch__:
                       this.__CP__ = 15;
                       break;
                     case 16:
-                      this._16__yield_75e5vq_a0c0a0a1a0c0i0_it = Sequence.fromIterable(ListSequence.<Integer>fromList(_7_ll).subListSequence(ListSequence.<Integer>fromList(_7_ll).indexOf(_13_ii), ListSequence.<Integer>fromList(_7_ll).count())).iterator();
+                      this._16__yield_75e5vq_a0c0a0a1a0c0i0_it = Sequence.fromIterable(ListSequence.fromList(_7_ll).subListSequence(ListSequence.fromList(_7_ll).indexOf(_13_ii), ListSequence.fromList(_7_ll).count())).iterator();
                     case 17:
                       if (!(this._16__yield_75e5vq_a0c0a0a1a0c0i0_it.hasNext())) {
                         this.__CP__ = 14;
@@ -953,11 +953,11 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._7_ll = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 21, 34, 55, 89);
+                      this._7_ll = ListSequence.fromListAndArray(new ArrayList<Integer>(), 21, 34, 55, 89);
                       this.__CP__ = 8;
                       break;
                     case 9:
-                      _7_ll = ListSequence.<Integer>fromList(_7_ll).reversedList();
+                      _7_ll = ListSequence.fromList(_7_ll).reversedList();
                       this.__CP__ = 10;
                       break;
                     case 12:
@@ -995,7 +995,7 @@ __switch__:
           val = 24;
         }
         if (val != 0) {
-          ListSequence.<Integer>fromList(exp).addElement(val);
+          ListSequence.fromList(exp).addElement(val);
         }
       }
     }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
@@ -1082,7 +1082,7 @@ label3:
               if (i % 2 > j) {
                 continue label2;
               }
-              ListSequence.<Integer>fromList(exp).addElement(i + j);
+              ListSequence.fromList(exp).addElement(i + j);
               i--;
             } while ((i + j) % 3 == 2);
             switch (j) {
@@ -1095,9 +1095,9 @@ label3:
               default:
                 break label2;
             }
-            ListSequence.<Integer>fromList(exp).addElement(j);
+            ListSequence.fromList(exp).addElement(j);
           }
-          ListSequence.<Integer>fromList(exp).addElement(i);
+          ListSequence.fromList(exp).addElement(i);
           i--;
         }
       }
@@ -1231,12 +1231,12 @@ __switch__:
   public void test_yieldAllLast() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
-        return ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
+        return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
       }
     }, new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
         //  some statements 
-        return ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
+        return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
       }
     });
   }
@@ -1244,7 +1244,7 @@ __switch__:
   public void test_yieldAll() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
-        return ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
+        return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
       }
     }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
@@ -1264,7 +1264,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2__yield_75e5vq_a0b0a0a21a_it = Sequence.fromIterable(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).iterator();
+                      this._2__yield_75e5vq_a0b0a0a21a_it = Sequence.fromIterable(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).iterator();
                     case 3:
                       if (!(this._2__yield_75e5vq_a0b0a0a21a_it.hasNext())) {
                         this.__CP__ = 5;
@@ -1303,7 +1303,7 @@ __switch__:
   public void test_yieldYieldAll() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
-        return ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
+        return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
       }
     }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
@@ -1323,7 +1323,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 3:
-                      this._3__yield_75e5vq_b0b0a0a31a_it = Sequence.fromIterable(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 2, 3)).iterator();
+                      this._3__yield_75e5vq_b0b0a0a31a_it = Sequence.fromIterable(ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 3)).iterator();
                     case 4:
                       if (!(this._3__yield_75e5vq_b0b0a0a31a_it.hasNext())) {
                         this.__CP__ = 1;
@@ -1362,7 +1362,7 @@ __switch__:
   public void test_yieldAllYieldAll() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
-        return ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
+        return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
       }
     }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
@@ -1384,7 +1384,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2__yield_75e5vq_a0b0a0a41a_it = Sequence.fromIterable(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2)).iterator();
+                      this._2__yield_75e5vq_a0b0a0a41a_it = Sequence.fromIterable(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2)).iterator();
                     case 3:
                       if (!(this._2__yield_75e5vq_a0b0a0a41a_it.hasNext())) {
                         this.__CP__ = 5;
@@ -1394,7 +1394,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._6__yield_75e5vq_b0b0a0a41a_it = Sequence.fromIterable(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 3, 4)).iterator();
+                      this._6__yield_75e5vq_b0b0a0a41a_it = Sequence.fromIterable(ListSequence.fromListAndArray(new ArrayList<Integer>(), 3, 4)).iterator();
                     case 7:
                       if (!(this._6__yield_75e5vq_b0b0a0a41a_it.hasNext())) {
                         this.__CP__ = 1;
@@ -1436,7 +1436,7 @@ __switch__:
   public void test_yieldAllInCycle() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
-        return ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
+        return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
       }
     }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
@@ -1470,7 +1470,7 @@ __switch__:
                       this.__CP__ = 3;
                       break;
                     case 6:
-                      this._6__yield_75e5vq_a0a0b0a0a51a_it = Sequence.fromIterable(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), _2_i)).iterator();
+                      this._6__yield_75e5vq_a0a0b0a0a51a_it = Sequence.fromIterable(ListSequence.fromListAndArray(new ArrayList<Integer>(), _2_i)).iterator();
                     case 7:
                       if (!(this._6__yield_75e5vq_a0a0b0a0a51a_it.hasNext())) {
                         this.__CP__ = 5;
@@ -1507,12 +1507,12 @@ __switch__:
 
   public void test_timur1() throws Exception {
     //  {1, 2, 3}.select{ it => yield 4; yield 5; } 
-    final List<Integer> input = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
-    List<Iterable<Integer>> exp = ListSequence.<Iterable<Integer>>fromListAndArray(new ArrayList<Iterable<Integer>>(), ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 4, 5), ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 4, 5), ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 4, 5));
-    List<Iterable<Integer>> res = ListSequence.<Iterable<Integer>>fromList(new ArrayList<Iterable<Integer>>());
-    ListSequence.<Iterable<Integer>>fromList(res).addSequence(Sequence.<Iterable<Integer>>fromIterable(new _FunctionTypes._return_P0_E0<ISequence<Iterable<Integer>>>() {
+    final List<Integer> input = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
+    List<Iterable<Integer>> exp = ListSequence.fromListAndArray(new ArrayList<Iterable<Integer>>(), ListSequence.fromListAndArray(new ArrayList<Integer>(), 4, 5), ListSequence.fromListAndArray(new ArrayList<Integer>(), 4, 5), ListSequence.fromListAndArray(new ArrayList<Integer>(), 4, 5));
+    List<Iterable<Integer>> res = ListSequence.fromList(new ArrayList<Iterable<Integer>>());
+    ListSequence.fromList(res).addSequence(Sequence.fromIterable(new _FunctionTypes._return_P0_E0<ISequence<Iterable<Integer>>>() {
       public ISequence<Iterable<Integer>> invoke() {
-        return ListSequence.<Integer>fromList(input).<Iterable<Integer>>select(new ISelector<Integer, Iterable<Integer>>() {
+        return ListSequence.fromList(input).<Iterable<Integer>>select(new ISelector<Integer, Iterable<Integer>>() {
           public Iterable<Integer> select(final Integer it) {
             return new Iterable<Integer>() {
               public Iterator<Integer> iterator() {
@@ -1556,12 +1556,12 @@ __switch__:
 
   public void test_timur2() throws Exception {
     //  {1, 2, 3}.select{ it => if (it == 2) {yield 4;}; } 
-    final List<Integer> input = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
-    List<Iterable<Integer>> exp = ListSequence.<Iterable<Integer>>fromListAndArray(new ArrayList<Iterable<Integer>>(), ListSequence.<Integer>fromList(new ArrayList<Integer>()), ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 4), ListSequence.<Integer>fromList(new ArrayList<Integer>()));
-    List<Iterable<Integer>> res = ListSequence.<Iterable<Integer>>fromList(new ArrayList<Iterable<Integer>>());
-    ListSequence.<Iterable<Integer>>fromList(res).addSequence(Sequence.<Iterable<Integer>>fromIterable(new _FunctionTypes._return_P0_E0<ISequence<Iterable<Integer>>>() {
+    final List<Integer> input = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
+    List<Iterable<Integer>> exp = ListSequence.fromListAndArray(new ArrayList<Iterable<Integer>>(), ListSequence.fromList(new ArrayList<Integer>()), ListSequence.fromListAndArray(new ArrayList<Integer>(), 4), ListSequence.fromList(new ArrayList<Integer>()));
+    List<Iterable<Integer>> res = ListSequence.fromList(new ArrayList<Iterable<Integer>>());
+    ListSequence.fromList(res).addSequence(Sequence.fromIterable(new _FunctionTypes._return_P0_E0<ISequence<Iterable<Integer>>>() {
       public ISequence<Iterable<Integer>> invoke() {
-        return ListSequence.<Integer>fromList(input).<Iterable<Integer>>select(new ISelector<Integer, Iterable<Integer>>() {
+        return ListSequence.fromList(input).<Iterable<Integer>>select(new ISelector<Integer, Iterable<Integer>>() {
           public Iterable<Integer> select(final Integer it) {
             return new Iterable<Integer>() {
               public Iterator<Integer> iterator() {
@@ -1610,8 +1610,8 @@ __switch__:
   }
 
   public void test_mps3477() throws Exception {
-    List<Integer> exp = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 10, 0, 20, 11, 1, 21, 12, 2, 22, 13, 3, 23, 14, 4, 24, 15, 5, 25, 16, 6, 26, 17, 7, 27, 18, 8, 28, 19, 9, 29);
-    final List<Integer> res = ListSequence.<Integer>fromList(new ArrayList<Integer>());
+    List<Integer> exp = ListSequence.fromListAndArray(new ArrayList<Integer>(), 10, 0, 20, 11, 1, 21, 12, 2, 22, 13, 3, 23, 14, 4, 24, 15, 5, 25, 16, 6, 26, 17, 7, 27, 18, 8, 28, 19, 9, 29);
+    final List<Integer> res = ListSequence.fromList(new ArrayList<Integer>());
     _FunctionTypes._return_P2_E0<? extends Iterable<Integer>, ? super Integer, ? super Integer> foo = new _FunctionTypes._return_P2_E0<Iterable<Integer>, Integer, Integer>() {
       public Iterable<Integer> invoke(final Integer start, final Integer end) {
         return new Iterable<Integer>() {
@@ -1649,11 +1649,11 @@ __switch__:
                       this.__CP__ = 2;
                       break;
                     case 4:
-                      ListSequence.<Integer>fromList(res).addElement(_2_i + 10);
+                      ListSequence.fromList(res).addElement(_2_i + 10);
                       this.__CP__ = 7;
                       break;
                     case 8:
-                      ListSequence.<Integer>fromList(res).addElement(_2_i + 20);
+                      ListSequence.fromList(res).addElement(_2_i + 20);
                       this.__CP__ = 5;
                       break;
                     default:
@@ -1668,14 +1668,14 @@ __switch__:
       }
     };
     Iterable<Integer> out = foo.invoke(0, 10);
-    for (int k : Sequence.<Integer>fromIterable(out)) {
-      ListSequence.<Integer>fromList(res).addElement(k);
+    for (int k : Sequence.fromIterable(out)) {
+      ListSequence.fromList(res).addElement(k);
     }
     Assert.assertEquals(exp, res);
   }
 
   public void test_mps10427() throws Exception {
-    final Iterable<String> s1 = Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+    final Iterable<String> s1 = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
         return new Iterable<String>() {
           public Iterator<String> iterator() {
@@ -1710,7 +1710,7 @@ __switch__:
     });
     final Iterable<String> s2 = null;
     final Iterable<String> s3 = Sequence.<String>singleton("bar");
-    String s = IterableUtils.join(Sequence.<String>fromIterable(Sequence.<String>fromClosure(new ISequenceClosure<String>() {
+    String s = IterableUtils.join(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
         return new Iterable<String>() {
           public Iterator<String> iterator() {
@@ -1800,7 +1800,7 @@ __switch__:
   }
 
   public void test_yieldNext() throws Exception {
-    Iterable<Integer> test = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -1852,7 +1852,7 @@ __switch__:
   }
 
   public void test_delayedException() throws Exception {
-    Iterable<Integer> seq = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -2007,16 +2007,16 @@ __switch__:
         };
       }
     }.invoke(input);
-    Sequence.<Object>fromIterable(output).disjunction(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList(), "a", "b", "c", "d"))).isEmpty();
+    Sequence.fromIterable(output).disjunction(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList(), "a", "b", "c", "d"))).isEmpty();
   }
 
   private void assertEquals(List<Iterable<Integer>> exp, List<Iterable<Integer>> res) {
-    Assert.assertSame(ListSequence.<Iterable<Integer>>fromList(exp).count(), ListSequence.<Iterable<Integer>>fromList(res).count());
+    Assert.assertSame(ListSequence.fromList(exp).count(), ListSequence.fromList(res).count());
     {
       Iterable<Integer> foo;
       Iterable<Integer> bar;
-      Iterator<Iterable<Integer>> foo_iterator = ListSequence.<Iterable<Integer>>fromList(exp).iterator();
-      Iterator<Iterable<Integer>> bar_iterator = ListSequence.<Iterable<Integer>>fromList(res).iterator();
+      Iterator<Iterable<Integer>> foo_iterator = ListSequence.fromList(exp).iterator();
+      Iterator<Iterable<Integer>> bar_iterator = ListSequence.fromList(res).iterator();
       while (true) {
         if (!(foo_iterator.hasNext())) {
           break;
@@ -2026,12 +2026,12 @@ __switch__:
         }
         foo = foo_iterator.next();
         bar = bar_iterator.next();
-        Assert.assertSame(Sequence.<Integer>fromIterable(foo).count(), Sequence.<Integer>fromIterable(bar).count());
+        Assert.assertSame(Sequence.fromIterable(foo).count(), Sequence.fromIterable(bar).count());
         {
           Integer a;
           Integer b;
-          Iterator<Integer> a_iterator = Sequence.<Integer>fromIterable(foo).iterator();
-          Iterator<Integer> b_iterator = Sequence.<Integer>fromIterable(bar).iterator();
+          Iterator<Integer> a_iterator = Sequence.fromIterable(foo).iterator();
+          Iterator<Integer> b_iterator = Sequence.fromIterable(bar).iterator();
           while (true) {
             if (!(a_iterator.hasNext())) {
               break;

@@ -41,9 +41,9 @@ public class ClassifierSuccessorsFinder {
   }
 
   public static List<SNode> getDerivedClassifiers(SNode classifier, IScope scope) {
-    Set<VirtualFile> unModifiedModelFiles = SetSequence.<VirtualFile>fromSet(new HashSet<VirtualFile>());
-    List<SNode> modifiedClasses = ListSequence.<SNode>fromList(new ArrayList<SNode>());
-    List<SNode> modifiedInterfaces = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    Set<VirtualFile> unModifiedModelFiles = SetSequence.fromSet(new HashSet<VirtualFile>());
+    List<SNode> modifiedClasses = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> modifiedInterfaces = ListSequence.fromList(new ArrayList<SNode>());
     for (SModelDescriptor md : scope.getModelDescriptors()) {
       if (!((md instanceof EditableSModelDescriptor))) {
         continue;
@@ -55,11 +55,11 @@ public class ClassifierSuccessorsFinder {
       }
       if (emd.isChanged()) {
         SModel sModel = md.getSModel();
-        for (SNode sNode : ListSequence.<SNode>fromList(SModelOperations.getNodes(sModel, null))) {
+        for (SNode sNode : ListSequence.fromList(SModelOperations.getNodes(sModel, null))) {
           if (SNodeOperations.isInstanceOf(sNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-            ListSequence.<SNode>fromList(modifiedClasses).addElement(SNodeOperations.cast(sNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+            ListSequence.fromList(modifiedClasses).addElement(SNodeOperations.cast(sNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
           } else if (SNodeOperations.isInstanceOf(sNode, "jetbrains.mps.baseLanguage.structure.Interface")) {
-            ListSequence.<SNode>fromList(modifiedInterfaces).addElement(SNodeOperations.cast(sNode, "jetbrains.mps.baseLanguage.structure.Interface"));
+            ListSequence.fromList(modifiedInterfaces).addElement(SNodeOperations.cast(sNode, "jetbrains.mps.baseLanguage.structure.Interface"));
           }
         }
       } else {
@@ -67,12 +67,12 @@ public class ClassifierSuccessorsFinder {
       }
     }
     List<SNode> result = new ArrayList<SNode>();
-    Queue<SNode> queue = QueueSequence.<SNode>fromQueue(new LinkedList<SNode>());
+    Queue<SNode> queue = QueueSequence.fromQueue(new LinkedList<SNode>());
     QueueSequence.fromQueue(queue).addLastElement(classifier);
     ClassifierSuccessorsFinder.ValueProcessor valueProcessor = new ClassifierSuccessorsFinder.ValueProcessor(result, queue);
     ClassifierSuccessorsFinder.ModifiedsuccessorFinder modifiedSuccessorFinder = new ClassifierSuccessorsFinder.ModifiedsuccessorFinder(modifiedClasses, modifiedInterfaces, result, queue);
     ClassifierSuccessorsFinder.SearchScope unModifiedFilesSearchScope = new ClassifierSuccessorsFinder.SearchScope(unModifiedModelFiles);
-    while (!(QueueSequence.<SNode>fromQueue(queue).isEmpty())) {
+    while (!(QueueSequence.fromQueue(queue).isEmpty())) {
       SNode nextClassifier = QueueSequence.fromQueue(queue).removeFirstElement();
       FileBasedIndex.getInstance().processValues(ClassifierSuccessorsIndexer.NAME, new GlobalSNodeId(nextClassifier), null, valueProcessor, unModifiedFilesSearchScope);
       modifiedSuccessorFinder.process(nextClassifier);
@@ -85,8 +85,8 @@ public class ClassifierSuccessorsFinder {
     private List<SNode> myModifiedInterfaces;
     private Queue<SNode> myClassifiersQueue;
     private List<SNode> myResult;
-    private Set<SNode> myProcessedNodes = SetSequence.<SNode>fromSet(new HashSet<SNode>());
-    private Map<SNode, List<SNode>> mySuccessorsMap = MapSequence.<SNode,List<SNode>>fromMap(new HashMap<SNode, List<SNode>>());
+    private Set<SNode> myProcessedNodes = SetSequence.fromSet(new HashSet<SNode>());
+    private Map<SNode, List<SNode>> mySuccessorsMap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     private boolean myInterfacesMapped;
     private boolean myClassesMapped;
 
@@ -98,7 +98,7 @@ public class ClassifierSuccessorsFinder {
     }
 
     public void process(SNode superClassifier) {
-      if (SetSequence.<SNode>fromSet(myProcessedNodes).contains(superClassifier)) {
+      if (SetSequence.fromSet(myProcessedNodes).contains(superClassifier)) {
         return;
       }
       SetSequence.fromSet(myProcessedNodes).addElement(superClassifier);
@@ -110,10 +110,10 @@ public class ClassifierSuccessorsFinder {
       } else {
         return;
       }
-      List<SNode> successors = MapSequence.<SNode,List<SNode>>fromMap(mySuccessorsMap).get(superClassifier);
+      List<SNode> successors = MapSequence.fromMap(mySuccessorsMap).get(superClassifier);
       if (successors != null) {
-        for (SNode successor : ListSequence.<SNode>fromList(successors)) {
-          ListSequence.<SNode>fromList(myResult).addElement(successor);
+        for (SNode successor : ListSequence.fromList(successors)) {
+          ListSequence.fromList(myResult).addElement(successor);
           QueueSequence.fromQueue(myClassifiersQueue).addLastElement(successor);
         }
       }
@@ -124,7 +124,7 @@ public class ClassifierSuccessorsFinder {
         return;
       }
       myClassesMapped = true;
-      for (SNode aClass : ListSequence.<SNode>fromList(myModifiedClasses)) {
+      for (SNode aClass : ListSequence.fromList(myModifiedClasses)) {
         SNode superClass = SLinkOperations.getTarget(aClass, "superclass", true);
         if (superClass != null) {
           safeMap(SLinkOperations.getTarget(superClass, "classifier", false), aClass);
@@ -132,7 +132,7 @@ public class ClassifierSuccessorsFinder {
         if (SNodeOperations.isInstanceOf(aClass, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
           safeMap(SLinkOperations.getTarget(SNodeOperations.cast(aClass, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), aClass);
         }
-        for (SNode implementedInterface : ListSequence.<SNode>fromList(SLinkOperations.getTargets(aClass, "implementedInterface", true))) {
+        for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(aClass, "implementedInterface", true))) {
           safeMap(SLinkOperations.getTarget(implementedInterface, "classifier", false), aClass);
         }
       }
@@ -143,8 +143,8 @@ public class ClassifierSuccessorsFinder {
         return;
       }
       myInterfacesMapped = true;
-      for (SNode anInterface : ListSequence.<SNode>fromList(myModifiedInterfaces)) {
-        for (SNode extendedInterface : ListSequence.<SNode>fromList(SLinkOperations.getTargets(anInterface, "extendedInterface", true))) {
+      for (SNode anInterface : ListSequence.fromList(myModifiedInterfaces)) {
+        for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getTargets(anInterface, "extendedInterface", true))) {
           safeMap(SLinkOperations.getTarget(extendedInterface, "classifier", false), anInterface);
         }
       }
@@ -154,19 +154,19 @@ public class ClassifierSuccessorsFinder {
       if (predecessor == null) {
         return;
       }
-      List<SNode> successors = MapSequence.<SNode,List<SNode>>fromMap(mySuccessorsMap).get(predecessor);
+      List<SNode> successors = MapSequence.fromMap(mySuccessorsMap).get(predecessor);
       if (successors == null) {
         successors = new ArrayList<SNode>();
-        MapSequence.<SNode,List<SNode>>fromMap(mySuccessorsMap).put(predecessor, successors);
+        MapSequence.fromMap(mySuccessorsMap).put(predecessor, successors);
       }
-      ListSequence.<SNode>fromList(successors).addElement(successor);
+      ListSequence.fromList(successors).addElement(successor);
     }
   }
 
   private static class ValueProcessor implements FileBasedIndex.ValueProcessor<List<GlobalSNodeId>> {
     private List<SNode> myResult;
     private Queue<SNode> myQueue;
-    private Set<GlobalSNodeId> myProcessedNodes = SetSequence.<GlobalSNodeId>fromSet(new HashSet<GlobalSNodeId>());
+    private Set<GlobalSNodeId> myProcessedNodes = SetSequence.fromSet(new HashSet<GlobalSNodeId>());
 
     /*package*/ ValueProcessor(List<SNode> result, Queue<SNode> queue) {
       myResult = result;
@@ -176,14 +176,14 @@ public class ClassifierSuccessorsFinder {
     @Override
     public boolean process(VirtualFile file, List<GlobalSNodeId> successors) {
       for (GlobalSNodeId sNodeId : successors) {
-        if (SetSequence.<GlobalSNodeId>fromSet(myProcessedNodes).contains(sNodeId)) {
+        if (SetSequence.fromSet(myProcessedNodes).contains(sNodeId)) {
           continue;
         }
         SetSequence.fromSet(myProcessedNodes).addElement(sNodeId);
         SNode node = sNodeId.getNode();
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
           SNode classifier = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
-          ListSequence.<SNode>fromList(myResult).addElement(classifier);
+          ListSequence.fromList(myResult).addElement(classifier);
           QueueSequence.fromQueue(myQueue).addLastElement(classifier);
         }
       }
@@ -201,7 +201,7 @@ public class ClassifierSuccessorsFinder {
 
     @Override
     public boolean contains(VirtualFile file) {
-      return SetSequence.<VirtualFile>fromSet(myFilesInScope).contains(file);
+      return SetSequence.fromSet(myFilesInScope).contains(file);
     }
 
     @Override

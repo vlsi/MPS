@@ -26,7 +26,7 @@ public class Create_Test extends BaseTransformationTest {
       final IEditor editor = TestBody.this.initEditor("6170050146384276079", "6170050146384276081");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "Hierarchy");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.<String>fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
     }
   }
 }

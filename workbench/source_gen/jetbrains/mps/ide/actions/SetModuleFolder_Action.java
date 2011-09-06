@@ -29,7 +29,7 @@ public class SetModuleFolder_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((MPSProject) MapSequence.<String,Object>fromMap(_params).get("project")).isProjectModule(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")));
+    return ((MPSProject) MapSequence.fromMap(_params).get("project")).isProjectModule(((IModule) MapSequence.fromMap(_params).get("module")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -50,20 +50,20 @@ public class SetModuleFolder_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("ideaProject") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
@@ -71,15 +71,15 @@ public class SetModuleFolder_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ProjectPane pane = ProjectPane.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("ideaProject")));
-      String oldFolder = ((MPSProject) MapSequence.<String,Object>fromMap(_params).get("project")).getFolderFor(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")));
-      String newFolder = JOptionPane.showInputDialog(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), "Enter new folder", oldFolder);
+      ProjectPane pane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
+      String oldFolder = ((MPSProject) MapSequence.fromMap(_params).get("project")).getFolderFor(((IModule) MapSequence.fromMap(_params).get("module")));
+      String newFolder = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter new folder", oldFolder);
       if (newFolder != null) {
         if (newFolder.equals("")) {
           newFolder = null;
         }
         for (IModule m : pane.getSelectedModules()) {
-          ((MPSProject) MapSequence.<String,Object>fromMap(_params).get("project")).setFolderFor(m, newFolder);
+          ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(m, newFolder);
         }
         pane.rebuild();
       }

@@ -36,7 +36,7 @@ public class SampleModule implements EntryPoint {
         label.setText("Label #" + i);
         return label;
       }
-    }, Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
+    }, Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -86,15 +86,15 @@ __switch__:
         };
       }
     }));
-    while (DequeSequence.<Widget>fromDeque(widgets).isNotEmpty()) {
+    while (DequeSequence.fromDeque(widgets).isNotEmpty()) {
       lp.add(DequeSequence.fromDeque(widgets).removeLastElement());
     }
     return lp;
   }
 
   public Deque<Widget> createWidgets(final _FunctionTypes._return_P1_E0<? extends Widget, ? super Integer> f, Iterable<Integer> ints) {
-    final Deque<Widget> widgets = LinkedListSequence.<Widget>fromLinkedList(new LinkedList<Widget>());
-    Sequence.<Integer>fromIterable(ints).visitAll(new IVisitor<Integer>() {
+    final Deque<Widget> widgets = LinkedListSequence.fromLinkedList(new LinkedList<Widget>());
+    Sequence.fromIterable(ints).visitAll(new IVisitor<Integer>() {
       public void visit(Integer i) {
         LinkedListSequence.fromLinkedList(widgets).insertElement(0, f.invoke(i));
       }

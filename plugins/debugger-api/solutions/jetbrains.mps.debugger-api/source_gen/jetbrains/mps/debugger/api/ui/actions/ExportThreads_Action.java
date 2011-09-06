@@ -52,12 +52,12 @@ public class ExportThreads_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
@@ -68,10 +68,10 @@ public class ExportThreads_Action extends GeneratedAction {
       AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
       AbstractUiState uiState = ((AbstractUiState) debugSession.getUiState());
       StringBuffer sb = new StringBuffer();
-      for (IThread thread : ListSequence.<IThread>fromList(uiState.getThreads())) {
+      for (IThread thread : ListSequence.fromList(uiState.getThreads())) {
         sb.append(thread.getPresentation());
         sb.append('\n');
-        for (IStackFrame frame : ListSequence.<IStackFrame>fromList(thread.getFrames())) {
+        for (IStackFrame frame : ListSequence.fromList(thread.getFrames())) {
           ILocation location = frame.getLocation();
           sb.append('\t');
           sb.append("at ");
@@ -88,7 +88,7 @@ public class ExportThreads_Action extends GeneratedAction {
         sb.append('\n');
       }
 
-      final ExportThreadsDialog dialog = new ExportThreadsDialog(((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")), sb);
+      final ExportThreadsDialog dialog = new ExportThreadsDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), sb);
 
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {

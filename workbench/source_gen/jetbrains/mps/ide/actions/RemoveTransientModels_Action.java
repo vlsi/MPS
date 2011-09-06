@@ -40,8 +40,8 @@ public class RemoveTransientModels_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -49,8 +49,8 @@ public class RemoveTransientModels_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(MessagesViewTool.class).clear();
-      TransientModelsComponent component = ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(TransientModelsComponent.class);
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MessagesViewTool.class).clear();
+      TransientModelsComponent component = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(TransientModelsComponent.class);
       component.removeAllTransient();
       System.gc();
     } catch (Throwable t) {

@@ -35,7 +35,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 5:
-                      this._5_childCell_it = Sequence.<EditorCell>fromIterable((EditorCell_Collection) c).iterator();
+                      this._5_childCell_it = Sequence.fromIterable((EditorCell_Collection) c).iterator();
                     case 6:
                       if (!(this._5_childCell_it.hasNext())) {
                         this.__CP__ = 1;

@@ -33,8 +33,8 @@ public class CutNode_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    for (SNode node : ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes")))) {
-      if (SNodeOperations.getParent(node) != SNodeOperations.getParent(ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes"))).first())) {
+    for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
+      if (SNodeOperations.getParent(node) != SNodeOperations.getParent(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first())) {
         return false;
       }
     }
@@ -65,20 +65,20 @@ public class CutNode_Action extends GeneratedAction {
       if (nodes != null) {
       }
       if (error || nodes == null) {
-        MapSequence.<String,Object>fromMap(_params).put("nodes", null);
+        MapSequence.fromMap(_params).put("nodes", null);
       } else {
-        MapSequence.<String,Object>fromMap(_params).put("nodes", ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), nodes));
+        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("nodes") == null) {
+    if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
@@ -86,11 +86,11 @@ public class CutNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      CopyPasteUtil.copyNodesToClipboard(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes")));
-      for (SNode node : ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes")))) {
-        if (node == ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes"))).last()) {
+      CopyPasteUtil.copyNodesToClipboard(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
+      for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
+        if (node == ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).last()) {
           ProjectPane pane = CutNode_Action.this.getProjectPane(_params);
-          if (ListSequence.<SNode>fromList(((List<SNode>) MapSequence.<String,Object>fromMap(_params).get("nodes"))).count() != 1) {
+          if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).count() != 1) {
             pane.rebuildTree();
           }
           pane.selectNextNode(node);
@@ -105,6 +105,6 @@ public class CutNode_Action extends GeneratedAction {
   }
 
   private ProjectPane getProjectPane(final Map<String, Object> _params) {
-    return ProjectPane.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
+    return ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
   }
 }

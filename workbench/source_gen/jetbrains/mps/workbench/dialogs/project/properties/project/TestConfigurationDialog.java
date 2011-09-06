@@ -239,12 +239,12 @@ public class TestConfigurationDialog extends BaseDialog {
               projectModules.value = myProject.getComponent(MPSProject.class).getModules();
             }
           });
-          List<ModuleReference> projectModuleRefs = ListSequence.<IModule>fromList(projectModules.value).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
+          List<ModuleReference> projectModuleRefs = ListSequence.fromList(projectModules.value).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
             public ModuleReference select(IModule it) {
               return it.getModuleReference();
             }
           }).toListSequence();
-          List<ModuleReference> moduleRefs = ListSequence.<IModule>fromList(modules.value).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
+          List<ModuleReference> moduleRefs = ListSequence.fromList(modules.value).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
             public ModuleReference select(IModule it) {
               return it.getModuleReference();
             }
@@ -330,11 +330,11 @@ public class TestConfigurationDialog extends BaseDialog {
         protected int doAdd(AnActionEvent e) {
           List<SModelDescriptor> models = myProject.getComponent(MPSProject.class).getProjectModels();
           List<SModelDescriptor> descrs = SModelRepository.getInstance().getModelDescriptors();
-          SModelReference modelRef = CommonChoosers.showDialogModelChooser(ModelsPanel.this, ListSequence.<SModelDescriptor>fromList(models).<SModelReference>select(new ISelector<SModelDescriptor, SModelReference>() {
+          SModelReference modelRef = CommonChoosers.showDialogModelChooser(ModelsPanel.this, ListSequence.fromList(models).<SModelReference>select(new ISelector<SModelDescriptor, SModelReference>() {
             public SModelReference select(SModelDescriptor it) {
               return it.getSModelReference();
             }
-          }).toListSequence(), ListSequence.<SModelDescriptor>fromList(descrs).<SModelReference>select(new ISelector<SModelDescriptor, SModelReference>() {
+          }).toListSequence(), ListSequence.fromList(descrs).<SModelReference>select(new ISelector<SModelDescriptor, SModelReference>() {
             public SModelReference select(SModelDescriptor it) {
               return it.getSModelReference();
             }

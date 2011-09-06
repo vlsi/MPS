@@ -41,8 +41,8 @@ public class MergeConflictsBuilder {
   private SModel myRepositoryModel;
   /*package*/ ChangeSet myMineChangeSet;
   /*package*/ ChangeSet myRepositoryChangeSet;
-  /*package*/ Map<ModelChange, List<ModelChange>> myConflictingChanges = MapSequence.<ModelChange,List<ModelChange>>fromMap(new HashMap<ModelChange, List<ModelChange>>());
-  /*package*/ Map<ModelChange, List<ModelChange>> mySymmetricChanges = MapSequence.<ModelChange,List<ModelChange>>fromMap(new HashMap<ModelChange, List<ModelChange>>());
+  /*package*/ Map<ModelChange, List<ModelChange>> myConflictingChanges = MapSequence.fromMap(new HashMap<ModelChange, List<ModelChange>>());
+  /*package*/ Map<ModelChange, List<ModelChange>> mySymmetricChanges = MapSequence.fromMap(new HashMap<ModelChange, List<ModelChange>>());
 
   public MergeConflictsBuilder(SModel base, SModel mine, SModel repository) {
     // should be invoked from read action 
@@ -70,7 +70,7 @@ public class MergeConflictsBuilder {
 
   private <K, C extends ModelChange> void collectSymmetricChanges(Map<K, C> mine, Map<K, C> repo) {
     for (K key : SetSequence.fromSet(MapSequence.fromMap(mine).keySet()).intersect(SetSequence.fromSet(MapSequence.fromMap(repo).keySet()))) {
-      addSymmetric(MapSequence.<K,C>fromMap(mine).get(key), MapSequence.<K,C>fromMap(repo).get(key));
+      addSymmetric(MapSequence.fromMap(mine).get(key), MapSequence.fromMap(repo).get(key));
     }
   }
 
@@ -88,7 +88,7 @@ public class MergeConflictsBuilder {
         return drc.getRootId();
       }
     }, DeleteRootChange.class);
-    for (ModelChange change : ListSequence.<ModelChange>fromList(otherChangeSet.getModelChanges())) {
+    for (ModelChange change : ListSequence.fromList(otherChangeSet.getModelChanges())) {
       if (MapSequence.fromMap(myConflictingChanges).containsKey(change)) {
         continue;
       }
@@ -105,14 +105,14 @@ public class MergeConflictsBuilder {
       SNode node = myBaseModel.getNodeById(nodeId);
       while (node != null) {
         if (SNodeOperations.getParent(node) == null) {
-          DeleteRootChange conflicting = MapSequence.<SNodeId,DeleteRootChange>fromMap(deleteRootChanges).get(nodeId);
+          DeleteRootChange conflicting = MapSequence.fromMap(deleteRootChanges).get(nodeId);
           if (conflicting != null) {
             addConflict(change, conflicting);
           }
         } else {
           Tuples._2<SNodeId, String> nodeRole = MultiTuple.<SNodeId,String>from(SNodeOperations.getParent(node).getSNodeId(), SNodeOperations.getContainingLinkRole(node));
           final int index = SNodeOperations.getIndexInParent(node);
-          NodeGroupChange conflicting = ListSequence.<NodeGroupChange>fromList(MapSequence.<Tuples._2<SNodeId, String>,List<NodeGroupChange>>fromMap(arrangedChanges).get(nodeRole)).findFirst(new IWhereFilter<NodeGroupChange>() {
+          NodeGroupChange conflicting = ListSequence.fromList(MapSequence.fromMap(arrangedChanges).get(nodeRole)).findFirst(new IWhereFilter<NodeGroupChange>() {
             public boolean accept(NodeGroupChange ch) {
               return ch.getBegin() <= index && index < ch.getEnd();
             }
@@ -134,9 +134,9 @@ public class MergeConflictsBuilder {
         return MultiTuple.<SNodeId,String>from(spc.getAffectedNodeId(), spc.getPropertyName());
       }
     }, SetPropertyChange.class);
-    for (Tuples._2<SNodeId, String> nodeName : SetSequence.<Tuples._2<SNodeId, String>>fromSet(MapSequence.fromMap(arranged._0()).keySet()).intersect(SetSequence.<Tuples._2<SNodeId, String>>fromSet(MapSequence.fromMap(arranged._1()).keySet()))) {
-      SetPropertyChange mineChange = MapSequence.<Tuples._2<SNodeId, String>,SetPropertyChange>fromMap(arranged._0()).get(nodeName);
-      SetPropertyChange repositoryChange = MapSequence.<Tuples._2<SNodeId, String>,SetPropertyChange>fromMap(arranged._1()).get(nodeName);
+    for (Tuples._2<SNodeId, String> nodeName : SetSequence.fromSet(MapSequence.fromMap(arranged._0()).keySet()).intersect(SetSequence.fromSet(MapSequence.fromMap(arranged._1()).keySet()))) {
+      SetPropertyChange mineChange = MapSequence.fromMap(arranged._0()).get(nodeName);
+      SetPropertyChange repositoryChange = MapSequence.fromMap(arranged._1()).get(nodeName);
       if (ObjectUtils.equals(mineChange.getNewValue(), repositoryChange.getNewValue())) {
         addSymmetric(mineChange, repositoryChange);
       } else {
@@ -152,9 +152,9 @@ public class MergeConflictsBuilder {
         return MultiTuple.<SNodeId,String>from(src.getAffectedNodeId(), src.getRole());
       }
     }, SetReferenceChange.class);
-    for (Tuples._2<SNodeId, String> nodeName : SetSequence.<Tuples._2<SNodeId, String>>fromSet(MapSequence.fromMap(arranged._0()).keySet()).intersect(SetSequence.<Tuples._2<SNodeId, String>>fromSet(MapSequence.fromMap(arranged._1()).keySet()))) {
-      SetReferenceChange mineChange = MapSequence.<Tuples._2<SNodeId, String>,SetReferenceChange>fromMap(arranged._0()).get(nodeName);
-      SetReferenceChange repositoryChange = MapSequence.<Tuples._2<SNodeId, String>,SetReferenceChange>fromMap(arranged._1()).get(nodeName);
+    for (Tuples._2<SNodeId, String> nodeName : SetSequence.fromSet(MapSequence.fromMap(arranged._0()).keySet()).intersect(SetSequence.fromSet(MapSequence.fromMap(arranged._1()).keySet()))) {
+      SetReferenceChange mineChange = MapSequence.fromMap(arranged._0()).get(nodeName);
+      SetReferenceChange repositoryChange = MapSequence.fromMap(arranged._1()).get(nodeName);
       if (ObjectUtils.equals(mineChange.getTargetNodeId(), repositoryChange.getTargetNodeId()) && ObjectUtils.equals(mineChange.getTargetModelReference(), repositoryChange.getTargetModelReference()) && ObjectUtils.equals(mineChange.getResolveInfo(), repositoryChange.getResolveInfo())) {
         addSymmetric(mineChange, repositoryChange);
       } else {
@@ -178,9 +178,9 @@ public class MergeConflictsBuilder {
         return drc.getRootId();
       }
     }, AddRootChange.class);
-    for (SNodeId addedRoot : SetSequence.<SNodeId>fromSet(MapSequence.fromMap(arranged._0()).keySet()).intersect(SetSequence.<SNodeId>fromSet(MapSequence.fromMap(arranged._1()).keySet()))) {
-      AddRootChange mine = MapSequence.<SNodeId,AddRootChange>fromMap(arranged._0()).get(addedRoot);
-      AddRootChange repository = MapSequence.<SNodeId,AddRootChange>fromMap(arranged._1()).get(addedRoot);
+    for (SNodeId addedRoot : SetSequence.fromSet(MapSequence.fromMap(arranged._0()).keySet()).intersect(SetSequence.fromSet(MapSequence.fromMap(arranged._1()).keySet()))) {
+      AddRootChange mine = MapSequence.fromMap(arranged._0()).get(addedRoot);
+      AddRootChange repository = MapSequence.fromMap(arranged._1()).get(addedRoot);
       if (SNodeCompare.nodeEquals(myMyModel.getNodeById(mine.getRootId()), myRepositoryModel.getNodeById(repository.getRootId()))) {
         addSymmetric(mine, repository);
       } else {
@@ -224,13 +224,13 @@ public class MergeConflictsBuilder {
   private void collectConflicts() {
     Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> mineGroupChanges = arrangeNodeGroupChanges(myMineChangeSet);
     Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> repositoryGroupChanges = arrangeNodeGroupChanges(myRepositoryChangeSet);
-    for (Tuples._2<SNodeId, String> nodeRole : SetSequence.<Tuples._2<SNodeId, String>>fromSet(MapSequence.fromMap(mineGroupChanges).keySet()).intersect(SetSequence.<Tuples._2<SNodeId, String>>fromSet(MapSequence.fromMap(repositoryGroupChanges).keySet()))) {
-      List<NodeGroupChange> mine = MapSequence.<Tuples._2<SNodeId, String>,List<NodeGroupChange>>fromMap(mineGroupChanges).get(nodeRole);
-      List<NodeGroupChange> repository = MapSequence.<Tuples._2<SNodeId, String>,List<NodeGroupChange>>fromMap(repositoryGroupChanges).get(nodeRole);
+    for (Tuples._2<SNodeId, String> nodeRole : SetSequence.fromSet(MapSequence.fromMap(mineGroupChanges).keySet()).intersect(SetSequence.fromSet(MapSequence.fromMap(repositoryGroupChanges).keySet()))) {
+      List<NodeGroupChange> mine = MapSequence.fromMap(mineGroupChanges).get(nodeRole);
+      List<NodeGroupChange> repository = MapSequence.fromMap(repositoryGroupChanges).get(nodeRole);
       // This is a quadratic algorithm, it can be optimized to linear, 
       // but it is left for simplicity 
-      for (NodeGroupChange m : ListSequence.<NodeGroupChange>fromList(mine)) {
-        for (NodeGroupChange r : ListSequence.<NodeGroupChange>fromList(repository)) {
+      for (NodeGroupChange m : ListSequence.fromList(mine)) {
+        for (NodeGroupChange r : ListSequence.fromList(repository)) {
           if (m.getEnd() < r.getBegin() || m.getBegin() > r.getEnd()) {
             // ok 
           } else {
@@ -258,22 +258,22 @@ public class MergeConflictsBuilder {
   }
 
   private static Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> arrangeNodeGroupChanges(ChangeSet changeSet) {
-    Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> nodeRoleToGroupChanges = MapSequence.<Tuples._2<SNodeId, String>,List<NodeGroupChange>>fromMap(new HashMap<Tuples._2<SNodeId, String>, List<NodeGroupChange>>());
-    for (NodeGroupChange change : Sequence.<NodeGroupChange>fromIterable(changeSet.getModelChanges(NodeGroupChange.class))) {
+    Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> nodeRoleToGroupChanges = MapSequence.fromMap(new HashMap<Tuples._2<SNodeId, String>, List<NodeGroupChange>>());
+    for (NodeGroupChange change : Sequence.fromIterable(changeSet.getModelChanges(NodeGroupChange.class))) {
       Tuples._2<SNodeId, String> nodeRole = MultiTuple.<SNodeId,String>from(change.getParentNodeId(), change.getRole());
       if (!(MapSequence.fromMap(nodeRoleToGroupChanges).containsKey(nodeRole))) {
-        MapSequence.<Tuples._2<SNodeId, String>,List<NodeGroupChange>>fromMap(nodeRoleToGroupChanges).put(nodeRole, ListSequence.<NodeGroupChange>fromList(new ArrayList<NodeGroupChange>()));
+        MapSequence.fromMap(nodeRoleToGroupChanges).put(nodeRole, ListSequence.fromList(new ArrayList<NodeGroupChange>()));
       }
-      ListSequence.<NodeGroupChange>fromList(MapSequence.<Tuples._2<SNodeId, String>,List<NodeGroupChange>>fromMap(nodeRoleToGroupChanges).get(nodeRole)).addElement(change);
+      ListSequence.fromList(MapSequence.fromMap(nodeRoleToGroupChanges).get(nodeRole)).addElement(change);
     }
     return nodeRoleToGroupChanges;
   }
 
   private static void addOneWayChangeLink(Map<ModelChange, List<ModelChange>> map, ModelChange a, ModelChange b) {
-    if (MapSequence.<ModelChange,List<ModelChange>>fromMap(map).get(a) == null) {
-      MapSequence.<ModelChange,List<ModelChange>>fromMap(map).put(a, ListSequence.<ModelChange>fromList(new ArrayList<ModelChange>()));
+    if (MapSequence.fromMap(map).get(a) == null) {
+      MapSequence.fromMap(map).put(a, ListSequence.fromList(new ArrayList<ModelChange>()));
     }
-    ListSequence.<ModelChange>fromList(MapSequence.<ModelChange,List<ModelChange>>fromMap(map).get(a)).addElement(b);
+    ListSequence.fromList(MapSequence.fromMap(map).get(a)).addElement(b);
   }
 
   private static void addChangeLink(Map<ModelChange, List<ModelChange>> map, ModelChange a, ModelChange b) {
@@ -283,10 +283,10 @@ public class MergeConflictsBuilder {
   }
 
   private static <K, C extends ModelChange> Map<K, C> arrangeChanges(ChangeSet changeSet, final _FunctionTypes._return_P1_E0<? extends K, ? super C> changeToKey, Class<C> changeClass) {
-    final Map<K, C> map = MapSequence.<K,C>fromMap(new HashMap<K, C>());
-    Sequence.<C>fromIterable(changeSet.getModelChanges(changeClass)).visitAll(new IVisitor<C>() {
+    final Map<K, C> map = MapSequence.fromMap(new HashMap<K, C>());
+    Sequence.fromIterable(changeSet.getModelChanges(changeClass)).visitAll(new IVisitor<C>() {
       public void visit(C ch) {
-        MapSequence.<K,C>fromMap(map).put(changeToKey.invoke(ch), ch);
+        MapSequence.fromMap(map).put(changeToKey.invoke(ch), ch);
       }
     });
     return map;

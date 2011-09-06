@@ -13,20 +13,20 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 /*package*/ class MergerRoleIdsHandler implements RoleIdsComponent.RoleIdsHandler {
   private boolean myConsistent = true;
-  private Map<String, SNodePointer> myConceptsToPointers = MapSequence.<String,SNodePointer>fromMap(new HashMap<String, SNodePointer>());
-  private Map<Tuples._2<String, String>, SNodePointer> myNodeRolesToPointers = MapSequence.<Tuples._2<String, String>,SNodePointer>fromMap(new HashMap<Tuples._2<String, String>, SNodePointer>());
-  private Map<Tuples._2<String, String>, SNodePointer> myReferenceRolesToPointers = MapSequence.<Tuples._2<String, String>,SNodePointer>fromMap(new HashMap<Tuples._2<String, String>, SNodePointer>());
-  private Map<Tuples._2<String, String>, SNodePointer> myPropertyNamesToPointers = MapSequence.<Tuples._2<String, String>,SNodePointer>fromMap(new HashMap<Tuples._2<String, String>, SNodePointer>());
-  private Map<SModelReference, Integer> myModelVersions = MapSequence.<SModelReference,Integer>fromMap(new HashMap<SModelReference, Integer>());
+  private Map<String, SNodePointer> myConceptsToPointers = MapSequence.fromMap(new HashMap<String, SNodePointer>());
+  private Map<Tuples._2<String, String>, SNodePointer> myNodeRolesToPointers = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodePointer>());
+  private Map<Tuples._2<String, String>, SNodePointer> myReferenceRolesToPointers = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodePointer>());
+  private Map<Tuples._2<String, String>, SNodePointer> myPropertyNamesToPointers = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodePointer>());
+  private Map<SModelReference, Integer> myModelVersions = MapSequence.fromMap(new HashMap<SModelReference, Integer>());
 
   /*package*/ MergerRoleIdsHandler() {
   }
 
   private <K, V> void storeAndCheckConsistency(Map<K, V> theMap, K key, V value) {
     if (MapSequence.fromMap(theMap).containsKey(key)) {
-      myConsistent = myConsistent && eq_clnjnl_a0a0a0a0a(MapSequence.<K,V>fromMap(theMap).get(key), value);
+      myConsistent = myConsistent && eq_clnjnl_a0a0a0a0a(MapSequence.fromMap(theMap).get(key), value);
     } else {
-      MapSequence.<K,V>fromMap(theMap).put(key, value);
+      MapSequence.fromMap(theMap).put(key, value);
     }
   }
 
@@ -51,23 +51,23 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
   }
 
   public SNodePointer getConceptPointer(String conceptFqName) {
-    return MapSequence.<String,SNodePointer>fromMap(myConceptsToPointers).get(conceptFqName);
+    return MapSequence.fromMap(myConceptsToPointers).get(conceptFqName);
   }
 
   public SNodePointer getNodeRolePointer(String conceptFqName, String linkRole) {
-    return MapSequence.<Tuples._2<String, String>,SNodePointer>fromMap(myNodeRolesToPointers).get(MultiTuple.<String,String>from(conceptFqName, linkRole));
+    return MapSequence.fromMap(myNodeRolesToPointers).get(MultiTuple.<String,String>from(conceptFqName, linkRole));
   }
 
   public SNodePointer getReferenceRolePointer(String conceptFqName, String referenceLinkRole) {
-    return MapSequence.<Tuples._2<String, String>,SNodePointer>fromMap(myReferenceRolesToPointers).get(MultiTuple.<String,String>from(conceptFqName, referenceLinkRole));
+    return MapSequence.fromMap(myReferenceRolesToPointers).get(MultiTuple.<String,String>from(conceptFqName, referenceLinkRole));
   }
 
   public SNodePointer getPropertyNamePointer(String conceptFqName, String propertyName) {
-    return MapSequence.<Tuples._2<String, String>,SNodePointer>fromMap(myPropertyNamesToPointers).get(MultiTuple.<String,String>from(conceptFqName, propertyName));
+    return MapSequence.fromMap(myPropertyNamesToPointers).get(MultiTuple.<String,String>from(conceptFqName, propertyName));
   }
 
   public int getModelVersion(SModelReference reference) {
-    return MapSequence.<SModelReference,Integer>fromMap(myModelVersions).get(reference);
+    return MapSequence.fromMap(myModelVersions).get(reference);
   }
 
   /*package*/ boolean isConsistent() {

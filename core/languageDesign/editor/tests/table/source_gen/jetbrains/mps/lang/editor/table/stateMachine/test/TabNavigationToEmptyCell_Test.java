@@ -25,7 +25,7 @@ public class TabNavigationToEmptyCell_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("3152271290514981437", "3152271290514981463");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.<String>fromListAndArray(new ArrayList<String>(), " TAB"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " TAB"));
     }
   }
 }

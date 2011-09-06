@@ -16,8 +16,8 @@ import jetbrains.mps.smodel.persistence.lines.PropertyLineContent;
 import jetbrains.mps.smodel.persistence.lines.ReferenceLineContent;
 
 public class LineContentAccumulator {
-  private List<LineContent> myLineToContentMap = ListSequence.<LineContent>fromList(new ArrayList<LineContent>());
-  private Deque<SNodeId> myNodeIdStack = DequeSequence.<SNodeId>fromDeque(new LinkedList<SNodeId>());
+  private List<LineContent> myLineToContentMap = ListSequence.fromList(new ArrayList<LineContent>());
+  private Deque<SNodeId> myNodeIdStack = DequeSequence.fromDeque(new LinkedList<SNodeId>());
 
   public LineContentAccumulator() {
   }
@@ -33,10 +33,10 @@ public class LineContentAccumulator {
   }
 
   private void saveElement(int index, LineContent lineContent) {
-    while (index >= ListSequence.<LineContent>fromList(myLineToContentMap).count()) {
-      ListSequence.<LineContent>fromList(myLineToContentMap).addElement(null);
+    while (index >= ListSequence.fromList(myLineToContentMap).count()) {
+      ListSequence.fromList(myLineToContentMap).addElement(null);
     }
-    ListSequence.<LineContent>fromList(myLineToContentMap).setElement(index, lineContent);
+    ListSequence.fromList(myLineToContentMap).setElement(index, lineContent);
   }
 
   private void saveElement(Locator locator, LineContent lineContent) {
@@ -57,11 +57,11 @@ public class LineContentAccumulator {
 
   public void processText(String text, Locator locator) {
     LineContent lineContent = null;
-    if (DequeSequence.<SNodeId>fromDeque(myNodeIdStack).isNotEmpty()) {
+    if (DequeSequence.fromDeque(myNodeIdStack).isNotEmpty()) {
       lineContent = new NodeLineContent(DequeSequence.fromDeque(myNodeIdStack).peekElement());
     }
-    while (locator.getLineNumber() - 1 > ListSequence.<LineContent>fromList(myLineToContentMap).count()) {
-      ListSequence.<LineContent>fromList(myLineToContentMap).addElement(lineContent);
+    while (locator.getLineNumber() - 1 > ListSequence.fromList(myLineToContentMap).count()) {
+      ListSequence.fromList(myLineToContentMap).addElement(lineContent);
     }
   }
 

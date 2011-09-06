@@ -12,8 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring;
 
 @MPSLaunch
@@ -37,7 +37,7 @@ public class InlineFromConceptFunction_Test extends BaseTransformationTest {
       this.addNodeById("1230053266380");
       InlineVariableRefactoring ref = new InlineVariableAssignmentRefactoring(SNodeOperations.cast(this.getNodeById("1230053266370"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053266367"), "jetbrains.mps.baseLanguage.structure.ConceptFunction")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053266381"), "jetbrains.mps.baseLanguage.structure.ConceptFunction"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053266367"), "jetbrains.mps.baseLanguage.structure.ConceptFunction")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053266381"), "jetbrains.mps.baseLanguage.structure.ConceptFunction"))));
     }
 
     public void test_reference() throws Exception {
@@ -45,7 +45,7 @@ public class InlineFromConceptFunction_Test extends BaseTransformationTest {
       this.addNodeById("1230053266380");
       InlineVariableRefactoring ref = new InlineVariableReferenceRefactoring(SNodeOperations.cast(this.getNodeById("1230053266377"), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053266367"), "jetbrains.mps.baseLanguage.structure.ConceptFunction")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053266381"), "jetbrains.mps.baseLanguage.structure.ConceptFunction"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053266367"), "jetbrains.mps.baseLanguage.structure.ConceptFunction")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053266381"), "jetbrains.mps.baseLanguage.structure.ConceptFunction"))));
     }
   }
 }

@@ -36,7 +36,7 @@ public class HistoryWriter {
 
   public Document saveHistory(StructureModificationLog history) {
     final Element root = new Element(MODIFICATION_HISTORY);
-    ListSequence.<StructureModification>fromList(history.getHistory()).visitAll(new IVisitor<StructureModification>() {
+    ListSequence.fromList(history.getHistory()).visitAll(new IVisitor<StructureModification>() {
       public void visit(StructureModification it) {
         root.addContent(saveModification(it));
       }
@@ -51,7 +51,7 @@ public class HistoryWriter {
 
     Element dependencies = new Element(DEPENDENCIES);
     elem.addContent(dependencies);
-    for (IMapping<SModelReference, Integer> dependency : MapSequence.<SModelReference,Integer>fromMap(modification.getDependencies())) {
+    for (IMapping<SModelReference, Integer> dependency : MapSequence.fromMap(modification.getDependencies())) {
       myHelper.addModelReference(dependency.key());
       Element model = new Element(DEPEND_MODEL);
       model.setAttribute(MODEL_INDEX, myHelper.getImportIndex(dependency.key()));
@@ -60,7 +60,7 @@ public class HistoryWriter {
       dependencies.addContent(model);
     }
 
-    ListSequence.<StructureModification.Entry>fromList(modification.getData()).visitAll(new IVisitor<StructureModification.Entry>() {
+    ListSequence.fromList(modification.getData()).visitAll(new IVisitor<StructureModification.Entry>() {
       public void visit(StructureModification.Entry it) {
         elem.addContent(saveData(it));
       }

@@ -857,21 +857,21 @@
     <unitInfo nodeId="651246788329828609" fileName="LineToContentMapReader5Handler.java" startLine="16" startPosition="0" endLine="345" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.LineToContentMapReader5Handler" />
   </root>
   <root nodeId="8837498651724313880">
-    <nodeInfo nodeId="8837498651724313930" fileName="LineContentAccumulator.java" startLine="18" startPosition="37" endLine="19" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLineToContentMap" />
-    <nodeInfo nodeId="8837498651724313937" fileName="LineContentAccumulator.java" startLine="19" startPosition="114" endLine="20" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeIdStack" />
+    <nodeInfo nodeId="8837498651724313930" fileName="LineContentAccumulator.java" startLine="18" startPosition="37" endLine="19" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLineToContentMap" />
+    <nodeInfo nodeId="8837498651724313937" fileName="LineContentAccumulator.java" startLine="19" startPosition="101" endLine="20" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeIdStack" />
     <nodeInfo nodeId="8837498651724313885" fileName="LineContentAccumulator.java" startLine="25" startPosition="57" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7606567306781654147" fileName="LineContentAccumulator.java" startLine="26" startPosition="63" endLine="27" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7606567306781654137" fileName="LineContentAccumulator.java" startLine="30" startPosition="40" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8837498651724313896" fileName="LineContentAccumulator.java" startLine="31" startPosition="22" endLine="32" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8837498651724314041" fileName="LineContentAccumulator.java" startLine="36" startPosition="85" endLine="37" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8837498651724314064" fileName="LineContentAccumulator.java" startLine="38" startPosition="5" endLine="39" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8837498651724314041" fileName="LineContentAccumulator.java" startLine="36" startPosition="72" endLine="37" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8837498651724314064" fileName="LineContentAccumulator.java" startLine="38" startPosition="5" endLine="39" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8837498651724314088" fileName="LineContentAccumulator.java" startLine="42" startPosition="70" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8837498651724313969" fileName="LineContentAccumulator.java" startLine="46" startPosition="42" endLine="47" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8837498651724314102" fileName="LineContentAccumulator.java" startLine="50" startPosition="58" endLine="51" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8837498651724314117" fileName="LineContentAccumulator.java" startLine="54" startPosition="59" endLine="55" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8837498651724314165" fileName="LineContentAccumulator.java" startLine="58" startPosition="57" endLine="59" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8837498651724314181" fileName="LineContentAccumulator.java" startLine="60" startPosition="71" endLine="61" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8837498651724314134" fileName="LineContentAccumulator.java" startLine="63" startPosition="106" endLine="64" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8837498651724314181" fileName="LineContentAccumulator.java" startLine="60" startPosition="62" endLine="61" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8837498651724314134" fileName="LineContentAccumulator.java" startLine="63" startPosition="93" endLine="64" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8837498651724313956" fileName="LineContentAccumulator.java" startLine="68" startPosition="50" endLine="69" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8837498651724313945" fileName="LineContentAccumulator.java" startLine="21" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LineContentAccumulator#()V" />
     <nodeInfo nodeId="8837498651724314020" fileName="LineContentAccumulator.java" startLine="35" startPosition="64" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
@@ -887,18 +887,18 @@
     <nodeInfo nodeId="8837498651724313980" fileName="LineContentAccumulator.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveElement#(ILjetbrains/mps/smodel/persistence/lines/LineContent;)V" />
     <nodeInfo nodeId="8837498651724313922" fileName="LineContentAccumulator.java" startLine="57" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processText#(Ljava/lang/String;Lorg/xml/sax/Locator;)V" />
     <scopeInfo nodeId="8837498651724313948" fileName="LineContentAccumulator.java" startLine="22" startPosition="35" endLine="22" endPosition="35" />
-    <scopeInfo nodeId="8837498651724314022" fileName="LineContentAccumulator.java" startLine="36" startPosition="85" endLine="37" endPosition="78" />
+    <scopeInfo nodeId="8837498651724314022" fileName="LineContentAccumulator.java" startLine="36" startPosition="72" endLine="37" endPosition="65" />
     <scopeInfo nodeId="8837498651724314077" fileName="LineContentAccumulator.java" startLine="42" startPosition="70" endLine="43" endPosition="58" />
     <scopeInfo nodeId="8837498651724313903" fileName="LineContentAccumulator.java" startLine="46" startPosition="42" endLine="47" endPosition="100" />
     <scopeInfo nodeId="8837498651724313909" fileName="LineContentAccumulator.java" startLine="50" startPosition="58" endLine="51" endPosition="110" />
     <scopeInfo nodeId="8837498651724313917" fileName="LineContentAccumulator.java" startLine="54" startPosition="59" endLine="55" endPosition="111" />
-    <scopeInfo nodeId="8837498651724314172" fileName="LineContentAccumulator.java" startLine="60" startPosition="71" endLine="61" endPosition="94" />
-    <scopeInfo nodeId="8837498651724314133" fileName="LineContentAccumulator.java" startLine="63" startPosition="106" endLine="64" endPosition="85" />
+    <scopeInfo nodeId="8837498651724314172" fileName="LineContentAccumulator.java" startLine="60" startPosition="62" endLine="61" endPosition="94" />
+    <scopeInfo nodeId="8837498651724314133" fileName="LineContentAccumulator.java" startLine="63" startPosition="93" endLine="64" endPosition="72" />
     <scopeInfo nodeId="8837498651724313955" fileName="LineContentAccumulator.java" startLine="68" startPosition="50" endLine="69" endPosition="30" />
     <scopeInfo nodeId="8837498651724313945" fileName="LineContentAccumulator.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
     <scopeInfo nodeId="8837498651724313884" fileName="LineContentAccumulator.java" startLine="25" startPosition="57" endLine="27" endPosition="22" />
     <scopeInfo nodeId="8837498651724313895" fileName="LineContentAccumulator.java" startLine="30" startPosition="40" endLine="32" endPosition="56" />
-    <scopeInfo nodeId="8837498651724313983" fileName="LineContentAccumulator.java" startLine="35" startPosition="64" endLine="39" endPosition="90" />
+    <scopeInfo nodeId="8837498651724313983" fileName="LineContentAccumulator.java" startLine="35" startPosition="64" endLine="39" endPosition="77" />
     <scopeInfo nodeId="8837498651724314074" fileName="LineContentAccumulator.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="8837498651724314079" varName="locator" />
       <varInfo nodeId="8837498651724314081" varName="lineContent" />

@@ -13,8 +13,8 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignature
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNode;
 
 @MPSLaunch
 public class ChangeReturningType_Test extends BaseTransformationTest {
@@ -33,7 +33,7 @@ public class ChangeReturningType_Test extends BaseTransformationTest {
       SLinkOperations.setTarget(params.getDeclaration(), "returnType", SNodeOperations.copyNode(SNodeOperations.cast(this.getNodeById("1188338037704648623"), "jetbrains.mps.baseLanguage.structure.StringType")), true);
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052903029"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903028"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903037"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903028"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903037"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }
 }

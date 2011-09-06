@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.generator.GenerationCheckHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.resources.MResource;
 
@@ -38,7 +38,7 @@ public class MakeActionImpl {
     MakeSession session = new MakeSession(context, null, cleanMake) {
       @Override
       public void doExecute(Runnable scriptRunnable) {
-        if (GenerationCheckHelper.getInstance().checkModelsBeforeGenerationIfNeeded(MakeActionImpl.this.context.getProject(), MakeActionImpl.this.context, Sequence.<SModelDescriptor>fromIterable(MakeActionImpl.this.selectModels(inputRes)).toListSequence(), null)) {
+        if (GenerationCheckHelper.getInstance().checkModelsBeforeGenerationIfNeeded(MakeActionImpl.this.context.getProject(), MakeActionImpl.this.context, Sequence.fromIterable(MakeActionImpl.this.selectModels(inputRes)).toListSequence(), null)) {
           // ok to go 
           scriptRunnable.run();
         } else {

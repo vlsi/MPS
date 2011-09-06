@@ -41,7 +41,7 @@ public class RootDifferenceDialog extends BaseDialog {
   private SNodeId myRootId;
   private DiffEditor myOldEditor;
   private DiffEditor myNewEditor;
-  private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.<ChangeGroupBuilder>fromList(new ArrayList<ChangeGroupBuilder>());
+  private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.fromList(new ArrayList<ChangeGroupBuilder>());
   private DiffEditorsGroup myDiffEditorsGroup = new DiffEditorsGroup();
   private JPanel myTopPanel = new JPanel(new GridBagLayout());
   private JPanel myBottomPanel = new JPanel(new GridBagLayout());
@@ -109,20 +109,20 @@ public class RootDifferenceDialog extends BaseDialog {
   }
 
   private void highlightAllChanges() {
-    ListSequence.<ChangeGroupBuilder>fromList(myChangeGroupBuilders).visitAll(new IVisitor<ChangeGroupBuilder>() {
+    ListSequence.fromList(myChangeGroupBuilders).visitAll(new IVisitor<ChangeGroupBuilder>() {
       public void visit(ChangeGroupBuilder b) {
         b.invalidate();
       }
     });
 
-    for (ModelChange change : ListSequence.<ModelChange>fromList(myModelDialog.getChangesForRoot(myRootId))) {
+    for (ModelChange change : ListSequence.fromList(myModelDialog.getChangesForRoot(myRootId))) {
       higlightChange(myOldEditor, myModelDialog.getChangeSet().getOldModel(), change);
       higlightChange(myNewEditor, myModelDialog.getChangeSet().getNewModel(), change);
     }
     myOldEditor.repaintAndRebuildEditorMessages();
     myNewEditor.repaintAndRebuildEditorMessages();
 
-    int count = ListSequence.<ModelChange>fromList(myModelDialog.getChangesForRoot(myRootId)).count();
+    int count = ListSequence.fromList(myModelDialog.getChangesForRoot(myRootId)).count();
     myStatusBar.setText((count == 0 ?
       "no differences" :
       NameUtil.formatNumericalString(count, "difference")
@@ -133,7 +133,7 @@ public class RootDifferenceDialog extends BaseDialog {
     // create change group builder, trapecium strip and merge buttons painter 
     // 'mine' parameter means mine changeset, 'inspector' - highlight inspector editor component 
     ChangeGroupBuilder changeGroupBuilder = new ChangeGroupBuilder(null, myModelDialog.getChangeSet(), myOldEditor, myNewEditor, inspector);
-    ListSequence.<ChangeGroupBuilder>fromList(myChangeGroupBuilders).addElement(changeGroupBuilder);
+    ListSequence.fromList(myChangeGroupBuilders).addElement(changeGroupBuilder);
     ChangeTrapeciumStrip strip = new ChangeTrapeciumStrip(changeGroupBuilder);
     GridBagConstraints gbc = new GridBagConstraints(1, 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0);
     ((inspector ?
@@ -164,20 +164,20 @@ public class RootDifferenceDialog extends BaseDialog {
   /*package*/ void rollbackChanges(final Iterable<ModelChange> changes) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        assert Sequence.<ModelChange>fromIterable(changes).isNotEmpty();
-        final SModel model = Sequence.<ModelChange>fromIterable(changes).first().getChangeSet().getNewModel();
+        assert Sequence.fromIterable(changes).isNotEmpty();
+        final SModel model = Sequence.fromIterable(changes).first().getChangeSet().getNewModel();
         final NodeCopier nc = new NodeCopier(model);
-        Iterable<ModelChange> oppositeChanges = Sequence.<ModelChange>fromIterable(changes).<ModelChange>select(new ISelector<ModelChange, ModelChange>() {
+        Iterable<ModelChange> oppositeChanges = Sequence.fromIterable(changes).<ModelChange>select(new ISelector<ModelChange, ModelChange>() {
           public ModelChange select(ModelChange ch) {
             return ch.getOppositeChange();
           }
         });
-        for (ModelChange ch : Sequence.<ModelChange>fromIterable(oppositeChanges)) {
+        for (ModelChange ch : Sequence.fromIterable(oppositeChanges)) {
           if (ch instanceof NodeGroupChange) {
             ((NodeGroupChange) ch).prepare();
           }
         }
-        Sequence.<ModelChange>fromIterable(oppositeChanges).visitAll(new IVisitor<ModelChange>() {
+        Sequence.fromIterable(oppositeChanges).visitAll(new IVisitor<ModelChange>() {
           public void visit(ModelChange ch) {
             ch.apply(model, nc);
           }

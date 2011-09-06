@@ -26,9 +26,9 @@ public class LT_DotExpression_with_UnaryMinus_Test extends BaseTransformationTes
       final IEditor editor = TestBody.this.initEditor("4507831107788316824", "4507831107788317078");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "-");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.<String>fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.<String>fromListAndArray(new ArrayList<String>(), " DOWN"));
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.<String>fromListAndArray(new ArrayList<String>(), " ENTER"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }

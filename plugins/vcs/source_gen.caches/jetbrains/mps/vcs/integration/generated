@@ -19,7 +19,7 @@
   <dep model="r:351fe3d9-2ce5-4ea0-8afc-9b076259a949(jetbrains.mps.vcs.diff.merge.ui)" hash="-4fox27se9w9p8tmdfkfa7dudhf3l1xk" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
   <dep model="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)" hash="8g8uc5vgjayju3i8tign4zevav94jf7" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="exvglk6y5zgrj3jxf5fsomfzxig7fz3" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
   <common hash="-cxxmaunm7umkz0is66saj62obrmj9xf">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
   </common>

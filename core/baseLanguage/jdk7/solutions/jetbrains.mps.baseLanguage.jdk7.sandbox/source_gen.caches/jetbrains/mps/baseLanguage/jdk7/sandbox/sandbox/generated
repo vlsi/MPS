@@ -5,7 +5,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-6r5i332c87x8xyc3ivazsp5i0nmdz40" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="33wkjgiezx0fo2ce3ik1767insl4n2e" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="exvglk6y5zgrj3jxf5fsomfzxig7fz3" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
   <common hash="-4llisky5atxven5jxaumf2wrdf3hqj9" />
   <source id="616711547385063562" name="TestClass" hash="59jxuifbbzha5646tj0rfyralwsvqei">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

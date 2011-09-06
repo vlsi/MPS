@@ -165,7 +165,7 @@
     <nodeInfo nodeId="7012936564564596267" fileName="BaseMpsBeforeTaskProvider.java" startLine="89" startPosition="36" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7012936564564596267" fileName="BaseMpsBeforeTaskProvider.java" startLine="89" startPosition="36" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7037083547576022724" fileName="BaseMpsBeforeTaskProvider.java" startLine="126" startPosition="75" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseMpsBeforeRunTask#()V" />
-    <nodeInfo nodeId="7012936564564596304" fileName="BaseMpsBeforeTaskProvider.java" startLine="74" startPosition="149" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/reflect/Method;)Z" />
+    <nodeInfo nodeId="7012936564564596304" fileName="BaseMpsBeforeTaskProvider.java" startLine="74" startPosition="141" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/reflect/Method;)Z" />
     <nodeInfo nodeId="7037083547575991188" fileName="BaseMpsBeforeTaskProvider.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethod#(Lcom/intellij/execution/configurations/RunConfiguration;)Ljava/lang/reflect/Method;" />
     <nodeInfo nodeId="7876144211257451447" fileName="BaseMpsBeforeTaskProvider.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCreateMethodName#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="2930479450914408229" fileName="BaseMpsBeforeTaskProvider.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConfigureMethodName#()Ljava/lang/String;" />
@@ -238,7 +238,7 @@
     <scopeInfo nodeId="7012936564564596267" fileName="BaseMpsBeforeTaskProvider.java" startLine="89" startPosition="36" endLine="92" endPosition="7" />
     <scopeInfo nodeId="7037083547576022724" fileName="BaseMpsBeforeTaskProvider.java" startLine="126" startPosition="75" endLine="129" endPosition="5" />
     <scopeInfo nodeId="7037083547575991077" fileName="BaseMpsBeforeTaskProvider.java" startLine="35" startPosition="58" endLine="39" endPosition="16" />
-    <scopeInfo nodeId="7012936564564596304" fileName="BaseMpsBeforeTaskProvider.java" startLine="74" startPosition="149" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="7012936564564596304" fileName="BaseMpsBeforeTaskProvider.java" startLine="74" startPosition="141" endLine="78" endPosition="0" />
     <scopeInfo nodeId="7037083547575991188" fileName="BaseMpsBeforeTaskProvider.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="7037083547575991191" varName="configuration" />
     </scopeInfo>
@@ -280,7 +280,7 @@
       <varInfo nodeId="7012936564564596241" varName="task" />
       <varInfo nodeId="7012936564564596240" varName="runConfiguration" />
     </scopeInfo>
-    <unitInfo nodeId="7012936564564596304" fileName="BaseMpsBeforeTaskProvider.java" startLine="74" startPosition="125" endLine="78" endPosition="7" unitName="jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider$1" />
+    <unitInfo nodeId="7012936564564596304" fileName="BaseMpsBeforeTaskProvider.java" startLine="74" startPosition="117" endLine="78" endPosition="7" unitName="jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider$1" />
     <unitInfo nodeId="7037083547576022722" fileName="BaseMpsBeforeTaskProvider.java" startLine="126" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider$BaseMpsBeforeRunTask" />
     <unitInfo nodeId="7037083547575991021" fileName="BaseMpsBeforeTaskProvider.java" startLine="18" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider" />
   </root>

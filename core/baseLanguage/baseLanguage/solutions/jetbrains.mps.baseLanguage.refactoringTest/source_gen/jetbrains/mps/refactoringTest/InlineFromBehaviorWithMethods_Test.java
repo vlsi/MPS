@@ -11,8 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNode;
 
 @MPSLaunch
 public class InlineFromBehaviorWithMethods_Test extends BaseTransformationTest {
@@ -31,7 +31,7 @@ public class InlineFromBehaviorWithMethods_Test extends BaseTransformationTest {
       this.addNodeById("1230053040868");
       InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053040785"), "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall"));
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053040769"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053040817"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053040769"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053040817"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))));
     }
   }
 }

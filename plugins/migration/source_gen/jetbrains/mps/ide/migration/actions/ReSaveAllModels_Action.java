@@ -42,8 +42,8 @@ public class ReSaveAllModels_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
@@ -51,7 +51,7 @@ public class ReSaveAllModels_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (SModelDescriptor model : ListSequence.<SModelDescriptor>fromList(SModelRepository.getInstance().getModelDescriptors())) {
+      for (SModelDescriptor model : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
         if (!(SModelStereotype.isUserModel(model))) {
           continue;
         }

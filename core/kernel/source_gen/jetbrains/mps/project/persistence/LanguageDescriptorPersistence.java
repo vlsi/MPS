@@ -55,8 +55,8 @@ public class LanguageDescriptorPersistence {
             result_v3r4p8_a0a0d0d0a.setGenPath(result_v3r4p8_a0a3a0a0d0d0a);
           }
 
-          if (ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "models")).isNotEmpty()) {
-            result_v3r4p8_a0a0d0d0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "models")).first(), "modelRoot"), file, macros));
+          if (ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "models")).isNotEmpty()) {
+            result_v3r4p8_a0a0d0d0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "models")).first(), "modelRoot"), file, macros));
           } else {
             // old - for backwards compatibility 
             result_v3r4p8_a0a0d0d0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(languageElement, "modelRoot"), file, macros));
@@ -64,24 +64,24 @@ public class LanguageDescriptorPersistence {
 
           ModuleDescriptorPersistence.loadDependencies(result_v3r4p8_a0a0d0d0a, languageElement);
 
-          for (Element extendedLanguage : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "extendedLanguages")).first(), "extendedLanguage"))) {
+          for (Element extendedLanguage : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "extendedLanguages")).first(), "extendedLanguage"))) {
             result_v3r4p8_a0a0d0d0a.getExtendedLanguages().add(ModuleReference.fromString(extendedLanguage.getText()));
           }
 
-          Element autoImports = ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "accessoryModels")).first();
+          Element autoImports = ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "accessoryModels")).first();
           if (autoImports == null) {
             // deprecated name 
-            autoImports = ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "library")).first();
+            autoImports = ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "library")).first();
           }
-          for (Element modelElement : ListSequence.<Element>fromList(AttributeUtils.elementChildren(autoImports, "model"))) {
+          for (Element modelElement : ListSequence.fromList(AttributeUtils.elementChildren(autoImports, "model"))) {
             result_v3r4p8_a0a0d0d0a.getAccessoryModels().add(SModelReference.fromString(modelElement.getAttributeValue("modelUID")));
           }
 
-          for (Element generatorElement : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "generators")).first(), "generator"))) {
+          for (Element generatorElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "generators")).first(), "generator"))) {
             result_v3r4p8_a0a0d0d0a.getGenerators().add(GeneratorDescriptorPersistence.loadGeneratorDescriptor(generatorElement, file, macros));
           }
 
-          for (Element entryElement : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "classPath")).first(), "entry")).concat(ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "runtimeClassPath")).first(), "entry")))) {
+          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeClassPath")).first(), "entry")))) {
             // runtimeClassPath was left for compatibility 
             ModelRoot entry = new ModelRoot();
             entry.setPath(macros.expandPath(entryElement.getAttributeValue("path"), file));
@@ -89,34 +89,34 @@ public class LanguageDescriptorPersistence {
             result_v3r4p8_a0a0d0d0a.getStubModelEntries().add(entry);
           }
 
-          if (ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "stubModelEntries")).isNotEmpty()) {
+          if (ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "stubModelEntries")).isNotEmpty()) {
             result_v3r4p8_a0a0d0d0a.getStubModelEntries().addAll(ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(languageElement, "stubModelEntries"), file, macros));
           }
 
-          for (Element entryElement : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "languageRuntimeClassPath")).first(), "entry"))) {
+          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "languageRuntimeClassPath")).first(), "entry"))) {
             ModelRoot entry = new ModelRoot();
             entry.setPath(macros.expandPath(entryElement.getAttributeValue("path"), file));
             entry.setManager(LanguageID.JAVA_MANAGER);
             result_v3r4p8_a0a0d0d0a.getRuntimeStubModels().add(entry);
           }
 
-          if (ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "runtimeStubModels")).isNotEmpty()) {
-            for (Element entryElement : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "runtimeStubModels")).first(), "stubModelEntry"))) {
+          if (ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeStubModels")).isNotEmpty()) {
+            for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeStubModels")).first(), "stubModelEntry"))) {
               final ModelRoot result_v3r4p8_a0a0a32a0a0d0d0a = new ModelRoot();
               final String result_v3r4p8_a0a0a0a32a0a0d0d0a = macros.expandPath(entryElement.getAttributeValue("path"), file);
               result_v3r4p8_a0a0a32a0a0d0d0a.setPath(result_v3r4p8_a0a0a0a32a0a0d0d0a);
               final ModelRootManager result_v3r4p8_a1a0a0a32a0a0d0d0a = new ModelRootManager();
-              final String result_v3r4p8_a0a1a0a0a32a0a0d0d0a = AttributeUtils.stringWithDefault(ListSequence.<Element>fromList(AttributeUtils.elementChildren(entryElement, "manager")).first().getAttributeValue("moduleId"), "");
+              final String result_v3r4p8_a0a1a0a0a32a0a0d0d0a = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(entryElement, "manager")).first().getAttributeValue("moduleId"), "");
               result_v3r4p8_a1a0a0a32a0a0d0d0a.setModuleId(result_v3r4p8_a0a1a0a0a32a0a0d0d0a);
-              final String result_v3r4p8_a1a1a0a0a32a0a0d0d0a = AttributeUtils.stringWithDefault(ListSequence.<Element>fromList(AttributeUtils.elementChildren(entryElement, "manager")).first().getAttributeValue("className"), "");
+              final String result_v3r4p8_a1a1a0a0a32a0a0d0d0a = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(entryElement, "manager")).first().getAttributeValue("className"), "");
               result_v3r4p8_a1a0a0a32a0a0d0d0a.setClassName(result_v3r4p8_a1a1a0a0a32a0a0d0d0a);
               result_v3r4p8_a0a0a32a0a0d0d0a.setManager(result_v3r4p8_a1a0a0a32a0a0d0d0a);
               result_v3r4p8_a0a0d0d0a.getRuntimeStubModels().add(result_v3r4p8_a0a0a32a0a0d0d0a);
             }
           }
 
-          if (ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "stubSolutions")).isNotEmpty()) {
-            for (Element solutionElement : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "stubSolutions")).first(), "stubSolution"))) {
+          if (ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "stubSolutions")).isNotEmpty()) {
+            for (Element solutionElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "stubSolutions")).first(), "stubSolution"))) {
               final StubSolution result_v3r4p8_a0a0a52a0a0d0d0a = new StubSolution();
               final String result_v3r4p8_a0a0a0a52a0a0d0d0a = AttributeUtils.stringWithDefault(solutionElement.getAttributeValue("moduleName"), "");
               result_v3r4p8_a0a0a52a0a0d0d0a.setName(result_v3r4p8_a0a0a0a52a0a0d0d0a);
@@ -126,7 +126,7 @@ public class LanguageDescriptorPersistence {
             }
           }
 
-          for (Element entryElement : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(languageElement, "sourcePath")).first(), "source"))) {
+          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "sourcePath")).first(), "source"))) {
             result_v3r4p8_a0a0d0d0a.getSourcePaths().add(macros.expandPath(entryElement.getAttributeValue("path"), file));
           }
 
@@ -177,7 +177,7 @@ public class LanguageDescriptorPersistence {
         result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a4a0a0d0c);
 
         final Element result_v3r4p8_a6a0a0d0c = new Element("accessoryModels");
-        for (SModelReference model : ListSequence.<SModelReference>fromList(descriptor.getAccessoryModels())) {
+        for (SModelReference model : ListSequence.fromList(descriptor.getAccessoryModels())) {
           final Element result_v3r4p8_a0a0a6a0a0d0c = new Element("model");
           final String result_v3r4p8_a0a0a0a6a0a0d0c = model.toString();
           result_v3r4p8_a0a0a6a0a0d0c.setAttribute("modelUID", "" + result_v3r4p8_a0a0a0a6a0a0d0c);
@@ -186,7 +186,7 @@ public class LanguageDescriptorPersistence {
         result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a6a0a0d0c);
 
         final Element result_v3r4p8_a8a0a0d0c = new Element("generators");
-        for (GeneratorDescriptor generatorDescriptor : ListSequence.<GeneratorDescriptor>fromList(descriptor.getGenerators())) {
+        for (GeneratorDescriptor generatorDescriptor : ListSequence.fromList(descriptor.getGenerators())) {
           GeneratorDescriptorPersistence.saveGeneratorDescriptor(result_v3r4p8_a8a0a0d0c, generatorDescriptor, file, macros);
         }
         result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a8a0a0d0c);
@@ -201,7 +201,7 @@ public class LanguageDescriptorPersistence {
 
         if (!(descriptor.getRuntimeStubModels().isEmpty())) {
           final Element result_v3r4p8_a0a41a0a0d0c = new Element("runtimeStubModels");
-          for (ModelRoot entry : ListSequence.<ModelRoot>fromList(descriptor.getRuntimeStubModels())) {
+          for (ModelRoot entry : ListSequence.fromList(descriptor.getRuntimeStubModels())) {
             final Element result_v3r4p8_a0a0a0a41a0a0d0c = new Element("stubModelEntry");
             final String result_v3r4p8_a0a0a0a0a41a0a0d0c = macros.shrinkPath(entry.getPath(), file);
             result_v3r4p8_a0a0a0a41a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a0a41a0a0d0c);
@@ -218,7 +218,7 @@ public class LanguageDescriptorPersistence {
 
         if (!(descriptor.getStubSolutions().isEmpty())) {
           final Element result_v3r4p8_a0a61a0a0d0c = new Element("stubSolutions");
-          for (StubSolution entry : ListSequence.<StubSolution>fromList(descriptor.getStubSolutions())) {
+          for (StubSolution entry : ListSequence.fromList(descriptor.getStubSolutions())) {
             final Element result_v3r4p8_a0a0a0a61a0a0d0c = new Element("stubSolution");
             final String result_v3r4p8_a0a0a0a0a61a0a0d0c = entry.getName();
             result_v3r4p8_a0a0a0a61a0a0d0c.setAttribute("moduleName", "" + result_v3r4p8_a0a0a0a0a61a0a0d0c);
@@ -230,7 +230,7 @@ public class LanguageDescriptorPersistence {
         }
 
         final Element result_v3r4p8_a81a0a0d0c = new Element("sourcePath");
-        for (String p : ListSequence.<String>fromList(descriptor.getSourcePaths())) {
+        for (String p : ListSequence.fromList(descriptor.getSourcePaths())) {
           final Element result_v3r4p8_a0a0a81a0a0d0c = new Element("source");
           final String result_v3r4p8_a0a0a0a81a0a0d0c = macros.shrinkPath(p, file);
           result_v3r4p8_a0a0a81a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a81a0a0d0c);
@@ -246,7 +246,7 @@ public class LanguageDescriptorPersistence {
         ModuleDescriptorPersistence.saveDependencies(result_v3r4p8_a0a0d0c, descriptor);
 
         final Element result_v3r4p8_a52a0a0d0c = new Element("extendedLanguages");
-        for (ModuleReference ref : ListSequence.<ModuleReference>fromList(descriptor.getExtendedLanguages())) {
+        for (ModuleReference ref : ListSequence.fromList(descriptor.getExtendedLanguages())) {
           final Element result_v3r4p8_a0a0a52a0a0d0c = new Element("extendedLanguage");
           final String result_v3r4p8_a0a0a0a52a0a0d0c = ref.toString();
           result_v3r4p8_a0a0a52a0a0d0c.setText(result_v3r4p8_a0a0a0a52a0a0d0c);

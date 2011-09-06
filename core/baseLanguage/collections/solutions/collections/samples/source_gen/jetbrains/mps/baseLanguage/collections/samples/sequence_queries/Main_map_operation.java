@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.StopIteratingException;
   }
 
   /*package*/ static void main(String[] args) {
-    Iterable<Integer> nums = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
+    Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -68,7 +68,7 @@ __switch__:
     System.out.println("ignore odd numbers,");
     System.out.println("map each even number to two strings");
     final Wrappers._int count = new Wrappers._int(0);
-    Iterable<String> strings = Sequence.<Integer>fromIterable(nums).<String>translate(new ITranslator2<Integer, String>() {
+    Iterable<String> strings = Sequence.fromIterable(nums).<String>translate(new ITranslator2<Integer, String>() {
       public Iterable<String> translate(final Integer n) {
         return new Iterable<String>() {
           public Iterator<String> iterator() {
@@ -143,7 +143,7 @@ __switch__:
       }
     });
     System.out.println("count (before):" + count.value);
-    for (String s : Sequence.<String>fromIterable(strings)) {
+    for (String s : Sequence.fromIterable(strings)) {
       System.out.println(s);
     }
     System.out.println("count (after):" + count.value);

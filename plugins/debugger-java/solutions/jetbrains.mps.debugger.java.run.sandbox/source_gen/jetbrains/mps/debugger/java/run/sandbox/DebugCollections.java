@@ -33,31 +33,31 @@ public class DebugCollections {
   }
 
   public static void testMap() {
-    Map<String, String> strings = MapSequence.<String,String>fromMap(new HashMap<String, String>());
-    MapSequence.<String,String>fromMap(strings).put("one", "1");
-    MapSequence.<String,String>fromMap(strings).put("two", "2");
-    MapSequence.<String,String>fromMap(strings).put("three", "3");
+    Map<String, String> strings = MapSequence.fromMap(new HashMap<String, String>());
+    MapSequence.fromMap(strings).put("one", "1");
+    MapSequence.fromMap(strings).put("two", "2");
+    MapSequence.fromMap(strings).put("three", "3");
     System.out.println(strings);
   }
 
   public static void testSortedMap() {
-    Map<String, String> strings = SortedMapSequence.<String,String>fromMap(new TreeMap<String, String>());
-    MapSequence.<String,String>fromMap(strings).put("one", "1");
-    MapSequence.<String,String>fromMap(strings).put("two", "2");
-    MapSequence.<String,String>fromMap(strings).put("three", "3");
+    Map<String, String> strings = SortedMapSequence.fromMap(new TreeMap<String, String>());
+    MapSequence.fromMap(strings).put("one", "1");
+    MapSequence.fromMap(strings).put("two", "2");
+    MapSequence.fromMap(strings).put("three", "3");
     System.out.println(strings);
   }
 
   private static void testList() {
-    List<String> strings = ListSequence.<String>fromList(new ArrayList<String>());
-    ListSequence.<String>fromList(strings).addElement("alpha");
-    ListSequence.<String>fromList(strings).addElement("beta");
-    ListSequence.<String>fromList(strings).addElement("gamma");
+    List<String> strings = ListSequence.fromList(new ArrayList<String>());
+    ListSequence.fromList(strings).addElement("alpha");
+    ListSequence.fromList(strings).addElement("beta");
+    ListSequence.fromList(strings).addElement("gamma");
     System.out.println(strings);
   }
 
   private static void testLinkedList() {
-    Deque<String> strings = LinkedListSequence.<String>fromLinkedList(new LinkedList<String>());
+    Deque<String> strings = LinkedListSequence.fromLinkedList(new LinkedList<String>());
     LinkedListSequence.fromLinkedList(strings).addElement("alpha");
     LinkedListSequence.fromLinkedList(strings).addElement("beta");
     LinkedListSequence.fromLinkedList(strings).addElement("gamma");
@@ -65,7 +65,7 @@ public class DebugCollections {
   }
 
   public static void testSet() {
-    Set<String> strings = SetSequence.<String>fromSet(new HashSet<String>());
+    Set<String> strings = SetSequence.fromSet(new HashSet<String>());
     SetSequence.fromSet(strings).addElement("alpha");
     SetSequence.fromSet(strings).addElement("beta");
     SetSequence.fromSet(strings).addElement("gamma");
@@ -73,11 +73,11 @@ public class DebugCollections {
   }
 
   public static void testForeach() {
-    Set<String> strings = SetSequence.<String>fromSet(new HashSet<String>());
+    Set<String> strings = SetSequence.fromSet(new HashSet<String>());
     SetSequence.fromSet(strings).addElement("alpha");
     SetSequence.fromSet(strings).addElement("beta");
     SetSequence.fromSet(strings).addElement("gamma");
-    for (String i : SetSequence.<String>fromSet(strings)) {
+    for (String i : SetSequence.fromSet(strings)) {
       System.err.println(i);
     }
     for (String j : strings) {

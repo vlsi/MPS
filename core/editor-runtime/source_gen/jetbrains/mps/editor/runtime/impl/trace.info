@@ -13,7 +13,7 @@
     <nodeInfo nodeId="1182113674817443072" fileName="CellUtil.java" startLine="26" startPosition="101" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1182113674817443366" fileName="CellUtil.java" startLine="32" startPosition="51" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1182113674817158666" fileName="CellUtil.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefaultSideTransformTag#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5031719587736625268" fileName="CellUtil.java" startLine="40" startPosition="360" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5031719587736625268" fileName="CellUtil.java" startLine="40" startPosition="353" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="3425632322555626899" fileName="CellUtil.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinkDeclarationRole#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="5031719587736625224" fileName="CellUtil.java" startLine="39" startPosition="99" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1182113674817443063" fileName="CellUtil.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setupIDeprecatableStyles#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;)V" />
@@ -33,7 +33,7 @@
       <varInfo nodeId="1182113674817443095" varName="deprecatable" />
     </scopeInfo>
     <scopeInfo nodeId="1182113674817443336" fileName="CellUtil.java" startLine="32" startPosition="51" endLine="36" endPosition="16" />
-    <scopeInfo nodeId="5031719587736625268" fileName="CellUtil.java" startLine="40" startPosition="360" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5031719587736625268" fileName="CellUtil.java" startLine="40" startPosition="353" endLine="44" endPosition="0" />
     <scopeInfo nodeId="3425632322555626899" fileName="CellUtil.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="3425632322555626904" varName="linkDeclaration" />
     </scopeInfo>
@@ -52,7 +52,7 @@
       <varInfo nodeId="5031719587736625220" varName="conceptPropertyName" />
       <varInfo nodeId="5031719587736609121" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5031719587736625268" fileName="CellUtil.java" startLine="40" startPosition="337" endLine="44" endPosition="5" unitName="jetbrains.mps.editor.runtime.impl.CellUtil$1" />
+    <unitInfo nodeId="5031719587736625268" fileName="CellUtil.java" startLine="40" startPosition="330" endLine="44" endPosition="5" unitName="jetbrains.mps.editor.runtime.impl.CellUtil$1" />
     <unitInfo nodeId="1182113674817158574" fileName="CellUtil.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.CellUtil" />
   </root>
   <root nodeId="1182113674817458489">
@@ -72,14 +72,14 @@
   <root nodeId="1182113674817469564">
     <nodeInfo nodeId="1182113674817469596" fileName="LanguagesKeymapManager.java" startLine="33" startPosition="69" endLine="34" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1182113674817469611" fileName="LanguagesKeymapManager.java" startLine="37" startPosition="26" endLine="38" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817473378" fileName="LanguagesKeymapManager.java" startLine="40" startPosition="4" endLine="41" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguagesToKeyMaps" />
-    <nodeInfo nodeId="1182113674817469624" fileName="LanguagesKeymapManager.java" startLine="41" startPosition="173" endLine="42" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListener" />
+    <nodeInfo nodeId="1182113674817473378" fileName="LanguagesKeymapManager.java" startLine="40" startPosition="4" endLine="41" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguagesToKeyMaps" />
+    <nodeInfo nodeId="1182113674817469624" fileName="LanguagesKeymapManager.java" startLine="41" startPosition="140" endLine="42" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListener" />
     <nodeInfo nodeId="1182113674817469629" fileName="LanguagesKeymapManager.java" startLine="42" startPosition="129" endLine="43" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRepository" />
     <nodeInfo nodeId="1182113674817469632" fileName="LanguagesKeymapManager.java" startLine="43" startPosition="43" endLine="44" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassLoaderManager" />
     <nodeInfo nodeId="1182113674817469654" fileName="LanguagesKeymapManager.java" startLine="46" startPosition="124" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817469658" fileName="LanguagesKeymapManager.java" startLine="47" startPosition="30" endLine="48" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817469677" fileName="LanguagesKeymapManager.java" startLine="52" startPosition="70" endLine="53" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469680" fileName="LanguagesKeymapManager.java" startLine="54" startPosition="5" endLine="55" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1182113674817469680" fileName="LanguagesKeymapManager.java" startLine="54" startPosition="5" endLine="55" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1182113674817469689" fileName="LanguagesKeymapManager.java" startLine="58" startPosition="31" endLine="59" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817469694" fileName="LanguagesKeymapManager.java" startLine="59" startPosition="59" endLine="60" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817469703" fileName="LanguagesKeymapManager.java" startLine="65" startPosition="36" endLine="66" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -88,13 +88,13 @@
     <nodeInfo nodeId="1182113674817469725" fileName="LanguagesKeymapManager.java" startLine="74" startPosition="30" endLine="75" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817469735" fileName="LanguagesKeymapManager.java" startLine="78" startPosition="59" endLine="79" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1182113674817538823" fileName="LanguagesKeymapManager.java" startLine="83" startPosition="6" endLine="84" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817538829" fileName="LanguagesKeymapManager.java" startLine="85" startPosition="30" endLine="86" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1182113674817538829" fileName="LanguagesKeymapManager.java" startLine="85" startPosition="30" endLine="86" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817469792" fileName="LanguagesKeymapManager.java" startLine="88" startPosition="13" endLine="89" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1182113674817469803" fileName="LanguagesKeymapManager.java" startLine="90" startPosition="36" endLine="91" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817540166" fileName="LanguagesKeymapManager.java" startLine="92" startPosition="52" endLine="93" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1182113674817540166" fileName="LanguagesKeymapManager.java" startLine="92" startPosition="52" endLine="93" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817469784" fileName="LanguagesKeymapManager.java" startLine="96" startPosition="31" endLine="97" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817469762" fileName="LanguagesKeymapManager.java" startLine="100" startPosition="12" endLine="101" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817538812" fileName="LanguagesKeymapManager.java" startLine="102" startPosition="5" endLine="103" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1182113674817538812" fileName="LanguagesKeymapManager.java" startLine="102" startPosition="5" endLine="103" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817540188" fileName="LanguagesKeymapManager.java" startLine="106" startPosition="83" endLine="107" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1182113674817469837" fileName="LanguagesKeymapManager.java" startLine="107" startPosition="229" endLine="108" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1182113674817469842" fileName="LanguagesKeymapManager.java" startLine="108" startPosition="62" endLine="109" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
@@ -125,9 +125,9 @@
     <nodeInfo nodeId="1182113674817469798" fileName="LanguagesKeymapManager.java" startLine="89" startPosition="96" endLine="95" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1182113674817469580" fileName="LanguagesKeymapManager.java" startLine="132" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeModuleRemoved#(Ljetbrains/mps/project/IModule;)V" />
     <nodeInfo nodeId="1182113674817469662" fileName="LanguagesKeymapManager.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyMapsForLanguage#(Ljetbrains/mps/smodel/Language;)Ljava/util/List;" />
-    <nodeInfo nodeId="1182113674817469781" fileName="LanguagesKeymapManager.java" startLine="87" startPosition="169" endLine="98" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1182113674817469781" fileName="LanguagesKeymapManager.java" startLine="87" startPosition="162" endLine="98" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1182113674817469825" fileName="LanguagesKeymapManager.java" startLine="105" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findKeyMapClassByDeclaration#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Class;" />
-    <nodeInfo nodeId="1182113674817540157" fileName="LanguagesKeymapManager.java" startLine="86" startPosition="91" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1182113674817540157" fileName="LanguagesKeymapManager.java" startLine="86" startPosition="73" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1182113674817469756" fileName="LanguagesKeymapManager.java" startLine="84" startPosition="35" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1182113674817469729" fileName="LanguagesKeymapManager.java" startLine="77" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerLanguageKeyMaps#(Ljetbrains/mps/smodel/Language;)V" />
     <scopeInfo nodeId="1182113674817469573" fileName="LanguagesKeymapManager.java" startLine="127" startPosition="42" endLine="127" endPosition="42" />
@@ -136,7 +136,7 @@
     <scopeInfo nodeId="1182113674817469676" fileName="LanguagesKeymapManager.java" startLine="52" startPosition="70" endLine="53" endPosition="33" />
     <scopeInfo nodeId="1182113674817469702" fileName="LanguagesKeymapManager.java" startLine="65" startPosition="36" endLine="66" endPosition="37" />
     <scopeInfo nodeId="1182113674817469724" fileName="LanguagesKeymapManager.java" startLine="74" startPosition="30" endLine="75" endPosition="54" />
-    <scopeInfo nodeId="1182113674817469813" fileName="LanguagesKeymapManager.java" startLine="92" startPosition="52" endLine="93" endPosition="82" />
+    <scopeInfo nodeId="1182113674817469813" fileName="LanguagesKeymapManager.java" startLine="92" startPosition="52" endLine="93" endPosition="64" />
     <scopeInfo nodeId="1182113674817469782" fileName="LanguagesKeymapManager.java" startLine="96" startPosition="0" endLine="97" endPosition="23">
       <varInfo nodeId="1182113674817469789" varName="t" />
     </scopeInfo>
@@ -160,7 +160,7 @@
       <varInfo nodeId="1182113674817469647" varName="repository" />
       <varInfo nodeId="1182113674817469651" varName="libraryManager" />
     </scopeInfo>
-    <scopeInfo nodeId="1182113674817469669" fileName="LanguagesKeymapManager.java" startLine="51" startPosition="76" endLine="55" endPosition="93" />
+    <scopeInfo nodeId="1182113674817469669" fileName="LanguagesKeymapManager.java" startLine="51" startPosition="76" endLine="55" endPosition="60" />
     <scopeInfo nodeId="1182113674817469721" fileName="LanguagesKeymapManager.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="1182113674817469802" fileName="LanguagesKeymapManager.java" startLine="90" startPosition="36" endLine="94" endPosition="13">
       <varInfo nodeId="1182113674817469804" varName="keyMap" />
@@ -187,13 +187,13 @@
       <varInfo nodeId="1182113674817469862" varName="language" />
       <varInfo nodeId="1182113674817469838" varName="namespace" />
     </scopeInfo>
-    <scopeInfo nodeId="1182113674817540160" fileName="LanguagesKeymapManager.java" startLine="87" startPosition="169" endLine="98" endPosition="9" />
+    <scopeInfo nodeId="1182113674817540160" fileName="LanguagesKeymapManager.java" startLine="87" startPosition="162" endLine="98" endPosition="9" />
     <scopeInfo nodeId="1182113674817469825" fileName="LanguagesKeymapManager.java" startLine="105" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="1182113674817469829" varName="declaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1182113674817540157" fileName="LanguagesKeymapManager.java" startLine="86" startPosition="91" endLine="99" endPosition="7" />
+    <scopeInfo nodeId="1182113674817540157" fileName="LanguagesKeymapManager.java" startLine="86" startPosition="73" endLine="99" endPosition="7" />
     <scopeInfo nodeId="1182113674817469766" fileName="LanguagesKeymapManager.java" startLine="85" startPosition="30" endLine="99" endPosition="7" />
-    <scopeInfo nodeId="1182113674817469734" fileName="LanguagesKeymapManager.java" startLine="78" startPosition="59" endLine="103" endPosition="102">
+    <scopeInfo nodeId="1182113674817469734" fileName="LanguagesKeymapManager.java" startLine="78" startPosition="59" endLine="103" endPosition="69">
       <varInfo nodeId="1182113674817469736" varName="editorModelDescriptor" />
       <varInfo nodeId="1182113674817538824" varName="keyMaps" />
       <varInfo nodeId="1182113674817540135" varName="editorModel" />
@@ -290,7 +290,7 @@
     <nodeInfo nodeId="6001307866941538929" fileName="EditorsFinderManager.java" startLine="45" startPosition="67" endLine="46" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6001307866941557306" fileName="EditorsFinderManager.java" startLine="50" startPosition="26" endLine="51" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941538919" fileName="EditorsFinderManager.java" startLine="53" startPosition="4" endLine="54" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassLoaderManager" />
-    <nodeInfo nodeId="6001307866941563665" fileName="EditorsFinderManager.java" startLine="54" startPosition="50" endLine="55" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedEditors" />
+    <nodeInfo nodeId="6001307866941563665" fileName="EditorsFinderManager.java" startLine="54" startPosition="50" endLine="55" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedEditors" />
     <nodeInfo nodeId="6001307866941538923" fileName="EditorsFinderManager.java" startLine="57" startPosition="70" endLine="58" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941562927" fileName="EditorsFinderManager.java" startLine="61" startPosition="31" endLine="62" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941563656" fileName="EditorsFinderManager.java" startLine="65" startPosition="34" endLine="66" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -299,17 +299,17 @@
     <nodeInfo nodeId="6001307866941575634" fileName="EditorsFinderManager.java" startLine="76" startPosition="252" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6001307866941646991" fileName="EditorsFinderManager.java" startLine="78" startPosition="37" endLine="79" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6001307866941647643" fileName="EditorsFinderManager.java" startLine="80" startPosition="5" endLine="81" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941647002" fileName="EditorsFinderManager.java" startLine="82" startPosition="64" endLine="83" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6001307866941647002" fileName="EditorsFinderManager.java" startLine="82" startPosition="64" endLine="83" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6001307866941647045" fileName="EditorsFinderManager.java" startLine="85" startPosition="13" endLine="86" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6001307866941647019" fileName="EditorsFinderManager.java" startLine="87" startPosition="44" endLine="88" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941647028" fileName="EditorsFinderManager.java" startLine="89" startPosition="44" endLine="90" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941647037" fileName="EditorsFinderManager.java" startLine="91" startPosition="47" endLine="92" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941647051" fileName="EditorsFinderManager.java" startLine="94" startPosition="7" endLine="95" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6001307866941647054" fileName="EditorsFinderManager.java" startLine="96" startPosition="5" endLine="97" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941647113" fileName="EditorsFinderManager.java" startLine="98" startPosition="25" endLine="99" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6001307866941647113" fileName="EditorsFinderManager.java" startLine="98" startPosition="25" endLine="99" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941647091" fileName="EditorsFinderManager.java" startLine="101" startPosition="11" endLine="102" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6001307866941647099" fileName="EditorsFinderManager.java" startLine="102" startPosition="59" endLine="103" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941647104" fileName="EditorsFinderManager.java" startLine="103" startPosition="30" endLine="104" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6001307866941647104" fileName="EditorsFinderManager.java" startLine="103" startPosition="30" endLine="104" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941647068" fileName="EditorsFinderManager.java" startLine="105" startPosition="41" endLine="106" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941647073" fileName="EditorsFinderManager.java" startLine="106" startPosition="21" endLine="107" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6001307866941647080" fileName="EditorsFinderManager.java" startLine="108" startPosition="40" endLine="109" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -320,11 +320,11 @@
     <nodeInfo nodeId="6001307866941577533" fileName="EditorsFinderManager.java" startLine="121" startPosition="141" endLine="122" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6001307866941577850" fileName="EditorsFinderManager.java" startLine="124" startPosition="126" endLine="125" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6001307866941577540" fileName="EditorsFinderManager.java" startLine="125" startPosition="49" endLine="126" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941577863" fileName="EditorsFinderManager.java" startLine="127" startPosition="9" endLine="128" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941646910" fileName="EditorsFinderManager.java" startLine="128" startPosition="98" endLine="129" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941577875" fileName="EditorsFinderManager.java" startLine="129" startPosition="88" endLine="130" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941646595" fileName="EditorsFinderManager.java" startLine="131" startPosition="75" endLine="132" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941646942" fileName="EditorsFinderManager.java" startLine="133" startPosition="99" endLine="134" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6001307866941577863" fileName="EditorsFinderManager.java" startLine="127" startPosition="9" endLine="128" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6001307866941646910" fileName="EditorsFinderManager.java" startLine="128" startPosition="91" endLine="129" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6001307866941577875" fileName="EditorsFinderManager.java" startLine="129" startPosition="81" endLine="130" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6001307866941646595" fileName="EditorsFinderManager.java" startLine="131" startPosition="68" endLine="132" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6001307866941646942" fileName="EditorsFinderManager.java" startLine="133" startPosition="92" endLine="134" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="6001307866941646946" fileName="EditorsFinderManager.java" startLine="135" startPosition="18" endLine="136" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941646608" fileName="EditorsFinderManager.java" startLine="137" startPosition="11" endLine="138" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6001307866941646618" fileName="EditorsFinderManager.java" startLine="139" startPosition="35" endLine="140" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -365,8 +365,8 @@
     <nodeInfo nodeId="6001307866941538895" fileName="EditorsFinderManager.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
     <nodeInfo nodeId="6001307866941577515" fileName="EditorsFinderManager.java" startLine="119" startPosition="78" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6001307866941577535" fileName="EditorsFinderManager.java" startLine="123" startPosition="9" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6001307866941646834" fileName="EditorsFinderManager.java" startLine="147" startPosition="141" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="6001307866941646889" fileName="EditorsFinderManager.java" startLine="153" startPosition="241" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6001307866941646834" fileName="EditorsFinderManager.java" startLine="147" startPosition="134" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6001307866941646889" fileName="EditorsFinderManager.java" startLine="153" startPosition="234" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="6001307866941557302" fileName="EditorsFinderManager.java" startLine="193" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearCaches#()V" />
     <nodeInfo nodeId="6001307866941557308" fileName="EditorsFinderManager.java" startLine="197" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/editor/runtime/impl/EditorsFinderManager;" />
     <nodeInfo nodeId="6001307866941575644" fileName="EditorsFinderManager.java" startLine="205" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -378,7 +378,7 @@
     <nodeInfo nodeId="6001307866941540641" fileName="EditorsFinderManager.java" startLine="47" startPosition="0" endLine="53" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadListener" />
     <nodeInfo nodeId="6001307866941538899" fileName="EditorsFinderManager.java" startLine="68" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
     <nodeInfo nodeId="6001307866941647016" fileName="EditorsFinderManager.java" startLine="84" startPosition="32" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6001307866941647011" fileName="EditorsFinderManager.java" startLine="83" startPosition="98" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6001307866941647011" fileName="EditorsFinderManager.java" startLine="83" startPosition="78" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6001307866941647065" fileName="EditorsFinderManager.java" startLine="100" startPosition="12" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="6001307866941647063" fileName="EditorsFinderManager.java" startLine="100" startPosition="10" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6001307866941646994" fileName="EditorsFinderManager.java" startLine="81" startPosition="258" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -411,8 +411,8 @@
       <varInfo nodeId="6001307866941647042" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="6001307866941647036" fileName="EditorsFinderManager.java" startLine="91" startPosition="47" endLine="92" endPosition="23" />
-    <scopeInfo nodeId="6001307866941647112" fileName="EditorsFinderManager.java" startLine="98" startPosition="25" endLine="99" endPosition="78" />
-    <scopeInfo nodeId="6001307866941646931" fileName="EditorsFinderManager.java" startLine="133" startPosition="99" endLine="134" endPosition="21" />
+    <scopeInfo nodeId="6001307866941647112" fileName="EditorsFinderManager.java" startLine="98" startPosition="25" endLine="99" endPosition="58" />
+    <scopeInfo nodeId="6001307866941646931" fileName="EditorsFinderManager.java" startLine="133" startPosition="92" endLine="134" endPosition="21" />
     <scopeInfo nodeId="6001307866941646945" fileName="EditorsFinderManager.java" startLine="135" startPosition="18" endLine="136" endPosition="90" />
     <scopeInfo nodeId="6001307866941646617" fileName="EditorsFinderManager.java" startLine="139" startPosition="35" endLine="140" endPosition="30" />
     <scopeInfo nodeId="6001307866941646781" fileName="EditorsFinderManager.java" startLine="144" startPosition="251" endLine="145" endPosition="132" />
@@ -451,13 +451,13 @@
     <scopeInfo nodeId="6001307866941531765" fileName="EditorsFinderManager.java" startLine="56" startPosition="0" endLine="59" endPosition="3">
       <varInfo nodeId="6001307866941538916" varName="classLoaderManager" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941647090" fileName="EditorsFinderManager.java" startLine="101" startPosition="11" endLine="104" endPosition="77">
+    <scopeInfo nodeId="6001307866941647090" fileName="EditorsFinderManager.java" startLine="101" startPosition="11" endLine="104" endPosition="57">
       <varInfo nodeId="6001307866941647092" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="6001307866941538891" fileName="EditorsFinderManager.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="6001307866941538895" fileName="EditorsFinderManager.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="6001307866941646834" fileName="EditorsFinderManager.java" startLine="147" startPosition="141" endLine="151" endPosition="0" />
-    <scopeInfo nodeId="6001307866941646889" fileName="EditorsFinderManager.java" startLine="153" startPosition="241" endLine="157" endPosition="0" />
+    <scopeInfo nodeId="6001307866941646834" fileName="EditorsFinderManager.java" startLine="147" startPosition="134" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="6001307866941646889" fileName="EditorsFinderManager.java" startLine="153" startPosition="234" endLine="157" endPosition="0" />
     <scopeInfo nodeId="6001307866941557302" fileName="EditorsFinderManager.java" startLine="193" startPosition="0" endLine="197" endPosition="0" />
     <scopeInfo nodeId="6001307866941557308" fileName="EditorsFinderManager.java" startLine="197" startPosition="0" endLine="201" endPosition="0" />
     <scopeInfo nodeId="6001307866941575644" fileName="EditorsFinderManager.java" startLine="205" startPosition="0" endLine="209" endPosition="0">
@@ -489,7 +489,7 @@
       <varInfo nodeId="6001307866941575736" varName="editorModelDescriptor" />
       <varInfo nodeId="6001307866941575721" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941646579" fileName="EditorsFinderManager.java" startLine="131" startPosition="75" endLine="158" endPosition="11">
+    <scopeInfo nodeId="6001307866941646579" fileName="EditorsFinderManager.java" startLine="131" startPosition="68" endLine="158" endPosition="11">
       <varInfo nodeId="6001307866941646596" varName="abstractConceptDeclaration" />
       <varInfo nodeId="6001307866941646609" varName="nodeEditor" />
     </scopeInfo>
@@ -514,8 +514,8 @@
     <scopeInfo nodeId="6001307866941575858" fileName="EditorsFinderManager.java" startLine="115" startPosition="0" endLine="164" endPosition="0">
       <varInfo nodeId="6001307866941575863" varName="nodeToEdit" />
     </scopeInfo>
-    <unitInfo nodeId="6001307866941646834" fileName="EditorsFinderManager.java" startLine="147" startPosition="122" endLine="151" endPosition="13" unitName="jetbrains.mps.editor.runtime.impl.EditorsFinderManager$3" />
-    <unitInfo nodeId="6001307866941646889" fileName="EditorsFinderManager.java" startLine="153" startPosition="222" endLine="157" endPosition="13" unitName="jetbrains.mps.editor.runtime.impl.EditorsFinderManager$3" />
+    <unitInfo nodeId="6001307866941646834" fileName="EditorsFinderManager.java" startLine="147" startPosition="115" endLine="151" endPosition="13" unitName="jetbrains.mps.editor.runtime.impl.EditorsFinderManager$3" />
+    <unitInfo nodeId="6001307866941646889" fileName="EditorsFinderManager.java" startLine="153" startPosition="215" endLine="157" endPosition="13" unitName="jetbrains.mps.editor.runtime.impl.EditorsFinderManager$3" />
     <unitInfo nodeId="6001307866941557293" fileName="EditorsFinderManager.java" startLine="48" startPosition="48" endLine="53" endPosition="3" unitName="jetbrains.mps.editor.runtime.impl.EditorsFinderManager$1" />
     <unitInfo nodeId="6001307866941575637" fileName="EditorsFinderManager.java" startLine="202" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.EditorsFinderManager$DefaultInterfaceEditor" />
     <unitInfo nodeId="6001307866941575873" fileName="EditorsFinderManager.java" startLine="117" startPosition="69" endLine="162" endPosition="5" unitName="jetbrains.mps.editor.runtime.impl.EditorsFinderManager$2" />

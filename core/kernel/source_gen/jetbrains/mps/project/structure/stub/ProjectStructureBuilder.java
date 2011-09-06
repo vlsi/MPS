@@ -261,8 +261,8 @@ public abstract class ProjectStructureBuilder {
   }
 
   protected void collectModels(SNode module, ModuleDescriptor descriptor) {
-    for (SModelReference ref : Sequence.<SModelReference>fromIterable(loadReferences(module, descriptor))) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(module, "model", true)).addElement(convert(ref));
+    for (SModelReference ref : Sequence.fromIterable(loadReferences(module, descriptor))) {
+      ListSequence.fromList(SLinkOperations.getTargets(module, "model", true)).addElement(convert(ref));
     }
   }
 

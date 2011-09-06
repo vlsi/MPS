@@ -47,13 +47,13 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.<String,Object>fromMap(_params).put("node", node);
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
@@ -62,8 +62,8 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.concept");
-      SNode concept = SNodeOperations.getConceptDeclaration(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")));
-      ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getComponent(MPSEditorOpener.class).editNode(concept, ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+      SNode concept = SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
+      ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(MPSEditorOpener.class).editNode(concept, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToConceptDeclaration", t);

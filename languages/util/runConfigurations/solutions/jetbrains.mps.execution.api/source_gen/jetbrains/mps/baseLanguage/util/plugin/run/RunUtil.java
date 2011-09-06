@@ -37,7 +37,7 @@ public class RunUtil {
   }
 
   public static boolean makeBeforeRun(Project project, SNode... nodes) {
-    return makeBeforeRun(project, Sequence.<SNode>fromIterable(Sequence.fromArray(nodes)).toListSequence());
+    return makeBeforeRun(project, Sequence.fromIterable(Sequence.fromArray(nodes)).toListSequence());
   }
 
   public static boolean makeBeforeRun(final Project project, final List<SNode> nodes) {
@@ -45,10 +45,10 @@ public class RunUtil {
       throw new RuntimeException("Can't run make from the event dispatch thread");
     }
 
-    final Wrappers._T<List<SModelDescriptor>> descriptors = new Wrappers._T<List<SModelDescriptor>>(ListSequence.<SModelDescriptor>fromList(new ArrayList<SModelDescriptor>()));
+    final Wrappers._T<List<SModelDescriptor>> descriptors = new Wrappers._T<List<SModelDescriptor>>(ListSequence.fromList(new ArrayList<SModelDescriptor>()));
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        descriptors.value = ListSequence.<SNode>fromList(nodes).<SModelDescriptor>select(new ISelector<SNode, SModelDescriptor>() {
+        descriptors.value = ListSequence.fromList(nodes).<SModelDescriptor>select(new ISelector<SNode, SModelDescriptor>() {
           public SModelDescriptor select(SNode it) {
             return SNodeOperations.getModel(it).getModelDescriptor();
           }
@@ -63,7 +63,7 @@ public class RunUtil {
   }
 
   private static boolean makeModels(Project project, List<SModelDescriptor> models) {
-    if (ListSequence.<SModelDescriptor>fromList(models).isEmpty()) {
+    if (ListSequence.fromList(models).isEmpty()) {
       return true;
     }
 

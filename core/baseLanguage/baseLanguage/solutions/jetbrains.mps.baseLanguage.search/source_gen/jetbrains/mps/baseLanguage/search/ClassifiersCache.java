@@ -25,8 +25,8 @@ import jetbrains.mps.cache.CachesManager;
 /*package*/ class ClassifiersCache extends AbstractCache {
   private static final KeyProducer keyProducer = new KeyProducer();
 
-  private Map<String, List<SNode>> myClassifiersByName = MapSequence.<String,List<SNode>>fromMap(new HashMap<String, List<SNode>>());
-  private Map<SNode, String> myNameByClassifier = MapSequence.<SNode,String>fromMap(new HashMap<SNode, String>());
+  private Map<String, List<SNode>> myClassifiersByName = MapSequence.fromMap(new HashMap<String, List<SNode>>());
+  private Map<SNode, String> myNameByClassifier = MapSequence.fromMap(new HashMap<SNode, String>());
 
   protected ClassifiersCache(Object key, SModelDescriptor model) {
     super(key);
@@ -58,10 +58,10 @@ import jetbrains.mps.cache.CachesManager;
   private void putClassifier(SNode classifier) {
     String name = this.getRefName(classifier);
     if (!(MapSequence.fromMap(myClassifiersByName).containsKey(name))) {
-      MapSequence.<String,List<SNode>>fromMap(myClassifiersByName).put(name, new ArrayList<SNode>());
+      MapSequence.fromMap(myClassifiersByName).put(name, new ArrayList<SNode>());
     }
-    ListSequence.<SNode>fromList(MapSequence.<String,List<SNode>>fromMap(myClassifiersByName).get(name)).addElement(classifier);
-    MapSequence.<SNode,String>fromMap(myNameByClassifier).put(classifier, name);
+    ListSequence.fromList(MapSequence.fromMap(myClassifiersByName).get(name)).addElement(classifier);
+    MapSequence.fromMap(myNameByClassifier).put(classifier, name);
     List<SNode> list = SLinkOperations.getTargets(classifier, "staticInnerClassifiers", true);
     for (SNode innerClassifier : list) {
       this.putClassifier(innerClassifier);
@@ -71,9 +71,9 @@ import jetbrains.mps.cache.CachesManager;
   private void removeClassifier(SNode classifier) {
     String name = this.getRefName(classifier);
     if (MapSequence.fromMap(myClassifiersByName).containsKey(name)) {
-      List<SNode> nodes = MapSequence.<String,List<SNode>>fromMap(myClassifiersByName).get(name);
+      List<SNode> nodes = MapSequence.fromMap(myClassifiersByName).get(name);
       nodes.remove(classifier);
-      if (ListSequence.<SNode>fromList(nodes).isEmpty()) {
+      if (ListSequence.fromList(nodes).isEmpty()) {
         MapSequence.fromMap(myClassifiersByName).removeKey(name);
       }
     }
@@ -101,7 +101,7 @@ import jetbrains.mps.cache.CachesManager;
   }
 
   public List<SNode> getClassifiersByRefName(String refName) {
-    List<SNode> result = MapSequence.<String,List<SNode>>fromMap(myClassifiersByName).get(refName);
+    List<SNode> result = MapSequence.fromMap(myClassifiersByName).get(refName);
     if (result != null) {
       return result;
     }
@@ -141,11 +141,11 @@ import jetbrains.mps.cache.CachesManager;
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") && "name".equals(event.getPropertyName())) {
       SNode classifier = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
       List<SNode> classifiersToUpdate = new ArrayList<SNode>();
-      ListSequence.<SNode>fromList(classifiersToUpdate).addElement(classifier);
+      ListSequence.fromList(classifiersToUpdate).addElement(classifier);
       collectInnerClasses(classifier, classifiersToUpdate);
       for (SNode cl : classifiersToUpdate) {
-        String oldRefName = MapSequence.<SNode,String>fromMap(myNameByClassifier).get(cl);
-        List<SNode> nodes = MapSequence.<String,List<SNode>>fromMap(myClassifiersByName).get(oldRefName);
+        String oldRefName = MapSequence.fromMap(myNameByClassifier).get(cl);
+        List<SNode> nodes = MapSequence.fromMap(myClassifiersByName).get(oldRefName);
         if (nodes != null) {
           nodes.remove(cl);
         }

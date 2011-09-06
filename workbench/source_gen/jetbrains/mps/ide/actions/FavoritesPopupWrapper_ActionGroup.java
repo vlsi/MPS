@@ -21,7 +21,7 @@ public class FavoritesPopupWrapper_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(FavoritesPopupWrapper_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.FavoritesPopupWrapper_ActionGroup";
 
-  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.<Pair<ActionPlace, Condition<BaseAction>>>fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
+  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
 
   public FavoritesPopupWrapper_ActionGroup() {
     super("FavoritesPopupWrapper", ID);

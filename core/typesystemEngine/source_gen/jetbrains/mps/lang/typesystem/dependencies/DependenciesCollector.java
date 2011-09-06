@@ -23,21 +23,21 @@ public class DependenciesCollector {
   }
 
   public void collectDependencies(SNode inferenceRule, Map<SNode, Pair<SNode, SNode>> dependencies, Set<SNode> leaves) {
-    Set<SNode> roots = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+    Set<SNode> roots = SetSequence.fromSet(new HashSet<SNode>());
     for (SNode applicableNodeReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", false, new String[]{})) {
       if (SLinkOperations.getTarget(applicableNodeReference, "applicableNode", false) == SLinkOperations.getTarget(inferenceRule, "applicableNode", true)) {
         SetSequence.fromSet(roots).addElement(applicableNodeReference);
       }
     }
-    int prevSize = SetSequence.<SNode>fromSet(MapSequence.fromMap(dependencies).keySet()).count();
-    int leavesSize = SetSequence.<SNode>fromSet(leaves).count();
+    int prevSize = SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).count();
+    int leavesSize = SetSequence.fromSet(leaves).count();
     for (SNode root : roots) {
-      MapSequence.<SNode,Pair<SNode, SNode>>fromMap(dependencies).put(root, null);
+      MapSequence.fromMap(dependencies).put(root, null);
     }
-    while (SetSequence.<SNode>fromSet(MapSequence.fromMap(dependencies).keySet()).count() > prevSize || SetSequence.<SNode>fromSet(leaves).count() > leavesSize) {
-      prevSize = SetSequence.<SNode>fromSet(MapSequence.fromMap(dependencies).keySet()).count();
-      leavesSize = SetSequence.<SNode>fromSet(leaves).count();
-      for (SNode node : SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(dependencies).keySet())) {
+    while (SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).count() > prevSize || SetSequence.fromSet(leaves).count() > leavesSize) {
+      prevSize = SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).count();
+      leavesSize = SetSequence.fromSet(leaves).count();
+      for (SNode node : SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(dependencies).keySet())) {
         SNode parent = SNodeOperations.getParent(node);
         {
           SNode matchedNode_bcwvc2_b0c0f0a = parent;
@@ -50,7 +50,7 @@ public class DependenciesCollector {
               }
             }
             if (matches_bcwvc2_a1a2a5a0) {
-              if (!(SetSequence.<SNode>fromSet(roots).contains(node))) {
+              if (!(SetSequence.fromSet(roots).contains(node))) {
                 SetSequence.fromSet(leaves).addElement(node);
               }
             } else {
@@ -63,7 +63,7 @@ public class DependenciesCollector {
               }
               if (matches_bcwvc2_b1a2a5a0) {
                 if (SLinkOperations.getTarget(matchedNode_bcwvc2_b0c0f0a, "rValue", true) == node) {
-                  MapSequence.<SNode,Pair<SNode, SNode>>fromMap(dependencies).put(SLinkOperations.getTarget(matchedNode_bcwvc2_b0c0f0a, "lValue", true), new Pair<SNode, SNode>(node, new DependenciesCollector.QuotationClass_bcwvc2_a1a1a0a0a0a0c0a2a1a1a2a5a0().createNode()));
+                  MapSequence.fromMap(dependencies).put(SLinkOperations.getTarget(matchedNode_bcwvc2_b0c0f0a, "lValue", true), new Pair<SNode, SNode>(node, new DependenciesCollector.QuotationClass_bcwvc2_a1a1a0a0a0a0c0a2a1a1a2a5a0().createNode()));
                 }
               } else {
                 boolean matches_bcwvc2_c1a2a5a0 = false;
@@ -75,7 +75,7 @@ public class DependenciesCollector {
                 }
                 if (matches_bcwvc2_c1a2a5a0) {
                   if (SLinkOperations.getTarget(matchedNode_bcwvc2_b0c0f0a, "initializer", true) == node) {
-                    MapSequence.<SNode,Pair<SNode, SNode>>fromMap(dependencies).put(matchedNode_bcwvc2_b0c0f0a, new Pair<SNode, SNode>(node, new DependenciesCollector.QuotationClass_bcwvc2_a1a1a0a0a0a0c0a2a0c0b0b0c0f0a().createNode()));
+                    MapSequence.fromMap(dependencies).put(matchedNode_bcwvc2_b0c0f0a, new Pair<SNode, SNode>(node, new DependenciesCollector.QuotationClass_bcwvc2_a1a1a0a0a0a0c0a2a0c0b0b0c0f0a().createNode()));
                   }
                 } else {
                   SNode matchedNode_bcwvc2_a1a2a5a0 = node;
@@ -90,7 +90,7 @@ public class DependenciesCollector {
                     if (matches_bcwvc2_a0b0c0f0a) {
                       for (SNode variableReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
                         if (SLinkOperations.getTarget(variableReference, "variableDeclaration", false) == node) {
-                          MapSequence.<SNode,Pair<SNode, SNode>>fromMap(dependencies).put(variableReference, new Pair<SNode, SNode>(node, new DependenciesCollector.QuotationClass_bcwvc2_a1a1a0a0a0a0a0c0b0a2a0c0a2a1a1a2a5a0().createNode()));
+                          MapSequence.fromMap(dependencies).put(variableReference, new Pair<SNode, SNode>(node, new DependenciesCollector.QuotationClass_bcwvc2_a1a1a0a0a0a0a0c0b0a2a0c0a2a1a1a2a5a0().createNode()));
                         }
                       }
                     } else {
@@ -116,8 +116,8 @@ public class DependenciesCollector {
                                   return SNodeOperations.isInstanceOf(((SNode) p0), "jetbrains.mps.baseLanguage.structure.Statement");
                                 }
                               });
-                              if (ListSequence.<SNode>fromList(list).indexOf(nodeStatement) <= ListSequence.<SNode>fromList(list).indexOf(usageStatement)) {
-                                MapSequence.<SNode,Pair<SNode, SNode>>fromMap(dependencies).put(reference, new Pair<SNode, SNode>(node, new DependenciesCollector.QuotationClass_bcwvc2_a1a1a0a0e0a0b0a0c0a2a1a0c0a2a0c0b0b0c0f0a().createNode()));
+                              if (ListSequence.fromList(list).indexOf(nodeStatement) <= ListSequence.fromList(list).indexOf(usageStatement)) {
+                                MapSequence.fromMap(dependencies).put(reference, new Pair<SNode, SNode>(node, new DependenciesCollector.QuotationClass_bcwvc2_a1a1a0a0e0a0b0a0c0a2a1a0c0a2a0c0b0b0c0f0a().createNode()));
                               }
                             }
                           }

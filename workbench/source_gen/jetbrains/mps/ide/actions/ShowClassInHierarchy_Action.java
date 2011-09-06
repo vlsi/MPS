@@ -53,17 +53,17 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.<String,Object>fromMap(_params).put("node", node);
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorCell") == null) {
+    MapSequence.fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("editorCell") == null) {
       return false;
     }
     return true;
@@ -72,8 +72,8 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode classNode = ShowClassInHierarchy_Action.this.getContextClassifier(_params);
-      BaseLanguageHierarchyViewTool tool = ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getComponent(BaseLanguageHierarchyViewTool.class);
-      tool.showItemInHierarchy(classNode, ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+      BaseLanguageHierarchyViewTool tool = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(BaseLanguageHierarchyViewTool.class);
+      tool.showItemInHierarchy(classNode, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -83,7 +83,7 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
   }
 
   private SNode getContextClassifier(final Map<String, Object> _params) {
-    SNode refNode = ((EditorCell) MapSequence.<String,Object>fromMap(_params).get("editorCell")).getSNodeWRTReference();
+    SNode refNode = ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNodeWRTReference();
     if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.baseLanguage.structure.Classifier")) {
       return SNodeOperations.cast(refNode, "jetbrains.mps.baseLanguage.structure.Classifier");
     }
@@ -93,7 +93,7 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
         return classifier;
       }
     }
-    SNode outerClass = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.Interface"}, true, false), "jetbrains.mps.baseLanguage.structure.Classifier");
+    SNode outerClass = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(((SNode) MapSequence.fromMap(_params).get("node")), new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.Interface"}, true, false), "jetbrains.mps.baseLanguage.structure.Classifier");
     return outerClass;
   }
 }

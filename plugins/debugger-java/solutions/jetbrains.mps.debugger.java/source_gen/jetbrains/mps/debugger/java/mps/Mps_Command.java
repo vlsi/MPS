@@ -100,7 +100,7 @@ public class Mps_Command {
   }
 
   private static List<String> getClassPath() {
-    Iterable<String> currentClassPath = ListSequence.<String>fromList(ListSequence.<String>fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(File.pathSeparator))).<String>select(new ISelector<String, String>() {
+    Iterable<String> currentClassPath = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(File.pathSeparator))).<String>select(new ISelector<String, String>() {
       public String select(String it) {
         try {
           return new File(it).getCanonicalPath();
@@ -109,7 +109,7 @@ public class Mps_Command {
         }
       }
     });
-    return Sequence.<String>fromIterable(currentClassPath).where(new IWhereFilter<String>() {
+    return Sequence.fromIterable(currentClassPath).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
         return !(it.startsWith(System.getProperty("java.home")));
       }

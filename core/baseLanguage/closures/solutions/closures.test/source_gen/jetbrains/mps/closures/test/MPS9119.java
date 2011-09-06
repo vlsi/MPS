@@ -17,7 +17,7 @@ public class MPS9119 {
   public static void m2() {
     m1(new _FunctionTypes._return_P1_E0<Set<String>, String>() {
       public Set<String> invoke(String s) {
-        Set<String> result = SetSequence.<String>fromSet(new HashSet<String>());
+        Set<String> result = SetSequence.fromSet(new HashSet<String>());
         return result;
       }
     });

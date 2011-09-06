@@ -28,8 +28,8 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
   private SNode myNode;
-  private final Map<IJavaNodeChangeListener, _FunctionTypes._void_P1_E0<? super SNode>> myLegacyListenersMap = MapSequence.<IJavaNodeChangeListener,_FunctionTypes._void_P1_E0<? super SNode>>fromMap(new HashMap<IJavaNodeChangeListener, _FunctionTypes._void_P1_E0<? super SNode>>());
-  private final List<_FunctionTypes._void_P1_E0<? super SNode>> myListeners = ListSequence.<_FunctionTypes._void_P1_E0<? super SNode>>fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
+  private final Map<IJavaNodeChangeListener, _FunctionTypes._void_P1_E0<? super SNode>> myLegacyListenersMap = MapSequence.fromMap(new HashMap<IJavaNodeChangeListener, _FunctionTypes._void_P1_E0<? super SNode>>());
+  private final List<_FunctionTypes._void_P1_E0<? super SNode>> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
 
   public AbstractMainNodeChooser() {
     this.init(new ActionListener() {
@@ -67,11 +67,11 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             SNode foundNode = null;
-            for (SModelDescriptor descriptor : ListSequence.<SModelDescriptor>fromList(descriptors)) {
+            for (SModelDescriptor descriptor : ListSequence.fromList(descriptors)) {
               SModel smodel = descriptor.getSModel();
               Iterable<SNode> nodes = findNodes(smodel, text);
-              if (!(Sequence.<SNode>fromIterable(nodes).isEmpty())) {
-                foundNode = Sequence.<SNode>fromIterable(nodes).first();
+              if (!(Sequence.fromIterable(nodes).isEmpty())) {
+                foundNode = Sequence.fromIterable(nodes).first();
                 break;
               }
             }
@@ -132,21 +132,21 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
         listener.nodeChanged(node);
       }
     };
-    MapSequence.<IJavaNodeChangeListener,_FunctionTypes._void_P1_E0<? super SNode>>fromMap(myLegacyListenersMap).put(listener, function);
-    ListSequence.<_FunctionTypes._void_P1_E0<? super SNode>>fromList(this.myListeners).addElement(function);
+    MapSequence.fromMap(myLegacyListenersMap).put(listener, function);
+    ListSequence.fromList(this.myListeners).addElement(function);
   }
 
   public void addNodeChangeListener(@NotNull _FunctionTypes._void_P1_E0<? super SNode> listener) {
-    ListSequence.<_FunctionTypes._void_P1_E0<? super SNode>>fromList(this.myListeners).addElement(listener);
+    ListSequence.fromList(this.myListeners).addElement(listener);
   }
 
   public void removeNodeChangeListener(IJavaNodeChangeListener listener) {
-    ListSequence.<_FunctionTypes._void_P1_E0<? super SNode>>fromList(this.myListeners).removeElement(MapSequence.<IJavaNodeChangeListener,_FunctionTypes._void_P1_E0<? super SNode>>fromMap(myLegacyListenersMap).get(listener));
+    ListSequence.fromList(this.myListeners).removeElement(MapSequence.fromMap(myLegacyListenersMap).get(listener));
     MapSequence.fromMap(myLegacyListenersMap).removeKey(listener);
   }
 
   private void fireNodeChanged() {
-    ListSequence.<_FunctionTypes._void_P1_E0<? super SNode>>fromList(this.myListeners).visitAll(new IVisitor<_FunctionTypes._void_P1_E0<? super SNode>>() {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<_FunctionTypes._void_P1_E0<? super SNode>>() {
       public void visit(_FunctionTypes._void_P1_E0<? super SNode> it) {
         it.invoke(AbstractMainNodeChooser.this.myNode);
       }
@@ -155,6 +155,6 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
 
   public void dispose() {
     super.dispose();
-    ListSequence.<_FunctionTypes._void_P1_E0<? super SNode>>fromList(myListeners).clear();
+    ListSequence.fromList(myListeners).clear();
   }
 }

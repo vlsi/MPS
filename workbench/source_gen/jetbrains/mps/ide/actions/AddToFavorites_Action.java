@@ -46,12 +46,12 @@ public class AddToFavorites_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("treeNodes", event.getData(MPSDataKeys.LOGICAL_VIEW_NODES));
-    if (MapSequence.<String,Object>fromMap(_params).get("treeNodes") == null) {
+    MapSequence.fromMap(_params).put("treeNodes", event.getData(MPSDataKeys.LOGICAL_VIEW_NODES));
+    if (MapSequence.fromMap(_params).get("treeNodes") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -59,12 +59,12 @@ public class AddToFavorites_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MPSFavoritesManager favoritesManager = ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
+      MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
       if (favoritesManager == null) {
         return;
       }
-      List<Object> toMove = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.<String,Object>fromMap(_params).get("treeNodes")));
-      FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
+      List<Object> toMove = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")));
+      FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.fromMap(_params).get("project")));
       if (pane != null) {
         favoritesManager.removeRoots(pane.getSubId(), toMove);
       }

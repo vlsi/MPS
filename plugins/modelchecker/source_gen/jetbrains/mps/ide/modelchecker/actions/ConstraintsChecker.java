@@ -26,19 +26,19 @@ public class ConstraintsChecker extends SpecificChecker {
   }
 
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
-    List<SearchResult<ModelCheckerIssue>> results = ListSequence.<SearchResult<ModelCheckerIssue>>fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
+    List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
-    for (final SNode node : ListSequence.<SNode>fromList(SModelOperations.getNodes(model, null))) {
+    for (final SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
       if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for cardinalities and properties constraints..."))) {
         break;
       }
       SNode concept = SNodeOperations.getConceptDeclaration(node);
 
       // Check links 
-      for (final SNode link : ListSequence.<SNode>fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_getLinkDeclarations_1213877394480", new Class[]{SNode.class})))) {
+      for (final SNode link : ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_getLinkDeclarations_1213877394480", new Class[]{SNode.class})))) {
         if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isAtLeastOneCardinality_3386205146660812199", new Class[]{SNode.class}))) {
           if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
-            if (ListSequence.<SNode>fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
+            if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
               addIssue(results, node, "No children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", null);
             }
           } else {
@@ -47,10 +47,10 @@ public class ConstraintsChecker extends SpecificChecker {
             }
           }
         } else if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class}))) {
-          if (ListSequence.<SNode>fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
-            addIssue(results, node, ListSequence.<SNode>fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", new IModelCheckerFix() {
+          if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
+            addIssue(results, node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", new IModelCheckerFix() {
               public boolean doFix() {
-                ListSequence.<SNode>fromList(SNodeOperations.getChildren(node, link)).skip(1).toListSequence().visitAll(new IVisitor<SNode>() {
+                ListSequence.fromList(SNodeOperations.getChildren(node, link)).skip(1).toListSequence().visitAll(new IVisitor<SNode>() {
                   public void visit(SNode child) {
                     SNodeOperations.deleteNode(child);
                   }
@@ -62,7 +62,7 @@ public class ConstraintsChecker extends SpecificChecker {
         }
       }
 
-      for (final SNode child : ListSequence.<SNode>fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
+      for (final SNode child : ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SNodeOperations.isAttribute(it));
         }
@@ -70,7 +70,7 @@ public class ConstraintsChecker extends SpecificChecker {
         if (!(ModelCheckerUtils.isDeclaredLink(SNodeOperations.getContainingLinkDeclaration(child), true))) {
           addIssue(results, node, "Usage of undeclared child role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", ModelChecker.SEVERITY_WARNING, "undeclared child", new IModelCheckerFix() {
             public boolean doFix() {
-              ListSequence.<SNode>fromList(SNodeOperations.getChildren(node, SNodeOperations.getContainingLinkDeclaration(child))).visitAll(new IVisitor<SNode>() {
+              ListSequence.fromList(SNodeOperations.getChildren(node, SNodeOperations.getContainingLinkDeclaration(child))).visitAll(new IVisitor<SNode>() {
                 public void visit(SNode child) {
                   SNodeOperations.deleteNode(child);
                 }
@@ -81,7 +81,7 @@ public class ConstraintsChecker extends SpecificChecker {
         }
       }
 
-      for (final SReference reference : Sequence.<SReference>fromIterable(SNodeOperations.getReferences(node))) {
+      for (final SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
         if (!(ModelCheckerUtils.isDeclaredLink(SLinkOperations.findLinkDeclaration(reference), false))) {
           addIssue(results, node, "Usage of undeclared reference role \"" + reference + "\"", ModelChecker.SEVERITY_WARNING, "undeclared reference", new IModelCheckerFix() {
             public boolean doFix() {

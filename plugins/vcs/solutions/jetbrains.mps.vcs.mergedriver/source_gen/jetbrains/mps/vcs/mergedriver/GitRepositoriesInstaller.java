@@ -20,7 +20,7 @@ import java.io.IOException;
 
 /*package*/ class GitRepositoriesInstaller extends AbstractInstaller {
   private static final String ATTRIBUTES_FILE = ".gitattributes";
-  private static final List<String> PATTERNS = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "*.mps", FileType.TRACE_CACHE.getSuffix(), FileType.JAVA_DEPENDENCIES.getSuffix(), FileType.GENERATOR_DEPENDENCIES.getSuffix());
+  private static final List<String> PATTERNS = ListSequence.fromListAndArray(new ArrayList<String>(), "*.mps", FileType.TRACE_CACHE.getSuffix(), FileType.JAVA_DEPENDENCIES.getSuffix(), FileType.GENERATOR_DEPENDENCIES.getSuffix());
 
   public GitRepositoriesInstaller(Project project) {
     super(project);
@@ -29,21 +29,21 @@ import java.io.IOException;
   @NotNull
   protected AbstractInstaller.State install(final boolean dryRun) {
     Iterable<VcsRoot> gitRoots = getGitRoots();
-    if (Sequence.<VcsRoot>fromIterable(gitRoots).isEmpty()) {
+    if (Sequence.fromIterable(gitRoots).isEmpty()) {
       return AbstractInstaller.State.INSTALLED;
     } else {
-      List<AbstractInstaller.State> states = Sequence.<VcsRoot>fromIterable(gitRoots).<AbstractInstaller.State>select(new ISelector<VcsRoot, AbstractInstaller.State>() {
+      List<AbstractInstaller.State> states = Sequence.fromIterable(gitRoots).<AbstractInstaller.State>select(new ISelector<VcsRoot, AbstractInstaller.State>() {
         public AbstractInstaller.State select(VcsRoot r) {
           return installForRoot(r.path, dryRun);
         }
       }).toListSequence();
-      if (ListSequence.<AbstractInstaller.State>fromList(states).all(new IWhereFilter<AbstractInstaller.State>() {
+      if (ListSequence.fromList(states).all(new IWhereFilter<AbstractInstaller.State>() {
         public boolean accept(AbstractInstaller.State s) {
           return s == AbstractInstaller.State.INSTALLED;
         }
       })) {
         return AbstractInstaller.State.INSTALLED;
-      } else if (ListSequence.<AbstractInstaller.State>fromList(states).any(new IWhereFilter<AbstractInstaller.State>() {
+      } else if (ListSequence.fromList(states).any(new IWhereFilter<AbstractInstaller.State>() {
         public boolean accept(AbstractInstaller.State s) {
           return s == AbstractInstaller.State.OUTDATED;
         }
@@ -61,7 +61,7 @@ import java.io.IOException;
   }
 
   private int getRootsToInstall() {
-    return Sequence.<VcsRoot>fromIterable(getGitRoots()).<AbstractInstaller.State>select(new ISelector<VcsRoot, AbstractInstaller.State>() {
+    return Sequence.fromIterable(getGitRoots()).<AbstractInstaller.State>select(new ISelector<VcsRoot, AbstractInstaller.State>() {
       public AbstractInstaller.State select(VcsRoot r) {
         return installForRoot(r.path, true);
       }
@@ -74,7 +74,7 @@ import java.io.IOException;
 
   private Iterable<VcsRoot> getGitRoots() {
     VcsRoot[] allRoots = myProject.getComponent(ProjectLevelVcsManager.class).getAllVcsRoots();
-    return Sequence.<VcsRoot>fromIterable(Sequence.fromArray(allRoots)).where(new IWhereFilter<VcsRoot>() {
+    return Sequence.fromIterable(Sequence.fromArray(allRoots)).where(new IWhereFilter<VcsRoot>() {
       public boolean accept(VcsRoot root) {
         return "Git".equals(root.vcs.getName());
       }
@@ -84,7 +84,7 @@ import java.io.IOException;
   private AbstractInstaller.State installForRoots(Iterable<VcsRoot> roots) {
     int updated = 0;
     int failed = 0;
-    for (VcsRoot root : Sequence.<VcsRoot>fromIterable(roots)) {
+    for (VcsRoot root : Sequence.fromIterable(roots)) {
       if (installForRoot(root.path, false) == AbstractInstaller.State.INSTALLED) {
         updated++;
       } else {
@@ -124,9 +124,9 @@ import java.io.IOException;
       }
       final List<String> lines = StringsIO.readLines(attributesFile.getInputStream());
 
-      if (ListSequence.<String>fromList(PATTERNS).all(new IWhereFilter<String>() {
+      if (ListSequence.fromList(PATTERNS).all(new IWhereFilter<String>() {
         public boolean accept(final String pat) {
-          return ListSequence.<String>fromList(lines).any(new IWhereFilter<String>() {
+          return ListSequence.fromList(lines).any(new IWhereFilter<String>() {
             public boolean accept(String line) {
               return line.matches("\\s*" + pat.replace("*", "\\*") + ".+merge=mps\\s*");
             }
@@ -136,22 +136,22 @@ import java.io.IOException;
         return AbstractInstaller.State.INSTALLED;
       }
 
-      for (String pat : ListSequence.<String>fromList(PATTERNS)) {
+      for (String pat : ListSequence.fromList(PATTERNS)) {
         boolean addNew = true;
-        for (int i = 0; i < ListSequence.<String>fromList(lines).count(); i++) {
-          if (ListSequence.<String>fromList(lines).getElement(i).matches("\\s*" + pat.replace("*", "\\*") + ".*")) {
-            if (ListSequence.<String>fromList(lines).getElement(i).contains("merge=mps")) {
+        for (int i = 0; i < ListSequence.fromList(lines).count(); i++) {
+          if (ListSequence.fromList(lines).getElement(i).matches("\\s*" + pat.replace("*", "\\*") + ".*")) {
+            if (ListSequence.fromList(lines).getElement(i).contains("merge=mps")) {
               if (dryRun) {
                 return AbstractInstaller.State.OUTDATED;
               }
             } else {
-              ListSequence.<String>fromList(lines).setElement(i, ListSequence.<String>fromList(lines).getElement(i) + " merge=mps");
+              ListSequence.fromList(lines).setElement(i, ListSequence.fromList(lines).getElement(i) + " merge=mps");
             }
             addNew = false;
           }
         }
         if (addNew) {
-          ListSequence.<String>fromList(lines).addElement(pat + " merge=mps");
+          ListSequence.fromList(lines).addElement(pat + " merge=mps");
         }
       }
 

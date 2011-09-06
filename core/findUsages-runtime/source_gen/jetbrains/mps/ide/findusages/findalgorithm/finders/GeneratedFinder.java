@@ -77,7 +77,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
       }
       List<SNode> res = new ArrayList<SNode>();
       doFind(node, query.getScope(), res, indicator);
-      for (SNode resnode : ListSequence.<SNode>fromList(res).sort(new Comparator<SNode>() {
+      for (SNode resnode : ListSequence.fromList(res).sort(new Comparator<SNode>() {
         public int compare(SNode a, SNode b) {
           return compareNodes(a, b);
         }
@@ -91,14 +91,14 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
   }
 
   private int compareNodes(SNode n1, SNode n2) {
-    List<SNode> path1 = ListSequence.<SNode>fromList(SNodeOperations.getAncestors(n1, null, true)).reversedList();
-    List<SNode> path2 = ListSequence.<SNode>fromList(SNodeOperations.getAncestors(n2, null, true)).reversedList();
-    for (int i = 0; i < ListSequence.<SNode>fromList(path1).count() && i < ListSequence.<SNode>fromList(path2).count(); ++i) {
-      if (ListSequence.<SNode>fromList(path1).getElement(i) != ListSequence.<SNode>fromList(path2).getElement(i)) {
-        return compareBrothers(ListSequence.<SNode>fromList(path1).getElement(i), ListSequence.<SNode>fromList(path2).getElement(i));
+    List<SNode> path1 = ListSequence.fromList(SNodeOperations.getAncestors(n1, null, true)).reversedList();
+    List<SNode> path2 = ListSequence.fromList(SNodeOperations.getAncestors(n2, null, true)).reversedList();
+    for (int i = 0; i < ListSequence.fromList(path1).count() && i < ListSequence.fromList(path2).count(); ++i) {
+      if (ListSequence.fromList(path1).getElement(i) != ListSequence.fromList(path2).getElement(i)) {
+        return compareBrothers(ListSequence.fromList(path1).getElement(i), ListSequence.fromList(path2).getElement(i));
       }
     }
-    return ListSequence.<SNode>fromList(path1).count() - ListSequence.<SNode>fromList(path2).count();
+    return ListSequence.fromList(path1).count() - ListSequence.fromList(path2).count();
   }
 
   private int compareBrothers(SNode n1, SNode n2) {
@@ -113,7 +113,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     SNode l2 = SNodeOperations.getContainingLinkDeclaration(n2);
     for (SNode p = SNodeOperations.getParent(n1); (p != null); p = SNodeOperations.getParent(p)) {
       SNode editor = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(p), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findConceptAspect_8360039740498068384", new Class[]{SNode.class, LanguageAspect.class}, LanguageAspect.EDITOR));
-      for (SNode cell : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(editor, "jetbrains.mps.lang.editor.structure.CellModel_WithRole", false, new String[]{}))) {
+      for (SNode cell : ListSequence.fromList(SNodeOperations.getDescendants(editor, "jetbrains.mps.lang.editor.structure.CellModel_WithRole", false, new String[]{}))) {
         if (SLinkOperations.getTarget(cell, "relationDeclaration", false) == l1) {
           return -1;
         }

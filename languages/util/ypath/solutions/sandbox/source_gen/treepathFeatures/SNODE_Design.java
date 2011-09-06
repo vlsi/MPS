@@ -18,7 +18,7 @@ import jetbrains.mps.project.GlobalScope;
 public class SNODE_Design {
   public static class Design_Feature_child extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
     public Iterable<String> getParameters(SNode nodeType) {
-      return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(nodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
+      return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(nodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return "aggregation".equals(SPropertyOperations.getString_def(it, "metaClass", "reference"));
         }
@@ -31,7 +31,7 @@ public class SNODE_Design {
 
     public SNode getTargetType(String param, SNode nodeType) {
       final String _param = param;
-      SNode ld = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(nodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
+      SNode ld = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(nodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(it, "role").equals(_param);
         }
@@ -65,7 +65,7 @@ public class SNODE_Design {
 
   public static class Design_Feature_link extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
     public Iterable<String> getParameters(SNode nodeType) {
-      return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(nodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
+      return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(nodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString_def(it, "metaClass", "reference") == null || "reference".equals(SPropertyOperations.getString_def(it, "metaClass", "reference"));
         }
@@ -78,7 +78,7 @@ public class SNODE_Design {
 
     public SNode getTargetType(String param, SNode nodeType) {
       final String _param = param;
-      SNode ld = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(nodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
+      SNode ld = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(nodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(it, "role").equals(_param);
         }

@@ -215,7 +215,7 @@
     <nodeInfo nodeId="5628633142282727032" fileName="BaseConfigCreator.java" startLine="65" startPosition="9" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5628633142282726901" fileName="BaseConfigCreator.java" startLine="71" startPosition="7" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5628633142282726977" fileName="BaseConfigCreator.java" startLine="96" startPosition="37" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4013739085301555640" fileName="BaseConfigCreator.java" startLine="106" startPosition="153" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4013739085301555640" fileName="BaseConfigCreator.java" startLine="106" startPosition="131" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4013739085301555725" fileName="BaseConfigCreator.java" startLine="110" startPosition="5" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4013739085301555725" fileName="BaseConfigCreator.java" startLine="110" startPosition="5" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5628633142282726832" fileName="BaseConfigCreator.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSourceElement#(Lcom/intellij/psi/PsiElement;)V" />
@@ -256,7 +256,7 @@
     <scopeInfo nodeId="5628633142282726824" fileName="BaseConfigCreator.java" startLine="35" startPosition="0" endLine="38" endPosition="3">
       <varInfo nodeId="5628633142282726827" varName="configurationFactory" />
     </scopeInfo>
-    <scopeInfo nodeId="4013739085301555639" fileName="BaseConfigCreator.java" startLine="106" startPosition="153" endLine="109" endPosition="7" />
+    <scopeInfo nodeId="4013739085301555639" fileName="BaseConfigCreator.java" startLine="106" startPosition="131" endLine="109" endPosition="7" />
     <scopeInfo nodeId="4013739085301555725" fileName="BaseConfigCreator.java" startLine="110" startPosition="5" endLine="113" endPosition="5" />
     <scopeInfo nodeId="5628633142282726832" fileName="BaseConfigCreator.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="5628633142282726835" varName="sourceElement" />

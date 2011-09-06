@@ -23,7 +23,7 @@
     <nodeInfo nodeId="6056923343037305922" fileName="MappingConfigFinder.java" startLine="65" startPosition="24" endLine="66" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6056923343037305909" fileName="MappingConfigFinder.java" startLine="61" startPosition="34" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6056923343037305740" fileName="MappingConfigFinder.java" startLine="25" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MappingConfigFinder#(Ljetbrains/mps/smodel/Generator;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="130" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="123" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="6056923343037305855" fileName="MappingConfigFinder.java" startLine="48" startPosition="47" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6056923343037305850" fileName="MappingConfigFinder.java" startLine="47" startPosition="57" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6056923343037305904" fileName="MappingConfigFinder.java" startLine="60" startPosition="53" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -43,7 +43,7 @@
       <varInfo nodeId="6056923343037305745" varName="nodeToFindUsages" />
       <varInfo nodeId="6056923343037305743" varName="generator" />
     </scopeInfo>
-    <scopeInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="130" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="123" endLine="40" endPosition="0" />
     <scopeInfo nodeId="6056923343037305854" fileName="MappingConfigFinder.java" startLine="48" startPosition="47" endLine="53" endPosition="9" />
     <scopeInfo nodeId="6056923343037305908" fileName="MappingConfigFinder.java" startLine="61" startPosition="34" endLine="66" endPosition="67" />
     <scopeInfo nodeId="6056923343037305850" fileName="MappingConfigFinder.java" startLine="47" startPosition="57" endLine="54" endPosition="7">
@@ -81,7 +81,7 @@
       <varInfo nodeId="6056923343037305762" varName="indicator" />
       <varInfo nodeId="6056923343037305760" varName="query" />
     </scopeInfo>
-    <unitInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="107" endLine="40" endPosition="7" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder$1" />
+    <unitInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="36" startPosition="100" endLine="40" endPosition="7" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder$1" />
     <unitInfo nodeId="6056923343037305731" fileName="MappingConfigFinder.java" startLine="22" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder" />
   </root>
   <root nodeId="7228605397000826641">

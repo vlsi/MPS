@@ -39,8 +39,8 @@ public class CopyModuleName_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
-    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
@@ -48,7 +48,7 @@ public class CopyModuleName_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      CopyPasteUtil.copyTextToClipboard(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")).getModuleFqName());
+      CopyPasteUtil.copyTextToClipboard(((IModule) MapSequence.fromMap(_params).get("module")).getModuleFqName());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "CopyModuleName", t);

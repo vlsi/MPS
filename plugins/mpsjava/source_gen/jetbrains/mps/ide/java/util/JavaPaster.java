@@ -81,20 +81,20 @@ public class JavaPaster {
     JavaCompiler javaCompiler = new JavaCompiler(operationContext, module, null, false, model);
     try {
       List<SNode> nodes = javaCompiler.compileIsolated(javaCode, featureKind);
-      if (ListSequence.<SNode>fromList(nodes).isEmpty()) {
+      if (ListSequence.fromList(nodes).isEmpty()) {
         JOptionPane.showMessageDialog(null, "nothing to paste as Java", "ERROR", JOptionPane.ERROR_MESSAGE);
         return;
       }
       switch (featureKind) {
         case CLASS:
-          ListSequence.<SNode>fromList(nodes).visitAll(new IVisitor<SNode>() {
+          ListSequence.fromList(nodes).visitAll(new IVisitor<SNode>() {
             public void visit(SNode node) {
               SModelOperations.addRootNode(model, node);
             }
           });
           break;
         case CLASS_CONTENT:
-          for (SNode node : ListSequence.<SNode>fromList(nodes)) {
+          for (SNode node : ListSequence.fromList(nodes)) {
             if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
               pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "method"));
             } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
@@ -111,7 +111,7 @@ public class JavaPaster {
           }
           break;
         case STATEMENTS:
-          for (SNode node : ListSequence.<SNode>fromList(nodes)) {
+          for (SNode node : ListSequence.fromList(nodes)) {
             pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", "statement"));
           }
           break;

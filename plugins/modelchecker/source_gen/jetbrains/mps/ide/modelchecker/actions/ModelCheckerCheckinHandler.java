@@ -69,7 +69,7 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
 
   private static List<SModelDescriptor> getModelDescriptorsByFiles(Iterable<File> files) {
     final SModelRepository repository = SModelRepository.getInstance();
-    return Sequence.<File>fromIterable(files).<EditableSModelDescriptor>select(new ISelector<File, EditableSModelDescriptor>() {
+    return Sequence.fromIterable(files).<EditableSModelDescriptor>select(new ISelector<File, EditableSModelDescriptor>() {
       public EditableSModelDescriptor select(File file) {
         return repository.findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
       }

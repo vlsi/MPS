@@ -41,12 +41,12 @@ public class GoToNode_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("operationContext") == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("source", event.getData(MPSDataKeys.SOURCE_NODE));
-    if (MapSequence.<String,Object>fromMap(_params).get("source") == null) {
+    MapSequence.fromMap(_params).put("source", event.getData(MPSDataKeys.SOURCE_NODE));
+    if (MapSequence.fromMap(_params).get("source") == null) {
       return false;
     }
     return true;
@@ -54,7 +54,7 @@ public class GoToNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")).getComponent(MPSEditorOpener.class).openNode(((SNode) MapSequence.<String,Object>fromMap(_params).get("source")), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("operationContext")), false, true);
+      ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getComponent(MPSEditorOpener.class).openNode(((SNode) MapSequence.fromMap(_params).get("source")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), false, true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToNode", t);

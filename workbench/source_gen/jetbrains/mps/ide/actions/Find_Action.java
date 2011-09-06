@@ -39,8 +39,8 @@ public class Find_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
@@ -48,7 +48,7 @@ public class Find_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getSearchPanel().activate();
+      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSearchPanel().activate();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Find", t);

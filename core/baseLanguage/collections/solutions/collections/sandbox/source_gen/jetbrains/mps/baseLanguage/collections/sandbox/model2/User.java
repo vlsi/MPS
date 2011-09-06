@@ -18,6 +18,6 @@ import java.util.ArrayList;
   }
 
   /*package*/ static List<User> allUsers() {
-    return ListSequence.<User>fromListAndArray(new ArrayList<User>(), new User("user 1"), new User("user 2"));
+    return ListSequence.fromListAndArray(new ArrayList<User>(), new User("user 1"), new User("user 2"));
   }
 }

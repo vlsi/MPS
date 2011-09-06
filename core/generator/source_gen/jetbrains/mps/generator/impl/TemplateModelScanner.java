@@ -19,8 +19,8 @@ public class TemplateModelScanner {
   private Set<String> myQueryLanguages;
 
   public TemplateModelScanner(SModel model) {
-    myTargetLanguages = SetSequence.<String>fromSet(new LinkedHashSet<String>());
-    myQueryLanguages = SetSequence.<String>fromSet(new LinkedHashSet<String>());
+    myTargetLanguages = SetSequence.fromSet(new LinkedHashSet<String>());
+    myQueryLanguages = SetSequence.fromSet(new LinkedHashSet<String>());
     myTemplateModel = model;
   }
 

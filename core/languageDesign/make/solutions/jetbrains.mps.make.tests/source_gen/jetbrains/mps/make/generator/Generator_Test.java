@@ -19,7 +19,6 @@ import jetbrains.mps.make.facet.IFacet;
 import junit.framework.Assert;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.unittest.Mockups;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.hamcrest.BaseMatcher;
@@ -73,7 +72,7 @@ public class Generator_Test extends MockTestCase {
     IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
-    Assert.assertTrue(Sequence.<IResource>fromIterable(res.output()).isEmpty());
+    Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
   }
 
   @Test
@@ -119,7 +118,7 @@ public class Generator_Test extends MockTestCase {
         }));
         will(new Action() {
           public Object invoke(Invocation invocation) throws Throwable {
-            return Sequence.<Object>fromIterable(query[0].options()).first();
+            return Sequence.fromIterable(query[0].options()).first();
           }
 
           public void describeTo(Description description) {
@@ -136,7 +135,7 @@ public class Generator_Test extends MockTestCase {
     IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
-    Assert.assertTrue(Sequence.<IResource>fromIterable(res.output()).isEmpty());
+    Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
   }
 
   @Test
@@ -183,7 +182,7 @@ public class Generator_Test extends MockTestCase {
         }));
         will(new Action() {
           public Object invoke(Invocation invocation) throws Throwable {
-            return Sequence.<Object>fromIterable(query[0].options()).last();
+            return Sequence.fromIterable(query[0].options()).last();
           }
 
           public void describeTo(Description description) {
@@ -202,7 +201,7 @@ public class Generator_Test extends MockTestCase {
     IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertFalse(res.isSucessful());
-    Assert.assertTrue(Sequence.<IResource>fromIterable(res.output()).isEmpty());
+    Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
   }
 
   @Test
@@ -252,7 +251,7 @@ public class Generator_Test extends MockTestCase {
     IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
-    Assert.assertTrue(Sequence.<IResource>fromIterable(res.output()).isEmpty());
+    Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
   }
 
   @Test
@@ -299,7 +298,7 @@ public class Generator_Test extends MockTestCase {
     IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
-    Assert.assertTrue(Sequence.<IResource>fromIterable(res.output()).isEmpty());
+    Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
   }
 
   @Before

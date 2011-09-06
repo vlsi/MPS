@@ -26,10 +26,10 @@ public class DeleteReferenceAction_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((TreeNode) MapSequence.<String,Object>fromMap(_params).get("node")) instanceof ReferenceTreeNode)) {
+    if (!(((TreeNode) MapSequence.fromMap(_params).get("node")) instanceof ReferenceTreeNode)) {
       return false;
     }
-    TreeNode parent = ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("node")).getParent();
+    TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
     return parent instanceof ReferencesTreeNode;
   }
 
@@ -51,8 +51,8 @@ public class DeleteReferenceAction_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
@@ -60,9 +60,9 @@ public class DeleteReferenceAction_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      TreeNode parent = ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("node")).getParent();
+      TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
       ReferencesTreeNode refsNode = (ReferencesTreeNode) parent;
-      ReferenceTreeNode refNode = (ReferenceTreeNode) ((TreeNode) MapSequence.<String,Object>fromMap(_params).get("node"));
+      ReferenceTreeNode refNode = (ReferenceTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
       refsNode.getSNode().removeReference(refNode.getRef());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

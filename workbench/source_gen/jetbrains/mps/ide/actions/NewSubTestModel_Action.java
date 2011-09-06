@@ -38,10 +38,10 @@ public class NewSubTestModel_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((TreeNode) MapSequence.<String,Object>fromMap(_params).get("treeNode")) instanceof SModelTreeNode)) {
+    if (!(((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof SModelTreeNode)) {
       return false;
     }
-    return SModelStereotype.NONE.equals(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getStereotype());
+    return SModelStereotype.NONE.equals(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getStereotype());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -62,20 +62,20 @@ public class NewSubTestModel_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("ideaProject") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
-    if (MapSequence.<String,Object>fromMap(_params).get("treeNode") == null) {
+    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }
     return true;
@@ -87,9 +87,9 @@ public class NewSubTestModel_Action extends GeneratedAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           SModelFqName newModelFqName = new SModelFqName(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS);
-          result.value = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getModule().createModel(newModelFqName, ModelRootUtil.getSModelRoot(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model"))));
+          result.value = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule().createModel(newModelFqName, ModelRootUtil.getSModelRoot(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))));
           SModel createdModel = result.value.getSModel();
-          SModel sourceModel = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getSModel();
+          SModel sourceModel = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel();
           createdModel.addModelImport(sourceModel.getSModelReference(), false);
           for (SModel.ImportElement importElement : sourceModel.importedModels()) {
             createdModel.addModelImport(sourceModel.getSModelReference(), false);
@@ -102,7 +102,7 @@ public class NewSubTestModel_Action extends GeneratedAction {
           }
         }
       });
-      ProjectPane.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("ideaProject"))).selectModel(result.value, false);
+      ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(result.value, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "NewSubTestModel", t);
@@ -112,15 +112,15 @@ public class NewSubTestModel_Action extends GeneratedAction {
 
   /*package*/ String getTestModelName(final Map<String, Object> _params) {
     StringBuilder builder = new StringBuilder();
-    builder.append(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getLongName());
+    builder.append(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getLongName());
     int testModelCount = 0;
-    List<SModelDescriptor> models = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getModule().getOwnModelDescriptors();
+    List<SModelDescriptor> models = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule().getOwnModelDescriptors();
     List<SModelDescriptor> sortedModels = SortUtil.sortModels(models);
     for (SModelDescriptor md : sortedModels) {
       if (!(SModelStereotype.TESTS.equals(md.getStereotype()))) {
         continue;
       }
-      String name = ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")).getLongName() + ((testModelCount == 0 ?
+      String name = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getLongName() + ((testModelCount == 0 ?
         "" :
         testModelCount
       ));

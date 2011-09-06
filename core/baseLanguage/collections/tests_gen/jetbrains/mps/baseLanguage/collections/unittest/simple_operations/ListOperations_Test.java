@@ -11,22 +11,22 @@ import java.util.Arrays;
 
 public class ListOperations_Test extends TestCase {
   public void test_1() {
-    List<Integer> list = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
-    Integer at_2 = ListSequence.<Integer>fromList(list).getElement(2);
+    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
+    Integer at_2 = ListSequence.fromList(list).getElement(2);
     Assert.assertEquals(3, at_2.intValue());
-    int index_2 = ListSequence.<Integer>fromList(list).indexOf(at_2);
+    int index_2 = ListSequence.fromList(list).indexOf(at_2);
     Assert.assertEquals(2, index_2);
   }
 
   public void test_2() {
-    List<List<Boolean>> llb = ListSequence.<List<Boolean>>fromListAndArray(new ArrayList<List<Boolean>>(), ListSequence.<Boolean>fromListAndArray(new ArrayList<Boolean>(), false, true));
-    Assert.assertSame(2, ListSequence.<Boolean>fromList(ListSequence.<List<Boolean>>fromList(llb).first()).count());
-    Assert.assertSame(false, ListSequence.<Boolean>fromList(ListSequence.<List<Boolean>>fromList(llb).first()).first());
+    List<List<Boolean>> llb = ListSequence.fromListAndArray(new ArrayList<List<Boolean>>(), ListSequence.fromListAndArray(new ArrayList<Boolean>(), false, true));
+    Assert.assertSame(2, ListSequence.fromList(ListSequence.fromList(llb).first()).count());
+    Assert.assertSame(false, ListSequence.fromList(ListSequence.fromList(llb).first()).first());
   }
 
   public void test_3() {
     List<Integer> li = Arrays.asList(1, 2, 3, 4, 5);
-    List<Integer> lo = ListSequence.<Integer>fromList(li).concat(ListSequence.<Integer>fromList(li)).distinct().toListSequence();
+    List<Integer> lo = ListSequence.fromList(li).concat(ListSequence.fromList(li)).distinct().toListSequence();
     Assert.assertEquals(li, lo);
   }
 }

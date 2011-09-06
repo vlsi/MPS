@@ -9,8 +9,8 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch;
@@ -30,15 +30,15 @@ public class SimpleFindForExtractFromManyStatements_Test extends BaseTransformat
     public void test_SimpleFindForExtractFromManyStatementsTest() throws Exception {
       this.addNodeById("7793057097608406464");
       this.addNodeById("7793057097608416301");
-      ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7793057097608406470"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), SNodeOperations.cast(this.getNodeById("7793057097608406474"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
+      ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7793057097608406470"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), SNodeOperations.cast(this.getNodeById("7793057097608406474"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
       params.setName("printTwo");
       ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       SNode res = ref.doRefactor();
-      for (MethodMatch match : ListSequence.<MethodMatch>fromList(ref.getMatches())) {
+      for (MethodMatch match : ListSequence.fromList(ref.getMatches())) {
         ExtractMethodRefactoring matchRef = ExtractMethodFactory.createRefactoring(ExtractMethodFactory.createParameters(match.getNodes()));
         matchRef.replaceMatch(match, res);
       }
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7793057097608406465"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7793057097608416325"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7793057097608406465"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7793057097608416325"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }
 }

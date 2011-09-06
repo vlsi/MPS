@@ -41,16 +41,16 @@ public class ShowInLogicalView_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
@@ -58,8 +58,8 @@ public class ShowInLogicalView_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ProjectPane pane = ProjectPane.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
-      pane.selectNode(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")), true);
+      ProjectPane pane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
+      pane.selectNode(((SNode) MapSequence.fromMap(_params).get("node")), true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowInLogicalView", t);

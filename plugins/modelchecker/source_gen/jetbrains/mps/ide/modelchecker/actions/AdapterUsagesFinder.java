@@ -25,7 +25,7 @@ public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
 
   @Override
   protected List<SpecificChecker> getSpecificCheckers() {
-    return ListSequence.<SpecificChecker>fromListAndArray(new ArrayList<SpecificChecker>(), new AdapterUsagesFinder.AdapterUsagesChecker());
+    return ListSequence.fromListAndArray(new ArrayList<SpecificChecker>(), new AdapterUsagesFinder.AdapterUsagesChecker());
   }
 
   public static class AdapterUsagesChecker extends SpecificChecker {
@@ -33,15 +33,15 @@ public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
     }
 
     public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
-      List<SearchResult<ModelCheckerIssue>> results = ListSequence.<SearchResult<ModelCheckerIssue>>fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
+      List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
       String title = "Checking " + SModelOperations.getModelName(model) + " for adapter usages...";
-      for (SNode node : ListSequence.<SNode>fromList(SModelOperations.getNodes(model, null))) {
+      for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
         if (!(progressContext.checkAndUpdateIndicator(title))) {
           break;
         }
         // Check for adapter references 
-        for (SReference ref : Sequence.<SReference>fromIterable(SNodeOperations.getReferences(node))) {
+        for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
           SModelReference targetSModelReference = ref.getTargetSModelReference();
           if (targetSModelReference != null && targetSModelReference.getStereotype().equals("java_stub")) {
             SNode target = SLinkOperations.getTargetNode(ref);

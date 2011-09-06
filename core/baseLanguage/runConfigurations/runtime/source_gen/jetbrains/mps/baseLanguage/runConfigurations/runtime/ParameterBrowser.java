@@ -13,7 +13,7 @@ public class ParameterBrowser extends JPanel {
   public ParameterBrowser myThis;
   private String myText;
   private String myDialogCaption;
-  public List<AutoBinding> myBindings = ListSequence.<AutoBinding>fromList(new ArrayList<AutoBinding>());
+  public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
   private Events myEvents = new Events(null) {
     {
     }

@@ -35,11 +35,11 @@ public class RemoveModuleFromProject_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IModule module = ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getModule();
+    IModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
     if (module == null) {
       return false;
     }
-    return ((MPSProject) MapSequence.<String,Object>fromMap(_params).get("mpsproject")).isProjectModule(module);
+    return ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).isProjectModule(module);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -60,16 +60,16 @@ public class RemoveModuleFromProject_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("mpsproject", event.getData(MPSDataKeys.MPS_PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("mpsproject") == null) {
+    MapSequence.fromMap(_params).put("mpsproject", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsproject") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -77,9 +77,9 @@ public class RemoveModuleFromProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IModule module = ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")).getModule();
+      IModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
       final String message = "Are you sure you want to remove selected module from a project? This operation is not undoable.";
-      DialogWrapper dialogWrapper = new DialogWrapper(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), true) {
+      DialogWrapper dialogWrapper = new DialogWrapper(((Project) MapSequence.fromMap(_params).get("project")), true) {
         {
           setTitle("Remove Module From Project");
           init();
@@ -99,7 +99,7 @@ public class RemoveModuleFromProject_Action extends GeneratedAction {
       if (!(dialogWrapper.isOK())) {
         return;
       }
-      ((MPSProject) MapSequence.<String,Object>fromMap(_params).get("mpsproject")).removeProjectModule(module);
+      ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).removeProjectModule(module);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RemoveModuleFromProject", t);

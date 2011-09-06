@@ -12,8 +12,8 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityLevel;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNode;
 
 @MPSLaunch
 public class IntroduceConstantFromAnonimousClass_Test extends BaseTransformationTest {
@@ -34,7 +34,7 @@ public class IntroduceConstantFromAnonimousClass_Test extends BaseTransformation
       refactoring.setReplacingAll(true);
       refactoring.setVisibilityLevel(VisibilityLevel.PUBLIC);
       refactoring.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2163048091639854958"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2163048091639855016"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2163048091639854958"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2163048091639855016"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }
 }

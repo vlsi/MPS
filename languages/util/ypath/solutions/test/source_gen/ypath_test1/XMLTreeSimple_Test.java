@@ -22,40 +22,40 @@ public class XMLTreeSimple_Test extends TestCase {
   public void test_single() throws Exception {
     Document doc = this.parse(SINGLE_NODE);
     ITreeTraversal<Node> tp = new DOM().startTraversal(doc);
-    Assert.assertSame(Sequence.<Node>fromIterable(tp).count(), 1);
-    Assert.assertEquals(Sequence.<Node>fromIterable(tp).first(), doc);
+    Assert.assertSame(Sequence.fromIterable(tp).count(), 1);
+    Assert.assertEquals(Sequence.fromIterable(tp).first(), doc);
   }
 
   public void test_children() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
     ITreeTraversal<Node> nodes1 = TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN"));
-    Assert.assertSame(Sequence.<Node>fromIterable(nodes1).count(), 1);
+    Assert.assertSame(Sequence.fromIterable(nodes1).count(), 1);
     Assert.assertEquals("root", this.toString(nodes1));
     ITreeTraversal<Node> nodes2 = TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN")), TreeTraversalFactory.Axis("CHILDREN"));
-    Assert.assertSame(Sequence.<Node>fromIterable(nodes2).count(), 2);
+    Assert.assertSame(Sequence.fromIterable(nodes2).count(), 2);
     Assert.assertEquals("a1, a2", this.toString(nodes2));
   }
 
   public void test_descendants() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
     ITreeTraversal<Node> nodes = TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"));
-    Assert.assertSame(Sequence.<Node>fromIterable(nodes).count(), 7);
+    Assert.assertSame(Sequence.fromIterable(nodes).count(), 7);
     Assert.assertEquals("root, a1, b1, b2, a2, b3, c1", this.toString(nodes));
   }
 
   public void test_defautProperty() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
     ITreeTraversal<Node> nodes = TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(DOM.ELEMENT_NodeKindTrigger.getInstance(), DOM.ELEMENT_tag_Property.getMatcher("b3")));
-    Assert.assertSame(Sequence.<Node>fromIterable(nodes).count(), 1);
+    Assert.assertSame(Sequence.fromIterable(nodes).count(), 1);
     Assert.assertEquals("b3", this.toString(nodes));
   }
 
   public void test_sibling_descendants() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
-    Node a1 = Sequence.<Node>fromIterable(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN")), TreeTraversalFactory.Axis("CHILDREN"))).first();
+    Node a1 = Sequence.fromIterable(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN")), TreeTraversalFactory.Axis("CHILDREN"))).first();
     Assert.assertEquals("a1", a1.getNodeName());
     Iterable<Node> nodes = TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOM().startTraversal(a1), TreeTraversalFactory.Axis("SELF_FOLLOWING_SIBLINGS")), TreeTraversalFactory.Axis("SELF_DESCENDANTS"));
-    Assert.assertSame(6, Sequence.<Node>fromIterable(nodes).count());
+    Assert.assertSame(6, Sequence.fromIterable(nodes).count());
     Assert.assertEquals("a1, b1, b2, a2, b3, c1", this.toString(nodes));
   }
 
@@ -68,7 +68,7 @@ public class XMLTreeSimple_Test extends TestCase {
   public String toString(Iterable<Node> nodes) {
     StringBuilder sb = new StringBuilder();
     String sep = "";
-    for (Node n : Sequence.<Node>fromIterable(nodes)) {
+    for (Node n : Sequence.fromIterable(nodes)) {
       sb.append(sep).append(n.getNodeName());
       sep = ", ";
     }

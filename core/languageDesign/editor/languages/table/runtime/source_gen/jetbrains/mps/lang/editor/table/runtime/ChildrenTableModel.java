@@ -20,7 +20,7 @@ public abstract class ChildrenTableModel extends AbstractTableModel_optimized {
   private SNode myParentNode;
   private SNode myChildLinkDeclaration;
   private List<TableRow> myTableRows;
-  private Map<TableRow, SNode> myRowToNodeMap = MapSequence.<TableRow,SNode>fromMap(new HashMap<TableRow, SNode>());
+  private Map<TableRow, SNode> myRowToNodeMap = MapSequence.fromMap(new HashMap<TableRow, SNode>());
 
   public ChildrenTableModel(@NotNull SNode parentNode, @NotNull SNode childLinkDeclaration, boolean keepSameSizeRows) {
     super(keepSameSizeRows);
@@ -32,19 +32,19 @@ public abstract class ChildrenTableModel extends AbstractTableModel_optimized {
 
   public void removeRow(int index) {
     TableRow row = getRow(index);
-    SNode rowNode = MapSequence.<TableRow,SNode>fromMap(myRowToNodeMap).get(row);
+    SNode rowNode = MapSequence.fromMap(myRowToNodeMap).get(row);
     SNodeOperations.deleteNode(rowNode);
   }
 
   public List<TableRow> getRows() {
     if (myTableRows == null) {
-      myTableRows = ListSequence.<TableRow>fromList(new ArrayList<TableRow>());
-      for (SNode child : ListSequence.<SNode>fromList(SNodeOperations.getChildren(myParentNode, myChildLinkDeclaration))) {
-        TableRow row = createTableRow(child, ListSequence.<TableRow>fromList(myTableRows).count());
-        ListSequence.<TableRow>fromList(myTableRows).addElement(row);
-        MapSequence.<TableRow,SNode>fromMap(myRowToNodeMap).put(row, child);
+      myTableRows = ListSequence.fromList(new ArrayList<TableRow>());
+      for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(myParentNode, myChildLinkDeclaration))) {
+        TableRow row = createTableRow(child, ListSequence.fromList(myTableRows).count());
+        ListSequence.fromList(myTableRows).addElement(row);
+        MapSequence.fromMap(myRowToNodeMap).put(row, child);
       }
-      assert ListSequence.<TableRow>fromList(myTableRows).count() > 0;
+      assert ListSequence.fromList(myTableRows).count() > 0;
     }
     return myTableRows;
   }
@@ -56,7 +56,7 @@ public abstract class ChildrenTableModel extends AbstractTableModel_optimized {
     if (index == rowCount) {
       myParentNode.addChild(SPropertyOperations.getString(myChildLinkDeclaration, "role"), newRowNode);
     } else {
-      SNodeOperations.insertPrevSiblingChild(MapSequence.<TableRow,SNode>fromMap(myRowToNodeMap).get(getRow(index)), newRowNode);
+      SNodeOperations.insertPrevSiblingChild(MapSequence.fromMap(myRowToNodeMap).get(getRow(index)), newRowNode);
     }
   }
 }

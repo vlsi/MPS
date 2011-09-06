@@ -25,18 +25,18 @@ public class TypesystemChecker extends SpecificChecker implements ITypeContextOw
   }
 
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
-    List<SearchResult<ModelCheckerIssue>> results = ListSequence.<SearchResult<ModelCheckerIssue>>fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
+    List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
-    for (SNode rootNode : ListSequence.<SNode>fromList(SModelOperations.getRoots(model, null))) {
+    for (SNode rootNode : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
       if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for typesystem rules..."))) {
         break;
       }
       TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().getOrCreateContext(rootNode, this, true);
       typeCheckingContext.setOperationContext(operationContext);
       Set<Pair<SNode, List<IErrorReporter>>> nodeWithErrors = typeCheckingContext.checkRootAndGetErrors(true);
-      for (Pair<SNode, List<IErrorReporter>> nodeErrorReporters : SetSequence.<Pair<SNode, List<IErrorReporter>>>fromSet(nodeWithErrors)) {
+      for (Pair<SNode, List<IErrorReporter>> nodeErrorReporters : SetSequence.fromSet(nodeWithErrors)) {
         final SNode node = nodeErrorReporters.o1;
-        for (IErrorReporter errorReporter : ListSequence.<IErrorReporter>fromList(nodeErrorReporters.o2)) {
+        for (IErrorReporter errorReporter : ListSequence.fromList(nodeErrorReporters.o2)) {
           final IErrorReporter reporter = errorReporter;
           final QuickFix_Runtime quickFix = check_5gkhbq_a0b0b0e0c0a(check_5gkhbq_a0a1a1a4a2a0(reporter));
           IModelCheckerFix fix = null;

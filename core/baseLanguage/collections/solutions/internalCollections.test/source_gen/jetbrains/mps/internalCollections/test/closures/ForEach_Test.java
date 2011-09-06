@@ -9,7 +9,7 @@ import junit.framework.Assert;
 public class ForEach_Test extends Util_Test {
   public void test_legacyForeach() throws Exception {
     ArrayList<Integer> res = new ArrayList<Integer>();
-    for (Integer foo : Sequence.<Integer>fromIterable(this.input5())) {
+    for (Integer foo : Sequence.fromIterable(this.input5())) {
       res.add(foo * 2);
     }
     this.assertIterableEquals(this.expectEven10(), res);
@@ -19,19 +19,19 @@ public class ForEach_Test extends Util_Test {
     int[] arr = new int[]{1, 2, 3, 4, 5};
     Iterable<Integer> exp = this.input5();
     for (int i : arr) {
-      Assert.assertTrue(Sequence.<Integer>fromIterable(exp).contains(i));
+      Assert.assertTrue(Sequence.fromIterable(exp).contains(i));
     }
     String[] arr2 = new String[]{"A", "B", "C"};
     Iterable<String> exp2 = this.inputABC();
     for (String s : arr2) {
-      Assert.assertTrue(Sequence.<String>fromIterable(exp2).contains(s));
+      Assert.assertTrue(Sequence.fromIterable(exp2).contains(s));
     }
   }
 
   public void test_noWrapperForGNE() throws Exception {
     Iterable<Integer> exp = this.input5();
     for (int i : new int[]{1, 2, 3, 4, 5}) {
-      Assert.assertTrue(Sequence.<Integer>fromIterable(exp).contains(i));
+      Assert.assertTrue(Sequence.fromIterable(exp).contains(i));
       this.accept(i);
     }
   }
@@ -40,7 +40,7 @@ public class ForEach_Test extends Util_Test {
     Iterable<Integer> exp = this.input5();
     int[] arr = new int[]{1, 2, 3, 4, 5};
     for (int i : arr) {
-      Assert.assertTrue(Sequence.<Integer>fromIterable(exp).contains(i));
+      Assert.assertTrue(Sequence.fromIterable(exp).contains(i));
       this.accept(i);
     }
   }
@@ -54,7 +54,7 @@ public class ForEach_Test extends Util_Test {
     };
     for (IBar bars : Sequence.fromIterable(foo.get())) {
     }
-    for (IBar.Bar bars : Sequence.<IBar.Bar>fromIterable(new IFoo.Foo().get())) {
+    for (IBar.Bar bars : Sequence.fromIterable(new IFoo.Foo().get())) {
     }
   }
 

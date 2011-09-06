@@ -26,7 +26,7 @@ public class DevKitChooser implements Computable<List<ModuleReference>> {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<DevKit> devkits = GlobalScope.getInstance().getVisibleDevkits();
-        dkRefs.value = ListSequence.<DevKit>fromList(devkits).<ModuleReference>select(new ISelector<DevKit, ModuleReference>() {
+        dkRefs.value = ListSequence.fromList(devkits).<ModuleReference>select(new ISelector<DevKit, ModuleReference>() {
           public ModuleReference select(DevKit it) {
             return it.getModuleReference();
           }

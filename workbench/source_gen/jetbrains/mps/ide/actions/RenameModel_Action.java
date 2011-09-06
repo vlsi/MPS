@@ -33,10 +33,10 @@ public class RenameModel_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")) instanceof Language)) {
+    if (!(((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language)) {
       return true;
     }
-    return Language.isLanguageOwnedAccessoryModel(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")));
+    return Language.isLanguageOwnedAccessoryModel(((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -57,20 +57,20 @@ public class RenameModel_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
-    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
-    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
@@ -81,10 +81,10 @@ public class RenameModel_Action extends GeneratedAction {
       final Wrappers._T<SModelRoot> root = new Wrappers._T<SModelRoot>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          root.value = ModelRootUtil.getSModelRoot(((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")));
+          root.value = ModelRootUtil.getSModelRoot(((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
         }
       });
-      new RenameModelDialog(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), ((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), root.value, ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model"))).showDialog();
+      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), root.value, ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameModel", t);

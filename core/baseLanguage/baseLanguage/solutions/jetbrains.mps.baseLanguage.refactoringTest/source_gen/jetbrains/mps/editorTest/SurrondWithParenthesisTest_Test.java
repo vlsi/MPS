@@ -44,7 +44,7 @@ public class SurrondWithParenthesisTest_Test extends BaseTransformationTest {
       this.addNodeById("3852894662483240397");
       this.addNodeById("3852894662483240422");
       SNode result = ParenthesisUtil.createParenthesis(SNodeOperations.cast(this.getNodeById("3852894662483077204"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), true);
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483077210"), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), result)));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483077210"), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")), ListSequence.fromListAndArray(new ArrayList<SNode>(), result)));
     }
 
     public void test_thereIsAlreadyParenthesis() throws Exception {
@@ -55,7 +55,7 @@ public class SurrondWithParenthesisTest_Test extends BaseTransformationTest {
       this.addNodeById("3852894662483240397");
       this.addNodeById("3852894662483240422");
       ParenthesisUtil.createParenthesis(SNodeOperations.cast(this.getNodeById("3852894662483230127"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), true);
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230135"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230126"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230135"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230126"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
     }
 
     public void test_treeRotation() throws Exception {
@@ -66,7 +66,7 @@ public class SurrondWithParenthesisTest_Test extends BaseTransformationTest {
       this.addNodeById("3852894662483240397");
       this.addNodeById("3852894662483240422");
       ParenthesisUtil.createParenthesis(SNodeOperations.cast(this.getNodeById("3852894662483240405"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), false);
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483240425"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483240400"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483240425"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483240400"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
     }
   }
 }

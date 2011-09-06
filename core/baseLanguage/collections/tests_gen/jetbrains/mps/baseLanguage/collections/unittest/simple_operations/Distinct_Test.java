@@ -16,26 +16,26 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 public class Distinct_Test extends TestCase {
   public void test_distinct1() throws Exception {
     Iterable<Integer> source;
-    source = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 2, 3, 4, 4, 5);
-    source = Sequence.<Integer>fromIterable(source).distinct();
-    Assert.assertEquals(Sequence.<Integer>fromIterable(source).where(new IWhereFilter<Integer>() {
+    source = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 2, 3, 4, 4, 5);
+    source = Sequence.fromIterable(source).distinct();
+    Assert.assertEquals(Sequence.fromIterable(source).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
         return it == 2;
       }
     }).count(), 1);
-    Assert.assertEquals(Sequence.<Integer>fromIterable(source).where(new IWhereFilter<Integer>() {
+    Assert.assertEquals(Sequence.fromIterable(source).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
         return it == 4;
       }
     }).count(), 1);
-    Assert.assertEquals(Sequence.<Integer>fromIterable(source).count(), 5);
-    source = Sequence.<Integer>fromIterable(source).sort(new ISelector<Integer, Comparable<?>>() {
+    Assert.assertEquals(Sequence.fromIterable(source).count(), 5);
+    source = Sequence.fromIterable(source).sort(new ISelector<Integer, Comparable<?>>() {
       public Comparable<?> select(Integer it) {
         return it;
       }
     }, true);
     Integer c = 1;
-    for (Integer i : Sequence.<Integer>fromIterable(source)) {
+    for (Integer i : Sequence.fromIterable(source)) {
       Assert.assertEquals(i, c);
       c++;
     }
@@ -43,7 +43,7 @@ public class Distinct_Test extends TestCase {
 
   public void test_distinct2() throws Exception {
     Iterable<Integer> source;
-    source = Sequence.<Integer>fromClosure(new ISequenceClosure<Integer>() {
+    source = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -100,25 +100,25 @@ __switch__:
         };
       }
     });
-    source = Sequence.<Integer>fromIterable(source).distinct();
-    Assert.assertEquals(Sequence.<Integer>fromIterable(source).where(new IWhereFilter<Integer>() {
+    source = Sequence.fromIterable(source).distinct();
+    Assert.assertEquals(Sequence.fromIterable(source).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
         return it == 2;
       }
     }).count(), 1);
-    Assert.assertEquals(Sequence.<Integer>fromIterable(source).where(new IWhereFilter<Integer>() {
+    Assert.assertEquals(Sequence.fromIterable(source).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
         return it == 4;
       }
     }).count(), 1);
-    Assert.assertEquals(Sequence.<Integer>fromIterable(source).count(), 5);
-    source = Sequence.<Integer>fromIterable(source).sort(new ISelector<Integer, Comparable<?>>() {
+    Assert.assertEquals(Sequence.fromIterable(source).count(), 5);
+    source = Sequence.fromIterable(source).sort(new ISelector<Integer, Comparable<?>>() {
       public Comparable<?> select(Integer it) {
         return it;
       }
     }, true);
     Integer c = 1;
-    for (Integer i : Sequence.<Integer>fromIterable(source)) {
+    for (Integer i : Sequence.fromIterable(source)) {
       Assert.assertEquals(i, c);
       c++;
     }
@@ -126,7 +126,7 @@ __switch__:
 
   public void test__null() throws Exception {
     Iterable<Integer> source = null;
-    source = Sequence.<Integer>fromIterable(source).distinct();
-    Assert.assertTrue(Sequence.<Integer>fromIterable(source).count() == 0);
+    source = Sequence.fromIterable(source).distinct();
+    Assert.assertTrue(Sequence.fromIterable(source).count() == 0);
   }
 }

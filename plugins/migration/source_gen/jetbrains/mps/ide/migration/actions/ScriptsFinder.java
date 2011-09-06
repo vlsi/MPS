@@ -11,9 +11,9 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -22,14 +22,14 @@ public class ScriptsFinder {
   }
 
   public static List<SNodePointer> find() {
-    List<SNodePointer> list = ListSequence.<SNodePointer>fromList(new ArrayList<SNodePointer>());
-    for (Language l : ListSequence.<Language>fromList(MPSModuleRepository.getInstance().getAllLanguages())) {
+    List<SNodePointer> list = ListSequence.fromList(new ArrayList<SNodePointer>());
+    for (Language l : ListSequence.fromList(MPSModuleRepository.getInstance().getAllLanguages())) {
       EditableSModelDescriptor smd = LanguageAspect.SCRIPTS.get(l);
       if (smd == null) {
         continue;
       }
       SModel model = smd.getSModel();
-      ListSequence.<SNodePointer>fromList(list).addSequence(ListSequence.<SNode>fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.script.structure.MigrationScript")).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(list).addSequence(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.script.structure.MigrationScript")).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.hasValue(it, "type", "migration", "enhancement");
         }

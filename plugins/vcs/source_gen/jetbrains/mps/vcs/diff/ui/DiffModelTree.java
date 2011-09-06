@@ -7,8 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.commons.lang.StringUtils;
@@ -37,7 +37,7 @@ public abstract class DiffModelTree extends MPSTree {
 
   protected MPSTreeNode rebuild() {
     DiffModelTree.ModelTreeNode modelNode = new DiffModelTree.ModelTreeNode();
-    myRootNodes = Sequence.<SNodeId>fromIterable(getAffectedRoots()).where(new IWhereFilter<SNodeId>() {
+    myRootNodes = Sequence.fromIterable(getAffectedRoots()).where(new IWhereFilter<SNodeId>() {
       public boolean accept(SNodeId r) {
         return r != null;
       }
@@ -50,12 +50,12 @@ public abstract class DiffModelTree extends MPSTree {
         return rtn.myVirtualPackage + "|" + rtn.myPresentation;
       }
     }, true).toListSequence();
-    for (DiffModelTree.RootTreeNode rtn : ListSequence.<DiffModelTree.RootTreeNode>fromList(myRootNodes)) {
+    for (DiffModelTree.RootTreeNode rtn : ListSequence.fromList(myRootNodes)) {
       MPSTreeNode parentNode = modelNode;
       if (StringUtils.isNotEmpty(rtn.myVirtualPackage)) {
-        for (final String sub : Sequence.<String>fromIterable(Sequence.fromArray(rtn.myVirtualPackage.split("\\.")))) {
+        for (final String sub : Sequence.fromIterable(Sequence.fromArray(rtn.myVirtualPackage.split("\\.")))) {
           Iterable<MPSTreeNode> children = (Iterable<MPSTreeNode>) parentNode;
-          MPSTreeNode child = Sequence.<MPSTreeNode>fromIterable(children).findFirst(new IWhereFilter<MPSTreeNode>() {
+          MPSTreeNode child = Sequence.fromIterable(children).findFirst(new IWhereFilter<MPSTreeNode>() {
             public boolean accept(MPSTreeNode c) {
               return c instanceof DiffModelTree.PackageTreeNode && sub.equals(c.getText());
             }
@@ -69,7 +69,7 @@ public abstract class DiffModelTree extends MPSTree {
       }
       parentNode.add(rtn);
     }
-    if (Sequence.<SNodeId>fromIterable(getAffectedRoots()).any(new IWhereFilter<SNodeId>() {
+    if (Sequence.fromIterable(getAffectedRoots()).any(new IWhereFilter<SNodeId>() {
       public boolean accept(SNodeId r) {
         return r == null;
       }
@@ -98,7 +98,7 @@ public abstract class DiffModelTree extends MPSTree {
   }
 
   private DiffModelTree.RootTreeNode findRootNode(@NotNull final SNodeId nodeId) {
-    return ListSequence.<DiffModelTree.RootTreeNode>fromList(myRootNodes).findFirst(new IWhereFilter<DiffModelTree.RootTreeNode>() {
+    return ListSequence.fromList(myRootNodes).findFirst(new IWhereFilter<DiffModelTree.RootTreeNode>() {
       public boolean accept(DiffModelTree.RootTreeNode r) {
         return nodeId.equals(r.myRootId);
       }
@@ -107,7 +107,7 @@ public abstract class DiffModelTree extends MPSTree {
 
   @Nullable
   public SNodeId getNeighbourRoot(@NotNull SNodeId nodeId, boolean next) {
-    int index = ListSequence.<DiffModelTree.RootTreeNode>fromList(myRootNodes).indexOf(findRootNode(nodeId));
+    int index = ListSequence.fromList(myRootNodes).indexOf(findRootNode(nodeId));
     if (index == -1) {
       return null;
     }
@@ -115,10 +115,10 @@ public abstract class DiffModelTree extends MPSTree {
       index + 1 :
       index - 1
     );
-    if (index == -1 || index == ListSequence.<DiffModelTree.RootTreeNode>fromList(myRootNodes).count()) {
+    if (index == -1 || index == ListSequence.fromList(myRootNodes).count()) {
       return null;
     } else {
-      return ListSequence.<DiffModelTree.RootTreeNode>fromList(myRootNodes).getElement(index).myRootId;
+      return ListSequence.fromList(myRootNodes).getElement(index).myRootId;
     }
   }
 
@@ -134,7 +134,7 @@ public abstract class DiffModelTree extends MPSTree {
 
     @Override
     protected void doUpdatePresentation() {
-      setText(Sequence.<SModel>fromIterable(getModels()).first().getLongName());
+      setText(Sequence.fromIterable(getModels()).first().getLongName());
       setIcon(Icons.MODEL_ICON);
     }
   }
@@ -163,7 +163,7 @@ public abstract class DiffModelTree extends MPSTree {
     protected void doUpdatePresentation() {
       myPresentation = null;
       Icon icon = null;
-      for (SModel model : Sequence.<SModel>fromIterable(getModels())) {
+      for (SModel model : Sequence.fromIterable(getModels())) {
         SNode root = model.getNodeById(myRootId);
         if (root != null && SNodeOperations.getParent(root) == null) {
           String presentation = root.getPresentation();
@@ -194,12 +194,12 @@ public abstract class DiffModelTree extends MPSTree {
 
     @Override
     public void doubleClick() {
-      Sequence.<BaseAction>fromIterable(getRootActions(myRootId)).first().actionPerformed(null);
+      Sequence.fromIterable(getRootActions(myRootId)).first().actionPerformed(null);
     }
 
     @Override
     public ActionGroup getActionGroup() {
-      return ActionUtils.groupFromActions(Sequence.<BaseAction>fromIterable(getRootActions(myRootId)).toGenericArray(BaseAction.class));
+      return ActionUtils.groupFromActions(Sequence.fromIterable(getRootActions(myRootId)).toGenericArray(BaseAction.class));
     }
 
     @Nullable

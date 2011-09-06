@@ -28,8 +28,8 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        BreakpointsUiComponent breakpointManager = BreakpointsUiComponent.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
-        event.getPresentation().setEnabled(breakpointManager != null && breakpointManager.isDebuggable(((EditorCell) MapSequence.<String,Object>fromMap(_params).get("selectedCell"))));
+        BreakpointsUiComponent breakpointManager = BreakpointsUiComponent.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
+        event.getPresentation().setEnabled(breakpointManager != null && breakpointManager.isDebuggable(((EditorCell) MapSequence.fromMap(_params).get("selectedCell"))));
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -43,16 +43,16 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("selectedCell", event.getData(MPSDataKeys.EDITOR_CELL));
-    if (MapSequence.<String,Object>fromMap(_params).get("selectedCell") == null) {
+    MapSequence.fromMap(_params).put("selectedCell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("selectedCell") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -60,7 +60,7 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      BreakpointsUiComponent.getInstance(((Project) MapSequence.<String,Object>fromMap(_params).get("project"))).toggleBreakpoint(((EditorCell) MapSequence.<String,Object>fromMap(_params).get("selectedCell")));
+      BreakpointsUiComponent.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).toggleBreakpoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ToggleBreakpoint", t);

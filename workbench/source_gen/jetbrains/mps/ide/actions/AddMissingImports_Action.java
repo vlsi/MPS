@@ -40,12 +40,12 @@ public class AddMissingImports_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("modelDescriptor", event.getData(MPSDataKeys.MODEL));
-    if (MapSequence.<String,Object>fromMap(_params).get("modelDescriptor") == null) {
+    MapSequence.fromMap(_params).put("modelDescriptor", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
@@ -53,7 +53,7 @@ public class AddMissingImports_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MissingDependenciesFixer(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")), ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("modelDescriptor"))).fix(true);
+      new MissingDependenciesFixer(((Frame) MapSequence.fromMap(_params).get("frame")), ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))).fix(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddMissingImports", t);

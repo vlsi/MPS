@@ -37,7 +37,7 @@ public class ProjectDescriptorPersistence {
       public Element invoke() {
         final Element result_jnk9az_a0a1a0 = new Element("project");
         final Element result_jnk9az_a0a0a1a0 = new Element("projectModules");
-        for (Path path : ListSequence.<Path>fromList(descriptor.getModules())) {
+        for (Path path : ListSequence.fromList(descriptor.getModules())) {
           final Element result_jnk9az_a0a0a0a0a1a0 = new Element("modulePath");
           if (path.getPath() != null) {
             final String result_jnk9az_a0a0a0a0a0a0a1a0 = macros.shrinkPath(path.getPath(), file);
@@ -52,7 +52,7 @@ public class ProjectDescriptorPersistence {
         result_jnk9az_a0a1a0.addContent(result_jnk9az_a0a0a1a0);
 
         final Element result_jnk9az_a2a0a1a0 = new Element("genConfs");
-        for (BaseTestConfiguration tc : ListSequence.<BaseTestConfiguration>fromList(descriptor.getTestConfigurations())) {
+        for (BaseTestConfiguration tc : ListSequence.fromList(descriptor.getTestConfigurations())) {
           if (tc instanceof ModelsTestConfiguration) {
             ModelsTestConfiguration mgc = (ModelsTestConfiguration) tc;
             final Element result_jnk9az_a1a0a0a2a0a1a0 = new Element("genConfModels");
@@ -61,7 +61,7 @@ public class ProjectDescriptorPersistence {
               result_jnk9az_a1a0a0a2a0a1a0.setAttribute("name", "" + result_jnk9az_a0a0a1a0a0a2a0a1a0);
             }
             final Element result_jnk9az_a1a1a0a0a2a0a1a0 = new Element("models");
-            for (SModelReference m : ListSequence.<SModelReference>fromList(mgc.getModels())) {
+            for (SModelReference m : ListSequence.fromList(mgc.getModels())) {
               final Element result_jnk9az_a0a0a1a1a0a0a2a0a1a0 = new Element("model");
               final String result_jnk9az_a0a0a0a1a1a0a0a2a0a1a0 = m.toString();
               result_jnk9az_a0a0a1a1a0a0a2a0a1a0.setAttribute("modelRef", "" + result_jnk9az_a0a0a0a1a1a0a0a2a0a1a0);
@@ -115,12 +115,12 @@ public class ProjectDescriptorPersistence {
       return;
     }
 
-    List<Element> moduleList = ListSequence.<Element>fromList(new ArrayList<Element>());
-    ListSequence.<Element>fromList(moduleList).addSequence(ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "projectSolutions")).first(), "solutionPath")));
-    ListSequence.<Element>fromList(moduleList).addSequence(ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "projectLanguages")).first(), "languagePath")));
-    ListSequence.<Element>fromList(moduleList).addSequence(ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "projectDevkits")).first(), "devkitPath")));
-    ListSequence.<Element>fromList(moduleList).addSequence(ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "projectModules")).first(), "modulePath")));
-    for (Element moduleElement : ListSequence.<Element>fromList(moduleList)) {
+    List<Element> moduleList = ListSequence.fromList(new ArrayList<Element>());
+    ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectSolutions")).first(), "solutionPath")));
+    ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectLanguages")).first(), "languagePath")));
+    ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectDevkits")).first(), "devkitPath")));
+    ListSequence.fromList(moduleList).addSequence(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "projectModules")).first(), "modulePath")));
+    for (Element moduleElement : ListSequence.fromList(moduleList)) {
       Path modulePath = new Path();
       Path result_jnk9az_a1a9a1a2 = modulePath;
       final String result_jnk9az_a0a1a9a1a2 = macros.expandPath(moduleElement.getAttributeValue("path"), file);
@@ -130,15 +130,15 @@ public class ProjectDescriptorPersistence {
       result_jnk9az_a1a2.addModule(modulePath);
     }
 
-    for (Element e : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "genConfs")).first(), "genConfModels"))) {
+    for (Element e : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "genConfs")).first(), "genConfModels"))) {
       ModelsTestConfiguration tc = new ModelsTestConfiguration();
       tc.setName(e.getAttributeValue("name"));
-      for (Element me : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(e, "models")).first(), "model"))) {
+      for (Element me : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(e, "models")).first(), "model"))) {
         tc.addModel(SModelReference.fromString(me.getAttributeValue("modelRef")));
       }
       result_jnk9az_a1a2.getTestConfigurations().add(tc);
     }
-    for (Element e : ListSequence.<Element>fromList(AttributeUtils.elementChildren(ListSequence.<Element>fromList(AttributeUtils.elementChildren(root, "genConfs")).first(), "genConfModule"))) {
+    for (Element e : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "genConfs")).first(), "genConfModule"))) {
       ModuleTestConfiguration tc = new ModuleTestConfiguration();
       tc.setName(e.getAttributeValue("name"));
       if (e.getAttributeValue("moduleRef") != null) {
@@ -161,8 +161,8 @@ public class ProjectDescriptorPersistence {
 
     try {
       Document document = JDOMUtil.loadDocument(file);
-      List<Element> components = ListSequence.<Element>fromListWithValues(new ArrayList<Element>(), ((List<Element>) document.getRootElement().getChildren("component")));
-      Element projectElement = ((Element) ListSequence.<Element>fromList(components).findFirst(new IWhereFilter<Element>() {
+      List<Element> components = ListSequence.fromListWithValues(new ArrayList<Element>(), ((List<Element>) document.getRootElement().getChildren("component")));
+      Element projectElement = ((Element) ListSequence.fromList(components).findFirst(new IWhereFilter<Element>() {
         public boolean accept(Element it) {
           return it.getAttributeValue("name").equals("MPSProject");
         }

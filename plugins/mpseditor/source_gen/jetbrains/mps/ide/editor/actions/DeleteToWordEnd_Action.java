@@ -25,7 +25,7 @@ public class DeleteToWordEnd_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")));
+    return EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -46,8 +46,8 @@ public class DeleteToWordEnd_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
@@ -55,7 +55,7 @@ public class DeleteToWordEnd_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.DELETE_TO_WORD_END);
+      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.DELETE_TO_WORD_END);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "DeleteToWordEnd", t);

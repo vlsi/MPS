@@ -43,7 +43,7 @@ public class UpgradeModulePersistenceGlobally_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (IModule module : ListSequence.<IModule>fromList(MPSModuleRepository.getInstance().getAllModules())) {
+      for (IModule module : ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules())) {
         if (module.isPackaged()) {
           continue;
         }

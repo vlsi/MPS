@@ -40,7 +40,7 @@ public class Where_Test extends Util_Test {
   public void test_whereOperation() throws Exception {
     Iterable<Integer> seq = this.input5();
     Iterable<Integer> expected = Arrays.asList(1, 3, 5);
-    this.assertIterableEquals(expected, Sequence.<Integer>fromIterable(seq).where(new IWhereFilter<Integer>() {
+    this.assertIterableEquals(expected, Sequence.fromIterable(seq).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
         return it % 2 == 1;
       }
@@ -50,11 +50,11 @@ public class Where_Test extends Util_Test {
         return it % 2 == 1;
       }
     };
-    this.assertIterableEquals(expected, Sequence.<Integer>fromIterable(seq).where(cl));
+    this.assertIterableEquals(expected, Sequence.fromIterable(seq).where(cl));
   }
 
   public void test_nextWithoutHasNext() throws Exception {
-    Iterator<Integer> it = ListSequence.<Integer>fromList(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6)).where(new IWhereFilter<Integer>() {
+    Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6)).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer i) {
         return i % 2 == 0;
       }
@@ -72,21 +72,21 @@ public class Where_Test extends Util_Test {
   }
 
   public void test_whereAdvancesTooEarly() throws Exception {
-    final List<Integer> test = ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9);
-    final List<Integer> odd = ListSequence.<Integer>fromList(new ArrayList<Integer>());
-    ListSequence.<Integer>fromList(test).where(new IWhereFilter<Integer>() {
+    final List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9);
+    final List<Integer> odd = ListSequence.fromList(new ArrayList<Integer>());
+    ListSequence.fromList(test).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer i) {
         return i != 0;
       }
     }).visitAll(new IVisitor<Integer>() {
       public void visit(Integer i) {
-        int idx = ListSequence.<Integer>fromList(test).indexOf(i);
-        if (++idx < ListSequence.<Integer>fromList(test).count()) {
-          ListSequence.<Integer>fromList(test).setElement(idx, 0);
+        int idx = ListSequence.fromList(test).indexOf(i);
+        if (++idx < ListSequence.fromList(test).count()) {
+          ListSequence.fromList(test).setElement(idx, 0);
         }
-        ListSequence.<Integer>fromList(odd).addElement(i);
+        ListSequence.fromList(odd).addElement(i);
       }
     });
-    Assert.assertEquals(ListSequence.<Integer>fromListAndArray(new ArrayList<Integer>(), 1, 3, 5, 7, 9), odd);
+    Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 3, 5, 7, 9), odd);
   }
 }

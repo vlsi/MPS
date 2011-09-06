@@ -15,9 +15,9 @@ import java.util.List;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
 
 public class AddModuleToVcs_Action extends GeneratedAction {
@@ -34,11 +34,11 @@ public class AddModuleToVcs_Action extends GeneratedAction {
     try {
       {
         Presentation presentation = event.getPresentation();
-        presentation.setText(String.format("Add %s to VCS", (((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")).size() == 1 ?
+        presentation.setText(String.format("Add %s to VCS", (((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() == 1 ?
           "Module" :
           "Modules"
         )));
-        boolean enabled = ListSequence.<VirtualFile>fromList(VcsActionsHelper.getUnversionedFilesForModules(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), ((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")))).isNotEmpty();
+        boolean enabled = ListSequence.fromList(VcsActionsHelper.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")))).isNotEmpty();
         presentation.setEnabled(enabled);
         presentation.setVisible(enabled);
       }
@@ -54,12 +54,12 @@ public class AddModuleToVcs_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
-    if (MapSequence.<String,Object>fromMap(_params).get("modules") == null) {
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    if (MapSequence.fromMap(_params).get("modules") == null) {
       return false;
     }
     return true;
@@ -67,8 +67,8 @@ public class AddModuleToVcs_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<VirtualFile> unversionedFiles = VcsActionsHelper.getUnversionedFilesForModules(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), ((List<IModule>) MapSequence.<String,Object>fromMap(_params).get("modules")));
-      ChangeListManagerImpl changeListManager = ChangeListManagerImpl.getInstanceImpl(((Project) MapSequence.<String,Object>fromMap(_params).get("project")));
+      List<VirtualFile> unversionedFiles = VcsActionsHelper.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
+      ChangeListManagerImpl changeListManager = ChangeListManagerImpl.getInstanceImpl(((Project) MapSequence.fromMap(_params).get("project")));
       changeListManager.addUnversionedFiles(changeListManager.getDefaultChangeList(), unversionedFiles);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

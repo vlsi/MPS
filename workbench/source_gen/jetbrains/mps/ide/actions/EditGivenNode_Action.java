@@ -46,12 +46,12 @@ public class EditGivenNode_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
@@ -59,7 +59,7 @@ public class EditGivenNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((Project) MapSequence.<String,Object>fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(EditGivenNode_Action.this.targetNode.getNode(), ((IOperationContext) MapSequence.<String,Object>fromMap(_params).get("context")));
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(EditGivenNode_Action.this.targetNode.getNode(), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "EditGivenNode", t);
