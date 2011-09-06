@@ -31,10 +31,6 @@ public class MPSItemProvider extends IdeaItemProvider {
     return super.filterElements(transformPattern(pattern), everywhere, cancelled, maxListSize, extra);
   }
 
-  public String getNamePattern(String pattern) {
-    return super.getNamePattern(transformPattern(pattern));
-  }
-
   public List<String> getNamesByPattern(String[] names, String pattern) {
     return super.getNamesByPattern(names, transformPattern(pattern));
   }
