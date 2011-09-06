@@ -470,7 +470,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1225195370241(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "method", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "isVirtual");
       }
@@ -547,7 +547,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1144956008583745034(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode concept = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(concept, "implements", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(concept, "implements", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "intfc", false) != null);
       }
@@ -571,7 +571,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7923290658387314426(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    Map<String, SNode> generatedNameToConceptMethodDeclaration = MapSequence.<String,SNode>fromMap(new HashMap<String, SNode>());
+    Map<String, SNode> generatedNameToConceptMethodDeclaration = MapSequence.fromMap(new HashMap<String, SNode>());
 
     List<SNode> methods = ConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386338(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
     SNode extendsNode = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "extends", false);
@@ -581,18 +581,18 @@ public class QueriesGenerated {
     );
 
     if (extendsNode != SLinkOperations.getTarget(_context.getNode(), "concept", false)) {
-      ListSequence.<SNode>fromList(methods).removeSequence(ListSequence.<SNode>fromList(ConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386338(extendsNode)));
+      ListSequence.fromList(methods).removeSequence(ListSequence.fromList(ConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386338(extendsNode)));
     }
 
     // <node> 
 
     for (SNode method : methods) {
       if (!(MapSequence.fromMap(generatedNameToConceptMethodDeclaration).containsKey(ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(method)))) {
-        MapSequence.<String,SNode>fromMap(generatedNameToConceptMethodDeclaration).put(ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(method), method);
+        MapSequence.fromMap(generatedNameToConceptMethodDeclaration).put(ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(method), method);
       }
     }
 
-    for (SNode behavior : ListSequence.<SNode>fromList(SModelOperations.getNodes(_context.getInputModel(), null)).where(new IWhereFilter<SNode>() {
+    for (SNode behavior : ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
       }
@@ -601,7 +601,7 @@ public class QueriesGenerated {
       if (SLinkOperations.getTarget(SNodeOperations.cast(behavior, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false) == SLinkOperations.getTarget(_context.getNode(), "concept", false)) {
         for (SNode method : SLinkOperations.getTargets(SNodeOperations.cast(behavior, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "method", true)) {
           if (MapSequence.fromMap(generatedNameToConceptMethodDeclaration).containsKey(ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(method))) {
-            MapSequence.<String,SNode>fromMap(generatedNameToConceptMethodDeclaration).put(ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(method), method);
+            MapSequence.fromMap(generatedNameToConceptMethodDeclaration).put(ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(method), method);
           }
         }
       }
@@ -609,7 +609,7 @@ public class QueriesGenerated {
 
     // <node> 
 
-    return Sequence.<SNode>fromIterable(MapSequence.fromMap(generatedNameToConceptMethodDeclaration).values()).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(MapSequence.fromMap(generatedNameToConceptMethodDeclaration).values()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "isAbstract")) && ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(it).startsWith("virtual_");
       }
@@ -629,7 +629,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1144956008583623940(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode behavior = SNodeOperations.cast(ListSequence.<SNode>fromList(SModelOperations.getNodes(_context.getInputModel(), null)).where(new IWhereFilter<SNode>() {
+    SNode behavior = SNodeOperations.cast(ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
       }
@@ -638,7 +638,7 @@ public class QueriesGenerated {
         return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false) == SLinkOperations.getTarget(_context.getNode(), "concept", false);
       }
     }).first(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(behavior, "method", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(behavior, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "isAbstract");
       }
@@ -655,7 +655,7 @@ public class QueriesGenerated {
     Language language = Language.getLanguageForLanguageAspect(behaviorModel.getModelDescriptor());
     SModel structureModel = LanguageAspect.STRUCTURE.get(language).getSModel();
 
-    return ListSequence.<SNode>fromList(SModelOperations.getNodes(structureModel, null)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getNodes(structureModel, null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
       }
@@ -664,7 +664,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1144956008583742081(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode concept = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(concept, "extends", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(concept, "extends", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "intfc", false) != null);
       }
@@ -688,7 +688,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1144956008583655066(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode behavior = SNodeOperations.cast(ListSequence.<SNode>fromList(SModelOperations.getNodes(_context.getInputModel(), null)).where(new IWhereFilter<SNode>() {
+    SNode behavior = SNodeOperations.cast(ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
       }
@@ -697,7 +697,7 @@ public class QueriesGenerated {
         return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false) == SLinkOperations.getTarget(_context.getNode(), "concept", false);
       }
     }).first(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(behavior, "method", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(behavior, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "isVirtual");
       }
@@ -714,7 +714,7 @@ public class QueriesGenerated {
     Language language = Language.getLanguageForLanguageAspect(behaviorModel.getModelDescriptor());
     SModel structureModel = LanguageAspect.STRUCTURE.get(language).getSModel();
 
-    return ListSequence.<SNode>fromList(SModelOperations.getNodes(structureModel, null)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getNodes(structureModel, null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && !(SConceptPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract"));
       }

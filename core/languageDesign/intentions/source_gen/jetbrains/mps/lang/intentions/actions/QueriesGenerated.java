@@ -16,15 +16,15 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 
 public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1240404186104(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
         public Object calculate() {
-          List<SNode> parameters = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+          List<SNode> parameters = ListSequence.fromList(new ArrayList<SNode>());
           boolean inParInt = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", false, false) != null;
           boolean notInApplicable = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.intentions.structure.IsApplicableBlock", false, false) == null;
           if (inParInt && notInApplicable) {
-            ListSequence.<SNode>fromList(parameters).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionParameter"));
+            ListSequence.fromList(parameters).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionParameter"));
           }
           return parameters;
         }
@@ -33,7 +33,7 @@ public class QueriesGenerated {
       if (queryResult != null) {
         for (Object item : queryResult) {
           List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((SNode) item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-          ListSequence.<INodeSubstituteAction>fromList(result).addSequence(ListSequence.<INodeSubstituteAction>fromList(defaultActions));
+          ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
         }
       }
     }

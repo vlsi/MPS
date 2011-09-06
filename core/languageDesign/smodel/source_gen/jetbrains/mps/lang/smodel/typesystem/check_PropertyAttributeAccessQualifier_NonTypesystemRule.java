@@ -29,7 +29,7 @@ public class check_PropertyAttributeAccessQualifier_NonTypesystemRule extends Ab
       SNode conceptDeclaration = RulesUtil.get_inputNodeConcept(SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, false), false);
       SNode inputNodeConcept = conceptDeclaration;
       List<SNode> declaredProperties = AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(inputNodeConcept);
-      if (!(ListSequence.<SNode>fromList(declaredProperties).contains(property))) {
+      if (!(ListSequence.fromList(declaredProperties).contains(property))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(propQ, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226067188701", null, errorTarget);
       }

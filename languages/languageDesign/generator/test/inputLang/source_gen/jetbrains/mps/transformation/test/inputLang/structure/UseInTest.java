@@ -37,15 +37,15 @@ public enum UseInTest {
   }
 
   public static List<UseInTest> getConstants() {
-    List<UseInTest> list = ListSequence.<UseInTest>fromList(new LinkedList<UseInTest>());
-    ListSequence.<UseInTest>fromList(list).addElement(UseInTest.test1);
-    ListSequence.<UseInTest>fromList(list).addElement(UseInTest.getPrevInputTest);
-    ListSequence.<UseInTest>fromList(list).addElement(UseInTest.reduceInheritors);
-    ListSequence.<UseInTest>fromList(list).addElement(UseInTest.reduceExpressionToStatement);
-    ListSequence.<UseInTest>fromList(list).addElement(UseInTest.dontApplyReductionTwice);
-    ListSequence.<UseInTest>fromList(list).addElement(UseInTest.weaveManyToSingularChild);
-    ListSequence.<UseInTest>fromList(list).addElement(UseInTest.reduceOneToMany);
-    ListSequence.<UseInTest>fromList(list).addElement(UseInTest.none);
+    List<UseInTest> list = ListSequence.fromList(new LinkedList<UseInTest>());
+    ListSequence.fromList(list).addElement(UseInTest.test1);
+    ListSequence.fromList(list).addElement(UseInTest.getPrevInputTest);
+    ListSequence.fromList(list).addElement(UseInTest.reduceInheritors);
+    ListSequence.fromList(list).addElement(UseInTest.reduceExpressionToStatement);
+    ListSequence.fromList(list).addElement(UseInTest.dontApplyReductionTwice);
+    ListSequence.fromList(list).addElement(UseInTest.weaveManyToSingularChild);
+    ListSequence.fromList(list).addElement(UseInTest.reduceOneToMany);
+    ListSequence.fromList(list).addElement(UseInTest.none);
     return list;
   }
 

@@ -78,12 +78,12 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1174655313358(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false);
-    return "_pattern_" + ListSequence.<SNode>fromList(nodes).count();
+    return "_pattern_" + ListSequence.fromList(nodes).count();
   }
 
   public static Object propertyMacro_GetPropertyValue_1174655168104(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false);
-    return "_matcher_" + ListSequence.<SNode>fromList(nodes).count();
+    return "_matcher_" + ListSequence.fromList(nodes).count();
   }
 
   public static Object propertyMacro_GetPropertyValue_1174658262046(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -95,27 +95,27 @@ public class QueriesGenerated {
     SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
     List<SNode> parensList = new ArrayList<SNode>();
     Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(c, "regexp", true), "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), "regexp", true), parensList);
-    return 1 + ListSequence.<SNode>fromList(parensList).indexOf(parens);
+    return 1 + ListSequence.fromList(parensList).indexOf(parens);
   }
 
   public static Object propertyMacro_GetPropertyValue_1175155526348(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false);
-    return "_pattern_" + ListSequence.<SNode>fromList(nodes).count();
+    return "_pattern_" + ListSequence.fromList(nodes).count();
   }
 
   public static Object propertyMacro_GetPropertyValue_1175155558088(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false);
-    return "_matcher_" + ListSequence.<SNode>fromList(nodes).count();
+    return "_matcher_" + ListSequence.fromList(nodes).count();
   }
 
   public static Object propertyMacro_GetPropertyValue_1175169642723(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false);
-    return "_pattern_" + ListSequence.<SNode>fromList(nodes).count();
+    return "_pattern_" + ListSequence.fromList(nodes).count();
   }
 
   public static Object propertyMacro_GetPropertyValue_1175169648262(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false);
-    return "_matcher_" + ListSequence.<SNode>fromList(nodes).count();
+    return "_matcher_" + ListSequence.fromList(nodes).count();
   }
 
   public static Object propertyMacro_GetPropertyValue_1175170026397(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -123,7 +123,7 @@ public class QueriesGenerated {
     SNode c = GeneratorUtil.findRegexpUsingConstructionFor(_context.getNode());
     List<SNode> parensList = new ArrayList<SNode>();
     Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(c, "regexp", true), "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), "regexp", true), parensList);
-    return 1 + ListSequence.<SNode>fromList(parensList).indexOf(parens);
+    return 1 + ListSequence.fromList(parensList).indexOf(parens);
   }
 
   public static Object propertyMacro_GetPropertyValue_7048923897763036419(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -295,7 +295,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7048923897763033580(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return Flags.REGEXP_NEED_VAR.isFlagged(it);
       }

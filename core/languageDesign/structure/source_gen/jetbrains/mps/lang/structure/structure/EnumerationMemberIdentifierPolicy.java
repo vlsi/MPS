@@ -32,10 +32,10 @@ public enum EnumerationMemberIdentifierPolicy {
   }
 
   public static List<EnumerationMemberIdentifierPolicy> getConstants() {
-    List<EnumerationMemberIdentifierPolicy> list = ListSequence.<EnumerationMemberIdentifierPolicy>fromList(new LinkedList<EnumerationMemberIdentifierPolicy>());
-    ListSequence.<EnumerationMemberIdentifierPolicy>fromList(list).addElement(EnumerationMemberIdentifierPolicy.derive_from_presentation);
-    ListSequence.<EnumerationMemberIdentifierPolicy>fromList(list).addElement(EnumerationMemberIdentifierPolicy.derive_from_internal_value);
-    ListSequence.<EnumerationMemberIdentifierPolicy>fromList(list).addElement(EnumerationMemberIdentifierPolicy.custom);
+    List<EnumerationMemberIdentifierPolicy> list = ListSequence.fromList(new LinkedList<EnumerationMemberIdentifierPolicy>());
+    ListSequence.fromList(list).addElement(EnumerationMemberIdentifierPolicy.derive_from_presentation);
+    ListSequence.fromList(list).addElement(EnumerationMemberIdentifierPolicy.derive_from_internal_value);
+    ListSequence.fromList(list).addElement(EnumerationMemberIdentifierPolicy.custom);
     return list;
   }
 

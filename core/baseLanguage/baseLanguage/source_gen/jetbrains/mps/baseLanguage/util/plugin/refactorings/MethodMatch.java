@@ -27,21 +27,21 @@ public class MethodMatch {
   private Set<SNode> myOutputRefs;
 
   public MethodMatch(List<SNode> parametersOrder) {
-    this.myParamsToNodes = MapSequence.<SNode,List<SNode>>fromMap(new HashMap<SNode, List<SNode>>());
+    this.myParamsToNodes = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     this.myNodes = new ArrayList<SNode>();
-    myOutputRefs = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+    myOutputRefs = SetSequence.fromSet(new HashSet<SNode>());
     this.myParametersOrder = parametersOrder;
   }
 
   public void putMapping(SNode node, SNode parameter) {
     if (!(MapSequence.fromMap(this.myParamsToNodes).containsKey(parameter))) {
-      MapSequence.<SNode,List<SNode>>fromMap(this.myParamsToNodes).put(parameter, new ArrayList<SNode>());
+      MapSequence.fromMap(this.myParamsToNodes).put(parameter, new ArrayList<SNode>());
     }
-    ListSequence.<SNode>fromList(MapSequence.<SNode,List<SNode>>fromMap(this.myParamsToNodes).get(parameter)).addElement(node);
+    ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).addElement(node);
   }
 
   public void putNode(SNode node) {
-    ListSequence.<SNode>fromList(this.myNodes).addElement(node);
+    ListSequence.fromList(this.myNodes).addElement(node);
   }
 
   public void putOutputReference(SNode node) {
@@ -71,7 +71,7 @@ public class MethodMatch {
   }
 
   private boolean checkMapping() {
-    for (SNode parameter : SetSequence.<SNode>fromSet(MapSequence.fromMap(this.myParamsToNodes).keySet())) {
+    for (SNode parameter : SetSequence.fromSet(MapSequence.fromMap(this.myParamsToNodes).keySet())) {
       if (!(this.checkParameter(parameter))) {
         return false;
       }
@@ -80,16 +80,16 @@ public class MethodMatch {
   }
 
   private boolean checkParameter(SNode parameter) {
-    List<SNode> nodes = MapSequence.<SNode,List<SNode>>fromMap(this.myParamsToNodes).get(parameter);
-    if (ListSequence.<SNode>fromList(nodes).count() == 0) {
+    List<SNode> nodes = MapSequence.fromMap(this.myParamsToNodes).get(parameter);
+    if (ListSequence.fromList(nodes).count() == 0) {
       return true;
     }
-    for (int i = 0; i < ListSequence.<SNode>fromList(nodes).count() - 1; i++) {
-      if (!(MatchingUtil.matchNodes(ListSequence.<SNode>fromList(nodes).getElement(i), ListSequence.<SNode>fromList(nodes).getElement(i + 1)))) {
+    for (int i = 0; i < ListSequence.fromList(nodes).count() - 1; i++) {
+      if (!(MatchingUtil.matchNodes(ListSequence.fromList(nodes).getElement(i), ListSequence.fromList(nodes).getElement(i + 1)))) {
         return false;
       }
     }
-    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(ListSequence.<SNode>fromList(nodes).getElement(0)), SLinkOperations.getTarget(parameter, "type", true)))) {
+    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(nodes).getElement(0)), SLinkOperations.getTarget(parameter, "type", true)))) {
       return false;
     }
     return true;
@@ -97,8 +97,8 @@ public class MethodMatch {
 
   private boolean checkOutputReferencies() {
     Set<SNode> computedOutputRefs = myRefactoring.getOutputReferences();
-    for (SNode computedRef : SetSequence.<SNode>fromSet(computedOutputRefs)) {
-      if (!(SetSequence.<SNode>fromSet(myOutputRefs).contains(computedRef))) {
+    for (SNode computedRef : SetSequence.fromSet(computedOutputRefs)) {
+      if (!(SetSequence.fromSet(myOutputRefs).contains(computedRef))) {
         return false;
       }
     }
@@ -107,11 +107,11 @@ public class MethodMatch {
 
   public List<SNode> getCallParameters() {
     List<SNode> callActualParams = new ArrayList<SNode>();
-    for (SNode parameter : ListSequence.<SNode>fromList(this.myParametersOrder)) {
-      if (ListSequence.<SNode>fromList(MapSequence.<SNode,List<SNode>>fromMap(this.myParamsToNodes).get(parameter)).isEmpty()) {
-        ListSequence.<SNode>fromList(callActualParams).addElement(new MethodMatch.QuotationClass_5zfyci_a0a0a0a0b0l().createNode());
+    for (SNode parameter : ListSequence.fromList(this.myParametersOrder)) {
+      if (ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).isEmpty()) {
+        ListSequence.fromList(callActualParams).addElement(new MethodMatch.QuotationClass_5zfyci_a0a0a0a0b0l().createNode());
       } else {
-        ListSequence.<SNode>fromList(callActualParams).addElement(SNodeOperations.cast(SNodeOperations.copyNode(ListSequence.<SNode>fromList(MapSequence.<SNode,List<SNode>>fromMap(this.myParamsToNodes).get(parameter)).getElement(0)), "jetbrains.mps.baseLanguage.structure.Expression"));
+        ListSequence.fromList(callActualParams).addElement(SNodeOperations.cast(SNodeOperations.copyNode(ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).getElement(0)), "jetbrains.mps.baseLanguage.structure.Expression"));
       }
     }
     return callActualParams;

@@ -228,7 +228,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_h096ql_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty();
   }
 
   private static class lineListHandler_h096ql_d0a extends RefNodeListHandler {
@@ -272,7 +272,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.<String>fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
     }
   }
 
@@ -281,7 +281,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.<String>fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
     }
   }
 }

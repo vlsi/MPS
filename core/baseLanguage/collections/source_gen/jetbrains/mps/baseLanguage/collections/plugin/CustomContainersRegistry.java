@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 public class CustomContainersRegistry {
   /*package*/ static CustomContainersRegistry INSTANCE = new CustomContainersRegistry();
 
-  private List<_FunctionTypes._return_P0_E0<? extends List<SNode>>> providers = ListSequence.<_FunctionTypes._return_P0_E0<? extends List<SNode>>>fromList(new ArrayList<_FunctionTypes._return_P0_E0<? extends List<SNode>>>());
+  private List<_FunctionTypes._return_P0_E0<? extends List<SNode>>> providers = ListSequence.fromList(new ArrayList<_FunctionTypes._return_P0_E0<? extends List<SNode>>>());
 
   private CustomContainersRegistry() {
   }
@@ -30,7 +30,7 @@ public class CustomContainersRegistry {
   public List<SNode> allCustomContainerDeclarations() {
     Iterable<SNode> allCustomContainers = this.primAllCustomContainers();
     List<SNode> res = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(res).addSequence(Sequence.<SNode>fromIterable(allCustomContainers).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    ListSequence.fromList(res).addSequence(Sequence.fromIterable(allCustomContainers).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode cc) {
         return SLinkOperations.getTargets(cc, "containerDeclaration", true);
       }
@@ -45,10 +45,10 @@ public class CustomContainersRegistry {
       final Set<IModule> allVisibleModules = om.getDependenciesManager().getAllVisibleModules();
       final Set<Language> allUsedLanguages = om.getDependenciesManager().getAllUsedLanguages();
       Iterable<SNode> allCustomContainers = this.primAllCustomContainers();
-      ListSequence.<SNode>fromList(res).addSequence(Sequence.<SNode>fromIterable(allCustomContainers).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(res).addSequence(Sequence.fromIterable(allCustomContainers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode cc) {
           IModule owner = CustomContainersRegistry.this.getOwningModule(SNodeOperations.getModel(cc));
-          return SetSequence.<IModule>fromSet(allVisibleModules).contains(owner) || (owner instanceof Language && SetSequence.<Language>fromSet(allUsedLanguages).contains((Language) owner));
+          return SetSequence.fromSet(allVisibleModules).contains(owner) || (owner instanceof Language && SetSequence.fromSet(allUsedLanguages).contains((Language) owner));
         }
       }).<SNode>translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode cc) {
@@ -61,13 +61,13 @@ public class CustomContainersRegistry {
 
   public void registerProvider(_FunctionTypes._return_P0_E0<? extends List<SNode>> prov) {
     synchronized (this) {
-      ListSequence.<_FunctionTypes._return_P0_E0<? extends List<SNode>>>fromList(this.providers).addElement(prov);
+      ListSequence.fromList(this.providers).addElement(prov);
     }
   }
 
   public void unRegisterProvider(_FunctionTypes._return_P0_E0<? extends List<SNode>> prov) {
     synchronized (this) {
-      ListSequence.<_FunctionTypes._return_P0_E0<? extends List<SNode>>>fromList(this.providers).removeElement(prov);
+      ListSequence.fromList(this.providers).removeElement(prov);
     }
   }
 
@@ -82,9 +82,9 @@ public class CustomContainersRegistry {
   private Iterable<SNode> primAllCustomContainers() {
     List<_FunctionTypes._return_P0_E0<? extends List<SNode>>> providersCopy;
     synchronized (this) {
-      providersCopy = ListSequence.<_FunctionTypes._return_P0_E0<? extends List<SNode>>>fromListWithValues(new ArrayList<_FunctionTypes._return_P0_E0<? extends List<SNode>>>(), this.providers);
+      providersCopy = ListSequence.fromListWithValues(new ArrayList<_FunctionTypes._return_P0_E0<? extends List<SNode>>>(), this.providers);
     }
-    return ListSequence.<_FunctionTypes._return_P0_E0<? extends List<SNode>>>fromList(providersCopy).<SNode>translate(new ITranslator2<_FunctionTypes._return_P0_E0<? extends List<SNode>>, SNode>() {
+    return ListSequence.fromList(providersCopy).<SNode>translate(new ITranslator2<_FunctionTypes._return_P0_E0<? extends List<SNode>>, SNode>() {
       public Iterable<SNode> translate(_FunctionTypes._return_P0_E0<? extends List<SNode>> prov) {
         return prov.invoke();
       }

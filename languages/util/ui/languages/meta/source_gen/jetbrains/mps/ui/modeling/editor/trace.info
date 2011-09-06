@@ -3663,7 +3663,7 @@
     <nodeInfo nodeId="4391079257750550397" fileName="ContainerItemAdder_Editor.java" startLine="200" startPosition="72" endLine="201" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4391079257750550397" fileName="ContainerItemAdder_Editor.java" startLine="201" startPosition="78" endLine="202" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4391079257750550397" fileName="ContainerItemAdder_Editor.java" startLine="203" startPosition="10" endLine="204" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1055897155339721751" fileName="ContainerItemAdder_Editor.java" startLine="207" startPosition="112" endLine="208" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1055897155339721751" fileName="ContainerItemAdder_Editor.java" startLine="207" startPosition="112" endLine="208" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4391079257750550397" fileName="ContainerItemAdder_Editor.java" startLine="194" startPosition="26" endLine="196" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4391079257750550397" fileName="ContainerItemAdder_Editor.java" startLine="54" startPosition="82" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4391079257750550397" fileName="ContainerItemAdder_Editor.java" startLine="54" startPosition="82" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -3732,7 +3732,7 @@
     <scopeInfo nodeId="4391079257750550413" fileName="ContainerItemAdder_Editor.java" startLine="169" startPosition="31" endLine="170" endPosition="222" />
     <scopeInfo nodeId="4391079257750550397" fileName="ContainerItemAdder_Editor.java" startLine="176" startPosition="44" endLine="177" endPosition="51" />
     <scopeInfo nodeId="4391079257750550397" fileName="ContainerItemAdder_Editor.java" startLine="180" startPosition="72" endLine="181" endPosition="61" />
-    <scopeInfo nodeId="1055897155339721750" fileName="ContainerItemAdder_Editor.java" startLine="207" startPosition="112" endLine="208" endPosition="124" />
+    <scopeInfo nodeId="1055897155339721750" fileName="ContainerItemAdder_Editor.java" startLine="207" startPosition="112" endLine="208" endPosition="117" />
     <scopeInfo nodeId="4391079257750550397" fileName="ContainerItemAdder_Editor.java" startLine="48" startPosition="5" endLine="50" endPosition="51" />
     <scopeInfo nodeId="4391079257750550397" fileName="ContainerItemAdder_Editor.java" startLine="68" startPosition="5" endLine="70" endPosition="51" />
     <scopeInfo nodeId="4391079257750550397" fileName="ContainerItemAdder_Editor.java" startLine="80" startPosition="5" endLine="82" endPosition="51" />
@@ -8170,7 +8170,7 @@
     <nodeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="531" startPosition="78" endLine="532" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="533" startPosition="10" endLine="534" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1719339442170944832" fileName="UIObject_Editor.java" startLine="537" startPosition="112" endLine="538" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1719339442170944824" fileName="UIObject_Editor.java" startLine="538" startPosition="78" endLine="539" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1719339442170944824" fileName="UIObject_Editor.java" startLine="538" startPosition="78" endLine="539" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="543" startPosition="34" endLine="544" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="547" startPosition="69" endLine="548" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="551" startPosition="81" endLine="552" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -8328,7 +8328,7 @@
     <nodeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="202" startPosition="49" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="215" startPosition="51" endLine="219" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="226" startPosition="49" endLine="230" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1719339442170712517" fileName="UIObject_Editor.java" startLine="338" startPosition="162" endLine="342" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1719339442170712517" fileName="UIObject_Editor.java" startLine="338" startPosition="155" endLine="342" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1719339442170712526" fileName="UIObject_Editor.java" startLine="342" startPosition="48" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1719339442170715514" fileName="UIObject_Editor.java" startLine="346" startPosition="11" endLine="350" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="355" startPosition="0" endLine="359" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidText#(Ljava/lang/String;)Z" />
@@ -8570,7 +8570,7 @@
     <scopeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="453" startPosition="92" endLine="455" endPosition="18" />
     <scopeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="458" startPosition="90" endLine="460" endPosition="18" />
     <scopeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="505" startPosition="58" endLine="507" endPosition="76" />
-    <scopeInfo nodeId="1719339442170944823" fileName="UIObject_Editor.java" startLine="537" startPosition="112" endLine="539" endPosition="249">
+    <scopeInfo nodeId="1719339442170944823" fileName="UIObject_Editor.java" startLine="537" startPosition="112" endLine="539" endPosition="242">
       <varInfo nodeId="1719339442170944833" varName="mbt" />
     </scopeInfo>
     <scopeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="613" startPosition="66" endLine="615" endPosition="93" />
@@ -8604,7 +8604,7 @@
     <scopeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="274" startPosition="90" endLine="278" endPosition="22" />
     <scopeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="281" startPosition="90" endLine="285" endPosition="22" />
     <scopeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="288" startPosition="90" endLine="292" endPosition="22" />
-    <scopeInfo nodeId="1719339442170712517" fileName="UIObject_Editor.java" startLine="338" startPosition="162" endLine="342" endPosition="0" />
+    <scopeInfo nodeId="1719339442170712517" fileName="UIObject_Editor.java" startLine="338" startPosition="155" endLine="342" endPosition="0" />
     <scopeInfo nodeId="1719339442170712526" fileName="UIObject_Editor.java" startLine="342" startPosition="48" endLine="346" endPosition="0" />
     <scopeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="355" startPosition="0" endLine="359" endPosition="0" />
     <scopeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="467" startPosition="26" endLine="471" endPosition="73" />
@@ -8756,7 +8756,7 @@
     <scopeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="48" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="335" startPosition="115" endLine="363" endPosition="22" />
     <scopeInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="334" startPosition="0" endLine="365" endPosition="0" />
-    <unitInfo nodeId="1719339442170712517" fileName="UIObject_Editor.java" startLine="338" startPosition="135" endLine="342" endPosition="9" unitName="jetbrains.mps.ui.modeling.editor.UIObject_Editor$2" />
+    <unitInfo nodeId="1719339442170712517" fileName="UIObject_Editor.java" startLine="338" startPosition="128" endLine="342" endPosition="9" unitName="jetbrains.mps.ui.modeling.editor.UIObject_Editor$2" />
     <unitInfo nodeId="1719339442170712526" fileName="UIObject_Editor.java" startLine="342" startPosition="25" endLine="346" endPosition="9" unitName="jetbrains.mps.ui.modeling.editor.UIObject_Editor$2" />
     <unitInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="336" startPosition="83" endLine="359" endPosition="5" unitName="jetbrains.mps.ui.modeling.editor.UIObject_Editor$1" />
     <unitInfo nodeId="8381258131358158060" fileName="UIObject_Editor.java" startLine="542" startPosition="0" endLine="574" endPosition="0" unitName="jetbrains.mps.ui.modeling.editor.UIObject_Editor$_Inline_c5f0a4_a2a0" />

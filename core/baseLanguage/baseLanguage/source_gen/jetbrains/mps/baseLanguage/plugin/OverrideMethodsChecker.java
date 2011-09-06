@@ -47,17 +47,17 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
   }
 
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
-    Iterable<SNode> classifiers = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(rootNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, new String[]{})).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> classifiers = ListSequence.fromList(SNodeOperations.getDescendants(rootNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface");
       }
     });
     this.myIndexWasNotReady = !(ClassifierSuccessorsFinder.isIndexReady(editorContext.getOperationContext().getProject()));
-    if (Sequence.<SNode>fromIterable(classifiers).isEmpty() || this.myIndexWasNotReady) {
+    if (Sequence.fromIterable(classifiers).isEmpty() || this.myIndexWasNotReady) {
       return Collections.<EditorMessage>emptySet();
     }
-    Set<EditorMessage> result = SetSequence.<EditorMessage>fromSet(new HashSet<EditorMessage>());
-    for (SNode containedClassifier : Sequence.<SNode>fromIterable(classifiers)) {
+    Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
+    for (SNode containedClassifier : Sequence.fromIterable(classifiers)) {
       // each classifier here is instance of ClassConcept or Interface 
       try {
         collectOverridenMethods(containedClassifier, result);
@@ -73,16 +73,16 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
 
   private void collectOverridingMethods(SNode container, Set<EditorMessage> messages) {
     OverridingMethodsFinder finder = new OverridingMethodsFinder(container);
-    for (SNode overridingMethod : SetSequence.<SNode>fromSet(finder.getOverridingMethods())) {
+    for (SNode overridingMethod : SetSequence.fromSet(finder.getOverridingMethods())) {
       StringBuffer tooltip = new StringBuffer();
       int messageCounter = 0;
       Set<Tuples._2<SNode, SNode>> overridenMethods = finder.getOverridenMethods(overridingMethod);
-      boolean overrides = SPropertyOperations.getBoolean(overridingMethod, "isAbstract") || SetSequence.<Tuples._2<SNode, SNode>>fromSet(overridenMethods).where(new IWhereFilter<Tuples._2<SNode, SNode>>() {
+      boolean overrides = SPropertyOperations.getBoolean(overridingMethod, "isAbstract") || SetSequence.fromSet(overridenMethods).where(new IWhereFilter<Tuples._2<SNode, SNode>>() {
         public boolean accept(Tuples._2<SNode, SNode> it) {
           return !(SPropertyOperations.getBoolean(it._0(), "isAbstract"));
         }
       }).isNotEmpty();
-      for (Iterator<Tuples._2<SNode, SNode>> it = SetSequence.<Tuples._2<SNode, SNode>>fromSet(overridenMethods).iterator(); it.hasNext();) {
+      for (Iterator<Tuples._2<SNode, SNode>> it = SetSequence.fromSet(overridenMethods).iterator(); it.hasNext();) {
         SNode overridenClassifier = it.next()._1();
         tooltip.append((overrides ?
           "Overrides" :
@@ -105,12 +105,12 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
 
   private void collectOverridenMethods(SNode container, Set<EditorMessage> messages) {
     List<SNode> derivedClassifiers = ClassifierSuccessorsFinder.getDerivedClassifiers(container, GlobalScope.getInstance());
-    if (ListSequence.<SNode>fromList(derivedClassifiers).isEmpty()) {
+    if (ListSequence.fromList(derivedClassifiers).isEmpty()) {
       return;
     }
     boolean isInterface = SNodeOperations.isInstanceOf(container, "jetbrains.mps.baseLanguage.structure.Interface");
     StringBuffer superClassifierTooltip = new StringBuffer();
-    if (ListSequence.<SNode>fromList(derivedClassifiers).count() > MAX_MESSAGE_NUMBER) {
+    if (ListSequence.fromList(derivedClassifiers).count() > MAX_MESSAGE_NUMBER) {
       superClassifierTooltip.append((isInterface ?
         "Has implementations" :
         "Has subclasses"
@@ -120,11 +120,11 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
         "Is implemented by" :
         "Is subclassed by"
       ));
-      for (SNode subClassifier : ListSequence.<SNode>fromList(derivedClassifiers)) {
+      for (SNode subClassifier : ListSequence.fromList(derivedClassifiers)) {
         superClassifierTooltip.append(TOOLTIP_INDENT);
         superClassifierTooltip.append(getClassifierPresentation(subClassifier));
         if (SNodeOperations.isInstanceOf(subClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
-          for (SNode enumConstant : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(subClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
+          for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(subClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
             superClassifierTooltip.append(TOOLTIP_INDENT);
             superClassifierTooltip.append(getEnumConstantPresentation(enumConstant));
           }
@@ -133,19 +133,19 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     }
     SetSequence.fromSet(messages).addElement(new SubclassedClassifierEditorMessage(container, this, superClassifierTooltip.toString(), isInterface));
 
-    Map<String, Set<SNode>> nameToMethodsMap = MapSequence.<String,Set<SNode>>fromMap(new HashMap<String, Set<SNode>>());
-    for (SNode method : ListSequence.<SNode>fromList(SLinkOperations.getTargets(container, "method", true)).where(new IWhereFilter<SNode>() {
+    Map<String, Set<SNode>> nameToMethodsMap = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
+    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(container, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return OverridingMethodsFinder.canBeOverriden(it);
       }
     })) {
       SetSequence.fromSet(OverridingMethodsFinder.safeGet(nameToMethodsMap, SPropertyOperations.getString(method, "name"))).addElement(method);
     }
-    if (MapSequence.<String,Set<SNode>>fromMap(nameToMethodsMap).isEmpty()) {
+    if (MapSequence.fromMap(nameToMethodsMap).isEmpty()) {
       return;
     }
     Map<SNode, Set<SNode>> overridenToOverridingMethodsMap = createOverridenToOverridingMethodsMap(nameToMethodsMap, derivedClassifiers);
-    for (SNode overridenMethod : SetSequence.<SNode>fromSet(MapSequence.fromMap(overridenToOverridingMethodsMap).keySet())) {
+    for (SNode overridenMethod : SetSequence.fromSet(MapSequence.fromMap(overridenToOverridingMethodsMap).keySet())) {
       if (SPropertyOperations.getBoolean(overridenMethod, "isFinal")) {
         continue;
       }
@@ -157,7 +157,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
       ));
       tooltip.append(" in");
       int messageCounter = 0;
-      for (Iterator<SNode> it = SetSequence.<SNode>fromSet(MapSequence.<SNode,Set<SNode>>fromMap(overridenToOverridingMethodsMap).get(overridenMethod)).iterator(); it.hasNext();) {
+      for (Iterator<SNode> it = SetSequence.fromSet(MapSequence.fromMap(overridenToOverridingMethodsMap).get(overridenMethod)).iterator(); it.hasNext();) {
         SNode overridingMethod = it.next();
         tooltip.append(TOOLTIP_INDENT);
         tooltip.append(getPresentation(SNodeOperations.getParent(overridingMethod)));
@@ -172,18 +172,18 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
   }
 
   private Map<SNode, Set<SNode>> createOverridenToOverridingMethodsMap(Map<String, Set<SNode>> nameToMethodsMap, Iterable<SNode> derivedClassifiers) {
-    Map<SNode, Set<SNode>> result = MapSequence.<SNode,Set<SNode>>fromMap(new HashMap<SNode, Set<SNode>>());
-    for (SNode derivedClassifier : Sequence.<SNode>fromIterable(derivedClassifiers)) {
-      for (final SNode derivedClassifierMethod : Sequence.<SNode>fromIterable(OverridingMethodsFinder.getInstanceMethods(derivedClassifier)).where(new IWhereFilter<SNode>() {
+    Map<SNode, Set<SNode>> result = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
+    for (SNode derivedClassifier : Sequence.fromIterable(derivedClassifiers)) {
+      for (final SNode derivedClassifierMethod : Sequence.fromIterable(OverridingMethodsFinder.getInstanceMethods(derivedClassifier)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return OverridingMethodsFinder.canOverride(it);
         }
       })) {
-        Set<SNode> similarMethods = MapSequence.<String,Set<SNode>>fromMap(nameToMethodsMap).get(SPropertyOperations.getString(derivedClassifierMethod, "name"));
+        Set<SNode> similarMethods = MapSequence.fromMap(nameToMethodsMap).get(SPropertyOperations.getString(derivedClassifierMethod, "name"));
         if (similarMethods == null) {
           continue;
         }
-        SNode overridenMethod = SetSequence.<SNode>fromSet(similarMethods).findFirst(new IWhereFilter<SNode>() {
+        SNode overridenMethod = SetSequence.fromSet(similarMethods).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(it, derivedClassifierMethod);
           }
@@ -191,11 +191,11 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
         if (overridenMethod != null) {
           Set<SNode> overridingMethods = OverridingMethodsFinder.safeGet(result, overridenMethod);
           SetSequence.fromSet(overridingMethods).addElement(derivedClassifierMethod);
-          if (SetSequence.<SNode>fromSet(overridingMethods).count() > MAX_MESSAGE_NUMBER) {
+          if (SetSequence.fromSet(overridingMethods).count() > MAX_MESSAGE_NUMBER) {
             SetSequence.fromSet(similarMethods).removeElement(overridenMethod);
-            if (SetSequence.<SNode>fromSet(similarMethods).isEmpty()) {
+            if (SetSequence.fromSet(similarMethods).isEmpty()) {
               MapSequence.fromMap(nameToMethodsMap).removeKey(SPropertyOperations.getString(derivedClassifierMethod, "name"));
-              if (MapSequence.<String,Set<SNode>>fromMap(nameToMethodsMap).isEmpty()) {
+              if (MapSequence.fromMap(nameToMethodsMap).isEmpty()) {
                 return result;
               }
             }
@@ -211,7 +211,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     if (this.myIndexWasNotReady) {
       return true;
     }
-    for (SModelEvent event : ListSequence.<SModelEvent>fromList(events)) {
+    for (SModelEvent event : ListSequence.fromList(events)) {
       if (event instanceof SModelRootEvent || event instanceof SModelFileChangedEvent) {
         return true;
       }

@@ -40,10 +40,10 @@ public class SurroundWithComment_Intention extends SurroundWithIntention impleme
     SNode commentedBlock = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", null);
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(node, commentedBlock);
-    for (SNode selectedNode : ListSequence.<SNode>fromList(selectedNodes)) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(commentedBlock, "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
+    for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
+      ListSequence.fromList(SLinkOperations.getTargets(commentedBlock, "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
     }
-    editorContext.select(ListSequence.<SNode>fromList(SLinkOperations.getTargets(commentedBlock, "statement", true)).last());
+    editorContext.select(ListSequence.fromList(SLinkOperations.getTargets(commentedBlock, "statement", true)).last());
   }
 
   public String getLocationString() {

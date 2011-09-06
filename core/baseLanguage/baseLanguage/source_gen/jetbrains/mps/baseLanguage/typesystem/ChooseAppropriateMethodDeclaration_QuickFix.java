@@ -44,7 +44,7 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
         }
       });
       for (SNode methodDecl : mDecls) {
-        Iterable<SNode> parameterTypes = ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodDecl, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
+        Iterable<SNode> parameterTypes = ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "type", true);
           }
@@ -74,9 +74,9 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
       SNode constructorCall = SNodeOperations.cast(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement");
       List<SNode> list = SLinkOperations.getTargets(classConcept, "constructor", true);
       for (SNode constructorDeclaration : list) {
-        List<SNode> parameterTypes = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+        List<SNode> parameterTypes = ListSequence.fromList(new ArrayList<SNode>());
         for (SNode parameter : SLinkOperations.getTargets(constructorDeclaration, "parameter", true)) {
-          ListSequence.<SNode>fromList(parameterTypes).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(parameter, "type", true)));
+          ListSequence.fromList(parameterTypes).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(parameter, "type", true)));
         }
         boolean good = ResolveUtil.goodArguments(parameterTypes, SLinkOperations.getTargets(constructorCall, "actualArgument", true));
         if (good) {

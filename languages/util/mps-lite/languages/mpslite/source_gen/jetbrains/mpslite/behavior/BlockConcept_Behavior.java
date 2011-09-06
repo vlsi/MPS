@@ -18,9 +18,9 @@ public class BlockConcept_Behavior {
     SNode linkDeclaration = SLinkOperations.addNewChild(concept, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SPropertyOperations.set(linkDeclaration, "role", "body");
     SPropertyOperations.set(linkDeclaration, "metaClass", "aggregation");
-    SLinkOperations.setTarget(linkDeclaration, "target", MapSequence.<SNode,SNode>fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "statementConcept", true)), false);
+    SLinkOperations.setTarget(linkDeclaration, "target", MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "statementConcept", true)), false);
     SPropertyOperations.set(linkDeclaration, "sourceCardinality", "0..n");
-    MapSequence.<SNode,SNode>fromMap(partsToLinks).put(thisNode, linkDeclaration);
+    MapSequence.fromMap(partsToLinks).put(thisNode, linkDeclaration);
   }
 
   public static SNode virtual_createEditor_1239890004879(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {

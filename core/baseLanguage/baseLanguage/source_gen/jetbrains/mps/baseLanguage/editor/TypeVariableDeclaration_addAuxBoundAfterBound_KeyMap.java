@@ -49,12 +49,12 @@ public class TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap extends Editor
     }
 
     private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      if (ListSequence.<SNode>fromList(selectedNodes).count() != 1) {
+      if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
       }
 
       // Selected node should be within TypeVariableDeclaration 
-      SNode selectedNode = ListSequence.<SNode>fromList(selectedNodes).first();
+      SNode selectedNode = ListSequence.fromList(selectedNodes).first();
       SNode typeVarDeclaration = SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", true, false);
       if (typeVarDeclaration == null) {
         return false;
@@ -71,7 +71,7 @@ public class TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap extends Editor
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNode typeVarDeclaration = SNodeOperations.getAncestor(ListSequence.<SNode>fromList(selectedNodes).first(), "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", true, false);
+      SNode typeVarDeclaration = SNodeOperations.getAncestor(ListSequence.fromList(selectedNodes).first(), "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", true, false);
       SNodeFactoryOperations.addNewChild(typeVarDeclaration, "auxBounds", "jetbrains.mps.baseLanguage.structure.ClassifierType");
     }
 

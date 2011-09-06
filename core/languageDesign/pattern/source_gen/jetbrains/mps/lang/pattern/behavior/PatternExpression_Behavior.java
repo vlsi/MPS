@@ -22,12 +22,12 @@ public class PatternExpression_Behavior {
 
   public static List<SNode> call_getVariables_4855904478357072957(SNode thisNode) {
     List<SNode> variables = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(variables).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{})));
-    ListSequence.<SNode>fromList(variables).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", false, new String[]{})));
-    ListSequence.<SNode>fromList(variables).addSequence(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{})));
+    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{})));
+    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", false, new String[]{})));
+    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{})));
     /*
       if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.pattern.structure.OrPatternClause")) {
-        ListSequence.<SNode>fromList(variables).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.pattern.structure.OrPattern"), "variable", true)));
+        ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.pattern.structure.OrPattern"), "variable", true)));
       }
     */
     return variables;
@@ -39,7 +39,7 @@ public class PatternExpression_Behavior {
     Set<String> names = new HashSet();
     for (SNode var : variables) {
       if (!(names.contains(SPropertyOperations.getString(var, "name")))) {
-        ListSequence.<SNode>fromList(result).addElement(var);
+        ListSequence.fromList(result).addElement(var);
         names.add(SPropertyOperations.getString(var, "name"));
       }
     }
@@ -51,7 +51,7 @@ public class PatternExpression_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode var : variables) {
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.lang.pattern.structure.OrPattern") && SNodeOperations.getParent(var) != thisNode)) {
-        ListSequence.<SNode>fromList(result).addElement(var);
+        ListSequence.fromList(result).addElement(var);
       }
     }
     return result;

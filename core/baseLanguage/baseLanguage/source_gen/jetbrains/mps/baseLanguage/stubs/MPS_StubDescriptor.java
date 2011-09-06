@@ -29,6 +29,6 @@ public class MPS_StubDescriptor extends BaseLibStubDescriptor {
   }
 
   public List<String> getPaths() {
-    return ListSequence.<String>fromListWithValues(new ArrayList<String>(), CommonPaths.getMPSPaths());
+    return ListSequence.fromListWithValues(new ArrayList<String>(), CommonPaths.getMPSPaths());
   }
 }

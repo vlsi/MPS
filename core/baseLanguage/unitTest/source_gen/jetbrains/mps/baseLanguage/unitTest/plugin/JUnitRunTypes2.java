@@ -23,7 +23,7 @@ public enum JUnitRunTypes2 {
         return "Methods list is empty.";
       }
       if (configuration.getTestMethods() != null) {
-        for (String method : ListSequence.<String>fromList(configuration.getTestMethods())) {
+        for (String method : ListSequence.fromList(configuration.getTestMethods())) {
           SNodePointer pointer = TestUtils.stringToPointer(method);
           if (pointer == null || pointer.getNode() == null || TestNodeWrapperFactory.tryToWrap(pointer.getNode()) == null) {
             return "Could not find test method for id " + method + ".";
@@ -45,7 +45,7 @@ public enum JUnitRunTypes2 {
         return "Classes list is empty.";
       }
       if (configuration.getTestCases() != null) {
-        for (String testCase : ListSequence.<String>fromList(configuration.getTestCases())) {
+        for (String testCase : ListSequence.fromList(configuration.getTestCases())) {
           SNodePointer pointer = TestUtils.stringToPointer(testCase);
           if (pointer == null || pointer.getNode() == null || TestNodeWrapperFactory.tryToWrap(pointer.getNode()) == null) {
             return "Could not find test case for id " + testCase + ".";
@@ -61,7 +61,7 @@ public enum JUnitRunTypes2 {
     public Iterable<ITestNodeWrapper> collect(JUnitTests_Configuration configuration) {
       SModel model = TestUtils.getModel(configuration.getModel());
       if (model == null) {
-        return Sequence.<ITestNodeWrapper>fromIterable(Collections.<ITestNodeWrapper>emptyList());
+        return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
       }
       return TestUtils.getModelTests(model);
     }
@@ -74,7 +74,7 @@ public enum JUnitRunTypes2 {
       if (model == null) {
         return "Could not find model " + configuration.getModel();
       }
-      if (Sequence.<ITestNodeWrapper>fromIterable(TestUtils.getModelTests(model)).isEmpty()) {
+      if (Sequence.fromIterable(TestUtils.getModelTests(model)).isEmpty()) {
         return "No tests found in model " + configuration.getModel() + ".";
       }
       return null;
@@ -86,7 +86,7 @@ public enum JUnitRunTypes2 {
     public Iterable<ITestNodeWrapper> collect(JUnitTests_Configuration configuration) {
       IModule module = TestUtils.getModule(configuration.getModule());
       if (module == null) {
-        return Sequence.<ITestNodeWrapper>fromIterable(Collections.<ITestNodeWrapper>emptyList());
+        return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
       }
       return TestUtils.getModuleTests(module);
     }
@@ -99,7 +99,7 @@ public enum JUnitRunTypes2 {
       if (module == null) {
         return "Module " + configuration.getModule() + " does not exist.";
       }
-      if (Sequence.<ITestNodeWrapper>fromIterable(TestUtils.getModuleTests(module)).isEmpty()) {
+      if (Sequence.fromIterable(TestUtils.getModuleTests(module)).isEmpty()) {
         return "No tests found in module " + configuration.getModule() + "";
       }
       return null;
@@ -113,7 +113,7 @@ public enum JUnitRunTypes2 {
     }
 
     public String check(JUnitTests_Configuration configuration) {
-      if (Sequence.<ITestNodeWrapper>fromIterable(TestUtils.getProjectTests(configuration.getProject().getComponent(MPSProject.class))).isEmpty()) {
+      if (Sequence.fromIterable(TestUtils.getProjectTests(configuration.getProject().getComponent(MPSProject.class))).isEmpty()) {
         return "Project does not contain tests.";
       }
       return null;

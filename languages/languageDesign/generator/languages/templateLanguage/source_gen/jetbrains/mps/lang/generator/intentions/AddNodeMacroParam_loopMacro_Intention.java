@@ -70,7 +70,7 @@ public class AddNodeMacroParam_loopMacro_Intention extends BaseIntention impleme
     SLinkOperations.setTarget(dotExpression, "operand", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
     SNode expressionStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(referentValue, "body", true), "statement", true)).addElement(expressionStatement);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(referentValue, "body", true), "statement", true)).addElement(expressionStatement);
     SLinkOperations.setTarget(loopMacro, "sourceNodesQuery", referentValue, true);
     // set caret 
     editorContext.selectAndSetCaret(loopMacro, 1);
@@ -86,13 +86,13 @@ public class AddNodeMacroParam_loopMacro_Intention extends BaseIntention impleme
   }
 
   public static List<Intention> instances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.<Intention>fromList(new ArrayList<Intention>());
+    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
     List<SNode> paramList = parameter(node, editorContext);
     if (paramList != null) {
       for (SNode param : paramList) {
         AddNodeMacroParam_loopMacro_Intention intention = new AddNodeMacroParam_loopMacro_Intention();
         intention.myParameter = param;
-        ListSequence.<Intention>fromList(list).addElement(intention);
+        ListSequence.fromList(list).addElement(intention);
       }
     }
     return list;

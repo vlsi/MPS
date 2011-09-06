@@ -44,8 +44,8 @@ public class AnonymousCellAnnotation_Behavior {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false) != null) {
-          SNode selectionStart = MapSequence.<SNode,SNode>fromMap(map).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false));
-          SNode selectionEnd = MapSequence.<SNode,SNode>fromMap(map).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false));
+          SNode selectionStart = MapSequence.fromMap(map).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false));
+          SNode selectionEnd = MapSequence.fromMap(map).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false));
           SelectionManager selectionManager = editorComponent.value.getSelectionManager();
           selectionManager.pushSelection(selectionManager.createRangeSelection(selectionStart, selectionEnd));
         }
@@ -70,7 +70,7 @@ public class AnonymousCellAnnotation_Behavior {
     assert selection != null;
     if (selection instanceof SingularSelection) {
       EditorCell selectedCell = ((SingularSelection) selection).getEditorCell();
-      Assert.assertSame(node, MapSequence.<SNode,SNode>fromMap(map).get(selectedCell.getSNode()));
+      Assert.assertSame(node, MapSequence.fromMap(map).get(selectedCell.getSNode()));
       Assert.assertEquals(selectedCell.getCellId(), SPropertyOperations.getString(thisNode, "cellId"));
       if (selectedCell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) selectedCell;
@@ -83,8 +83,8 @@ public class AnonymousCellAnnotation_Behavior {
       NodeRangeSelection rangeSelection = (NodeRangeSelection) selection;
       Assert.assertNotNull(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false));
       Assert.assertNotNull(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false));
-      Assert.assertEquals(MapSequence.<SNode,SNode>fromMap(nodeToCopy).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false)), MapSequence.<SNode,SNode>fromMap(map).get(rangeSelection.getFirstNode()));
-      Assert.assertEquals(MapSequence.<SNode,SNode>fromMap(nodeToCopy).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false)), MapSequence.<SNode,SNode>fromMap(map).get(rangeSelection.getLastNode()));
+      Assert.assertEquals(MapSequence.fromMap(nodeToCopy).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false)), MapSequence.fromMap(map).get(rangeSelection.getFirstNode()));
+      Assert.assertEquals(MapSequence.fromMap(nodeToCopy).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false)), MapSequence.fromMap(map).get(rangeSelection.getLastNode()));
     } else {
       if (selection != null) {
         Assert.fail("Selection of unsupported type: " + selection.getClass());

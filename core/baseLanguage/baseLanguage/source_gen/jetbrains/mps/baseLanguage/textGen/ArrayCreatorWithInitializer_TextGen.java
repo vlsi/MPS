@@ -12,10 +12,10 @@ public class ArrayCreatorWithInitializer_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "componentType", true), this.getSNode());
     this.append("[]{");
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "initValue", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "initValue", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "initValue", true)).last()) {
+        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).last()) {
           this.append(", ");
         }
       }

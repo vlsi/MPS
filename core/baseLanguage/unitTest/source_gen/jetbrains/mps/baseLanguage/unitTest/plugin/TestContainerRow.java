@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public abstract class TestContainerRow implements TestStatisticsRow {
   private final String myText;
   private String myAdditionalText;
-  private List<TestStatisticsRow> myRows = ListSequence.<TestStatisticsRow>fromList(new ArrayList<TestStatisticsRow>());
+  private List<TestStatisticsRow> myRows = ListSequence.fromList(new ArrayList<TestStatisticsRow>());
 
   public TestContainerRow(String text, String additionalText) {
     this.myText = text;
@@ -26,7 +26,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public long getElapsedTime() {
     long elapsedTime = 0;
-    for (TestStatisticsRow row : ListSequence.<TestStatisticsRow>fromList(this.myRows)) {
+    for (TestStatisticsRow row : ListSequence.fromList(this.myRows)) {
       long methodTime = row.getElapsedTime();
       if (methodTime >= 0) {
         elapsedTime = elapsedTime + methodTime;
@@ -37,7 +37,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public long getUsageBefore() {
     long usageBefore = -1;
-    TestStatisticsRow row = ListSequence.<TestStatisticsRow>fromList(this.myRows).first();
+    TestStatisticsRow row = ListSequence.fromList(this.myRows).first();
     if (row != null) {
       long methodUsageBefore = row.getUsageBefore();
       if (methodUsageBefore >= 0) {
@@ -49,7 +49,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public long getUsageAfter() {
     long usageAfter = -1;
-    TestStatisticsRow row = ListSequence.<TestStatisticsRow>fromList(this.myRows).last();
+    TestStatisticsRow row = ListSequence.fromList(this.myRows).last();
     if (row != null) {
       long methodUsageAfter = row.getUsageAfter();
       if (methodUsageAfter >= 0) {
@@ -71,7 +71,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public int getSuccessful() {
     int count = 0;
-    for (TestStatisticsRow row : ListSequence.<TestStatisticsRow>fromList(this.myRows)) {
+    for (TestStatisticsRow row : ListSequence.fromList(this.myRows)) {
       count = count + row.getSuccessful();
     }
     return count;
@@ -79,7 +79,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public int getErrored() {
     int count = 0;
-    for (TestStatisticsRow row : ListSequence.<TestStatisticsRow>fromList(this.myRows)) {
+    for (TestStatisticsRow row : ListSequence.fromList(this.myRows)) {
       count = count + row.getErrored();
     }
     return count;
@@ -87,13 +87,13 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public int getFailed() {
     int count = 0;
-    for (TestStatisticsRow row : ListSequence.<TestStatisticsRow>fromList(this.myRows)) {
+    for (TestStatisticsRow row : ListSequence.fromList(this.myRows)) {
       count = count + row.getFailed();
     }
     return count;
   }
 
   public void addRow(TestStatisticsRow row) {
-    ListSequence.<TestStatisticsRow>fromList(this.myRows).addElement(row);
+    ListSequence.fromList(this.myRows).addElement(row);
   }
 }

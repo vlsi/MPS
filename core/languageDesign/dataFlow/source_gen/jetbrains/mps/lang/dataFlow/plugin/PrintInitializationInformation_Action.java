@@ -44,9 +44,9 @@ public class PrintInitializationInformation_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.<String,Object>fromMap(_params).put("node", node);
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
@@ -54,7 +54,7 @@ public class PrintInitializationInformation_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")));
+      Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
       AnalysisResult<VarSet> result = program.analyze(new InitializedVariablesAnalyzer());
       System.out.println(result.toString());
     } catch (Throwable t) {

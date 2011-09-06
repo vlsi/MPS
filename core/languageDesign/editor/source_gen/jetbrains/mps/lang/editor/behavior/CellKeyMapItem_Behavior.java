@@ -11,7 +11,7 @@ public class CellKeyMapItem_Behavior {
   }
 
   public static String call_getKeyStroke_1213877335427(SNode thisNode) {
-    SNode first = ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "keystroke", true)).first();
+    SNode first = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "keystroke", true)).first();
     String result = "";
     if (first == null) {
       return result;

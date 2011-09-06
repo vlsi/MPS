@@ -11,7 +11,7 @@ public class EquationDirection_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<EquationDirection_Enum> constants = ListSequence.<EquationDirection_Enum>fromList(EquationDirection_Enum.getConstants()).iterator();
+    Iterator<EquationDirection_Enum> constants = ListSequence.fromList(EquationDirection_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       EquationDirection_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class EquationDirection_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<EquationDirection_Enum> constants = ListSequence.<EquationDirection_Enum>fromList(EquationDirection_Enum.getConstants()).iterator();
+    Iterator<EquationDirection_Enum> constants = ListSequence.fromList(EquationDirection_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       EquationDirection_Enum constant = constants.next();
       if (value.equals(constant.getName())) {

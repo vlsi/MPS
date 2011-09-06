@@ -112,7 +112,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
       declaration = SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
     } else {
-      return Sequence.<SNode>fromIterable(Collections.<SNode>emptyList());
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
     return SLinkOperations.getTargets(declaration, "throwsItem", true);
   }

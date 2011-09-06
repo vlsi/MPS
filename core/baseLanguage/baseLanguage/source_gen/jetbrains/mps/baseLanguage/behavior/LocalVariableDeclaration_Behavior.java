@@ -37,7 +37,7 @@ public class LocalVariableDeclaration_Behavior {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
     {
       SNode ref;
-      Iterator<SNode> ref_iterator = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).iterator();
+      Iterator<SNode> ref_iterator = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).iterator();
       while (true) {
         if (!(ref_iterator.hasNext())) {
           break;

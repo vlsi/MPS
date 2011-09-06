@@ -99,7 +99,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_kcujn9_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1213877259423(node), "visitParameterDeclarationList", true), "visitParameterDeclaration", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1213877259423(node), "visitParameterDeclarationList", true), "visitParameterDeclaration", true)).count() > 0;
   }
 
   private static class actualArgumentListHandler_kcujn9_b1a extends RefNodeListHandler {

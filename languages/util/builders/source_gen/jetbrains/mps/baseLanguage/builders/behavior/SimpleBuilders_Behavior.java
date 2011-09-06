@@ -29,7 +29,7 @@ public class SimpleBuilders_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode sb : SModelOperations.getRootsIncludingImported(context, scope, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders")) {
       if (SimpleBuilders_Behavior.call_isDescendant_5199967550912479710(sb, thisNode)) {
-        ListSequence.<SNode>fromList(result).addElement(sb);
+        ListSequence.fromList(result).addElement(sb);
       }
     }
     return result;
@@ -39,7 +39,7 @@ public class SimpleBuilders_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     SNode current = thisNode;
     while (current != null) {
-      ListSequence.<SNode>fromList(result).addElement(current);
+      ListSequence.fromList(result).addElement(current);
       current = SLinkOperations.getTarget(current, "extendsBuilder", false);
     }
     return result;

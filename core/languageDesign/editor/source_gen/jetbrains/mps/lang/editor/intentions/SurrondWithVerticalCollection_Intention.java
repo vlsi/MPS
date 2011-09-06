@@ -44,16 +44,16 @@ public class SurrondWithVerticalCollection_Intention extends BaseIntention imple
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.<SNode>fromList(((List<SNode>) editorContext.getSelectedNodes())).isNotEmpty();
+    return ListSequence.fromList(((List<SNode>) editorContext.getSelectedNodes())).isNotEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
     SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
     List<SNode> nodes = editorContext.getSelectedNodes();
-    SNodeOperations.insertNextSiblingChild(ListSequence.<SNode>fromList(nodes).last(), result);
+    SNodeOperations.insertNextSiblingChild(ListSequence.fromList(nodes).last(), result);
     for (SNode sn : nodes) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(result, "childCellModel", true)).addElement(SNodeOperations.cast(sn, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
+      ListSequence.fromList(SLinkOperations.getTargets(result, "childCellModel", true)).addElement(SNodeOperations.cast(sn, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
     }
   }
 

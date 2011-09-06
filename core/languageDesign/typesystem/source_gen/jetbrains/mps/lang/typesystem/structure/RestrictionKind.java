@@ -31,9 +31,9 @@ public enum RestrictionKind {
   }
 
   public static List<RestrictionKind> getConstants() {
-    List<RestrictionKind> list = ListSequence.<RestrictionKind>fromList(new LinkedList<RestrictionKind>());
-    ListSequence.<RestrictionKind>fromList(list).addElement(RestrictionKind.equals);
-    ListSequence.<RestrictionKind>fromList(list).addElement(RestrictionKind.subtype);
+    List<RestrictionKind> list = ListSequence.fromList(new LinkedList<RestrictionKind>());
+    ListSequence.fromList(list).addElement(RestrictionKind.equals);
+    ListSequence.fromList(list).addElement(RestrictionKind.subtype);
     return list;
   }
 

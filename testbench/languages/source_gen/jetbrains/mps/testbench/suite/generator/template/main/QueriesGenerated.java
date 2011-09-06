@@ -26,7 +26,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4089647634161018296(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String tns = IterableUtils.join(Sequence.<String>fromIterable(ITestRef_Behavior.call_testNames_4089647634160960707(_context.getNode())), ",");
+    String tns = IterableUtils.join(Sequence.fromIterable(ITestRef_Behavior.call_testNames_4089647634160960707(_context.getNode())), ",");
     if (StringUtils.isEmpty(tns)) {
       _context.showWarningMessage(_context.getNode(), "empty test case");
     }

@@ -14,7 +14,7 @@ public class EditorTestCase_Behavior {
   }
 
   public static List<SNode> virtual_getTestSet_1216130724401(SNode thisNode) {
-    return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), thisNode);
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), thisNode);
   }
 
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
@@ -31,7 +31,7 @@ public class EditorTestCase_Behavior {
 
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(result).addElement(thisNode);
+    ListSequence.fromList(result).addElement(thisNode);
     return result;
   }
 }

@@ -34,14 +34,14 @@ public class AnonymousClass_CurlyBraces {
         SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
         final SNode classCreator = SNodeFactoryOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguage.structure.ClassCreator");
         SLinkOperations.setTarget(classCreator, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).visitAll(new IVisitor<SNode>() {
+        ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            ListSequence.<SNode>fromList(SLinkOperations.getTargets(classCreator, "typeParameter", true)).addElement(it);
+            ListSequence.fromList(SLinkOperations.getTargets(classCreator, "typeParameter", true)).addElement(it);
           }
         });
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)).visitAll(new IVisitor<SNode>() {
+        ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            ListSequence.<SNode>fromList(SLinkOperations.getTargets(classCreator, "actualArgument", true)).addElement(it);
+            ListSequence.fromList(SLinkOperations.getTargets(classCreator, "actualArgument", true)).addElement(it);
           }
         });
       } else {

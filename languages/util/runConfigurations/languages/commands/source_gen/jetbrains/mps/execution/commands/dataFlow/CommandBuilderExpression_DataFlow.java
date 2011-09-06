@@ -14,7 +14,7 @@ public class CommandBuilderExpression_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode arg : ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "argument", true))) {
+    for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "argument", true))) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(arg, "value", true));
     }
   }

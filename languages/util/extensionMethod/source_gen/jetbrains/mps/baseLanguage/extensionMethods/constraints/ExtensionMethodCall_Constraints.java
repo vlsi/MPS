@@ -55,25 +55,25 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
               public List<SNode> getNodes(Condition<SNode> p0) {
                 List<SNode> result = new ArrayList<SNode>();
                 SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-                for (SNode extension : ListSequence.<SNode>fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"))) {
+                for (SNode extension : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"))) {
                   if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(SLinkOperations.getTarget(extension, "type", true)))) {
-                    for (SNode method : ListSequence.<SNode>fromList(SLinkOperations.getTargets(extension, "methods", true))) {
+                    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(extension, "methods", true))) {
                       if (VisibilityUtil.isVisible(_context.getEnclosingNode(), method)) {
-                        ListSequence.<SNode>fromList(result).addElement(method);
+                        ListSequence.fromList(result).addElement(method);
                       }
                     }
                   }
                 }
-                for (SNode container : ListSequence.<SNode>fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"))) {
-                  for (SNode method : ListSequence.<SNode>fromList(SLinkOperations.getTargets(container, "methods", true))) {
+                for (SNode container : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"))) {
+                  for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(container, "methods", true))) {
                     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(SLinkOperations.getTarget(method, "extendedType", true)))) {
                       if (VisibilityUtil.isVisible(_context.getEnclosingNode(), method)) {
-                        ListSequence.<SNode>fromList(result).addElement(method);
+                        ListSequence.fromList(result).addElement(method);
                       }
                     }
                   }
                 }
-                return ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), result);
+                return ListSequence.fromListWithValues(new ArrayList<SNode>(), result);
               }
 
               @Override

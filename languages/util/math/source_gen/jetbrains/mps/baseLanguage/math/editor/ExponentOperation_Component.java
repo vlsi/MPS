@@ -108,10 +108,10 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<SNode> result = ListSequence.<SNode>fromList(new ArrayList<SNode>());
-      for (SNode a : ListSequence.<SNode>fromList(SConceptOperations.getAllSubConcepts(ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(node, "allowedSubstituends")).first(), SNodeOperations.getModel(node), scope))) {
+      List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+      for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(node, "allowedSubstituends")).first(), SNodeOperations.getModel(node), scope))) {
         if (!(SConceptPropertyOperations.getBoolean(a, "abstract")) && SConceptOperations.isSubConceptOf(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation")) {
-          ListSequence.<SNode>fromList(result).addElement(SNodeOperations.castConcept(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"));
+          ListSequence.fromList(result).addElement(SNodeOperations.castConcept(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"));
         }
       }
       return result;

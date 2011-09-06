@@ -36,9 +36,9 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
   }
 
   private Map<String, Object> getParametersAsMap() {
-    Map<String, Object> result = MapSequence.<String,Object>fromMap(new HashMap<String, Object>());
-    MapSequence.<String,Object>fromMap(result).put("left", myLeft);
-    MapSequence.<String,Object>fromMap(result).put("right", myRight);
+    Map<String, Object> result = MapSequence.fromMap(new HashMap<String, Object>());
+    MapSequence.fromMap(result).put("left", myLeft);
+    MapSequence.fromMap(result).put("right", myRight);
     return result;
   }
 

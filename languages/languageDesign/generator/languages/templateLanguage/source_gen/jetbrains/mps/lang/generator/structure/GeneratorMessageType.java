@@ -32,10 +32,10 @@ public enum GeneratorMessageType {
   }
 
   public static List<GeneratorMessageType> getConstants() {
-    List<GeneratorMessageType> list = ListSequence.<GeneratorMessageType>fromList(new LinkedList<GeneratorMessageType>());
-    ListSequence.<GeneratorMessageType>fromList(list).addElement(GeneratorMessageType.info);
-    ListSequence.<GeneratorMessageType>fromList(list).addElement(GeneratorMessageType.warning);
-    ListSequence.<GeneratorMessageType>fromList(list).addElement(GeneratorMessageType.error);
+    List<GeneratorMessageType> list = ListSequence.fromList(new LinkedList<GeneratorMessageType>());
+    ListSequence.fromList(list).addElement(GeneratorMessageType.info);
+    ListSequence.fromList(list).addElement(GeneratorMessageType.warning);
+    ListSequence.fromList(list).addElement(GeneratorMessageType.error);
     return list;
   }
 

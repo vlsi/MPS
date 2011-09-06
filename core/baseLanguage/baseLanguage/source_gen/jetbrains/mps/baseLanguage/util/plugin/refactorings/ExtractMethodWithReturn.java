@@ -27,8 +27,8 @@ public class ExtractMethodWithReturn extends ExtractMethodFromStatementsRefactor
         SNode returnlStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
         SLinkOperations.setTarget(returnlStatement, "expression", methodCall, true);
         List<SNode> statements = match.getNodes();
-        SNodeOperations.insertPrevSiblingChild(ListSequence.<SNode>fromList(statements).first(), returnlStatement);
-        for (SNode statement : ListSequence.<SNode>fromList(statements)) {
+        SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), returnlStatement);
+        for (SNode statement : ListSequence.fromList(statements)) {
           SNodeOperations.deleteNode(statement);
         }
       }

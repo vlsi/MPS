@@ -32,10 +32,10 @@ public class InlineLocalVariable_Action extends GeneratedAction {
     final Wrappers._boolean result = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = InlineVariableRefactoring.isApplicable(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")));
+        result.value = InlineVariableRefactoring.isApplicable(((SNode) MapSequence.fromMap(_params).get("node")));
       }
     });
-    return result.value && !(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")).isReadOnly());
+    return result.value && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -58,21 +58,21 @@ public class InlineLocalVariable_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.<String,Object>fromMap(_params).put("node", node);
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("node") == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorContext") == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.<String,Object>fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
@@ -84,15 +84,15 @@ public class InlineLocalVariable_Action extends GeneratedAction {
       boolean isAvailable;
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ref.value = InlineVariableRefactoring.createRefactoring(((SNode) MapSequence.<String,Object>fromMap(_params).get("node")));
+          ref.value = InlineVariableRefactoring.createRefactoring(((SNode) MapSequence.fromMap(_params).get("node")));
         }
       });
-      isAvailable = ref.value.checkRefactoring(((Frame) MapSequence.<String,Object>fromMap(_params).get("frame")));
+      isAvailable = ref.value.checkRefactoring(((Frame) MapSequence.fromMap(_params).get("frame")));
       if (isAvailable) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             SNode result = ref.value.doRefactoring();
-            ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("editorContext")).select(result);
+            ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(result);
           }
         });
       }

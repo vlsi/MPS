@@ -46,9 +46,9 @@ public class ConvertDateTimeOperations_Action extends GeneratedAction {
       if (modelDescriptor == null) {
         return false;
       }
-      MapSequence.<String,Object>fromMap(_params).put("model", modelDescriptor.getSModel());
+      MapSequence.fromMap(_params).put("model", modelDescriptor.getSModel());
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
@@ -56,13 +56,13 @@ public class ConvertDateTimeOperations_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<SNode> minusPeriodOperations = SModelOperations.getNodes(((SModel) MapSequence.<String,Object>fromMap(_params).get("model")), "jetbrains.mps.baseLanguage.dates.structure.DateTimeMinusPeriodOperation");
+      List<SNode> minusPeriodOperations = SModelOperations.getNodes(((SModel) MapSequence.fromMap(_params).get("model")), "jetbrains.mps.baseLanguage.dates.structure.DateTimeMinusPeriodOperation");
       for (SNode operation : minusPeriodOperations) {
         SNode minusExpression = SNodeOperations.replaceWithNewChild(operation, "jetbrains.mps.baseLanguage.structure.MinusExpression");
         SLinkOperations.setTarget(minusExpression, "leftExpression", SLinkOperations.getTarget(operation, "leftValue", true), true);
         SLinkOperations.setTarget(minusExpression, "rightExpression", SLinkOperations.getTarget(operation, "rightValue", true), true);
       }
-      List<SNode> plusPeriodOperations = SModelOperations.getNodes(((SModel) MapSequence.<String,Object>fromMap(_params).get("model")), "jetbrains.mps.baseLanguage.dates.structure.DateTimePlusPeriodOperation");
+      List<SNode> plusPeriodOperations = SModelOperations.getNodes(((SModel) MapSequence.fromMap(_params).get("model")), "jetbrains.mps.baseLanguage.dates.structure.DateTimePlusPeriodOperation");
       for (SNode operation : plusPeriodOperations) {
         SNode plusExpression = SNodeOperations.replaceWithNewChild(operation, "jetbrains.mps.baseLanguage.structure.PlusExpression");
         SLinkOperations.setTarget(plusExpression, "leftExpression", SLinkOperations.getTarget(operation, "leftValue", true), true);

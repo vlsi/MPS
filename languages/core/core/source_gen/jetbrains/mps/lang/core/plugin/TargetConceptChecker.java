@@ -19,7 +19,7 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
   }
 
   public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext) {
-    for (SNode child : ListSequence.<SNode>fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
+    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isAttribute(it));
       }
@@ -33,7 +33,7 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
       }
     }
 
-    for (SReference reference : Sequence.<SReference>fromIterable(SNodeOperations.getReferences(node))) {
+    for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
       SNode link = SLinkOperations.findLinkDeclaration(reference);
       if (link != null && SPropertyOperations.hasValue(link, "metaClass", "reference", "reference")) {
         SNode target = SLinkOperations.getTargetNode(reference);

@@ -16,9 +16,9 @@ import jetbrains.mps.smodel.ModelAccess;
 public class MethodModel {
   private SNode myType;
   private String myName = "";
-  private List<ChangeListener> myListeners = ListSequence.<ChangeListener>fromList(new ArrayList<ChangeListener>());
-  private Map<String, SNode> myTypesMap = MapSequence.<String,SNode>fromMap(new HashMap<String, SNode>());
-  private List<String> myExceptions = ListSequence.<String>fromList(new ArrayList<String>());
+  private List<ChangeListener> myListeners = ListSequence.fromList(new ArrayList<ChangeListener>());
+  private Map<String, SNode> myTypesMap = MapSequence.fromMap(new HashMap<String, SNode>());
+  private List<String> myExceptions = ListSequence.fromList(new ArrayList<String>());
 
   public MethodModel() {
   }
@@ -42,13 +42,13 @@ public class MethodModel {
   }
 
   public void fireChange() {
-    for (ChangeListener listener : ListSequence.<ChangeListener>fromList(this.myListeners)) {
+    for (ChangeListener listener : ListSequence.fromList(this.myListeners)) {
       listener.stateChanged(new ChangeEvent(this));
     }
   }
 
   public void addChangeListener(ChangeListener listener) {
-    ListSequence.<ChangeListener>fromList(this.myListeners).addElement(listener);
+    ListSequence.fromList(this.myListeners).addElement(listener);
   }
 
   public List<String> getThrowItems() {
@@ -56,7 +56,7 @@ public class MethodModel {
   }
 
   public void setException(int i, String exception) {
-    ListSequence.<String>fromList(this.myExceptions).setElement(i, exception);
+    ListSequence.fromList(this.myExceptions).setElement(i, exception);
     this.fireChange();
   }
 
@@ -74,10 +74,10 @@ public class MethodModel {
     text.append(" ");
     text.append(this.getName());
     text.append("(");
-    if (ListSequence.<String>fromList(this.getParametersNames()).count() > 0) {
+    if (ListSequence.fromList(this.getParametersNames()).count() > 0) {
       text.append("\n");
       boolean first = true;
-      for (String parameter : ListSequence.<String>fromList(this.getParametersNames())) {
+      for (String parameter : ListSequence.fromList(this.getParametersNames())) {
         if (!(first)) {
           text.append(",\n");
         }
@@ -87,10 +87,10 @@ public class MethodModel {
     }
     text.append(")");
     //  Add throw intems 
-    if (ListSequence.<String>fromList(this.getThrowItems()).count() > 0) {
+    if (ListSequence.fromList(this.getThrowItems()).count() > 0) {
       text.append("throws\n");
       boolean first = true;
-      for (String exception : ListSequence.<String>fromList(this.getThrowItems())) {
+      for (String exception : ListSequence.fromList(this.getThrowItems())) {
         if (!(first)) {
           text.append(",\n");
         }

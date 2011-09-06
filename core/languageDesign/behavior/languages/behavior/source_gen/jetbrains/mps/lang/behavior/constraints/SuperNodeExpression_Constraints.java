@@ -67,16 +67,16 @@ public class SuperNodeExpression_Constraints extends BaseConstraintsDescriptor {
               SNode cd = (SNode) abstractConceptDeclaration;
               SNode extendsNode = SLinkOperations.getTarget(cd, "extends", false);
               if (extendsNode != null) {
-                ListSequence.<SNode>fromList(result).addElement(extendsNode);
+                ListSequence.fromList(result).addElement(extendsNode);
               }
               for (SNode itfcRef : SLinkOperations.getTargets(cd, "implements", true)) {
-                ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(itfcRef, "intfc", false));
+                ListSequence.fromList(result).addElement(SLinkOperations.getTarget(itfcRef, "intfc", false));
               }
             }
             if (SNodeOperations.isInstanceOf(abstractConceptDeclaration, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
               SNode itfc = (SNode) abstractConceptDeclaration;
               for (SNode itfcRef : SLinkOperations.getTargets(itfc, "extends", true)) {
-                ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(itfcRef, "intfc", false));
+                ListSequence.fromList(result).addElement(SLinkOperations.getTarget(itfcRef, "intfc", false));
               }
             }
             return result;

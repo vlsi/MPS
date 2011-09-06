@@ -11,7 +11,7 @@ public class _CaretPosition_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<_CaretPosition_Enum> constants = ListSequence.<_CaretPosition_Enum>fromList(_CaretPosition_Enum.getConstants()).iterator();
+    Iterator<_CaretPosition_Enum> constants = ListSequence.fromList(_CaretPosition_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _CaretPosition_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class _CaretPosition_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<_CaretPosition_Enum> constants = ListSequence.<_CaretPosition_Enum>fromList(_CaretPosition_Enum.getConstants()).iterator();
+    Iterator<_CaretPosition_Enum> constants = ListSequence.fromList(_CaretPosition_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _CaretPosition_Enum constant = constants.next();
       if (value.equals(constant.getName())) {

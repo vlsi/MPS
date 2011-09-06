@@ -20,9 +20,9 @@ public class LoggingGenerationUtil {
 
   public static SNode toPlus(List<SNode> textExpressions) {
     SNode result = null;
-    if (ListSequence.<SNode>fromList(textExpressions).isNotEmpty()) {
-      result = SNodeOperations.copyNode(ListSequence.<SNode>fromList(textExpressions).first());
-      for (SNode textExpression : ListSequence.<SNode>fromList(textExpressions).skip(1)) {
+    if (ListSequence.fromList(textExpressions).isNotEmpty()) {
+      result = SNodeOperations.copyNode(ListSequence.fromList(textExpressions).first());
+      for (SNode textExpression : ListSequence.fromList(textExpressions).skip(1)) {
         result = new LoggingGenerationUtil.QuotationClass_gd2srw_a0a0a1a1a0().createNode(SNodeOperations.copyNode(textExpression), result);
       }
     }

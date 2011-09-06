@@ -401,12 +401,12 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
+      List<String> result = ListSequence.fromList(new ArrayList<String>());
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference")) {
         SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
         if ((concept != null) && SPropertyOperations.getString(concept, "name") != null) {
-          ListSequence.<String>fromList(result).addElement("typeof_" + SPropertyOperations.getString(concept, "name"));
-          ListSequence.<String>fromList(result).addElement("check_" + SPropertyOperations.getString(concept, "name"));
+          ListSequence.fromList(result).addElement("typeof_" + SPropertyOperations.getString(concept, "name"));
+          ListSequence.fromList(result).addElement("check_" + SPropertyOperations.getString(concept, "name"));
         }
       }
       return result;

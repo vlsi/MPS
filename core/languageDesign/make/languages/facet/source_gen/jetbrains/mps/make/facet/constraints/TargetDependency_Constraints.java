@@ -44,9 +44,9 @@ public class TargetDependency_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             final Iterable<SNode> relatedFacets = FacetDeclaration_Behavior.call_allRelated_8351679702044331818(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.make.facet.structure.FacetDeclaration", false, false));
-            return ListSequence.<SNode>fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.make.facet.structure.TargetDeclaration")).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.make.facet.structure.TargetDeclaration")).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return Sequence.<SNode>fromIterable(relatedFacets).contains(SNodeOperations.getAncestor(it, "jetbrains.mps.make.facet.structure.FacetDeclaration", false, false));
+                return Sequence.fromIterable(relatedFacets).contains(SNodeOperations.getAncestor(it, "jetbrains.mps.make.facet.structure.FacetDeclaration", false, false));
               }
             });
           }

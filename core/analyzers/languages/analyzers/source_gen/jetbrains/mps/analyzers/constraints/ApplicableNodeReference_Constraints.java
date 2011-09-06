@@ -45,7 +45,7 @@ public class ApplicableNodeReference_Constraints extends BaseConstraintsDescript
             List<SNode> result = new ArrayList<SNode>();
             SNode rule = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.analyzers.structure.Rule", true, false);
             if (rule != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "condition", true), "jetbrains.mps.analyzers.structure.ConceptCondition")) {
-              ListSequence.<SNode>fromList(result).addElement(SNodeOperations.cast(SLinkOperations.getTarget(rule, "condition", true), "jetbrains.mps.analyzers.structure.ConceptCondition"));
+              ListSequence.fromList(result).addElement(SNodeOperations.cast(SLinkOperations.getTarget(rule, "condition", true), "jetbrains.mps.analyzers.structure.ConceptCondition"));
             }
             return result;
           }

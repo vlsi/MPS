@@ -111,7 +111,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         return SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
       }
     }));
-    for (SNode p : ListSequence.<SNode>fromList(props)) {
+    for (SNode p : ListSequence.fromList(props)) {
       final PropertySupport ps = PropertySupport.getPropertySupport(p);
       final String propertyName = SPropertyOperations.getString(p, "name");
       if (propertyName == null) {

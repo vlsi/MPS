@@ -207,15 +207,15 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_e0yr07_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "query", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "query", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_e0yr07_a0b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "query", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "query", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_e0yr07_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "query", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "query", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_e0yr07_a3a(SNode node, EditorContext editorContext, IScope scope) {

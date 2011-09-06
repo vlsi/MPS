@@ -45,7 +45,7 @@ public class VariableDeclaration_Behavior {
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(thisNode, "type", true));
+    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "type", true));
     return result;
   }
 

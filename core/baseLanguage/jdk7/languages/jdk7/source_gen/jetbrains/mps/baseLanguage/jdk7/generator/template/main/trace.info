@@ -100,7 +100,7 @@
   </root>
   <root nodeId="400642802550420129">
     <nodeInfo nodeId="3708576844065084050" fileName="QueriesGenerated.java" startLine="20" startPosition="153" endLine="21" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3708576844065084085" fileName="QueriesGenerated.java" startLine="21" startPosition="196" endLine="22" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3708576844065084085" fileName="QueriesGenerated.java" startLine="21" startPosition="196" endLine="22" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="23" startPosition="98" endLine="24" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_wjpymb_a0a0a1a1" />
     <nodeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="24" startPosition="209" endLine="25" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="loopMacroRef_wjpymb_a0a0a1a3a1a1" />
     <nodeInfo nodeId="400642802550422234" fileName="QueriesGenerated.java" startLine="25" startPosition="149" endLine="26" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -307,7 +307,7 @@
     <scopeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="231" startPosition="67" endLine="232" endPosition="58" />
     <scopeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="240" startPosition="30" endLine="241" endPosition="49" />
     <scopeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="252" startPosition="146" endLine="253" endPosition="72" />
-    <scopeInfo nodeId="400642802550422215" fileName="QueriesGenerated.java" startLine="20" startPosition="153" endLine="22" endPosition="237">
+    <scopeInfo nodeId="400642802550422215" fileName="QueriesGenerated.java" startLine="20" startPosition="153" endLine="22" endPosition="221">
       <varInfo nodeId="3708576844065084051" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="400642802550420129" fileName="Templatestring_x0020switch_x0020template.java" startLine="39" startPosition="0" endLine="41" endPosition="3" />

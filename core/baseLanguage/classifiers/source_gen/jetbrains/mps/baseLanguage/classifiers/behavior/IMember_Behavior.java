@@ -27,7 +27,7 @@ public class IMember_Behavior {
   }
 
   public static SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
-    SNode memberOperationConcept = ((SNode) ListSequence.<SNode>fromList(SLinkOperations.getConceptLinkTargets(thisNode, "operationConcept")).first());
+    SNode memberOperationConcept = ((SNode) ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "operationConcept")).first());
     if (memberOperationConcept == null) {
       throw new RuntimeException("Please set operationConcept in " + SNodeOperations.getConceptDeclaration(thisNode) + " concept");
     }

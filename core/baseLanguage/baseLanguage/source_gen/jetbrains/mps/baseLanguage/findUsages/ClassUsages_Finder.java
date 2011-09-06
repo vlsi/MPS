@@ -31,20 +31,20 @@ public class ClassUsages_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    for (SNode result : ListSequence.<SNode>fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator))) {
-      ListSequence.<SNode>fromList(_results).addElement(result);
+    for (SNode result : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator))) {
+      ListSequence.fromList(_results).addElement(result);
     }
-    for (SNode constructor : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "constructor", true))) {
-      for (SNode result : ListSequence.<SNode>fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder", constructor, scope, indicator))) {
-        ListSequence.<SNode>fromList(_results).addElement(result);
+    for (SNode constructor : ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true))) {
+      for (SNode result : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder", constructor, scope, indicator))) {
+        ListSequence.fromList(_results).addElement(result);
       }
     }
   }
 
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
-    ListSequence.<SNode>fromList(_results).addElement(node);
-    for (SNode constructor : ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "constructor", true))) {
-      ListSequence.<SNode>fromList(_results).addElement(constructor);
+    ListSequence.fromList(_results).addElement(node);
+    for (SNode constructor : ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true))) {
+      ListSequence.fromList(_results).addElement(constructor);
     }
   }
 

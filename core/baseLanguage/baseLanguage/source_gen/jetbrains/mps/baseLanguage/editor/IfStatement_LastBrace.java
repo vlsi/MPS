@@ -28,8 +28,8 @@ public class IfStatement_LastBrace {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
-        SNodeOperations.deleteNode(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).last());
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
+        SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).last());
       } else {
         SNodeOperations.deleteNode(node);
       }

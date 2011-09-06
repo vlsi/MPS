@@ -56,7 +56,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     List<SNode> fields = SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true);
-    if (ListSequence.<SNode>fromList(fields).isEmpty()) {
+    if (ListSequence.fromList(fields).isEmpty()) {
       return false;
     }
     boolean allGettersImplemented = true;
@@ -64,9 +64,9 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
     for (SNode fieldDeclaration : fields) {
       boolean hasCurrentFieldGetter = false;
       final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(fieldDeclaration, project);
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
+      if (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return getterName.equals(SPropertyOperations.getString(it, "name")) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(it, "parameter", true)).isEmpty();
+          return getterName.equals(SPropertyOperations.getString(it, "name")) && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).isEmpty();
         }
       })) {
         hasCurrentFieldGetter = true;
@@ -83,7 +83,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       for (SNode field : fields) {
         final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, project);
         boolean hasCurrentFieldSetter = false;
-        if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
+        if (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return setterName.equals(SPropertyOperations.getString(it, "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType");
           }
@@ -106,9 +106,9 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
     for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
       final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, ideaProject);
       final Wrappers._boolean getterIsAbsent = new Wrappers._boolean(true);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          if (getterName.equals(SPropertyOperations.getString(it, "name")) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(it, "parameter", true)).isEmpty()) {
+          if (getterName.equals(SPropertyOperations.getString(it, "name")) && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).isEmpty()) {
             getterIsAbsent.value = false;
           }
         }
@@ -118,13 +118,13 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       }
       SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
       SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
-      lastAdded = ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Intention.QuotationClass_43x4b2_a0a0a6a3a7().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
+      lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Intention.QuotationClass_43x4b2_a0a0a6a3a7().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
 
       final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, ideaProject);
       final Wrappers._boolean setterIsAbsent = new Wrappers._boolean(true);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode method) {
-          if (setterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1) {
+          if (setterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1) {
             setterIsAbsent.value = false;
           }
         }
@@ -133,7 +133,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
         continue;
       }
       String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, ideaProject);
-      lastAdded = ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Intention.QuotationClass_43x4b2_a0a0a31a3a7().createNode(SNodeOperations.copyNode(fieldReference), SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
+      lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Intention.QuotationClass_43x4b2_a0a0a31a3a7().createNode(SNodeOperations.copyNode(fieldReference), SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
     }
     if (lastAdded != null) {
       editorContext.select(lastAdded);

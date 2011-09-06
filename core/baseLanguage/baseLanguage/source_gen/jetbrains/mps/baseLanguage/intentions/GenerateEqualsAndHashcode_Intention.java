@@ -56,18 +56,18 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    return !(ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
+    return !(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode method) {
         return "equals".equals(SPropertyOperations.getString(method, "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.BooleanType");
       }
-    })) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "field", true)).isNotEmpty();
+    })) && ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).isNotEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     final SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     final SNode thisExp = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
     final SNode equalsDeclaration = new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a2a7().createNode(thisExp, thisExp, classConcept, classConcept);
-    SNode thatDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true);
+    SNode thatDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true);
 
     SNode thatRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(thatRef, "variableDeclaration", thatDeclaration, false);
@@ -93,27 +93,27 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
       } else {
         checkStmt = new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0a0d0k0h_0().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal), thatRef, SNodeOperations.copyNode(fieldRefOperation));
       }
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).addElement(checkStmt);
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).addElement(checkStmt);
     }
     SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.Statement");
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).addElement(new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0m0h().createNode());
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(equalsDeclaration);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).addElement(new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0m0h().createNode());
+    ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(equalsDeclaration);
     // Method equals() is generated, now hashCode method body generation begins  
-    SNode hashCodeDeclaration = ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0a51a7().createNode());
+    SNode hashCodeDeclaration = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0a51a7().createNode());
     SNode resultDeclaration = new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a61a7().createNode();
     SNode resultReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(resultReference, "variableDeclaration", SLinkOperations.getTarget(resultDeclaration, "localVariableDeclaration", true), false);
     SNode tempDeclaration = new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a91a7().createNode();
     SNode tempReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(tempReference, "variableDeclaration", SLinkOperations.getTarget(tempDeclaration, "localVariableDeclaration", true), false);
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "field", true)).any(new IWhereFilter<SNode>() {
+    if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "type", true), "jetbrains.mps.baseLanguage.structure.DoubleType");
       }
     })) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(tempDeclaration);
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(tempDeclaration);
     }
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(resultDeclaration);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(resultDeclaration);
     for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
       SLinkOperations.setTarget(fieldRefLocal, "variableDeclaration", field, false);
       SNode calcStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null);
@@ -125,7 +125,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ByteType") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.CharType") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ShortType")) {
         calcStatement = new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0a1d0y0h().createNode(SNodeOperations.copyNode(fieldRefLocal), mulExpression, resultReference);
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.DoubleType")) {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0a0c3a42a7().createNode(tempReference, SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal)));
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0a0c3a42a7().createNode(tempReference, SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal)));
         calcStatement = new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a1a2d0y0h().createNode(resultReference, mulExpression, tempReference, tempReference);
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.FloatType")) {
         calcStatement = new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0a3d0y0h().createNode(resultReference, mulExpression, SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal));
@@ -138,9 +138,9 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
       } else {
         calcStatement = new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0a0d0y0h_0().createNode(SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal), mulExpression, resultReference);
       }
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(calcStatement);
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(calcStatement);
     }
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0z0h().createNode(resultReference));
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0z0h().createNode(resultReference));
     editorContext.select(equalsDeclaration);
   }
 

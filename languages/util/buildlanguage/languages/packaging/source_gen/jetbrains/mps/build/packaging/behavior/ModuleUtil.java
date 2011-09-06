@@ -43,7 +43,7 @@ public class ModuleUtil {
   }
 
   public static void findMacro(SNode pathHolder, List<SNode> macro) {
-    for (SNode m : ListSequence.<SNode>fromList(macro)) {
+    for (SNode m : ListSequence.fromList(macro)) {
       if (SPropertyOperations.getString(pathHolder, "fullPath").startsWith(SPropertyOperations.getString(m, "path") + Util.SEPARATOR)) {
         SLinkOperations.setTarget(pathHolder, "macro", m, false);
         SPropertyOperations.set(pathHolder, "fullPath", getRelativePath(SPropertyOperations.getString(pathHolder, "fullPath"), SPropertyOperations.getString(m, "path")));
@@ -53,7 +53,7 @@ public class ModuleUtil {
   }
 
   public static List<String> retrieveClassPath(IClassPathItem cpitem) {
-    final List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
+    final List<String> result = ListSequence.fromList(new ArrayList<String>());
     final List<String> jdk = CommonPaths.getJDKPath();
     cpitem.accept(new EachClassPathItemVisitor() {
       public void visit(FileClassPathItem item) {
@@ -61,7 +61,7 @@ public class ModuleUtil {
         if (jdk.contains(item.getClassPath())) {
           return;
         }
-        ListSequence.<String>fromList(result).addElement(item.getClassPath());
+        ListSequence.fromList(result).addElement(item.getClassPath());
       }
 
       public void visit(JarFileClassPathItem item) {
@@ -69,7 +69,7 @@ public class ModuleUtil {
         if (jdk.contains(item.getAbsolutePath())) {
           return;
         }
-        ListSequence.<String>fromList(result).addElement(item.getAbsolutePath());
+        ListSequence.fromList(result).addElement(item.getAbsolutePath());
       }
     });
     return result;

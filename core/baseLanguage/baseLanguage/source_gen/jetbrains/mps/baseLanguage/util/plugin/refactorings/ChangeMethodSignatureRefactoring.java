@@ -32,20 +32,20 @@ public class ChangeMethodSignatureRefactoring {
       }
     }
     this.changeParameters();
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(this.myDeclaration, "throwsItem", true)).clear();
-    for (SNode throwItem : ListSequence.<SNode>fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "throwsItem", true))) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(this.myDeclaration, "throwsItem", true)).addElement(SNodeOperations.copyNode(throwItem));
+    ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "throwsItem", true)).clear();
+    for (SNode throwItem : ListSequence.fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "throwsItem", true))) {
+      ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "throwsItem", true)).addElement(SNodeOperations.copyNode(throwItem));
     }
-    for (SNode node : ListSequence.<SNode>fromList(this.myUssages)) {
+    for (SNode node : ListSequence.fromList(this.myUssages)) {
       MethodCallAdapter call = new MethodCallAdapter(node);
       List<SNode> oldArgs = call.getMethodArguments();
       call.removeArguments();
-      for (SNode parameter : ListSequence.<SNode>fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "parameter", true))) {
-        int index = ListSequence.<String>fromList(this.myParameters.getIdList()).indexOf(parameter.getId());
+      for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "parameter", true))) {
+        int index = ListSequence.fromList(this.myParameters.getIdList()).indexOf(parameter.getId());
         if (index == -1) {
           call.addArgument(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null));
         } else {
-          call.addArgument(ListSequence.<SNode>fromList(oldArgs).getElement(index));
+          call.addArgument(ListSequence.fromList(oldArgs).getElement(index));
         }
       }
     }
@@ -57,14 +57,14 @@ public class ChangeMethodSignatureRefactoring {
 
   private void changeParameters() {
     List<SNode> oldParams = SLinkOperations.getTargets(this.myDeclaration, "parameter", true);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).clear();
-    for (SNode parameter : ListSequence.<SNode>fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "parameter", true))) {
-      int index = ListSequence.<String>fromList(this.myParameters.getIdList()).indexOf(parameter.getId());
+    ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).clear();
+    for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "parameter", true))) {
+      int index = ListSequence.fromList(this.myParameters.getIdList()).indexOf(parameter.getId());
       if (index == -1) {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).addElement(SNodeOperations.copyNode(parameter));
+        ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).addElement(SNodeOperations.copyNode(parameter));
       } else {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).addElement(ListSequence.<SNode>fromList(oldParams).getElement(index));
-        SNode newParam = ListSequence.<SNode>fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).last();
+        ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).addElement(ListSequence.fromList(oldParams).getElement(index));
+        SNode newParam = ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).last();
         SPropertyOperations.set(newParam, "name", SPropertyOperations.getString(parameter, "name").substring(0));
         SLinkOperations.setTarget(newParam, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(parameter, "type", true)), true);
       }

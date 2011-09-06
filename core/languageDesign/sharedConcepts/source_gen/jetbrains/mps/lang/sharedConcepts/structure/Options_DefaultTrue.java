@@ -31,9 +31,9 @@ public enum Options_DefaultTrue {
   }
 
   public static List<Options_DefaultTrue> getConstants() {
-    List<Options_DefaultTrue> list = ListSequence.<Options_DefaultTrue>fromList(new LinkedList<Options_DefaultTrue>());
-    ListSequence.<Options_DefaultTrue>fromList(list).addElement(Options_DefaultTrue.default_);
-    ListSequence.<Options_DefaultTrue>fromList(list).addElement(Options_DefaultTrue.true_);
+    List<Options_DefaultTrue> list = ListSequence.fromList(new LinkedList<Options_DefaultTrue>());
+    ListSequence.fromList(list).addElement(Options_DefaultTrue.default_);
+    ListSequence.fromList(list).addElement(Options_DefaultTrue.true_);
     return list;
   }
 

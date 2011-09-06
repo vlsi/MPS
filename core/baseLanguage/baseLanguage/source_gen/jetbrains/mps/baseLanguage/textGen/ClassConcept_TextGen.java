@@ -43,12 +43,12 @@ public class ClassConcept_TextGen extends SNodeTextGen {
       this.append(" extends ");
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "superclass", true), this.getSNode());
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
       this.append(" implements ");
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "implementedInterface", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).last()) {
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).last()) {
             this.append(", ");
           }
         }
@@ -58,7 +58,7 @@ public class ClassConcept_TextGen extends SNodeTextGen {
     this.increaseDepth();
     BaseClassConceptTextGen.body(node, this);
     this.decreaseDepth();
-    if ((SLinkOperations.getTarget(node, "classInitializer", true) == null) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "constructor", true)).isEmpty() && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "field", true)).isEmpty() && (SLinkOperations.getTarget(node, "instanceInitializer", true) == null) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "method", true)).isEmpty() && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "staticField", true)).isEmpty() && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "property", true)).isEmpty() && (SLinkOperations.getTarget(node, "staticInitializer", true) == null) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).isEmpty() && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "staticMethod", true)).isEmpty()) {
+    if ((SLinkOperations.getTarget(node, "classInitializer", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isEmpty() && (SLinkOperations.getTarget(node, "instanceInitializer", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "property", true)).isEmpty() && (SLinkOperations.getTarget(node, "staticInitializer", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).isEmpty()) {
       this.appendNewLine();
     }
     if (!(node.isRoot())) {

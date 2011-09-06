@@ -33,10 +33,10 @@ public class IfStatement_elseBlockStatement_delete {
       SNode statement;
       SNode ifFalseStatement = SLinkOperations.getTarget(node, "ifFalseStatement", true);
       List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(ifFalseStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true), "statement", true);
-      if (ListSequence.<SNode>fromList(statements).isEmpty()) {
+      if (ListSequence.fromList(statements).isEmpty()) {
         statement = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.Statement", null);
       } else {
-        statement = ListSequence.<SNode>fromList(statements).first();
+        statement = ListSequence.fromList(statements).first();
       }
       SNodeOperations.replaceWithAnother(ifFalseStatement, statement);
     }

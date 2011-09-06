@@ -20,11 +20,11 @@ public class setType_with_vars_subtypeOf_setType_InequationReplacementRule exten
   }
 
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
-    return SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(subtype), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(supertype))) && !(ListSequence.<SNode>fromList(SNodeOperations.getChildren(supertype)).any(new IWhereFilter<SNode>() {
+    return SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(subtype), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(supertype))) && !(ListSequence.fromList(SNodeOperations.getChildren(supertype)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode ch) {
         return SNodeOperations.isInstanceOf(ch, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
       }
-    })) && ListSequence.<SNode>fromList(SNodeOperations.getChildren(subtype)).any(new IWhereFilter<SNode>() {
+    })) && ListSequence.fromList(SNodeOperations.getChildren(subtype)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode ch) {
         return SNodeOperations.isInstanceOf(ch, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
       }

@@ -5,9 +5,9 @@ package jetbrains.mps.ypath.generator.baseLanguage.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -32,7 +32,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1191923770124(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "features", true)).isEmpty() || ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "features", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "features", true)).isEmpty() || ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "features", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature"));
       }
@@ -40,7 +40,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1184762279213(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "features", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "features", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IParamFeature");
       }
@@ -273,7 +273,7 @@ public class QueriesGenerated {
     SNode fun = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode body = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(fun, "body", true), "function_body");
     SNode imd = SNodeOperations.getAncestor(body, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(imd, "parameter", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(imd, "parameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("idx");
       }
@@ -284,7 +284,7 @@ public class QueriesGenerated {
     SNode fun = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode body = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(fun, "body", true), "function_body");
     SNode imd = SNodeOperations.getAncestor(body, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(imd, "parameter", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(imd, "parameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("value");
       }
@@ -303,7 +303,7 @@ public class QueriesGenerated {
     SNode df = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.IDesignFunction", false, false);
     SNode stmts = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.cast(df, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "body", true), "body");
     final String paramAlias = SConceptPropertyOperations.getString(_context.getNode(), "alias");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(stmts, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false), "parameter", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(stmts, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false), "parameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(paramAlias);
       }
@@ -314,12 +314,12 @@ public class QueriesGenerated {
     final SNode fun = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode feature = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.IParamFeature", false, false);
     SNode designClass = _context.getOutputNodeByInputNodeAndMappingLabel(feature, "feature_design");
-    SNode method = ListSequence.<SNode>fromList(SLinkOperations.getTargets(designClass, "method", true)).where(new IWhereFilter<SNode>() {
+    SNode method = ListSequence.fromList(SLinkOperations.getTargets(designClass, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(SConceptPropertyOperations.getString(fun, "alias"));
       }
     }).first();
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return "nodeType".equals(SPropertyOperations.getString(it, "name"));
       }
@@ -329,7 +329,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1172658935860(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode tpCreator = SLinkOperations.getTarget(_context.getNode(), "creator", true);
     SNode klass = _context.getOutputNodeByInputNodeAndMappingLabel(tpCreator, "treePathCreator_class");
-    return ListSequence.<SNode>fromList(SNodeOperations.getDescendants(klass, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SNodeOperations.getDescendants(klass, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
       }
@@ -350,12 +350,12 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1184680030750(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode descClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "feature_descriptor");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(descClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(descClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1184237709773(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode descClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "feature_descriptor");
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(descClass, "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(descClass, "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1184236913540(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -675,7 +675,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1179334580327(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode tpoe = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(tpoe, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+    SNode tpae = ListSequence.fromList(SNodeOperations.getDescendants(tpoe, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
       }
@@ -982,7 +982,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1184679753545(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "features", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "features", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IParamFeature");
       }
@@ -990,7 +990,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1184237003214(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "features", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "features", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IParamFeature"));
       }
@@ -1000,7 +1000,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1179331802560(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> kindBlocks = new ArrayList<SNode>();
     for (SNode nodeKind : SLinkOperations.getTargets(_context.getNode(), "nodeKinds", true)) {
-      ListSequence.<SNode>fromList(kindBlocks).addElement(SLinkOperations.getTarget(nodeKind, "trigger", true));
+      ListSequence.fromList(kindBlocks).addElement(SLinkOperations.getTarget(nodeKind, "trigger", true));
     }
     return kindBlocks;
   }
@@ -1009,7 +1009,7 @@ public class QueriesGenerated {
     List<SNode> properties = new ArrayList<SNode>();
     for (SNode nodeKind : SLinkOperations.getTargets(_context.getNode(), "nodeKinds", true)) {
       for (SNode property : SLinkOperations.getTargets(nodeKind, "properties", true)) {
-        ListSequence.<SNode>fromList(properties).addElement(property);
+        ListSequence.fromList(properties).addElement(property);
       }
     }
     return properties;
@@ -1048,7 +1048,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1180090213117(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "visitBlock", true), "visitParameterDeclarationList", true), "visitParameterDeclaration", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "visitBlock", true), "visitParameterDeclarationList", true), "visitParameterDeclaration", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "initializer", true);
       }
@@ -1060,7 +1060,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1184762104927(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "features", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "features", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IParamFeature");
       }
@@ -1068,7 +1068,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1196881595288(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "features", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "features", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature") && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IParamFeature"));
       }

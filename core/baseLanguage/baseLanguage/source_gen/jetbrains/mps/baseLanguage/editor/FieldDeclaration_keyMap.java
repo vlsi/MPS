@@ -73,7 +73,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode g;
       g = new FieldDeclaration_keyMap.FieldDeclaration_keyMap_Action0.QuotationClass_bsktda_a0a1a5a().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), node, FieldDeclaration_Behavior.call_getGetterName_1213877243782(node));
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "method", true)).addElement(g);
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "method", true)).addElement(g);
     }
 
     public String getKeyStroke() {
@@ -191,7 +191,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode s;
       s = new FieldDeclaration_keyMap.FieldDeclaration_keyMap_Action1.QuotationClass_bsktda_a0a1a5b().createNode(node, FieldDeclaration_Behavior.call_getSetterName_1213877243861(node), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), SPropertyOperations.getString(node, "name"));
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "method", true)).addElement(s);
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "method", true)).addElement(s);
     }
 
     public String getKeyStroke() {

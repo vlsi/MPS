@@ -32,7 +32,7 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
     boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new check_ConceptFunctionReturns_NonTypesystemRule.QuotationClass_rs2pxi_a1a0a0a1a0().createNode(typeCheckingContext)));
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(func, "body", true));
     if (noReturnExpected) {
-      for (SNode returnStatement : Sequence.<SNode>fromIterable(returnStatements)) {
+      for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
@@ -41,15 +41,15 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
         }
       }
     } else {
-      boolean somethingReturned = Sequence.<SNode>fromIterable(returnStatements).isNotEmpty();
+      boolean somethingReturned = Sequence.fromIterable(returnStatements).isNotEmpty();
       SNode lastStatement = IMethodLike_Behavior.call_getLastStatement_1239354409446(func);
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         somethingReturned = true;
       }
       if (!(somethingReturned)) {
-        Set<SNode> throwables = SetSequence.<SNode>fromSet(new HashSet());
+        Set<SNode> throwables = SetSequence.fromSet(new HashSet());
         StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(IMethodLike_Behavior.call_getBody_1239354440022(func), throwables, true);
-        if (SetSequence.<SNode>fromSet(throwables).isEmpty()) {
+        if (SetSequence.fromSet(throwables).isEmpty()) {
           String whatExpected = ((expectedRetType == null) ?
             "some value" :
             "" + expectedRetType

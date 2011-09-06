@@ -28,11 +28,11 @@ public class TypeVariableDeclaration_Behavior {
   }
 
   public static SNode call_getConcreteUpperBound_4346214032091509920(SNode thisNode) {
-    return TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(thisNode, SetSequence.<SNode>fromSet(new HashSet<SNode>()));
+    return TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(thisNode, SetSequence.fromSet(new HashSet<SNode>()));
   }
 
   public static SNode call_getConcreteUpperBound_4346214032091504647(SNode thisNode, Set<SNode> visitedVars) {
-    if (SetSequence.<SNode>fromSet(visitedVars).contains(thisNode)) {
+    if (SetSequence.fromSet(visitedVars).contains(thisNode)) {
       return new TypeVariableDeclaration_Behavior.QuotationClass_ct7zh2_a0a0a0c().createNode();
     }
     SetSequence.fromSet(visitedVars).addElement(thisNode);
@@ -49,7 +49,7 @@ public class TypeVariableDeclaration_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "bound", true) != null)) {
       buff.append(" extends ").append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "bound", true)));
     }
-    for (SNode bound : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "auxBounds", true))) {
+    for (SNode bound : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "auxBounds", true))) {
       buff.append(" & ").append(BaseConcept_Behavior.call_getPresentation_1213877396640(bound));
     }
     return buff.toString();

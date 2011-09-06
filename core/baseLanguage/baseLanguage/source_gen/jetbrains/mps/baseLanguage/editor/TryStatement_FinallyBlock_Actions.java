@@ -33,11 +33,11 @@ public class TryStatement_FinallyBlock_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "catchClause", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "catchClause", true)).isNotEmpty()) {
         SNode tryCatchStatement = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
         SLinkOperations.setTarget(tryCatchStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).clear();
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "catchClause", true)));
+        ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).clear();
+        ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "catchClause", true)));
         SNodeOperations.deleteNode(node);
       }
     }

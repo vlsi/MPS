@@ -33,11 +33,11 @@ public enum MatrixNormKind {
   }
 
   public static List<MatrixNormKind> getConstants() {
-    List<MatrixNormKind> list = ListSequence.<MatrixNormKind>fromList(new LinkedList<MatrixNormKind>());
-    ListSequence.<MatrixNormKind>fromList(list).addElement(MatrixNormKind.norm1);
-    ListSequence.<MatrixNormKind>fromList(list).addElement(MatrixNormKind.normInfty);
-    ListSequence.<MatrixNormKind>fromList(list).addElement(MatrixNormKind.norm2F);
-    ListSequence.<MatrixNormKind>fromList(list).addElement(MatrixNormKind.normMax);
+    List<MatrixNormKind> list = ListSequence.fromList(new LinkedList<MatrixNormKind>());
+    ListSequence.fromList(list).addElement(MatrixNormKind.norm1);
+    ListSequence.fromList(list).addElement(MatrixNormKind.normInfty);
+    ListSequence.fromList(list).addElement(MatrixNormKind.norm2F);
+    ListSequence.fromList(list).addElement(MatrixNormKind.normMax);
     return list;
   }
 

@@ -47,7 +47,7 @@ public class PackagingBuildScript_Configuration extends BaseMpsRunConfiguration 
       final Wrappers._boolean isApplicable = new Wrappers._boolean();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          isApplicable.value = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty();
+          isApplicable.value = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty();
         }
       });
       return isApplicable.value;

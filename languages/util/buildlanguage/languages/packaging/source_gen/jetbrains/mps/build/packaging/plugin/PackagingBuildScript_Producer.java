@@ -23,9 +23,9 @@ public class PackagingBuildScript_Producer {
   }
 
   public static List<RuntimeConfigurationProducer> getProducers(ConfigurationType configurationType) {
-    List<RuntimeConfigurationProducer> creators = ListSequence.<RuntimeConfigurationProducer>fromList(new ArrayList<RuntimeConfigurationProducer>());
-    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new PackagingBuildScript_Producer.ProducerPart_NodeConfiguration_55pzr0_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.<RuntimeConfigurationProducer>fromList(creators).addElement(new PackagingBuildScript_Producer.ProducerPart_NodeLayout_55pzr0_b(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    List<RuntimeConfigurationProducer> creators = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
+    ListSequence.fromList(creators).addElement(new PackagingBuildScript_Producer.ProducerPart_NodeConfiguration_55pzr0_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.fromList(creators).addElement(new PackagingBuildScript_Producer.ProducerPart_NodeLayout_55pzr0_b(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     return creators;
   }
 
@@ -46,7 +46,7 @@ public class PackagingBuildScript_Producer {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           layout.value = SNodeOperations.getAncestor(source, "jetbrains.mps.build.packaging.structure.Layout", false, true);
-          isApplicable.value = (layout.value != null) && ListSequence.<SNode>fromList(SNodeOperations.getDescendants(layout.value, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty();
+          isApplicable.value = (layout.value != null) && ListSequence.fromList(SNodeOperations.getDescendants(layout.value, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty();
           configurationId.value = source.getId();
         }
       });
@@ -80,7 +80,7 @@ public class PackagingBuildScript_Producer {
       final Wrappers._boolean isApplicable = new Wrappers._boolean();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          isApplicable.value = !(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(source, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isNotEmpty());
+          isApplicable.value = !(ListSequence.fromList(SNodeOperations.getDescendants(source, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isNotEmpty());
         }
       });
       if (!(isApplicable.value)) {
@@ -90,7 +90,7 @@ public class PackagingBuildScript_Producer {
       final Wrappers._T<String> configurationId = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          configurationId.value = ListSequence.<SNode>fromList(SLinkOperations.getTargets(source, "configuration", true)).first().getId();
+          configurationId.value = ListSequence.fromList(SLinkOperations.getTargets(source, "configuration", true)).first().getId();
         }
       });
 

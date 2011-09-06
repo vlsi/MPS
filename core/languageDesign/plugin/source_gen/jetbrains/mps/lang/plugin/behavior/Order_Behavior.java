@@ -32,7 +32,7 @@ public class Order_Behavior {
   }
 
   public static boolean virtual_presents_1499919975383879508(SNode thisNode, final SNode tab) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "tab", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "tab", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "editorTab", false) == tab;
       }

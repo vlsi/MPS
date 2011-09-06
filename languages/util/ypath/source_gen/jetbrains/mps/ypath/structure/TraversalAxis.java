@@ -38,16 +38,16 @@ public enum TraversalAxis {
   }
 
   public static List<TraversalAxis> getConstants() {
-    List<TraversalAxis> list = ListSequence.<TraversalAxis>fromList(new LinkedList<TraversalAxis>());
-    ListSequence.<TraversalAxis>fromList(list).addElement(TraversalAxis.DESCENDANTS);
-    ListSequence.<TraversalAxis>fromList(list).addElement(TraversalAxis.SELF_DESCENDANTS);
-    ListSequence.<TraversalAxis>fromList(list).addElement(TraversalAxis.CHILDREN);
-    ListSequence.<TraversalAxis>fromList(list).addElement(TraversalAxis.ANCESTORS);
-    ListSequence.<TraversalAxis>fromList(list).addElement(TraversalAxis.SELF_ANCESTORS);
-    ListSequence.<TraversalAxis>fromList(list).addElement(TraversalAxis.FOLLOWING_SIBLINGS);
-    ListSequence.<TraversalAxis>fromList(list).addElement(TraversalAxis.SELF_FOLLOWING_SIBLINGS);
-    ListSequence.<TraversalAxis>fromList(list).addElement(TraversalAxis.PRECEDING_SIBLINGS);
-    ListSequence.<TraversalAxis>fromList(list).addElement(TraversalAxis.PRECEDING_SIBLINGS_SELF);
+    List<TraversalAxis> list = ListSequence.fromList(new LinkedList<TraversalAxis>());
+    ListSequence.fromList(list).addElement(TraversalAxis.DESCENDANTS);
+    ListSequence.fromList(list).addElement(TraversalAxis.SELF_DESCENDANTS);
+    ListSequence.fromList(list).addElement(TraversalAxis.CHILDREN);
+    ListSequence.fromList(list).addElement(TraversalAxis.ANCESTORS);
+    ListSequence.fromList(list).addElement(TraversalAxis.SELF_ANCESTORS);
+    ListSequence.fromList(list).addElement(TraversalAxis.FOLLOWING_SIBLINGS);
+    ListSequence.fromList(list).addElement(TraversalAxis.SELF_FOLLOWING_SIBLINGS);
+    ListSequence.fromList(list).addElement(TraversalAxis.PRECEDING_SIBLINGS);
+    ListSequence.fromList(list).addElement(TraversalAxis.PRECEDING_SIBLINGS_SELF);
     return list;
   }
 

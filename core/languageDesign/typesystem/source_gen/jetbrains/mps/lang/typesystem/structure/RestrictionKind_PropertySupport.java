@@ -11,7 +11,7 @@ public class RestrictionKind_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<RestrictionKind> constants = ListSequence.<RestrictionKind>fromList(RestrictionKind.getConstants()).iterator();
+    Iterator<RestrictionKind> constants = ListSequence.fromList(RestrictionKind.getConstants()).iterator();
     while (constants.hasNext()) {
       RestrictionKind constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class RestrictionKind_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<RestrictionKind> constants = ListSequence.<RestrictionKind>fromList(RestrictionKind.getConstants()).iterator();
+    Iterator<RestrictionKind> constants = ListSequence.fromList(RestrictionKind.getConstants()).iterator();
     while (constants.hasNext()) {
       RestrictionKind constant = constants.next();
       if (value.equals(constant.getName())) {

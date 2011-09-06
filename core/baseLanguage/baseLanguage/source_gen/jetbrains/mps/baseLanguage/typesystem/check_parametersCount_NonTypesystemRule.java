@@ -26,12 +26,12 @@ public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesyst
     if (baseMethodDeclaration != null) {
       List<SNode> parameterDeclarations = SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true);
       List<SNode> actualArguments = SLinkOperations.getTargets(iMethodCall, "actualArgument", true);
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.<SNode>fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
-        b = ListSequence.<SNode>fromList(parameterDeclarations).count() - 1 <= ListSequence.<SNode>fromList(actualArguments).count();
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
+        b = ListSequence.fromList(parameterDeclarations).count() - 1 <= ListSequence.fromList(actualArguments).count();
       } else {
-        b = ListSequence.<SNode>fromList(parameterDeclarations).count() == ListSequence.<SNode>fromList(actualArguments).count();
+        b = ListSequence.fromList(parameterDeclarations).count() == ListSequence.fromList(actualArguments).count();
       }
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(baseMethodDeclaration, "typeVariableDeclaration", true)).count() > 0) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "typeVariableDeclaration", true)).count() > 0) {
         for (SNode actual : actualArguments) {
           typeCheckingContext.addDependencyForCurrent(actual);
         }

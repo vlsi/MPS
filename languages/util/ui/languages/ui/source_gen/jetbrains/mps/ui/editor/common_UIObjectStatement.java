@@ -137,7 +137,7 @@ public class common_UIObjectStatement extends AbstractCellProvider {
   }
 
   private static boolean renderingCondition_cz3bck_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.<SNode>fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(node, "uiObject", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(node, "uiObject", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode uio) {
         return SLinkOperations.getTargets(uio, "compartment", true);
       }

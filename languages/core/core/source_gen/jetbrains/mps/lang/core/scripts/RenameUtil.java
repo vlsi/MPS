@@ -20,7 +20,7 @@ public class RenameUtil {
   public static boolean canBeRenamed(SNode node) {
     // we won't rename nodes, for which there are registered name constrints 
     // if there are constrints, but they are not compiled, we can rename it 
-    String nameProperty = SPropertyOperations.getString(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"), "propertyDeclaration", true)).first(), "name");
+    String nameProperty = SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"), "propertyDeclaration", true)).first(), "name");
     return !(ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName()).getProperty(nameProperty).isReadOnly());
   }
 

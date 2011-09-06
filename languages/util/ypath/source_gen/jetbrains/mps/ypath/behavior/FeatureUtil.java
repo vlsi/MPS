@@ -78,8 +78,8 @@ public class FeatureUtil {
     final IParameterizedFeatureDesign fd = (IParameterizedFeatureDesign) getFeatureDesign(feature);
     if (fd != null) {
       Iterable<Object> params = fd.getParameters(nodeType);
-      if (Sequence.<Object>fromIterable(params).isNotEmpty()) {
-        return Sequence.<Object>fromIterable(params).<SNode>select(new ISelector<Object, SNode>() {
+      if (Sequence.fromIterable(params).isNotEmpty()) {
+        return Sequence.fromIterable(params).<SNode>select(new ISelector<Object, SNode>() {
           public SNode select(Object it) {
             SNode param = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.ParameterWrapper", null);
             if (it instanceof SNode) {
@@ -94,7 +94,7 @@ public class FeatureUtil {
         }).toListSequence();
       }
     }
-    return ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    return ListSequence.fromList(new ArrayList<SNode>());
   }
 
   public static IFeatureDesign getFeatureDesign(SNode feature) {

@@ -21,6 +21,6 @@ public class CreateDefaultConstructor_QuickFix extends QuickFix_Runtime {
     SLinkOperations.setNewChild(constructor, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
     SLinkOperations.setNewChild(constructor, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
     SLinkOperations.setNewChild(constructor, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(((SNode) CreateDefaultConstructor_QuickFix.this.getField("classConcept")[0]), "constructor", true)).addElement(constructor);
+    ListSequence.fromList(SLinkOperations.getTargets(((SNode) CreateDefaultConstructor_QuickFix.this.getField("classConcept")[0]), "constructor", true)).addElement(constructor);
   }
 }

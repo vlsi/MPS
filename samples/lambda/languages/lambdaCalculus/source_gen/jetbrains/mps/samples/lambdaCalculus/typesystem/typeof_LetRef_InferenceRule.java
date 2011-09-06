@@ -23,17 +23,17 @@ public class typeof_LetRef_InferenceRule extends AbstractInferenceRule_Runtime i
   public void applyRule(final SNode letRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
 
     SNode type = SNodeOperations.copyNode(typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(letRef, "variable", false)), "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), "value", true), "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "926857988255646351", true));
-    Map<String, SNode> map = MapSequence.<String,SNode>fromMap(new HashMap<String, SNode>());
+    Map<String, SNode> map = MapSequence.fromMap(new HashMap<String, SNode>());
     for (SNode t : SNodeOperations.getDescendants(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", false, new String[]{})) {
       final SNode v_typevar_464844656889754475 = typeCheckingContext.createNewRuntimeTypesVariable();
       SNode varNode = typeCheckingContext.getRepresentative(v_typevar_464844656889754475);
       if (!(MapSequence.fromMap(map).containsKey(SPropertyOperations.getString(t, "name")))) {
-        MapSequence.<String,SNode>fromMap(map).put(SPropertyOperations.getString(t, "name"), SNodeOperations.cast(typeCheckingContext.getRepresentative(v_typevar_464844656889754475), "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"));
+        MapSequence.fromMap(map).put(SPropertyOperations.getString(t, "name"), SNodeOperations.cast(typeCheckingContext.getRepresentative(v_typevar_464844656889754475), "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"));
       } else {
         {
           SNode _nodeToCheck_1029348928467 = letRef;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "464844656889754494", 0, null);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(v_typevar_464844656889754475), (SNode) MapSequence.<String,SNode>fromMap(map).get(SPropertyOperations.getString(t, "name")), _info_12389875345);
+          typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(v_typevar_464844656889754475), (SNode) MapSequence.fromMap(map).get(SPropertyOperations.getString(t, "name")), _info_12389875345);
         }
       }
       SNodeOperations.replaceWithAnother(t, varNode);

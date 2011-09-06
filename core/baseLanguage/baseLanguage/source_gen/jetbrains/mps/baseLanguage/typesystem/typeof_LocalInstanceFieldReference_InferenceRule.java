@@ -37,14 +37,14 @@ public class typeof_LocalInstanceFieldReference_InferenceRule extends AbstractIn
     }
     final SNode InstanceType_typevar_2233570453276392932 = typeCheckingContext.createNewRuntimeTypesVariable();
     SNode currentClassifier = SNodeOperations.getAncestor(fieldReference, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    while (currentClassifier != null && !(ListSequence.<SNode>fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(currentClassifier, fieldReference, IClassifiersSearchScope.INSTANCE_FIELD)).contains(fieldDeclaration))) {
+    while (currentClassifier != null && !(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(currentClassifier, fieldReference, IClassifiersSearchScope.INSTANCE_FIELD)).contains(fieldDeclaration))) {
       currentClassifier = SNodeOperations.getAncestor(currentClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     }
     SNode constructedType = new typeof_LocalInstanceFieldReference_InferenceRule.QuotationClass_4vmy70_a0a5a0().createNode(currentClassifier, typeCheckingContext);
     for (SNode tvd : SLinkOperations.getTargets(currentClassifier, "typeVariableDeclaration", true)) {
       SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
       SLinkOperations.setTarget(tvr, "typeVariableDeclaration", tvd, false);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(constructedType, "parameter", true)).addElement(tvr);
+      ListSequence.fromList(SLinkOperations.getTargets(constructedType, "parameter", true)).addElement(tvr);
     }
 
     {
@@ -58,7 +58,7 @@ public class typeof_LocalInstanceFieldReference_InferenceRule extends AbstractIn
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2233570453276392949", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.getRepresentative(InstanceType_typevar_2233570453276392932), (SNode) new typeof_LocalInstanceFieldReference_InferenceRule.QuotationClass_4vmy70_a0a01a0().createNode(fieldClassifier, typeCheckingContext), true, false, _info_12389875345);
     }
-    Map<SNode, List<SNode>> mmap = MapSequence.<SNode,List<SNode>>fromMap(new HashMap<SNode, List<SNode>>());
+    Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(typeCheckingContext, SLinkOperations.getTarget(fieldDeclaration, "type", true), mmap);
     {
       SNode _nodeToCheck_1029348928467 = fieldReference;

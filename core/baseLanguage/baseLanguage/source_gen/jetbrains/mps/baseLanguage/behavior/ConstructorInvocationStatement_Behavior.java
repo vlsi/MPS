@@ -24,7 +24,7 @@ public class ConstructorInvocationStatement_Behavior {
     SNode concept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     List<SNode> typeVarRefs = new ArrayList<SNode>();
     for (SNode tvd : SLinkOperations.getTargets(concept, "typeVariableDeclaration", true)) {
-      ListSequence.<SNode>fromList(typeVarRefs).addElement(new ConstructorInvocationStatement_Behavior.QuotationClass_teq92u_a0a0a0c0b().createNode(tvd));
+      ListSequence.fromList(typeVarRefs).addElement(new ConstructorInvocationStatement_Behavior.QuotationClass_teq92u_a0a0a0c0b().createNode(tvd));
     }
     return new ConstructorInvocationStatement_Behavior.QuotationClass_teq92u_a0d0b().createNode(typeVarRefs, concept);
   }

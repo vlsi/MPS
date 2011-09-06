@@ -48,13 +48,13 @@ public class FieldDeclaration_Behavior {
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = HasAnnotation_Behavior.callSuper_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-    ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
+    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
   }
 
   public static boolean call_hasGetter_1213877243808(SNode thisNode, SNode classConcept) {
     final SNode fieldDeclaration = thisNode;
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "method", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return FieldDeclaration_Behavior.call_isGetter_1213877243833(fieldDeclaration, it);
       }
@@ -62,7 +62,7 @@ public class FieldDeclaration_Behavior {
   }
 
   public static boolean call_isGetter_1213877243833(SNode thisNode, SNode method) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty() && FieldDeclaration_Behavior.call_getGetterName_1213877243782(thisNode).equals(SPropertyOperations.getString(method, "name")) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "type", true), SLinkOperations.getTarget(method, "returnType", true));
+    return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty() && FieldDeclaration_Behavior.call_getGetterName_1213877243782(thisNode).equals(SPropertyOperations.getString(method, "name")) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "type", true), SLinkOperations.getTarget(method, "returnType", true));
   }
 
   public static String call_getSetterName_1213877243861(SNode thisNode) {
@@ -71,7 +71,7 @@ public class FieldDeclaration_Behavior {
 
   public static boolean call_hasSetter_1213877243871(SNode thisNode, SNode classConcept) {
     final SNode fieldDeclaration = thisNode;
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "method", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return FieldDeclaration_Behavior.call_isSetter_1213877243896(fieldDeclaration, it);
       }
@@ -79,7 +79,7 @@ public class FieldDeclaration_Behavior {
   }
 
   public static boolean call_isSetter_1213877243896(SNode thisNode, SNode method) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && FieldDeclaration_Behavior.call_getSetterName_1213877243861(thisNode).equals(SPropertyOperations.getString(method, "name")) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).first(), "type", true), SLinkOperations.getTarget(thisNode, "type", true));
+    return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && FieldDeclaration_Behavior.call_getSetterName_1213877243861(thisNode).equals(SPropertyOperations.getString(method, "name")) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).first(), "type", true), SLinkOperations.getTarget(thisNode, "type", true));
   }
 
   public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {

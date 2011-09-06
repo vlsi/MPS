@@ -128,9 +128,9 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
           //  This is the beginning of line 
           SNode curLine = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
           SNode prevLine = SNodeOperations.cast(SNodeOperations.getPrevSibling(curLine), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-          nodeToSelect = ListSequence.<SNode>fromList(SLinkOperations.getTargets(prevLine, "part", true)).last();
-          int index = ListSequence.<SNode>fromList(SLinkOperations.getTargets(prevLine, "part", true)).count() - 1;
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(prevLine, "part", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(curLine, "part", true)));
+          nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).last();
+          int index = ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).count() - 1;
+          ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)));
           if (SNodeOperations.isInstanceOf(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
             caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
           } else {
@@ -241,9 +241,9 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
               public void run() {
                 SNode curLine = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
                 SNode nextLine = SNodeOperations.cast(SNodeOperations.getNextSibling(curLine), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-                nodeToSelect.value = ListSequence.<SNode>fromList(SLinkOperations.getTargets(curLine, "part", true)).last();
+                nodeToSelect.value = ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).last();
                 int index = SNodeOperations.getIndexInParent(node);
-                ListSequence.<SNode>fromList(SLinkOperations.getTargets(curLine, "part", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(nextLine, "part", true)));
+                ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(nextLine, "part", true)));
                 if (SNodeOperations.isInstanceOf(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
                   caret.value = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
                 } else {

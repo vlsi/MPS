@@ -75,7 +75,7 @@ public class LocalInstanceFieldReference_Constraints extends BaseConstraintsDesc
             vars.addAll(param);
             SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getEnclosingNode());
             int constraint = IClassifiersSearchScope.INSTANCE_FIELD;
-            Set<String> names = SetSequence.<String>fromSet(new HashSet<String>());
+            Set<String> names = SetSequence.fromSet(new HashSet<String>());
             while (classifier != null) {
               for (SNode field : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, ((_context.getReferenceNode() != null) ?
                 _context.getReferenceNode() :
@@ -84,14 +84,14 @@ public class LocalInstanceFieldReference_Constraints extends BaseConstraintsDesc
                 boolean hasNameSakes = false;
                 for (SNode var : vars) {
                   if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.lang.core.structure.INamedConcept") && SPropertyOperations.getString(field, "name") != null && SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"))) {
-                    if (!(ListSequence.<SNode>fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", false)).contains(SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)))) {
+                    if (!(ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", false)).contains(SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)))) {
                       hasNameSakes = true;
                       break;
                     }
                   }
                 }
-                if (!(hasNameSakes) && !(SetSequence.<String>fromSet(names).contains(SPropertyOperations.getString(field, "name")))) {
-                  ListSequence.<SNode>fromList(result).addElement(field);
+                if (!(hasNameSakes) && !(SetSequence.fromSet(names).contains(SPropertyOperations.getString(field, "name")))) {
+                  ListSequence.fromList(result).addElement(field);
                   SetSequence.fromSet(names).addElement(SPropertyOperations.getString(field, "name"));
                 }
               }

@@ -56,14 +56,14 @@ public class OptionReference_Constraints extends BaseConstraintsDescriptor {
             return new ProviderGeneratedSearchScope(this, operationContext, _context) {
               public boolean isInScope(SNode checkedNode) {
                 SNode call = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.bash.structure.ExternalCommandCall", false, false);
-                Iterable<SNode> optionSetReferences = ListSequence.<SNode>fromList(SLinkOperations.getTargets(call, "refToOptions", true)).where(new IWhereFilter<SNode>() {
+                Iterable<SNode> optionSetReferences = ListSequence.fromList(SLinkOperations.getTargets(call, "refToOptions", true)).where(new IWhereFilter<SNode>() {
                   public boolean accept(SNode it) {
                     return SNodeOperations.isInstanceOf(it, "jetbrains.mps.bash.structure.OptionSetReference");
                   }
                 });
-                return Sequence.<SNode>fromIterable(optionSetReferences).<Iterable<SNode>>select(new ISelector<SNode, ISequence<SNode>>() {
+                return Sequence.fromIterable(optionSetReferences).<Iterable<SNode>>select(new ISelector<SNode, ISequence<SNode>>() {
                   public ISequence<SNode> select(SNode it) {
-                    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.bash.structure.OptionSetReference"), "refToOptions", true)).where(new IWhereFilter<SNode>() {
+                    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.bash.structure.OptionSetReference"), "refToOptions", true)).where(new IWhereFilter<SNode>() {
                       public boolean accept(SNode it) {
                         return (SLinkOperations.getTarget(it, "option", false) != null);
                       }
@@ -73,7 +73,7 @@ public class OptionReference_Constraints extends BaseConstraintsDescriptor {
                       }
                     });
                   }
-                }).distinct().count() == Sequence.<SNode>fromIterable(optionSetReferences).count();
+                }).distinct().count() == Sequence.fromIterable(optionSetReferences).count();
               }
             };
           }

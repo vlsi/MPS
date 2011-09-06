@@ -11,7 +11,7 @@ public class RoundingMode_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<RoundingMode> constants = ListSequence.<RoundingMode>fromList(RoundingMode.getConstants()).iterator();
+    Iterator<RoundingMode> constants = ListSequence.fromList(RoundingMode.getConstants()).iterator();
     while (constants.hasNext()) {
       RoundingMode constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class RoundingMode_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<RoundingMode> constants = ListSequence.<RoundingMode>fromList(RoundingMode.getConstants()).iterator();
+    Iterator<RoundingMode> constants = ListSequence.fromList(RoundingMode.getConstants()).iterator();
     while (constants.hasNext()) {
       RoundingMode constant = constants.next();
       if (value.equals(constant.getName())) {

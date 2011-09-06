@@ -41,11 +41,11 @@ public class RemoveTVD_Intention extends BaseIntention implements Intention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).clear();
+    ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).clear();
   }
 
   public String getLocationString() {

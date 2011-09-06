@@ -56,7 +56,7 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getSourcesDirectories_1775602641704992067(SNode thisNode) {
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.<String>fromList(ListSequence.<String>fromListWithValues(new ArrayList<String>(), Module_Behavior.call_getModule_1213877515148(thisNode).getSourcePaths())).<String>select(new ISelector<String, String>() {
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<String>(), Module_Behavior.call_getModule_1213877515148(thisNode).getSourcePaths())).<String>select(new ISelector<String, String>() {
       public String select(String it) {
         return it.replace(File.separator, Util.SEPARATOR);
       }
@@ -64,7 +64,7 @@ public class Module_Behavior {
   }
 
   public static boolean call_needsOwnStubs_8177148268721488524(SNode thisNode) {
-    return Sequence.<StubPath>fromIterable(((Iterable<StubPath>) ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getStubPaths())).where(new IWhereFilter<StubPath>() {
+    return Sequence.fromIterable(((Iterable<StubPath>) ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getStubPaths())).where(new IWhereFilter<StubPath>() {
       public boolean accept(StubPath it) {
         return !(it.getPath().endsWith(".jar"));
       }
@@ -73,7 +73,7 @@ public class Module_Behavior {
 
   public static List<SNode> call_getClassPathDirectories_1213877515083(SNode thisNode, boolean includeHomeLib) {
     List<StubPath> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getAllStubPaths();
-    return Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.<String>fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ListSequence.<StubPath>fromList(paths).where(new IWhereFilter<StubPath>() {
+    return Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ListSequence.fromList(paths).where(new IWhereFilter<StubPath>() {
       public boolean accept(StubPath it) {
         return LanguageID.JAVA_MANAGER.equals(it.getManager()) || it.getPath().endsWith(".jar");
       }
@@ -83,14 +83,14 @@ public class Module_Behavior {
   public static List<SNode> call_getModelRootPaths_2739262311775052381(SNode thisNode) {
     List<SModelRoot> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getSModelRoots();
     if (Module_Behavior.call_getModule_1213877515148(thisNode) instanceof Language) {
-      paths = ListSequence.<SModelRoot>fromListWithValues(new ArrayList<SModelRoot>(), paths);
-      ListSequence.<SModelRoot>fromList(paths).addSequence(Sequence.<Generator>fromIterable(((Iterable<Generator>) ((Language) Module_Behavior.call_getModule_1213877515148(thisNode)).getGenerators())).<SModelRoot>translate(new ITranslator2<Generator, SModelRoot>() {
+      paths = ListSequence.fromListWithValues(new ArrayList<SModelRoot>(), paths);
+      ListSequence.fromList(paths).addSequence(Sequence.fromIterable(((Iterable<Generator>) ((Language) Module_Behavior.call_getModule_1213877515148(thisNode)).getGenerators())).<SModelRoot>translate(new ITranslator2<Generator, SModelRoot>() {
         public Iterable<SModelRoot> translate(Generator it) {
           return it.getSModelRoots();
         }
       }));
     }
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.<SModelRoot>fromList(paths).<String>select(new ISelector<SModelRoot, String>() {
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).<String>select(new ISelector<SModelRoot, String>() {
       public String select(SModelRoot it) {
         return it.getPath().replace(File.separator, Util.SEPARATOR);
       }
@@ -98,7 +98,7 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getSourcePaths_3673831299872169203(SNode thisNode) {
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.<String>fromList(((List<String>) Module_Behavior.call_getModule_1213877515148(thisNode).getSourcePaths())).<String>select(new ISelector<String, String>() {
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(((List<String>) Module_Behavior.call_getModule_1213877515148(thisNode).getSourcePaths())).<String>select(new ISelector<String, String>() {
       public String select(String it) {
         return (String) it.replace(File.separator, Util.SEPARATOR);
       }
@@ -108,13 +108,13 @@ public class Module_Behavior {
   public static List<SNode> call_getRuntimeClassPath_1213877515098(SNode thisNode, boolean includeRuntimeSolutions, boolean includeHomeLib) {
     IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
     if (module instanceof Language) {
-      List<SNode> result = ListSequence.<SNode>fromList(Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.<String>fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Language) module).getRuntimeStubPaths())).distinct().toListSequence(), true, includeHomeLib)).subtract(ListSequence.<SNode>fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, true))).toListSequence();
+      List<SNode> result = ListSequence.fromList(Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Language) module).getRuntimeStubPaths())).distinct().toListSequence(), true, includeHomeLib)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, true))).toListSequence();
       if (includeRuntimeSolutions) {
-        for (Dependency runtimeDependency : ListSequence.<Dependency>fromList(((Language) module).getRuntimeDependencies())) {
+        for (Dependency runtimeDependency : ListSequence.fromList(((Language) module).getRuntimeDependencies())) {
           IModule runtimeDependencyModule = MPSModuleRepository.getInstance().getModule(runtimeDependency.getModuleRef());
           if (runtimeDependencyModule instanceof Solution) {
             // TODO proper module in holder? 
-            ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.<String>fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Solution) runtimeDependencyModule).getAllStubPaths())).toListSequence(), true)));
+            ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Solution) runtimeDependencyModule).getAllStubPaths())).toListSequence(), true)));
           }
         }
       }
@@ -124,11 +124,11 @@ public class Module_Behavior {
   }
 
   public static boolean call_needsSeparateFolder_1902360454496029008(SNode thisNode) {
-    return ListSequence.<SNode>fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(thisNode, false, false)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(thisNode, false, false)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
       }
-    }) || ListSequence.<SNode>fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, false)).any(new IWhereFilter<SNode>() {
+    }) || ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, false)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
       }
@@ -137,12 +137,12 @@ public class Module_Behavior {
 
   public static List<SNode> call_getRequiredJars_1902360454496272739(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(thisNode, false, false)).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(thisNode, false, false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
       }
     }));
-    ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, false)).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
       }
@@ -211,16 +211,16 @@ public class Module_Behavior {
       homeLib = Module_Behavior.call_getHomeLibPath_4642981534832311125(thisNode);
     }
     // process classpath 
-    for (String cp : ListSequence.<String>fromList(stubpath)) {
+    for (String cp : ListSequence.fromList(stubpath)) {
       if ((!(onlyUnderModuleBasedir) || cp.startsWith(moduleBasedir)) || (includeLibJars && cp.startsWith(homeLib))) {
-        ListSequence.<SNode>fromList(result).addElement(PathHolder_Behavior.createPathHolder_7235580512916878209(cp, thisNode));
+        ListSequence.fromList(result).addElement(PathHolder_Behavior.createPathHolder_7235580512916878209(cp, thisNode));
       }
     }
     return result;
   }
 
   public static Iterable<String> call_convertSeparators_4777659345279794559(SNode thisNode, List<StubPath> paths) {
-    return ListSequence.<StubPath>fromList(paths).<String>select(new ISelector<StubPath, String>() {
+    return ListSequence.fromList(paths).<String>select(new ISelector<StubPath, String>() {
       public String select(StubPath it) {
         return it.getPath().replace(File.separator, Util.SEPARATOR);
       }
@@ -228,15 +228,15 @@ public class Module_Behavior {
   }
 
   public static List<IModule> getAllAvailableModules_1222444746697() {
-    List<IModule> list = ListSequence.<IModule>fromList(new ArrayList<IModule>());
-    for (Language language : ListSequence.<Language>fromList(GlobalScope.getInstance().getVisibleLanguages())) {
-      ListSequence.<IModule>fromList(list).addElement(language);
+    List<IModule> list = ListSequence.fromList(new ArrayList<IModule>());
+    for (Language language : ListSequence.fromList(GlobalScope.getInstance().getVisibleLanguages())) {
+      ListSequence.fromList(list).addElement(language);
     }
-    for (DevKit devKit : ListSequence.<DevKit>fromList(GlobalScope.getInstance().getVisibleDevkits())) {
-      ListSequence.<IModule>fromList(list).addElement(devKit);
+    for (DevKit devKit : ListSequence.fromList(GlobalScope.getInstance().getVisibleDevkits())) {
+      ListSequence.fromList(list).addElement(devKit);
     }
-    for (Solution solution : ListSequence.<Solution>fromList(GlobalScope.getInstance().getVisibleSolutions())) {
-      ListSequence.<IModule>fromList(list).addElement(solution);
+    for (Solution solution : ListSequence.fromList(GlobalScope.getInstance().getVisibleSolutions())) {
+      ListSequence.fromList(list).addElement(solution);
     }
     return list;
   }

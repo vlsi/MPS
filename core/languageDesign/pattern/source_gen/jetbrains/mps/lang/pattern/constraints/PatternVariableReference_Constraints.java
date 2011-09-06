@@ -64,7 +64,7 @@ public class PatternVariableReference_Constraints extends BaseConstraintsDescrip
             List<SNode> result = new ArrayList<SNode>();
             for (SNode declaration : SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.pattern.structure.PatternExpression", false, false), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{})) {
               if (SPropertyOperations.getString(declaration, "name") != null) {
-                ListSequence.<SNode>fromList(result).addElement(declaration);
+                ListSequence.fromList(result).addElement(declaration);
               }
             }
             return result;

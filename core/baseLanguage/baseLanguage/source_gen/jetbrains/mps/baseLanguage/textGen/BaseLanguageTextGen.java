@@ -22,12 +22,12 @@ import jetbrains.mps.util.JavaNameUtil;
 
 public abstract class BaseLanguageTextGen {
   public static void typeParameters(List<SNode> types, final SNodeTextGen textGen) {
-    if (ListSequence.<SNode>fromList(types).isNotEmpty()) {
+    if (ListSequence.fromList(types).isNotEmpty()) {
       textGen.append("<");
-      if (ListSequence.<SNode>fromList(types).isNotEmpty()) {
+      if (ListSequence.fromList(types).isNotEmpty()) {
         for (SNode item : types) {
           TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
-          if (item != ListSequence.<SNode>fromList(types).last()) {
+          if (item != ListSequence.fromList(types).last()) {
             textGen.append(", ");
           }
         }
@@ -38,10 +38,10 @@ public abstract class BaseLanguageTextGen {
 
   public static void arguments(SNode methodCall, final SNodeTextGen textGen) {
     textGen.append("(");
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(methodCall, "actualArgument", true)) {
         TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
-        if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).last()) {
+        if (item != ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).last()) {
           textGen.append(", ");
         }
       }
@@ -56,7 +56,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void annotations(SNode annotable, final SNodeTextGen textGen) {
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(annotable, "annotation", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(annotable, "annotation", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(annotable, "annotation", true)) {
         TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
       }
@@ -159,7 +159,7 @@ public abstract class BaseLanguageTextGen {
       textGen.appendNewLine();
       textGen.getBuffer().selectPart(wasPart);
     }
-    if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface") && ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)).isNotEmpty()) {
+    if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)).isNotEmpty()) {
       for (SNode interface1 : SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)) {
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(interface1, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
           BaseLanguageTextGen.extendedInterface(SNodeOperations.cast(SLinkOperations.getTarget(interface1, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), textGen);
@@ -180,12 +180,12 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void methodTypeArguments(SNode methodCall, final SNodeTextGen textGen) {
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty()) {
       textGen.append("<");
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(methodCall, "typeArgument", true)) {
           TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
-          if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).last()) {
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).last()) {
             textGen.append(",");
           }
         }
@@ -197,7 +197,7 @@ public abstract class BaseLanguageTextGen {
   protected static Set<String> getUserObjects(String type, final SNodeTextGen textGen) {
     Set<String> names = (Set<String>) textGen.getBuffer().getUserObject(type);
     if (names == null) {
-      names = SetSequence.<String>fromSet(new HashSet<String>());
+      names = SetSequence.fromSet(new HashSet<String>());
       textGen.getBuffer().putUserObject(type, names);
     }
     return names;
@@ -236,7 +236,7 @@ public abstract class BaseLanguageTextGen {
       importedLongFqName = className;
     }
     Set<String> importedNames = BaseLanguageTextGen.getUserObjects(TextGenManager.IMPORT, textGen);
-    if (SetSequence.<String>fromSet(importedNames).contains(importedLongFqName)) {
+    if (SetSequence.fromSet(importedNames).contains(importedLongFqName)) {
       if (isInternal) {
         textGen.append(className);
       }
@@ -259,7 +259,7 @@ public abstract class BaseLanguageTextGen {
     SetSequence.fromSet(importedNames).addElement(importedLongFqName);
     BaseLanguageTextGen.addDependency(InternUtil.intern(importedFqName), textGen);
     Set<String> addedImports = BaseLanguageTextGen.getUserObjects(TextGenManager.ADDED_IMPORT, textGen);
-    if (!(packageName.equals("java.lang") || packageName.equals(textGen.getBuffer().getUserObject(TextGenManager.PACKAGE_NAME)) || SetSequence.<String>fromSet(addedImports).contains(importedFqName))) {
+    if (!(packageName.equals("java.lang") || packageName.equals(textGen.getBuffer().getUserObject(TextGenManager.PACKAGE_NAME)) || SetSequence.fromSet(addedImports).contains(importedFqName))) {
       int currPartId = textGen.getBuffer().selectPart(TextGenBuffer.TOP);
       textGen.appendNewLine();
       textGen.append("import " + importedFqName + ";");

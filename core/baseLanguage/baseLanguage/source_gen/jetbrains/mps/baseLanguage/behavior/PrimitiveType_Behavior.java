@@ -17,7 +17,7 @@ public class PrimitiveType_Behavior {
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    return ListSequence.<String>fromListAndArray(new ArrayList<String>(), SConceptPropertyOperations.getString(thisNode, "alias").substring(0, 1));
+    return ListSequence.fromListAndArray(new ArrayList<String>(), SConceptPropertyOperations.getString(thisNode, "alias").substring(0, 1));
   }
 
   public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {

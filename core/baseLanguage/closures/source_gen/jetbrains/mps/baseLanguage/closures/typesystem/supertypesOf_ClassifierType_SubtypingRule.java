@@ -28,27 +28,27 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
   }
 
   public List<SNode> getSubOrSuperTypes(SNode ct, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> supertypes = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    List<SNode> supertypes = ListSequence.fromList(new ArrayList<SNode>());
     SNode classifier = SLinkOperations.getTarget(ct, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
       List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
-      Iterable<SNode> cands = ListSequence.<SNode>fromList(methods).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> cands = ListSequence.fromList(methods).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode m) {
           return !("equals".equals(SPropertyOperations.getString(m, "name"))) && SPropertyOperations.getBoolean(m, "isAbstract");
         }
       });
-      Iterator<SNode> it = Sequence.<SNode>fromIterable(cands).iterator();
+      Iterator<SNode> it = Sequence.fromIterable(cands).iterator();
       SNode mtd = (it.hasNext() ?
         it.next() :
         null
       );
       if (!(it.hasNext()) && (mtd != null)) {
-        List<SNode> paramTypes = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+        List<SNode> paramTypes = ListSequence.fromList(new ArrayList<SNode>());
         for (SNode p : SLinkOperations.getTargets(mtd, "parameter", true)) {
-          ListSequence.<SNode>fromList(paramTypes).addElement(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(p, "type", true), ct));
+          ListSequence.fromList(paramTypes).addElement(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(p, "type", true), ct));
         }
         SNode resType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mtd, "returnType", true), ct);
-        supertypes = ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), new supertypesOf_ClassifierType_SubtypingRule.QuotationClass_qen718_a1a0d0e0c0a().createNode(paramTypes, resType, typeCheckingContext));
+        supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), new supertypesOf_ClassifierType_SubtypingRule.QuotationClass_qen718_a1a0d0e0c0a().createNode(paramTypes, resType, typeCheckingContext));
       }
     }
     return supertypes;

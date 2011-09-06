@@ -33,9 +33,9 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
     SNode body = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     this.myProgram = DataFlowManager.getInstance().buildProgramFor(body);
     AnalysisResult<Set<ReadInstruction>> reachingReads = this.myProgram.analyze(new ReachingReadsAnalyzer());
-    this.myReadInstructions = SetSequence.<ReadInstruction>fromSet(new HashSet<ReadInstruction>());
-    for (Instruction instruction : ListSequence.<Instruction>fromList(this.myProgram.getInstructionsFor(node))) {
-      for (Instruction next : SetSequence.<Instruction>fromSet(instruction.succ())) {
+    this.myReadInstructions = SetSequence.fromSet(new HashSet<ReadInstruction>());
+    for (Instruction instruction : ListSequence.fromList(this.myProgram.getInstructionsFor(node))) {
+      for (Instruction next : SetSequence.fromSet(instruction.succ())) {
         for (ReadInstruction read : reachingReads.get(next)) {
           if (read.getVariable() == node) {
             SetSequence.fromSet(this.myReadInstructions).addElement(read);
@@ -60,7 +60,7 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
         public void run() {
           variableName.value = myVariable + "";
           notInitialized.value = (SLinkOperations.getTarget(SNodeOperations.cast(InlineVariableAssignmentRefactoring.this.myVariable, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "initializer", true) == null);
-          nodesCount.value = ListSequence.<SNode>fromList(getNodesToRefactor()).count();
+          nodesCount.value = ListSequence.fromList(getNodesToRefactor()).count();
         }
       });
       if (notInitialized.value) {
@@ -83,7 +83,7 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
     SNode newSelection = null;
     for (SNode sourceNode : this.getNodesToRefactor()) {
       // <node> 
-      for (SNode reference : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(sourceNode, "jetbrains.mps.baseLanguage.structure.VariableReference", true, new String[]{}))) {
+      for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(sourceNode, "jetbrains.mps.baseLanguage.structure.VariableReference", true, new String[]{}))) {
         if (SLinkOperations.getTarget(reference, "variableDeclaration", false) == myVariable) {
           SNodeOperations.replaceWithAnother(reference, SNodeOperations.copyNode(SLinkOperations.getTarget(myVariable, "initializer", true)));
         }
@@ -95,8 +95,8 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
 
   private List<SNode> getNodesToRefactor() {
     List<SNode> result = new ArrayList<SNode>();
-    for (ReadInstruction read : SetSequence.<ReadInstruction>fromSet(this.myReadInstructions)) {
-      ListSequence.<SNode>fromList(result).addElement(((SNode) read.getSource()));
+    for (ReadInstruction read : SetSequence.fromSet(this.myReadInstructions)) {
+      ListSequence.fromList(result).addElement(((SNode) read.getSource()));
     }
     return result;
   }

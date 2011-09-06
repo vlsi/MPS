@@ -32,10 +32,10 @@ public enum UnderlineStyle {
   }
 
   public static List<UnderlineStyle> getConstants() {
-    List<UnderlineStyle> list = ListSequence.<UnderlineStyle>fromList(new LinkedList<UnderlineStyle>());
-    ListSequence.<UnderlineStyle>fromList(list).addElement(UnderlineStyle.as_is);
-    ListSequence.<UnderlineStyle>fromList(list).addElement(UnderlineStyle.not_underlined);
-    ListSequence.<UnderlineStyle>fromList(list).addElement(UnderlineStyle.underlined);
+    List<UnderlineStyle> list = ListSequence.fromList(new LinkedList<UnderlineStyle>());
+    ListSequence.fromList(list).addElement(UnderlineStyle.as_is);
+    ListSequence.fromList(list).addElement(UnderlineStyle.not_underlined);
+    ListSequence.fromList(list).addElement(UnderlineStyle.underlined);
     return list;
   }
 

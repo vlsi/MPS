@@ -19,7 +19,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_400642802550422214(final IOperationContext operationContext, final PropertyMacroContext _context) {
     Map<String, Integer> m = SwitchGenUtil.getMap(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement"), _context);
-    return MapSequence.<String,Integer>fromMap(m).get(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value"));
+    return MapSequence.fromMap(m).get(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value"));
   }
 
   public static SNode sourceNodeQuery_400642802550422232(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

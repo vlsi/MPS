@@ -18,7 +18,7 @@ public class MeetType_Behavior {
     List<SNode> nodes = SLinkOperations.getTargets(thisNode, "argument", true);
     for (SNode arg : nodes) {
       sb.append(BaseConcept_Behavior.call_getPresentation_1213877396640(arg));
-      if (SNodeOperations.getIndexInParent(arg) < ListSequence.<SNode>fromList(nodes).count() - 1) {
+      if (SNodeOperations.getIndexInParent(arg) < ListSequence.fromList(nodes).count() - 1) {
         sb.append(" & ");
       }
     }

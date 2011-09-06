@@ -35,7 +35,7 @@ public class GWTModuleReader {
   public void read(SNode gwtmod, Document doc) throws GWTModuleFormatException {
     this.module = gwtmod;
     SLinkOperations.setTarget(this.module, "renameTo", null, true);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(this.module, "element", true)).clear();
+    ListSequence.fromList(SLinkOperations.getTargets(this.module, "element", true)).clear();
     Element root = doc.getRootElement();
     if ("module".equals(root.getName())) {
       this.readModule(root);
@@ -50,7 +50,7 @@ public class GWTModuleReader {
       SLinkOperations.setTarget(this.module, "renameTo", SConceptOperations.createNewNode("jetbrains.mps.gwt.client.structure.RenameTo", null), true);
       SPropertyOperations.set(SLinkOperations.getTarget(this.module, "renameTo", true), "value", renameTo);
     }
-    for (Element elm : Sequence.<Element>fromIterable(this.elements(moduleElm, "inherits", "entry-point", "source", "super-source", "public"))) {
+    for (Element elm : Sequence.fromIterable(this.elements(moduleElm, "inherits", "entry-point", "source", "super-source", "public"))) {
       if ("inherits".equals(elm.getName())) {
         this.readInherits(elm);
       } else if ("entry-point".equals(elm.getName())) {
@@ -99,7 +99,7 @@ public class GWTModuleReader {
         false
       ));
     }
-    for (Element elm : Sequence.<Element>fromIterable(this.elements(filterElm, "include", "exclude"))) {
+    for (Element elm : Sequence.fromIterable(this.elements(filterElm, "include", "exclude"))) {
       this.readPatternHolder(elm);
     }
   }
@@ -149,7 +149,7 @@ public class GWTModuleReader {
   private void addGWTModuleReference(SNode link, SNode src, final String fqName) {
     SModelReference trgsmref = this.gwtstubResolver.stubModelReference(namespace(fqName));
     if (SNodeOperations.getModel(src).getSModelReference().equals(trgsmref)) {
-      SNode trg = ListSequence.<SNode>fromList(SModelOperations.getRoots(SNodeOperations.getModel(src), "jetbrains.mps.gwt.client.structure.GWTModule")).findFirst(new IWhereFilter<SNode>() {
+      SNode trg = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(src), "jetbrains.mps.gwt.client.structure.GWTModule")).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode gwtmod) {
           return SPropertyOperations.getString(gwtmod, "name").equals(shortName(fqName));
         }

@@ -28,13 +28,13 @@ public class RetainedUtil {
   }
 
   /*package*/ static Map<IModule, Iterable<SModelDescriptor>> collectModelsToRetain(Iterable<IResource> input) {
-    final Map<IModule, Iterable<SModelDescriptor>> retainedModels = MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(new HashMap<IModule, Iterable<SModelDescriptor>>());
-    Iterable<SModelDescriptor> empty = ListSequence.<SModelDescriptor>fromList(new ArrayList<SModelDescriptor>());
+    final Map<IModule, Iterable<SModelDescriptor>> retainedModels = MapSequence.fromMap(new HashMap<IModule, Iterable<SModelDescriptor>>());
+    Iterable<SModelDescriptor> empty = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     for (IResource it : input) {
       MResource mres = ((MResource) it);
       IModule module = mres.module();
-      MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).put(module, empty);
-      Iterable<SModelDescriptor> modelsToRetain = Sequence.<SModelDescriptor>fromIterable(((Iterable<SModelDescriptor>) module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+      MapSequence.fromMap(retainedModels).put(module, empty);
+      Iterable<SModelDescriptor> modelsToRetain = Sequence.fromIterable(((Iterable<SModelDescriptor>) module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor it2) {
           return it2.isGeneratable();
         }
@@ -42,22 +42,22 @@ public class RetainedUtil {
       if (module instanceof Language) {
         for (final Generator gen : ((Language) module).getGenerators()) {
           if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
-            MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).put(gen, Sequence.<SModelDescriptor>fromIterable(((Iterable<SModelDescriptor>) gen.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModelDescriptor>) gen.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor it2) {
                 return it2.isGeneratable();
               }
             }));
           }
-          modelsToRetain = Sequence.<SModelDescriptor>fromIterable(modelsToRetain).concat(Sequence.<SModelDescriptor>fromIterable(Sequence.<SModelDescriptor>fromClosure(new ISequenceClosure<SModelDescriptor>() {
+          modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
             public Iterable<SModelDescriptor> iterable() {
-              return MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).get(gen);
+              return MapSequence.fromMap(retainedModels).get(gen);
             }
           })));
         }
       } else if (module instanceof Generator) {
         final Language slang = ((Generator) module).getSourceLanguage();
         if (!(MapSequence.fromMap(retainedModels).containsKey(slang))) {
-          MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).put(slang, Sequence.<SModelDescriptor>fromIterable(((Iterable<SModelDescriptor>) slang.getOwnModelDescriptors())).subtract(ListSequence.<SModelDescriptor>fromList(module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+          MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(((Iterable<SModelDescriptor>) slang.getOwnModelDescriptors())).subtract(ListSequence.fromList(module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
             public boolean accept(SModelDescriptor it3) {
               return it3.isGeneratable();
             }
@@ -68,25 +68,25 @@ public class RetainedUtil {
             continue;
           }
           if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
-            MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).put(gen, Sequence.<SModelDescriptor>fromIterable(((Iterable<SModelDescriptor>) gen.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModelDescriptor>) gen.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor it2) {
                 return it2.isGeneratable();
               }
             }));
           }
-          modelsToRetain = Sequence.<SModelDescriptor>fromIterable(modelsToRetain).concat(Sequence.<SModelDescriptor>fromIterable(Sequence.<SModelDescriptor>fromClosure(new ISequenceClosure<SModelDescriptor>() {
+          modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
             public Iterable<SModelDescriptor> iterable() {
-              return MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).get(gen);
+              return MapSequence.fromMap(retainedModels).get(gen);
             }
           })));
         }
-        modelsToRetain = Sequence.<SModelDescriptor>fromIterable(modelsToRetain).concat(Sequence.<SModelDescriptor>fromIterable(Sequence.<SModelDescriptor>fromClosure(new ISequenceClosure<SModelDescriptor>() {
+        modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
           public Iterable<SModelDescriptor> iterable() {
-            return MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).get(slang);
+            return MapSequence.fromMap(retainedModels).get(slang);
           }
         })));
       }
-      MapSequence.<IModule,Iterable<SModelDescriptor>>fromMap(retainedModels).put(mres.module(), Sequence.<SModelDescriptor>fromIterable(modelsToRetain).subtract(Sequence.<SModelDescriptor>fromIterable(mres.models())).toListSequence());
+      MapSequence.fromMap(retainedModels).put(mres.module(), Sequence.fromIterable(modelsToRetain).subtract(Sequence.fromIterable(mres.models())).toListSequence());
     }
     return retainedModels;
   }
@@ -101,7 +101,7 @@ public class RetainedUtil {
 
   /*package*/ static class RetainedFilesDelta {
     private IModule module;
-    protected Map<String, FilesDelta> dir2delta = MapSequence.<String,FilesDelta>fromMap(new HashMap<String, FilesDelta>());
+    protected Map<String, FilesDelta> dir2delta = MapSequence.fromMap(new HashMap<String, FilesDelta>());
     private _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile;
 
     public RetainedFilesDelta(IModule module, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
@@ -124,7 +124,7 @@ public class RetainedUtil {
     }
 
     private Iterable<IDelta> collectedDeltas() {
-      return Sequence.<FilesDelta>fromIterable(MapSequence.fromMap(dir2delta).values()).<IDelta>select(new ISelector<FilesDelta, IDelta>() {
+      return Sequence.fromIterable(MapSequence.fromMap(dir2delta).values()).<IDelta>select(new ISelector<FilesDelta, IDelta>() {
         public IDelta select(FilesDelta it) {
           return (IDelta) it;
         }
@@ -133,9 +133,9 @@ public class RetainedUtil {
 
     protected FilesDelta deltaForDir(String dir) {
       if (!(MapSequence.fromMap(dir2delta).containsKey(dir))) {
-        MapSequence.<String,FilesDelta>fromMap(dir2delta).put(dir, new FilesDelta(this.getRootOutputDir(dir)));
+        MapSequence.fromMap(dir2delta).put(dir, new FilesDelta(this.getRootOutputDir(dir)));
       }
-      return MapSequence.<String,FilesDelta>fromMap(dir2delta).get(dir);
+      return MapSequence.fromMap(dir2delta).get(dir);
     }
   }
 

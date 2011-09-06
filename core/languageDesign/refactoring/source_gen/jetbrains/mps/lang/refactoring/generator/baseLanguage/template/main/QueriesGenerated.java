@@ -459,7 +459,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7110754463748604327(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "arguments", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "arguments", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1212243788664(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -778,12 +778,12 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode argument : SLinkOperations.getTargets(_context.getNode(), "arguments", true)) {
       if (RequiredAdditionalArgument_Behavior.call_isTransient_1213877343864(argument)) {
-        ListSequence.<SNode>fromList(result).addElement(argument);
+        ListSequence.fromList(result).addElement(argument);
       }
     }
     for (SNode argument : SLinkOperations.getTargets(_context.getNode(), "internalArguments", true)) {
       if (RequiredAdditionalArgument_Behavior.call_isTransient_1213877343864(argument)) {
-        ListSequence.<SNode>fromList(result).addElement(argument);
+        ListSequence.fromList(result).addElement(argument);
       }
     }
     return result;
@@ -794,7 +794,7 @@ public class QueriesGenerated {
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
     for (SNode argument : requiredUserEnteredArguments) {
       if ((SLinkOperations.getTarget(argument, "filterClause", true) != null)) {
-        ListSequence.<SNode>fromList(result).addElement(argument);
+        ListSequence.fromList(result).addElement(argument);
       }
     }
     return result;
@@ -813,7 +813,7 @@ public class QueriesGenerated {
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
     for (SNode argument : requiredUserEnteredArguments) {
       if ((SLinkOperations.getTarget(argument, "chooseComponentClause", true) != null)) {
-        ListSequence.<SNode>fromList(result).addElement(argument);
+        ListSequence.fromList(result).addElement(argument);
       }
     }
     return result;
@@ -824,7 +824,7 @@ public class QueriesGenerated {
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
     for (SNode argument : requiredUserEnteredArguments) {
       if ((SLinkOperations.getTarget(argument, "initialValue", true) != null)) {
-        ListSequence.<SNode>fromList(result).addElement(argument);
+        ListSequence.fromList(result).addElement(argument);
       }
     }
     return result;
@@ -842,7 +842,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode argument : SLinkOperations.getTargets(_context.getNode(), "parameter", true)) {
       if (RefactoringArgument_Behavior.call_isTransient_478744034994716004(argument)) {
-        ListSequence.<SNode>fromList(result).addElement(argument);
+        ListSequence.fromList(result).addElement(argument);
       }
     }
     return result;
@@ -852,7 +852,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode argument : SLinkOperations.getTargets(_context.getNode(), "field", true)) {
       if (RefactoringArgument_Behavior.call_isTransient_478744034994716004(argument)) {
-        ListSequence.<SNode>fromList(result).addElement(argument);
+        ListSequence.fromList(result).addElement(argument);
       }
     }
     return result;

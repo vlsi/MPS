@@ -54,9 +54,9 @@ public class ExtractWhileConditionToInternalIfStatement_Intention extends BaseIn
     SNode conditionExpr = SNodeFactoryOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.NotExpression");
     SLinkOperations.setTarget(conditionExpr, "expression", SLinkOperations.getTarget(node, "condition", true), true);
     SNodeFactoryOperations.setNewChild(ifStatement, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).insertElement(0, breakStatement);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).insertElement(0, breakStatement);
     // insert if statement and replace condition with true 
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "statement", true)).insertElement(0, ifStatement);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "statement", true)).insertElement(0, ifStatement);
     SNode condition = SNodeFactoryOperations.setNewChild(node, "condition", "jetbrains.mps.baseLanguage.structure.BooleanConstant");
     SPropertyOperations.set(condition, "value", "" + (true));
   }

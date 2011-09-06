@@ -23,7 +23,7 @@ public class supertypesOf_UIObjectType_SubtypingRule extends SubtypingRule_Runti
   public List<SNode> getSubOrSuperTypes(SNode uiot, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> res = new ArrayList<SNode>();
     if ((SLinkOperations.getTarget(uiot, "uiObject", false) != null)) {
-      ListSequence.<SNode>fromList(res).addElement(new supertypesOf_UIObjectType_SubtypingRule.QuotationClass_bsrb1x_a0a0a0b0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(uiot, "uiObject", false), "extends", false), typeCheckingContext));
+      ListSequence.fromList(res).addElement(new supertypesOf_UIObjectType_SubtypingRule.QuotationClass_bsrb1x_a0a0a0b0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(uiot, "uiObject", false), "extends", false), typeCheckingContext));
     }
     return res;
   }

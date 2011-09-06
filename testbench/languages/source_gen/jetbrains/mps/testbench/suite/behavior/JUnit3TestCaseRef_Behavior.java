@@ -29,9 +29,9 @@ public class JUnit3TestCaseRef_Behavior {
   public static Iterable<String> virtual_testNames_4089647634160960707(SNode thisNode) {
     final SNode ignoreAnn = SLinkOperations.getTarget(new JUnit3TestCaseRef_Behavior.QuotationClass_6e9f36_a0a0a0c().createNode(), "annotation", false);
 
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "klass", false), "method", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "klass", false), "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode m) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(m, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(m, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType") && SPropertyOperations.getString(m, "name").startsWith("test") && !(ListSequence.<SNode>fromList(SLinkOperations.getTargets(m, "annotation", true)).any(new IWhereFilter<SNode>() {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(m, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(m, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType") && SPropertyOperations.getString(m, "name").startsWith("test") && !(ListSequence.fromList(SLinkOperations.getTargets(m, "annotation", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode mann) {
             return SLinkOperations.getTarget(mann, "annotation", false) == ignoreAnn;
           }

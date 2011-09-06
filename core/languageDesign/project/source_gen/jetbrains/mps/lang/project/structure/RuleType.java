@@ -34,12 +34,12 @@ public enum RuleType {
   }
 
   public static List<RuleType> getConstants() {
-    List<RuleType> list = ListSequence.<RuleType>fromList(new LinkedList<RuleType>());
-    ListSequence.<RuleType>fromList(list).addElement(RuleType.strictly_before);
-    ListSequence.<RuleType>fromList(list).addElement(RuleType.strictly_together);
-    ListSequence.<RuleType>fromList(list).addElement(RuleType.before_or_together);
-    ListSequence.<RuleType>fromList(list).addElement(RuleType.after_or_together);
-    ListSequence.<RuleType>fromList(list).addElement(RuleType.strictly_after);
+    List<RuleType> list = ListSequence.fromList(new LinkedList<RuleType>());
+    ListSequence.fromList(list).addElement(RuleType.strictly_before);
+    ListSequence.fromList(list).addElement(RuleType.strictly_together);
+    ListSequence.fromList(list).addElement(RuleType.before_or_together);
+    ListSequence.fromList(list).addElement(RuleType.after_or_together);
+    ListSequence.fromList(list).addElement(RuleType.strictly_after);
     return list;
   }
 

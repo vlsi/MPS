@@ -338,15 +338,15 @@ public class PatternTest_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_kasahx_a0i0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{})).isNotEmpty();
   }
 
   private static boolean renderingCondition_kasahx_a1i0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{})).isNotEmpty();
   }
 
   private static boolean renderingCondition_kasahx_a2i0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.lang.pattern.structure.ListPattern", false, new String[]{})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.lang.pattern.structure.ListPattern", false, new String[]{})).isNotEmpty();
   }
 
   private static boolean renderingCondition_kasahx_a8a(SNode node, EditorContext editorContext, IScope scope) {

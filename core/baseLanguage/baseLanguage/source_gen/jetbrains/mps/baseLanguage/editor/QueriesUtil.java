@@ -27,14 +27,14 @@ public class QueriesUtil {
 
   public static List<SNode> replaceNodeMenu_parameterObjects(ISearchScope searchScope, SNode classifier) {
     List<SNode> members = (List<SNode>) searchScope.getNodes();
-    List<SNode> result = ListSequence.<SNode>fromList(members).where(new IWhereFilter<SNode>() {
+    List<SNode> result = ListSequence.fromList(members).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
       }
     }).toListSequence();
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
-      ListSequence.<SNode>fromList(result).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", null));
-      ListSequence.<SNode>fromList(result).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumValuesExpression", null));
+      ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", null));
+      ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumValuesExpression", null));
     }
     return result;
   }
@@ -75,11 +75,11 @@ public class QueriesUtil {
     SLinkOperations.setTarget(newNode, "classConcept", SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
     if (SNodeOperations.isInstanceOf(oldNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")) {
       SNode call = SNodeOperations.cast(oldNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall");
-      for (SNode arg : ListSequence.<SNode>fromList(SLinkOperations.getTargets(call, "actualArgument", true))) {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(newNode, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
+      for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true))) {
+        ListSequence.fromList(SLinkOperations.getTargets(newNode, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
       }
     }
-    for (SNode attribute : ListSequence.<SNode>fromList(AttributeOperations.getAttributeList(oldNode, new IAttributeDescriptor.AllAttributes()))) {
+    for (SNode attribute : ListSequence.fromList(AttributeOperations.getAttributeList(oldNode, new IAttributeDescriptor.AllAttributes()))) {
       String role = oldNode.getRoleOf(attribute);
       newNode.addChild(role, SNodeOperations.copyNode(attribute));
     }

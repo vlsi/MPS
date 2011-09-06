@@ -22,6 +22,6 @@ public class ConcreteReferencePart_Behavior {
       SPropertyOperations.set(linkDeclaration, "sourceCardinality", "1");
     }
     SLinkOperations.setTarget(linkDeclaration, "target", AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(thisNode, "conceptReference", true), conceptsToTargets), false);
-    MapSequence.<SNode,SNode>fromMap(partsToLinks).put(thisNode, linkDeclaration);
+    MapSequence.fromMap(partsToLinks).put(thisNode, linkDeclaration);
   }
 }

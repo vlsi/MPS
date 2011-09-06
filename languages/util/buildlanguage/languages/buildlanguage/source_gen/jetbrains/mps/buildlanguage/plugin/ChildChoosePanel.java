@@ -54,8 +54,8 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<C> childrenNodes = getChildrenNodes(node);
-        if (childrenNodes != null && ListSequence.<C>fromList(childrenNodes).isNotEmpty()) {
-          child.value = ((SNode) ListSequence.<C>fromList(childrenNodes).first()).getId();
+        if (childrenNodes != null && ListSequence.fromList(childrenNodes).isNotEmpty()) {
+          child.value = ((SNode) ListSequence.fromList(childrenNodes).first()).getId();
         }
       }
     });
@@ -103,7 +103,7 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
     }
 
     public int getSize() {
-      return ListSequence.<Object>fromList(this.getConfigurations()).count();
+      return ListSequence.fromList(this.getConfigurations()).count();
     }
 
     public Object getSelectedItem() {
@@ -111,7 +111,7 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
     }
 
     public Object getElementAt(int i) {
-      return ListSequence.<Object>fromList(this.getConfigurations()).getElement(i);
+      return ListSequence.fromList(this.getConfigurations()).getElement(i);
     }
 
     @NotNull
@@ -120,9 +120,9 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           if ((ChildChoosePanel.this.myNode != null)) {
-            children.value = ListSequence.<Object>fromListWithValues(new ArrayList<Object>(), getChildrenNodes(ChildChoosePanel.this.myNode));
+            children.value = ListSequence.fromListWithValues(new ArrayList<Object>(), getChildrenNodes(ChildChoosePanel.this.myNode));
           } else {
-            children.value = ListSequence.<Object>fromList(new ArrayList<Object>());
+            children.value = ListSequence.fromList(new ArrayList<Object>());
           }
         }
       });

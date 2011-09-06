@@ -58,19 +58,19 @@ public class CreateDefaultEditor_Intention extends BaseIntention implements Inte
     if (SPropertyOperations.getString(node, "name") == null) {
       return false;
     }
-    Queue<SNode> toCheck = QueueSequence.<SNode>fromQueue(new LinkedList<SNode>());
+    Queue<SNode> toCheck = QueueSequence.fromQueue(new LinkedList<SNode>());
     QueueSequence.fromQueue(toCheck).addLastElement(node);
-    while (QueueSequence.<SNode>fromQueue(toCheck).isNotEmpty()) {
+    while (QueueSequence.fromQueue(toCheck).isNotEmpty()) {
       SNode acd = QueueSequence.fromQueue(toCheck).removeFirstElement();
       List<SNode> aspects = AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_1567570417158062208(acd, LanguageAspect.EDITOR);
-      if (!(SConceptOperations.isExactly(acd, "jetbrains.mps.lang.core.structure.BaseConcept")) && ListSequence.<SNode>fromList(aspects).any(new IWhereFilter<SNode>() {
+      if (!(SConceptOperations.isExactly(acd, "jetbrains.mps.lang.core.structure.BaseConcept")) && ListSequence.fromList(aspects).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode a) {
           return SNodeOperations.isInstanceOf(a, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration");
         }
       })) {
         return false;
       }
-      QueueSequence.fromQueue(toCheck).addSequence(ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(acd)));
+      QueueSequence.fromQueue(toCheck).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(acd)));
     }
     return true;
   }

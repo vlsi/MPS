@@ -33,30 +33,30 @@ public class check_ConstructorRecursiveInvocation_NonTypesystemRule extends Abst
     }
     List<SNode> nodesWithErrors = new ArrayList<SNode>();
 
-    while (ListSequence.<SNode>fromList(constructors).isNotEmpty()) {
-      SNode current = ListSequence.<SNode>fromList(constructors).getElement(0);
+    while (ListSequence.fromList(constructors).isNotEmpty()) {
+      SNode current = ListSequence.fromList(constructors).getElement(0);
       List<SNode> passed = new ArrayList<SNode>();
-      ListSequence.<SNode>fromList(passed).addElement(current);
+      ListSequence.fromList(passed).addElement(current);
       boolean end = false;
       while (!(end)) {
         SNode calledConstructor = ConstructorDeclaration_Behavior.call_getThisConstructorInvocation_6018737561676809124(current);
         if (calledConstructor != null) {
-          if (ListSequence.<SNode>fromList(passed).contains(calledConstructor)) {
-            ListSequence.<SNode>fromList(nodesWithErrors).addElement(current);
+          if (ListSequence.fromList(passed).contains(calledConstructor)) {
+            ListSequence.fromList(nodesWithErrors).addElement(current);
             do {
               current = ConstructorDeclaration_Behavior.call_getThisConstructorInvocation_6018737561676809124(current);
-              ListSequence.<SNode>fromList(nodesWithErrors).addElement(current);
+              ListSequence.fromList(nodesWithErrors).addElement(current);
             } while (current != calledConstructor);
             end = true;
           }
-          ListSequence.<SNode>fromList(passed).addElement(calledConstructor);
+          ListSequence.fromList(passed).addElement(calledConstructor);
           current = calledConstructor;
         } else {
           end = true;
         }
       }
-      ListSequence.<SNode>fromList(constructors).removeSequence(ListSequence.<SNode>fromList(passed));
-      ListSequence.<SNode>fromList(passed).clear();
+      ListSequence.fromList(constructors).removeSequence(ListSequence.fromList(passed));
+      ListSequence.fromList(passed).clear();
     }
     for (SNode constructor : nodesWithErrors) {
       {

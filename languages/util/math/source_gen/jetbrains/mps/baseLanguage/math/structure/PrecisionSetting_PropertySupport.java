@@ -11,7 +11,7 @@ public class PrecisionSetting_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<PrecisionSetting> constants = ListSequence.<PrecisionSetting>fromList(PrecisionSetting.getConstants()).iterator();
+    Iterator<PrecisionSetting> constants = ListSequence.fromList(PrecisionSetting.getConstants()).iterator();
     while (constants.hasNext()) {
       PrecisionSetting constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class PrecisionSetting_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<PrecisionSetting> constants = ListSequence.<PrecisionSetting>fromList(PrecisionSetting.getConstants()).iterator();
+    Iterator<PrecisionSetting> constants = ListSequence.fromList(PrecisionSetting.getConstants()).iterator();
     while (constants.hasNext()) {
       PrecisionSetting constant = constants.next();
       if (value.equals(constant.getName())) {

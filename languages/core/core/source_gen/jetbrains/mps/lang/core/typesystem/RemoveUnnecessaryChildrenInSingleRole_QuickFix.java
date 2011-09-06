@@ -18,7 +18,7 @@ public class RemoveUnnecessaryChildrenInSingleRole_QuickFix extends QuickFix_Run
   }
 
   public void execute(SNode node) {
-    ListSequence.<SNode>fromList(SNodeOperations.getChildren(node, ((SNode) RemoveUnnecessaryChildrenInSingleRole_QuickFix.this.getField("link")[0]))).skip(1).toListSequence().visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SNodeOperations.getChildren(node, ((SNode) RemoveUnnecessaryChildrenInSingleRole_QuickFix.this.getField("link")[0]))).skip(1).toListSequence().visitAll(new IVisitor<SNode>() {
       public void visit(SNode child) {
         SNodeOperations.deleteNode(child);
       }

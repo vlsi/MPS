@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesUtil {
   public static SNode get_registerSelf_body(SNode clazz) {
-    SNode regiserSelfMethod = ListSequence.<SNode>fromList(SLinkOperations.getTargets(clazz, "method", true)).where(new IWhereFilter<SNode>() {
+    SNode regiserSelfMethod = ListSequence.fromList(SLinkOperations.getTargets(clazz, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return "registerSelf".equals(SPropertyOperations.getString(it, "name"));
       }
@@ -19,7 +19,7 @@ public class QueriesUtil {
   }
 
   public static SNode get_unRegisterSelf_body(SNode clazz) {
-    SNode unRegiserSelfMethod = ListSequence.<SNode>fromList(SLinkOperations.getTargets(clazz, "method", true)).where(new IWhereFilter<SNode>() {
+    SNode unRegiserSelfMethod = ListSequence.fromList(SLinkOperations.getTargets(clazz, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return "unRegisterSelf".equals(SPropertyOperations.getString(it, "name"));
       }

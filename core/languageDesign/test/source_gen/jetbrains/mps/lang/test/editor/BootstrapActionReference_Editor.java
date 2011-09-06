@@ -77,7 +77,7 @@ public class BootstrapActionReference_Editor extends DefaultNodeEditor {
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
       // <node> 
-      List<String> result = ListSequence.<String>fromListAndArray(new ArrayList<String>(), ActionManager.getInstance().getActionIds(""));
+      List<String> result = ListSequence.fromListAndArray(new ArrayList<String>(), ActionManager.getInstance().getActionIds(""));
       return result;
     }
   }

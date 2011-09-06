@@ -24,7 +24,7 @@ public class check_CorrectScope_NonTypesystemRule extends AbstractNonTypesystemR
     if ((SLinkOperations.getTarget(thisExpression, "classConcept", false) == null)) {
       return;
     }
-    if (!(ListSequence.<SNode>fromList(ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(thisExpression)).contains(SLinkOperations.getTarget(thisExpression, "classConcept", false)))) {
+    if (!(ListSequence.fromList(ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(thisExpression)).contains(SLinkOperations.getTarget(thisExpression, "classConcept", false)))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisExpression, "Can't access " + SPropertyOperations.getString(SLinkOperations.getTarget(thisExpression, "classConcept", false), "name"), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4539702814067113826", null, errorTarget);

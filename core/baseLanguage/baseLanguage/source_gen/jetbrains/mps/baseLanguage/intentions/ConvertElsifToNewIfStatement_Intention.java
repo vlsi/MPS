@@ -45,7 +45,7 @@ public class ConvertElsifToNewIfStatement_Intention extends BaseIntention implem
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode statement = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false);
     SNode statementParent = SNodeOperations.getParent(statement);
-    return (statementParent != null) && SNodeOperations.isInstanceOf(statementParent, "jetbrains.mps.baseLanguage.structure.StatementList") && SNodeOperations.getIndexInParent(node) == SNodeOperations.getIndexInParent(ListSequence.<SNode>fromList(SLinkOperations.getTargets(statement, "elsifClauses", true)).last()) && (SLinkOperations.getTarget(statement, "ifFalseStatement", true) == null);
+    return (statementParent != null) && SNodeOperations.isInstanceOf(statementParent, "jetbrains.mps.baseLanguage.structure.StatementList") && SNodeOperations.getIndexInParent(node) == SNodeOperations.getIndexInParent(ListSequence.fromList(SLinkOperations.getTargets(statement, "elsifClauses", true)).last()) && (SLinkOperations.getTarget(statement, "ifFalseStatement", true) == null);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

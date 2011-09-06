@@ -42,14 +42,14 @@ public class SModelLanguageEnhancements_MigrationScript extends BaseMigrationScr
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeType"))) {
           return false;
         }
-        if (ListSequence.<SNode>fromList(AttributeOperations.getAttributeList(SLinkOperations.getTarget(node, "type", true), new IAttributeDescriptor.AllAttributes())).isNotEmpty()) {
+        if (ListSequence.fromList(AttributeOperations.getAttributeList(SLinkOperations.getTarget(node, "type", true), new IAttributeDescriptor.AllAttributes())).isNotEmpty()) {
           return false;
         }
         SNode nodeConcept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
         if (nodeConcept == null) {
           return false;
         }
-        if (ListSequence.<SNode>fromList(AttributeOperations.getAttributeList(nodeConcept, new IAttributeDescriptor.AllAttributes())).isNotEmpty()) {
+        if (ListSequence.fromList(AttributeOperations.getAttributeList(nodeConcept, new IAttributeDescriptor.AllAttributes())).isNotEmpty()) {
           return false;
         }
         SNode realType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true));
@@ -118,7 +118,7 @@ public class SModelLanguageEnhancements_MigrationScript extends BaseMigrationScr
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
           return false;
         }
-        if (ListSequence.<SNode>fromList(AttributeOperations.getAttributeList(SLinkOperations.getTarget(node, "type", true), new IAttributeDescriptor.AllAttributes())).isNotEmpty()) {
+        if (ListSequence.fromList(AttributeOperations.getAttributeList(SLinkOperations.getTarget(node, "type", true), new IAttributeDescriptor.AllAttributes())).isNotEmpty()) {
           return false;
         }
         SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
@@ -156,7 +156,7 @@ public class SModelLanguageEnhancements_MigrationScript extends BaseMigrationScr
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
           return false;
         }
-        if (ListSequence.<SNode>fromList(AttributeOperations.getAttributeList(SLinkOperations.getTarget(node, "type", true), new IAttributeDescriptor.AllAttributes())).isNotEmpty()) {
+        if (ListSequence.fromList(AttributeOperations.getAttributeList(SLinkOperations.getTarget(node, "type", true), new IAttributeDescriptor.AllAttributes())).isNotEmpty()) {
           return false;
         }
         SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);

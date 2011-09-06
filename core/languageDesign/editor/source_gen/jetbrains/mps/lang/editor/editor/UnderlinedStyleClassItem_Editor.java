@@ -124,7 +124,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.<String>fromListAndArray(new ArrayList<String>(), "0", "1", "2");
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "0", "1", "2");
     }
   }
 

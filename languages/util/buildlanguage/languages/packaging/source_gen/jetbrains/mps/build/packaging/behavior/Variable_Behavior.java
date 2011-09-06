@@ -24,7 +24,7 @@ public class Variable_Behavior {
 
   public static List<SNode> getDefaultVariables_7323449223785133410() {
     Iterable<SModelDescriptor> accessories = Variable_Behavior.getPackagingLanguage_5558646027962551669().getAccessoryModels();
-    Iterable<SNode> variables = Sequence.<SModelDescriptor>fromIterable(accessories).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {
+    Iterable<SNode> variables = Sequence.fromIterable(accessories).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {
       public Iterable<SNode> translate(final SModelDescriptor smodel) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -87,6 +87,6 @@ __switch__:
         };
       }
     });
-    return Sequence.<SNode>fromIterable(variables).toListSequence();
+    return Sequence.fromIterable(variables).toListSequence();
   }
 }

@@ -58,7 +58,7 @@ public class GroupReference_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Sequence.<IModule>fromIterable(((Iterable<IModule>) operationContext.getScope().getVisibleModules())).<SModelDescriptor>translate(new ITranslator2<IModule, SModelDescriptor>() {
+            return Sequence.fromIterable(((Iterable<IModule>) operationContext.getScope().getVisibleModules())).<SModelDescriptor>translate(new ITranslator2<IModule, SModelDescriptor>() {
               public Iterable<SModelDescriptor> translate(IModule m) {
                 return m.getOwnModelDescriptors();
               }
@@ -102,7 +102,7 @@ public class GroupReference_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Sequence.<IModule>fromIterable(((Iterable<IModule>) operationContext.getScope().getVisibleModules())).<SModelDescriptor>translate(new ITranslator2<IModule, SModelDescriptor>() {
+            return Sequence.fromIterable(((Iterable<IModule>) operationContext.getScope().getVisibleModules())).<SModelDescriptor>translate(new ITranslator2<IModule, SModelDescriptor>() {
               public Iterable<SModelDescriptor> translate(IModule m) {
                 return m.getOwnModelDescriptors();
               }

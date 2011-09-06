@@ -26,13 +26,13 @@ public class check_NamedTupleDeclaration_extends_NonTypesystemRule extends Abstr
   public void applyRule(final SNode ntd, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(ntd, "extended", true), "classifier", false) != null)) {
       List<SNode> allExtends = NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(SLinkOperations.getTarget(ntd, "extended", true), "classifier", false));
-      if (!(!(ListSequence.<SNode>fromList(allExtends).contains(ntd)))) {
+      if (!(!(ListSequence.fromList(allExtends).contains(ntd)))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(ntd, "extended", true), "circular extends relation", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "7367153454745473434", null, errorTarget);
       }
-      for (final SNode cmp : ListSequence.<SNode>fromList(SLinkOperations.getTargets(ntd, "component", true))) {
+      for (final SNode cmp : ListSequence.fromList(SLinkOperations.getTargets(ntd, "component", true))) {
         if (cmp != null) {
-          if (!(!(ListSequence.<SNode>fromList(allExtends).<SNode>translate(new ITranslator2<SNode, SNode>() {
+          if (!(!(ListSequence.fromList(allExtends).<SNode>translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode td) {
               return SLinkOperations.getTargets(td, "component", true);
             }

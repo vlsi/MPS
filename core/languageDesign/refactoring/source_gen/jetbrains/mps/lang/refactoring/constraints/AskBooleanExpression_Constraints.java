@@ -60,7 +60,7 @@ public class AskBooleanExpression_Constraints extends BaseConstraintsDescriptor 
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false), "parameter", true)).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false), "parameter", true)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "chooser", true), "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser");
               }

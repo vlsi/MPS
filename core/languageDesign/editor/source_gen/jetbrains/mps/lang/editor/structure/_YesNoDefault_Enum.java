@@ -32,10 +32,10 @@ public enum _YesNoDefault_Enum {
   }
 
   public static List<_YesNoDefault_Enum> getConstants() {
-    List<_YesNoDefault_Enum> list = ListSequence.<_YesNoDefault_Enum>fromList(new LinkedList<_YesNoDefault_Enum>());
-    ListSequence.<_YesNoDefault_Enum>fromList(list).addElement(_YesNoDefault_Enum.yes);
-    ListSequence.<_YesNoDefault_Enum>fromList(list).addElement(_YesNoDefault_Enum.no);
-    ListSequence.<_YesNoDefault_Enum>fromList(list).addElement(_YesNoDefault_Enum.none);
+    List<_YesNoDefault_Enum> list = ListSequence.fromList(new LinkedList<_YesNoDefault_Enum>());
+    ListSequence.fromList(list).addElement(_YesNoDefault_Enum.yes);
+    ListSequence.fromList(list).addElement(_YesNoDefault_Enum.no);
+    ListSequence.fromList(list).addElement(_YesNoDefault_Enum.none);
     return list;
   }
 

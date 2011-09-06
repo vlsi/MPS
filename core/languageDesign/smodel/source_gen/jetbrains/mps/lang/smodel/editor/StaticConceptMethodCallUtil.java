@@ -22,7 +22,7 @@ public class StaticConceptMethodCallUtil {
     List<SNode> result = new ArrayList<SNode>();
     SNode behavior = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(SLinkOperations.getTarget(staticConceptMethodCall, "concept", false), LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
     if (behavior != null) {
-      ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(ConceptBehavior_Behavior.call_getVisibleStaticMethods_1225194243338(behavior, staticConceptMethodCall)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ConceptBehavior_Behavior.call_getVisibleStaticMethods_1225194243338(behavior, staticConceptMethodCall)));
     }
     return result;
   }
@@ -31,12 +31,12 @@ public class StaticConceptMethodCallUtil {
     final SNode staticConceptMethodCall = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(existingNode), "jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null);
     SLinkOperations.setTarget(staticConceptMethodCall, "concept", SLinkOperations.getTarget(existingNode, "concept", false), false);
     SLinkOperations.setTarget(staticConceptMethodCall, "baseMethodDeclaration", parameter, false);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(existingNode, "actualArgument", true)).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SLinkOperations.getTargets(existingNode, "actualArgument", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(staticConceptMethodCall, "actualArgument", true)).addElement(SNodeOperations.copyNode(it));
+        ListSequence.fromList(SLinkOperations.getTargets(staticConceptMethodCall, "actualArgument", true)).addElement(SNodeOperations.copyNode(it));
       }
     });
-    for (SNode attribute : ListSequence.<SNode>fromList(AttributeOperations.getAttributeList(existingNode, new IAttributeDescriptor.AllAttributes()))) {
+    for (SNode attribute : ListSequence.fromList(AttributeOperations.getAttributeList(existingNode, new IAttributeDescriptor.AllAttributes()))) {
       String role = existingNode.getRoleOf(attribute);
       staticConceptMethodCall.addChild(role, SNodeOperations.copyNode(attribute));
     }

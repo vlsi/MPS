@@ -33,11 +33,11 @@ public enum HAlignment {
   }
 
   public static List<HAlignment> getConstants() {
-    List<HAlignment> list = ListSequence.<HAlignment>fromList(new LinkedList<HAlignment>());
-    ListSequence.<HAlignment>fromList(list).addElement(HAlignment.left);
-    ListSequence.<HAlignment>fromList(list).addElement(HAlignment.center);
-    ListSequence.<HAlignment>fromList(list).addElement(HAlignment.right);
-    ListSequence.<HAlignment>fromList(list).addElement(HAlignment.fill);
+    List<HAlignment> list = ListSequence.fromList(new LinkedList<HAlignment>());
+    ListSequence.fromList(list).addElement(HAlignment.left);
+    ListSequence.fromList(list).addElement(HAlignment.center);
+    ListSequence.fromList(list).addElement(HAlignment.right);
+    ListSequence.fromList(list).addElement(HAlignment.fill);
     return list;
   }
 

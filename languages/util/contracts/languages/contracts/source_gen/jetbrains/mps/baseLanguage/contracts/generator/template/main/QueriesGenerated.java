@@ -69,9 +69,9 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_2203155934612650020(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode nodeParent = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
     SNode linkParent = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
-    int declarationNum = ListSequence.<SNode>fromList(SLinkOperations.getTargets(linkParent, "parameter", true)).indexOf(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false));
+    int declarationNum = ListSequence.fromList(SLinkOperations.getTargets(linkParent, "parameter", true)).indexOf(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false));
     SNode clone = SNodeOperations.copyNode(_context.getNode());
-    SLinkOperations.setTarget(clone, "variableDeclaration", ListSequence.<SNode>fromList(SLinkOperations.getTargets(nodeParent, "parameter", true)).getElement(declarationNum), false);
+    SLinkOperations.setTarget(clone, "variableDeclaration", ListSequence.fromList(SLinkOperations.getTargets(nodeParent, "parameter", true)).getElement(declarationNum), false);
     return clone;
   }
 

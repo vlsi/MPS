@@ -177,7 +177,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_vsmugd_a0a0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "annotation", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).count() > 0;
   }
 
   private static boolean renderingCondition_vsmugd_a1a0(SNode node, EditorContext editorContext, IScope scope) {

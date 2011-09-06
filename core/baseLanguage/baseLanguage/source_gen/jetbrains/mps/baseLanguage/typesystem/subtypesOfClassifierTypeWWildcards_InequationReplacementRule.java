@@ -44,8 +44,8 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
               {
                 SNode typeParam;
                 SNode myParam;
-                Iterator<SNode> typeParam_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(coercedNode_n8ubly_a0a0, "parameter", true)).iterator();
-                Iterator<SNode> myParam_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
+                Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_n8ubly_a0a0, "parameter", true)).iterator();
+                Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
                 while (true) {
                   if (!(typeParam_iterator.hasNext())) {
                     break;
@@ -107,8 +107,8 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
           {
             SNode typeParam;
             SNode myParam;
-            Iterator<SNode> typeParam_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(coercedNode_a0a0, "parameter", true)).iterator();
-            Iterator<SNode> myParam_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
+            Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_a0a0, "parameter", true)).iterator();
+            Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
             while (true) {
               if (!(typeParam_iterator.hasNext())) {
                 break;
@@ -191,11 +191,11 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
         }
         {
           String childRole_subtypesOfClassifierTypeWWildcards_n8ubly_ = "parameter";
-          this.patternVar_l = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+          this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignored = null;
           for (SNode childVar : nodeToMatch_subtypesOfClassifierTypeWWildcards_n8ubly_a0a0a0a.getChildren(childRole_subtypesOfClassifierTypeWWildcards_n8ubly_)) {
             patternVar_ignored = childVar;
-            ListSequence.<SNode>fromList(this.patternVar_l).addElement(childVar);
+            ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
         }
       }
@@ -252,11 +252,11 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
         }
         {
           String childRole_null_ = "parameter";
-          this.patternVar_l = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+          this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignored = null;
           for (SNode childVar : nodeToMatch_null_a0a0a0a.getChildren(childRole_null_)) {
             patternVar_ignored = childVar;
-            ListSequence.<SNode>fromList(this.patternVar_l).addElement(childVar);
+            ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
         }
       }

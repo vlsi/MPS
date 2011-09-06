@@ -26,7 +26,7 @@ public class check_FieldIsNeverUsedOrAssigned_NonTypesystemRule extends Abstract
     if (SNodeOperations.isInstanceOf(field, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")) {
       final SNode member = SNodeOperations.cast(field, "jetbrains.mps.baseLanguage.classifiers.structure.IMember");
       List<SNode> memberOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(field), "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation", false, new String[]{});
-      Iterable<SNode> references = ListSequence.<SNode>fromList(memberOperations).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> references = ListSequence.fromList(memberOperations).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SLinkOperations.getTarget(it, "member", false) == member;
         }
@@ -36,17 +36,17 @@ public class check_FieldIsNeverUsedOrAssigned_NonTypesystemRule extends Abstract
       SNode root = SNodeOperations.getContainingRoot(field);
       List<SNode> localFieldRefs = SNodeOperations.getDescendants(root, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{});
       List<SNode> fieldRefOperations = SNodeOperations.getDescendants(root, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{});
-      Iterable<SNode> localFieldReferences = ListSequence.<SNode>fromList(localFieldRefs).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> localFieldReferences = ListSequence.fromList(localFieldRefs).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SLinkOperations.getTarget(it, "variableDeclaration", false) == field;
         }
       });
-      Iterable<SNode> fieldReferenceOperations = ListSequence.<SNode>fromList(fieldRefOperations).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> fieldReferenceOperations = ListSequence.fromList(fieldRefOperations).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SLinkOperations.getTarget(it, "fieldDeclaration", false) == field;
         }
       });
-      Iterable<SNode> refs = Sequence.<SNode>fromIterable(localFieldReferences).union(Sequence.<SNode>fromIterable(fieldReferenceOperations));
+      Iterable<SNode> refs = Sequence.fromIterable(localFieldReferences).union(Sequence.fromIterable(fieldReferenceOperations));
       VariableReferenceUtil.checkField(typeCheckingContext, field, refs);
     }
   }

@@ -4,13 +4,13 @@
   <root nodeId="1210626395131">
     <nodeInfo nodeId="7910522704535779665" fileName="SNodeOperation_DataFlow.java" startLine="18" startPosition="98" endLine="19" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1210626395131" fileName="SNodeOperation_DataFlow.java" startLine="12" startPosition="62" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SNodeOperation_DataFlow#()V" />
-    <nodeInfo nodeId="7910522704535779643" fileName="SNodeOperation_DataFlow.java" startLine="17" startPosition="102" endLine="20" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7910522704535779643" fileName="SNodeOperation_DataFlow.java" startLine="17" startPosition="95" endLine="20" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1210626400305" fileName="SNodeOperation_DataFlow.java" startLine="16" startPosition="102" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1210626395131" fileName="SNodeOperation_DataFlow.java" startLine="15" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
     <scopeInfo nodeId="1210626395131" fileName="SNodeOperation_DataFlow.java" startLine="13" startPosition="36" endLine="13" endPosition="36" />
     <scopeInfo nodeId="7910522704535779644" fileName="SNodeOperation_DataFlow.java" startLine="18" startPosition="98" endLine="19" endPosition="50" />
     <scopeInfo nodeId="1210626395131" fileName="SNodeOperation_DataFlow.java" startLine="12" startPosition="62" endLine="14" endPosition="3" />
-    <scopeInfo nodeId="1210626400308" fileName="SNodeOperation_DataFlow.java" startLine="17" startPosition="102" endLine="20" endPosition="7" />
+    <scopeInfo nodeId="1210626400308" fileName="SNodeOperation_DataFlow.java" startLine="17" startPosition="95" endLine="20" endPosition="7" />
     <scopeInfo nodeId="1210626395133" fileName="SNodeOperation_DataFlow.java" startLine="16" startPosition="102" endLine="21" endPosition="5" />
     <scopeInfo nodeId="1210626400305" fileName="SNodeOperation_DataFlow.java" startLine="16" startPosition="102" endLine="21" endPosition="5" />
     <scopeInfo nodeId="1210626395131" fileName="SNodeOperation_DataFlow.java" startLine="15" startPosition="0" endLine="23" endPosition="0" />

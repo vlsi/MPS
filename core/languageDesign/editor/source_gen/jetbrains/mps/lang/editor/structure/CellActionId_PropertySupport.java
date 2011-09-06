@@ -11,7 +11,7 @@ public class CellActionId_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<CellActionId> constants = ListSequence.<CellActionId>fromList(CellActionId.getConstants()).iterator();
+    Iterator<CellActionId> constants = ListSequence.fromList(CellActionId.getConstants()).iterator();
     while (constants.hasNext()) {
       CellActionId constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class CellActionId_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<CellActionId> constants = ListSequence.<CellActionId>fromList(CellActionId.getConstants()).iterator();
+    Iterator<CellActionId> constants = ListSequence.fromList(CellActionId.getConstants()).iterator();
     while (constants.hasNext()) {
       CellActionId constant = constants.next();
       if (value.equals(constant.getName())) {

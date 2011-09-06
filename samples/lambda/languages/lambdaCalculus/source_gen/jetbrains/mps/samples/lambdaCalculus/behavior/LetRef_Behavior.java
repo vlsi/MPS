@@ -21,7 +21,7 @@ public class LetRef_Behavior {
     }
     for (SNode letRef : SNodeOperations.getDescendants(node, "jetbrains.mps.samples.lambdaCalculus.structure.LetRef", false, new String[]{})) {
       if (SLinkOperations.getTarget(letRef, "variable", false) == SLinkOperations.getTarget(thisNode, "variable", false)) {
-        ListSequence.<SNode>fromList(result).addElement(letRef);
+        ListSequence.fromList(result).addElement(letRef);
       }
     }
     return result;

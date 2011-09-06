@@ -106,8 +106,8 @@ public class QueriesUtil {
   }
 
   public static List<SNode> conceptAndItsInterfaces(SNode concept) {
-    List<SNode> result = ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), concept);
-    ListSequence.<SNode>fromList(result).addSequence(ListSequence.<SNode>fromList(SModelUtil.getDirectSuperInterfacesAndTheirSupers(concept)));
+    List<SNode> result = ListSequence.fromListAndArray(new ArrayList<SNode>(), concept);
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelUtil.getDirectSuperInterfacesAndTheirSupers(concept)));
     return result;
   }
 
@@ -229,7 +229,7 @@ public class QueriesUtil {
   }
 
   public static Iterable<SNode> sortedProperties(Iterable<SNode> r) {
-    return Sequence.<SNode>fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
+    return Sequence.fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return getPropertyIndex(it);
       }
@@ -237,7 +237,7 @@ public class QueriesUtil {
   }
 
   public static Iterable<SNode> sortedPropertiesForInterface(Iterable<SNode> r) {
-    return Sequence.<SNode>fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
+    return Sequence.fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return getPropertyIndex(it);
       }
@@ -289,7 +289,7 @@ public class QueriesUtil {
   }
 
   public static Iterable<SNode> sortedLinks(Iterable<SNode> r) {
-    return Sequence.<SNode>fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
+    return Sequence.fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return getLinkIndex(it);
       }
@@ -297,7 +297,7 @@ public class QueriesUtil {
   }
 
   public static Iterable<SNode> sortedLinksForInterface(Iterable<SNode> r) {
-    return Sequence.<SNode>fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
+    return Sequence.fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return getInterfaceLinkIndex(it);
       }

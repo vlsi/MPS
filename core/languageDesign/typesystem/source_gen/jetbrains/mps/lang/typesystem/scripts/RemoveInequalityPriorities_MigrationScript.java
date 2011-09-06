@@ -27,15 +27,15 @@ public class RemoveInequalityPriorities_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "afterEquations", true)).isNotEmpty() || ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "afterGroups", true)).isNotEmpty() || ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "beforeGroups", true)).isNotEmpty() || ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "beforeEquations", true)).isNotEmpty() || SLinkOperations.getTarget(node, "inequationGroup", true) != null || SPropertyOperations.getInteger_def(node, "inequationPriority", "0") != 0;
+        return ListSequence.fromList(SLinkOperations.getTargets(node, "afterEquations", true)).isNotEmpty() || ListSequence.fromList(SLinkOperations.getTargets(node, "afterGroups", true)).isNotEmpty() || ListSequence.fromList(SLinkOperations.getTargets(node, "beforeGroups", true)).isNotEmpty() || ListSequence.fromList(SLinkOperations.getTargets(node, "beforeEquations", true)).isNotEmpty() || SLinkOperations.getTarget(node, "inequationGroup", true) != null || SPropertyOperations.getInteger_def(node, "inequationPriority", "0") != 0;
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "afterEquations", true)).clear();
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "beforeEquations", true)).clear();
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "afterGroups", true)).clear();
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "beforeGroups", true)).clear();
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "rulesToSkip", true)).clear();
+        ListSequence.fromList(SLinkOperations.getTargets(node, "afterEquations", true)).clear();
+        ListSequence.fromList(SLinkOperations.getTargets(node, "beforeEquations", true)).clear();
+        ListSequence.fromList(SLinkOperations.getTargets(node, "afterGroups", true)).clear();
+        ListSequence.fromList(SLinkOperations.getTargets(node, "beforeGroups", true)).clear();
+        ListSequence.fromList(SLinkOperations.getTargets(node, "rulesToSkip", true)).clear();
         SLinkOperations.setTarget(node, "inequationGroup", null, true);
         SPropertyOperations.set(node, "inequationPriority", "" + 0);
       }

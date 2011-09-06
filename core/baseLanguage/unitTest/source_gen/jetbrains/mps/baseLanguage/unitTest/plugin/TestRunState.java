@@ -21,10 +21,10 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class TestRunState {
   private static final Object lock = new Object();
 
-  private final List<String> myTestMethods = ListSequence.<String>fromList(new ArrayList<String>());
-  private Map<ITestNodeWrapper, List<ITestNodeWrapper>> myTestToMethodsMap = MapSequence.<ITestNodeWrapper,List<ITestNodeWrapper>>fromMap(new LinkedHashMap<ITestNodeWrapper, List<ITestNodeWrapper>>(16, (float) 0.75, false));
-  private final Set<TestView> myViewsList = SetSequence.<TestView>fromSet(new HashSet<TestView>());
-  private final List<TestStateListener> myListeners = ListSequence.<TestStateListener>fromList(new ArrayList<TestStateListener>());
+  private final List<String> myTestMethods = ListSequence.fromList(new ArrayList<String>());
+  private Map<ITestNodeWrapper, List<ITestNodeWrapper>> myTestToMethodsMap = MapSequence.fromMap(new LinkedHashMap<ITestNodeWrapper, List<ITestNodeWrapper>>(16, (float) 0.75, false));
+  private final Set<TestView> myViewsList = SetSequence.fromSet(new HashSet<TestView>());
+  private final List<TestStateListener> myListeners = ListSequence.fromList(new ArrayList<TestStateListener>());
   private String myCurrentClass;
   private String myCurrentMethod;
   private String myCurrentToken;
@@ -42,11 +42,11 @@ public class TestRunState {
   }
 
   public TestRunState(List<ITestNodeWrapper> tests) {
-    this.initTestState(ListSequence.<ITestNodeWrapper>fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
+    this.initTestState(ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
       public boolean accept(ITestNodeWrapper it) {
         return it.isTestCase();
       }
-    }), ListSequence.<ITestNodeWrapper>fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
+    }), ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
       public boolean accept(ITestNodeWrapper it) {
         return !(it.isTestCase());
       }
@@ -59,35 +59,35 @@ public class TestRunState {
         TestRunState.this.addTestCases(testCases);
         TestRunState.this.addTestMethods(testMethods);
         for (ITestNodeWrapper testCase : MapSequence.fromMap(TestRunState.this.myTestToMethodsMap).keySet()) {
-          for (ITestNodeWrapper testMethod : MapSequence.<ITestNodeWrapper,List<ITestNodeWrapper>>fromMap(TestRunState.this.myTestToMethodsMap).get(testCase)) {
-            ListSequence.<String>fromList(TestRunState.this.myTestMethods).addElement(testCase.getFqName() + '.' + testMethod.getName());
+          for (ITestNodeWrapper testMethod : MapSequence.fromMap(TestRunState.this.myTestToMethodsMap).get(testCase)) {
+            ListSequence.fromList(TestRunState.this.myTestMethods).addElement(testCase.getFqName() + '.' + testMethod.getName());
           }
         }
       }
     });
-    this.myTotalTests = ListSequence.<String>fromList(this.myTestMethods).count();
+    this.myTotalTests = ListSequence.fromList(this.myTestMethods).count();
 
     this.initView();
   }
 
   private void addTestCases(Iterable<ITestNodeWrapper> testCases) {
-    for (ITestNodeWrapper testCase : Sequence.<ITestNodeWrapper>fromIterable(testCases)) {
-      List<ITestNodeWrapper> testMethods = ListSequence.<ITestNodeWrapper>fromList(new ArrayList<ITestNodeWrapper>());
-      MapSequence.<ITestNodeWrapper,List<ITestNodeWrapper>>fromMap(this.myTestToMethodsMap).put(testCase, testMethods);
-      ListSequence.<ITestNodeWrapper>fromList(testMethods).addSequence(Sequence.<ITestNodeWrapper>fromIterable(testCase.getTestMethods()));
+    for (ITestNodeWrapper testCase : Sequence.fromIterable(testCases)) {
+      List<ITestNodeWrapper> testMethods = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
+      MapSequence.fromMap(this.myTestToMethodsMap).put(testCase, testMethods);
+      ListSequence.fromList(testMethods).addSequence(Sequence.fromIterable(testCase.getTestMethods()));
     }
   }
 
   private void addTestMethods(Iterable<ITestNodeWrapper> testMethods) {
-    for (ITestNodeWrapper testMethod : Sequence.<ITestNodeWrapper>fromIterable(testMethods)) {
+    for (ITestNodeWrapper testMethod : Sequence.fromIterable(testMethods)) {
       ITestNodeWrapper testCase = testMethod.getTestCase();
-      List<ITestNodeWrapper> curTestMethods = MapSequence.<ITestNodeWrapper,List<ITestNodeWrapper>>fromMap(this.myTestToMethodsMap).get(testCase);
+      List<ITestNodeWrapper> curTestMethods = MapSequence.fromMap(this.myTestToMethodsMap).get(testCase);
       if (curTestMethods == null) {
-        curTestMethods = ListSequence.<ITestNodeWrapper>fromList(new ArrayList<ITestNodeWrapper>());
-        MapSequence.<ITestNodeWrapper,List<ITestNodeWrapper>>fromMap(this.myTestToMethodsMap).put(testCase, curTestMethods);
+        curTestMethods = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
+        MapSequence.fromMap(this.myTestToMethodsMap).put(testCase, curTestMethods);
       }
-      if (!(ListSequence.<ITestNodeWrapper>fromList(curTestMethods).contains(testMethod))) {
-        ListSequence.<ITestNodeWrapper>fromList(curTestMethods).addElement(testMethod);
+      if (!(ListSequence.fromList(curTestMethods).contains(testMethod))) {
+        ListSequence.fromList(curTestMethods).addElement(testMethod);
       }
     }
   }
@@ -109,7 +109,7 @@ public class TestRunState {
   }
 
   public void startTest(final TestEvent event) {
-    ListSequence.<TestStateListener>fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestStart(event);
       }
@@ -118,7 +118,7 @@ public class TestRunState {
   }
 
   public void endTest(final TestEvent event) {
-    ListSequence.<TestStateListener>fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestEnd(event);
       }
@@ -127,7 +127,7 @@ public class TestRunState {
   }
 
   public void testError(final TestEvent event) {
-    ListSequence.<TestStateListener>fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestError(event);
       }
@@ -136,7 +136,7 @@ public class TestRunState {
   }
 
   public void testFailure(final TestEvent event) {
-    ListSequence.<TestStateListener>fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestFailure(event);
       }
@@ -145,7 +145,7 @@ public class TestRunState {
   }
 
   public void looseTest(final String className, final String testName) {
-    ListSequence.<TestStateListener>fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onLooseTest(className, testName);
       }
@@ -216,8 +216,8 @@ public class TestRunState {
       String testMethodName = event.getTestMethodName();
       String key = testClassName + '.' + testMethodName;
       synchronized (this.myTestMethods) {
-        if (ListSequence.<String>fromList(this.myTestMethods).contains(key)) {
-          ListSequence.<String>fromList(this.myTestMethods).removeElement(key);
+        if (ListSequence.fromList(this.myTestMethods).contains(key)) {
+          ListSequence.fromList(this.myTestMethods).removeElement(key);
         }
       }
     }
@@ -276,11 +276,11 @@ public class TestRunState {
   }
 
   public void addListener(TestStateListener listener) {
-    ListSequence.<TestStateListener>fromList(this.myListeners).addElement(listener);
+    ListSequence.fromList(this.myListeners).addElement(listener);
   }
 
   public void removeListener(TestStateListener listener) {
-    ListSequence.<TestStateListener>fromList(this.myListeners).removeElement(listener);
+    ListSequence.fromList(this.myListeners).removeElement(listener);
   }
 
   public Map<ITestNodeWrapper, List<ITestNodeWrapper>> getTestsMap() {

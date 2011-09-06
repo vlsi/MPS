@@ -336,7 +336,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_2ojjgh_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() > 0;
   }
 
   public static class _Inline_2ojjgh_a1a0 extends InlineCellProvider {
@@ -357,7 +357,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
         public String getText() {
           StringBuilder sb = new StringBuilder();
           String sep = "";
-          for (SNode ntcd : ListSequence.<SNode>fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().<SNode>translate(new ITranslator2<SNode, SNode>() {
+          for (SNode ntcd : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().<SNode>translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode ntd) {
               return SLinkOperations.getTargets(ntd, "component", true);
             }
@@ -447,7 +447,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     }
 
     private static boolean renderingCondition_2ojjgh_a0a0c0a(SNode node, EditorContext editorContext, IScope scope) {
-      return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+      return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
     }
   }
 
@@ -467,7 +467,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     private EditorCell createReadOnlyModelAccessor_2ojjgh_a0b1a(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
-          return IterableUtils.join(ListSequence.<SNode>fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().<SNode>translate(new ITranslator2<SNode, SNode>() {
+          return IterableUtils.join(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().<SNode>translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode ntd) {
               return SLinkOperations.getTargets(ntd, "component", true);
             }

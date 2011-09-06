@@ -27,9 +27,9 @@ public class ExtractMethodWithExitPoints extends ExtractMethodFromStatementsRefa
         SNode ifNode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
         SLinkOperations.setTarget(ifNode, "condition", methodCall, true);
         SLinkOperations.setTarget(ifNode, "ifTrue", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifNode, "ifTrue", true), "statement", true)).addElement(ListSequence.<SNode>fromList(ExtractMethodWithExitPoints.this.myAnalyzer.getIntenalExitPoints()).first());
-        SNodeOperations.insertPrevSiblingChild(ListSequence.<SNode>fromList(ExtractMethodWithExitPoints.this.myStatements).first(), ifNode);
-        for (SNode statement : ListSequence.<SNode>fromList(ExtractMethodWithExitPoints.this.myStatements)) {
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifNode, "ifTrue", true), "statement", true)).addElement(ListSequence.fromList(ExtractMethodWithExitPoints.this.myAnalyzer.getIntenalExitPoints()).first());
+        SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(ExtractMethodWithExitPoints.this.myStatements).first(), ifNode);
+        for (SNode statement : ListSequence.fromList(ExtractMethodWithExitPoints.this.myStatements)) {
           SNodeOperations.deleteNode(statement);
         }
       }
@@ -41,9 +41,9 @@ public class ExtractMethodWithExitPoints extends ExtractMethodFromStatementsRefa
     SNode constant = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
     SPropertyOperations.set(constant, "value", "" + false);
     SLinkOperations.setTarget(ret, "expression", constant, true);
-    ListSequence.<SNode>fromList(this.myStatements).addElement(SNodeOperations.copyNode(ret));
+    ListSequence.fromList(this.myStatements).addElement(SNodeOperations.copyNode(ret));
     SPropertyOperations.set(constant, "value", "" + true);
-    for (SNode exitPoint : ListSequence.<SNode>fromList(this.myAnalyzer.getIntenalExitPoints())) {
+    for (SNode exitPoint : ListSequence.fromList(this.myAnalyzer.getIntenalExitPoints())) {
       SNodeOperations.replaceWithAnother(exitPoint, SNodeOperations.copyNode(ret));
     }
   }

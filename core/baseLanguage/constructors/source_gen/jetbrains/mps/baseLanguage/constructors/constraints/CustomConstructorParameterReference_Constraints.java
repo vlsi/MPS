@@ -82,7 +82,7 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
             SNode args = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor", false, false), "arguments", true);
             if (SNodeOperations.isInstanceOf(args, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause")) {
               List<SNode> result = new ArrayList<SNode>();
-              ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(args, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"), "list", true));
+              ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(args, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"), "list", true));
               return result;
             } else if (SNodeOperations.isInstanceOf(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause")) {
               return SLinkOperations.getTargets(SNodeOperations.cast(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"), "parameter", true);

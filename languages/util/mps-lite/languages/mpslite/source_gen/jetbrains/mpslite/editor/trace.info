@@ -515,7 +515,7 @@
     <nodeInfo nodeId="1237318138403" fileName="_Line_Actions.java" startLine="149" startPosition="33" endLine="150" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1237318150657" fileName="_Line_Actions.java" startLine="150" startPosition="41" endLine="151" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237318098217" fileName="_Line_Actions.java" startLine="151" startPosition="122" endLine="152" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237318124661" fileName="_Line_Actions.java" startLine="152" startPosition="43" endLine="153" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237318124661" fileName="_Line_Actions.java" startLine="152" startPosition="43" endLine="153" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182843354789" fileName="_Line_Actions.java" startLine="158" startPosition="34" endLine="159" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1182843354789" fileName="_Line_Actions.java" startLine="20" startPosition="34" endLine="22" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1182843354789" fileName="_Line_Actions.java" startLine="22" startPosition="47" endLine="24" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -594,7 +594,7 @@
     <scopeInfo nodeId="1182843354789" fileName="_Line_Actions.java" startLine="107" startPosition="76" endLine="111" endPosition="5" />
     <scopeInfo nodeId="1182843354789" fileName="_Line_Actions.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
     <scopeInfo nodeId="1182843354789" fileName="_Line_Actions.java" startLine="125" startPosition="7" endLine="129" endPosition="19" />
-    <scopeInfo nodeId="1237318086743" fileName="_Line_Actions.java" startLine="149" startPosition="33" endLine="153" endPosition="122">
+    <scopeInfo nodeId="1237318086743" fileName="_Line_Actions.java" startLine="149" startPosition="33" endLine="153" endPosition="115">
       <varInfo nodeId="1237318138404" varName="currentSibling" />
     </scopeInfo>
     <scopeInfo nodeId="1182843354789" fileName="_Line_Actions.java" startLine="157" startPosition="0" endLine="161" endPosition="0" />

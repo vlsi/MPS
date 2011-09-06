@@ -74,7 +74,7 @@ public class InlineMethodDialogModel {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         if (InlineMethodDialogModel.this.myForAll) {
-          for (SearchResult<SNode> res : ListSequence.<SearchResult<SNode>>fromList(InlineMethodDialogModel.this.myResults.getSearchResults())) {
+          for (SearchResult<SNode> res : ListSequence.fromList(InlineMethodDialogModel.this.myResults.getSearchResults())) {
             InlineMethodRefactoring ref = new InlineMethodRefactoring(res.getObject());
             ref.doRefactor();
           }

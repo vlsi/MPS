@@ -23,7 +23,7 @@ public class ResourceType_subtypeOf_IResource_SubtypingRule extends SubtypingRul
   }
 
   public List<SNode> getSubOrSuperTypes(SNode rt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return ListSequence.<SNode>fromListAndArray(new ArrayList<SNode>(), new ResourceType_subtypeOf_IResource_SubtypingRule.QuotationClass_9rsqz7_a1a0a0().createNode(typeCheckingContext));
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), new ResourceType_subtypeOf_IResource_SubtypingRule.QuotationClass_9rsqz7_a1a0a0().createNode(typeCheckingContext));
   }
 
   public String getApplicableConceptFQName() {

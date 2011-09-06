@@ -45,7 +45,7 @@ public class SideTransformVariableReference_Constraints extends BaseConstraintsD
             List<SNode> vars = new ArrayList<SNode>();
             SNode builder = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", true, false);
             if (builder != null) {
-              ListSequence.<SNode>fromList(vars).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(builder, "variable", true)));
+              ListSequence.fromList(vars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(builder, "variable", true)));
             }
             return vars;
           }

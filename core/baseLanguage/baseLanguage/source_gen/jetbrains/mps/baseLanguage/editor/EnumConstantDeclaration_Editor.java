@@ -189,7 +189,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_u66lwb_a5a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty();
   }
 
   private static class actualArgumentListHandler_u66lwb_d0 extends RefNodeListHandler {

@@ -3211,8 +3211,8 @@
     <nodeInfo nodeId="6880840382462248685" fileName="BaseConcept_brokenRefs.java" startLine="58" startPosition="50" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6880840382462248685" fileName="BaseConcept_brokenRefs.java" startLine="69" startPosition="50" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6880840382462248685" fileName="BaseConcept_brokenRefs.java" startLine="80" startPosition="49" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6880840382462474688" fileName="BaseConcept_brokenRefs.java" startLine="96" startPosition="136" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SReference;)Z" />
-    <nodeInfo nodeId="6880840382462418645" fileName="BaseConcept_brokenRefs.java" startLine="104" startPosition="144" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SReference;)Z" />
+    <nodeInfo nodeId="6880840382462474688" fileName="BaseConcept_brokenRefs.java" startLine="96" startPosition="124" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SReference;)Z" />
+    <nodeInfo nodeId="6880840382462418645" fileName="BaseConcept_brokenRefs.java" startLine="104" startPosition="132" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SReference;)Z" />
     <nodeInfo nodeId="6311300859709247678" fileName="BaseConcept_brokenRefs.java" startLine="111" startPosition="76" endLine="115" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6880840382462248685" fileName="BaseConcept_brokenRefs.java" startLine="57" startPosition="99" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6880840382462248685" fileName="BaseConcept_brokenRefs.java" startLine="68" startPosition="97" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3250,8 +3250,8 @@
     <scopeInfo nodeId="6880840382462248685" fileName="BaseConcept_brokenRefs.java" startLine="89" startPosition="92" endLine="92" endPosition="22" />
     <scopeInfo nodeId="6880840382462248685" fileName="BaseConcept_brokenRefs.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="6880840382462248685" fileName="BaseConcept_brokenRefs.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6880840382462474688" fileName="BaseConcept_brokenRefs.java" startLine="96" startPosition="136" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="6880840382462418645" fileName="BaseConcept_brokenRefs.java" startLine="104" startPosition="144" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="6880840382462474688" fileName="BaseConcept_brokenRefs.java" startLine="96" startPosition="124" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="6880840382462418645" fileName="BaseConcept_brokenRefs.java" startLine="104" startPosition="132" endLine="108" endPosition="0" />
     <scopeInfo nodeId="6880840382462248685" fileName="BaseConcept_brokenRefs.java" startLine="48" startPosition="90" endLine="53" endPosition="22" />
     <scopeInfo nodeId="6880840382462248685" fileName="BaseConcept_brokenRefs.java" startLine="57" startPosition="99" endLine="62" endPosition="5" />
     <scopeInfo nodeId="6880840382462248685" fileName="BaseConcept_brokenRefs.java" startLine="68" startPosition="97" endLine="73" endPosition="5" />
@@ -3276,8 +3276,8 @@
       <varInfo nodeId="6880840382462418631" varName="txt" />
     </scopeInfo>
     <scopeInfo nodeId="6880840382462248685" fileName="BaseConcept_brokenRefs.java" startLine="102" startPosition="0" endLine="127" endPosition="0" />
-    <unitInfo nodeId="6880840382462474688" fileName="BaseConcept_brokenRefs.java" startLine="96" startPosition="108" endLine="100" endPosition="5" unitName="jetbrains.mps.platform.conf.editor.BaseConcept_brokenRefs$1" />
-    <unitInfo nodeId="6880840382462418645" fileName="BaseConcept_brokenRefs.java" startLine="104" startPosition="116" endLine="108" endPosition="5" unitName="jetbrains.mps.platform.conf.editor.BaseConcept_brokenRefs$2" />
+    <unitInfo nodeId="6880840382462474688" fileName="BaseConcept_brokenRefs.java" startLine="96" startPosition="96" endLine="100" endPosition="5" unitName="jetbrains.mps.platform.conf.editor.BaseConcept_brokenRefs$1" />
+    <unitInfo nodeId="6880840382462418645" fileName="BaseConcept_brokenRefs.java" startLine="104" startPosition="104" endLine="108" endPosition="5" unitName="jetbrains.mps.platform.conf.editor.BaseConcept_brokenRefs$2" />
     <unitInfo nodeId="6880840382462418656" fileName="BaseConcept_brokenRefs.java" startLine="108" startPosition="40" endLine="118" endPosition="5" unitName="jetbrains.mps.platform.conf.editor.BaseConcept_brokenRefs$3" />
     <unitInfo nodeId="6880840382462248685" fileName="BaseConcept_brokenRefs.java" startLine="26" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.BaseConcept_brokenRefs" />
   </root>

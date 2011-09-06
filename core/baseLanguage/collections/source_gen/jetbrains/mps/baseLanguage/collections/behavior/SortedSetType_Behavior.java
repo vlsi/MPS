@@ -30,8 +30,8 @@ public class SortedSetType_Behavior {
 
   public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(result).addElement(new SortedSetType_Behavior.QuotationClass_7p913d_a0a0b0b().createNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
-    ListSequence.<SNode>fromList(result).addSequence(Sequence.<SNode>fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
+    ListSequence.fromList(result).addElement(new SortedSetType_Behavior.QuotationClass_7p913d_a0a0b0b().createNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
+    ListSequence.fromList(result).addSequence(Sequence.fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
     return result;
   }
 

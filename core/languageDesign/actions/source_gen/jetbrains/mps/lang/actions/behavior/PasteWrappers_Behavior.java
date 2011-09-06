@@ -23,7 +23,7 @@ public class PasteWrappers_Behavior {
   public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode nodeFactory : SLinkOperations.getTargets(thisNode, "wrapper", true)) {
-      ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(nodeFactory, "sourceConcept", false));
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(nodeFactory, "sourceConcept", false));
     }
     return result;
   }
@@ -31,7 +31,7 @@ public class PasteWrappers_Behavior {
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SNode pasteWrapper = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.PasteWrapper", null);
     SLinkOperations.setTarget(pasteWrapper, "sourceConcept", baseConcept, false);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "wrapper", true)).addElement(pasteWrapper);
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "wrapper", true)).addElement(pasteWrapper);
   }
 
   public static List<SNode> call_getBaseConceptCollection_5270353093116089917(SNode thisNode) {

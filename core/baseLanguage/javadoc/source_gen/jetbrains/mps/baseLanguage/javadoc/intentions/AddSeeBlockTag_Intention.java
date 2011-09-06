@@ -42,7 +42,7 @@ public class AddSeeBlockTag_Intention extends BaseIntention implements Intention
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "see", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "see", true)).isEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

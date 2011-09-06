@@ -130,7 +130,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_865001690840232902(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.<SNode>fromList(CommandDeclaration_Behavior.call_getDistinctFieldParameters_6129022259108623165(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "jetbrains.mps.execution.commands.structure.CommandDeclaration", false, false))).findFirst(new IWhereFilter<SNode>() {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.fromList(CommandDeclaration_Behavior.call_getDistinctFieldParameters_6129022259108623165(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "jetbrains.mps.execution.commands.structure.CommandDeclaration", false, false))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_x583g4_a0a0a0a0a0a0a0v(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "name"));
       }
@@ -274,7 +274,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_865001690840233061(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(_context.getNode())).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(_context.getNode())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(CommandParameterDeclaration_Behavior.call_generateField_8478830098674441876(it));
       }
@@ -306,7 +306,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_865001690840233303(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "argument", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "argument", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(CommandParameterDeclaration_Behavior.call_generateField_8478830098674441876(SLinkOperations.getTarget(it, "parameterDeclaration", false)));
       }
@@ -322,7 +322,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_865001690840233681(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "part", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "part", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.execution.commands.structure.ProcessBuilderPart");
       }
@@ -330,7 +330,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_865001690840233733(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "part", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "part", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.execution.commands.structure.ProcessBuilderKeyPart");
       }
@@ -338,7 +338,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_865001690840233785(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "part", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "part", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.execution.commands.structure.ProcessBuilderKeyPart");
       }
@@ -347,7 +347,7 @@ public class QueriesGenerated {
 
   public static SNode mapSrcMacro_mapper_865001690840233348(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode expression = new QueriesGenerated.QuotationClass_x583g4_a0a0a76().createNode(IGeneratedToClass_Behavior.call_getFullName_946964771156905503(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(_context.getNode(), "commandPart", false))));
-    for (SNode argument : ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "argument", true)).where(new IWhereFilter<SNode>() {
+    for (SNode argument : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "argument", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return CommandParameterDeclaration_Behavior.call_generateField_8478830098674441876(SLinkOperations.getTarget(it, "parameterDeclaration", false));
       }
@@ -365,7 +365,7 @@ public class QueriesGenerated {
 
   public static SNode mapSrcMacro_mapper_865001690840233807(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode expression = new QueriesGenerated.QuotationClass_x583g4_a0a0a86().createNode();
-    for (SNode part : ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "part", true))) {
+    for (SNode part : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "part", true))) {
       if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.execution.commands.structure.ProcessBuilderPart")) {
         SNode ref = new QueriesGenerated.QuotationClass_x583g4_a0a0a0a1a86().createNode(_context.getOutputNodeByInputNodeAndMappingLabel(part, "ProcessBuilderPartToLocalVariableDeclaration"));
         AttributeOperations.createAndSetAttrbiute(ref, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.BuilderParameter")), "jetbrains.mps.execution.commands.structure.BuilderParameter");
@@ -384,12 +384,12 @@ public class QueriesGenerated {
   }
 
   public static void mapSrcMacro_post_mapper_865001690840233535(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    Iterable<SNode> references = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> references = ListSequence.fromList(SNodeOperations.getDescendants(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.BuilderParameter"))) != null);
       }
     });
-    for (SNode ref : Sequence.<SNode>fromIterable(references)) {
+    for (SNode ref : Sequence.fromIterable(references)) {
       SNodeOperations.replaceWithAnother(ref, SLinkOperations.getTarget(SLinkOperations.getTarget(ref, "variableDeclaration", false), "initializer", true));
       SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(ref, "variableDeclaration", false));
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
@@ -403,12 +403,12 @@ public class QueriesGenerated {
   }
 
   public static void mapSrcMacro_post_mapper_865001690840233947(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    Iterable<SNode> references = ListSequence.<SNode>fromList(SNodeOperations.getDescendants(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> references = ListSequence.fromList(SNodeOperations.getDescendants(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.BuilderParameter"))) != null);
       }
     });
-    for (SNode ref : Sequence.<SNode>fromIterable(references)) {
+    for (SNode ref : Sequence.fromIterable(references)) {
       SNodeOperations.replaceWithAnother(ref, SLinkOperations.getTarget(SLinkOperations.getTarget(ref, "variableDeclaration", false), "initializer", true));
       SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(ref, "variableDeclaration", false));
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
@@ -419,19 +419,19 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_865001690840234106(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for (SNode commandRef : ListSequence.<SNode>fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.execution.commands.structure.CommandParameterReference"))) {
+    for (SNode commandRef : ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.execution.commands.structure.CommandParameterReference"))) {
       SPropertyOperations.set(commandRef, "resolveInfo", SPropertyOperations.getString(SLinkOperations.getTarget(commandRef, "parameter", false), "name"));
       // this is a hack to generate command parameter references into field references incide of process builder expression 
     }
   }
 
   public static void mappingScript_CodeBlock_865001690840234128(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for (SNode blockStatement : ListSequence.<SNode>fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.BlockStatement")).where(new IWhereFilter<SNode>() {
+    for (SNode blockStatement : ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.BlockStatement")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.BuilderBlockStatement"))) != null);
       }
     })) {
-      SNodeOperations.replaceWithAnother(blockStatement, SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(blockStatement, "statements", true), "statement", true)).where(new IWhereFilter<SNode>() {
+      SNodeOperations.replaceWithAnother(blockStatement, SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(blockStatement, "statements", true), "statement", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
         }

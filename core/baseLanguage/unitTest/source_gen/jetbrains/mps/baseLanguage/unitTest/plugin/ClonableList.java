@@ -12,7 +12,7 @@ public class ClonableList<T> extends AbstractList<T> implements Cloneable {
   private List<T> myData;
 
   public ClonableList() {
-    this(ListSequence.<T>fromList(new ArrayList<T>()));
+    this(ListSequence.fromList(new ArrayList<T>()));
   }
 
   public ClonableList(List<T> inner) {
@@ -20,32 +20,32 @@ public class ClonableList<T> extends AbstractList<T> implements Cloneable {
   }
 
   public ClonableList(@NotNull T value) {
-    this(ListSequence.<T>fromListAndArray(new ArrayList<T>(), value));
+    this(ListSequence.fromListAndArray(new ArrayList<T>(), value));
   }
 
   public T get(int index) {
-    return ListSequence.<T>fromList(this.myData).getElement(index);
+    return ListSequence.fromList(this.myData).getElement(index);
   }
 
   public int size() {
-    return ListSequence.<T>fromList(this.myData).count();
+    return ListSequence.fromList(this.myData).count();
   }
 
   public T remove(int index) {
-    return ListSequence.<T>fromList(this.myData).removeElementAt(index);
+    return ListSequence.fromList(this.myData).removeElementAt(index);
   }
 
   public void add(int index, @NotNull T object) {
-    ListSequence.<T>fromList(this.myData).insertElement(index, object);
+    ListSequence.fromList(this.myData).insertElement(index, object);
   }
 
   public T set(int index, @NotNull T object) {
-    return ListSequence.<T>fromList(this.myData).setElement(index, object);
+    return ListSequence.fromList(this.myData).setElement(index, object);
   }
 
   protected ClonableList<T> clone() throws CloneNotSupportedException {
     ClonableList<T> result = ((ClonableList<T>) super.clone());
-    result.myData = ListSequence.<T>fromListWithValues(new ArrayList<T>(), this.myData);
+    result.myData = ListSequence.fromListWithValues(new ArrayList<T>(), this.myData);
     return result;
   }
 }

@@ -37,12 +37,12 @@ public class EnumClass_TextGen extends SNodeTextGen {
       this.append(" extends ");
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "superclass", true), this.getSNode());
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
       this.append(" implements ");
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "implementedInterface", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).last()) {
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).last()) {
             this.append(", ");
           }
         }
@@ -50,10 +50,10 @@ public class EnumClass_TextGen extends SNodeTextGen {
     }
     this.append(" {");
     this.increaseDepth();
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "enumConstant", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "enumConstant", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "enumConstant", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "enumConstant", true)).last()) {
+        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "enumConstant", true)).last()) {
           this.append(",");
         }
       }

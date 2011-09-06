@@ -22,15 +22,15 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
   }
 
   public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> supertypes = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    List<SNode> supertypes = ListSequence.fromList(new ArrayList<SNode>());
     SNode elementConcept = SLinkOperations.getTarget(type, "elementConcept", false);
     if (elementConcept != null) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(elementConcept, false);
-      for (SNode superConcept : ListSequence.<SNode>fromList(superConcepts)) {
-        ListSequence.<SNode>fromList(supertypes).addElement(new supertypesOf_SNodeListType_SNodeListType_SubtypingRule.QuotationClass_csbboy_a0a0a0b0c0a().createNode(superConcept, typeCheckingContext));
+      for (SNode superConcept : ListSequence.fromList(superConcepts)) {
+        ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SNodeListType_SubtypingRule.QuotationClass_csbboy_a0a0a0b0c0a().createNode(superConcept, typeCheckingContext));
       }
       // ========== 
-      ListSequence.<SNode>fromList(supertypes).addElement(new supertypesOf_SNodeListType_SNodeListType_SubtypingRule.QuotationClass_csbboy_a0a0d0c0a().createNode(typeCheckingContext));
+      ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SNodeListType_SubtypingRule.QuotationClass_csbboy_a0a0d0c0a().createNode(typeCheckingContext));
     }
     return supertypes;
   }

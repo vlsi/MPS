@@ -110,11 +110,11 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
   }
 
   private static boolean renderingCondition_2l0gvl_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "tags", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).isEmpty();
   }
 
   private static boolean renderingCondition_2l0gvl_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "tags", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).isNotEmpty();
   }
 
   private static class tagsListHandler_2l0gvl_d0 extends RefNodeListHandler {
@@ -185,7 +185,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     }
 
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "tags", true)).clear();
+      ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).clear();
       SPropertyOperations.set(node, "tag", SEnumOperations.getEnumMemberValue(parameterObject));
     }
 
@@ -201,7 +201,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       SNode tagWrapper = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", null);
       SPropertyOperations.set(tagWrapper, "tag", SPropertyOperations.getString_def(node, "tag", null));
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "tags", true)).addElement(tagWrapper);
+      ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).addElement(tagWrapper);
       SPropertyOperations.set(node, "tag", null);
     }
 

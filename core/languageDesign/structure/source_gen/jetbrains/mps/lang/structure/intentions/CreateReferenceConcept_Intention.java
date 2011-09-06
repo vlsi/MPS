@@ -64,7 +64,7 @@ public class CreateReferenceConcept_Intention extends BaseIntention implements I
     SNode concept = new CreateReferenceConcept_Intention.QuotationClass_k63gxf_a0a1a7().createNode(NameUtil.decapitalize(SPropertyOperations.getString(node, "name")), node, SPropertyOperations.getString(node, "name") + "Reference");
     SModelOperations.addRootNode(SNodeOperations.getModel(node), concept);
     SPropertyOperations.set(concept, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
-    SNode link = ListSequence.<SNode>fromList(SLinkOperations.getTargets(concept, "linkDeclaration", true)).first();
+    SNode link = ListSequence.fromList(SLinkOperations.getTargets(concept, "linkDeclaration", true)).first();
 
     // find editor model 
     Language language = Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor());

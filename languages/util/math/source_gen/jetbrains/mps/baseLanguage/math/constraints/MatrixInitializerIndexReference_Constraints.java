@@ -57,8 +57,8 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
                     }
                   }
                   if (matches_5upoaw_a0a2a0a) {
-                    ListSequence.<SNode>fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, "colIndex", true));
-                    ListSequence.<SNode>fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, "rowIndex", true));
+                    ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, "colIndex", true));
+                    ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, "rowIndex", true));
                   } else {
                     boolean matches_5upoaw_b0a2a0a = false;
                     {
@@ -68,7 +68,7 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
                       }
                     }
                     if (matches_5upoaw_b0a2a0a) {
-                      ListSequence.<SNode>fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, "rowIndex", true));
+                      ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, "rowIndex", true));
                     }
                   }
                 }

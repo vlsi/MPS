@@ -65,25 +65,25 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.<String,Object>fromMap(_params).put("selectedNode", node);
+      MapSequence.fromMap(_params).put("selectedNode", node);
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("selectedNode") == null) {
+    if (MapSequence.fromMap(_params).get("selectedNode") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorComponent") == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("editorContext") == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.<String,Object>fromMap(_params).get("operationContext") == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.<String,Object>fromMap(_params).get("project") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -93,7 +93,7 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
     try {
       final Wrappers._T<Set<Tuples._2<SNode, SNode>>> overridenMethods = new Wrappers._T<Set<Tuples._2<SNode, SNode>>>();
       final String[] methodName = new String[1];
-      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.<String,Object>fromMap(_params).get("project")), "Searchig...", true) {
+      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searchig...", true) {
         public void run(@NotNull ProgressIndicator p0) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
@@ -103,22 +103,22 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
           });
         }
       });
-      Rectangle cellBounds = ((EditorContext) MapSequence.<String,Object>fromMap(_params).get("editorContext")).getSelectedCell().getBounds();
+      Rectangle cellBounds = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell().getBounds();
       Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
-      RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.<String,Object>fromMap(_params).get("editorComponent")), point);
+      RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
 
-      GoToHelper.showOverridenMethodsMenu(SetSequence.<Tuples._2<SNode, SNode>>fromSet(overridenMethods.value).<SNode>select(new ISelector<Tuples._2<SNode, SNode>, SNode>() {
+      GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods.value).<SNode>select(new ISelector<Tuples._2<SNode, SNode>, SNode>() {
         public SNode select(Tuples._2<SNode, SNode> it) {
           return it._0();
         }
-      }).toListSequence(), relPoint, ((Project) MapSequence.<String,Object>fromMap(_params).get("project")), methodName[0]);
+      }).toListSequence(), relPoint, ((Project) MapSequence.fromMap(_params).get("project")), methodName[0]);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToOverridenMethod", t);
     }
   }
 
   private SNode getInstanceMethodDeclaration(final Map<String, Object> _params) {
-    return SNodeOperations.getAncestor(((SNode) MapSequence.<String,Object>fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false);
+    return SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false);
   }
 
   private SNode getClassifier(final Map<String, Object> _params) {
@@ -130,7 +130,7 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
     SNode classifier = GoToOverridenMethod_Action.this.getClassifier(_params);
     Set<Tuples._2<SNode, SNode>> overridenMethods = new OverridingMethodsFinder(classifier, Sequence.<SNode>singleton(method)).getOverridenMethods(method);
     return (overridenMethods == null ?
-      SetSequence.<Tuples._2<SNode, SNode>>fromSet(new HashSet<Tuples._2<SNode, SNode>>()) :
+      SetSequence.fromSet(new HashSet<Tuples._2<SNode, SNode>>()) :
       overridenMethods
     );
   }

@@ -41,7 +41,7 @@ public class ClosureParameterReference_Constraints extends BaseConstraintsDescri
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode enclosingClosure = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Closure", true, false);
-            return (Iterable<SNode>) ListSequence.<SNode>fromList(SNodeOperations.getChildren(enclosingClosure)).where(new IWhereFilter<SNode>() {
+            return (Iterable<SNode>) ListSequence.fromList(SNodeOperations.getChildren(enclosingClosure)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClosureParameter");
               }

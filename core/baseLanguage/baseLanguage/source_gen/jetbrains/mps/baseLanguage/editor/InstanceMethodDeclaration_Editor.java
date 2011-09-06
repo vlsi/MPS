@@ -342,11 +342,11 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_359zr8_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
   }
 
   private static boolean renderingCondition_359zr8_a9a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() > 0;
   }
 
   private static boolean renderingCondition_359zr8_a01a(SNode node, EditorContext editorContext, IScope scope) {

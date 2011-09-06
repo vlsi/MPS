@@ -24,12 +24,12 @@ public class check_ContinueStatement_NonTypesystemRule extends AbstractNonTypesy
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SPropertyOperations.hasValue(nodeToCheck, "label", null))) {
       final String lbl = SPropertyOperations.getString(nodeToCheck, "label");
-      Iterable<SNode> matchingLoops = ListSequence.<SNode>fromList(SNodeOperations.getAncestors(nodeToCheck, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> matchingLoops = ListSequence.fromList(SNodeOperations.getAncestors(nodeToCheck, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return lbl.equals(SPropertyOperations.getString(it, "label"));
         }
       });
-      if (!(Sequence.<SNode>fromIterable(matchingLoops).isNotEmpty())) {
+      if (!(Sequence.fromIterable(matchingLoops).isNotEmpty())) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "No such label", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9215127012916007627", null, errorTarget);
       }

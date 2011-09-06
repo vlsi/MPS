@@ -32,10 +32,10 @@ public enum _Layout_Constraints_Enum {
   }
 
   public static List<_Layout_Constraints_Enum> getConstants() {
-    List<_Layout_Constraints_Enum> list = ListSequence.<_Layout_Constraints_Enum>fromList(new LinkedList<_Layout_Constraints_Enum>());
-    ListSequence.<_Layout_Constraints_Enum>fromList(list).addElement(_Layout_Constraints_Enum.punctuation);
-    ListSequence.<_Layout_Constraints_Enum>fromList(list).addElement(_Layout_Constraints_Enum.noflow);
-    ListSequence.<_Layout_Constraints_Enum>fromList(list).addElement(_Layout_Constraints_Enum.none);
+    List<_Layout_Constraints_Enum> list = ListSequence.fromList(new LinkedList<_Layout_Constraints_Enum>());
+    ListSequence.fromList(list).addElement(_Layout_Constraints_Enum.punctuation);
+    ListSequence.fromList(list).addElement(_Layout_Constraints_Enum.noflow);
+    ListSequence.fromList(list).addElement(_Layout_Constraints_Enum.none);
     return list;
   }
 

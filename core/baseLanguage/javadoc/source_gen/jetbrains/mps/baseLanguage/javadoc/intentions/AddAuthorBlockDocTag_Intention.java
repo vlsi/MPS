@@ -45,17 +45,17 @@ public class AddAuthorBlockDocTag_Intention extends BaseIntention implements Int
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "author", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).isEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode authorTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", null);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "author", true)).addElement(authorTag);
+    ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).addElement(authorTag);
     editorContext.flushEvents();
     EditorCell authorEditorCell = editorContext.getNodeEditorComponent().findNodeCell(authorTag);
     EditorCell cellToSelect = null;
     if (authorEditorCell instanceof EditorCell_Collection) {
-      for (EditorCell childCell : Sequence.<EditorCell>fromIterable((EditorCell_Collection) authorEditorCell)) {
+      for (EditorCell childCell : Sequence.fromIterable((EditorCell_Collection) authorEditorCell)) {
         String cellId = childCell.getCellId();
         if (cellId != null && cellId.contains("text")) {
           cellToSelect = childCell;

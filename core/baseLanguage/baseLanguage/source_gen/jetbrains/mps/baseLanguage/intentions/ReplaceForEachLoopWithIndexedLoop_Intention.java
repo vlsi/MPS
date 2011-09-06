@@ -64,7 +64,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
     boolean containsDefault = false;
     String name = "i";
     List<SNode> localVariableDeclarations = SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{});
-    ListSequence.<SNode>fromList(localVariableDeclarations).addElement(SLinkOperations.getTarget(node, "variable", true));
+    ListSequence.fromList(localVariableDeclarations).addElement(SLinkOperations.getTarget(node, "variable", true));
     for (SNode localVar : localVariableDeclarations) {
       String varName = SPropertyOperations.getString(localVar, "name");
       if (varName.equals(name)) {
@@ -126,7 +126,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
       SLinkOperations.setTarget(variable, "initializer", listAccess, true);
     }
     final SNode fake_node = node;
-    ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
       }
@@ -140,7 +140,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
       }
     });
     SLinkOperations.setTarget(forStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(forStatement, "body", true), "statement", true)).insertElement(0, firstStatement);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(forStatement, "body", true), "statement", true)).insertElement(0, firstStatement);
     // 
     SNodeOperations.replaceWithAnother(node, forStatement);
   }

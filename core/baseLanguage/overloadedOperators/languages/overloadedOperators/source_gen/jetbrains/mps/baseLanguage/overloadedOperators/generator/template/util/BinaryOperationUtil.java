@@ -35,16 +35,16 @@ public class BinaryOperationUtil {
   }
 
   public static Map<SNode, Boolean> getOverloadedOperators(SNode node, SNode leftType, SNode rightType, List<SNode> operators) {
-    Map<SNode, Boolean> result = MapSequence.<SNode,Boolean>fromMap(new HashMap<SNode, Boolean>());
+    Map<SNode, Boolean> result = MapSequence.fromMap(new HashMap<SNode, Boolean>());
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
       return result;
     }
     for (SNode operator : operators) {
       if (isOverloading(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), leftType, rightType, operator)) {
-        MapSequence.<SNode,Boolean>fromMap(result).put(operator, false);
+        MapSequence.fromMap(result).put(operator, false);
       }
       if (SPropertyOperations.getBoolean(operator, "commutative") && isOverloading(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), rightType, leftType, operator)) {
-        MapSequence.<SNode,Boolean>fromMap(result).put(operator, true);
+        MapSequence.fromMap(result).put(operator, true);
       }
     }
     return result;
@@ -107,12 +107,12 @@ public class BinaryOperationUtil {
       return result;
     }
     Map<SNode, Boolean> operatorMap = getOverloadedOperators(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), leftType, rightType, operators);
-    if (MapSequence.<SNode,Boolean>fromMap(operatorMap).count() == 0) {
+    if (MapSequence.fromMap(operatorMap).count() == 0) {
       return null;
     }
-    result = MapSequence.<SNode,Boolean>fromMap(operatorMap).first().key();
-    boolean resultReversed = MapSequence.<SNode,Boolean>fromMap(operatorMap).first().value();
-    for (IMapping<SNode, Boolean> operatorEntry : MapSequence.<SNode,Boolean>fromMap(operatorMap)) {
+    result = MapSequence.fromMap(operatorMap).first().key();
+    boolean resultReversed = MapSequence.fromMap(operatorMap).first().value();
+    for (IMapping<SNode, Boolean> operatorEntry : MapSequence.fromMap(operatorMap)) {
       SNode operator = operatorEntry.key();
       boolean reversed = operatorEntry.value() != resultReversed;
       if (isSubTypeOperator(operator, result, reversed)) {

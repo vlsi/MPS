@@ -30,14 +30,14 @@ public class ModuleCycle_Behavior {
 
   public static List<SNode> call_getClassPath_1218646038565(SNode thisNode) {
     // collecting modules 
-    Set<IModule> modules = SetSequence.<IModule>fromSet(new HashSet<IModule>());
-    for (SNode moduleRef : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "moduleReference", true))) {
+    Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
+    for (SNode moduleRef : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "moduleReference", true))) {
       IModule module = Module_Behavior.call_getModule_1213877515148(SLinkOperations.getTarget(moduleRef, "module", false));
       SetSequence.fromSet(modules).addElement(module);
     }
     // getting classpath 
     IClassPathItem classpath = AbstractModule.getDependenciesClasspath(modules, false);
-    List<String> stringClasspath = ListSequence.<String>fromList(ModuleUtil.retrieveClassPath(classpath)).<String>select(new ISelector<String, String>() {
+    List<String> stringClasspath = ListSequence.fromList(ModuleUtil.retrieveClassPath(classpath)).<String>select(new ISelector<String, String>() {
       public String select(String it) {
         return it.replace(File.separator, Util.SEPARATOR);
       }
@@ -47,7 +47,7 @@ public class ModuleCycle_Behavior {
   }
 
   public static List<SNode> getMPSClassPath_1218716245482(String homePath, List<SNode> macro) {
-    return ModuleCycle_Behavior.createPathHolders_1218716903754(ListSequence.<String>fromList(ModuleUtil.retrieveClassPath(CommonPaths.getMPSClassPath())).<String>select(new ISelector<String, String>() {
+    return ModuleCycle_Behavior.createPathHolders_1218716903754(ListSequence.fromList(ModuleUtil.retrieveClassPath(CommonPaths.getMPSClassPath())).<String>select(new ISelector<String, String>() {
       public String select(String it) {
         return it.replace(File.separator, Util.SEPARATOR);
       }
@@ -57,8 +57,8 @@ public class ModuleCycle_Behavior {
   public static List<SNode> createPathHolders_1218716903754(Iterable<String> stringClasspath, String homePath, List<SNode> macro) {
     homePath = homePath.replace(File.separator, Util.SEPARATOR);
     List<SNode> pathHolders = new ArrayList<SNode>();
-    for (String string : Sequence.<String>fromIterable(stringClasspath)) {
-      ListSequence.<SNode>fromList(pathHolders).addElement(PathHolder_Behavior.createPathHolder_55204148067446946(string, macro, homePath, null));
+    for (String string : Sequence.fromIterable(stringClasspath)) {
+      ListSequence.fromList(pathHolders).addElement(PathHolder_Behavior.createPathHolder_55204148067446946(string, macro, homePath, null));
     }
     return pathHolders;
   }

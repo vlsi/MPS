@@ -67,10 +67,10 @@ public class IfInstanceOfVariable_Editor extends DefaultNodeEditor {
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
       SNode nodeConcept = SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement"), "nodeConcept", false);
-      List<String> variableSuffixes = ListSequence.<String>fromListAndArray(new ArrayList<String>(), "node");
+      List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "node");
       if (nodeConcept != null) {
         String name = NameUtil.decapitalize(SPropertyOperations.getString(nodeConcept, "name"));
-        ListSequence.<String>fromList(variableSuffixes).addSequence(ListSequence.<String>fromList(NameUtil.splitByCamels(name)));
+        ListSequence.fromList(variableSuffixes).addSequence(ListSequence.fromList(NameUtil.splitByCamels(name)));
       }
       return variableSuffixes;
     }

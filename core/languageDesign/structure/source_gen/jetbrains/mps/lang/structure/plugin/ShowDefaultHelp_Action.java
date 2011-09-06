@@ -28,7 +28,7 @@ public class ShowDefaultHelp_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        HelpHelper.HelpType defaultHelp = HelpHelper.getDefaultHelpFor(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")), ((SNode) MapSequence.<String,Object>fromMap(_params).get("node")));
+        HelpHelper.HelpType defaultHelp = HelpHelper.getDefaultHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
         if (defaultHelp == null) {
           ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), false);
           return;
@@ -50,16 +50,16 @@ public class ShowDefaultHelp_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.<String,Object>fromMap(_params).put("node", node);
+      MapSequence.fromMap(_params).put("node", node);
     }
-    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
-    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      HelpHelper.showHelpFor(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")), ((SNode) MapSequence.<String,Object>fromMap(_params).get("node")));
+      HelpHelper.showHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowDefaultHelp", t);
     }

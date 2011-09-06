@@ -24,7 +24,7 @@ public class EditorTab_Behavior {
   }
 
   public static List<PropertyReference> virtual_getPropertiesToCheck_1628770029971140570(SNode thisNode) {
-    List<PropertyReference> props = ListSequence.<PropertyReference>fromList(new ArrayList<PropertyReference>());
+    List<PropertyReference> props = ListSequence.fromList(new ArrayList<PropertyReference>());
     return props;
   }
 }

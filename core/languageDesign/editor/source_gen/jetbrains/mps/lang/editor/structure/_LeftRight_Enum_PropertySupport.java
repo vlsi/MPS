@@ -11,7 +11,7 @@ public class _LeftRight_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<_LeftRight_Enum> constants = ListSequence.<_LeftRight_Enum>fromList(_LeftRight_Enum.getConstants()).iterator();
+    Iterator<_LeftRight_Enum> constants = ListSequence.fromList(_LeftRight_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _LeftRight_Enum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class _LeftRight_Enum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<_LeftRight_Enum> constants = ListSequence.<_LeftRight_Enum>fromList(_LeftRight_Enum.getConstants()).iterator();
+    Iterator<_LeftRight_Enum> constants = ListSequence.fromList(_LeftRight_Enum.getConstants()).iterator();
     while (constants.hasNext()) {
       _LeftRight_Enum constant = constants.next();
       if (value.equals(constant.getName())) {

@@ -11,7 +11,7 @@ public class TableComponentEnum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<TableComponentEnum> constants = ListSequence.<TableComponentEnum>fromList(TableComponentEnum.getConstants()).iterator();
+    Iterator<TableComponentEnum> constants = ListSequence.fromList(TableComponentEnum.getConstants()).iterator();
     while (constants.hasNext()) {
       TableComponentEnum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class TableComponentEnum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<TableComponentEnum> constants = ListSequence.<TableComponentEnum>fromList(TableComponentEnum.getConstants()).iterator();
+    Iterator<TableComponentEnum> constants = ListSequence.fromList(TableComponentEnum.getConstants()).iterator();
     while (constants.hasNext()) {
       TableComponentEnum constant = constants.next();
       if (value.equals(constant.getName())) {

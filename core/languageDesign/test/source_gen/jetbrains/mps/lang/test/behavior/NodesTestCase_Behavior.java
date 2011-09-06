@@ -30,11 +30,11 @@ public class NodesTestCase_Behavior {
 
   public static List<SNode> virtual_getTestSet_1216130724401(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode method : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "testMethods", true))) {
-      ListSequence.<SNode>fromList(result).addElement(method);
+    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testMethods", true))) {
+      ListSequence.fromList(result).addElement(method);
     }
-    for (SNode operation : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{}))) {
-      ListSequence.<SNode>fromList(result).addElement(operation);
+    for (SNode operation : ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{}))) {
+      ListSequence.fromList(result).addElement(operation);
     }
     return result;
   }
@@ -44,7 +44,7 @@ public class NodesTestCase_Behavior {
   }
 
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "testMethods", true)).union(ListSequence.<SNode>fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{})).<SNode>select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testMethods", true)).union(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{})).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return (SNode) it;
       }
@@ -57,39 +57,39 @@ public class NodesTestCase_Behavior {
   }
 
   public static List<String> getIdeaClassPath_1217424542979() {
-    final List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
+    final List<String> result = ListSequence.fromList(new ArrayList<String>());
     ClassLoader classLoader = UrlClassLoader.class.getClassLoader();
     Class cls = classLoader.getClass();
     try {
       List<URL> urls = ((List<URL>) cls.getMethod("getUrls", new Class[0]).invoke(classLoader, new Object[0]));
       for (URL url : urls) {
-        ListSequence.<String>fromList(result).addElement(new URI(url.toString()).getPath());
+        ListSequence.fromList(result).addElement(new URI(url.toString()).getPath());
       }
     } catch (Throwable e) {
     }
     Language testsLanguage = (Language) SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase")).getModelDescriptor().getModule();
-    for (StubPath path : ListSequence.<StubPath>fromList(testsLanguage.getRuntimeStubPaths())) {
-      ListSequence.<String>fromList(result).addElement(path.getPath());
+    for (StubPath path : ListSequence.fromList(testsLanguage.getRuntimeStubPaths())) {
+      ListSequence.fromList(result).addElement(path.getPath());
     }
-    for (Dependency dep : ListSequence.<Dependency>fromList(testsLanguage.getRuntimeDependencies())) {
+    for (Dependency dep : ListSequence.fromList(testsLanguage.getRuntimeDependencies())) {
       AbstractModule module = (AbstractModule) MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
-      for (StubPath path : ListSequence.<StubPath>fromList(module.getStubPaths())) {
-        ListSequence.<String>fromList(result).addElement(path.getPath());
+      for (StubPath path : ListSequence.fromList(module.getStubPaths())) {
+        ListSequence.fromList(result).addElement(path.getPath());
       }
     }
-    ListSequence.<String>fromList(result).addSequence(ListSequence.<String>fromList(NodesTestCase_Behavior.getPluginsClassPath_2937573621172202149()));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(NodesTestCase_Behavior.getPluginsClassPath_2937573621172202149()));
     return result;
   }
 
   public static List<String> getPluginsClassPath_2937573621172202149() {
-    List<String> path = ListSequence.<String>fromList(new ArrayList<String>());
+    List<String> path = ListSequence.fromList(new ArrayList<String>());
     String pluginsPath = PathManager.getPreinstalledPluginsPath();
     File pluginsDir = new File(pluginsPath);
     for (File pluginDir : pluginsDir.listFiles()) {
       if (pluginDir.isDirectory()) {
-        ListSequence.<String>fromList(path).addElement(new File(pluginDir, "classes").getAbsolutePath());
+        ListSequence.fromList(path).addElement(new File(pluginDir, "classes").getAbsolutePath());
       } else {
-        ListSequence.<String>fromList(path).addElement(pluginDir.getAbsolutePath());
+        ListSequence.fromList(path).addElement(pluginDir.getAbsolutePath());
       }
     }
     return path;
@@ -98,11 +98,11 @@ public class NodesTestCase_Behavior {
   public static TestRunParameters getTestRunParameters_1217424543047() {
     TestRunParameters result = new TestRunParameters();
     result.setClassPath(NodesTestCase_Behavior.getIdeaClassPath_1217424542979());
-    List<String> vmParams = ListSequence.<String>fromList(new ArrayList<String>());
-    ListSequence.<String>fromList(vmParams).addElement("-Xmx1024m");
-    for (String key : SetSequence.<String>fromSet(PathMacros.getInstance().getUserMacroNames())) {
+    List<String> vmParams = ListSequence.fromList(new ArrayList<String>());
+    ListSequence.fromList(vmParams).addElement("-Xmx1024m");
+    for (String key : SetSequence.fromSet(PathMacros.getInstance().getUserMacroNames())) {
       String value = PathMacros.getInstance().getValue(key);
-      ListSequence.<String>fromList(vmParams).addElement("-D" + "path.macro." + key + "=" + value);
+      ListSequence.fromList(vmParams).addElement("-D" + "path.macro." + key + "=" + value);
     }
     result.setVmParameters(vmParams);
     // wtf, could not run tests because of typo 

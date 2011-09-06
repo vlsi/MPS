@@ -70,7 +70,7 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
             );
             for (SNode n : SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", false)) {
               if ((SLinkOperations.getTarget(n, "innerClass", true) != null)) {
-                ListSequence.<SNode>fromList(res).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(n, "innerClass", true), "constructor", true)));
+                ListSequence.fromList(res).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(n, "innerClass", true), "constructor", true)));
               }
             }
             return res;

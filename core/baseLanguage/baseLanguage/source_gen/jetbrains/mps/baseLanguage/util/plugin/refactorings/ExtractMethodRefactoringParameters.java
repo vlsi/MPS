@@ -16,13 +16,13 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
   private ExtractMethodRefactoringAnalyzer myAnalyzer;
   private List<SNode> myNodesToRefactor;
   private VisibilityLevel myVisibility = VisibilityLevel.PRIVATE;
-  private List<MethodParameter> myParameters = ListSequence.<MethodParameter>fromList(new ArrayList<MethodParameter>());
+  private List<MethodParameter> myParameters = ListSequence.fromList(new ArrayList<MethodParameter>());
 
   public ExtractMethodRefactoringParameters(List<SNode> nodes) {
     this.myNodesToRefactor = nodes;
     this.myAnalyzer = new ExtractMethodRefactoringAnalyzer(nodes);
-    for (MethodParameter inputVariable : ListSequence.<MethodParameter>fromList(this.myAnalyzer.getInputVariables())) {
-      ListSequence.<MethodParameter>fromList(this.myParameters).addElement(inputVariable);
+    for (MethodParameter inputVariable : ListSequence.fromList(this.myAnalyzer.getInputVariables())) {
+      ListSequence.fromList(this.myParameters).addElement(inputVariable);
     }
   }
 
@@ -47,9 +47,9 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
   }
 
   public List<String> getParametersNames() {
-    List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
-    for (MethodParameter param : ListSequence.<MethodParameter>fromList(this.myParameters)) {
-      ListSequence.<String>fromList(result).addElement(param.getTypeName() + " " + param.getName());
+    List<String> result = ListSequence.fromList(new ArrayList<String>());
+    for (MethodParameter param : ListSequence.fromList(this.myParameters)) {
+      ListSequence.fromList(result).addElement(param.getTypeName() + " " + param.getName());
     }
     return result;
   }
@@ -75,7 +75,7 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
   }
 
   private boolean isParametersMatch(SNode method) {
-    Iterator<SNode> parameters = ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).iterator();
+    Iterator<SNode> parameters = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).iterator();
     for (MethodParameter p1 : this.myParameters) {
       if (p1.isSelected()) {
         if (!(parameters.hasNext())) {

@@ -44,14 +44,14 @@ public class ConvertXMLSchemaComments_MigrationScript extends BaseMigrationScrip
         // xml.BaseText 
         List<SNode> baseText = comment.getChildren("text");
         // xml.Text 
-        Iterable<SNode> textParts = ListSequence.<SNode>fromList(baseText).where(new IWhereFilter<SNode>() {
+        Iterable<SNode> textParts = ListSequence.fromList(baseText).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return eq_zghlll_a0a0a0a0a0a5a4a0a0a1a0(it.getConceptFqName(), "jetbrains.mps.xml.structure.Text");
           }
         });
 
         SLinkOperations.setTarget(node, "sComment", SConceptOperations.createNewNode("jetbrains.mps.xmlSchema.structure.SchemaComment", null), true);
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "sComment", true), "text", true)).addSequence(Sequence.<SNode>fromIterable(textParts).<SNode>select(new ISelector<SNode, SNode>() {
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "sComment", true), "text", true)).addSequence(Sequence.fromIterable(textParts).<SNode>select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return new ConvertXMLSchemaComments_MigrationScript.QuotationClass_zghlll_a0a0a0a0a8a4a0a0a1a0().createNode(it.getPersistentProperty("text"));
           }

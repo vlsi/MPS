@@ -51,7 +51,7 @@ public class MakeParameterFinal_Intention extends BaseIntention implements Inten
     if (SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, "variableDeclaration", false), "isFinal")) {
       return false;
     }
-    return ListSequence.<SNode>fromList(SNodeOperations.getAncestors(classNode, null, false)).contains(methodNode);
+    return ListSequence.fromList(SNodeOperations.getAncestors(classNode, null, false)).contains(methodNode);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

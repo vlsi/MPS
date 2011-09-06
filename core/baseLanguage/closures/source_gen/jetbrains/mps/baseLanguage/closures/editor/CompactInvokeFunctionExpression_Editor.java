@@ -94,11 +94,11 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_1dey68_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_1dey68_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty();
   }
 
   private static class parameterListHandler_1dey68_c0 extends RefNodeListHandler {

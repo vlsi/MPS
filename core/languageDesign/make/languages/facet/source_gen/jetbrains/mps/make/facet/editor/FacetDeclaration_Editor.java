@@ -303,27 +303,27 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_aj8zjo_a0a1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "required", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "required", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_aj8zjo_a1b1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "required", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "required", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_aj8zjo_a0c1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "optional", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "optional", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_aj8zjo_a3b1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "optional", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "optional", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_aj8zjo_a4b1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "targetDeclaration", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "targetDeclaration", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_aj8zjo_a0f1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "targetDeclaration", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "targetDeclaration", true)).isNotEmpty();
   }
 
   private static class extendedListHandler_aj8zjo_d0a extends RefNodeListHandler {

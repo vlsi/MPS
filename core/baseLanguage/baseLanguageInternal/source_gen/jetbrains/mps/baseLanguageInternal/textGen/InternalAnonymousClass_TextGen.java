@@ -19,12 +19,12 @@ public class InternalAnonymousClass_TextGen extends SNodeTextGen {
       TraceInfoGenerationUtil.createUnitInfo(this, node);
     }
     BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), this);
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
       this.append("<");
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "typeParameter", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeParameter", true)).last()) {
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).last()) {
             this.append(", ");
           }
         }
@@ -32,16 +32,16 @@ public class InternalAnonymousClass_TextGen extends SNodeTextGen {
       this.append(">");
     }
     this.append("(");
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "constructorArgument", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "constructorArgument", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "constructorArgument", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "constructorArgument", true)).last()) {
+        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "constructorArgument", true)).last()) {
           this.append(", ");
         }
       }
     }
     this.append(")");
-    if ((SLinkOperations.getTarget(node, "instanceInitializer", true) == null) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "field", true)).isEmpty() && ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "method", true)).isEmpty()) {
+    if ((SLinkOperations.getTarget(node, "instanceInitializer", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isEmpty()) {
       this.append(" {}");
       return;
     }

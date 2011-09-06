@@ -23,8 +23,8 @@ import java.awt.event.ActionEvent;
   }
 
   public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
-    MethodParameter p = ListSequence.<MethodParameter>fromList(this.myModel.getParameters()).getElement(row);
-    final JComboBox comboBox = new JComboBox(ListSequence.<String>fromList(p.getAvailableTypes()).toGenericArray(String.class));
+    MethodParameter p = ListSequence.fromList(this.myModel.getParameters()).getElement(row);
+    final JComboBox comboBox = new JComboBox(ListSequence.fromList(p.getAvailableTypes()).toGenericArray(String.class));
     comboBox.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
         ParameterTypeCellEditor.this.mySelected = ((String) comboBox.getSelectedItem());

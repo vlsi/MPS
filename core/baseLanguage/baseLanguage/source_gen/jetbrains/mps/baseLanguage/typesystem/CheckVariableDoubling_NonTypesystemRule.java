@@ -33,7 +33,7 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
     List<SNode> intersection = new ArrayList<SNode>();
     for (SNode var : methodVariables) {
       if (vars.contains(var)) {
-        ListSequence.<SNode>fromList(intersection).addElement(var);
+        ListSequence.fromList(intersection).addElement(var);
       }
     }
     for (SNode var : intersection) {

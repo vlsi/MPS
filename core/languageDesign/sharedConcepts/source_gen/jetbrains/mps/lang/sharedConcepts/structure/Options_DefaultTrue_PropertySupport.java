@@ -11,7 +11,7 @@ public class Options_DefaultTrue_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<Options_DefaultTrue> constants = ListSequence.<Options_DefaultTrue>fromList(Options_DefaultTrue.getConstants()).iterator();
+    Iterator<Options_DefaultTrue> constants = ListSequence.fromList(Options_DefaultTrue.getConstants()).iterator();
     while (constants.hasNext()) {
       Options_DefaultTrue constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class Options_DefaultTrue_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<Options_DefaultTrue> constants = ListSequence.<Options_DefaultTrue>fromList(Options_DefaultTrue.getConstants()).iterator();
+    Iterator<Options_DefaultTrue> constants = ListSequence.fromList(Options_DefaultTrue.getConstants()).iterator();
     while (constants.hasNext()) {
       Options_DefaultTrue constant = constants.next();
       if (value.equals(constant.getName())) {

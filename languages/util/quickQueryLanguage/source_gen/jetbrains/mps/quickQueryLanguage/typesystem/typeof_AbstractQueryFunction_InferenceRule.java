@@ -26,7 +26,7 @@ public class typeof_AbstractQueryFunction_InferenceRule extends AbstractInferenc
     SNode expectedRetType = IMethodLike_Behavior.call_getExpectedRetType_1239354342632(bmd);
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(bmd, "body", true));
     if (expectedRetType == null) {
-      for (SNode returnStatement : Sequence.<SNode>fromIterable(returnStatements)) {
+      for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
@@ -35,7 +35,7 @@ public class typeof_AbstractQueryFunction_InferenceRule extends AbstractInferenc
         }
       }
     } else {
-      for (SNode returnStatement : Sequence.<SNode>fromIterable(returnStatements)) {
+      for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();

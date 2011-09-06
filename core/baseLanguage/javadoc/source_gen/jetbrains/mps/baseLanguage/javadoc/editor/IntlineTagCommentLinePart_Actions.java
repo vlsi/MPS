@@ -32,9 +32,9 @@ public class IntlineTagCommentLinePart_Actions {
       System.out.println(System.currentTimeMillis() + ": " + SNodeOperations.getConceptDeclaration(node));
       SNode commentLine = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
       SNodeOperations.deleteNode(node);
-      for (int i = 0; i < ListSequence.<SNode>fromList(SLinkOperations.getTargets(commentLine, "part", true)).count() - 1; i++) {
-        SNode part1 = ListSequence.<SNode>fromList(SLinkOperations.getTargets(commentLine, "part", true)).getElement(i);
-        SNode part2 = ListSequence.<SNode>fromList(SLinkOperations.getTargets(commentLine, "part", true)).getElement(i + 1);
+      for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).count() - 1; i++) {
+        SNode part1 = ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).getElement(i);
+        SNode part2 = ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).getElement(i + 1);
         if (SNodeOperations.isInstanceOf(part1, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && SNodeOperations.isInstanceOf(part2, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
           SPropertyOperations.set(SNodeOperations.cast(part1, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", SPropertyOperations.getString(SNodeOperations.cast(part1, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text") + SPropertyOperations.getString(SNodeOperations.cast(part2, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"));
           SNodeOperations.deleteNode(part2);

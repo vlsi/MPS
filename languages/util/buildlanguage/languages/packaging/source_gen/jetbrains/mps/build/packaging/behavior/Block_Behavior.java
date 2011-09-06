@@ -16,7 +16,7 @@ public class Block_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "layout", false) != null)) {
       return IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(SLinkOperations.getTarget(thisNode, "layout", false), addBasedir);
     }
-    return ListSequence.<String>fromList(new ArrayList<String>());
+    return ListSequence.fromList(new ArrayList<String>());
   }
 
   public static String virtual_getPath_1234976932856(SNode thisNode) {
@@ -30,6 +30,6 @@ public class Block_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "layout", false) != null)) {
       return IVariableHolder_Behavior.call_getAllVariable_1234864693585(SLinkOperations.getTarget(thisNode, "layout", false));
     }
-    return ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    return ListSequence.fromList(new ArrayList<SNode>());
   }
 }

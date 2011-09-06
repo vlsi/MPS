@@ -24,7 +24,7 @@ public class CollectionsLanguage {
 
   /*package*/ void init() {
     synchronized (CollectionsLanguage.class) {
-      while (QueueSequence.<_FunctionTypes._void_P1_E0<? super CollectionsLanguage>>fromQueue(ONINIT_DELAYED_RUNMES).isNotEmpty()) {
+      while (QueueSequence.fromQueue(ONINIT_DELAYED_RUNMES).isNotEmpty()) {
         try {
           QueueSequence.fromQueue(ONINIT_DELAYED_RUNMES).removeFirstElement().invoke(INSTANCE);
         } catch (Throwable thr) {
@@ -36,7 +36,7 @@ public class CollectionsLanguage {
 
   /*package*/ void dispose() {
     synchronized (CollectionsLanguage.class) {
-      while (QueueSequence.<_FunctionTypes._void_P1_E0<? super CollectionsLanguage>>fromQueue(ONDISPOSE_RUNMES).isNotEmpty()) {
+      while (QueueSequence.fromQueue(ONDISPOSE_RUNMES).isNotEmpty()) {
         try {
           QueueSequence.fromQueue(ONDISPOSE_RUNMES).removeFirstElement().invoke(INSTANCE);
         } catch (Throwable thr) {

@@ -16,15 +16,15 @@ public class ReferencePart_Behavior {
 
   public static SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
     SNode refCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null);
-    SNode linkDeclaration = SNodeOperations.cast(MapSequence.<SNode,SNode>fromMap(partsToLinks).get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    SNode linkDeclaration = SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SLinkOperations.setTarget(refCell, "relationDeclaration", linkDeclaration, false);
     SNode component = SLinkOperations.setNewChild(refCell, "editorComponent", "jetbrains.mps.lang.editor.structure.InlineEditorComponent");
     SNode propertyCell = SLinkOperations.setNewChild(component, "cellModel", "jetbrains.mps.lang.editor.structure.CellModel_Property");
     SNode targetConcept = SLinkOperations.getTarget(linkDeclaration, "target", false);
     if (SConceptOperations.isSubConceptOf(targetConcept, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-      SLinkOperations.setTarget(propertyCell, "relationDeclaration", ListSequence.<SNode>fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"), "propertyDeclaration", true)).first(), false);
-    } else if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(targetConcept, "propertyDeclaration", true)).count() == 1) {
-      SLinkOperations.setTarget(propertyCell, "relationDeclaration", ListSequence.<SNode>fromList(SLinkOperations.getTargets(targetConcept, "propertyDeclaration", true)).first(), false);
+      SLinkOperations.setTarget(propertyCell, "relationDeclaration", ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"), "propertyDeclaration", true)).first(), false);
+    } else if (ListSequence.fromList(SLinkOperations.getTargets(targetConcept, "propertyDeclaration", true)).count() == 1) {
+      SLinkOperations.setTarget(propertyCell, "relationDeclaration", ListSequence.fromList(SLinkOperations.getTargets(targetConcept, "propertyDeclaration", true)).first(), false);
     }
     return refCell;
   }

@@ -36,8 +36,8 @@ public class ConceptBehavior_Behavior {
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "method", true)));
-    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)));
     return members;
   }
 
@@ -45,23 +45,23 @@ public class ConceptBehavior_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode method : SLinkOperations.getTargets(thisNode, "staticMethod", true)) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
-        ListSequence.<SNode>fromList(result).addElement(method);
+        ListSequence.fromList(result).addElement(method);
       }
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
         if (SNodeOperations.getAncestor(contextNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false) == thisNode) {
-          ListSequence.<SNode>fromList(result).addElement(method);
+          ListSequence.fromList(result).addElement(method);
         }
       }
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
         SNode contextConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(contextNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false), "concept", false);
         SNode methodConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(method, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false), "concept", false);
         if (SConceptOperations.isSubConceptOf(contextConcept, NameUtil.nodeFQName(methodConcept))) {
-          ListSequence.<SNode>fromList(result).addElement(method);
+          ListSequence.fromList(result).addElement(method);
         }
       }
       if ((SLinkOperations.getTarget(method, "visibility", true) == null)) {
         if (SNodeOperations.getModel(method) == SNodeOperations.getModel(contextNode)) {
-          ListSequence.<SNode>fromList(result).addElement(method);
+          ListSequence.fromList(result).addElement(method);
         }
       }
     }
@@ -74,7 +74,7 @@ public class ConceptBehavior_Behavior {
         if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
           SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
           SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), false);
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(arguments));
+          ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addSequence(ListSequence.fromList(arguments));
           SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
           SLinkOperations.setTarget(result, "operand", SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.ThisNodeExpression", null), true);
           SLinkOperations.setTarget(result, "operation", call, true);
@@ -83,7 +83,7 @@ public class ConceptBehavior_Behavior {
         if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration")) {
           SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null);
           SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration"), false);
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(arguments));
+          ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addSequence(ListSequence.fromList(arguments));
           SLinkOperations.setTarget(call, "concept", SLinkOperations.getTarget(SNodeOperations.cast(this.myNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), false);
           return call;
         }
@@ -131,7 +131,7 @@ public class ConceptBehavior_Behavior {
         continue;
       }
 
-      ListSequence.<SNode>fromList(methods).addElement(method);
+      ListSequence.fromList(methods).addElement(method);
     }
     return methods;
   }
@@ -150,7 +150,7 @@ public class ConceptBehavior_Behavior {
       SNode behaviour = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
       if (behaviour != null) {
         for (SNode method : SLinkOperations.getTargets(behaviour, "method", true)) {
-          ListSequence.<SNode>fromList(methods).addElement(method);
+          ListSequence.fromList(methods).addElement(method);
         }
       }
     }

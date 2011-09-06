@@ -32,10 +32,10 @@ public enum TrimKind {
   }
 
   public static List<TrimKind> getConstants() {
-    List<TrimKind> list = ListSequence.<TrimKind>fromList(new LinkedList<TrimKind>());
-    ListSequence.<TrimKind>fromList(list).addElement(TrimKind.both);
-    ListSequence.<TrimKind>fromList(list).addElement(TrimKind.leading);
-    ListSequence.<TrimKind>fromList(list).addElement(TrimKind.trailing);
+    List<TrimKind> list = ListSequence.fromList(new LinkedList<TrimKind>());
+    ListSequence.fromList(list).addElement(TrimKind.both);
+    ListSequence.fromList(list).addElement(TrimKind.leading);
+    ListSequence.fromList(list).addElement(TrimKind.trailing);
     return list;
   }
 

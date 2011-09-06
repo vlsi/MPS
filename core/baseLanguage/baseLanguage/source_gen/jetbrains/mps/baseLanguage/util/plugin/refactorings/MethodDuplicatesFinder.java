@@ -20,24 +20,24 @@ public class MethodDuplicatesFinder {
   private final Map<SNode, SNode> myMapping;
   private final List<SNode> myParameterOrder;
   private Set<SNode> myOutputRefs;
-  private Set<SNode> myUsedNodes = SetSequence.<SNode>fromSet(new HashSet<SNode>());
+  private Set<SNode> myUsedNodes = SetSequence.fromSet(new HashSet<SNode>());
 
   public MethodDuplicatesFinder(List<SNode> nodesToFind, Map<SNode, SNode> mapping, List<SNode> parametersOrder, Set<SNode> outputReferences) {
     this.myNodesToFind = nodesToFind;
     this.myMapping = mapping;
     this.myParameterOrder = parametersOrder;
     myOutputRefs = outputReferences;
-    SetSequence.fromSet(this.myUsedNodes).addSequence(ListSequence.<SNode>fromList(this.myNodesToFind));
+    SetSequence.fromSet(this.myUsedNodes).addSequence(ListSequence.fromList(this.myNodesToFind));
   }
 
   public List<MethodMatch> findDuplicates(SNode root) {
     List<MethodMatch> found = new ArrayList<MethodMatch>();
-    for (SNode node : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
+    for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
       SNode current = node;
       MethodDuplicatesFinder.MethodMatchModifier modifier = new MethodDuplicatesFinder.MethodMatchModifier();
       boolean hasNoErrors = true;
-      for (SNode nodeToFind : ListSequence.<SNode>fromList(this.myNodesToFind)) {
-        if ((current == null) || SetSequence.<SNode>fromSet(this.myUsedNodes).contains(current)) {
+      for (SNode nodeToFind : ListSequence.fromList(this.myNodesToFind)) {
+        if ((current == null) || SetSequence.fromSet(this.myUsedNodes).contains(current)) {
           hasNoErrors = false;
           break;
         } else {
@@ -53,7 +53,7 @@ public class MethodDuplicatesFinder {
         MethodMatch resultMatch = modifier.getMatch();
         resultMatch.createRefactoring();
         if (resultMatch.checkMatch()) {
-          for (SNode resultNode : ListSequence.<SNode>fromList(resultMatch.getNodes())) {
+          for (SNode resultNode : ListSequence.fromList(resultMatch.getNodes())) {
             SetSequence.fromSet(this.myUsedNodes).addElement(resultNode);
           }
           found.add(resultMatch);
@@ -74,7 +74,7 @@ public class MethodDuplicatesFinder {
     }
 
     public boolean accept(SNode candidate, SNode original) {
-      if (SetSequence.<SNode>fromSet(myOutputRefs).contains(original)) {
+      if (SetSequence.fromSet(myOutputRefs).contains(original)) {
         this.myMatch.putOutputReference(candidate);
       }
       if (MapSequence.fromMap(MethodDuplicatesFinder.this.myMapping).containsKey(original)) {
@@ -88,7 +88,7 @@ public class MethodDuplicatesFinder {
     }
 
     public void performAction(SNode candidate, SNode original) {
-      this.myMatch.putMapping(candidate, MapSequence.<SNode,SNode>fromMap(MethodDuplicatesFinder.this.myMapping).get(original));
+      this.myMatch.putMapping(candidate, MapSequence.fromMap(MethodDuplicatesFinder.this.myMapping).get(original));
     }
 
     public void performGroupAction(List<SNode> list1, List<SNode> list2) {

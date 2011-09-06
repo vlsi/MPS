@@ -33,16 +33,16 @@ public class DerivedClasses_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     List<SNode> derived = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(derived).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    ListSequence.fromList(derived).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     // 
     int passed = 0;
-    while (ListSequence.<SNode>fromList(derived).count() != passed) {
-      SNode passingNode = ListSequence.<SNode>fromList(derived).getElement(passed);
+    while (ListSequence.fromList(derived).count() != passed) {
+      SNode passingNode = ListSequence.fromList(derived).getElement(passed);
       for (SNode classNode : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", passingNode, scope, indicator)) {
-        ListSequence.<SNode>fromList(derived).addElement(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        ListSequence.fromList(derived).addElement(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       }
       if (passingNode != node) {
-        ListSequence.<SNode>fromList(_results).addElement(passingNode);
+        ListSequence.fromList(_results).addElement(passingNode);
       }
       passed++;
     }

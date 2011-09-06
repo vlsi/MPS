@@ -11,7 +11,7 @@ public class RuleType_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<RuleType> constants = ListSequence.<RuleType>fromList(RuleType.getConstants()).iterator();
+    Iterator<RuleType> constants = ListSequence.fromList(RuleType.getConstants()).iterator();
     while (constants.hasNext()) {
       RuleType constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class RuleType_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<RuleType> constants = ListSequence.<RuleType>fromList(RuleType.getConstants()).iterator();
+    Iterator<RuleType> constants = ListSequence.fromList(RuleType.getConstants()).iterator();
     while (constants.hasNext()) {
       RuleType constant = constants.next();
       if (value.equals(constant.getName())) {

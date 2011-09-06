@@ -16,38 +16,38 @@ public abstract class BaseClassConceptTextGen {
       TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), SLinkOperations.getTarget(concept, "instanceInitializer", true), textGen.getSNode());
       needNewLine = true;
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(concept, "staticField", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(concept, "staticField", true)).isNotEmpty()) {
       BaseClassConceptTextGen.collection(SLinkOperations.getTargets(concept, "staticField", true), textGen);
       needNewLine = true;
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(concept, "field", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(concept, "field", true)).isNotEmpty()) {
       BaseClassConceptTextGen.collection(SLinkOperations.getTargets(concept, "field", true), textGen);
       needNewLine = true;
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(concept, "constructor", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(concept, "constructor", true)).isNotEmpty()) {
       for (SNode constructor : SLinkOperations.getTargets(concept, "constructor", true)) {
         TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), constructor, textGen.getSNode());
         textGen.appendNewLine();
       }
       needNewLine = true;
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(concept, "method", true)).isNotEmpty()) {
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(concept, "method", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(concept, "method", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(concept, "method", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(concept, "method", true)) {
           TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
         }
       }
       needNewLine = true;
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(concept, "staticMethod", true)).isNotEmpty()) {
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(concept, "staticMethod", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(concept, "staticMethod", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(concept, "staticMethod", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(concept, "staticMethod", true)) {
           TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
         }
       }
       needNewLine = true;
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(concept, "staticInnerClassifiers", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(concept, "staticInnerClassifiers", true)).isNotEmpty()) {
       textGen.appendNewLine();
       BaseClassConceptTextGen.innerClassifiers(concept, textGen);
       needNewLine = true;
@@ -78,14 +78,14 @@ public abstract class BaseClassConceptTextGen {
   public static void innerClassifiers(SNode concept, final SNodeTextGen textGen) {
     for (SNode classifier : SLinkOperations.getTargets(concept, "staticInnerClassifiers", true)) {
       TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), classifier, textGen.getSNode());
-      if (!(classifier.equals(ListSequence.<SNode>fromList(SLinkOperations.getTargets(concept, "staticInnerClassifiers", true)).last()))) {
+      if (!(classifier.equals(ListSequence.fromList(SLinkOperations.getTargets(concept, "staticInnerClassifiers", true)).last()))) {
         textGen.appendNewLine();
       }
     }
   }
 
   public static void collection(List<SNode> nodes, final SNodeTextGen textGen) {
-    if (ListSequence.<SNode>fromList(nodes).isNotEmpty()) {
+    if (ListSequence.fromList(nodes).isNotEmpty()) {
       for (SNode item : nodes) {
         TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
       }

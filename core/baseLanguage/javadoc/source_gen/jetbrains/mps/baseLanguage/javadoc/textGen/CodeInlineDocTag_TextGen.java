@@ -11,7 +11,7 @@ import jetbrains.mps.textGen.TextGenManager;
 public class CodeInlineDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("code ");
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "line", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "line", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
       }

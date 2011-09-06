@@ -707,9 +707,9 @@
     <nodeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="333" startPosition="72" endLine="334" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="334" startPosition="78" endLine="335" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="336" startPosition="10" endLine="337" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5341591979805250550" fileName="PatternTest_Editor.java" startLine="340" startPosition="112" endLine="341" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5341591979805250573" fileName="PatternTest_Editor.java" startLine="344" startPosition="112" endLine="345" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5341591979805250596" fileName="PatternTest_Editor.java" startLine="348" startPosition="112" endLine="349" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5341591979805250550" fileName="PatternTest_Editor.java" startLine="340" startPosition="112" endLine="341" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5341591979805250573" fileName="PatternTest_Editor.java" startLine="344" startPosition="112" endLine="345" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5341591979805250596" fileName="PatternTest_Editor.java" startLine="348" startPosition="112" endLine="349" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5341591979805260281" fileName="PatternTest_Editor.java" startLine="352" startPosition="111" endLine="353" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="357" startPosition="102" endLine="358" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="361" startPosition="66" endLine="362" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -880,9 +880,9 @@
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="107" startPosition="83" endLine="108" endPosition="86" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="113" startPosition="98" endLine="114" endPosition="47" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="144" startPosition="94" endLine="145" endPosition="47" />
-    <scopeInfo nodeId="5341591979805250549" fileName="PatternTest_Editor.java" startLine="340" startPosition="112" endLine="341" endPosition="225" />
-    <scopeInfo nodeId="5341591979805250572" fileName="PatternTest_Editor.java" startLine="344" startPosition="112" endLine="345" endPosition="233" />
-    <scopeInfo nodeId="5341591979805250595" fileName="PatternTest_Editor.java" startLine="348" startPosition="112" endLine="349" endPosition="210" />
+    <scopeInfo nodeId="5341591979805250549" fileName="PatternTest_Editor.java" startLine="340" startPosition="112" endLine="341" endPosition="218" />
+    <scopeInfo nodeId="5341591979805250572" fileName="PatternTest_Editor.java" startLine="344" startPosition="112" endLine="345" endPosition="226" />
+    <scopeInfo nodeId="5341591979805250595" fileName="PatternTest_Editor.java" startLine="348" startPosition="112" endLine="349" endPosition="203" />
     <scopeInfo nodeId="5341591979805250607" fileName="PatternTest_Editor.java" startLine="352" startPosition="111" endLine="353" endPosition="109" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="357" startPosition="102" endLine="358" endPosition="50" />
     <scopeInfo nodeId="8707387027762047777" fileName="PatternTest_Editor.java" startLine="382" startPosition="34" endLine="383" endPosition="95" />

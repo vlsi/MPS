@@ -25,7 +25,7 @@ public class ShowHelpForAspect_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return HelpHelper.helpForAspectIsAvailable(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model"))) && HelpHelper.getDefaultHelpFor(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")), ((SNode) MapSequence.<String,Object>fromMap(_params).get("node"))) != HelpHelper.HelpType.ASPECT;
+    return HelpHelper.helpForAspectIsAvailable(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))) && HelpHelper.getDefaultHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node"))) != HelpHelper.HelpType.ASPECT;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -48,14 +48,14 @@ public class ShowHelpForAspect_Action extends GeneratedAction {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      MapSequence.<String,Object>fromMap(_params).put("node", node);
+      MapSequence.fromMap(_params).put("node", node);
     }
-    MapSequence.<String,Object>fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
-    if (MapSequence.<String,Object>fromMap(_params).get("model") == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
-    if (MapSequence.<String,Object>fromMap(_params).get("module") == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
@@ -63,7 +63,7 @@ public class ShowHelpForAspect_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      HelpHelper.showHelpForAspect(((IModule) MapSequence.<String,Object>fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.<String,Object>fromMap(_params).get("model")));
+      HelpHelper.showHelpForAspect(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowHelpForAspect", t);
     }

@@ -175,7 +175,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_vablur_a4a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsType", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsType", true)).isNotEmpty();
   }
 
   private static class parameterTypeListHandler_vablur_b0 extends RefNodeListHandler {

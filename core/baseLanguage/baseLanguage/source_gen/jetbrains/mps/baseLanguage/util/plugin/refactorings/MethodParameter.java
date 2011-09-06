@@ -22,7 +22,7 @@ public class MethodParameter extends MethodParameterModel {
   private SNode myVariableReference;
   private boolean mySelected = true;
   private List<String> myAvailableTypes;
-  private Map<String, SNode> myTypesMap = MapSequence.<String,SNode>fromMap(new HashMap<String, SNode>());
+  private Map<String, SNode> myTypesMap = MapSequence.fromMap(new HashMap<String, SNode>());
 
   public MethodParameter(SNode variable, SNode type, String name, SNode reference) {
     this.myDeclaration = variable;
@@ -39,7 +39,7 @@ public class MethodParameter extends MethodParameterModel {
 
   public List<String> createAvailableTypes() {
     if (this.myType == null) {
-      List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
+      List<String> result = ListSequence.fromList(new ArrayList<String>());
       return result;
     }
     SubtypingManager manager = TypeChecker.getInstance().getSubtypingManager();
@@ -48,19 +48,19 @@ public class MethodParameter extends MethodParameterModel {
     frontier.add(this.myType);
     while (!(frontier.isEmpty())) {
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
-      for (SNode node : SetSequence.<SNode>fromSet(frontier)) {
+      for (SNode node : SetSequence.fromSet(frontier)) {
         ancestors.addAllStructurally(manager.collectImmediateSupertypes(node, false));
-        ListSequence.<SNode>fromList(found).addElement(node);
+        ListSequence.fromList(found).addElement(node);
       }
-      for (SNode passed : ListSequence.<SNode>fromList(found)) {
+      for (SNode passed : ListSequence.fromList(found)) {
         ancestors.removeStructurally(passed);
       }
       frontier = ancestors;
     }
-    List<String> result = ListSequence.<String>fromList(new ArrayList<String>());
-    for (SNode node : ListSequence.<SNode>fromList(found)) {
-      ListSequence.<String>fromList(result).addElement(node.toString());
-      MapSequence.<String,SNode>fromMap(this.myTypesMap).put(node.toString(), node);
+    List<String> result = ListSequence.fromList(new ArrayList<String>());
+    for (SNode node : ListSequence.fromList(found)) {
+      ListSequence.fromList(result).addElement(node.toString());
+      MapSequence.fromMap(this.myTypesMap).put(node.toString(), node);
     }
     return result;
   }
@@ -75,7 +75,7 @@ public class MethodParameter extends MethodParameterModel {
 
   public void setTypeByName(String name) {
     this.setTypeName(name);
-    this.setType(MapSequence.<String,SNode>fromMap(this.myTypesMap).get(name));
+    this.setType(MapSequence.fromMap(this.myTypesMap).get(name));
   }
 
   public SNode getDeclaration() {

@@ -24,14 +24,14 @@ public class MappingConfiguration_Behavior {
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "rootMappingRule", true)));
-    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "weavingMappingRule", true)));
-    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "reductionMappingRule", true)));
-    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "patternReductionRule", true)));
-    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "createRootRule", true)));
-    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "preMappingScript", true)));
-    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "postMappingScript", true)));
-    ListSequence.<SNode>fromList(members).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "mappingLabel", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "rootMappingRule", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "weavingMappingRule", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "reductionMappingRule", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "patternReductionRule", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "createRootRule", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "preMappingScript", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "postMappingScript", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mappingLabel", true)));
     return members;
   }
 
@@ -53,9 +53,9 @@ public class MappingConfiguration_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode mapConfChild : SNodeOperations.getChildren(thisNode)) {
       if (SNodeOperations.isInstanceOf(mapConfChild, "jetbrains.mps.lang.generator.structure.BaseMappingRule")) {
-        ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(mapConfChild, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "applicableConcept", false));
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(mapConfChild, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "applicableConcept", false));
       } else if (SNodeOperations.isInstanceOf(mapConfChild, "jetbrains.mps.lang.generator.structure.DropRootRule")) {
-        ListSequence.<SNode>fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(mapConfChild, "jetbrains.mps.lang.generator.structure.DropRootRule"), "applicableConcept", false));
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(mapConfChild, "jetbrains.mps.lang.generator.structure.DropRootRule"), "applicableConcept", false));
       }
     }
     return result;

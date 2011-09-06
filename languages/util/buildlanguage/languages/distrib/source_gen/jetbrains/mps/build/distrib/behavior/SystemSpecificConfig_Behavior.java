@@ -44,7 +44,7 @@ public class SystemSpecificConfig_Behavior {
 
   public static List<SNode> virtual_getAllUsedVariable_1234793567442(SNode thisNode) {
     List<SNode> references = SNodeOperations.getDescendants(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode), "jetbrains.mps.build.distrib.structure.ExternalVariableReference", false, new String[]{});
-    return ListSequence.<SNode>fromList(references).<SNode>select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(references).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "variable", false);
       }

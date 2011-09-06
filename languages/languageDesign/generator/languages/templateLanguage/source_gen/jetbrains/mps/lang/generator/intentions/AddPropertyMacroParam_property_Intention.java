@@ -69,7 +69,7 @@ public class AddPropertyMacroParam_property_Intention extends BaseIntention impl
     SLinkOperations.setTarget(dotExpression, "operand", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
     SNode expressionStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(propertyValue, "body", true), "statement", true)).addElement(expressionStatement);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(propertyValue, "body", true), "statement", true)).addElement(expressionStatement);
     SLinkOperations.setTarget(propertyMacro, "propertyValueFunction", propertyValue, true);
     // set caret 
     editorContext.selectAndSetCaret(propertyMacro, 0);
@@ -88,7 +88,7 @@ public class AddPropertyMacroParam_property_Intention extends BaseIntention impl
     if (propertyName == null) {
       return null;
     }
-    List<SNode> result = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode propertySource : AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(sourceNode)) {
       SNode propertyDeclaration = SNodeOperations.cast(node.getPropertyDeclaration(propertyName), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
       if (propertyDeclaration == null) {
@@ -96,20 +96,20 @@ public class AddPropertyMacroParam_property_Intention extends BaseIntention impl
       }
       SNode property = SLinkOperations.getTarget(propertyDeclaration, "dataType", false);
       if (property == SLinkOperations.getTarget(propertySource, "dataType", false)) {
-        ListSequence.<SNode>fromList(result).addElement(propertySource);
+        ListSequence.fromList(result).addElement(propertySource);
       }
     }
     return result;
   }
 
   public static List<Intention> instances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.<Intention>fromList(new ArrayList<Intention>());
+    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
     List<SNode> paramList = parameter(node, editorContext);
     if (paramList != null) {
       for (SNode param : paramList) {
         AddPropertyMacroParam_property_Intention intention = new AddPropertyMacroParam_property_Intention();
         intention.myParameter = param;
-        ListSequence.<Intention>fromList(list).addElement(intention);
+        ListSequence.fromList(list).addElement(intention);
       }
     }
     return list;

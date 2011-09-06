@@ -26,17 +26,17 @@ public class typeof_ITemplateCall_InferenceRule extends AbstractInferenceRule_Ru
     if (templateDeclaration != null) {
       List<SNode> parameterDeclarations = SLinkOperations.getTargets(templateDeclaration, "parameter", true);
       List<SNode> actualArguments = SLinkOperations.getTargets(iTemplateCall, "actualArgument", true);
-      if (ListSequence.<SNode>fromList(parameterDeclarations).count() != ListSequence.<SNode>fromList(actualArguments).count()) {
+      if (ListSequence.fromList(parameterDeclarations).count() != ListSequence.fromList(actualArguments).count()) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(iTemplateCall, "wrong number of parameters", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1722980698497666339", null, errorTarget);
         }
       } else {
-        for (int i = 0; i < ListSequence.<SNode>fromList(parameterDeclarations).count(); i++) {
+        for (int i = 0; i < ListSequence.fromList(parameterDeclarations).count(); i++) {
           {
-            SNode _nodeToCheck_1029348928467 = ListSequence.<SNode>fromList(actualArguments).getElement(i);
+            SNode _nodeToCheck_1029348928467 = ListSequence.fromList(actualArguments).getElement(i);
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "4665309944889675072", 0, null);
-            typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "4665309944889705399", true), (SNode) SLinkOperations.getTarget(ListSequence.<SNode>fromList(parameterDeclarations).getElement(i), "type", true), false, true, _info_12389875345);
+            typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "4665309944889705399", true), (SNode) SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).getElement(i), "type", true), false, true, _info_12389875345);
           }
         }
       }

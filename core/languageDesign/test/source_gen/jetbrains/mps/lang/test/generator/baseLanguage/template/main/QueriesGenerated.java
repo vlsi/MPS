@@ -222,11 +222,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1221567898689(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    Set<SNode> set = SetSequence.<SNode>fromSet(new LinkedHashSet<SNode>());
-    for (SNode ref : ListSequence.<SNode>fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "body", true), "jetbrains.mps.lang.test.structure.TestNodeReference", false, new String[]{}))) {
+    Set<SNode> set = SetSequence.fromSet(new LinkedHashSet<SNode>());
+    for (SNode ref : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "body", true), "jetbrains.mps.lang.test.structure.TestNodeReference", false, new String[]{}))) {
       SetSequence.fromSet(set).addElement(SLinkOperations.getTarget(ref, "declaration", false));
     }
-    return ListSequence.<SNode>fromListWithValues(new ArrayList<SNode>(), set);
+    return ListSequence.fromListWithValues(new ArrayList<SNode>(), set);
   }
 
   public static Iterable sourceNodesQuery_1221567898723(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -243,8 +243,8 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1225976113129(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (SNode nodeTocheck : ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.test.structure.NodesTestCase", false, false), "nodesToCheck", true))) {
-      ListSequence.<SNode>fromList(nodes).addElement(SNodeOperations.cast(nodeTocheck, "jetbrains.mps.lang.test.structure.TestNode"));
+    for (SNode nodeTocheck : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.test.structure.NodesTestCase", false, false), "nodesToCheck", true))) {
+      ListSequence.fromList(nodes).addElement(SNodeOperations.cast(nodeTocheck, "jetbrains.mps.lang.test.structure.TestNode"));
     }
     return nodes;
   }

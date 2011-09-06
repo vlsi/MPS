@@ -15,10 +15,10 @@ public class TestInfo_Behavior {
 
   public static String getProjectPath_5097124989038916375(SModel model) {
     List<SNode> infos = SModelOperations.getRoots(model, "jetbrains.mps.lang.test.structure.TestInfo");
-    if (ListSequence.<SNode>fromList(infos).isEmpty()) {
+    if (ListSequence.fromList(infos).isEmpty()) {
       return null;
     }
-    SNode testInfo = ListSequence.<SNode>fromList(infos).first();
+    SNode testInfo = ListSequence.fromList(infos).first();
     return SPropertyOperations.getString(testInfo, "projectPath");
   }
 }

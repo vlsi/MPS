@@ -23,9 +23,9 @@ public class supertypesOf_linkedlist_SubtypingRule extends SubtypingRule_Runtime
 
   public List<SNode> getSubOrSuperTypes(SNode llt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> res = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(res).addElement(new supertypesOf_linkedlist_SubtypingRule.QuotationClass_vg4yju_a0a0b0a().createNode(SLinkOperations.getTarget(llt, "elementType", true), typeCheckingContext));
-    ListSequence.<SNode>fromList(res).addElement(new supertypesOf_linkedlist_SubtypingRule.QuotationClass_vg4yju_a0a0c0a().createNode(SLinkOperations.getTarget(llt, "elementType", true), typeCheckingContext));
-    ListSequence.<SNode>fromList(res).addElement(new supertypesOf_linkedlist_SubtypingRule.QuotationClass_vg4yju_a0a0d0a().createNode(SLinkOperations.getTarget(llt, "elementType", true), typeCheckingContext));
+    ListSequence.fromList(res).addElement(new supertypesOf_linkedlist_SubtypingRule.QuotationClass_vg4yju_a0a0b0a().createNode(SLinkOperations.getTarget(llt, "elementType", true), typeCheckingContext));
+    ListSequence.fromList(res).addElement(new supertypesOf_linkedlist_SubtypingRule.QuotationClass_vg4yju_a0a0c0a().createNode(SLinkOperations.getTarget(llt, "elementType", true), typeCheckingContext));
+    ListSequence.fromList(res).addElement(new supertypesOf_linkedlist_SubtypingRule.QuotationClass_vg4yju_a0a0d0a().createNode(SLinkOperations.getTarget(llt, "elementType", true), typeCheckingContext));
     return res;
   }
 

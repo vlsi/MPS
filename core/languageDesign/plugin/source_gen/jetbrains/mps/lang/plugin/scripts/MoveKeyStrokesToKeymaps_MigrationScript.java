@@ -39,7 +39,7 @@ public class MoveKeyStrokesToKeymaps_MigrationScript extends BaseMigrationScript
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode keymap = ListSequence.<SNode>fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration")).where(new IWhereFilter<SNode>() {
+        SNode keymap = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.hasValue(it, "keymap", "$default", "$default");
           }
@@ -50,7 +50,7 @@ public class MoveKeyStrokesToKeymaps_MigrationScript extends BaseMigrationScript
           SPropertyOperations.set(keymap, "name", "Default");
         }
 
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(keymap, "shortcutChange", true)).addElement(new MoveKeyStrokesToKeymaps_MigrationScript.QuotationClass_guynmc_a0a0d0e0a0a0b0a().createNode(SLinkOperations.getTarget(node, "keystroke", true), node));
+        ListSequence.fromList(SLinkOperations.getTargets(keymap, "shortcutChange", true)).addElement(new MoveKeyStrokesToKeymaps_MigrationScript.QuotationClass_guynmc_a0a0d0e0a0a0b0a().createNode(SLinkOperations.getTarget(node, "keystroke", true), node));
         SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "keystroke", true));
       }
 

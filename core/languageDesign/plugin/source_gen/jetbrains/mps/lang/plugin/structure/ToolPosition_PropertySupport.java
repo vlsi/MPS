@@ -11,7 +11,7 @@ public class ToolPosition_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<ToolPosition> constants = ListSequence.<ToolPosition>fromList(ToolPosition.getConstants()).iterator();
+    Iterator<ToolPosition> constants = ListSequence.fromList(ToolPosition.getConstants()).iterator();
     while (constants.hasNext()) {
       ToolPosition constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class ToolPosition_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<ToolPosition> constants = ListSequence.<ToolPosition>fromList(ToolPosition.getConstants()).iterator();
+    Iterator<ToolPosition> constants = ListSequence.fromList(ToolPosition.getConstants()).iterator();
     while (constants.hasNext()) {
       ToolPosition constant = constants.next();
       if (value.equals(constant.getName())) {

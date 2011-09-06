@@ -44,9 +44,9 @@ public class ExternalVariableReference_Constraints extends BaseConstraintsDescri
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode ancestor = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.distrib.structure.DistribConfiguration", true, false);
-            List<SNode> availableVars = ListSequence.<SNode>fromList(new ArrayList<SNode>());
-            ListSequence.<SNode>fromList(availableVars).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(ancestor, "buildScriptConfiguration", false)), "builtInVariable", true)));
-            ListSequence.<SNode>fromList(availableVars).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(ancestor, "buildScriptConfiguration", false)), "variable", true)));
+            List<SNode> availableVars = ListSequence.fromList(new ArrayList<SNode>());
+            ListSequence.fromList(availableVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(ancestor, "buildScriptConfiguration", false)), "builtInVariable", true)));
+            ListSequence.fromList(availableVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(ancestor, "buildScriptConfiguration", false)), "variable", true)));
             return availableVars;
           }
 

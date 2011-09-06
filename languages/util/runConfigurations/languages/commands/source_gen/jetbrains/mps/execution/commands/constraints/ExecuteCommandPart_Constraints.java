@@ -47,10 +47,10 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
         String propertyName = "shortDescription";
         {
           List<SNode> requiredParameters = ExecuteCommandPart_Behavior.call_getRequiredParameters_6129022259108621289(node);
-          if (ListSequence.<SNode>fromList(requiredParameters).isEmpty()) {
+          if (ListSequence.fromList(requiredParameters).isEmpty()) {
             return "()";
           }
-          String joined = IterableUtils.join(ListSequence.<SNode>fromList(requiredParameters).<String>select(new ISelector<SNode, String>() {
+          String joined = IterableUtils.join(ListSequence.fromList(requiredParameters).<String>select(new ISelector<SNode, String>() {
             public String select(SNode it) {
               return SPropertyOperations.getString(it, "name") + ", ";
             }

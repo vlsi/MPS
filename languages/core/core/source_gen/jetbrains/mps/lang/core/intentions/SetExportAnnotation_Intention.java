@@ -72,7 +72,7 @@ public class SetExportAnnotation_Intention extends BaseIntention implements Inte
 
   private static List<SNode> parameter(final SNode node, final EditorContext editorContext) {
     SNode[] all = {null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopeModule"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopePublic"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopeNamespace")};
-    return Sequence.<SNode>fromIterable(Sequence.fromArray(all)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Sequence.fromArray(all)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it != SNodeOperations.getConceptDeclaration(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))));
       }
@@ -80,13 +80,13 @@ public class SetExportAnnotation_Intention extends BaseIntention implements Inte
   }
 
   public static List<Intention> instances(final SNode node, final EditorContext editorContext) {
-    List<Intention> list = ListSequence.<Intention>fromList(new ArrayList<Intention>());
+    List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
     List<SNode> paramList = parameter(node, editorContext);
     if (paramList != null) {
       for (SNode param : paramList) {
         SetExportAnnotation_Intention intention = new SetExportAnnotation_Intention();
         intention.myParameter = param;
-        ListSequence.<Intention>fromList(list).addElement(intention);
+        ListSequence.fromList(list).addElement(intention);
       }
     }
     return list;

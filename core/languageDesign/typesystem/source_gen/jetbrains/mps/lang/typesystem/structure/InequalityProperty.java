@@ -32,10 +32,10 @@ public enum InequalityProperty {
   }
 
   public static List<InequalityProperty> getConstants() {
-    List<InequalityProperty> list = ListSequence.<InequalityProperty>fromList(new LinkedList<InequalityProperty>());
-    ListSequence.<InequalityProperty>fromList(list).addElement(InequalityProperty.as_is);
-    ListSequence.<InequalityProperty>fromList(list).addElement(InequalityProperty.same_as_inequality);
-    ListSequence.<InequalityProperty>fromList(list).addElement(InequalityProperty.opposite_to_inequality);
+    List<InequalityProperty> list = ListSequence.fromList(new LinkedList<InequalityProperty>());
+    ListSequence.fromList(list).addElement(InequalityProperty.as_is);
+    ListSequence.fromList(list).addElement(InequalityProperty.same_as_inequality);
+    ListSequence.fromList(list).addElement(InequalityProperty.opposite_to_inequality);
     return list;
   }
 

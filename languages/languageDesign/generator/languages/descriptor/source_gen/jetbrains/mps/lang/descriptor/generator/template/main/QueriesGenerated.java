@@ -124,9 +124,9 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1698302279987411159(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode l = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
-    return (ListSequence.<SNode>fromList(SLinkOperations.getTargets(l, "generator", true)).count() == 1 ?
+    return (ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).count() == 1 ?
       "Generator" :
-      "Generator" + ListSequence.<SNode>fromList(SLinkOperations.getTargets(l, "generator", true)).indexOf(_context.getNode())
+      "Generator" + ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).indexOf(_context.getNode())
     );
   }
 
@@ -139,7 +139,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_5554116809065233210(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generator.descriptor"), "constructor", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generator.descriptor"), "constructor", true)).first();
   }
 
   public static boolean ifMacro_Condition_5828571963818937566(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -157,7 +157,7 @@ public class QueriesGenerated {
       _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "Cannot load model: " + ts.getLongName());
       return false;
     }
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(m, null)).isNotEmpty();
+    return ListSequence.fromList(SModelOperations.getRoots(m, null)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_2838795720286867781(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -175,7 +175,7 @@ public class QueriesGenerated {
       _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "Cannot load model: " + ts.getLongName());
       return false;
     }
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).isNotEmpty();
+    return ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_5554116809065233232(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -183,43 +183,43 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5554116809065233262(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "language", true), "generator", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "language", true), "generator", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1820665478710807083(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "priorityRules", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "priorityRules", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_6655394244919403419(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1250389701475281189(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "depGenerators", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "depGenerators", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1820665478710839778(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "priorityRules", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "priorityRules", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_6655394244919461188(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1250389701475344465(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "depGenerators", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "depGenerators", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_6655394244919461209(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1820665478710839798(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "priorityRules", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "priorityRules", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1250389701475344489(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "depGenerators", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "depGenerators", true)).isNotEmpty();
   }
 
   public static SNode sourceNodeQuery_1820665478710839875(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -287,7 +287,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_6655394244919455802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_x583g4_a0a0a0a0a0a0a0yb(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
       }
@@ -302,7 +302,7 @@ public class QueriesGenerated {
         if (m == null) {
           return false;
         }
-        return ListSequence.<SNode>fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.generator.structure.TemplateSwitch")).isNotEmpty() || ListSequence.<SNode>fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.generator.structure.MappingConfiguration")).isNotEmpty();
+        return ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.generator.structure.TemplateSwitch")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.generator.structure.MappingConfiguration")).isNotEmpty();
       }
     }).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
@@ -316,7 +316,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1250389701475431822(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).<String>translate(new ITranslator2<SNode, String>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).<String>translate(new ITranslator2<SNode, String>() {
       public Iterable<String> translate(SNode it) {
         SModelDescriptor m = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ModelReference_Behavior.call_getModelReference_6236774123822284799(it)));
         return (m == null ?

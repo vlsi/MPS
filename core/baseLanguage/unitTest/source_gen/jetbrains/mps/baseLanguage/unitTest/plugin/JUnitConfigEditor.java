@@ -64,7 +64,7 @@ public class JUnitConfigEditor extends JPanel {
   private List<ITestNodeWrapper> myNodes;
   private List<ITestNodeWrapper> myMethods;
   private JRadioButton[] myButtons;
-  public List<AutoBinding> myBindings = ListSequence.<AutoBinding>fromList(new ArrayList<AutoBinding>());
+  public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
   private Events myEvents = new Events(null) {
     {
     }
@@ -77,8 +77,8 @@ public class JUnitConfigEditor extends JPanel {
     this.myThis = this;
     JUnitConfigEditor component = this;
     myThis.setGroup(new ButtonGroup());
-    myThis.setNodes(ListSequence.<ITestNodeWrapper>fromList(new ArrayList<ITestNodeWrapper>()));
-    myThis.setMethods(ListSequence.<ITestNodeWrapper>fromList(new ArrayList<ITestNodeWrapper>()));
+    myThis.setNodes(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
+    myThis.setMethods(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
       public void run() {
         myThis.setProject(myThis.findProjectFromContext());
@@ -447,7 +447,7 @@ public class JUnitConfigEditor extends JPanel {
         if (testCase == null) {
           return;
         }
-        ListSequence.<ITestNodeWrapper>fromList(myThis.getNodes()).addElement(testCase);
+        ListSequence.fromList(myThis.getNodes()).addElement(testCase);
         myThis.myTestCases_d0.addItem(testCase);
       }
     });
@@ -461,7 +461,7 @@ public class JUnitConfigEditor extends JPanel {
         if (testMethod == null) {
           return;
         }
-        ListSequence.<ITestNodeWrapper>fromList(myThis.getMethods()).addElement(testMethod);
+        ListSequence.fromList(myThis.getMethods()).addElement(testMethod);
         myThis.myTestMethods_e0.addItem(testMethod);
       }
     });
@@ -483,7 +483,7 @@ public class JUnitConfigEditor extends JPanel {
     final SModel editorModel = myThis.getModel();
     final IModule editorModule = myThis.getModule();
     // five of them, so we do not mind going twice 
-    final int configTypeIndex = Sequence.<JRadioButton>fromIterable(Sequence.fromArray(myThis.getButtons())).indexOf(Sequence.<JRadioButton>fromIterable(Sequence.fromArray(myThis.getButtons())).findFirst(new IWhereFilter<JRadioButton>() {
+    final int configTypeIndex = Sequence.fromIterable(Sequence.fromArray(myThis.getButtons())).indexOf(Sequence.fromIterable(Sequence.fromArray(myThis.getButtons())).findFirst(new IWhereFilter<JRadioButton>() {
       public boolean accept(JRadioButton it) {
         return it.isSelected();
       }
@@ -547,28 +547,28 @@ public class JUnitConfigEditor extends JPanel {
     }
 
     // nodes 
-    myThis.setNodes(ListSequence.<ITestNodeWrapper>fromList(new ArrayList<ITestNodeWrapper>()));
+    myThis.setNodes(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     myThis.myTestCases_d0.clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Sequence.<ITestNodeWrapper>fromIterable(TestUtils.wrapPointerStrings(configuration.getTestCases())).visitAll(new IVisitor<ITestNodeWrapper>() {
+        Sequence.fromIterable(TestUtils.wrapPointerStrings(configuration.getTestCases())).visitAll(new IVisitor<ITestNodeWrapper>() {
           public void visit(ITestNodeWrapper it) {
             myThis.myTestCases_d0.addItem(it);
-            ListSequence.<ITestNodeWrapper>fromList(myThis.getNodes()).addElement(it);
+            ListSequence.fromList(myThis.getNodes()).addElement(it);
           }
         });
       }
     });
 
     // methods 
-    myThis.setMethods(ListSequence.<ITestNodeWrapper>fromList(new ArrayList<ITestNodeWrapper>()));
+    myThis.setMethods(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     myThis.myTestMethods_e0.clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Sequence.<ITestNodeWrapper>fromIterable(TestUtils.wrapPointerStrings(configuration.getTestMethods())).visitAll(new IVisitor<ITestNodeWrapper>() {
+        Sequence.fromIterable(TestUtils.wrapPointerStrings(configuration.getTestMethods())).visitAll(new IVisitor<ITestNodeWrapper>() {
           public void visit(ITestNodeWrapper it) {
             myThis.myTestMethods_e0.addItem(it);
-            ListSequence.<ITestNodeWrapper>fromList(myThis.getMethods()).addElement(it);
+            ListSequence.fromList(myThis.getMethods()).addElement(it);
           }
         });
       }
@@ -580,11 +580,11 @@ public class JUnitConfigEditor extends JPanel {
     } else {
       // if model is null, it is convenient to take model from the first node 
       final Wrappers._T<ITestNodeWrapper> wrapperToTakeModelFrom = new Wrappers._T<ITestNodeWrapper>(null);
-      if (myThis.getNodes() != null && ListSequence.<ITestNodeWrapper>fromList(myThis.getNodes()).isNotEmpty()) {
-        wrapperToTakeModelFrom.value = ListSequence.<ITestNodeWrapper>fromList(myThis.getNodes()).first();
+      if (myThis.getNodes() != null && ListSequence.fromList(myThis.getNodes()).isNotEmpty()) {
+        wrapperToTakeModelFrom.value = ListSequence.fromList(myThis.getNodes()).first();
       }
-      if (myThis.getMethods() != null && ListSequence.<ITestNodeWrapper>fromList(myThis.getMethods()).isNotEmpty()) {
-        wrapperToTakeModelFrom.value = ListSequence.<ITestNodeWrapper>fromList(myThis.getMethods()).first();
+      if (myThis.getMethods() != null && ListSequence.fromList(myThis.getMethods()).isNotEmpty()) {
+        wrapperToTakeModelFrom.value = ListSequence.fromList(myThis.getMethods()).first();
       }
       if (wrapperToTakeModelFrom.value != null) {
         ModelAccess.instance().runReadAction(new Runnable() {

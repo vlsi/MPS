@@ -23,9 +23,9 @@ public class ContractsUtils {
 
   public static List<SNode> getFilteredConditions(SNode method, SNode filter) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode condition : ListSequence.<SNode>fromList(getConditions(method))) {
+    for (SNode condition : ListSequence.fromList(getConditions(method))) {
       if (SNodeOperations.getConceptDeclaration(condition) == filter) {
-        ListSequence.<SNode>fromList(result).addElement(condition);
+        ListSequence.fromList(result).addElement(condition);
       }
     }
     return result;
@@ -34,14 +34,14 @@ public class ContractsUtils {
   private static List<SNode> getConditions(SNode method) {
     List<SNode> interfaceMethods = getOverridenInterfaceMethod(method);
     List<SNode> resultList = new ArrayList<SNode>();
-    for (SNode intMethod : ListSequence.<SNode>fromList(interfaceMethods)) {
-      ListSequence.<SNode>fromList(resultList).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(intMethod, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions"))), "condition", true)));
+    for (SNode intMethod : ListSequence.fromList(interfaceMethods)) {
+      ListSequence.fromList(resultList).addSequence(ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(intMethod, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions"))), "condition", true)));
     }
     return resultList;
   }
 
   public static boolean needProcessing(SNode method) {
-    return ListSequence.<SNode>fromList(getConditions(method)).isNotEmpty();
+    return ListSequence.fromList(getConditions(method)).isNotEmpty();
   }
 
   public static String makeImplName(String methodName) {
@@ -60,12 +60,12 @@ public class ContractsUtils {
     SNode parent = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(parent, IClassifiersSearchScope.INSTANCE_METHOD);
     List<SNode> overridenMethods = scope.getOverriddenMethods(method);
-    for (SNode node : ListSequence.<SNode>fromList(overridenMethods)) {
+    for (SNode node : ListSequence.fromList(overridenMethods)) {
       SNode baseMethod = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       if (SNodeOperations.isInstanceOf(baseMethod, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
         SNode instanceMethod = SNodeOperations.cast(baseMethod, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
         if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(instanceMethod), "jetbrains.mps.baseLanguage.structure.Interface")) {
-          ListSequence.<SNode>fromList(resultList).addElement(instanceMethod);
+          ListSequence.fromList(resultList).addElement(instanceMethod);
         }
       }
     }

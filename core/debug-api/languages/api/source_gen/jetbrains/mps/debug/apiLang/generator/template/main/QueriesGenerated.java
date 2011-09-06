@@ -11,9 +11,9 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
@@ -47,7 +47,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4030433165042041058(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SetSequence.<SNode>fromSet(StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createBreakpoint", true), "body", true), false)).isNotEmpty() || ListSequence.<SNode>fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.debug.apiLang.structure.DebuggerReference", false, new String[]{})).isNotEmpty();
+    return SetSequence.fromSet(StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createBreakpoint", true), "body", true), false)).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.debug.apiLang.structure.DebuggerReference", false, new String[]{})).isNotEmpty();
   }
 
   public static SNode sourceNodeQuery_2526721715665232360(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

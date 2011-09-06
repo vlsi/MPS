@@ -31,9 +31,9 @@ public enum MPSLitePropertyType_Enum {
   }
 
   public static List<MPSLitePropertyType_Enum> getConstants() {
-    List<MPSLitePropertyType_Enum> list = ListSequence.<MPSLitePropertyType_Enum>fromList(new LinkedList<MPSLitePropertyType_Enum>());
-    ListSequence.<MPSLitePropertyType_Enum>fromList(list).addElement(MPSLitePropertyType_Enum.string);
-    ListSequence.<MPSLitePropertyType_Enum>fromList(list).addElement(MPSLitePropertyType_Enum.numeric);
+    List<MPSLitePropertyType_Enum> list = ListSequence.fromList(new LinkedList<MPSLitePropertyType_Enum>());
+    ListSequence.fromList(list).addElement(MPSLitePropertyType_Enum.string);
+    ListSequence.fromList(list).addElement(MPSLitePropertyType_Enum.numeric);
     return list;
   }
 

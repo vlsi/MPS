@@ -25,8 +25,8 @@ public class typeof_LocalBehaviorMethodCall_InferenceRule extends AbstractInfere
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(localCall, "no method declaration", "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593438", null, errorTarget);
     }
-    int actCount = ListSequence.<SNode>fromList(SLinkOperations.getTargets(localCall, "actualArgument", true)).count();
-    int expCount = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(localCall, "baseMethodDeclaration", false), "parameter", true)).count();
+    int actCount = ListSequence.fromList(SLinkOperations.getTargets(localCall, "actualArgument", true)).count();
+    int expCount = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(localCall, "baseMethodDeclaration", false), "parameter", true)).count();
     if (!(actCount == expCount)) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(localCall, "Wrong parameters number: expected " + expCount + ", actual " + actCount, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593464", null, errorTarget);
@@ -34,8 +34,8 @@ public class typeof_LocalBehaviorMethodCall_InferenceRule extends AbstractInfere
     {
       SNode arg;
       SNode parameter;
-      Iterator<SNode> arg_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(localCall, "actualArgument", true)).iterator();
-      Iterator<SNode> parameter_iterator = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(localCall, "baseMethodDeclaration", false), "parameter", true)).iterator();
+      Iterator<SNode> arg_iterator = ListSequence.fromList(SLinkOperations.getTargets(localCall, "actualArgument", true)).iterator();
+      Iterator<SNode> parameter_iterator = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(localCall, "baseMethodDeclaration", false), "parameter", true)).iterator();
       while (true) {
         if (!(arg_iterator.hasNext())) {
           break;

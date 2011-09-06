@@ -16,9 +16,9 @@ public class StatementList_TextGen extends SNodeTextGen {
     if (getBuffer().hasPositionsSupport()) {
       TraceInfoGenerationUtil.createScopeInfo(this, node);
     }
-    int size = ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "statement", true)).count();
+    int size = ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).count();
     for (int i = 0; i < size; i++) {
-      SNode statement = ListSequence.<SNode>fromList(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "statement", true)).toListSequence()).getElement(i);
+      SNode statement = ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).toListSequence()).getElement(i);
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), statement, this.getSNode());
     }
     if (getBuffer().hasPositionsSupport()) {

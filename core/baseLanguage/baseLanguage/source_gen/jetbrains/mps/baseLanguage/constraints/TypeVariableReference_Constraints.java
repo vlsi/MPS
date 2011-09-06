@@ -50,12 +50,12 @@ public class TypeVariableReference_Constraints extends BaseConstraintsDescriptor
             }
             // type-variables declared in enclosing classifier 
             List<SNode> declarations = new ArrayList<SNode>();
-            for (SNode genericDeclaration : ListSequence.<SNode>fromList(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.GenericDeclaration", true))) {
+            for (SNode genericDeclaration : ListSequence.fromList(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.GenericDeclaration", true))) {
               if (isStaticContext && SNodeOperations.isInstanceOf(genericDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier")) {
                 // if we are in static context, we cannot use classifier type variables 
                 continue;
               }
-              ListSequence.<SNode>fromList(declarations).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(genericDeclaration, "typeVariableDeclaration", true)));
+              ListSequence.fromList(declarations).addSequence(ListSequence.fromList(SLinkOperations.getTargets(genericDeclaration, "typeVariableDeclaration", true)));
             }
             return declarations;
           }

@@ -46,13 +46,13 @@ public class ShowMetaLevel_Action extends GeneratedAction {
           node = null;
         }
       }
-      MapSequence.<String,Object>fromMap(_params).put("currentNode", node);
+      MapSequence.fromMap(_params).put("currentNode", node);
     }
-    if (MapSequence.<String,Object>fromMap(_params).get("currentNode") == null) {
+    if (MapSequence.fromMap(_params).get("currentNode") == null) {
       return false;
     }
-    MapSequence.<String,Object>fromMap(_params).put("component", event.getData(MPSDataKeys.CONTEXT_COMPONENT));
-    if (MapSequence.<String,Object>fromMap(_params).get("component") == null) {
+    MapSequence.fromMap(_params).put("component", event.getData(MPSDataKeys.CONTEXT_COMPONENT));
+    if (MapSequence.fromMap(_params).get("component") == null) {
       return false;
     }
     return true;
@@ -60,8 +60,8 @@ public class ShowMetaLevel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      int metaLevel = BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(((SNode) MapSequence.<String,Object>fromMap(_params).get("currentNode")));
-      JOptionPane.showMessageDialog(((Component) MapSequence.<String,Object>fromMap(_params).get("component")), metaLevel);
+      int metaLevel = BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(((SNode) MapSequence.fromMap(_params).get("currentNode")));
+      JOptionPane.showMessageDialog(((Component) MapSequence.fromMap(_params).get("component")), metaLevel);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowMetaLevel", t);
     }

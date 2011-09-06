@@ -20,8 +20,8 @@ public class ITemplateCall_Behavior {
     if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.lang.generator.structure.ITemplateCall", "actualArgument")) {
       SNode template = SLinkOperations.getTarget(thisNode, "template", false);
       int i = SNodeOperations.getIndexInParent(expression);
-      if (i < ListSequence.<SNode>fromList(SLinkOperations.getTargets(template, "parameter", true)).count()) {
-        SNode parameterDeclaration = ListSequence.<SNode>fromList(SLinkOperations.getTargets(template, "parameter", true)).getElement(i);
+      if (i < ListSequence.fromList(SLinkOperations.getTargets(template, "parameter", true)).count()) {
+        SNode parameterDeclaration = ListSequence.fromList(SLinkOperations.getTargets(template, "parameter", true)).getElement(i);
         SNode rawType = SNodeOperations.copyNode(SLinkOperations.getTarget(parameterDeclaration, "type", true));
         return rawType;
       }

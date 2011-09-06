@@ -20,7 +20,7 @@ public class ConfUtil {
   }
 
   public static Iterable<SModel> visibleConfModels(IScope scope) {
-    return Sequence.<IModule>fromIterable(((Iterable<IModule>) scope.getVisibleModules())).<SModelDescriptor>translate(new ITranslator2<IModule, SModelDescriptor>() {
+    return Sequence.fromIterable(((Iterable<IModule>) scope.getVisibleModules())).<SModelDescriptor>translate(new ITranslator2<IModule, SModelDescriptor>() {
       public Iterable<SModelDescriptor> translate(IModule m) {
         return m.getOwnModelDescriptors();
       }
@@ -28,7 +28,7 @@ public class ConfUtil {
       public boolean accept(SModelDescriptor smd) {
         return ((smd.getModelRootManager() instanceof BaseStubModelRootManager) ?
           "conf_stub".equals(smd.getStereotype()) :
-          Sequence.<ModuleReference>fromIterable(((Iterable<ModuleReference>) smd.getSModel().importedLanguages())).contains(ConfUtil.CONF_LANG)
+          Sequence.fromIterable(((Iterable<ModuleReference>) smd.getSModel().importedLanguages())).contains(ConfUtil.CONF_LANG)
         );
       }
     }).<SModel>select(new ISelector<SModelDescriptor, SModel>() {

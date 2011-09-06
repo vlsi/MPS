@@ -19,7 +19,7 @@ public class SwitchGenUtil {
   }
 
   public static Iterable<SNode> getNodes(SNode node) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "case", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "case", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "expression", true) != null);
       }
@@ -41,10 +41,10 @@ public class SwitchGenUtil {
     }
 
     final Iterable<SNode> nodes = getNodes(node);
-    m = MapSequence.<String,Integer>fromMap(new HashMap<String, Integer>());
+    m = MapSequence.fromMap(new HashMap<String, Integer>());
     int index = 0;
     for (SNode e : nodes) {
-      MapSequence.<String,Integer>fromMap(m).put(SPropertyOperations.getString(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value"), index++);
+      MapSequence.fromMap(m).put(SPropertyOperations.getString(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value"), index++);
     }
     genContext.putTransientObject("switch" + node.getId(), m);
     return m;

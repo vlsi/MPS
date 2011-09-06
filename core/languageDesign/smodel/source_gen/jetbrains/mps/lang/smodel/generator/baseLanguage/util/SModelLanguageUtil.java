@@ -10,7 +10,7 @@ import jetbrains.mps.util.NameUtil;
 
 public class SModelLanguageUtil {
   public static SNode findNodeOperationParameter(SNode operation, SNode parameterConcept) {
-    for (SNode parameter : ListSequence.<SNode>fromList(SLinkOperations.getTargets(operation, "parameter", true))) {
+    for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(operation, "parameter", true))) {
       if (SNodeOperations.isInstanceOf(parameter, NameUtil.nodeFQName(parameterConcept))) {
         return parameter;
       }

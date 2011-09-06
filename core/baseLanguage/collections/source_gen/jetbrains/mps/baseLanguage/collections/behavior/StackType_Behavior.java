@@ -27,8 +27,8 @@ public class StackType_Behavior {
 
   public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     List<SNode> res = new ArrayList<SNode>();
-    ListSequence.<SNode>fromList(res).addElement(new StackType_Behavior.QuotationClass_pawenb_a0a0b0b().createNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
-    ListSequence.<SNode>fromList(res).addSequence(Sequence.<SNode>fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
+    ListSequence.fromList(res).addElement(new StackType_Behavior.QuotationClass_pawenb_a0a0b0b().createNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
+    ListSequence.fromList(res).addSequence(Sequence.fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
     return res;
   }
 

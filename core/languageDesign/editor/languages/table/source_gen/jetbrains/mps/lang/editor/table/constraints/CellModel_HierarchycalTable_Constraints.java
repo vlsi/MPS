@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.editor.table.behavior.CellModel_HierarchycalTable_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -45,7 +45,7 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(CellModel_HierarchycalTable_Behavior.call_getContainingConceptDeclaration_6216065619544944230(_context.getReferenceNode()))).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(CellModel_HierarchycalTable_Behavior.call_getContainingConceptDeclaration_6216065619544944230(_context.getReferenceNode()))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return !(LinkDeclaration_Behavior.call_isSingular_1213877254557(it));
               }
@@ -71,7 +71,7 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(CellModel_HierarchycalTable_Behavior.call_getContainingConceptDeclaration_6216065619544944230(_context.getReferenceNode()))).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(CellModel_HierarchycalTable_Behavior.call_getContainingConceptDeclaration_6216065619544944230(_context.getReferenceNode()))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return !(LinkDeclaration_Behavior.call_isSingular_1213877254557(it));
               }
@@ -100,7 +100,7 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
             if ((SLinkOperations.getTarget(_context.getReferenceNode(), "rowsLinkDeclaration", false) == null)) {
               return null;
             }
-            return ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), "rowsLinkDeclaration", false), "target", false))).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), "rowsLinkDeclaration", false), "target", false))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return !(LinkDeclaration_Behavior.call_isSingular_1213877254557(it));
               }

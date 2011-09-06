@@ -36,7 +36,7 @@ public class ConvertBehaviorMethodCallToLocal_MigrationScript extends BaseMigrat
       public void doUpdateInstanceNode(SNode node) {
         SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", null);
         SLinkOperations.setTarget(call, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
-        ListSequence.<SNode>fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addSequence(ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "actualArgument", true)));
+        ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)));
         SNodeOperations.replaceWithAnother(IOperation_Behavior.call_getDotExpression_1224687669172(node), call);
       }
 

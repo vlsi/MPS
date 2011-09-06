@@ -11,7 +11,7 @@ public class AlignEnum_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<AlignEnum> constants = ListSequence.<AlignEnum>fromList(AlignEnum.getConstants()).iterator();
+    Iterator<AlignEnum> constants = ListSequence.fromList(AlignEnum.getConstants()).iterator();
     while (constants.hasNext()) {
       AlignEnum constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class AlignEnum_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<AlignEnum> constants = ListSequence.<AlignEnum>fromList(AlignEnum.getConstants()).iterator();
+    Iterator<AlignEnum> constants = ListSequence.fromList(AlignEnum.getConstants()).iterator();
     while (constants.hasNext()) {
       AlignEnum constant = constants.next();
       if (value.equals(constant.getName())) {

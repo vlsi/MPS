@@ -31,9 +31,9 @@ public enum ValueType {
   }
 
   public static List<ValueType> getConstants() {
-    List<ValueType> list = ListSequence.<ValueType>fromList(new LinkedList<ValueType>());
-    ListSequence.<ValueType>fromList(list).addElement(ValueType.Quantity);
-    ListSequence.<ValueType>fromList(list).addElement(ValueType.Money);
+    List<ValueType> list = ListSequence.fromList(new LinkedList<ValueType>());
+    ListSequence.fromList(list).addElement(ValueType.Quantity);
+    ListSequence.fromList(list).addElement(ValueType.Money);
     return list;
   }
 

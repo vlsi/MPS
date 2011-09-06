@@ -22,7 +22,7 @@ public class check_DefaultSuperConstructorThrowables_NonTypesystemRule extends A
     if (ConstructorDeclaration_Behavior.call_containsImplicitSuperConstructorCall_7152041109751551503(constructorDeclaration)) {
       SNode superConstructor = ConstructorDeclaration_Behavior.call_getSuperDefaultConstructor_7152041109751601013(constructorDeclaration);
       if (superConstructor != null) {
-        Set<SNode> throwables = SetSequence.<SNode>fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(superConstructor, "throwsItem", true));
+        Set<SNode> throwables = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(superConstructor, "throwsItem", true));
         RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, SLinkOperations.getTarget(constructorDeclaration, "body", true), "uncaught exceptions in super constructor:");
       }
     }

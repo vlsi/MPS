@@ -138,7 +138,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.<Boolean>fromListAndArray(new ArrayList<Boolean>(), true, false);
+      return ListSequence.fromListAndArray(new ArrayList<Boolean>(), true, false);
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

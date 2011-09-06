@@ -24,10 +24,10 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
   }
 
   public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final List<SNode> ptypes = ListSequence.<SNode>fromList(new ArrayList<SNode>());
+    final List<SNode> ptypes = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
       final SNode T_typevar_642108346586029317 = typeCheckingContext.createNewRuntimeTypesVariable();
-      ListSequence.<SNode>fromList(ptypes).addElement(typeCheckingContext.getRepresentative(T_typevar_642108346586029317));
+      ListSequence.fromList(ptypes).addElement(typeCheckingContext.getRepresentative(T_typevar_642108346586029317));
       {
         SNode _nodeToCheck_1029348928467 = p;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2608385503904033309", 0, null);
@@ -59,8 +59,8 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
             {
               SNode pt;
               SNode fpt;
-              Iterator<SNode> pt_iterator = ListSequence.<SNode>fromList(ptypes).iterator();
-              Iterator<SNode> fpt_iterator = ListSequence.<SNode>fromList(FunctionTypeUtil.getParameterTypes(typeCheckingContext.getRepresentative(ftype_typevar_642108346586029342))).iterator();
+              Iterator<SNode> pt_iterator = ListSequence.fromList(ptypes).iterator();
+              Iterator<SNode> fpt_iterator = ListSequence.fromList(FunctionTypeUtil.getParameterTypes(typeCheckingContext.getRepresentative(ftype_typevar_642108346586029342))).iterator();
               while (true) {
                 if (!(pt_iterator.hasNext())) {
                   break;

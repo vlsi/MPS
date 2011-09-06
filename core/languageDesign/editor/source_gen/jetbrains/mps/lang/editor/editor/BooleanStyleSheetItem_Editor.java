@@ -131,7 +131,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.<String>fromListAndArray(new ArrayList<String>(), "true", "false");
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
     }
   }
 

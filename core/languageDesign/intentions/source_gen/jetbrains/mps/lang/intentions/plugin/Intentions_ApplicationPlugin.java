@@ -35,9 +35,9 @@ public class Intentions_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
-    List<BaseKeymapChanges> res = ListSequence.<BaseKeymapChanges>fromList(new ArrayList<BaseKeymapChanges>());
-    ListSequence.<BaseKeymapChanges>fromList(res).addElement(new Default_KeymapChanges());
-    ListSequence.<BaseKeymapChanges>fromList(res).addElement(new Mac_KeymapChanges());
+    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
+    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
+    ListSequence.fromList(res).addElement(new Mac_KeymapChanges());
     return res;
   }
 }

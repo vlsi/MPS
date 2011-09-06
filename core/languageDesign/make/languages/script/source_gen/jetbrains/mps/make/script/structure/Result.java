@@ -31,9 +31,9 @@ public enum Result {
   }
 
   public static List<Result> getConstants() {
-    List<Result> list = ListSequence.<Result>fromList(new LinkedList<Result>());
-    ListSequence.<Result>fromList(list).addElement(Result.success);
-    ListSequence.<Result>fromList(list).addElement(Result.failure);
+    List<Result> list = ListSequence.fromList(new LinkedList<Result>());
+    ListSequence.fromList(list).addElement(Result.success);
+    ListSequence.fromList(list).addElement(Result.failure);
     return list;
   }
 

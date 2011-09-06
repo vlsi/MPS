@@ -76,7 +76,7 @@
     <nodeInfo nodeId="2722628536111996136" fileName="GridBagConstraints_Editor.java" startLine="120" startPosition="72" endLine="121" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2722628536111996136" fileName="GridBagConstraints_Editor.java" startLine="121" startPosition="78" endLine="122" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2722628536111996136" fileName="GridBagConstraints_Editor.java" startLine="123" startPosition="10" endLine="124" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2722628536112099243" fileName="GridBagConstraints_Editor.java" startLine="131" startPosition="105" endLine="132" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722628536112099243" fileName="GridBagConstraints_Editor.java" startLine="131" startPosition="105" endLine="132" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2722628536111996136" fileName="GridBagConstraints_Editor.java" startLine="46" startPosition="87" endLine="48" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2722628536111996136" fileName="GridBagConstraints_Editor.java" startLine="66" startPosition="87" endLine="68" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2722628536111996136" fileName="GridBagConstraints_Editor.java" startLine="77" startPosition="26" endLine="79" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -109,7 +109,7 @@
     <scopeInfo nodeId="2722628536111996136" fileName="GridBagConstraints_Editor.java" startLine="39" startPosition="81" endLine="40" endPosition="80" />
     <scopeInfo nodeId="2722628536111996136" fileName="GridBagConstraints_Editor.java" startLine="40" startPosition="80" endLine="41" endPosition="81" />
     <scopeInfo nodeId="2722628536111996136" fileName="GridBagConstraints_Editor.java" startLine="95" startPosition="58" endLine="96" endPosition="53" />
-    <scopeInfo nodeId="2722628536112099242" fileName="GridBagConstraints_Editor.java" startLine="131" startPosition="105" endLine="132" endPosition="103" />
+    <scopeInfo nodeId="2722628536112099242" fileName="GridBagConstraints_Editor.java" startLine="131" startPosition="105" endLine="132" endPosition="95" />
     <scopeInfo nodeId="2722628536111996136" fileName="GridBagConstraints_Editor.java" startLine="46" startPosition="87" endLine="48" endPosition="85" />
     <scopeInfo nodeId="2722628536111996136" fileName="GridBagConstraints_Editor.java" startLine="66" startPosition="87" endLine="68" endPosition="77" />
     <scopeInfo nodeId="2722628536111996136" fileName="GridBagConstraints_Editor.java" startLine="77" startPosition="26" endLine="79" endPosition="73" />

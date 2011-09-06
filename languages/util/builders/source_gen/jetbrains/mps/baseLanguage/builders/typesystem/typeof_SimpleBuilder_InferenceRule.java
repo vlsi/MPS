@@ -20,7 +20,7 @@ public class typeof_SimpleBuilder_InferenceRule extends AbstractInferenceRule_Ru
   }
 
   public void applyRule(final SNode builder, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(builder, "argument", true)).count() != ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(builder, "declaration", false), "parameter", true)).count()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(builder, "argument", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(builder, "declaration", false), "parameter", true)).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(builder, "Wrong number of parameters", "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "4315270135340741370", null, errorTarget);
@@ -28,11 +28,11 @@ public class typeof_SimpleBuilder_InferenceRule extends AbstractInferenceRule_Ru
       return;
     }
 
-    for (int i = 0; i < ListSequence.<SNode>fromList(SLinkOperations.getTargets(builder, "argument", true)).count(); i++) {
+    for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(builder, "argument", true)).count(); i++) {
       {
-        SNode _nodeToCheck_1029348928467 = ListSequence.<SNode>fromList(SLinkOperations.getTargets(builder, "argument", true)).getElement(i);
+        SNode _nodeToCheck_1029348928467 = ListSequence.fromList(SLinkOperations.getTargets(builder, "argument", true)).getElement(i);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "4315270135340745084", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "4315270135340745046", true), (SNode) SLinkOperations.getTarget(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(builder, "declaration", false), "parameter", true)).getElement(i), "type", true), false, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "4315270135340745046", true), (SNode) SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(builder, "declaration", false), "parameter", true)).getElement(i), "type", true), false, true, _info_12389875345);
       }
     }
   }

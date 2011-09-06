@@ -313,7 +313,7 @@ public class AbstractContainerCreator_Component extends AbstractCellProvider {
   }
 
   private static boolean renderingCondition_jky4mt_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "initValue", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).count() > 0;
   }
 
   private static boolean renderingCondition_jky4mt_a3a(SNode node, EditorContext editorContext, IScope scope) {

@@ -101,11 +101,11 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
   }
 
   private static boolean renderingCondition_c9gv4j_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "member", false), "parameter", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "member", false), "parameter", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_c9gv4j_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "member", false), "parameter", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "member", false), "parameter", true)).isEmpty();
   }
 
   public static class _Inline_c9gv4j_a0a extends InlineCellProvider {

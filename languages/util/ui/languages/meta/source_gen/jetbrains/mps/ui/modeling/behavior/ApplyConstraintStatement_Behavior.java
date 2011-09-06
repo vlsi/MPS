@@ -13,7 +13,7 @@ public class ApplyConstraintStatement_Behavior {
   }
 
   public static boolean call_hasConstraint_6030013275785838176(SNode thisNode, final SNode cc) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "constraint", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "constraint", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode c) {
         return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(c, "jetbrains.mps.ui.modeling.structure.LayoutConstraintExpression"), "constraint", true)) == cc;
       }
@@ -21,7 +21,7 @@ public class ApplyConstraintStatement_Behavior {
   }
 
   public static SNode call_getConstraint_6030013275785842517(SNode thisNode, final SNode cc) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "constraint", true)).findFirst(new IWhereFilter<SNode>() {
+    return SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "constraint", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode c) {
         return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(c, "jetbrains.mps.ui.modeling.structure.LayoutConstraintExpression"), "constraint", true)) == cc;
       }

@@ -65,9 +65,9 @@ public class TestUtils {
   @NotNull
   public static Iterable<ITestNodeWrapper> wrapPointerStrings(@Nullable final Iterable<String> strings) {
     if (strings == null) {
-      return Sequence.<ITestNodeWrapper>fromIterable(Collections.<ITestNodeWrapper>emptyList());
+      return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
     }
-    return Sequence.<ITestNodeWrapper>fromClosure(new ISequenceClosure<ITestNodeWrapper>() {
+    return Sequence.fromClosure(new ISequenceClosure<ITestNodeWrapper>() {
       public Iterable<ITestNodeWrapper> iterable() {
         return new Iterable<ITestNodeWrapper>() {
           public Iterator<ITestNodeWrapper> iterator() {
@@ -87,7 +87,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_pointerString_it = Sequence.<String>fromIterable(strings).iterator();
+                      this._2_pointerString_it = Sequence.fromIterable(strings).iterator();
                     case 3:
                       if (!(this._2_pointerString_it.hasNext())) {
                         this.__CP__ = 1;
@@ -142,7 +142,7 @@ __switch__:
   }
 
   public static ClonableList nodesToCloneableList(List<SNode> nodes) {
-    return new ClonableList(ListSequence.<SNode>fromList(nodes).<String>select(new ISelector<SNode, String>() {
+    return new ClonableList(ListSequence.fromList(nodes).<String>select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return TestUtils.pointerToString(new SNodePointer(it));
       }
@@ -164,7 +164,7 @@ __switch__:
       return null;
     }
     Iterable<ITestNodeWrapper> methods = caseNodeWrapper.getTestMethods();
-    return Sequence.<ITestNodeWrapper>fromIterable(methods).findFirst(new IWhereFilter<ITestNodeWrapper>() {
+    return Sequence.fromIterable(methods).findFirst(new IWhereFilter<ITestNodeWrapper>() {
       public boolean accept(ITestNodeWrapper it) {
         return it.getName().equals(methodName);
       }
@@ -218,7 +218,7 @@ __switch__:
   }
 
   public static Iterable<ITestNodeWrapper> getModelTests(@NotNull SModel model) {
-    return ListSequence.<SNode>fromList(SModelOperations.getRoots(model, null)).<ITestNodeWrapper>select(new ISelector<SNode, ITestNodeWrapper>() {
+    return ListSequence.fromList(SModelOperations.getRoots(model, null)).<ITestNodeWrapper>select(new ISelector<SNode, ITestNodeWrapper>() {
       public ITestNodeWrapper select(SNode it) {
         return TestNodeWrapperFactory.tryToWrap(it);
       }
@@ -230,7 +230,7 @@ __switch__:
   }
 
   public static Iterable<ITestNodeWrapper> getModuleTests(@NotNull final IModule module) {
-    return Sequence.<SModelDescriptor>fromIterable(Sequence.<SModelDescriptor>fromClosure(new ISequenceClosure<SModelDescriptor>() {
+    return Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
       public Iterable<SModelDescriptor> iterable() {
         return module.getOwnModelDescriptors();
       }
@@ -246,7 +246,7 @@ __switch__:
   }
 
   public static Iterable<ITestNodeWrapper> getProjectTests(@NotNull final MPSProject project) {
-    return Sequence.<IModule>fromIterable(Sequence.<IModule>fromClosure(new ISequenceClosure<IModule>() {
+    return Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<IModule>() {
       public Iterable<IModule> iterable() {
         return project.getModules();
       }

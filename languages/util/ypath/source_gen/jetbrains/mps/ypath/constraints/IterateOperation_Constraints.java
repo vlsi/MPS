@@ -49,7 +49,7 @@ public class IterateOperation_Constraints extends BaseConstraintsDescriptor {
             } else {
               tpoe = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
             }
-            return Sequence.<SNode>fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(tpoe), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true))).toListSequence();
+            return Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(tpoe), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true))).toListSequence();
           }
 
           @Override

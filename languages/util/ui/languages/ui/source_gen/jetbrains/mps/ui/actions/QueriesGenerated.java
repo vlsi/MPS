@@ -55,24 +55,24 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_UIObjectStatement_1576918603589068320(final IOperationContext operationContext, final NodeSetupContext _context) {
     if ((_context.getSampleNode() != null)) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "viewBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "viewBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode vb) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "viewBinding", true)).addElement(SNodeOperations.detachNode(vb));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "viewBinding", true)).addElement(SNodeOperations.detachNode(vb));
         }
       });
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "controllerBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "controllerBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode cb) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "controllerBinding", true)).addElement(SNodeOperations.detachNode(cb));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "controllerBinding", true)).addElement(SNodeOperations.detachNode(cb));
         }
       });
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "compartment", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "compartment", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode cm) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "compartment", true)).addElement(SNodeOperations.detachNode(cm));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "compartment", true)).addElement(SNodeOperations.detachNode(cm));
         }
       });
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "aspect", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "aspect", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode as) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "aspect", true)).addElement(SNodeOperations.detachNode(as));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "aspect", true)).addElement(SNodeOperations.detachNode(as));
         }
       });
       SLinkOperations.setTarget(_context.getNewNode(), "uiObject", SLinkOperations.getTarget(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "uiObject", false), false);
@@ -81,24 +81,24 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_CreateUIObjectStatement_6261739386029037453(final IOperationContext operationContext, final NodeSetupContext _context) {
     if ((_context.getSampleNode() != null)) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "viewBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "viewBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode vb) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "viewBinding", true)).addElement(SNodeOperations.detachNode(vb));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "viewBinding", true)).addElement(SNodeOperations.detachNode(vb));
         }
       });
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "controllerBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "controllerBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode cb) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "controllerBinding", true)).addElement(SNodeOperations.detachNode(cb));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "controllerBinding", true)).addElement(SNodeOperations.detachNode(cb));
         }
       });
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "compartment", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "compartment", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode cm) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "compartment", true)).addElement(SNodeOperations.detachNode(cm));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "compartment", true)).addElement(SNodeOperations.detachNode(cm));
         }
       });
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "aspect", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "aspect", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode as) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "aspect", true)).addElement(SNodeOperations.detachNode(as));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "aspect", true)).addElement(SNodeOperations.detachNode(as));
         }
       });
       SLinkOperations.setTarget(_context.getNewNode(), "uiObject", SLinkOperations.getTarget(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "uiObject", false), false);
@@ -107,24 +107,24 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_AppendUIObjectStatement_1576918603589090122(final IOperationContext operationContext, final NodeSetupContext _context) {
     if ((_context.getSampleNode() != null)) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "viewBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "viewBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode vb) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "viewBinding", true)).addElement(SNodeOperations.detachNode(vb));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "viewBinding", true)).addElement(SNodeOperations.detachNode(vb));
         }
       });
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "controllerBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "controllerBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode cb) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "controllerBinding", true)).addElement(SNodeOperations.detachNode(cb));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "controllerBinding", true)).addElement(SNodeOperations.detachNode(cb));
         }
       });
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "compartment", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "compartment", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode cm) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "compartment", true)).addElement(SNodeOperations.detachNode(cm));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "compartment", true)).addElement(SNodeOperations.detachNode(cm));
         }
       });
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "aspect", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "aspect", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode as) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "aspect", true)).addElement(SNodeOperations.detachNode(as));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "aspect", true)).addElement(SNodeOperations.detachNode(as));
         }
       });
       SLinkOperations.setTarget(_context.getNewNode(), "uiObject", SLinkOperations.getTarget(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "uiObject", false), false);
@@ -133,24 +133,24 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_InsertUIObjectStatement_3091159734392475680(final IOperationContext operationContext, final NodeSetupContext _context) {
     if ((_context.getSampleNode() != null)) {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "viewBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "viewBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode vb) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "viewBinding", true)).addElement(SNodeOperations.detachNode(vb));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "viewBinding", true)).addElement(SNodeOperations.detachNode(vb));
         }
       });
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "controllerBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "controllerBinding", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode cb) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "controllerBinding", true)).addElement(SNodeOperations.detachNode(cb));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "controllerBinding", true)).addElement(SNodeOperations.detachNode(cb));
         }
       });
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "compartment", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "compartment", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode cm) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "compartment", true)).addElement(SNodeOperations.detachNode(cm));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "compartment", true)).addElement(SNodeOperations.detachNode(cm));
         }
       });
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "aspect", true)).toListSequence().visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "aspect", true)).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode as) {
-          ListSequence.<SNode>fromList(SLinkOperations.getTargets(_context.getNewNode(), "aspect", true)).addElement(SNodeOperations.detachNode(as));
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "aspect", true)).addElement(SNodeOperations.detachNode(as));
         }
       });
       SLinkOperations.setTarget(_context.getNewNode(), "uiObject", SLinkOperations.getTarget(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.ui.structure.UIObjectStatement"), "uiObject", false), false);
@@ -158,20 +158,20 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_8381258131358549267(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     final List<SNode> availableObjects;
     {
       Calculable calc = new Calculable() {
         public Object calculate() {
           final SNode ctx = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.ui.structure.UIObjectStatement", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, true, false);
           if (SNodeOperations.isInstanceOf(ctx, "jetbrains.mps.ui.structure.UIObjectStatement")) {
-            return ListSequence.<SNode>fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.ui.modeling.structure.UIObject")).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.ui.modeling.structure.UIObject")).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode uio) {
-                return !(SPropertyOperations.getBoolean(uio, "abstract")) && ((UIObject_Behavior.call_actuallyBelongsTo_1719339442171687163(uio) == null) || Sequence.<SNode>fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(SNodeOperations.as(ctx, "jetbrains.mps.ui.structure.UIObjectStatement"), "uiObject", false))).contains(UIObject_Behavior.call_actuallyBelongsTo_1719339442171687163(uio)));
+                return !(SPropertyOperations.getBoolean(uio, "abstract")) && ((UIObject_Behavior.call_actuallyBelongsTo_1719339442171687163(uio) == null) || Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(SNodeOperations.as(ctx, "jetbrains.mps.ui.structure.UIObjectStatement"), "uiObject", false))).contains(UIObject_Behavior.call_actuallyBelongsTo_1719339442171687163(uio)));
               }
             }).toListSequence();
           } else {
-            return ListSequence.<SNode>fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.ui.modeling.structure.UIObject")).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.ui.modeling.structure.UIObject")).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode uio) {
                 return !(SPropertyOperations.getBoolean(uio, "abstract"));
               }
@@ -193,7 +193,7 @@ public class QueriesGenerated {
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.<INodeSubstituteAction>fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode uios = SNodeFactoryOperations.createNewNode("jetbrains.mps.ui.structure.CreateUIObjectStatement", null);
                 SLinkOperations.setTarget(uios, "uiObject", (item), false);
@@ -224,7 +224,7 @@ public class QueriesGenerated {
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.<INodeSubstituteAction>fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode auios = SNodeFactoryOperations.createNewNode("jetbrains.mps.ui.structure.AppendUIObjectStatement", null);
                 SLinkOperations.setTarget(auios, "uiObject", (item), false);
@@ -255,7 +255,7 @@ public class QueriesGenerated {
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
-            ListSequence.<INodeSubstituteAction>fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode iuios = SNodeFactoryOperations.createNewNode("jetbrains.mps.ui.structure.InsertUIObjectStatement", null);
                 SLinkOperations.setTarget(iuios, "uiObject", (item), false);
@@ -278,12 +278,12 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_5776545240965874272(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.<INodeSubstituteAction>fromList(new ArrayList<INodeSubstituteAction>());
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.structure.CompartmentReferenceExpression");
       Calculable calculable = new Calculable() {
         public Object calculate() {
-          return Sequence.<SNode>fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.ui.structure.UIObjectType"), true), "uiObject", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+          return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.ui.structure.UIObjectType"), true), "uiObject", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode o) {
               return SLinkOperations.getTargets(o, "compartment", true);
             }
@@ -293,7 +293,7 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
-        ListSequence.<INodeSubstituteAction>fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a0a4a0a1a8().createNode(_context.getSourceNode(), (item)));
           }

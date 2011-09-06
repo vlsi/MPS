@@ -55,9 +55,9 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return !(ListSequence.<SNode>fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
+    return !(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode method) {
-        return "toString".equals(SPropertyOperations.getString(method, "name")) && ListSequence.<SNode>fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty() && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.StringType");
+        return "toString".equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty() && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.StringType");
       }
     }));
   }
@@ -65,7 +65,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     final SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     final SNode rightmostExpression;
-    SNode firstField = ListSequence.<SNode>fromList(((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))).first();
+    SNode firstField = ListSequence.fromList(((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))).first();
     SNode currentExpression = null;
     for (SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
       SNode fieldRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
@@ -82,12 +82,12 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
         currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a1a0d0e0h().createNode(fieldRef, currentExpression);
       }
     }
-    if (ListSequence.<SNode>fromList(((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))).isEmpty()) {
+    if (ListSequence.fromList(((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))).isEmpty()) {
       rightmostExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a0a5a7().createNode(SPropertyOperations.getString(classConcept, "name") + "{}");
     } else {
       rightmostExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a0a0f0h().createNode(currentExpression);
     }
-    SNode method = ListSequence.<SNode>fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateToString_Intention.QuotationClass_6enhg7_a0a0a6a7().createNode(rightmostExpression));
+    SNode method = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateToString_Intention.QuotationClass_6enhg7_a0a0a6a7().createNode(rightmostExpression));
     editorContext.select(method);
   }
 

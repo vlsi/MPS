@@ -42,7 +42,7 @@ public class add_parameter_to_InternalClassifierType_Intention extends BaseInten
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "parameter", true)).count() == 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() == 0;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

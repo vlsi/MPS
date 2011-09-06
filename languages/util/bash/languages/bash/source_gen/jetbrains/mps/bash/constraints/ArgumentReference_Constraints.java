@@ -55,16 +55,16 @@ public class ArgumentReference_Constraints extends BaseConstraintsDescriptor {
             return new ProviderGeneratedSearchScope(this, operationContext, _context) {
               public boolean isInScope(SNode checkedNode) {
                 SNode call = SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.bash.structure.ExternalCommandCall");
-                Iterable<SNode> argumentReferences = ListSequence.<SNode>fromList(SLinkOperations.getTargets(call, "refToOptions", true)).where(new IWhereFilter<SNode>() {
+                Iterable<SNode> argumentReferences = ListSequence.fromList(SLinkOperations.getTargets(call, "refToOptions", true)).where(new IWhereFilter<SNode>() {
                   public boolean accept(SNode it) {
                     return SNodeOperations.isInstanceOf(it, "jetbrains.mps.bash.structure.ArgumentReference");
                   }
                 });
-                return Sequence.<SNode>fromIterable(argumentReferences).<SNode>select(new ISelector<SNode, SNode>() {
+                return Sequence.fromIterable(argumentReferences).<SNode>select(new ISelector<SNode, SNode>() {
                   public SNode select(SNode it) {
                     return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.bash.structure.ArgumentReference"), "arg", false);
                   }
-                }).distinct().count() == Sequence.<SNode>fromIterable(argumentReferences).count();
+                }).distinct().count() == Sequence.fromIterable(argumentReferences).count();
               }
             };
           }

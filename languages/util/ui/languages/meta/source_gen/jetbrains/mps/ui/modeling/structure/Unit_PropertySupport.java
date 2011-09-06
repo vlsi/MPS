@@ -11,7 +11,7 @@ public class Unit_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<Unit> constants = ListSequence.<Unit>fromList(Unit.getConstants()).iterator();
+    Iterator<Unit> constants = ListSequence.fromList(Unit.getConstants()).iterator();
     while (constants.hasNext()) {
       Unit constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class Unit_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<Unit> constants = ListSequence.<Unit>fromList(Unit.getConstants()).iterator();
+    Iterator<Unit> constants = ListSequence.fromList(Unit.getConstants()).iterator();
     while (constants.hasNext()) {
       Unit constant = constants.next();
       if (value.equals(constant.getName())) {

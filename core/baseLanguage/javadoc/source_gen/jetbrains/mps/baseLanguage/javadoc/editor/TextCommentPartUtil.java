@@ -67,16 +67,16 @@ public class TextCommentPartUtil {
 
     SNode thisLine = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
     SNode nextLine = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", null);
-    SPropertyOperations.set(SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(nextLine, "part", true)).getElement(0), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", rightPart);
+    SPropertyOperations.set(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(nextLine, "part", true)).getElement(0), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", rightPart);
     SNodeOperations.insertNextSiblingChild(thisLine, nextLine);
 
     int indexInParent = SNodeOperations.getIndexInParent(node);
-    SPropertyOperations.set(SNodeOperations.cast(ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisLine, "part", true)).getElement(indexInParent), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", leftPart);
+    SPropertyOperations.set(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisLine, "part", true)).getElement(indexInParent), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", leftPart);
 
-    while (ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisLine, "part", true)).count() > indexInParent + 1) {
-      SNode linePart = ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisLine, "part", true)).getElement(indexInParent + 1);
+    while (ListSequence.fromList(SLinkOperations.getTargets(thisLine, "part", true)).count() > indexInParent + 1) {
+      SNode linePart = ListSequence.fromList(SLinkOperations.getTargets(thisLine, "part", true)).getElement(indexInParent + 1);
       SNodeOperations.detachNode(linePart);
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(nextLine, "part", true)).addElement(linePart);
+      ListSequence.fromList(SLinkOperations.getTargets(nextLine, "part", true)).addElement(linePart);
     }
 
     return nextLine;

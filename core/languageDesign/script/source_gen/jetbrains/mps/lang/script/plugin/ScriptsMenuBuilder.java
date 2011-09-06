@@ -19,8 +19,8 @@ public class ScriptsMenuBuilder {
 
   public ScriptsMenuBuilder(boolean applyToSelection) {
     this.applyToSelection = applyToSelection;
-    this.allLanguages = ListSequence.<Language>fromListWithValues(new ArrayList<Language>(), GlobalScope.getInstance().getVisibleLanguages());
-    ListSequence.<Language>fromList(this.allLanguages).sort(new Comparator<Language>() {
+    this.allLanguages = ListSequence.fromListWithValues(new ArrayList<Language>(), GlobalScope.getInstance().getVisibleLanguages());
+    ListSequence.fromList(this.allLanguages).sort(new Comparator<Language>() {
       public int compare(Language l1, Language l2) {
         return l1.getModuleFqName().compareTo(l2.getModuleFqName());
       }
@@ -45,7 +45,7 @@ public class ScriptsMenuBuilder {
   public BaseGroup create_ByLanguagePopup() {
     BaseGroup byLanguageGroup = new BaseGroup("By Language");
     byLanguageGroup.setPopup(true);
-    for (Language language : ListSequence.<Language>fromList(this.allLanguages)) {
+    for (Language language : ListSequence.fromList(this.allLanguages)) {
       ScriptsActionGroupHelper.populateByLanguageGroup(language, byLanguageGroup, this.applyToSelection);
     }
     return byLanguageGroup;

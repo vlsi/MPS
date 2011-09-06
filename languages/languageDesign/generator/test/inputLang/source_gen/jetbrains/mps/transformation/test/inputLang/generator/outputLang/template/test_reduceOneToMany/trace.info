@@ -376,7 +376,7 @@
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="27" startPosition="246" endLine="28" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveTfConst_b8tv7e_a0e0g" />
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="28" startPosition="246" endLine="29" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveTfConst_b8tv7e_a0h0g" />
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="29" startPosition="246" endLine="30" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveTfConst_b8tv7e_a0k0g" />
-    <nodeInfo nodeId="3893401255414163870" fileName="QueriesGenerated.java" startLine="33" startPosition="155" endLine="34" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3893401255414163870" fileName="QueriesGenerated.java" startLine="33" startPosition="155" endLine="34" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="35" startPosition="41" endLine="36" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="39" startPosition="166" endLine="40" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="41" startPosition="9" endLine="42" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -468,7 +468,7 @@
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="40" startPosition="47" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="38" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
     <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="32" startPosition="41" endLine="32" endPosition="41" />
-    <scopeInfo nodeId="3893401255414161784" fileName="QueriesGenerated.java" startLine="33" startPosition="155" endLine="34" endPosition="112" />
+    <scopeInfo nodeId="3893401255414161784" fileName="QueriesGenerated.java" startLine="33" startPosition="155" endLine="34" endPosition="105" />
     <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="35" startPosition="41" endLine="36" endPosition="199" />
     <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="45" startPosition="30" endLine="46" endPosition="19" />
     <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="50" startPosition="30" endLine="51" endPosition="59" />

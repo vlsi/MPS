@@ -16,9 +16,9 @@ public class OutputNode_TextGen extends SNodeTextGen {
     } else {
       this.append("!no text!");
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "outputChild", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "outputChild", true)).isNotEmpty()) {
       this.append(" children:{");
-      if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "outputChild", true)).isNotEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "outputChild", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "outputChild", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         }

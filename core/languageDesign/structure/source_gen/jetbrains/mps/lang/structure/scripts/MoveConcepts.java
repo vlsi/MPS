@@ -58,7 +58,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
-    SModel model = SNodeOperations.getModel(ListSequence.<SNode>fromList(refactoringContext.getSelectedNodes()).first());
+    SModel model = SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first());
     for (SNode node : refactoringContext.getSelectedNodes()) {
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
         return false;
@@ -80,7 +80,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SearchResults searchResults = new SearchResults();
-    for (SNode selNode : ListSequence.<SNode>fromList(refactoringContext.getSelectedNodes())) {
+    for (SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
       searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     }
     return searchResults;
@@ -88,7 +88,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
 
   public void doRefactor(final RefactoringContext refactoringContext) {
     List<SNode> nodes = (List<SNode>) refactoringContext.getSelectedNodes();
-    refactoringContext.setParameter("sourceModel", SNodeOperations.getModel(ListSequence.<SNode>fromList(refactoringContext.getSelectedNodes()).first()).getModelDescriptor());
+    refactoringContext.setParameter("sourceModel", SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first()).getModelDescriptor());
     Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("sourceModel")));
     Language targetLanguage = Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("targetModel")));
     List<SNode> editors = new ArrayList<SNode>();
@@ -101,7 +101,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       for (SNode node : nodes) {
         SNode editor = AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498069412(node, editorModelDescriptor.getSModel());
         if (editor != null) {
-          ListSequence.<SNode>fromList(editors).addElement(editor);
+          ListSequence.fromList(editors).addElement(editor);
         }
       }
     }
@@ -111,7 +111,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       for (SNode node : nodes) {
         SNode behavior = AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498069412(node, behaviorModelDescriptor.getSModel());
         if (behavior != null) {
-          ListSequence.<SNode>fromList(behaviors).addElement(behavior);
+          ListSequence.fromList(behaviors).addElement(behavior);
         }
       }
     }
@@ -121,7 +121,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       for (SNode node : nodes) {
         SNode constraint = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498069412(node, constraintsModelDescriptor.getSModel()), "jetbrains.mps.lang.constraints.structure.ConceptConstraints");
         if (constraint != null) {
-          ListSequence.<SNode>fromList(constraints).addElement(constraint);
+          ListSequence.fromList(constraints).addElement(constraint);
         }
       }
     }
@@ -131,7 +131,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       for (SNode node : nodes) {
         SNode dataFlow = AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498069412(node, dataflowModelDescriptor.getSModel());
         if (dataFlow != null) {
-          ListSequence.<SNode>fromList(dataFlows).addElement(dataFlow);
+          ListSequence.fromList(dataFlows).addElement(dataFlow);
         }
       }
     }
@@ -140,7 +140,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       refactoringContext.changeFeatureName(node, ((SModelDescriptor) refactoringContext.getParameter("targetModel")).getSModelReference().getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
     }
     refactoringContext.moveNodesToModel(nodes, ((SModelDescriptor) refactoringContext.getParameter("targetModel")).getSModel());
-    if (ListSequence.<SNode>fromList(editors).isNotEmpty()) {
+    if (ListSequence.fromList(editors).isNotEmpty()) {
       refactoringContext.updateByDefault(editorModelDescriptor.getSModel());
       SModelDescriptor targetEditorModelDescriptor = targetLanguage.getEditorModelDescriptor();
       if (targetEditorModelDescriptor == null) {
@@ -150,7 +150,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       refactoringContext.moveNodesToModel(editors, editorModel);
       refactoringContext.updateByDefault(editorModel);
     }
-    if (ListSequence.<SNode>fromList(behaviors).isNotEmpty()) {
+    if (ListSequence.fromList(behaviors).isNotEmpty()) {
       refactoringContext.updateByDefault(behaviorModelDescriptor.getSModel());
       SModelDescriptor targetBehaviorModelDescriptor = targetLanguage.getBehaviorModelDescriptor();
       if (targetBehaviorModelDescriptor == null) {
@@ -160,7 +160,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       refactoringContext.moveNodesToModel(behaviors, behaviorModel);
       refactoringContext.updateByDefault(behaviorModel);
     }
-    if (ListSequence.<SNode>fromList(constraints).isNotEmpty()) {
+    if (ListSequence.fromList(constraints).isNotEmpty()) {
       refactoringContext.updateByDefault(constraintsModelDescriptor.getSModel());
       SModelDescriptor targetConstraintsModelDescriptor = targetLanguage.getConstraintsModelDescriptor();
       if (targetConstraintsModelDescriptor == null) {
@@ -170,7 +170,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       refactoringContext.moveNodesToModel(constraints, constraintsModel);
       refactoringContext.updateByDefault(constraintsModel);
     }
-    if (ListSequence.<SNode>fromList(dataFlows).isNotEmpty()) {
+    if (ListSequence.fromList(dataFlows).isNotEmpty()) {
       refactoringContext.updateByDefault(dataflowModelDescriptor.getSModel());
       SModelDescriptor targetDataFlowModelDescriptor = targetLanguage.getDataFlowModelDescriptor();
       if (targetDataFlowModelDescriptor == null) {
@@ -184,7 +184,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    Map<IModule, List<SModel>> result = MapSequence.<IModule,List<SModel>>fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float) 0.75, false));
+    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float) 0.75, false));
     Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("sourceModel")));
     if (sourceLanguage != null) {
       MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
@@ -205,7 +205,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
   }
 
   public List<IChooseComponent> getChooseComponents(final RefactoringContext refactoringContext) {
-    List<IChooseComponent> components = ListSequence.<IChooseComponent>fromList(new ArrayList<IChooseComponent>());
+    List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
     {
       IChooseComponent<SModelDescriptor> chooseComponent;
       chooseComponent = new ChooseModelDescriptorComponent(refactoringContext.getCurrentOperationContext());
@@ -213,7 +213,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       chooseComponent.setPropertyName("targetModel");
       chooseComponent.setCaption("choose target model");
       chooseComponent.initComponent();
-      ListSequence.<IChooseComponent>fromList(components).addElement(chooseComponent);
+      ListSequence.fromList(components).addElement(chooseComponent);
     }
     return components;
   }

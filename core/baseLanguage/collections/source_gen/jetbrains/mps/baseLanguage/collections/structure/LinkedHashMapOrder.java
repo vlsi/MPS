@@ -31,9 +31,9 @@ public enum LinkedHashMapOrder {
   }
 
   public static List<LinkedHashMapOrder> getConstants() {
-    List<LinkedHashMapOrder> list = ListSequence.<LinkedHashMapOrder>fromList(new LinkedList<LinkedHashMapOrder>());
-    ListSequence.<LinkedHashMapOrder>fromList(list).addElement(LinkedHashMapOrder.insertion_order);
-    ListSequence.<LinkedHashMapOrder>fromList(list).addElement(LinkedHashMapOrder.access_order);
+    List<LinkedHashMapOrder> list = ListSequence.fromList(new LinkedList<LinkedHashMapOrder>());
+    ListSequence.fromList(list).addElement(LinkedHashMapOrder.insertion_order);
+    ListSequence.fromList(list).addElement(LinkedHashMapOrder.access_order);
     return list;
   }
 

@@ -207,7 +207,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_bqk3nx_a4a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "throwsType", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsType", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_bqk3nx_a6a(SNode node, EditorContext editorContext, IScope scope) {

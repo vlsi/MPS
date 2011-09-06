@@ -42,7 +42,7 @@ public class MakeGeneric_Intention extends BaseIntention implements Intention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() == 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() == 0;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

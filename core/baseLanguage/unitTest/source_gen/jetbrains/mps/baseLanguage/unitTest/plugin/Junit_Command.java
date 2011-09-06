@@ -88,13 +88,13 @@ public class Junit_Command {
       throw new ExecutionException("Tests to run are null.");
     }
     Tuples._2<List<ITestNodeWrapper>, TestRunParameters> testsToRun = Junit_Command.getTestsToRunWithParameters(tests);
-    if (ListSequence.<ITestNodeWrapper>fromList(testsToRun._0()).isEmpty()) {
+    if (ListSequence.fromList(testsToRun._0()).isEmpty()) {
       throw new ExecutionException("Could not find tests to run.");
     }
-    return new Java_Command().setVirtualMachineParameter(IterableUtils.join(ListSequence.<String>fromList(testsToRun._1().getVmParameters()), " ") + ((StringUtils.isNotEmpty(myVirtualMachineParameter) ?
+    return new Java_Command().setVirtualMachineParameter(IterableUtils.join(ListSequence.fromList(testsToRun._1().getVmParameters()), " ") + ((StringUtils.isNotEmpty(myVirtualMachineParameter) ?
       " " + myVirtualMachineParameter :
       ""
-    ))).setDebuggerSettings(myDebuggerSettings).setClassPath(ListSequence.<String>fromList(testsToRun._1().getClassPath()).union(ListSequence.<String>fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setProgramParameter(Junit_Command.getProgramParameters(testsToRun._0())).createProcess(testsToRun._1().getTestRunner());
+    ))).setDebuggerSettings(myDebuggerSettings).setClassPath(ListSequence.fromList(testsToRun._1().getClassPath()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setProgramParameter(Junit_Command.getProgramParameters(testsToRun._0())).createProcess(testsToRun._1().getTestRunner());
   }
 
   public static IDebugger getDebugger() {
@@ -105,17 +105,17 @@ public class Junit_Command {
     final Wrappers._T<List<String>> testsCommandLine = new Wrappers._T<List<String>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        testsCommandLine.value = ListSequence.<String>fromList(new ArrayList<String>(ListSequence.<ITestNodeWrapper>fromList(tests).count()));
-        for (ITestNodeWrapper test : ListSequence.<ITestNodeWrapper>fromList(tests)) {
-          List<String> parametersPart = ListSequence.<String>fromListAndArray(new ArrayList<String>(), (test.isTestCase() ?
+        testsCommandLine.value = ListSequence.fromList(new ArrayList<String>(ListSequence.fromList(tests).count()));
+        for (ITestNodeWrapper test : ListSequence.fromList(tests)) {
+          List<String> parametersPart = ListSequence.fromListAndArray(new ArrayList<String>(), (test.isTestCase() ?
             "-c" :
             "-m"
           ), test.getFqName());
-          ListSequence.<String>fromList(testsCommandLine.value).addSequence(ListSequence.<String>fromList(parametersPart));
+          ListSequence.fromList(testsCommandLine.value).addSequence(ListSequence.fromList(parametersPart));
         }
       }
     });
-    return IterableUtils.join(ListSequence.<String>fromList(testsCommandLine.value), " ");
+    return IterableUtils.join(ListSequence.fromList(testsCommandLine.value), " ");
   }
 
   private static Tuples._2<List<ITestNodeWrapper>, TestRunParameters> getTestsToRunWithParameters(@NotNull List<ITestNodeWrapper> tests) throws ExecutionException {
@@ -123,23 +123,23 @@ public class Junit_Command {
     final Wrappers._T<TestRunParameters> runParams = new Wrappers._T<TestRunParameters>();
     final Wrappers._T<List<ITestNodeWrapper>> testsToRun = new Wrappers._T<List<ITestNodeWrapper>>();
     final Wrappers._T<String> skipped = new Wrappers._T<String>();
-    _tests.value = ListSequence.<ITestNodeWrapper>fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
+    _tests.value = ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
       public boolean accept(ITestNodeWrapper it) {
         return it != null;
       }
     }).toListSequence();
-    if (ListSequence.<ITestNodeWrapper>fromList(_tests.value).isEmpty()) {
-      return MultiTuple.<List<ITestNodeWrapper>,TestRunParameters>from(ListSequence.<ITestNodeWrapper>fromList(new ArrayList<ITestNodeWrapper>()), new TestRunParameters());
+    if (ListSequence.fromList(_tests.value).isEmpty()) {
+      return MultiTuple.<List<ITestNodeWrapper>,TestRunParameters>from(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), new TestRunParameters());
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        runParams.value = ListSequence.<ITestNodeWrapper>fromList(_tests.value).first().getTestRunParameters();
-        testsToRun.value = ListSequence.<ITestNodeWrapper>fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
+        runParams.value = ListSequence.fromList(_tests.value).first().getTestRunParameters();
+        testsToRun.value = ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
           public boolean accept(ITestNodeWrapper it) {
             return eq_yo2c7x_a0a0a0a0a0a0b0a0a0a0g0c(it.getTestRunParameters(), runParams.value);
           }
         }).toListSequence();
-        skipped.value = IterableUtils.join(ListSequence.<ITestNodeWrapper>fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
+        skipped.value = IterableUtils.join(ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
           public boolean accept(ITestNodeWrapper it) {
             return neq_yo2c7x_a0a0a0a0a0a0a2a0a0a0a6a2(it.getTestRunParameters(), runParams.value);
           }
@@ -157,7 +157,7 @@ public class Junit_Command {
   }
 
   private static List<String> getClasspath(final List<ITestNodeWrapper> tests) {
-    final Set<IModule> uniqueModules = SetSequence.<IModule>fromSet(new HashSet<IModule>());
+    final Set<IModule> uniqueModules = SetSequence.fromSet(new HashSet<IModule>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (ITestNodeWrapper testable : tests) {
@@ -166,11 +166,11 @@ public class Junit_Command {
         }
       }
     });
-    Set<String> classpath = SetSequence.<String>fromSet(new LinkedHashSet<String>());
+    Set<String> classpath = SetSequence.fromSet(new LinkedHashSet<String>());
     for (IModule module : uniqueModules) {
-      SetSequence.fromSet(classpath).addSequence(ListSequence.<String>fromList(Java_Command.getClasspath(module, true)));
+      SetSequence.fromSet(classpath).addSequence(ListSequence.fromList(Java_Command.getClasspath(module, true)));
     }
-    return SetSequence.<String>fromSet(classpath).toListSequence();
+    return SetSequence.fromSet(classpath).toListSequence();
   }
 
   public static IDebuggerConfiguration getDebuggerConfiguration() {

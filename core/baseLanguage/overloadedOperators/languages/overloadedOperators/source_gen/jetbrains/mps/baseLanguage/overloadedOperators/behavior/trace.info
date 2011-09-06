@@ -13,13 +13,13 @@
   <root nodeId="1141736782992984502">
     <nodeInfo nodeId="1141736782992986318" fileName="CustomOperatorUsage_Behavior.java" startLine="18" startPosition="89" endLine="19" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1141736782992986333" fileName="CustomOperatorUsage_Behavior.java" startLine="19" startPosition="48" endLine="20" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1141736782993465854" fileName="CustomOperatorUsage_Behavior.java" startLine="21" startPosition="40" endLine="22" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1141736782993465854" fileName="CustomOperatorUsage_Behavior.java" startLine="21" startPosition="40" endLine="22" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1141736782992986474" fileName="CustomOperatorUsage_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="14" startPosition="43" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1141736782992986380" fileName="CustomOperatorUsage_Behavior.java" startLine="20" startPosition="194" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getVisibleCustomOperators_1141736782992984505#(Ljetbrains/mps/smodel/SModel;)Ljava/util/List;" />
     <scopeInfo nodeId="1141736782992984504" fileName="CustomOperatorUsage_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1141736782992986381" fileName="CustomOperatorUsage_Behavior.java" startLine="21" startPosition="40" endLine="22" endPosition="149" />
+    <scopeInfo nodeId="1141736782992986381" fileName="CustomOperatorUsage_Behavior.java" startLine="21" startPosition="40" endLine="22" endPosition="135" />
     <scopeInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="14" startPosition="43" endLine="17" endPosition="0" />
     <scopeInfo nodeId="1141736782992986380" fileName="CustomOperatorUsage_Behavior.java" startLine="20" startPosition="194" endLine="23" endPosition="5">
       <varInfo nodeId="1141736782992986405" varName="container" />

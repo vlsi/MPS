@@ -20,17 +20,17 @@ public class IfStatement_Behavior {
     if (SNodeOperations.isInstanceOf(ifFalseStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
       SLinkOperations.setTarget(result, "statementList", SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true)), true);
     } else {
-      ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(result, "statementList", true), "statement", true)).addElement(SNodeOperations.copyNode(ifFalseStatement));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(result, "statementList", true), "statement", true)).addElement(SNodeOperations.copyNode(ifFalseStatement));
     }
     SNodeOperations.detachNode(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true));
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "elsifClauses", true)).addElement(result);
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elsifClauses", true)).addElement(result);
   }
 
   public static boolean call_isGuardIf_1237547453258(SNode thisNode) {
-    if ((SLinkOperations.getTarget(thisNode, "ifFalseStatement", true) != null) || ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "elsifClauses", true)).isNotEmpty()) {
+    if ((SLinkOperations.getTarget(thisNode, "ifFalseStatement", true) != null) || ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elsifClauses", true)).isNotEmpty()) {
       return false;
     }
-    if (ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "ifTrue", true), "statement", true)).count() != 1 || !(StatementList_Behavior.call_isOneLiner_1237538811451(SLinkOperations.getTarget(thisNode, "ifTrue", true)))) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "ifTrue", true), "statement", true)).count() != 1 || !(StatementList_Behavior.call_isOneLiner_1237538811451(SLinkOperations.getTarget(thisNode, "ifTrue", true)))) {
       return false;
     }
 
@@ -41,7 +41,7 @@ public class IfStatement_Behavior {
       return true;
     }
 
-    SNode onlyStatement = ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "ifTrue", true), "statement", true)).first();
+    SNode onlyStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "ifTrue", true), "statement", true)).first();
     return Statement_Behavior.call_isGuardClauseStatement_1237547327995(onlyStatement);
   }
 
@@ -56,7 +56,7 @@ public class IfStatement_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "ifFalseStatement", true) != null)) {
       Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383134223(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true), throwables, ignoreMayBeThrowables);
     }
-    for (SNode elseIfClause : ListSequence.<SNode>fromList(SLinkOperations.getTargets(thisNode, "elsifClauses", true))) {
+    for (SNode elseIfClause : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elsifClauses", true))) {
       StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(elseIfClause, "statementList", true), throwables, ignoreMayBeThrowables);
       if (!(ignoreMayBeThrowables)) {
         Statement_Behavior.collectUncaughtMethodThrowables_5412515780383112967(throwables, SLinkOperations.getTarget(elseIfClause, "condition", true));

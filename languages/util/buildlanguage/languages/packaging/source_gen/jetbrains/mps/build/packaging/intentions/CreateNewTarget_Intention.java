@@ -48,7 +48,7 @@ public class CreateNewTarget_Intention extends BaseIntention implements Intentio
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode targetDeclaration = SNodeFactoryOperations.createNewNode("jetbrains.mps.buildlanguage.structure.TargetDeclaration", null);
-    ListSequence.<SNode>fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "project", false), "target", true)).addElement(targetDeclaration);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "project", false), "target", true)).addElement(targetDeclaration);
     SLinkOperations.setTarget(node, "targetDeclaration", targetDeclaration, false);
     MPSEditorOpener opener = editorContext.getOperationContext().getProject().getComponent(MPSEditorOpener.class);
     opener.openNode(targetDeclaration);

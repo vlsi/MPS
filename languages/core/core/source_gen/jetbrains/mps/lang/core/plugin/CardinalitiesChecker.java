@@ -27,14 +27,14 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
 
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     component.addDependency(concept);
-    for (SNode link : ListSequence.<SNode>fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
+    for (SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
       if (StringUtils.isEmpty(SPropertyOperations.getString(link, "role"))) {
         continue;
       }
       component.addDependency(link);
       if (LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(link)) {
         if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
-          if (ListSequence.<SNode>fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
+          if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
             // TODO this is a hack for constructor declarations 
             if ("returnType".equals(SPropertyOperations.getString(link, "role")) && "ConstructorDeclaration".equals(SPropertyOperations.getString(concept, "name"))) {
               continue;
@@ -43,13 +43,13 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
           }
         } else {
           if ((SLinkOperations.getTargetNode(SNodeOperations.getReference(node, link)) == null)) {
-            SetSequence.<SNode>fromSet(new HashSet<SNode>());
+            SetSequence.fromSet(new HashSet<SNode>());
             component.addError(node, "No reference in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is 1)", null, new ReferenceMessageTarget(SPropertyOperations.getString(link, "role")));
           }
         }
       } else if (LinkDeclaration_Behavior.call_isSingular_1213877254557(link)) {
-        if (ListSequence.<SNode>fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
-          component.addError(node, ListSequence.<SNode>fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", null);
+        if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
+          component.addError(node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", null);
         }
       }
     }

@@ -81,7 +81,7 @@ public class HasAnnotation_AnnotationComponent extends AbstractCellProvider {
   }
 
   private static boolean renderingCondition_85xxz0_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.<SNode>fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static class annotationListHandler_85xxz0_a0 extends RefNodeListHandler {
