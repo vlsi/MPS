@@ -13,8 +13,9 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import junit.framework.TestCase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public enum TestNodeWrapperFactory {
   LanguageTestCaseNodeWrapperFactory() {
@@ -170,24 +171,52 @@ public enum TestNodeWrapperFactory {
     return null;
   }
 
-  public static Iterable<SNode> getWrappedConcepts() {
-    return Sequence.fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values())).<SNode>select(new ISelector<TestNodeWrapperFactory, SNode>() {
-      public SNode select(TestNodeWrapperFactory it) {
-        return it.getWrappedConcept();
-      }
-    }).distinct();
-  }
-
-  public static Iterable<SNode> getWrappedRootConcepts() {
+  private static Iterable<SNode> getWrappedConcepts(final _FunctionTypes._return_P1_E0<? extends Boolean, ? super TestNodeWrapperFactory> condition) {
     return Sequence.fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values())).where(new IWhereFilter<TestNodeWrapperFactory>() {
       public boolean accept(TestNodeWrapperFactory it) {
-        return it.isRoot();
+        return condition.invoke(it);
       }
     }).<SNode>select(new ISelector<TestNodeWrapperFactory, SNode>() {
       public SNode select(TestNodeWrapperFactory it) {
         return it.getWrappedConcept();
       }
     }).distinct();
+  }
+
+  public static Iterable<SNode> getWrappedConcepts() {
+    return getWrappedConcepts(new _FunctionTypes._return_P1_E0<Boolean, TestNodeWrapperFactory>() {
+      public Boolean invoke(TestNodeWrapperFactory factory) {
+        return true;
+      }
+    });
+  }
+
+  public static Iterable<SNode> getWrappedRootConcepts() {
+    return getWrappedConcepts(new _FunctionTypes._return_P1_E0<Boolean, TestNodeWrapperFactory>() {
+      public Boolean invoke(TestNodeWrapperFactory factory) {
+        return factory.isRoot();
+      }
+    });
+  }
+
+  public static Iterable<SNode> getWrappedNonRootConcepts() {
+    return getWrappedConcepts(new _FunctionTypes._return_P1_E0<Boolean, TestNodeWrapperFactory>() {
+      public Boolean invoke(TestNodeWrapperFactory factory) {
+        return !(factory.isRoot());
+      }
+    });
+  }
+
+  public static SNode findWrappableAncestor(SNode source, boolean isRoot) {
+    Iterable<SNode> concepts = (isRoot ?
+      TestNodeWrapperFactory.getWrappedRootConcepts() :
+      TestNodeWrapperFactory.getWrappedNonRootConcepts()
+    );
+    return SNodeOperations.getAncestorWhereConceptInList(source, Sequence.fromIterable(concepts).<String>select(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return INamedConcept_Behavior.call_getFqName_1213877404258(it);
+      }
+    }).toGenericArray(String.class), true, isRoot);
   }
 
   private static SNode check_kl7j79_a0a0c0a0b2(SNode checkedDotOperand) {
