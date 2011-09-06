@@ -2060,9 +2060,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.MPSItemProvider" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.matcher.matchers.DefaultMatcher" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.base.FakePsiContext" />
+    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.modules.BaseModuleItem" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.modules.BaseModuleModel" />
     <classNode dependClassName="org.apache.commons.logging.Log" />

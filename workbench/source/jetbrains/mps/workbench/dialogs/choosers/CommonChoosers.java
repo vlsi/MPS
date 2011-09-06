@@ -28,9 +28,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.actions.goTo.MPSItemProvider;
-import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
-import jetbrains.mps.workbench.actions.goTo.matcher.matchers.DefaultMatcher;
+import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
+import jetbrains.mps.workbench.actions.goTo.matcher.matchers.IdeaMatcher;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
@@ -138,7 +137,7 @@ public class CommonChoosers {
       }
     };
 
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, new MPSItemProvider(new DefaultMatcher(goToNodeModel, new FakePsiContext())), new FakePsiContext());
+    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -173,7 +172,7 @@ public class CommonChoosers {
       }
     };
 
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, new MPSItemProvider(DefaultMatcherFactory.createAllMatcher(goToModelModel)), new FakePsiContext());
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -214,7 +213,7 @@ public class CommonChoosers {
         return (ModuleReference[]) modules.toArray();
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModuleModel, new MPSItemProvider(DefaultMatcherFactory.createAllMatcher(goToModuleModel)),new FakePsiContext() );
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModuleModel);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

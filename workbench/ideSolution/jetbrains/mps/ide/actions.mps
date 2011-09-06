@@ -126,6 +126,7 @@
   <import index="hp43" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ui(MPS.Classpath/com.intellij.ui@java_stub)" version="-1" />
   <import index="jwig" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project.structure.project(MPS.Classpath/jetbrains.mps.project.structure.project@java_stub)" version="-1" />
   <import index="6uv" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.actions.goTo.matcher.matchers(MPS.Classpath/jetbrains.mps.workbench.actions.goTo.matcher.matchers@java_stub)" version="-1" />
+  <import index="j08o" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench.actions.goTo.matcher(MPS.Classpath/jetbrains.mps.workbench.actions.goTo.matcher@java_stub)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -16062,55 +16063,23 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1402666617209535715">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1402666617209535716">
-            <property name="name" nameId="tpck.1169194664001" value="fpc" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1402666617209535717">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2kq0.~FakePsiContext" resolveInfo="FakePsiContext" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1402666617209535718">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1402666617209535719">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2kq0.~FakePsiContext%d&lt;init&gt;()" resolveInfo="FakePsiContext" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2777079932569210251">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2777079932569210252">
             <property name="name" nameId="tpck.1169194664001" value="popup" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1402666617209495478">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bsou.~ChooseByNamePopup" resolveInfo="ChooseByNamePopup" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1402666617209535734">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="bsou.~ChooseByNamePopup" resolveInfo="ChooseByNamePopup" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bsou.~ChooseByNamePopup%dcreatePopup(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dide%dutil%dgotoByName%dChooseByNameModel,com%dintellij%dpsi%dPsiElement,java%dlang%dString)%ccom%dintellij%dide%dutil%dgotoByName%dChooseByNamePopup" resolveInfo="createPopup" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1402666617209535735">
-                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1402666617209535736" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1402666617209535737">
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7193245081074854584">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="j08o.~MpsPopupFactory%dcreatePackagePopup(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dide%dutil%dgotoByName%dChooseByNameModel)%ccom%dintellij%dide%dutil%dgotoByName%dChooseByNamePopup" resolveInfo="createPackagePopup" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="j08o.~MpsPopupFactory" resolveInfo="MpsPopupFactory" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7193245081074854585">
+                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7193245081074854586" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="7193245081074854587">
                   <link role="member" roleId="tp4f.1205756909548" targetNodeId="2777079932569210487" resolveInfo="project" />
                 </node>
               </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1402666617209535738">
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7193245081074854588">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2777079932569140022" resolveInfo="baseSolutionModel" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1402666617209535739">
-                <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1402666617209535740">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lj90.~MPSItemProvider%d&lt;init&gt;(jetbrains%dmps%dworkbench%dactions%dgoTo%dmatcher%dEntityMatcher)" resolveInfo="MPSItemProvider" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1402666617209535741">
-                    <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1402666617209535742">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6uv.~DefaultMatcher%d&lt;init&gt;(com%dintellij%dide%dutil%dgotoByName%dChooseByNameModel,com%dintellij%dpsi%dPsiElement)" resolveInfo="DefaultMatcher" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1402666617209535743">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2777079932569140022" resolveInfo="baseSolutionModel" />
-                      </node>
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1402666617209535744">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1402666617209535716" resolveInfo="fpc" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1402666617209535745">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1402666617209535716" resolveInfo="fpc" />
               </node>
             </node>
           </node>

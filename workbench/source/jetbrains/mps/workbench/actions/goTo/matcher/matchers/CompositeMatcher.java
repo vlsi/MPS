@@ -16,7 +16,6 @@
 package jetbrains.mps.workbench.actions.goTo.matcher.matchers;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
 
 import java.util.HashSet;
 import java.util.Set;

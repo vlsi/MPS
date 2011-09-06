@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.workbench.actions.goTo;
+package jetbrains.mps.workbench.actions.goTo.matcher;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.temp.ChooseByNameBase;
 import com.intellij.ide.util.gotoByName.temp.ItemProvider;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
+import jetbrains.mps.workbench.actions.goTo.matcher.matchers.EntityMatcher;
 
 import java.util.*;
 

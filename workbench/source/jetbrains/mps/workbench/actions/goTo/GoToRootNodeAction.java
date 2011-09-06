@@ -29,7 +29,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
-import jetbrains.mps.workbench.actions.goTo.matcher.matchers.DefaultMatcher;
+import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
+import jetbrains.mps.workbench.actions.goTo.matcher.matchers.IdeaMatcher;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 
@@ -64,10 +65,10 @@ public class GoToRootNodeAction extends BaseAction {
           return nodes.toArray(new SNode[0]);
         }
       };
-      popup = ChooseByNamePopup.createPopup(project, baseNodeModel, new MPSItemProvider(new DefaultMatcher(baseNodeModel, new FakePsiContext())), new FakePsiContext());
+      popup = MpsPopupFactory.createNodePopup(project, baseNodeModel);
     } else {
       MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex());
-      popup = ChooseByNamePopup.createPopup(project, chooseSNodeResult,new MPSItemProvider(new DefaultMatcher(chooseSNodeResult, new FakePsiContext())), new FakePsiContext());
+      popup = MpsPopupFactory.createNodePopup(project, chooseSNodeResult);
     }
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {

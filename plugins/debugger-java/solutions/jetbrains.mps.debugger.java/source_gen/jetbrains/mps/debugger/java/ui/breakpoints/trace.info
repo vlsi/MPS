@@ -200,69 +200,64 @@
     <unitInfo nodeId="742486944792816688" fileName="ChooseFromStubsByNameModel.java" startLine="27" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.debugger.java.ui.breakpoints.ChooseFromStubsByNameModel" />
   </root>
   <root nodeId="742486944792820722">
-    <nodeInfo nodeId="742486944792820725" fileName="StubsClassChooserDialog.java" startLine="18" startPosition="66" endLine="19" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
-    <nodeInfo nodeId="742486944792820728" fileName="StubsClassChooserDialog.java" startLine="19" startPosition="47" endLine="20" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
-    <nodeInfo nodeId="742486944792820731" fileName="StubsClassChooserDialog.java" startLine="20" startPosition="28" endLine="21" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="742486944792820742" fileName="StubsClassChooserDialog.java" startLine="23" startPosition="89" endLine="24" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="742486944792820868" fileName="StubsClassChooserDialog.java" startLine="27" startPosition="45" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792820875" fileName="StubsClassChooserDialog.java" startLine="33" startPosition="53" endLine="34" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792820879" fileName="StubsClassChooserDialog.java" startLine="39" startPosition="49" endLine="40" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742486944792820788" fileName="StubsClassChooserDialog.java" startLine="46" startPosition="43" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792820797" fileName="StubsClassChooserDialog.java" startLine="50" startPosition="31" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792820803" fileName="StubsClassChooserDialog.java" startLine="55" startPosition="26" endLine="56" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742486944792820818" fileName="StubsClassChooserDialog.java" startLine="60" startPosition="22" endLine="61" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="742486944792820831" fileName="StubsClassChooserDialog.java" startLine="62" startPosition="32" endLine="63" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742486944792820838" fileName="StubsClassChooserDialog.java" startLine="64" startPosition="5" endLine="65" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742486944792820853" fileName="StubsClassChooserDialog.java" startLine="69" startPosition="82" endLine="70" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792820861" fileName="StubsClassChooserDialog.java" startLine="72" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="742486944792820826" fileName="StubsClassChooserDialog.java" startLine="61" startPosition="89" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="742486944792820793" fileName="StubsClassChooserDialog.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelected#()Ljava/lang/String;" />
-    <nodeInfo nodeId="742486944792820751" fileName="StubsClassChooserDialog.java" startLine="25" startPosition="48" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="742486944792820762" fileName="StubsClassChooserDialog.java" startLine="31" startPosition="108" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowListForEmptyPattern#()Z" />
-    <nodeInfo nodeId="742486944792820776" fileName="StubsClassChooserDialog.java" startLine="37" startPosition="62" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="elementChosen#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="742486944792820784" fileName="StubsClassChooserDialog.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="742486944792820799" fileName="StubsClassChooserDialog.java" startLine="53" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCancel#()V" />
-    <nodeInfo nodeId="742486944792820849" fileName="StubsClassChooserDialog.java" startLine="67" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
-    <nodeInfo nodeId="742486944792820745" fileName="StubsClassChooserDialog.java" startLine="24" startPosition="27" endLine="30" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742486944792820756" fileName="StubsClassChooserDialog.java" startLine="30" startPosition="6" endLine="36" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742486944792820769" fileName="StubsClassChooserDialog.java" startLine="36" startPosition="6" endLine="42" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742486944792820814" fileName="StubsClassChooserDialog.java" startLine="58" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onOk#()V" />
-    <nodeInfo nodeId="742486944792820734" fileName="StubsClassChooserDialog.java" startLine="22" startPosition="0" endLine="43" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StubsClassChooserDialog#(Ljava/awt/Frame;Ljava/lang/String;)V" />
-    <scopeInfo nodeId="742486944792820867" fileName="StubsClassChooserDialog.java" startLine="27" startPosition="45" endLine="28" endPosition="58" />
-    <scopeInfo nodeId="742486944792820874" fileName="StubsClassChooserDialog.java" startLine="33" startPosition="53" endLine="34" endPosition="21" />
-    <scopeInfo nodeId="742486944792820878" fileName="StubsClassChooserDialog.java" startLine="39" startPosition="49" endLine="40" endPosition="15" />
-    <scopeInfo nodeId="742486944792820787" fileName="StubsClassChooserDialog.java" startLine="46" startPosition="43" endLine="47" endPosition="30" />
-    <scopeInfo nodeId="742486944792820796" fileName="StubsClassChooserDialog.java" startLine="50" startPosition="31" endLine="51" endPosition="22" />
-    <scopeInfo nodeId="742486944792820802" fileName="StubsClassChooserDialog.java" startLine="55" startPosition="26" endLine="56" endPosition="14" />
-    <scopeInfo nodeId="742486944792820830" fileName="StubsClassChooserDialog.java" startLine="62" startPosition="32" endLine="63" endPosition="54" />
-    <scopeInfo nodeId="742486944792820852" fileName="StubsClassChooserDialog.java" startLine="69" startPosition="82" endLine="70" endPosition="77" />
-    <scopeInfo nodeId="742486944792820861" fileName="StubsClassChooserDialog.java" startLine="72" startPosition="0" endLine="74" endPosition="0">
+    <nodeInfo nodeId="742486944792820725" fileName="StubsClassChooserDialog.java" startLine="17" startPosition="66" endLine="18" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="742486944792820728" fileName="StubsClassChooserDialog.java" startLine="18" startPosition="47" endLine="19" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelected" />
+    <nodeInfo nodeId="742486944792820731" fileName="StubsClassChooserDialog.java" startLine="19" startPosition="28" endLine="20" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="742486944792820742" fileName="StubsClassChooserDialog.java" startLine="22" startPosition="89" endLine="23" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="742486944792820868" fileName="StubsClassChooserDialog.java" startLine="26" startPosition="45" endLine="27" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7193245081074915444" fileName="StubsClassChooserDialog.java" startLine="29" startPosition="6" endLine="30" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742486944792820879" fileName="StubsClassChooserDialog.java" startLine="33" startPosition="49" endLine="34" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742486944792820788" fileName="StubsClassChooserDialog.java" startLine="40" startPosition="43" endLine="41" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792820797" fileName="StubsClassChooserDialog.java" startLine="44" startPosition="31" endLine="45" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792820803" fileName="StubsClassChooserDialog.java" startLine="49" startPosition="26" endLine="50" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742486944792820818" fileName="StubsClassChooserDialog.java" startLine="54" startPosition="22" endLine="55" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="742486944792820831" fileName="StubsClassChooserDialog.java" startLine="56" startPosition="32" endLine="57" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742486944792820838" fileName="StubsClassChooserDialog.java" startLine="58" startPosition="5" endLine="59" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742486944792820853" fileName="StubsClassChooserDialog.java" startLine="63" startPosition="82" endLine="64" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792820861" fileName="StubsClassChooserDialog.java" startLine="66" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="742486944792820826" fileName="StubsClassChooserDialog.java" startLine="55" startPosition="89" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="742486944792820793" fileName="StubsClassChooserDialog.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelected#()Ljava/lang/String;" />
+    <nodeInfo nodeId="742486944792820751" fileName="StubsClassChooserDialog.java" startLine="24" startPosition="48" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="742486944792820776" fileName="StubsClassChooserDialog.java" startLine="31" startPosition="62" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="elementChosen#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="742486944792820784" fileName="StubsClassChooserDialog.java" startLine="38" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="742486944792820799" fileName="StubsClassChooserDialog.java" startLine="47" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCancel#()V" />
+    <nodeInfo nodeId="742486944792820849" fileName="StubsClassChooserDialog.java" startLine="61" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
+    <nodeInfo nodeId="742486944792820745" fileName="StubsClassChooserDialog.java" startLine="23" startPosition="27" endLine="29" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742486944792820769" fileName="StubsClassChooserDialog.java" startLine="30" startPosition="67" endLine="36" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742486944792820814" fileName="StubsClassChooserDialog.java" startLine="52" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onOk#()V" />
+    <nodeInfo nodeId="742486944792820734" fileName="StubsClassChooserDialog.java" startLine="21" startPosition="0" endLine="37" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StubsClassChooserDialog#(Ljava/awt/Frame;Ljava/lang/String;)V" />
+    <scopeInfo nodeId="742486944792820867" fileName="StubsClassChooserDialog.java" startLine="26" startPosition="45" endLine="27" endPosition="58" />
+    <scopeInfo nodeId="742486944792820878" fileName="StubsClassChooserDialog.java" startLine="33" startPosition="49" endLine="34" endPosition="15" />
+    <scopeInfo nodeId="742486944792820787" fileName="StubsClassChooserDialog.java" startLine="40" startPosition="43" endLine="41" endPosition="30" />
+    <scopeInfo nodeId="742486944792820796" fileName="StubsClassChooserDialog.java" startLine="44" startPosition="31" endLine="45" endPosition="22" />
+    <scopeInfo nodeId="742486944792820802" fileName="StubsClassChooserDialog.java" startLine="49" startPosition="26" endLine="50" endPosition="14" />
+    <scopeInfo nodeId="742486944792820830" fileName="StubsClassChooserDialog.java" startLine="56" startPosition="32" endLine="57" endPosition="54" />
+    <scopeInfo nodeId="742486944792820852" fileName="StubsClassChooserDialog.java" startLine="63" startPosition="82" endLine="64" endPosition="77" />
+    <scopeInfo nodeId="742486944792820861" fileName="StubsClassChooserDialog.java" startLine="66" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="742486944792820864" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792820793" fileName="StubsClassChooserDialog.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="742486944792820751" fileName="StubsClassChooserDialog.java" startLine="25" startPosition="48" endLine="30" endPosition="0">
+    <scopeInfo nodeId="742486944792820793" fileName="StubsClassChooserDialog.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="742486944792820751" fileName="StubsClassChooserDialog.java" startLine="24" startPosition="48" endLine="29" endPosition="0">
       <varInfo nodeId="742486944792820754" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792820762" fileName="StubsClassChooserDialog.java" startLine="31" startPosition="108" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="742486944792820776" fileName="StubsClassChooserDialog.java" startLine="37" startPosition="62" endLine="42" endPosition="0">
+    <scopeInfo nodeId="742486944792820776" fileName="StubsClassChooserDialog.java" startLine="31" startPosition="62" endLine="36" endPosition="0">
       <varInfo nodeId="742486944792820779" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792820784" fileName="StubsClassChooserDialog.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="742486944792820799" fileName="StubsClassChooserDialog.java" startLine="53" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="742486944792820817" fileName="StubsClassChooserDialog.java" startLine="60" startPosition="22" endLine="65" endPosition="14">
+    <scopeInfo nodeId="742486944792820784" fileName="StubsClassChooserDialog.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="742486944792820799" fileName="StubsClassChooserDialog.java" startLine="47" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="742486944792820817" fileName="StubsClassChooserDialog.java" startLine="54" startPosition="22" endLine="59" endPosition="14">
       <varInfo nodeId="742486944792820819" varName="chosenElement" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792820849" fileName="StubsClassChooserDialog.java" startLine="67" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="742486944792820814" fileName="StubsClassChooserDialog.java" startLine="58" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="742486944792820741" fileName="StubsClassChooserDialog.java" startLine="23" startPosition="89" endLine="42" endPosition="39" />
-    <scopeInfo nodeId="742486944792820734" fileName="StubsClassChooserDialog.java" startLine="22" startPosition="0" endLine="43" endPosition="3">
+    <scopeInfo nodeId="742486944792820849" fileName="StubsClassChooserDialog.java" startLine="61" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="742486944792820814" fileName="StubsClassChooserDialog.java" startLine="52" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="742486944792820741" fileName="StubsClassChooserDialog.java" startLine="22" startPosition="89" endLine="36" endPosition="39" />
+    <scopeInfo nodeId="742486944792820734" fileName="StubsClassChooserDialog.java" startLine="21" startPosition="0" endLine="37" endPosition="3">
       <varInfo nodeId="742486944792820739" varName="text" />
       <varInfo nodeId="742486944792820737" varName="mainFrame" />
     </scopeInfo>
-    <unitInfo nodeId="742486944792820750" fileName="StubsClassChooserDialog.java" startLine="25" startPosition="18" endLine="30" endPosition="5" unitName="jetbrains.mps.debugger.java.ui.breakpoints.StubsClassChooserDialog$1" />
-    <unitInfo nodeId="742486944792820761" fileName="StubsClassChooserDialog.java" startLine="31" startPosition="18" endLine="36" endPosition="5" unitName="jetbrains.mps.debugger.java.ui.breakpoints.StubsClassChooserDialog$2" />
-    <unitInfo nodeId="742486944792820775" fileName="StubsClassChooserDialog.java" startLine="37" startPosition="23" endLine="42" endPosition="5" unitName="jetbrains.mps.debugger.java.ui.breakpoints.StubsClassChooserDialog$3" />
-    <unitInfo nodeId="742486944792820722" fileName="StubsClassChooserDialog.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.debugger.java.ui.breakpoints.StubsClassChooserDialog" />
+    <unitInfo nodeId="742486944792820750" fileName="StubsClassChooserDialog.java" startLine="24" startPosition="18" endLine="29" endPosition="5" unitName="jetbrains.mps.debugger.java.ui.breakpoints.StubsClassChooserDialog$1" />
+    <unitInfo nodeId="742486944792820775" fileName="StubsClassChooserDialog.java" startLine="31" startPosition="23" endLine="36" endPosition="5" unitName="jetbrains.mps.debugger.java.ui.breakpoints.StubsClassChooserDialog$2" />
+    <unitInfo nodeId="742486944792820722" fileName="StubsClassChooserDialog.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.debugger.java.ui.breakpoints.StubsClassChooserDialog" />
   </root>
   <root nodeId="742486944792833383">
     <nodeInfo nodeId="742486944792833386" fileName="ExceptionChooserDialog.java" startLine="14" startPosition="69" endLine="15" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThrowableClassifier" />

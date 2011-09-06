@@ -8,7 +8,6 @@ import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
 import javax.swing.JComponent;
@@ -28,12 +27,7 @@ public abstract class StubsClassChooserDialog extends BaseDialog {
         return StubsClassChooserDialog.this.isValid(node);
       }
     };
-    myPanel = new SmartChooseByNamePanel(myModel, false, DefaultMatcherFactory.createIdeaMatcher(myModel)) {
-      @Override
-      protected boolean isShowListForEmptyPattern() {
-        return false;
-      }
-    };
+    myPanel = SmartChooseByNamePanel.createForNode(myModel, false);
     myPanel.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
       public void elementChosen(Object element) {

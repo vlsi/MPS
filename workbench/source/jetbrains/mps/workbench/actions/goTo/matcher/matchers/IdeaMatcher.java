@@ -27,20 +27,19 @@ import com.intellij.psi.util.proximity.PsiProximityComparator;
 import com.intellij.util.Function;
 import com.intellij.util.SmartList;
 import com.intellij.util.containers.ContainerUtil;
-import jetbrains.mps.workbench.actions.goTo.MPSItemProvider;
-import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
+import jetbrains.mps.workbench.actions.goTo.matcher.MPSItemProvider;
 
 import java.lang.ref.WeakReference;
 import java.util.*;
 
-public class DefaultMatcher implements EntityMatcher {
+public class IdeaMatcher implements EntityMatcher {
   private ChooseByNameModel myModel;
   private WeakReference<PsiElement> myContext;
 
   private String myPattern = null;
   private NameUtil.Matcher myMatcher = null;
 
-  public DefaultMatcher(ChooseByNameModel model, PsiElement context) {
+  public IdeaMatcher(ChooseByNameModel model, PsiElement context) {
     myModel = model;
     myContext = new WeakReference<PsiElement>(context);
   }

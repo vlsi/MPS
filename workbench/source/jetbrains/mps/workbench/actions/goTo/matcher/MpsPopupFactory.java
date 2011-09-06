@@ -16,30 +16,23 @@
 package jetbrains.mps.workbench.actions.goTo.matcher;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.actions.goTo.matcher.matchers.CompositeMatcher;
-import jetbrains.mps.workbench.actions.goTo.matcher.matchers.DefaultMatcher;
+import jetbrains.mps.workbench.actions.goTo.matcher.matchers.IdeaMatcher;
 import jetbrains.mps.workbench.actions.goTo.matcher.matchers.MPSMatcher;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 
-public class DefaultMatcherFactory {
-  public static EntityMatcher createMPSMatcher(ChooseByNameModel model) {
-    return new MPSMatcher(model) {
-      protected boolean canShowListForEmptyPattern() {
-        return false;
-      }
-    };
+public abstract class MpsPopupFactory {
+  private static final FakePsiContext CONTEXT = new FakePsiContext();
+
+  public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m) {
+    return ChooseByNamePopup.createPopup(p, m, new MPSItemProvider(new IdeaMatcher(m, CONTEXT)), CONTEXT);
   }
 
-  public static EntityMatcher createIdeaMatcher(ChooseByNameModel model) {
-    return new DefaultMatcher(model, new FakePsiContext()) {
-      protected boolean canShowListForEmptyPattern() {
-        return false;
-      }
-    };
-
-  }
-
-  public static EntityMatcher createAllMatcher(ChooseByNameModel model) {
-    return new CompositeMatcher(createMPSMatcher(model), createIdeaMatcher(model));
+  public static ChooseByNamePopup createPackagePopup(Project p, ChooseByNameModel m) {
+    MPSMatcher mpsMatcher = new MPSMatcher(m);
+    IdeaMatcher ideaMatcher = new IdeaMatcher(m, CONTEXT);
+    return ChooseByNamePopup.createPopup(p, m, new MPSItemProvider(new CompositeMatcher(mpsMatcher, ideaMatcher)), CONTEXT);
   }
 }

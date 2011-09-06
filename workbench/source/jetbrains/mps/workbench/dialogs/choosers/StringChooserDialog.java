@@ -86,7 +86,7 @@ class StringChooserDialog extends BaseDialog {
       }
     };
 
-    myChooser = new SmartChooseByNamePanel(goToStringModel, false);
+    myChooser = SmartChooseByNamePanel.createForNode(goToStringModel, false);
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {

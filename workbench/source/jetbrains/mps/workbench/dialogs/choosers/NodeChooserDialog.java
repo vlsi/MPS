@@ -82,7 +82,7 @@ class NodeChooserDialog extends BaseDialog {
       }
     };
 
-    myChooser = new SmartChooseByNamePanel(goToNodeModel, false);
+    myChooser = SmartChooseByNamePanel.createForNode(goToNodeModel, false);
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {

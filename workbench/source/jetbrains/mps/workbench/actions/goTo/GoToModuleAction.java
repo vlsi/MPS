@@ -30,7 +30,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
+import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
@@ -67,7 +67,7 @@ public class GoToModuleAction extends BaseAction {
         return modules.toArray(new ModuleReference[modules.size()]);
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModuleModel, new MPSItemProvider(DefaultMatcherFactory.createAllMatcher(goToModuleModel)), new FakePsiContext());
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModuleModel);
 
     popup.invoke(new NavigateCallback(), ModalityState.current(), true);
   }

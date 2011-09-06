@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import org.jetbrains.annotations.Nullable;
@@ -97,7 +96,7 @@ class ModelChooserDialog extends BaseDialog {
       }
     };
 
-    myChooser = new SmartChooseByNamePanel(goToModelModel, !myNonProjectModels.isEmpty(), DefaultMatcherFactory.createAllMatcher(goToModelModel));
+    myChooser = SmartChooseByNamePanel.createForPackage(goToModelModel, !myNonProjectModels.isEmpty());
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {

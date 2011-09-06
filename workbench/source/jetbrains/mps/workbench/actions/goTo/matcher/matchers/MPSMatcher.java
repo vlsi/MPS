@@ -17,13 +17,12 @@ package jetbrains.mps.workbench.actions.goTo.matcher.matchers;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 
 import java.util.Set;
 
-public abstract class MPSMatcher extends DefaultMatcher implements EntityMatcher {
-  protected MPSMatcher(ChooseByNameModel model) {
+public class MPSMatcher extends IdeaMatcher implements EntityMatcher {
+  public MPSMatcher(ChooseByNameModel model) {
     super(model, new FakePsiContext());
   }
 
