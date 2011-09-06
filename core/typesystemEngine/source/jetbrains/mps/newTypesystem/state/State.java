@@ -20,7 +20,7 @@ import com.intellij.openapi.util.Pair;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.SimpleErrorReporter;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -360,9 +360,8 @@ public class State {
           if (node != null) {
             SNode concept = node.getConceptDeclarationNode();
             if (!SConceptPropertyOperations.getBoolean(concept, "abstract")) {
-              SimpleErrorReporter errorReporter = new SimpleErrorReporter(node, "argument of WHEN CONCRETE block is never concrete",
-                wCBlock.getNodeModel(), wCBlock.getNodeId());
-              myTypeCheckingContext.reportMessage(node, errorReporter);
+              myTypeCheckingContext.reportWarning(node, "argument of WHEN CONCRETE block is never concrete",
+                wCBlock.getNodeModel(), wCBlock.getNodeId(), null, new NodeMessageTarget());
             }
           }
         }
