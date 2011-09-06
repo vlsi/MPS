@@ -44,6 +44,7 @@ public class Inequalities {  //
   private static final SubTypingRelation subTypingRelation = new SubTypingRelation();
 
   private boolean solvingInProcess = false;
+  private boolean mySolveOnlyGreater = true;
 
   public void setSolvingInProcess(boolean solvingInProcess) {
     this.solvingInProcess = solvingInProcess;
@@ -99,6 +100,7 @@ public class Inequalities {  //
 
   public void solveRelations() {
     solvingInProcess = true;
+    mySolveOnlyGreater = true;
     List<RelationBlock> inequalities = getRelationsToSolve();
  //   initializeMaps(inequalities);
     initializeMapsInc(inequalities);
@@ -273,6 +275,10 @@ public class Inequalities {  //
       usedNodes.add(current);
       //myInputsToOutputsInc.clearFirst(current);
     }
+    if (!mySolveOnlyGreater) {
+      mySolveOnlyGreater = true;
+      return true;
+    }
     //last chance
     for (RelationBlock inequality : inequalities) {
       if (!(TypesUtil.isVariable(inequality.getLeftNode()) && TypesUtil.isVariable(inequality.getRightNode()))) {
@@ -329,6 +335,9 @@ public class Inequalities {  //
     Set<SNode> leftTypes = new LinkedHashSet<SNode>();
 
     collectNodesInRelation(node, leftTypes, rightTypes, blocks, typesToBlocks);
+    if (mySolveOnlyGreater) {
+      rightTypes = new LinkedHashSet<SNode>();
+    }
     return relation.solve(node, leftTypes, rightTypes, myState, typesToBlocks);
   }
 
