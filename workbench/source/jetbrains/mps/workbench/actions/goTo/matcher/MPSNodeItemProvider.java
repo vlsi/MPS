@@ -30,4 +30,8 @@ public class MPSNodeItemProvider extends IdeaItemProvider {
   public String getNamePattern(String pattern) {
     return pattern;
   }
+
+  public String getQualifierPattern(String pattern) {
+    return "";
+  }
 }

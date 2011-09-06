@@ -113,7 +113,7 @@ public class IdeaItemProvider implements ItemProvider {
     Collections.sort(sameNameElements, new PathProximityComparator(myBase.getModel(), myContext.get()));
   }
 
-  private String getQualifierPattern(String pattern) {
+  public String getQualifierPattern(String pattern) {
     final String[] separators = myBase.getModel().getSeparators();
     int lastSeparatorOccurence = 0;
     for (String separator : separators) {
