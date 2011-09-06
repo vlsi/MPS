@@ -26,22 +26,26 @@ public abstract class MpsPopupFactory {
   private static final FakePsiContext CONTEXT = new FakePsiContext();
 
   public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m) {
-    return ChooseByNamePopup.createPopup(p, m, new IdeaItemProvider(CONTEXT), CONTEXT);
+    return ChooseByNamePopup.createPopup(p, m, nodeProvider(), CONTEXT);
   }
 
   public static ChooseByNamePopup createPackagePopup(Project p, ChooseByNameModel m) {
-    return ChooseByNamePopup.createPopup(p, m, allProvider(), CONTEXT);
+    return ChooseByNamePopup.createPopup(p, m, packageProvider(), CONTEXT);
   }
 
   public static ChooseByNamePanel createPanelForNode(ChooseByNameModel model, boolean checkboxVisible) {
-    return new ChooseByNamePanel(model,checkboxVisible, new IdeaItemProvider(CONTEXT));
+    return new ChooseByNamePanel(model, checkboxVisible, nodeProvider());
   }
 
   public static ChooseByNamePanel createPanelForPackage(ChooseByNameModel model, boolean checkboxVisible) {
-    return new ChooseByNamePanel(model,checkboxVisible, allProvider());
+    return new ChooseByNamePanel(model, checkboxVisible, packageProvider());
   }
 
-  private static ItemProvider allProvider() {
-    return new CompositeItemProvider(new MPSItemProvider(CONTEXT), new IdeaItemProvider(CONTEXT));
+  private static ItemProvider nodeProvider() {
+    return new CompositeItemProvider(new MPSNodeItemProvider(CONTEXT), new IdeaItemProvider(CONTEXT));
+  }
+
+  private static ItemProvider packageProvider() {
+    return new CompositeItemProvider(new MPSPackageItemProvider(CONTEXT), new IdeaItemProvider(CONTEXT));
   }
 }

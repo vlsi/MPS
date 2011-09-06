@@ -22,22 +22,12 @@ import com.intellij.psi.PsiElement;
 
 import java.util.List;
 
-public class MPSItemProvider extends IdeaItemProvider {
-  public MPSItemProvider(PsiElement context) {
+public class MPSNodeItemProvider extends IdeaItemProvider {
+  public MPSNodeItemProvider(PsiElement context) {
     super(context);
   }
 
-  public List<Object> filterElements(String pattern, boolean everywhere, Computable<Boolean> cancelled, int maxListSize, String extra) {
-    return super.filterElements(transformPattern(pattern), everywhere, cancelled, maxListSize, extra);
-  }
-
-  public List<String> getNamesByPattern(String[] names, String pattern) {
-    return super.getNamesByPattern(names, transformPattern(pattern));
-  }
-
-  private String transformPattern(String pattern) {
-    if ("".equals(pattern)) return "*";
-    if (pattern.endsWith(" ")) return pattern;
-    else return pattern + ".*";
+  public String getNamePattern(String pattern) {
+    return pattern;
   }
 }
