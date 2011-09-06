@@ -76,7 +76,14 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
     public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
       String classname = referenceInfo;
       int dotIndex = classname.lastIndexOf(".");
-      if (dotIndex >= 0) {
+      if (dotIndex >= 0 && myModel.getSModelReference().equals(targetModelReference)) {
+        // try local nested classes 
+        List<SNode> localClassifiers = ClassifiersCache.getInstance(myModel.getModelDescriptor()).getClassifiersByRefName(classname);
+        if (ListSequence.fromList(localClassifiers).count() >= 1) {
+          return ListSequence.fromList(localClassifiers).first();
+        }
+
+        // search everywhere 
         String package_ = classname.substring(0, dotIndex);
         classname = classname.substring(dotIndex + 1);
         return resolveClass(package_, null, classname);
