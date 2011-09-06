@@ -17,5 +17,4 @@ fi
 
 mkdir $mps_home/help
 export ANT_OPTS=-Xmx1024m
-export HOME="$mps_home/build/home"
-ant -f MPS-external-dist.xml -Dmps_home=$mps_home -Dbuild.number=28 -Dversion=EAP -Dbuild.vcs.number=222 -Dteamcity.buildConfName=Local -Dcompile.debug=true -Dbuild.compiler=org.eclipse.jdt.core.JDTCompilerAdapter -Dant.build.javac.source=1.6 -Dant.build.javac.target=1.6 universal.single
+ant -f MPS-external-dist.xml -Dmps_home=$mps_home -Dbuild.number=28 -Dversion=EAP -Dbuild.vcs.number=222 -Dteamcity.buildConfName=Local universal.single
