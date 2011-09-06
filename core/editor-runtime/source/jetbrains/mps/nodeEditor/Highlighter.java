@@ -30,6 +30,7 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.project.MPSProject;
@@ -269,6 +270,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     if (ApplicationManager.getApplication().isDisposed()) {
       return;
     }
+    if (IMakeService.INSTANCE.get().isSessionActive()) {
+      return;
+    }
     // SwingUtilities.invokeLater(new Runnable() {
     //   public void run() {
 
@@ -473,7 +477,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     boolean anyMessageChanged = false;
     for (final BaseEditorChecker checker : checkersToRecheck) {
       final LinkedHashSet<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
-      boolean changed = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      boolean changed = runLoPrioRead(new Computable<Boolean>() {
         public Boolean compute() {
           if (myStopThread) return false;
 
@@ -534,6 +538,27 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
 
     return anyMessageChanged;
+  }
+
+  private static <T> T runLoPrioRead(final Computable<T> computable) {
+    T result;
+    do {
+      while (IMakeService.INSTANCE.get().isSessionActive()) {
+        try {
+          Thread.sleep(600);
+        } catch (InterruptedException e) {
+        }
+      }
+      result = ModelAccess.instance().runReadAction(new Computable<T>() {
+        @Override
+        public T compute() {
+          if (IMakeService.INSTANCE.get().isSessionActive() || ModelAccess.instance().hasScheduledWrites()) return null;
+          return computable.compute();
+        }
+      });
+    } while (result == null);
+
+    return result;
   }
 
   private class HighlighterThread extends Thread {

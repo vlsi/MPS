@@ -31,7 +31,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   private static ModelAccess ourInstance = new DefaultModelAccess();
 
   private final boolean allowSharedRead;
-  private final ReentrantReadWriteLock myReadWriteLock = new ReentrantReadWriteLock(true);
+  private final ReentrantReadWriteLockEx myReadWriteLock = new ReentrantReadWriteLockEx();
 
   /* support of temporary downgrading write lock to shared read lock */
   protected final ReentrantReadWriteLock mySharedReadInWriteLock = new ReentrantReadWriteLock();
@@ -65,6 +65,10 @@ public abstract class ModelAccess implements ModelCommandExecutor {
 
   protected Lock getWriteLock() {
     return myReadWriteLock.writeLock();
+  }
+
+  public boolean hasScheduledWrites() {
+    return myReadWriteLock.hasScheduledWrites();
   }
 
   @Override
@@ -184,5 +188,16 @@ public abstract class ModelAccess implements ModelCommandExecutor {
 
   private boolean isReadEnabledFlag () {
     return Boolean.TRUE == myReadEnabledFlag.get();
+  }
+
+  private static class ReentrantReadWriteLockEx extends ReentrantReadWriteLock {
+
+    public ReentrantReadWriteLockEx() {
+      super(true);
+    }
+
+    public boolean hasScheduledWrites() {
+      return !this.getQueuedWriterThreads().isEmpty();
+    }
   }
 }
