@@ -26,6 +26,8 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.actions.goTo.matcher.ChooseByNamePanel;
+import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 
@@ -38,7 +40,7 @@ import java.util.List;
 
 class NodeChooserDialog extends BaseDialog {
   private List<SNode> myNodes = new ArrayList<SNode>();
-  private SmartChooseByNamePanel myChooser;
+  private ChooseByNamePanel myChooser;
   private boolean myIsCancelled = true;
   private boolean myOkDone = false;
 
@@ -82,7 +84,7 @@ class NodeChooserDialog extends BaseDialog {
       }
     };
 
-    myChooser = SmartChooseByNamePanel.createForNode(goToNodeModel, false);
+    myChooser = MpsPopupFactory.createPanelForNode(goToNodeModel, false);
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {

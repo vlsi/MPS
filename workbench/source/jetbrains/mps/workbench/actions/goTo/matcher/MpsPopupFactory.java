@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.actions.goTo.matcher;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
+import com.intellij.ide.util.gotoByName.temp.IdeaItemProvider;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.actions.goTo.matcher.matchers.CompositeMatcher;
 import jetbrains.mps.workbench.actions.goTo.matcher.matchers.IdeaMatcher;
@@ -31,8 +32,20 @@ public abstract class MpsPopupFactory {
   }
 
   public static ChooseByNamePopup createPackagePopup(Project p, ChooseByNameModel m) {
-    MPSMatcher mpsMatcher = new MPSMatcher(m);
-    IdeaMatcher ideaMatcher = new IdeaMatcher(m, CONTEXT);
-    return ChooseByNamePopup.createPopup(p, m, new MPSItemProvider(new CompositeMatcher(mpsMatcher, ideaMatcher)), CONTEXT);
+    MPSItemProvider provider = allProvider(m);
+    return ChooseByNamePopup.createPopup(p, m, provider, CONTEXT);
+  }
+
+  public static ChooseByNamePanel createPanelForNode(ChooseByNameModel model, boolean checkboxVisible) {
+    return new ChooseByNamePanel(model,checkboxVisible, new IdeaItemProvider(CONTEXT));
+  }
+
+  public static ChooseByNamePanel createPanelForPackage(ChooseByNameModel model, boolean checkboxVisible) {
+    MPSItemProvider provider = allProvider(model);
+    return new ChooseByNamePanel(model,checkboxVisible, provider);
+  }
+
+  private static MPSItemProvider allProvider(ChooseByNameModel m) {
+    return new MPSItemProvider(new CompositeMatcher(new MPSMatcher(m), new IdeaMatcher(m, CONTEXT)));
   }
 }

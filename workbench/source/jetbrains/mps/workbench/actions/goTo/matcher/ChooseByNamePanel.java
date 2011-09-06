@@ -13,20 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.dialogs.choosers;
+package jetbrains.mps.workbench.actions.goTo.matcher;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
-import com.intellij.ide.util.gotoByName.temp.IdeaItemProvider;
 import com.intellij.ide.util.gotoByName.temp.ItemProvider;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.actions.goTo.matcher.MPSItemProvider;
-import jetbrains.mps.workbench.actions.goTo.matcher.matchers.CompositeMatcher;
-import jetbrains.mps.workbench.actions.goTo.matcher.matchers.EntityMatcher;
-import jetbrains.mps.workbench.actions.goTo.matcher.matchers.IdeaMatcher;
-import jetbrains.mps.workbench.actions.goTo.matcher.matchers.MPSMatcher;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 
 import javax.swing.JComponent;
@@ -36,22 +30,11 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.util.List;
 
-public class SmartChooseByNamePanel extends ChooseByNamePopup {
+public class ChooseByNamePanel extends ChooseByNamePopup {
   private JPanel myPanel;
   private boolean myCheckboxVisible = false;
 
-  public static SmartChooseByNamePanel createForNode(ChooseByNameModel model, boolean checkboxVisible) {
-    return new SmartChooseByNamePanel(model,checkboxVisible, new IdeaItemProvider(new FakePsiContext()));
-  }
-
-  public static SmartChooseByNamePanel createForPackage(ChooseByNameModel model, boolean checkboxVisible) {
-    MPSMatcher mpsMatcher = new MPSMatcher(model);
-    IdeaMatcher ideaMatcher = new IdeaMatcher(model, new FakePsiContext());
-    MPSItemProvider provider = new MPSItemProvider(new CompositeMatcher(mpsMatcher, ideaMatcher));
-    return new SmartChooseByNamePanel(model,checkboxVisible, provider);
-  }
-
-  private SmartChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible, ItemProvider provider) {
+  ChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible, ItemProvider provider) {
     super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, provider, null, new FakePsiContext(), "");
     myCheckboxVisible = checkboxVisible;
   }
