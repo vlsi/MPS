@@ -229,8 +229,8 @@ public class Inequalities {
     if (myNodesInc.size() == 0) {
       return false;
     }
-    if (chooseVarAndSolve(mySolvableLeft)) return true;
     if (chooseVarAndSolve(mySolvableRight)) return true;
+    if (chooseVarAndSolve(mySolvableLeft)) return true;
     if (lastChance(inequalities)) return true;
     return false;
   }
