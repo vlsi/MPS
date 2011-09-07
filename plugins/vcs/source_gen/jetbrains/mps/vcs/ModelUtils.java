@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jdom.Document;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import java.io.ByteArrayOutputStream;
 import jetbrains.mps.util.JDOMUtil;
@@ -41,9 +42,9 @@ public class ModelUtils {
 
   public static byte[] modelToBytes(final SModel result) {
     final Wrappers._T<Document> document = new Wrappers._T<Document>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        document.value = ModelPersistence.saveModel(result);
+    ModelAccess.instance().runReadAction(new Computable<Document>() {
+      public Document compute() {
+        return document.value = ModelPersistence.saveModel(result);
       }
     });
     ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -133,7 +134,7 @@ public class ModelUtils {
   }
 
   public static SModel readModel(final byte[] bytes, String path) throws IOException {
-    return ModelUtils.readModel((bytes.length == 0 ?
+    return readModel((bytes.length == 0 ?
       null :
       new ModelUtils.InputSourceFactory() {
         public InputSource create() throws IOException {
@@ -144,7 +145,7 @@ public class ModelUtils {
   }
 
   public static SModel readModel(final String content, String path) throws IOException {
-    return ModelUtils.readModel((content.isEmpty() ?
+    return readModel((content.isEmpty() ?
       null :
       new ModelUtils.InputSourceFactory() {
         public InputSource create() throws IOException {
@@ -155,29 +156,11 @@ public class ModelUtils {
   }
 
   public static SModel readModel(final String path) throws IOException {
-    final FileInputStream stream = new FileInputStream(path);
-    try {
-      return ModelUtils.readModel(new ModelUtils.InputSourceFactory() {
-        public InputSource create() throws IOException {
-          return new InputSource(stream);
-        }
-      }, path);
-    } finally {
-      stream.close();
-    }
+    return readModel(new File(path));
   }
 
   public static SModel readModel(final File file) throws IOException {
-    final FileInputStream stream = new FileInputStream(file);
-    try {
-      return ModelUtils.readModel(new ModelUtils.InputSourceFactory() {
-        public InputSource create() throws IOException {
-          return new InputSource(stream);
-        }
-      }, file.getAbsolutePath());
-    } finally {
-      stream.close();
-    }
+    return readModel(com.intellij.openapi.util.io.FileUtil.loadFileBytes(file), file.getAbsolutePath());
   }
 
   private static SModel readModel(final ModelUtils.InputSourceFactory inputSourceFactory, String path) throws IOException {
