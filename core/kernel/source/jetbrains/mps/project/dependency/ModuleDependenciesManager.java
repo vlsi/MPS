@@ -132,13 +132,5 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
         }
       }
     }
-
-    for (Language l : getAllUsedLanguages()) {
-      for (Solution s : l.getExportedSolutions()) {
-        if (!dependencies.contains(s)){
-          s.getDependenciesManager().collectVisibleModules(dependencies, true);
-        }
-      }
-    }
   }
 }
