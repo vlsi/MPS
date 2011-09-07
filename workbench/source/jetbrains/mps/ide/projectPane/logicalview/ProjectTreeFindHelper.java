@@ -31,6 +31,7 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.dependency.LanguageDependenciesManager;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
@@ -272,8 +273,8 @@ public abstract class ProjectTreeFindHelper {
 
     //runtime models in languages
     for (Language l : project.getProjectModules(Language.class)) {
-      for (IModule depModule : ((LanguageDependenciesManager) l.getDependenciesManager()).getRuntimeDependOnModules()) {
-        if (depModule.getModuleReference().equals(mainModule.getModuleReference())) return owner;
+      for (ModuleReference depModule : l.getRuntimeModulesReferences()) {
+        if (depModule.equals(mainModule.getModuleReference())) return owner;
       }
     }
 

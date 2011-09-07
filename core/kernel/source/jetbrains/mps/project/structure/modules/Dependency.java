@@ -25,6 +25,15 @@ public class Dependency {
   private ModuleReference myModuleRef;
   private boolean myReexport;
 
+  public Dependency() {
+
+  }
+
+  public Dependency(ModuleReference ref, boolean reexport) {
+    myModuleRef = ref;
+    myReexport = reexport;
+  }
+
   @NotNull
   public ModuleReference getModuleRef() {
     return myModuleRef;

@@ -18,10 +18,8 @@ package jetbrains.mps.project.dependency;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -86,8 +84,8 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
   protected void collectAllCompileTimeDependenciesInUsedLanguage(Language l, /* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime) {
     for (Language language : l.getAllExtendedLanguages()) {
       if (language == null) continue;
-      for (Dependency dep : language.getRuntimeDependencies()) {
-        IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+      for (ModuleReference dep : language.getRuntimeModulesReferences()) {
+        IModule m = MPSModuleRepository.getInstance().getModule(dep);
         if (m == null) continue;
         if (!dependencies.contains(m)) {
           m.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);

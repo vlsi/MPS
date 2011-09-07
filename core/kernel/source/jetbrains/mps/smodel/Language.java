@@ -248,10 +248,14 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public List<Dependency> getRuntimeDependencies() {
+  public List<ModuleReference> getRuntimeModulesReferences() {
     LanguageDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return new ArrayList<Dependency>();
-    return Collections.unmodifiableList(descriptor.getRuntimeModules());
+    if (descriptor == null) return Collections.emptyList();
+    List<ModuleReference> refs = new ArrayList<ModuleReference>();
+    for (Dependency d : descriptor.getRuntimeModules()) {
+      refs.add(d.getModuleRef());
+    }
+    return refs;
   }
 
   protected ModuleDescriptor loadDescriptor() {
@@ -764,10 +768,5 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     public void modelChangedDramatically(SModel model) {
       invalidateCaches();
     }
-  }
-
-  @Deprecated
-  public List<Dependency> getRuntimeDependOn() {
-    return getRuntimeDependencies();
   }
 }

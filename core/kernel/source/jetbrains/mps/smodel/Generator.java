@@ -24,7 +24,6 @@ import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.runtime.BytecodeLocator;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
 import java.net.URL;
@@ -192,7 +191,9 @@ public class Generator extends AbstractModule {
       result.add(depLocal);
     }
 
-    result.addAll(getSourceLanguage().getRuntimeDependencies());
+    for (ModuleReference ref : getSourceLanguage().getRuntimeModulesReferences()) {
+      result.add(new Dependency(ref, false));
+    }
     return result;
   }
 
