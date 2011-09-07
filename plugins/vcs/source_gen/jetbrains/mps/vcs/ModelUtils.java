@@ -24,11 +24,13 @@ import jetbrains.mps.util.UnzipUtil;
 import java.io.FilenameFilter;
 import jetbrains.mps.project.MPSExtentions;
 import java.io.FileInputStream;
+import org.jetbrains.annotations.Nullable;
 import org.xml.sax.InputSource;
 import java.io.ByteArrayInputStream;
 import java.io.StringReader;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.vcs.integration.ModelDiffTool;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -133,6 +135,7 @@ public class ModelUtils {
     return models;
   }
 
+  @Nullable
   public static SModel readModel(final byte[] bytes, String path) throws IOException {
     return readModel((bytes.length == 0 ?
       null :
@@ -144,6 +147,7 @@ public class ModelUtils {
     ), path);
   }
 
+  @Nullable
   public static SModel readModel(final String content, String path) throws IOException {
     return readModel((content.isEmpty() ?
       null :
@@ -155,14 +159,17 @@ public class ModelUtils {
     ), path);
   }
 
+  @Nullable
   public static SModel readModel(final String path) throws IOException {
     return readModel(new File(path));
   }
 
+  @Nullable
   public static SModel readModel(final File file) throws IOException {
     return readModel(com.intellij.openapi.util.io.FileUtil.loadFileBytes(file), file.getAbsolutePath());
   }
 
+  @Nullable
   private static SModel readModel(final ModelUtils.InputSourceFactory inputSourceFactory, String path) throws IOException {
     try {
       if (inputSourceFactory == null) {
@@ -174,13 +181,18 @@ public class ModelUtils {
         public void run() {
           try {
             DescriptorLoadResult loadResult = ModelPersistence.loadDescriptor(inputSourceFactory.create());
-            model[0] = ModelPersistence.readModel(loadResult.getHeader(), inputSourceFactory.create(), ModelLoadingState.FULLY_LOADED).getModel();
+            BaseSModelDescriptor.ModelLoadResult result = ModelPersistence.readModel(loadResult.getHeader(), inputSourceFactory.create(), ModelLoadingState.FULLY_LOADED);
+            if (result.getState() != ModelLoadingState.FULLY_LOADED) {
+              model[0] = null;
+            } else {
+              model[0] = result.getModel();
+            }
           } catch (IOException e) {
             ex[0] = e;
           }
         }
       });
-      if (model[0] == null) {
+      if (ex[0] != null) {
         throw ex[0];
       } else {
         return model[0];
