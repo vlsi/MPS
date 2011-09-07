@@ -54,6 +54,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.ModelUtils" file="ModelUtils.java">
+    <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.io.ByteArrayInputStream" />
     <classNode dependClassName="java.io.ByteArrayOutputStream" />
