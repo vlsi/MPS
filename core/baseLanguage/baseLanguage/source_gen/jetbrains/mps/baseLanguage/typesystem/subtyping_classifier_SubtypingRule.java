@@ -59,8 +59,8 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     }
     ListSequence.fromList(supertypes).addElement(clt);
     for (SNode supertype : supertypes) {
-      SNode erasure = SNodeOperations.cast(SNodeOperations.copyNode(supertype), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-      if (ListSequence.fromList(SLinkOperations.getTargets(erasure, "parameter", true)).count() > 0) {
+      if (ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.structure.ClassifierType")), "parameter", true)).count() > 0) {
+        SNode erasure = SNodeOperations.cast(SNodeOperations.copyNode(supertype), "jetbrains.mps.baseLanguage.structure.ClassifierType");
         for (SNode parameter : SLinkOperations.getTargets(erasure, "parameter", true)) {
           SNodeOperations.deleteNode(parameter);
         }
