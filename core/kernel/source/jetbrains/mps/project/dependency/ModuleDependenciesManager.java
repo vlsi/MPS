@@ -136,9 +136,7 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     }
 
     for (Language l : getAllUsedLanguages()) {
-      for (StubSolution ss : l.getModuleDescriptor().getStubSolutions()) {
-        ModuleReference solutionRef = new ModuleReference(ss.getName(), ss.getId());
-        Solution s = MPSModuleRepository.getInstance().getSolution(solutionRef);
+      for (Solution s : l.getStubSolutions()) {
         if (!dependencies.contains(s)){
           s.getDependenciesManager().collectVisibleModules(dependencies, true);
         }

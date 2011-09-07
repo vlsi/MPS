@@ -217,6 +217,17 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
   }
 
+  public List<Solution> getStubSolutions() {
+    ArrayList<Solution> res = new ArrayList<Solution>();
+    for (StubSolution ss : getModuleDescriptor().getStubSolutions()) {
+      ModuleReference solutionRef = new ModuleReference(ss.getName(), ss.getId());
+      Solution s = MPSModuleRepository.getInstance().getSolution(solutionRef);
+      if (s == null) continue;
+      res.add(s);
+    }
+    return res;
+  }
+
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
     for (ModuleReference ref : getExtendedLanguageRefs()) {
