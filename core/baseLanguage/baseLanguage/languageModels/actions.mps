@@ -15800,6 +15800,10 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="7405906576723794401" />
                   <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Model_CreateNewNodeOperation" typeId="tpdg.5480835971642155304" id="7405906576723794406">
                     <link role="concept" roleId="tp25.1143235391024" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
+                    <node role="prototype" roleId="tpdg.3757480014665175786" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7751045675524663108">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_currentTargetNode" typeId="tpdg.1177568407352" id="3756363851204000770" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_CopyOperation" typeId="tp25.1144146199828" id="7751045675524663112" />
+                    </node>
                   </node>
                 </node>
               </node>
