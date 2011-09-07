@@ -24,10 +24,10 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class IfMacro_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -406,6 +406,18 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "alternativeConsequence", true) != null);
   }
 
+  public static class IfMacro_component_cellMenu_a0a0a implements SubstituteInfoPart {
+    private replace_node_macro myComponent;
+
+    public IfMacro_component_cellMenu_a0a0a() {
+      this.myComponent = new replace_node_macro();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
   public static class _Inline_t4g6n2_a2b2a extends InlineCellProvider {
     public _Inline_t4g6n2_a2b2a() {
       super();
@@ -437,18 +449,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
-    }
-  }
-
-  public static class IfMacro_component_cellMenu_a0a0a implements SubstituteInfoPart {
-    private replace_node_macro myComponent;
-
-    public IfMacro_component_cellMenu_a0a0a() {
-      this.myComponent = new replace_node_macro();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 }

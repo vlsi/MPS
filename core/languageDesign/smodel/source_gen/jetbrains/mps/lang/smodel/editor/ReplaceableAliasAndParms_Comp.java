@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -31,7 +32,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.CaretPosition;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   public ReplaceableAliasAndParms_Comp(SNode node) {
@@ -134,6 +134,15 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
+  public static class ReplaceWith_SNodeOperation_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SNodeOperation_cellMenu_a0a0_0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.lang.smodel.structure.SNodeOperation";
+    }
+  }
+
   private static class parameterListHandler_n84rmm_b1a extends RefNodeListHandler {
     public parameterListHandler_n84rmm_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -195,15 +204,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       }
       editorCell.setDefaultText("");
       return editorCell;
-    }
-  }
-
-  public static class ReplaceWith_SNodeOperation_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SNodeOperation_cellMenu_a0a0_0() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.smodel.structure.SNodeOperation";
     }
   }
 }

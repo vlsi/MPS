@@ -35,6 +35,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -42,9 +45,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -534,6 +534,18 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.getBoolean(node, "isVirtual")) && !(SPropertyOperations.getBoolean(node, "isPrivate"));
   }
 
+  public static class ConceptMethodDeclaration_component_cellMenu_a0e2a implements SubstituteInfoPart {
+    private ConceptMethodDeclaration_Menu myComponent;
+
+    public ConceptMethodDeclaration_component_cellMenu_a0e2a() {
+      this.myComponent = new ConceptMethodDeclaration_Menu();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
   public static class _Inline_gmtuod_a4i2a extends InlineCellProvider {
     public _Inline_gmtuod_a4i2a() {
       super();
@@ -694,18 +706,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
-    }
-  }
-
-  public static class ConceptMethodDeclaration_component_cellMenu_a0e2a implements SubstituteInfoPart {
-    private ConceptMethodDeclaration_Menu myComponent;
-
-    public ConceptMethodDeclaration_component_cellMenu_a0e2a() {
-      this.myComponent = new ConceptMethodDeclaration_Menu();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 }

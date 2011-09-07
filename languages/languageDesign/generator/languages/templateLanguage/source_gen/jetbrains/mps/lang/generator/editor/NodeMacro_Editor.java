@@ -21,11 +21,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class NodeMacro_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -161,6 +161,18 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "mappingLabel", false) != null;
   }
 
+  public static class NodeMacro_component_cellMenu_a0a0 implements SubstituteInfoPart {
+    private replace_node_macro myComponent;
+
+    public NodeMacro_component_cellMenu_a0a0() {
+      this.myComponent = new replace_node_macro();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
   public static class _Inline_e7cx8x_a2a2a extends InlineCellProvider {
     public _Inline_e7cx8x_a2a2a() {
       super();
@@ -195,18 +207,6 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
-    }
-  }
-
-  public static class NodeMacro_component_cellMenu_a0a0 implements SubstituteInfoPart {
-    private replace_node_macro myComponent;
-
-    public NodeMacro_component_cellMenu_a0a0() {
-      this.myComponent = new replace_node_macro();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 }
