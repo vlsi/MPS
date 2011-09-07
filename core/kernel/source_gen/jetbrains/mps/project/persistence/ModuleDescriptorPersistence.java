@@ -45,9 +45,6 @@ public class ModuleDescriptorPersistence {
       if (runtimeXML != null) {
         for (Dependency dep : ListSequence.fromList(loadDependenciesList(runtimeXML))) {
           ld.getRuntimeModules().add(dep.getModuleRef());
-          if (dep.isReexport()) {
-            ld.getExportedSolutions().add(dep.getModuleRef());
-          }
         }
       }
 
@@ -55,11 +52,6 @@ public class ModuleDescriptorPersistence {
       Element runtimeModulesXML = ListSequence.fromList(AttributeUtils.elementChildren(((Element) root), "runtimeModules")).first();
       if (runtimeModulesXML != null) {
         ld.getRuntimeModules().addAll(parseModuleRefList(runtimeModulesXML));
-      }
-
-      Element expXML = ListSequence.fromList(AttributeUtils.elementChildren(((Element) root), "exportedModules")).first();
-      if (expXML != null) {
-        ld.getExportedSolutions().addAll(parseModuleRefList(expXML));
       }
     }
   }
@@ -109,12 +101,6 @@ public class ModuleDescriptorPersistence {
         final Element result_dxyzb6_a0a0a1a2a2 = new Element("runtimeModules");
         saveModuleRefList(result_dxyzb6_a0a0a1a2a2, ld.getRuntimeModules());
         result_dxyzb6_a1a2a2.addContent(result_dxyzb6_a0a0a1a2a2);
-      }
-
-      if (!(ld.getExportedSolutions().isEmpty())) {
-        final Element result_dxyzb6_a0a2a1a2a2 = new Element("exportedModules");
-        saveModuleRefList(result_dxyzb6_a0a2a1a2a2, ld.getExportedSolutions());
-        result_dxyzb6_a1a2a2.addContent(result_dxyzb6_a0a2a1a2a2);
       }
     }
   }

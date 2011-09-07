@@ -20,7 +20,6 @@ public class LanguageProperties extends ModuleProperties {
   private List<SModelReference> myAccessoryModels;
   private List<ModuleReference> myExtendedLanguages;
   private List<ModuleReference> myRuntimeModules;
-  private List<ModuleReference> myExportedSolutions;
   private List<ClassPathEntry> myRuntimeClassPaths;
   private List<ModelRoot> myRuntimeStubModels;
   private boolean myDoNotGenerateAdapters = false;
@@ -30,7 +29,6 @@ public class LanguageProperties extends ModuleProperties {
     myAccessoryModels = ListsFactory.create(ListsFactory.MODEL_REF_COMPARATOR);
     myExtendedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     myRuntimeModules = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
-    myExportedSolutions = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
     myRuntimeClassPaths = ListsFactory.create(ListsFactory.CLASSPATH_ENTRY_COMPARATOR);
     myStubSolutions = ListsFactory.create(ListsFactory.STUB_SOLUTIONS_ENTRY_COMPARATOR);
     myRuntimeStubModels = ListsFactory.create(ListsFactory.MODEL_ROOT_COMPARATOR);
@@ -54,10 +52,6 @@ public class LanguageProperties extends ModuleProperties {
 
   public List<ModuleReference> getRuntimeModules() {
     return myRuntimeModules;
-  }
-
-  public List<ModuleReference> getExportedSolutions() {
-    return myExportedSolutions;
   }
 
   public List<StubSolution> getStubSolutions() {
@@ -90,7 +84,6 @@ public class LanguageProperties extends ModuleProperties {
     myAccessoryModels.addAll(d.getAccessoryModels());
     myExtendedLanguages.addAll(d.getExtendedLanguages());
     myRuntimeModules.addAll(d.getRuntimeModules());
-    myExportedSolutions.addAll(d.getRuntimeModules());
     for (StubSolution ss : d.getStubSolutions()) {
       myStubSolutions.add((ss != null ?
         ss.getCopy() :
@@ -118,8 +111,6 @@ public class LanguageProperties extends ModuleProperties {
     d.getExtendedLanguages().addAll(myExtendedLanguages);
     d.getRuntimeModules().clear();
     d.getRuntimeModules().addAll(myRuntimeModules);
-    d.getExportedSolutions().clear();
-    d.getExportedSolutions().addAll(myExportedSolutions);
     d.getStubSolutions().clear();
     d.getStubSolutions().addAll(myStubSolutions);
     d.getRuntimeStubModels().clear();

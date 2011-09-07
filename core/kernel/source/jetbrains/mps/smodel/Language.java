@@ -225,11 +225,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       if (s == null) continue;
       res.add(s);
     }
-    for (ModuleReference mr : getModuleDescriptor().getExportedSolutions()) {
-      Solution s = MPSModuleRepository.getInstance().getSolution(mr);
-      if (s == null) continue;
-      res.add(s);
-    }
     return res;
   }
 
