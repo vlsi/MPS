@@ -213,12 +213,13 @@ public class Inequalities {
       }
     }
     Set<SNode> usedNodes = new HashSet<SNode>();
-    while (nodes.size() > 0) {
-      SNode current = getNodeWithNoInput(nodes, usedNodes);
+    Set<SNode> tempNodes = new HashSet<SNode>(nodes);
+    while (tempNodes.size() > 0) {
+      SNode current = getNodeWithNoInput(tempNodes, usedNodes);
       if (solveRelationsForNode(current)) {
         return true;
       }
-      nodes.remove(current);
+      tempNodes.remove(current);
       usedNodes.add(current);
     }
     return false;
