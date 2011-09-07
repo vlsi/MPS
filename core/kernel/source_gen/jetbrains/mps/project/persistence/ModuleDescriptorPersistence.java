@@ -9,8 +9,8 @@ import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import java.util.List;
 import jetbrains.mps.project.structure.modules.Dependency;
+import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.vfs.IFile;
@@ -40,46 +40,81 @@ public class ModuleDescriptorPersistence {
 
     if (descriptor instanceof LanguageDescriptor) {
       LanguageDescriptor ld = (LanguageDescriptor) descriptor;
-      ld.getRuntimeModules().addAll(loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(root, "runtime")).first()));
+      // old 
+      Element runtimeXML = ListSequence.fromList(AttributeUtils.elementChildren(root, "runtime")).first();
+      if (runtimeXML != null) {
+        for (Dependency dep : ListSequence.fromList(loadDependenciesList(runtimeXML))) {
+          ld.getRuntimeModules().add(dep.getModuleRef());
+          if (dep.isReexport()) {
+            ld.getExportedSolutions().add(dep.getModuleRef());
+          }
+        }
+      }
+
+      // new 
+      Element runtimeModulesXML = ListSequence.fromList(AttributeUtils.elementChildren(((Element) root), "runtimeModules")).first();
+      if (runtimeModulesXML != null) {
+        ld.getRuntimeModules().addAll(parseModuleRefList(runtimeModulesXML));
+      }
+
+      Element expXML = ListSequence.fromList(AttributeUtils.elementChildren(((Element) root), "exportedModules")).first();
+      if (expXML != null) {
+        ld.getExportedSolutions().addAll(parseModuleRefList(expXML));
+      }
     }
   }
 
+  private static List<ModuleReference> parseModuleRefList(Element runtimeXML) {
+    return ListSequence.fromList(AttributeUtils.elementChildren(runtimeXML, "module")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
+      public ModuleReference select(Element d) {
+        return new ModuleReference(AttributeUtils.stringWithDefault(d.getAttributeValue("name"), ""), AttributeUtils.stringWithDefault(d.getAttributeValue("id"), ""));
+      }
+    }).toListSequence();
+  }
+
   public static void saveDependencies(Element result, ModuleDescriptor descriptor) {
-    Element result_dxyzb6_a0a1 = result;
+    Element result_dxyzb6_a0a2 = result;
     if (!(descriptor.getDependencies().isEmpty())) {
-      final Element result_dxyzb6_a0a0a0a1 = new Element("dependencies");
-      saveDependencyList(result_dxyzb6_a0a0a0a1, descriptor.getDependencies());
-      result_dxyzb6_a0a1.addContent(result_dxyzb6_a0a0a0a1);
+      final Element result_dxyzb6_a0a0a0a2 = new Element("dependencies");
+      saveDependencyList(result_dxyzb6_a0a0a0a2, descriptor.getDependencies());
+      result_dxyzb6_a0a2.addContent(result_dxyzb6_a0a0a0a2);
     }
 
     if (!(descriptor.getUsedLanguages().isEmpty())) {
-      final Element result_dxyzb6_a0a2a0a1 = new Element("usedLanguages");
+      final Element result_dxyzb6_a0a2a0a2 = new Element("usedLanguages");
       for (ModuleReference langRef : ListSequence.fromList(descriptor.getUsedLanguages())) {
-        final Element result_dxyzb6_a0a0a0a2a0a1 = new Element("usedLanguage");
-        final String result_dxyzb6_a0a0a0a0a2a0a1 = langRef.toString();
-        result_dxyzb6_a0a0a0a2a0a1.setText(result_dxyzb6_a0a0a0a0a2a0a1);
-        result_dxyzb6_a0a2a0a1.addContent(result_dxyzb6_a0a0a0a2a0a1);
+        final Element result_dxyzb6_a0a0a0a2a0a2 = new Element("usedLanguage");
+        final String result_dxyzb6_a0a0a0a0a2a0a2 = langRef.toString();
+        result_dxyzb6_a0a0a0a2a0a2.setText(result_dxyzb6_a0a0a0a0a2a0a2);
+        result_dxyzb6_a0a2a0a2.addContent(result_dxyzb6_a0a0a0a2a0a2);
       }
-      result_dxyzb6_a0a1.addContent(result_dxyzb6_a0a2a0a1);
+      result_dxyzb6_a0a2.addContent(result_dxyzb6_a0a2a0a2);
     }
 
     if (!(descriptor.getUsedDevkits().isEmpty())) {
-      final Element result_dxyzb6_a0a4a0a1 = new Element("usedDevKits");
+      final Element result_dxyzb6_a0a4a0a2 = new Element("usedDevKits");
       for (ModuleReference dkRef : ListSequence.fromList(descriptor.getUsedDevkits())) {
-        final Element result_dxyzb6_a0a0a0a4a0a1 = new Element("usedDevKit");
-        final String result_dxyzb6_a0a0a0a0a4a0a1 = dkRef.toString();
-        result_dxyzb6_a0a0a0a4a0a1.setText(result_dxyzb6_a0a0a0a0a4a0a1);
-        result_dxyzb6_a0a4a0a1.addContent(result_dxyzb6_a0a0a0a4a0a1);
+        final Element result_dxyzb6_a0a0a0a4a0a2 = new Element("usedDevKit");
+        final String result_dxyzb6_a0a0a0a0a4a0a2 = dkRef.toString();
+        result_dxyzb6_a0a0a0a4a0a2.setText(result_dxyzb6_a0a0a0a0a4a0a2);
+        result_dxyzb6_a0a4a0a2.addContent(result_dxyzb6_a0a0a0a4a0a2);
       }
-      result_dxyzb6_a0a1.addContent(result_dxyzb6_a0a4a0a1);
+      result_dxyzb6_a0a2.addContent(result_dxyzb6_a0a4a0a2);
     }
 
     if (descriptor instanceof LanguageDescriptor) {
-      LanguageDescriptor ld = (LanguageDescriptor) descriptor;
+      LanguageDescriptor ld = ((LanguageDescriptor) descriptor);
+      Element result_dxyzb6_a1a2a2 = result;
       if (!(ld.getRuntimeModules().isEmpty())) {
-        final Element result_dxyzb6_a0a1a6a0a1 = new Element("runtime");
-        saveDependencyList(result_dxyzb6_a0a1a6a0a1, ld.getRuntimeModules());
-        result_dxyzb6_a0a1.addContent(result_dxyzb6_a0a1a6a0a1);
+        final Element result_dxyzb6_a0a0a1a2a2 = new Element("runtimeModules");
+        saveModuleRefList(result_dxyzb6_a0a0a1a2a2, ld.getRuntimeModules());
+        result_dxyzb6_a1a2a2.addContent(result_dxyzb6_a0a0a1a2a2);
+      }
+
+      if (!(ld.getExportedSolutions().isEmpty())) {
+        final Element result_dxyzb6_a0a2a1a2a2 = new Element("exportedModules");
+        saveModuleRefList(result_dxyzb6_a0a2a1a2a2, ld.getExportedSolutions());
+        result_dxyzb6_a1a2a2.addContent(result_dxyzb6_a0a2a1a2a2);
       }
     }
   }
@@ -89,12 +124,12 @@ public class ModuleDescriptorPersistence {
       public Dependency select(final Element d) {
         return new _FunctionTypes._return_P0_E0<Dependency>() {
           public Dependency invoke() {
-            final Dependency result_dxyzb6_a0a0a0a0a0a2 = new Dependency();
-            final ModuleReference result_dxyzb6_a0a0a0a0a0a0a2 = ModuleReference.fromString(d.getText());
-            result_dxyzb6_a0a0a0a0a0a2.setModuleRef(result_dxyzb6_a0a0a0a0a0a0a2);
-            final boolean result_dxyzb6_a1a0a0a0a0a0a2 = AttributeUtils.booleanWithDefault(d.getAttributeValue("reexport"), true);
-            result_dxyzb6_a0a0a0a0a0a2.setReexport(result_dxyzb6_a1a0a0a0a0a0a2);
-            return result_dxyzb6_a0a0a0a0a0a2;
+            final Dependency result_dxyzb6_a0a0a0a0a0a3 = new Dependency();
+            final ModuleReference result_dxyzb6_a0a0a0a0a0a0a3 = ModuleReference.fromString(d.getText());
+            result_dxyzb6_a0a0a0a0a0a3.setModuleRef(result_dxyzb6_a0a0a0a0a0a0a3);
+            final boolean result_dxyzb6_a1a0a0a0a0a0a3 = AttributeUtils.booleanWithDefault(d.getAttributeValue("reexport"), true);
+            result_dxyzb6_a0a0a0a0a0a3.setReexport(result_dxyzb6_a1a0a0a0a0a0a3);
+            return result_dxyzb6_a0a0a0a0a0a3;
           }
         }.invoke();
       }
@@ -102,14 +137,26 @@ public class ModuleDescriptorPersistence {
   }
 
   private static void saveDependencyList(Element depElement, List<Dependency> dependencies) {
-    Element result_dxyzb6_a0a3 = depElement;
+    Element result_dxyzb6_a0a4 = depElement;
     for (Dependency md : ListSequence.fromList(dependencies)) {
-      final Element result_dxyzb6_a0a0a0a3 = new Element("dependency");
-      final String result_dxyzb6_a0a0a0a0a3 = md.getModuleRef().toString();
-      result_dxyzb6_a0a0a0a3.setText(result_dxyzb6_a0a0a0a0a3);
-      final boolean result_dxyzb6_a1a0a0a0a3 = md.isReexport();
-      result_dxyzb6_a0a0a0a3.setAttribute("reexport", "" + result_dxyzb6_a1a0a0a0a3);
-      result_dxyzb6_a0a3.addContent(result_dxyzb6_a0a0a0a3);
+      final Element result_dxyzb6_a0a0a0a4 = new Element("dependency");
+      final String result_dxyzb6_a0a0a0a0a4 = md.getModuleRef().toString();
+      result_dxyzb6_a0a0a0a4.setText(result_dxyzb6_a0a0a0a0a4);
+      final boolean result_dxyzb6_a1a0a0a0a4 = md.isReexport();
+      result_dxyzb6_a0a0a0a4.setAttribute("reexport", "" + result_dxyzb6_a1a0a0a0a4);
+      result_dxyzb6_a0a4.addContent(result_dxyzb6_a0a0a0a4);
+    }
+  }
+
+  private static void saveModuleRefList(Element depElement, List<ModuleReference> dependencies) {
+    Element result_dxyzb6_a0a5 = depElement;
+    for (ModuleReference md : ListSequence.fromList(dependencies)) {
+      final Element result_dxyzb6_a0a0a0a5 = new Element("module");
+      final String result_dxyzb6_a0a0a0a0a5 = md.getModuleId().toString();
+      result_dxyzb6_a0a0a0a5.setAttribute("id", "" + result_dxyzb6_a0a0a0a0a5);
+      final String result_dxyzb6_a1a0a0a0a5 = md.getModuleFqName();
+      result_dxyzb6_a0a0a0a5.setAttribute("name", "" + result_dxyzb6_a1a0a0a0a5);
+      result_dxyzb6_a0a5.addContent(result_dxyzb6_a0a0a0a5);
     }
   }
 
@@ -124,26 +171,26 @@ public class ModuleDescriptorPersistence {
   private static ModelRoot loadModelRoot(final Element modelRootElement, final IFile file, final Macros macros) {
     return new _FunctionTypes._return_P0_E0<ModelRoot>() {
       public ModelRoot invoke() {
-        final ModelRoot result_dxyzb6_a0a0a5 = new ModelRoot();
-        final String result_dxyzb6_a0a0a0a5 = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("namespacePrefix"), "");
-        result_dxyzb6_a0a0a5.setPrefix(result_dxyzb6_a0a0a0a5);
+        final ModelRoot result_dxyzb6_a0a0a7 = new ModelRoot();
+        final String result_dxyzb6_a0a0a0a7 = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("namespacePrefix"), "");
+        result_dxyzb6_a0a0a7.setPrefix(result_dxyzb6_a0a0a0a7);
         String pathName = modelRootElement.getAttributeValue("path");
         if (pathName == null) {
           // left for compatibility 
           pathName = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("rootPath"), "");
         }
-        final String result_dxyzb6_a3a0a0a5 = macros.expandPath(pathName, file);
-        result_dxyzb6_a0a0a5.setPath(result_dxyzb6_a3a0a0a5);
+        final String result_dxyzb6_a3a0a0a7 = macros.expandPath(pathName, file);
+        result_dxyzb6_a0a0a7.setPath(result_dxyzb6_a3a0a0a7);
         if (ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).isNotEmpty()) {
-          final ModelRootManager result_dxyzb6_a0a4a0a0a5 = new ModelRootManager();
+          final ModelRootManager result_dxyzb6_a0a4a0a0a7 = new ModelRootManager();
           Element manager = ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first();
-          final String result_dxyzb6_a1a0a4a0a0a5 = AttributeUtils.stringWithDefault(manager.getAttributeValue("moduleId"), "");
-          result_dxyzb6_a0a4a0a0a5.setModuleId(result_dxyzb6_a1a0a4a0a0a5);
-          final String result_dxyzb6_a2a0a4a0a0a5 = AttributeUtils.stringWithDefault(manager.getAttributeValue("className"), "");
-          result_dxyzb6_a0a4a0a0a5.setClassName(result_dxyzb6_a2a0a4a0a0a5);
-          result_dxyzb6_a0a0a5.setManager(result_dxyzb6_a0a4a0a0a5);
+          final String result_dxyzb6_a1a0a4a0a0a7 = AttributeUtils.stringWithDefault(manager.getAttributeValue("moduleId"), "");
+          result_dxyzb6_a0a4a0a0a7.setModuleId(result_dxyzb6_a1a0a4a0a0a7);
+          final String result_dxyzb6_a2a0a4a0a0a7 = AttributeUtils.stringWithDefault(manager.getAttributeValue("className"), "");
+          result_dxyzb6_a0a4a0a0a7.setClassName(result_dxyzb6_a2a0a4a0a0a7);
+          result_dxyzb6_a0a0a7.setManager(result_dxyzb6_a0a4a0a0a7);
         }
-        return result_dxyzb6_a0a0a5;
+        return result_dxyzb6_a0a0a7;
       }
     }.invoke();
   }
@@ -159,62 +206,62 @@ public class ModuleDescriptorPersistence {
   private static ModelRoot loadModelEntry(final Element modelRootElement, final IFile file, final Macros macros) {
     return new _FunctionTypes._return_P0_E0<ModelRoot>() {
       public ModelRoot invoke() {
-        final ModelRoot result_dxyzb6_a0a0a7 = new ModelRoot();
-        final String result_dxyzb6_a0a0a0a7 = macros.expandPath(modelRootElement.getAttributeValue("path"), file);
-        result_dxyzb6_a0a0a7.setPath(result_dxyzb6_a0a0a0a7);
-        final ModelRootManager result_dxyzb6_a1a0a0a7 = new ModelRootManager();
-        final String result_dxyzb6_a0a1a0a0a7 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("moduleId"), "");
-        result_dxyzb6_a1a0a0a7.setModuleId(result_dxyzb6_a0a1a0a0a7);
-        final String result_dxyzb6_a1a1a0a0a7 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("className"), "");
-        result_dxyzb6_a1a0a0a7.setClassName(result_dxyzb6_a1a1a0a0a7);
-        result_dxyzb6_a0a0a7.setManager(result_dxyzb6_a1a0a0a7);
-        return result_dxyzb6_a0a0a7;
+        final ModelRoot result_dxyzb6_a0a0a9 = new ModelRoot();
+        final String result_dxyzb6_a0a0a0a9 = macros.expandPath(modelRootElement.getAttributeValue("path"), file);
+        result_dxyzb6_a0a0a9.setPath(result_dxyzb6_a0a0a0a9);
+        final ModelRootManager result_dxyzb6_a1a0a0a9 = new ModelRootManager();
+        final String result_dxyzb6_a0a1a0a0a9 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("moduleId"), "");
+        result_dxyzb6_a1a0a0a9.setModuleId(result_dxyzb6_a0a1a0a0a9);
+        final String result_dxyzb6_a1a1a0a0a9 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("className"), "");
+        result_dxyzb6_a1a0a0a9.setClassName(result_dxyzb6_a1a1a0a0a9);
+        result_dxyzb6_a0a0a9.setManager(result_dxyzb6_a1a0a0a9);
+        return result_dxyzb6_a0a0a9;
       }
     }.invoke();
   }
 
   public static void saveModelRoots(Element modelsElement, List<ModelRoot> modelRoots, IFile file, Macros macros) {
-    Element result_dxyzb6_a0a8 = modelsElement;
+    Element result_dxyzb6_a0a01 = modelsElement;
     for (ModelRoot root : ListSequence.fromList(modelRoots)) {
-      final Element result_dxyzb6_a0a0a0a8 = new Element("modelRoot");
-      final String result_dxyzb6_a0a0a0a0a8 = macros.shrinkPath((root.getPath() == null ?
+      final Element result_dxyzb6_a0a0a0a01 = new Element("modelRoot");
+      final String result_dxyzb6_a0a0a0a0a01 = macros.shrinkPath((root.getPath() == null ?
         "" :
         root.getPath()
       ), file);
-      result_dxyzb6_a0a0a0a8.setAttribute("path", "" + result_dxyzb6_a0a0a0a0a8);
-      final String result_dxyzb6_a1a0a0a0a8 = (root.getPrefix() == null ?
+      result_dxyzb6_a0a0a0a01.setAttribute("path", "" + result_dxyzb6_a0a0a0a0a01);
+      final String result_dxyzb6_a1a0a0a0a01 = (root.getPrefix() == null ?
         "" :
         root.getPrefix()
       );
-      result_dxyzb6_a0a0a0a8.setAttribute("namespacePrefix", "" + result_dxyzb6_a1a0a0a0a8);
+      result_dxyzb6_a0a0a0a01.setAttribute("namespacePrefix", "" + result_dxyzb6_a1a0a0a0a01);
       if (root.getManager() != null) {
-        final Element result_dxyzb6_a0a2a0a0a0a8 = new Element("manager");
-        final String result_dxyzb6_a0a0a2a0a0a0a8 = root.getManager().getModuleId();
-        result_dxyzb6_a0a2a0a0a0a8.setAttribute("moduleId", "" + result_dxyzb6_a0a0a2a0a0a0a8);
-        final String result_dxyzb6_a1a0a2a0a0a0a8 = root.getManager().getClassName();
-        result_dxyzb6_a0a2a0a0a0a8.setAttribute("className", "" + result_dxyzb6_a1a0a2a0a0a0a8);
-        result_dxyzb6_a0a0a0a8.addContent(result_dxyzb6_a0a2a0a0a0a8);
+        final Element result_dxyzb6_a0a2a0a0a0a01 = new Element("manager");
+        final String result_dxyzb6_a0a0a2a0a0a0a01 = root.getManager().getModuleId();
+        result_dxyzb6_a0a2a0a0a0a01.setAttribute("moduleId", "" + result_dxyzb6_a0a0a2a0a0a0a01);
+        final String result_dxyzb6_a1a0a2a0a0a0a01 = root.getManager().getClassName();
+        result_dxyzb6_a0a2a0a0a0a01.setAttribute("className", "" + result_dxyzb6_a1a0a2a0a0a0a01);
+        result_dxyzb6_a0a0a0a01.addContent(result_dxyzb6_a0a2a0a0a0a01);
       }
-      result_dxyzb6_a0a8.addContent(result_dxyzb6_a0a0a0a8);
+      result_dxyzb6_a0a01.addContent(result_dxyzb6_a0a0a0a01);
     }
   }
 
   public static void saveStubModelEntries(Element modelsElement, List<ModelRoot> modelRoots, IFile file, Macros macros) {
-    Element result_dxyzb6_a0a9 = modelsElement;
+    Element result_dxyzb6_a0a11 = modelsElement;
     for (ModelRoot root : ListSequence.fromList(modelRoots)) {
-      final Element result_dxyzb6_a0a0a0a9 = new Element("stubModelEntry");
-      final String result_dxyzb6_a0a0a0a0a9 = macros.shrinkPath((root.getPath() == null ?
+      final Element result_dxyzb6_a0a0a0a11 = new Element("stubModelEntry");
+      final String result_dxyzb6_a0a0a0a0a11 = macros.shrinkPath((root.getPath() == null ?
         "" :
         root.getPath()
       ), file);
-      result_dxyzb6_a0a0a0a9.setAttribute("path", "" + result_dxyzb6_a0a0a0a0a9);
-      final Element result_dxyzb6_a1a0a0a0a9 = new Element("manager");
-      final String result_dxyzb6_a0a1a0a0a0a9 = root.getManager().getModuleId();
-      result_dxyzb6_a1a0a0a0a9.setAttribute("moduleId", "" + result_dxyzb6_a0a1a0a0a0a9);
-      final String result_dxyzb6_a1a1a0a0a0a9 = root.getManager().getClassName();
-      result_dxyzb6_a1a0a0a0a9.setAttribute("className", "" + result_dxyzb6_a1a1a0a0a0a9);
-      result_dxyzb6_a0a0a0a9.addContent(result_dxyzb6_a1a0a0a0a9);
-      result_dxyzb6_a0a9.addContent(result_dxyzb6_a0a0a0a9);
+      result_dxyzb6_a0a0a0a11.setAttribute("path", "" + result_dxyzb6_a0a0a0a0a11);
+      final Element result_dxyzb6_a1a0a0a0a11 = new Element("manager");
+      final String result_dxyzb6_a0a1a0a0a0a11 = root.getManager().getModuleId();
+      result_dxyzb6_a1a0a0a0a11.setAttribute("moduleId", "" + result_dxyzb6_a0a1a0a0a0a11);
+      final String result_dxyzb6_a1a1a0a0a0a11 = root.getManager().getClassName();
+      result_dxyzb6_a1a0a0a0a11.setAttribute("className", "" + result_dxyzb6_a1a1a0a0a0a11);
+      result_dxyzb6_a0a0a0a11.addContent(result_dxyzb6_a1a0a0a0a11);
+      result_dxyzb6_a0a11.addContent(result_dxyzb6_a0a0a0a11);
     }
   }
 

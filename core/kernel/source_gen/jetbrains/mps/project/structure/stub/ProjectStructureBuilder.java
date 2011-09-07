@@ -72,9 +72,6 @@ public abstract class ProjectStructureBuilder {
     for (ModuleReference ref : source.getExtendedLanguages()) {
       SLinkOperations.getTargets(result, "extendedLanguages", true).add(convert(ref));
     }
-    for (Dependency dep : source.getRuntimeModules()) {
-      SLinkOperations.getTargets(result, "runtimeModules", true).add(convert(dep));
-    }
     for (ModelRoot entry : source.getRuntimeStubModels()) {
       SLinkOperations.getTargets(result, "runtimeStubModels", true).add(convert(entry));
     }

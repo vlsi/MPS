@@ -5,7 +5,6 @@ package jetbrains.mps.ide.properties;
 import java.util.List;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.StubSolution;
@@ -20,7 +19,8 @@ public class LanguageProperties extends ModuleProperties {
   private String myGenPath;
   private List<SModelReference> myAccessoryModels;
   private List<ModuleReference> myExtendedLanguages;
-  private List<Dependency> myRuntimeModules;
+  private List<ModuleReference> myRuntimeModules;
+  private List<ModuleReference> myExportedSolutions;
   private List<ClassPathEntry> myRuntimeClassPaths;
   private List<ModelRoot> myRuntimeStubModels;
   private boolean myDoNotGenerateAdapters = false;
@@ -29,7 +29,8 @@ public class LanguageProperties extends ModuleProperties {
   public LanguageProperties() {
     myAccessoryModels = ListsFactory.create(ListsFactory.MODEL_REF_COMPARATOR);
     myExtendedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
-    myRuntimeModules = ListsFactory.create(ListsFactory.DEPENDENCY_COMPARATOR);
+    myRuntimeModules = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
+    myExportedSolutions = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
     myRuntimeClassPaths = ListsFactory.create(ListsFactory.CLASSPATH_ENTRY_COMPARATOR);
     myStubSolutions = ListsFactory.create(ListsFactory.STUB_SOLUTIONS_ENTRY_COMPARATOR);
     myRuntimeStubModels = ListsFactory.create(ListsFactory.MODEL_ROOT_COMPARATOR);
@@ -51,8 +52,12 @@ public class LanguageProperties extends ModuleProperties {
     return myExtendedLanguages;
   }
 
-  public List<Dependency> getRuntimeModules() {
+  public List<ModuleReference> getRuntimeModules() {
     return myRuntimeModules;
+  }
+
+  public List<ModuleReference> getExportedSolutions() {
+    return myExportedSolutions;
   }
 
   public List<StubSolution> getStubSolutions() {
@@ -85,6 +90,7 @@ public class LanguageProperties extends ModuleProperties {
     myAccessoryModels.addAll(d.getAccessoryModels());
     myExtendedLanguages.addAll(d.getExtendedLanguages());
     myRuntimeModules.addAll(d.getRuntimeModules());
+    myExportedSolutions.addAll(d.getRuntimeModules());
     for (StubSolution ss : d.getStubSolutions()) {
       myStubSolutions.add((ss != null ?
         ss.getCopy() :
@@ -112,6 +118,8 @@ public class LanguageProperties extends ModuleProperties {
     d.getExtendedLanguages().addAll(myExtendedLanguages);
     d.getRuntimeModules().clear();
     d.getRuntimeModules().addAll(myRuntimeModules);
+    d.getExportedSolutions().clear();
+    d.getExportedSolutions().addAll(myExportedSolutions);
     d.getStubSolutions().clear();
     d.getStubSolutions().addAll(myStubSolutions);
     d.getRuntimeStubModels().clear();

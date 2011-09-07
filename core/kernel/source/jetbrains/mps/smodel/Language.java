@@ -251,11 +251,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public List<ModuleReference> getRuntimeModulesReferences() {
     LanguageDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptyList();
-    List<ModuleReference> refs = new ArrayList<ModuleReference>();
-    for (Dependency d : descriptor.getRuntimeModules()) {
-      refs.add(d.getModuleRef());
-    }
-    return refs;
+    return Collections.unmodifiableList(descriptor.getRuntimeModules());
   }
 
   protected ModuleDescriptor loadDescriptor() {

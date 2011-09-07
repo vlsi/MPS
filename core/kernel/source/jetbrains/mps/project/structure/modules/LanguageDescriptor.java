@@ -27,7 +27,8 @@ public class LanguageDescriptor extends ModuleDescriptor {
   private List<SModelReference> myAccessoryModels;
   private List<GeneratorDescriptor> myGenerators;
   private List<ModuleReference> myExtendedLanguages;
-  private List<Dependency> myRuntimeModules;
+  private List<ModuleReference> myRuntimeModules;
+  private List<ModuleReference> myExportedSolutions;
   private List<ModelRoot> myRuntimeStubModels;
   private List<StubSolution> myStubSolutions;
   private boolean myDoNotGenerateAdapters = false;
@@ -37,7 +38,8 @@ public class LanguageDescriptor extends ModuleDescriptor {
     myAccessoryModels = new ArrayList<SModelReference>();
     myGenerators = new ArrayList<GeneratorDescriptor>();
     myExtendedLanguages = new ArrayList<ModuleReference>();
-    myRuntimeModules = new ArrayList<Dependency>();
+    myRuntimeModules = new ArrayList<ModuleReference>();
+    myExportedSolutions = new ArrayList<ModuleReference>();
     myRuntimeStubModels = new ArrayList<ModelRoot>();
     myStubSolutions = new ArrayList<StubSolution>();
   }
@@ -62,7 +64,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
     return myExtendedLanguages;
   }
 
-  public List<Dependency> getRuntimeModules() {
+  public List<ModuleReference> getRuntimeModules() {
     return myRuntimeModules;
   }
 
@@ -72,6 +74,10 @@ public class LanguageDescriptor extends ModuleDescriptor {
 
   public List<StubSolution> getStubSolutions() {
     return myStubSolutions;
+  }
+
+  public List<ModuleReference> getExportedSolutions() {
+    return myExportedSolutions;
   }
 
   public boolean isDoNotGenerateAdapters() {
@@ -94,7 +100,8 @@ public class LanguageDescriptor extends ModuleDescriptor {
   public boolean updateModuleRefs() {
     return RefUpdateUtil.composeUpdates(
       super.updateModuleRefs(),
-      RefUpdateUtil.updateDependencies(myRuntimeModules),
+      RefUpdateUtil.updateModuleRefs(myRuntimeModules),
+      RefUpdateUtil.updateModuleRefs(myExportedSolutions),
       RefUpdateUtil.updateModuleRefs(myExtendedLanguages)
     );
   }

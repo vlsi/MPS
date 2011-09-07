@@ -85,9 +85,9 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
         errors.add("Can't find accessory model: " + accessory.getLongName());
       }
     }
-    for (Dependency runtimeModule : myModule.getModuleDescriptor().getRuntimeModules()) {
-      if (MPSModuleRepository.getInstance().getModule(runtimeModule.getModuleRef()) == null) {
-        errors.add("Can't find runtime module: " + runtimeModule.getModuleRef().getModuleFqName());
+    for (ModuleReference ref : myModule.getModuleDescriptor().getRuntimeModules()) {
+      if (MPSModuleRepository.getInstance().getModule(ref) == null) {
+        errors.add("Can't find runtime module: " + ref.getModuleFqName());
       }
     }
     for (ModelRoot stubModelsEntry : myModule.getModuleDescriptor().getRuntimeStubModels()) {
