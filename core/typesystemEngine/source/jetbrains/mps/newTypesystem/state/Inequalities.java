@@ -178,12 +178,10 @@ public class Inequalities {
     }
     SNode left = myState.getRepresentative(inequality.getLeftNode());
     SNode right = myState.getRepresentative(inequality.getRightNode());
-    boolean isVarLeft = TypesUtil.isVariable(left);
-    boolean isVarRight = TypesUtil.isVariable(right);
-    if (isVarLeft && !isVarRight) {
+    if (TypesUtil.isVariable(left)) {
       mySolvableLeft.add(left);
     }
-    if (!isVarLeft && isVarRight) {
+    if (TypesUtil.isVariable(right)) {
       mySolvableRight.add(right);
     }
   }
