@@ -127,7 +127,7 @@ public class ProcessHandlerBuilder {
       public boolean accept(String it) {
         return StringUtils.isNotEmpty(it);
       }
-    }).<String>select(new ISelector<String, String>() {
+    }).select(new ISelector<String, String>() {
       public String select(String it) {
         return it.replace("\"", "");
       }

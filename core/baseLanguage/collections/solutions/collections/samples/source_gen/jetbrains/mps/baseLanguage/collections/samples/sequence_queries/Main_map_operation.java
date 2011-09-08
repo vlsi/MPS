@@ -68,7 +68,7 @@ __switch__:
     System.out.println("ignore odd numbers,");
     System.out.println("map each even number to two strings");
     final Wrappers._int count = new Wrappers._int(0);
-    Iterable<String> strings = Sequence.fromIterable(nums).<String>translate(new ITranslator2<Integer, String>() {
+    Iterable<String> strings = Sequence.fromIterable(nums).translate(new ITranslator2<Integer, String>() {
       public Iterable<String> translate(final Integer n) {
         return new Iterable<String>() {
           public Iterator<String> iterator() {

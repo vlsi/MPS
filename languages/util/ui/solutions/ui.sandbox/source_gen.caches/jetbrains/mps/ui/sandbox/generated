@@ -51,7 +51,7 @@
   <dep model="r:0096937e-0d1c-4498-b54e-f1ebceb78c48(jetbrains.mps.ui.internal.generator.template.main@generator)" hash="3hamuqiaisa177r0cuwycx4oqqo1l3o" />
   <dep model="r:0c4bfdbb-e20d-4270-a9e7-42e358fb6809(jetbrains.mps.ui.generator.template.cleanup@generator)" hash="-bw0xf50zbt5jx2pc7fct56ha2z944wo" />
   <dep model="r:10f25532-8045-4769-a24c-e48e027baa9d(jetbrains.mps.ui.sandbox.gwt)" hash="-5ixogyzbvyi9oqp7xmgrua66ftb8ga9" />
-  <dep model="r:1662aa20-edf5-46c3-8002-c6d4c875fd31(jetbrains.mps.gwt.client.generator.template.main@generator)" hash="-bjao2aljzybgdjor08vrw5k4f5ayfwu" />
+  <dep model="r:1662aa20-edf5-46c3-8002-c6d4c875fd31(jetbrains.mps.gwt.client.generator.template.main@generator)" hash="-6xjiub2ivxcuyxpttsgzrcg5i905lqe" />
   <dep model="r:22d98723-5ac5-4775-a416-434d71d737ed(jetbrains.mps.ui.swing.widgets)" />
   <dep model="r:2ca63f28-9d3e-4a14-8ffa-4a524cb41743(jetbrains.mps.ui.swt.generator.template.helper)" hash="-28ho7low3sid106uov1axjiy1yhv9xk" />
   <dep model="r:32537826-1146-4f8d-92f2-d34a6c6f2706(jetbrains.mps.ui.swing.generator.template.main@generator)" hash="8vorgj82wa84q9g6yu10z1hui9ssii0" />
@@ -112,12 +112,11 @@
     <file name="Function.java" />
     <file name="WidgetIterator.java" />
   </common>
-  <source id="7046856741208198715" name="UIDemo" hash="-6j73s62dj27ghw14km7wxp2kfgyfyzh" dependsOnCreated="true" dependsOnNodes="true">
+  <source id="7046856741208198715" name="UIDemo" hash="-6j73s62dj27ghw14km7wxp2kfgyfyzh" dependsOnCreated="true">
     <dep root="1438009850184735648" />
     <dep root="3546006303814922744" />
     <dep root="7001216437968616991" />
     <dep root="7046856741208199003" />
-    <dep root="7046856741208290890" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator(MPS.Classpath/jetbrains.mps.generator@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
     <dep model="f:java_stub#4c6a28d1-2c60-478d-b36e-db9b3cbb21fb#jetbrains.mps.baseLanguage.closures.runtime(closures.runtime/jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
@@ -232,12 +231,8 @@
     <dep model="r:6a4f00d3-a72e-48b0-96be-a5139db9536c(jetbrains.mps.baseLanguage.closures)" />
     <file name="UIDemo.gwt.xml" />
   </source>
-  <source id="7001216437968616991" name="PanelsDemo" hash="2u2m73vdxwg4sjoko9tyn02d83u8h24" dependsOnCreated="true" dependsOnNodes="true">
-    <dep root="1438009850184735648" />
-    <dep root="3546006303814922744" />
+  <source id="7001216437968616991" name="PanelsDemo" hash="2u2m73vdxwg4sjoko9tyn02d83u8h24" dependsOnCreated="true">
     <dep root="7046856741208198715" />
-    <dep root="7046856741208199003" />
-    <dep root="7046856741208290890" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator(MPS.Classpath/jetbrains.mps.generator@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
     <dep model="f:java_stub#4c6a28d1-2c60-478d-b36e-db9b3cbb21fb#jetbrains.mps.baseLanguage.closures.runtime(closures.runtime/jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />

@@ -112,7 +112,7 @@ public class ChangeSetBuilder {
     buildPropertyChanges(oldNode, newNode);
     buildReferenceChanges(oldNode, newNode);
 
-    Set<String> roles = SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(SNodeOperations.getChildren(oldNode)).concat(ListSequence.fromList(SNodeOperations.getChildren(newNode))).<String>select(new ISelector<SNode, String>() {
+    Set<String> roles = SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(SNodeOperations.getChildren(oldNode)).concat(ListSequence.fromList(SNodeOperations.getChildren(newNode))).select(new ISelector<SNode, String>() {
       public String select(SNode ch) {
         return SNodeOperations.getContainingLinkRole(ch);
       }
@@ -120,12 +120,12 @@ public class ChangeSetBuilder {
     for (String role : SetSequence.fromSet(roles)) {
       final List<SNode> oldChildren = oldNode.getChildren(role);
       List<SNode> newChildren = newNode.getChildren(role);
-      List<SNodeId> oldIds = ListSequence.fromList(oldChildren).<SNodeId>select(new ISelector<SNode, SNodeId>() {
+      List<SNodeId> oldIds = ListSequence.fromList(oldChildren).select(new ISelector<SNode, SNodeId>() {
         public SNodeId select(SNode n) {
           return n.getSNodeId();
         }
       }).toListSequence();
-      List<SNodeId> newIds = ListSequence.fromList(newChildren).<SNodeId>select(new ISelector<SNode, SNodeId>() {
+      List<SNodeId> newIds = ListSequence.fromList(newChildren).select(new ISelector<SNode, SNodeId>() {
         public SNodeId select(SNode n) {
           return n.getSNodeId();
         }
@@ -142,7 +142,7 @@ public class ChangeSetBuilder {
 
       // Finding changes for children 
       List<Tuples._2<Integer, Integer>> commonIndices = finder.getCommonIndices();
-      ListSequence.fromList(commonIndices).<SNode>select(new ISelector<Tuples._2<Integer, Integer>, SNode>() {
+      ListSequence.fromList(commonIndices).select(new ISelector<Tuples._2<Integer, Integer>, SNode>() {
         public SNode select(Tuples._2<Integer, Integer> in) {
           return ListSequence.fromList(oldChildren).getElement((int) in._0());
         }
@@ -162,12 +162,12 @@ public class ChangeSetBuilder {
       added = _tmp_nbyrtw_c0d._0();
       deleted = _tmp_nbyrtw_c0d._1();
     }
-    myChangeSet.addAll(Sequence.fromIterable(added).<DependencyChange>select(new ISelector<D, DependencyChange>() {
+    myChangeSet.addAll(Sequence.fromIterable(added).select(new ISelector<D, DependencyChange>() {
       public DependencyChange select(D r) {
         return changeCreator.invoke(r, false);
       }
     }));
-    myChangeSet.addAll(Sequence.fromIterable(deleted).<DependencyChange>select(new ISelector<D, DependencyChange>() {
+    myChangeSet.addAll(Sequence.fromIterable(deleted).select(new ISelector<D, DependencyChange>() {
       public DependencyChange select(D r) {
         return changeCreator.invoke(r, true);
       }
@@ -177,7 +177,7 @@ public class ChangeSetBuilder {
   private void buildModelImports() {
     _FunctionTypes._return_P1_E0<? extends Iterable<SModelReference>, ? super SModel> importedModelsExtractor = new _FunctionTypes._return_P1_E0<ISequence<SModelReference>, SModel>() {
       public ISequence<SModelReference> invoke(SModel model) {
-        return ListSequence.fromList(((List<SModel.ImportElement>) model.importedModels())).<SModelReference>select(new ISelector<SModel.ImportElement, SModelReference>() {
+        return ListSequence.fromList(((List<SModel.ImportElement>) model.importedModels())).select(new ISelector<SModel.ImportElement, SModelReference>() {
           public SModelReference select(SModel.ImportElement ie) {
             return ie.getModelReference();
           }
@@ -230,7 +230,7 @@ public class ChangeSetBuilder {
 
     _FunctionTypes._return_P1_E0<? extends Set<SNodeId>, ? super SModel> rootIds = new _FunctionTypes._return_P1_E0<ISetSequence<SNodeId>, SModel>() {
       public ISetSequence<SNodeId> invoke(SModel m) {
-        return SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SModelOperations.getRoots(m, null)).<SNodeId>select(new ISelector<SNode, SNodeId>() {
+        return SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SModelOperations.getRoots(m, null)).select(new ISelector<SNode, SNodeId>() {
           public SNodeId select(SNode node) {
             return node.getSNodeId();
           }
@@ -240,12 +240,12 @@ public class ChangeSetBuilder {
     Set<SNodeId> oldRootIds = rootIds.invoke(myOldModel);
     Set<SNodeId> newRootIds = rootIds.invoke(myNewModel);
 
-    myChangeSet.addAll(SetSequence.fromSet(newRootIds).subtract(SetSequence.fromSet(oldRootIds)).<AddRootChange>select(new ISelector<SNodeId, AddRootChange>() {
+    myChangeSet.addAll(SetSequence.fromSet(newRootIds).subtract(SetSequence.fromSet(oldRootIds)).select(new ISelector<SNodeId, AddRootChange>() {
       public AddRootChange select(SNodeId r) {
         return new AddRootChange(myChangeSet, r);
       }
     }));
-    myChangeSet.addAll(SetSequence.fromSet(oldRootIds).subtract(SetSequence.fromSet(newRootIds)).<DeleteRootChange>select(new ISelector<SNodeId, DeleteRootChange>() {
+    myChangeSet.addAll(SetSequence.fromSet(oldRootIds).subtract(SetSequence.fromSet(newRootIds)).select(new ISelector<SNodeId, DeleteRootChange>() {
       public DeleteRootChange select(SNodeId r) {
         return new DeleteRootChange(myChangeSet, r);
       }

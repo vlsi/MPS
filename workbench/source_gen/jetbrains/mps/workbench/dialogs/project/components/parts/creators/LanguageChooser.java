@@ -26,7 +26,7 @@ public class LanguageChooser implements Computable<List<ModuleReference>> {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<Language> langs = GlobalScope.getInstance().getVisibleLanguages();
-        langRefs.value = ListSequence.fromList(langs).<ModuleReference>select(new ISelector<Language, ModuleReference>() {
+        langRefs.value = ListSequence.fromList(langs).select(new ISelector<Language, ModuleReference>() {
           public ModuleReference select(Language it) {
             return it.getModuleReference();
           }

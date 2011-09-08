@@ -43,7 +43,7 @@ public class NullSequence_Test extends Util_Test {
   public void test_nullTranslate() throws Exception {
     if (Sequence.USE_NULL_SEQUENCE) {
       Iterable<Integer> input = this.input5();
-      Iterable<String> nullSeq = Sequence.fromIterable(input).<String>translate(new ITranslator2<Integer, String>() {
+      Iterable<String> nullSeq = Sequence.fromIterable(input).translate(new ITranslator2<Integer, String>() {
         public Iterable<String> translate(Integer it) {
           return ((ISequence<String>) null);
         }

@@ -115,7 +115,7 @@ __switch__:
         SetSequence.fromSet(ls).addElement(i);
       }
     });
-    this.assertIterableEqualsAsSet(this.input5(), SetSequence.fromSet(ls).<Integer>select(new ISelector<Long, Integer>() {
+    this.assertIterableEqualsAsSet(this.input5(), SetSequence.fromSet(ls).select(new ISelector<Long, Integer>() {
       public Integer select(Long l) {
         return (int) (long) l;
       }

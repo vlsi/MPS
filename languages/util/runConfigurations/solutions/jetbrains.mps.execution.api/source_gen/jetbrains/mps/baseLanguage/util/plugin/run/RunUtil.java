@@ -48,7 +48,7 @@ public class RunUtil {
     final Wrappers._T<List<SModelDescriptor>> descriptors = new Wrappers._T<List<SModelDescriptor>>(ListSequence.fromList(new ArrayList<SModelDescriptor>()));
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        descriptors.value = ListSequence.fromList(nodes).<SModelDescriptor>select(new ISelector<SNode, SModelDescriptor>() {
+        descriptors.value = ListSequence.fromList(nodes).select(new ISelector<SNode, SModelDescriptor>() {
           public SModelDescriptor select(SNode it) {
             return SNodeOperations.getModel(it).getModelDescriptor();
           }

@@ -134,16 +134,16 @@ public class SetNodePackage_Action extends GeneratedAction {
   }
 
   /*package*/ List<String> fetchExistingPackages(List<SNode> nlist, final Map<String, Object> _params) {
-    Set<SModel> models = SetSequence.fromSetWithValues(new HashSet<SModel>(), ListSequence.fromList(nlist).<SModel>select(new ISelector<SNode, SModel>() {
+    Set<SModel> models = SetSequence.fromSetWithValues(new HashSet<SModel>(), ListSequence.fromList(nlist).select(new ISelector<SNode, SModel>() {
       public SModel select(SNode n) {
         return SNodeOperations.getModel(n);
       }
     }));
-    Set<String> packages = SetSequence.fromSetWithValues(new HashSet<String>(), SetSequence.fromSet(models).<SNode>translate(new ITranslator2<SModel, SNode>() {
+    Set<String> packages = SetSequence.fromSetWithValues(new HashSet<String>(), SetSequence.fromSet(models).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel m) {
         return SModelOperations.getRoots(m, "jetbrains.mps.lang.core.structure.BaseConcept");
       }
-    }).<String>select(new ISelector<SNode, String>() {
+    }).select(new ISelector<SNode, String>() {
       public String select(SNode r) {
         return SPropertyOperations.getString(r, "virtualPackage");
       }

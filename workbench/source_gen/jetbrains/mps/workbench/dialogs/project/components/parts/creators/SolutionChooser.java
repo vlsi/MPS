@@ -26,7 +26,7 @@ public class SolutionChooser implements Computable<List<ModuleReference>> {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<Solution> solutions = MPSModuleRepository.getInstance().getAllSolutions();
-        solRefs.value = ListSequence.fromList(solutions).<ModuleReference>select(new ISelector<Solution, ModuleReference>() {
+        solRefs.value = ListSequence.fromList(solutions).select(new ISelector<Solution, ModuleReference>() {
           public ModuleReference select(Solution it) {
             return it.getModuleReference();
           }

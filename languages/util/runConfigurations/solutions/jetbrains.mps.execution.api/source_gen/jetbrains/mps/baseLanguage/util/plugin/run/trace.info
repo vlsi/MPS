@@ -369,7 +369,7 @@
     <nodeInfo nodeId="5766538065404345043" fileName="RunUtil.java" startLine="43" startPosition="87" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5766538065404344182" fileName="RunUtil.java" startLine="65" startPosition="85" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="809981953580477607" fileName="RunUtil.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="makeBeforeRun#(Lcom/intellij/openapi/project/Project;null)Z" />
-    <nodeInfo nodeId="5766538065404281878" fileName="RunUtil.java" startLine="51" startPosition="124" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SModelDescriptor;" />
+    <nodeInfo nodeId="5766538065404281878" fileName="RunUtil.java" startLine="51" startPosition="106" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SModelDescriptor;" />
     <nodeInfo nodeId="5766538065404283748" fileName="RunUtil.java" startLine="55" startPosition="66" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
     <nodeInfo nodeId="5766538065404345103" fileName="RunUtil.java" startLine="73" startPosition="28" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="5766538065404281867" fileName="RunUtil.java" startLine="50" startPosition="25" endLine="59" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -402,7 +402,7 @@
       <varInfo nodeId="809981953580482464" varName="project" />
       <varInfo nodeId="809981953580482508" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="5766538065404281878" fileName="RunUtil.java" startLine="51" startPosition="124" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="5766538065404281878" fileName="RunUtil.java" startLine="51" startPosition="106" endLine="55" endPosition="0" />
     <scopeInfo nodeId="5766538065404283748" fileName="RunUtil.java" startLine="55" startPosition="66" endLine="59" endPosition="0" />
     <scopeInfo nodeId="5766538065404281866" fileName="RunUtil.java" startLine="50" startPosition="25" endLine="59" endPosition="28" />
     <scopeInfo nodeId="8492721726839158355" fileName="RunUtil.java" startLine="71" startPosition="62" endLine="80" endPosition="52">
@@ -424,7 +424,7 @@
       <varInfo nodeId="5766538065404281845" varName="project" />
       <varInfo nodeId="5766538065404281847" varName="nodes" />
     </scopeInfo>
-    <unitInfo nodeId="5766538065404281878" fileName="RunUtil.java" startLine="51" startPosition="86" endLine="55" endPosition="9" unitName="jetbrains.mps.baseLanguage.util.plugin.run.RunUtil$2" />
+    <unitInfo nodeId="5766538065404281878" fileName="RunUtil.java" startLine="51" startPosition="68" endLine="55" endPosition="9" unitName="jetbrains.mps.baseLanguage.util.plugin.run.RunUtil$2" />
     <unitInfo nodeId="5766538065404283748" fileName="RunUtil.java" startLine="55" startPosition="32" endLine="59" endPosition="9" unitName="jetbrains.mps.baseLanguage.util.plugin.run.RunUtil$2" />
     <unitInfo nodeId="5766538065404281865" fileName="RunUtil.java" startLine="49" startPosition="45" endLine="61" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.run.RunUtil$1" />
     <unitInfo nodeId="8492459591399148601" fileName="RunUtil.java" startLine="28" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.run.RunUtil" />

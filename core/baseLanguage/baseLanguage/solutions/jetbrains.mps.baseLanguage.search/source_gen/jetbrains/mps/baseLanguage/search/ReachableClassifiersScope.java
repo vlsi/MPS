@@ -84,7 +84,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       Collection<IModule> visibleModules = IterableUtil.asCollection(myScope.getVisibleModules());
 
       List<SNode> classifiers = new ArrayList<SNode>();
-      for (SModelDescriptor model : Sequence.fromIterable(((Iterable<IModule>) visibleModules)).<SModelDescriptor>translate(new ITranslator2<IModule, SModelDescriptor>() {
+      for (SModelDescriptor model : Sequence.fromIterable(((Iterable<IModule>) visibleModules)).translate(new ITranslator2<IModule, SModelDescriptor>() {
         public Iterable<SModelDescriptor> translate(IModule it) {
           return it.getOwnModelDescriptors();
         }

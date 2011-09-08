@@ -29,14 +29,14 @@
     <nodeInfo nodeId="7566850531967206381" fileName="CommandLineGenerator.java" startLine="66" startPosition="44" endLine="69" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3042807695808132413" fileName="CommandLineGenerator.java" startLine="81" startPosition="153" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3042807695808133921" fileName="CommandLineGenerator.java" startLine="37" startPosition="85" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="74" startPosition="130" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Class;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="74" startPosition="122" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Class;)Ljava/lang/String;" />
     <nodeInfo nodeId="3042807695808133904" fileName="CommandLineGenerator.java" startLine="36" startPosition="40" endLine="41" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1016968294606525542" fileName="CommandLineGenerator.java" startLine="50" startPosition="91" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3042807695808132383" fileName="CommandLineGenerator.java" startLine="73" startPosition="46" endLine="78" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3042807695808133893" fileName="CommandLineGenerator.java" startLine="35" startPosition="58" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7566850531967206370" fileName="CommandLineGenerator.java" startLine="63" startPosition="38" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1016968294606525527" fileName="CommandLineGenerator.java" startLine="48" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSvnkitJar#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="62" startPosition="97" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Class;" />
+    <nodeInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="62" startPosition="90" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Class;" />
     <nodeInfo nodeId="7464741641936367237" fileName="CommandLineGenerator.java" startLine="61" startPosition="158" endLine="73" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1016968294606525398" fileName="CommandLineGenerator.java" startLine="33" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCommandLine#(Z)Ljava/lang/String;" />
     <nodeInfo nodeId="3042807695808132371" fileName="CommandLineGenerator.java" startLine="57" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClasspath#(Z)Ljava/util/Set;" />
@@ -55,14 +55,14 @@
       <varInfo nodeId="7566850531967206378" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="7566850531967206380" fileName="CommandLineGenerator.java" startLine="66" startPosition="44" endLine="70" endPosition="22" />
-    <scopeInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="74" startPosition="130" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="74" startPosition="122" endLine="78" endPosition="0" />
     <scopeInfo nodeId="3042807695808133894" fileName="CommandLineGenerator.java" startLine="36" startPosition="40" endLine="41" endPosition="87" />
     <scopeInfo nodeId="1016968294606525530" fileName="CommandLineGenerator.java" startLine="49" startPosition="44" endLine="55" endPosition="5">
       <varInfo nodeId="1016968294606525535" varName="svnPlugin" />
     </scopeInfo>
     <scopeInfo nodeId="7566850531967206369" fileName="CommandLineGenerator.java" startLine="63" startPosition="38" endLine="71" endPosition="9" />
     <scopeInfo nodeId="1016968294606525527" fileName="CommandLineGenerator.java" startLine="48" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="62" startPosition="97" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="62" startPosition="90" endLine="73" endPosition="0" />
     <scopeInfo nodeId="1016968294606525401" fileName="CommandLineGenerator.java" startLine="34" startPosition="59" endLine="46" endPosition="173">
       <varInfo nodeId="4971460776563927971" varName="escapedLogPath" />
       <varInfo nodeId="7745158536326881993" varName="classpathString" />
@@ -81,8 +81,8 @@
       <varInfo nodeId="3042807695808132421" varName="withSvnkit" />
     </scopeInfo>
     <unitInfo nodeId="3042807695808133921" fileName="CommandLineGenerator.java" startLine="37" startPosition="61" endLine="41" endPosition="7" unitName="jetbrains.mps.vcs.mergedriver.CommandLineGenerator$1" />
-    <unitInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="74" startPosition="102" endLine="78" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.CommandLineGenerator$3" />
-    <unitInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="62" startPosition="69" endLine="73" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.CommandLineGenerator$2" />
+    <unitInfo nodeId="8869411891375799190" fileName="CommandLineGenerator.java" startLine="74" startPosition="94" endLine="78" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.CommandLineGenerator$3" />
+    <unitInfo nodeId="7566850531967206368" fileName="CommandLineGenerator.java" startLine="62" startPosition="62" endLine="73" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.CommandLineGenerator$2" />
     <unitInfo nodeId="1016968294606525391" fileName="CommandLineGenerator.java" startLine="28" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.CommandLineGenerator" />
   </root>
   <root nodeId="1016968294606545841">
@@ -927,11 +927,11 @@
     <nodeInfo nodeId="1376744028423472504" fileName="GitRepositoriesInstaller.java" startLine="143" startPosition="83" endLine="146" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="572687202609934005" fileName="GitRepositoriesInstaller.java" startLine="152" startPosition="9" endLine="155" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8943425860594721065" fileName="GitRepositoriesInstaller.java" startLine="157" startPosition="0" endLine="160" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1376744028423472586" fileName="GitRepositoriesInstaller.java" startLine="35" startPosition="160" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lcom/intellij/openapi/vcs/VcsRoot;)Ljetbrains/mps/vcs/mergedriver/AbstractInstaller/State;" />
+    <nodeInfo nodeId="1376744028423472586" fileName="GitRepositoriesInstaller.java" startLine="35" startPosition="135" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lcom/intellij/openapi/vcs/VcsRoot;)Ljetbrains/mps/vcs/mergedriver/AbstractInstaller/State;" />
     <nodeInfo nodeId="1376744028423472608" fileName="GitRepositoriesInstaller.java" startLine="40" startPosition="89" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/mergedriver/AbstractInstaller/State;)Z" />
     <nodeInfo nodeId="1376744028423472667" fileName="GitRepositoriesInstaller.java" startLine="46" startPosition="96" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/mergedriver/AbstractInstaller/State;)Z" />
     <nodeInfo nodeId="1376744028423472664" fileName="GitRepositoriesInstaller.java" startLine="54" startPosition="12" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1400826623542832160" fileName="GitRepositoriesInstaller.java" startLine="64" startPosition="131" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lcom/intellij/openapi/vcs/VcsRoot;)Ljetbrains/mps/vcs/mergedriver/AbstractInstaller/State;" />
+    <nodeInfo nodeId="1400826623542832160" fileName="GitRepositoriesInstaller.java" startLine="64" startPosition="106" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lcom/intellij/openapi/vcs/VcsRoot;)Ljetbrains/mps/vcs/mergedriver/AbstractInstaller/State;" />
     <nodeInfo nodeId="1400826623542832182" fileName="GitRepositoriesInstaller.java" startLine="68" startPosition="58" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/mergedriver/AbstractInstaller/State;)Z" />
     <nodeInfo nodeId="1400826623542832129" fileName="GitRepositoriesInstaller.java" startLine="77" startPosition="98" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/intellij/openapi/vcs/VcsRoot;)Z" />
     <nodeInfo nodeId="5130910134095705956" fileName="GitRepositoriesInstaller.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getActionTitle#()Ljava/lang/String;" />
@@ -996,10 +996,10 @@
     <scopeInfo nodeId="1376744028423472637" fileName="GitRepositoriesInstaller.java" startLine="50" startPosition="11" endLine="53" endPosition="9" />
     <scopeInfo nodeId="1376744028423472665" fileName="GitRepositoriesInstaller.java" startLine="54" startPosition="14" endLine="57" endPosition="9" />
     <scopeInfo nodeId="1376744028423472483" fileName="GitRepositoriesInstaller.java" startLine="143" startPosition="83" endLine="146" endPosition="15" />
-    <scopeInfo nodeId="1376744028423472586" fileName="GitRepositoriesInstaller.java" startLine="35" startPosition="160" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1376744028423472586" fileName="GitRepositoriesInstaller.java" startLine="35" startPosition="135" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1376744028423472608" fileName="GitRepositoriesInstaller.java" startLine="40" startPosition="89" endLine="44" endPosition="0" />
     <scopeInfo nodeId="1376744028423472667" fileName="GitRepositoriesInstaller.java" startLine="46" startPosition="96" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1400826623542832160" fileName="GitRepositoriesInstaller.java" startLine="64" startPosition="131" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1400826623542832160" fileName="GitRepositoriesInstaller.java" startLine="64" startPosition="106" endLine="68" endPosition="0" />
     <scopeInfo nodeId="1400826623542832182" fileName="GitRepositoriesInstaller.java" startLine="68" startPosition="58" endLine="72" endPosition="0" />
     <scopeInfo nodeId="1400826623542832129" fileName="GitRepositoriesInstaller.java" startLine="77" startPosition="98" endLine="81" endPosition="0" />
     <scopeInfo nodeId="5130910134095705956" fileName="GitRepositoriesInstaller.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
@@ -1051,10 +1051,10 @@
       <varInfo nodeId="572687202609933841" varName="dryRun" />
       <varInfo nodeId="572687202609933839" varName="vcsRootPath" />
     </scopeInfo>
-    <unitInfo nodeId="1376744028423472586" fileName="GitRepositoriesInstaller.java" startLine="35" startPosition="113" endLine="39" endPosition="7" unitName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller$2" />
+    <unitInfo nodeId="1376744028423472586" fileName="GitRepositoriesInstaller.java" startLine="35" startPosition="88" endLine="39" endPosition="7" unitName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller$2" />
     <unitInfo nodeId="1376744028423472608" fileName="GitRepositoriesInstaller.java" startLine="40" startPosition="48" endLine="44" endPosition="7" unitName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller$3" />
     <unitInfo nodeId="1376744028423472667" fileName="GitRepositoriesInstaller.java" startLine="46" startPosition="55" endLine="50" endPosition="7" unitName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller$4" />
-    <unitInfo nodeId="1400826623542832160" fileName="GitRepositoriesInstaller.java" startLine="64" startPosition="84" endLine="68" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller$5" />
+    <unitInfo nodeId="1400826623542832160" fileName="GitRepositoriesInstaller.java" startLine="64" startPosition="59" endLine="68" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller$5" />
     <unitInfo nodeId="1400826623542832182" fileName="GitRepositoriesInstaller.java" startLine="68" startPosition="17" endLine="72" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller$6" />
     <unitInfo nodeId="1400826623542832129" fileName="GitRepositoriesInstaller.java" startLine="77" startPosition="73" endLine="81" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller$7" />
     <unitInfo nodeId="1376744028423395842" fileName="GitRepositoriesInstaller.java" startLine="129" startPosition="54" endLine="133" endPosition="11" unitName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller$2" />
@@ -1637,9 +1637,9 @@
     <nodeInfo nodeId="6989360587247930339" fileName="MergeDriverNotification.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNotificationSuppressed#()Z" />
     <nodeInfo nodeId="6989360587248001330" fileName="MergeDriverNotification.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setNotificationsSuppressed#(Z)V" />
     <nodeInfo nodeId="4355241322422981958" fileName="MergeDriverNotification.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calculateCompositeState#()V" />
-    <nodeInfo nodeId="1190974551626681719" fileName="MergeDriverNotification.java" startLine="70" startPosition="269" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lcom/intellij/openapi/vcs/VcsDirectoryMapping;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1190974551626681719" fileName="MergeDriverNotification.java" startLine="70" startPosition="261" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lcom/intellij/openapi/vcs/VcsDirectoryMapping;)Ljava/lang/String;" />
     <nodeInfo nodeId="4495307634210966568" fileName="MergeDriverNotification.java" startLine="74" startPosition="41" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1190974551626681729" fileName="MergeDriverNotification.java" startLine="81" startPosition="123" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1190974551626681729" fileName="MergeDriverNotification.java" startLine="81" startPosition="115" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="4355241322423085285" fileName="MergeDriverNotification.java" startLine="85" startPosition="36" endLine="89" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6989360587247930300" fileName="MergeDriverNotification.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/vcs/mergedriver/MergeDriverNotification;" />
     <nodeInfo nodeId="6989360587248026904" fileName="MergeDriverNotification.java" startLine="80" startPosition="25" endLine="85" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1677,9 +1677,9 @@
       <varInfo nodeId="6989360587248001351" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="4355241322422981958" fileName="MergeDriverNotification.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1190974551626681719" fileName="MergeDriverNotification.java" startLine="70" startPosition="269" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="1190974551626681719" fileName="MergeDriverNotification.java" startLine="70" startPosition="261" endLine="74" endPosition="0" />
     <scopeInfo nodeId="4495307634210966568" fileName="MergeDriverNotification.java" startLine="74" startPosition="41" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1190974551626681729" fileName="MergeDriverNotification.java" startLine="81" startPosition="123" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="1190974551626681729" fileName="MergeDriverNotification.java" startLine="81" startPosition="115" endLine="85" endPosition="0" />
     <scopeInfo nodeId="6989360587247930300" fileName="MergeDriverNotification.java" startLine="114" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="6989360587247930304" varName="project" />
     </scopeInfo>
@@ -1700,9 +1700,9 @@
       <varInfo nodeId="1190974551626681703" varName="vcsNames" />
     </scopeInfo>
     <scopeInfo nodeId="6989360587248012822" fileName="MergeDriverNotification.java" startLine="68" startPosition="0" endLine="114" endPosition="0" />
-    <unitInfo nodeId="1190974551626681719" fileName="MergeDriverNotification.java" startLine="70" startPosition="227" endLine="74" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverNotification$1" />
+    <unitInfo nodeId="1190974551626681719" fileName="MergeDriverNotification.java" startLine="70" startPosition="219" endLine="74" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverNotification$1" />
     <unitInfo nodeId="4495307634210966568" fileName="MergeDriverNotification.java" startLine="74" startPosition="17" endLine="78" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverNotification$2" />
-    <unitInfo nodeId="1190974551626681729" fileName="MergeDriverNotification.java" startLine="81" startPosition="94" endLine="85" endPosition="9" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverNotification$4" />
+    <unitInfo nodeId="1190974551626681729" fileName="MergeDriverNotification.java" startLine="81" startPosition="86" endLine="85" endPosition="9" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverNotification$4" />
     <unitInfo nodeId="6989360587248026804" fileName="MergeDriverNotification.java" startLine="91" startPosition="114" endLine="109" endPosition="9" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverNotification$4" />
     <unitInfo nodeId="6989360587248025276" fileName="MergeDriverNotification.java" startLine="79" startPosition="40" endLine="112" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverNotification$3" />
     <unitInfo nodeId="6989360587247930283" fileName="MergeDriverNotification.java" startLine="29" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverNotification" />

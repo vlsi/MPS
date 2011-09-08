@@ -19,7 +19,7 @@ public abstract class GraphAnalyzer<V> {
   private Map<V, GraphAnalyzer.Wrapper<V>> wrapMap = MapSequence.fromMap(new HashMap<V, GraphAnalyzer.Wrapper<V>>());
   private _FunctionTypes._return_P1_E0<? extends Iterable<GraphAnalyzer.Wrapper<V>>, ? super GraphAnalyzer.Wrapper<V>> forward = new _FunctionTypes._return_P1_E0<ISequence<GraphAnalyzer.Wrapper<V>>, GraphAnalyzer.Wrapper<V>>() {
     public ISequence<GraphAnalyzer.Wrapper<V>> invoke(GraphAnalyzer.Wrapper<V> d) {
-      return Sequence.fromIterable(forwardEdges(d.vertex)).<GraphAnalyzer.Wrapper<V>>select(new ISelector<V, GraphAnalyzer.Wrapper<V>>() {
+      return Sequence.fromIterable(forwardEdges(d.vertex)).select(new ISelector<V, GraphAnalyzer.Wrapper<V>>() {
         public GraphAnalyzer.Wrapper<V> select(V v) {
           return MapSequence.fromMap(wrapMap).get(v);
         }
@@ -28,7 +28,7 @@ public abstract class GraphAnalyzer<V> {
   };
   private _FunctionTypes._return_P1_E0<? extends Iterable<GraphAnalyzer.Wrapper<V>>, ? super GraphAnalyzer.Wrapper<V>> backward = new _FunctionTypes._return_P1_E0<ISequence<GraphAnalyzer.Wrapper<V>>, GraphAnalyzer.Wrapper<V>>() {
     public ISequence<GraphAnalyzer.Wrapper<V>> invoke(GraphAnalyzer.Wrapper<V> d) {
-      return Sequence.fromIterable(backwardEdges(d.vertex)).<GraphAnalyzer.Wrapper<V>>select(new ISelector<V, GraphAnalyzer.Wrapper<V>>() {
+      return Sequence.fromIterable(backwardEdges(d.vertex)).select(new ISelector<V, GraphAnalyzer.Wrapper<V>>() {
         public GraphAnalyzer.Wrapper<V> select(V v) {
           return MapSequence.fromMap(wrapMap).get(v);
         }
@@ -57,7 +57,7 @@ public abstract class GraphAnalyzer<V> {
 
   public Iterable<V> topologicalSort() {
     Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices());
-    return ListSequence.fromList(this.topoSort(ws)).<V>select(new ISelector<GraphAnalyzer.Wrapper<V>, V>() {
+    return ListSequence.fromList(this.topoSort(ws)).select(new ISelector<GraphAnalyzer.Wrapper<V>, V>() {
       public V select(GraphAnalyzer.Wrapper<V> w) {
         return w.vertex;
       }
@@ -66,7 +66,7 @@ public abstract class GraphAnalyzer<V> {
 
   public Iterable<V> precursors(V v) {
     Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices());
-    return ListSequence.fromList(this.reachable(MapSequence.fromMap(wrapMap).get(v), ws, backward)).<V>select(new ISelector<GraphAnalyzer.Wrapper<V>, V>() {
+    return ListSequence.fromList(this.reachable(MapSequence.fromMap(wrapMap).get(v), ws, backward)).select(new ISelector<GraphAnalyzer.Wrapper<V>, V>() {
       public V select(GraphAnalyzer.Wrapper<V> w) {
         return w.vertex;
       }
@@ -74,7 +74,7 @@ public abstract class GraphAnalyzer<V> {
   }
 
   private Iterable<GraphAnalyzer.Wrapper<V>> init(Iterable<V> vertices) {
-    return Sequence.fromIterable(vertices).<GraphAnalyzer.Wrapper<V>>select(new ISelector<V, GraphAnalyzer.Wrapper<V>>() {
+    return Sequence.fromIterable(vertices).select(new ISelector<V, GraphAnalyzer.Wrapper<V>>() {
       public GraphAnalyzer.Wrapper<V> select(V v) {
         GraphAnalyzer.Wrapper<V> data = new GraphAnalyzer.Wrapper<V>(v);
         MapSequence.fromMap(wrapMap).put(v, data);

@@ -232,7 +232,7 @@
     <nodeInfo nodeId="5444017747357185935" fileName="EditorComponentChangesHighligher.java" startLine="291" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToNextChange#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <nodeInfo nodeId="3499023120082622733" fileName="EditorComponentChangesHighligher.java" startLine="295" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPreviousChangeAvailable#(Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
     <nodeInfo nodeId="3499023120082624535" fileName="EditorComponentChangesHighligher.java" startLine="299" startPosition="0" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNextChangeAvailable#(Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="2107542654406138048" fileName="EditorComponentChangesHighligher.java" startLine="305" startPosition="225" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Ljetbrains/mps/vcs/diff/oldchanges/OldChange;" />
+    <nodeInfo nodeId="2107542654406138048" fileName="EditorComponentChangesHighligher.java" startLine="305" startPosition="214" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Ljetbrains/mps/vcs/diff/oldchanges/OldChange;" />
     <nodeInfo nodeId="3525805834279458636" fileName="EditorComponentChangesHighligher.java" startLine="312" startPosition="0" endLine="316" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHighlightManager#()Ljetbrains/mps/nodeEditor/NodeHighlightManager;" />
     <nodeInfo nodeId="7152638585749154664" fileName="EditorComponentChangesHighligher.java" startLine="320" startPosition="112" endLine="324" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Z" />
     <nodeInfo nodeId="6149144798615862332" fileName="EditorComponentChangesHighligher.java" startLine="340" startPosition="0" endLine="344" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeEditorMessage#(Ljetbrains/mps/vcs/diff/oldchanges/OldChange;Ljetbrains/mps/smodel/SNode;Ljava/awt/Color;Ljetbrains/mps/errors/messageTargets/MessageTarget;)V" />
@@ -424,7 +424,7 @@
     <scopeInfo nodeId="3499023120082624535" fileName="EditorComponentChangesHighligher.java" startLine="299" startPosition="0" endLine="303" endPosition="0">
       <varInfo nodeId="3499023120082624546" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2107542654406138048" fileName="EditorComponentChangesHighligher.java" startLine="305" startPosition="225" endLine="309" endPosition="0" />
+    <scopeInfo nodeId="2107542654406138048" fileName="EditorComponentChangesHighligher.java" startLine="305" startPosition="214" endLine="309" endPosition="0" />
     <scopeInfo nodeId="3525805834279458636" fileName="EditorComponentChangesHighligher.java" startLine="312" startPosition="0" endLine="316" endPosition="0" />
     <scopeInfo nodeId="7152638585749154664" fileName="EditorComponentChangesHighligher.java" startLine="320" startPosition="112" endLine="324" endPosition="0" />
     <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="330" startPosition="93" endLine="334" endPosition="16" />
@@ -607,7 +607,7 @@
     <unitInfo nodeId="7627490208786700325" fileName="EditorComponentChangesHighligher.java" startLine="164" startPosition="45" endLine="168" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$3" />
     <unitInfo nodeId="3499023120082619109" fileName="EditorComponentChangesHighligher.java" startLine="257" startPosition="87" endLine="261" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$5" />
     <unitInfo nodeId="3499023120082621850" fileName="EditorComponentChangesHighligher.java" startLine="270" startPosition="88" endLine="274" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$6" />
-    <unitInfo nodeId="2107542654406138048" fileName="EditorComponentChangesHighligher.java" startLine="305" startPosition="147" endLine="309" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$7" />
+    <unitInfo nodeId="2107542654406138048" fileName="EditorComponentChangesHighligher.java" startLine="305" startPosition="136" endLine="309" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$7" />
     <unitInfo nodeId="7152638585749154664" fileName="EditorComponentChangesHighligher.java" startLine="320" startPosition="84" endLine="324" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$1" />
     <unitInfo nodeId="967454776205100697" fileName="EditorComponentChangesHighligher.java" startLine="538" startPosition="44" endLine="542" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$1" />
     <unitInfo nodeId="4410510979167112711" fileName="EditorComponentChangesHighligher.java" startLine="145" startPosition="51" endLine="153" endPosition="11" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$3" />
@@ -1305,7 +1305,7 @@
     <nodeInfo nodeId="7523553402533156445" fileName="SModelUtils.java" startLine="21" startPosition="26" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SModelUtils#()V" />
     <nodeInfo nodeId="4056424511791981411" fileName="SModelUtils.java" startLine="36" startPosition="132" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4056424511791981436" fileName="SModelUtils.java" startLine="41" startPosition="322" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4056424511791981374" fileName="SModelUtils.java" startLine="27" startPosition="89" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="4056424511791981374" fileName="SModelUtils.java" startLine="27" startPosition="80" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNodeId;" />
     <nodeInfo nodeId="4056424511791981454" fileName="SModelUtils.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isChildInSingleRole#(Ljetbrains/mps/smodel/event/SModelChildEvent;)Z" />
     <nodeInfo nodeId="4056424511791981490" fileName="SModelUtils.java" startLine="55" startPosition="70" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="762570481842505907" fileName="SModelUtils.java" startLine="68" startPosition="72" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
@@ -1327,7 +1327,7 @@
     <scopeInfo nodeId="762570481842505897" fileName="SModelUtils.java" startLine="72" startPosition="12" endLine="73" endPosition="60" />
     <scopeInfo nodeId="7523553402533156445" fileName="SModelUtils.java" startLine="21" startPosition="26" endLine="23" endPosition="3" />
     <scopeInfo nodeId="4056424511791981494" fileName="SModelUtils.java" startLine="56" startPosition="26" endLine="58" endPosition="45" />
-    <scopeInfo nodeId="4056424511791981374" fileName="SModelUtils.java" startLine="27" startPosition="89" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="4056424511791981374" fileName="SModelUtils.java" startLine="27" startPosition="80" endLine="31" endPosition="0" />
     <scopeInfo nodeId="4056424511791981400" fileName="SModelUtils.java" startLine="35" startPosition="57" endLine="39" endPosition="7">
       <varInfo nodeId="4056424511791981402" varName="annotationLinkDeclaration" />
     </scopeInfo>
@@ -1362,7 +1362,7 @@
     <scopeInfo nodeId="762570481842505862" fileName="SModelUtils.java" startLine="63" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="762570481842505872" varName="nodes" />
     </scopeInfo>
-    <unitInfo nodeId="4056424511791981374" fileName="SModelUtils.java" startLine="27" startPosition="60" endLine="31" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.SModelUtils$1" />
+    <unitInfo nodeId="4056424511791981374" fileName="SModelUtils.java" startLine="27" startPosition="51" endLine="31" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.SModelUtils$1" />
     <unitInfo nodeId="762570481842505907" fileName="SModelUtils.java" startLine="68" startPosition="49" endLine="72" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.SModelUtils$2" />
     <unitInfo nodeId="4056424511791981358" fileName="SModelUtils.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.SModelUtils" />
   </root>
@@ -3313,7 +3313,7 @@
     <nodeInfo nodeId="5687497293128274350" fileName="ModelChangesManager.java" startLine="951" startPosition="12" endLine="961" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="118178915293552722" fileName="ModelChangesManager.java" startLine="1486" startPosition="102" endLine="1496" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3766380978283789387" fileName="ModelChangesManager.java" startLine="101" startPosition="0" endLine="112" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelChangesManager#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;)V" />
-    <nodeInfo nodeId="7055875085428864154" fileName="ModelChangesManager.java" startLine="508" startPosition="124" endLine="519" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/oldchanges/OldChange;)Ljetbrains/mps/vcs/diff/oldchanges/OldChange;" />
+    <nodeInfo nodeId="7055875085428864154" fileName="ModelChangesManager.java" startLine="508" startPosition="113" endLine="519" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/oldchanges/OldChange;)Ljetbrains/mps/vcs/diff/oldchanges/OldChange;" />
     <nodeInfo nodeId="2370132037603420702" fileName="ModelChangesManager.java" startLine="543" startPosition="0" endLine="554" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1142852935921022181" fileName="ModelChangesManager.java" startLine="670" startPosition="25" endLine="681" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3187554551048036378" fileName="ModelChangesManager.java" startLine="167" startPosition="49" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -3396,7 +3396,7 @@
     <nodeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="458" startPosition="50" endLine="496" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
     <nodeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="457" startPosition="72" endLine="496" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5433436225280057842" fileName="ModelChangesManager.java" startLine="1339" startPosition="0" endLine="1379" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceAdded#(Ljetbrains/mps/smodel/event/SModelReferenceEvent;)V" />
-    <nodeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="456" startPosition="162" endLine="498" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/vcs/diff/oldchanges/OldChange;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="456" startPosition="147" endLine="498" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/vcs/diff/oldchanges/OldChange;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="2352903979085962633" fileName="ModelChangesManager.java" startLine="1262" startPosition="45" endLine="1304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4604734785880205972" fileName="ModelChangesManager.java" startLine="455" startPosition="9" endLine="498" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1281598945698463541" fileName="ModelChangesManager.java" startLine="622" startPosition="5" endLine="665" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
@@ -3993,7 +3993,7 @@
     <scopeInfo nodeId="3501823384977736616" fileName="ModelChangesManager.java" startLine="318" startPosition="189" endLine="329" endPosition="51">
       <varInfo nodeId="8279184985700098679" varName="toRemove" />
     </scopeInfo>
-    <scopeInfo nodeId="7055875085428864154" fileName="ModelChangesManager.java" startLine="508" startPosition="124" endLine="519" endPosition="0" />
+    <scopeInfo nodeId="7055875085428864154" fileName="ModelChangesManager.java" startLine="508" startPosition="113" endLine="519" endPosition="0" />
     <scopeInfo nodeId="1142852935920991543" fileName="ModelChangesManager.java" startLine="670" startPosition="25" endLine="681" endPosition="9" />
     <scopeInfo nodeId="353838656593057524" fileName="ModelChangesManager.java" startLine="767" startPosition="49" endLine="778" endPosition="176">
       <varInfo nodeId="353838656593057540" varName="node" />
@@ -4208,7 +4208,7 @@
     <scopeInfo nodeId="5433436225280057842" fileName="ModelChangesManager.java" startLine="1339" startPosition="0" endLine="1379" endPosition="0">
       <varInfo nodeId="5433436225280057845" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="456" startPosition="162" endLine="498" endPosition="0" />
+    <scopeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="456" startPosition="147" endLine="498" endPosition="0" />
     <scopeInfo nodeId="2352903979085962633" fileName="ModelChangesManager.java" startLine="1262" startPosition="45" endLine="1304" endPosition="0" />
     <scopeInfo nodeId="6186253165936375130" fileName="ModelChangesManager.java" startLine="1524" startPosition="31" endLine="1567" endPosition="15">
       <varInfo nodeId="2352903979085963580" varName="child" />
@@ -4328,7 +4328,7 @@
     <unitInfo nodeId="5962623969496361305" fileName="ModelChangesManager.java" startLine="692" startPosition="31" endLine="700" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$11" />
     <unitInfo nodeId="1998279847126832468" fileName="ModelChangesManager.java" startLine="716" startPosition="45" endLine="724" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$12" />
     <unitInfo nodeId="1281598945698463567" fileName="ModelChangesManager.java" startLine="635" startPosition="47" endLine="644" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$9" />
-    <unitInfo nodeId="7055875085428864154" fileName="ModelChangesManager.java" startLine="508" startPosition="89" endLine="519" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$8" />
+    <unitInfo nodeId="7055875085428864154" fileName="ModelChangesManager.java" startLine="508" startPosition="78" endLine="519" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$8" />
     <unitInfo nodeId="1142852935920991542" fileName="ModelChangesManager.java" startLine="669" startPosition="31" endLine="683" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$10" />
     <unitInfo nodeId="2352903979085962642" fileName="ModelChangesManager.java" startLine="1169" startPosition="33" endLine="1185" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$3" />
     <unitInfo nodeId="2352903979085962669" fileName="ModelChangesManager.java" startLine="1199" startPosition="33" endLine="1215" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$4" />
@@ -4344,7 +4344,7 @@
     <unitInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="460" startPosition="27" endLine="494" endPosition="17" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$10" />
     <unitInfo nodeId="2352903979085962660" fileName="ModelChangesManager.java" startLine="1343" startPosition="33" endLine="1377" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$8" />
     <unitInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="458" startPosition="23" endLine="496" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$9" />
-    <unitInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="456" startPosition="120" endLine="498" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$8" />
+    <unitInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="456" startPosition="105" endLine="498" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$8" />
     <unitInfo nodeId="2352903979085962633" fileName="ModelChangesManager.java" startLine="1262" startPosition="33" endLine="1304" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$6" />
     <unitInfo nodeId="6186253165936375129" fileName="ModelChangesManager.java" startLine="1523" startPosition="51" endLine="1569" endPosition="11" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$13" />
     <unitInfo nodeId="6186253165936375121" fileName="ModelChangesManager.java" startLine="1455" startPosition="51" endLine="1502" endPosition="11" unitName="jetbrains.mps.vcs.changesmanager.ModelChangesManager$12" />
@@ -4550,7 +4550,7 @@
     <nodeInfo nodeId="3322868409858674645" fileName="ChangesFoldingAreaPainter.java" startLine="340" startPosition="122" endLine="344" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" />
     <nodeInfo nodeId="3322868409858674666" fileName="ChangesFoldingAreaPainter.java" startLine="346" startPosition="129" endLine="350" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" />
     <nodeInfo nodeId="4434895596490169019" fileName="ChangesFoldingAreaPainter.java" startLine="397" startPosition="123" endLine="401" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" />
-    <nodeInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="402" startPosition="206" endLine="406" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="402" startPosition="197" endLine="406" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Ljava/lang/Integer;" />
     <nodeInfo nodeId="9173051028496928504" fileName="ChangesFoldingAreaPainter.java" startLine="436" startPosition="52" endLine="440" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupMenuWillBecomeVisible#(Ljavax/swing/event/PopupMenuEvent;)V" />
     <nodeInfo nodeId="9173051028496928510" fileName="ChangesFoldingAreaPainter.java" startLine="440" startPosition="0" endLine="444" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupMenuWillBecomeInvisible#(Ljavax/swing/event/PopupMenuEvent;)V" />
     <nodeInfo nodeId="6208564103581785206" fileName="ChangesFoldingAreaPainter.java" startLine="450" startPosition="48" endLine="454" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -4699,7 +4699,7 @@
     <scopeInfo nodeId="3322868409858674645" fileName="ChangesFoldingAreaPainter.java" startLine="340" startPosition="122" endLine="344" endPosition="0" />
     <scopeInfo nodeId="3322868409858674666" fileName="ChangesFoldingAreaPainter.java" startLine="346" startPosition="129" endLine="350" endPosition="0" />
     <scopeInfo nodeId="4434895596490169019" fileName="ChangesFoldingAreaPainter.java" startLine="397" startPosition="123" endLine="401" endPosition="0" />
-    <scopeInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="402" startPosition="206" endLine="406" endPosition="0" />
+    <scopeInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="402" startPosition="197" endLine="406" endPosition="0" />
     <scopeInfo nodeId="9173051028496928504" fileName="ChangesFoldingAreaPainter.java" startLine="436" startPosition="52" endLine="440" endPosition="0">
       <varInfo nodeId="9173051028496928507" varName="event" />
     </scopeInfo>
@@ -4852,7 +4852,7 @@
     <unitInfo nodeId="3322868409858674645" fileName="ChangesFoldingAreaPainter.java" startLine="340" startPosition="52" endLine="344" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />
     <unitInfo nodeId="3322868409858674666" fileName="ChangesFoldingAreaPainter.java" startLine="346" startPosition="59" endLine="350" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$3" />
     <unitInfo nodeId="4434895596490169019" fileName="ChangesFoldingAreaPainter.java" startLine="397" startPosition="53" endLine="401" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
-    <unitInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="402" startPosition="130" endLine="406" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />
+    <unitInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="402" startPosition="121" endLine="406" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />
     <unitInfo nodeId="7429456937243136224" fileName="ChangesFoldingAreaPainter.java" startLine="192" startPosition="69" endLine="200" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$4" />
     <unitInfo nodeId="9173051028496928502" fileName="ChangesFoldingAreaPainter.java" startLine="436" startPosition="31" endLine="447" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
     <unitInfo nodeId="480390906262810818" fileName="ChangesFoldingAreaPainter.java" startLine="140" startPosition="74" endLine="154" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />

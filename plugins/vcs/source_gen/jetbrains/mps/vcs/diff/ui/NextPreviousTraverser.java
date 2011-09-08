@@ -62,7 +62,7 @@ public class NextPreviousTraverser {
         });
       }
     });
-    SetSequence.fromSet(SetSequence.fromSetWithValues(new HashSet<EditorComponent>(), ListSequence.fromList(myChangeGroupBuilders).<EditorComponent>translate(new ITranslator2<ChangeGroupBuilder, EditorComponent>() {
+    SetSequence.fromSet(SetSequence.fromSetWithValues(new HashSet<EditorComponent>(), ListSequence.fromList(myChangeGroupBuilders).translate(new ITranslator2<ChangeGroupBuilder, EditorComponent>() {
       public Iterable<EditorComponent> translate(ChangeGroupBuilder b) {
         return Arrays.asList(b.getLeftComponent(), b.getRightComponent());
       }

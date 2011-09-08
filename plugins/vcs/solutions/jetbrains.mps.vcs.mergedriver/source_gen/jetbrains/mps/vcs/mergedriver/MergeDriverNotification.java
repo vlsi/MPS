@@ -67,7 +67,7 @@ public class MergeDriverNotification {
   }
 
   private void showNotifications() {
-    final Set<String> vcsNames = SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(((List<VcsDirectoryMapping>) ProjectLevelVcsManager.getInstance(myProject).getDirectoryMappings())).<String>select(new ISelector<VcsDirectoryMapping, String>() {
+    final Set<String> vcsNames = SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(((List<VcsDirectoryMapping>) ProjectLevelVcsManager.getInstance(myProject).getDirectoryMappings())).select(new ISelector<VcsDirectoryMapping, String>() {
       public String select(VcsDirectoryMapping dm) {
         return dm.getVcs();
       }
@@ -78,7 +78,7 @@ public class MergeDriverNotification {
     }));
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
-        String whichVcses = StringUtils.join(SetSequence.fromSet(vcsNames).<String>select(new ISelector<String, String>() {
+        String whichVcses = StringUtils.join(SetSequence.fromSet(vcsNames).select(new ISelector<String, String>() {
           public String select(String vn) {
             return AllVcses.getInstance(myProject).getByName(vn).getDisplayName();
           }

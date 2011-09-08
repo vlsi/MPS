@@ -124,7 +124,7 @@ public class ScriptBuilder {
   }
 
   private void collectTargets(Iterable<IFacet.Name> sortedFacets, TargetRange tr) {
-    List<ITarget> allTargets = ListSequence.fromList(Sequence.fromIterable(sortedFacets).<ITarget>translate(new ITranslator2<IFacet.Name, ITarget>() {
+    List<ITarget> allTargets = ListSequence.fromList(Sequence.fromIterable(sortedFacets).translate(new ITranslator2<IFacet.Name, ITarget>() {
       public Iterable<ITarget> translate(IFacet.Name fname) {
         return MapSequence.fromMap(facetsView).get(fname).targets();
       }
@@ -143,7 +143,7 @@ public class ScriptBuilder {
     if (ListSequence.fromList(errors).isNotEmpty()) {
       return;
     }
-    tr.addRelatedPrecursors(Sequence.fromIterable(MapSequence.fromMap(facetsView).values()).<ITarget>translate(new ITranslator2<IFacet, ITarget>() {
+    tr.addRelatedPrecursors(Sequence.fromIterable(MapSequence.fromMap(facetsView).values()).translate(new ITranslator2<IFacet, ITarget>() {
       public Iterable<ITarget> translate(IFacet fct) {
         return fct.targets();
       }
@@ -170,7 +170,7 @@ public class ScriptBuilder {
     GraphAnalyzer<IFacet.Name> ga = new GraphAnalyzer<IFacet.Name>() {
       @Override
       public Iterable<IFacet.Name> forwardEdges(IFacet.Name v) {
-        return ListSequence.fromList(MapSequence.fromMap(refs).get(v).extendedBy).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
+        return ListSequence.fromList(MapSequence.fromMap(refs).get(v).extendedBy).select(new ISelector<IFacet, IFacet.Name>() {
           public IFacet.Name select(IFacet f) {
             return f.getName();
           }
@@ -179,7 +179,7 @@ public class ScriptBuilder {
 
       @Override
       public Iterable<IFacet.Name> backwardEdges(IFacet.Name v) {
-        return ListSequence.fromList(MapSequence.fromMap(refs).get(v).extended).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
+        return ListSequence.fromList(MapSequence.fromMap(refs).get(v).extended).select(new ISelector<IFacet, IFacet.Name>() {
           public IFacet.Name select(IFacet f) {
             return f.getName();
           }

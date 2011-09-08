@@ -61,12 +61,12 @@ __switch__:
         };
       }
     });
-    Sequence.fromIterable(ss).<String>select(new ISelector<String, String>() {
+    Sequence.fromIterable(ss).select(new ISelector<String, String>() {
       public String select(String s) {
         return "a";
       }
     });
-    Sequence.fromIterable(ss).<String>translate(new ITranslator2<String, String>() {
+    Sequence.fromIterable(ss).translate(new ITranslator2<String, String>() {
       public Iterable<String> translate(final String in) {
         return new Iterable<String>() {
           public Iterator<String> iterator() {

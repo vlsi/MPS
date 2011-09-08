@@ -91,7 +91,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       this.addNodeById("2906110183022219843");
       this.addNodeById("2906110183022354865");
       this.addNodeById("2906110183022432276");
-      TestUtilities.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("2906110183022219847"), "jetbrains.mps.lang.smodelTests.structure.Root"), SNodeOperations.cast(this.getNodeById("2906110183022219848"), "jetbrains.mps.lang.smodelTests.structure.Child"), SNodeOperations.cast(this.getNodeById("2906110183022311236"), "jetbrains.mps.lang.smodelTests.structure.ChildSubConcept")}), Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022219844"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).<SNode>select(new ISelector<SReference, SNode>() {
+      TestUtilities.assertEquals(Sequence.fromArray(new SNode[]{SNodeOperations.cast(this.getNodeById("2906110183022219847"), "jetbrains.mps.lang.smodelTests.structure.Root"), SNodeOperations.cast(this.getNodeById("2906110183022219848"), "jetbrains.mps.lang.smodelTests.structure.Child"), SNodeOperations.cast(this.getNodeById("2906110183022311236"), "jetbrains.mps.lang.smodelTests.structure.ChildSubConcept")}), Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022219844"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).select(new ISelector<SReference, SNode>() {
         public SNode select(SReference it) {
           return SLinkOperations.getTargetNode(it);
         }
@@ -104,7 +104,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       this.addNodeById("2906110183022219843");
       this.addNodeById("2906110183022354865");
       this.addNodeById("2906110183022432276");
-      TestUtilities.assertEquals(Sequence.fromArray(new SNode[]{SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "root"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "leftChild"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "rightChild")}), Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022219844"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).<SNode>select(new ISelector<SReference, SNode>() {
+      TestUtilities.assertEquals(Sequence.fromArray(new SNode[]{SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "root"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "leftChild"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "rightChild")}), Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022219844"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).select(new ISelector<SReference, SNode>() {
         public SNode select(SReference it) {
           return SLinkOperations.findLinkDeclaration(it);
         }
@@ -121,7 +121,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
         public boolean accept(SReference it) {
           return SLinkOperations.findLinkDeclaration(it) == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "rightChild");
         }
-      }).<SNode>select(new ISelector<SReference, SNode>() {
+      }).select(new ISelector<SReference, SNode>() {
         public SNode select(SReference it) {
           return SLinkOperations.getTargetNode(it);
         }
@@ -139,7 +139,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       this.addNodeById("2906110183022219843");
       this.addNodeById("2906110183022354865");
       this.addNodeById("2906110183022432276");
-      TestUtilities.assertEquals(Sequence.fromArray(new String[]{SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "root"), "role"), SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "leftChild"), "role"), SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "rightChild"), "role")}), Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022219844"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).<String>select(new ISelector<SReference, String>() {
+      TestUtilities.assertEquals(Sequence.fromArray(new String[]{SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "root"), "role"), SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "leftChild"), "role"), SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "rightChild"), "role")}), Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022219844"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).select(new ISelector<SReference, String>() {
         public String select(SReference it) {
           return SLinkOperations.getRole(it);
         }
@@ -158,7 +158,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
           SLinkOperations.getTargetNode(it);
         }
       });
-      Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022219844"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).<String>select(new ISelector<SReference, String>() {
+      Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022219844"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).select(new ISelector<SReference, String>() {
         public String select(SReference it) {
           return SLinkOperations.getResolveInfo(it);
         }

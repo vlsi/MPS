@@ -20,12 +20,12 @@ public class NullValues_Test extends Util_Test {
   public void test_nullValues() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       Iterable<Integer> input = this.input5();
-      this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).<Integer>select(new ISelector<Integer, Integer>() {
+      this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).select(new ISelector<Integer, Integer>() {
         public Integer select(Integer it) {
           return (Integer) null;
         }
       }));
-      this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).<Integer>translate(new ITranslator2<Integer, Integer>() {
+      this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).translate(new ITranslator2<Integer, Integer>() {
         public Iterable<Integer> translate(final Integer it) {
           return new Iterable<Integer>() {
             public Iterator<Integer> iterator() {
@@ -60,7 +60,7 @@ __switch__:
       }));
     } else {
       Iterable<Integer> input = this.input5();
-      Iterable<Integer> seqOfNulls = Sequence.fromIterable(input).<Integer>select(new ISelector<Integer, Integer>() {
+      Iterable<Integer> seqOfNulls = Sequence.fromIterable(input).select(new ISelector<Integer, Integer>() {
         public Integer select(Integer it) {
           return (Integer) null;
         }
@@ -71,7 +71,7 @@ __switch__:
           return it == null;
         }
       }));
-      Iterable<Integer> seqOfNulls2 = Sequence.fromIterable(input).<Integer>translate(new ITranslator2<Integer, Integer>() {
+      Iterable<Integer> seqOfNulls2 = Sequence.fromIterable(input).translate(new ITranslator2<Integer, Integer>() {
         public Iterable<Integer> translate(final Integer it) {
           return new Iterable<Integer>() {
             public Iterator<Integer> iterator() {

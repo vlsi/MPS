@@ -167,7 +167,7 @@ public class RootDifferenceDialog extends BaseDialog {
         assert Sequence.fromIterable(changes).isNotEmpty();
         final SModel model = Sequence.fromIterable(changes).first().getChangeSet().getNewModel();
         final NodeCopier nc = new NodeCopier(model);
-        Iterable<ModelChange> oppositeChanges = Sequence.fromIterable(changes).<ModelChange>select(new ISelector<ModelChange, ModelChange>() {
+        Iterable<ModelChange> oppositeChanges = Sequence.fromIterable(changes).select(new ISelector<ModelChange, ModelChange>() {
           public ModelChange select(ModelChange ch) {
             return ch.getOppositeChange();
           }

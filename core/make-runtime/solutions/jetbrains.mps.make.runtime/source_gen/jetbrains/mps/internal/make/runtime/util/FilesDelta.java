@@ -113,7 +113,7 @@ public class FilesDelta implements IDelta {
       public boolean accept(IMapping<IFile, FilesDelta.Status> f) {
         return f.value() != FilesDelta.Status.DELETED;
       }
-    }).<String>select(new ISelector<IMapping<IFile, FilesDelta.Status>, String>() {
+    }).select(new ISelector<IMapping<IFile, FilesDelta.Status>, String>() {
       public String select(IMapping<IFile, FilesDelta.Status> f) {
         String path = straighten(urlToPath(f.key().getAbsolutePath()));
         return (f.key().isDirectory() ?
@@ -137,7 +137,7 @@ public class FilesDelta implements IDelta {
         -1 - diridx :
         diridx
       );
-      for (Tuples._2<IFile, String> fp : Sequence.fromIterable(((Iterable<IFile>) dir.getChildren())).<Tuples._2<IFile, String>>select(new ISelector<IFile, Tuples._2<IFile, String>>() {
+      for (Tuples._2<IFile, String> fp : Sequence.fromIterable(((Iterable<IFile>) dir.getChildren())).select(new ISelector<IFile, Tuples._2<IFile, String>>() {
         public Tuples._2<IFile, String> select(IFile f) {
           return MultiTuple.<IFile,String>from(f, straighten(urlToPath(f.getAbsolutePath())));
         }

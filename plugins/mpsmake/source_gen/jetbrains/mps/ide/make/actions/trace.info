@@ -1291,7 +1291,7 @@
     <nodeInfo nodeId="3519555968774803973" fileName="MakeActionImpl.java" startLine="44" startPosition="14" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1841925426083462648" fileName="MakeActionImpl.java" startLine="50" startPosition="0" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1186936846703260829" fileName="MakeActionImpl.java" startLine="32" startPosition="67" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8610665572788515313" fileName="MakeActionImpl.java" startLine="57" startPosition="120" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8610665572788515313" fileName="MakeActionImpl.java" startLine="57" startPosition="102" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="8610665572788515325" fileName="MakeActionImpl.java" startLine="21" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeActionImpl#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/make/actions/MakeActionParameters;Z)V" />
     <nodeInfo nodeId="1186936846703260828" fileName="MakeActionImpl.java" startLine="31" startPosition="38" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8610665572788515309" fileName="MakeActionImpl.java" startLine="56" startPosition="91" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1307,7 +1307,7 @@
     <scopeInfo nodeId="3519555968774803974" fileName="MakeActionImpl.java" startLine="44" startPosition="16" endLine="46" endPosition="57" />
     <scopeInfo nodeId="8610665572788515328" fileName="MakeActionImpl.java" startLine="22" startPosition="100" endLine="25" endPosition="31" />
     <scopeInfo nodeId="1186936846703260829" fileName="MakeActionImpl.java" startLine="32" startPosition="67" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="8610665572788515313" fileName="MakeActionImpl.java" startLine="57" startPosition="120" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="8610665572788515313" fileName="MakeActionImpl.java" startLine="57" startPosition="102" endLine="61" endPosition="0" />
     <scopeInfo nodeId="8610665572788515325" fileName="MakeActionImpl.java" startLine="21" startPosition="0" endLine="26" endPosition="3">
       <varInfo nodeId="8610665572788515351" varName="cleanMake" />
       <varInfo nodeId="8610665572788515347" varName="context" />
@@ -1327,7 +1327,7 @@
     </scopeInfo>
     <scopeInfo nodeId="8610665572788515238" fileName="MakeActionImpl.java" startLine="27" startPosition="0" endLine="55" endPosition="0" />
     <unitInfo nodeId="1186936846703260829" fileName="MakeActionImpl.java" startLine="32" startPosition="55" endLine="36" endPosition="5" unitName="jetbrains.mps.ide.make.actions.MakeActionImpl$1" />
-    <unitInfo nodeId="8610665572788515313" fileName="MakeActionImpl.java" startLine="57" startPosition="75" endLine="61" endPosition="5" unitName="jetbrains.mps.ide.make.actions.MakeActionImpl$3" />
+    <unitInfo nodeId="8610665572788515313" fileName="MakeActionImpl.java" startLine="57" startPosition="57" endLine="61" endPosition="5" unitName="jetbrains.mps.ide.make.actions.MakeActionImpl$3" />
     <unitInfo nodeId="1841925426083408135" fileName="MakeActionImpl.java" startLine="38" startPosition="30" endLine="49" endPosition="5" unitName="jetbrains.mps.ide.make.actions.MakeActionImpl$2" />
     <unitInfo nodeId="8610665572788515237" fileName="MakeActionImpl.java" startLine="17" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeActionImpl" />
   </root>

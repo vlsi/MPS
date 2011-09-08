@@ -53,7 +53,7 @@ public abstract class PathItem {
       public boolean accept(IFile f) {
         return f.isDirectory();
       }
-    }).<String>select(new ISelector<IFile, String>() {
+    }).select(new ISelector<IFile, String>() {
       public String select(IFile dir) {
         return PathItem.this.compose(pkg, dir.getName());
       }
@@ -68,7 +68,7 @@ public abstract class PathItem {
     if (fld == null) {
       return PathItem.EMPTY_LIST;
     }
-    return ListSequence.fromList(((List<IFile>) fld.getChildren())).<String>select(new ISelector<IFile, String>() {
+    return ListSequence.fromList(((List<IFile>) fld.getChildren())).select(new ISelector<IFile, String>() {
       public String select(IFile f) {
         return (String) f.getName();
       }
