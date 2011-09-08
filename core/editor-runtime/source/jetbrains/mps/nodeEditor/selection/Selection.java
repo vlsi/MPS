@@ -54,7 +54,7 @@ public interface Selection {
   @NotNull
   List<SNode> getSelectedNodes();
 
-  //void ensureSelectionVisible();
+  void ensureVisible();
 
   void paintSelection(Graphics2D g);
 }
