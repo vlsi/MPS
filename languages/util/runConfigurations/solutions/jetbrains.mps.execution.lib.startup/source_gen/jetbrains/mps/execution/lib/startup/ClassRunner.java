@@ -88,6 +88,7 @@ public class ClassRunner {
     // execute 
     try {
       URLClassLoader classLoader = new URLClassLoader(classPath.<URL>toArray(new URL[classPath.size()]));
+      Thread.currentThread().setContextClassLoader(classLoader);
       Class<?> classToStart = classLoader.loadClass(className);
       Method method = classToStart.getMethod("main", args.getClass());
       method.invoke(null, new Object[]{fileContents.<String>toArray(new String[fileContents.size()])});
