@@ -51,7 +51,7 @@ public class ConvertXMLSchemaComments_MigrationScript extends BaseMigrationScrip
         });
 
         SLinkOperations.setTarget(node, "sComment", SConceptOperations.createNewNode("jetbrains.mps.xmlSchema.structure.SchemaComment", null), true);
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "sComment", true), "text", true)).addSequence(Sequence.fromIterable(textParts).<SNode>select(new ISelector<SNode, SNode>() {
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "sComment", true), "text", true)).addSequence(Sequence.fromIterable(textParts).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return new ConvertXMLSchemaComments_MigrationScript.QuotationClass_zghlll_a0a0a0a0a8a4a0a0a1a0().createNode(it.getPersistentProperty("text"));
           }

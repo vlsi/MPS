@@ -99,7 +99,7 @@
     <nodeInfo nodeId="8590671622326856466" fileName="VariantsUtil.java" startLine="47" startPosition="184" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="3210848622155289949" fileName="VariantsUtil.java" startLine="55" startPosition="130" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="3210848622155289971" fileName="VariantsUtil.java" startLine="60" startPosition="149" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="3210848622155311360" fileName="VariantsUtil.java" startLine="65" startPosition="200" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3210848622155311360" fileName="VariantsUtil.java" startLine="65" startPosition="192" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isGenerateVariantsAnn#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isVariantAnn#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="8590671622326856508" fileName="VariantsUtil.java" startLine="81" startPosition="238" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
@@ -182,7 +182,7 @@
     <scopeInfo nodeId="8590671622326856466" fileName="VariantsUtil.java" startLine="47" startPosition="184" endLine="51" endPosition="0" />
     <scopeInfo nodeId="3210848622155289949" fileName="VariantsUtil.java" startLine="55" startPosition="130" endLine="59" endPosition="0" />
     <scopeInfo nodeId="3210848622155289971" fileName="VariantsUtil.java" startLine="60" startPosition="149" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="3210848622155311360" fileName="VariantsUtil.java" startLine="65" startPosition="200" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="3210848622155311360" fileName="VariantsUtil.java" startLine="65" startPosition="192" endLine="69" endPosition="0" />
     <scopeInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
     <scopeInfo nodeId="8590671622326856508" fileName="VariantsUtil.java" startLine="81" startPosition="238" endLine="85" endPosition="0" />
@@ -252,7 +252,7 @@
     <unitInfo nodeId="8590671622326856466" fileName="VariantsUtil.java" startLine="47" startPosition="161" endLine="51" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$4" />
     <unitInfo nodeId="3210848622155289949" fileName="VariantsUtil.java" startLine="55" startPosition="107" endLine="59" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$5" />
     <unitInfo nodeId="3210848622155289971" fileName="VariantsUtil.java" startLine="60" startPosition="126" endLine="64" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$6" />
-    <unitInfo nodeId="3210848622155311360" fileName="VariantsUtil.java" startLine="65" startPosition="172" endLine="69" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$7" />
+    <unitInfo nodeId="3210848622155311360" fileName="VariantsUtil.java" startLine="65" startPosition="164" endLine="69" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$7" />
     <unitInfo nodeId="8590671622326856508" fileName="VariantsUtil.java" startLine="81" startPosition="215" endLine="85" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$8" />
     <unitInfo nodeId="8590671622326856530" fileName="VariantsUtil.java" startLine="86" startPosition="126" endLine="90" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$9" />
     <unitInfo nodeId="4063181131897049374" fileName="VariantsUtil.java" startLine="95" startPosition="215" endLine="99" endPosition="5" unitName="jetbrains.mps.ui.multiplexing.VariantsUtil$10" />

@@ -18,8 +18,8 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.delta.IInternalDelta;
 import jetbrains.mps.make.script.IConfig;
@@ -78,7 +78,7 @@ public class Make_Facet extends IFacet.Stub {
                 public void run() {
                   ModelAccess.instance().requireWrite(new Runnable() {
                     public void run() {
-                      new DeltaReconciler(Sequence.fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
+                      new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
                         public Iterable<IDelta> translate(IResource res) {
                           return ((IDeltaResource) res).delta();
                         }
@@ -87,7 +87,7 @@ public class Make_Facet extends IFacet.Stub {
                           return !(d instanceof IInternalDelta);
                         }
                       })).reconcileAll();
-                      new DeltaReconciler(Sequence.fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
+                      new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
                         public Iterable<IDelta> translate(IResource res) {
                           return ((IDeltaResource) res).delta();
                         }

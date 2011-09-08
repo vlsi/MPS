@@ -46,7 +46,7 @@ public class EditorExtensions {
   }
 
   public Iterable<SNode> findAllUIObjectTemplates() {
-    return ListSequence.fromList(this.uiObjectTemplateProviders).<SNode>translate(new ITranslator2<IObjectsProvider<SNode, SNode>, SNode>() {
+    return ListSequence.fromList(this.uiObjectTemplateProviders).translate(new ITranslator2<IObjectsProvider<SNode, SNode>, SNode>() {
       public Iterable<SNode> translate(IObjectsProvider<SNode, SNode> prov) {
         return prov.getObjects();
       }
@@ -54,7 +54,7 @@ public class EditorExtensions {
   }
 
   public Iterable<SNode> findAllEventHandlerTemplates() {
-    return ListSequence.fromList(this.eventHandlerTemplateProviders).<SNode>translate(new ITranslator2<IObjectsProvider<SNode, SNode>, SNode>() {
+    return ListSequence.fromList(this.eventHandlerTemplateProviders).translate(new ITranslator2<IObjectsProvider<SNode, SNode>, SNode>() {
       public Iterable<SNode> translate(IObjectsProvider<SNode, SNode> prov) {
         return prov.getObjects();
       }
@@ -62,7 +62,7 @@ public class EditorExtensions {
   }
 
   public Iterable<Object> findTemplateCreatorsInfo() {
-    return ListSequence.fromList(this.uiObjectTemplateProviders).<Object>select(new ISelector<IObjectsProvider<SNode, SNode>, Object>() {
+    return ListSequence.fromList(this.uiObjectTemplateProviders).select(new ISelector<IObjectsProvider<SNode, SNode>, Object>() {
       public Object select(IObjectsProvider<SNode, SNode> tc) {
         return tc.info();
       }
@@ -70,7 +70,7 @@ public class EditorExtensions {
   }
 
   public Iterable<Object> findEventHandlerTemplateCreatorsInfo() {
-    return ListSequence.fromList(this.eventHandlerTemplateProviders).<Object>select(new ISelector<IObjectsProvider<SNode, SNode>, Object>() {
+    return ListSequence.fromList(this.eventHandlerTemplateProviders).select(new ISelector<IObjectsProvider<SNode, SNode>, Object>() {
       public Object select(IObjectsProvider<SNode, SNode> tc) {
         return tc.info();
       }

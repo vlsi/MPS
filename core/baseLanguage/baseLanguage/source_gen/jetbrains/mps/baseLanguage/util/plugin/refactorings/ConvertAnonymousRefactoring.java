@@ -126,7 +126,7 @@ public class ConvertAnonymousRefactoring {
 
   private void makeConstructorBody(SNode constructorDeclaration) {
     if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(this.myClassToRefactor, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty()) {
-      List<SNode> parameterReferences = ListSequence.fromList(this.mySuperConstructorParameters).<SNode>select(new ISelector<SNode, SNode>() {
+      List<SNode> parameterReferences = ListSequence.fromList(this.mySuperConstructorParameters).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0a0a0a8().createNode(it);
         }
@@ -146,7 +146,7 @@ public class ConvertAnonymousRefactoring {
   }
 
   private void copyChildren(SNode from, SNode to) {
-    Set<String> toConceptRoles = SetSequence.fromSetWithValues(new HashSet(), ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(to))).<String>select(new ISelector<SNode, String>() {
+    Set<String> toConceptRoles = SetSequence.fromSetWithValues(new HashSet(), ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(to))).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "role");
       }
@@ -197,7 +197,7 @@ public class ConvertAnonymousRefactoring {
 
   private SNode makeInnerConstructorInvocation(SNode constructor) {
     SNode constructorInvocation = new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a51().createNode(constructor, SLinkOperations.getTargets(this.myClassToRefactor, "actualArgument", true));
-    ListSequence.fromList(SLinkOperations.getTargets(constructorInvocation, "actualArgument", true)).addSequence(SetSequence.fromSet(MapSequence.fromMap(this.myInnerFields).keySet()).<SNode>select(new ISelector<SNode, SNode>() {
+    ListSequence.fromList(SLinkOperations.getTargets(constructorInvocation, "actualArgument", true)).addSequence(SetSequence.fromSet(MapSequence.fromMap(this.myInnerFields).keySet()).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") ?
           new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0a0b0p().createNode(it) :

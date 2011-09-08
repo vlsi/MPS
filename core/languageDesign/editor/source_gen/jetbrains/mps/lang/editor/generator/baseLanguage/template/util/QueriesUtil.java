@@ -47,7 +47,7 @@ public class QueriesUtil {
 
   public static SNode getGeneratedClassByAncestor(SNode inputNode, final TemplateQueryContext genctx) {
     List<SNode> ancestors = SNodeOperations.getAncestors(inputNode, null, false);
-    Iterable<SNode> outputClasses = ListSequence.fromList(ancestors).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> outputClasses = ListSequence.fromList(ancestors).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {

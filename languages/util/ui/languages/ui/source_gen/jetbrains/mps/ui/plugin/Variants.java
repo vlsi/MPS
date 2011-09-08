@@ -50,7 +50,7 @@ public class Variants {
   }
 
   public static Iterable<String> availableVariants() {
-    return ListSequence.fromList(getInstance().variantLanguages).<String>select(new ISelector<Tuples._2<String, Language>, String>() {
+    return ListSequence.fromList(getInstance().variantLanguages).select(new ISelector<Tuples._2<String, Language>, String>() {
       public String select(Tuples._2<String, Language> t) {
         return t._0();
       }

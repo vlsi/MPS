@@ -52,8 +52,8 @@
     <nodeInfo nodeId="3583849467508048975" fileName="CheckUtil.java" startLine="114" startPosition="0" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3583849467508048981" fileName="CheckUtil.java" startLine="118" startPosition="53" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3583849467508048981" fileName="CheckUtil.java" startLine="118" startPosition="53" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3583849467508049041" fileName="CheckUtil.java" startLine="67" startPosition="121" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3583849467508049052" fileName="CheckUtil.java" startLine="71" startPosition="56" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="3583849467508049041" fileName="CheckUtil.java" startLine="67" startPosition="114" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3583849467508049052" fileName="CheckUtil.java" startLine="71" startPosition="47" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/project/IModule;" />
     <nodeInfo nodeId="8050490695748590861" fileName="CheckUtil.java" startLine="87" startPosition="149" endLine="91" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3583849467508049141" fileName="CheckUtil.java" startLine="34" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInMpsAutobuild#(Ljetbrains/mps/smodel/SModel;)Z" />
     <nodeInfo nodeId="3583849467508048977" fileName="CheckUtil.java" startLine="117" startPosition="5" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -90,8 +90,8 @@
     <scopeInfo nodeId="3583849467508042531" fileName="CheckUtil.java" startLine="48" startPosition="39" endLine="52" endPosition="9">
       <varInfo nodeId="3583849467508042533" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="3583849467508049041" fileName="CheckUtil.java" startLine="67" startPosition="121" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="3583849467508049052" fileName="CheckUtil.java" startLine="71" startPosition="56" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="3583849467508049041" fileName="CheckUtil.java" startLine="67" startPosition="114" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="3583849467508049052" fileName="CheckUtil.java" startLine="71" startPosition="47" endLine="75" endPosition="0" />
     <scopeInfo nodeId="3583849467508049094" fileName="CheckUtil.java" startLine="93" startPosition="71" endLine="97" endPosition="13">
       <varInfo nodeId="3583849467508049096" varName="msg" />
     </scopeInfo>
@@ -125,8 +125,8 @@
       <varInfo nodeId="3583849467508049034" varName="coreModules" />
     </scopeInfo>
     <scopeInfo nodeId="3583849467508042431" fileName="CheckUtil.java" startLine="56" startPosition="0" endLine="103" endPosition="0" />
-    <unitInfo nodeId="3583849467508049041" fileName="CheckUtil.java" startLine="67" startPosition="91" endLine="71" endPosition="5" unitName="jetbrains.mps.build.packaging.mps.generator.template.util.CheckUtil$1" />
-    <unitInfo nodeId="3583849467508049052" fileName="CheckUtil.java" startLine="71" startPosition="27" endLine="75" endPosition="5" unitName="jetbrains.mps.build.packaging.mps.generator.template.util.CheckUtil$2" />
+    <unitInfo nodeId="3583849467508049041" fileName="CheckUtil.java" startLine="67" startPosition="84" endLine="71" endPosition="5" unitName="jetbrains.mps.build.packaging.mps.generator.template.util.CheckUtil$1" />
+    <unitInfo nodeId="3583849467508049052" fileName="CheckUtil.java" startLine="71" startPosition="18" endLine="75" endPosition="5" unitName="jetbrains.mps.build.packaging.mps.generator.template.util.CheckUtil$2" />
     <unitInfo nodeId="3583849467508042415" fileName="CheckUtil.java" startLine="29" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.generator.template.util.CheckUtil" />
   </root>
 </debugInfo>

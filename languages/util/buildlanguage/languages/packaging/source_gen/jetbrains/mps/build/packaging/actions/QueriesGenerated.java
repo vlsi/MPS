@@ -98,7 +98,7 @@ public class QueriesGenerated {
               public boolean accept(File it) {
                 return it.exists() && (isFile || it.isDirectory());
               }
-            }).<String>select(new ISelector<File, String>() {
+            }).select(new ISelector<File, String>() {
               public String select(File it) {
                 return it.getName();
               }

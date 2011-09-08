@@ -46,7 +46,7 @@ public class ConfStubs extends BaseStubModelRootManager {
 
     moduleIds.add("32d0a39c-772f-4490-8142-e50f9a9f19d4");
 
-    Iterable<Language> languages = SetSequence.fromSet(moduleIds).<Language>select(new ISelector<String, Language>() {
+    Iterable<Language> languages = SetSequence.fromSet(moduleIds).select(new ISelector<String, Language>() {
       public Language select(String it) {
         return (Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(it));
       }

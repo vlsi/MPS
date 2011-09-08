@@ -44,7 +44,7 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
         }
       });
       for (SNode methodDecl : mDecls) {
-        Iterable<SNode> parameterTypes = ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
+        Iterable<SNode> parameterTypes = ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "parameter", true)).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "type", true);
           }

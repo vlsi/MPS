@@ -113,7 +113,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            return ListSequence.fromList((new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.CLASS, operationContext.getScope()).getClassifiers())).<SNode>select(new ISelector<SNode, SNode>() {
+            return ListSequence.fromList((new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.CLASS, operationContext.getScope()).getClassifiers())).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode cls) {
                 return SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept");
               }
@@ -157,7 +157,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            return ListSequence.fromList((new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.INTERFACE, operationContext.getScope()).getClassifiers())).<SNode>select(new ISelector<SNode, SNode>() {
+            return ListSequence.fromList((new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.INTERFACE, operationContext.getScope()).getClassifiers())).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode cls) {
                 return SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Interface");
               }
@@ -277,7 +277,7 @@ public class QueriesGenerated {
             List<SNode> classifiers = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.CLASS, operationContext.getScope()).getClassifiers();
             List<Tuples._2<SNode, SNode>> result = ListSequence.fromList(new ArrayList<Tuples._2<SNode, SNode>>());
             for (final SNode iep : SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint")) {
-              for (SNode cc : ListSequence.fromList(classifiers).<SNode>select(new ISelector<SNode, SNode>() {
+              for (SNode cc : ListSequence.fromList(classifiers).select(new ISelector<SNode, SNode>() {
                 public SNode select(SNode cls) {
                   return SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept");
                 }

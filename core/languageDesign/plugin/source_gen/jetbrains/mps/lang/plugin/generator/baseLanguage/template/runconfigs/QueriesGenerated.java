@@ -801,7 +801,7 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1403054519076822739(final IOperationContext operationContext, final MappingScriptContext _context) {
-    Iterable<SNode> executeBlocks = ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), null)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> executeBlocks = ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), null)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SNodeOperations.getDescendants(it, "jetbrains.mps.lang.plugin.structure.ParametrizedExecuteBlock", false, new String[]{});
       }

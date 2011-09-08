@@ -6,8 +6,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_7930737280446985751(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "constraint", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "constraint", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode c) {
         return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(c, "jetbrains.mps.ui.modeling.structure.AspectParameterRef"), "parameterDecl", false), "aspectDef", false);
       }
@@ -37,7 +37,7 @@ public class QueriesGenerated {
       public boolean accept(SNode def) {
         return (def != null) && !(SPropertyOperations.getBoolean(def, "optional"));
       }
-    }).subtract(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.internal.structure.ContextBindingWrapper", false, false), "childAspect", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    }).subtract(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ui.internal.structure.ContextBindingWrapper", false, false), "childAspect", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode ca) {
         return SLinkOperations.getTarget(ca, "definition", false);
       }

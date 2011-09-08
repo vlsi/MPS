@@ -609,7 +609,7 @@ public class Generate_Facet extends IFacet.Stub {
                 }
               }) + 1000, monitor.currentProgress().workLeft());
               monitor.currentProgress().advanceWork("Generating", 1000);
-              List<SModelDescriptor> models = Sequence.fromIterable(input).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
+              List<SModelDescriptor> models = Sequence.fromIterable(input).translate(new ITranslator2<IResource, SModelDescriptor>() {
                 public Iterable<SModelDescriptor> translate(IResource in) {
                   return ((MResource) in).models();
                 }

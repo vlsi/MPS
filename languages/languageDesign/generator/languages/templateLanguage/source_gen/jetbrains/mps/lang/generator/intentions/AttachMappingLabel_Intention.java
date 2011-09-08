@@ -109,7 +109,7 @@ public class AttachMappingLabel_Intention extends BaseIntention implements Inten
     } else {
       mappings = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
     }
-    final List<String> existingLabels = ListSequence.fromList(mappings).<String>translate(new ITranslator2<SNode, String>() {
+    final List<String> existingLabels = ListSequence.fromList(mappings).translate(new ITranslator2<SNode, String>() {
       public Iterable<String> translate(final SNode it) {
         return new Iterable<String>() {
           public Iterator<String> iterator() {

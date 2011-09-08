@@ -2742,7 +2742,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_6389702176794275053(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SNodeOperations.getDescendants(it, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", false, new String[]{});
       }
@@ -2750,7 +2750,7 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "mapperFunction", true) == null);
       }
-    }).<SNode>select(new ISelector<SNode, SNode>() {
+    }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.getParent(it);
       }
@@ -2849,7 +2849,7 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "mapperFunction", true) == null);
       }
-    }).<SNode>select(new ISelector<SNode, SNode>() {
+    }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.getParent(it);
       }
@@ -2994,7 +2994,7 @@ public class QueriesGenerated {
   public static Object templateArgumentQuery_1147906725605070288(final IOperationContext operationContext, final TemplateQueryContext _context) {
     List<SNode> fragments = SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "contentNode", true), "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{});
 
-    return ListSequence.fromList(fragments).<SNode>select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(fragments).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.getParent(it);
       }
@@ -3550,17 +3550,17 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_1199965771120(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> nodes = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode");
-    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef")).<SNode>select(new ISelector<SNode, SNode>() {
+    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef")).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return IOperation_Behavior.call_getDotExpression_1224687669172(it);
       }
     }));
-    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef")).<SNode>select(new ISelector<SNode, SNode>() {
+    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef")).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return IOperation_Behavior.call_getDotExpression_1224687669172(it);
       }
     }));
-    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef")).<SNode>select(new ISelector<SNode, SNode>() {
+    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef")).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return IOperation_Behavior.call_getDotExpression_1224687669172(it);
       }

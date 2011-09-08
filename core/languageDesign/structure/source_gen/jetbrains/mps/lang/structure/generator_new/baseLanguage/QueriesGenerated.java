@@ -887,7 +887,7 @@ public class QueriesGenerated {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all boolean-type-properties from implemented interfaces 
     final List<String> names = ListSequence.fromList(new ArrayList<String>());
-    return QueriesUtil.sortedProperties(ListSequence.fromList(concepts).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    return QueriesUtil.sortedProperties(ListSequence.fromList(concepts).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -962,7 +962,7 @@ __switch__:
     if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() == 0 && ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() == 0) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
-    return QueriesUtil.sortedLinks(ListSequence.fromList(QueriesUtil.conceptAndItsInterfaces(_context.getNode())).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    return QueriesUtil.sortedLinks(ListSequence.fromList(QueriesUtil.conceptAndItsInterfaces(_context.getNode())).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "linkDeclaration", true);
       }
@@ -990,13 +990,13 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_545838410333248006(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    Iterable<SNode> properties = ListSequence.fromList(QueriesUtil.conceptAndItsInterfaces(_context.getNode())).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> properties = ListSequence.fromList(QueriesUtil.conceptAndItsInterfaces(_context.getNode())).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "propertyDeclaration", true);
       }
     });
     final Set<String> names = SetSequence.fromSet(new HashSet<String>());
-    Iterable<SNode> nodes = Sequence.fromIterable(properties).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> nodes = Sequence.fromIterable(properties).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -1047,7 +1047,7 @@ __switch__:
     if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() == 0 && ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() == 0) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
-    Iterable<SNode> res = ListSequence.fromList(QueriesUtil.conceptAndItsInterfaces(_context.getNode())).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> res = ListSequence.fromList(QueriesUtil.conceptAndItsInterfaces(_context.getNode())).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "linkDeclaration", true);
       }

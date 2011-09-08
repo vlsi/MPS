@@ -366,7 +366,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
         public String getText() {
           StringBuilder sb = new StringBuilder();
           String sep = "";
-          for (SNode ntcd : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().<SNode>translate(new ITranslator2<SNode, SNode>() {
+          for (SNode ntcd : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode ntd) {
               return SLinkOperations.getTargets(ntd, "component", true);
             }
@@ -476,11 +476,11 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     private EditorCell createReadOnlyModelAccessor_2ojjgh_a0b1a(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
-          return IterableUtils.join(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().<SNode>translate(new ITranslator2<SNode, SNode>() {
+          return IterableUtils.join(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode ntd) {
               return SLinkOperations.getTargets(ntd, "component", true);
             }
-          }).<String>select(new ISelector<SNode, String>() {
+          }).select(new ISelector<SNode, String>() {
             public String select(SNode c) {
               return ((SPropertyOperations.getBoolean(c, "final") ?
                 "final " :

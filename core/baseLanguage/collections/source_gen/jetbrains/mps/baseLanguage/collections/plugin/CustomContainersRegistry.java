@@ -30,7 +30,7 @@ public class CustomContainersRegistry {
   public List<SNode> allCustomContainerDeclarations() {
     Iterable<SNode> allCustomContainers = this.primAllCustomContainers();
     List<SNode> res = new ArrayList<SNode>();
-    ListSequence.fromList(res).addSequence(Sequence.fromIterable(allCustomContainers).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    ListSequence.fromList(res).addSequence(Sequence.fromIterable(allCustomContainers).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode cc) {
         return SLinkOperations.getTargets(cc, "containerDeclaration", true);
       }
@@ -50,7 +50,7 @@ public class CustomContainersRegistry {
           IModule owner = CustomContainersRegistry.this.getOwningModule(SNodeOperations.getModel(cc));
           return SetSequence.fromSet(allVisibleModules).contains(owner) || (owner instanceof Language && SetSequence.fromSet(allUsedLanguages).contains((Language) owner));
         }
-      }).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      }).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode cc) {
           return SLinkOperations.getTargets(cc, "containerDeclaration", true);
         }
@@ -84,7 +84,7 @@ public class CustomContainersRegistry {
     synchronized (this) {
       providersCopy = ListSequence.fromListWithValues(new ArrayList<_FunctionTypes._return_P0_E0<? extends List<SNode>>>(), this.providers);
     }
-    return ListSequence.fromList(providersCopy).<SNode>translate(new ITranslator2<_FunctionTypes._return_P0_E0<? extends List<SNode>>, SNode>() {
+    return ListSequence.fromList(providersCopy).translate(new ITranslator2<_FunctionTypes._return_P0_E0<? extends List<SNode>>, SNode>() {
       public Iterable<SNode> translate(_FunctionTypes._return_P0_E0<? extends List<SNode>> prov) {
         return prov.invoke();
       }

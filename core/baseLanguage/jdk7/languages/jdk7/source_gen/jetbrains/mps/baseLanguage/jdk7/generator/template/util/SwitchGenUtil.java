@@ -23,7 +23,7 @@ public class SwitchGenUtil {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "expression", true) != null);
       }
-    }).<SNode>select(new ISelector<SNode, SNode>() {
+    }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "expression", true);
       }

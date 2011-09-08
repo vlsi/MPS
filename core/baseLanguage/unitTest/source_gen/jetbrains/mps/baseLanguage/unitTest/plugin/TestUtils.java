@@ -142,7 +142,7 @@ __switch__:
   }
 
   public static ClonableList nodesToCloneableList(List<SNode> nodes) {
-    return new ClonableList(ListSequence.fromList(nodes).<String>select(new ISelector<SNode, String>() {
+    return new ClonableList(ListSequence.fromList(nodes).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return TestUtils.pointerToString(new SNodePointer(it));
       }
@@ -218,7 +218,7 @@ __switch__:
   }
 
   public static Iterable<ITestNodeWrapper> getModelTests(@NotNull SModel model) {
-    return ListSequence.fromList(SModelOperations.getRoots(model, null)).<ITestNodeWrapper>select(new ISelector<SNode, ITestNodeWrapper>() {
+    return ListSequence.fromList(SModelOperations.getRoots(model, null)).select(new ISelector<SNode, ITestNodeWrapper>() {
       public ITestNodeWrapper select(SNode it) {
         return TestNodeWrapperFactory.tryToWrap(it);
       }
@@ -238,7 +238,7 @@ __switch__:
       public boolean accept(SModelDescriptor it) {
         return SModelStereotype.isUserModel(it);
       }
-    }).<ITestNodeWrapper>translate(new ITranslator2<SModelDescriptor, ITestNodeWrapper>() {
+    }).translate(new ITranslator2<SModelDescriptor, ITestNodeWrapper>() {
       public Iterable<ITestNodeWrapper> translate(SModelDescriptor model) {
         return TestUtils.getModelTests(model.getSModel());
       }
@@ -250,7 +250,7 @@ __switch__:
       public Iterable<IModule> iterable() {
         return project.getModules();
       }
-    })).<ITestNodeWrapper>translate(new ITranslator2<IModule, ITestNodeWrapper>() {
+    })).translate(new ITranslator2<IModule, ITestNodeWrapper>() {
       public Iterable<ITestNodeWrapper> translate(IModule module) {
         return TestUtils.getModuleTests(module);
       }

@@ -62,7 +62,7 @@ public class VariantsUtil {
         return "value".equals(SPropertyOperations.getString(SLinkOperations.getTarget(v, "key", false), "name"));
       }
     }), "value", true);
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(val, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true)).<String>select(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(val, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true)).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
       }

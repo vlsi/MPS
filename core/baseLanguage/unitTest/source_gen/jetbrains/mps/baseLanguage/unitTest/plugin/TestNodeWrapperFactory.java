@@ -176,7 +176,7 @@ public enum TestNodeWrapperFactory {
       public boolean accept(TestNodeWrapperFactory it) {
         return condition.invoke(it);
       }
-    }).<SNode>select(new ISelector<TestNodeWrapperFactory, SNode>() {
+    }).select(new ISelector<TestNodeWrapperFactory, SNode>() {
       public SNode select(TestNodeWrapperFactory it) {
         return it.getWrappedConcept();
       }
@@ -212,7 +212,7 @@ public enum TestNodeWrapperFactory {
       TestNodeWrapperFactory.getWrappedRootConcepts() :
       TestNodeWrapperFactory.getWrappedNonRootConcepts()
     );
-    return SNodeOperations.getAncestorWhereConceptInList(source, Sequence.fromIterable(concepts).<String>select(new ISelector<SNode, String>() {
+    return SNodeOperations.getAncestorWhereConceptInList(source, Sequence.fromIterable(concepts).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return INamedConcept_Behavior.call_getFqName_1213877404258(it);
       }

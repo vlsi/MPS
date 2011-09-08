@@ -431,7 +431,7 @@
     <nodeInfo nodeId="7713872743340736334" fileName="RetainedUtil.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="retainedCachesDelta#(Ljava/lang/Iterable;Ljetbrains/mps/project/IModule;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="7713872743340736102" fileName="RetainedUtil.java" startLine="106" startPosition="0" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RetainedFilesDelta#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)V" />
     <nodeInfo nodeId="8229655164456307828" fileName="RetainedUtil.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootOutputDir#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="7713872743340805341" fileName="RetainedUtil.java" startLine="127" startPosition="128" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/internal/make/runtime/util/FilesDelta;)Ljetbrains/mps/make/delta/IDelta;" />
+    <nodeInfo nodeId="7713872743340805341" fileName="RetainedUtil.java" startLine="127" startPosition="120" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/internal/make/runtime/util/FilesDelta;)Ljetbrains/mps/make/delta/IDelta;" />
     <nodeInfo nodeId="3110513929263083515" fileName="RetainedUtil.java" startLine="36" startPosition="61" endLine="41" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3110513929263083542" fileName="RetainedUtil.java" startLine="44" startPosition="72" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3110513929263083569" fileName="RetainedUtil.java" startLine="50" startPosition="11" endLine="55" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -503,7 +503,7 @@
     <scopeInfo nodeId="8229655164456307828" fileName="RetainedUtil.java" startLine="121" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="8229655164456307827" varName="output" />
     </scopeInfo>
-    <scopeInfo nodeId="7713872743340805341" fileName="RetainedUtil.java" startLine="127" startPosition="128" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="7713872743340805341" fileName="RetainedUtil.java" startLine="127" startPosition="120" endLine="131" endPosition="0" />
     <scopeInfo nodeId="7713872743340736109" fileName="RetainedUtil.java" startLine="134" startPosition="50" endLine="138" endPosition="53" />
     <scopeInfo nodeId="3110513929263083541" fileName="RetainedUtil.java" startLine="44" startPosition="72" endLine="49" endPosition="16" />
     <scopeInfo nodeId="3110513929263083610" fileName="RetainedUtil.java" startLine="59" startPosition="72" endLine="64" endPosition="14" />
@@ -557,7 +557,7 @@
     <unitInfo nodeId="3110513929263083667" fileName="RetainedUtil.java" startLine="71" startPosition="150" endLine="75" endPosition="13" unitName="jetbrains.mps.lang.core.plugin.RetainedUtil$5" />
     <unitInfo nodeId="3110513929263083688" fileName="RetainedUtil.java" startLine="77" startPosition="119" endLine="81" endPosition="11" unitName="jetbrains.mps.lang.core.plugin.RetainedUtil$6" />
     <unitInfo nodeId="3110513929263083708" fileName="RetainedUtil.java" startLine="83" startPosition="117" endLine="87" endPosition="9" unitName="jetbrains.mps.lang.core.plugin.RetainedUtil$7" />
-    <unitInfo nodeId="7713872743340805341" fileName="RetainedUtil.java" startLine="127" startPosition="95" endLine="131" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.RetainedUtil$1" />
+    <unitInfo nodeId="7713872743340805341" fileName="RetainedUtil.java" startLine="127" startPosition="87" endLine="131" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.RetainedUtil$1" />
     <unitInfo nodeId="7713872743340736246" fileName="RetainedUtil.java" startLine="142" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.RetainedUtil$RetainedCachesDelta" />
     <unitInfo nodeId="7713872743340736100" fileName="RetainedUtil.java" startLine="102" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.RetainedUtil$RetainedFilesDelta" />
     <unitInfo nodeId="3110513929263083458" fileName="RetainedUtil.java" startLine="26" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.RetainedUtil" />
@@ -910,7 +910,7 @@
     <nodeInfo nodeId="6648795410103939779" fileName="Generate_Facet.java" startLine="553" startPosition="0" endLine="557" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
     <nodeInfo nodeId="6648795410103940134" fileName="Generate_Facet.java" startLine="597" startPosition="58" endLine="601" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/mps/messages/IMessage;)V" />
     <nodeInfo nodeId="6648795410103940153" fileName="Generate_Facet.java" startLine="606" startPosition="148" endLine="610" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Integer;" />
-    <nodeInfo nodeId="6648795410103940185" fileName="Generate_Facet.java" startLine="612" startPosition="152" endLine="616" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6648795410103940185" fileName="Generate_Facet.java" startLine="612" startPosition="134" endLine="616" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="6648795410103940238" fileName="Generate_Facet.java" startLine="624" startPosition="211" endLine="628" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="merge#(Ljetbrains/mps/make/delta/IDelta;)Ljetbrains/mps/make/delta/IDelta;" />
     <nodeInfo nodeId="6648795410103940246" fileName="Generate_Facet.java" startLine="628" startPosition="0" endLine="632" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljetbrains/mps/make/delta/IDelta;)Z" />
     <nodeInfo nodeId="6067326609049460298" fileName="Generate_Facet.java" startLine="639" startPosition="0" endLine="643" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptVisitor#(Ljetbrains/mps/make/delta/IDeltaVisitor;)Z" />
@@ -1212,7 +1212,7 @@
       <varInfo nodeId="6648795410103940137" varName="msg" />
     </scopeInfo>
     <scopeInfo nodeId="6648795410103940153" fileName="Generate_Facet.java" startLine="606" startPosition="148" endLine="610" endPosition="0" />
-    <scopeInfo nodeId="6648795410103940185" fileName="Generate_Facet.java" startLine="612" startPosition="152" endLine="616" endPosition="0" />
+    <scopeInfo nodeId="6648795410103940185" fileName="Generate_Facet.java" startLine="612" startPosition="134" endLine="616" endPosition="0" />
     <scopeInfo nodeId="6648795410103940238" fileName="Generate_Facet.java" startLine="624" startPosition="211" endLine="628" endPosition="0">
       <varInfo nodeId="6648795410103940241" varName="toMerge" />
     </scopeInfo>
@@ -1312,7 +1312,7 @@
     <scopeInfo nodeId="6648795410103939855" fileName="Generate_Facet.java" startLine="573" startPosition="29" endLine="648" endPosition="8" />
     <scopeInfo nodeId="6648795410103939855" fileName="Generate_Facet.java" startLine="572" startPosition="0" endLine="650" endPosition="0" />
     <unitInfo nodeId="6648795410103940153" fileName="Generate_Facet.java" startLine="606" startPosition="109" endLine="610" endPosition="15" unitName="jetbrains.mps.lang.core.plugin.Generate_Facet$2" />
-    <unitInfo nodeId="6648795410103940185" fileName="Generate_Facet.java" startLine="612" startPosition="107" endLine="616" endPosition="15" unitName="jetbrains.mps.lang.core.plugin.Generate_Facet$2" />
+    <unitInfo nodeId="6648795410103940185" fileName="Generate_Facet.java" startLine="612" startPosition="89" endLine="616" endPosition="15" unitName="jetbrains.mps.lang.core.plugin.Generate_Facet$2" />
     <unitInfo nodeId="6648795410103939828" fileName="Generate_Facet.java" startLine="494" startPosition="65" endLine="499" endPosition="25" unitName="jetbrains.mps.lang.core.plugin.Generate_Facet$4" />
     <unitInfo nodeId="6648795410103940104" fileName="Generate_Facet.java" startLine="589" startPosition="68" endLine="596" endPosition="15" unitName="jetbrains.mps.lang.core.plugin.Generate_Facet$2" />
     <unitInfo nodeId="6648795410103940132" fileName="Generate_Facet.java" startLine="597" startPosition="39" endLine="604" endPosition="15" unitName="jetbrains.mps.lang.core.plugin.Generate_Facet$2" />
@@ -2814,9 +2814,9 @@
     <nodeInfo nodeId="8096124782826059775" fileName="Make_Facet.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="8096124782826059775" fileName="Make_Facet.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
     <nodeInfo nodeId="8096124782826059775" fileName="Make_Facet.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertiesPersistence#()Ljetbrains/mps/make/resources/IPropertiesPersistence;" />
-    <nodeInfo nodeId="8096124782826059794" fileName="Make_Facet.java" startLine="81" startPosition="128" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8096124782826059794" fileName="Make_Facet.java" startLine="81" startPosition="120" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="8096124782826059806" fileName="Make_Facet.java" startLine="85" startPosition="59" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/make/delta/IDelta;)Z" />
-    <nodeInfo nodeId="8096124782826059824" fileName="Make_Facet.java" startLine="90" startPosition="128" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8096124782826059824" fileName="Make_Facet.java" startLine="90" startPosition="120" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="8096124782826059836" fileName="Make_Facet.java" startLine="94" startPosition="59" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/make/delta/IDelta;)Z" />
     <nodeInfo nodeId="8096124782826059776" fileName="Make_Facet.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
     <nodeInfo nodeId="8096124782826059776" fileName="Make_Facet.java" startLine="115" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
@@ -2914,9 +2914,9 @@
     <scopeInfo nodeId="8096124782826059775" fileName="Make_Facet.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="8096124782826059775" fileName="Make_Facet.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="8096124782826059775" fileName="Make_Facet.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="8096124782826059794" fileName="Make_Facet.java" startLine="81" startPosition="128" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="8096124782826059794" fileName="Make_Facet.java" startLine="81" startPosition="120" endLine="85" endPosition="0" />
     <scopeInfo nodeId="8096124782826059806" fileName="Make_Facet.java" startLine="85" startPosition="59" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="8096124782826059824" fileName="Make_Facet.java" startLine="90" startPosition="128" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="8096124782826059824" fileName="Make_Facet.java" startLine="90" startPosition="120" endLine="94" endPosition="0" />
     <scopeInfo nodeId="8096124782826059836" fileName="Make_Facet.java" startLine="94" startPosition="59" endLine="98" endPosition="0" />
     <scopeInfo nodeId="8096124782826059776" fileName="Make_Facet.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
     <scopeInfo nodeId="8096124782826059776" fileName="Make_Facet.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
@@ -2956,9 +2956,9 @@
     <scopeInfo nodeId="8096124782826059778" fileName="Make_Facet.java" startLine="72" startPosition="30" endLine="109" endPosition="0" />
     <scopeInfo nodeId="8096124782826059776" fileName="Make_Facet.java" startLine="71" startPosition="29" endLine="109" endPosition="8" />
     <scopeInfo nodeId="8096124782826059776" fileName="Make_Facet.java" startLine="70" startPosition="0" endLine="111" endPosition="0" />
-    <unitInfo nodeId="8096124782826059794" fileName="Make_Facet.java" startLine="81" startPosition="93" endLine="85" endPosition="23" unitName="jetbrains.mps.lang.core.plugin.Make_Facet$4" />
+    <unitInfo nodeId="8096124782826059794" fileName="Make_Facet.java" startLine="81" startPosition="85" endLine="85" endPosition="23" unitName="jetbrains.mps.lang.core.plugin.Make_Facet$4" />
     <unitInfo nodeId="8096124782826059806" fileName="Make_Facet.java" startLine="85" startPosition="35" endLine="89" endPosition="23" unitName="jetbrains.mps.lang.core.plugin.Make_Facet$4" />
-    <unitInfo nodeId="8096124782826059824" fileName="Make_Facet.java" startLine="90" startPosition="93" endLine="94" endPosition="23" unitName="jetbrains.mps.lang.core.plugin.Make_Facet$4" />
+    <unitInfo nodeId="8096124782826059824" fileName="Make_Facet.java" startLine="90" startPosition="85" endLine="94" endPosition="23" unitName="jetbrains.mps.lang.core.plugin.Make_Facet$4" />
     <unitInfo nodeId="8096124782826059836" fileName="Make_Facet.java" startLine="94" startPosition="35" endLine="98" endPosition="23" unitName="jetbrains.mps.lang.core.plugin.Make_Facet$4" />
     <unitInfo nodeId="8096124782826059851" fileName="Make_Facet.java" startLine="172" startPosition="17" endLine="181" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.Make_Facet$1" />
     <unitInfo nodeId="8096124782826059775" fileName="Make_Facet.java" startLine="234" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Make_Facet$TargetProperties" />
