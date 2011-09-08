@@ -57,7 +57,7 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
         if (!myInvalidated) return;
         myInvalidated = false;
       }
-      myMessageBus.syncPublisher(ProjectTopics.PROJECT_ROOTS).rootsChanged(new ModuleRootEventImpl(myProject, false));
+      notifyRootsChanged(false);
     }
   };
 
@@ -89,10 +89,14 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
     MPSModuleRepository.getInstance().removeModuleRepositoryListener(myModuleRepositoryListener);
   }
 
-  private void notifyRootsChanged() {
+  private void notifyRootsChanged(boolean async) {
     if (!myProject.isDisposed()) {
-      synchronized (LOCK) {
-        myInvalidated = true;
+      if (async) {
+        synchronized (LOCK) {
+          myInvalidated = true;
+        }
+      } else {
+        myMessageBus.syncPublisher(ProjectTopics.PROJECT_ROOTS).rootsChanged(new ModuleRootEventImpl(myProject, false));
       }
     }
   }
@@ -110,7 +114,7 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
     @Override
     public void fileCreated(VirtualFileEvent event) {
       if (event.getFile().isDirectory() && isExcluded(event.getFile())) {
-        notifyRootsChanged();
+        notifyRootsChanged(false);
       }
     }
   }
@@ -118,12 +122,12 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
     @Override
     public void moduleAdded(IModule module) {
-      notifyRootsChanged();
+      notifyRootsChanged(true);
     }
 
     @Override
     public void moduleChanged(IModule module) {
-      notifyRootsChanged();
+      notifyRootsChanged(true);
     }
   }
 }
