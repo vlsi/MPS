@@ -34,7 +34,7 @@ public class FacetDeclaration_Behavior {
       SNode fd = QueueSequence.fromQueue(queue).removeFirstElement();
       if (!(SetSequence.fromSet(result).contains(fd))) {
         SetSequence.fromSet(result).addElement(fd);
-        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getTargets(fd, "extended", true)).<SNode>select(new ISelector<SNode, SNode>() {
+        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getTargets(fd, "extended", true)).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "facet", false);
           }
@@ -51,12 +51,12 @@ public class FacetDeclaration_Behavior {
       SNode fd = QueueSequence.fromQueue(queue).removeFirstElement();
       if (!(SetSequence.fromSet(result).contains(fd))) {
         SetSequence.fromSet(result).addElement(fd);
-        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getTargets(fd, "required", true)).<SNode>select(new ISelector<SNode, SNode>() {
+        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getTargets(fd, "required", true)).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "facet", false);
           }
         }));
-        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getTargets(fd, "optional", true)).<SNode>select(new ISelector<SNode, SNode>() {
+        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getTargets(fd, "optional", true)).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "facet", false);
           }

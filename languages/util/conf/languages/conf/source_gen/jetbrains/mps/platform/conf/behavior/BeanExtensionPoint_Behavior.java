@@ -17,7 +17,7 @@ public class BeanExtensionPoint_Behavior {
   }
 
   public static Iterable<String> call_propertyNames_618741292999315209(SNode thisNode) {
-    return Sequence.fromIterable(BeanUtil.properties(SLinkOperations.getTarget(thisNode, "beanClass", false))).<String>select(new ISelector<BeanProperty, String>() {
+    return Sequence.fromIterable(BeanUtil.properties(SLinkOperations.getTarget(thisNode, "beanClass", false))).select(new ISelector<BeanProperty, String>() {
       public String select(BeanProperty p) {
         return p.name();
       }

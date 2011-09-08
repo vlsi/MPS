@@ -68,7 +68,7 @@
     <nodeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDistribConfiguration_1230207861621#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVMOptionfFileName_1231748960223#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAntPathFromAbstractPath_1234513234515#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1234793567460" fileName="SystemSpecificConfig_Behavior.java" startLine="47" startPosition="90" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1234793567460" fileName="SystemSpecificConfig_Behavior.java" startLine="47" startPosition="83" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getVMOptionsFilePath_1231769123888#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAllUsedVariable_1234793567442#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
     <nodeInfo nodeId="1234793567454" fileName="SystemSpecificConfig_Behavior.java" startLine="46" startPosition="234" endLine="51" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -92,7 +92,7 @@
     <scopeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1234513273721" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="1234793567460" fileName="SystemSpecificConfig_Behavior.java" startLine="47" startPosition="90" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1234793567460" fileName="SystemSpecificConfig_Behavior.java" startLine="47" startPosition="83" endLine="51" endPosition="0" />
     <scopeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="53" startPosition="0" endLine="58" endPosition="0" />
@@ -106,7 +106,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="31" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="44" startPosition="0" endLine="53" endPosition="0" />
-    <unitInfo nodeId="1234793567460" fileName="SystemSpecificConfig_Behavior.java" startLine="47" startPosition="63" endLine="51" endPosition="5" unitName="jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior$1" />
+    <unitInfo nodeId="1234793567460" fileName="SystemSpecificConfig_Behavior.java" startLine="47" startPosition="56" endLine="51" endPosition="5" unitName="jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior$1" />
     <unitInfo nodeId="1230207860043" fileName="SystemSpecificConfig_Behavior.java" startLine="17" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior" />
   </root>
   <root nodeId="1230208019848">
@@ -215,7 +215,7 @@
     <nodeInfo nodeId="1234874469987" fileName="DistribConfiguration_Behavior.java" startLine="69" startPosition="143" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getProjectName_1230292821821#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1230294599697" fileName="DistribConfiguration_Behavior.java" startLine="41" startPosition="136" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1230294560788" fileName="DistribConfiguration_Behavior.java" startLine="46" startPosition="83" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1230294560788" fileName="DistribConfiguration_Behavior.java" startLine="46" startPosition="76" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getProjectFolderAntName_1230295546376#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVMOptionsExt_1231692561653#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVMOptionsFileName_1231749012626#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
@@ -243,7 +243,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="1230294599697" fileName="DistribConfiguration_Behavior.java" startLine="41" startPosition="136" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1230294560788" fileName="DistribConfiguration_Behavior.java" startLine="46" startPosition="83" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1230294560788" fileName="DistribConfiguration_Behavior.java" startLine="46" startPosition="76" endLine="50" endPosition="0" />
     <scopeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
@@ -261,7 +261,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="31" startPosition="0" endLine="52" endPosition="0" />
     <unitInfo nodeId="1230294599697" fileName="DistribConfiguration_Behavior.java" startLine="41" startPosition="113" endLine="45" endPosition="5" unitName="jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior$1" />
-    <unitInfo nodeId="1230294560788" fileName="DistribConfiguration_Behavior.java" startLine="46" startPosition="56" endLine="50" endPosition="5" unitName="jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior$2" />
+    <unitInfo nodeId="1230294560788" fileName="DistribConfiguration_Behavior.java" startLine="46" startPosition="49" endLine="50" endPosition="5" unitName="jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior$2" />
     <unitInfo nodeId="1230292819375" fileName="DistribConfiguration_Behavior.java" startLine="21" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior" />
   </root>
   <root nodeId="1231864296686">

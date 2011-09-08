@@ -94,10 +94,10 @@ public class Binaries_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               final List<IDelta> deltaList = ListSequence.fromList(new ArrayList<IDelta>());
-              final Iterable<Tuples._2<IFile, IFile>> filesToCopy = Sequence.fromIterable(input).<Tuples._2<IFile, IFile>>translate(new ITranslator2<IResource, Tuples._2<IFile, IFile>>() {
+              final Iterable<Tuples._2<IFile, IFile>> filesToCopy = Sequence.fromIterable(input).translate(new ITranslator2<IResource, Tuples._2<IFile, IFile>>() {
                 public Iterable<Tuples._2<IFile, IFile>> translate(IResource res) {
                   final IModule module = ((MResource) res).module();
-                  return Sequence.fromIterable(((MResource) res).models()).<Tuples._2<IFile, IFile>>translate(new ITranslator2<SModelDescriptor, Tuples._2<IFile, IFile>>() {
+                  return Sequence.fromIterable(((MResource) res).models()).translate(new ITranslator2<SModelDescriptor, Tuples._2<IFile, IFile>>() {
                     public Iterable<Tuples._2<IFile, IFile>> translate(SModelDescriptor smd) {
                       SModel model = smd.getSModel();
                       String output = module.getOutputFor(smd);
@@ -116,7 +116,7 @@ public class Binaries_Facet extends IFacet.Stub {
                           public boolean accept(SNode it) {
                             return StringUtils.isNotEmpty(SPropertyOperations.getString(it, "path"));
                           }
-                        }).<String>select(new ISelector<SNode, String>() {
+                        }).select(new ISelector<SNode, String>() {
                           public String select(SNode bin) {
                             return MacrosUtil.expandPath(SPropertyOperations.getString(bin, "path"), module.getModuleFqName());
                           }
@@ -124,7 +124,7 @@ public class Binaries_Facet extends IFacet.Stub {
                           public boolean accept(String p) {
                             return p != null;
                           }
-                        }).<Tuples._2<IFile, IFile>>select(new ISelector<String, Tuples._2<IFile, IFile>>() {
+                        }).select(new ISelector<String, Tuples._2<IFile, IFile>>() {
                           public Tuples._2<IFile, IFile> select(String p) {
                             IFile fromFile = FileSystem.getInstance().getFileByPath(p);
                             IFile toFile = outputDir.getDescendant(fromFile.getName());

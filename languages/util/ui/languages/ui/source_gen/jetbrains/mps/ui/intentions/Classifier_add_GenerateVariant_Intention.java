@@ -99,11 +99,11 @@ public class Classifier_add_GenerateVariant_Intention extends BaseIntention impl
       public boolean accept(SNode ann) {
         return SLinkOperations.getTarget(ann, "annotation", false) == gv;
       }
-    }), "value", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    }), "value", true)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode av) {
         return SLinkOperations.getTargets(SNodeOperations.as(SLinkOperations.getTarget(av, "value", true), "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true);
       }
-    }).<String>select(new ISelector<SNode, String>() {
+    }).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
       }

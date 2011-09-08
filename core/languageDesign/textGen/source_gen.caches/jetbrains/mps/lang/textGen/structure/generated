@@ -10,7 +10,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-6r5i332c87x8xyc3ivazsp5i0nmdz40" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="33wkjgiezx0fo2ce3ik1767insl4n2e" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="d8xfna3g5ul3mdj5lmmb4ag6juunapj" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-5g8163zp0j3pctdgbcilsfbj6z1v6tf" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-aponn5nsgce6wtlpsam7uobqmzylfnq" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6wcb0wku66kauzfch9knq1rbzi73svq" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="90582pvul3jpqwmlp2m8l0fz4qnawyz" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
@@ -61,6 +61,7 @@
     <file name="TextGen_Language.java" />
   </common>
   <source id="1233670071145" name="ConceptTextGenDeclaration" hash="1v7f1kfboxme0cni97rfz8w5kx4c89u">
+    <dep root="1224137887853744019" />
     <dep root="1224137887853744059" />
     <dep root="1233749247888" />
     <dep root="1234281982537" />
@@ -212,6 +213,7 @@
     <file name="ContextParameter.java" />
   </source>
   <source id="1234281982537" name="AbstractTextGenDeclaration" hash="-v8u5v9s264svbpjfu9y6ecbocs9600">
+    <dep root="1224137887853744019" />
     <dep root="7166719696753421196" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -430,6 +432,7 @@
     <file name="ReferenceAppendPart.java" />
   </source>
   <source id="7166719696753421196" name="EncodingLiteral" hash="-2e7tbiuofh8jl1zmuxq010p0qovyry8">
+    <dep root="1224137887853744019" />
     <dep root="1224137887853744059" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />

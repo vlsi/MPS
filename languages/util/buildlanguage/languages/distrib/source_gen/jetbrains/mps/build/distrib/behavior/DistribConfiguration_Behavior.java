@@ -43,7 +43,7 @@ public class DistribConfiguration_Behavior {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Folder") && (ListSequence.fromList(SLinkOperations.getTargets(it, "configuration", true)).isEmpty() || ListSequence.fromList(SLinkOperations.getTargets(it, "configuration", true)).contains(selectedConfiguration));
       }
     });
-    return Sequence.fromIterable(seq).<SNode>select(new ISelector<SNode, SNode>() {
+    return Sequence.fromIterable(seq).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.build.packaging.structure.Folder");
       }

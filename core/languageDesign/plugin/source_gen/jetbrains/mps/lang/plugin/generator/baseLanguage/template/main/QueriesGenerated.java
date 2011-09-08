@@ -1684,7 +1684,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_3038738109029038605(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "tab", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "tab", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a753().createNode(SPropertyOperations.getString(SLinkOperations.getTarget(it, "editorTab", false), "name"));
 
@@ -1724,7 +1724,7 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_2713887941725402118(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for (SNode method : ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.plugin.structure.ActionDeclaration")).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    for (SNode method : ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.plugin.structure.ActionDeclaration")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "methodDeclaration", true);
       }

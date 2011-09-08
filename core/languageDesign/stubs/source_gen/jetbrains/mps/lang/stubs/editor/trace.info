@@ -120,7 +120,7 @@
     <nodeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="49" startPosition="99" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguageRef_generic_cellMenu_a0a#()V" />
     <nodeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="35" startPosition="26" endLine="38" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="26" startPosition="59" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="562112407432160048" fileName="LanguageRef_Editor.java" startLine="55" startPosition="95" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/Language;)Ljava/lang/String;" />
+    <nodeInfo nodeId="562112407432160048" fileName="LanguageRef_Editor.java" startLine="55" startPosition="87" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/Language;)Ljava/lang/String;" />
     <nodeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Ljava/lang/Object;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <nodeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction_impl#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <nodeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReferentPresentation#()Z" />
@@ -143,7 +143,7 @@
     <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="35" startPosition="26" endLine="38" endPosition="189" />
     <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="41" startPosition="35" endLine="44" endPosition="105" />
     <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="26" startPosition="59" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="562112407432160048" fileName="LanguageRef_Editor.java" startLine="55" startPosition="95" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="562112407432160048" fileName="LanguageRef_Editor.java" startLine="55" startPosition="87" endLine="59" endPosition="0" />
     <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
@@ -155,7 +155,7 @@
     <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="52" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="31" startPosition="87" endLine="46" endPosition="22" />
     <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="30" startPosition="0" endLine="48" endPosition="0" />
-    <unitInfo nodeId="562112407432160048" fileName="LanguageRef_Editor.java" startLine="55" startPosition="64" endLine="59" endPosition="7" unitName="jetbrains.mps.lang.stubs.editor.LanguageRef_Editor$1" />
+    <unitInfo nodeId="562112407432160048" fileName="LanguageRef_Editor.java" startLine="55" startPosition="56" endLine="59" endPosition="7" unitName="jetbrains.mps.lang.stubs.editor.LanguageRef_Editor$1" />
     <unitInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="49" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.LanguageRef_Editor$LanguageRef_generic_cellMenu_a0a" />
     <unitInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="26" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.LanguageRef_Editor" />
   </root>

@@ -95,7 +95,7 @@ public abstract class ExtractMethodRefactoring {
     for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true))) {
       ListSequence.fromList(throwables).addSequence(SetSequence.fromSet(Statement_Behavior.call_uncaughtThrowables_5412515780383108857(statement, false)));
     }
-    ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(throwables).<SNode>select(new ISelector<SNode, SNode>() {
+    ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(throwables).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0a0a2a6().createNode(it);
       }

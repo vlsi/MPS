@@ -144,7 +144,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_3210848622155981218(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).skip(1).<SNode>select(new ISelector<String, SNode>() {
+    return Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).skip(1).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
         return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a62().createNode(it);
       }
@@ -176,7 +176,7 @@ public class QueriesGenerated {
     });
     ListSequence.fromList(SLinkOperations.getTargets(copy, "annotation", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0c0eb().createNode(Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).first()));
     if (Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).count() > 1) {
-      List<SNode> vals = Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).skip(1).<SNode>select(new ISelector<String, SNode>() {
+      List<SNode> vals = Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).skip(1).select(new ISelector<String, SNode>() {
         public SNode select(String it) {
           return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a3a03().createNode(it);
         }

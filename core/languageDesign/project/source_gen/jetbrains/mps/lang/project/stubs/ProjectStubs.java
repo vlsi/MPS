@@ -39,7 +39,7 @@ public class ProjectStubs extends BaseStubModelRootManager {
 
     moduleIds.add("86ef8290-12bb-4ca7-947f-093788f263a9");
 
-    Iterable<Language> languages = SetSequence.fromSet(moduleIds).<Language>select(new ISelector<String, Language>() {
+    Iterable<Language> languages = SetSequence.fromSet(moduleIds).select(new ISelector<String, Language>() {
       public Language select(String it) {
         return (Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(it));
       }
@@ -55,7 +55,7 @@ public class ProjectStubs extends BaseStubModelRootManager {
     final ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(file);
     new ProjectStructureBuilder(descriptor, file, model) {
       public Iterable<SModelReference> loadReferences(SNode module, ModuleDescriptor d) {
-        return Sequence.fromIterable(((Iterable<ModelRoot>) d.getModelRoots())).<SModelReference>translate(new ITranslator2<ModelRoot, SModelReference>() {
+        return Sequence.fromIterable(((Iterable<ModelRoot>) d.getModelRoots())).translate(new ITranslator2<ModelRoot, SModelReference>() {
           public Iterable<SModelReference> translate(ModelRoot it) {
             return ProjectStubs.this.loadModels(it);
           }
@@ -78,7 +78,7 @@ public class ProjectStubs extends BaseStubModelRootManager {
     IFile folder = FileSystem.getInstance().getFileByPath(location.getPath());
     Iterable<ModulesMiner.ModuleHandle> descriptors = ModulesMiner.getInstance().collectModules(folder, false);
     final String stereotype = SModelStereotype.getStubStereotypeForId("project");
-    return Sequence.fromIterable(descriptors).<BaseStubModelDescriptor>select(new ISelector<ModulesMiner.ModuleHandle, BaseStubModelDescriptor>() {
+    return Sequence.fromIterable(descriptors).select(new ISelector<ModulesMiner.ModuleHandle, BaseStubModelDescriptor>() {
       public BaseStubModelDescriptor select(ModulesMiner.ModuleHandle it) {
         SModelReference modelRef = ProjectStubs.this.createModelReference(it, location, stereotype);
         BaseStubModelDescriptor descriptor = new BaseStubModelDescriptor(ProjectStubs.this, modelRef, new BaseStubModelDescriptor.FileStubSource(it.getFile()));

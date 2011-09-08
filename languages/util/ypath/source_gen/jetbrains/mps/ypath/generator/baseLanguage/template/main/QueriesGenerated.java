@@ -1048,7 +1048,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1180090213117(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "visitBlock", true), "visitParameterDeclarationList", true), "visitParameterDeclaration", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "visitBlock", true), "visitParameterDeclarationList", true), "visitParameterDeclaration", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "initializer", true);
       }

@@ -74,7 +74,7 @@ public class Ant_Command {
     if (StringUtils.isEmpty(jdkHome)) {
       throw new ExecutionException("Could not find valid java home.");
     }
-    return new Java_Command().setClassPath(Ant_Command.getAntClassPath(myAntLocation)).setProgramParameter(Java_Command.protect("-Djava.home=" + jdkHome) + " " + Java_Command.protect("-Dant.home=" + myAntLocation) + " " + IterableUtils.join(Sequence.fromIterable(Ant_Command.getMacroValues()).<String>select(new ISelector<String, String>() {
+    return new Java_Command().setClassPath(Ant_Command.getAntClassPath(myAntLocation)).setProgramParameter(Java_Command.protect("-Djava.home=" + jdkHome) + " " + Java_Command.protect("-Dant.home=" + myAntLocation) + " " + IterableUtils.join(Sequence.fromIterable(Ant_Command.getMacroValues()).select(new ISelector<String, String>() {
       public String select(String it) {
         return Java_Command.protect(it);
       }
@@ -114,7 +114,7 @@ public class Ant_Command {
       public Iterable<String> iterable() {
         return pathMacros.getUserMacroNames();
       }
-    })).<String>select(new ISelector<String, String>() {
+    })).select(new ISelector<String, String>() {
       public String select(String it) {
         return "-D" + it + "=" + pathMacros.getValue(it);
       }

@@ -56,7 +56,7 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getSourcesDirectories_1775602641704992067(SNode thisNode) {
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<String>(), Module_Behavior.call_getModule_1213877515148(thisNode).getSourcePaths())).<String>select(new ISelector<String, String>() {
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<String>(), Module_Behavior.call_getModule_1213877515148(thisNode).getSourcePaths())).select(new ISelector<String, String>() {
       public String select(String it) {
         return it.replace(File.separator, Util.SEPARATOR);
       }
@@ -84,13 +84,13 @@ public class Module_Behavior {
     List<SModelRoot> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getSModelRoots();
     if (Module_Behavior.call_getModule_1213877515148(thisNode) instanceof Language) {
       paths = ListSequence.fromListWithValues(new ArrayList<SModelRoot>(), paths);
-      ListSequence.fromList(paths).addSequence(Sequence.fromIterable(((Iterable<Generator>) ((Language) Module_Behavior.call_getModule_1213877515148(thisNode)).getGenerators())).<SModelRoot>translate(new ITranslator2<Generator, SModelRoot>() {
+      ListSequence.fromList(paths).addSequence(Sequence.fromIterable(((Iterable<Generator>) ((Language) Module_Behavior.call_getModule_1213877515148(thisNode)).getGenerators())).translate(new ITranslator2<Generator, SModelRoot>() {
         public Iterable<SModelRoot> translate(Generator it) {
           return it.getSModelRoots();
         }
       }));
     }
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).<String>select(new ISelector<SModelRoot, String>() {
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<SModelRoot, String>() {
       public String select(SModelRoot it) {
         return it.getPath().replace(File.separator, Util.SEPARATOR);
       }
@@ -98,7 +98,7 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getSourcePaths_3673831299872169203(SNode thisNode) {
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(((List<String>) Module_Behavior.call_getModule_1213877515148(thisNode).getSourcePaths())).<String>select(new ISelector<String, String>() {
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(((List<String>) Module_Behavior.call_getModule_1213877515148(thisNode).getSourcePaths())).select(new ISelector<String, String>() {
       public String select(String it) {
         return (String) it.replace(File.separator, Util.SEPARATOR);
       }
@@ -220,7 +220,7 @@ public class Module_Behavior {
   }
 
   public static Iterable<String> call_convertSeparators_4777659345279794559(SNode thisNode, List<StubPath> paths) {
-    return ListSequence.fromList(paths).<String>select(new ISelector<StubPath, String>() {
+    return ListSequence.fromList(paths).select(new ISelector<StubPath, String>() {
       public String select(StubPath it) {
         return it.getPath().replace(File.separator, Util.SEPARATOR);
       }

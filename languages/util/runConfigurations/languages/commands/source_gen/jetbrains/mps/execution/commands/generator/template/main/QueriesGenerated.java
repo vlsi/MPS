@@ -314,7 +314,7 @@ public class QueriesGenerated {
       public Comparable<?> select(SNode it) {
         return SNodeOperations.getIndexInParent(SLinkOperations.getTarget(it, "parameterDeclaration", false));
       }
-    }, true).<SNode>select(new ISelector<SNode, SNode>() {
+    }, true).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "value", true);
       }

@@ -167,7 +167,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
         stuffToTest[0] = getTestsUnderProgress();
       }
     }, ModalityState.NON_MODAL);
-    return ListSequence.fromList(stuffToTest[0]).<SNode>select(new ISelector<ITestNodeWrapper, SNode>() {
+    return ListSequence.fromList(stuffToTest[0]).select(new ISelector<ITestNodeWrapper, SNode>() {
       public SNode select(ITestNodeWrapper it) {
         return it.getNode();
       }

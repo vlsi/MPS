@@ -287,10 +287,10 @@
     <nodeInfo nodeId="5630235838746750188" fileName="EditorExtensions.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeUIObjectTemplateProvider#(Ljetbrains/mps/ui/modeling/plugin/IObjectsProvider;)V" />
     <nodeInfo nodeId="3302932283760466962" fileName="EditorExtensions.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addEventHandlerTemplateProvider#(Ljetbrains/mps/ui/modeling/plugin/IObjectsProvider;)V" />
     <nodeInfo nodeId="3302932283760467021" fileName="EditorExtensions.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeEventHandlerTemplateProvider#(Ljetbrains/mps/ui/modeling/plugin/IObjectsProvider;)V" />
-    <nodeInfo nodeId="5630235838746755320" fileName="EditorExtensions.java" startLine="49" startPosition="141" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/ui/modeling/plugin/IObjectsProvider;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3302932283760467096" fileName="EditorExtensions.java" startLine="57" startPosition="145" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/ui/modeling/plugin/IObjectsProvider;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="380233880019585782" fileName="EditorExtensions.java" startLine="65" startPosition="137" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/ui/modeling/plugin/IObjectsProvider;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="5275753781174797684" fileName="EditorExtensions.java" startLine="73" startPosition="141" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/ui/modeling/plugin/IObjectsProvider;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="5630235838746755320" fileName="EditorExtensions.java" startLine="49" startPosition="134" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/ui/modeling/plugin/IObjectsProvider;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3302932283760467096" fileName="EditorExtensions.java" startLine="57" startPosition="138" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/ui/modeling/plugin/IObjectsProvider;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="380233880019585782" fileName="EditorExtensions.java" startLine="65" startPosition="129" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/ui/modeling/plugin/IObjectsProvider;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="5275753781174797684" fileName="EditorExtensions.java" startLine="73" startPosition="133" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/ui/modeling/plugin/IObjectsProvider;)Ljava/lang/Object;" />
     <nodeInfo nodeId="380233880019585971" fileName="EditorExtensions.java" startLine="84" startPosition="156" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/ui/modeling/plugin/IObjectsProvider;)Z" />
     <nodeInfo nodeId="5275753781174797855" fileName="EditorExtensions.java" startLine="99" startPosition="160" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/ui/modeling/plugin/IObjectsProvider;)Z" />
     <nodeInfo nodeId="5630235838746751349" fileName="EditorExtensions.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
@@ -361,10 +361,10 @@
     <scopeInfo nodeId="3302932283760467021" fileName="EditorExtensions.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="3302932283760467064" varName="prov" />
     </scopeInfo>
-    <scopeInfo nodeId="5630235838746755320" fileName="EditorExtensions.java" startLine="49" startPosition="141" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="3302932283760467096" fileName="EditorExtensions.java" startLine="57" startPosition="145" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="380233880019585782" fileName="EditorExtensions.java" startLine="65" startPosition="137" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="5275753781174797684" fileName="EditorExtensions.java" startLine="73" startPosition="141" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="5630235838746755320" fileName="EditorExtensions.java" startLine="49" startPosition="134" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="3302932283760467096" fileName="EditorExtensions.java" startLine="57" startPosition="138" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="380233880019585782" fileName="EditorExtensions.java" startLine="65" startPosition="129" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="5275753781174797684" fileName="EditorExtensions.java" startLine="73" startPosition="133" endLine="77" endPosition="0" />
     <scopeInfo nodeId="380233880019585971" fileName="EditorExtensions.java" startLine="84" startPosition="156" endLine="88" endPosition="0" />
     <scopeInfo nodeId="5275753781174797855" fileName="EditorExtensions.java" startLine="99" startPosition="160" endLine="103" endPosition="0" />
     <scopeInfo nodeId="5630235838746751349" fileName="EditorExtensions.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
@@ -411,10 +411,10 @@
       <varInfo nodeId="5275753781174797831" varName="event" />
       <varInfo nodeId="5275753781174797833" varName="creatorInfo" />
     </scopeInfo>
-    <unitInfo nodeId="5630235838746755320" fileName="EditorExtensions.java" startLine="49" startPosition="86" endLine="53" endPosition="5" unitName="jetbrains.mps.ui.modeling.plugin.EditorExtensions$1" />
-    <unitInfo nodeId="3302932283760467096" fileName="EditorExtensions.java" startLine="57" startPosition="90" endLine="61" endPosition="5" unitName="jetbrains.mps.ui.modeling.plugin.EditorExtensions$2" />
-    <unitInfo nodeId="380233880019585782" fileName="EditorExtensions.java" startLine="65" startPosition="84" endLine="69" endPosition="5" unitName="jetbrains.mps.ui.modeling.plugin.EditorExtensions$3" />
-    <unitInfo nodeId="5275753781174797684" fileName="EditorExtensions.java" startLine="73" startPosition="88" endLine="77" endPosition="5" unitName="jetbrains.mps.ui.modeling.plugin.EditorExtensions$4" />
+    <unitInfo nodeId="5630235838746755320" fileName="EditorExtensions.java" startLine="49" startPosition="79" endLine="53" endPosition="5" unitName="jetbrains.mps.ui.modeling.plugin.EditorExtensions$1" />
+    <unitInfo nodeId="3302932283760467096" fileName="EditorExtensions.java" startLine="57" startPosition="83" endLine="61" endPosition="5" unitName="jetbrains.mps.ui.modeling.plugin.EditorExtensions$2" />
+    <unitInfo nodeId="380233880019585782" fileName="EditorExtensions.java" startLine="65" startPosition="76" endLine="69" endPosition="5" unitName="jetbrains.mps.ui.modeling.plugin.EditorExtensions$3" />
+    <unitInfo nodeId="5275753781174797684" fileName="EditorExtensions.java" startLine="73" startPosition="80" endLine="77" endPosition="5" unitName="jetbrains.mps.ui.modeling.plugin.EditorExtensions$4" />
     <unitInfo nodeId="380233880019585971" fileName="EditorExtensions.java" startLine="84" startPosition="108" endLine="88" endPosition="5" unitName="jetbrains.mps.ui.modeling.plugin.EditorExtensions$5" />
     <unitInfo nodeId="5275753781174797855" fileName="EditorExtensions.java" startLine="99" startPosition="112" endLine="103" endPosition="5" unitName="jetbrains.mps.ui.modeling.plugin.EditorExtensions$6" />
     <unitInfo nodeId="5630235838746748701" fileName="EditorExtensions.java" startLine="16" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.EditorExtensions" />

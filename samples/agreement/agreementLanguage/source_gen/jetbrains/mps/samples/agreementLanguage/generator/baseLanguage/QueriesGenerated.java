@@ -261,7 +261,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1197663295186(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> values = SLinkOperations.getTargets(_context.getNode(), "value", true);
-    return ListSequence.fromList(values).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(values).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode value) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -313,7 +313,7 @@ __switch__:
 
   public static Iterable sourceNodesQuery_1197659602870(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> events = SLinkOperations.getTargets(_context.getNode(), "event", true);
-    return ListSequence.fromList(events).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(events).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode event) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {

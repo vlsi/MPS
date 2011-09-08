@@ -124,7 +124,7 @@ public class RetainedUtil {
     }
 
     private Iterable<IDelta> collectedDeltas() {
-      return Sequence.fromIterable(MapSequence.fromMap(dir2delta).values()).<IDelta>select(new ISelector<FilesDelta, IDelta>() {
+      return Sequence.fromIterable(MapSequence.fromMap(dir2delta).values()).select(new ISelector<FilesDelta, IDelta>() {
         public IDelta select(FilesDelta it) {
           return (IDelta) it;
         }

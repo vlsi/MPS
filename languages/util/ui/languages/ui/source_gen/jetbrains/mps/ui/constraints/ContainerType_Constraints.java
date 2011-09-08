@@ -72,7 +72,7 @@ public class ContainerType_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.ui.modeling.structure.UIObject")).<SNode>translate(new ITranslator2<SNode, SNode>() {
+            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.ui.modeling.structure.UIObject")).translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode o) {
                 return SLinkOperations.getTargets(o, "compartment", true);
               }

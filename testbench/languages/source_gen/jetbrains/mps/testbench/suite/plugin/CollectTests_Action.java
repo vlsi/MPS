@@ -187,7 +187,7 @@ public class CollectTests_Action extends GeneratedAction {
 
   private List<ModuleReference> allSolutions(final Map<String, Object> _params) {
     List<Solution> allSolutions = MPSModuleRepository.getInstance().getAllSolutions();
-    return ListSequence.fromList(allSolutions).<ModuleReference>select(new ISelector<Solution, ModuleReference>() {
+    return ListSequence.fromList(allSolutions).select(new ISelector<Solution, ModuleReference>() {
       public ModuleReference select(Solution s) {
         return s.getModuleReference();
       }
@@ -202,7 +202,7 @@ public class CollectTests_Action extends GeneratedAction {
   }
 
   private List<ModuleReference> existingSolutions(SModel model, final Map<String, Object> _params) {
-    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite")).<ModuleReference>select(new ISelector<SNode, ModuleReference>() {
+    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite")).select(new ISelector<SNode, ModuleReference>() {
       public ModuleReference select(SNode ms) {
         return IModuleRef_Behavior.call_moduleReference_1280144168199513544(SLinkOperations.getTarget(ms, "moduleRef", true));
       }

@@ -246,7 +246,7 @@
     <nodeInfo nodeId="7149605750504389879" fileName="NodesTestCase_Behavior.java" startLine="70" startPosition="192" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1937023808170650696" fileName="NodesTestCase_Behavior.java" startLine="75" startPosition="96" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1217250493536" fileName="NodesTestCase_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTestRunParameters_1216045139515#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/runtime/TestRunParameters;" />
-    <nodeInfo nodeId="7100218149872807137" fileName="NodesTestCase_Behavior.java" startLine="47" startPosition="281" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7100218149872807137" fileName="NodesTestCase_Behavior.java" startLine="47" startPosition="274" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2379153299285187431" fileName="NodesTestCase_Behavior.java" startLine="102" startPosition="60" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1217250493536" fileName="NodesTestCase_Behavior.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTestBodyName_1224602741295#()Ljava/lang/String;" />
     <nodeInfo nodeId="2148145109766224023" fileName="NodesTestCase_Behavior.java" startLine="46" startPosition="88" endLine="51" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -290,7 +290,7 @@
     <scopeInfo nodeId="7149605750504389879" fileName="NodesTestCase_Behavior.java" startLine="70" startPosition="192" endLine="73" endPosition="5" />
     <scopeInfo nodeId="1937023808170650696" fileName="NodesTestCase_Behavior.java" startLine="75" startPosition="96" endLine="78" endPosition="7" />
     <scopeInfo nodeId="1217250493536" fileName="NodesTestCase_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="7100218149872807137" fileName="NodesTestCase_Behavior.java" startLine="47" startPosition="281" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="7100218149872807137" fileName="NodesTestCase_Behavior.java" startLine="47" startPosition="274" endLine="51" endPosition="0" />
     <scopeInfo nodeId="1217424543001" fileName="NodesTestCase_Behavior.java" startLine="63" startPosition="9" endLine="67" endPosition="7">
       <varInfo nodeId="1217424543003" varName="urls" />
     </scopeInfo>
@@ -329,7 +329,7 @@
       <varInfo nodeId="1217424542989" varName="classLoader" />
     </scopeInfo>
     <scopeInfo nodeId="1217250493536" fileName="NodesTestCase_Behavior.java" startLine="58" startPosition="0" endLine="83" endPosition="0" />
-    <unitInfo nodeId="7100218149872807137" fileName="NodesTestCase_Behavior.java" startLine="47" startPosition="254" endLine="51" endPosition="5" unitName="jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior$1" />
+    <unitInfo nodeId="7100218149872807137" fileName="NodesTestCase_Behavior.java" startLine="47" startPosition="247" endLine="51" endPosition="5" unitName="jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior$1" />
     <unitInfo nodeId="1217250493536" fileName="NodesTestCase_Behavior.java" startLine="27" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior" />
   </root>
   <root nodeId="1217423888659">

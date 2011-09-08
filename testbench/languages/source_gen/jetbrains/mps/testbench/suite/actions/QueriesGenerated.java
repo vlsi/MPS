@@ -14,8 +14,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -51,7 +51,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
           public Object calculate() {
             List<Solution> allSolutions = MPSModuleRepository.getInstance().getAllSolutions();
-            return ListSequence.fromList(allSolutions).<ModuleReference>select(new ISelector<Solution, ModuleReference>() {
+            return ListSequence.fromList(allSolutions).select(new ISelector<Solution, ModuleReference>() {
               public ModuleReference select(Solution s) {
                 return s.getModuleReference();
               }
@@ -94,7 +94,7 @@ public class QueriesGenerated {
           public Object calculate() {
             SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
             final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {
+            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModelDescriptor, SNode>() {
               public Iterable<SNode> translate(SModelDescriptor smd) {
                 return new AllSubclassifiersScope(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0c0a0a0a0a2a0a1a1().createNode(), "classifier", false), smd.getSModel(), IClassifiersSearchScope.CLASS, (mscope != null ?
                   mscope :
@@ -147,14 +147,14 @@ public class QueriesGenerated {
             final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
             final SNode testAnn = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0c0a0a0a0a2a0a1a2().createNode(), "annotation", false);
 
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {
+            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModelDescriptor, SNode>() {
               public Iterable<SNode> translate(SModelDescriptor smd) {
                 return new ReachableClassifiersScope(smd.getSModel(), IClassifiersSearchScope.CLASS, (mscope != null ?
                   mscope :
                   operationContext.getScope()
                 )).getNodes(new Condition<SNode>() {
                   public boolean met(SNode cls) {
-                    return ListSequence.fromList(SLinkOperations.getTargets(cls, "method", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+                    return ListSequence.fromList(SLinkOperations.getTargets(cls, "method", true)).translate(new ITranslator2<SNode, SNode>() {
                       public Iterable<SNode> translate(SNode m) {
                         return SLinkOperations.getTargets(m, "annotation", true);
                       }
@@ -205,7 +205,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
           public Object calculate() {
             SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {
+            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModelDescriptor, SNode>() {
               public Iterable<SNode> translate(SModelDescriptor smd) {
                 return SModelOperations.getNodes(((SModel) smd.getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
               }

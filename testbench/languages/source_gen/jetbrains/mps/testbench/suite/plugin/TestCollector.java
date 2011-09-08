@@ -114,7 +114,7 @@ public class TestCollector {
                 public boolean accept(SNode cann) {
                   return SLinkOperations.getTarget(cann, "annotation", false) == ignoreAnn;
                 }
-              })) && ListSequence.fromList(SLinkOperations.getTargets(cls, "method", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+              })) && ListSequence.fromList(SLinkOperations.getTargets(cls, "method", true)).translate(new ITranslator2<SNode, SNode>() {
                 public Iterable<SNode> translate(SNode m) {
                   return SLinkOperations.getTargets(m, "annotation", true);
                 }

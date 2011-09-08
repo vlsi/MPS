@@ -15,8 +15,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.stubs.BaseStubModelRootManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -46,7 +46,7 @@ public class Inherits_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Sequence.fromIterable(((Iterable<IModule>) operationContext.getScope().getVisibleModules())).<SModelDescriptor>translate(new ITranslator2<IModule, SModelDescriptor>() {
+            return Sequence.fromIterable(((Iterable<IModule>) operationContext.getScope().getVisibleModules())).translate(new ITranslator2<IModule, SModelDescriptor>() {
               public Iterable<SModelDescriptor> translate(IModule m) {
                 return m.getOwnModelDescriptors();
               }
@@ -57,7 +57,7 @@ public class Inherits_Constraints extends BaseConstraintsDescriptor {
                   Sequence.fromIterable(((Iterable<ModuleReference>) smd.getSModel().importedLanguages())).contains(ModuleReference.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)"))
                 );
               }
-            }).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {
+            }).translate(new ITranslator2<SModelDescriptor, SNode>() {
               public Iterable<SNode> translate(SModelDescriptor smd) {
                 return SModelOperations.getNodes(((SModel) smd.getSModel()), "jetbrains.mps.gwt.client.structure.GWTModule");
               }

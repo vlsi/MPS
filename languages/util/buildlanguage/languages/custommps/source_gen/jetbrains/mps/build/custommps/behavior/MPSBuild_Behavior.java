@@ -78,7 +78,7 @@ public class MPSBuild_Behavior {
         Language language = (Language) module;
         SetSequence.fromSet(modulesInClasspath).addElement(language);
         List<ModuleReference> list = language.getRuntimeModulesReferences();
-        SetSequence.fromSet(modulesInClasspath).addSequence(ListSequence.fromList(list).<IModule>select(new ISelector<ModuleReference, IModule>() {
+        SetSequence.fromSet(modulesInClasspath).addSequence(ListSequence.fromList(list).select(new ISelector<ModuleReference, IModule>() {
           public IModule select(ModuleReference it) {
             return MPSModuleRepository.getInstance().getModule(it);
           }

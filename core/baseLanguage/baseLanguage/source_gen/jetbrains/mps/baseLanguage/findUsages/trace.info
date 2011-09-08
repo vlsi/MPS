@@ -423,7 +423,7 @@
     <nodeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
     <nodeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="46" startPosition="124" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="46" startPosition="117" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeCategory#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1200425863012" fileName="InterfaceMethodImplementations_Finder.java" startLine="50" startPosition="9" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1200425862976" fileName="InterfaceMethodImplementations_Finder.java" startLine="45" startPosition="5" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -444,7 +444,7 @@
     <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="46" startPosition="124" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="46" startPosition="117" endLine="50" endPosition="0" />
     <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1200425862979" fileName="InterfaceMethodImplementations_Finder.java" startLine="50" startPosition="9" endLine="55" endPosition="7" />
     <scopeInfo nodeId="1200425863012" fileName="InterfaceMethodImplementations_Finder.java" startLine="50" startPosition="9" endLine="55" endPosition="7" />
@@ -453,7 +453,7 @@
       <varInfo nodeId="1200503349565" varName="implementorsAndAncestorsList" />
     </scopeInfo>
     <scopeInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="40" startPosition="0" endLine="58" endPosition="0" />
-    <unitInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="46" startPosition="97" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder$1" />
+    <unitInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="46" startPosition="90" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder$1" />
     <unitInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="19" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder" />
   </root>
   <root nodeId="1200502085335">

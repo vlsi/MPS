@@ -101,7 +101,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "annotation", false) != null);
           }
-        }).<SNode>select(new ISelector<SNode, SNode>() {
+        }).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "annotation", false);
           }
@@ -126,7 +126,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
         public boolean accept(SNode it) {
           return (SLinkOperations.getTarget(it, "annotation", false) != null);
         }
-      }).<SNode>select(new ISelector<SNode, SNode>() {
+      }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, "annotation", false);
         }

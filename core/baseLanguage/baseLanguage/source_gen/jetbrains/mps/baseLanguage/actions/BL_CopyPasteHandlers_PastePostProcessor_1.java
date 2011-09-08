@@ -56,7 +56,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
         }
 
         for (SNode nextClassConcept : ListSequence.fromList(possibleClassConcepts)) {
-          if (ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(nextClassConcept, pastedNode, IClassifiersSearchScope.INSTANCE_FIELD)).<SNode>select(new ISelector<SNode, SNode>() {
+          if (ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(nextClassConcept, pastedNode, IClassifiersSearchScope.INSTANCE_FIELD)).select(new ISelector<SNode, SNode>() {
             public SNode select(SNode it) {
               return SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
             }

@@ -15,8 +15,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class IfInstanceOfVarReference_Constraints extends BaseConstraintsDescriptor {
@@ -41,7 +41,7 @@ public class IfInstanceOfVarReference_Constraints extends BaseConstraintsDescrip
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement", false)).<SNode>select(new ISelector<SNode, SNode>() {
+            return ListSequence.fromList(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement", false)).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
                 return SLinkOperations.getTarget(it, "variable", true);
               }

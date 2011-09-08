@@ -30,7 +30,7 @@ public class NamedTupleDeclaration_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder(SConceptPropertyOperations.getString(thisNode, "leftBracket"));
     String sep = "";
-    for (SNode cmp : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(thisNode)).reversedList().<SNode>translate(new ITranslator2<SNode, SNode>() {
+    for (SNode cmp : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(thisNode)).reversedList().translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode ntd) {
         return SLinkOperations.getTargets(ntd, "component", true);
       }
@@ -57,7 +57,7 @@ public class NamedTupleDeclaration_Behavior {
         return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0a0a0a0d().createNode(tvr);
       }
     };
-    return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0b0d().createNode(thisNode, ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)).<SNode>select(tvd2tvr).toListSequence());
+    return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0b0d().createNode(thisNode, ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)).select(tvd2tvr).toListSequence());
   }
 
   public static SNode call_getThisType_6742265879766289824(SNode thisNode) {

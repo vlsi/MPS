@@ -61,13 +61,13 @@ public class OptionReference_Constraints extends BaseConstraintsDescriptor {
                     return SNodeOperations.isInstanceOf(it, "jetbrains.mps.bash.structure.OptionSetReference");
                   }
                 });
-                return Sequence.fromIterable(optionSetReferences).<Iterable<SNode>>select(new ISelector<SNode, ISequence<SNode>>() {
+                return Sequence.fromIterable(optionSetReferences).select(new ISelector<SNode, ISequence<SNode>>() {
                   public ISequence<SNode> select(SNode it) {
                     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.bash.structure.OptionSetReference"), "refToOptions", true)).where(new IWhereFilter<SNode>() {
                       public boolean accept(SNode it) {
                         return (SLinkOperations.getTarget(it, "option", false) != null);
                       }
-                    }).<SNode>select(new ISelector<SNode, SNode>() {
+                    }).select(new ISelector<SNode, SNode>() {
                       public SNode select(SNode it) {
                         return SLinkOperations.getTarget(it, "option", false);
                       }

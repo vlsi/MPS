@@ -44,7 +44,7 @@ public class NodesTestCase_Behavior {
   }
 
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testMethods", true)).union(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{})).<SNode>select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testMethods", true)).union(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{})).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return (SNode) it;
       }

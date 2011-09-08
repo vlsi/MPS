@@ -56,7 +56,7 @@ public class SequenceOperation_Constraints extends BaseConstraintsDescriptor {
             public boolean accept(SNode it) {
               return cld == SLinkOperations.getTarget(it, "conceptLinkDeclaration", false);
             }
-          }).<SNode>select(new ISelector<SNode, SNode>() {
+          }).select(new ISelector<SNode, SNode>() {
             public SNode select(SNode it) {
               return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.AggregationConceptLink"), "target", true);
             }

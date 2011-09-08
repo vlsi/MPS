@@ -283,7 +283,7 @@ public class QueriesGenerated {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.structure.CompartmentReferenceExpression");
       Calculable calculable = new Calculable() {
         public Object calculate() {
-          return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.ui.structure.UIObjectType"), true), "uiObject", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+          return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.ui.structure.UIObjectType"), true), "uiObject", false))).translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode o) {
               return SLinkOperations.getTargets(o, "compartment", true);
             }
