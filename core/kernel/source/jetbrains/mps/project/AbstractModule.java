@@ -198,10 +198,10 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<StubPath> getAllStubPaths() {
-    ArrayList<StubPath> result = new ArrayList<StubPath>();
+    LinkedHashSet<StubPath> result = new LinkedHashSet<StubPath>();
     result.addAll(getStubPaths());
     result.addAll(getOwnStubPaths());
-    return result;
+    return new ArrayList<StubPath>(result);
   }
 
   public List<StubPath> getOwnStubPaths() {
