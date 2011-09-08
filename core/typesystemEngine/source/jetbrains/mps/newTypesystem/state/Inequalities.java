@@ -29,16 +29,13 @@ import jetbrains.mps.util.ManyToManyMap;
 
 import java.util.*;
 
-public class Inequalities {  //
-  private final State myState;       /*
-  private ManyToManyMap<SNode, SNode> myInputsToOutputs = new ManyToManyMap<SNode, SNode>();
-  private ManyToManyMap<SNode, RelationBlock> myNodesToBlocks = new ManyToManyMap<SNode, RelationBlock>();
-  private Set<SNode> myNodes = new THashSet<SNode>();
-                                       */
+public class Inequalities {
+  private final State myState;
   private ManyToManyMap<SNode, SNode> myInputsToOutputsInc = new ManyToManyMap<SNode, SNode>();
   private ManyToManyMap<SNode, RelationBlock> myNodesToBlocksInc = new ManyToManyMap<SNode, RelationBlock>();
   private Set<SNode> myNodesInc = new THashSet<SNode>();
-
+  private Set<SNode> mySolvableLeft = new THashSet<SNode>();
+  private Set<SNode> mySolvableRight = new THashSet<SNode>();
 
   private static final ComparableRelation comparableRelation = new ComparableRelation();
   private static final SubTypingRelation subTypingRelation = new SubTypingRelation();
@@ -74,9 +71,9 @@ public class Inequalities {  //
     }
   }
 
-  private SNode getNodeWithNoInput(ManyToManyMap<SNode, SNode> inputsToOutputs, Set<SNode> unsorted, Set<SNode> used) {
+  private SNode getNodeWithNoInput(Set<SNode> unsorted, Set<SNode> used) {
     for (SNode node : unsorted) {
-      if (used.containsAll(inputsToOutputs.getBySecond(node))) {
+      if (used.containsAll(myInputsToOutputsInc.getBySecond(node))) {
   //    if (inputsToOutputs.getBySecond(node).isEmpty()) {
         return node;
       }
@@ -100,20 +97,12 @@ public class Inequalities {  //
   public void solveRelations() {
     solvingInProcess = true;
     List<RelationBlock> inequalities = getRelationsToSolve();
- //   initializeMaps(inequalities);
     initializeMapsInc(inequalities);
     while (iteration(inequalities)) {
       inequalities = getRelationsToSolve();
     }
     solvingInProcess = false;
   }
-  /*
-  private void addVariablesLink(SNode input, SNode output) {
-    if (!TypesUtil.isVariable(input)) return;
-    if (!TypesUtil.isVariable(output)) return;
-    if (input == output) return;
-    myInputsToOutputs.addLink(input, output);
-  } */
 
   private void addVariablesLinkInc(SNode input, SNode output) {
      if (!TypesUtil.isVariable(input)) return;
@@ -122,44 +111,19 @@ public class Inequalities {  //
      myInputsToOutputsInc.addLink(input, output);
    }
 
-                          /*
-  private void initializeMaps(List<RelationBlock> inequalities) {
-    myInputsToOutputs.clear();
-    myNodesToBlocks.clear();
-    myNodes.clear();
-    for (RelationBlock inequality : inequalities) {
-      if (inequality.isCheckOnly()) {
-        continue;
-      }
-      for (Pair<SNode, SNode> pair : inequality.getInputsAndOutputs()) {
-        SNode input = myState.getRepresentative(pair.first);
-        SNode output = myState.getRepresentative(pair.second);
-        if (input == null || output == null) continue;
-        if (TypesUtil.isVariable(input)) {
-          myNodes.add(input);
-          myNodesToBlocks.addLink(input, inequality);
-        }
-        if (TypesUtil.isVariable(output)) {
-          myNodes.add(output);
-          myNodesToBlocks.addLink(output, inequality);
-        }
-        if (input != output) {
-          for (SNode inputVar : TypesUtil.getVariables(input, myState)) {
-            for (SNode outputVar : TypesUtil.getVariables(output, myState)) {
-              addVariablesLink(myState.getRepresentative(inputVar), myState.getRepresentative(outputVar));
-            }
-          }
-        }
-      }
-    }
-  }                    */
-
   private void initializeMapsInc(List<RelationBlock> inequalities) {
     myInputsToOutputsInc.clear();
     myNodesToBlocksInc.clear();
     myNodesInc.clear();
     for (RelationBlock inequality : inequalities) {
       onInequalityAdded(inequality);
+    }
+  }
+
+  private void substituteVarInSet(SNode oldVar, SNode newVar, Set<SNode> varSet) {
+    varSet.remove(oldVar);
+    if (TypesUtil.isVariable(newVar)) {
+      myNodesInc.add(newVar);
     }
   }
 
@@ -171,19 +135,16 @@ public class Inequalities {  //
         myNodesToBlocksInc.addLink(parent, block);
       }
     }
-    myNodesInc.remove(child);
-    if (TypesUtil.isVariable(parent)) {
-      myNodesInc.add(parent);
-    }
+    substituteVarInSet(child, parent, myNodesInc);
+    substituteVarInSet(child, parent, mySolvableLeft);
+    substituteVarInSet(child, parent, mySolvableRight);
     List<SNode> variables = TypesUtil.getVariables(parent, myState);
-
     for (SNode outputVar : new ArrayList<SNode>(myInputsToOutputsInc.getByFirst(child))) {
       for (SNode inputVar : variables) {
         addVariablesLinkInc(inputVar, outputVar);
       }
       myInputsToOutputsInc.removeLink(child, outputVar);
     }
-
     for (SNode inputVar : new ArrayList<SNode>(myInputsToOutputsInc.getBySecond(child))) {
       for (SNode outputVar : variables) {
         addVariablesLinkInc(inputVar, outputVar);
@@ -215,6 +176,14 @@ public class Inequalities {  //
         }
       }
     }
+    SNode left = myState.getRepresentative(inequality.getLeftNode());
+    SNode right = myState.getRepresentative(inequality.getRightNode());
+    if (TypesUtil.isVariable(left)) {
+      mySolvableLeft.add(left);
+    }
+    if (TypesUtil.isVariable(right)) {
+      mySolvableRight.add(right);
+    }
   }
 
   private boolean compareMap (ManyToManyMap m1, ManyToManyMap m2) {
@@ -231,49 +200,42 @@ public class Inequalities {  //
     return true;
   }
 
-              /*
-  private void compareMaps() {
-    if (!(myNodes.containsAll(myNodesInc) && myNodesInc.containsAll(myNodes))) {
-      System.out.println("Nodes incompatible");
-      System.out.println(myNodes);
-      System.out.println(myNodesInc);
-    }
-    if (!compareMap(myNodesToBlocksInc, myNodesToBlocks)) {
-      System.out.println("NodesToBlocks incompatible");
-    }
-    if (!compareMap(myInputsToOutputs, myInputsToOutputsInc)) {
-      System.out.println("inputs incompatible");
-      printMMMap(myInputsToOutputs);
-      printMMMap(myInputsToOutputsInc);
-    }
-  }
-                                                            */
-  private boolean iteration(List<RelationBlock> inequalities) {
- //   initializeMaps(inequalities);
-  //  compareMaps();
-    if (myNodesInc.size() == 0) {
-      return false;
-    }
+  private boolean chooseVarAndSolve(Set<SNode> nodes) {
+    //Solves relation for an independent node
+    //first tries to solve for when concrete waiting node
+    if (nodes.isEmpty()) return false;
     for (Block block : myState.getBlocks(BlockKind.WHEN_CONCRETE)) {
       SNode node = myState.getRepresentative(((WhenConcreteBlock) block).getArgument());
-      if (myNodesInc.contains(node) && myInputsToOutputsInc.getBySecond(node).isEmpty()) {
+      if (nodes.contains(node) && myInputsToOutputsInc.getBySecond(node).isEmpty()) {
         if (solveRelationsForNode(node)) {
           return true;
         }
       }
     }
-    Set<SNode> nodes = new HashSet<SNode>(myNodesInc);
     Set<SNode> usedNodes = new HashSet<SNode>();
-    while (nodes.size() > 0) {
-      SNode current = getNodeWithNoInput(myInputsToOutputsInc, nodes, usedNodes);
+    Set<SNode> tempNodes = new HashSet<SNode>(nodes);
+    while (tempNodes.size() > 0) {
+      SNode current = getNodeWithNoInput(tempNodes, usedNodes);
       if (solveRelationsForNode(current)) {
         return true;
       }
-      nodes.remove(current);
+      tempNodes.remove(current);
       usedNodes.add(current);
-      //myInputsToOutputsInc.clearFirst(current);
     }
-    //last chance
+    return false;
+  }
+
+  private boolean iteration(List<RelationBlock> inequalities) {
+    if (myNodesInc.size() == 0) {
+      return false;
+    }
+    if (chooseVarAndSolve(mySolvableRight)) return true;
+    if (chooseVarAndSolve(mySolvableLeft)) return true;
+    if (lastChance(inequalities)) return true;
+    return false;
+  }
+
+  private boolean lastChance(List<RelationBlock> inequalities) {
     for (RelationBlock inequality : inequalities) {
       if (!(TypesUtil.isVariable(inequality.getLeftNode()) && TypesUtil.isVariable(inequality.getRightNode()))) {
         myState.executeOperation(new RemoveBlockOperation(inequality));
