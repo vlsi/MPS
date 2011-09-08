@@ -70,7 +70,7 @@ public class AllSubclassifiersScope extends AbstractClassifiersScope {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "classifier", false) != null);
           }
-        }).<SNode>select(new ISelector<SNode, SNode>() {
+        }).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "classifier", false);
           }
@@ -87,7 +87,7 @@ public class AllSubclassifiersScope extends AbstractClassifiersScope {
         public boolean accept(SNode it) {
           return (SLinkOperations.getTarget(it, "classifier", false) != null);
         }
-      }).<SNode>select(new ISelector<SNode, SNode>() {
+      }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, "classifier", false);
         }

@@ -29,7 +29,7 @@ public class DependencyChooser implements Computable<List<Dependency>> {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
-        allModuleRefs.value = ListSequence.fromList(modules).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
+        allModuleRefs.value = ListSequence.fromList(modules).select(new ISelector<IModule, ModuleReference>() {
           public ModuleReference select(IModule it) {
             return it.getModuleReference();
           }

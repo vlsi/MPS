@@ -132,7 +132,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
 
   public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, AbstractVcs vcs, VirtualFile modelVirtualFile) {
     super(leftEditorHighlighter);
-    Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).<SNodeId>select(new ISelector<SNode, SNodeId>() {
+    Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getSNodeId();
       }
@@ -168,7 +168,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
         MapSequence.fromMap(nodeIdToFileLine).put(id, line);
       }
     }
-    ListSequence.fromList(myAspectSubcolumns).addSequence(Sequence.fromIterable(Sequence.fromArray(fileAnnotation.getAspects())).<AnnotationAspectSubcolumn>select(new ISelector<LineAnnotationAspect, AnnotationAspectSubcolumn>() {
+    ListSequence.fromList(myAspectSubcolumns).addSequence(Sequence.fromIterable(Sequence.fromArray(fileAnnotation.getAspects())).select(new ISelector<LineAnnotationAspect, AnnotationAspectSubcolumn>() {
       public AnnotationAspectSubcolumn select(LineAnnotationAspect a) {
         return new AnnotationAspectSubcolumn(AnnotationColumn.this, a);
       }
@@ -281,7 +281,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   }
 
   public int getWidth() {
-    return ListSequence.fromList(myAspectSubcolumns).<Integer>select(new ISelector<AnnotationAspectSubcolumn, Integer>() {
+    return ListSequence.fromList(myAspectSubcolumns).select(new ISelector<AnnotationAspectSubcolumn, Integer>() {
       public Integer select(AnnotationAspectSubcolumn s) {
         return (s.isEnabled() || myShowAdditionalInfo ?
           s.getWidth() :
@@ -391,7 +391,7 @@ __switch__:
         return cell.getWidth() * cell.getHeight() != 0;
       }
     });
-    Set<Integer> yCoordinatesSet = SetSequence.fromSetWithValues(new HashSet<Integer>(), Sequence.fromIterable(nonTrivialCells).<Integer>select(new ISelector<EditorCell, Integer>() {
+    Set<Integer> yCoordinatesSet = SetSequence.fromSetWithValues(new HashSet<Integer>(), Sequence.fromIterable(nonTrivialCells).select(new ISelector<EditorCell, Integer>() {
       public Integer select(EditorCell cell) {
         return cell.getY();
       }

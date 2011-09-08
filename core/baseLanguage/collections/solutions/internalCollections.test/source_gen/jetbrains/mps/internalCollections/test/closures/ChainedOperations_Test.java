@@ -58,11 +58,11 @@ __switch__:
   }
 
   public void test_chainedOperations() throws Exception {
-    Iterable<String> test = Sequence.fromIterable(this.input5()).<Integer>select(new ISelector<Integer, Integer>() {
+    Iterable<String> test = Sequence.fromIterable(this.input5()).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it * 3;
       }
-    }).<String>translate(new ITranslator2<Integer, String>() {
+    }).translate(new ITranslator2<Integer, String>() {
       public Iterable<String> translate(final Integer it) {
         return new Iterable<String>() {
           public Iterator<String> iterator() {

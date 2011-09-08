@@ -126,7 +126,7 @@ public class GeneratorWorker extends MpsWorker {
       public boolean accept(IModule it) {
         return it instanceof Language;
       }
-    }).<IModule>translate(new ITranslator2<IModule, IModule>() {
+    }).translate(new ITranslator2<IModule, IModule>() {
       public Iterable<IModule> translate(IModule it) {
         return Collections.<IModule>unmodifiableList(((Language) it).getGenerators());
       }
@@ -163,7 +163,7 @@ public class GeneratorWorker extends MpsWorker {
       public boolean accept(SModelDescriptor smd) {
         return !(GeneratorManager.isDoNotGenerate(smd));
       }
-    })).resources(false)).<IMResource>select(new ISelector<IResource, IMResource>() {
+    })).resources(false)).select(new ISelector<IResource, IMResource>() {
       public IMResource select(IResource r) {
         return (IMResource) r;
       }

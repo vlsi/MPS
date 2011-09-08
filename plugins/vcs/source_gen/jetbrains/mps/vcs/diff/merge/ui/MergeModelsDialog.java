@@ -309,7 +309,7 @@ public class MergeModelsDialog extends BaseDialog {
 
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {
       List<ModelChange> changes = (rootTreeNode.getRootId() == null ?
-        ListSequence.fromList(myMergeContext.getMetadataChanges()).<ModelChange>select(new ISelector<ModelChange, ModelChange>() {
+        ListSequence.fromList(myMergeContext.getMetadataChanges()).select(new ISelector<ModelChange, ModelChange>() {
           public ModelChange select(ModelChange ch) {
             return (ModelChange) ch;
           }

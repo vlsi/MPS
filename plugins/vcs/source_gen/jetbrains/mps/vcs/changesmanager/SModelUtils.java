@@ -24,7 +24,7 @@ public class SModelUtils {
 
   @NotNull
   public static List<SNodeId> getNodeIds(List<SNode> nodes) {
-    return ListSequence.fromList(nodes).<SNodeId>select(new ISelector<SNode, SNodeId>() {
+    return ListSequence.fromList(nodes).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode node) {
         return node.getSNodeId();
       }

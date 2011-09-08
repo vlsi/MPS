@@ -12,7 +12,6 @@
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Result" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._base" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._return_terminate_P0_E0" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._return_terminate_P0_E1" />

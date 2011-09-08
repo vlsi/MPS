@@ -1512,7 +1512,7 @@ __switch__:
     List<Iterable<Integer>> res = ListSequence.fromList(new ArrayList<Iterable<Integer>>());
     ListSequence.fromList(res).addSequence(Sequence.fromIterable(new _FunctionTypes._return_P0_E0<ISequence<Iterable<Integer>>>() {
       public ISequence<Iterable<Integer>> invoke() {
-        return ListSequence.fromList(input).<Iterable<Integer>>select(new ISelector<Integer, Iterable<Integer>>() {
+        return ListSequence.fromList(input).select(new ISelector<Integer, Iterable<Integer>>() {
           public Iterable<Integer> select(final Integer it) {
             return new Iterable<Integer>() {
               public Iterator<Integer> iterator() {
@@ -1561,7 +1561,7 @@ __switch__:
     List<Iterable<Integer>> res = ListSequence.fromList(new ArrayList<Iterable<Integer>>());
     ListSequence.fromList(res).addSequence(Sequence.fromIterable(new _FunctionTypes._return_P0_E0<ISequence<Iterable<Integer>>>() {
       public ISequence<Iterable<Integer>> invoke() {
-        return ListSequence.fromList(input).<Iterable<Integer>>select(new ISelector<Integer, Iterable<Integer>>() {
+        return ListSequence.fromList(input).select(new ISelector<Integer, Iterable<Integer>>() {
           public Iterable<Integer> select(final Integer it) {
             return new Iterable<Integer>() {
               public Iterator<Integer> iterator() {

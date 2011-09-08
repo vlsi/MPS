@@ -219,7 +219,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
           public boolean accept(IModule m) {
             return m instanceof Generator;
           }
-        }).<Generator>select(new ISelector<IModule, Generator>() {
+        }).select(new ISelector<IModule, Generator>() {
           public Generator select(IModule m) {
             return (Generator) m;
           }

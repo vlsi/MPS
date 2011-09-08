@@ -234,7 +234,7 @@ public class TransformationUtil {
   }
 
   public static String getJniSignature(SNode methodDeclaration) {
-    return getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    return getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "type", true);
       }

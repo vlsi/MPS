@@ -73,7 +73,7 @@ __switch__:
       public boolean accept(Integer n) {
         return n % 2 == 0;
       }
-    }).<String>select(new ISelector<Integer, String>() {
+    }).select(new ISelector<Integer, String>() {
       public String select(Integer n) {
         count.value++;
         return "num:" + n;

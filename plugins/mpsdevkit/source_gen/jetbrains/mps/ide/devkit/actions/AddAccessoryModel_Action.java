@@ -79,7 +79,7 @@ public class AddAccessoryModel_Action extends GeneratedAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           List<SModelDescriptor> descriptors = GlobalScope.getInstance().getModelDescriptors();
-          ListSequence.fromList(models).addSequence(ListSequence.fromList(descriptors).<SModelReference>select(new ISelector<SModelDescriptor, SModelReference>() {
+          ListSequence.fromList(models).addSequence(ListSequence.fromList(descriptors).select(new ISelector<SModelDescriptor, SModelReference>() {
             public SModelReference select(SModelDescriptor it) {
               return it.getSModelReference();
             }

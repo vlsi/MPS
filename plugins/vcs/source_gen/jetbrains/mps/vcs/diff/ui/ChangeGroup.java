@@ -23,7 +23,7 @@ public class ChangeGroup {
     myLeftBounds = leftBounds;
     myRightBounds = rightBounds;
     myChanges = changes;
-    myChangeType = ListSequence.fromList(changes).<ChangeType>select(new ISelector<ModelChange, ChangeType>() {
+    myChangeType = ListSequence.fromList(changes).select(new ISelector<ModelChange, ChangeType>() {
       public ChangeType select(ModelChange ch) {
         return ch.getType();
       }

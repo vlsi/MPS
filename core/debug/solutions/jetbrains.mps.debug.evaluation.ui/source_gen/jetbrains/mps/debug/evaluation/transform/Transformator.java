@@ -49,7 +49,7 @@ public class Transformator {
           return SPropertyOperations.getString(it, "name").equals("evaluate");
         }
       });
-      myWhatToEvaluate = ListSequence.fromList(SModelOperations.getNodes(myModel, "jetbrains.mps.baseLanguage.structure.ClassConcept")).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      myWhatToEvaluate = ListSequence.fromList(SModelOperations.getNodes(myModel, "jetbrains.mps.baseLanguage.structure.ClassConcept")).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode root) {
           return ListSequence.fromList(SNodeOperations.getDescendants(root, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode node) {
@@ -241,7 +241,7 @@ public class Transformator {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
-      TransformationUtil.replaceConstructor(newExpression, TransformationUtil.createStringLiteral(SPropertyOperations.getString(newExpression, "fqClassName")), TransformationUtil.createStringLiteral(TransformationUtil.getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(newExpression, "actualArgument", true)).<SNode>select(new ISelector<SNode, SNode>() {
+      TransformationUtil.replaceConstructor(newExpression, TransformationUtil.createStringLiteral(SPropertyOperations.getString(newExpression, "fqClassName")), TransformationUtil.createStringLiteral(TransformationUtil.getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(newExpression, "actualArgument", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(it), "jetbrains.mps.baseLanguage.structure.Type");
         }
@@ -569,7 +569,7 @@ public class Transformator {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
-      TransformationUtil.replaceStaticMethodCall(staticMethodCall, TransformationUtil.createStringLiteral(SPropertyOperations.getString(staticMethodCall, "fqClassName")), SPropertyOperations.getString(staticMethodCall, "methodName"), TransformationUtil.getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(staticMethodCall, "actualArgument", true)).<SNode>select(new ISelector<SNode, SNode>() {
+      TransformationUtil.replaceStaticMethodCall(staticMethodCall, TransformationUtil.createStringLiteral(SPropertyOperations.getString(staticMethodCall, "fqClassName")), SPropertyOperations.getString(staticMethodCall, "methodName"), TransformationUtil.getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(staticMethodCall, "actualArgument", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(it), "jetbrains.mps.baseLanguage.structure.Type");
         }
@@ -600,7 +600,7 @@ public class Transformator {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
-      TransformationUtil.replaceMethodCall(methodCall, SLinkOperations.getTarget(methodCall, "instance", true), methodCall, SPropertyOperations.getString(methodCall, "methodName"), TransformationUtil.getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).<SNode>select(new ISelector<SNode, SNode>() {
+      TransformationUtil.replaceMethodCall(methodCall, SLinkOperations.getTarget(methodCall, "instance", true), methodCall, SPropertyOperations.getString(methodCall, "methodName"), TransformationUtil.getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(it), "jetbrains.mps.baseLanguage.structure.Type");
         }

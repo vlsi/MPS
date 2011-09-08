@@ -34,7 +34,7 @@ public class ChangeSet {
       public boolean accept(ModelChange ch) {
         return changeClass.isInstance(ch);
       }
-    }).<C>select(new ISelector<ModelChange, C>() {
+    }).select(new ISelector<ModelChange, C>() {
       public C select(ModelChange ch) {
         return (C) ch;
       }
@@ -71,7 +71,7 @@ public class ChangeSet {
       myOppositeChangeSet = new ChangeSet(myNewModel, myOldModel);
       myOppositeChangeSet.myOppositeChangeSet = this;
 
-      myOppositeChangeSet.addAll(ListSequence.fromList(myModelChanges).<ModelChange>select(new ISelector<ModelChange, ModelChange>() {
+      myOppositeChangeSet.addAll(ListSequence.fromList(myModelChanges).select(new ISelector<ModelChange, ModelChange>() {
         public ModelChange select(ModelChange c) {
           return c.getOppositeChange();
         }

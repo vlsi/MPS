@@ -74,7 +74,7 @@ __switch__:
       public boolean accept(Integer n) {
         return n % 2 == 0;
       }
-    }).<String>select(new ISelector<Integer, String>() {
+    }).select(new ISelector<Integer, String>() {
       public String select(Integer n) {
         count.value++;
         return "num:" + n;
@@ -98,7 +98,7 @@ __switch__:
         return n % 2 == 0;
       }
     });
-    Iterable<String> strings = Sequence.fromIterable(evenNums).<String>select(new ISelector<Integer, String>() {
+    Iterable<String> strings = Sequence.fromIterable(evenNums).select(new ISelector<Integer, String>() {
       public String select(Integer it) {
         return "" + it;
       }
@@ -110,7 +110,7 @@ __switch__:
     if (Sequence.IGNORE_NULL_VALUES) {
       // 'select' skips all 'null'-s 
       List<String> list = ListSequence.fromListAndArray(new ArrayList<String>(), "1", "2", "3");
-      Iterable<String> empty = ListSequence.fromList(list).<String>select(new ISelector<String, String>() {
+      Iterable<String> empty = ListSequence.fromList(list).select(new ISelector<String, String>() {
         public String select(String it) {
           return (String) null;
         }
@@ -118,7 +118,7 @@ __switch__:
       Assert.assertTrue(Sequence.fromIterable(empty).isEmpty());
     } else {
       List<String> list = ListSequence.fromListAndArray(new ArrayList<String>(), "1", "2", "3");
-      Iterable<String> empty = ListSequence.fromList(list).<String>select(new ISelector<String, String>() {
+      Iterable<String> empty = ListSequence.fromList(list).select(new ISelector<String, String>() {
         public String select(String it) {
           return (String) null;
         }

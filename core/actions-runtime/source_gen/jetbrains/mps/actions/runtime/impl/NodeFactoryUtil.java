@@ -31,7 +31,7 @@ public class NodeFactoryUtil {
       return Collections.emptyList();
     }
     SModel model = actionsModelDescriptor.getSModel();
-    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.actions.structure.NodeFactories")).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.actions.structure.NodeFactories")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "nodeFactory", true);
       }

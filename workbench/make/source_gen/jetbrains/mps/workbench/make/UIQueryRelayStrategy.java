@@ -19,7 +19,7 @@ public class UIQueryRelayStrategy {
 
   public <T extends IOption> T relayQuery(final IQuery<T> query, final IOperationContext context) {
     List<T> optList = Sequence.fromIterable(query.options()).toListSequence();
-    final String[] options = ListSequence.fromList(optList).<String>select(new ISelector<T, String>() {
+    final String[] options = ListSequence.fromList(optList).select(new ISelector<T, String>() {
       public String select(T o) {
         return o.getText();
       }

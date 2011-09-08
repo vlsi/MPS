@@ -26,7 +26,7 @@ public class GeneratorChooser implements Computable<List<ModuleReference>> {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<Generator> generators = MPSModuleRepository.getInstance().getAllGenerators();
-        genRefs.value = ListSequence.fromList(generators).<ModuleReference>select(new ISelector<Generator, ModuleReference>() {
+        genRefs.value = ListSequence.fromList(generators).select(new ISelector<Generator, ModuleReference>() {
           public ModuleReference select(Generator it) {
             return it.getModuleReference();
           }

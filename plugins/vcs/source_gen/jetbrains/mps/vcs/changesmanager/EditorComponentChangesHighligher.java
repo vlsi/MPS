@@ -302,7 +302,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   public void rollbackChanges(@NotNull EditorContext editorContext) {
-    myModelChangesManager.rollbackChanges(ListSequence.fromList(myFoldingAreaPainter.getCurrentMessageGroup().getMessages()).<OldChange>select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, OldChange>() {
+    myModelChangesManager.rollbackChanges(ListSequence.fromList(myFoldingAreaPainter.getCurrentMessageGroup().getMessages()).select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, OldChange>() {
       public OldChange select(EditorComponentChangesHighligher.ChangeEditorMessage msg) {
         return msg.getChange();
       }

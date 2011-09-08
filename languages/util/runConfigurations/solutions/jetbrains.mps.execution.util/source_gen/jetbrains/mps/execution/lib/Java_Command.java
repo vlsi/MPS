@@ -94,7 +94,7 @@ public class Java_Command {
 
   public ProcessHandler createProcess(String className) throws ExecutionException {
     String java = Java_Command.getJavaCommand(myJrePath);
-    String classPathString = IterableUtils.join(ListSequence.fromList(myClassPath).<String>select(new ISelector<String, String>() {
+    String classPathString = IterableUtils.join(ListSequence.fromList(myClassPath).select(new ISelector<String, String>() {
       public String select(String it) {
         return Java_Command.protect(it);
       }
@@ -109,7 +109,7 @@ public class Java_Command {
           myProgramParameter
         )));
         String classPathFile = Java_Command.writeToTmpFile(myClassPath);
-        String classRunnerClassPath = IterableUtils.join(ListSequence.fromList(Java_Command.getClassRunnerClassPath()).<String>select(new ISelector<String, String>() {
+        String classRunnerClassPath = IterableUtils.join(ListSequence.fromList(Java_Command.getClassRunnerClassPath()).select(new ISelector<String, String>() {
           public String select(String it) {
             return Java_Command.protect(it);
           }

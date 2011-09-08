@@ -41,7 +41,7 @@ public abstract class DiffModelTree extends MPSTree {
       public boolean accept(SNodeId r) {
         return r != null;
       }
-    }).<DiffModelTree.RootTreeNode>select(new ISelector<SNodeId, DiffModelTree.RootTreeNode>() {
+    }).select(new ISelector<SNodeId, DiffModelTree.RootTreeNode>() {
       public DiffModelTree.RootTreeNode select(SNodeId r) {
         return new DiffModelTree.RootTreeNode(r);
       }

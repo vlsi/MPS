@@ -29,7 +29,7 @@ public class MPS10313<T> {
   }
 
   protected boolean listIsSame(List<T> values) {
-    return tableIsSame(ListSequence.fromList(values).<List<T>>select(new ISelector<T, IListSequence<T>>() {
+    return tableIsSame(ListSequence.fromList(values).select(new ISelector<T, IListSequence<T>>() {
       public IListSequence<T> select(T it) {
         return ListSequence.fromListAndArray(new ArrayList<T>(), it);
       }

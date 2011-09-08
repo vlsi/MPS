@@ -75,7 +75,7 @@ public class Script implements IScript {
       LOG.error("cycle(s) detected: " + targetRange.cycles());
       error(this, "cycle(s) detected: " + targetRange.cycles());
     }
-    if (startingTarget != null && !(Sequence.fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).<ITarget.Name>select(new ISelector<ITarget, ITarget.Name>() {
+    if (startingTarget != null && !(Sequence.fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).select(new ISelector<ITarget, ITarget.Name>() {
       public ITarget.Name select(ITarget t) {
         return t.getName();
       }
@@ -129,7 +129,7 @@ public class Script implements IScript {
     }
 
     final Wrappers._T<ITarget.Name> waitFor = new Wrappers._T<ITarget.Name>(startingTarget);
-    Iterable<ITarget> toExecute = Sequence.fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).<ITarget>translate(new ITranslator2<ITarget, ITarget>() {
+    Iterable<ITarget> toExecute = Sequence.fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).translate(new ITranslator2<ITarget, ITarget>() {
       public Iterable<ITarget> translate(final ITarget tn) {
         return new Iterable<ITarget>() {
           public Iterator<ITarget> iterator() {
@@ -230,11 +230,11 @@ __switch__:
           LOG.debug("Executing " + trg.getName());
           try {
             Iterable<ITarget> impre = targetRange.immediatePrecursors(trg.getName());
-            Iterable<IResource> preInput = Sequence.fromIterable(impre).<IResult>select(new ISelector<ITarget, IResult>() {
+            Iterable<IResource> preInput = Sequence.fromIterable(impre).select(new ISelector<ITarget, IResult>() {
               public IResult select(ITarget t) {
                 return results.getResult(t.getName());
               }
-            }).<IResource>translate(new ITranslator2<IResult, IResource>() {
+            }).translate(new ITranslator2<IResult, IResource>() {
               public Iterable<IResource> translate(IResult r) {
                 return r.output();
               }
