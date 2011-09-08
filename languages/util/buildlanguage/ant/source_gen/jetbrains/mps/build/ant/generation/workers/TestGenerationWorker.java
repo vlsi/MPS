@@ -295,7 +295,7 @@ public class TestGenerationWorker extends MpsWorker {
     if (generationOk && Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
       diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
         public List<String> compute() {
-          return myGenerationHandler.createDiffReports();
+          return myGenerationHandler.createDiffReports(myWhatToDo.getExcludedFromDiffFiles());
         }
       });
     } else {

@@ -15,25 +15,22 @@
  */
 package jetbrains.mps.build.ant;
 
-import org.apache.tools.ant.types.EnumeratedAttribute;
-import org.apache.tools.ant.types.FileSet;
-import org.apache.tools.ant.types.resources.FileResource;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.taskdefs.Execute;
+import org.apache.tools.ant.types.EnumeratedAttribute;
+import org.apache.tools.ant.types.FileSet;
+import org.apache.tools.ant.types.resources.FileResource;
 import org.apache.tools.ant.util.JavaEnvUtils;
 
 import java.io.*;
-import java.util.*;
-import java.net.URL;
-import java.net.MalformedURLException;
-import java.net.URLClassLoader;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
-import java.lang.reflect.InvocationTargetException;
-
-import jetbrains.mps.build.ant.ProjectNested;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.util.*;
 
 public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
   public static final String CONFIGURATION_NAME = "configuration.name";
@@ -85,6 +82,12 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
     while (it.hasNext()) {
       FileResource next = (FileResource) it.next();
       myWhatToDo.addProjectFile(next.getFile());
+    }
+  }
+
+  public void addConfiguredExclude(ExcludeNested excludeInner) {
+    for (File file : excludeInner.getExcludedFromDiffFiles()) {
+      myWhatToDo.excludeFileFromDiff(file);
     }
   }
 
@@ -249,7 +252,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
   private void dumpPropertiesToWhatToDo() {
     Hashtable properties = getProject().getProperties();
     for (Object key : properties.keySet()) {
-      myWhatToDo.putProperty((String)key, (String)properties.get(key));  
+      myWhatToDo.putProperty((String) key, (String) properties.get(key));
     }
   }
 
