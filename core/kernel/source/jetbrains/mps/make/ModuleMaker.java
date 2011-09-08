@@ -83,7 +83,6 @@ public class ModuleMaker {
       indicator.setText2("Calculating modules to compile...");
       Set<IModule> toCompile = getModulesToCompile(candidates);
 
-
       int errorCount = 0;
       int warnCount = 0;
       boolean compiled = false;
@@ -178,10 +177,6 @@ public class ModuleMaker {
       compiler.addCompilationResultListener(listener);
       compiler.compile(classPathItems);
       compiler.removeCompilationResultListener(listener);
-
-      for (IModule module:modules){
-        ClassPathFactory.getInstance().invalidate(Collections.singleton(module.getClassesGen().getPath()));
-      }
     }
 
     for (IModule module : modules) {

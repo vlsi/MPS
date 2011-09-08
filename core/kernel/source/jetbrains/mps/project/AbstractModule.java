@@ -40,7 +40,6 @@ import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -206,16 +205,15 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<StubPath> getOwnStubPaths() {
-    if (isCompileInMPS() && getClassesGen() != null) {
-      String file = getClassesGen().getPath();
-      if (file.endsWith("!/")) {
-        file = file.substring(0, file.length() - 2);
-      }
-      if (new File(file).exists()) {
-        return Collections.singletonList(new StubPath(getClassesGen().getPath(), LanguageID.JAVA_MANAGER));
-      }
+    IFile classFolder = isCompileInMPS() ? getClassesGen() : ProjectPathUtil.getClassesFolder(getDescriptorFile());
+    if (classFolder == null) return Collections.emptyList();
+
+    String file = classFolder.getPath();
+    if (file.endsWith("!/")) {
+      file = file.substring(0, file.length() - 2);
     }
-    return Collections.emptyList();
+
+    return Collections.singletonList(new StubPath(classFolder.getPath(), LanguageID.JAVA_MANAGER));
   }
 
   public List<StubPath> getStubPaths() {
@@ -300,6 +298,7 @@ public abstract class AbstractModule implements IModule {
           }
         }
       }
+
       return myCachedClassPathItem;
     }
   }

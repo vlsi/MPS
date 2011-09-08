@@ -16,6 +16,7 @@
 package jetbrains.mps.reloading;
 
 import com.intellij.util.xmlb.annotations.Collection;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -30,6 +31,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class ClassPathFactory {
+  private static Logger LOG = Logger.getLogger(ClassPathFactory.class);
   private static final ClassPathFactory ourInstance = new ClassPathFactory();
 
   public static ClassPathFactory getInstance() {
@@ -49,9 +51,8 @@ public class ClassPathFactory {
     if (!exists) {
       String moduleString = requestor == null ? "" : (" in " + requestor.toString());
       String message = "Can't load class path item " + path + moduleString + "." + (new File(path).isDirectory() ? " Execute make in IDEA." : "");
-      myCache.put(path, new FileClassPathItem(path));
-      return myCache.get(path);
-      //throw new IOException(message);
+      LOG.debug(message,new Throwable());
+      return new NonExistingClassPathItem(path);
     }
 
     if (file.isDirectory()) {
