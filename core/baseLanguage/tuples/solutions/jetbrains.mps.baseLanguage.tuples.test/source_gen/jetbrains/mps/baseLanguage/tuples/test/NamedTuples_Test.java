@@ -187,7 +187,7 @@ public class NamedTuples_Test extends TestCase {
   }
 
   public String getString(Pair<String, String>... tuples) {
-    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).<String>select(new ISelector<Pair<String, String>, String>() {
+    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector<Pair<String, String>, String>() {
       public String select(Pair<String, String> t) {
         return t.first() + "=" + t.second();
       }
@@ -195,7 +195,7 @@ public class NamedTuples_Test extends TestCase {
   }
 
   public String getString(GlobalSharedPair<String, String>... tuples) {
-    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).<String>select(new ISelector<GlobalSharedPair<String, String>, String>() {
+    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector<GlobalSharedPair<String, String>, String>() {
       public String select(GlobalSharedPair<String, String> t) {
         return t.first() + "=" + t.second();
       }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-65rf9p2rhrbnxp5w28ynnm94dq89r5j">
+<dependencies version="2" modelHash="-e2ctrc4mz9pg097lenxn0rny4sknz3b">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.typesystem.runtime(MPS.Classpath/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
@@ -88,7 +88,7 @@
     <dep model="r:ff802b39-fe8b-448c-92e1-659087928d82(jetbrains.mps.baseLanguage.tuples.generator.template.helpers)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1238919387774" name="indexedTuples" hash="261giv8mlc628kwpxnduq782sm607fi">
+  <source id="1238919387774" name="indexedTuples" hash="-voh2v3xwx34sg0b4jjq8x9kzxzny1w">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1238919529264" name="runtime" hash="-55bjuqf0b7rwazvkn0lzgjskk3uqm7g">
