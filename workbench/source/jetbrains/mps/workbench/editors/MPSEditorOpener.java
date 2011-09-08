@@ -197,8 +197,7 @@ public class MPSEditorOpener {
     assert file.hasValidMPSNode() : "Invalid file returned for: " + baseNode + ", corresponding node from SNodePointer: " + new SNodePointer(baseNode).getNode();
     // [--] assertion for http://youtrack.jetbrains.net/issue/MPS-9753
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
-    editorManager.closeFile(file);
-    FileEditor fileEditor = editorManager.openFile(file, false)[0];
+    FileEditor fileEditor = editorManager.openFile(file, true)[0];
 
     MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;
 

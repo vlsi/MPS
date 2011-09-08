@@ -119,6 +119,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   private void showNodeInternal(SNode node, boolean select, boolean fromTabs) {
     SNode containingRoot = node.isRoot() ? node : node.getContainingRoot();
     SNodePointer currentlyEditedNode = getCurrentlyEditedNode();
+    EditorComponent editor = getCurrentEditorComponent();
     boolean rootChange = getCurrentlyEditedNode() == null || (containingRoot != currentlyEditedNode.getNode());
 
     if (!fromTabs) {
@@ -134,17 +135,13 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
       if (model != null) {
         model.removeModelListener(myModelListener);
       }
-    }
 
-    EditorComponent editor = getCurrentEditorComponent();
-    SModelDescriptor md = containingRoot.getModel().getModelDescriptor();
-    IModule module = md.getModule();
-    assert module != null : md.getSModelReference().toString() + "; node is disposed = " + node.isDisposed();
+      SModelDescriptor md = containingRoot.getModel().getModelDescriptor();
+      IModule module = md.getModule();
+      assert module != null : md.getSModelReference().toString() + "; node is disposed = " + node.isDisposed();
+      editor.editNode(containingRoot, new ModuleContext(module, myContext.getProject()));
 
-    editor.editNode(containingRoot, new ModuleContext(module, myContext.getProject()));
-
-    if (rootChange) {
-      SModelDescriptor model = getCurrentNodeModel();
+      model = getCurrentNodeModel();
       assert model != null;
 
       model.addModelListener(myModelListener);
