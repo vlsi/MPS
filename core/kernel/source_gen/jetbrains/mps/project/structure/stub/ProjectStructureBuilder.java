@@ -17,9 +17,9 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.StubSolution;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -71,6 +71,9 @@ public abstract class ProjectStructureBuilder {
     }
     for (ModuleReference ref : source.getExtendedLanguages()) {
       SLinkOperations.getTargets(result, "extendedLanguages", true).add(convert(ref));
+    }
+    for (ModuleReference dep : source.getRuntimeModules()) {
+      SLinkOperations.getTargets(result, "runtimeModules", true).add(convert(dep));
     }
     for (ModelRoot entry : source.getRuntimeStubModels()) {
       SLinkOperations.getTargets(result, "runtimeStubModels", true).add(convert(entry));

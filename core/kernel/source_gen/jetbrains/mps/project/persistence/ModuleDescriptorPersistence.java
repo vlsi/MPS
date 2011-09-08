@@ -6,8 +6,8 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import org.jdom.Element;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.List;
@@ -26,13 +26,13 @@ public class ModuleDescriptorPersistence {
   public static void loadDependencies(ModuleDescriptor descriptor, Element root) {
     descriptor.getDependencies().addAll(loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(root, "dependencies")).first()));
 
-    descriptor.getUsedLanguages().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "usedLanguages")).first(), "usedLanguage")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
+    descriptor.getUsedLanguages().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "usedLanguages")).first(), "usedLanguage")).select(new ISelector<Element, ModuleReference>() {
       public ModuleReference select(Element ul) {
         return ModuleReference.fromString(ul.getText());
       }
     }).toListSequence());
 
-    descriptor.getUsedDevkits().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "usedDevKits")).first(), "usedDevKit")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
+    descriptor.getUsedDevkits().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "usedDevKits")).first(), "usedDevKit")).select(new ISelector<Element, ModuleReference>() {
       public ModuleReference select(Element udk) {
         return ModuleReference.fromString(udk.getText());
       }
@@ -57,7 +57,7 @@ public class ModuleDescriptorPersistence {
   }
 
   private static List<ModuleReference> parseModuleRefList(Element runtimeXML) {
-    return ListSequence.fromList(AttributeUtils.elementChildren(runtimeXML, "module")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
+    return ListSequence.fromList(AttributeUtils.elementChildren(runtimeXML, "module")).select(new ISelector<Element, ModuleReference>() {
       public ModuleReference select(Element d) {
         return new ModuleReference(AttributeUtils.stringWithDefault(d.getAttributeValue("name"), ""), AttributeUtils.stringWithDefault(d.getAttributeValue("id"), ""));
       }
@@ -106,7 +106,7 @@ public class ModuleDescriptorPersistence {
   }
 
   public static List<Dependency> loadDependenciesList(Element depElement) {
-    return ListSequence.fromList(AttributeUtils.elementChildren(depElement, "dependency")).<Dependency>select(new ISelector<Element, Dependency>() {
+    return ListSequence.fromList(AttributeUtils.elementChildren(depElement, "dependency")).select(new ISelector<Element, Dependency>() {
       public Dependency select(final Element d) {
         return new _FunctionTypes._return_P0_E0<Dependency>() {
           public Dependency invoke() {
@@ -147,7 +147,7 @@ public class ModuleDescriptorPersistence {
   }
 
   public static List<ModelRoot> loadModelRoots(List<Element> modelRootElements, final IFile file, final Macros macros) {
-    return ListSequence.fromList(modelRootElements).<ModelRoot>select(new ISelector<Element, ModelRoot>() {
+    return ListSequence.fromList(modelRootElements).select(new ISelector<Element, ModelRoot>() {
       public ModelRoot select(Element mre) {
         return loadModelRoot(mre, file, macros);
       }
@@ -182,7 +182,7 @@ public class ModuleDescriptorPersistence {
   }
 
   public static List<ModelRoot> loadStubModelEntries(List<Element> stubModelEntryElements, final IFile file, final Macros macros) {
-    return ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(stubModelEntryElements).first(), "stubModelEntry")).<ModelRoot>select(new ISelector<Element, ModelRoot>() {
+    return ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(stubModelEntryElements).first(), "stubModelEntry")).select(new ISelector<Element, ModelRoot>() {
       public ModelRoot select(Element mre) {
         return loadModelEntry(mre, file, macros);
       }
