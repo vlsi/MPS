@@ -15,15 +15,18 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.treeview.path;
 
+import org.jetbrains.annotations.NotNull;
+
 public class PathItem {
   private Object myIdObject;
   private PathItemRole myRole;
 
-  public PathItem(PathItemRole role, Object idObject) {
+  public PathItem(PathItemRole role, @NotNull Object idObject) {
     myRole = role;
     myIdObject = idObject;
   }
 
+  @NotNull
   public Object getIdObject() {
     return myIdObject;
   }
