@@ -30,10 +30,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   public void add(IClassPathItem item) {
     assert item != null;
     myChildren.add(item);
-  }
-
-  public void remove(IClassPathItem item) {
-    myChildren.remove(item);
+    item.addInvalidationAction(myInvalidationListener);
   }
 
   public byte[] getClass(String name) {
@@ -97,23 +94,19 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return new ArrayList<IClassPathItem>(myChildren);
   }
 
-  public List<IClassPathItem> flatten() {
-    List<IClassPathItem> result = new ArrayList<IClassPathItem>();
+  public List<RealClassPathItem> flatten() {
+    List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
 
     for (IClassPathItem child : myChildren) {
-      if (child instanceof CompositeClassPathItem) {
-        result.addAll(((CompositeClassPathItem) child).flatten());
-      } else {
-        result.add(child);
-      }
+      result.addAll(child.flatten());
     }
 
     return result;
   }
 
   public CompositeClassPathItem optimize() {
-    List<IClassPathItem> flattenedItems = flatten();
-    Iterator<IClassPathItem> it = flattenedItems.iterator();
+    List<RealClassPathItem> flattenedItems = flatten();
+    Iterator<RealClassPathItem> it = flattenedItems.iterator();
 
     Set<String> alreadyVisited = new HashSet<String>();
 
@@ -121,10 +114,10 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
       IClassPathItem item = it.next();
       if (item instanceof FileClassPathItem) {
         FileClassPathItem fcp = (FileClassPathItem) item;
-        if (alreadyVisited.contains(fcp.getClassPath())) {
+        if (alreadyVisited.contains(fcp.getPath())) {
           it.remove();
         } else {
-          alreadyVisited.add(fcp.getClassPath());
+          alreadyVisited.add(fcp.getPath());
         }
       }
 
@@ -164,4 +157,10 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     result.append("}");
     return result.toString();
   }
+
+  private final Runnable myInvalidationListener = new Runnable() {
+    public void run() {
+      callInvalidationListeners();
+    }
+  };
 }

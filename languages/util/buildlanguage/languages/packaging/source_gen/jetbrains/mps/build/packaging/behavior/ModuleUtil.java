@@ -58,10 +58,10 @@ public class ModuleUtil {
     cpitem.accept(new EachClassPathItemVisitor() {
       public void visit(FileClassPathItem item) {
         // filter out JDK 
-        if (jdk.contains(item.getClassPath())) {
+        if (jdk.contains(item.getPath())) {
           return;
         }
-        ListSequence.fromList(result).addElement(item.getClassPath());
+        ListSequence.fromList(result).addElement(item.getPath());
       }
 
       public void visit(JarFileClassPathItem item) {

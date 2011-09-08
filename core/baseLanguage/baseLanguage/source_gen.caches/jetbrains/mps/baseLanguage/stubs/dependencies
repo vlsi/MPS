@@ -56,6 +56,7 @@
     <classNode extendsClassName="jetbrains.mps.stubs.BaseStubModelRootManager" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.stubs.JavaStubsUtil" file="JavaStubsUtil.java">
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />

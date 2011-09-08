@@ -23,9 +23,9 @@ import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.*;
+import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -61,9 +61,10 @@ public class ModuleMaker {
         if (indicator.isCanceled()) break;
 
         indicator.setText2("Cleaning " + m.getModuleFqName() + "...");
-        FileUtil.delete(new File(m.getClassesGen().getPath()));
+        String path = m.getClassesGen().getPath();
+        FileUtil.delete(new File(path));
+        ClassPathFactory.getInstance().invalidate(Collections.singleton(path));
       }
-      invalidateClasspath(modules);
     } finally {
       indicator.popState();
     }
@@ -166,8 +167,9 @@ public class ModuleMaker {
       return new MPSCompilationResult(0, 0, false, false, messages);
     }
 
-    //todo:do we need this invalidation?
-    invalidateClasspath(modulesWithRemovals);
+    for (IModule module : modulesWithRemovals) {
+      ClassPathFactory.getInstance().invalidate(Collections.singleton(module.getClassesGen().getPath()));
+    }
 
     MyCompilationResultAdapter listener = null;
     if(hasJavaToCompile) {
@@ -177,7 +179,9 @@ public class ModuleMaker {
       compiler.compile(classPathItems);
       compiler.removeCompilationResultListener(listener);
 
-      invalidateClasspath(modules);
+      for (IModule module:modules){
+        ClassPathFactory.getInstance().invalidate(Collections.singleton(module.getClassesGen().getPath()));
+      }
     }
 
     for (IModule module : modules) {
@@ -198,7 +202,7 @@ public class ModuleMaker {
     }
 
     for (IModule module : modules) {
-      module.updateClassPath();
+      ClassPathFactory.getInstance().invalidate(Collections.singleton(module.getClassesGen().getPath()));
     }
 
     return new MPSCompilationResult(listener == null ? 0 : listener.getErrorCount(), 0, false, hasJavaToCompile, messages);
@@ -286,15 +290,6 @@ public class ModuleMaker {
     if (!m.isCompileInMPS()) return true;
 
     return false;
-  }
-
-  private void invalidateClasspath(Set<IModule> modules) {
-    for (IModule m : modules) {
-      m.invalidateClassPath();
-    }
-    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      m.updateClassPath();
-    }
   }
 
   private class MyCompilationResultAdapter extends CompilationResultAdapter {

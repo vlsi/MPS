@@ -46,9 +46,11 @@ public interface IClassPathItem {
 
   long getTimestamp();
 
-  List<IClassPathItem> flatten();
+  List<RealClassPathItem> flatten();
 
   IClassPathItem optimize();
 
   void accept(IClassPathItemVisitor visitor);
+
+  void addInvalidationAction(Runnable action);
 }

@@ -323,7 +323,7 @@ public class JavaCompiler {
             myClassPathItem.add(classpath);
             ClassPathEntry cpe = new ClassPathEntry();
             if (classpath instanceof FileClassPathItem) {
-              cpe.setPath(((FileClassPathItem) classpath).getClassPath());
+              cpe.setPath(((FileClassPathItem) classpath).getPath());
             } else
             if (classpath instanceof JarFileClassPathItem) {
               cpe.setPath(((JarFileClassPathItem) classpath).getFile().getAbsolutePath());

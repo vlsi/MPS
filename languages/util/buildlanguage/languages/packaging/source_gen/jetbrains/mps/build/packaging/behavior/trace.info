@@ -1107,8 +1107,8 @@
     <nodeInfo nodeId="1218648416968" fileName="ModuleUtil.java" startLine="55" startPosition="71" endLine="56" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8223737516323747310" fileName="ModuleUtil.java" startLine="56" startPosition="79" endLine="57" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8223737516323788611" fileName="ModuleUtil.java" startLine="59" startPosition="49" endLine="60" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8223737516323788615" fileName="ModuleUtil.java" startLine="61" startPosition="48" endLine="62" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1040213783748331934" fileName="ModuleUtil.java" startLine="63" startPosition="9" endLine="64" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8223737516323788615" fileName="ModuleUtil.java" startLine="61" startPosition="43" endLine="62" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1040213783748331934" fileName="ModuleUtil.java" startLine="63" startPosition="9" endLine="64" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8223737516323747298" fileName="ModuleUtil.java" startLine="67" startPosition="52" endLine="68" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8223737516323747326" fileName="ModuleUtil.java" startLine="69" startPosition="51" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1040213783748331947" fileName="ModuleUtil.java" startLine="71" startPosition="9" endLine="72" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1135,7 +1135,7 @@
     <scopeInfo nodeId="5092967552123101785" fileName="ModuleUtil.java" startLine="32" startPosition="51" endLine="33" endPosition="18" />
     <scopeInfo nodeId="1220985506212" fileName="ModuleUtil.java" startLine="36" startPosition="43" endLine="37" endPosition="59" />
     <scopeInfo nodeId="1218647814937" fileName="ModuleUtil.java" startLine="39" startPosition="55" endLine="40" endPosition="18" />
-    <scopeInfo nodeId="8223737516323788614" fileName="ModuleUtil.java" startLine="61" startPosition="48" endLine="62" endPosition="17" />
+    <scopeInfo nodeId="8223737516323788614" fileName="ModuleUtil.java" startLine="61" startPosition="43" endLine="62" endPosition="17" />
     <scopeInfo nodeId="8223737516323743969" fileName="ModuleUtil.java" startLine="69" startPosition="51" endLine="70" endPosition="17" />
     <scopeInfo nodeId="1218647682298" fileName="ModuleUtil.java" startLine="19" startPosition="25" endLine="21" endPosition="3" />
     <scopeInfo nodeId="1219230217704" fileName="ModuleUtil.java" startLine="47" startPosition="136" endLine="50" endPosition="14" />
@@ -1144,7 +1144,7 @@
       <varInfo nodeId="6863060912307986430" varName="basefile" />
     </scopeInfo>
     <scopeInfo nodeId="1219230088825" fileName="ModuleUtil.java" startLine="46" startPosition="50" endLine="51" endPosition="7" />
-    <scopeInfo nodeId="1040213783748331933" fileName="ModuleUtil.java" startLine="59" startPosition="49" endLine="64" endPosition="70" />
+    <scopeInfo nodeId="1040213783748331933" fileName="ModuleUtil.java" startLine="59" startPosition="49" endLine="64" endPosition="65" />
     <scopeInfo nodeId="1040213783748331946" fileName="ModuleUtil.java" startLine="67" startPosition="52" endLine="72" endPosition="73" />
     <scopeInfo nodeId="1219230047141" fileName="ModuleUtil.java" startLine="45" startPosition="69" endLine="52" endPosition="5" />
     <scopeInfo nodeId="1219230088822" fileName="ModuleUtil.java" startLine="45" startPosition="69" endLine="52" endPosition="5" />

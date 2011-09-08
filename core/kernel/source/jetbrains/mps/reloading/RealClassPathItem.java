@@ -17,13 +17,19 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.logging.Logger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class RealClassPathItem extends AbstractClassPathItem {
   private static final Logger LOG = Logger.getLogger(RealClassPathItem.class);
   private boolean myValid = true;
   private boolean myErrorShown = false;
 
+  public abstract String getPath();
+
   public void invalidate() {
     myValid = false;
+    callInvalidationListeners();
   }
 
   protected void checkValidity() {

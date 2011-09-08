@@ -46,6 +46,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
@@ -108,8 +109,13 @@ public class ClassPathTest extends BaseMPSTest {
 
           for (ModelRoot entry : stubs) {
             String path = entry.getPath();
-            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path);
-            if (pathItem == null) continue;
+            IClassPathItem pathItem = null;
+            try {
+              pathItem = ClassPathFactory.getInstance().createFromPath(path, null);
+            } catch (IOException e) {
+              LOG.error(e);
+              continue;
+            }
 
             // do not check libs
             if (pathItem instanceof JarFileClassPathItem) continue;
