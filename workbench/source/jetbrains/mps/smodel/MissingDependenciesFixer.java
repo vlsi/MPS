@@ -58,14 +58,15 @@ public class MissingDependenciesFixer {
         md[0] = module[0].getModuleDescriptor();
 
         for (SModelReference modelImport : SModelOperations.getImportedModelUIDs(myModelDescriptor.getSModel())) {
-          if (moduleScope[0].getModelDescriptor(modelImport) == null) {
-            SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(modelImport);
-            if (sm == null) continue;
-            IModule anotherModule = sm.getModule();
-            if (anotherModule != null && anotherModule != module[0]) {
-              newImports.add(anotherModule);
-            }
-          }
+          if (moduleScope[0].getModelDescriptor(modelImport) != null) continue;
+
+          SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(modelImport);
+          if (sm == null) continue;
+
+          IModule anotherModule = sm.getModule();
+          if (anotherModule == null || anotherModule == module[0]) continue;
+
+          newImports.add(anotherModule);
         }
       }
     });
