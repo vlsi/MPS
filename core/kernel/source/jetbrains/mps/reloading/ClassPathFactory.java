@@ -15,20 +15,14 @@
  */
 package jetbrains.mps.reloading;
 
-import com.intellij.util.xmlb.annotations.Collection;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class ClassPathFactory {
   private static Logger LOG = Logger.getLogger(ClassPathFactory.class);
@@ -41,6 +35,7 @@ public class ClassPathFactory {
   //--------------------------
 
   private Map<String, RealClassPathItem> myCache = new HashMap<String, RealClassPathItem>();
+  private List<CompositeClassPathItem> myCompositeClassPathItems = new ArrayList<CompositeClassPathItem>();
 
   @NotNull
   public RealClassPathItem createFromPath(String path, @Nullable String requestor) throws IOException {
@@ -51,7 +46,7 @@ public class ClassPathFactory {
     if (!exists) {
       String moduleString = requestor == null ? "" : (" in " + requestor.toString());
       String message = "Can't load class path item " + path + moduleString + "." + (new File(path).isDirectory() ? " Execute make in IDEA." : "");
-      LOG.debug(message,new Throwable());
+      LOG.debug(message, new Throwable());
       return new NonExistingClassPathItem(path);
     }
 
@@ -73,6 +68,10 @@ public class ClassPathFactory {
       p.invalidate();
     }
     myCache.clear();
+    for (CompositeClassPathItem item : myCompositeClassPathItems) {
+      item.invalidate();
+    }
+    myCompositeClassPathItems.clear();
   }
 
   public void invalidate(Set<String> paths) {
@@ -86,5 +85,9 @@ public class ClassPathFactory {
     for (RealClassPathItem item : classPathItems.flatten()) {
       invalidate(Collections.singleton(item.getPath()));
     }
+  }
+
+  public void addCompositeClassPathItem(CompositeClassPathItem item) {
+    myCompositeClassPathItems.add(item);
   }
 }

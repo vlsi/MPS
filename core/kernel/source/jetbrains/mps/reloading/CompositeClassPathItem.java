@@ -27,13 +27,19 @@ import java.util.*;
 public class CompositeClassPathItem extends AbstractClassPathItem {
   private List<IClassPathItem> myChildren = new ArrayList<IClassPathItem>();
 
+  public CompositeClassPathItem() {
+    ClassPathFactory.getInstance().addCompositeClassPathItem(this);
+  }
+
   public void add(IClassPathItem item) {
     assert item != null;
+    checkValidity();
     myChildren.add(item);
     item.addInvalidationAction(myInvalidationListener);
   }
 
   public byte[] getClass(String name) {
+    checkValidity();
     for (IClassPathItem item : myChildren) {
       byte[] result = item.getClass(name);
       if (result != null) return result;
@@ -42,6 +48,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public ClassifierKind getClassifierKind(String name) {
+    checkValidity();
     for (IClassPathItem item : myChildren) {
       ClassifierKind result = item.getClassifierKind(name);
       if (result != null) return result;
@@ -50,6 +57,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public URL getResource(String name) {
+    checkValidity();
     for (IClassPathItem item : myChildren) {
       if (item.getResource(name) != null) return item.getResource(name);
     }
@@ -57,6 +65,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public Iterable<String> getAvailableClasses(String namespace) {
+    checkValidity();
     FlattenIterable<String> result = new FlattenIterable<String>();
     for (IClassPathItem item : myChildren) {
       //todo rewrite using mapping iterable
@@ -66,6 +75,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public Iterable<String> getSubpackages(String namespace) {
+    checkValidity();
     FlattenIterable<String> result = new FlattenIterable<String>();
     for (IClassPathItem item : myChildren) {
       //todo rewrite using mapping iterable
@@ -75,6 +85,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public long getClassesTimestamp(String namespace) {
+    checkValidity();
     long result = 0;
     for (IClassPathItem item : myChildren) {
       result = Math.max(result, item.getClassesTimestamp(namespace));
@@ -83,6 +94,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public long getTimestamp() {
+    checkValidity();
     long result = 0;
     for (IClassPathItem item : myChildren) {
       result = Math.max(result, item.getTimestamp());
@@ -91,10 +103,12 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public List<IClassPathItem> getChildren() {
+    checkValidity();
     return new ArrayList<IClassPathItem>(myChildren);
   }
 
   public List<RealClassPathItem> flatten() {
+    checkValidity();
     List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
 
     for (IClassPathItem child : myChildren) {
@@ -105,6 +119,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public CompositeClassPathItem optimize() {
+    checkValidity();
     List<RealClassPathItem> flattenedItems = flatten();
     Iterator<RealClassPathItem> it = flattenedItems.iterator();
 
@@ -142,10 +157,12 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
   @Override
   public void accept(IClassPathItemVisitor visitor) {
+    checkValidity();
     visitor.visit(this);
   }
 
   public String toString() {
+    checkValidity();
     StringBuilder result = new StringBuilder("classpath {\n");
 
     for (IClassPathItem child : myChildren) {

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 
@@ -57,6 +58,24 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
       result = Math.max(result, getTimestamp(subpackage));
     }
     return result;
+  }
+
+  //-----------------------
+
+  private static final Logger LOG = Logger.getLogger(RealClassPathItem.class);
+  private boolean myValid = true;
+  private boolean myErrorShown = false;
+
+  public void invalidate() {
+    myValid = false;
+    callInvalidationListeners();
+  }
+
+  protected void checkValidity() {
+    if (myValid) return;
+    if (myErrorShown) return;
+    myErrorShown = true;
+    LOG.error("Using outdated classpath: " + this, new Throwable());
   }
 
   //-----------------------

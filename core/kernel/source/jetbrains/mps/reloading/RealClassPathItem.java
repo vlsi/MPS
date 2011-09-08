@@ -21,21 +21,5 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class RealClassPathItem extends AbstractClassPathItem {
-  private static final Logger LOG = Logger.getLogger(RealClassPathItem.class);
-  private boolean myValid = true;
-  private boolean myErrorShown = false;
-
   public abstract String getPath();
-
-  public void invalidate() {
-    myValid = false;
-    callInvalidationListeners();
-  }
-
-  protected void checkValidity() {
-    if (myValid) return;
-    if (myErrorShown) return;
-    myErrorShown = true;
-    LOG.error("Using outdated classpath: " + this, new Throwable());
-  }
 }
