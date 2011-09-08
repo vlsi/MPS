@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.AuxilaryRuntimeModel;
+
 class AddRootUndoableAction extends SNodeUndoableAction {
 
   public AddRootUndoableAction(SNode root) {
@@ -31,6 +33,6 @@ class AddRootUndoableAction extends SNodeUndoableAction {
 
   @Override
   public boolean isGlobal() {
-    return false;
+    return !AuxilaryRuntimeModel.isAuxModel(getAffectedNode().getModel());
   }
 }
