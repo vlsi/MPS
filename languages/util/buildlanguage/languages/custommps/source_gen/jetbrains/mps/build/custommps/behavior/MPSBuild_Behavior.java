@@ -23,13 +23,13 @@ import jetbrains.mps.project.IModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.project.dependency.LanguageDependenciesManager;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.StubPath;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class MPSBuild_Behavior {
   public static void init(SNode thisNode) {
@@ -77,7 +77,12 @@ public class MPSBuild_Behavior {
       if (module instanceof Language) {
         Language language = (Language) module;
         SetSequence.fromSet(modulesInClasspath).addElement(language);
-        SetSequence.fromSet(modulesInClasspath).addSequence(ListSequence.fromList(((LanguageDependenciesManager) language.getDependenciesManager()).getRuntimeDependOnModules()));
+        List<ModuleReference> list = language.getRuntimeModulesReferences();
+        SetSequence.fromSet(modulesInClasspath).addSequence(ListSequence.fromList(list).<IModule>select(new ISelector<ModuleReference, IModule>() {
+          public IModule select(ModuleReference it) {
+            return MPSModuleRepository.getInstance().getModule(it);
+          }
+        }));
       }
     }
     for (IModule module : SetSequence.fromSet(modulesInClasspath)) {
