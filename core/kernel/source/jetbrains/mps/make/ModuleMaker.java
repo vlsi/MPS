@@ -22,12 +22,16 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vfs.IFile;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -162,16 +166,16 @@ public class ModuleMaker {
       }
     }
 
-    if(!hasJavaToCompile && !hasFilesToCopyOrDelete) {
+    if (!hasJavaToCompile && !hasFilesToCopyOrDelete) {
       return new MPSCompilationResult(0, 0, false, false, messages);
     }
 
     for (IModule module : modulesWithRemovals) {
-      ClassPathFactory.getInstance().invalidate(Collections.singleton(module.getClassesGen().getPath()));
+      invalidateCompiledClasses(module);
     }
 
     MyCompilationResultAdapter listener = null;
-    if(hasJavaToCompile) {
+    if (hasJavaToCompile) {
       IClassPathItem classPathItems = computeDependenciesClassPath(modules);
       listener = new MyCompilationResultAdapter(modules, classPathItems, messages);
       compiler.addCompilationResultListener(listener);
@@ -197,10 +201,17 @@ public class ModuleMaker {
     }
 
     for (IModule module : modules) {
-      ClassPathFactory.getInstance().invalidate(Collections.singleton(module.getClassesGen().getPath()));
+      invalidateCompiledClasses(module);
     }
 
     return new MPSCompilationResult(listener == null ? 0 : listener.getErrorCount(), 0, false, hasJavaToCompile, messages);
+  }
+
+  private void invalidateCompiledClasses(IModule module) {
+    IFile classesGen = module.getClassesGen();
+    if (classesGen != null) {
+      ClassPathFactory.getInstance().invalidate(Collections.singleton(classesGen.getPath()));
+    }
   }
 
   private String getName(char[][] compoundName) {
