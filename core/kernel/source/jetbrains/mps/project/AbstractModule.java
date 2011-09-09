@@ -205,7 +205,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<StubPath> getOwnStubPaths() {
-    IFile classFolder = isCompileInMPS() ? getClassesGen() : ProjectPathUtil.getClassesFolder(getDescriptorFile());
+    IFile classFolder = getClassesGen();
     if (classFolder == null) return Collections.emptyList();
 
     String file = classFolder.getPath();
