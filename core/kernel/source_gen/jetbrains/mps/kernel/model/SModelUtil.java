@@ -41,6 +41,9 @@ public class SModelUtil {
   private static ConcurrentMap<SNode, Language> myConceptToLanguage = new ConcurrentHashMap<SNode, Language>();
   protected static Log log = LogFactory.getLog(SModelUtil.class);
 
+  public SModelUtil() {
+  }
+
   public static void clearCaches() {
     myFQNameToConcepDecl.clear();
     myConceptToLanguage.clear();
