@@ -2490,39 +2490,44 @@
     <unitInfo nodeId="1453248744423411392" fileName="ModelCheckerTool_Tool.java" startLine="33" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerTool_Tool" />
   </root>
   <root nodeId="2786701023156660698">
-    <nodeInfo nodeId="2786701023156660699" fileName="LangSpecificChecker.java" startLine="19" startPosition="58" endLine="20" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguageCheckers" />
-    <nodeInfo nodeId="2786701023156660707" fileName="LangSpecificChecker.java" startLine="22" startPosition="32" endLine="23" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2786701023156660725" fileName="LangSpecificChecker.java" startLine="26" startPosition="142" endLine="27" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2786701023156660742" fileName="LangSpecificChecker.java" startLine="29" startPosition="140" endLine="30" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="2786701023156660808" fileName="LangSpecificChecker.java" startLine="32" startPosition="55" endLine="33" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2786701023156660820" fileName="LangSpecificChecker.java" startLine="34" startPosition="83" endLine="35" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2786701023156660782" fileName="LangSpecificChecker.java" startLine="38" startPosition="5" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2786701023156660703" fileName="LangSpecificChecker.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LangSpecificChecker#()V" />
-    <nodeInfo nodeId="2786701023156660740" fileName="LangSpecificChecker.java" startLine="28" startPosition="90" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2786701023156660817" fileName="LangSpecificChecker.java" startLine="33" startPosition="92" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2786701023156660801" fileName="LangSpecificChecker.java" startLine="31" startPosition="7" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2786701023156660734" fileName="LangSpecificChecker.java" startLine="27" startPosition="124" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2786701023156660713" fileName="LangSpecificChecker.java" startLine="25" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/ide/modelchecker/actions/ProgressContext;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
-    <scopeInfo nodeId="2786701023156660706" fileName="LangSpecificChecker.java" startLine="22" startPosition="32" endLine="23" endPosition="73" />
-    <scopeInfo nodeId="2786701023156660741" fileName="LangSpecificChecker.java" startLine="29" startPosition="140" endLine="30" endPosition="14" />
-    <scopeInfo nodeId="2786701023156660819" fileName="LangSpecificChecker.java" startLine="34" startPosition="83" endLine="35" endPosition="173" />
-    <scopeInfo nodeId="2786701023156660703" fileName="LangSpecificChecker.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
-    <scopeInfo nodeId="2786701023156660817" fileName="LangSpecificChecker.java" startLine="33" startPosition="92" endLine="36" endPosition="9" />
-    <scopeInfo nodeId="2786701023156660804" fileName="LangSpecificChecker.java" startLine="32" startPosition="55" endLine="36" endPosition="9">
+    <nodeInfo nodeId="2786701023156660699" fileName="LangSpecificChecker.java" startLine="22" startPosition="87" endLine="23" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguageCheckers" />
+    <nodeInfo nodeId="2786701023156660707" fileName="LangSpecificChecker.java" startLine="25" startPosition="32" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2786701023156660725" fileName="LangSpecificChecker.java" startLine="29" startPosition="142" endLine="30" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8443867807229719073" fileName="LangSpecificChecker.java" startLine="31" startPosition="90" endLine="32" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2786701023156660742" fileName="LangSpecificChecker.java" startLine="33" startPosition="140" endLine="34" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2786701023156660808" fileName="LangSpecificChecker.java" startLine="36" startPosition="55" endLine="37" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2786701023156660820" fileName="LangSpecificChecker.java" startLine="38" startPosition="83" endLine="39" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8443867807229719068" fileName="LangSpecificChecker.java" startLine="41" startPosition="7" endLine="42" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8443867807229719083" fileName="LangSpecificChecker.java" startLine="42" startPosition="70" endLine="43" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2786701023156660782" fileName="LangSpecificChecker.java" startLine="44" startPosition="5" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2786701023156660703" fileName="LangSpecificChecker.java" startLine="24" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LangSpecificChecker#()V" />
+    <nodeInfo nodeId="2786701023156660740" fileName="LangSpecificChecker.java" startLine="32" startPosition="122" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2786701023156660817" fileName="LangSpecificChecker.java" startLine="37" startPosition="92" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2786701023156660801" fileName="LangSpecificChecker.java" startLine="35" startPosition="7" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2786701023156660734" fileName="LangSpecificChecker.java" startLine="30" startPosition="124" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2786701023156660713" fileName="LangSpecificChecker.java" startLine="28" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/ide/modelchecker/actions/ProgressContext;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
+    <scopeInfo nodeId="2786701023156660706" fileName="LangSpecificChecker.java" startLine="25" startPosition="32" endLine="26" endPosition="73" />
+    <scopeInfo nodeId="2786701023156660741" fileName="LangSpecificChecker.java" startLine="33" startPosition="140" endLine="34" endPosition="14" />
+    <scopeInfo nodeId="2786701023156660819" fileName="LangSpecificChecker.java" startLine="38" startPosition="83" endLine="39" endPosition="173" />
+    <scopeInfo nodeId="2786701023156660703" fileName="LangSpecificChecker.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="2786701023156660817" fileName="LangSpecificChecker.java" startLine="37" startPosition="92" endLine="40" endPosition="9" />
+    <scopeInfo nodeId="2786701023156660804" fileName="LangSpecificChecker.java" startLine="36" startPosition="55" endLine="40" endPosition="9">
       <varInfo nodeId="2786701023156660809" varName="iErrorReporters" />
     </scopeInfo>
-    <scopeInfo nodeId="2786701023156660801" fileName="LangSpecificChecker.java" startLine="31" startPosition="7" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="2786701023156660739" fileName="LangSpecificChecker.java" startLine="28" startPosition="90" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="2786701023156660734" fileName="LangSpecificChecker.java" startLine="27" startPosition="124" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="2786701023156660724" fileName="LangSpecificChecker.java" startLine="26" startPosition="142" endLine="39" endPosition="19">
+    <scopeInfo nodeId="2786701023156660801" fileName="LangSpecificChecker.java" startLine="35" startPosition="7" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="2786701023156660739" fileName="LangSpecificChecker.java" startLine="31" startPosition="90" endLine="43" endPosition="36">
+      <varInfo nodeId="8443867807229719074" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2786701023156660734" fileName="LangSpecificChecker.java" startLine="30" startPosition="124" endLine="44" endPosition="5" />
+    <scopeInfo nodeId="2786701023156660724" fileName="LangSpecificChecker.java" startLine="29" startPosition="142" endLine="45" endPosition="19">
       <varInfo nodeId="2786701023156660726" varName="results" />
     </scopeInfo>
-    <scopeInfo nodeId="2786701023156660713" fileName="LangSpecificChecker.java" startLine="25" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="2786701023156660713" fileName="LangSpecificChecker.java" startLine="28" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="2786701023156660718" varName="model" />
       <varInfo nodeId="2786701023156660722" varName="operationContext" />
       <varInfo nodeId="2786701023156660720" varName="progressContext" />
     </scopeInfo>
-    <unitInfo nodeId="2786701023156660698" fileName="LangSpecificChecker.java" startLine="19" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.LangSpecificChecker" />
+    <unitInfo nodeId="2786701023156660698" fileName="LangSpecificChecker.java" startLine="22" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.LangSpecificChecker" />
   </root>
   <root nodeId="5361317699454626937">
     <nodeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="8" startPosition="71" endLine="9" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
