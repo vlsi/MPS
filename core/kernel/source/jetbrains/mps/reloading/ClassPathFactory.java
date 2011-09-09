@@ -16,80 +16,80 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class ClassPathFactory {
-  private static final Logger LOG = Logger.getLogger(ClassPathFactory.class);
+  private static Logger LOG = Logger.getLogger(ClassPathFactory.class);
   private static final ClassPathFactory ourInstance = new ClassPathFactory();
 
   public static ClassPathFactory getInstance() {
     return ourInstance;
   }
 
-  public RealClassPathItem createFromPath(String path) {
-    try {
-      return createFromPath(path, null);
-    } catch (IOException e) {
-      LOG.debug("Can't find classpath " + path);
-      return null;
-    }
-  }
+  //--------------------------
 
-  public RealClassPathItem createFromPath(String path, @Nullable IModule module) throws IOException {
-    boolean exists = path.contains("!/") ? !FileSystem.getInstance().getFileByPath(path).exists() : !new File(path).exists();
-    if (exists) {
-      String moduleString = module == null ? "" : (" in " + module.toString());
+  private Map<String, RealClassPathItem> myCache = new HashMap<String, RealClassPathItem>();
+  private List<CompositeClassPathItem> myCompositeClassPathItems = new ArrayList<CompositeClassPathItem>();
+
+  @NotNull
+  public RealClassPathItem createFromPath(String path, @Nullable String requestor) throws IOException {
+    if (myCache.containsKey(path)) return myCache.get(path);
+
+    File file = new File(path);
+    boolean exists = file.exists();
+    if (!exists) {
+      String moduleString = requestor == null ? "" : (" in " + requestor.toString());
       String message = "Can't load class path item " + path + moduleString + "." + (new File(path).isDirectory() ? " Execute make in IDEA." : "");
-      throw new IOException(message);
+      LOG.debug(message, new Throwable());
+      NonExistingClassPathItem item = new NonExistingClassPathItem(path);
+      myCache.put(path, item);
+      return item;
     }
 
-    return getInstance().get(path);
+    if (file.isDirectory()) {
+      myCache.put(path, new FileClassPathItem(path));
+    } else {
+      myCache.put(path, new JarFileClassPathItem(path));
+    }
+
+    return myCache.get(path);
   }
 
   //--------------------------
 
   @UseCarefully
   //this is supposed to be used only on class reloading
-  public void update() {
+  public void invalidateAll() {
     for (RealClassPathItem p : myCache.values()) {
       p.invalidate();
     }
     myCache.clear();
+    for (CompositeClassPathItem item : myCompositeClassPathItems) {
+      item.invalidate();
+    }
+    myCompositeClassPathItems.clear();
   }
 
-  @UseCarefully
-  //this should be used only from modules to invalidate their classpaths
   public void invalidate(Set<String> paths) {
     for (String path : paths) {
-      if (myCache.containsKey(path)) {
-        myCache.remove(path).invalidate();
-      }
+      if (!myCache.containsKey(path)) continue;
+      myCache.remove(path).invalidate();
     }
   }
 
-  //--------------------------
-
-  private Map<String, RealClassPathItem> myCache = new HashMap<String, RealClassPathItem>();
-
-  private RealClassPathItem get(String path) {
-    if (!myCache.containsKey(path)) {
-      if (new File(path).isDirectory()) {
-        myCache.put(path, new FileClassPathItem(path));
-      } else {
-        myCache.put(path, new JarFileClassPathItem(path));
-      }
+  public void invalidate(IClassPathItem classPathItems) {
+    for (RealClassPathItem item : classPathItems.flatten()) {
+      invalidate(Collections.singleton(item.getPath()));
     }
+  }
 
-    return myCache.get(path);
+  public void addCompositeClassPathItem(CompositeClassPathItem item) {
+    myCompositeClassPathItems.add(item);
   }
 }

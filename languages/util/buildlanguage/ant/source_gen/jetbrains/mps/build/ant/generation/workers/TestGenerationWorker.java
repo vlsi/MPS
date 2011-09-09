@@ -678,7 +678,7 @@ public class TestGenerationWorker extends MpsWorker {
       cp.accept(new EachClassPathItemVisitor() {
         @Override
         public void visit(FileClassPathItem cpItem) {
-          classPathFiles.add(new File(cpItem.getClassPath()));
+          classPathFiles.add(new File(cpItem.getPath()));
         }
 
         @Override

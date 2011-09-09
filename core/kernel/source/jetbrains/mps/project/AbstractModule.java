@@ -16,6 +16,7 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.DependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
@@ -41,7 +42,6 @@ import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -59,6 +59,14 @@ public abstract class AbstractModule implements IModule {
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
   private ModuleScope myScope = createScope();
 
+  private final Object LOCK = new Object();
+  private Runnable myClasspathInvalidator = new Runnable() {
+    public void run() {
+      synchronized (LOCK) {
+        myCachedClassPathItem = null;
+      }
+    }
+  };
   private CompositeClassPathItem myCachedClassPathItem;
   private DependenciesManager myDependenciesManager;
 
@@ -192,23 +200,22 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<StubPath> getAllStubPaths() {
-    ArrayList<StubPath> result = new ArrayList<StubPath>();
+    LinkedHashSet<StubPath> result = new LinkedHashSet<StubPath>();
     result.addAll(getStubPaths());
     result.addAll(getOwnStubPaths());
-    return result;
+    return new ArrayList<StubPath>(result);
   }
 
   public List<StubPath> getOwnStubPaths() {
-    if (isCompileInMPS() && getClassesGen() != null) {
-      String file = getClassesGen().getPath();
-      if (file.endsWith("!/")) {
-        file = file.substring(0, file.length() - 2);
-      }
-      if (new File(file).exists()) {
-        return Collections.singletonList(new StubPath(getClassesGen().getPath(), LanguageID.JAVA_MANAGER));
-      }
+    IFile classFolder = getClassesGen();
+    if (classFolder == null) return Collections.emptyList();
+
+    String file = classFolder.getPath();
+    if (file.endsWith("!/")) {
+      file = file.substring(0, file.length() - 2);
     }
-    return Collections.emptyList();
+
+    return Collections.singletonList(new StubPath(classFolder.getPath(), LanguageID.JAVA_MANAGER));
   }
 
   public List<StubPath> getStubPaths() {
@@ -231,17 +238,10 @@ public abstract class AbstractModule implements IModule {
 
   //----classpath
 
-  public void updateClassPath() {
-    myCachedClassPathItem = null;
-  }
-
-  public void invalidateClassPath() {
-    Set<String> invalidate = new HashSet<String>();
-    for (StubPath path : getAllStubPaths()) {
-      if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
-      invalidate.add(path.getPath());
+  protected void invalidateClassPath() {
+    synchronized (LOCK) {
+      myCachedClassPathItem = null;
     }
-    ClassPathFactory.getInstance().invalidate(invalidate);
   }
 
   //todo check this code. Wy not to do it where we add jars?
@@ -292,21 +292,26 @@ public abstract class AbstractModule implements IModule {
   }
 
   public IClassPathItem getClassPathItem() {
-    if (myCachedClassPathItem == null) {
-      myCachedClassPathItem = new CompositeClassPathItem();
-      for (StubPath path : getAllStubPaths()) {
-        //look for classes only in stub dirs with JavaStub manager
-        if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
+    synchronized (LOCK) {
+      if (myCachedClassPathItem == null) {
+        myCachedClassPathItem = new CompositeClassPathItem();
+        myCachedClassPathItem.addInvalidationAction(myClasspathInvalidator);
 
-        try {
-          IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path.getPath(), this);
-          myCachedClassPathItem.add(pathItem);
-        } catch (IOException e) {
-          LOG.debug(e.getMessage());
+        for (StubPath path : getAllStubPaths()) {
+          //look for classes only in stub dirs with JavaStub manager
+          if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
+
+          try {
+            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path.getPath(), this.getModuleFqName());
+            myCachedClassPathItem.add(pathItem);
+          } catch (IOException e) {
+            LOG.error(e.getMessage());
+          }
         }
       }
+
+      return myCachedClassPathItem;
     }
-    return myCachedClassPathItem;
   }
 
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
@@ -331,7 +336,7 @@ public abstract class AbstractModule implements IModule {
     rereadModels();
 
     updatePackagedDescriptorClasspath();
-    updateClassPath();
+    invalidateClassPath();
   }
 
   public void onModuleLoad() {

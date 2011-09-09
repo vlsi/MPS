@@ -27,16 +27,19 @@ import java.util.*;
 public class CompositeClassPathItem extends AbstractClassPathItem {
   private List<IClassPathItem> myChildren = new ArrayList<IClassPathItem>();
 
-  public void add(IClassPathItem item) {
-    assert item != null;
-    myChildren.add(item);
+  public CompositeClassPathItem() {
+    ClassPathFactory.getInstance().addCompositeClassPathItem(this);
   }
 
-  public void remove(IClassPathItem item) {
-    myChildren.remove(item);
+  public void add(IClassPathItem item) {
+    assert item != null;
+    checkValidity();
+    myChildren.add(item);
+    item.addInvalidationAction(myInvalidationListener);
   }
 
   public byte[] getClass(String name) {
+    checkValidity();
     for (IClassPathItem item : myChildren) {
       byte[] result = item.getClass(name);
       if (result != null) return result;
@@ -45,6 +48,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public ClassifierKind getClassifierKind(String name) {
+    checkValidity();
     for (IClassPathItem item : myChildren) {
       ClassifierKind result = item.getClassifierKind(name);
       if (result != null) return result;
@@ -53,6 +57,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public URL getResource(String name) {
+    checkValidity();
     for (IClassPathItem item : myChildren) {
       if (item.getResource(name) != null) return item.getResource(name);
     }
@@ -60,6 +65,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public Iterable<String> getAvailableClasses(String namespace) {
+    checkValidity();
     FlattenIterable<String> result = new FlattenIterable<String>();
     for (IClassPathItem item : myChildren) {
       //todo rewrite using mapping iterable
@@ -69,6 +75,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public Iterable<String> getSubpackages(String namespace) {
+    checkValidity();
     FlattenIterable<String> result = new FlattenIterable<String>();
     for (IClassPathItem item : myChildren) {
       //todo rewrite using mapping iterable
@@ -78,6 +85,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public long getClassesTimestamp(String namespace) {
+    checkValidity();
     long result = 0;
     for (IClassPathItem item : myChildren) {
       result = Math.max(result, item.getClassesTimestamp(namespace));
@@ -86,6 +94,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public long getTimestamp() {
+    checkValidity();
     long result = 0;
     for (IClassPathItem item : myChildren) {
       result = Math.max(result, item.getTimestamp());
@@ -94,26 +103,25 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public List<IClassPathItem> getChildren() {
+    checkValidity();
     return new ArrayList<IClassPathItem>(myChildren);
   }
 
-  public List<IClassPathItem> flatten() {
-    List<IClassPathItem> result = new ArrayList<IClassPathItem>();
+  public List<RealClassPathItem> flatten() {
+    checkValidity();
+    List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
 
     for (IClassPathItem child : myChildren) {
-      if (child instanceof CompositeClassPathItem) {
-        result.addAll(((CompositeClassPathItem) child).flatten());
-      } else {
-        result.add(child);
-      }
+      result.addAll(child.flatten());
     }
 
     return result;
   }
 
   public CompositeClassPathItem optimize() {
-    List<IClassPathItem> flattenedItems = flatten();
-    Iterator<IClassPathItem> it = flattenedItems.iterator();
+    checkValidity();
+    List<RealClassPathItem> flattenedItems = flatten();
+    Iterator<RealClassPathItem> it = flattenedItems.iterator();
 
     Set<String> alreadyVisited = new HashSet<String>();
 
@@ -121,10 +129,10 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
       IClassPathItem item = it.next();
       if (item instanceof FileClassPathItem) {
         FileClassPathItem fcp = (FileClassPathItem) item;
-        if (alreadyVisited.contains(fcp.getClassPath())) {
+        if (alreadyVisited.contains(fcp.getPath())) {
           it.remove();
         } else {
-          alreadyVisited.add(fcp.getClassPath());
+          alreadyVisited.add(fcp.getPath());
         }
       }
 
@@ -149,10 +157,12 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
   @Override
   public void accept(IClassPathItemVisitor visitor) {
+    checkValidity();
     visitor.visit(this);
   }
 
   public String toString() {
+    checkValidity();
     StringBuilder result = new StringBuilder("classpath {\n");
 
     for (IClassPathItem child : myChildren) {
@@ -164,4 +174,10 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     result.append("}");
     return result.toString();
   }
+
+  private final Runnable myInvalidationListener = new Runnable() {
+    public void run() {
+      callInvalidationListeners();
+    }
+  };
 }

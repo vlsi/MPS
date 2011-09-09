@@ -27,10 +27,7 @@ import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ClassPathFactory;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -60,7 +57,15 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private ModelLoadingState myNamesLoadingState = ModelLoadingState.NOT_LOADED;
 
-  private IClassPathItem myLanguageRuntimeClasspathCache;
+  private final Object LOCK = new Object();
+  private Runnable myClasspathInvalidator = new Runnable() {
+    public void run() {
+      synchronized (LOCK) {
+        myLanguageRuntimeClasspathCache = null;
+      }
+    }
+  };
+  private CompositeClassPathItem myLanguageRuntimeClasspathCache;
 
   private CachesInvalidator myCachesInvalidator;
 
@@ -167,21 +172,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       generator.dispose();
     }
 
-    rereadModels();
-    updatePackagedDescriptorClasspath();
-    updateClassPath();
+    super.reloadAfterDescriptorChange();
     revalidateGenerators();
-  }
-
-  IFile newDescriptorFileByNewName(String newNamespace) {
-    IFile dir = myDescriptorFile.getParent();
-    String oldShortFileName = NameUtil.shortNameFromLongName(myDescriptorFile.getPath());
-    String newPathSuffix = NameUtil.shortNameFromLongName(newNamespace);
-    if ((dir.getPath() + MPSExtentions.DOT_LANGUAGE).endsWith(oldShortFileName)) {
-      dir = dir.getParent();
-      newPathSuffix = newPathSuffix + File.separatorChar + newPathSuffix;
-    }
-    return dir.getDescendant(newPathSuffix + MPSExtentions.DOT_LANGUAGE);
   }
 
   public List<ModuleReference> getExtendedLanguageRefs() {
@@ -650,45 +642,36 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public void updateClassPath() {
-    super.updateClassPath();
-    myLanguageRuntimeClasspathCache = null;
-  }
-
-  public void invalidateClassPath() {
+  protected void invalidateClassPath() {
     super.invalidateClassPath();
-
-    Set<String> invalidate = new HashSet<String>();
-    for (StubPath path : getRuntimeStubPaths()) {
-      if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
-      invalidate.add(path.getPath());
+    synchronized (LOCK) {
+      myLanguageRuntimeClasspathCache = null;
     }
-
-    ClassPathFactory.getInstance().invalidate(invalidate);
   }
 
   public IClassPathItem getLanguageRuntimeClasspath() {
-    if (myLanguageRuntimeClasspathCache == null) {
-      CompositeClassPathItem result = new CompositeClassPathItem();
-      for (ModelRoot entry : getRuntimeModelsEntries()) {
-        String s = entry.getPath();
-        try {
-          IFile file = FileSystem.getInstance().getFileByPath(s);
-          if (!file.exists()) {
-            LOG.debug("Can't find " + s);
-            continue;
-          }
+    synchronized (LOCK) {
+      if (myLanguageRuntimeClasspathCache == null) {
+        myLanguageRuntimeClasspathCache = new CompositeClassPathItem();
+        myLanguageRuntimeClasspathCache.addInvalidationAction(myClasspathInvalidator);
+        for (ModelRoot entry : getRuntimeModelsEntries()) {
+          String s = entry.getPath();
+          try {
+            IFile file = FileSystem.getInstance().getFileByPath(s);
+            if (!file.exists()) {
+              LOG.debug("Can't find " + s);
+              continue;
+            }
 
-          result.add(ClassPathFactory.getInstance().createFromPath(s, this));
-        } catch (IOException e) {
-          LOG.debug(e.getMessage());
+            myLanguageRuntimeClasspathCache.add(ClassPathFactory.getInstance().createFromPath(s, this.getModuleFqName()));
+          } catch (IOException e) {
+            LOG.debug(e.getMessage());
+          }
         }
       }
 
-      myLanguageRuntimeClasspathCache = result;
+      return myLanguageRuntimeClasspathCache;
     }
-
-    return myLanguageRuntimeClasspathCache;
   }
 
   //todo check this code. Wy not to do it where we add jars?
