@@ -17,6 +17,7 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -41,8 +42,8 @@ public class ClassPathFactory {
   public RealClassPathItem createFromPath(String path, @Nullable String requestor) throws IOException {
     if (myCache.containsKey(path)) return myCache.get(path);
 
-    File file = new File(path);
-    boolean exists = file.exists();
+    boolean jared = path.contains("!/");
+    boolean exists = jared ? FileSystem.getInstance().getFileByPath(path).exists() : new File(path).exists();
     if (!exists) {
       String moduleString = requestor == null ? "" : (" in " + requestor.toString());
       String message = "Can't load class path item " + path + moduleString + "." + (new File(path).isDirectory() ? " Execute make in IDEA." : "");
@@ -52,7 +53,7 @@ public class ClassPathFactory {
       return item;
     }
 
-    if (file.isDirectory()) {
+    if (jared || new File(path).isDirectory()) {
       myCache.put(path, new FileClassPathItem(path));
     } else {
       myCache.put(path, new JarFileClassPathItem(path));
