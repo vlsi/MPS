@@ -121,8 +121,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     List<SolutionDescriptor> solutionDescriptors = createStubSolutionDescriptors(languageDescriptor);
 
-    addDepsOnStubSolutions(languageDescriptor, solutionDescriptors);
-
     language.setLanguageDescriptor(languageDescriptor, false);
     repository.addModule(language, moduleOwner);
 
@@ -152,26 +150,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       result.add(descriptor);
     }
     return result;
-  }
-
-  private static void addDepsOnStubSolutions(LanguageDescriptor languageDescriptor, List<SolutionDescriptor> solutionDescriptors) {
-    for (SolutionDescriptor sd : solutionDescriptors) {
-      List<Dependency> dependencies = languageDescriptor.getDependencies();
-
-      boolean hasDependency = false;
-      for (Dependency ld : dependencies) {
-        if (ObjectUtils.equals(ld.getModuleRef(), sd.getModuleReference())) {
-          hasDependency = true;
-          break;
-        }
-      }
-      if (hasDependency) continue;
-
-      Dependency dep = new Dependency();
-      dep.setModuleRef(sd.getModuleReference());
-      dep.setReexport(true);
-      dependencies.add(dep);
-    }
   }
 
   protected ModuleDependenciesManager createDependenciesManager() {

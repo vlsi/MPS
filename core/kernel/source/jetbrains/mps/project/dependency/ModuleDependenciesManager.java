@@ -18,10 +18,14 @@ package jetbrains.mps.project.dependency;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelDescriptor;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class ModuleDependenciesManager<T extends AbstractModule> implements DependenciesManager {
   protected T myModule;
@@ -108,25 +112,35 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     dependencies.add(myModule);
 
     for (Dependency dependency : myModule.getDependencies()) {
-      if(reexportOnly && !dependency.isReexport()) continue;
+      if (reexportOnly && !dependency.isReexport()) continue;
 
       IModule m = MPSModuleRepository.getInstance().getModule(dependency.getModuleRef());
       if (m == null) continue;
 
-      if(!dependencies.contains(m)) {
+      if (!dependencies.contains(m)) {
         m.getDependenciesManager().collectVisibleModules(dependencies, true);
       }
     }
 
-    if(reexportOnly) return;
+    if (reexportOnly) return;
 
     for (ModuleReference ref : myModule.getUsedDevkitReferences()) {
       DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
       if (dk == null) continue;
 
       for (Solution solution : dk.getAllExportedSolutions()) {
-        if(!dependencies.contains(solution)) {
+        if (!dependencies.contains(solution)) {
           solution.getDependenciesManager().collectVisibleModules(dependencies, true);
+        }
+      }
+    }
+
+    for (Language l : getAllUsedLanguages()) {
+      for (StubSolution ss : l.getModuleDescriptor().getStubSolutions()) {
+        ModuleReference solutionRef = new ModuleReference(ss.getName(), ss.getId());
+        Solution s = MPSModuleRepository.getInstance().getSolution(solutionRef);
+        if (!dependencies.contains(s)){
+          s.getDependenciesManager().collectVisibleModules(dependencies, true);
         }
       }
     }
