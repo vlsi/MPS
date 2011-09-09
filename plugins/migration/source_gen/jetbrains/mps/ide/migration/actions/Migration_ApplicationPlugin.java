@@ -25,6 +25,7 @@ public class Migration_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new BuildAllLanguageDescriptors_Action());
     addAction(new BuildAllStructures_Action());
     addAction(new FindDuplicatedStubs_Action());
+    addAction(new FixMissingImportsInGlobalScope_Action());
     addAction(new FixModuleDependencies_Action());
     addAction(new LoadNonStubModels_Action());
     addAction(new MigrateStubs_Action());
