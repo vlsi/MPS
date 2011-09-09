@@ -19,7 +19,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
 
@@ -90,26 +89,32 @@ public abstract class DefaultScope extends BaseScope {
     ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     synchronized (LOCK) {
       initialize();
-      for (IModule m:myVisibleModules){
+      for (IModule m : myVisibleModules) {
         result.addAll(m.getHiddenModelDescriptors());
       }
     }
     return result;
   }
 
-  public Iterable<SModelDescriptor> getModelDescriptors() {
-    LinkedHashSet<SModelDescriptor> uniqueResult = new LinkedHashSet<SModelDescriptor>();
+  //todo replace with iterable
+  public List<SModelDescriptor> getModelDescriptors() {
+    ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     synchronized (LOCK) {
       initialize();
-      for(IModule m : myVisibleModules) {
-        uniqueResult.addAll(m.getOwnModelDescriptors());
+      for (SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors()) {
+        IModule module = d.getModule();
+        if (myVisibleModules.contains(module)) {
+          result.add(d);
+        }
       }
 
       for (Language l : myUsedLanguages) {
-        uniqueResult.addAll(l.getAccessoryModels());
+        for (SModelDescriptor accessory : l.getAccessoryModels()) {
+          result.add(accessory);
+        }
       }
     }
-    return uniqueResult;
+    return result;
   }
 
   //todo replace with iterable
@@ -164,95 +169,47 @@ public abstract class DefaultScope extends BaseScope {
 
       myInitializationInProgress = true;
 
-      myVisibleModules = new HashSet<IModule>();
-      myUsedLanguages = new HashSet<Language>();
-      myUsedDevkits = new HashSet<DevKit>();
-
       Set<IModule> initialModules = getInitialModules();
-      myVisibleModules.addAll(initialModules);
-      for (IModule module : initialModules) {
-        for (Dependency d : module.getDependencies()) {
-          IModule dependency = MPSModuleRepository.getInstance().getModule(d.getModuleRef());
-          if (dependency != null) {
-            myVisibleModules.add(dependency);
-          }
-        }
-      }
-
-      myUsedLanguages.addAll(getInitialUsedLanguages());
-
-      for (IModule m : initialModules) {
-        if (m instanceof DevKit) {
-          DevKit dk = (DevKit) m;
-          myUsedDevkits.add(dk);
-          myUsedDevkits.addAll(dk.getAllExtendedDevkits());
-        }
-
-        for (DevKit dk : ModuleUtil.refsToDevkits(m.getUsedDevkitReferences())) {
-          myUsedDevkits.add(dk);
-          myUsedDevkits.addAll(dk.getAllExtendedDevkits());
-        }
-      }
-
-      for (DevKit dk : myUsedDevkits) {
-        myUsedLanguages.addAll(dk.getAllExportedLanguages());
-        myVisibleModules.addAll(dk.getAllExportedSolutions());
-      }
-
-      boolean changed = true;
-      while (changed) {
-        changed = false;
-
-        for (IModule module : new HashSet<IModule>(myVisibleModules)) {
-          if (module instanceof Language) {
-            Language language = (Language) module;
-            for (Language l : language.getExtendedLanguages()) {
-              if (!myVisibleModules.contains(l)) {
-                myVisibleModules.add(l);
-                changed = true;
-              }
-            }
-          }
-
-          for (Dependency dep : module.getDependencies()) {
-            if (dep.isReexport()) {
-              IModule dependency = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
-              if (dependency != null) {
-                if (!myVisibleModules.contains(dependency)) {
-                  myVisibleModules.add(dependency);
-                  changed = true;
-                }
-              } else {
-                LOG.error("Can't find module " + dep.getModuleRef().getModuleFqName() + " in " + this);
-              }
-            }
-          }
-        }
-
-        for (Language language : new ArrayList<Language>(myUsedLanguages)) {
-          for (Language extendedLanguage : language.getExtendedLanguages()) {
-            if (extendedLanguage == null) {
-              LOG.error("One of extended language of " + language.getModuleFqName() + " in " + this + " is null.");
-            } else if (!myUsedLanguages.contains(extendedLanguage)) {
-              myUsedLanguages.add(extendedLanguage);
-              changed = true;
-            }
-          }
-
-          for (Dependency dep : language.getDependencies()) {
-            IModule dependency = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
-            if (dependency != null) {
-              if (dep.isReexport() && !myVisibleModules.contains(dependency)) {
-                myVisibleModules.add(dependency);
-                changed = true;
-              }
-            }
-          }
-        }
-      }
+      fillInDevkits(initialModules);
+      fillInLanguages();
+      fillInVisible(initialModules);
 
       myInitializationInProgress = false;
       myInitialized = true;
+    }
+  }
+
+  private void fillInVisible(Set<IModule> initialModules) {
+    myVisibleModules = new HashSet<IModule>();
+    for (IModule module : initialModules) {
+      module.getDependenciesManager().collectVisibleModules(myVisibleModules, false);
+    }
+  }
+
+  private void fillInLanguages() {
+    myUsedLanguages = new HashSet<Language>();
+    myUsedLanguages.addAll(getInitialUsedLanguages());
+    for (DevKit dk : myUsedDevkits) {
+      myUsedLanguages.addAll(dk.getAllExportedLanguages());
+    }
+    for (Language l : new ArrayList<Language>(myUsedLanguages)) {
+      myUsedLanguages.addAll(l.getAllExtendedLanguages());
+    }
+  }
+
+  private void fillInDevkits(Set<IModule> initialModules) {
+    myUsedDevkits = new HashSet<DevKit>();
+    for (IModule m : initialModules) {
+      if (m instanceof DevKit) {
+        DevKit dk = (DevKit) m;
+        myUsedDevkits.add(dk);
+        myUsedDevkits.addAll(dk.getAllExtendedDevkits());
+      }
+
+      for (DevKit dk : ModuleUtil.refsToDevkits(m.getUsedDevkitReferences())) {
+        myUsedDevkits.add(dk);
+        myUsedDevkits.addAll(dk.getAllExtendedDevkits());
+      }
     }
   }
 
