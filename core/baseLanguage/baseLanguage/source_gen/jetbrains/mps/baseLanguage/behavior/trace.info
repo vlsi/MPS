@@ -7273,16 +7273,16 @@
     <unitInfo nodeId="1430303182963994558" fileName="AbstractStaticContainerProcessor.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractStaticContainerProcessor" />
   </root>
   <root nodeId="1430303182963994588">
-    <nodeInfo nodeId="1430303182963994589" fileName="IStaticContainerProcessor.java" startLine="8" startPosition="44" endLine="9" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewMethod#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1430303182963994592" fileName="IStaticContainerProcessor.java" startLine="9" startPosition="33" endLine="10" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMethod#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1430303182963994597" fileName="IStaticContainerProcessor.java" startLine="10" startPosition="38" endLine="11" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodCall#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1430303182963994589" fileName="IStaticContainerProcessor.java" startLine="8" startPosition="44" endLine="9" endPosition="33" />
-    <scopeInfo nodeId="1430303182963994592" fileName="IStaticContainerProcessor.java" startLine="9" startPosition="33" endLine="10" endPosition="38">
-      <varInfo nodeId="1430303182963994595" varName="method" />
+    <nodeInfo nodeId="7279049670023193817" fileName="IStaticContainerProcessor.java" startLine="8" startPosition="44" endLine="9" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewMethod#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7279049670023193811" fileName="IStaticContainerProcessor.java" startLine="9" startPosition="33" endLine="10" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMethod#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7279049670023193822" fileName="IStaticContainerProcessor.java" startLine="10" startPosition="38" endLine="11" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodCall#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="7279049670023193817" fileName="IStaticContainerProcessor.java" startLine="8" startPosition="44" endLine="9" endPosition="33" />
+    <scopeInfo nodeId="7279049670023193811" fileName="IStaticContainerProcessor.java" startLine="9" startPosition="33" endLine="10" endPosition="38">
+      <varInfo nodeId="7279049670023193815" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="1430303182963994597" fileName="IStaticContainerProcessor.java" startLine="10" startPosition="38" endLine="11" endPosition="82">
-      <varInfo nodeId="1430303182963994601" varName="parameteres" />
-      <varInfo nodeId="1430303182963994599" varName="methodDeclaration" />
+    <scopeInfo nodeId="7279049670023193822" fileName="IStaticContainerProcessor.java" startLine="10" startPosition="38" endLine="11" endPosition="82">
+      <varInfo nodeId="7279049670023193831" varName="parameteres" />
+      <varInfo nodeId="7279049670023193827" varName="methodDeclaration" />
     </scopeInfo>
     <unitInfo nodeId="1430303182963994588" fileName="IStaticContainerProcessor.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IStaticContainerProcessor" />
   </root>
