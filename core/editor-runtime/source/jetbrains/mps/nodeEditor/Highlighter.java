@@ -483,6 +483,11 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
           SNode node = editor.getEditedNode();
           if (node == null || node.isDisposed()) return false;
+          if (node.getModel().getModelDescriptor() == null) {
+            // asking runLoPrioRead() implementation to re-execute this task later:
+            // editor was not updated in accordance with last modelReload event yet.
+            return null;
+          }
 
           EditorContext editorContext = editor.getEditorContext();
           if (editorContext != null) {

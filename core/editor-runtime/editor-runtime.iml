@@ -23,6 +23,7 @@
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="intentions-runtime" />
     <orderEntry type="library" name="Trove" level="project" />
+    <orderEntry type="module" module-name="make-runtime" />
   </component>
 </module>
 
