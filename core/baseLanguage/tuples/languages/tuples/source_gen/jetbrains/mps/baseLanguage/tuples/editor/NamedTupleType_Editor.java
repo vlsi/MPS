@@ -339,10 +339,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() > 0;
   }
 
-  private static boolean renderingCondition_2ojjgh_a0a0c0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
-  }
-
   public static class ReplaceWith_NamedTupleType_cellMenu_a0a1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_NamedTupleType_cellMenu_a0a1a() {
     }
@@ -457,6 +453,10 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       AbstractCellProvider provider = new _GenericDeclaration_TypeVariables_Component(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
       return editorCell;
+    }
+
+    private static boolean renderingCondition_2ojjgh_a0a0c0a(SNode node, EditorContext editorContext, IScope scope) {
+      return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
     }
   }
 
