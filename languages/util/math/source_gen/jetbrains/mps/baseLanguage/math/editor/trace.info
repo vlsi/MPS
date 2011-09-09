@@ -1725,7 +1725,7 @@
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="56" startPosition="58" endLine="56" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="73" startPosition="58" endLine="73" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="90" startPosition="58" endLine="90" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="141" startPosition="71" endLine="141" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="150" startPosition="71" endLine="150" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="30" startPosition="82" endLine="31" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="34" startPosition="89" endLine="35" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1798,29 +1798,29 @@
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="119" startPosition="72" endLine="120" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="120" startPosition="78" endLine="121" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="122" startPosition="10" endLine="123" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="127" startPosition="33" endLine="128" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="131" startPosition="69" endLine="132" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="135" startPosition="81" endLine="136" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="139" startPosition="93" endLine="140" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="140" startPosition="70" endLine="141" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="141" startPosition="71" endLine="142" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="150" startPosition="47" endLine="151" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="130" startPosition="47" endLine="131" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="136" startPosition="33" endLine="137" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="140" startPosition="69" endLine="141" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="144" startPosition="81" endLine="145" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="148" startPosition="93" endLine="149" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="149" startPosition="70" endLine="150" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="150" startPosition="71" endLine="151" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="72" startPosition="26" endLine="74" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="89" startPosition="26" endLine="91" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="146" startPosition="126" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_BinaryOperation_cellMenu_a0b0_1#()V" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="126" startPosition="126" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_BinaryOperation_cellMenu_a0b0_1#()V" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="54" startPosition="26" endLine="57" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="126" startPosition="69" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_sl2ryj_a0a#()V" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="135" startPosition="69" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_sl2ryj_a0a#()V" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="25" startPosition="70" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="130" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="134" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="149" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="139" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="143" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="59" startPosition="59" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="76" startPosition="59" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="93" startPosition="59" endLine="99" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="108" startPosition="50" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="117" startPosition="59" endLine="123" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="138" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_sl2ryj_a0a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="147" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_sl2ryj_a0a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_sl2ryj_a_0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="107" startPosition="58" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="33" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_sl2ryj_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -1832,8 +1832,8 @@
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="56" startPosition="58" endLine="56" endPosition="58" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="73" startPosition="58" endLine="73" endPosition="58" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="90" startPosition="58" endLine="90" endPosition="58" />
-    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="141" startPosition="71" endLine="141" endPosition="71" />
-    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="147" startPosition="58" endLine="147" endPosition="58" />
+    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="127" startPosition="58" endLine="127" endPosition="58" />
+    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="150" startPosition="71" endLine="150" endPosition="71" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="30" startPosition="82" endLine="31" endPosition="65" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="35" startPosition="96" endLine="36" endPosition="48" />
@@ -1842,29 +1842,29 @@
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="38" startPosition="88" endLine="39" endPosition="80" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="44" startPosition="96" endLine="45" endPosition="50" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="45" startPosition="50" endLine="46" endPosition="80" />
-    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="127" startPosition="33" endLine="128" endPosition="14" />
-    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="131" startPosition="69" endLine="132" endPosition="67" />
-    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="135" startPosition="81" endLine="136" endPosition="67" />
-    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="150" startPosition="47" endLine="151" endPosition="68" />
+    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="130" startPosition="47" endLine="131" endPosition="68" />
+    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="136" startPosition="33" endLine="137" endPosition="14" />
+    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="140" startPosition="69" endLine="141" endPosition="67" />
+    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="144" startPosition="81" endLine="145" endPosition="67" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="72" startPosition="26" endLine="74" endPosition="73" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="89" startPosition="26" endLine="91" endPosition="73" />
-    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="146" startPosition="126" endLine="148" endPosition="5" />
+    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="126" startPosition="126" endLine="128" endPosition="5" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="54" startPosition="26" endLine="57" endPosition="73" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="60" startPosition="35" endLine="63" endPosition="105" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="77" startPosition="35" endLine="80" endPosition="105" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="94" startPosition="35" endLine="97" endPosition="105" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="118" startPosition="35" endLine="121" endPosition="105" />
-    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="126" startPosition="69" endLine="129" endPosition="5" />
-    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="139" startPosition="93" endLine="142" endPosition="24" />
+    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="135" startPosition="69" endLine="138" endPosition="5" />
+    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="148" startPosition="93" endLine="151" endPosition="24" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="25" startPosition="70" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="43" startPosition="91" endLine="47" endPosition="22" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="109" startPosition="5" endLine="113" endPosition="48" />
-    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="149" startPosition="0" endLine="153" endPosition="0" />
+    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="139" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="143" startPosition="0" endLine="147" endPosition="0" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="34" startPosition="89" endLine="40" endPosition="22" />
-    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="138" startPosition="0" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="147" startPosition="0" endLine="153" endPosition="0" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="107" startPosition="58" endLine="114" endPosition="5" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="33" startPosition="0" endLine="42" endPosition="0" />
@@ -1877,8 +1877,8 @@
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="49" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="102" startPosition="95" endLine="123" endPosition="22" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="101" startPosition="0" endLine="125" endPosition="0" />
-    <unitInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="146" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor$ReplaceWith_BinaryOperation_cellMenu_a0b0_1" />
-    <unitInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="126" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor$_Inline_sl2ryj_a0a" />
+    <unitInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="126" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor$ReplaceWith_BinaryOperation_cellMenu_a0b0_1" />
+    <unitInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="135" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor$_Inline_sl2ryj_a0a" />
     <unitInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="25" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor" />
   </root>
   <root nodeId="1418611629041138657">

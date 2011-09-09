@@ -16,7 +16,6 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.DependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
@@ -33,7 +32,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.VcsMigrationUtil;
@@ -258,11 +257,20 @@ public abstract class AbstractModule implements IModule {
     IFile bundleParent = bundleHomeFile.getParent();
     if (bundleParent == null || !bundleParent.exists()) return;
 
+    String packagedSourcesPath = bundleHomeFile.getPath();
+    if (packagedSourcesPath.endsWith(".jar")) {
+      packagedSourcesPath = (packagedSourcesPath.substring(0, packagedSourcesPath.length() - 4) + "-src.jar!/").toLowerCase();
+    } else {
+      packagedSourcesPath = null;
+    }
+
     List<ModelRoot> toRemove = new ArrayList<ModelRoot>();
     for (ModelRoot sme : descriptor.getStubModelEntries()) {
       String path = sme.getPath();
-      String shrinked = MacrosFactory.moduleDescriptor(this).shrinkPath(path, getDescriptorFile());
-      if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
+      if (packagedSourcesPath == null || !FileUtil.getCanonicalPath(path).toLowerCase().startsWith(packagedSourcesPath)) {
+        String shrinked = MacrosFactory.moduleDescriptor(this).shrinkPath(path, getDescriptorFile());
+        if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
+      }
       toRemove.add(sme);
     }
     descriptor.getStubModelEntries().removeAll(toRemove);

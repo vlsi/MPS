@@ -665,7 +665,7 @@ public class TestMain {
               );
 
               if (myIsRunnable) {
-                diffReports.addAll(generationHandler.createDiffReports());
+                diffReports.addAll(generationHandler.createDiffReports(null));
               }
               List<SModel> outputModels = new ArrayList<SModel>();
               outputModels.addAll(generationHandler.getOutputModels());

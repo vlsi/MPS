@@ -5552,7 +5552,15 @@
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7795897115019499680" resolveInfo="myGenerationHandler" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7795897115019501600">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pi7p.~DiffGenerationHandler%dcreateDiffReports()%cjava%dutil%dList" resolveInfo="createDiffReports" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pi7p.~DiffGenerationHandler%dcreateDiffReports(java%dutil%dSet)%cjava%dutil%dList" resolveInfo="createDiffReports" />
+                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3449270742160235811">
+                                      <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3449270742160235810">
+                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c123.~MpsWorker%dmyWhatToDo" resolveInfo="myWhatToDo" />
+                                      </node>
+                                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3449270742160235815">
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="c123.~WhatToDo%dgetExcludedFromDiffFiles()%cjava%dutil%dSet" resolveInfo="getExcludedFromDiffFiles" />
+                                      </node>
+                                    </node>
                                   </node>
                                 </node>
                               </node>

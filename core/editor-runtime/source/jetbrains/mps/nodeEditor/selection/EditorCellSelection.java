@@ -166,6 +166,11 @@ public class EditorCellSelection implements SingularSelection {
   }
 
   @Override
+  public void ensureVisible() {
+    myEditorCell.getEditor().scrollToCell(myEditorCell);
+  }
+
+  @Override
   public void paintSelection(Graphics2D g) {
     //To change body of implemented methods use File | Settings | File Templates.
   }

@@ -247,6 +247,18 @@ public class GenerationSession {
     }
 
     // -- prepare generator
+    Collections.sort(mappingConfigurations, new Comparator<TemplateMappingConfiguration>() {
+      @Override
+      public int compare(TemplateMappingConfiguration o1, TemplateMappingConfiguration o2) {
+        TemplateModel m1 = o1.getModel();
+        TemplateModel m2 = o2.getModel();
+        int result = m1 == m2 ? 0 : m1.getLongName().compareTo(m2.getLongName());
+        if(result != 0) {
+          return result;
+        }
+        return o1.getName().compareTo(o2.getName());
+      }
+    });
     RuleManager ruleManager = new RuleManager(myGenerationPlan, mappingConfigurations);
 
     SModel outputModel = executeMajorStepInternal(inputModel, ruleManager);

@@ -135,4 +135,9 @@ public abstract class AbstractMultipleSelection implements MultipleSelection {
       cell.setSelected(wasSelected);
     }
   }
+
+  @Override
+  public void ensureVisible() {
+    getEditorComponent().scrollToCell(getLastCell());
+  }
 }

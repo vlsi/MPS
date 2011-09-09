@@ -18,9 +18,9 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -123,6 +123,15 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public static class ReplaceWith_BinaryOperation_cellMenu_a0b0_1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BinaryOperation_cellMenu_a0b0_1() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.structure.BinaryOperation";
+    }
+  }
+
   public static class _Inline_sl2ryj_a0a extends InlineCellProvider {
     public _Inline_sl2ryj_a0a() {
       super();
@@ -140,15 +149,6 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
       AbstractCellProvider provider = new MathContextEditorPart(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
       return editorCell;
-    }
-  }
-
-  public static class ReplaceWith_BinaryOperation_cellMenu_a0b0_1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BinaryOperation_cellMenu_a0b0_1() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.structure.BinaryOperation";
     }
   }
 }

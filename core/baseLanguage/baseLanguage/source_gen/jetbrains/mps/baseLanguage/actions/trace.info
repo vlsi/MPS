@@ -2352,9 +2352,9 @@
     </scopeInfo>
   </root>
   <root nodeId="7405906576723769513">
-    <nodeInfo nodeId="7405906576723794400" fileName="QueriesGenerated.java" startLine="1959" startPosition="94" endLine="1960" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7405906576723794400" fileName="QueriesGenerated.java" startLine="1959" startPosition="94" endLine="1960" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7405906576723794384" fileName="QueriesGenerated.java" startLine="1963" startPosition="57" endLine="1967" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="7405906576723793357" fileName="QueriesGenerated.java" startLine="1959" startPosition="94" endLine="1960" endPosition="121" />
+    <scopeInfo nodeId="7405906576723793357" fileName="QueriesGenerated.java" startLine="1959" startPosition="94" endLine="1960" endPosition="174" />
     <scopeInfo nodeId="7405906576723793364" fileName="QueriesGenerated.java" startLine="1963" startPosition="57" endLine="1967" endPosition="14" />
   </root>
   <root nodeId="9072722389861457598">

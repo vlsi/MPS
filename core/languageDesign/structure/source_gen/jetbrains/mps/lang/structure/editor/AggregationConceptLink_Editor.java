@@ -15,15 +15,15 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_CustomChildConcept;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_CustomChildConcept;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AggregationConceptLink_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -81,6 +81,15 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public static class AggregationConceptLink_target_cellMenu_a0c0 extends AbstractCellMenuPart_ReplaceChild_CustomChildConcept {
+    public AggregationConceptLink_target_cellMenu_a0c0() {
+    }
+
+    public SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext operationContext) {
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptLinkDeclaration", false), "targetType", false);
+    }
+  }
+
   public static class _Inline_ivlr8m_a0a extends InlineCellProvider {
     public _Inline_ivlr8m_a0a() {
       super();
@@ -116,15 +125,6 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
-    }
-  }
-
-  public static class AggregationConceptLink_target_cellMenu_a0c0 extends AbstractCellMenuPart_ReplaceChild_CustomChildConcept {
-    public AggregationConceptLink_target_cellMenu_a0c0() {
-    }
-
-    public SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext operationContext) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptLinkDeclaration", false), "targetType", false);
     }
   }
 }

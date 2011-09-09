@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -29,6 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class ConceptCondition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -110,6 +110,22 @@ public class ConceptCondition_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public static class ConceptCondition_name_postfixCellMenu_a0e0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public ConceptCondition_name_postfixCellMenu_a0e0() {
+    }
+
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
+      List<String> result;
+      if ((SLinkOperations.getTarget(node, "concept", false) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(node, "concept", false), "name") != null) {
+        String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "concept", false), "name"));
+        result = NameUtil.splitByCamels(name);
+      } else {
+        result = ListSequence.fromList(new ArrayList<String>());
+      }
+      return result;
+    }
+  }
+
   public static class _Inline_hrb2do_a2a extends InlineCellProvider {
     public _Inline_hrb2do_a2a() {
       super();
@@ -140,22 +156,6 @@ public class ConceptCondition_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
-    }
-  }
-
-  public static class ConceptCondition_name_postfixCellMenu_a0e0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public ConceptCondition_name_postfixCellMenu_a0e0() {
-    }
-
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> result;
-      if ((SLinkOperations.getTarget(node, "concept", false) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(node, "concept", false), "name") != null) {
-        String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "concept", false), "name"));
-        result = NameUtil.splitByCamels(name);
-      } else {
-        result = ListSequence.fromList(new ArrayList<String>());
-      }
-      return result;
     }
   }
 }
