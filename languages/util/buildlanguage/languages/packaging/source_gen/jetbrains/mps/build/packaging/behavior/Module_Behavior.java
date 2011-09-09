@@ -72,7 +72,8 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getClassPathDirectories_1213877515083(SNode thisNode, boolean includeHomeLib) {
-    List<StubPath> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getAllStubPaths();
+    AbstractModule module = (AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode);
+    List<StubPath> paths = Module_Behavior.call_getClassPathExcludingIdea_2000252915626233691(thisNode, module);
     return Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ListSequence.fromList(paths).where(new IWhereFilter<StubPath>() {
       public boolean accept(StubPath it) {
         return LanguageID.JAVA_MANAGER.equals(it.getManager()) || it.getPath().endsWith(".jar");
@@ -114,7 +115,7 @@ public class Module_Behavior {
           IModule runtimeDependencyModule = MPSModuleRepository.getInstance().getModule(runtimeDependency);
           if (runtimeDependencyModule instanceof Solution) {
             // TODO proper module in holder? 
-            ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Solution) runtimeDependencyModule).getAllStubPaths())).toListSequence(), true)));
+            ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, Module_Behavior.call_getClassPathExcludingIdea_2000252915626233691(thisNode, (Solution) runtimeDependencyModule))).toListSequence(), true)));
           }
         }
       }
@@ -225,6 +226,13 @@ public class Module_Behavior {
         return it.getPath().replace(File.separator, Util.SEPARATOR);
       }
     });
+  }
+
+  public static List<StubPath> call_getClassPathExcludingIdea_2000252915626233691(SNode thisNode, AbstractModule module) {
+    return (module.isCompileInMPS() ?
+      module.getAllStubPaths() :
+      module.getStubPaths()
+    );
   }
 
   public static List<IModule> getAllAvailableModules_1222444746697() {
