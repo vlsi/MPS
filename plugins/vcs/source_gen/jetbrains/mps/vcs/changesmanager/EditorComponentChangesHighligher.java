@@ -27,6 +27,7 @@ import jetbrains.mps.vcs.diff.oldchanges.OldChangeType;
 import jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.OldAddRootChange;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -215,8 +216,12 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     synchronized (myDisposedLock) {
       myDisposed = true;
       try {
-        for (OldChange change : SetSequence.fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence()) {
-          unhighlightChange(change);
+        synchronized (myChangesMessages) {
+          SetSequence.fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence().visitAll(new IVisitor<OldChange>() {
+            public void visit(OldChange ch) {
+              unhighlightChange(ch);
+            }
+          });
         }
         getHighlightManager().clearForOwner(this);
         myEditorComponent.getLeftEditorHighlighter().removeFoldingAreaPainter(myFoldingAreaPainter);
