@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.SplitCommandInParts_Test" file="SplitCommandInParts_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode extendsClassName="junit.framework.TestCase" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.impl.configurations.tests.TestConfigurationsMigration_Test" file="TestConfigurationsMigration_Test.java">
     <classNode dependClassName="com.intellij.execution.configurations.UnknownConfigurationType" />
     <classNode dependClassName="com.intellij.execution.impl.RunManagerImpl" />

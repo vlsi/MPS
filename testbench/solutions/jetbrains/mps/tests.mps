@@ -1771,6 +1771,9 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="76698190606059890">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="q7wr.7141662564075383485" resolveInfo="TestConfigurationsMigration" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="6709861905465286301">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="q7wr.677474076745506235" resolveInfo="SplitCommandInParts_Test" />
+    </node>
   </root>
   <root id="3034322180552461514">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="3034322180552461515">
