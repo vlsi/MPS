@@ -190,6 +190,8 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     return Boolean.TRUE == myReadEnabledFlag.get();
   }
 
+  public void dispose() {}
+
   private static class ReentrantReadWriteLockEx extends ReentrantReadWriteLock {
 
     public ReentrantReadWriteLockEx() {
