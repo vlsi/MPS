@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.ModuleId;
@@ -110,8 +110,8 @@ public class Module_Behavior {
     if (module instanceof Language) {
       List<SNode> result = ListSequence.fromList(Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Language) module).getRuntimeStubPaths())).distinct().toListSequence(), true, includeHomeLib)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, true))).toListSequence();
       if (includeRuntimeSolutions) {
-        for (Dependency runtimeDependency : ListSequence.fromList(((Language) module).getRuntimeDependencies())) {
-          IModule runtimeDependencyModule = MPSModuleRepository.getInstance().getModule(runtimeDependency.getModuleRef());
+        for (ModuleReference runtimeDependency : ListSequence.fromList(((Language) module).getRuntimeModulesReferences())) {
+          IModule runtimeDependencyModule = MPSModuleRepository.getInstance().getModule(runtimeDependency);
           if (runtimeDependencyModule instanceof Solution) {
             // TODO proper module in holder? 
             ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Solution) runtimeDependencyModule).getAllStubPaths())).toListSequence(), true)));

@@ -43,6 +43,7 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
         ProjectActions_ActionGroup.this.addAction(action);
       }
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeProjectImports_Action");
+      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddMissingImportsInProject_Action");
       ProjectActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(ProjectActions_ActionGroup.LABEL_ID_compileJava);

@@ -83,8 +83,8 @@
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="101" startPosition="70" endLine="102" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="102" startPosition="60" endLine="103" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="103" startPosition="120" endLine="104" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="104" startPosition="133" endLine="105" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="105" startPosition="157" endLine="106" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="104" startPosition="133" endLine="105" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="105" startPosition="164" endLine="106" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="106" startPosition="74" endLine="107" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="107" startPosition="114" endLine="108" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="108" startPosition="76" endLine="109" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1966,119 +1966,119 @@
     <unitInfo nodeId="5923576889075043786" fileName="GeneratorProperties.java" startLine="12" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.properties.GeneratorProperties" />
   </root>
   <root nodeId="5923576889075043939">
-    <nodeInfo nodeId="5923576889075043942" fileName="LanguageProperties.java" startLine="16" startPosition="58" endLine="17" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OUTPUT_PATH" />
-    <nodeInfo nodeId="5923576889075043946" fileName="LanguageProperties.java" startLine="17" startPosition="53" endLine="18" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DO_NOT_GENERATE_ADAPTERS" />
-    <nodeInfo nodeId="5923576889075043950" fileName="LanguageProperties.java" startLine="19" startPosition="0" endLine="20" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenPath" />
-    <nodeInfo nodeId="5923576889075043953" fileName="LanguageProperties.java" startLine="20" startPosition="27" endLine="21" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAccessoryModels" />
-    <nodeInfo nodeId="5923576889075043957" fileName="LanguageProperties.java" startLine="21" startPosition="50" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExtendedLanguages" />
-    <nodeInfo nodeId="5923576889075043961" fileName="LanguageProperties.java" startLine="22" startPosition="52" endLine="23" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRuntimeModules" />
-    <nodeInfo nodeId="5923576889075043965" fileName="LanguageProperties.java" startLine="23" startPosition="44" endLine="24" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRuntimeClassPaths" />
-    <nodeInfo nodeId="5923576889075043969" fileName="LanguageProperties.java" startLine="24" startPosition="51" endLine="25" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRuntimeStubModels" />
-    <nodeInfo nodeId="5923576889075043973" fileName="LanguageProperties.java" startLine="25" startPosition="46" endLine="26" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDoNotGenerateAdapters" />
-    <nodeInfo nodeId="5923576889075043977" fileName="LanguageProperties.java" startLine="26" startPosition="50" endLine="27" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStubSolutions" />
-    <nodeInfo nodeId="5923576889075043984" fileName="LanguageProperties.java" startLine="29" startPosition="31" endLine="30" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075043991" fileName="LanguageProperties.java" startLine="30" startPosition="79" endLine="31" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075043998" fileName="LanguageProperties.java" startLine="31" startPosition="88" endLine="32" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044005" fileName="LanguageProperties.java" startLine="32" startPosition="79" endLine="33" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044012" fileName="LanguageProperties.java" startLine="33" startPosition="87" endLine="34" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044019" fileName="LanguageProperties.java" startLine="34" startPosition="88" endLine="35" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044030" fileName="LanguageProperties.java" startLine="38" startPosition="30" endLine="39" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075044040" fileName="LanguageProperties.java" startLine="42" startPosition="42" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044051" fileName="LanguageProperties.java" startLine="46" startPosition="53" endLine="47" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075044060" fileName="LanguageProperties.java" startLine="50" startPosition="55" endLine="51" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075044069" fileName="LanguageProperties.java" startLine="54" startPosition="47" endLine="55" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075044078" fileName="LanguageProperties.java" startLine="58" startPosition="48" endLine="59" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075044087" fileName="LanguageProperties.java" startLine="62" startPosition="54" endLine="63" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075044096" fileName="LanguageProperties.java" startLine="66" startPosition="49" endLine="67" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075044104" fileName="LanguageProperties.java" startLine="70" startPosition="44" endLine="71" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075044114" fileName="LanguageProperties.java" startLine="74" startPosition="71" endLine="75" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044126" fileName="LanguageProperties.java" startLine="79" startPosition="53" endLine="80" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="5923576889075044130" fileName="LanguageProperties.java" startLine="80" startPosition="52" endLine="81" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044133" fileName="LanguageProperties.java" startLine="81" startPosition="31" endLine="82" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075044139" fileName="LanguageProperties.java" startLine="82" startPosition="59" endLine="83" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044147" fileName="LanguageProperties.java" startLine="83" startPosition="31" endLine="84" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044155" fileName="LanguageProperties.java" startLine="84" startPosition="58" endLine="85" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044164" fileName="LanguageProperties.java" startLine="85" startPosition="53" endLine="86" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044173" fileName="LanguageProperties.java" startLine="86" startPosition="57" endLine="87" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044252" fileName="LanguageProperties.java" startLine="103" startPosition="51" endLine="104" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="5923576889075044256" fileName="LanguageProperties.java" startLine="104" startPosition="52" endLine="105" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044259" fileName="LanguageProperties.java" startLine="105" startPosition="29" endLine="106" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075044265" fileName="LanguageProperties.java" startLine="106" startPosition="59" endLine="107" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044272" fileName="LanguageProperties.java" startLine="107" startPosition="28" endLine="108" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044279" fileName="LanguageProperties.java" startLine="108" startPosition="56" endLine="109" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044285" fileName="LanguageProperties.java" startLine="109" startPosition="35" endLine="110" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044294" fileName="LanguageProperties.java" startLine="110" startPosition="53" endLine="111" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044300" fileName="LanguageProperties.java" startLine="111" startPosition="37" endLine="112" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044309" fileName="LanguageProperties.java" startLine="112" startPosition="57" endLine="113" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044315" fileName="LanguageProperties.java" startLine="113" startPosition="34" endLine="114" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044339" fileName="LanguageProperties.java" startLine="114" startPosition="51" endLine="115" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044345" fileName="LanguageProperties.java" startLine="115" startPosition="33" endLine="116" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044354" fileName="LanguageProperties.java" startLine="116" startPosition="49" endLine="117" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044360" fileName="LanguageProperties.java" startLine="117" startPosition="37" endLine="118" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044026" fileName="LanguageProperties.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenPath#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5923576889075044034" fileName="LanguageProperties.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGenPath#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5923576889075044046" fileName="LanguageProperties.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAccessoryModels#()Ljava/util/List;" />
-    <nodeInfo nodeId="5923576889075044055" fileName="LanguageProperties.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExtendedLanguages#()Ljava/util/List;" />
-    <nodeInfo nodeId="5923576889075044064" fileName="LanguageProperties.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRuntimeModules#()Ljava/util/List;" />
-    <nodeInfo nodeId="5923576889075044073" fileName="LanguageProperties.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStubSolutions#()Ljava/util/List;" />
-    <nodeInfo nodeId="5923576889075044082" fileName="LanguageProperties.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRuntimeClassPaths#()Ljava/util/List;" />
-    <nodeInfo nodeId="5923576889075044091" fileName="LanguageProperties.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRuntimeStubModels#()Ljava/util/List;" />
-    <nodeInfo nodeId="5923576889075044100" fileName="LanguageProperties.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDoNotGenerateAdapters#()Z" />
-    <nodeInfo nodeId="5923576889075044108" fileName="LanguageProperties.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDoNotGenerateAdapters#(Z)V" />
-    <nodeInfo nodeId="5923576889075044210" fileName="LanguageProperties.java" startLine="88" startPosition="50" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044231" fileName="LanguageProperties.java" startLine="94" startPosition="54" endLine="98" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075044203" fileName="LanguageProperties.java" startLine="87" startPosition="51" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5923576889075044224" fileName="LanguageProperties.java" startLine="93" startPosition="5" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5923576889075043981" fileName="LanguageProperties.java" startLine="28" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguageProperties#()V" />
-    <nodeInfo nodeId="5923576889075044246" fileName="LanguageProperties.java" startLine="101" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveTo#(Ljetbrains/mps/project/structure/modules/ModuleDescriptor;)V" />
-    <nodeInfo nodeId="5923576889075044120" fileName="LanguageProperties.java" startLine="77" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadFrom#(Ljetbrains/mps/project/structure/modules/ModuleDescriptor;)V" />
-    <scopeInfo nodeId="5923576889075044029" fileName="LanguageProperties.java" startLine="38" startPosition="30" endLine="39" endPosition="21" />
-    <scopeInfo nodeId="5923576889075044039" fileName="LanguageProperties.java" startLine="42" startPosition="42" endLine="43" endPosition="24" />
-    <scopeInfo nodeId="5923576889075044050" fileName="LanguageProperties.java" startLine="46" startPosition="53" endLine="47" endPosition="29" />
-    <scopeInfo nodeId="5923576889075044059" fileName="LanguageProperties.java" startLine="50" startPosition="55" endLine="51" endPosition="31" />
-    <scopeInfo nodeId="5923576889075044068" fileName="LanguageProperties.java" startLine="54" startPosition="47" endLine="55" endPosition="28" />
-    <scopeInfo nodeId="5923576889075044077" fileName="LanguageProperties.java" startLine="58" startPosition="48" endLine="59" endPosition="27" />
-    <scopeInfo nodeId="5923576889075044086" fileName="LanguageProperties.java" startLine="62" startPosition="54" endLine="63" endPosition="31" />
-    <scopeInfo nodeId="5923576889075044095" fileName="LanguageProperties.java" startLine="66" startPosition="49" endLine="67" endPosition="31" />
-    <scopeInfo nodeId="5923576889075044103" fileName="LanguageProperties.java" startLine="70" startPosition="44" endLine="71" endPosition="35" />
-    <scopeInfo nodeId="5923576889075044113" fileName="LanguageProperties.java" startLine="74" startPosition="71" endLine="75" endPosition="52" />
-    <scopeInfo nodeId="5923576889075044026" fileName="LanguageProperties.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="5923576889075044034" fileName="LanguageProperties.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+    <nodeInfo nodeId="5923576889075043942" fileName="LanguageProperties.java" startLine="15" startPosition="58" endLine="16" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OUTPUT_PATH" />
+    <nodeInfo nodeId="5923576889075043946" fileName="LanguageProperties.java" startLine="16" startPosition="53" endLine="17" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DO_NOT_GENERATE_ADAPTERS" />
+    <nodeInfo nodeId="5923576889075043950" fileName="LanguageProperties.java" startLine="18" startPosition="0" endLine="19" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenPath" />
+    <nodeInfo nodeId="5923576889075043953" fileName="LanguageProperties.java" startLine="19" startPosition="27" endLine="20" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAccessoryModels" />
+    <nodeInfo nodeId="5923576889075043957" fileName="LanguageProperties.java" startLine="20" startPosition="50" endLine="21" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExtendedLanguages" />
+    <nodeInfo nodeId="5923576889075043961" fileName="LanguageProperties.java" startLine="21" startPosition="52" endLine="22" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRuntimeModules" />
+    <nodeInfo nodeId="5923576889075043965" fileName="LanguageProperties.java" startLine="22" startPosition="49" endLine="23" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRuntimeClassPaths" />
+    <nodeInfo nodeId="5923576889075043969" fileName="LanguageProperties.java" startLine="23" startPosition="51" endLine="24" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRuntimeStubModels" />
+    <nodeInfo nodeId="5923576889075043973" fileName="LanguageProperties.java" startLine="24" startPosition="46" endLine="25" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDoNotGenerateAdapters" />
+    <nodeInfo nodeId="5923576889075043977" fileName="LanguageProperties.java" startLine="25" startPosition="50" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStubSolutions" />
+    <nodeInfo nodeId="5923576889075043984" fileName="LanguageProperties.java" startLine="28" startPosition="31" endLine="29" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075043991" fileName="LanguageProperties.java" startLine="29" startPosition="79" endLine="30" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075043998" fileName="LanguageProperties.java" startLine="30" startPosition="88" endLine="31" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044005" fileName="LanguageProperties.java" startLine="31" startPosition="79" endLine="32" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044012" fileName="LanguageProperties.java" startLine="32" startPosition="87" endLine="33" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044019" fileName="LanguageProperties.java" startLine="33" startPosition="88" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044030" fileName="LanguageProperties.java" startLine="37" startPosition="30" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075044040" fileName="LanguageProperties.java" startLine="41" startPosition="42" endLine="42" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044051" fileName="LanguageProperties.java" startLine="45" startPosition="53" endLine="46" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075044060" fileName="LanguageProperties.java" startLine="49" startPosition="55" endLine="50" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075044069" fileName="LanguageProperties.java" startLine="53" startPosition="52" endLine="54" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075044078" fileName="LanguageProperties.java" startLine="57" startPosition="48" endLine="58" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075044087" fileName="LanguageProperties.java" startLine="61" startPosition="54" endLine="62" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075044096" fileName="LanguageProperties.java" startLine="65" startPosition="49" endLine="66" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075044104" fileName="LanguageProperties.java" startLine="69" startPosition="44" endLine="70" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075044114" fileName="LanguageProperties.java" startLine="73" startPosition="71" endLine="74" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044126" fileName="LanguageProperties.java" startLine="78" startPosition="53" endLine="79" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="5923576889075044130" fileName="LanguageProperties.java" startLine="79" startPosition="52" endLine="80" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044133" fileName="LanguageProperties.java" startLine="80" startPosition="31" endLine="81" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075044139" fileName="LanguageProperties.java" startLine="81" startPosition="59" endLine="82" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044147" fileName="LanguageProperties.java" startLine="82" startPosition="31" endLine="83" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044155" fileName="LanguageProperties.java" startLine="83" startPosition="58" endLine="84" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044164" fileName="LanguageProperties.java" startLine="84" startPosition="53" endLine="85" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044173" fileName="LanguageProperties.java" startLine="85" startPosition="57" endLine="86" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044252" fileName="LanguageProperties.java" startLine="102" startPosition="51" endLine="103" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="5923576889075044256" fileName="LanguageProperties.java" startLine="103" startPosition="52" endLine="104" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044259" fileName="LanguageProperties.java" startLine="104" startPosition="29" endLine="105" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075044265" fileName="LanguageProperties.java" startLine="105" startPosition="59" endLine="106" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044272" fileName="LanguageProperties.java" startLine="106" startPosition="28" endLine="107" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044279" fileName="LanguageProperties.java" startLine="107" startPosition="56" endLine="108" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044285" fileName="LanguageProperties.java" startLine="108" startPosition="35" endLine="109" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044294" fileName="LanguageProperties.java" startLine="109" startPosition="53" endLine="110" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044300" fileName="LanguageProperties.java" startLine="110" startPosition="37" endLine="111" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044309" fileName="LanguageProperties.java" startLine="111" startPosition="57" endLine="112" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044315" fileName="LanguageProperties.java" startLine="112" startPosition="34" endLine="113" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044339" fileName="LanguageProperties.java" startLine="113" startPosition="51" endLine="114" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044345" fileName="LanguageProperties.java" startLine="114" startPosition="33" endLine="115" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044354" fileName="LanguageProperties.java" startLine="115" startPosition="49" endLine="116" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044360" fileName="LanguageProperties.java" startLine="116" startPosition="37" endLine="117" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044026" fileName="LanguageProperties.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenPath#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5923576889075044034" fileName="LanguageProperties.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGenPath#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5923576889075044046" fileName="LanguageProperties.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAccessoryModels#()Ljava/util/List;" />
+    <nodeInfo nodeId="5923576889075044055" fileName="LanguageProperties.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExtendedLanguages#()Ljava/util/List;" />
+    <nodeInfo nodeId="5923576889075044064" fileName="LanguageProperties.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRuntimeModules#()Ljava/util/List;" />
+    <nodeInfo nodeId="5923576889075044073" fileName="LanguageProperties.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStubSolutions#()Ljava/util/List;" />
+    <nodeInfo nodeId="5923576889075044082" fileName="LanguageProperties.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRuntimeClassPaths#()Ljava/util/List;" />
+    <nodeInfo nodeId="5923576889075044091" fileName="LanguageProperties.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRuntimeStubModels#()Ljava/util/List;" />
+    <nodeInfo nodeId="5923576889075044100" fileName="LanguageProperties.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDoNotGenerateAdapters#()Z" />
+    <nodeInfo nodeId="5923576889075044108" fileName="LanguageProperties.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDoNotGenerateAdapters#(Z)V" />
+    <nodeInfo nodeId="5923576889075044210" fileName="LanguageProperties.java" startLine="87" startPosition="50" endLine="91" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044231" fileName="LanguageProperties.java" startLine="93" startPosition="54" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075044203" fileName="LanguageProperties.java" startLine="86" startPosition="51" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5923576889075044224" fileName="LanguageProperties.java" startLine="92" startPosition="5" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5923576889075043981" fileName="LanguageProperties.java" startLine="27" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguageProperties#()V" />
+    <nodeInfo nodeId="5923576889075044246" fileName="LanguageProperties.java" startLine="100" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveTo#(Ljetbrains/mps/project/structure/modules/ModuleDescriptor;)V" />
+    <nodeInfo nodeId="5923576889075044120" fileName="LanguageProperties.java" startLine="76" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadFrom#(Ljetbrains/mps/project/structure/modules/ModuleDescriptor;)V" />
+    <scopeInfo nodeId="5923576889075044029" fileName="LanguageProperties.java" startLine="37" startPosition="30" endLine="38" endPosition="21" />
+    <scopeInfo nodeId="5923576889075044039" fileName="LanguageProperties.java" startLine="41" startPosition="42" endLine="42" endPosition="24" />
+    <scopeInfo nodeId="5923576889075044050" fileName="LanguageProperties.java" startLine="45" startPosition="53" endLine="46" endPosition="29" />
+    <scopeInfo nodeId="5923576889075044059" fileName="LanguageProperties.java" startLine="49" startPosition="55" endLine="50" endPosition="31" />
+    <scopeInfo nodeId="5923576889075044068" fileName="LanguageProperties.java" startLine="53" startPosition="52" endLine="54" endPosition="28" />
+    <scopeInfo nodeId="5923576889075044077" fileName="LanguageProperties.java" startLine="57" startPosition="48" endLine="58" endPosition="27" />
+    <scopeInfo nodeId="5923576889075044086" fileName="LanguageProperties.java" startLine="61" startPosition="54" endLine="62" endPosition="31" />
+    <scopeInfo nodeId="5923576889075044095" fileName="LanguageProperties.java" startLine="65" startPosition="49" endLine="66" endPosition="31" />
+    <scopeInfo nodeId="5923576889075044103" fileName="LanguageProperties.java" startLine="69" startPosition="44" endLine="70" endPosition="35" />
+    <scopeInfo nodeId="5923576889075044113" fileName="LanguageProperties.java" startLine="73" startPosition="71" endLine="74" endPosition="52" />
+    <scopeInfo nodeId="5923576889075044026" fileName="LanguageProperties.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="5923576889075044034" fileName="LanguageProperties.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="5923576889075044037" varName="genPath" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075044046" fileName="LanguageProperties.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="5923576889075044055" fileName="LanguageProperties.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="5923576889075044064" fileName="LanguageProperties.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="5923576889075044073" fileName="LanguageProperties.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="5923576889075044082" fileName="LanguageProperties.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="5923576889075044091" fileName="LanguageProperties.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="5923576889075044100" fileName="LanguageProperties.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="5923576889075044108" fileName="LanguageProperties.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="5923576889075044046" fileName="LanguageProperties.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="5923576889075044055" fileName="LanguageProperties.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="5923576889075044064" fileName="LanguageProperties.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="5923576889075044073" fileName="LanguageProperties.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="5923576889075044082" fileName="LanguageProperties.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="5923576889075044091" fileName="LanguageProperties.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="5923576889075044100" fileName="LanguageProperties.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="5923576889075044108" fileName="LanguageProperties.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="5923576889075044111" varName="doNotGenerateAdapters" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075044209" fileName="LanguageProperties.java" startLine="88" startPosition="50" endLine="92" endPosition="9" />
-    <scopeInfo nodeId="5923576889075044230" fileName="LanguageProperties.java" startLine="94" startPosition="54" endLine="98" endPosition="9" />
-    <scopeInfo nodeId="5923576889075043983" fileName="LanguageProperties.java" startLine="29" startPosition="31" endLine="35" endPosition="82" />
-    <scopeInfo nodeId="5923576889075044203" fileName="LanguageProperties.java" startLine="87" startPosition="51" endLine="93" endPosition="5">
+    <scopeInfo nodeId="5923576889075044209" fileName="LanguageProperties.java" startLine="87" startPosition="50" endLine="91" endPosition="9" />
+    <scopeInfo nodeId="5923576889075044230" fileName="LanguageProperties.java" startLine="93" startPosition="54" endLine="97" endPosition="9" />
+    <scopeInfo nodeId="5923576889075043983" fileName="LanguageProperties.java" startLine="28" startPosition="31" endLine="34" endPosition="82" />
+    <scopeInfo nodeId="5923576889075044203" fileName="LanguageProperties.java" startLine="86" startPosition="51" endLine="92" endPosition="5">
       <varInfo nodeId="5923576889075044207" varName="ss" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075044224" fileName="LanguageProperties.java" startLine="93" startPosition="5" endLine="99" endPosition="5">
+    <scopeInfo nodeId="5923576889075044224" fileName="LanguageProperties.java" startLine="92" startPosition="5" endLine="98" endPosition="5">
       <varInfo nodeId="5923576889075044228" varName="entry" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075043981" fileName="LanguageProperties.java" startLine="28" startPosition="0" endLine="36" endPosition="3" />
-    <scopeInfo nodeId="5923576889075044251" fileName="LanguageProperties.java" startLine="103" startPosition="51" endLine="118" endPosition="57">
+    <scopeInfo nodeId="5923576889075043981" fileName="LanguageProperties.java" startLine="27" startPosition="0" endLine="35" endPosition="3" />
+    <scopeInfo nodeId="5923576889075044251" fileName="LanguageProperties.java" startLine="102" startPosition="51" endLine="117" endPosition="57">
       <varInfo nodeId="5923576889075044260" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075044246" fileName="LanguageProperties.java" startLine="101" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="5923576889075044246" fileName="LanguageProperties.java" startLine="100" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="5923576889075044249" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075044125" fileName="LanguageProperties.java" startLine="79" startPosition="53" endLine="99" endPosition="5">
+    <scopeInfo nodeId="5923576889075044125" fileName="LanguageProperties.java" startLine="78" startPosition="53" endLine="98" endPosition="5">
       <varInfo nodeId="5923576889075044134" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075044120" fileName="LanguageProperties.java" startLine="77" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="5923576889075044120" fileName="LanguageProperties.java" startLine="76" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="5923576889075044123" varName="descriptor" />
     </scopeInfo>
-    <unitInfo nodeId="5923576889075043939" fileName="LanguageProperties.java" startLine="16" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.ide.properties.LanguageProperties" />
+    <unitInfo nodeId="5923576889075043939" fileName="LanguageProperties.java" startLine="15" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.ide.properties.LanguageProperties" />
   </root>
   <root nodeId="5923576889075044370">
     <nodeInfo nodeId="5923576889075044377" fileName="SolutionProperties.java" startLine="8" startPosition="58" endLine="9" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OUTPUT_PATH" />

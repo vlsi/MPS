@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import javax.swing.tree.TreeNode;
@@ -109,9 +108,7 @@ public class NewRuntimeModule_Action extends GeneratedAction {
                 return;
               }
               final Language language = (Language) ((IModule) MapSequence.fromMap(_params).get("contextModule"));
-              Dependency dependency = new Dependency();
-              dependency.setModuleRef(module);
-              language.getModuleDescriptor().getRuntimeModules().add(dependency);
+              language.getModuleDescriptor().getRuntimeModules().add(module);
               final MPSTree mpsTree = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getTree();
               ModelAccess.instance().runWriteInEDT(new Runnable() {
                 public void run() {

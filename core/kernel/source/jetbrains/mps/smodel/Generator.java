@@ -192,7 +192,9 @@ public class Generator extends AbstractModule {
       result.add(depLocal);
     }
 
-    result.addAll(getSourceLanguage().getRuntimeDependencies());
+    for (ModuleReference ref : getSourceLanguage().getRuntimeModulesReferences()) {
+      result.add(new Dependency(ref, false));
+    }
     return result;
   }
 

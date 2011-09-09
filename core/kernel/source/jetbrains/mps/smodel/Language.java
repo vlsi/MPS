@@ -217,6 +217,17 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
   }
 
+  public List<Solution> getExportedSolutions() {
+    ArrayList<Solution> res = new ArrayList<Solution>();
+    for (StubSolution ss : getModuleDescriptor().getStubSolutions()) {
+      ModuleReference solutionRef = new ModuleReference(ss.getName(), ss.getId());
+      Solution s = MPSModuleRepository.getInstance().getSolution(solutionRef);
+      if (s == null) continue;
+      res.add(s);
+    }
+    return res;
+  }
+
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
     for (ModuleReference ref : getExtendedLanguageRefs()) {
@@ -237,9 +248,9 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public List<Dependency> getRuntimeDependencies() {
+  public List<ModuleReference> getRuntimeModulesReferences() {
     LanguageDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return new ArrayList<Dependency>();
+    if (descriptor == null) return Collections.emptyList();
     return Collections.unmodifiableList(descriptor.getRuntimeModules());
   }
 
@@ -797,10 +808,5 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     public void modelChangedDramatically(SModel model) {
       invalidateCaches();
     }
-  }
-
-  @Deprecated
-  public List<Dependency> getRuntimeDependOn() {
-    return getRuntimeDependencies();
   }
 }

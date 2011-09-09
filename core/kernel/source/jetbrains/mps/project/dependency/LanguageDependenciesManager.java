@@ -16,7 +16,6 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 
@@ -36,10 +35,5 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
     if(!dependencies.contains(core)) {
       core.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
     }
-  }
-
-  @Deprecated
-  public List<IModule> getRuntimeDependOnModules() {
-    return ModuleUtil.depsToModules(myModule.getRuntimeDependencies());
   }
 }
