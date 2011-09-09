@@ -537,6 +537,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -548,6 +549,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -748,6 +750,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -759,6 +762,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -883,6 +887,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -895,6 +900,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -1010,6 +1016,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1021,6 +1028,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -1135,6 +1143,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1146,6 +1155,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/contracts/languages/contracts/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -1261,6 +1271,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1272,6 +1283,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/classes_gen" />
     <path path="${base_dir}/languages/util/dates/internal/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
@@ -1388,6 +1400,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1399,6 +1412,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/internal/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -1514,6 +1528,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1525,6 +1540,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
@@ -1641,6 +1657,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1652,6 +1669,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -1766,6 +1784,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1777,6 +1796,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -1892,6 +1912,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1903,6 +1924,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2019,6 +2041,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2030,6 +2053,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2175,6 +2199,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2186,6 +2211,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2300,6 +2326,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2312,6 +2339,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2427,6 +2455,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2442,6 +2471,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2556,6 +2586,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2568,6 +2599,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2682,6 +2714,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2695,6 +2728,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2809,6 +2843,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2820,6 +2855,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2935,6 +2971,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2947,6 +2984,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3062,6 +3100,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3073,6 +3112,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3188,6 +3228,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3199,6 +3240,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3314,6 +3356,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3325,6 +3368,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3440,6 +3484,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3451,6 +3496,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3565,6 +3611,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3576,6 +3623,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3692,6 +3740,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3703,6 +3752,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -3818,6 +3868,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3829,6 +3880,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3945,6 +3997,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3956,6 +4009,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -4081,6 +4135,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -4092,6 +4147,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -4228,6 +4284,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -4240,6 +4297,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -4358,6 +4416,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -4369,6 +4428,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -4484,6 +4544,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -4495,6 +4556,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -4610,6 +4672,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -4621,6 +4684,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
