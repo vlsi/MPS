@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.smodel;
 
+import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.ex.ApplicationEx;
@@ -36,6 +37,8 @@ import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.DelayQueue;
+import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
@@ -54,7 +57,39 @@ public class WorkbenchModelAccess extends ModelAccess {
   private volatile boolean myDistributedLocksMode = false;
   private static final int REQUIRE_MAX_TRIES = 8;
 
+  private DelayQueue<DelayedInterrupt> myInterruptQueue = new DelayQueue<DelayedInterrupt>();
+
+  private Thread myInterruptingThread;
+
   public WorkbenchModelAccess() {
+    this.myInterruptingThread = new Thread(new Runnable() {
+      @Override
+      public void run() {
+        for (; ;) {
+          try {
+            DelayedInterrupt di = myInterruptQueue.take();
+            di.timeIsUp();
+          } catch (InterruptedException e) {
+            Application app = ApplicationManager.getApplication();
+            if (app == null || app.isDisposeInProgress() || app.isDisposed()) {
+              return;
+            }
+          }
+        }
+      }
+    }, "MPS interrupting thread");
+    myInterruptingThread.start();
+  }
+
+  @Override
+  public void dispose() {
+    for (int attempt=3; attempt > 0 && myInterruptingThread.isAlive(); --attempt) {
+      myInterruptingThread.interrupt();
+      try {
+        myInterruptingThread.join(500);
+      } catch (InterruptedException e) { break; }
+    }
+    super.dispose();
   }
 
   @Override
@@ -355,14 +390,9 @@ public class WorkbenchModelAccess extends ModelAccess {
       return false;
     }
 
-//    if (!getWriteLock().tryLock()) {
-//      return false;
-//    }
-//    getWriteLock().unlock();
-
     Computable<Boolean> computable = new Computable<Boolean>() {
       public Boolean compute() {
-        try {
+         try {
           if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
             try {
               r.run();
@@ -380,7 +410,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     };
 
     if (ThreadUtils.isEventDispatchThread()) {
-      return ApplicationManager.getApplication().runWriteAction(computable);
+      return new TryWriteActionComputable<Boolean> (computable).compute();
     } else {
       return ApplicationManager.getApplication().runReadAction(computable);
     }
@@ -416,7 +446,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     };
 
     if (ThreadUtils.isEventDispatchThread()) {
-      return ApplicationManager.getApplication().runWriteAction(computable);
+      return new TryWriteActionComputable<T> (computable).compute();
     } else {
       return ApplicationManager.getApplication().runReadAction(computable);
     }
@@ -469,30 +499,33 @@ public class WorkbenchModelAccess extends ModelAccess {
     if(myDistributedLocksMode) {
       return false;
     }
+    ApplicationManager.getApplication().assertIsDispatchThread();
 
     final boolean[] res = new boolean[]{false};
 
     final Project project = p != null ? p : CurrentProjectAccessUtil.getProjectFromUI();
+
+    Runnable commandRunnable = new Runnable() {
+      @Override
+      public void run() {
+        try {
+          if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
+            try {
+              new CommandRunnable(r, project).run();
+            } finally {
+              getWriteLock().unlock();
+            }
+          }
+        } catch (InterruptedException e) {
+          return;
+        }
+        res[0] = true;
+      }
+    };
+
     CommandProcessor.getInstance().executeCommand(
       project,
-      new Runnable() {
-        public void run() {
-          ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            public void run() {
-              try {
-                if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-                  try {
-                    new CommandRunnable(r, project).run();
-                  } finally {
-                    getWriteLock().unlock();
-                  }
-                  res[0] = true;
-                }
-              } catch (InterruptedException ignore) {}
-            }
-          });
-        }
-      },
+      new TryWriteActionRunnable(commandRunnable),
       "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 
     return res[0];
@@ -503,29 +536,29 @@ public class WorkbenchModelAccess extends ModelAccess {
     if(myDistributedLocksMode) {
       return null;
     }
+    ApplicationManager.getApplication().assertIsDispatchThread();
 
     final T[] res = (T[])new Object[]{null};
 
     final Project project = p != null ? p : CurrentProjectAccessUtil.getProjectFromUI();
+    Runnable commandRunnable = new Runnable() {
+      @Override
+      public void run() {
+        try {
+          if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
+            try {
+              res[0] = new CommandComputable<T>(r, project).compute();
+            } finally {
+              getWriteLock().unlock();
+            }
+          }
+        } catch (InterruptedException ignore) {}
+      }
+    };
+
     CommandProcessor.getInstance().executeCommand(
       project,
-      new Runnable() {
-        public void run() {
-          ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            public void run() {
-              try {
-                if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-                  try {
-                    res[0] = new CommandComputable<T>(r, project).compute();
-                  } finally {
-                    getWriteLock().unlock();
-                  }
-                }
-              } catch (InterruptedException ignore) {}
-            }
-          });
-        }
-      },
+      new TryWriteActionRunnable(commandRunnable),
       "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 
     return res[0];
@@ -778,6 +811,106 @@ public class WorkbenchModelAccess extends ModelAccess {
           return result;
         }
       });
+    }
+  }
+
+  private class TryWriteActionRunnable implements Runnable {
+
+    private final Runnable myRunnable;
+
+    public TryWriteActionRunnable(Runnable runnable) {
+      myRunnable = runnable;
+    }
+
+    public void run() {
+      // workaround for IDEA's locks shortcoming: timeout on write action
+      Thread.interrupted();
+      final DelayedInterrupt delayedInterrupt = interruptLater(Thread.currentThread(), WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS);
+      try {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            cancelInterrupt(delayedInterrupt);
+            myRunnable.run();
+          }
+        });
+      }
+      catch (RuntimeException re) {
+        while (re.getCause() instanceof RuntimeException) {
+          re = (RuntimeException) re.getCause();
+        }
+        if (!(re.getCause() instanceof InterruptedException)) {
+          throw re;
+        }
+        cancelInterrupt(delayedInterrupt);
+      }
+    }
+  }
+
+  private class TryWriteActionComputable<T> implements Computable<T>{
+
+    private final Computable<T> myComputable;
+
+    public TryWriteActionComputable(Computable<T> computable) {
+      myComputable = computable;
+    }
+
+    @Override
+    public T compute() {
+      // workaround for IDEA's locks shortcoming: timeout on write action
+      Thread.interrupted();
+      final DelayedInterrupt delayedInterrupt = interruptLater(Thread.currentThread(), WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS);
+      try {
+        return ApplicationManager.getApplication().runWriteAction(new Computable<T> () {
+          public T compute() {
+            cancelInterrupt(delayedInterrupt);
+            return myComputable.compute();
+          }
+        });
+      }
+      catch (RuntimeException re) {
+        while (re.getCause() instanceof RuntimeException) {
+          re = (RuntimeException) re.getCause();
+        }
+        if (!(re.getCause() instanceof InterruptedException)) {
+          throw re;
+        }
+        cancelInterrupt(delayedInterrupt);
+        return null;
+      }
+    }
+  }
+
+  private void cancelInterrupt (DelayedInterrupt di) {
+    myInterruptQueue.remove(di);
+  }
+
+  private DelayedInterrupt interruptLater (Thread toInterrupt, long delay, TimeUnit unit) {
+    DelayedInterrupt di = new DelayedInterrupt(toInterrupt, delay, unit);
+    myInterruptQueue.put(di);
+    return di;
+  }
+
+  private static class DelayedInterrupt implements Delayed {
+
+    private long alarmTimeMillis;
+    private Thread toInterrupt;
+
+    private DelayedInterrupt(Thread toInterrupt, long delay, TimeUnit unit) {
+      this.toInterrupt = toInterrupt;
+      this.alarmTimeMillis = System.currentTimeMillis() + unit.toMillis(delay);
+    }
+
+    private void timeIsUp () {
+      toInterrupt.interrupt();
+    }
+
+    public long getDelay(TimeUnit unit) {
+      return unit.convert(alarmTimeMillis - System.currentTimeMillis(), TimeUnit.MILLISECONDS);
+    }
+
+    public int compareTo(Delayed that) {
+      if (!(that instanceof DelayedInterrupt)) throw new ClassCastException();
+      return (int) (this.alarmTimeMillis - ((DelayedInterrupt)that).alarmTimeMillis);
     }
   }
 }
