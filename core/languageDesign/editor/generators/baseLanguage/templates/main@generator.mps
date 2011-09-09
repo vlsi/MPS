@@ -140,7 +140,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1143051457456">
-      <property name="name" nameId="tpck.1169194664001" value="MAPPING_QueryFunction" />
+      <property name="name" nameId="tpck.1169194664001" value="MAPPING_queryFunction" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1143052634969">
       <property name="name" nameId="tpck.1169194664001" value="weave_QueryFunction_NodeCondition_MethodDeclaration" />
