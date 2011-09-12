@@ -22,6 +22,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class ClosuresUtil {
   private static Object CLOSURE_CONTEXT_DATA = new Object();
 
+  public ClosuresUtil() {
+  }
+
   public static boolean isClosureContextOwner(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       return true;

@@ -18117,11 +18117,8 @@
                 <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8492459591399169252">
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="8459194913967272161">
                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8459194913967272166">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8459194913967272163">
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="8459194913967272164">
-                          <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="2163048091639680045" resolveInfo="myVisibilityLevel" />
-                        </node>
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="8459194913967272165" />
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4723230619342908356">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2163048091639680045" resolveInfo="myVisibilityLevel" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8459194913967272170">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8492459591399165318" resolveInfo="getNode" />
