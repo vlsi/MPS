@@ -74,51 +74,45 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
 
     ChangesManager.getInstance(project).getCommandQueue().runTask(new Runnable() {
       public void run() {
-        synchronized (myDisposedLock) {
-          if (myDisposed) {
-            return;
-          }
-        }
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            SNode editedNode = editorComponent.getEditedNode();
-            if (editedNode == null || editedNode.isDisposed()) {
-              return;
-            }
-            final SModel model = editedNode.getModel();
-            SModelDescriptor descriptor = (model != null ?
-              model.getModelDescriptor() :
-              null
-            );
-            if (descriptor instanceof EditableSModelDescriptor) {
-              myModelChangesManager = ChangesManager.getInstance(project).getModelChangesManager((EditableSModelDescriptor) descriptor);
-              myChangeListener = new EditorComponentChangesHighligher.MyChangeListener();
-            } else {
-              return;
+            synchronized (myDisposedLock) {
+              if (myDisposed) {
+                return;
+              }
+              SNode editedNode = editorComponent.getEditedNode();
+              if (editedNode == null || editedNode.isDisposed()) {
+                return;
+              }
+              final SModel model = editedNode.getModel();
+              SModelDescriptor descriptor = (model != null ?
+                model.getModelDescriptor() :
+                null
+              );
+              if (descriptor instanceof EditableSModelDescriptor) {
+                myModelChangesManager = ChangesManager.getInstance(project).getModelChangesManager((EditableSModelDescriptor) descriptor);
+                myChangeListener = new EditorComponentChangesHighligher.MyChangeListener();
+              }
+              if (myChangeListener != null) {
+                for (OldChange change : ListSequence.fromList(myModelChangesManager.getChangeList())) {
+                  highlightChange(change);
+                }
+                synchronized (myChangesMessages) {
+                  for (EditorComponentChangesHighligher.ChangeEditorMessage message : Sequence.fromIterable(MapSequence.fromMap(myChangesMessages).values())) {
+                    getHighlightManager().mark(message);
+                  }
+                }
+                getHighlightManager().repaintAndRebuildEditorMessages();
+                ThreadUtils.runInUIThreadNoWait(new Runnable() {
+                  public void run() {
+                    myFoldingAreaPainter.relayout();
+                  }
+                });
+                myModelChangesManager.addChangeListener(myChangeListener);
+              }
             }
           }
         });
-        if (myChangeListener != null) {
-          for (OldChange change : ListSequence.fromList(myModelChangesManager.getChangeList())) {
-            highlightChange(change);
-          }
-          synchronized (myChangesMessages) {
-            for (EditorComponentChangesHighligher.ChangeEditorMessage message : Sequence.fromIterable(MapSequence.fromMap(myChangesMessages).values())) {
-              getHighlightManager().mark(message);
-            }
-          }
-          getHighlightManager().repaintAndRebuildEditorMessages();
-          ThreadUtils.runInUIThreadNoWait(new Runnable() {
-            public void run() {
-              myFoldingAreaPainter.relayout();
-            }
-          });
-          synchronized (EditorComponentChangesHighligher.this) {
-            if (myChangeListener != null) {
-              myModelChangesManager.addChangeListener(myChangeListener);
-            }
-          }
-        }
       }
     });
   }
@@ -213,27 +207,29 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   public void dispose() {
-    synchronized (myDisposedLock) {
-      myDisposed = true;
-      try {
-        synchronized (myChangesMessages) {
-          SetSequence.fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence().visitAll(new IVisitor<OldChange>() {
-            public void visit(OldChange ch) {
-              unhighlightChange(ch);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        synchronized (myDisposedLock) {
+          myDisposed = true;
+          try {
+            synchronized (myChangesMessages) {
+              SetSequence.fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence().visitAll(new IVisitor<OldChange>() {
+                public void visit(OldChange ch) {
+                  unhighlightChange(ch);
+                }
+              });
             }
-          });
-        }
-        getHighlightManager().clearForOwner(this);
-        myEditorComponent.getLeftEditorHighlighter().removeFoldingAreaPainter(myFoldingAreaPainter);
-      } finally {
-        if (myModelChangesManager != null) {
-          synchronized (this) {
-            myModelChangesManager.removeChangeListener(myChangeListener);
-            myChangeListener = null;
+            getHighlightManager().clearForOwner(EditorComponentChangesHighligher.this);
+            myEditorComponent.getLeftEditorHighlighter().removeFoldingAreaPainter(myFoldingAreaPainter);
+          } finally {
+            if (myModelChangesManager != null) {
+              myModelChangesManager.removeChangeListener(myChangeListener);
+              myChangeListener = null;
+            }
           }
         }
       }
-    }
+    });
   }
 
   @NotNull
