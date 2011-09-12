@@ -47,7 +47,6 @@
   <import index="tpk3" modelUID="r:00000000-0000-4000-0000-011c895905bf(ypath_test1)" version="-1" />
   <import index="vz87" modelUID="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" version="-1" />
   <import index="mbhy" modelUID="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)" version="-1" />
-  <import index="p1tj" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.impl.configurations.tests(MPS.Classpath/jetbrains.mps.execution.impl.configurations.tests@java_stub)" version="-1" />
   <import index="q7wr" modelUID="r:00c1e1d0-e3c4-4d43-82f5-4c4f80539a57(jetbrains.mps.execution.impl.configurations.tests@tests)" version="-1" />
   <import index="pop3" modelUID="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" version="-1" implicit="yes" />
   <roots>
