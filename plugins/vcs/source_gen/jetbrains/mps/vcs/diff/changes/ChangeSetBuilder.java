@@ -223,6 +223,9 @@ public class ChangeSetBuilder {
     if (myNewModel.getSModelHeader().isDoNotGenerate() != myOldModel.getSModelHeader().isDoNotGenerate()) {
       myChangeSet.add(new DoNotGenerateOptionChange(myChangeSet));
     }
+    if (myNewModel.getSModelHeader().getVersion() != myOldModel.getSModelHeader().getVersion()) {
+      myChangeSet.add(new ModelVersionChange(myChangeSet));
+    }
   }
 
   private Iterable<SNodeId> generateRootChanges() {
