@@ -47,7 +47,8 @@
   <import index="tpk3" modelUID="r:00000000-0000-4000-0000-011c895905bf(ypath_test1)" version="-1" />
   <import index="vz87" modelUID="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" version="-1" />
   <import index="mbhy" modelUID="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)" version="-1" />
-  <import index="1va8" modelUID="r:4a10d467-ebea-4c93-8251-9563d3485037(jetbrains.mps.execution.impl.tests.tests@tests)" version="-1" />
+  <import index="p1tj" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.impl.configurations.tests(MPS.Classpath/jetbrains.mps.execution.impl.configurations.tests@java_stub)" version="-1" />
+  <import index="q7wr" modelUID="r:00c1e1d0-e3c4-4d43-82f5-4c4f80539a57(jetbrains.mps.execution.impl.configurations.tests@tests)" version="-1" />
   <import index="pop3" modelUID="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707830840" />
@@ -1784,7 +1785,10 @@
       <property name="moduleID" nameId="pop3.1280144168199506910" value="7b15492d-a198-43e2-91e3-4a7e9116ce2b" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1538369951873468541">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="1va8.7141662564075383485" resolveInfo="TestConfigurationsMigration" />
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="q7wr.7141662564075383485" resolveInfo="TestConfigurationsMigration" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7181359126575139604">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="q7wr.677474076745506235" resolveInfo="SplitCommandInParts_Test" />
     </node>
   </root>
 </model>
