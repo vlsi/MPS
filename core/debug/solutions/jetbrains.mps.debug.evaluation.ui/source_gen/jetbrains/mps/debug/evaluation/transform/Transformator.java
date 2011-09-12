@@ -103,6 +103,7 @@ public class Transformator {
       finished &= replaceAssignments();
       finished &= replaceLocalVariableDeclarations();
       finished &= replaceForeachVariable();
+      finished &= replaceCasts();
     }
 
     replaceInstanceofs();
@@ -664,6 +665,33 @@ public class Transformator {
     })) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(arrayLength), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), new Transformator.QuotationClass_rxfadt_a1a0a0c0bb().createNode())) {
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(arrayLength), new Transformator.QuotationClass_rxfadt_a0a0a0a0c0bb().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(arrayLength), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)));
+        finished = false;
+      }
+    }
+    return finished;
+  }
+
+  private boolean replaceCasts() {
+    boolean finished = true;
+    for (SNode cast : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.CastExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return TransformationUtil.isUnprocessed(it);
+      }
+    })) {
+      SNode expression = SLinkOperations.getTarget(cast, "expression", true);
+      SNode expressionType = TypeChecker.getInstance().getTypeOf(expression);
+      SNode castType = SLinkOperations.getTarget(cast, "type", true);
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(expressionType, new Transformator.QuotationClass_rxfadt_a1a0a3a1a82_0().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(castType, new Transformator.QuotationClass_rxfadt_a1a0a3a1a82().createNode())) {
+        SNodeOperations.replaceWithAnother(cast, expression);
+        TransformationUtil.replaceExpressionWithBox(expression);
+        finished = false;
+      } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(expressionType, new Transformator.QuotationClass_rxfadt_a1a0a0d0b0cb().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(castType, TransformationUtil.getPrimitiveType(), false)) {
+        SNodeOperations.replaceWithAnother(cast, expression);
+        TransformationUtil.replaceExpressionWithUnbox(expression);
+        finished = false;
+      } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(expressionType, new Transformator.QuotationClass_rxfadt_a1a0a1d0b0cb().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(castType, new Transformator.QuotationClass_rxfadt_a1a0a0b3a1a82().createNode()))) {
+        SNode classifierType = TransformationUtil.getValueProxyTypeFromType(castType);
+        SLinkOperations.setTarget(cast, "type", classifierType, true);
         finished = false;
       }
     }
@@ -2044,6 +2072,96 @@ public class Transformator {
 
   public static class QuotationClass_rxfadt_a1a0a0c0bb {
     public QuotationClass_rxfadt_a1a0a0c0bb() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~IValueProxy")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_rxfadt_a1a0a3a1a82 {
+    public QuotationClass_rxfadt_a1a0a3a1a82() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_rxfadt_a1a0a3a1a82_0 {
+    public QuotationClass_rxfadt_a1a0a3a1a82_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~PrimitiveValueProxy")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_rxfadt_a1a0a0d0b0cb {
+    public QuotationClass_rxfadt_a1a0a0d0b0cb() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~IObjectValueProxy")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_rxfadt_a1a0a0b3a1a82 {
+    public QuotationClass_rxfadt_a1a0a0b3a1a82() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~IValueProxy")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_rxfadt_a1a0a1d0b0cb {
+    public QuotationClass_rxfadt_a1a0a1d0b0cb() {
     }
 
     public SNode createNode() {
