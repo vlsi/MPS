@@ -119,25 +119,26 @@
     <nodeInfo nodeId="5314141825909197141" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="33" startPosition="75" endLine="34" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5314141825909197147" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="34" startPosition="131" endLine="35" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5314141825909197156" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="35" startPosition="114" endLine="36" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7827327345620418288" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="36" startPosition="118" endLine="37" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="20" startPosition="0" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckedDot_Actions_MakeUnchecked_DELETE#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="13" startPosition="47" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
     <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="32" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="14" startPosition="95" endLine="15" endPosition="132" />
     <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="21" startPosition="64" endLine="22" endPosition="25" />
     <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="25" startPosition="40" endLine="26" endPosition="36" />
     <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="29" startPosition="54" endLine="30" endPosition="56" />
     <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="20" startPosition="0" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="5314141825909190992" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="33" startPosition="75" endLine="36" endPosition="118">
-      <varInfo nodeId="5314141825909197142" varName="dotExpression" />
-    </scopeInfo>
     <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="13" startPosition="47" endLine="17" endPosition="0" />
     <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="32" startPosition="0" endLine="38" endPosition="0" />
-    <unitInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="18" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_MakeUnchecked$CheckedDot_Actions_MakeUnchecked_DELETE" />
-    <unitInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_MakeUnchecked" />
+    <scopeInfo nodeId="5314141825909190992" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="33" startPosition="75" endLine="37" endPosition="102">
+      <varInfo nodeId="5314141825909197142" varName="dotExpression" />
+    </scopeInfo>
+    <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
+    <unitInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="18" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_MakeUnchecked$CheckedDot_Actions_MakeUnchecked_DELETE" />
+    <unitInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_MakeUnchecked" />
   </root>
 </debugInfo>
 
