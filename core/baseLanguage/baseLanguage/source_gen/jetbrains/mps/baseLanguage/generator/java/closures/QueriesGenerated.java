@@ -118,7 +118,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170288676089(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.find_Closure_generatedClosureAdapter_constructor(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    return SNodeOperations.cast(_QueriesUtil.find_Closure_generatedClosureAdapter_constructor(_context.getNode(), ((TemplateQueryContext) _context).getGenerator()), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1170293907670(final IOperationContext operationContext, final ReferenceMacroContext _context) {
