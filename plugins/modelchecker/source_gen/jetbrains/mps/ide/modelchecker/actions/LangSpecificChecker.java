@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
@@ -29,7 +28,7 @@ public class LangSpecificChecker extends SpecificChecker implements ITypeContext
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
     for (SNode rootNode : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
-      TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().getOrCreateContext(rootNode, this, true);
+      TypeContextManager.getInstance().getOrCreateContext(rootNode, this, true);
       if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for constraints & scopes..."))) {
         break;
       }
@@ -39,8 +38,7 @@ public class LangSpecificChecker extends SpecificChecker implements ITypeContext
           addIssue(results, errorReporter.getSNode(), errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), "constraints", null);
         }
       }
-      TypeContextManager.getInstance().removeContextForNode(rootNode);
-      typeCheckingContext.dispose();
+      TypeContextManager.getInstance().removeOwnerForRootNodeContext(rootNode, this);
     }
     return results;
   }
