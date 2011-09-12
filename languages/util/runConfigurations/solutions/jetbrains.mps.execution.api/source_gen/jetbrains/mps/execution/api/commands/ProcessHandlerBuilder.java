@@ -106,10 +106,11 @@ public class ProcessHandlerBuilder {
   public static Iterable<String> splitCommandInParts(@NotNull String command) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     boolean insideQuotes = false;
+    boolean escaped = false;
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < command.length(); i++) {
       char currentChar = command.charAt(i);
-      if (currentChar == '"' && (i == 0 || command.charAt(i - 1) != '\\')) {
+      if (currentChar == '"' && !(escaped)) {
         insideQuotes = !(insideQuotes);
         continue;
       }
@@ -120,11 +121,13 @@ public class ProcessHandlerBuilder {
           sb = new StringBuilder();
         }
       } else if (currentChar == '\\' && (i < command.length() - 1 && command.charAt(i + 1) == '"')) {
+        escaped = true;
         continue;
       } else {
         // inside word 
         sb.append(currentChar);
       }
+      escaped = false;
     }
     if (sb.length() > 0) {
       ListSequence.fromList(result).addElement(sb.toString());
