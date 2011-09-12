@@ -125,7 +125,7 @@ public class EvaluationAuxModule extends AbstractModule {
     } else {
       myStubPaths.add(path);
     }
-    updateClassPath();
+    invalidateClassPath();
     MPSModuleRepository.getInstance().fireModuleChanged(this);
     return path;
   }

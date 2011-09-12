@@ -34,7 +34,7 @@ public class ClasspathStringCollector extends EachClassPathItemVisitor {
 
   @Override
   public void visit(FileClassPathItem cpItem) {
-    myStrings.add(cpItem.getClassPath());
+    myStrings.add(cpItem.getPath());
   }
 
   @Override

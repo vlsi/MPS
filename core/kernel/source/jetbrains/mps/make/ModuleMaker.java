@@ -22,12 +22,16 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vfs.IFile;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -61,9 +65,10 @@ public class ModuleMaker {
         if (indicator.isCanceled()) break;
 
         indicator.setText2("Cleaning " + m.getModuleFqName() + "...");
-        FileUtil.delete(new File(m.getClassesGen().getPath()));
+        String path = m.getClassesGen().getPath();
+        FileUtil.delete(new File(path));
+        ClassPathFactory.getInstance().invalidate(Collections.singleton(path));
       }
-      invalidateClasspath(modules);
     } finally {
       indicator.popState();
     }
@@ -81,7 +86,6 @@ public class ModuleMaker {
 
       indicator.setText2("Calculating modules to compile...");
       Set<IModule> toCompile = getModulesToCompile(candidates);
-
 
       int errorCount = 0;
       int warnCount = 0;
@@ -162,22 +166,21 @@ public class ModuleMaker {
       }
     }
 
-    if(!hasJavaToCompile && !hasFilesToCopyOrDelete) {
+    if (!hasJavaToCompile && !hasFilesToCopyOrDelete) {
       return new MPSCompilationResult(0, 0, false, false, messages);
     }
 
-    //todo:do we need this invalidation?
-    invalidateClasspath(modulesWithRemovals);
+    for (IModule module : modulesWithRemovals) {
+      invalidateCompiledClasses(module);
+    }
 
     MyCompilationResultAdapter listener = null;
-    if(hasJavaToCompile) {
+    if (hasJavaToCompile) {
       IClassPathItem classPathItems = computeDependenciesClassPath(modules);
       listener = new MyCompilationResultAdapter(modules, classPathItems, messages);
       compiler.addCompilationResultListener(listener);
       compiler.compile(classPathItems);
       compiler.removeCompilationResultListener(listener);
-
-      invalidateClasspath(modules);
     }
 
     for (IModule module : modules) {
@@ -198,10 +201,17 @@ public class ModuleMaker {
     }
 
     for (IModule module : modules) {
-      module.updateClassPath();
+      invalidateCompiledClasses(module);
     }
 
     return new MPSCompilationResult(listener == null ? 0 : listener.getErrorCount(), 0, false, hasJavaToCompile, messages);
+  }
+
+  private void invalidateCompiledClasses(IModule module) {
+    IFile classesGen = module.getClassesGen();
+    if (classesGen != null) {
+      ClassPathFactory.getInstance().invalidate(Collections.singleton(classesGen.getPath()));
+    }
   }
 
   private String getName(char[][] compoundName) {
@@ -286,15 +296,6 @@ public class ModuleMaker {
     if (!m.isCompileInMPS()) return true;
 
     return false;
-  }
-
-  private void invalidateClasspath(Set<IModule> modules) {
-    for (IModule m : modules) {
-      m.invalidateClassPath();
-    }
-    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      m.updateClassPath();
-    }
   }
 
   private class MyCompilationResultAdapter extends CompilationResultAdapter {

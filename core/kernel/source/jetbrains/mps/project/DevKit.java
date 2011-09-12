@@ -163,6 +163,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     return null;
   }
 
+  //why?   [Mihail Muhin]
   protected void reloadAfterDescriptorChange() {
     MPSModuleRepository.getInstance().unRegisterModules(this);
     super.reloadAfterDescriptorChange();

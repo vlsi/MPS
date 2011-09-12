@@ -44,8 +44,10 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   private Map<String, ZipEntry> myEntries = new THashMap<String, ZipEntry>();
   private MyCache myCache = new MyCache();
+  private String myPath;
 
   protected JarFileClassPathItem(String path) {
+    myPath = path;
     if (path.endsWith("!/")) {
       path = path.substring(0, path.length() - 2);
     }
@@ -55,6 +57,11 @@ public class JarFileClassPathItem extends RealClassPathItem {
     } catch (IOException e) {
       LOG.error("invalid class path: " + path, e);
     }
+  }
+
+  public String getPath() {
+    checkValidity();
+    return myPath;
   }
 
   public String getAbsolutePath() {
@@ -193,9 +200,9 @@ public class JarFileClassPathItem extends RealClassPathItem {
     return myFile.lastModified();
   }
 
-  public List<IClassPathItem> flatten() {
+  public List<RealClassPathItem> flatten() {
     checkValidity();
-    List<IClassPathItem> result = new ArrayList<IClassPathItem>();
+    List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
     result.add(this);
     return result;
   }
