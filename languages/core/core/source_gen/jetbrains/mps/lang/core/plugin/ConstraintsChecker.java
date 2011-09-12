@@ -6,6 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -38,7 +39,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     return node;
   }
 
-  public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext) {
+  public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext, IScope scope) {
     final ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(node.getConceptFqName());
 
     final CheckingNodeContext checkingNodeContext = new jetbrains.mps.smodel.structure.CheckingNodeContext();

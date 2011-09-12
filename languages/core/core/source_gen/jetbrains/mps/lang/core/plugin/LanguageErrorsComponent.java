@@ -19,6 +19,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.smodel.IOperationContext;
+import java.util.HashSet;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -144,9 +146,10 @@ public class LanguageErrorsComponent {
     if (myCheckedRoot && SetSequence.fromSet(myInvalidNodes).isEmpty()) {
       return false;
     }
-    Set<SNode> frontier = new THashSet<SNode>(1);
+    Set<SNode> frontier = new HashSet<SNode>(1);
     SetSequence.fromSet(frontier).addElement(root);
-    Set<SNode> newFrontier = new THashSet<SNode>(1);
+    Set<SNode> newFrontier = new HashSet<SNode>(1);
+    IScope scope = SNodeOperations.getModel(root).getModelDescriptor().getModule().getScope();
     while (!(SetSequence.fromSet(frontier).isEmpty())) {
       for (SNode node : frontier) {
         if (!(myCheckedRoot) || SetSequence.fromSet(myInvalidNodes).contains(node)) {
@@ -154,7 +157,7 @@ public class LanguageErrorsComponent {
             myCurrentNode = node;
             addDependency(node);
             for (AbstractConstraintsChecker checker : checkers) {
-              checker.checkNode(node, this, operationContext);
+              checker.checkNode(node, this, operationContext, scope);
             }
           } finally {
             myCurrentNode = null;
@@ -164,7 +167,7 @@ public class LanguageErrorsComponent {
         SetSequence.fromSet(newFrontier).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
       }
       frontier = newFrontier;
-      newFrontier = new THashSet<SNode>(1);
+      newFrontier = new HashSet<SNode>(1);
     }
     myCheckedRoot = true;
     return true;
