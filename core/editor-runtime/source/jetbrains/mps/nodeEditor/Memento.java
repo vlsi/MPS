@@ -47,11 +47,12 @@ class Memento {
       for (EditorCell bracesEnabledCell : nodeEditor.getBracesEnabledCells()) {
         myCollectionsWithEnabledBraces.add(bracesEnabledCell.getCellInfo());
       }
+
+      if (full) {
+        collectErrors(nodeEditor);
+      }
     }
 
-    if (full) {
-      collectErrors(nodeEditor);
-    }
     myViewPosition = nodeEditor.getViewport().getViewPosition();
   }
 
