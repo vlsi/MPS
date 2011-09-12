@@ -23,7 +23,6 @@ import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -53,6 +52,5 @@ public class MPSWorkbench implements ApplicationComponent {
 
   @Override
   public void disposeComponent() {
-    ModelAccess.instance().dispose();
   }
 }
