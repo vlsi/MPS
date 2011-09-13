@@ -16,6 +16,10 @@ public class Example {
   }
 
   public void f() {
+    List<String> v = <!TextGen not found for 'jetbrains.mps.baseLanguage.structure.Expression'!>;
+    v.<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.AbstractOperation'!>;
+    Iterable<String> s;
+    s.<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.AbstractOperation'!>;
     CClass c2 = <!TextGen not found for 'jetbrains.mps.baseLanguage.structure.Expression'!>;
   }
 }
