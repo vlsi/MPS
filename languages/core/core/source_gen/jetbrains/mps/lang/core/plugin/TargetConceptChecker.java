@@ -4,6 +4,7 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -18,7 +19,7 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
   public TargetConceptChecker() {
   }
 
-  public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext) {
+  public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext, IScope scope) {
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isAttribute(it));
