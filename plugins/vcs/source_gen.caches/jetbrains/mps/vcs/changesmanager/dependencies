@@ -249,7 +249,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ICollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
@@ -267,6 +266,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.PropertySupport" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -289,7 +289,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SModelUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.VCSUtils" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager._Adapters" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.DiffBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange" />
@@ -454,11 +453,6 @@
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-  </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager._Adapters" file="_Adapters.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode extendsClassName="java.lang.Runnable" />
   </dependency>
 </dependenciesRoot>
 
