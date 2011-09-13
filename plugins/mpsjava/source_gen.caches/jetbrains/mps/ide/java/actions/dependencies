@@ -17,7 +17,6 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.generator.TransientModelsModule" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaCompiler" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
@@ -43,7 +42,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaCompiler" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
@@ -149,7 +147,6 @@
     <classNode dependClassName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaCompiler" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />

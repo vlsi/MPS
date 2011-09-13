@@ -12,7 +12,6 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
 import jetbrains.mps.vfs.IFile;
 import java.awt.Frame;
 import jetbrains.mps.ide.java.parser.JavaCompiler;
@@ -65,11 +64,6 @@ public class GetModuleContentsFromSource_Action extends GeneratedAction {
       TreeFileChooser treeFileChooser = new TreeFileChooser();
       treeFileChooser.setDirectoriesAreAlwaysVisible(true);
       treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-      treeFileChooser.setFileFilter(new IFileFilter() {
-        public boolean accept(IFile file) {
-          return file.isDirectory();
-        }
-      });
       IFile result = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
       if (result != null) {
         JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), new File(result.getPath()), true);
