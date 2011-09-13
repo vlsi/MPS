@@ -40,11 +40,7 @@ public class ClasspathStringCollector extends EachClassPathItemVisitor {
 
   @Override
   public void visit(FileClassPathItem cpItem) {
-    String path = cpItem.getPath();
-    if (path.endsWith("!/")){
-      path = path.substring(0, path.length() - 2);
-    }
-    myStrings.add(path.replace("/", separator()).replace("\\", separator()));
+    myStrings.add(cpItem.getPath().replace("/", separator()).replace("\\", separator()));
   }
 
   @Override
