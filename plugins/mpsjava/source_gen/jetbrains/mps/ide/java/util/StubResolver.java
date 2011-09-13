@@ -102,7 +102,7 @@ public class StubResolver {
         });
         if (ListSequence.fromList(resolved).count() > 1) {
           if (log.isErrorEnabled()) {
-            log.error("more than 1 possible resolution for " + SLinkOperations.getResolveInfo(ref));
+            log.error("more than 1 possible resolution for " + SLinkOperations.getResolveInfo(ref) + " in model " + modelRef.getLongName());
           }
         }
         if (ListSequence.fromList(resolved).count() > 0) {
