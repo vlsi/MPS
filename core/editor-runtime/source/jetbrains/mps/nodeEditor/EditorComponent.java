@@ -816,6 +816,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         SModel model = node == null ? null : node.getModel();
         setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
         rebuildEditorContent();
+        getTypeCheckingContext();
       }
     });
   }
