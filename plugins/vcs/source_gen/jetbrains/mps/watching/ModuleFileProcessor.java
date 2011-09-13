@@ -19,7 +19,7 @@ import jetbrains.mps.vfs.FileSystem;
 
   @Override
   protected void processContentChanged(VFileEvent event, ReloadSession reloadSession) {
-    if (event.isFromRefresh() && event.getRequestor() instanceof FileDocumentManager) {
+    if (event.isFromRefresh() || event.getRequestor() instanceof FileDocumentManager) {
       IModule module = ModuleFileProcessor.getModuleByEvent(event);
       if ((module != null) && (module.needReloading())) {
         reloadSession.addChangedModule(module);

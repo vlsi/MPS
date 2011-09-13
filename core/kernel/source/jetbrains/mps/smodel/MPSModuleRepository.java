@@ -31,6 +31,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -188,6 +189,24 @@ public class MPSModuleRepository implements ApplicationComponent {
     return (TM) module;
   }
 
+  private void addCanonicalFile(@Nullable IFile file, IModule module) {
+    if (file != null) {
+      String canonicalDescriptorPath = IFileUtils.getCanonicalPath(file);
+      if (canonicalDescriptorPath != null && !myCanonicalFileToModuleMap.containsKey(canonicalDescriptorPath)) {
+        myCanonicalFileToModuleMap.put(canonicalDescriptorPath, module);
+      }
+    }
+  }
+
+  private void removeModuleFile(@Nullable IFile file) {
+    if (file != null) {
+      String canonicalPath = IFileUtils.getCanonicalPath(file);
+      if (canonicalPath != null) {
+        myCanonicalFileToModuleMap.remove(canonicalPath);
+      }
+    }
+  }
+
   public void addModule(IModule module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
@@ -195,10 +214,8 @@ public class MPSModuleRepository implements ApplicationComponent {
     if (existsModule(module, owner)) {
       throw new IllegalStateException("Couldn't add module \"" + module.getModuleFqName() + "\" : this module is already registered with this very owner: " + owner);
     }
-    String canonicalDescriptorPath = IFileUtils.getCanonicalPath(module.getDescriptorFile());
-    if (canonicalDescriptorPath != null && !myCanonicalFileToModuleMap.containsKey(canonicalDescriptorPath)) {
-      myCanonicalFileToModuleMap.put(canonicalDescriptorPath, module);
-    }
+    addCanonicalFile(module.getDescriptorFile(), module);
+    addCanonicalFile(ModulesMiner.getRealDescriptorFile(module), module);
 
     String moduleFqName = module.getModuleFqName();
 
@@ -240,9 +257,8 @@ public class MPSModuleRepository implements ApplicationComponent {
       myIdToModuleMap.remove(module.getModuleReference().getModuleId());
     }
 
-    if (descriptorFile != null) {
-      myCanonicalFileToModuleMap.remove(IFileUtils.getCanonicalPath(descriptorFile));
-    }
+    removeModuleFile(descriptorFile);
+    removeModuleFile(ModulesMiner.getRealDescriptorFile(module));
 
     fireModuleRemoved(module);
   }

@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -169,16 +170,12 @@ public class ModulesMiner {
       if (filePath.endsWith(META_INF_MODULE_XML)) {
         DeploymentDescriptor deploymentDescriptor = DeploymentDescriptorPersistence.loadDeploymentDescriptor(file);
         ModuleDescriptor result = null;
-        if(deploymentDescriptor.getSourcesJar() != null) {
-          IFile moduleJar = FileSystem.getInstance().getFileByPath(filePath.substring(0, filePath.length() - META_INF_MODULE_XML.length()));
-          IFile sourcesJar = moduleJar.getParent().getDescendant(deploymentDescriptor.getSourcesJar());
-          if(sourcesJar.exists() && deploymentDescriptor.getDescriptorFile() != null) {
-            IFile descriptorSource = FileSystem.getInstance().getFileByPath(sourcesJar.getPath() + "!/module/" + deploymentDescriptor.getDescriptorFile());
-            result = loadModuleDescriptor(descriptorSource);
-          }
+        IFile realDescriptorFile = getRealDescriptorFile(filePath, deploymentDescriptor);
+        if (realDescriptorFile != null) {
+          result = loadModuleDescriptor(realDescriptorFile);
         }
         // TODO create module without sources
-        if(result != null) {
+        if (result != null) {
           result.setDeploymentDescriptor(deploymentDescriptor);
           // TODO fix stubs
         }
@@ -290,5 +287,25 @@ public class ModulesMiner {
     public ModuleDescriptor getDescriptor() {
       return descriptor;
     }
+  }
+
+  @Nullable
+  public static IFile getRealDescriptorFile(String filePath, DeploymentDescriptor deploymentDescriptor) {
+    if (deploymentDescriptor.getSourcesJar() != null) {
+      IFile moduleJar = FileSystem.getInstance().getFileByPath(filePath.substring(0, filePath.length() - META_INF_MODULE_XML.length()));
+      IFile sourcesJar = moduleJar.getParent().getDescendant(deploymentDescriptor.getSourcesJar());
+      if (sourcesJar.exists() && deploymentDescriptor.getDescriptorFile() != null) {
+        return FileSystem.getInstance().getFileByPath(sourcesJar.getPath() + "!/module/" + deploymentDescriptor.getDescriptorFile());
+      }
+    }
+    return null;
+  }
+
+  @Nullable
+  public static IFile getRealDescriptorFile(IModule module) {
+    if (module.getDescriptorFile() != null && module.getModuleDescriptor() != null && module.getModuleDescriptor().getDeploymentDescriptor() != null) {
+      return getRealDescriptorFile(module.getDescriptorFile().getPath(), module.getModuleDescriptor().getDeploymentDescriptor());
+    }
+    return null;
   }
 }
