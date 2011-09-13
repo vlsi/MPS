@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-aponn5nsgce6wtlpsam7uobqmzylfnq">
+<dependencies version="2" modelHash="-h9u9hcbweyac955q02knzt9cgtbezg">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.inference(MPS.Classpath/jetbrains.mps.typesystem.inference@java_stub)" />
@@ -80,7 +80,7 @@
   <source id="1201792021422" name="internal" hash="dlsr8scjn09cfobkub3ozrfy2qzr3k6">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1202904627607" name="convertclosures" hash="5lxondjd59012inobprdv9n5fz2booy">
+  <source id="1202904627607" name="convertclosures" hash="-5v6tq4ca3h9qdz457bkmk3m8hjlijdn">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1203340411125" name="switch_sequence_operation_toSequence" hash="4olgj1ws5h4p5t8lm3hthfo9jude4p6">

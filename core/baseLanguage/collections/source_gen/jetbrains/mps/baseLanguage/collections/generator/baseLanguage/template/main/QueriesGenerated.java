@@ -1147,6 +1147,14 @@ public class QueriesGenerated {
         if (SNodeOperations.isInstanceOf(ct, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
           return SLinkOperations.getTarget(SNodeOperations.cast(ct, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true);
         }
+        if (!(SNodeOperations.isInstanceOf(ct, "jetbrains.mps.baseLanguage.structure.ClassifierType") || SNodeOperations.isInstanceOf(ct, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+          for (SNode supt : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(ct)) {
+            ct = ClassifierTypeUtil.getTypeCoercedToClassifierType((SNode) supt);
+            if (SNodeOperations.isInstanceOf(ct, "jetbrains.mps.baseLanguage.structure.ClassifierType") || SNodeOperations.isInstanceOf(ct, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+              break;
+            }
+          }
+        }
         return ct;
       } else {
       }
@@ -1183,10 +1191,19 @@ public class QueriesGenerated {
       IMatchingPattern pattern_x583g4_a0yi = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_x583g4_a0yi = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true)), pattern_x583g4_a0yi);
       if (coercedNode_x583g4_a0yi != null) {
-        return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_x583g4_a0yi, "elementType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType") ?
-          SLinkOperations.getTarget(coercedNode_x583g4_a0yi, "elementType", true) :
-          ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_x583g4_a0yi, "elementType", true))
-        );
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_x583g4_a0yi, "elementType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+          return SLinkOperations.getTarget(coercedNode_x583g4_a0yi, "elementType", true);
+        }
+        SNode ct = ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_x583g4_a0yi, "elementType", true));
+        if (!(SNodeOperations.isInstanceOf(ct, "jetbrains.mps.baseLanguage.structure.ClassifierType") || SNodeOperations.isInstanceOf(ct, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+          for (SNode supt : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(ct)) {
+            ct = ClassifierTypeUtil.getTypeCoercedToClassifierType((SNode) supt);
+            if (SNodeOperations.isInstanceOf(ct, "jetbrains.mps.baseLanguage.structure.ClassifierType") || SNodeOperations.isInstanceOf(ct, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+              break;
+            }
+          }
+        }
+        return ct;
       } else {
       }
     }
