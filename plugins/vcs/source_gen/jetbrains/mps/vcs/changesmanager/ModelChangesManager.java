@@ -32,7 +32,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.ICollectionSequence;
 import jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange;
@@ -47,6 +46,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Arrays;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -369,159 +369,155 @@ public class ModelChangesManager {
 
   private void mergeChanges() {
     myCommandQueue.assertSoftlyIsCommandThread();
+    ModelAccess.assertLegalRead();
     // Note: this method does not notify ChangeListeners, so it should be invoked only during initialization 
 
-    final Wrappers._T<List<OldChange>> changeList = new Wrappers._T<List<OldChange>>(ListSequence.fromList(new ArrayList<OldChange>()));
-    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<ICollectionSequence<OldChange>>() {
-      public ICollectionSequence<OldChange> invoke() {
-        SModel model = getModel();
-        final Set<SNodeId> addedNodes = SetSequence.fromSet(new HashSet<SNodeId>());
-        final Set<SNodeId> removedNodes = SetSequence.fromSet(new HashSet<SNodeId>());
-        Set<SNodeId> hasRemovedParent = SetSequence.fromSet(new HashSet<SNodeId>());
-        for (OldChange change : ListSequence.fromList(myChangeList)) {
-          if (change instanceof NewNodeChange) {
-            SetSequence.fromSet(addedNodes).addElement(change.getAffectedNodeId());
-          } else if (change instanceof DeleteNodeChange) {
-            SNodeId parent = change.getAffectedNodeId();
-            SetSequence.fromSet(removedNodes).addElement(parent);
-            for (SNodeId child : ListSequence.fromList(((DeleteNodeChange) change).getChildren())) {
-              SetSequence.fromSet(hasRemovedParent).addElement(child);
-            }
-          } else if (change instanceof MoveNodeChange) {
-            SetSequence.fromSet(addedNodes).addElement(change.getAffectedNodeId());
-            SetSequence.fromSet(addedNodes).addSequence(ListSequence.fromList(SModelUtils.getNodeIds(SNodeOperations.getDescendants(((SNode) model.getNodeById(change.getAffectedNodeId())), null, false, new String[]{}))));
-            SNodeId parentId = change.getAffectedNodeId();
-            SetSequence.fromSet(removedNodes).addElement(parentId);
-            // TODO update hasRemovedParent 
-          }
+    List<OldChange> changeList = ListSequence.fromList(new ArrayList<OldChange>());
+    SModel model = getModel();
+    final Set<SNodeId> addedNodes = SetSequence.fromSet(new HashSet<SNodeId>());
+    final Set<SNodeId> removedNodes = SetSequence.fromSet(new HashSet<SNodeId>());
+    Set<SNodeId> hasRemovedParent = SetSequence.fromSet(new HashSet<SNodeId>());
+    for (OldChange change : ListSequence.fromList(myChangeList)) {
+      if (change instanceof NewNodeChange) {
+        SetSequence.fromSet(addedNodes).addElement(change.getAffectedNodeId());
+      } else if (change instanceof DeleteNodeChange) {
+        SNodeId parent = change.getAffectedNodeId();
+        SetSequence.fromSet(removedNodes).addElement(parent);
+        for (SNodeId child : ListSequence.fromList(((DeleteNodeChange) change).getChildren())) {
+          SetSequence.fromSet(hasRemovedParent).addElement(child);
         }
+      } else if (change instanceof MoveNodeChange) {
+        SetSequence.fromSet(addedNodes).addElement(change.getAffectedNodeId());
+        SetSequence.fromSet(addedNodes).addSequence(ListSequence.fromList(SModelUtils.getNodeIds(SNodeOperations.getDescendants(((SNode) model.getNodeById(change.getAffectedNodeId())), null, false, new String[]{}))));
+        SNodeId parentId = change.getAffectedNodeId();
+        SetSequence.fromSet(removedNodes).addElement(parentId);
+        // TODO update hasRemovedParent 
+      }
+    }
 
-        for (OldChange change : ListSequence.fromList(myChangeList)) {
-          if (change instanceof NewNodeChange) {
-            SNode node = model.getNodeById(change.getAffectedNodeId());
-            assert node != null;
-            if (!(ListSequence.fromList(SNodeOperations.getAncestors(node, null, false)).any(new IWhereFilter<SNode>() {
-              public boolean accept(SNode a) {
-                return SetSequence.fromSet(addedNodes).contains(a.getSNodeId());
-              }
-            }))) {
-              ListSequence.fromList(changeList.value).addElement(change);
-            }
-          } else if (change instanceof DeleteNodeChange) {
-            if (!(SetSequence.fromSet(hasRemovedParent).contains(change.getAffectedNodeId()))) {
-              ListSequence.fromList(changeList.value).addElement(change);
-            }
-          } else if (change instanceof OldSetPropertyChange || change instanceof OldSetReferenceChange) {
-            SNodeId nodeId = change.getAffectedNodeId();
-            SNode node = model.getNodeById(nodeId);
-            if (!(ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).any(new IWhereFilter<SNode>() {
-              public boolean accept(SNode a) {
-                return SetSequence.fromSet(addedNodes).contains(a.getSNodeId()) || SetSequence.fromSet(removedNodes).contains(a.getSNodeId());
-              }
-            }))) {
-              ListSequence.fromList(changeList.value).addElement(change);
-            }
-          } else if (change instanceof MoveNodeChange) {
-            // Split into NewNodeChange and DeleteNodeChange 
-            SNodeId nodeId = change.getAffectedNodeId();
-            SNode node = model.getNodeById(nodeId);
-            SNode parent = SNodeOperations.getParent(node);
-            String conceptFqName = node.getConceptFqName();
+    for (OldChange change : ListSequence.fromList(myChangeList)) {
+      if (change instanceof NewNodeChange) {
+        SNode node = model.getNodeById(change.getAffectedNodeId());
+        assert node != null;
+        if (!(ListSequence.fromList(SNodeOperations.getAncestors(node, null, false)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode a) {
+            return SetSequence.fromSet(addedNodes).contains(a.getSNodeId());
+          }
+        }))) {
+          ListSequence.fromList(changeList).addElement(change);
+        }
+      } else if (change instanceof DeleteNodeChange) {
+        if (!(SetSequence.fromSet(hasRemovedParent).contains(change.getAffectedNodeId()))) {
+          ListSequence.fromList(changeList).addElement(change);
+        }
+      } else if (change instanceof OldSetPropertyChange || change instanceof OldSetReferenceChange) {
+        SNodeId nodeId = change.getAffectedNodeId();
+        SNode node = model.getNodeById(nodeId);
+        if (!(ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode a) {
+            return SetSequence.fromSet(addedNodes).contains(a.getSNodeId()) || SetSequence.fromSet(removedNodes).contains(a.getSNodeId());
+          }
+        }))) {
+          ListSequence.fromList(changeList).addElement(change);
+        }
+      } else if (change instanceof MoveNodeChange) {
+        // Split into NewNodeChange and DeleteNodeChange 
+        SNodeId nodeId = change.getAffectedNodeId();
+        SNode node = model.getNodeById(nodeId);
+        SNode parent = SNodeOperations.getParent(node);
+        String conceptFqName = node.getConceptFqName();
 
-            // adding NewNodeChange if needed 
-            if (parent == null || !(SetSequence.fromSet(addedNodes).contains(parent.getSNodeId()))) {
-              if (parent == null) {
-                ListSequence.fromList(changeList.value).addElement(new OldAddRootChange(conceptFqName, nodeId));
-              } else if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.getContainingLinkDeclaration(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class}))) {
-                SNode thisNodeInBase = myBaseVersionModel.getNodeById(nodeId);
-                if (thisNodeInBase != null && parent.getSNodeId().equals(check_fh1co9_a0a0a1a0a0h0c0a6a0e0y(SNodeOperations.getParent(thisNodeInBase))) && SNodeOperations.getContainingLinkRole(node).equals(SNodeOperations.getContainingLinkRole(thisNodeInBase))) {
-                  continue;
-                }
-                ListSequence.fromList(changeList.value).addElement(new SetNodeChange(conceptFqName, nodeId, SNodeOperations.getContainingLinkRole(node), parent.getSNodeId(), check_fh1co9_e0a0a2a0a0h0c0a6a0e0y(check_fh1co9_a4a0a0c0a0a7a2a0g0a4a42(myBaseVersionModel.getNodeById(SNodeOperations.getParent(node).getSNodeId()), node)), SNodeOperations.getContainingLinkRole(SNodeOperations.getPrevSibling(node))));
-              } else {
-                // TODO null in prevSibling and prevRole 
-                ListSequence.fromList(changeList.value).addElement(new AddNodeChange(conceptFqName, nodeId, SNodeOperations.getContainingLinkRole(node), parent.getSNodeId(), null, null));
-              }
+        // adding NewNodeChange if needed 
+        if (parent == null || !(SetSequence.fromSet(addedNodes).contains(parent.getSNodeId()))) {
+          if (parent == null) {
+            ListSequence.fromList(changeList).addElement(new OldAddRootChange(conceptFqName, nodeId));
+          } else if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.getContainingLinkDeclaration(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class}))) {
+            SNode thisNodeInBase = myBaseVersionModel.getNodeById(nodeId);
+            if (thisNodeInBase != null && parent.getSNodeId().equals(check_fh1co9_a0a0a1a0a0h0c0a11a42(SNodeOperations.getParent(thisNodeInBase))) && SNodeOperations.getContainingLinkRole(node).equals(SNodeOperations.getContainingLinkRole(thisNodeInBase))) {
+              continue;
             }
-
-
-            // adding DeleteNodeChange if needed 
-            if (!(SetSequence.fromSet(hasRemovedParent).contains(nodeId))) {
-              ListSequence.fromList(changeList.value).addElement(new DeleteNodeChange(nodeId, new ArrayList<SNodeId>()));
-            }
+            ListSequence.fromList(changeList).addElement(new SetNodeChange(conceptFqName, nodeId, SNodeOperations.getContainingLinkRole(node), parent.getSNodeId(), check_fh1co9_e0a0a2a0a0h0c0a11a42(check_fh1co9_a4a0a0c0a0a7a2a0l0y(myBaseVersionModel.getNodeById(SNodeOperations.getParent(node).getSNodeId()), node)), SNodeOperations.getContainingLinkRole(SNodeOperations.getPrevSibling(node))));
           } else {
-            ListSequence.fromList(changeList.value).addElement(change);
+            // TODO null in prevSibling and prevRole 
+            ListSequence.fromList(changeList).addElement(new AddNodeChange(conceptFqName, nodeId, SNodeOperations.getContainingLinkRole(node), parent.getSNodeId(), null, null));
           }
         }
-        final List<SetNodeChange> setNodeChanges = ListSequence.fromList(changeList.value).translate(new ITranslator2<OldChange, SetNodeChange>() {
-          public Iterable<SetNodeChange> translate(final OldChange ch) {
-            return new Iterable<SetNodeChange>() {
-              public Iterator<SetNodeChange> iterator() {
-                return new YieldingIterator<SetNodeChange>() {
-                  private int __CP__ = 0;
 
-                  protected boolean moveToNext() {
+
+        // adding DeleteNodeChange if needed 
+        if (!(SetSequence.fromSet(hasRemovedParent).contains(nodeId))) {
+          ListSequence.fromList(changeList).addElement(new DeleteNodeChange(nodeId, new ArrayList<SNodeId>()));
+        }
+      } else {
+        ListSequence.fromList(changeList).addElement(change);
+      }
+    }
+    final List<SetNodeChange> setNodeChanges = ListSequence.fromList(changeList).translate(new ITranslator2<OldChange, SetNodeChange>() {
+      public Iterable<SetNodeChange> translate(final OldChange ch) {
+        return new Iterable<SetNodeChange>() {
+          public Iterator<SetNodeChange> iterator() {
+            return new YieldingIterator<SetNodeChange>() {
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
 __loop__:
-                    do {
+                do {
 __switch__:
-                      switch (this.__CP__) {
-                        case -1:
-                          assert false : "Internal error";
-                          return false;
-                        case 2:
-                          if (ch instanceof SetNodeChange && ((SetNodeChange) ch).getOldChildId() != null) {
-                            this.__CP__ = 3;
-                            break;
-                          }
-                          this.__CP__ = 1;
-                          break;
-                        case 4:
-                          this.__CP__ = 1;
-                          this.yield((SetNodeChange) ch);
-                          return true;
-                        case 0:
-                          this.__CP__ = 2;
-                          break;
-                        case 3:
-                          this.__CP__ = 4;
-                          break;
-                        default:
-                          break __loop__;
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      if (ch instanceof SetNodeChange && ((SetNodeChange) ch).getOldChildId() != null) {
+                        this.__CP__ = 3;
+                        break;
                       }
-                    } while (true);
-                    return false;
+                      this.__CP__ = 1;
+                      break;
+                    case 4:
+                      this.__CP__ = 1;
+                      this.yield((SetNodeChange) ch);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 3:
+                      this.__CP__ = 4;
+                      break;
+                    default:
+                      break __loop__;
                   }
-                };
+                } while (true);
+                return false;
               }
             };
           }
-        }).toListSequence();
-        ListSequence.fromList(changeList.value).removeWhere(new IWhereFilter<OldChange>() {
-          public boolean accept(final OldChange ch) {
-            return ch instanceof DeleteNodeChange && ListSequence.fromList(setNodeChanges).any(new IWhereFilter<SetNodeChange>() {
-              public boolean accept(SetNodeChange snCh) {
-                return snCh.getOldChildId().equals(ch.getAffectedNodeId());
-              }
-            });
+        };
+      }
+    }).toListSequence();
+    ListSequence.fromList(changeList).removeWhere(new IWhereFilter<OldChange>() {
+      public boolean accept(final OldChange ch) {
+        return ch instanceof DeleteNodeChange && ListSequence.fromList(setNodeChanges).any(new IWhereFilter<SetNodeChange>() {
+          public boolean accept(SetNodeChange snCh) {
+            return snCh.getOldChildId().equals(ch.getAffectedNodeId());
           }
         });
-        changeList.value = ListSequence.fromList(changeList.value).select(new ISelector<OldChange, OldChange>() {
-          public OldChange select(OldChange ch) {
-            OldChange newCh = ch;
-            if (ch instanceof DeleteNodeChange) {
-              SNode deletedNode = myBaseVersionModel.getNodeById(ch.getAffectedNodeId());
-              if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.getContainingLinkDeclaration(deletedNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class}))) {
-                newCh = new DeleteNodeChange(ch.getAffectedNodeId(), ((DeleteNodeChange) ch).getChildren(), check_fh1co9_c0a0a0b0b0a0a0a9a0e0y(SNodeOperations.getParent(deletedNode)), SNodeOperations.getContainingLinkRole(deletedNode), -1);
-              }
-            }
-            return newCh;
-          }
-        }).toListSequence();
-        ListSequence.fromList(myChangeList).clear();
-        return ListSequence.fromList(myChangeList).addSequence(ListSequence.fromList(changeList.value));
-        // avoid returning value 
       }
-    }));
+    });
+    changeList = ListSequence.fromList(changeList).select(new ISelector<OldChange, OldChange>() {
+      public OldChange select(OldChange ch) {
+        OldChange newCh = ch;
+        if (ch instanceof DeleteNodeChange) {
+          SNode deletedNode = myBaseVersionModel.getNodeById(ch.getAffectedNodeId());
+          if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.getContainingLinkDeclaration(deletedNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class}))) {
+            newCh = new DeleteNodeChange(ch.getAffectedNodeId(), ((DeleteNodeChange) ch).getChildren(), check_fh1co9_c0a0a0b0b0a0a0a41a42(SNodeOperations.getParent(deletedNode)), SNodeOperations.getContainingLinkRole(deletedNode), -1);
+          }
+        }
+        return newCh;
+      }
+    }).toListSequence();
+    ListSequence.fromList(myChangeList).clear();
+    ListSequence.fromList(myChangeList).addSequence(ListSequence.fromList(changeList));
   }
 
   private void updateChangesCountsForRootsAndMultipleChildChanges() {
@@ -566,10 +562,19 @@ __switch__:
 
   private boolean checkLoaded() {
     myCommandQueue.assertSoftlyIsCommandThread();
+    if (!(isModelRegistered())) {
+      return false;
+    }
     if (myEnabled && isEmpty() && myBaseVersionModel == null) {
       update(true);
     }
     return myBaseVersionModel != null;
+  }
+
+  private boolean isModelRegistered() {
+    // TODO this actually should be checked in the beginning of all read actions here, 
+    // but it needs rewriting a lot of code. This can be fixed after 2.0.x 
+    return myModelDescriptor == SModelRepository.getInstance().getModelDescriptor(myModelDescriptor.getSModelReference());
   }
 
   private void fillWithAddRootChange() {
@@ -594,7 +599,7 @@ __switch__:
     removeAllChanges();
     clearCaches();
 
-    if (!(myModelDescriptor instanceof EditableSModelDescriptor)) {
+    if (!(myModelDescriptor instanceof EditableSModelDescriptor) || !(isModelRegistered())) {
       return;
     }
     IFile modelFile = ((EditableSModelDescriptor) myModelDescriptor).getModelFile();
@@ -634,6 +639,9 @@ __switch__:
       final Wrappers._T<List<OldChange>> changeList = new Wrappers._T<List<OldChange>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
+          if (!(isModelRegistered())) {
+            ListSequence.fromList(myChangeList).clear();
+          }
           myChangeList = new DiffBuilder(myBaseVersionModel, getModel()).getChanges();
           mergeChanges();
           updateChangesCountsForRootsAndMultipleChildChanges();
@@ -703,7 +711,7 @@ __switch__:
   @Nullable
   public SNodeId getBaseParentId(@NotNull SNodeId child) {
     myCommandQueue.assertSoftlyIsCommandThread();
-    return check_fh1co9_a1a43(check_fh1co9_a0b0ib(check_fh1co9_a0a1a43(myBaseVersionModel, child)));
+    return check_fh1co9_a1a53(check_fh1co9_a0b0jb(check_fh1co9_a0a1a53(myBaseVersionModel, child)));
   }
 
   public boolean isAddedNode(@NotNull SNodePointer node) {
@@ -754,7 +762,7 @@ __switch__:
 
     // Step 2: find longest common subsequence of children 
     List<SNodeId> currentChildrenIds = SModelUtils.getNodeIds(currentChildren);
-    List<SNodeId> baseChildrenIds = SModelUtils.getNodeIds(check_fh1co9_a0a21a93(myBaseVersionModel.getNodeById(parentNode.getSNodeId()), role));
+    List<SNodeId> baseChildrenIds = SModelUtils.getNodeIds(check_fh1co9_a0a21a04(myBaseVersionModel.getNodeById(parentNode.getSNodeId()), role));
     List<Tuples._2<Iterable<SNodeId>, Iterable<SNodeId>>> differentSubsequences = new LongestCommonSubsequenceFinder<SNodeId>(baseChildrenIds, currentChildrenIds).getDifferentSubsequences();
 
     // Step 3: add new changes 
@@ -921,8 +929,8 @@ __switch__:
       }
     } else if (change instanceof DeleteNodeChange) {
       DeleteNodeChange deleteChange = (DeleteNodeChange) change;
-      SNode parent = check_fh1co9_a0b0a2a74(myBaseVersionModel.getNodeById(change.getAffectedNodeId()));
-      parent = getModel().getNodeById(check_fh1co9_a0a0c0a2a74(parent));
+      SNode parent = check_fh1co9_a0b0a2a84(myBaseVersionModel.getNodeById(change.getAffectedNodeId()));
+      parent = getModel().getNodeById(check_fh1co9_a0a0c0a2a84(parent));
       SNode oldNode = getBaseNode(change.getAffectedNodeId(), null);
       if (deleteChange.getRole() != null && oldNode != null) {
         if (deleteChange.getNextChildIndex() == -1) {
@@ -930,8 +938,8 @@ __switch__:
         } else {
           SNode anchorChild = null;
           if (deleteChange.getNextChildIndex() != 0) {
-            anchorChild = check_fh1co9_a0a0b0a0a4a0c0vb(parent.getChildren(deleteChange.getRole()), deleteChange);
-            anchorChild = getModel().getNodeById(check_fh1co9_a0a0b0b0a0a4a0c0vb(anchorChild));
+            anchorChild = check_fh1co9_a0a0b0a0a4a0c0wb(parent.getChildren(deleteChange.getRole()), deleteChange);
+            anchorChild = getModel().getNodeById(check_fh1co9_a0a0b0b0a0a4a0c0wb(anchorChild));
           }
           parent.insertChild(anchorChild, deleteChange.getRole(), oldNode);
         }
@@ -940,12 +948,12 @@ __switch__:
       String role = ((OldSetPropertyChange) change).getProperty();
       SNode node = getModel().getNodeById(change.getAffectedNodeId());
       assert node != null;
-      node.setProperty(role, check_fh1co9_b0a3a1c0vb(myBaseVersionModel.getNodeById(node.getSNodeId()), role));
+      node.setProperty(role, check_fh1co9_b0a3a1c0wb(myBaseVersionModel.getNodeById(node.getSNodeId()), role));
     } else if (change instanceof OldSetReferenceChange) {
       String role = ((OldSetReferenceChange) change).getRole();
       SNode node = getModel().getNodeById(change.getAffectedNodeId());
       assert node != null;
-      SReference br = check_fh1co9_a0d0c2a74(myBaseVersionModel.getNodeById(node.getSNodeId()), role);
+      SReference br = check_fh1co9_a0d0c2a84(myBaseVersionModel.getNodeById(node.getSNodeId()), role);
       if (br == null) {
         node.setReferent(role, null);
       } else {
@@ -962,98 +970,98 @@ __switch__:
     }
   }
 
-  private static SNodeId check_fh1co9_a0a0a1a0a0h0c0a6a0e0y(SNode checkedDotOperand) {
+  private static SNodeId check_fh1co9_a0a0a1a0a0h0c0a11a42(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNodeId();
     }
     return null;
   }
 
-  private static SNodeId check_fh1co9_e0a0a2a0a0h0c0a6a0e0y(SNode checkedDotOperand) {
+  private static SNodeId check_fh1co9_e0a0a2a0a0h0c0a11a42(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNodeId();
     }
     return null;
   }
 
-  private static SNode check_fh1co9_a4a0a0c0a0a7a2a0g0a4a42(SNode checkedDotOperand, SNode node) {
+  private static SNode check_fh1co9_a4a0a0c0a0a7a2a0l0y(SNode checkedDotOperand, SNode node) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getChild(SNodeOperations.getContainingLinkRole(node));
     }
     return null;
   }
 
-  private static SNodeId check_fh1co9_c0a0a0b0b0a0a0a9a0e0y(SNode checkedDotOperand) {
+  private static SNodeId check_fh1co9_c0a0a0b0b0a0a0a41a42(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNodeId();
     }
     return null;
   }
 
-  private static SNodeId check_fh1co9_a1a43(SNode checkedDotOperand) {
+  private static SNodeId check_fh1co9_a1a53(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNodeId();
     }
     return null;
   }
 
-  private static SNode check_fh1co9_a0b0ib(SNode checkedDotOperand) {
+  private static SNode check_fh1co9_a0b0jb(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getParent();
     }
     return null;
   }
 
-  private static SNode check_fh1co9_a0a1a43(SModel checkedDotOperand, SNodeId child) {
+  private static SNode check_fh1co9_a0a1a53(SModel checkedDotOperand, SNodeId child) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeById(child);
     }
     return null;
   }
 
-  private static List<SNode> check_fh1co9_a0a21a93(SNode checkedDotOperand, String role) {
+  private static List<SNode> check_fh1co9_a0a21a04(SNode checkedDotOperand, String role) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getChildren(role);
     }
     return null;
   }
 
-  private static SNode check_fh1co9_a0b0a2a74(SNode checkedDotOperand) {
+  private static SNode check_fh1co9_a0b0a2a84(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getParent();
     }
     return null;
   }
 
-  private static SNodeId check_fh1co9_a0a0c0a2a74(SNode checkedDotOperand) {
+  private static SNodeId check_fh1co9_a0a0c0a2a84(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNodeId();
     }
     return null;
   }
 
-  private static SNode check_fh1co9_a0a0b0a0a4a0c0vb(List<SNode> checkedDotOperand, DeleteNodeChange deleteChange) {
+  private static SNode check_fh1co9_a0a0b0a0a4a0c0wb(List<SNode> checkedDotOperand, DeleteNodeChange deleteChange) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.get(deleteChange.getNextChildIndex() - 1);
     }
     return null;
   }
 
-  private static SNodeId check_fh1co9_a0a0b0b0a0a4a0c0vb(SNode checkedDotOperand) {
+  private static SNodeId check_fh1co9_a0a0b0b0a0a4a0c0wb(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNodeId();
     }
     return null;
   }
 
-  private static String check_fh1co9_b0a3a1c0vb(SNode checkedDotOperand, String role) {
+  private static String check_fh1co9_b0a3a1c0wb(SNode checkedDotOperand, String role) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getProperty(role);
     }
     return null;
   }
 
-  private static SReference check_fh1co9_a0d0c2a74(SNode checkedDotOperand, String role) {
+  private static SReference check_fh1co9_a0d0c2a84(SNode checkedDotOperand, String role) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference(role);
     }
