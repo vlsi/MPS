@@ -28,9 +28,11 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     if (BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept")) != 0) {
       return;
     }
-    IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
-    Set<IModule> allVisibleModules = module.getDependenciesManager().getAllVisibleModules();
-    allVisibleModules.add(module);
+    /*
+      IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
+      Set<IModule> allVisibleModules = module.getDependenciesManager().getAllVisibleModules();
+      allVisibleModules.add(module);
+    */
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     for (SReference ref : SNodeOperations.getReferences(node)) {
       SNode target = SLinkOperations.getTargetNode(ref);
