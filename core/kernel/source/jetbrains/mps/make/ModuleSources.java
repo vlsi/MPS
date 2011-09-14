@@ -247,7 +247,7 @@ public class ModuleSources {
 
   private boolean isResourceFileName(String fileName) {
     int extPos = fileName.lastIndexOf('.');
-    return extPos > 0 && !fileName.endsWith(MPSExtentions.DOT_JAVAFILE) &&
+    return extPos == -1 || extPos > 0 && !fileName.endsWith(MPSExtentions.DOT_JAVAFILE) &&
       !fileName.endsWith(MPSExtentions.DOT_CLASSFILE);
   }
 }
