@@ -25,6 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.CollectionUtil;
+import java.util.Set;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
@@ -170,12 +171,7 @@ public class Java_Command {
   }
 
   public static List<String> getClasspath(final IModule module, boolean withDependencies) {
-    List<String> result = ListSequence.fromList(new ArrayList<String>());
-    if (module.getClassesGen() != null) {
-      ListSequence.fromList(result).addElement(module.getClassesGen().getAbsolutePath());
-    }
-
-    final ClasspathStringCollector visitor = new ClasspathStringCollector(result);
+    final ClasspathStringCollector visitor = new ClasspathStringCollector();
     module.getClassPathItem().accept(visitor);
     if (withDependencies) {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -185,10 +181,9 @@ public class Java_Command {
       });
     }
 
-    List<String> visited = visitor.getResultAndReInit();
+    Set<String> visited = visitor.getClasspath();
     visited.removeAll(CommonPaths.getJDKPath());
-
-    return visited;
+    return ListSequence.fromListWithValues(new ArrayList<String>(), visited);
   }
 
   private static List<String> getClassRunnerClassPath() {
@@ -199,10 +194,7 @@ public class Java_Command {
       }
     });
 
-    List<String> cp = ListSequence.fromList(new ArrayList<String>());
-    ClasspathStringCollector visitor = new ClasspathStringCollector(cp);
-    module.value.getClassPathItem().accept(visitor);
-    return visitor.getResultAndReInit();
+    return Java_Command.getClasspath(module.value, false);
   }
 
   public static String getJavaCommand(@Nullable String javaHome) throws ExecutionException {

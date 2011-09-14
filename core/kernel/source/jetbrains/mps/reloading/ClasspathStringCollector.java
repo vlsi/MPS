@@ -17,35 +17,42 @@ package jetbrains.mps.reloading;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class ClasspathStringCollector extends EachClassPathItemVisitor {
   @NotNull
-  private List<String> myStrings;
-
-  public ClasspathStringCollector(List<String> strings) {
-    myStrings = strings;
-  }
+  private final LinkedHashSet<String> myStrings = new LinkedHashSet<String>();
+  private final boolean myUseSystemSeparator;
 
   public ClasspathStringCollector() {
-    this(new ArrayList<String>());
+    this(true);
+  }
+
+  public ClasspathStringCollector(boolean useSystemSeparator) {
+    myUseSystemSeparator = useSystemSeparator;
+  }
+
+  private String separator() {
+    return myUseSystemSeparator ? File.separator : "/";
   }
 
   @Override
   public void visit(FileClassPathItem cpItem) {
-    myStrings.add(cpItem.getPath());
+    myStrings.add(cpItem.getPath().replace("/", separator()).replace("\\", separator()));
   }
 
   @Override
   public void visit(JarFileClassPathItem cpItem) {
-    myStrings.add(cpItem.getFile().getAbsolutePath());
+    myStrings.add(cpItem.getFile().getAbsolutePath().replace("/", separator()).replace("\\", separator()));
   }
 
-  public List<String> getResultAndReInit() {
-    List<String> result = myStrings;
-    myStrings = new ArrayList<String>();
-    return result;
+  public Set<String> getClasspath() {
+    return myStrings;
   }
 
+  public void clean() {
+    myStrings.clear();
+  }
 }

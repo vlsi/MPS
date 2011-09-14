@@ -53,7 +53,7 @@ public class ClassPathFactory {
       return item;
     }
 
-    if (jared || new File(path).isDirectory()) {
+    if (!jared && new File(path).isDirectory()) {
       myCache.put(path, new FileClassPathItem(path));
     } else {
       myCache.put(path, new JarFileClassPathItem(path));

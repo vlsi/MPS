@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3dzjlh9ejaje3o8jsg4uca855xjbv2u">
+<dependencies version="2" modelHash="-dtbw7tun3oqjhz9lhg0fp9lq7csaqvq">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project.structure.modules(MPS.Classpath/jetbrains.mps.project.structure.modules@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.reloading(MPS.Classpath/jetbrains.mps.reloading@java_stub)" />
@@ -26,7 +26,7 @@
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
   <dep model="r:f2dd746b-c380-468c-b7b4-617bc6843aa2(jetbrains.mps.lang.stubs.generator.template.main@generator)" hash="-emi09pd22rl3ru34x0ve7ur3te0w1x" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-c8o7egrhhlddj60rzgg330ecnpq5k8d" />
-  <common hash="90mpj6p11md0080yi2hwcm9z9l9p3fb">
+  <common hash="cpjb5zpejxehsyu3xbmkusic5mf8kz3">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
   </common>
   <source id="5516999836374025628" name="JavaStubs" hash="lhhxxqfdjbzf1c0y9x7wa8n7b9lm8e">
@@ -98,7 +98,7 @@
     <file name="JavaStubs_MPS.java" />
     <file name="MPS_StubDescriptor.java" />
   </source>
-  <source id="4381823297881500018" name="Testbench" hash="a7tm8yj5r5u1osjhafdp98941kmr7wf">
+  <source id="4381823297881500018" name="Testbench" hash="bna9ozstk5na7i8qkyad8l5xmeqo8zn">
     <dep root="5516999836374025628" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.reloading(MPS.Classpath/jetbrains.mps.reloading@java_stub)" />

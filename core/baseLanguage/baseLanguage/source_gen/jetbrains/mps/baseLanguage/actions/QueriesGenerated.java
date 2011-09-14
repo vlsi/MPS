@@ -1667,6 +1667,75 @@ __switch__:
         });
       }
     }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode cast = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.CastExpression", null);
+            SNode parens = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+            SLinkOperations.setTarget(parens, "expression", cast, true);
+            SNode instanceOf = ExpectedType_FactoryUtil.getCorrespondingInstanceOf((_context.getCurrentTargetNode() != null && SNodeOperations.getParent(_context.getCurrentTargetNode()) == _context.getParentNode() ?
+              _context.getCurrentTargetNode() :
+              _context.getParentNode()
+            ));
+            if ((instanceOf != null)) {
+              SLinkOperations.setTarget(cast, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOf, "classType", true)), true);
+              SLinkOperations.setTarget(cast, "expression", (_context.getCurrentTargetNode() == null || SConceptPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), "abstract") ?
+                SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOf, "leftExpression", true)) :
+                null
+              ), true);
+              if ((SLinkOperations.getTarget(cast, "expression", true) == null) && SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
+                SLinkOperations.setTarget(cast, "expression", SNodeOperations.copyNode(_context.getCurrentTargetNode()), true);
+              }
+            } else if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
+              SLinkOperations.setTarget(cast, "expression", SNodeOperations.copyNode(_context.getCurrentTargetNode()), true);
+            }
+            return parens;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "type cast expression";
+          }
+
+          public String getMatchingText(String pattern) {
+            if (pattern.startsWith("(")) {
+              String typeName = "type";
+              String varName = "expr";
+              SNode instanceOf = ExpectedType_FactoryUtil.getCorrespondingInstanceOf((_context.getCurrentTargetNode() != null && SNodeOperations.getParent(_context.getCurrentTargetNode()) == _context.getParentNode() ?
+                _context.getCurrentTargetNode() :
+                _context.getParentNode()
+              ));
+              SNode var;
+              if (instanceOf != null) {
+                if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(instanceOf, "classType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+                  typeName = BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(SLinkOperations.getTarget(instanceOf, "classType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+                }
+                var = (_context.getCurrentTargetNode() == null || SConceptPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), "abstract") ?
+                  SLinkOperations.getTarget(instanceOf, "leftExpression", true) :
+                  _context.getCurrentTargetNode()
+                );
+              } else {
+                var = _context.getCurrentTargetNode();
+              }
+              if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) {
+                varName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(var, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false), "name");
+              } else if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.baseLanguage.structure.ParameterReference")) {
+                varName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(var, "jetbrains.mps.baseLanguage.structure.ParameterReference"), "variableDeclaration", false), "name");
+              }
+              return "((" + typeName + ")" + varName + ")";
+            }
+            return "((type)expr)";
+
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
     return result;
   }
 

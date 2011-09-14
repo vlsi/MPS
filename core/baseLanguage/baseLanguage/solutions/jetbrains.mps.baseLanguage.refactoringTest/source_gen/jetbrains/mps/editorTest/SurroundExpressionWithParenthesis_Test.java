@@ -25,7 +25,7 @@ public class SurroundExpressionWithParenthesis_Test extends BaseTransformationTe
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1989240834983537721", "1989240834983537728");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "(");
+      BaseEditorTestBody.typeString(editorComponent, "(e");
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
