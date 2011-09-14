@@ -5,6 +5,7 @@
     <classNode dependClassName="java.awt.datatransfer.DataFlavor" />
     <classNode dependClassName="java.awt.datatransfer.Transferable" />
     <classNode dependClassName="java.awt.datatransfer.UnsupportedFlavorException" />
+    <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />

@@ -14,6 +14,7 @@ import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.java.parser.JavaCompiler;
+import java.io.File;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.JOptionPane;
@@ -78,7 +79,7 @@ public class JavaPaster {
 
   public void pasteJavaAsNode(SNode anchor, final SModel model, String javaCode, IOperationContext operationContext, FeatureKind featureKind) {
     IModule module = model.getModelDescriptor().getModule();
-    JavaCompiler javaCompiler = new JavaCompiler(operationContext, module, null, false, model);
+    JavaCompiler javaCompiler = new JavaCompiler(operationContext, module, (File) null, false, model);
     try {
       List<SNode> nodes = javaCompiler.compileIsolated(javaCode, featureKind);
       if (ListSequence.fromList(nodes).isEmpty()) {
@@ -139,7 +140,7 @@ public class JavaPaster {
   public static List<SNode> getStatementsFromJavaText(String javaCode, SModel model, IOperationContext context) {
     IModule module = model.getModelDescriptor().getModule();
     try {
-      return new JavaCompiler(context, module, null, false, model).compileIsolated(javaCode, FeatureKind.STATEMENTS);
+      return new JavaCompiler(context, module, (File) null, false, model).compileIsolated(javaCode, FeatureKind.STATEMENTS);
     } catch (ConversionFailedException e) {
     }
     return new ArrayList<SNode>();
