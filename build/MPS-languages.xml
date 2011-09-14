@@ -7215,7 +7215,9 @@
     <mkdir dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.general-purpose.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.general-purpose.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.devkit.general-purpose" uuid="fbc25dd2-5da4-483a-8b19-70928e1b62d7" type="unknown">
-        <dependencies />
+        <dependencies>
+          <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+        </dependencies>
         <sources jar="jetbrains.mps.devkit.general-purpose-src.jar" descriptor="jetbrains.mps.devkit.general-purpose.devkit" />
       </module>
     </echoxml>
@@ -7235,7 +7237,9 @@
     <mkdir dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.language-design.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.language-design.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.devkit.language-design" uuid="2677cb18-f558-4e33-bc38-a5139cee06dc" type="unknown">
-        <dependencies />
+        <dependencies>
+          <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+        </dependencies>
         <sources jar="jetbrains.mps.devkit.language-design-src.jar" descriptor="jetbrains.mps.devkit.language-design.devkit" />
       </module>
     </echoxml>
@@ -7255,7 +7259,9 @@
     <mkdir dir="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.devkit.bootstrap-languages" uuid="e073aac8-8c71-4c23-be71-86bf7a6df0a2" type="unknown">
-        <dependencies />
+        <dependencies>
+          <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+        </dependencies>
         <sources jar="jetbrains.mps.devkit.bootstrap-languages-src.jar" descriptor="jetbrains.mps.devkit.bootstrap-languages.devkit" />
       </module>
     </echoxml>
