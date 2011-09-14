@@ -426,6 +426,10 @@ public class JavaCompiler {
     return myCompilationResults;
   }
 
+  public Iterable<SModel> getAffectedModels() {
+    return myPackageFQNamesToModels.values();
+  }
+
   public static boolean checkBaseModelMatchesSourceDirectory(SModel model, File sourceDir) {
     String pathPostfix = NameUtil.pathFromNamespace(SModelOperations.getModelName(model));
     return sourceDir.getAbsolutePath().endsWith(pathPostfix);

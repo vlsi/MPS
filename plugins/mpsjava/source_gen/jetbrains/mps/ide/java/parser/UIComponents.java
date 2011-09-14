@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.jdesktop.observablecollections.ObservableList;
 import java.util.Map;
 import java.util.Set;
-import com.intellij.util.containers.HashMap;
+import java.util.HashMap;
 import java.awt.HeadlessException;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;

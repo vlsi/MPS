@@ -6,23 +6,26 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import java.util.Set;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.List;
 import jetbrains.mps.smodel.SReference;
+import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.Map;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.IOperationContext;
+import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -31,6 +34,7 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.MissingDependenciesFixer;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -41,13 +45,26 @@ public class StubResolver {
   private static final String JAVA_STUB = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
   protected static Log log = LogFactory.getLog(StubResolver.class);
 
+  private Set<SModelReference> myUsedModels;
+
   public StubResolver() {
+    // resolve to any nonstub model 
+    myUsedModels = null;
   }
 
-  public static void resolveInModel(final SModel model, IOperationContext context) {
-    List<SReference> toResolve = ListSequence.fromList(new ArrayList<SReference>());
-    Map<SModelReference, SModelReference> models = MapSequence.fromMap(new HashMap<SModelReference, SModelReference>());
-    for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+  public StubResolver(Iterable<SModel> models) {
+    // resolve only to models from sequence 
+    myUsedModels = SetSequence.fromSetWithValues(new HashSet<SModelReference>(), Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
+      public SModelReference select(SModel it) {
+        return it.getSModelReference();
+      }
+    }));
+  }
+
+  private List<SReference> getReferencesToResolve(SModel sourceModel, Map<SModelReference, SModelReference> models) {
+    // fills models map with stub -> model correspondance 
+    List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
+    for (SNode node : ListSequence.fromList(SModelOperations.getNodes(sourceModel, null))) {
       for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
         SModelReference targetModelRef = ref.getTargetSModelReference();
         if (targetModelRef == null || !(JAVA_STUB.equals(targetModelRef.getStereotype()))) {
@@ -55,14 +72,19 @@ public class StubResolver {
         }
         // trying to find correspondent nonstub model 
         SModelFqName modelName = new SModelFqName(targetModelRef.getLongName(), null);
-        SModelDescriptor modelDescr = SModelRepository.getInstance().getModelDescriptor(modelName);
-        if (modelDescr == null) {
-          continue;
+        SModelReference modelRef = check_ar1im2_a0e0a0c0a(SModelRepository.getInstance().getModelDescriptor(modelName));
+        if (myUsedModels == null || SetSequence.fromSet(myUsedModels).contains(modelRef)) {
+          MapSequence.fromMap(models).put(targetModelRef, modelRef);
+          ListSequence.fromList(result).addElement(ref);
         }
-        MapSequence.fromMap(models).put(targetModelRef, modelDescr.getSModelReference());
-        ListSequence.fromList(toResolve).addElement(ref);
       }
     }
+    return result;
+  }
+
+  public void resolveInModel(final SModel model, IOperationContext context) {
+    Map<SModelReference, SModelReference> models = MapSequence.fromMap(new HashMap<SModelReference, SModelReference>());
+    List<SReference> toResolve = getReferencesToResolve(model, models);
     Iterable<SModelReference> modelsToAdd = Sequence.fromIterable(MapSequence.fromMap(models).values()).where(new IWhereFilter<SModelReference>() {
       public boolean accept(SModelReference it) {
         return !(jetbrains.mps.smodel.SModelOperations.getImportedModelUIDs(model).contains(it));
@@ -73,7 +95,7 @@ public class StubResolver {
         model.addModelImport(it, false);
       }
     });
-    final Map<SModelReference, Boolean> modelsUsed = MapSequence.fromMap(new HashMap<SModelReference, Boolean>());
+    final Set<SModelReference> modelsUsed = SetSequence.fromSet(new HashSet<SModelReference>());
 
     int cnt = 0;
     int delta = 0;
@@ -107,7 +129,7 @@ public class StubResolver {
         }
         if (ListSequence.fromList(resolved).count() > 0) {
           node.setReferent(SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
-          MapSequence.fromMap(modelsUsed).put(ref.getTargetSModelReference(), true);
+          SetSequence.fromSet(modelsUsed).addElement(ref.getTargetSModelReference());
           ListSequence.fromList(toResolve).removeElement(ref);
           ++delta;
         }
@@ -119,7 +141,7 @@ public class StubResolver {
 
     Sequence.fromIterable(modelsToAdd).where(new IWhereFilter<SModelReference>() {
       public boolean accept(SModelReference it) {
-        return MapSequence.fromMap(modelsUsed).get(it);
+        return SetSequence.fromSet(modelsUsed).contains(it);
       }
     }).visitAll(new IVisitor<SModelReference>() {
       public void visit(SModelReference it) {
@@ -128,7 +150,6 @@ public class StubResolver {
         }
       }
     });
-    // <node> 
     Sequence.fromIterable(modelsToAdd).visitAll(new IVisitor<SModelReference>() {
       public void visit(SModelReference it) {
         model.deleteModelImport(it);
@@ -141,7 +162,7 @@ public class StubResolver {
     }
   }
 
-  public static void resolveInModels(List<SModelDescriptor> models, IOperationContext context) {
+  public void resolveInModels(List<SModelDescriptor> models, IOperationContext context) {
     for (SModelDescriptor model : ListSequence.fromList(models)) {
       if (log.isInfoEnabled()) {
         log.info("resolving " + model.getLongName());
@@ -150,7 +171,7 @@ public class StubResolver {
     }
   }
 
-  public static void resolveInProject(MPSProject project, IOperationContext context) {
+  public void resolveInProject(MPSProject project, IOperationContext context) {
     for (IModule module : ListSequence.fromList(project.getModules())) {
       if (module.isPackaged()) {
         continue;
@@ -163,9 +184,16 @@ public class StubResolver {
           continue;
         }
 
-        StubResolver.resolveInModel(model.getSModel(), context);
+        resolveInModel(model.getSModel(), context);
       }
     }
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+  }
+
+  private static SModelReference check_ar1im2_a0e0a0c0a(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModelReference();
+    }
+    return null;
   }
 }

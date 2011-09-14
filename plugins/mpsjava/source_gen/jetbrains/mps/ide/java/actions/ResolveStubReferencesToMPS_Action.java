@@ -54,7 +54,7 @@ public class ResolveStubReferencesToMPS_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      StubResolver.resolveInModels(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      new StubResolver().resolveInModels(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ResolveStubReferencesToMPS", t);

@@ -13,10 +13,15 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
+import java.util.Set;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.java.parser.JavaCompiler;
 import jetbrains.mps.smodel.IOperationContext;
 import java.io.File;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.java.util.StubResolver;
 import jetbrains.mps.project.MPSProject;
 
@@ -74,11 +79,14 @@ public class MigrateSourcesToMPS_Action extends GeneratedAction {
       if (moduleDescr == null) {
         return;
       }
+      Set<SModel> affectedModels = SetSequence.fromSet(new HashSet<SModel>());
       for (String sourcePath : ListSequence.fromList(moduleDescr.getSourcePaths())) {
         JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), new File(sourcePath), false);
         javaCompiler.compile();
+        SetSequence.fromSet(affectedModels).addSequence(Sequence.fromIterable(javaCompiler.getAffectedModels()));
       }
-      StubResolver.resolveInProject(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      new StubResolver(affectedModels).resolveInProject(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      moduleDescr.getSourcePaths().clear();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MigrateSourcesToMPS", t);
