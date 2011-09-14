@@ -42,6 +42,11 @@ public class FileClassPathItem extends RealClassPathItem {
     myClassPath = classPath;
   }
 
+  @Deprecated
+  public String getClassPath() {
+    return getPath();
+  }
+
   public String getPath() {
     checkValidity();
     return myClassPath;
