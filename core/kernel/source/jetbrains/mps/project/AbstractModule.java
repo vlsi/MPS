@@ -184,12 +184,9 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<ModuleReference> getUsedDevkitReferences() {
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      result.addAll(descriptor.getUsedDevkits());
-    }
-    return result;
+    if (descriptor == null) return new ArrayList<ModuleReference>();
+    return new ArrayList<ModuleReference>(descriptor.getUsedDevkits());
   }
 
   //----stubs
