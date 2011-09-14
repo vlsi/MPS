@@ -466,10 +466,6 @@
     <path path="${base_dir}/core/analyzers/languages/analyzers/classes_gen" />
     <path path="${base_dir}/core/analyzers/languages/analyzers/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -497,6 +493,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -541,6 +538,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -552,6 +550,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -589,6 +588,7 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage_tjc.classpaths">
@@ -676,10 +676,6 @@
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -707,6 +703,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -755,6 +752,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -766,6 +764,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -813,15 +812,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.builders_tjc.classpaths">
     <path path="${base_dir}/languages/util/builders/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -849,6 +845,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -893,6 +890,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -905,6 +903,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -942,15 +941,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.constructors_tjc.classpaths">
     <path path="${base_dir}/core/baseLanguage/constructors/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -979,6 +975,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1023,6 +1020,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1034,6 +1032,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -1071,15 +1070,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.contracts_tjc.classpaths">
     <path path="${base_dir}/languages/util/contracts/languages/contracts/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -1107,6 +1103,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1151,6 +1148,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1162,6 +1160,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/contracts/languages/contracts/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -1200,15 +1199,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths">
     <path path="${base_dir}/languages/util/dates/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -1236,6 +1232,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1280,6 +1277,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1291,6 +1289,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/classes_gen" />
     <path path="${base_dir}/languages/util/dates/internal/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
@@ -1330,15 +1329,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.datesInternal_tjc.classpaths">
     <path path="${base_dir}/languages/util/dates/internal/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -1366,6 +1362,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1410,6 +1407,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1421,6 +1419,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/internal/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -1459,15 +1458,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.classpaths">
     <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -1495,6 +1491,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1539,6 +1536,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1550,6 +1548,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
@@ -1588,15 +1587,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.jdk7_tjc.classpaths">
     <path path="${base_dir}/core/baseLanguage/jdk7/languages/jdk7/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -1625,6 +1621,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1669,6 +1666,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1680,6 +1678,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -1717,15 +1716,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.math_tjc.classpaths">
     <path path="${base_dir}/languages/util/math/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -1753,6 +1749,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1797,6 +1794,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1808,6 +1806,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -1846,15 +1845,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.money_tjc.classpaths">
     <path path="${base_dir}/languages/util/money/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -1882,6 +1878,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1926,6 +1923,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -1937,6 +1935,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -1975,15 +1974,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc.classpaths">
     <path path="${base_dir}/core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -2012,6 +2008,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2056,6 +2053,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2067,6 +2065,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2104,6 +2103,7 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc.classpaths">
@@ -2115,6 +2115,7 @@
     <path path="${base_dir}/core/baseLanguage/collections/runtime/gwt/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2139,10 +2140,6 @@
   <path id="cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc.classpaths">
     <path path="${base_dir}/core/baseLanguage/runConfigurations/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -2171,6 +2168,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2215,6 +2213,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2226,6 +2225,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2263,15 +2263,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.bash_tjc.classpaths">
     <path path="${base_dir}/languages/util/bash/languages/bash/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -2299,6 +2296,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2343,6 +2341,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2355,6 +2354,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2392,16 +2392,13 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.custommps_tjc.classpaths">
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/distrib/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -2429,6 +2426,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2473,6 +2471,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2488,6 +2487,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2525,15 +2525,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.dependency_tjc.classpaths">
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -2561,6 +2558,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2605,6 +2603,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2617,6 +2616,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2654,20 +2654,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
-<<<<<<< HEAD
   <path id="cycle.jetbrains.mps.build.packaging_tjc.classpaths">
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-=======
-  <path id="cycle.jetbrains.mps.build.generictasks_tjc.classpaths">
-    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
-    <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -2695,6 +2687,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2739,6 +2732,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2752,6 +2746,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2789,18 +2784,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
-<<<<<<< HEAD
   <path id="cycle.jetbrains.mps.ide.uiLanguage_tjc.classpaths">
     <path path="${base_dir}/workbench/ideUiLanguage/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-=======
-  <path id="cycle.jetbrains.mps.build.packaging_tjc.classpaths">
-    <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
-    <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -2828,6 +2817,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2872,6 +2862,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -2883,6 +2874,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -2920,19 +2912,13 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path path="${base_dir}/workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
-<<<<<<< HEAD
   <path id="cycle.jetbrains.mps.lang.descriptor_tjc.classpaths">
     <path path="${base_dir}/languages/languageDesign/generator/languages/descriptor/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-=======
-  <path id="cycle.jetbrains.mps.ide.uiLanguage_tjc.classpaths">
-    <path path="${base_dir}/workbench/ideUiLanguage/classes_gen" />
-    <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -2960,6 +2946,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3004,6 +2991,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3016,6 +3004,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3053,18 +3042,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
-<<<<<<< HEAD
   <path id="cycle.jetbrains.mps.lang.editor.editorTest_tjc.classpaths">
     <path path="${base_dir}/core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-=======
-  <path id="cycle.jetbrains.mps.lang.descriptor_tjc.classpaths">
-    <path path="${base_dir}/languages/languageDesign/generator/languages/descriptor/classes_gen" />
-    <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -3092,6 +3075,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3137,6 +3121,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3148,6 +3133,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3185,18 +3171,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
-<<<<<<< HEAD
   <path id="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths">
     <path path="${base_dir}/core/languageDesign/editor/languages/table/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-=======
-  <path id="cycle.jetbrains.mps.lang.editor.editorTest_tjc.classpaths">
-    <path path="${base_dir}/core/languageDesign/editor/languages/editorTest/classes_gen" />
-    <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -3224,6 +3204,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3269,6 +3250,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3280,6 +3262,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3317,18 +3300,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
-<<<<<<< HEAD
   <path id="cycle.jetbrains.mps.lang.pattern.testLang_tjc.classpaths">
     <path path="${base_dir}/core/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-=======
-  <path id="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths">
-    <path path="${base_dir}/core/languageDesign/editor/languages/table/classes_gen" />
-    <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -3356,6 +3333,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3401,6 +3379,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3412,6 +3391,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3449,18 +3429,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
-<<<<<<< HEAD
   <path id="cycle.jetbrains.mps.lang.smodelTests_tjc.classpaths">
     <path path="${base_dir}/core/languageDesign/smodel/languages/smodelTests/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-=======
-  <path id="cycle.jetbrains.mps.lang.pattern.testLang_tjc.classpaths">
-    <path path="${base_dir}/core/languageDesign/pattern/languages/testLang/classes_gen" />
-    <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -3488,6 +3462,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3533,6 +3508,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3544,6 +3520,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3581,18 +3558,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
-<<<<<<< HEAD
   <path id="cycle.jetbrains.mps.nanoj_tjc.classpaths">
     <path path="${base_dir}/languages/util/mps-lite/languages/nanoj/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-=======
-  <path id="cycle.jetbrains.mps.lang.smodelTests_tjc.classpaths">
-    <path path="${base_dir}/core/languageDesign/smodel/languages/smodelTests/classes_gen" />
-    <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -3620,6 +3591,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3664,6 +3636,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3675,6 +3648,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3713,18 +3687,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
-<<<<<<< HEAD
   <path id="cycle.jetbrains.mps.platform.conf_tjc.classpaths">
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-=======
-  <path id="cycle.jetbrains.mps.nanoj_tjc.classpaths">
-    <path path="${base_dir}/languages/util/mps-lite/languages/nanoj/classes_gen" />
-    <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -3752,6 +3720,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3769,10 +3738,7 @@
     <path path="${base_dir}/core/kernel/patternRuntime/classes_gen" />
     <path path="${base_dir}/core/kernel/resources/classes_gen" />
     <path path="${base_dir}/core/kernel/smodelRuntime/classes_gen" />
-<<<<<<< HEAD
     <path path="${base_dir}/core/kernel/stubUtils/classes_gen" />
-=======
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/classes_gen" />
     <path path="${base_dir}/core/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/core/languageDesign/behavior/languages/behavior/classes_gen" />
@@ -3800,6 +3766,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3811,6 +3778,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -3849,18 +3817,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
-<<<<<<< HEAD
   <path id="cycle.jetbrains.mps.quickQueryLanguage_tjc.classpaths">
     <path path="${base_dir}/languages/util/quickQueryLanguage/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-=======
-  <path id="cycle.jetbrains.mps.platform.conf_tjc.classpaths">
-    <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
-    <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -3888,6 +3850,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3905,10 +3868,6 @@
     <path path="${base_dir}/core/kernel/patternRuntime/classes_gen" />
     <path path="${base_dir}/core/kernel/resources/classes_gen" />
     <path path="${base_dir}/core/kernel/smodelRuntime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/kernel/stubUtils/classes_gen" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/classes_gen" />
     <path path="${base_dir}/core/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/core/languageDesign/behavior/languages/behavior/classes_gen" />
@@ -3936,6 +3895,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -3947,6 +3907,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3985,162 +3946,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path refid="common.classpath" />
-  </path>
-<<<<<<< HEAD
-  <path id="cycle.jetbrains.mps.ui.swing_tjc.classpaths">
-    <path path="${base_dir}/languages/util/ui/languages/swing/classes_gen" />
-    <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-=======
-  <path id="cycle.jetbrains.mps.quickQueryLanguage_tjc.classpaths">
-    <path path="${base_dir}/languages/util/quickQueryLanguage/classes_gen" />
-    <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/classifiers/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/closures/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/runtime/gwt/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
-    <path path="${base_dir}/core/editor-runtime/classes_gen" />
-    <path path="${base_dir}/core/kernel/dataFlowRuntime/classes_gen" />
-    <path path="${base_dir}/core/kernel/kernelSolution/classes_gen" />
-    <path path="${base_dir}/core/kernel/patternRuntime/classes_gen" />
-    <path path="${base_dir}/core/kernel/resources/classes_gen" />
-    <path path="${base_dir}/core/kernel/smodelRuntime/classes_gen" />
-<<<<<<< HEAD
-    <path path="${base_dir}/core/kernel/stubUtils/classes_gen" />
-=======
->>>>>>> origin/MPS2.0
-    <path path="${base_dir}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/actions/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/behavior/languages/behavior/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/constraints/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/dataFlow/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/editor/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/editor/languages/table/runtime/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/findUsages/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/intentions/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/make/languages/facet/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/make/languages/script/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/plugin/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/project/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/quotation/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/refactoring/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/script/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/sharedConcepts/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
-    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
-    <path path="${base_dir}/core/plugin-runtime/classes_gen" />
-    <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
-    <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
-    <path path="${base_dir}/languages/core/core/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
-    <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
-    <path path="${base_dir}/languages/util/gtext/classes_gen" />
-    <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
-    <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.util/classes_gen" />
-<<<<<<< HEAD
-    <path path="${base_dir}/languages/util/ui/languages/gwt/classes_gen" />
-=======
->>>>>>> origin/MPS2.0
-    <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/internal/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/meta/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/ui/classes_gen" />
-    <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
-    <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
-    <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
-    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
-    <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
-    <path path="${base_dir}/languages/util/ypath/classes_gen" />
-    <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
-    <path path="${base_dir}/lib/ant/lib/ant.jar" />
-    <path path="${base_dir}/lib/asm.jar" />
-    <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-<<<<<<< HEAD
-    <path path="${base_dir}/lib/bootstrap.jar" />
-=======
-    <path path="${base_dir}/lib/commons-lang-2.4.jar" />
-    <path path="${base_dir}/lib/commons-logging-1.1.jar" />
-    <path path="${base_dir}/lib/guava-r06.jar" />
-    <path path="${base_dir}/lib/junit-4.8.2.jar" />
-    <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.swing_tjc.classpaths">
     <path path="${base_dir}/languages/util/ui/languages/swing/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -4168,6 +3979,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4213,6 +4025,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -4220,6 +4033,11 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -4253,26 +4071,26 @@
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
->>>>>>> origin/MPS2.0
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.swt_tjc.classpaths">
     <path path="${base_dir}/languages/util/ui/languages/swt/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -4300,6 +4118,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4345,6 +4164,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -4356,6 +4176,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -4406,6 +4227,7 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.swt.runtime_tjc.classpaths">
@@ -4417,15 +4239,9 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path refid="common.classpath" />
   </path>
-<<<<<<< HEAD
   <path id="cycle.jetbrains.mps.xmlQuery_tjc.classpaths">
     <path path="${base_dir}/languages/util/xml/xmlQuery/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-=======
-  <path id="cycle.jetbrains.mps.xml.deprecated_tjc.classpaths">
-    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
-    <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -4453,6 +4269,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4497,124 +4314,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
-    <path path="${base_dir}/core/plugin-runtime/classes_gen" />
-    <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
-    <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
-    <path path="${base_dir}/languages/core/core/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
-    <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
-    <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.util/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
-    <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
-    <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
-    <path path="${base_dir}/languages/util/ypath/classes_gen" />
-    <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="${base_dir}/lib/asm.jar" />
-    <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/commons-lang-2.4.jar" />
-    <path path="${base_dir}/lib/commons-logging-1.1.jar" />
-    <path path="${base_dir}/lib/guava-r06.jar" />
-    <path path="${base_dir}/lib/junit-4.8.2.jar" />
-    <path path="${base_dir}/lib/tools.jar" />
-    <path refid="common.classpath" />
-  </path>
-  <path id="cycle.jetbrains.mps.xmlQuery_tjc.classpaths">
-    <path path="${base_dir}/languages/util/xml/xmlQuery/classes_gen" />
-    <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/classifiers/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/closures/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/runtime/gwt/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
-    <path path="${base_dir}/core/editor-runtime/classes_gen" />
-    <path path="${base_dir}/core/kernel/dataFlowRuntime/classes_gen" />
-    <path path="${base_dir}/core/kernel/kernelSolution/classes_gen" />
-    <path path="${base_dir}/core/kernel/patternRuntime/classes_gen" />
-    <path path="${base_dir}/core/kernel/resources/classes_gen" />
-    <path path="${base_dir}/core/kernel/smodelRuntime/classes_gen" />
-    <path path="${base_dir}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/actions/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/behavior/languages/behavior/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/constraints/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/dataFlow/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/editor/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/editor/languages/table/runtime/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/findUsages/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/intentions/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/make/languages/facet/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/make/languages/script/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/plugin/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/project/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/quotation/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/refactoring/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/script/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/sharedConcepts/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
-    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -4627,6 +4327,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -4668,15 +4369,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mpslite_tjc.classpaths">
     <path path="${base_dir}/languages/util/mps-lite/languages/mpslite/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -4704,6 +4402,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4748,6 +4447,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -4759,6 +4459,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -4797,15 +4498,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.ypath.main_tjc.classpaths">
     <path path="${base_dir}/languages/util/ypath/solutions/main/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -4833,6 +4531,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4877,6 +4576,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -4888,6 +4588,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -4926,15 +4627,12 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.ypath.test_tjc.classpaths">
     <path path="${base_dir}/languages/util/ypath/solutions/test/classes_gen" />
     <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
-<<<<<<< HEAD
-=======
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
->>>>>>> origin/MPS2.0
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
@@ -4962,6 +4660,7 @@
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -5006,6 +4705,7 @@
     <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make.runtime/classes_gen" />
+    <path path="${base_dir}/core/make-runtime/solutions/jetbrains.mps.make/classes_gen" />
     <path path="${base_dir}/core/plugin-runtime/classes_gen" />
     <path path="${base_dir}/core/refactoring-runtime/classes_gen" />
     <path path="${base_dir}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/classes_gen" />
@@ -5017,6 +4717,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -5056,6 +4757,7 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
+    <path path="${base_dir}/workbench/ideSolution/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
