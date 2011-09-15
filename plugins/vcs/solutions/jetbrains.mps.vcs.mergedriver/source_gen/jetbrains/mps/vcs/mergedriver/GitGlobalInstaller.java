@@ -34,6 +34,9 @@ import java.io.FileNotFoundException;
 
   @NotNull
   protected AbstractInstaller.State install(boolean dryRun) {
+    if (!(PluginUtil.isGitPluginEnabled())) {
+      return AbstractInstaller.State.INSTALLED;
+    }
     // TODO rewrite it using git4idea util classes 
     if (!(myConfigFile.exists())) {
       if (dryRun) {
@@ -80,7 +83,7 @@ import java.io.FileNotFoundException;
       boolean equal = ListSequence.fromList(section).count() == ListSequence.fromList(newConfigLines).count();
       if (equal) {
         for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
-          if (neq_btx4zt_a0a0a0e0s0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
+          if (neq_btx4zt_a0a0a0e0t0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
             equal = false;
             break;
           }
@@ -129,7 +132,7 @@ import java.io.FileNotFoundException;
     return "Git";
   }
 
-  private static boolean neq_btx4zt_a0a0a0e0s0a(Object a, Object b) {
+  private static boolean neq_btx4zt_a0a0a0e0t0a(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

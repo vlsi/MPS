@@ -46,13 +46,10 @@ public class CommandLineGenerator {
     return String.format("\"%s\" -D%s=\"%s\" -cp \"%s\" %s", javaExecutable, MergeDriverMain.LOG_PROPERTY, escapedLogPath, classpathString, MergeDriverMain.class.getName());
   }
 
-  /*package*/ static String getSvnkitJar() {
+  private static String getSvnkitJar() {
     IdeaPluginDescriptor svnPlugin = PluginManager.getPlugin(PluginId.getId("Subversion"));
-    if (svnPlugin == null) {
-      return null;
-    } else {
-      return svnPlugin.getPath() + File.separator + "lib" + File.separator + "svnkit.jar";
-    }
+    assert svnPlugin != null;
+    return svnPlugin.getPath() + File.separator + "lib" + File.separator + "svnkit.jar";
   }
 
   public static Set<String> getClasspath(boolean withSvnkit) {
