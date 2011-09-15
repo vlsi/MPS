@@ -4422,8 +4422,8 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3673831299872201455">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3673831299872201459">
                     <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3673831299872201456" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3673831299872201466">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.3673831299872169203" resolveInfo="getSourcePaths" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5804460305580886189">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1775602641704992067" resolveInfo="getSourcesDirectories" />
                     </node>
                   </node>
                 </node>
