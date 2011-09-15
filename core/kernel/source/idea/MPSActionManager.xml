@@ -148,8 +148,6 @@
     <group id="ConsoleView.PopupMenu">
       <action id="ConsoleView.ClearAll" class="com.intellij.execution.impl.ConsoleViewImpl$ClearAllAction"/>
       <action id="ConsoleView.Copy" class="com.intellij.execution.impl.ConsoleViewImpl$CopyAction"/>
-      <separator/>
-      <reference ref="CompareClipboardWithSelection"/>
     </group>
 
     <action id="Find" class="com.intellij.openapi.editor.actions.IncrementalFindAction" icon="/actions/menu-find.png"/>
