@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.StructureModificationLog;
@@ -95,17 +96,25 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       if (mySModel.isLoading()) return;
       if (getLoadingState() == ModelLoadingState.FULLY_LOADED) return;
 
-      SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
-      fullModel.setLoading(true);
+      runModelLoading(
+        new Computable<ModelLoadResult>() {
+          public ModelLoadResult compute() {
+            SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
+            fullModel.setLoading(true);
 
-      try {
-        mySModel.setLoading(true);
-        new ModelLoader(mySModel, fullModel).update();
-        setLoadingState(ModelLoadingState.FULLY_LOADED);
-        fireModelStateChanged(ModelLoadingState.ROOTS_LOADED, ModelLoadingState.FULLY_LOADED);
-      } finally {
-        mySModel.setLoading(false);
-      }
+            try {
+              mySModel.setLoading(true);
+              new ModelLoader(mySModel, fullModel).update();
+              setLoadingState(ModelLoadingState.FULLY_LOADED);
+              fireModelStateChanged(ModelLoadingState.ROOTS_LOADED, ModelLoadingState.FULLY_LOADED);
+            } finally {
+              mySModel.setLoading(false);
+            }
+
+            return null;
+          }
+        }
+      );
     }
   }
 
@@ -266,7 +275,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   @Override
   public void replaceModel(SModel newModel, ModelLoadingState state) {
-    if (newModel==mySModel) return;
+    if (newModel == mySModel) return;
     myStructureModificationLog = null;
     setChanged(false);
     super.replaceModel(newModel, state);
@@ -319,7 +328,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   public SModelHeader getSModelHeader() {
     SModel model = mySModel;
-    if(model != null) {
+    if (model != null) {
       return model.getSModelHeader();
     }
     return myHeader;
