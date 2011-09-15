@@ -13,15 +13,12 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
-import java.util.Set;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
+import java.util.List;
+import java.io.File;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.ide.java.parser.JavaCompiler;
 import jetbrains.mps.smodel.IOperationContext;
-import java.io.File;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.java.util.StubResolver;
 import jetbrains.mps.project.MPSProject;
 
@@ -76,16 +73,19 @@ public class MigrateSourcesToMPS_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ModuleDescriptor moduleDescr = ((IModule) MapSequence.fromMap(_params).get("module")).getModuleDescriptor();
-      if (moduleDescr == null) {
+      if (moduleDescr == null || moduleDescr.getSourcePaths().isEmpty()) {
         return;
       }
-      Set<SModel> affectedModels = SetSequence.fromSet(new HashSet<SModel>());
-      for (String sourcePath : ListSequence.fromList(moduleDescr.getSourcePaths())) {
-        JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), new File(sourcePath), false);
-        javaCompiler.compile();
-        SetSequence.fromSet(affectedModels).addSequence(Sequence.fromIterable(javaCompiler.getAffectedModels()));
+
+      List<File> sourcePaths = ListSequence.fromList(new ArrayList<File>());
+      for (String path : ListSequence.fromList(moduleDescr.getSourcePaths())) {
+        ListSequence.fromList(sourcePaths).addElement(new File(path));
       }
-      new StubResolver(affectedModels).resolveInProject(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), sourcePaths, false);
+      javaCompiler.compile();
+      // re-resolve references to just imported models 
+      new StubResolver(javaCompiler.getAffectedModels()).resolveInProject(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+
       moduleDescr.getSourcePaths().clear();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
