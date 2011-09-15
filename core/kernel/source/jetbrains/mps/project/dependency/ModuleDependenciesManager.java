@@ -20,6 +20,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.IterableUtil;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -53,37 +54,32 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     return modules;
   }
 
+  @Override
+  public Set<IModule> getRequiredModules() {
+    Set<IModule> modules = new LinkedHashSet<IModule>();
+    for (IModule m : ModuleUtil.getDependencies(myModule)) {
+      modules.add(m);
+    }
+
+    for(Language language : ModuleUtil.getUsedLanguages(myModule)) {
+      for (ModuleReference ref : language.getRuntimeModulesReferences()) {
+        IModule m = MPSModuleRepository.getInstance().getModule(ref);
+        if (m == null) continue;
+        modules.add(m);
+      }
+    }
+    return modules;
+  }
+
   public void collectAllCompileTimeDependencies(/* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime) {
     dependencies.add(myModule);
-    for (Dependency dep : myModule.getDependencies()) {
-      IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
-      if (m == null) continue;
+    for (IModule m : ModuleUtil.getDependencies(myModule)) {
       if (!dependencies.contains(m)) {
         m.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
       }
     }
-    for (ModuleReference ref : myModule.getUsedDevkitReferences()) {
-      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
-      if (dk == null) continue;
-      for (Solution exportedSolution : dk.getAllExportedSolutions()) {
-        if (exportedSolution != null && !dependencies.contains(exportedSolution)) {
-          exportedSolution.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
-        }
-      }
-      for (Language language : dk.getAllExportedLanguages()) {
-        collectAllCompileTimeDependenciesInUsedLanguage(language, dependencies, languagesWithRuntime);
-      }
-    }
-    for (ModuleReference ref : myModule.getUsedLanguagesReferences()) {
-      Language l = MPSModuleRepository.getInstance().getLanguage(ref);
-      if (l == null) continue;
-      collectAllCompileTimeDependenciesInUsedLanguage(l, dependencies, languagesWithRuntime);
-    }
-  }
 
-  protected void collectAllCompileTimeDependenciesInUsedLanguage(Language l, /* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime) {
-    for (Language language : l.getAllExtendedLanguages()) {
-      if (language == null) continue;
+    for(Language language : ModuleUtil.getUsedLanguages(myModule)) {
       for (ModuleReference dep : language.getRuntimeModulesReferences()) {
         IModule m = MPSModuleRepository.getInstance().getModule(dep);
         if (m == null) continue;

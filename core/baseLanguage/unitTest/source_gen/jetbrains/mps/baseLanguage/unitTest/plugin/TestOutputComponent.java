@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import javax.swing.JComponent;
 import com.intellij.execution.ui.ConsoleView;
-import java.util.List;
+import java.util.Queue;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
@@ -16,15 +16,16 @@ import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Disposer;
 
 public class TestOutputComponent implements TestView {
-  private JComponent myComponent;
-  private ConsoleView myConsoleView;
-  private List<TestOutputComponent.Message> myMessages;
+  private static final int MAX_SIZE = 10000;
+
+  private final JComponent myComponent;
+  private final ConsoleView myConsoleView;
+  private final Queue<TestOutputComponent.Message> myMessages = QueueSequence.fromQueue(new LinkedList());
   private String myFilterClass;
   private String myFilterMethod;
-  private TestRunState myState;
+  private final TestRunState myState;
 
   public TestOutputComponent(Project project, JComponent parentComponent, ConsoleView console, TestRunState state) {
-    this.myMessages = ListSequence.fromList(new ArrayList<TestOutputComponent.Message>());
     this.myConsoleView = console;
     this.myComponent = this.myConsoleView.getComponent();
     this.myState = state;
@@ -72,30 +73,37 @@ public class TestOutputComponent implements TestView {
       this.myFilterClass = filterClass;
       this.myFilterMethod = filterMethod;
       this.myConsoleView.clear();
-      for (TestOutputComponent.Message message : ListSequence.fromList(this.myMessages)) {
-        this.append(message);
+      for (TestOutputComponent.Message message : QueueSequence.fromQueue(this.myMessages)) {
+        this.print(message);
       }
     }
   }
 
   public void appendWithParameters(String testClass, String testMethod, String text, Key type) {
     TestOutputComponent.Message newMessage = new TestOutputComponent.Message(testClass, testMethod, text, type);
-    ListSequence.fromList(this.myMessages).addElement(newMessage);
-    this.append(newMessage);
+    this.pushMessage(newMessage);
+    this.print(newMessage);
   }
 
   public void append(String message, Key type) {
     TestOutputComponent.Message newMessage = new TestOutputComponent.Message(this.getCurrentClassName(), this.getCurrentMethodName(), message, type);
-    ListSequence.fromList(this.myMessages).addElement(newMessage);
-    this.append(newMessage);
+    this.pushMessage(newMessage);
+    this.print(newMessage);
+  }
+
+  private void pushMessage(TestOutputComponent.Message newMessage) {
+    if (QueueSequence.fromQueue(myMessages).count() >= MAX_SIZE) {
+      QueueSequence.fromQueue(myMessages).removeFirstElement();
+    }
+    QueueSequence.fromQueue(myMessages).addLastElement(newMessage);
   }
 
   public void clear() {
-    this.myMessages = ListSequence.fromList(new ArrayList<TestOutputComponent.Message>());
+    QueueSequence.fromQueue(this.myMessages).clear();
     this.myConsoleView.clear();
   }
 
-  private void append(TestOutputComponent.Message message) {
+  private void print(TestOutputComponent.Message message) {
     if (message.matches(this.myFilterClass, this.myFilterMethod)) {
       if (ProcessOutputTypes.STDERR.equals(message.getType())) {
         ConsoleView consoleView = this.myConsoleView;
@@ -132,28 +140,28 @@ public class TestOutputComponent implements TestView {
   }
 
   private static class Message {
-    private String testClass;
-    private String testMethod;
-    private String message;
-    private Key type;
+    private String myTestClass;
+    private String myTestMethod;
+    private String myMessage;
+    private Key myType;
 
     public Message(String testClass, String testMethod, String message, Key types) {
-      this.testClass = testClass;
-      this.testMethod = testMethod;
-      this.message = message;
-      this.type = types;
+      this.myTestClass = testClass;
+      this.myTestMethod = testMethod;
+      this.myMessage = message;
+      this.myType = types;
     }
 
     public boolean matches(String testClass, String testMethod) {
-      return testClass == null || (testClass.equals(this.testClass) && (testMethod == null || testMethod.equals(this.testMethod)));
+      return testClass == null || (testClass.equals(this.myTestClass) && (testMethod == null || testMethod.equals(this.myTestMethod)));
     }
 
     public String getMessage() {
-      return this.message;
+      return this.myMessage;
     }
 
     private Key getType() {
-      return this.type;
+      return this.myType;
     }
   }
 }

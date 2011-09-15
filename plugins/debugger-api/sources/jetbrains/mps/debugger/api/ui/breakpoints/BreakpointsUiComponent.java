@@ -39,7 +39,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
 import org.jdom.Attribute;
 import org.jdom.Element;
@@ -48,6 +47,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.awt.event.MouseEvent;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -124,6 +124,16 @@ public class BreakpointsUiComponent implements ProjectComponent {
   private Set<ILocationBreakpoint> getBreakpointsForComponent(@NotNull final EditorComponent editorComponent) {
     final SNode editedNode = editorComponent.getEditedNode();
     if (editedNode == null) return Collections.emptySet();
+    if (editedNode.isDisposed()) {
+      Set<IBreakpoint> allBreakpoints = myBreakpointsManagerComponent.getAllIBreakpoints();
+      Set<ILocationBreakpoint> locationBreakpoints = new HashSet<ILocationBreakpoint>();
+      for (IBreakpoint breakpoint : allBreakpoints) {
+        if (breakpoint instanceof ILocationBreakpoint) {
+          locationBreakpoints.add((ILocationBreakpoint) breakpoint);
+        }
+      }
+      return locationBreakpoints;
+    }
     SNodePointer rootPointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
       @Override
       public SNodePointer compute() {
@@ -169,8 +179,8 @@ public class BreakpointsUiComponent implements ProjectComponent {
     Set<ILocationBreakpoint> breakpointsForRoot = getBreakpointsForComponent(editorComponent);
     for (ILocationBreakpoint breakpoint : breakpointsForRoot) {
       editorComponent.removeAdditionalPainterByItem(breakpoint);
-      editorComponent.getLeftEditorHighlighter().removeIconRenderer(breakpoint.getLocation().getSNode(), BreakpointIconRenderer.TYPE);
     }
+    editorComponent.getLeftEditorHighlighter().removeAllIconRenderers(BreakpointIconRenderer.TYPE);
   }
 
   public void toggleBreakpoint(EditorCell cell) {

@@ -298,6 +298,7 @@
       </module>
     </echoxml>
     <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/collections.runtime.gwt-src.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset dir="${base_dir}/core/baseLanguage/collections/runtime/source_gen.gwt" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/runtime/gwt/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/core/baseLanguage/collections/runtime/gwt/collections.runtime.gwt.msd" prefix="module" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/runtime/gwt" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
@@ -12127,6 +12128,7 @@
       </module>
     </echoxml>
     <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.build.antsupport-src.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset dir="${base_dir}/languages/util/buildlanguage/ant/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/jetbrains.mps.build.antsupport.msd" prefix="module" />
       <zipfileset dir="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />

@@ -38,6 +38,11 @@ public interface DependenciesManager {
   Set<IModule> getAllRequiredModules();
 
   /*
+   *  Only direct dependencies, required for compilation.
+   */
+  Set<IModule> getRequiredModules();
+
+  /*
    *  Collects all visible modules (including current).
    */
   void collectVisibleModules(/* out */ Set<IModule> dependencies, boolean reexportOnly);

@@ -15,21 +15,36 @@
  */
 package jetbrains.mps.util;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
+import jetbrains.mps.util.iterable.DistinctIterator;
+import jetbrains.mps.util.iterable.MergeIterator;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.*;
 
 public class IterableUtil {
-  public static <T> Collection<T> asCollection(Iterable<T> iter){
+
+  public static <T> Iterable<T> distinct(Iterable<T> t) {
+    return new DistinctIterator(t.iterator());
+  }
+
+  public static <T> Iterable<T> merge(@NotNull Iterable<T>... its) {
+    if (its.length == 1) {
+      return its[1];
+    } else if (its.length == 2) {
+      return new MergeIterator(its[0].iterator(), its[1].iterator());
+    }
+    return new FlattenIterable<T>(Arrays.asList(its));
+  }
+
+  public static <T> Collection<T> asCollection(Iterable<T> iter) {
     if (iter instanceof Collection) return (Collection<T>) iter;
     return asList(iter);
   }
 
-  public static <T> List<T> asList(Iterable<T> iter){
+  public static <T> List<T> asList(Iterable<T> iter) {
     if (iter instanceof List) return (List<T>) iter;
     List<T> result = new ArrayList<T>();
-    for (T o:iter){
+    for (T o : iter) {
       result.add(o);
     }
     return result;
