@@ -29,9 +29,9 @@
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>
-  <runtimeModules>
-    <module id="45571709-5529-4a2c-94c9-5b0e2469ad35" name="jetbrains.mps.samples.agreement.framework" />
-  </runtimeModules>
+  <runtime>
+    <dependency reexport="false">45571709-5529-4a2c-94c9-5b0e2469ad35(jetbrains.mps.samples.agreement.framework)</dependency>
+  </runtime>
   <extendedLanguages>
     <extendedLanguage>b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.samples.formulaLanguage)</extendedLanguage>
   </extendedLanguages>
