@@ -28,6 +28,9 @@ import java.io.IOException;
 
   @NotNull
   protected AbstractInstaller.State install(final boolean dryRun) {
+    if (!(PluginUtil.isGitPluginEnabled())) {
+      return AbstractInstaller.State.INSTALLED;
+    }
     Iterable<VcsRoot> gitRoots = getGitRoots();
     if (Sequence.fromIterable(gitRoots).isEmpty()) {
       return AbstractInstaller.State.INSTALLED;
