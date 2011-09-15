@@ -60,7 +60,7 @@ public class Module_Behavior {
       public String select(String it) {
         return it.replace(File.separator, Util.SEPARATOR);
       }
-    }).toListSequence(), false);
+    }).distinct().toListSequence(), false);
   }
 
   public static boolean call_needsOwnStubs_8177148268721488524(SNode thisNode) {
@@ -94,14 +94,6 @@ public class Module_Behavior {
     return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<SModelRoot, String>() {
       public String select(SModelRoot it) {
         return it.getPath().replace(File.separator, Util.SEPARATOR);
-      }
-    }).distinct().toListSequence(), true);
-  }
-
-  public static List<SNode> call_getSourcePaths_3673831299872169203(SNode thisNode) {
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(((List<String>) Module_Behavior.call_getModule_1213877515148(thisNode).getSourcePaths())).select(new ISelector<String, String>() {
-      public String select(String it) {
-        return (String) it.replace(File.separator, Util.SEPARATOR);
       }
     }).distinct().toListSequence(), true);
   }
@@ -188,7 +180,7 @@ public class Module_Behavior {
   }
 
   public static String call_getModuleDescriptorPath_4777659345280330855(SNode thisNode) {
-    return check_835h7m_a0a91(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
+    return check_835h7m_a0a81(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
   }
 
   public static String call_getHomeLibPath_4642981534832311125(SNode thisNode) {
@@ -257,7 +249,7 @@ public class Module_Behavior {
     return name.replace("/", "_").replace("\\", "_");
   }
 
-  private static String check_835h7m_a0a91(String checkedDotOperand, String separator, String SEPARATOR) {
+  private static String check_835h7m_a0a81(String checkedDotOperand, String separator, String SEPARATOR) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.replace(File.separator, Util.SEPARATOR);
     }
