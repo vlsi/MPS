@@ -28,12 +28,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.MissingDependenciesFixer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.MissingDependenciesFixer;
+import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
@@ -73,6 +74,9 @@ public class StubResolver {
         // trying to find correspondent nonstub model 
         SModelFqName modelName = new SModelFqName(targetModelRef.getLongName(), null);
         SModelReference modelRef = check_ar1im2_a0e0a0c0a(SModelRepository.getInstance().getModelDescriptor(modelName));
+        if (modelRef == null) {
+          continue;
+        }
         if (myUsedModels == null || SetSequence.fromSet(myUsedModels).contains(modelRef)) {
           MapSequence.fromMap(models).put(targetModelRef, modelRef);
           ListSequence.fromList(result).addElement(ref);
@@ -85,6 +89,10 @@ public class StubResolver {
   public void resolveInModel(final SModel model, IOperationContext context) {
     Map<SModelReference, SModelReference> models = MapSequence.fromMap(new HashMap<SModelReference, SModelReference>());
     List<SReference> toResolve = getReferencesToResolve(model, models);
+    if (ListSequence.fromList(toResolve).isEmpty()) {
+      return;
+    }
+
     Iterable<SModelReference> modelsToAdd = Sequence.fromIterable(MapSequence.fromMap(models).values()).where(new IWhereFilter<SModelReference>() {
       public boolean accept(SModelReference it) {
         return !(jetbrains.mps.smodel.SModelOperations.getImportedModelUIDs(model).contains(it));
@@ -95,7 +103,10 @@ public class StubResolver {
         model.addModelImport(it, false);
       }
     });
-    final Set<SModelReference> modelsUsed = SetSequence.fromSet(new HashSet<SModelReference>());
+    if (Sequence.fromIterable(modelsToAdd).isNotEmpty()) {
+      new MissingDependenciesFixer(null, model.getModelDescriptor()).fix(false);
+    }
+    Set<SModelReference> modelsUsed = SetSequence.fromSet(new HashSet<SModelReference>());
 
     int cnt = 0;
     int delta = 0;
@@ -134,45 +145,25 @@ public class StubResolver {
           ++delta;
         }
       }
-      if (log.isErrorEnabled()) {
-        log.error("delta=" + delta);
-      }
     } while (delta > 0);
 
-    Sequence.fromIterable(modelsToAdd).where(new IWhereFilter<SModelReference>() {
-      public boolean accept(SModelReference it) {
-        return SetSequence.fromSet(modelsUsed).contains(it);
-      }
-    }).visitAll(new IVisitor<SModelReference>() {
-      public void visit(SModelReference it) {
-        if (log.isWarnEnabled()) {
-          log.warn("import of model " + it.getLongName() + " added");
-        }
-      }
-    });
-    Sequence.fromIterable(modelsToAdd).visitAll(new IVisitor<SModelReference>() {
-      public void visit(SModelReference it) {
-        model.deleteModelImport(it);
-      }
-    });
-    new MissingDependenciesFixer(null, model.getModelDescriptor()).fix(false);
-
-    if (log.isInfoEnabled()) {
-      log.info(cnt + " stub references were re-resolved. " + " (" + ListSequence.fromList(toResolve).count() + ")");
+    new OptimizeImportsHelper(context).optimizeModelImports(model.getModelDescriptor());
+    if (log.isErrorEnabled()) {
+      log.error(cnt + " stub references were re-resolved. " + " (" + ListSequence.fromList(toResolve).count() + ")");
     }
   }
 
   public void resolveInModels(List<SModelDescriptor> models, IOperationContext context) {
     for (SModelDescriptor model : ListSequence.fromList(models)) {
-      if (log.isInfoEnabled()) {
-        log.info("resolving " + model.getLongName());
+      if (log.isErrorEnabled()) {
+        log.error("resolving " + model.getLongName());
       }
       resolveInModel(model.getSModel(), context);
     }
   }
 
   public void resolveInProject(MPSProject project, IOperationContext context) {
-    for (IModule module : ListSequence.fromList(project.getModules())) {
+    for (IModule module : ListSequence.fromList(project.getModulesWithGenerators())) {
       if (module.isPackaged()) {
         continue;
       }
