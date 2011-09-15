@@ -184,6 +184,7 @@
   <unitInfo fileName="LocalInstanceMethodCall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalInstanceMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="VariableArityType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VariableArityType_BehaviorDescriptor" />
   <unitInfo fileName="ThrowStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ThrowStatement_BehaviorDescriptor" />
+  <unitInfo fileName="AbstractLoopStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescriptor" />
   <unitInfo fileName="EnumClass_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.EnumClass_BehaviorDescriptor" />
   <unitInfo fileName="NullLiteral_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.NullLiteral_BehaviorDescriptor" />
   <unitInfo fileName="CommentPart_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CommentPart_BehaviorDescriptor" />
@@ -204,7 +205,6 @@
   <unitInfo fileName="PrimitiveType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrimitiveType_BehaviorDescriptor" />
   <unitInfo fileName="StaticFieldReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticFieldReference_BehaviorDescriptor" />
   <unitInfo fileName="IfStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IfStatement_BehaviorDescriptor" />
-  <unitInfo fileName="AbstractLoopStatement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescriptor" />
   <unitInfo fileName="CommentedStatementsBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CommentedStatementsBlock_BehaviorDescriptor" />
   <unitInfo fileName="Property_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Property_BehaviorDescriptor" />
   <unitInfo fileName="UpperBoundType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UpperBoundType_BehaviorDescriptor" />
@@ -7580,19 +7580,6 @@
     <scopeInfo nodeId="3262277503800831938" fileName="ILocalReference_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="3262277503800831938" fileName="ILocalReference_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
     <unitInfo nodeId="3262277503800831938" fileName="ILocalReference_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ILocalReference_Behavior" />
-  </root>
-  <root nodeId="3382729383756582749">
-    <nodeInfo nodeId="3382729383756591198" fileName="AbstractLoopStatement_Behavior.java" startLine="13" startPosition="152" endLine="14" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3382729383756582749" fileName="AbstractLoopStatement_Behavior.java" startLine="9" startPosition="45" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3382729383756582749" fileName="AbstractLoopStatement_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_collectUncaughtMethodThrowables_5412515780383134223#(Ljetbrains/mps/smodel/SNode;Ljava/util/Set;Z)V" />
-    <scopeInfo nodeId="3382729383756582751" fileName="AbstractLoopStatement_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="3382729383756582755" fileName="AbstractLoopStatement_Behavior.java" startLine="13" startPosition="152" endLine="14" endPosition="164" />
-    <scopeInfo nodeId="3382729383756582749" fileName="AbstractLoopStatement_Behavior.java" startLine="9" startPosition="45" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="3382729383756582749" fileName="AbstractLoopStatement_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="3382729383756582759" varName="ignoreMayBeThrowables" />
-      <varInfo nodeId="3382729383756582756" varName="throwables" />
-    </scopeInfo>
-    <unitInfo nodeId="3382729383756582749" fileName="AbstractLoopStatement_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_Behavior" />
   </root>
   <root nodeId="3718132079121388579">
     <nodeInfo nodeId="3718132079121388579" fileName="ITryCatchStatement_Behavior.java" startLine="12" startPosition="42" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3718132079121388582" />
