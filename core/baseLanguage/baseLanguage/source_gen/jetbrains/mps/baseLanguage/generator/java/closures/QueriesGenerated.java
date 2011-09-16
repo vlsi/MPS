@@ -90,7 +90,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170294467354(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    return SNodeOperations.cast(_QueriesUtil.find_ContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator()), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   public static Object referenceMacro_GetReferent_1170295650824(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -98,15 +98,15 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170295049904(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass_constructor(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    return SNodeOperations.cast(_QueriesUtil.find_ContextOwner_ClosureContext_generatedClass_constructor(_context.getNode(), ((TemplateQueryContext) _context).getGenerator()), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
   }
 
-  public static Object referenceMacro_GetReferent_1170288297219(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+  public static Object referenceMacro_GetReferent_5351366134229433399(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(_QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator()), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   public static Object referenceMacro_GetReferent_1170287949033(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    return SNodeOperations.cast(_QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator()), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   public static Object referenceMacro_GetReferent_1170350646244(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -114,11 +114,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170348563863(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(_context.getNode(), _context.getGenerator());
+    return SNodeOperations.cast(_QueriesUtil.resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(_context.getNode(), ((TemplateQueryContext) _context).getGenerator()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1170288676089(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.find_Closure_generatedClosureAdapter_constructor(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    return SNodeOperations.cast(_QueriesUtil.find_Closure_generatedClosureAdapter_constructor(_context.getNode(), ((TemplateQueryContext) _context).getGenerator()), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1170293907670(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -133,7 +133,7 @@ public class QueriesGenerated {
     return SNodeOperations.getParent(_context.getNode());
   }
 
-  public static SNode sourceNodeQuery_1185917871131(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_5351366134229433414(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return QueriesUtil.createClassType_forClosure_enclosingClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
@@ -149,12 +149,12 @@ public class QueriesGenerated {
     return QueriesUtil.create_enclosingClassObject(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_1170347787985(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_5351366134229435466(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
     return (List<SNode>) list;
   }
 
-  public static Iterable sourceNodesQuery_1170347696338(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_5351366134229435491(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
     return (List<SNode>) list;
   }

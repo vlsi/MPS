@@ -871,12 +871,12 @@
     <nodeInfo nodeId="1199624494879" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="57" startPosition="164" endLine="58" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7376433222636453873" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="58" startPosition="129" endLine="59" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1032195626824969313" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="59" startPosition="24" endLine="60" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1199624712378" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="60" startPosition="33" endLine="61" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1199624737168" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="61" startPosition="129" endLine="62" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199624616912" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="62" startPosition="117" endLine="63" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636454069" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="63" startPosition="156" endLine="64" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1199624601011" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="64" startPosition="29" endLine="65" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="68" startPosition="37" endLine="69" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1199624712378" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="61" startPosition="81" endLine="62" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1199624737168" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="62" startPosition="131" endLine="63" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199624616912" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="63" startPosition="78" endLine="64" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636454069" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="65" startPosition="5" endLine="66" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1199624601011" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="66" startPosition="29" endLine="67" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="14" startPosition="95" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceForLoopWithWhileLoop_Intention#()V" />
     <nodeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="38" startPosition="84" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
@@ -885,9 +885,10 @@
     <nodeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
     <nodeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
     <nodeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1932617676786349818" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="60" startPosition="33" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="48" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="48" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="15" startPosition="50" endLine="15" endPosition="50" />
     <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="63" />
     <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" />
@@ -896,8 +897,11 @@
     <scopeInfo nodeId="1199623693660" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="36" />
     <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" />
     <scopeInfo nodeId="1199623693662" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="16" />
-    <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="68" startPosition="37" endLine="69" endPosition="51" />
+    <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="51" />
     <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="14" startPosition="95" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1932617676786349819" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="61" startPosition="81" endLine="64" endPosition="158">
+      <varInfo nodeId="1199624712379" varName="iterStatement" />
+    </scopeInfo>
     <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
@@ -905,15 +909,17 @@
     <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="38" startPosition="84" endLine="42" endPosition="16" />
     <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1932617676786349818" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="60" startPosition="33" endLine="65" endPosition="5">
+      <varInfo nodeId="1932617676786349821" varName="iteration" />
+    </scopeInfo>
     <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1199623693664" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="49" startPosition="76" endLine="65" endPosition="117">
+    <scopeInfo nodeId="1199623693664" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="49" startPosition="76" endLine="67" endPosition="117">
       <varInfo nodeId="1199624303362" varName="preStatement" />
       <varInfo nodeId="1199623738030" varName="whileStatement" />
-      <varInfo nodeId="1199624712379" varName="iterStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="48" startPosition="0" endLine="67" endPosition="0" />
-    <unitInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="14" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceForLoopWithWhileLoop_Intention" />
+    <scopeInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="48" startPosition="0" endLine="69" endPosition="0" />
+    <unitInfo nodeId="1199623693658" fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="14" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceForLoopWithWhileLoop_Intention" />
   </root>
   <root nodeId="1199625900037">
     <nodeInfo nodeId="1199625900037" fileName="FilpEqualsIntention_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -9944,13 +9950,13 @@
   </root>
   <root nodeId="9078697818357715964">
     <nodeInfo nodeId="9078697818357715969" fileName="SelectFieldsDialog.java" startLine="14" startPosition="87" endLine="15" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="9078697818357715986" fileName="SelectFieldsDialog.java" startLine="18" startPosition="42" endLine="19" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9078697818357715986" fileName="SelectFieldsDialog.java" startLine="18" startPosition="42" endLine="19" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9078697818357715996" fileName="SelectFieldsDialog.java" startLine="22" startPosition="38" endLine="23" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9078697818357715965" fileName="SelectFieldsDialog.java" startLine="13" startPosition="68" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectFieldsDialog#(Ljetbrains/mps/nodeEditor/EditorContext;Ljava/awt/Frame;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="9078697818357715983" fileName="SelectFieldsDialog.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedFields#()Ljava/util/List;" />
     <nodeInfo nodeId="9078697818357715991" fileName="SelectFieldsDialog.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMembers#()Ljava/util/List;" />
     <scopeInfo nodeId="9078697818357715968" fileName="SelectFieldsDialog.java" startLine="14" startPosition="87" endLine="15" endPosition="52" />
-    <scopeInfo nodeId="9078697818357715985" fileName="SelectFieldsDialog.java" startLine="18" startPosition="42" endLine="19" endPosition="37" />
+    <scopeInfo nodeId="9078697818357715985" fileName="SelectFieldsDialog.java" startLine="18" startPosition="42" endLine="19" endPosition="51" />
     <scopeInfo nodeId="9078697818357715995" fileName="SelectFieldsDialog.java" startLine="22" startPosition="38" endLine="23" endPosition="147" />
     <scopeInfo nodeId="9078697818357715965" fileName="SelectFieldsDialog.java" startLine="13" startPosition="68" endLine="16" endPosition="3">
       <varInfo nodeId="9078697818357715978" varName="node" />
