@@ -106,7 +106,6 @@ public class StubResolver {
     if (Sequence.fromIterable(modelsToAdd).isNotEmpty()) {
       new MissingDependenciesFixer(null, model.getModelDescriptor()).fix(false);
     }
-    Set<SModelReference> modelsUsed = SetSequence.fromSet(new HashSet<SModelReference>());
 
     int cnt = 0;
     int delta = 0;
@@ -140,7 +139,6 @@ public class StubResolver {
         }
         if (ListSequence.fromList(resolved).count() > 0) {
           node.setReferent(SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
-          SetSequence.fromSet(modelsUsed).addElement(ref.getTargetSModelReference());
           ListSequence.fromList(toResolve).removeElement(ref);
           ++delta;
         }
