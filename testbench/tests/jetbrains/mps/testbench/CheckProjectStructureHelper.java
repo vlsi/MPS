@@ -46,11 +46,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
- 
+
 public class CheckProjectStructureHelper {
  
   private final ModelsExtractor myModelsExtractor = new ModelsExtractor(false);
- 
+  private static long myErrors;
   /**
    * An opaque token to represent testing state.
    */
@@ -141,6 +141,7 @@ public class CheckProjectStructureHelper {
     File projectFile = FileUtil.createTmpFile();
     MPSProject project = new MPSProject(ideaProject);
     project.init(projectFile, new ProjectDescriptor());
+    myErrors = 0;
     return new PrivToken(project);
   }
  
@@ -344,7 +345,7 @@ public class CheckProjectStructureHelper {
     }
   }
  
-  private static List<String> applyChecker(final SpecificChecker checker, final Iterable<SModelDescriptor> models) {
+  private List<String> applyChecker(final SpecificChecker checker, final Iterable<SModelDescriptor> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -354,6 +355,7 @@ public class CheckProjectStructureHelper {
           for (SearchResult<ModelCheckerIssue> issue : checker.checkModel(sm.getSModel(), new ProgressContext(new EmptyProgressIndicator(), new LinkedList<String>()), null)) {
             if (issue.getCategoryForKind(ModelCheckerIssue.CATEGORY_KIND_SEVERITY).startsWith(jetbrains.mps.ide.modelchecker.actions.ModelChecker.SEVERITY_ERROR)) {
               SNode node = (SNode) issue.getPathObject();
+              myErrors++;
               errors.add("Error message: " +issue.getObject().getMessage() + "   model: "+ node.getModel()+" root: "+node.getContainingRoot()+" node: "+ node);
             }
           }
@@ -426,6 +428,10 @@ public class CheckProjectStructureHelper {
       }
     }
     return errorMessages;
+  }
+
+  public long getNumErrors() {
+    return  myErrors;
   }
  
 }

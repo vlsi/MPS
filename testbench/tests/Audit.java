@@ -17,6 +17,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.testbench.CheckProjectStructureHelper;
 import jetbrains.mps.testbench.CheckProjectStructureHelper.Token;
+import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.testbench.junit.Order;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
 import jetbrains.mps.vfs.FileSystem;
@@ -85,6 +86,8 @@ public class Audit {
   public static void cleanUp() {
     HELPER.cleanUp(TOKEN);
     HELPER.dispose();
+    PerformanceMessenger.getInstance().report("errors", HELPER.getNumErrors());
+    System.out.println(HELPER.getNumErrors());
   }
 
   private IFile file;
