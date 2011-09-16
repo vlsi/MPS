@@ -4,6 +4,8 @@ package jetbrains.mps.bootstrap.helgins.sandbox.sb3;
 
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import com.intellij.openapi.util.Computable;
 
 public class ErrorClosure<Q> {
   public ErrorClosure() {
@@ -20,6 +22,12 @@ public class ErrorClosure<Q> {
     Q q;
     f(new _FunctionTypes._return_P1_E0<String, CClass>() {
       public String invoke(CClass c) {
+        return "";
+      }
+    });
+    Iterable<String> s;
+    String runResolveAction = TypeContextManager.getInstance().runResolveAction(new Computable<String>() {
+      public String compute() {
         return "";
       }
     });
