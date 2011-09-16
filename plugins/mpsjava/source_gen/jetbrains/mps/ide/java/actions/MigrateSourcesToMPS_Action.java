@@ -21,6 +21,8 @@ import jetbrains.mps.ide.java.parser.JavaCompiler;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.java.util.StubResolver;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class MigrateSourcesToMPS_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -87,6 +89,8 @@ public class MigrateSourcesToMPS_Action extends GeneratedAction {
       new StubResolver(javaCompiler.getAffectedModels()).resolveInProject(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
 
       moduleDescr.getSourcePaths().clear();
+
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MigrateSourcesToMPS", t);

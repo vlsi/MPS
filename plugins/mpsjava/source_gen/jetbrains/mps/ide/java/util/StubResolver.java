@@ -39,8 +39,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class StubResolver {
   private static final String JAVA_STUB = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
@@ -108,10 +106,9 @@ public class StubResolver {
     }
 
     int cnt = 0;
-    int delta = 0;
+    boolean found;
     do {
-      cnt += delta;
-      delta = 0;
+      found = false;
       for (SReference ref : ListSequence.fromList(toResolve).toGenericArray(SReference.class)) {
         SNode node = ref.getSourceNode();
         final SModelReference modelRef = MapSequence.fromMap(models).get(ref.getTargetSModelReference());
@@ -140,22 +137,20 @@ public class StubResolver {
         if (ListSequence.fromList(resolved).count() > 0) {
           node.setReferent(SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
           ListSequence.fromList(toResolve).removeElement(ref);
-          ++delta;
+          ++cnt;
+          found = true;
         }
       }
-    } while (delta > 0);
+    } while (found);
 
     new OptimizeImportsHelper(context).optimizeModelImports(model.getModelDescriptor());
     if (log.isInfoEnabled()) {
-      log.info(cnt + " stub references were re-resolved. " + " (" + ListSequence.fromList(toResolve).count() + ")");
+      log.info(cnt + " stub references were re-resolved in model " + SModelOperations.getModelName(model) + ". (" + ListSequence.fromList(toResolve).count() + ")");
     }
   }
 
   public void resolveInModels(List<SModelDescriptor> models, IOperationContext context) {
     for (SModelDescriptor model : ListSequence.fromList(models)) {
-      if (log.isInfoEnabled()) {
-        log.info("resolving " + model.getLongName());
-      }
       resolveInModel(model.getSModel(), context);
     }
   }
@@ -166,17 +161,11 @@ public class StubResolver {
         continue;
       }
       for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
-        if (!(SModelStereotype.isUserModel(model))) {
-          continue;
+        if (SModelStereotype.isUserModel(model) && model instanceof EditableSModelDescriptor) {
+          resolveInModel(model.getSModel(), context);
         }
-        if (!(model instanceof EditableSModelDescriptor)) {
-          continue;
-        }
-
-        resolveInModel(model.getSModel(), context);
       }
     }
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
 
   private static SModelReference check_ar1im2_a0e0a0c0a(SModelDescriptor checkedDotOperand) {

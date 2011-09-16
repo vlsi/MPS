@@ -14,6 +14,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.java.util.StubResolver;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class ResolveStubReferencesToMPSGlobal_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -54,6 +56,7 @@ public class ResolveStubReferencesToMPSGlobal_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       new StubResolver().resolveInProject(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ResolveStubReferencesToMPSGlobal", t);
