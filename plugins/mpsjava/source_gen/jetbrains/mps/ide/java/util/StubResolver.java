@@ -148,15 +148,15 @@ public class StubResolver {
     } while (delta > 0);
 
     new OptimizeImportsHelper(context).optimizeModelImports(model.getModelDescriptor());
-    if (log.isErrorEnabled()) {
-      log.error(cnt + " stub references were re-resolved. " + " (" + ListSequence.fromList(toResolve).count() + ")");
+    if (log.isInfoEnabled()) {
+      log.info(cnt + " stub references were re-resolved. " + " (" + ListSequence.fromList(toResolve).count() + ")");
     }
   }
 
   public void resolveInModels(List<SModelDescriptor> models, IOperationContext context) {
     for (SModelDescriptor model : ListSequence.fromList(models)) {
-      if (log.isErrorEnabled()) {
-        log.error("resolving " + model.getLongName());
+      if (log.isInfoEnabled()) {
+        log.info("resolving " + model.getLongName());
       }
       resolveInModel(model.getSModel(), context);
     }
