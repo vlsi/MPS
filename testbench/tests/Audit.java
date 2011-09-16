@@ -87,7 +87,7 @@ public class Audit {
     HELPER.cleanUp(TOKEN);
     HELPER.dispose();
     PerformanceMessenger.getInstance().report("errors", HELPER.getNumErrors());
-    System.out.println(HELPER.getNumErrors());
+    System.out.println(HELPER.getNumErrors() + " errors total");
   }
 
   private IFile file;
