@@ -51,10 +51,10 @@ public class CloneUtil {
     }
     for (SReference reference : inputNode.getReferencesIterable()) {
       SModelReference targetModelReference = reference.isExternal() ? reference.getTargetSModelReference() : outputModel.getSModelReference();
-      if (targetModelReference == null) {
-        LOG.warning("broken reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
-      } else {
-        if (reference instanceof StaticReference) {
+      if (reference instanceof StaticReference) {
+        if (targetModelReference == null) {
+          LOG.warning("broken reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
+        } else {
           StaticReference outputReference = new StaticReference(
             reference.getRole(),
             outputNode,
@@ -62,18 +62,18 @@ public class CloneUtil {
             ((StaticReference) reference).getTargetNodeId(),
             reference.getResolveInfo());
           outputNode.addReference(outputReference);
-        } else if (reference instanceof DynamicReference) {
-          DynamicReference outputReference = new DynamicReference(
-            reference.getRole(),
-            outputNode,
-            targetModelReference,
-            reference.getResolveInfo());
-          outputReference.setOrigin(((DynamicReference) reference).getOrigin());
-          outputNode.addReference(outputReference);
-        } else {
-          LOG.error("internal error: can't clone reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
-          LOG.error(" -- was reference class : " + reference.getClass().getName());
         }
+      } else if (reference instanceof DynamicReference) {
+        DynamicReference outputReference = new DynamicReference(
+          reference.getRole(),
+          outputNode,
+          targetModelReference,
+          reference.getResolveInfo());
+        outputReference.setOrigin(((DynamicReference) reference).getOrigin());
+        outputNode.addReference(outputReference);
+      } else {
+        LOG.error("internal error: can't clone reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
+        LOG.error(" -- was reference class : " + reference.getClass().getName());
       }
     }
 

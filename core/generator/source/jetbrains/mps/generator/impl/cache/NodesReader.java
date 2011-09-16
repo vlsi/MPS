@@ -95,7 +95,6 @@ public class NodesReader {
             targetNodeId,
             resolveInfo));
       } else if (kind == 2 || kind == 3) {
-        assert modelRef != null;
         DynamicReference reference = new DynamicReference(
           role,
           node,

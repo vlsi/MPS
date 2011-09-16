@@ -30,7 +30,7 @@ abstract class SReferenceBase extends SReference {
   protected volatile SNode myImmatureTargetNode;            // young
   private volatile SModelReference myTargetModelReference;  // mature
 
-  protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference, SNode immatureTargetNode) {
+  protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference, @Nullable SNode immatureTargetNode) {
     super(InternUtil.intern(role), sourceNode);
 
     if (ourStubMode) {
@@ -47,7 +47,7 @@ abstract class SReferenceBase extends SReference {
     }
 
 
-    // if ref is 'mature' then 'targetModelRefernce' is either NOT NULL, or it is broken external reference.
+    // if ref is 'mature' then 'targetModelRefernce' is either NOT NULL, or it is broken external reference, or it is dynamic reference
     myTargetModelReference = targetModelReference;
 
     // 'young' reference

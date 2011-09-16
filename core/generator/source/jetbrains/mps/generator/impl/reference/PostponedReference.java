@@ -89,7 +89,7 @@ public class PostponedReference extends SReference {
     if (outputTargetNode != null) {
 //      if (checkResolvedTarget(outputSourceNode, role, outputTargetNode)) {
 //        // ok
-        myReplacementReference = new StaticReference(role, outputSourceNode, outputTargetNode);
+      myReplacementReference = new StaticReference(role, outputSourceNode, outputTargetNode);
 //      } else {
 //        myReplacementReference = new StaticReference(role, outputSourceNode, targetModelReference, null, myReferenceInfo.getResolveInfoForNothing());
 //      }
@@ -102,7 +102,7 @@ public class PostponedReference extends SReference {
 
       SNode templateNode = myReferenceInfo instanceof ReferenceInfo_Macro ? ((ReferenceInfo_Macro) myReferenceInfo).getMacroNode() : null;
       SNode inputNode = myReferenceInfo.getInputNode();
-      if(inputNode != null || templateNode != null) {
+      if (inputNode != null || templateNode != null) {
         dynamicReference.setOrigin(new DynamicReferenceOrigin(templateNode != null ? new SNodePointer(templateNode) : null, inputNode != null ? new SNodePointer(inputNode) : null));
       }
       myReplacementReference = dynamicReference;
@@ -114,14 +114,24 @@ public class PostponedReference extends SReference {
           // ok
           myReplacementReference = new StaticReference(role, outputSourceNode, outputTargetNode);
         } else {
-          myReplacementReference = new StaticReference(role, outputSourceNode, targetModelReference, null, myReferenceInfo.getResolveInfoForNothing());
+          myReplacementReference = new StaticReference(
+            role,
+            outputSourceNode,
+            targetModelReference == null ? myGenerator.getOutputModel().getSModelReference() : targetModelReference,
+            null,
+            myReferenceInfo.getResolveInfoForNothing());
         }
       } else if (myReferenceInfo.isRequired()) {
         myGenerator.getLogger().error(myReferenceInfo.getOutputSourceNode(),
           "cannot resolve required reference; role: '" + myReferenceInfo.getReferenceRole() + "' in output node " + myReferenceInfo.getOutputSourceNode().getDebugText(),
           myReferenceInfo.getErrorDescriptions());
 
-        myReplacementReference = new StaticReference(role, outputSourceNode, targetModelReference, null, myReferenceInfo.getResolveInfoForNothing());
+        myReplacementReference = new StaticReference(
+          role,
+          outputSourceNode,
+          targetModelReference == null ? myGenerator.getOutputModel().getSModelReference() : targetModelReference,
+          null,
+          myReferenceInfo.getResolveInfoForNothing());
       } else {
         // not resolved and not required
       }

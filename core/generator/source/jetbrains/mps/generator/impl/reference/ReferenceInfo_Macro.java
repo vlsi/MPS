@@ -46,8 +46,7 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
 
   public SModelReference getTargetModelReference(TemplateGenerator generator) {
     ensureMacroProcessed(generator);
-    if (myExternalTargetModelReference != null) return myExternalTargetModelReference;
-    return super.getTargetModelReference(generator);
+    return myExternalTargetModelReference;
   }
 
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
@@ -110,6 +109,9 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
               myExternalTargetModelReference = new SModelReference(new SModelFqName(modelName, stereo), id);
             }
           }
+        }
+        if(myExternalTargetModelReference == null) {
+          myExternalTargetModelReference = generator.getOutputModel().getSModelReference();
         }
       }
 

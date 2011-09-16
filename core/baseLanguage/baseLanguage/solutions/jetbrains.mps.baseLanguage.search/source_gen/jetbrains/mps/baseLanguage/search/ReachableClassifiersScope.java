@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelFqName;
 import java.util.Collection;
@@ -73,10 +74,10 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       this.myScope = scope;
     }
 
-    public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
+    public SNode resolve(String referenceInfo, @Nullable SModelReference targetModelReference) {
       String classname = referenceInfo;
       int dotIndex = classname.lastIndexOf(".");
-      if (dotIndex >= 0 && myModel.getSModelReference().equals(targetModelReference)) {
+      if (dotIndex >= 0 && targetModelReference == null) {
         // try local nested classes 
         List<SNode> localClassifiers = ClassifiersCache.getInstance(myModel.getModelDescriptor()).getClassifiersByRefName(classname);
         if (ListSequence.fromList(localClassifiers).count() >= 1) {
@@ -86,9 +87,15 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
         // search everywhere 
         String package_ = classname.substring(0, dotIndex);
         classname = classname.substring(dotIndex + 1);
+        if (classname.indexOf('$') >= 0) {
+          classname = classname.replace('$', '.');
+        }
         return resolveClass(package_, null, classname);
       }
 
+      if (targetModelReference == null) {
+        targetModelReference = myModel.getSModelReference();
+      }
       if (targetModelReference.getSModelId() != null) {
         SModelDescriptor targetModel = this.myScope.getModelDescriptor(targetModelReference);
         if (targetModel == null) {
@@ -100,7 +107,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       return resolveClass(modelname.getLongName(), modelname.getStereotype(), classname);
     }
 
-    public SNode resolveClass(String modelname, String stereotype, String classname) {
+    public SNode resolveClass(String modelname, String stereotype, String nestedClassName) {
       Collection<IModule> visibleModules = IterableUtil.asCollection(myScope.getVisibleModules());
 
       List<SNode> classifiers = new ArrayList<SNode>();
@@ -117,7 +124,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
           continue;
         }
 
-        ListSequence.fromList(classifiers).addSequence(ListSequence.fromList(ClassifiersCache.getInstance(model).getClassifiersByRefName(classname)));
+        ListSequence.fromList(classifiers).addSequence(ListSequence.fromList(ClassifiersCache.getInstance(model).getClassifiersByRefName(nestedClassName)));
       }
 
       if (ListSequence.fromList(classifiers).isEmpty()) {
@@ -135,7 +142,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
 
         final StringBuilder warn = new StringBuilder();
         warn.append("reference can't be resolved: ");
-        warn.append(classname);
+        warn.append(nestedClassName);
         warn.append(" in ");
         warn.append(myModel.getLongName());
         warn.append(" can reference nodes from models: ");

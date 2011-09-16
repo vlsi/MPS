@@ -1452,8 +1452,8 @@
       <varInfo nodeId="842994667883032510" varName="macros" />
     </scopeInfo>
     <scopeInfo nodeId="842994667883032505" fileName="ProjectDescriptorPersistence.java" startLine="107" startPosition="0" endLine="150" endPosition="0">
-      <varInfo nodeId="842994667883032770" varName="descriptor" />
       <varInfo nodeId="842994667883032774" varName="root" />
+      <varInfo nodeId="842994667883032770" varName="descriptor" />
       <varInfo nodeId="842994667883032772" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="842994667883032228" fileName="ProjectDescriptorPersistence.java" startLine="37" startPosition="31" endLine="89" endPosition="36" />
