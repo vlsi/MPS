@@ -111,7 +111,23 @@ public class GenerationSessionLogger implements IGeneratorLogger {
   }
 
   public void handleException(Throwable t) {
-    Message message = new Message(MessageKind.ERROR, "An exception was encountered: " + t.getClass().getCanonicalName() + ": " + t.getMessage());
+    String text = t.getMessage();
+    if(text == null) {
+      Throwable cause = t.getCause();
+      int tries = 0;
+      while(text == null && cause != null && tries < 10) {
+        text = cause.getMessage();
+        cause = cause.getCause();
+        tries++;
+      }
+    }
+    if(text == null) {
+      text = "An exception was encountered: " + t.getClass().getName() + " (no message) (right-click to see)";
+    } else {
+      text = "(" + t.getClass().getName() + "): " + text + " (right-click to see)";
+    }
+
+    Message message = new Message(MessageKind.ERROR, text);
     message.setException(t);
     synchronized (myMessageHandler) {
       myMessageHandler.handle(message);

@@ -113,9 +113,9 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
       }
     }
     if(text == null) {
-      text = "An exception was encountered: " + t.getClass().getName() + " (no message)";
+      text = "An exception was encountered: " + t.getClass().getName() + " (no message) (right-click to see)";
     } else {
-      text = "(" + t.getClass().getName() + "): " + text;
+      text = "(" + t.getClass().getName() + "): " + text + " (right-click to see)";
     }
     Message message = new Message(MessageKind.ERROR, text);
     message.setException(t);
