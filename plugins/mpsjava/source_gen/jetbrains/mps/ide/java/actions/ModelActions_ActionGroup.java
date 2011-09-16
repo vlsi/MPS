@@ -16,6 +16,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
     try {
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action");
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action");
+      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.java.actions.ResolveStubReferencesToMPS_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

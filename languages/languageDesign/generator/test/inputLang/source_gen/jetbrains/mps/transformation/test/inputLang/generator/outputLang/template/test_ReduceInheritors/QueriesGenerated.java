@@ -52,7 +52,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
   }
 
-  public static boolean mappingConfiguration_Condition_2507865635201605483(final TemplateQueryContext _context) {
+  public static boolean mappingConfiguration_Condition_2507865635201605483(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return (((Integer) _context.getGenerationParameter("r:00000000-0000-4000-0000-011c895905f9.GlobalParameters.list")) == null ?
       true :
       ((Integer) _context.getGenerationParameter("r:00000000-0000-4000-0000-011c895905f9.GlobalParameters.list")) < 2

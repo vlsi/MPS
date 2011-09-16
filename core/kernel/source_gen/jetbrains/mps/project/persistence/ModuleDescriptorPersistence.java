@@ -98,8 +98,13 @@ public class ModuleDescriptorPersistence {
       LanguageDescriptor ld = ((LanguageDescriptor) descriptor);
       Element result_dxyzb6_a1a2a2 = result;
       if (!(ld.getRuntimeModules().isEmpty())) {
-        final Element result_dxyzb6_a0a0a1a2a2 = new Element("runtimeModules");
-        saveModuleRefList(result_dxyzb6_a0a0a1a2a2, ld.getRuntimeModules());
+        final Element result_dxyzb6_a0a0a1a2a2 = new Element("runtime");
+        List<ModuleReference> runtimeModules = ld.getRuntimeModules();
+        saveDependencyList(result_dxyzb6_a0a0a1a2a2, ListSequence.fromList(runtimeModules).select(new ISelector<ModuleReference, Dependency>() {
+          public Dependency select(ModuleReference it) {
+            return new Dependency(it, false);
+          }
+        }).toListSequence());
         result_dxyzb6_a1a2a2.addContent(result_dxyzb6_a0a0a1a2a2);
       }
     }

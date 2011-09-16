@@ -25,7 +25,7 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.traceInfo.DebugInfo;
@@ -36,6 +36,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 
 public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   private static Logger LOG = Logger.getLogger(TraceInfoCache.class);
@@ -101,11 +102,11 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   }
 
   protected DebugInfo readCache(SModelDescriptor sm, IModule module) {
-    ClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoaderFor(module, false);
-    if (classLoader == null) {
+    IClassPathItem classPathItem = module.getClassPathItem();
+    if (classPathItem == null) {
       return null;
     }
-    DebugInfo info = getCacheFromClassloader(sm, classLoader);
+    DebugInfo info = getCacheFromClassPathItem(sm, classPathItem);
     if (info == null) {
       if (InternalFlag.isInternalMode() && !(module.isCompileInMPS())) {
         for (IdeaPluginDescriptor plugin : PluginManager.getPlugins()) {
@@ -119,8 +120,31 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     return info;
   }
 
+  @Nullable
+  public DebugInfo getCacheFromClassPathItem(@NotNull SModelDescriptor sm, @NotNull IClassPathItem classPathItem) {
+    URL url = classPathItem.getResource(traceInfoResourceName(sm));
+    if (url == null) return null;
+    InputStream stream = null;
+    try {
+      stream = url.openStream();
+      if (stream == null) return null;
+      return load(stream);
+    } catch (IOException e) {
+      return null;
+    } finally {
+      try {
+        if (stream != null) {
+          stream.close();
+        }
+      } catch (IOException e) {
+        LOG.error(e);
+      }
+    }
+  }
+
+  @Nullable
   public DebugInfo getCacheFromClassloader(@NotNull SModelDescriptor sm, @NotNull ClassLoader classLoader) {
-    InputStream stream = classLoader.getResourceAsStream(sm.getLongName().replace(".", "/") + "/" + TRACE_FILE_NAME);
+    InputStream stream = classLoader.getResourceAsStream(traceInfoResourceName(sm));
     if (stream == null) return null;
     try {
       return load(stream);
@@ -133,6 +157,10 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
         LOG.error(e);
       }
     }
+  }
+
+  private String traceInfoResourceName(SModelDescriptor sm) {
+    return sm.getLongName().replace(".", "/") + "/" + TRACE_FILE_NAME;
   }
 
   @Override

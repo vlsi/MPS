@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Map;
-import com.intellij.util.containers.HashMap;
+import java.util.HashMap;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -214,7 +214,7 @@ public class MethodResolveUtil {
   }
 
   public static Map<SNode, SNode> getTypesByTypeVars(SNode classifier, List<SNode> typeParameters) {
-    Map<SNode, SNode> typeByTypeVar = MapSequence.fromMap(new java.util.HashMap<SNode, SNode>());
+    Map<SNode, SNode> typeByTypeVar = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (IMapping<SNode, SNode> elem : MapSequence.fromMap(ClassifierAndSuperClassifiersCache.getInstance(classifier).getTypeByTypeVariableMap())) {
       typeByTypeVar.put(elem.key(), elem.value());
     }

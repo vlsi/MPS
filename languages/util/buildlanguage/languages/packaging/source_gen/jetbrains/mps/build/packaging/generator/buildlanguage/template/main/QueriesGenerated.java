@@ -1243,7 +1243,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_3673831299872169201(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Module_Behavior.call_getSourcePaths_3673831299872169203(_context.getNode());
+    return Module_Behavior.call_getSourcesDirectories_1775602641704992067(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1986682148700630636(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

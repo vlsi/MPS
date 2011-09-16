@@ -207,6 +207,18 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
+  Iterable<ModuleReference> getExtendedDevKits_internal() {
+    return myDescriptor.getExtendedDevkits();
+  }
+
+  Iterable<ModuleReference> getExportedSolutions_internal() {
+    return myDescriptor.getExportedSolutions();
+  }
+
+  Iterable<ModuleReference> getExportedLanguages_internal() {
+    return myDescriptor.getExportedLanguages();
+  }
+
   public List<DevKit> getExtendedDevKits() {
     List<DevKit> result = new ArrayList<DevKit>();
     for (ModuleReference ref : myDescriptor.getExtendedDevkits()) {
