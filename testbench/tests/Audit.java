@@ -95,9 +95,9 @@ public class Audit {
 
   @Test
   @Order(1)
-  public void checkReferences() {
-    List<String> errors = HELPER.check(TOKEN, Collections.singletonList(file));
-    Assert.assertTrue("Reference errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
+  public void checkTypeSystem() {
+    List<String> errors = HELPER.checkTypeSystem(TOKEN, Collections.singletonList(file));
+    Assert.assertTrue("Type system errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
   }
 
 }
