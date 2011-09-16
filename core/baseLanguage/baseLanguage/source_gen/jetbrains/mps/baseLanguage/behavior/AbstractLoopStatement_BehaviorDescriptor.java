@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import java.util.Set;
 
 public abstract class AbstractLoopStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IContainer_BehaviorDescriptor, IContainsStatementList_BehaviorDescriptor {
   public AbstractLoopStatement_BehaviorDescriptor() {
@@ -16,10 +15,6 @@ public abstract class AbstractLoopStatement_BehaviorDescriptor extends Statement
 
   public boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
     return IContainsStatementList_Behavior.virtual_isStatementListCompactable_1237546012856(thisNode);
-  }
-
-  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    AbstractLoopStatement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
   }
 
   @Override
