@@ -15,6 +15,7 @@
   <import index="wwn2" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.runConfigurations.runtime(MPS.Classpath/jetbrains.mps.baseLanguage.runConfigurations.runtime@java_stub)" version="-1" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" />
   <import index="7jsa" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.process(MPS.Classpath/com.intellij.execution.process@java_stub)" version="-1" />
+  <import index="fmpm" modelUID="r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
@@ -749,8 +750,8 @@
     <node role="editor" roleId="fb9u.946964771156066337" type="fb9u.SettingsEditor" typeId="fb9u.946964771156066621" id="747009152929086272">
       <node role="propertyDeclaration" roleId="fb9u.946964771156066626" type="fb9u.EditorPropertyDeclaration" typeId="fb9u.946964771156066610" id="747009152929086273">
         <property name="name" nameId="tpck.1169194664001" value="myChooser" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6887307225914467783">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wwn2.~MultiConceptChooser" resolveInfo="MultiConceptChooser" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8644312900085828067">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fmpm.747009152929080490" resolveInfo="MultiConceptChooser" />
         </node>
       </node>
       <node role="createEditor" roleId="fb9u.946964771156066622" type="fb9u.CreateEditor_Function" typeId="fb9u.946964771156066566" id="747009152929086275">
@@ -762,8 +763,8 @@
               </node>
               <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="747009152929086280">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="747009152929086281">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wwn2.~MultiConceptChooser%d&lt;init&gt;(jetbrains%dmps%dbaseLanguage%dtuples%druntime%dTuples$_2%d%d%d)" resolveInfo="MultiConceptChooser" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="fb9u.TemplateParameterReference" typeId="fb9u.946964771156066561" id="6887307225914467784">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fmpm.747009152929080492" resolveInfo="MultiConceptChooser" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="fb9u.TemplateParameterReference" typeId="fb9u.946964771156066561" id="8644312900085827233">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="747009152929086356" resolveInfo="myTargets" />
                   </node>
                 </node>
@@ -785,7 +786,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="747009152929086273" resolveInfo="myChooser" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="747009152929086299">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wwn2.~AbstractMainNodeChooser%dsetNode(jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="setNode" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fmpm.747009152929061295" resolveInfo="setNode" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="747009152929086300">
                   <node role="operand" roleId="tpee.1197027771414" type="fb9u.Configuration_Parameter" typeId="fb9u.946964771156067216" id="747009152929086301" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="747009152929086302">
@@ -809,7 +810,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="747009152929086273" resolveInfo="myChooser" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="747009152929086311">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wwn2.~AbstractMainNodeChooser%dgetNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNode" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fmpm.747009152929061287" resolveInfo="getNode" />
                   </node>
                 </node>
               </node>
