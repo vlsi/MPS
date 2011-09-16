@@ -18,6 +18,8 @@ import org.eclipse.jdt.internal.compiler.CompilationResult;
 import java.io.File;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.CommonPaths;
@@ -34,7 +36,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.eclipse.jdt.internal.compiler.Compiler;
 import java.util.LinkedHashSet;
@@ -50,7 +51,6 @@ import jetbrains.mps.project.structure.model.ModelRootUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Comparator;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -70,7 +70,7 @@ public class JavaCompiler {
   private CompositeClassPathItem myClassPathItem;
   private IModule myModule;
   private List<CompilationResult> myCompilationResults = new ArrayList<CompilationResult>();
-  private File mySourceDir;
+  private List<File> mySourceDirs;
   private Map<String, SModel> myPackageFQNamesToModels = new HashMap<String, SModel>();
   private Set<String> myModelsToCreate = new HashSet<String>();
   private SModel myBaseModelToAddSource;
@@ -83,9 +83,17 @@ public class JavaCompiler {
   }
 
   public JavaCompiler(IOperationContext context, IModule module, File sourceDir, boolean setOutputPath, SModel model) {
+    this(context, module, Sequence.<File>singleton(sourceDir), setOutputPath, model);
+  }
+
+  public JavaCompiler(IOperationContext context, IModule module, Iterable<File> sourceDirs, boolean setOutputPath) {
+    this(context, module, sourceDirs, setOutputPath, null);
+  }
+
+  public JavaCompiler(IOperationContext context, IModule module, Iterable<File> sourceDirs, boolean setOutputPath, SModel model) {
     myContext = context;
     myModule = module;
-    mySourceDir = sourceDir;
+    mySourceDirs = ListSequence.fromListWithValues(new ArrayList<File>(), sourceDirs);
     myBaseModelToAddSource = model;
     mySetOutputPath = setOutputPath;
   }
@@ -95,7 +103,7 @@ public class JavaCompiler {
       return null;
     }
     String prefixPath = NameUtil.pathFromNamespace(myPrefix);
-    String sourcePath = mySourceDir.getPath();
+    String sourcePath = ListSequence.fromList(mySourceDirs).first().getPath();
     if (!(sourcePath.endsWith(prefixPath))) {
       LOG.warning("source directory " + sourcePath + " does not match package structure (" + myPrefix + ")");
       return null;
@@ -227,13 +235,16 @@ public class JavaCompiler {
 
   public void compile() {
     if (myBaseModelToAddSource != null) {
-      if (!(JavaCompiler.checkBaseModelMatchesSourceDirectory(myBaseModelToAddSource, mySourceDir))) {
-        LOG.error("model fq name " + SModelOperations.getModelName(myBaseModelToAddSource) + " does not match source directory " + mySourceDir.getAbsolutePath());
+      if (!(JavaCompiler.checkBaseModelMatchesSourceDirectory(myBaseModelToAddSource, ListSequence.fromList(mySourceDirs).first()))) {
+        LOG.error("model fq name " + SModelOperations.getModelName(myBaseModelToAddSource) + " does not match source directory " + ListSequence.fromList(mySourceDirs).first().getAbsolutePath());
         return;
       }
     }
     initClassPathItem(myModule);
-    addSourceFromDirectory(mySourceDir, "");
+    for (File sourceDir : ListSequence.fromList(mySourceDirs)) {
+      myPrefix = null;
+      addSourceFromDirectory(sourceDir, "");
+    }
     File generalSourceDirectory = getGeneralSourceDirectory();
     if (generalSourceDirectory != null) {
       if (myModule instanceof Solution && mySetOutputPath) {
@@ -315,7 +326,7 @@ public class JavaCompiler {
     if (!(fqNames.isEmpty()) && myContext != null) {
       int option = JOptionPane.showConfirmDialog(null, "Some imports in source code were not resolved.\nDo you want to specify classpaths for unresolved imports?");
       if (option == JOptionPane.YES_OPTION) {
-        UIComponents.MyDialog dialog = UIComponents.createClasspathsDialog(myContext, mySourceDir, new Vector<String>(fqNames));
+        UIComponents.MyDialog dialog = UIComponents.createClasspathsDialog(myContext, mySourceDirs, new Vector<String>(fqNames));
         dialog.setVisible(true);
         List<IClassPathItem> list = dialog.getChosenClassPaths();
         if (!(list.isEmpty())) {
@@ -424,6 +435,10 @@ public class JavaCompiler {
 
   public List<CompilationResult> getCompilationResults() {
     return myCompilationResults;
+  }
+
+  public Iterable<SModel> getAffectedModels() {
+    return myPackageFQNamesToModels.values();
   }
 
   public static boolean checkBaseModelMatchesSourceDirectory(SModel model, File sourceDir) {

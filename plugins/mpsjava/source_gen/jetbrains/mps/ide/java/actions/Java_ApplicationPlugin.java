@@ -27,10 +27,13 @@ public class Java_ApplicationPlugin extends BaseApplicationPlugin {
     // actions w/o parameters 
     addAction(new GetModelContentsFromSource_Action());
     addAction(new GetModuleContentsFromSource_Action());
+    addAction(new MigrateSourcesToMPS_Action());
     addAction(new NewModelFromSource_Action());
     addAction(new PasteAsJavaClass_Action());
     addAction(new PasteAsJavaMethods_Action());
     addAction(new PasteAsJavaStatements_Action());
+    addAction(new ResolveStubReferencesToMPSGlobal_Action());
+    addAction(new ResolveStubReferencesToMPS_Action());
     // groups 
     addGroup(new EditorPopup_ActionGroup());
     addGroup(new ModelActions_ActionGroup());

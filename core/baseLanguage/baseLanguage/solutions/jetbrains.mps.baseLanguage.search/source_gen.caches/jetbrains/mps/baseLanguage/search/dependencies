@@ -205,12 +205,12 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.MethodResolveUtil" file="MethodResolveUtil.java">
     <classNode dependClassName="com.intellij.openapi.util.Computable" />
-    <classNode dependClassName="com.intellij.util.containers.HashMap" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />

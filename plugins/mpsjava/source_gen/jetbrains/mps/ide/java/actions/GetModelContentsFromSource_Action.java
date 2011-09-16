@@ -16,13 +16,12 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.ide.java.parser.JavaCompiler;
 import java.io.File;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import java.awt.Frame;
+import jetbrains.mps.ide.java.parser.JavaCompiler;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class GetModelContentsFromSource_Action extends GeneratedAction {
@@ -83,11 +82,6 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
       treeFileChooser.setDirectoriesAreAlwaysVisible(true);
       treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
       final SModel sModel = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel();
-      treeFileChooser.setFileFilter(new IFileFilter() {
-        public boolean accept(IFile file) {
-          return JavaCompiler.checkBaseModelMatchesSourceDirectory(sModel, new File(file.getPath()));
-        }
-      });
       String generatorOutputPath = module.getGeneratorOutputPath();
       File initial = null;
       File output = new File(generatorOutputPath);
