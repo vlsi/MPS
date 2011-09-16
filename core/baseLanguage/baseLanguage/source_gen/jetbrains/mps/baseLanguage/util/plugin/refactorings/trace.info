@@ -4615,29 +4615,31 @@
     <nodeInfo nodeId="8492459591399169143" fileName="MethodParameter.java" startLine="72" startPosition="35" endLine="73" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399169155" fileName="MethodParameter.java" startLine="76" startPosition="42" endLine="77" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399169160" fileName="MethodParameter.java" startLine="77" startPosition="27" endLine="78" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169173" fileName="MethodParameter.java" startLine="81" startPosition="33" endLine="82" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399169181" fileName="MethodParameter.java" startLine="85" startPosition="31" endLine="86" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399169192" fileName="MethodParameter.java" startLine="89" startPosition="45" endLine="90" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169201" fileName="MethodParameter.java" startLine="93" startPosition="43" endLine="94" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399169211" fileName="MethodParameter.java" startLine="97" startPosition="31" endLine="98" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399169230" fileName="MethodParameter.java" startLine="102" startPosition="119" endLine="103" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399169237" fileName="MethodParameter.java" startLine="104" startPosition="5" endLine="105" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8644312900085877346" fileName="MethodParameter.java" startLine="82" startPosition="115" endLine="83" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169173" fileName="MethodParameter.java" startLine="84" startPosition="5" endLine="85" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169181" fileName="MethodParameter.java" startLine="88" startPosition="31" endLine="89" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169192" fileName="MethodParameter.java" startLine="92" startPosition="45" endLine="93" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169201" fileName="MethodParameter.java" startLine="96" startPosition="43" endLine="97" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169211" fileName="MethodParameter.java" startLine="100" startPosition="31" endLine="101" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169230" fileName="MethodParameter.java" startLine="105" startPosition="119" endLine="106" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169237" fileName="MethodParameter.java" startLine="107" startPosition="5" endLine="108" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8492459591399168981" fileName="MethodParameter.java" startLine="32" startPosition="10" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8492459591399169086" fileName="MethodParameter.java" startLine="54" startPosition="7" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399169222" fileName="MethodParameter.java" startLine="101" startPosition="28" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8644312900085877334" fileName="MethodParameter.java" startLine="81" startPosition="33" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399169222" fileName="MethodParameter.java" startLine="104" startPosition="28" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399169015" fileName="MethodParameter.java" startLine="40" startPosition="46" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399169068" fileName="MethodParameter.java" startLine="50" startPosition="63" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8492459591399169106" fileName="MethodParameter.java" startLine="60" startPosition="73" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8492459591399169131" fileName="MethodParameter.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8492459591399169139" fileName="MethodParameter.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setType#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8492459591399169171" fileName="MethodParameter.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDeclaration#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8492459591399169179" fileName="MethodParameter.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#()Z" />
-    <nodeInfo nodeId="8492459591399169187" fileName="MethodParameter.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Z)V" />
-    <nodeInfo nodeId="8492459591399169199" fileName="MethodParameter.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableTypes#()Ljava/util/List;" />
-    <nodeInfo nodeId="8492459591399169208" fileName="MethodParameter.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReference#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399169179" fileName="MethodParameter.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#()Z" />
+    <nodeInfo nodeId="8492459591399169187" fileName="MethodParameter.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Z)V" />
+    <nodeInfo nodeId="8492459591399169199" fileName="MethodParameter.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableTypes#()Ljava/util/List;" />
+    <nodeInfo nodeId="8492459591399169208" fileName="MethodParameter.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReference#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8492459591399168968" fileName="MethodParameter.java" startLine="29" startPosition="23" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399169151" fileName="MethodParameter.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTypeByName#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8492459591399169218" fileName="MethodParameter.java" startLine="100" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isFinal#()Z" />
+    <nodeInfo nodeId="8492459591399169171" fileName="MethodParameter.java" startLine="80" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDeclaration#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399169218" fileName="MethodParameter.java" startLine="103" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isFinal#()Z" />
     <nodeInfo nodeId="8492459591399169056" fileName="MethodParameter.java" startLine="48" startPosition="30" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="8492459591399168946" fileName="MethodParameter.java" startLine="26" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodParameter#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="8492459591399169010" fileName="MethodParameter.java" startLine="39" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAvailableTypes#()Ljava/util/List;" />
@@ -4646,12 +4648,12 @@
     <scopeInfo nodeId="8492459591399169089" fileName="MethodParameter.java" startLine="55" startPosition="57" endLine="56" endPosition="45" />
     <scopeInfo nodeId="8492459591399169132" fileName="MethodParameter.java" startLine="68" startPosition="26" endLine="69" endPosition="23" />
     <scopeInfo nodeId="8492459591399169142" fileName="MethodParameter.java" startLine="72" startPosition="35" endLine="73" endPosition="23" />
-    <scopeInfo nodeId="8492459591399169172" fileName="MethodParameter.java" startLine="81" startPosition="33" endLine="82" endPosition="30" />
-    <scopeInfo nodeId="8492459591399169180" fileName="MethodParameter.java" startLine="85" startPosition="31" endLine="86" endPosition="27" />
-    <scopeInfo nodeId="8492459591399169191" fileName="MethodParameter.java" startLine="89" startPosition="45" endLine="90" endPosition="31" />
-    <scopeInfo nodeId="8492459591399169200" fileName="MethodParameter.java" startLine="93" startPosition="43" endLine="94" endPosition="33" />
-    <scopeInfo nodeId="8492459591399169210" fileName="MethodParameter.java" startLine="97" startPosition="31" endLine="98" endPosition="62" />
-    <scopeInfo nodeId="8492459591399169229" fileName="MethodParameter.java" startLine="102" startPosition="119" endLine="103" endPosition="157" />
+    <scopeInfo nodeId="8644312900085877335" fileName="MethodParameter.java" startLine="82" startPosition="115" endLine="83" endPosition="110" />
+    <scopeInfo nodeId="8492459591399169180" fileName="MethodParameter.java" startLine="88" startPosition="31" endLine="89" endPosition="27" />
+    <scopeInfo nodeId="8492459591399169191" fileName="MethodParameter.java" startLine="92" startPosition="45" endLine="93" endPosition="31" />
+    <scopeInfo nodeId="8492459591399169200" fileName="MethodParameter.java" startLine="96" startPosition="43" endLine="97" endPosition="33" />
+    <scopeInfo nodeId="8492459591399169210" fileName="MethodParameter.java" startLine="100" startPosition="31" endLine="101" endPosition="62" />
+    <scopeInfo nodeId="8492459591399169229" fileName="MethodParameter.java" startLine="105" startPosition="119" endLine="106" endPosition="157" />
     <scopeInfo nodeId="8492459591399169016" fileName="MethodParameter.java" startLine="41" startPosition="30" endLine="43" endPosition="20">
       <varInfo nodeId="8492459591399169018" varName="result" />
     </scopeInfo>
@@ -4665,18 +4667,19 @@
     <scopeInfo nodeId="8492459591399169139" fileName="MethodParameter.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="8492459591399169140" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169171" fileName="MethodParameter.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="8492459591399169179" fileName="MethodParameter.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="8492459591399169187" fileName="MethodParameter.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="8492459591399169172" fileName="MethodParameter.java" startLine="81" startPosition="33" endLine="85" endPosition="16" />
+    <scopeInfo nodeId="8492459591399169179" fileName="MethodParameter.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="8492459591399169187" fileName="MethodParameter.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="8492459591399169188" varName="selected" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169199" fileName="MethodParameter.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="8492459591399169208" fileName="MethodParameter.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="8492459591399169221" fileName="MethodParameter.java" startLine="101" startPosition="28" endLine="105" endPosition="17" />
+    <scopeInfo nodeId="8492459591399169199" fileName="MethodParameter.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="8492459591399169208" fileName="MethodParameter.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="8492459591399169221" fileName="MethodParameter.java" startLine="104" startPosition="28" endLine="108" endPosition="17" />
     <scopeInfo nodeId="8492459591399169151" fileName="MethodParameter.java" startLine="75" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="8492459591399169152" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169218" fileName="MethodParameter.java" startLine="100" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="8492459591399169171" fileName="MethodParameter.java" startLine="80" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="8492459591399169218" fileName="MethodParameter.java" startLine="103" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="8492459591399169061" fileName="MethodParameter.java" startLine="49" startPosition="35" endLine="58" endPosition="27">
       <varInfo nodeId="8492459591399169063" varName="ancestors" />
     </scopeInfo>
@@ -4694,11 +4697,11 @@
       <varInfo nodeId="8492459591399169044" varName="found" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399169010" fileName="MethodParameter.java" startLine="39" startPosition="0" endLine="67" endPosition="0" />
-    <unitInfo nodeId="8492459591399168919" fileName="MethodParameter.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter" />
+    <unitInfo nodeId="8492459591399168919" fileName="MethodParameter.java" startLine="19" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter" />
   </root>
   <root nodeId="8492459591399169241">
-    <nodeInfo nodeId="8492459591399169248" fileName="IntroduceConstantRefactoring.java" startLine="19" startPosition="32" endLine="20" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399169272" fileName="IntroduceConstantRefactoring.java" startLine="20" startPosition="247" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169248" fileName="IntroduceConstantRefactoring.java" startLine="19" startPosition="32" endLine="20" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399169272" fileName="IntroduceConstantRefactoring.java" startLine="20" startPosition="232" endLine="21" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399169282" fileName="IntroduceConstantRefactoring.java" startLine="21" startPosition="114" endLine="22" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8459194913967420165" fileName="IntroduceConstantRefactoring.java" startLine="22" startPosition="113" endLine="23" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8459194913967420170" fileName="IntroduceConstantRefactoring.java" startLine="23" startPosition="14" endLine="24" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6445,7 +6448,7 @@
     <nodeInfo nodeId="8492459591399174820" fileName="InlineMethodRefactoring.java" startLine="280" startPosition="43" endLine="281" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399174830" fileName="InlineMethodRefactoring.java" startLine="281" startPosition="142" endLine="282" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399174848" fileName="InlineMethodRefactoring.java" startLine="283" startPosition="58" endLine="284" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399174858" fileName="InlineMethodRefactoring.java" startLine="285" startPosition="65" endLine="286" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399174858" fileName="InlineMethodRefactoring.java" startLine="285" startPosition="223" endLine="286" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399174864" fileName="InlineMethodRefactoring.java" startLine="287" startPosition="111" endLine="288" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399174874" fileName="InlineMethodRefactoring.java" startLine="290" startPosition="109" endLine="291" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399174882" fileName="InlineMethodRefactoring.java" startLine="292" startPosition="9" endLine="293" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6669,7 +6672,7 @@
       <varInfo nodeId="8492459591399174284" varName="body" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399174491" fileName="InlineMethodRefactoring.java" startLine="207" startPosition="63" endLine="217" endPosition="17" />
-    <scopeInfo nodeId="8492459591399174857" fileName="InlineMethodRefactoring.java" startLine="285" startPosition="65" endLine="295" endPosition="60">
+    <scopeInfo nodeId="8492459591399174857" fileName="InlineMethodRefactoring.java" startLine="285" startPosition="223" endLine="295" endPosition="60">
       <varInfo nodeId="8492459591399174859" varName="start" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399174023" fileName="InlineMethodRefactoring.java" startLine="96" startPosition="174" endLine="107" endPosition="7">
@@ -6811,204 +6814,207 @@
     <nodeInfo nodeId="8492459591399175244" fileName="IntroduceVariableRefactoring.java" startLine="50" startPosition="42" endLine="51" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8492459591399175159" fileName="IntroduceVariableRefactoring.java" startLine="52" startPosition="12" endLine="53" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399175166" fileName="IntroduceVariableRefactoring.java" startLine="53" startPosition="112" endLine="54" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399175173" fileName="IntroduceVariableRefactoring.java" startLine="54" startPosition="77" endLine="55" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399175181" fileName="IntroduceVariableRefactoring.java" startLine="56" startPosition="41" endLine="57" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399175190" fileName="IntroduceVariableRefactoring.java" startLine="58" startPosition="7" endLine="59" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399175200" fileName="IntroduceVariableRefactoring.java" startLine="60" startPosition="37" endLine="61" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399175219" fileName="IntroduceVariableRefactoring.java" startLine="64" startPosition="42" endLine="65" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399175234" fileName="IntroduceVariableRefactoring.java" startLine="68" startPosition="66" endLine="69" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399175241" fileName="IntroduceVariableRefactoring.java" startLine="70" startPosition="7" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3109730807963405927" fileName="IntroduceVariableRefactoring.java" startLine="75" startPosition="47" endLine="76" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3109730807963405937" fileName="IntroduceVariableRefactoring.java" startLine="77" startPosition="109" endLine="78" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3109730807963405972" fileName="IntroduceVariableRefactoring.java" startLine="80" startPosition="110" endLine="81" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3109730807963532727" fileName="IntroduceVariableRefactoring.java" startLine="82" startPosition="112" endLine="83" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3109730807963502069" fileName="IntroduceVariableRefactoring.java" startLine="83" startPosition="168" endLine="84" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3109730807963532707" fileName="IntroduceVariableRefactoring.java" startLine="84" startPosition="245" endLine="85" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6974242407276524473" fileName="IntroduceVariableRefactoring.java" startLine="88" startPosition="108" endLine="89" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6974242407276553259" fileName="IntroduceVariableRefactoring.java" startLine="91" startPosition="110" endLine="92" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6974242407276553289" fileName="IntroduceVariableRefactoring.java" startLine="94" startPosition="110" endLine="95" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3109730807963405948" fileName="IntroduceVariableRefactoring.java" startLine="96" startPosition="5" endLine="97" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399175266" fileName="IntroduceVariableRefactoring.java" startLine="100" startPosition="36" endLine="101" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2163048091639678854" fileName="IntroduceVariableRefactoring.java" startLine="104" startPosition="57" endLine="105" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2163048091639678866" fileName="IntroduceVariableRefactoring.java" startLine="108" startPosition="42" endLine="109" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4038232163186941237" fileName="IntroduceVariableRefactoring.java" startLine="112" startPosition="37" endLine="113" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2163048091639723459" fileName="IntroduceVariableRefactoring.java" startLine="116" startPosition="34" endLine="117" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399175276" fileName="IntroduceVariableRefactoring.java" startLine="120" startPosition="27" endLine="121" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399175286" fileName="IntroduceVariableRefactoring.java" startLine="124" startPosition="32" endLine="125" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399175292" fileName="IntroduceVariableRefactoring.java" startLine="128" startPosition="36" endLine="129" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399175301" fileName="IntroduceVariableRefactoring.java" startLine="132" startPosition="42" endLine="133" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8459194913967420156" fileName="IntroduceVariableRefactoring.java" startLine="136" startPosition="31" endLine="137" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001355776228069588" fileName="IntroduceVariableRefactoring.java" startLine="142" startPosition="38" endLine="143" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001355776228124534" fileName="IntroduceVariableRefactoring.java" startLine="146" startPosition="35" endLine="147" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001355776228125744" fileName="IntroduceVariableRefactoring.java" startLine="149" startPosition="39" endLine="150" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8459194913967367928" fileName="IntroduceVariableRefactoring.java" startLine="155" startPosition="45" endLine="156" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001355776228069664" fileName="IntroduceVariableRefactoring.java" startLine="159" startPosition="55" endLine="160" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399175318" fileName="IntroduceVariableRefactoring.java" startLine="165" startPosition="54" endLine="166" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="173" startPosition="49" endLine="174" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="174" startPosition="26" endLine="175" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="175" startPosition="67" endLine="176" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="177" startPosition="7" endLine="178" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="178" startPosition="163" endLine="179" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="179" startPosition="43" endLine="180" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="180" startPosition="69" endLine="181" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="182" startPosition="7" endLine="183" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="191" startPosition="31" endLine="192" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="192" startPosition="26" endLine="193" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="193" startPosition="67" endLine="194" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="195" startPosition="7" endLine="196" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="196" startPosition="163" endLine="197" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="197" startPosition="43" endLine="198" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="198" startPosition="225" endLine="199" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="200" startPosition="7" endLine="201" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399175173" fileName="IntroduceVariableRefactoring.java" startLine="54" startPosition="77" endLine="55" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8644312900085877317" fileName="IntroduceVariableRefactoring.java" startLine="56" startPosition="98" endLine="57" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399175181" fileName="IntroduceVariableRefactoring.java" startLine="59" startPosition="41" endLine="60" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399175190" fileName="IntroduceVariableRefactoring.java" startLine="61" startPosition="7" endLine="62" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399175200" fileName="IntroduceVariableRefactoring.java" startLine="63" startPosition="37" endLine="64" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399175219" fileName="IntroduceVariableRefactoring.java" startLine="67" startPosition="42" endLine="68" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399175234" fileName="IntroduceVariableRefactoring.java" startLine="71" startPosition="66" endLine="72" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399175241" fileName="IntroduceVariableRefactoring.java" startLine="73" startPosition="7" endLine="74" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3109730807963405927" fileName="IntroduceVariableRefactoring.java" startLine="78" startPosition="47" endLine="79" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3109730807963405937" fileName="IntroduceVariableRefactoring.java" startLine="80" startPosition="109" endLine="81" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3109730807963405972" fileName="IntroduceVariableRefactoring.java" startLine="83" startPosition="110" endLine="84" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3109730807963532727" fileName="IntroduceVariableRefactoring.java" startLine="85" startPosition="112" endLine="86" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3109730807963502069" fileName="IntroduceVariableRefactoring.java" startLine="86" startPosition="168" endLine="87" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3109730807963532707" fileName="IntroduceVariableRefactoring.java" startLine="87" startPosition="245" endLine="88" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6974242407276524473" fileName="IntroduceVariableRefactoring.java" startLine="91" startPosition="108" endLine="92" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6974242407276553259" fileName="IntroduceVariableRefactoring.java" startLine="94" startPosition="110" endLine="95" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6974242407276553289" fileName="IntroduceVariableRefactoring.java" startLine="97" startPosition="110" endLine="98" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3109730807963405948" fileName="IntroduceVariableRefactoring.java" startLine="99" startPosition="5" endLine="100" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399175266" fileName="IntroduceVariableRefactoring.java" startLine="103" startPosition="36" endLine="104" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2163048091639678854" fileName="IntroduceVariableRefactoring.java" startLine="107" startPosition="57" endLine="108" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2163048091639678866" fileName="IntroduceVariableRefactoring.java" startLine="111" startPosition="42" endLine="112" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4038232163186941237" fileName="IntroduceVariableRefactoring.java" startLine="115" startPosition="37" endLine="116" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2163048091639723459" fileName="IntroduceVariableRefactoring.java" startLine="119" startPosition="34" endLine="120" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399175276" fileName="IntroduceVariableRefactoring.java" startLine="123" startPosition="27" endLine="124" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399175286" fileName="IntroduceVariableRefactoring.java" startLine="127" startPosition="32" endLine="128" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399175292" fileName="IntroduceVariableRefactoring.java" startLine="131" startPosition="36" endLine="132" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399175301" fileName="IntroduceVariableRefactoring.java" startLine="135" startPosition="42" endLine="136" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8459194913967420156" fileName="IntroduceVariableRefactoring.java" startLine="139" startPosition="31" endLine="140" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001355776228069588" fileName="IntroduceVariableRefactoring.java" startLine="145" startPosition="38" endLine="146" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001355776228124534" fileName="IntroduceVariableRefactoring.java" startLine="149" startPosition="35" endLine="150" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001355776228125744" fileName="IntroduceVariableRefactoring.java" startLine="152" startPosition="39" endLine="153" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8459194913967367928" fileName="IntroduceVariableRefactoring.java" startLine="158" startPosition="45" endLine="159" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001355776228069664" fileName="IntroduceVariableRefactoring.java" startLine="162" startPosition="55" endLine="163" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399175318" fileName="IntroduceVariableRefactoring.java" startLine="168" startPosition="54" endLine="169" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="176" startPosition="49" endLine="177" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="177" startPosition="26" endLine="178" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="178" startPosition="67" endLine="179" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="180" startPosition="7" endLine="181" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="181" startPosition="163" endLine="182" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="182" startPosition="43" endLine="183" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="183" startPosition="69" endLine="184" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="185" startPosition="7" endLine="186" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="194" startPosition="31" endLine="195" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="195" startPosition="26" endLine="196" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="196" startPosition="67" endLine="197" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="198" startPosition="7" endLine="199" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="199" startPosition="163" endLine="200" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="200" startPosition="43" endLine="201" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="201" startPosition="225" endLine="202" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="203" startPosition="7" endLine="204" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1279276159889585471" fileName="IntroduceVariableRefactoring.java" startLine="38" startPosition="0" endLine="40" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntroduceVariableRefactoring#()V" />
-    <nodeInfo nodeId="4001355776228087145" fileName="IntroduceVariableRefactoring.java" startLine="139" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8492459591399175307" fileName="IntroduceVariableRefactoring.java" startLine="162" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoring#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="169" startPosition="56" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_x65dk2_a0a1a1a2a1#()V" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="187" startPosition="54" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_x65dk2_a0a0a3a1#()V" />
-    <nodeInfo nodeId="8492459591399175179" fileName="IntroduceVariableRefactoring.java" startLine="55" startPosition="105" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399175198" fileName="IntroduceVariableRefactoring.java" startLine="59" startPosition="109" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399175227" fileName="IntroduceVariableRefactoring.java" startLine="67" startPosition="26" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3109730807963405935" fileName="IntroduceVariableRefactoring.java" startLine="76" startPosition="219" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6974242407276524461" fileName="IntroduceVariableRefactoring.java" startLine="87" startPosition="5" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6974242407276553247" fileName="IntroduceVariableRefactoring.java" startLine="90" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6974242407276553277" fileName="IntroduceVariableRefactoring.java" startLine="93" startPosition="5" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399175217" fileName="IntroduceVariableRefactoring.java" startLine="63" startPosition="98" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="8492459591399175262" fileName="IntroduceVariableRefactoring.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2163048091639678850" fileName="IntroduceVariableRefactoring.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVisibilityLevel#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/VisibilityLevel;)V" />
-    <nodeInfo nodeId="2163048091639678862" fileName="IntroduceVariableRefactoring.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setReplacingAll#(Z)V" />
-    <nodeInfo nodeId="4038232163186941231" fileName="IntroduceVariableRefactoring.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setIsFinal#(Z)V" />
-    <nodeInfo nodeId="2163048091639723454" fileName="IntroduceVariableRefactoring.java" startLine="115" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasDuplicates#()Z" />
-    <nodeInfo nodeId="8492459591399175274" fileName="IntroduceVariableRefactoring.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8492459591399175282" fileName="IntroduceVariableRefactoring.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExpression#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8492459591399175290" fileName="IntroduceVariableRefactoring.java" startLine="127" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExpressionType#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8492459591399175298" fileName="IntroduceVariableRefactoring.java" startLine="131" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExpectedNames#()Ljava/util/List;" />
-    <nodeInfo nodeId="8459194913967420151" fileName="IntroduceVariableRefactoring.java" startLine="135" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4001355776228069583" fileName="IntroduceVariableRefactoring.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDuplicates#()Ljava/util/List;" />
-    <nodeInfo nodeId="4001355776228125740" fileName="IntroduceVariableRefactoring.java" startLine="148" startPosition="98" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="8459194913967327402" fileName="IntroduceVariableRefactoring.java" startLine="154" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4001355776228069628" fileName="IntroduceVariableRefactoring.java" startLine="158" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootToFindDuplicates#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8492459591399175312" fileName="IntroduceVariableRefactoring.java" startLine="164" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVoidType#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="8492459591399175208" fileName="IntroduceVariableRefactoring.java" startLine="62" startPosition="7" endLine="67" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3109730807963405980" fileName="IntroduceVariableRefactoring.java" startLine="81" startPosition="169" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4001355776228125724" fileName="IntroduceVariableRefactoring.java" startLine="147" startPosition="140" endLine="152" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="176" startPosition="32" endLine="182" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="176" startPosition="32" endLine="182" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="194" startPosition="32" endLine="200" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="194" startPosition="32" endLine="200" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3109730807963405956" fileName="IntroduceVariableRefactoring.java" startLine="79" startPosition="5" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4001355776228124529" fileName="IntroduceVariableRefactoring.java" startLine="145" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findDuplicates#()V" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="172" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="190" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8492459591399175151" fileName="IntroduceVariableRefactoring.java" startLine="52" startPosition="10" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399175150" fileName="IntroduceVariableRefactoring.java" startLine="49" startPosition="10" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3109730807963405921" fileName="IntroduceVariableRefactoring.java" startLine="74" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExpressionType#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8492459591399175149" fileName="IntroduceVariableRefactoring.java" startLine="46" startPosition="56" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399175122" fileName="IntroduceVariableRefactoring.java" startLine="41" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;Ljavax/swing/JComponent;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4001355776228087145" fileName="IntroduceVariableRefactoring.java" startLine="142" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8492459591399175307" fileName="IntroduceVariableRefactoring.java" startLine="165" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoring#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="172" startPosition="56" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_x65dk2_a0a1a1a2a1#()V" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="190" startPosition="54" endLine="192" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_x65dk2_a0a0a3a1#()V" />
+    <nodeInfo nodeId="8644312900085877313" fileName="IntroduceVariableRefactoring.java" startLine="55" startPosition="41" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399175179" fileName="IntroduceVariableRefactoring.java" startLine="58" startPosition="7" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399175198" fileName="IntroduceVariableRefactoring.java" startLine="62" startPosition="109" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399175227" fileName="IntroduceVariableRefactoring.java" startLine="70" startPosition="26" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3109730807963405935" fileName="IntroduceVariableRefactoring.java" startLine="79" startPosition="219" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6974242407276524461" fileName="IntroduceVariableRefactoring.java" startLine="90" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6974242407276553247" fileName="IntroduceVariableRefactoring.java" startLine="93" startPosition="5" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6974242407276553277" fileName="IntroduceVariableRefactoring.java" startLine="96" startPosition="5" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399175217" fileName="IntroduceVariableRefactoring.java" startLine="66" startPosition="98" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="8492459591399175262" fileName="IntroduceVariableRefactoring.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2163048091639678850" fileName="IntroduceVariableRefactoring.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVisibilityLevel#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/VisibilityLevel;)V" />
+    <nodeInfo nodeId="2163048091639678862" fileName="IntroduceVariableRefactoring.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setReplacingAll#(Z)V" />
+    <nodeInfo nodeId="4038232163186941231" fileName="IntroduceVariableRefactoring.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setIsFinal#(Z)V" />
+    <nodeInfo nodeId="2163048091639723454" fileName="IntroduceVariableRefactoring.java" startLine="118" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasDuplicates#()Z" />
+    <nodeInfo nodeId="8492459591399175274" fileName="IntroduceVariableRefactoring.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8492459591399175282" fileName="IntroduceVariableRefactoring.java" startLine="126" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExpression#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399175290" fileName="IntroduceVariableRefactoring.java" startLine="130" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExpressionType#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399175298" fileName="IntroduceVariableRefactoring.java" startLine="134" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExpectedNames#()Ljava/util/List;" />
+    <nodeInfo nodeId="8459194913967420151" fileName="IntroduceVariableRefactoring.java" startLine="138" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4001355776228069583" fileName="IntroduceVariableRefactoring.java" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDuplicates#()Ljava/util/List;" />
+    <nodeInfo nodeId="4001355776228125740" fileName="IntroduceVariableRefactoring.java" startLine="151" startPosition="98" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8459194913967327402" fileName="IntroduceVariableRefactoring.java" startLine="157" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4001355776228069628" fileName="IntroduceVariableRefactoring.java" startLine="161" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootToFindDuplicates#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399175312" fileName="IntroduceVariableRefactoring.java" startLine="167" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVoidType#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8492459591399175208" fileName="IntroduceVariableRefactoring.java" startLine="65" startPosition="7" endLine="70" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3109730807963405980" fileName="IntroduceVariableRefactoring.java" startLine="84" startPosition="169" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001355776228125724" fileName="IntroduceVariableRefactoring.java" startLine="150" startPosition="140" endLine="155" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="179" startPosition="32" endLine="185" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="179" startPosition="32" endLine="185" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="197" startPosition="32" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="197" startPosition="32" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3109730807963405956" fileName="IntroduceVariableRefactoring.java" startLine="82" startPosition="5" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4001355776228124529" fileName="IntroduceVariableRefactoring.java" startLine="148" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findDuplicates#()V" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="175" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="193" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399175151" fileName="IntroduceVariableRefactoring.java" startLine="52" startPosition="10" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3109730807963405921" fileName="IntroduceVariableRefactoring.java" startLine="77" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExpressionType#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399175150" fileName="IntroduceVariableRefactoring.java" startLine="49" startPosition="10" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399175149" fileName="IntroduceVariableRefactoring.java" startLine="46" startPosition="56" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399175122" fileName="IntroduceVariableRefactoring.java" startLine="41" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;Ljavax/swing/JComponent;)Ljava/lang/String;" />
     <scopeInfo nodeId="1279276159889585473" fileName="IntroduceVariableRefactoring.java" startLine="39" startPosition="41" endLine="39" endPosition="41" />
-    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="170" startPosition="47" endLine="170" endPosition="47" />
-    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="188" startPosition="45" endLine="188" endPosition="45" />
+    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="173" startPosition="47" endLine="173" endPosition="47" />
+    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="191" startPosition="45" endLine="191" endPosition="45" />
     <scopeInfo nodeId="8492459591399175255" fileName="IntroduceVariableRefactoring.java" startLine="47" startPosition="103" endLine="48" endPosition="70" />
     <scopeInfo nodeId="8492459591399175243" fileName="IntroduceVariableRefactoring.java" startLine="50" startPosition="42" endLine="51" endPosition="38" />
-    <scopeInfo nodeId="8492459591399175180" fileName="IntroduceVariableRefactoring.java" startLine="56" startPosition="41" endLine="57" endPosition="99" />
-    <scopeInfo nodeId="8492459591399175199" fileName="IntroduceVariableRefactoring.java" startLine="60" startPosition="37" endLine="61" endPosition="96" />
-    <scopeInfo nodeId="8492459591399175218" fileName="IntroduceVariableRefactoring.java" startLine="64" startPosition="42" endLine="65" endPosition="45" />
-    <scopeInfo nodeId="8492459591399175233" fileName="IntroduceVariableRefactoring.java" startLine="68" startPosition="66" endLine="69" endPosition="67" />
-    <scopeInfo nodeId="3109730807963405936" fileName="IntroduceVariableRefactoring.java" startLine="77" startPosition="109" endLine="78" endPosition="171" />
-    <scopeInfo nodeId="6974242407276524462" fileName="IntroduceVariableRefactoring.java" startLine="88" startPosition="108" endLine="89" endPosition="102" />
-    <scopeInfo nodeId="6974242407276553248" fileName="IntroduceVariableRefactoring.java" startLine="91" startPosition="110" endLine="92" endPosition="157" />
-    <scopeInfo nodeId="6974242407276553278" fileName="IntroduceVariableRefactoring.java" startLine="94" startPosition="110" endLine="95" endPosition="157" />
-    <scopeInfo nodeId="8492459591399175265" fileName="IntroduceVariableRefactoring.java" startLine="100" startPosition="36" endLine="101" endPosition="23" />
-    <scopeInfo nodeId="2163048091639678853" fileName="IntroduceVariableRefactoring.java" startLine="104" startPosition="57" endLine="105" endPosition="35" />
-    <scopeInfo nodeId="2163048091639678865" fileName="IntroduceVariableRefactoring.java" startLine="108" startPosition="42" endLine="109" endPosition="30" />
-    <scopeInfo nodeId="4038232163186941234" fileName="IntroduceVariableRefactoring.java" startLine="112" startPosition="37" endLine="113" endPosition="18" />
-    <scopeInfo nodeId="2163048091639723457" fileName="IntroduceVariableRefactoring.java" startLine="116" startPosition="34" endLine="117" endPosition="60" />
-    <scopeInfo nodeId="8492459591399175275" fileName="IntroduceVariableRefactoring.java" startLine="120" startPosition="27" endLine="121" endPosition="23" />
-    <scopeInfo nodeId="8492459591399175285" fileName="IntroduceVariableRefactoring.java" startLine="124" startPosition="32" endLine="125" endPosition="29" />
-    <scopeInfo nodeId="8492459591399175291" fileName="IntroduceVariableRefactoring.java" startLine="128" startPosition="36" endLine="129" endPosition="33" />
-    <scopeInfo nodeId="8492459591399175300" fileName="IntroduceVariableRefactoring.java" startLine="132" startPosition="42" endLine="133" endPosition="32" />
-    <scopeInfo nodeId="8459194913967420154" fileName="IntroduceVariableRefactoring.java" startLine="136" startPosition="31" endLine="137" endPosition="28" />
-    <scopeInfo nodeId="4001355776228069586" fileName="IntroduceVariableRefactoring.java" startLine="142" startPosition="38" endLine="143" endPosition="29" />
-    <scopeInfo nodeId="4001355776228125741" fileName="IntroduceVariableRefactoring.java" startLine="149" startPosition="39" endLine="150" endPosition="138" />
-    <scopeInfo nodeId="8459194913967327405" fileName="IntroduceVariableRefactoring.java" startLine="155" startPosition="45" endLine="156" endPosition="112" />
-    <scopeInfo nodeId="4001355776228069631" fileName="IntroduceVariableRefactoring.java" startLine="159" startPosition="55" endLine="160" endPosition="51" />
-    <scopeInfo nodeId="8492459591399175317" fileName="IntroduceVariableRefactoring.java" startLine="165" startPosition="54" endLine="166" endPosition="105" />
+    <scopeInfo nodeId="8644312900085877314" fileName="IntroduceVariableRefactoring.java" startLine="56" startPosition="98" endLine="57" endPosition="173" />
+    <scopeInfo nodeId="8492459591399175180" fileName="IntroduceVariableRefactoring.java" startLine="59" startPosition="41" endLine="60" endPosition="99" />
+    <scopeInfo nodeId="8492459591399175199" fileName="IntroduceVariableRefactoring.java" startLine="63" startPosition="37" endLine="64" endPosition="96" />
+    <scopeInfo nodeId="8492459591399175218" fileName="IntroduceVariableRefactoring.java" startLine="67" startPosition="42" endLine="68" endPosition="45" />
+    <scopeInfo nodeId="8492459591399175233" fileName="IntroduceVariableRefactoring.java" startLine="71" startPosition="66" endLine="72" endPosition="67" />
+    <scopeInfo nodeId="3109730807963405936" fileName="IntroduceVariableRefactoring.java" startLine="80" startPosition="109" endLine="81" endPosition="171" />
+    <scopeInfo nodeId="6974242407276524462" fileName="IntroduceVariableRefactoring.java" startLine="91" startPosition="108" endLine="92" endPosition="102" />
+    <scopeInfo nodeId="6974242407276553248" fileName="IntroduceVariableRefactoring.java" startLine="94" startPosition="110" endLine="95" endPosition="157" />
+    <scopeInfo nodeId="6974242407276553278" fileName="IntroduceVariableRefactoring.java" startLine="97" startPosition="110" endLine="98" endPosition="157" />
+    <scopeInfo nodeId="8492459591399175265" fileName="IntroduceVariableRefactoring.java" startLine="103" startPosition="36" endLine="104" endPosition="23" />
+    <scopeInfo nodeId="2163048091639678853" fileName="IntroduceVariableRefactoring.java" startLine="107" startPosition="57" endLine="108" endPosition="35" />
+    <scopeInfo nodeId="2163048091639678865" fileName="IntroduceVariableRefactoring.java" startLine="111" startPosition="42" endLine="112" endPosition="30" />
+    <scopeInfo nodeId="4038232163186941234" fileName="IntroduceVariableRefactoring.java" startLine="115" startPosition="37" endLine="116" endPosition="18" />
+    <scopeInfo nodeId="2163048091639723457" fileName="IntroduceVariableRefactoring.java" startLine="119" startPosition="34" endLine="120" endPosition="60" />
+    <scopeInfo nodeId="8492459591399175275" fileName="IntroduceVariableRefactoring.java" startLine="123" startPosition="27" endLine="124" endPosition="23" />
+    <scopeInfo nodeId="8492459591399175285" fileName="IntroduceVariableRefactoring.java" startLine="127" startPosition="32" endLine="128" endPosition="29" />
+    <scopeInfo nodeId="8492459591399175291" fileName="IntroduceVariableRefactoring.java" startLine="131" startPosition="36" endLine="132" endPosition="33" />
+    <scopeInfo nodeId="8492459591399175300" fileName="IntroduceVariableRefactoring.java" startLine="135" startPosition="42" endLine="136" endPosition="32" />
+    <scopeInfo nodeId="8459194913967420154" fileName="IntroduceVariableRefactoring.java" startLine="139" startPosition="31" endLine="140" endPosition="28" />
+    <scopeInfo nodeId="4001355776228069586" fileName="IntroduceVariableRefactoring.java" startLine="145" startPosition="38" endLine="146" endPosition="29" />
+    <scopeInfo nodeId="4001355776228125741" fileName="IntroduceVariableRefactoring.java" startLine="152" startPosition="39" endLine="153" endPosition="138" />
+    <scopeInfo nodeId="8459194913967327405" fileName="IntroduceVariableRefactoring.java" startLine="158" startPosition="45" endLine="159" endPosition="112" />
+    <scopeInfo nodeId="4001355776228069631" fileName="IntroduceVariableRefactoring.java" startLine="162" startPosition="55" endLine="163" endPosition="51" />
+    <scopeInfo nodeId="8492459591399175317" fileName="IntroduceVariableRefactoring.java" startLine="168" startPosition="54" endLine="169" endPosition="105" />
     <scopeInfo nodeId="1279276159889585471" fileName="IntroduceVariableRefactoring.java" startLine="38" startPosition="0" endLine="40" endPosition="3" />
-    <scopeInfo nodeId="4001355776228087145" fileName="IntroduceVariableRefactoring.java" startLine="139" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="4001355776228087145" fileName="IntroduceVariableRefactoring.java" startLine="142" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="4001355776228087149" varName="node" />
       <varInfo nodeId="4001355776228087151" varName="declaration" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399175307" fileName="IntroduceVariableRefactoring.java" startLine="162" startPosition="0" endLine="164" endPosition="0" />
-    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="169" startPosition="56" endLine="171" endPosition="5" />
-    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="187" startPosition="54" endLine="189" endPosition="5" />
-    <scopeInfo nodeId="3109730807963405981" fileName="IntroduceVariableRefactoring.java" startLine="82" startPosition="112" endLine="85" endPosition="213">
+    <scopeInfo nodeId="8492459591399175307" fileName="IntroduceVariableRefactoring.java" startLine="165" startPosition="0" endLine="167" endPosition="0" />
+    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="172" startPosition="56" endLine="174" endPosition="5" />
+    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="190" startPosition="54" endLine="192" endPosition="5" />
+    <scopeInfo nodeId="3109730807963405981" fileName="IntroduceVariableRefactoring.java" startLine="85" startPosition="112" endLine="88" endPosition="213">
       <varInfo nodeId="3109730807963532728" varName="params" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399175217" fileName="IntroduceVariableRefactoring.java" startLine="63" startPosition="98" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="8492459591399175262" fileName="IntroduceVariableRefactoring.java" startLine="99" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="8492459591399175217" fileName="IntroduceVariableRefactoring.java" startLine="66" startPosition="98" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="8492459591399175262" fileName="IntroduceVariableRefactoring.java" startLine="102" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="8492459591399175263" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="2163048091639678850" fileName="IntroduceVariableRefactoring.java" startLine="103" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="2163048091639678850" fileName="IntroduceVariableRefactoring.java" startLine="106" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="2163048091639678860" varName="level" />
     </scopeInfo>
-    <scopeInfo nodeId="2163048091639678862" fileName="IntroduceVariableRefactoring.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="2163048091639678862" fileName="IntroduceVariableRefactoring.java" startLine="110" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="2163048091639678872" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4038232163186941231" fileName="IntroduceVariableRefactoring.java" startLine="111" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="4038232163186941231" fileName="IntroduceVariableRefactoring.java" startLine="114" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="4038232163186941235" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="2163048091639723454" fileName="IntroduceVariableRefactoring.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="8492459591399175274" fileName="IntroduceVariableRefactoring.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="8492459591399175282" fileName="IntroduceVariableRefactoring.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="8492459591399175290" fileName="IntroduceVariableRefactoring.java" startLine="127" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="8492459591399175298" fileName="IntroduceVariableRefactoring.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="8459194913967420151" fileName="IntroduceVariableRefactoring.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="4001355776228069583" fileName="IntroduceVariableRefactoring.java" startLine="141" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="4001355776228125740" fileName="IntroduceVariableRefactoring.java" startLine="148" startPosition="98" endLine="152" endPosition="0" />
-    <scopeInfo nodeId="8459194913967327402" fileName="IntroduceVariableRefactoring.java" startLine="154" startPosition="0" endLine="158" endPosition="0">
+    <scopeInfo nodeId="2163048091639723454" fileName="IntroduceVariableRefactoring.java" startLine="118" startPosition="0" endLine="122" endPosition="0" />
+    <scopeInfo nodeId="8492459591399175274" fileName="IntroduceVariableRefactoring.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="8492459591399175282" fileName="IntroduceVariableRefactoring.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="8492459591399175290" fileName="IntroduceVariableRefactoring.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="8492459591399175298" fileName="IntroduceVariableRefactoring.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="8459194913967420151" fileName="IntroduceVariableRefactoring.java" startLine="138" startPosition="0" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="4001355776228069583" fileName="IntroduceVariableRefactoring.java" startLine="144" startPosition="0" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="4001355776228125740" fileName="IntroduceVariableRefactoring.java" startLine="151" startPosition="98" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="8459194913967327402" fileName="IntroduceVariableRefactoring.java" startLine="157" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="8459194913967327408" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001355776228069628" fileName="IntroduceVariableRefactoring.java" startLine="158" startPosition="0" endLine="162" endPosition="0">
+    <scopeInfo nodeId="4001355776228069628" fileName="IntroduceVariableRefactoring.java" startLine="161" startPosition="0" endLine="165" endPosition="0">
       <varInfo nodeId="4001355776228069651" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399175312" fileName="IntroduceVariableRefactoring.java" startLine="164" startPosition="0" endLine="168" endPosition="0">
+    <scopeInfo nodeId="8492459591399175312" fileName="IntroduceVariableRefactoring.java" startLine="167" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="8492459591399175315" varName="expressionType" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="177" startPosition="7" endLine="181" endPosition="31" />
-    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="195" startPosition="7" endLine="199" endPosition="31" />
-    <scopeInfo nodeId="3109730807963405957" fileName="IntroduceVariableRefactoring.java" startLine="80" startPosition="110" endLine="86" endPosition="7">
+    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="180" startPosition="7" endLine="184" endPosition="31" />
+    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="198" startPosition="7" endLine="202" endPosition="31" />
+    <scopeInfo nodeId="3109730807963405957" fileName="IntroduceVariableRefactoring.java" startLine="83" startPosition="110" endLine="89" endPosition="7">
       <varInfo nodeId="3109730807963405973" varName="exprClassifier" />
     </scopeInfo>
-    <scopeInfo nodeId="4001355776228124532" fileName="IntroduceVariableRefactoring.java" startLine="146" startPosition="35" endLine="152" endPosition="24" />
-    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="176" startPosition="32" endLine="182" endPosition="7" />
-    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="194" startPosition="32" endLine="200" endPosition="7" />
-    <scopeInfo nodeId="4001355776228124529" fileName="IntroduceVariableRefactoring.java" startLine="145" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="173" startPosition="49" endLine="183" endPosition="20" />
-    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="191" startPosition="31" endLine="201" endPosition="20" />
-    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="172" startPosition="0" endLine="185" endPosition="0" />
-    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="190" startPosition="0" endLine="203" endPosition="0" />
-    <scopeInfo nodeId="8492459591399175152" fileName="IntroduceVariableRefactoring.java" startLine="52" startPosition="12" endLine="71" endPosition="18">
+    <scopeInfo nodeId="4001355776228124532" fileName="IntroduceVariableRefactoring.java" startLine="149" startPosition="35" endLine="155" endPosition="24" />
+    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="179" startPosition="32" endLine="185" endPosition="7" />
+    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="197" startPosition="32" endLine="203" endPosition="7" />
+    <scopeInfo nodeId="4001355776228124529" fileName="IntroduceVariableRefactoring.java" startLine="148" startPosition="0" endLine="157" endPosition="0" />
+    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="176" startPosition="49" endLine="186" endPosition="20" />
+    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="194" startPosition="31" endLine="204" endPosition="20" />
+    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="175" startPosition="0" endLine="188" endPosition="0" />
+    <scopeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="193" startPosition="0" endLine="206" endPosition="0" />
+    <scopeInfo nodeId="8492459591399175152" fileName="IntroduceVariableRefactoring.java" startLine="52" startPosition="12" endLine="74" endPosition="18">
       <varInfo nodeId="8492459591399175191" varName="variableSuffixes" />
       <varInfo nodeId="8492459591399175174" varName="expectedVariableName" />
       <varInfo nodeId="8492459591399175167" varName="expectedNames" />
     </scopeInfo>
-    <scopeInfo nodeId="3109730807963405926" fileName="IntroduceVariableRefactoring.java" startLine="75" startPosition="47" endLine="97" endPosition="26">
+    <scopeInfo nodeId="3109730807963405926" fileName="IntroduceVariableRefactoring.java" startLine="78" startPosition="47" endLine="100" endPosition="26">
       <varInfo nodeId="3109730807963405928" varName="expressionType" />
     </scopeInfo>
-    <scopeInfo nodeId="3109730807963405921" fileName="IntroduceVariableRefactoring.java" startLine="74" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="3109730807963405921" fileName="IntroduceVariableRefactoring.java" startLine="77" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="3109730807963405924" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399175127" fileName="IntroduceVariableRefactoring.java" startLine="42" startPosition="62" endLine="72" endPosition="5">
+    <scopeInfo nodeId="8492459591399175127" fileName="IntroduceVariableRefactoring.java" startLine="42" startPosition="62" endLine="75" endPosition="5">
       <varInfo nodeId="8492459591399175129" varName="expressionType" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399175122" fileName="IntroduceVariableRefactoring.java" startLine="41" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="8492459591399175122" fileName="IntroduceVariableRefactoring.java" startLine="41" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="8492459591399175123" varName="node" />
       <varInfo nodeId="8492459591399175125" varName="editorComponent" />
     </scopeInfo>
-    <unitInfo nodeId="8492459591399175217" fileName="IntroduceVariableRefactoring.java" startLine="63" startPosition="74" endLine="67" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring$1" />
-    <unitInfo nodeId="4001355776228125740" fileName="IntroduceVariableRefactoring.java" startLine="148" startPosition="75" endLine="152" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring$2" />
-    <unitInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="169" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring$QuotationClass_x65dk2_a0a1a1a2a1" />
-    <unitInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="187" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring$QuotationClass_x65dk2_a0a0a3a1" />
-    <unitInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="28" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring" />
+    <unitInfo nodeId="8492459591399175217" fileName="IntroduceVariableRefactoring.java" startLine="66" startPosition="74" endLine="70" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring$1" />
+    <unitInfo nodeId="4001355776228125740" fileName="IntroduceVariableRefactoring.java" startLine="151" startPosition="75" endLine="155" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring$2" />
+    <unitInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="172" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring$QuotationClass_x65dk2_a0a1a1a2a1" />
+    <unitInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="190" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring$QuotationClass_x65dk2_a0a0a3a1" />
+    <unitInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="28" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring" />
   </root>
   <root nodeId="8492459591399175323">
     <nodeInfo nodeId="8492459591399175324" fileName="ParametersPanel.java" startLine="28" startPosition="50" endLine="29" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MINIMUM_TABLE_COLUMN_WIDTH" />
