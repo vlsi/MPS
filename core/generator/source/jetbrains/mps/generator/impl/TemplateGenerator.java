@@ -523,14 +523,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (inputNode.isRegistered() && (inputReference instanceof DynamicReference || inputReference.isExternal())) {
         // dynamic & external references don't need validation => replace input model with output
         SModelReference targetModelReference = inputReference.isExternal() ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
-        if (targetModelReference == null) {
-          myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (target model is null)",
-            GeneratorUtil.describeIfExists(inputNode, "input node"),
-            GeneratorUtil.describeIfExists(templateNode != null ? templateNode.getNode() : null, "template"));
-          continue;
-        }
-
         if (inputReference instanceof StaticReference) {
+          if (targetModelReference == null) {
+            myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (target model is null)",
+              GeneratorUtil.describeIfExists(inputNode, "input node"),
+              GeneratorUtil.describeIfExists(templateNode != null ? templateNode.getNode() : null, "template"));
+            continue;
+          }
+
           outputNode.addReference(new StaticReference(
             inputReference.getRole(),
             outputNode,

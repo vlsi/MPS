@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.smodel.search.ISearchScope;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,17 +39,17 @@ public class DynamicReference extends SReferenceBase {
 
   private DynamicReferenceOrigin myOrigin;
 
-  /**
+  /*
    * create 'young' reference
    */
   public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode immatureTargetNode) {
     super(role, sourceNode, null, immatureTargetNode);
   }
 
-  /**
+  /*
    * create 'mature' reference
    */
-  public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SModelReference targetModelReference, String resolveInfo) {
+  public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, String resolveInfo) {
     super(role, sourceNode, targetModelReference, null);
     setResolveInfo(resolveInfo);
   }
@@ -107,7 +108,6 @@ public class DynamicReference extends SReferenceBase {
       if (!silently) {
         reportErrorWithOrigin("cannot resolve reference by string: '" + getResolveInfo() + "'");
       }
-//      infoResolver.resolve(getResolveInfo(), getTargetSModelReference());
     }
 
     return targetNode;

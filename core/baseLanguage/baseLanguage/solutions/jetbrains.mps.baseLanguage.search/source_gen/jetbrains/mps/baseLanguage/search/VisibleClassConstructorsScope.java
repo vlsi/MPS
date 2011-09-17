@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
@@ -66,7 +67,7 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
       myTypeParms = typeParms;
     }
 
-    public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
+    public SNode resolve(String referenceInfo, @Nullable SModelReference targetModelReference) {
       SNode classifier_ = super.resolve(referenceInfo, targetModelReference);
       if (classifier_ == null) {
         return null;

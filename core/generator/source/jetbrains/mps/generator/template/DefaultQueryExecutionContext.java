@@ -66,7 +66,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       generator.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (Throwable t) {
       generator.getLogger().handleException(t);
-      generator.getLogger().error(condition, "error executing condition " + methodName + " (see exception)");
+      generator.getLogger().error(condition, "error executing condition " + methodName + ", exception was thrown");
       throw new GenerationFailureException(t);
     }
     return false;
@@ -93,7 +93,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       generator.getLogger().warning(ifMacro, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (Throwable t) {
       generator.getLogger().handleException(t);
-      generator.getLogger().error(ifMacro, "error executing condition " + methodName + " (see exception)");
+      generator.getLogger().error(ifMacro, "error executing condition " + methodName + ", exception was thrown");
       throw new GenerationFailureException(t);
     }
 
@@ -112,7 +112,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         mapSrcNodeOrListMacro.getModel());
     } catch (Throwable t) {
       generator.getLogger().handleException(t);
-      generator.showErrorMessage(inputNode, mapSrcNodeOrListMacro, "cannot evaluate macro: mapping func failed (see exception)");
+      generator.showErrorMessage(inputNode, mapSrcNodeOrListMacro, "cannot evaluate macro: mapping func failed, exception was thrown");
       throw new GenerationFailureException(t);
     }
   }
@@ -131,7 +131,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         mapSrcNodeOrListMacro.getModel());
     } catch (Throwable t) {
       generator.getLogger().handleException(t);
-      generator.showErrorMessage(inputNode, mapSrcNodeOrListMacro, "cannot evaluate macro: post-processing failed (see exception)");
+      generator.showErrorMessage(inputNode, mapSrcNodeOrListMacro, "cannot evaluate macro: post-processing failed, exception was thrown");
       throw new GenerationFailureException(t);
     }
   }
@@ -157,7 +157,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       outputNode.setProperty(propertyName, propertyValue);
     } catch (Throwable t) {
       generator.getLogger().handleException(t);
-      generator.showErrorMessage(inputNode, templateNode, propertyMacro, "cannot evaluate property macro (see exception)");
+      generator.showErrorMessage(inputNode, templateNode, propertyMacro, "cannot evaluate property macro, exception was thrown");
       throw new GenerationFailureException(t);
     }
   }
@@ -175,7 +175,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return null;
     } catch (Exception e) {
       generator.getLogger().handleException(e);
-      generator.showErrorMessage(inputNode, query, "cannot evaluate query (see exception)");
+      generator.showErrorMessage(inputNode, query, "cannot evaluate query, exception was thrown");
       return null;
     }
   }
@@ -193,7 +193,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return null;
     } catch (Exception e) {
       generator.getLogger().handleException(e);
-      generator.showErrorMessage(inputNode, query, "cannot evaluate query (see exception)");
+      generator.showErrorMessage(inputNode, query, "cannot evaluate query, exception was thrown");
       return null;
     }
   }
@@ -225,7 +225,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return new ArrayList<SNode>();
     } catch (Exception e) {
       generator.getLogger().handleException(e);
-      generator.showErrorMessage(inputNode, query, "cannot evaluate query (see exception)");
+      generator.showErrorMessage(inputNode, query, "cannot evaluate query, exception was thrown");
       return new LinkedList<SNode>();
     }
   }
@@ -246,7 +246,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return null;
     } catch (Exception e) {
       generator.getLogger().handleException(e);
-      generator.showErrorMessage(inputNode, query, "cannot evaluate query (see exception)");
+      generator.showErrorMessage(inputNode, query, "cannot evaluate query, exception was thrown");
       return null;
     }
   }
@@ -268,7 +268,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         return null;
       } catch (Exception e) {
         generator.getLogger().handleException(e);
-        generator.showErrorMessage(context.getInput(), null, templateFragmentNode, "cannot evaluate template fragment context query (see exception)");
+        generator.showErrorMessage(context.getInput(), null, templateFragmentNode, "cannot evaluate template fragment context query, exception was thrown");
         return null;
       }
     }
@@ -294,7 +294,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
     } catch (Throwable t) {
       generator.getLogger().handleException(t);
-      generator.showErrorMessage(node, refMacro, "cannot evaluate reference macro (see exception)");
+      generator.showErrorMessage(node, refMacro, "cannot evaluate reference macro, exception was thrown");
     }
     return null;
   }

@@ -143,13 +143,22 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
       return "<err:null reference>";
     }
 
-    String shortName = null;
+    String shortName;
     String packageName = null;
     if (reference instanceof DynamicReference) {
       shortName = reference.getResolveInfo();
       final SModelReference modelReference = reference.getTargetSModelReference();
       if (modelReference != null) {
         packageName = modelReference.getLongName();
+      } else {
+        int lastDot = shortName.lastIndexOf('.');
+        if(lastDot >= 0) {
+          packageName = shortName.substring(0, lastDot);
+          shortName = shortName.substring(lastDot + 1);
+          if (shortName.indexOf('$') >= 0) {
+            shortName = shortName.replace('$', '.');
+          }
+        }
       }
     } else {
       SNode targetNode = reference.getTargetNode();

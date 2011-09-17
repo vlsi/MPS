@@ -107,18 +107,26 @@ public abstract class BaseLanguageTextGen {
       return;
     }
 
-    String shortName = null;
-    String packageName = null;
+    String shortName;
+    String packageName;
     if (ref instanceof DynamicReference) {
       shortName = ref.getResolveInfo();
       SModelReference modelReference = ref.getTargetSModelReference();
+      int dot = shortName.lastIndexOf(".");
       if (modelReference != null) {
         packageName = modelReference.getLongName();
-      }
-      int dot = shortName.lastIndexOf(".");
-      if (dot >= 0) {
+      } else if (dot >= 0) {
         packageName = shortName.substring(0, dot);
         shortName = shortName.substring(dot + 1);
+        if (shortName.indexOf('$') >= 0) {
+          shortName = shortName.replace('$', '.');
+        }
+      } else {
+        SModelReference sModelReference = ref.getSourceNode().getModel().getSModelReference();
+        packageName = (sModelReference != null ?
+          sModelReference.getLongName() :
+          ""
+        );
       }
     } else {
       SNode target = ref.getTargetNodeSilently();
