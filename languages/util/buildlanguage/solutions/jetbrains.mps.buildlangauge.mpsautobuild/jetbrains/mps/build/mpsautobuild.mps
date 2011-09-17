@@ -2703,8 +2703,8 @@
       </node>
       <node role="fullName" roleId="tps4.6108265972537372848" type="tps4.CompositeString" typeId="tps4.1205342812422" id="437343344535644754">
         <node role="right" roleId="tps4.1205342834160" type="tps4.CompositeString" typeId="tps4.1205342812422" id="437343344535644758">
-          <node role="right" roleId="tps4.1205342834160" type="tps4.VariableReference" typeId="tps4.1205339464939" id="437343344535644761">
-            <link role="variable" roleId="tps4.1205339484191" targetNodeId="2235195415637077108" resolveInfo="version" />
+          <node role="right" roleId="tps4.1205342834160" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3690850548079628667">
+            <property name="name" nameId="tps4.1223641503366" value="2.0.1" />
           </node>
           <node role="left" roleId="tps4.1205342829799" type="tps4.CompositeString" typeId="tps4.1205342812422" id="437343344535981773">
             <node role="right" roleId="tps4.1205342834160" type="tps4.Space" typeId="tps4.1234531699390" id="437343344535981776" />
