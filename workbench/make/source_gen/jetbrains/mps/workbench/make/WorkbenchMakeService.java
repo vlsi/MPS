@@ -349,6 +349,12 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
       return task;
     }
+
+    @Override
+    protected IScript toScript(ScriptBuilder scriptBuilder) {
+      MakeSession session = WorkbenchMakeService.this.getSession();
+      return session.toScript(scriptBuilder);
+    }
   }
 
   private class Controller extends IScriptController.Stub {

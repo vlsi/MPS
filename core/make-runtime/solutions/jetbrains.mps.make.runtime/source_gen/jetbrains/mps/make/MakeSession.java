@@ -4,6 +4,8 @@ package jetbrains.mps.make;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.make.script.ScriptBuilder;
 
 public class MakeSession {
   private IOperationContext context;
@@ -44,5 +46,9 @@ public class MakeSession {
 
   public void doExecute(Runnable scriptRunnable) {
     scriptRunnable.run();
+  }
+
+  public IScript toScript(ScriptBuilder scriptBuilder) {
+    return scriptBuilder.toScript();
   }
 }

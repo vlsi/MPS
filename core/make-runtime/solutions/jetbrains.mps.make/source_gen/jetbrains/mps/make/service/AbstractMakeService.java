@@ -73,12 +73,16 @@ public abstract class AbstractMakeService implements IMakeService {
         }) :
         Sequence.fromIterable(scriptBuilders).select(new ISelector<ScriptBuilder, IScript>() {
           public IScript select(ScriptBuilder scb) {
-            return scb.toScript();
+            return toScript(scb);
           }
         })
       ));
 
       return processClusteredInput(clInput.value, scripts, controller);
+    }
+
+    protected IScript toScript(ScriptBuilder scriptBuilder) {
+      return scriptBuilder.toScript();
     }
 
     protected abstract Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller);
