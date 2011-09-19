@@ -16,13 +16,13 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.stubs.StubModelManagerFactory;
 
 public class SModelRoot {
   private ModelRoot myModelRoot;
@@ -37,10 +37,30 @@ public class SModelRoot {
     if (myModelRoot.getManager() != null) {
       String moduleId = myModelRoot.getManager().getModuleId();
       String className = myModelRoot.getManager().getClassName();
-      return StubModelManagerFactory.create(moduleId, className);
+      return create(moduleId, className);
     }
 
     return new DefaultModelRootManager();
+  }
+
+  private IModelRootManager create(String moduleId, String className) throws ManagerNotFoundException {
+    IModule mod = MPSModuleRepository.getInstance().getModuleByUID(moduleId);
+    if (mod == null) return null;
+    // TODO: fixme
+    // hack -- avoid "harmless exceptions" to be reported if the module hasn't been loaded yet
+    if (!(MPSModuleRepository.getInstance().isKnownModule(mod))) {
+      return null;
+    }
+    Class managerClass = mod.getClass(className);
+    if (managerClass == null) {
+      throw new ManagerNotFoundException("Manager class " + className + " not found in module " + mod.getModuleFqName());
+    }
+
+    try {
+      return (IModelRootManager) managerClass.newInstance();
+    } catch (Throwable t) {
+      throw new ManagerNotFoundException("Problems during instantiating manager " + className, t);
+    }
   }
 
   public IModelRootManager getManager() {

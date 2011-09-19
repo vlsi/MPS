@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2003-2011 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public class LibrariesLoader implements ApplicationComponent {
   public static void createLanguageLibs(MPSModuleOwner moduleOwner, Language language, LanguageDescriptor languageDescriptor, MPSModuleRepository repository) {
     List<SolutionDescriptor> solutionDescriptors = createLanguageLibraryDescriptors(languageDescriptor);
 
-    addDepsOnStubSolutions(languageDescriptor, solutionDescriptors);
-
-    language.setLanguageDescriptor(languageDescriptor, false);
-    repository.addModule(language, moduleOwner);
-
     for (SolutionDescriptor sd : solutionDescriptors) {
       Solution.newInstance(sd, language);
     }
@@ -70,30 +65,11 @@ public class LibrariesLoader implements ApplicationComponent {
       descriptor.setNamespace(ss.getName());
 
       descriptor.setCompileInMPS(false);
+      descriptor.setDontLoadClasses(true);
 
       result.add(descriptor);
     }
     return result;
-  }
-
-  private static void addDepsOnStubSolutions(LanguageDescriptor languageDescriptor, List<SolutionDescriptor> descriptors) {
-    for (SolutionDescriptor d : descriptors) {
-      List<Dependency> dependencies = languageDescriptor.getDependencies();
-
-      boolean hasDependency = false;
-      for (Dependency ld : dependencies) {
-        if (ObjectUtils.equals(ld.getModuleRef(), d.getModuleReference())) {
-          hasDependency = true;
-          break;
-        }
-      }
-      if (hasDependency) continue;
-
-      Dependency dep = new Dependency();
-      dep.setModuleRef(d.getModuleReference());
-      dep.setReexport(true);
-      dependencies.add(dep);
-    }
   }
 
   private void loadNewLanguageLibs() {
@@ -148,29 +124,6 @@ public class LibrariesLoader implements ApplicationComponent {
     }
 
     return result;
-  }
-
-  @Nullable
-  private AbstractModelRootManager createStubManager(AbstractModule m, StubPath sp) {
-    try {
-      if (sp.getManager() == null) return null;
-
-      String moduleId = sp.getManager().getModuleId();
-      String className = sp.getManager().getClassName();
-
-      // TODO: fixme
-      // while loading a language we can't refer to it by ID, since it hasn't been created yet
-      // fortunately, we don't have to
-      if (m.getModuleReference().getModuleId().equals(ModuleId.fromString(moduleId))) {
-        // well, that's weird... this causes an NPE in ClassLoaderManager
-        return (AbstractModelRootManager) StubModelManagerFactory.create((AbstractModule) m, className);
-      }
-
-      return (AbstractModelRootManager) StubModelManagerFactory.create(moduleId, className);
-    } catch (ManagerNotFoundException e) {
-      LOG.error("Can't create stub manager " + sp.getManager().getClassName() + " for " + sp.getPath(), e);
-      return null;
-    }
   }
 
   //---------component stuff----------

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2003-2011 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,19 +17,16 @@ package jetbrains.mps.baseLanguage.stubs;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.reloading.RealClassPathItem;
-import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.*;
 
 /**
  * @author Kostik

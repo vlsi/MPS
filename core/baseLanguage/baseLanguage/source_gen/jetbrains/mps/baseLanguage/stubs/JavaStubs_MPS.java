@@ -18,7 +18,6 @@ public class JavaStubs_MPS extends JavaStubs {
   }
 
   protected void updateModel(final StubLocation location, final SModel model, ModelDataSource source) {
-    super.updateModel(location, model, source);
     SNode exp = null;
     SPropertyOperations.set(SNodeOperations.cast((exp = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.ExportScopeNamespace", null)), "jetbrains.mps.lang.core.structure.ExportScopeNamespace"), "namespace", "jetbrains.mps");
     for (SNode root : model.roots()) {

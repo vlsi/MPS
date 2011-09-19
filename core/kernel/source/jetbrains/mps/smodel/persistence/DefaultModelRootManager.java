@@ -22,6 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
@@ -100,6 +101,18 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return result;
   }
 
+  private ModelLoadResult handleExceptionDuringModelRead(EditableSModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
+    VcsMigrationUtil.getHandler().addSuspiciousModel(modelDescriptor, isConflictStateFixed);
+    SModel newModel = new StubModel(modelDescriptor.getSModelReference());
+    LOG.error(exception.getMessage(), newModel);
+    return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
+  }
+
+  @Override
+  public Collection<SModelDescriptor> load(@NotNull ModelRoot root, IModule module) {
+    return null;
+  }
+
   public boolean canCreateModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     return true;
   }
@@ -135,6 +148,5 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     //todo modelRepository.registerModelDescriptor(modelDescriptor);
     return modelDescriptor;
   }
-
 }
 

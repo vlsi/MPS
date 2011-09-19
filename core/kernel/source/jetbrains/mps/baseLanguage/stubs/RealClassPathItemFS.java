@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2003-2011 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,10 +74,10 @@ public abstract class RealClassPathItemFS extends AbstractClassPathItem {
     });
   }
 
-  public List<RealClassPathItem> flatten() {
+  public List<RealClassPathItem> flatten(){
     checkValidity();
     List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
-    result.add(this);
+    //result.add(this);
     return result;
   }
 

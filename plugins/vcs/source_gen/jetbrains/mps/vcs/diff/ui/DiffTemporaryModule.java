@@ -212,6 +212,11 @@ public class DiffTemporaryModule extends AbstractModule {
       throw new UnsupportedOperationException();
     }
 
+    @Override
+    public IFile getModelFile() {
+      throw new UnsupportedOperationException();
+    }
+
     public boolean isPackaged() {
       return !(myEditable);
     }

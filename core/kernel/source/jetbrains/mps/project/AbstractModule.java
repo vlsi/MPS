@@ -143,7 +143,7 @@ public abstract class AbstractModule implements IModule {
 
     descriptor.getUsedLanguages().add(langRef);
 //    setModuleDescriptor(descriptor, true);// removed as it follows to models disposing even after addChild()
-    save();
+    //save();
   }
 
   public void addUsedDevkit(ModuleReference devkitRef) {

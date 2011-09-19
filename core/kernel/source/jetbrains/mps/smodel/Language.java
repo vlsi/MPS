@@ -27,19 +27,21 @@ import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.reloading.*;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -106,7 +108,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public static Language createLanguage(String namespace, ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    Language language = new Language();
     LanguageDescriptor languageDescriptor;
     if (handle.getDescriptor() != null) {
       languageDescriptor = (LanguageDescriptor) handle.getDescriptor();
@@ -117,14 +118,16 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     } else {
       languageDescriptor = createNewDescriptor(namespace, handle.getFile());
     }
-    language.myDescriptorFile = handle.getFile();
 
     MPSModuleRepository repository = MPSModuleRepository.getInstance();
     if (repository.existsModule(languageDescriptor.getModuleReference())) {
       LOG.error("Loading module " + languageDescriptor.getNamespace() + " for the second time");
       return repository.getLanguage(languageDescriptor.getModuleReference());
     }
-    
+
+    Language language = new Language();
+    language.myDescriptorFile = handle.getFile();
+
     language.setLanguageDescriptor(languageDescriptor, false);
     repository.addModule(language, moduleOwner);
 
@@ -135,23 +138,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private Language() {
 
-  }
-
-  private static List<SolutionDescriptor> createStubSolutionDescriptors(LanguageDescriptor ld) {
-    List<SolutionDescriptor> result = new ArrayList<SolutionDescriptor>();
-    for (StubSolution ss : ld.getStubSolutions()) {
-      SolutionDescriptor descriptor = new SolutionDescriptor();
-      descriptor.setUUID(ss.getId().toString());
-      descriptor.setNamespace(ss.getName());
-
-      descriptor.setCompileInMPS(false);
-
-      //todo what should be here?
-      descriptor.setDontLoadClasses(true);
-
-      result.add(descriptor);
-    }
-    return result;
   }
 
   protected ModuleDependenciesManager createDependenciesManager() {
