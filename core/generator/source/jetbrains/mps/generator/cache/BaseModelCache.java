@@ -47,8 +47,10 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
 
   protected abstract T generateCache(GenerationStatus status);
 
+  @NotNull
   public abstract String getCacheFileName();
 
+  @Nullable
   protected abstract IFile getCacheFile(SModelDescriptor modelDescriptor);
 
   protected BaseModelCache(SModelRepository modelRepository) {
@@ -75,7 +77,11 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
         return myCache.get(modelDescriptor);
       }
 
-      myFilesToModels.put(getCacheFile(modelDescriptor), modelDescriptor);
+      IFile cacheFile = getCacheFile(modelDescriptor);
+      if (cacheFile == null) {
+        return null;
+      }
+      myFilesToModels.put(cacheFile, modelDescriptor);
       T cache = readCache(modelDescriptor);
       myCache.put(modelDescriptor, cache);
 
