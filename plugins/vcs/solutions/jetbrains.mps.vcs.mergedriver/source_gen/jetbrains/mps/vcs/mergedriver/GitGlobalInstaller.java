@@ -13,11 +13,11 @@ import com.intellij.openapi.ui.Messages;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
-import com.intellij.openapi.util.SystemInfo;
 import java.io.FileNotFoundException;
 
 /*package*/ class GitGlobalInstaller extends AbstractInstaller {
@@ -63,7 +63,11 @@ import java.io.FileNotFoundException;
       return createScriptResult;
     }
 
-    ListSequence.fromList(newConfigLines).addElement(String.format("\tdriver = \"\\\"%s\\\" %%O %%A %%B %%L\"", myScriptFile.getAbsolutePath().replace("\\", "\\\\")));
+    String scriptPath = myScriptFile.getAbsolutePath();
+    if (SystemInfo.isWindows) {
+      scriptPath = CommandLineGenerator.adaptPathForMsysGit(scriptPath);
+    }
+    ListSequence.fromList(newConfigLines).addElement(String.format("\tdriver = \"\\\"%s\\\" %%O %%A %%B %%L\"", scriptPath));
     ListSequence.fromList(newConfigLines).addElement("");
 
     List<String> configLines = StringsIO.readLines(myConfigFile);
@@ -83,7 +87,7 @@ import java.io.FileNotFoundException;
       boolean equal = ListSequence.fromList(section).count() == ListSequence.fromList(newConfigLines).count();
       if (equal) {
         for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
-          if (neq_btx4zt_a0a0a0e0t0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
+          if (neq_btx4zt_a0a0a0e0v0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
             equal = false;
             break;
           }
@@ -132,7 +136,7 @@ import java.io.FileNotFoundException;
     return "Git";
   }
 
-  private static boolean neq_btx4zt_a0a0a0e0t0a(Object a, Object b) {
+  private static boolean neq_btx4zt_a0a0a0e0v0a(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="eb0910byi6ufa97wt0g5pj4nxnn7697">
+<dependencies version="2" modelHash="5pxzqm5483a8ckmf6pwdshy4xxo88p2">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide(MPS.Classpath/com.intellij.ide@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.plugins(MPS.Classpath/com.intellij.ide.plugins@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.util(MPS.Classpath/com.intellij.ide.util@java_stub)" />
@@ -187,7 +187,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="GitRepositoriesInstaller.java" />
   </source>
-  <source id="572687202609936946" name="GitGlobalInstaller" hash="46krwk9bwm5vpu3k85ar2zwub6o2ynj" dependsOnNodes="true">
+  <source id="572687202609936946" name="GitGlobalInstaller" hash="b3fy37b9p3zwpgq3dszea8vii8ndr19" dependsOnNodes="true">
     <dep root="1376744028423385490" />
     <dep root="5332772916083838064" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide(MPS.Classpath/com.intellij.ide@java_stub)" />
@@ -404,11 +404,12 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MergeDriverOptionsDialog.java" />
   </source>
-  <source id="1016968294606525391" name="CommandLineGenerator" hash="dkc6z03ssoi0iezctzjlxy77tk6n6bv">
+  <source id="1016968294606525391" name="CommandLineGenerator" hash="bulrz8ipfpvjufzloz714s8mkg7ecnb">
     <dep root="3042807695808129902" />
     <dep root="5332772916083838064" />
     <dep root="7551811584090935086" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.plugins(MPS.Classpath/com.intellij.ide.plugins@java_stub)" />
+    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.util(MPS.Classpath/com.intellij.openapi.util@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide(MPS.Classpath/jetbrains.mps.ide@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" />
