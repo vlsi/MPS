@@ -39,6 +39,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeContext" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.InternalRuntimePacker" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergeDriverMain" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.ScriptGenerator" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
