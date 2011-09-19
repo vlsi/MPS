@@ -89,30 +89,4 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSourc
     updateDiskTimestamp();
     replaceModel(result.getModel(), getLoadingState());
   }
-
-  //todo remove duplication
-  public void replaceModel(@NotNull SModel newModel, ModelLoadingState loadingState) {
-    ModelAccess.assertLegalWrite();
-    if (newModel == mySModel) return;
-    final SModel oldSModel = mySModel;
-    if (oldSModel != null) {
-      oldSModel.setModelDescriptor(null);
-    }
-    mySModel = newModel;
-    mySModel.setModelDescriptor(this);
-    MPSModuleRepository.getInstance().invalidateCaches();
-    Runnable modelReplacedNotifier = new Runnable() {
-      public void run() {
-        fireModelReplaced();
-        if (oldSModel != null) {
-          oldSModel.dispose();
-        }
-      }
-    };
-    if (ModelAccess.instance().isInEDT()) {
-      modelReplacedNotifier.run();
-    } else {
-      ModelAccess.instance().runWriteInEDT(modelReplacedNotifier);
-    }
-  }
 }
