@@ -31,8 +31,8 @@ public class CommandLineGenerator {
   private CommandLineGenerator() {
   }
 
-  public static String getCommandLine(boolean withSvnkit) {
-    Iterable<String> classpath = getClasspath(withSvnkit);
+  public static String getCommandLine(int vcs) {
+    Iterable<String> classpath = getClasspath(vcs == ScriptGenerator.SVN);
     if (InternalFlag.isInternalMode()) {
       classpath = Sequence.fromIterable(classpath).where(new IWhereFilter<String>() {
         public boolean accept(String cpi) {
