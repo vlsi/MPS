@@ -13,8 +13,8 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
+import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -45,21 +45,25 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
   private IOperationContext context;
   private IMessageHandler messageHandler;
 
-  public BuildMakeService(IOperationContext context, IMessageHandler messageHandler) {
+  @Deprecated
+  /*package*/ BuildMakeService(IOperationContext context, IMessageHandler messageHandler) {
     this.context = context;
     this.messageHandler = messageHandler;
   }
 
+  /*package*/ BuildMakeService() {
+  }
+
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
-    return null;
+    return new FutureValue(doMake(session, resources, script, controller));
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
-    return null;
+    return new FutureValue(doMake(session, resources, script, null));
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
-    return null;
+    return new FutureValue(doMake(session, resources, defaultMakeScript(), null));
   }
 
   public boolean isSessionActive() {
@@ -82,18 +86,25 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
   }
 
   public Future<IResult> make(Iterable<? extends IResource> resources) {
-    return doMake(resources, defaultMakeScript(), null);
+    return doMake(internalMakeSession(), resources, defaultMakeScript(), null);
   }
 
   public Future<IResult> make(Iterable<? extends IResource> resources, IScript script) {
-    return doMake(resources, script, null);
+    return doMake(internalMakeSession(), resources, script, null);
   }
 
   public Future<IResult> make(Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
-    return new FutureValue(doMake(resources, script, controller));
+    return new FutureValue(doMake(internalMakeSession(), resources, script, controller));
   }
 
-  private Future<IResult> doMake(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller) {
+  private MakeSession internalMakeSession() {
+    if (context == null) {
+      throw new IllegalStateException("attempt to use deprecated API from modern context");
+    }
+    return new MakeSession(context, messageHandler, true);
+  }
+
+  private Future<IResult> doMake(MakeSession makeSession, Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller) {
     String scrName = "Build";
 
     if (Sequence.fromIterable(inputRes).isEmpty()) {
@@ -102,14 +113,14 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
       return new FutureValue(new IResult.FAILURE(null));
     }
 
-    return new BuildMakeService.TaskRunner(scrName, messageHandler).runTask(inputRes, defaultScript, controller);
+    return new BuildMakeService.TaskRunner(scrName, makeSession).runTask(inputRes, defaultScript, controller);
   }
 
   private void showError(String msg) {
     messageHandler.handle(new Message(MessageKind.ERROR, msg));
   }
 
-  private IScriptController completeController(final IScriptController ctl) {
+  private IScriptController completeController(final MakeSession msess, final IScriptController ctl) {
     final IConfigMonitor cmon = new IConfigMonitor.Stub() {
       public <T extends IOption> T relayQuery(IQuery<T> query) {
         return query.defaultOption();
@@ -142,8 +153,8 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
       public void setup(IPropertiesPool pool) {
         Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
         if (vars != null) {
-          vars._0(BuildMakeService.this.context.getProject());
-          vars._1(BuildMakeService.this.context);
+          vars._0(msess.getContext().getProject());
+          vars._1(msess.getContext());
           vars._2(true);
           vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
             public ProgressIndicator invoke() {
@@ -175,13 +186,13 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.plugin.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.baseLanguage.JavaCompile"), new IFacet.Name("jetbrains.mps.lang.core.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.Make.make")).toScript();
   }
 
-  public class TaskRunner extends AbstractMakeService.AbstractInputProcessor {
+  private class TaskRunner extends AbstractMakeService.AbstractInputProcessor {
     private String taskName;
-    private IMessageHandler mh;
+    private MakeSession makeSession;
 
-    private TaskRunner(String taskName, IMessageHandler mh) {
+    private TaskRunner(String taskName, MakeSession makeSession) {
       this.taskName = taskName;
-      this.mh = mh;
+      this.makeSession = makeSession;
     }
 
     public Future<IResult> runTask(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller) {
@@ -190,9 +201,9 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
 
     @Override
     protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller) {
-      IScriptController ctl = BuildMakeService.this.completeController(controller);
+      IScriptController ctl = BuildMakeService.this.completeController(makeSession, controller);
 
-      MakeTask task = new MakeTask(context.getProject(), taskName, scripts, taskName, clustRes, ctl, mh, PerformInBackgroundOption.DEAF);
+      MakeTask task = new MakeTask(context.getProject(), taskName, scripts, taskName, clustRes, ctl, makeSession.getMessageHandler(), PerformInBackgroundOption.DEAF);
       ProgressManager.getInstance().run(task);
 
       return task;
