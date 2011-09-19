@@ -16,55 +16,17 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.refactoring.StructureModificationLog;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
-import java.util.Set;
 
 public interface IModelRootManager {
-  public static final IModelRootManager NULL_MANAGER = new NullModelRootManager();
+  Collection<SModelDescriptor> load(@NotNull ModelRoot root, IModule module);
 
-  @Nullable
-  Collection<SModelReference> collectModels(@NotNull SModelRoot root);
+  boolean canCreateModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName);
 
-  void updateModels(@NotNull SModelRoot root, @NotNull IModule owner);
-
-  @NotNull
-  SModel loadModel(@NotNull SModelDescriptor modelDescriptor);
-
-  SModel saveModel(@NotNull SModelDescriptor modelDescriptor);
-
-  StructureModificationLog loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor);
-
-  void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull StructureModificationLog log);
-
-  boolean isFindUsagesSupported();
-
-  boolean containsSomeString(@NotNull SModelDescriptor modelDescriptor,
-                             @NotNull Set<String> strings);
-
-  boolean containsString(@NotNull SModelDescriptor modelDescriptor,
-                         @NotNull String string);
-
-  boolean isEmpty(SModelDescriptor modelDescriptor);
-
-  boolean isNewModelsSupported();
-
-  /*
-   * If you will implement this method do not forget
-   * 1. Register new model in SModelRepository
-   * 2. Fire new model created event : SModelsMulticaster.getInstance().fireModelCreatedEvent(modelDescriptor);
-   */
-  @NotNull
-  SModelDescriptor createNewModel(@NotNull SModelRoot root,
-                                  @NotNull SModelFqName fqName,
-                                  @NotNull ModelOwner owner);
-
-  void rename(SModelDescriptor model, SModelFqName modelFqName, boolean changeFile);
-
-  void dispose();
+  SModelDescriptor createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName);
 }

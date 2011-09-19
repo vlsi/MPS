@@ -185,7 +185,7 @@ public class LanguageDescriptorModelProvider implements ApplicationComponent {
     private String myHash;
 
     private LanguageModelDescriptor(SModelReference ref, Language module) {
-      super(IModelRootManager.NULL_MANAGER, ref, false);
+      super(ref, false);
       myModule = module;
       myHash = null;
     }

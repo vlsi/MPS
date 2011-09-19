@@ -15,124 +15,41 @@
  */
 package jetbrains.mps.stubs;
 
-import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.StubPath;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.util.annotation.ImmutableObject;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
-
-public final class BaseStubModelDescriptor extends BaseSModelDescriptor implements Cloneable {
+public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource implements Cloneable {
   private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
+  private IModule myModule;
 
-  private List<StubPath> myStubPaths;
-  private boolean myNeedsReloading = true;
-  private String myManagerClass;
-
-  private final Object myUpdatersLock = new Object();
-  private Set<ModelUpdater> myUpdaters = null;
-
-  private final StubSource mySource;
-
-  //todo left for compatibility. Should be removed
-  public BaseStubModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
-    this(manager, modelReference, true, modelFile != null ? new FileStubSource(modelFile) : null);
+  public BaseStubModelDescriptor(SModelReference modelReference, @Nullable ModelDataSource source, IModule module) {
+    this(modelReference, true, source, module);
   }
 
-  public BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference, @Nullable StubSource stubSource) {
-    this(manager, modelReference, true, stubSource);
+  protected BaseStubModelDescriptor(SModelReference modelReference, boolean checkDup, ModelDataSource source, IModule module) {
+    super(modelReference, source, checkDup);
+    myModule = module;
   }
 
-  protected BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference, boolean checkDup, StubSource source) {
-    super(manager, modelReference, checkDup);
-    this.mySource = source;
-    updateManagerId();
+  public BaseStubModelDescriptor copy() {
+    return new BaseStubModelDescriptor(myModelReference, false, getSource(), myModule);
   }
 
-  public BaseStubModelDescriptor copy(BaseStubModelRootManager manager) {
-    return new BaseStubModelDescriptor(manager, myModelReference, false, mySource);
+  @NotNull
+  public StubModelDataSource getSource() {
+    return ((StubModelDataSource) super.getSource());
   }
 
-  private void updateAfterLoad(SModel model) {
-    synchronized (myUpdatersLock) {
-      if (myUpdaters != null) {
-        Set<ModelUpdater> updCopy = new THashSet<ModelUpdater>(myUpdaters);
-        for (ModelUpdater updater : updCopy) {
-          updater.updateModel(this, model);
-        }
-      }
-      myNeedsReloading = false;
-    }
-  }
-
-  public void addModelUpdater(ModelUpdater updater) {
-    synchronized (myUpdatersLock) {
-      if (myUpdaters == null) {
-        myUpdaters = new THashSet<ModelUpdater>(1);
-      }
-      myUpdaters.add(updater);
-    }
-  }
-
-  public void removeModelUpdater(ModelUpdater updater) {
-    synchronized (myUpdatersLock) {
-      myUpdaters.remove(updater);
-      if (myUpdaters.isEmpty()) {
-        myUpdaters = null;
-      }
-    }
-  }
-
-  public void addStubPath(StubPath sp) {
-    if (myStubPaths == null) {
-      myStubPaths = new ArrayList<StubPath>();
-    }
-
-    if (myStubPaths.contains(sp)) return;
-
-    myStubPaths.add(sp);
-  }
-
-  public List<StubPath> getPaths() {
-    return myStubPaths == null ? Collections.<StubPath>emptyList() : myStubPaths;
-  }
-
-  public boolean isNeedsReloading() {
-    return myNeedsReloading;
-  }
-
-  public void markReload() {
-    myNeedsReloading = true;
-  }
-
-  public void unmarkReload() {
-    myNeedsReloading = false;
-  }
-
-  public void setModelRootManager(IModelRootManager modelRootManager) {
-    myModelRootManager = modelRootManager;
-    updateManagerId();
-  }
-
-  public String getManagerClass() {
-    return myManagerClass;
-  }
-
-  private void updateManagerId() {
-    if (myModelRootManager == null) return;
-    myManagerClass = myModelRootManager.getClass().getName();
-  }
-
-  public StubSource getSource() {
-    return mySource;
+  public boolean isReadOnly() {
+    return getSource().isReadOnly();
   }
 
   //------------common descriptor stuff-------------------
-
 
   protected void setLoadingState(ModelLoadingState state) {
     assert state != ModelLoadingState.ROOTS_LOADED : "this state can't be used for stub models for now";
@@ -140,25 +57,62 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
   }
 
   protected ModelLoadResult initialLoad() {
-    SModel model = myModelRootManager.loadModel(this);
-    try {
-      updateAfterLoad(model);
-    } catch (Throwable t) {
-      LOG.error("Error on model load. Model: " + model.getLongName(), t);
-    }
+    SModel model = getSource().loadSModel(myModule, this, ModelLoadingState.FULLY_LOADED).getModel();
+    updateDiskTimestamp();
     return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
   }
 
-  @ImmutableObject
-  public static class FileStubSource implements StubSource {
-    private IFile myFile;
 
-    public FileStubSource(IFile file) {
-      myFile = file;
+  //----------------------
+
+  /**
+   * This method should be called either in EDT, inside WriteAction or in any other thread
+   */
+  public void reloadFromDisk() {
+    ModelAccess.assertLegalWrite();
+
+    if (!getSource().hasModel(this)) {
+      SModelRepository.getInstance().deleteModel(this);
+      return;
     }
 
-    public IFile getFile() {
-      return myFile;
+    reload();
+    LOG.assertLog(!needsReloading());
+  }
+
+  private void reload() {
+    if (mySModel == null) {
+      updateDiskTimestamp();
+      return;
+    }
+    ModelLoadResult result = getSource().loadSModel(myModule, this, ModelLoadingState.FULLY_LOADED);
+    updateDiskTimestamp();
+    replaceModel(result.getModel(), getLoadingState());
+  }
+
+  //todo remove duplication
+  public void replaceModel(@NotNull SModel newModel, ModelLoadingState loadingState) {
+    ModelAccess.assertLegalWrite();
+    if (newModel == mySModel) return;
+    final SModel oldSModel = mySModel;
+    if (oldSModel != null) {
+      oldSModel.setModelDescriptor(null);
+    }
+    mySModel = newModel;
+    mySModel.setModelDescriptor(this);
+    MPSModuleRepository.getInstance().invalidateCaches();
+    Runnable modelReplacedNotifier = new Runnable() {
+      public void run() {
+        fireModelReplaced();
+        if (oldSModel != null) {
+          oldSModel.dispose();
+        }
+      }
+    };
+    if (ModelAccess.instance().isInEDT()) {
+      modelReplacedNotifier.run();
+    } else {
+      ModelAccess.instance().runWriteInEDT(modelReplacedNotifier);
     }
   }
 }

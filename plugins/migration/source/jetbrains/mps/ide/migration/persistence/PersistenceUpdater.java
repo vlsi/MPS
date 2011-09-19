@@ -32,8 +32,8 @@ import java.util.List;
 import java.util.Set;
 
 public class PersistenceUpdater {
-  public void upgradePersistence(final List<EditableSModelDescriptor> modelDescriptors, final int toVersion) {
-    for (final EditableSModelDescriptor modelDescriptor : modelDescriptors) {
+  public void upgradePersistence(final List<DefaultSModelDescriptor> modelDescriptors, final int toVersion) {
+    for (final DefaultSModelDescriptor modelDescriptor : modelDescriptors) {
       assert ThreadUtils.isEventDispatchThread() : "you must be in EDT to write files";
 
       IFile file = modelDescriptor.getModelFile();
@@ -54,8 +54,8 @@ public class PersistenceUpdater {
     }
   }
 
-  public void upgradePersistenceInUnit(final IScope scope, String unitDescription, Frame mainframe, boolean silent) {
-    final List<EditableSModelDescriptor> modelDescriptors = new ArrayList<EditableSModelDescriptor>();
+  public void upgradePersistenceInUnit(final IScope scope, String unitDescription, Frame mainframe) {
+    final List<DefaultSModelDescriptor> modelDescriptors = new ArrayList<DefaultSModelDescriptor>();
     final List<SModelDescriptor> scopeModelDescriptors = new ArrayList<SModelDescriptor>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -80,7 +80,7 @@ public class PersistenceUpdater {
         }
       }
       if (persistenceVersion != -1 && persistenceVersion <  ModelPersistence.LAST_VERSION) {
-        modelDescriptors.add((EditableSModelDescriptor) modelDescriptor);
+        modelDescriptors.add((DefaultSModelDescriptor) modelDescriptor);
       }
     }
 

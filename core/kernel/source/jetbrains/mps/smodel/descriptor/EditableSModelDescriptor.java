@@ -17,6 +17,8 @@ package jetbrains.mps.smodel.descriptor;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -28,32 +30,16 @@ import org.jetbrains.annotations.Nullable;
  * Maybe this kind of descriptor will be splitted to a number of descriptors in future.
  */
 public interface EditableSModelDescriptor extends SModelDescriptor, Refactorable, MetadataContainer {
-  boolean needsReloading();
-
-  void reloadFromDisk();
-
-  void reloadFromDiskSafe();
-
-  void save();
-
-  int getPersistenceVersion();
-
-  @Nullable
-  IFile getModelFile();
-
-  void setModelFile(IFile file);
-
   long lastChangeTime();
 
   boolean isChanged();
 
   void setChanged(boolean changed);
 
-  boolean isPackaged();
+  void save();
 
-  void replaceModel(@NotNull SModel newModel);
+  public void rename(SModelFqName newModelFqName, boolean changeFile);
 
-  void setDoNotGenerate(boolean value);
-
-  boolean isDoNotGenerate();
+  @Deprecated
+  IFile getModelFile();
 }

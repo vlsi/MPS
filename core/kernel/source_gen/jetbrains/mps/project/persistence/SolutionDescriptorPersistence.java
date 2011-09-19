@@ -59,6 +59,7 @@ public class SolutionDescriptorPersistence {
           result_8ckma3_a0a0g0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "models")).first(), "modelRoot"), file, macros));
 
           if (ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "stubModelEntries")).isNotEmpty()) {
+            result_8ckma3_a0a0g0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(solutionElement, "stubModelEntries"), file, macros));
             result_8ckma3_a0a0g0c0a.getStubModelEntries().addAll(ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(solutionElement, "stubModelEntries"), file, macros));
           }
 

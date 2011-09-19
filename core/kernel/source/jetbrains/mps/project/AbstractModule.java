@@ -51,9 +51,6 @@ public abstract class AbstractModule implements IModule {
 
   public static final String MODULE_DIR = "module";
 
-  private boolean myModelsRead = false;
-  private boolean myInitialized = false;
-
   protected IFile myDescriptorFile;
   private ModuleReference myModuleReference;
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
@@ -81,12 +78,13 @@ public abstract class AbstractModule implements IModule {
   public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root) {
     IModelRootManager manager = root.getManager();
 
-    if (!manager.isNewModelsSupported()) {
+    if (!manager.canCreateModel(this, root.getModelRoot(), name)) {
       LOG.error("Trying to create model root manager in root which doesn't support new models");
       return null;
     }
 
-    EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createNewModel(root, name, this);
+    EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createModel(this, root.getModelRoot(), name);
+    SModelRepository.getInstance().registerModelDescriptor(model, this);
     model.setChanged(true);
 
     for (ModelCreationListener listener : ourModelCreationListeners) {
@@ -332,7 +330,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void reloadAfterDescriptorChange() {
-    rereadModels();
+    loadNewModels();
 
     updatePackagedDescriptorClasspath();
     invalidateClassPath();
@@ -399,37 +397,7 @@ public abstract class AbstractModule implements IModule {
     return myScope;
   }
 
-  protected void readModels() {
-    if (myModelsRead) return;
-
-    myModelsRead = true;
-    for (SModelRoot root : mySModelRoots) {
-      root.dispose();
-    }
-    mySModelRoots.clear();
-
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      List<jetbrains.mps.project.structure.model.ModelRoot> roots = descriptor.getModelRoots();
-      for (jetbrains.mps.project.structure.model.ModelRoot modelRoot : roots) {
-        try {
-          SModelRoot root = new SModelRoot(modelRoot);
-          mySModelRoots.add(root);
-          IModelRootManager manager = root.getManager();
-          manager.updateModels(root, this);
-        } catch (Exception e) {
-          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
-        }
-      }
-    }
-
-    myInitialized = true;
-  }
-
   public void dispose() {
-    for (SModelRoot root : mySModelRoots) {
-      root.dispose();
-    }
     mySModelRoots.clear();
   }
 
@@ -450,14 +418,30 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  protected void rereadModels() {
-    myModelsRead = false;
-    myInitialized = false;
-    readModels();
-  }
+  protected void loadNewModels() {
+    mySModelRoots.clear();
 
-  protected boolean isInitialized() {
-    return myInitialized;
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      SModelRepository smRepo = SModelRepository.getInstance();
+      List<ModelRoot> roots = descriptor.getModelRoots();
+      for (ModelRoot modelRoot : roots) {
+        try {
+          SModelRoot root = new SModelRoot(modelRoot);
+          mySModelRoots.add(root);
+          IModelRootManager manager = root.getManager();
+          for (SModelDescriptor model : manager.load(root.getModelRoot(), this)) {
+            if (smRepo.getModelDescriptor(model.getSModelReference())==null) {
+              smRepo.registerModelDescriptor(model, this);
+            }
+          }
+        } catch (Exception e) {
+          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
+        }
+      }
+    }
+
+    fireModuleInitialized();
   }
 
   protected void fireModuleInitialized() {

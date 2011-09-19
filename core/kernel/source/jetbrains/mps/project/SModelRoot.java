@@ -19,9 +19,10 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.stubs.BaseStubModelRootManager;
+import jetbrains.mps.stubs.StubModelManagerFactory;
 
 public class SModelRoot {
   private ModelRoot myModelRoot;
@@ -36,7 +37,7 @@ public class SModelRoot {
     if (myModelRoot.getManager() != null) {
       String moduleId = myModelRoot.getManager().getModuleId();
       String className = myModelRoot.getManager().getClassName();
-      return BaseStubModelRootManager.create(moduleId, className);
+      return StubModelManagerFactory.create(moduleId, className);
     }
 
     return new DefaultModelRootManager();
@@ -67,9 +68,11 @@ public class SModelRoot {
     myModelRoot.setPrefix(newPrefix);
     for (SModelDescriptor sm : owner.getOwnModelDescriptors()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
+      if (!(sm instanceof EditableSModelDescriptor)) continue;
+
       if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldPrefix + ".")) {
         String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldPrefix.length());
-        sm.rename(SModelFqName.fromString(newPrefix + suffix), false);
+        ((EditableSModelDescriptor) sm).rename(SModelFqName.fromString(newPrefix + suffix), false);
       }
     }
   }
@@ -78,8 +81,8 @@ public class SModelRoot {
     return fqName.getLongName().startsWith(getPrefix());
   }
 
-  public void dispose() {
-    myManager.dispose();
+  public ModelRoot getModelRoot() {
+    return myModelRoot;
   }
 
   public static class ManagerNotFoundException extends Exception {

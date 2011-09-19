@@ -29,6 +29,7 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
@@ -123,15 +124,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       LOG.error("Loading module " + languageDescriptor.getNamespace() + " for the second time");
       return repository.getLanguage(languageDescriptor.getModuleReference());
     }
-
-    List<SolutionDescriptor> solutionDescriptors = createStubSolutionDescriptors(languageDescriptor);
-
+    
     language.setLanguageDescriptor(languageDescriptor, false);
     repository.addModule(language, moduleOwner);
 
-    for (SolutionDescriptor sd : solutionDescriptors) {
-      Solution.newInstance(sd, language);
-    }
+    LibrariesLoader.createLanguageLibs(moduleOwner, language, languageDescriptor, repository);
 
     return language;
   }
@@ -209,17 +206,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
   }
 
-  public List<Solution> getExportedSolutions() {
-    ArrayList<Solution> res = new ArrayList<Solution>();
-    for (StubSolution ss : getModuleDescriptor().getStubSolutions()) {
-      ModuleReference solutionRef = new ModuleReference(ss.getName(), ss.getId());
-      Solution s = MPSModuleRepository.getInstance().getSolution(solutionRef);
-      if (s == null) continue;
-      res.add(s);
-    }
-    return res;
-  }
-
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
     for (ModuleReference ref : getExtendedLanguageRefs()) {
@@ -273,16 +259,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     for (Generator g : getGenerators()) {
       g.onModuleLoad();
-    }
-  }
-
-  protected void readModels() {
-    if (!isInitialized()) {
-      super.readModels();
-
-      if (isInitialized()) {
-        fireModuleInitialized();
-      }
     }
   }
 

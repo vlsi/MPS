@@ -267,7 +267,7 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
     private final ProjectStructureModule myProjectStructureModule;
 
     private ProjectStructureSModelDescriptor(SModelReference ref, IModule module, @NotNull ProjectStructureModule projectStructureModule) {
-      super(IModelRootManager.NULL_MANAGER, ref, false);
+      super(ref, false);
       myModule = module;
       myProjectStructureModule = projectStructureModule;
     }

@@ -19,6 +19,8 @@ import com.intellij.openapi.vcs.changes.ChangeProvider;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.vcs.diff.ui.DiffTemporaryModule.DiffSModelDescriptor;
 import jetbrains.mps.vcs.mergedriver.MergeDriverNotification;
 import com.intellij.openapi.vcs.VcsListener;
 import org.jetbrains.annotations.NonNls;
@@ -144,8 +146,8 @@ public class MPSVcsManager implements ProjectComponent {
 
     public void beforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
       for (SModelDescriptor smodelDescriptor : inputModels) {
-        if (smodelDescriptor instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) smodelDescriptor).needsReloading()) {
-          ((EditableSModelDescriptor) smodelDescriptor).reloadFromDisk();
+        if (smodelDescriptor instanceof DiffSModelDescriptor && ((DefaultSModelDescriptor) smodelDescriptor).needsReloading()) {
+          ((DefaultSModelDescriptor) smodelDescriptor).reloadFromDisk();
           MPSVcsManager.LOG.info("Model " + smodelDescriptor + " reloaded from disk.");
         }
       }

@@ -26,6 +26,7 @@ import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
@@ -69,6 +70,7 @@ public class LanguageRenamer {
 
     for (SModelDescriptor sm : myLanguage.getOwnModelDescriptors()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
+      if (!(sm instanceof EditableSModelDescriptor)) continue;
 
       if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldFqName + ".")) {
         String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldFqName.length());

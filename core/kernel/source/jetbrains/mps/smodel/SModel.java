@@ -102,8 +102,8 @@ public class SModel {
 
   public boolean isNotEditable() {
     assert !isDisposed();
-    return !(getModelDescriptor() instanceof EditableSModelDescriptor)
-      || ((EditableSModelDescriptor) getModelDescriptor()).isPackaged();
+    return !(getModelDescriptor() instanceof BaseSModelDescriptorWithSource)
+      || ((BaseSModelDescriptorWithSource) getModelDescriptor()).isReadOnly();
   }
 
   public boolean isDisposed() {

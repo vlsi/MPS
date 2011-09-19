@@ -196,11 +196,12 @@ public class GeneratorManager {
   }
 
   public static boolean isDoNotGenerate(SModelDescriptor sm) {
-    return sm instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) sm).isDoNotGenerate();
+    if (!(sm instanceof DefaultSModelDescriptor)) return false;
+    return ((DefaultSModelDescriptor) sm).isDoNotGenerate();
   }
 
   public static void setDoNotGenerate(SModelDescriptor sm, boolean value) {
-    if (!(sm instanceof EditableSModelDescriptor)) return;
-    ((EditableSModelDescriptor) sm).setDoNotGenerate(value);
+    if (!(sm instanceof DefaultSModelDescriptor)) return;
+    ((DefaultSModelDescriptor) sm).setDoNotGenerate(value);
   }
 }
