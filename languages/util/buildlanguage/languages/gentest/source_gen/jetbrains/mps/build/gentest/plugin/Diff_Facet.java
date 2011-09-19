@@ -16,13 +16,21 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.smodel.resources.TResource;
+import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.io.File;
 import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class Diff_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -71,18 +79,34 @@ public class Diff_Facet extends IFacet.Stub {
           Iterable<IResource> _output_mtqq_a0a = null;
           switch (0) {
             case 0:
-              if (pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).path2tmp() != null) {
+              if (pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).fileToPath() != null) {
                 monitor.currentProgress().beginWork("Diffing", 100 * Sequence.fromIterable(input).count(), monitor.currentProgress().workLeft());
                 for (IResource resource : input) {
-                  String fqn = ((TResource) resource).module().getModuleFqName();
+                  TResource tgres = ((TResource) resource);
+                  String fqn = tgres.modelDescriptor().getSModelReference().getSModelFqName().getLongName();
                   monitor.currentProgress().advanceWork("Diffing", 1, fqn);
-                  for (String diff : new Differ(pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).path2tmp()).diff()) {
-                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(diff)));
-                  }
+                  DeltaReconciler dr = new DeltaReconciler(tgres.delta());
+                  final Set<String> retainedPaths = SetSequence.fromSet(new HashSet<String>());
+                  dr.visitAll(new FilesDelta.Visitor() {
+                    @Override
+                    public boolean acceptKept(IFile file) {
+                      SetSequence.fromSet(retainedPaths).addElement(pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).fileToPath().invoke(file));
+                      return true;
+                    }
+                  });
+                  final Differ differ = new Differ(retainedPaths, pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).excludedFiles());
+                  dr.visitAll(new FilesDelta.Visitor() {
+                    @Override
+                    public boolean acceptRoot(IFile root) {
+                      for (String diff : differ.diff(pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).fileToPath().invoke(root), root.getPath())) {
+                        monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(diff)));
+                      }
+                      return true;
+                    }
+                  });
                   monitor.currentProgress().advanceWork("Diffing", 99, fqn);
                 }
                 monitor.currentProgress().finishWork("Diffing");
-                MapSequence.fromMap(pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).path2tmp()).clear();
               }
             default:
               return new IResult.SUCCESS(_output_mtqq_a0a);
@@ -100,7 +124,7 @@ public class Diff_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -108,7 +132,7 @@ public class Diff_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile"), new ITarget.Name("jetbrains.mps.lang.core.Make.make")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.make")});
     }
 
     public ITarget.Name getName() {
@@ -138,30 +162,38 @@ public class Diff_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._1) t).assign((Tuples._1) copyFrom);
+        ((Tuples._2) t).assign((Tuples._2) copyFrom);
       }
       return t;
     }
 
-    public static class Parameters extends MultiTuple._1<Map<String, String>> {
+    public static class Parameters extends MultiTuple._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>> {
       public Parameters() {
         super();
       }
 
-      public Parameters(Map<String, String> path2tmp) {
-        super(path2tmp);
+      public Parameters(_FunctionTypes._return_P1_E0<? extends String, ? super IFile> fileToPath, Set<File> excludedFiles) {
+        super(fileToPath, excludedFiles);
       }
 
-      public Map<String, String> path2tmp(Map<String, String> value) {
+      public _FunctionTypes._return_P1_E0<? extends String, ? super IFile> fileToPath(_FunctionTypes._return_P1_E0<? extends String, ? super IFile> value) {
         return super._0(value);
       }
 
-      public Map<String, String> path2tmp() {
+      public Set<File> excludedFiles(Set<File> value) {
+        return super._1(value);
+      }
+
+      public _FunctionTypes._return_P1_E0<? extends String, ? super IFile> fileToPath() {
         return super._0();
       }
 
+      public Set<File> excludedFiles() {
+        return super._1();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public Diff_Facet.Target_diff.Parameters assignFrom(Tuples._1<Map<String, String>> from) {
+      public Diff_Facet.Target_diff.Parameters assignFrom(Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>> from) {
         return (Diff_Facet.Target_diff.Parameters) super.assign(from);
       }
     }
@@ -176,7 +208,8 @@ public class Diff_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.build.gentest.Diff.diff");
         if (properties.hasProperties(name)) {
           Diff_Facet.Target_diff.Parameters props = properties.properties(name, Diff_Facet.Target_diff.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.build.gentest.Diff.diff.path2tmp", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.build.gentest.Diff.diff.fileToPath", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.build.gentest.Diff.diff.excludedFiles", null);
         }
       }
     }
@@ -186,8 +219,11 @@ public class Diff_Facet extends IFacet.Stub {
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.build.gentest.Diff.diff");
           Diff_Facet.Target_diff.Parameters props = properties.properties(name, Diff_Facet.Target_diff.Parameters.class);
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.build.gentest.Diff.diff.path2tmp")) {
-            props.path2tmp(null);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.build.gentest.Diff.diff.fileToPath")) {
+            props.fileToPath(null);
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.build.gentest.Diff.diff.excludedFiles")) {
+            props.excludedFiles(null);
           }
         }
       } catch (RuntimeException re) {

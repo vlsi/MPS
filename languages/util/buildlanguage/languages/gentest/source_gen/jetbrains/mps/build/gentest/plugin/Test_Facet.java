@@ -16,6 +16,8 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.smodel.resources.GResource;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader;
@@ -46,7 +48,7 @@ public class Test_Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Generate")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -77,8 +79,17 @@ public class Test_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               for (IResource resource : input) {
-                GResource gr = (GResource) resource;
-                _output_rwbd_a0a = Sequence.fromIterable(_output_rwbd_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new Tester(gr.module(), new TestCollector(Sequence.<SModel>singleton((gr).model().getSModel())).collectTests()))));
+                final GResource gr = (GResource) resource;
+                final Wrappers._T<List<String>> tests = new Wrappers._T<List<String>>();
+                ModelAccess.instance().runReadAction(new Runnable() {
+                  public void run() {
+                    SModel outModel = gr.status().getOutputModel();
+                    tests.value = Sequence.fromIterable(new TestCollector(Sequence.<SModel>singleton(outModel)).collectTests()).toListSequence();
+                  }
+                });
+                if (ListSequence.fromList(tests.value).isNotEmpty()) {
+                  _output_rwbd_a0a = Sequence.fromIterable(_output_rwbd_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new Tester(gr.module(), tests.value))));
+                }
               }
             default:
               return new IResult.SUCCESS(_output_rwbd_a0a);
@@ -104,7 +115,7 @@ public class Test_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return null;
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen")});
     }
 
     public ITarget.Name getName() {
@@ -154,8 +165,9 @@ public class Test_Facet extends IFacet.Stub {
             case 0:
               monitor.currentProgress().beginWork("Testing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
               for (IResource resource : input) {
-                monitor.currentProgress().advanceWork("Testing", 50);
-                ProcessBuilder pb = new ProcessBuilder(((ITestResource) input).buildCommandLine());
+                String fqn = ((ITestResource) resource).getModule().getModuleFqName();
+                monitor.currentProgress().advanceWork("Testing", 1, fqn);
+                ProcessBuilder pb = new ProcessBuilder(((ITestResource) resource).buildCommandLine());
                 try {
                   Process process = pb.start();
                   UnitTestOutputReader reader = new UnitTestOutputReader(process, pa.global().properties(Target_runTests.this.getName(), Test_Facet.Target_runTests.Parameters.class).testListener());
@@ -166,7 +178,7 @@ public class Test_Facet extends IFacet.Stub {
                 } catch (IOException ioe) {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(ioe.getMessage())));
                 }
-                monitor.currentProgress().advanceWork("Testing", 50);
+                monitor.currentProgress().advanceWork("Testing", 99, fqn);
               }
               monitor.currentProgress().finishWork("Testing");
             default:
@@ -185,7 +197,7 @@ public class Test_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return null;
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.build.gentest.Test.collectTest")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -193,7 +205,7 @@ public class Test_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return null;
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.make")});
     }
 
     public ITarget.Name getName() {

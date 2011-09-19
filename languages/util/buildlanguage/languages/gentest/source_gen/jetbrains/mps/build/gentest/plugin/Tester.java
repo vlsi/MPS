@@ -7,11 +7,11 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.apache.tools.ant.util.JavaEnvUtils;
-import java.io.File;
-import jetbrains.mps.util.PathManager;
+import org.junit.Test;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestRunner;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.reloading.RealClassPathItem;
 import jetbrains.mps.smodel.ModelAccess;
@@ -33,17 +33,24 @@ public class Tester implements ITestResource {
     ListSequence.fromList(cmdline).addElement(JavaEnvUtils.getJreExecutable("java"));
 
     List<String> prependClasspath = ListSequence.fromList(new ArrayList<String>());
-    ListSequence.fromList(prependClasspath).addElement(new File(PathManager.getHomePath() + File.separator + "lib" + File.separator + "junit4" + File.separator + "junit-4.8.2.jar").getAbsolutePath());
-    ListSequence.fromList(prependClasspath).addElement(UnitTestRunner.class.getCanonicalName());
+    ListSequence.fromList(prependClasspath).addElement(getResource(Test.class));
+    ListSequence.fromList(prependClasspath).addElement(getResource(UnitTestRunner.class));
 
     ListSequence.fromList(cmdline).addElement("-classpath");
     ListSequence.fromList(cmdline).addElement(IterableUtils.join(ListSequence.fromList(prependClasspath).concat(Sequence.fromIterable(getModuleClasspath())), System.getProperty("path.separator")));
 
+    ListSequence.fromList(cmdline).addElement(UnitTestRunner.class.getCanonicalName());
+
+    ListSequence.fromList(cmdline).addElement("-w");
     for (String tc : testClasses) {
       ListSequence.fromList(cmdline).addElement("-c");
       ListSequence.fromList(cmdline).addElement(tc);
     }
     return cmdline;
+  }
+
+  private String getResource(Class<?> cls) {
+    return PathManager.getResourceRoot(cls, "/" + cls.getName().replace('.', '/') + ".class");
   }
 
   private Iterable<String> getModuleClasspath() {
@@ -62,5 +69,9 @@ public class Tester implements ITestResource {
 
   public String describe() {
     return "Testing " + module.getModuleFqName();
+  }
+
+  public IModule getModule() {
+    return module;
   }
 }

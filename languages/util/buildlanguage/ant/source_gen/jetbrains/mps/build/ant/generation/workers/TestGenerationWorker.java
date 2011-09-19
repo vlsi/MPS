@@ -8,7 +8,8 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.build.ant.WhatToDo;
-import org.apache.tools.ant.ProjectComponent;
+import java.io.File;
+import java.io.IOException;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.build.ant.generation.GenerateTask;
 import jetbrains.mps.ide.generator.GenerationSettings;
@@ -24,6 +25,7 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.make.facet.ITarget;
+import java.util.Set;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestListener;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.script.IResult;
@@ -36,23 +38,24 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import java.util.concurrent.ExecutionException;
-import java.io.File;
 import java.util.List;
 import jetbrains.mps.project.MPSExtentions;
 import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.Queue;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
@@ -70,13 +73,18 @@ public class TestGenerationWorker extends MpsWorker {
   private Map<String, String> path2tmp = MapSequence.fromMap(new HashMap<String, String>());
   private String tmpPath;
 
-  public TestGenerationWorker(WhatToDo whatToDo, ProjectComponent component) {
-    super(whatToDo, component);
-  }
-
   public TestGenerationWorker(WhatToDo whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
     myBuildServerMessageFormat = getBuildServerMessageFormat();
+    File tmpDir;
+    try {
+      tmpDir = File.createTempFile("gentest_", "tmp");
+      tmpDir.delete();
+      tmpDir.mkdir();
+    } catch (IOException ex) {
+      throw new RuntimeException(ex);
+    }
+    this.tmpPath = tmpDir.getAbsolutePath();
   }
 
   protected void executeTask(final MPSProject project, MpsWorker.ObjectsToProcess go) {
@@ -121,10 +129,10 @@ public class TestGenerationWorker extends MpsWorker {
         System.out.println(myBuildServerMessageFormat.formatTestStart(currentTestName[0]));
       }
     };
-    final _FunctionTypes._return_P1_E0<? extends String, ? super String> finishTestFormat = new _FunctionTypes._return_P1_E0<String, String>() {
-      public String invoke(String msg) {
+    final _FunctionTypes._void_P1_E0<? super String> finishTestFormat = new _FunctionTypes._void_P1_E0<String>() {
+      public void invoke(String msg) {
         System.out.println(myBuildServerMessageFormat.formatTestFinish(myBuildServerMessageFormat.escapeBuildMessage(new StringBuffer(msg)).toString()));
-        return currentTestName[0] = null;
+        currentTestName[0] = null;
       }
     };
 
@@ -142,39 +150,48 @@ public class TestGenerationWorker extends MpsWorker {
       @Override
       public void advanceWork(String name, int done, String comment) {
         if (comment != null) {
-          reportIfStartsWith("Diffing", name + " " + comment, (done == 1 ?
-            startTestFormat :
-            finishTestFormat
-          ));
+          _FunctionTypes._void_P1_E0<? super String> format = startTestFormat;
+          if (done > 1) {
+            format = finishTestFormat;
+          }
+          reportIfStartsWith("Diffing", name + " " + comment, format);
         }
       }
     }) {
       @Override
       public void reportFeedback(IFeedback fdbk) {
         if (fdbk.getSeverity() == IFeedback.Severity.ERROR) {
-          System.out.append(myBuildServerMessageFormat.formatTestFailure(currentTestName[0], fdbk.getMessage(), myBuildServerMessageFormat.escapeBuildMessage(new StringBuffer(fdbk.getException().toString()))));
+          String test = currentTestName[0];
+          if (test == null) {
+            test = "unknown";
+          }
+          System.out.println(myBuildServerMessageFormat.formatTestFailure(test, fdbk.getMessage(), myBuildServerMessageFormat.escapeBuildMessage(new StringBuffer(String.valueOf(fdbk.getException())))));
         }
       }
     }) {
       @Override
       public void setup(IPropertiesPool ppool) {
-        Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> bparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.plugin.Binaries.copyBinaries"), Object.class);
-        bparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
+        Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> makeparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Object.class);
+        makeparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
           public IFile invoke(String path) {
             return tmpFile(path);
           }
         });
 
-        Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> tparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
-        tparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
-          public IFile invoke(String path) {
-            return tmpFile(path);
-          }
-        });
-        tparams._1(false);
+        Tuples._1<Boolean> tparams = (Tuples._1<Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
+        if (tparams != null) {
+          tparams._0(false);
+        }
 
-        Tuples._1<Map<String, String>> dparams = (Tuples._1<Map<String, String>>) ppool.properties(new ITarget.Name("jetbrains.mps.build.gentest.Diff.diff"), Object.class);
-        dparams._0(path2tmp);
+        Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>> dparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends String, ? super IFile>, Set<File>>) ppool.properties(new ITarget.Name("jetbrains.mps.build.gentest.Diff.diff"), Object.class);
+        if (dparams != null && isShowDiff()) {
+          dparams._0(new _FunctionTypes._return_P1_E0<String, IFile>() {
+            public String invoke(IFile f) {
+              return pathOfTmpFile(f);
+            }
+          });
+          dparams._1(myWhatToDo.getExcludedFromDiffFiles());
+        }
 
         if (isInvokeTestsSet()) {
           Tuples._1<UnitTestListener> testParams = (Tuples._1<UnitTestListener>) ppool.properties(new ITarget.Name("jetbrains.mps.build.gentest.Test.runTests"), Object.class);
@@ -195,7 +212,10 @@ public class TestGenerationWorker extends MpsWorker {
               if (isInvokeTestsSet()) {
                 scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.build.gentest.Test"));
               }
-              return scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.build.gentest.Diff")).toScript();
+              if (isShowDiff()) {
+                scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.build.gentest.Diff"));
+              }
+              return scriptBuilder.toScript();
             }
           };
           result.value = bms.make(ms, collectResources(context, go.getProjects(), go.getModules(), go.getModels()), null, ctl).get();
@@ -249,20 +269,25 @@ public class TestGenerationWorker extends MpsWorker {
       // <node> 
     }
 
+    cleanUp();
     dispose();
     showStatistic();
   }
 
-  private Iterable<IModule> withGenerators(Iterable<IModule> modules) {
-    return Sequence.fromIterable(modules).concat(Sequence.fromIterable(modules).where(new IWhereFilter<IModule>() {
-      public boolean accept(IModule it) {
-        return it instanceof Language;
+  private void cleanUp() {
+    for (Queue<File> dirs = QueueSequence.fromQueueAndArray(new LinkedList<File>(), new File(tmpPath)); QueueSequence.fromQueue(dirs).isNotEmpty();) {
+      File dir = QueueSequence.fromQueue(dirs).removeFirstElement();
+      dir.deleteOnExit();
+      for (File f : dir.listFiles()) {
+        if (f.isDirectory()) {
+          QueueSequence.fromQueue(dirs).addLastElement(f);
+        } else {
+          f.deleteOnExit();
+        }
       }
-    }).translate(new ITranslator2<IModule, IModule>() {
-      public Iterable<IModule> translate(IModule it) {
-        return Collections.<IModule>unmodifiableList(((Language) it).getGenerators());
-      }
-    }));
+    }
+    this.tmpPath = null;
+    MapSequence.fromMap(path2tmp).clear();
   }
 
   private Iterable<IResource> collectResources(IOperationContext context, final Iterable<MPSProject> projects, Iterable<IModule> modules, final Iterable<SModelDescriptor> models) {
@@ -271,6 +296,9 @@ public class TestGenerationWorker extends MpsWorker {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (MPSProject prj : projects) {
+          if (isWholeProject(prj)) {
+            _modules.value = Sequence.fromIterable(_modules.value).concat(ListSequence.fromList(prj.getModules()));
+          } else
           if (!(prj.getProjectDescriptor().getTestConfigurations().isEmpty())) {
             for (BaseTestConfiguration tconf : prj.getProjectDescriptor().getTestConfigurations()) {
               try {
@@ -279,42 +307,40 @@ public class TestGenerationWorker extends MpsWorker {
                 log("Error while reading configuration of project " + prj.getProject().getName(), e);
               }
             }
-          } else
-          if (isWholeProject(prj)) {
-            _modules.value = Sequence.fromIterable(_modules.value).concat(ListSequence.fromList(prj.getModules()));
           } else {
             warning("No test configurations for project " + prj.getProjectDescriptor().getName());
           }
         }
-        _modules.value = Sequence.fromIterable(_modules.value).concat(Sequence.fromIterable(projects).translate(new ITranslator2<MPSProject, IModule>() {
-          public Iterable<IModule> translate(MPSProject prj) {
-            return prj.getModules();
-          }
-        }));
         result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(_modules.value).translate(new ITranslator2<IModule, SModelDescriptor>() {
           public Iterable<SModelDescriptor> translate(IModule m) {
             return m.getOwnModelDescriptors();
           }
-        })).concat(Sequence.fromIterable(withGenerators(_modules.value)).translate(new ITranslator2<IModule, SModelDescriptor>() {
+        }));
+        result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(_modules.value).where(new IWhereFilter<IModule>() {
+          public boolean accept(IModule it) {
+            return it instanceof Language;
+          }
+        }).translate(new ITranslator2<IModule, IModule>() {
+          public Iterable<IModule> translate(IModule it) {
+            return Collections.<IModule>unmodifiableList(((Language) it).getGenerators());
+          }
+        }).translate(new ITranslator2<IModule, SModelDescriptor>() {
           public Iterable<SModelDescriptor> translate(IModule gen) {
             return gen.getOwnModelDescriptors();
           }
-        }).where(new IWhereFilter<SModelDescriptor>() {
-          public boolean accept(SModelDescriptor smd) {
-            return smd.isGeneratable();
-          }
-        })).concat(Sequence.fromIterable(models));
+        }));
+        result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(models));
       }
     });
     return new ModelsToResources(context, Sequence.fromIterable(result.value).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor smd) {
-        return !(GeneratorManager.isDoNotGenerate(smd));
+        return smd.isGeneratable();
       }
     })).resources(false);
   }
 
   private boolean isWholeProject(MPSProject prj) {
-    return Sequence.fromIterable(((Iterable<String>) myWhatToDo.getMPSProjectFiles().get(prj))).contains(TestGenerationOnTeamcity.WHOLE_PROJECT);
+    return Sequence.fromIterable(((Iterable<String>) myWhatToDo.getMPSProjectFiles().get(prj.getProjectFile()))).contains(TestGenerationOnTeamcity.WHOLE_PROJECT);
   }
 
   private IFile tmpFile(String path) {
@@ -322,16 +348,38 @@ public class TestGenerationWorker extends MpsWorker {
       return FileSystem.getInstance().getFileByPath(MapSequence.fromMap(path2tmp).get(path));
     }
     int idx = path.indexOf("/");
+    if (idx > 0) {
+      throw new IllegalArgumentException("not an absolute path '" + path + "'");
+    }
     idx = (idx < 0 ?
       path.indexOf(File.separator) :
       idx
     );
-    String tmp = tmpPath + "/" + ((idx < 0 ?
-      path.replace(':', '_') :
-      path.substring(idx + 1)
+    if (idx > "C:\\".length() && path.indexOf(":") < 0) {
+      throw new IllegalArgumentException("not an absolute path '" + path + "'");
+    }
+    String tmp = tmpPath + "/" + ((idx != 0 ?
+      path.replace(":", "_w_") :
+      path.substring(1)
     ));
     MapSequence.fromMap(path2tmp).put(path, tmp);
     return FileSystem.getInstance().getFileByPath(tmp);
+  }
+
+  private String pathOfTmpFile(IFile file) {
+    String p = file.getPath();
+    if (!(p.startsWith(tmpPath))) {
+      throw new IllegalArgumentException("unknown tmp path '" + file.getParent() + "'");
+    }
+    p = p.substring(tmpPath.length() + 1);
+    if (p.contains("_w_")) {
+      return FileSystem.getInstance().getFileByPath(p.replace("_w_", ":")).getPath();
+    }
+    String prefix = (File.separatorChar == '/' ?
+      "/" :
+      "\\\\"
+    );
+    return FileSystem.getInstance().getFileByPath(prefix + p).getPath();
   }
 
   public IBuildServerMessageFormat getBuildServerMessageFormat() {
@@ -365,6 +413,10 @@ public class TestGenerationWorker extends MpsWorker {
 
   private boolean isCompileSet() {
     return Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE));
+  }
+
+  private boolean isShowDiff() {
+    return Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF));
   }
 
   @Override
