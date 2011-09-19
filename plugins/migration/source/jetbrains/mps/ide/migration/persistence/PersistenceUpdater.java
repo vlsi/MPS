@@ -54,7 +54,7 @@ public class PersistenceUpdater {
     }
   }
 
-  public void upgradePersistenceInUnit(final IScope scope, String unitDescription, Frame mainframe) {
+  public void upgradePersistenceInUnit(final IScope scope, String unitDescription, Frame mainframe, boolean silent) {
     final List<DefaultSModelDescriptor> modelDescriptors = new ArrayList<DefaultSModelDescriptor>();
     final List<SModelDescriptor> scopeModelDescriptors = new ArrayList<SModelDescriptor>();
     ModelAccess.instance().runReadAction(new Runnable() {

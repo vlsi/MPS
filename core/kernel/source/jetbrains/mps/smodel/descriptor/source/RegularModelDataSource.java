@@ -82,8 +82,8 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
   }
 
   @Override
-  public ModelLoadResult loadSModel(IModule module,SModelDescriptor descriptor, ModelLoadingState targetState) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) descriptor;
+  public ModelLoadResult loadSModel(IModule module, SModelDescriptor sm, ModelLoadingState state) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     SModelReference dsmRef = dsm.getSModelReference();
 
     if (!dsm.getModelFile().isReadOnly() && !dsm.getModelFile().exists()) {
@@ -93,19 +93,23 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
 
     ModelLoadResult result;
     try {
-      result = ModelPersistence.readModel(dsm.getSModelHeader(), dsm.getModelFile(), targetState);
+      result = ModelPersistence.readModel(dsm.getDescriptorSModelHeader(), dsm.getModelFile(), state);
       if (result.getState() == ModelLoadingState.NOT_LOADED) {
         // TODO this is a temporary fix to enable invoking merge dialog for model with wrong markup
-        if (targetState != ModelLoadingState.NOT_LOADED) {
+        if (state != ModelLoadingState.NOT_LOADED) {
           VcsMigrationUtil.getHandler().addSuspiciousModel(dsm, false);
         }
 
         return result;
       }
     } catch (ModelFileReadException t) {
-      return handleExceptionDuringModelRead(dsm, t, false);
+      VcsMigrationUtil.getHandler().addSuspiciousModel(dsm, false);
+      SModel newModel = new StubModel(dsm.getSModelReference());
+      LOG.error(t.getMessage(), newModel);
+      return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
     } catch (PersistenceVersionNotFoundException e) {
-      LOG.error(e);
+      LOG.error("Trying to load model " + dsm.getLongName() + " from file " + dsm.getModelFile().toString(), e);
+      VcsMigrationUtil.getHandler().addSuspiciousModel(dsm, false);
       StubModel model = new StubModel(dsmRef);
       return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
     }
@@ -147,13 +151,6 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
 
   public boolean hasModel(SModelDescriptor md) {
     return myFile == null || !myFile.exists();
-  }
-
-  private ModelLoadResult handleExceptionDuringModelRead(EditableSModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
-    VcsMigrationUtil.getHandler().addSuspiciousModel(modelDescriptor, isConflictStateFixed);
-    SModel newModel = new StubModel(modelDescriptor.getSModelReference());
-    LOG.error(exception.getMessage(), newModel);
-    return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
   }
 
   public boolean containsSomeString(@NotNull SModelDescriptor sm, @NotNull Set<String> strings) {

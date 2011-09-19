@@ -21,16 +21,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
-import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
-import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -42,75 +35,17 @@ import java.util.List;
 public class DefaultModelRootManager extends BaseMPSModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
-  @NotNull
-  @Override
-  public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
-    return loadModel(modelDescriptor, ModelLoadingState.FULLY_LOADED).getModel();
-  }
+  public Collection<SModelDescriptor> load(@NotNull ModelRoot root,IModule module) {
+    List<ModelHandle> models = new ArrayList<ModelHandle>();
+    ModelsMiner.collectModelDescriptors(FileSystem.getInstance().getFileByPath(root.getPath()), root, models);
 
-  @NotNull
-  public ModelLoadResult loadModel(final @NotNull SModelDescriptor sm, ModelLoadingState state) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    SModelReference dsmRef = dsm.getSModelReference();
-
-    if (!dsm.getModelFile().isReadOnly() && !dsm.getModelFile().exists()) {
-      SModel model = new SModel(dsmRef, new RegularNodeIdMap());
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    for (ModelHandle handle : models) {
+      SModelDescriptor modelDescriptor = getInstance(module,new RegularModelDataSource(handle.getFile()), handle.getReference(), handle.getLoadResult());
+      LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + root.getPath() + " " + root.getPrefix());
+      result.add(modelDescriptor);
     }
-
-    ModelLoadResult result;
-    try {
-      result = ModelPersistence.readModel(dsm.getDescriptorSModelHeader(), dsm.getModelFile(), state);
-      if (result.getState() == ModelLoadingState.NOT_LOADED) {
-        // TODO this is a temporary fix to enable invoking merge dialog for model with wrong markup
-        if (state != ModelLoadingState.NOT_LOADED) {
-          VcsMigrationUtil.getHandler().addSuspiciousModel(dsm, false);
-        }
-
-        return result;
-      }
-    } catch (ModelFileReadException t) {
-      return handleExceptionDuringModelRead(dsm, t, false);
-    } catch (PersistenceVersionNotFoundException e) {
-      LOG.error("Trying to load model " + dsm.getLongName() + " from file " + dsm.getModelFile().toString(), e);
-      VcsMigrationUtil.getHandler().addSuspiciousModel(dsm, false);
-      StubModel model = new StubModel(dsmRef);
-      return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
-    }
-
-    SModel model = result.getModel();
-    if (result.getState() == ModelLoadingState.FULLY_LOADED) {
-      try {
-        model.setLoading(true);
-        boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
-
-        if (needToSave && !dsm.getModelFile().isReadOnly()) {
-          SModelRepository.getInstance().markChanged(model);
-        }
-      } finally {
-        model.setLoading(false);
-      }
-    }
-
-    LOG.assertLog(model.getSModelReference().equals(dsmRef),
-      "\nError loading model from file: \"" + dsm.getModelFile() + "\"\n" +
-        "expected model UID     : \"" + dsmRef + "\"\n" +
-        "but was UID            : \"" + model.getSModelReference() + "\"\n" +
-        "the model will not be available.\n" +
-        "Make sure that all project's roots and/or the model namespace is correct");
     return result;
-  }
-
-  private ModelLoadResult handleExceptionDuringModelRead(EditableSModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
-    VcsMigrationUtil.getHandler().addSuspiciousModel(modelDescriptor, isConflictStateFixed);
-    SModel newModel = new StubModel(modelDescriptor.getSModelReference());
-    LOG.error(exception.getMessage(), newModel);
-    return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
-  }
-
-  @Override
-  public Collection<SModelDescriptor> load(@NotNull ModelRoot root, IModule module) {
-    return null;
   }
 
   public boolean canCreateModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
@@ -148,5 +83,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     //todo modelRepository.registerModelDescriptor(modelDescriptor);
     return modelDescriptor;
   }
+
 }
 
