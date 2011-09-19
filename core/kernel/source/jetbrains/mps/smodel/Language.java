@@ -397,31 +397,31 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public EditableSModelDescriptor getStructureModelDescriptor() {
+  public DefaultSModelDescriptor getStructureModelDescriptor() {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
-  public EditableSModelDescriptor getActionsModelDescriptor() {
+  public DefaultSModelDescriptor getActionsModelDescriptor() {
     return LanguageAspect.ACTIONS.get(this);
   }
 
-  public EditableSModelDescriptor getConstraintsModelDescriptor() {
+  public DefaultSModelDescriptor getConstraintsModelDescriptor() {
     return LanguageAspect.CONSTRAINTS.get(this);
   }
 
-  public EditableSModelDescriptor getBehaviorModelDescriptor() {
+  public DefaultSModelDescriptor getBehaviorModelDescriptor() {
     return LanguageAspect.BEHAVIOR.get(this);
   }
 
-  public EditableSModelDescriptor getDataFlowModelDescriptor() {
+  public DefaultSModelDescriptor getDataFlowModelDescriptor() {
     return LanguageAspect.DATA_FLOW.get(this);
   }
 
-  public EditableSModelDescriptor getEditorModelDescriptor() {
+  public DefaultSModelDescriptor getEditorModelDescriptor() {
     return LanguageAspect.EDITOR.get(this);
   }
 
-  public EditableSModelDescriptor getTextgenModelDescriptor() {
+  public DefaultSModelDescriptor getTextgenModelDescriptor() {
     return LanguageAspect.TEXT_GEN.get(this);
   }
 

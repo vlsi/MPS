@@ -74,7 +74,7 @@ public class LanguageRenamer {
 
       if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldFqName + ".")) {
         String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldFqName.length());
-        myContext.changeModelName(sm, myNewName + suffix);
+        myContext.changeModelName(((DefaultSModelDescriptor) sm), myNewName + suffix);
       }
     }
 
@@ -101,7 +101,7 @@ public class LanguageRenamer {
             if (!SModelStereotype.isUserModel(sm)) continue;
             if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldPrefix + ".")) {
               String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldFqName.length());
-              myContext.changeModelName(sm, newPrefix + suffix);
+              myContext.changeModelName(((DefaultSModelDescriptor) sm), newPrefix + suffix);
             }
           }
         }

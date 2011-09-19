@@ -29,7 +29,7 @@ import org.jetbrains.annotations.Nullable;
  * This kind of model also can be refactored and can contain some metadata.
  * Maybe this kind of descriptor will be splitted to a number of descriptors in future.
  */
-public interface EditableSModelDescriptor extends SModelDescriptor, Refactorable, MetadataContainer {
+public interface EditableSModelDescriptor extends SModelDescriptor {
   long lastChangeTime();
 
   boolean isChanged();

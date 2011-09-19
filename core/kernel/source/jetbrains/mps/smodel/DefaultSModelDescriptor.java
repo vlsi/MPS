@@ -23,6 +23,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.MetadataContainer;
+import jetbrains.mps.smodel.descriptor.Refactorable;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.event.*;
@@ -36,7 +38,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor {
+public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor,Refactorable, MetadataContainer {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
 
   private Map<String, String> myMetadata;
