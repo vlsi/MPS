@@ -282,7 +282,7 @@ public class InlineMethodRefactoring {
     String end = SNodeOperations.getParent(this.myMethodDeclaration) + "." + this.myMethodDeclaration;
     for (SNode node : SetSequence.fromSet(nodesToCheck)) {
       SNode classifier = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IVisible") && !(VisibilityUtil.isVisible(this.myMethodCall, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IVisible")))) {
+      if (!(VisibilityUtil.isVisible(this.myMethodCall, node))) {
         String start = "";
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
           start = "Method ";

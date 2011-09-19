@@ -81,10 +81,7 @@ public class MethodParameter extends MethodParameterModel {
   }
 
   public SNode getDeclaration() {
-    if (SNodeOperations.isInstanceOf(myDeclaration, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
-      return SNodeOperations.cast(myDeclaration, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
-    }
-    return null;
+    return this.myDeclaration;
   }
 
   public boolean isSelected() {
