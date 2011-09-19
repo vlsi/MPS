@@ -16,6 +16,7 @@
 package jetbrains.mps.testbench;
 
 import com.intellij.ide.IdeEventQueue;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
@@ -23,6 +24,8 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.ide.modelchecker.actions.*;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -41,21 +44,22 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.SwingUtilities;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class CheckProjectStructureHelper {
-
+ 
   private final ModelsExtractor myModelsExtractor = new ModelsExtractor(false);
-
+  private static long myErrors;
   /**
    * An opaque token to represent testing state.
    */
   public static abstract class Token {
   }
-
+ 
   public CheckProjectStructureHelper() {
   }
-
+ 
   public void load(final Iterable<IFile> files) {
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
@@ -64,7 +68,7 @@ public class CheckProjectStructureHelper {
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
               myModelsExtractor.loadModels(files);
-
+ 
               // ???
               Testbench.reloadAll();
             }
@@ -75,27 +79,39 @@ public class CheckProjectStructureHelper {
       throw new RuntimeException(e);
     }
   }
-
+ 
   public List<String> check(Token token, List<IFile> files) {
     return ((PrivToken) token).check(files);
   }
-
+ 
   public List<String> checkStructure(Token token, List<IFile> files) {
     return ((PrivToken) token).checkStructure(files);
   }
-
+ 
   public List<String> checkGenerationStatus(Token token, List<IFile> files) {
     return ((PrivToken) token).checkGenerationStatus(files);
   }
-
+ 
   public List<String> checkModule(Token token, List<IFile> files) {
     return ((PrivToken) token).checkModule(files);
   }
-
+ 
+  public List<String> checkTypeSystem(Token token, List<IFile> files) {
+    return ((PrivToken) token).checkTypeSystem(files);
+  }
+ 
+  public List<String> checkConstraints(Token token, List<IFile> files) {
+    return ((PrivToken) token).checkConstraints(files);
+  }
+ 
+  public List<String> checkReferences(Token token, List<IFile> files) {
+    return ((PrivToken) token).checkReferences(files);
+  }
+ 
   public void cleanUp(Token tok) {
     ((PrivToken) tok).cleanUp();
   }
-
+ 
   public String formatErrors(List<String> errors) {
     StringBuilder sb = new StringBuilder();
     String sep = "";
@@ -105,100 +121,121 @@ public class CheckProjectStructureHelper {
     }
     return sb.toString();
   }
-
+ 
   public Token init(String[][] macros) {
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.INFO);
     Testbench.initLogging();
-
+ 
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS(new String[0]);
-
+ 
     for (String[] macro : macros) {
       Testbench.setMacro(macro[0], macro[1]);
     }
     Testbench.initLibs();
     Testbench.makeAll();
     Testbench.reloadAll();
-
+ 
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();
     MPSProject project = new MPSProject(ideaProject);
     project.init(projectFile, new ProjectDescriptor());
+    myErrors = 0;
     return new PrivToken(project);
   }
-
+ 
   public void dispose() {
     myModelsExtractor.clear();
   }
-
+ 
   // Private
-
+ 
   private class PrivToken extends Token {
     private final MPSProject project;
-
+ 
     public PrivToken(MPSProject project) {
       this.project = project;
     }
-
+ 
     public List<String> check(Iterable<IFile> files) {
       return CheckProjectStructureHelper.this.doCheck(files, project);
     }
-
+ 
     public List<String> checkStructure(List<IFile> files) {
       return CheckProjectStructureHelper.this.doCheckStructure(files, project);
     }
-
+ 
     public List<String> checkGenerationStatus(List<IFile> files) {
       return CheckProjectStructureHelper.this.doCheckGenerationStatus(files, project);
     }
-
+ 
     public List<String> checkModule(List<IFile> files) {
       return CheckProjectStructureHelper.this.doCheckModule(files, project);
     }
-
+ 
+    public List<String> checkTypeSystem(List<IFile> files) {
+      return CheckProjectStructureHelper.this.doApplyChecker(files, new TypesystemChecker());
+    }
+ 
+    public List<String> checkConstraints(List<IFile> files) {
+      return CheckProjectStructureHelper.this.doApplyChecker(files, new LangSpecificChecker());
+    }
+ 
+    public List<String> checkReferences(List<IFile> files) {
+      return CheckProjectStructureHelper.this.doApplyChecker(files, new UnresolvedReferencesChecker());
+    }
+ 
     public void cleanUp() {
       CheckProjectStructureHelper.this.doCleanUp(project);
     }
   }
-
+ 
   private List<String> doCheck(Iterable<IFile> files, MPSProject project) {
     ModelsExtractor me = new ModelsExtractor(false);
     me.loadModels(files);
-
+ 
     // ???
     //Testbench.reloadAll();
-
+ 
     return checkModels(me.getModels());
   }
-
+ 
   private List<String> doCheckStructure(List<IFile> files, MPSProject project) {
     ModelsExtractor me = new ModelsExtractor(true);
     me.loadModels(files);
-
+ 
     // ???
     //Testbench.reloadAll();
-
+ 
     return checkStructure(me.getModels());
   }
-
+ 
   private List<String> doCheckGenerationStatus(List<IFile> files, MPSProject project) {
     ModelsExtractor me = new ModelsExtractor(false);
     me.loadModels(files);
-
+ 
     // ???
     //Testbench.reloadAll();
-
+ 
     return checkModelsGenerationStatus(me.getModels());
   }
-
+ 
    private List<String> doCheckModule(List<IFile> files, MPSProject project) {
     ModelsExtractor me = new ModelsExtractor(false);
     me.loadModels(files);
-
+ 
     return checkModules(me.getModules(files));
   }
-
+ 
+  private List<String> doApplyChecker(List<IFile> files, SpecificChecker checker) {
+    ModelsExtractor me = new ModelsExtractor(false);
+    me.loadModels(files);
+    return applyChecker(checker, me.getModels());
+  }
+ 
+ 
+ 
   private void doCleanUp(final MPSProject project) {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
@@ -208,14 +245,14 @@ public class CheckProjectStructureHelper {
       }
     });
   }
-
+ 
   private List<String> checkModelsGenerationStatus(final Iterable<SModelDescriptor> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModelDescriptor sm : models) {
           if(!sm.isGeneratable()) continue;
-
+ 
           IModule module = sm.getModule();
           if (module == null) {
             errors.add("Model without a module: " + sm.getSModelReference().toString());
@@ -239,7 +276,7 @@ public class CheckProjectStructureHelper {
     });
     return errors;
   }
-
+ 
   private List<String> checkStructure(final Iterable<SModelDescriptor> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -252,7 +289,7 @@ public class CheckProjectStructureHelper {
     });
     return errors;
   }
-
+ 
   private List<String> checkModels(final Iterable<SModelDescriptor> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -260,7 +297,7 @@ public class CheckProjectStructureHelper {
         for (SModelDescriptor sm : models) {
           if (!SModelStereotype.isUserModel(sm)) continue;
           StringBuilder errorMessages = checkModel(sm);
-
+ 
           if (errorMessages.length() > 0) {
             errors.add("Broken References: " + errorMessages.toString());
           }
@@ -269,7 +306,7 @@ public class CheckProjectStructureHelper {
     });
     return errors;
   }
-
+ 
    private List<String> checkModules(final Iterable<IModule> modules) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -284,7 +321,7 @@ public class CheckProjectStructureHelper {
     });
     return errors;
   }
-
+ 
   private static void checkModelNodes(@NotNull SModel model, @NotNull List<String> result) {
     for (SNode node : model.nodes()) {
       for (String propname : node.getProperties().keySet()) {
@@ -307,7 +344,27 @@ public class CheckProjectStructureHelper {
       }
     }
   }
-
+ 
+  private List<String> applyChecker(final SpecificChecker checker, final Iterable<SModelDescriptor> models) {
+    final List<String> errors = new ArrayList<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SModelDescriptor sm : models) {
+          if (!SModelStereotype.isUserModel(sm)) continue;
+          if (SModelStereotype.isGeneratorModel(sm)) continue;
+          for (SearchResult<ModelCheckerIssue> issue : checker.checkModel(sm.getSModel(), new ProgressContext(new EmptyProgressIndicator(), new LinkedList<String>()), null)) {
+            if (issue.getCategoryForKind(ModelCheckerIssue.CATEGORY_KIND_SEVERITY).startsWith(jetbrains.mps.ide.modelchecker.actions.ModelChecker.SEVERITY_ERROR)) {
+              SNode node = (SNode) issue.getPathObject();
+              myErrors++;
+              errors.add("Error message: " +issue.getObject().getMessage() + "   model: "+ node.getModel()+" root: "+node.getContainingRoot()+" node: "+ node);
+            }
+          }
+        }
+      }
+    });
+    return errors;
+  }
+ 
   private StringBuilder checkModel(final SModelDescriptor sm) {
     final IScope scope = sm.getModule().getScope();
     StringBuilder errorMessages = new StringBuilder();
@@ -324,7 +381,7 @@ public class CheckProjectStructureHelper {
         errorMessages.append("\n");
       }
     }
-
+ 
     for (SNode node : sm.getSModel().nodes()) {
       Testbench.LOG.debug("Checking node " + node);
       if (SModelUtil.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
@@ -333,13 +390,13 @@ public class CheckProjectStructureHelper {
         errorMessages.append("\n");
       }
     }
-
+ 
     for (SNode node : sm.getSModel().nodes()) {
       for (SReference ref : node.getReferences()) {
         if (SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
           continue;
         }
-
+ 
         if (ref.getTargetNodeSilently() == null) {
           errorMessages.
             append("Broken reference in model {").
@@ -355,7 +412,7 @@ public class CheckProjectStructureHelper {
     }
     return errorMessages;
   }
-
+ 
   private StringBuilder checkModule(final IModule module) {
     StringBuilder errorMessages = new StringBuilder();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
@@ -373,4 +430,8 @@ public class CheckProjectStructureHelper {
     return errorMessages;
   }
 
+  public long getNumErrors() {
+    return  myErrors;
+  }
+ 
 }

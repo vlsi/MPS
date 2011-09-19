@@ -52,7 +52,10 @@ public abstract class IntroduceVariableRefactoring {
     } else {
       this.myExpressionType = SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.Type");
       Set<String> expectedNames = SetSequence.fromSet(new HashSet<String>());
-      String expectedVariableName = Expression_Behavior.call_getVariableExpectedName_1213877519781(node);
+      String expectedVariableName = null;
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression")) {
+        expectedVariableName = Expression_Behavior.call_getVariableExpectedName_1213877519781(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Expression"));
+      }
       if (expectedVariableName != null) {
         SetSequence.fromSet(expectedNames).addElement(NameUtil.decapitalize(expectedVariableName));
       }

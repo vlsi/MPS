@@ -57,7 +57,7 @@ public class VarDeclReference_Constraints extends BaseConstraintsDescriptor {
                 if (statement == currentStatement) {
                   break;
                 }
-                ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(statement, null, false, new String[]{})));
+                ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(statement, "jetbrains.mps.nanoj.structure.VarDecl", false, new String[]{})));
               }
               currentStatement = SNodeOperations.getAncestor(currentBlock, "jetbrains.mps.nanoj.structure.NanoStatement", true, false);
             }

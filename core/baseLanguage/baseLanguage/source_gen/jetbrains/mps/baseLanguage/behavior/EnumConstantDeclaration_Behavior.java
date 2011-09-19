@@ -48,7 +48,7 @@ public class EnumConstantDeclaration_Behavior {
     SNode containingEnum = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
     return (containingEnum != null ?
       EnumConstantDeclaration_Behavior.call_getEnumConstantDeclarationPresentation_8767021959483237039(thisNode) + INamedConcept_Behavior.call_getFqName_1213877404258(containingEnum) :
-      INamedConcept_Behavior.callSuper_getFqName_1213877404258(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")
+      INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"))
     );
   }
 
