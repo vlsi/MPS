@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Arrays;
 import java.io.File;
+import com.intellij.openapi.util.SystemInfo;
 import org.apache.commons.lang.StringUtils;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
@@ -41,6 +42,9 @@ public class CommandLineGenerator {
       }).concat(ListSequence.fromList(Arrays.asList(InternalRuntimePacker.getPath())));
     }
     String javaExecutable = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
+    if (SystemInfo.isWindows) {
+      javaExecutable = adaptPathForMsysGit(javaExecutable + ".exe");
+    }
     String classpathString = StringUtils.join(Sequence.fromIterable(classpath).toListSequence(), File.pathSeparator);
     String escapedLogPath = (PathManager.getLogPath() + File.separator + "mergedriver.log").replace("\\", "\\\\");
     return String.format("\"%s\" -D%s=\"%s\" -cp \"%s\" %s", javaExecutable, MergeDriverMain.LOG_PROPERTY, escapedLogPath, classpathString, MergeDriverMain.class.getName());
@@ -80,5 +84,9 @@ public class CommandLineGenerator {
       SetSequence.fromSet(classpathItems).addElement(getSvnkitJar());
     }
     return classpathItems;
+  }
+
+  /*package*/ static String adaptPathForMsysGit(String path) {
+    return path.replaceFirst("^(\\w):\\\\", "/$1/").replace('\\', '/');
   }
 }

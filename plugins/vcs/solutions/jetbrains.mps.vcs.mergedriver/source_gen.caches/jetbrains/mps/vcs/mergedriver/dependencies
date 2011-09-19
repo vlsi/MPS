@@ -17,6 +17,7 @@
     <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
     <classNode dependClassName="com.intellij.util.PathUtil" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
@@ -95,6 +96,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.util.StringsIO" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.CommandLineGenerator" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.InternalRuntimePacker" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.PluginUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.ScriptGenerator" />
