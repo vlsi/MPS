@@ -5147,110 +5147,113 @@
     <nodeInfo nodeId="8492459591399169994" fileName="InlineVariableAssignmentRefactoring.java" startLine="28" startPosition="50" endLine="29" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVariable" />
     <nodeInfo nodeId="8492459591399170181" fileName="InlineVariableAssignmentRefactoring.java" startLine="31" startPosition="58" endLine="32" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6351584993764342771" fileName="InlineVariableAssignmentRefactoring.java" startLine="32" startPosition="27" endLine="33" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399170194" fileName="InlineVariableAssignmentRefactoring.java" startLine="33" startPosition="119" endLine="34" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399170203" fileName="InlineVariableAssignmentRefactoring.java" startLine="34" startPosition="73" endLine="35" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399170215" fileName="InlineVariableAssignmentRefactoring.java" startLine="35" startPosition="109" endLine="36" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399170238" fileName="InlineVariableAssignmentRefactoring.java" startLine="40" startPosition="43" endLine="41" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399170000" fileName="InlineVariableAssignmentRefactoring.java" startLine="48" startPosition="48" endLine="49" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399170006" fileName="InlineVariableAssignmentRefactoring.java" startLine="51" startPosition="25" endLine="52" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8771345753612974011" fileName="InlineVariableAssignmentRefactoring.java" startLine="55" startPosition="32" endLine="56" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8771345753612974054" fileName="InlineVariableAssignmentRefactoring.java" startLine="56" startPosition="73" endLine="57" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8771345753612974058" fileName="InlineVariableAssignmentRefactoring.java" startLine="57" startPosition="71" endLine="58" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8771345753612974015" fileName="InlineVariableAssignmentRefactoring.java" startLine="60" startPosition="27" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8771345753612974062" fileName="InlineVariableAssignmentRefactoring.java" startLine="61" startPosition="47" endLine="62" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8771345753612974081" fileName="InlineVariableAssignmentRefactoring.java" startLine="62" startPosition="230" endLine="63" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399170043" fileName="InlineVariableAssignmentRefactoring.java" startLine="66" startPosition="33" endLine="67" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6257145972254237335" fileName="InlineVariableAssignmentRefactoring.java" startLine="69" startPosition="34" endLine="70" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399170059" fileName="InlineVariableAssignmentRefactoring.java" startLine="70" startPosition="112" endLine="71" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399170063" fileName="InlineVariableAssignmentRefactoring.java" startLine="72" startPosition="14" endLine="73" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399170082" fileName="InlineVariableAssignmentRefactoring.java" startLine="74" startPosition="24" endLine="75" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399170085" fileName="InlineVariableAssignmentRefactoring.java" startLine="78" startPosition="5" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399170094" fileName="InlineVariableAssignmentRefactoring.java" startLine="82" startPosition="32" endLine="83" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7819877075461770758" fileName="InlineVariableAssignmentRefactoring.java" startLine="84" startPosition="56" endLine="85" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7819877075461788569" fileName="InlineVariableAssignmentRefactoring.java" startLine="87" startPosition="95" endLine="88" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399170141" fileName="InlineVariableAssignmentRefactoring.java" startLine="91" startPosition="5" endLine="92" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399170148" fileName="InlineVariableAssignmentRefactoring.java" startLine="92" startPosition="46" endLine="93" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399170152" fileName="InlineVariableAssignmentRefactoring.java" startLine="96" startPosition="44" endLine="97" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399170164" fileName="InlineVariableAssignmentRefactoring.java" startLine="98" startPosition="79" endLine="99" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399170174" fileName="InlineVariableAssignmentRefactoring.java" startLine="100" startPosition="5" endLine="101" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399170231" fileName="InlineVariableAssignmentRefactoring.java" startLine="39" startPosition="62" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399170041" fileName="InlineVariableAssignmentRefactoring.java" startLine="65" startPosition="9" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399170077" fileName="InlineVariableAssignmentRefactoring.java" startLine="73" startPosition="203" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7819877075461784793" fileName="InlineVariableAssignmentRefactoring.java" startLine="86" startPosition="177" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399170158" fileName="InlineVariableAssignmentRefactoring.java" startLine="97" startPosition="48" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399170004" fileName="InlineVariableAssignmentRefactoring.java" startLine="50" startPosition="57" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8492459591399170229" fileName="InlineVariableAssignmentRefactoring.java" startLine="38" startPosition="72" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399170003" fileName="InlineVariableAssignmentRefactoring.java" startLine="49" startPosition="70" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399170061" fileName="InlineVariableAssignmentRefactoring.java" startLine="72" startPosition="12" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7819877075461784777" fileName="InlineVariableAssignmentRefactoring.java" startLine="85" startPosition="16" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399170024" fileName="InlineVariableAssignmentRefactoring.java" startLine="59" startPosition="59" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8492459591399170226" fileName="InlineVariableAssignmentRefactoring.java" startLine="37" startPosition="100" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399170023" fileName="InlineVariableAssignmentRefactoring.java" startLine="58" startPosition="59" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399170098" fileName="InlineVariableAssignmentRefactoring.java" startLine="83" startPosition="30" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399170150" fileName="InlineVariableAssignmentRefactoring.java" startLine="95" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodesToRefactor#()Ljava/util/List;" />
-    <nodeInfo nodeId="8492459591399170223" fileName="InlineVariableAssignmentRefactoring.java" startLine="36" startPosition="82" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399170048" fileName="InlineVariableAssignmentRefactoring.java" startLine="68" startPosition="7" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399170090" fileName="InlineVariableAssignmentRefactoring.java" startLine="81" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoring#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8492459591399170178" fileName="InlineVariableAssignmentRefactoring.java" startLine="30" startPosition="0" endLine="46" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InlineVariableAssignmentRefactoring#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8492459591399170015" fileName="InlineVariableAssignmentRefactoring.java" startLine="54" startPosition="7" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399169997" fileName="InlineVariableAssignmentRefactoring.java" startLine="47" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkRefactoring#(Ljava/awt/Frame;)Z" />
-    <scopeInfo nodeId="8492459591399170237" fileName="InlineVariableAssignmentRefactoring.java" startLine="40" startPosition="43" endLine="41" endPosition="74" />
-    <scopeInfo nodeId="8492459591399170005" fileName="InlineVariableAssignmentRefactoring.java" startLine="51" startPosition="25" endLine="52" endPosition="179" />
-    <scopeInfo nodeId="8492459591399170042" fileName="InlineVariableAssignmentRefactoring.java" startLine="66" startPosition="33" endLine="67" endPosition="21" />
-    <scopeInfo nodeId="8492459591399170081" fileName="InlineVariableAssignmentRefactoring.java" startLine="74" startPosition="24" endLine="75" endPosition="23" />
-    <scopeInfo nodeId="7819877075461784795" fileName="InlineVariableAssignmentRefactoring.java" startLine="87" startPosition="95" endLine="88" endPosition="142" />
-    <scopeInfo nodeId="8492459591399170163" fileName="InlineVariableAssignmentRefactoring.java" startLine="98" startPosition="79" endLine="99" endPosition="75" />
-    <scopeInfo nodeId="8492459591399170052" fileName="InlineVariableAssignmentRefactoring.java" startLine="69" startPosition="34" endLine="71" endPosition="21" />
-    <scopeInfo nodeId="8492459591399170230" fileName="InlineVariableAssignmentRefactoring.java" startLine="39" startPosition="62" endLine="42" endPosition="11" />
-    <scopeInfo nodeId="8492459591399170025" fileName="InlineVariableAssignmentRefactoring.java" startLine="60" startPosition="27" endLine="63" endPosition="81" />
-    <scopeInfo nodeId="7819877075461784780" fileName="InlineVariableAssignmentRefactoring.java" startLine="86" startPosition="177" endLine="89" endPosition="9" />
-    <scopeInfo nodeId="8492459591399170158" fileName="InlineVariableAssignmentRefactoring.java" startLine="97" startPosition="48" endLine="100" endPosition="5" />
-    <scopeInfo nodeId="8492459591399170004" fileName="InlineVariableAssignmentRefactoring.java" startLine="50" startPosition="57" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="8492459591399170062" fileName="InlineVariableAssignmentRefactoring.java" startLine="72" startPosition="14" endLine="76" endPosition="9">
+    <nodeInfo nodeId="4921173976436682421" fileName="InlineVariableAssignmentRefactoring.java" startLine="34" startPosition="123" endLine="35" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399170194" fileName="InlineVariableAssignmentRefactoring.java" startLine="36" startPosition="5" endLine="37" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399170203" fileName="InlineVariableAssignmentRefactoring.java" startLine="37" startPosition="73" endLine="38" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399170215" fileName="InlineVariableAssignmentRefactoring.java" startLine="38" startPosition="109" endLine="39" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399170238" fileName="InlineVariableAssignmentRefactoring.java" startLine="43" startPosition="43" endLine="44" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399170000" fileName="InlineVariableAssignmentRefactoring.java" startLine="51" startPosition="48" endLine="52" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399170006" fileName="InlineVariableAssignmentRefactoring.java" startLine="54" startPosition="25" endLine="55" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8771345753612974011" fileName="InlineVariableAssignmentRefactoring.java" startLine="58" startPosition="32" endLine="59" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8771345753612974054" fileName="InlineVariableAssignmentRefactoring.java" startLine="59" startPosition="73" endLine="60" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8771345753612974058" fileName="InlineVariableAssignmentRefactoring.java" startLine="60" startPosition="71" endLine="61" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8771345753612974015" fileName="InlineVariableAssignmentRefactoring.java" startLine="63" startPosition="27" endLine="64" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8771345753612974062" fileName="InlineVariableAssignmentRefactoring.java" startLine="64" startPosition="47" endLine="65" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8771345753612974081" fileName="InlineVariableAssignmentRefactoring.java" startLine="65" startPosition="230" endLine="66" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399170043" fileName="InlineVariableAssignmentRefactoring.java" startLine="69" startPosition="33" endLine="70" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6257145972254237335" fileName="InlineVariableAssignmentRefactoring.java" startLine="72" startPosition="34" endLine="73" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399170059" fileName="InlineVariableAssignmentRefactoring.java" startLine="73" startPosition="112" endLine="74" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399170063" fileName="InlineVariableAssignmentRefactoring.java" startLine="75" startPosition="14" endLine="76" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399170082" fileName="InlineVariableAssignmentRefactoring.java" startLine="77" startPosition="24" endLine="78" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399170085" fileName="InlineVariableAssignmentRefactoring.java" startLine="81" startPosition="5" endLine="82" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399170094" fileName="InlineVariableAssignmentRefactoring.java" startLine="85" startPosition="32" endLine="86" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7819877075461770758" fileName="InlineVariableAssignmentRefactoring.java" startLine="87" startPosition="56" endLine="88" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7819877075461788569" fileName="InlineVariableAssignmentRefactoring.java" startLine="90" startPosition="95" endLine="91" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399170141" fileName="InlineVariableAssignmentRefactoring.java" startLine="94" startPosition="5" endLine="95" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399170148" fileName="InlineVariableAssignmentRefactoring.java" startLine="95" startPosition="46" endLine="96" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399170152" fileName="InlineVariableAssignmentRefactoring.java" startLine="99" startPosition="44" endLine="100" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399170164" fileName="InlineVariableAssignmentRefactoring.java" startLine="101" startPosition="79" endLine="102" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399170174" fileName="InlineVariableAssignmentRefactoring.java" startLine="103" startPosition="5" endLine="104" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4921173976436682404" fileName="InlineVariableAssignmentRefactoring.java" startLine="33" startPosition="119" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="8492459591399170231" fileName="InlineVariableAssignmentRefactoring.java" startLine="42" startPosition="62" endLine="45" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399170041" fileName="InlineVariableAssignmentRefactoring.java" startLine="68" startPosition="9" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399170077" fileName="InlineVariableAssignmentRefactoring.java" startLine="76" startPosition="203" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7819877075461784793" fileName="InlineVariableAssignmentRefactoring.java" startLine="89" startPosition="177" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399170158" fileName="InlineVariableAssignmentRefactoring.java" startLine="100" startPosition="48" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8492459591399170004" fileName="InlineVariableAssignmentRefactoring.java" startLine="53" startPosition="57" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8492459591399170229" fileName="InlineVariableAssignmentRefactoring.java" startLine="41" startPosition="72" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8492459591399170003" fileName="InlineVariableAssignmentRefactoring.java" startLine="52" startPosition="70" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399170061" fileName="InlineVariableAssignmentRefactoring.java" startLine="75" startPosition="12" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7819877075461784777" fileName="InlineVariableAssignmentRefactoring.java" startLine="88" startPosition="16" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8492459591399170024" fileName="InlineVariableAssignmentRefactoring.java" startLine="62" startPosition="59" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8492459591399170226" fileName="InlineVariableAssignmentRefactoring.java" startLine="40" startPosition="100" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8492459591399170023" fileName="InlineVariableAssignmentRefactoring.java" startLine="61" startPosition="59" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399170098" fileName="InlineVariableAssignmentRefactoring.java" startLine="86" startPosition="30" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8492459591399170150" fileName="InlineVariableAssignmentRefactoring.java" startLine="98" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodesToRefactor#()Ljava/util/List;" />
+    <nodeInfo nodeId="8492459591399170223" fileName="InlineVariableAssignmentRefactoring.java" startLine="39" startPosition="82" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8492459591399170048" fileName="InlineVariableAssignmentRefactoring.java" startLine="71" startPosition="7" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399170090" fileName="InlineVariableAssignmentRefactoring.java" startLine="84" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoring#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399170178" fileName="InlineVariableAssignmentRefactoring.java" startLine="30" startPosition="0" endLine="49" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InlineVariableAssignmentRefactoring#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8492459591399170015" fileName="InlineVariableAssignmentRefactoring.java" startLine="57" startPosition="7" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399169997" fileName="InlineVariableAssignmentRefactoring.java" startLine="50" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkRefactoring#(Ljava/awt/Frame;)Z" />
+    <scopeInfo nodeId="4921173976436682406" fileName="InlineVariableAssignmentRefactoring.java" startLine="34" startPosition="123" endLine="35" endPosition="115" />
+    <scopeInfo nodeId="8492459591399170237" fileName="InlineVariableAssignmentRefactoring.java" startLine="43" startPosition="43" endLine="44" endPosition="74" />
+    <scopeInfo nodeId="8492459591399170005" fileName="InlineVariableAssignmentRefactoring.java" startLine="54" startPosition="25" endLine="55" endPosition="179" />
+    <scopeInfo nodeId="8492459591399170042" fileName="InlineVariableAssignmentRefactoring.java" startLine="69" startPosition="33" endLine="70" endPosition="21" />
+    <scopeInfo nodeId="8492459591399170081" fileName="InlineVariableAssignmentRefactoring.java" startLine="77" startPosition="24" endLine="78" endPosition="23" />
+    <scopeInfo nodeId="7819877075461784795" fileName="InlineVariableAssignmentRefactoring.java" startLine="90" startPosition="95" endLine="91" endPosition="142" />
+    <scopeInfo nodeId="8492459591399170163" fileName="InlineVariableAssignmentRefactoring.java" startLine="101" startPosition="79" endLine="102" endPosition="75" />
+    <scopeInfo nodeId="8492459591399170052" fileName="InlineVariableAssignmentRefactoring.java" startLine="72" startPosition="34" endLine="74" endPosition="21" />
+    <scopeInfo nodeId="8492459591399170230" fileName="InlineVariableAssignmentRefactoring.java" startLine="42" startPosition="62" endLine="45" endPosition="11" />
+    <scopeInfo nodeId="8492459591399170025" fileName="InlineVariableAssignmentRefactoring.java" startLine="63" startPosition="27" endLine="66" endPosition="81" />
+    <scopeInfo nodeId="7819877075461784780" fileName="InlineVariableAssignmentRefactoring.java" startLine="89" startPosition="177" endLine="92" endPosition="9" />
+    <scopeInfo nodeId="8492459591399170158" fileName="InlineVariableAssignmentRefactoring.java" startLine="100" startPosition="48" endLine="103" endPosition="5" />
+    <scopeInfo nodeId="8492459591399170004" fileName="InlineVariableAssignmentRefactoring.java" startLine="53" startPosition="57" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="8492459591399170062" fileName="InlineVariableAssignmentRefactoring.java" startLine="75" startPosition="14" endLine="79" endPosition="9">
       <varInfo nodeId="8492459591399170064" varName="code" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399170228" fileName="InlineVariableAssignmentRefactoring.java" startLine="38" startPosition="72" endLine="43" endPosition="9" />
-    <scopeInfo nodeId="8492459591399170229" fileName="InlineVariableAssignmentRefactoring.java" startLine="38" startPosition="72" endLine="43" endPosition="9">
+    <scopeInfo nodeId="8492459591399170228" fileName="InlineVariableAssignmentRefactoring.java" startLine="41" startPosition="72" endLine="46" endPosition="9" />
+    <scopeInfo nodeId="8492459591399170229" fileName="InlineVariableAssignmentRefactoring.java" startLine="41" startPosition="72" endLine="46" endPosition="9">
       <varInfo nodeId="8492459591399170245" varName="read" />
     </scopeInfo>
-    <scopeInfo nodeId="7819877075461784777" fileName="InlineVariableAssignmentRefactoring.java" startLine="85" startPosition="16" endLine="90" endPosition="7" />
-    <scopeInfo nodeId="8492459591399170151" fileName="InlineVariableAssignmentRefactoring.java" startLine="96" startPosition="44" endLine="101" endPosition="18">
+    <scopeInfo nodeId="7819877075461784777" fileName="InlineVariableAssignmentRefactoring.java" startLine="88" startPosition="16" endLine="93" endPosition="7" />
+    <scopeInfo nodeId="8492459591399170151" fileName="InlineVariableAssignmentRefactoring.java" startLine="99" startPosition="44" endLine="104" endPosition="18">
       <varInfo nodeId="8492459591399170153" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399170024" fileName="InlineVariableAssignmentRefactoring.java" startLine="59" startPosition="59" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="8492459591399170101" fileName="InlineVariableAssignmentRefactoring.java" startLine="84" startPosition="56" endLine="90" endPosition="7" />
-    <scopeInfo nodeId="8492459591399170225" fileName="InlineVariableAssignmentRefactoring.java" startLine="37" startPosition="100" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="8492459591399170226" fileName="InlineVariableAssignmentRefactoring.java" startLine="37" startPosition="100" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="8492459591399170098" fileName="InlineVariableAssignmentRefactoring.java" startLine="83" startPosition="30" endLine="91" endPosition="5">
+    <scopeInfo nodeId="8492459591399170024" fileName="InlineVariableAssignmentRefactoring.java" startLine="62" startPosition="59" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="8492459591399170101" fileName="InlineVariableAssignmentRefactoring.java" startLine="87" startPosition="56" endLine="93" endPosition="7" />
+    <scopeInfo nodeId="8492459591399170225" fileName="InlineVariableAssignmentRefactoring.java" startLine="40" startPosition="100" endLine="47" endPosition="7" />
+    <scopeInfo nodeId="8492459591399170226" fileName="InlineVariableAssignmentRefactoring.java" startLine="40" startPosition="100" endLine="47" endPosition="7" />
+    <scopeInfo nodeId="8492459591399170098" fileName="InlineVariableAssignmentRefactoring.java" startLine="86" startPosition="30" endLine="94" endPosition="5">
       <varInfo nodeId="8492459591399170099" varName="sourceNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399170150" fileName="InlineVariableAssignmentRefactoring.java" startLine="95" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="8492459591399170223" fileName="InlineVariableAssignmentRefactoring.java" startLine="36" startPosition="82" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="8492459591399170093" fileName="InlineVariableAssignmentRefactoring.java" startLine="82" startPosition="32" endLine="93" endPosition="24">
+    <scopeInfo nodeId="8492459591399170150" fileName="InlineVariableAssignmentRefactoring.java" startLine="98" startPosition="0" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="8492459591399170223" fileName="InlineVariableAssignmentRefactoring.java" startLine="39" startPosition="82" endLine="48" endPosition="5" />
+    <scopeInfo nodeId="8492459591399170093" fileName="InlineVariableAssignmentRefactoring.java" startLine="85" startPosition="32" endLine="96" endPosition="24">
       <varInfo nodeId="8492459591399170095" varName="newSelection" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399170180" fileName="InlineVariableAssignmentRefactoring.java" startLine="31" startPosition="58" endLine="45" endPosition="5">
+    <scopeInfo nodeId="8492459591399170090" fileName="InlineVariableAssignmentRefactoring.java" startLine="84" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="8492459591399170180" fileName="InlineVariableAssignmentRefactoring.java" startLine="31" startPosition="58" endLine="48" endPosition="5">
       <varInfo nodeId="6351584993764342772" varName="body" />
       <varInfo nodeId="8492459591399170204" varName="reachingReads" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399170090" fileName="InlineVariableAssignmentRefactoring.java" startLine="81" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="8492459591399170178" fileName="InlineVariableAssignmentRefactoring.java" startLine="30" startPosition="0" endLine="46" endPosition="3">
+    <scopeInfo nodeId="8492459591399170178" fileName="InlineVariableAssignmentRefactoring.java" startLine="30" startPosition="0" endLine="49" endPosition="3">
       <varInfo nodeId="8492459591399170260" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399170016" fileName="InlineVariableAssignmentRefactoring.java" startLine="55" startPosition="32" endLine="77" endPosition="7">
+    <scopeInfo nodeId="8492459591399170016" fileName="InlineVariableAssignmentRefactoring.java" startLine="58" startPosition="32" endLine="80" endPosition="7">
       <varInfo nodeId="8771345753612974055" varName="notInitialized" />
       <varInfo nodeId="8771345753612974012" varName="variableName" />
       <varInfo nodeId="8771345753612974059" varName="nodesCount" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169999" fileName="InlineVariableAssignmentRefactoring.java" startLine="48" startPosition="48" endLine="79" endPosition="16">
+    <scopeInfo nodeId="8492459591399169999" fileName="InlineVariableAssignmentRefactoring.java" startLine="51" startPosition="48" endLine="82" endPosition="16">
       <varInfo nodeId="8492459591399170001" varName="isLocalVariable" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169997" fileName="InlineVariableAssignmentRefactoring.java" startLine="47" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="8492459591399169997" fileName="InlineVariableAssignmentRefactoring.java" startLine="50" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="8492459591399170088" varName="frame" />
     </scopeInfo>
-    <unitInfo nodeId="8492459591399170004" fileName="InlineVariableAssignmentRefactoring.java" startLine="50" startPosition="45" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableAssignmentRefactoring$1" />
-    <unitInfo nodeId="8492459591399170024" fileName="InlineVariableAssignmentRefactoring.java" startLine="59" startPosition="47" endLine="65" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableAssignmentRefactoring$2" />
-    <unitInfo nodeId="8492459591399169986" fileName="InlineVariableAssignmentRefactoring.java" startLine="26" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableAssignmentRefactoring" />
+    <unitInfo nodeId="8492459591399170004" fileName="InlineVariableAssignmentRefactoring.java" startLine="53" startPosition="45" endLine="57" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableAssignmentRefactoring$1" />
+    <unitInfo nodeId="8492459591399170024" fileName="InlineVariableAssignmentRefactoring.java" startLine="62" startPosition="47" endLine="68" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableAssignmentRefactoring$2" />
+    <unitInfo nodeId="8492459591399169986" fileName="InlineVariableAssignmentRefactoring.java" startLine="26" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableAssignmentRefactoring" />
   </root>
   <root nodeId="8492459591399170533">
     <nodeInfo nodeId="8492459591399170550" fileName="ChangeMethodSignatureRefactoring.java" startLine="14" startPosition="47" endLine="15" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameters" />
