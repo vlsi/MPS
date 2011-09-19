@@ -59,7 +59,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7985661997283714148">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="bj1v.7985661997283714146" resolveInfo="InstructionType" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="bj1v.7985661997283714146" resolveInfo="IsOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4943044633101738905">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Rules" />
@@ -505,7 +505,7 @@
                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4943044633101738920">
                     <property name="name" nameId="tpck.1169194664001" value="result" />
                     <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="4943044633101742682">
-                      <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="4943044633101742683" />
+                      <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="8683742917308945011" />
                     </node>
                   </node>
                 </node>
@@ -537,11 +537,16 @@
                         <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4943044633101738936">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4943044633101738920" resolveInfo="result" />
                         </node>
-                        <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4943044633101738937">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~NameUtil" resolveInfo="NameUtil" />
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~NameUtil%dsplitByCamels(java%dlang%dString)%cjava%dutil%dList" resolveInfo="splitByCamels" />
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4943044633101738938">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4943044633101738926" resolveInfo="name" />
+                        <node role="rValue" roleId="tpee.1068498886297" type="tpee.CastExpression" typeId="tpee.1070534934090" id="8683742917308945012">
+                          <node role="type" roleId="tpee.1070534934091" type="tp2q.ListType" typeId="tp2q.1151688443754" id="8683742917308945015">
+                            <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="8683742917308945017" />
+                          </node>
+                          <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4943044633101738937">
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~NameUtil" resolveInfo="NameUtil" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~NameUtil%dsplitByCamels(java%dlang%dString)%cjava%dutil%dList" resolveInfo="splitByCamels" />
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4943044633101738938">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4943044633101738926" resolveInfo="name" />
+                            </node>
                           </node>
                         </node>
                       </node>

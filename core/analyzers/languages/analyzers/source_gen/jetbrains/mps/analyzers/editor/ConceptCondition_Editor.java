@@ -118,7 +118,7 @@ public class ConceptCondition_Editor extends DefaultNodeEditor {
       List<String> result;
       if ((SLinkOperations.getTarget(node, "concept", false) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(node, "concept", false), "name") != null) {
         String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "concept", false), "name"));
-        result = NameUtil.splitByCamels(name);
+        result = (List<String>) NameUtil.splitByCamels(name);
       } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }

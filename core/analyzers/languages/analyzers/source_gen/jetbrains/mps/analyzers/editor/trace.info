@@ -1225,7 +1225,7 @@
     <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="109" startPosition="10" endLine="110" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4943044633101738919" fileName="ConceptCondition_Editor.java" startLine="117" startPosition="100" endLine="118" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4943044633101738925" fileName="ConceptCondition_Editor.java" startLine="119" startPosition="172" endLine="120" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738934" fileName="ConceptCondition_Editor.java" startLine="120" startPosition="134" endLine="121" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738934" fileName="ConceptCondition_Editor.java" startLine="120" startPosition="134" endLine="121" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4943044633101738954" fileName="ConceptCondition_Editor.java" startLine="122" startPosition="14" endLine="123" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4943044633101738960" fileName="ConceptCondition_Editor.java" startLine="124" startPosition="7" endLine="125" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="130" startPosition="33" endLine="131" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1289,7 +1289,7 @@
     <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="50" startPosition="93" endLine="52" endPosition="74" />
     <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="65" startPosition="88" endLine="67" endPosition="74" />
     <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="113" startPosition="116" endLine="115" endPosition="5" />
-    <scopeInfo nodeId="4943044633101738924" fileName="ConceptCondition_Editor.java" startLine="119" startPosition="172" endLine="121" endPosition="46">
+    <scopeInfo nodeId="4943044633101738924" fileName="ConceptCondition_Editor.java" startLine="119" startPosition="172" endLine="121" endPosition="61">
       <varInfo nodeId="4943044633101738926" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="76" startPosition="26" endLine="79" endPosition="73" />
