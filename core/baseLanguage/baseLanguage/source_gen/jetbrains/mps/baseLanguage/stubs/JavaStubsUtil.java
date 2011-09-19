@@ -8,7 +8,6 @@ import java.util.Set;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
-import jetbrains.mps.stubs.StubModelManagerFactory;
 import jetbrains.mps.stubs.StubLocation;
 import java.util.HashSet;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -34,13 +33,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   public JavaStubsUtil() {
   }
 
-  /*package*/ static Set<BaseStubModelDescriptor> getModelDescriptors(StubModelManagerFactory stubCreator, StubLocation location, String languageId) {
+  /*package*/ static Set<BaseStubModelDescriptor> getModelDescriptors(StubLocation location, String languageId) {
     Set<BaseStubModelDescriptor> result = new HashSet<BaseStubModelDescriptor>();
-    JavaStubsUtil.getModelDescriptors(stubCreator, location, languageId, result);
+    JavaStubsUtil.getModelDescriptors(location, languageId, result);
     return result;
   }
 
-  private static void getModelDescriptors(StubModelManagerFactory stubCreator, StubLocation location, String languageId, Set<BaseStubModelDescriptor> result) {
+  private static void getModelDescriptors(StubLocation location, String languageId, Set<BaseStubModelDescriptor> result) {
     String pack = location.getPrefix();
     IClassPathItem cpItem = createClassPathItem(location);
     if (cpItem == null) {
@@ -55,11 +54,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
           assert descriptor instanceof BaseStubModelDescriptor;
           result.add((BaseStubModelDescriptor) descriptor);
         } else {
-          result.add(new BaseStubModelDescriptor(stubCreator, modelReference, true, new StubModelDataSource(new ArrayList<StubPath>())));
+          result.add(new BaseStubModelDescriptor( modelReference,new JavaStubModelDataSource(),location.getModule()));
         }
       }
       StubLocation newLocation = new StubLocation(location.getPath(), subpackage, location.getModuleRef());
-      getModelDescriptors(stubCreator, newLocation, languageId, result);
+      getModelDescriptors(newLocation, languageId, result);
     }
   }
 

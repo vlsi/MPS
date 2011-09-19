@@ -16,6 +16,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
@@ -44,13 +45,11 @@ public class SModelRoot {
   }
 
   private IModelRootManager create(String moduleId, String className) throws ManagerNotFoundException {
-    IModule mod = MPSModuleRepository.getInstance().getModuleByUID(moduleId);
+    IModule mod = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId));
     if (mod == null) return null;
-    // TODO: fixme
-    // hack -- avoid "harmless exceptions" to be reported if the module hasn't been loaded yet
-    if (!(MPSModuleRepository.getInstance().isKnownModule(mod))) {
-      return null;
-    }
+
+    if (!mod.canLoadClasses()) return null;
+
     Class managerClass = mod.getClass(className);
     if (managerClass == null) {
       throw new ManagerNotFoundException("Manager class " + className + " not found in module " + mod.getModuleFqName());

@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.project.SModelRoot;
 import java.util.Collections;
 
-public class ProjectStubs extends StubModelManagerFactory {
+public class ProjectStubs {
   public ProjectStubs() {
   }
 

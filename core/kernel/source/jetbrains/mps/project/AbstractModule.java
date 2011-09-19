@@ -16,8 +16,8 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
 import jetbrains.mps.project.dependency.DependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
@@ -418,7 +418,7 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  protected void loadNewModels() {
+  public void loadNewModels() {
     mySModelRoots.clear();
 
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -430,11 +430,16 @@ public abstract class AbstractModule implements IModule {
           SModelRoot root = new SModelRoot(modelRoot);
           mySModelRoots.add(root);
           IModelRootManager manager = root.getManager();
-          for (SModelDescriptor model : manager.load(root.getModelRoot(), this)) {
-            if (smRepo.getModelDescriptor(model.getSModelReference())==null) {
-              smRepo.registerModelDescriptor(model, this);
+          if (manager != null) {
+            for (SModelDescriptor model : manager.load(root.getModelRoot(), this)) {
+              if (smRepo.getModelDescriptor(model.getSModelReference()) == null) {
+                smRepo.registerModelDescriptor(model, this);
+              }
             }
           }
+          //model with model root manager not yet loaded - should be loaded after classes reloading
+        } catch (ManagerNotFoundException e) {
+          LOG.warning("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
         } catch (Exception e) {
           LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
         }
@@ -446,6 +451,10 @@ public abstract class AbstractModule implements IModule {
 
   protected void fireModuleInitialized() {
     MPSModuleRepository.getInstance().fireModuleInitialized(this);
+  }
+
+  public boolean canLoadClasses() {
+    return ClassLoaderManager.getInstance().canLoadClasses(this);
   }
 
   public Class getClass(String fqName) {

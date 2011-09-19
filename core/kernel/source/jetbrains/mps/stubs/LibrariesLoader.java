@@ -46,6 +46,10 @@ public class LibrariesLoader implements ApplicationComponent {
 
   public void reload() {
     loadNewLanguageLibs();
+    for (IModule m:MPSModuleRepository.getInstance().getAllModules()){
+      if (!(m instanceof AbstractModule)) continue;
+      ((AbstractModule) m).loadNewModels();
+    }
   }
 
 

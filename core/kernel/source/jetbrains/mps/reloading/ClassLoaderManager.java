@@ -21,6 +21,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -224,6 +225,10 @@ public class ClassLoaderManager implements ApplicationComponent {
       RBundle<ModuleReference> bundle = new RBundle<ModuleReference>(ref, module.getBytecodeLocator());
       myRuntimeEnvironment.add(bundle);
     }
+  }
+
+  public boolean canLoadClasses(AbstractModule m) {
+    return myRuntimeEnvironment == null ? false : myRuntimeEnvironment.get(m.getModuleReference()) != null;
   }
 
   //---------------component stuff------------------

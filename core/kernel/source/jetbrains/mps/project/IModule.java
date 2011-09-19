@@ -116,6 +116,8 @@ public interface IModule extends ModelOwner {
 
   boolean needReloading();
 
+  boolean canLoadClasses();
+
   //-----todo ret rid of
   String getModuleFqName();
 
