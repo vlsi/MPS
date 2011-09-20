@@ -74,10 +74,11 @@ public class CheckModel_Action extends GeneratedAction {
     try {
       // check all models in model 
       List<SModelDescriptor> modelsToCheck = new ArrayList<SModelDescriptor>();
+      modelsToCheck.addAll(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
       for (SModelDescriptor model : ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"))) {
         String name = model.getLongName();
         for (SModelDescriptor innerModel : ListSequence.fromList(model.getModule().getOwnModelDescriptors())) {
-          if (innerModel.getLongName().startsWith(name)) {
+          if (innerModel.getLongName().startsWith(name + ".")) {
             modelsToCheck.add(innerModel);
           }
         }
