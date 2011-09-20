@@ -4,8 +4,6 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-
-import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -20,7 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.make.TextPreviewUtil;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 
 public class TextPreviewModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -94,6 +92,6 @@ public class TextPreviewModel_Action extends GeneratedAction {
     if (!(SModelStereotype.isUserModel(md))) {
       return false;
     }
-    return md instanceof EditableSModelDescriptor && !(((BaseSModelDescriptorWithSource) md).isReadOnly());
+    return md instanceof DefaultSModelDescriptor && !(((DefaultSModelDescriptor) md).isReadOnly());
   }
 }
