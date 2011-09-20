@@ -24,6 +24,8 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class ReachableClassifiersScope extends AbstractClassifiersScope {
@@ -138,6 +140,14 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
           if (check_x9ho2v_a0b0a0g0b0_0(check_x9ho2v_a0a1a0a6a1a_0(myModel)) == check_x9ho2v_a0b0a0g0b0(check_x9ho2v_a0a1a0a6a1a(SNodeOperations.getModel(cls)))) {
             return cls;
           }
+        }
+        Iterable<SNode> userClassifiers = ListSequence.fromList(classifiers).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SModelStereotype.isUserModel(SNodeOperations.getModel(it));
+          }
+        });
+        if (Sequence.fromIterable(userClassifiers).count() == 1) {
+          return Sequence.fromIterable(userClassifiers).first();
         }
 
         final StringBuilder warn = new StringBuilder();
