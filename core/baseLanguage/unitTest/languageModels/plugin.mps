@@ -6735,6 +6735,16 @@
           </node>
         </node>
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6926806367476460033">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="370352702285707746">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="370352702285707748">
+              <node role="rValue" roleId="tpee.1068498886297" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="370352702285707751">
+                <property name="value" nameId="tpee.1068580320021" value="-1" />
+              </node>
+              <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="370352702285707747">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="370352702285707713" resolveInfo="myCachedSize" />
+              </node>
+            </node>
+          </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="6926806367476460054">
             <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="6926806367476460056">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3788785580659093661">
@@ -6849,16 +6859,6 @@
                 <node role="argument" roleId="tp2q.1160612519549" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6926806367476640182">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6926806367476640175" resolveInfo="message" />
                 </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="370352702285707746">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="370352702285707748">
-              <node role="rValue" roleId="tpee.1068498886297" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="370352702285707751">
-                <property name="value" nameId="tpee.1068580320021" value="-1" />
-              </node>
-              <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="370352702285707747">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="370352702285707713" resolveInfo="myCachedSize" />
               </node>
             </node>
           </node>

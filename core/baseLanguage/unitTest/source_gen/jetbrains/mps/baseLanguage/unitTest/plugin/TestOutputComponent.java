@@ -180,6 +180,7 @@ public class TestOutputComponent implements TestView {
     }
 
     public TestOutputComponent.IMessage addMessage(String testClass, String testMethod, String text, Key key) {
+      myCachedSize = -1;
       if (ListSequence.fromList(myChildren).isNotEmpty() && ListSequence.fromList(myChildren).last() instanceof TestOutputComponent.CompositeMessage) {
         TestOutputComponent.CompositeMessage message = (TestOutputComponent.CompositeMessage) ListSequence.fromList(myChildren).last();
         if (message.merges(testClass, testMethod)) {
@@ -188,7 +189,6 @@ public class TestOutputComponent implements TestView {
       }
       TestOutputComponent.IMessage message = createChildMessage(testClass, testMethod, text, key);
       ListSequence.fromList(myChildren).addElement(message);
-      myCachedSize = -1;
       return message;
     }
 
