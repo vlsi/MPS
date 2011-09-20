@@ -26,7 +26,9 @@ import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 public abstract class StubModelDataSource extends FileBasedModelDataSource {
@@ -41,8 +43,13 @@ public abstract class StubModelDataSource extends FileBasedModelDataSource {
   }
 
   public boolean containFile(IFile file) {
+    List<IFile> parents = new ArrayList<IFile>();
+    while (file!=null){
+      parents.add(file);
+      file = file.getParent();
+    }
     for (String p:myStubPaths){
-      if (FileSystem.getInstance().getFileByPath(p)==file) return true;
+      if (parents.contains(FileSystem.getInstance().getFileByPath(p))) return true;
     }
     return false;
   }
