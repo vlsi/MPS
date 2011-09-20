@@ -11,7 +11,7 @@
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1197044909166">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp3b.1197044488845" resolveInfo="SimpleFinderDeclaration" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp3b.1197044488845" resolveInfo="FinderDeclaration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1200242474757">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Statements" />
@@ -23,7 +23,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1206197950998">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Statements" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp3b.1206197741569" resolveInfo="NewExecuteFinderStatement" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp3b.1206197741569" resolveInfo="ExecuteFinderExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1207141875089">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Statements" />
@@ -38,7 +38,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6366407517031508179">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Statements" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp3b.6366407517031508177" resolveInfo="MakeFindersProvider" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp3b.6366407517031508177" resolveInfo="MakeResultProvider" />
     </node>
   </roots>
   <root id="1197044909166">
@@ -160,7 +160,7 @@
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1218984549474">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp3j.2522969319638198290" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp3b.1218978181697" />
           <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1218984549475">
             <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1218984549476">
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
