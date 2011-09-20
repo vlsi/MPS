@@ -261,7 +261,7 @@
     <nodeInfo nodeId="3613324658897712863" fileName="SuspiciousModelIndex.java" startLine="42" startPosition="114" endLine="43" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3613324658897712867" fileName="SuspiciousModelIndex.java" startLine="43" startPosition="31" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3613324658897712871" fileName="SuspiciousModelIndex.java" startLine="44" startPosition="24" endLine="45" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897712883" fileName="SuspiciousModelIndex.java" startLine="48" startPosition="78" endLine="49" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897712883" fileName="SuspiciousModelIndex.java" startLine="48" startPosition="77" endLine="49" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3613324658897712899" fileName="SuspiciousModelIndex.java" startLine="52" startPosition="76" endLine="53" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3613324658897712911" fileName="SuspiciousModelIndex.java" startLine="58" startPosition="36" endLine="59" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3613324658897712924" fileName="SuspiciousModelIndex.java" startLine="63" startPosition="45" endLine="64" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -301,7 +301,7 @@
     <nodeInfo nodeId="3613324658897713031" fileName="SuspiciousModelIndex.java" startLine="117" startPosition="12" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3613324658897713140" fileName="SuspiciousModelIndex.java" startLine="131" startPosition="66" endLine="134" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3613324658897712813" fileName="SuspiciousModelIndex.java" startLine="144" startPosition="61" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTaskQueue#(Lcom/intellij/openapi/project/ProjectManager;Ljetbrains/mps/watching/ModelChangesWatcher;Lcom/intellij/openapi/vfs/VirtualFileManager;)V" />
-    <nodeInfo nodeId="3613324658897712875" fileName="SuspiciousModelIndex.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModel#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;Z)V" />
+    <nodeInfo nodeId="3613324658897712875" fileName="SuspiciousModelIndex.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModel#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;Z)V" />
     <nodeInfo nodeId="3613324658897712891" fileName="SuspiciousModelIndex.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModule#(Ljetbrains/mps/project/AbstractModule;Z)V" />
     <nodeInfo nodeId="3613324658897712960" fileName="SuspiciousModelIndex.java" startLine="77" startPosition="68" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3613324658897713077" fileName="SuspiciousModelIndex.java" startLine="110" startPosition="57" endLine="114" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -326,7 +326,7 @@
     <nodeInfo nodeId="3613324658897713016" fileName="SuspiciousModelIndex.java" startLine="102" startPosition="61" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3613324658897712947" fileName="SuspiciousModelIndex.java" startLine="75" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeModels#(Ljava/util/List;)V" />
     <nodeInfo nodeId="3613324658897712981" fileName="SuspiciousModelIndex.java" startLine="98" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showMergeDialog#(Ljava/util/List;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="3613324658897712882" fileName="SuspiciousModelIndex.java" startLine="48" startPosition="78" endLine="49" endPosition="75" />
+    <scopeInfo nodeId="3613324658897712882" fileName="SuspiciousModelIndex.java" startLine="48" startPosition="77" endLine="49" endPosition="75" />
     <scopeInfo nodeId="3613324658897712898" fileName="SuspiciousModelIndex.java" startLine="52" startPosition="76" endLine="53" endPosition="83" />
     <scopeInfo nodeId="3613324658897712910" fileName="SuspiciousModelIndex.java" startLine="58" startPosition="36" endLine="59" endPosition="36" />
     <scopeInfo nodeId="3613324658897712923" fileName="SuspiciousModelIndex.java" startLine="63" startPosition="45" endLine="64" endPosition="13" />
@@ -854,7 +854,7 @@
   </root>
   <root nodeId="3613324658897714583">
     <nodeInfo nodeId="3613324658897714599" fileName="RealVcsHandler.java" startLine="17" startPosition="88" endLine="18" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897714613" fileName="RealVcsHandler.java" startLine="21" startPosition="98" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897714613" fileName="RealVcsHandler.java" startLine="21" startPosition="97" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3613324658897714625" fileName="RealVcsHandler.java" startLine="25" startPosition="58" endLine="26" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3613324658897714636" fileName="RealVcsHandler.java" startLine="29" startPosition="67" endLine="30" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3613324658897714648" fileName="RealVcsHandler.java" startLine="33" startPosition="75" endLine="34" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -863,7 +863,7 @@
     <nodeInfo nodeId="3613324658897714659" fileName="RealVcsHandler.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
     <nodeInfo nodeId="3613324658897714663" fileName="RealVcsHandler.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
     <nodeInfo nodeId="3613324658897714591" fileName="RealVcsHandler.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSuspiciousModule#(Ljetbrains/mps/project/AbstractModule;Z)V" />
-    <nodeInfo nodeId="3613324658897714605" fileName="RealVcsHandler.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSuspiciousModel#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;Z)V" />
+    <nodeInfo nodeId="3613324658897714605" fileName="RealVcsHandler.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSuspiciousModel#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;Z)V" />
     <nodeInfo nodeId="3613324658897714619" fileName="RealVcsHandler.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRevisionNumber#(Ljetbrains/mps/vfs/IFile;)Lcom/intellij/openapi/vcs/history/VcsRevisionNumber;" />
     <nodeInfo nodeId="3613324658897714628" fileName="RealVcsHandler.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInConflict#(Ljetbrains/mps/vfs/IFile;Z)Z" />
     <nodeInfo nodeId="3613324658897714640" fileName="RealVcsHandler.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveDiskMemoryConflict#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/SModel;)Z" />
@@ -872,7 +872,7 @@
     <scopeInfo nodeId="3613324658897714662" fileName="RealVcsHandler.java" startLine="42" startPosition="31" endLine="42" endPosition="31" />
     <scopeInfo nodeId="3613324658897714666" fileName="RealVcsHandler.java" startLine="45" startPosition="34" endLine="45" endPosition="34" />
     <scopeInfo nodeId="3613324658897714598" fileName="RealVcsHandler.java" startLine="17" startPosition="88" endLine="18" endPosition="76" />
-    <scopeInfo nodeId="3613324658897714612" fileName="RealVcsHandler.java" startLine="21" startPosition="98" endLine="22" endPosition="76" />
+    <scopeInfo nodeId="3613324658897714612" fileName="RealVcsHandler.java" startLine="21" startPosition="97" endLine="22" endPosition="76" />
     <scopeInfo nodeId="3613324658897714624" fileName="RealVcsHandler.java" startLine="25" startPosition="58" endLine="26" endPosition="43" />
     <scopeInfo nodeId="3613324658897714635" fileName="RealVcsHandler.java" startLine="29" startPosition="67" endLine="30" endPosition="54" />
     <scopeInfo nodeId="3613324658897714647" fileName="RealVcsHandler.java" startLine="33" startPosition="75" endLine="34" endPosition="65" />

@@ -4,7 +4,7 @@ package jetbrains.mps.vcs;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModel;
@@ -18,7 +18,7 @@ public class RealVcsHandler implements VCSHandler, ApplicationComponent {
     SuspiciousModelIndex.instance().addModule(abstractModule, isInConflict);
   }
 
-  public void addSuspiciousModel(EditableSModelDescriptor modelDescriptor, boolean isInConflict) {
+  public void addSuspiciousModel(DefaultSModelDescriptor modelDescriptor, boolean isInConflict) {
     SuspiciousModelIndex.instance().addModel(modelDescriptor, isInConflict);
   }
 
