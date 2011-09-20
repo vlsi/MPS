@@ -35,7 +35,7 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3798212845297797388">
       <property name="name" nameId="tpck.1169194664001" value="StubsModelRootManager" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Stubs" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Deprecated.Stubs" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5516999836374789370">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ThisClassifierExpression" />
@@ -83,6 +83,7 @@
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5516999836374470556">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Deprecated.Stubs" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="n3kn.5516999836374121342" resolveInfo="StubsCreatorType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="5516999836374471948">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5516999836374471951">
@@ -150,6 +151,7 @@
       </node>
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="3798212845297795142">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Deprecated.Stubs" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="n3kn.3671542447677113727" resolveInfo="StubsCreatorDeclaration" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="3798212845297797388" resolveInfo="StubsModelRootManager" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="5516999836374471947" resolveInfo="map_StubCreator" />

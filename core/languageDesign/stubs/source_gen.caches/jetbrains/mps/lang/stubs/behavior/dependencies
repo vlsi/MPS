@@ -42,16 +42,22 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.AbstractModelCreator_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.BaseCreatorType_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.CanCreateFunction_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.CreateBlock_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.CreateFunction_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.DescriptorsFunction_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.GetRootsBlock_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.IModule_ConceptFunctionParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.InitModuleBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.LanguageRef_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.LibraryStubDescriptor_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.ModelCreationSettings_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.ModelDescriptorsBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.ModelManagerDeclaration_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.ModelManagerType_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.ModelRoot_ConceptFunctionParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.Model_ConceptFunctionParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.RootNodeDescriptorsBlock_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.SModelFqName_ConceptFunctionParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.Solution_ConceptFunctionParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.Stereotype_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.StubLocation_ConceptFunctionParameter_BehaviorDescriptor" />
@@ -63,10 +69,40 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.stubs.behavior.CanCreateFunction_BehaviorDescriptor" file="CanCreateFunction_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.stubs.behavior.CreateBlock_BehaviorDescriptor" file="CreateBlock_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.stubs.behavior.CreateFunction_BehaviorDescriptor" file="CreateFunction_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.stubs.behavior.DescriptorsFunction_BehaviorDescriptor" file="DescriptorsFunction_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.stubs.behavior.GetRootsBlock_BehaviorDescriptor" file="GetRootsBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.stubs.behavior.IModule_ConceptFunctionParameter_BehaviorDescriptor" file="IModule_ConceptFunctionParameter_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.stubs.behavior.InitModuleBlock_BehaviorDescriptor" file="InitModuleBlock_BehaviorDescriptor.java">
@@ -117,25 +153,29 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
   </dependency>
   <dependency className="jetbrains.mps.lang.stubs.behavior.ModelManagerDeclaration_BehaviorDescriptor" file="ModelManagerDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.AbstractModelCreator_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifier_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.ModelManagerDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.stubs.behavior.ModelManagerType_BehaviorDescriptor" file="ModelManagerType_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.stubs.behavior.ModelRoot_ConceptFunctionParameter_BehaviorDescriptor" file="ModelRoot_ConceptFunctionParameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.BaseCreatorType_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.stubs.behavior.Model_ConceptFunctionParameter_BehaviorDescriptor" file="Model_ConceptFunctionParameter_BehaviorDescriptor.java">
@@ -148,6 +188,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.stubs.behavior.SModelFqName_ConceptFunctionParameter_BehaviorDescriptor" file="SModelFqName_ConceptFunctionParameter_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.stubs.behavior.Solution_ConceptFunctionParameter_BehaviorDescriptor" file="Solution_ConceptFunctionParameter_BehaviorDescriptor.java">
