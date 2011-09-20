@@ -201,7 +201,6 @@
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
     <classNode dependClassName="jetbrains.mps.plugins.PluginReloader" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.workbench.make.UIFeedbackStrategy" />
     <classNode dependClassName="jetbrains.mps.workbench.make.UIQueryRelayStrategy" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />

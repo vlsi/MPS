@@ -113,7 +113,7 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + gres.model().getLongName())));
                   continue;
                 }
-                _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile = pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).pathToFile();
+                _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile = pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile();
                 if (getFile == null) {
                   getFile = new _FunctionTypes._return_P1_E0<IFile, String>() {
                     public IFile invoke(String p) {
@@ -244,46 +244,38 @@ public class TextGen_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._3) t).assign((Tuples._3) copyFrom);
+        ((Tuples._2) t).assign((Tuples._2) copyFrom);
       }
       return t;
     }
 
-    public static class Parameters extends MultiTuple._3<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean, Boolean> {
+    public static class Parameters extends MultiTuple._2<Boolean, Boolean> {
       public Parameters() {
         super();
       }
 
-      public Parameters(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile, Boolean failIfNoTextgen, Boolean generateDebugInfo) {
-        super(pathToFile, failIfNoTextgen, generateDebugInfo);
-      }
-
-      public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> value) {
-        return super._0(value);
+      public Parameters(Boolean failIfNoTextgen, Boolean generateDebugInfo) {
+        super(failIfNoTextgen, generateDebugInfo);
       }
 
       public Boolean failIfNoTextgen(Boolean value) {
-        return super._1(value);
+        return super._0(value);
       }
 
       public Boolean generateDebugInfo(Boolean value) {
-        return super._2(value);
-      }
-
-      public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile() {
-        return super._0();
+        return super._1(value);
       }
 
       public Boolean failIfNoTextgen() {
-        return super._1();
+        return super._0();
       }
 
       public Boolean generateDebugInfo() {
-        return super._2();
+        return super._1();
       }
 
       @SuppressWarnings(value = "unchecked")
-      public TextGen_Facet.Target_textGen.Parameters assignFrom(Tuples._3<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean, Boolean> from) {
+      public TextGen_Facet.Target_textGen.Parameters assignFrom(Tuples._2<Boolean, Boolean> from) {
         return (TextGen_Facet.Target_textGen.Parameters) super.assign(from);
       }
     }
@@ -406,7 +398,6 @@ public class TextGen_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
         if (properties.hasProperties(name)) {
           TextGen_Facet.Target_textGen.Parameters props = properties.properties(name, TextGen_Facet.Target_textGen.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.pathToFile", null);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.failIfNoTextgen", String.valueOf(props.failIfNoTextgen()));
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo", String.valueOf(props.generateDebugInfo()));
         }
@@ -418,9 +409,6 @@ public class TextGen_Facet extends IFacet.Stub {
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
           TextGen_Facet.Target_textGen.Parameters props = properties.properties(name, TextGen_Facet.Target_textGen.Parameters.class);
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.pathToFile")) {
-            props.pathToFile(null);
-          }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.failIfNoTextgen")) {
             props.failIfNoTextgen(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.TextGen.textGen.failIfNoTextgen")));
           }

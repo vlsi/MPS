@@ -191,20 +191,15 @@ public class ProjectTestHelper {
       final IScriptController ctl = new IScriptController.Stub() {
         @Override
         public void setup(IPropertiesPool ppool) {
-          Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> bparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.plugin.Binaries.copyBinaries"), Object.class);
-          bparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
-            public IFile invoke(String path) {
-              return tmpFile(path);
-            }
-          });
+          Tuples._1<Boolean> tparams = (Tuples._1<Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
+          tparams._0(false);
 
-          Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> tparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
-          tparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
+          Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> makeparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Object.class);
+          makeparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
             public IFile invoke(String path) {
               return tmpFile(path);
             }
           });
-          tparams._1(false);
 
           Tuples._2<Boolean, GenerationOptions.OptionsBuilder> params = (Tuples._2<Boolean, GenerationOptions.OptionsBuilder>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Object.class);
           params._1(optBuilder);
