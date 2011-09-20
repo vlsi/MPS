@@ -18,6 +18,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class StaticConceptMethodCallUtil {
+  public StaticConceptMethodCallUtil() {
+  }
+
   public static List<SNode> getParameterObjectsForMethodDeclaration(SNode staticConceptMethodCall, IScope scope) {
     List<SNode> result = new ArrayList<SNode>();
     SNode behavior = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(SLinkOperations.getTarget(staticConceptMethodCall, "concept", false), LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
