@@ -78,7 +78,8 @@ public class LanguageDescriptorPersistence {
           }
 
           for (Element generatorElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "generators")).first(), "generator"))) {
-            result_v3r4p8_a0a0d0d0a.getGenerators().add(GeneratorDescriptorPersistence.loadGeneratorDescriptor(generatorElement, file, macros));
+            GeneratorDescriptor gd = GeneratorDescriptorPersistence.loadGeneratorDescriptor(generatorElement, file, macros);
+            result_v3r4p8_a0a0d0d0a.getGenerators().add(gd);
           }
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeClassPath")).first(), "entry")))) {
@@ -113,6 +114,9 @@ public class LanguageDescriptorPersistence {
               result_v3r4p8_a1a0a0a32a0a0d0d0a.setClassName(result_v3r4p8_a1a1a0a0a32a0a0d0d0a);
               result_v3r4p8_a0a0a32a0a0d0d0a.setManager(result_v3r4p8_a1a0a0a32a0a0d0d0a);
               result_v3r4p8_a0a0d0d0a.getRuntimeStubModels().add(result_v3r4p8_a0a0a32a0a0d0d0a);
+              for (GeneratorDescriptor gd: result_v3r4p8_a0a0d0d0a.getGenerators()){
+                gd.getModelRoots().add(result_v3r4p8_a0a0a32a0a0d0d0a);
+              }
             }
           }
 
