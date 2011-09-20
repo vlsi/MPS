@@ -6,6 +6,7 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import java.util.Set;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingReadsAnalyzer;
@@ -16,13 +17,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.awt.Frame;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior;
 
 public class InlineVariableAssignmentRefactoring extends InlineVariableRefactoring {
   private Program myProgram;
@@ -31,7 +30,7 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
 
   public InlineVariableAssignmentRefactoring(SNode node) {
     this.myVariable = node;
-    SNode body = findStatementList(node);
+    SNode body = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     this.myProgram = DataFlowManager.getInstance().buildProgramFor(body);
     AnalysisResult<Set<ReadInstruction>> reachingReads = this.myProgram.analyze(new ReachingReadsAnalyzer());
     this.myReadInstructions = SetSequence.fromSet(new HashSet<ReadInstruction>());
@@ -100,16 +99,5 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
       ListSequence.fromList(result).addElement(((SNode) read.getSource()));
     }
     return result;
-  }
-
-  public static SNode findStatementList(SNode node) {
-    SNode body = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-    if (SNodeOperations.getAncestor(body, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) == null) {
-      return body;
-    }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(body), "jetbrains.mps.baseLanguage.structure.IStatementListContainer") && !(IStatementListContainer_Behavior.call_isExecuteSynchronous_1230212745736(SNodeOperations.cast(SNodeOperations.getParent(body), "jetbrains.mps.baseLanguage.structure.IStatementListContainer")))) {
-      return body;
-    }
-    return findStatementList(body);
   }
 }
