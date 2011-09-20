@@ -44,11 +44,11 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "dataFlowBuilderConstructor");
   }
 
-  public static boolean ifMacro_Condition_3063987229946191549(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_2979128091426922176(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "position", true) != null;
   }
 
-  public static boolean ifMacro_Condition_3063987229946254751(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_2979128091426921167(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "position", true) != null;
   }
 
@@ -64,7 +64,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "codeFor", true);
   }
 
-  public static SNode sourceNodeQuery_3063987229946191546(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_2979128091426922173(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "position", true);
   }
 
@@ -72,7 +72,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "jumpTo", true);
   }
 
-  public static SNode sourceNodeQuery_3063987229946254760(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_2979128091426921164(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "position", true);
   }
 
