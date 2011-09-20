@@ -78,7 +78,7 @@ public class DataFlowManager implements ApplicationComponent {
   private void load() {
     for (Language l : this.myModuleRepository.getAllLanguages()) {
       SModelDescriptor dfaModel = LanguageAspect.DATA_FLOW.get(l);
-      if (dfaModel != null && !(dfaModel.getSModel().rootsCount()==0)) {
+      if (dfaModel != null && !(dfaModel.getSModel().rootsCount() == 0)) {
         String dfaBuildersClassName = dfaModel.getLongName() + ".DFABuilders";
         Class<? extends DataFlowBuilders> buildersClass = l.getClass(dfaBuildersClassName);
         if (buildersClass != null) {
