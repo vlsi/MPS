@@ -1310,6 +1310,11 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1106479162954059968" />
     </node>
+    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="2979128091427193653">
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2979128091427193654" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2979128091427193655" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2979128091427193656" />
+    </node>
   </root>
   <root id="1106479162954059190">
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.ParameterizedShortcutChange" typeId="tp4k.6193305307616734266" id="1106479162954059192">

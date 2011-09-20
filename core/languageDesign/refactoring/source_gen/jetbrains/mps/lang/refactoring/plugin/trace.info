@@ -110,68 +110,71 @@
     <unitInfo nodeId="1106479162954038584" fileName="GenericRefactoringAction_Action.java" startLine="22" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.GenericRefactoringAction_Action" />
   </root>
   <root nodeId="1106479162954058963">
-    <nodeInfo nodeId="1106479162954059028" fileName="GenericRefactoringHelper.java" startLine="20" startPosition="55" endLine="21" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1106479162954059021" fileName="GenericRefactoringHelper.java" startLine="22" startPosition="12" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1106479162954059052" fileName="GenericRefactoringHelper.java" startLine="28" startPosition="126" endLine="29" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1106479162954059059" fileName="GenericRefactoringHelper.java" startLine="29" startPosition="36" endLine="30" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1106479162954059089" fileName="GenericRefactoringHelper.java" startLine="35" startPosition="23" endLine="36" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1106479162954059105" fileName="GenericRefactoringHelper.java" startLine="38" startPosition="52" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1106479162954059119" fileName="GenericRefactoringHelper.java" startLine="41" startPosition="38" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1106479162954059123" fileName="GenericRefactoringHelper.java" startLine="43" startPosition="5" endLine="44" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1106479162954059739" fileName="GenericRefactoringHelper.java" startLine="48" startPosition="74" endLine="49" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1106479162954059757" fileName="GenericRefactoringHelper.java" startLine="53" startPosition="86" endLine="54" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1106479162954059800" fileName="GenericRefactoringHelper.java" startLine="58" startPosition="78" endLine="59" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1106479162954059178" fileName="GenericRefactoringHelper.java" startLine="62" startPosition="74" endLine="63" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1106479162954059019" fileName="GenericRefactoringHelper.java" startLine="22" startPosition="10" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1106479162954059084" fileName="GenericRefactoringHelper.java" startLine="34" startPosition="7" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1106479162954059094" fileName="GenericRefactoringHelper.java" startLine="37" startPosition="5" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1106479162954059110" fileName="GenericRefactoringHelper.java" startLine="40" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1106479162954059067" fileName="GenericRefactoringHelper.java" startLine="30" startPosition="38" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1106479162954059734" fileName="GenericRefactoringHelper.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMinApplicabilityLevel#()Ljetbrains/mps/refactoring/framework/RefactoringUtil/Applicability;" />
-    <nodeInfo nodeId="1106479162954059015" fileName="GenericRefactoringHelper.java" startLine="19" startPosition="74" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1106479162954059722" fileName="GenericRefactoringHelper.java" startLine="46" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodes#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)Ljava/util/List;" />
-    <nodeInfo nodeId="1106479162954059726" fileName="GenericRefactoringHelper.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModels#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)Ljava/util/List;" />
-    <nodeInfo nodeId="1106479162954059730" fileName="GenericRefactoringHelper.java" startLine="56" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModules#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)Ljava/util/List;" />
-    <nodeInfo nodeId="1106479162954059009" fileName="GenericRefactoringHelper.java" startLine="18" startPosition="39" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getRefactoringClassName#(Ljetbrains/mps/refactoring/framework/IRefactoring;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1106479162954059516" fileName="GenericRefactoringHelper.java" startLine="26" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEntities#(Lcom/intellij/openapi/actionSystem/AnActionEvent;ZLcom/intellij/openapi/actionSystem/DataKey;Lcom/intellij/openapi/actionSystem/DataKey;)Ljava/util/List;" />
-    <scopeInfo nodeId="1106479162954059027" fileName="GenericRefactoringHelper.java" startLine="20" startPosition="55" endLine="21" endPosition="77" />
-    <scopeInfo nodeId="1106479162954059020" fileName="GenericRefactoringHelper.java" startLine="22" startPosition="12" endLine="23" endPosition="46" />
-    <scopeInfo nodeId="1106479162954059088" fileName="GenericRefactoringHelper.java" startLine="35" startPosition="23" endLine="36" endPosition="23" />
-    <scopeInfo nodeId="1106479162954059104" fileName="GenericRefactoringHelper.java" startLine="38" startPosition="52" endLine="39" endPosition="22" />
-    <scopeInfo nodeId="1106479162954059118" fileName="GenericRefactoringHelper.java" startLine="41" startPosition="38" endLine="42" endPosition="18" />
-    <scopeInfo nodeId="1106479162954059134" fileName="GenericRefactoringHelper.java" startLine="48" startPosition="74" endLine="49" endPosition="74" />
-    <scopeInfo nodeId="1106479162954059150" fileName="GenericRefactoringHelper.java" startLine="53" startPosition="86" endLine="54" endPosition="84" />
-    <scopeInfo nodeId="1106479162954059166" fileName="GenericRefactoringHelper.java" startLine="58" startPosition="78" endLine="59" endPosition="78" />
-    <scopeInfo nodeId="1106479162954059177" fileName="GenericRefactoringHelper.java" startLine="62" startPosition="74" endLine="63" endPosition="52" />
-    <scopeInfo nodeId="1106479162954059734" fileName="GenericRefactoringHelper.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1106479162954059014" fileName="GenericRefactoringHelper.java" startLine="19" startPosition="74" endLine="24" endPosition="5" />
-    <scopeInfo nodeId="1106479162954059722" fileName="GenericRefactoringHelper.java" startLine="46" startPosition="0" endLine="51" endPosition="0">
+    <nodeInfo nodeId="1106479162954059028" fileName="GenericRefactoringHelper.java" startLine="23" startPosition="55" endLine="24" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1106479162954059021" fileName="GenericRefactoringHelper.java" startLine="25" startPosition="12" endLine="26" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1106479162954059052" fileName="GenericRefactoringHelper.java" startLine="31" startPosition="126" endLine="32" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1106479162954059059" fileName="GenericRefactoringHelper.java" startLine="32" startPosition="36" endLine="33" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1106479162954059089" fileName="GenericRefactoringHelper.java" startLine="38" startPosition="23" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1106479162954059105" fileName="GenericRefactoringHelper.java" startLine="41" startPosition="52" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1106479162954059119" fileName="GenericRefactoringHelper.java" startLine="44" startPosition="38" endLine="45" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1106479162954059123" fileName="GenericRefactoringHelper.java" startLine="46" startPosition="5" endLine="47" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1106479162954059739" fileName="GenericRefactoringHelper.java" startLine="51" startPosition="74" endLine="52" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1106479162954059757" fileName="GenericRefactoringHelper.java" startLine="56" startPosition="86" endLine="57" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1106479162954059800" fileName="GenericRefactoringHelper.java" startLine="61" startPosition="78" endLine="62" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1106479162954059178" fileName="GenericRefactoringHelper.java" startLine="65" startPosition="74" endLine="66" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2979128091427193653" fileName="GenericRefactoringHelper.java" startLine="18" startPosition="39" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenericRefactoringHelper#()V" />
+    <nodeInfo nodeId="1106479162954059019" fileName="GenericRefactoringHelper.java" startLine="25" startPosition="10" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1106479162954059084" fileName="GenericRefactoringHelper.java" startLine="37" startPosition="7" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1106479162954059094" fileName="GenericRefactoringHelper.java" startLine="40" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1106479162954059110" fileName="GenericRefactoringHelper.java" startLine="43" startPosition="5" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1106479162954059067" fileName="GenericRefactoringHelper.java" startLine="33" startPosition="38" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1106479162954059734" fileName="GenericRefactoringHelper.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMinApplicabilityLevel#()Ljetbrains/mps/refactoring/framework/RefactoringUtil/Applicability;" />
+    <nodeInfo nodeId="1106479162954059015" fileName="GenericRefactoringHelper.java" startLine="22" startPosition="74" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1106479162954059722" fileName="GenericRefactoringHelper.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodes#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)Ljava/util/List;" />
+    <nodeInfo nodeId="1106479162954059726" fileName="GenericRefactoringHelper.java" startLine="54" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModels#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)Ljava/util/List;" />
+    <nodeInfo nodeId="1106479162954059730" fileName="GenericRefactoringHelper.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModules#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)Ljava/util/List;" />
+    <nodeInfo nodeId="1106479162954059009" fileName="GenericRefactoringHelper.java" startLine="21" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getRefactoringClassName#(Ljetbrains/mps/refactoring/framework/IRefactoring;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1106479162954059516" fileName="GenericRefactoringHelper.java" startLine="29" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEntities#(Lcom/intellij/openapi/actionSystem/AnActionEvent;ZLcom/intellij/openapi/actionSystem/DataKey;Lcom/intellij/openapi/actionSystem/DataKey;)Ljava/util/List;" />
+    <scopeInfo nodeId="2979128091427193655" fileName="GenericRefactoringHelper.java" startLine="19" startPosition="37" endLine="19" endPosition="37" />
+    <scopeInfo nodeId="1106479162954059027" fileName="GenericRefactoringHelper.java" startLine="23" startPosition="55" endLine="24" endPosition="77" />
+    <scopeInfo nodeId="1106479162954059020" fileName="GenericRefactoringHelper.java" startLine="25" startPosition="12" endLine="26" endPosition="46" />
+    <scopeInfo nodeId="1106479162954059088" fileName="GenericRefactoringHelper.java" startLine="38" startPosition="23" endLine="39" endPosition="23" />
+    <scopeInfo nodeId="1106479162954059104" fileName="GenericRefactoringHelper.java" startLine="41" startPosition="52" endLine="42" endPosition="22" />
+    <scopeInfo nodeId="1106479162954059118" fileName="GenericRefactoringHelper.java" startLine="44" startPosition="38" endLine="45" endPosition="18" />
+    <scopeInfo nodeId="1106479162954059134" fileName="GenericRefactoringHelper.java" startLine="51" startPosition="74" endLine="52" endPosition="74" />
+    <scopeInfo nodeId="1106479162954059150" fileName="GenericRefactoringHelper.java" startLine="56" startPosition="86" endLine="57" endPosition="84" />
+    <scopeInfo nodeId="1106479162954059166" fileName="GenericRefactoringHelper.java" startLine="61" startPosition="78" endLine="62" endPosition="78" />
+    <scopeInfo nodeId="1106479162954059177" fileName="GenericRefactoringHelper.java" startLine="65" startPosition="74" endLine="66" endPosition="52" />
+    <scopeInfo nodeId="2979128091427193653" fileName="GenericRefactoringHelper.java" startLine="18" startPosition="39" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="1106479162954059734" fileName="GenericRefactoringHelper.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1106479162954059014" fileName="GenericRefactoringHelper.java" startLine="22" startPosition="74" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="1106479162954059722" fileName="GenericRefactoringHelper.java" startLine="49" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="1106479162954059130" varName="e" />
       <varInfo nodeId="1106479162954059132" varName="oneEntity" />
     </scopeInfo>
-    <scopeInfo nodeId="1106479162954059726" fileName="GenericRefactoringHelper.java" startLine="51" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="1106479162954059726" fileName="GenericRefactoringHelper.java" startLine="54" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="1106479162954059146" varName="e" />
       <varInfo nodeId="1106479162954059148" varName="oneEntity" />
     </scopeInfo>
-    <scopeInfo nodeId="1106479162954059730" fileName="GenericRefactoringHelper.java" startLine="56" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="1106479162954059730" fileName="GenericRefactoringHelper.java" startLine="59" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="1106479162954059162" varName="e" />
       <varInfo nodeId="1106479162954059164" varName="oneEntity" />
     </scopeInfo>
-    <scopeInfo nodeId="1106479162954059009" fileName="GenericRefactoringHelper.java" startLine="18" startPosition="39" endLine="26" endPosition="0">
+    <scopeInfo nodeId="1106479162954059009" fileName="GenericRefactoringHelper.java" startLine="21" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1106479162954059012" varName="refactoring" />
     </scopeInfo>
-    <scopeInfo nodeId="1106479162954059051" fileName="GenericRefactoringHelper.java" startLine="28" startPosition="126" endLine="44" endPosition="15">
+    <scopeInfo nodeId="1106479162954059051" fileName="GenericRefactoringHelper.java" startLine="31" startPosition="126" endLine="47" endPosition="15">
       <varInfo nodeId="1106479162954059068" varName="res" />
       <varInfo nodeId="1106479162954059053" varName="single" />
       <varInfo nodeId="1106479162954059060" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="1106479162954059516" fileName="GenericRefactoringHelper.java" startLine="26" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="1106479162954059516" fileName="GenericRefactoringHelper.java" startLine="29" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="1106479162954059040" varName="e" />
       <varInfo nodeId="1106479162954059047" varName="keyList" />
       <varInfo nodeId="1106479162954059044" varName="keySingle" />
       <varInfo nodeId="1106479162954059042" varName="oneEntity" />
     </scopeInfo>
-    <unitInfo nodeId="1106479162954058963" fileName="GenericRefactoringHelper.java" startLine="18" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.GenericRefactoringHelper" />
+    <unitInfo nodeId="1106479162954058963" fileName="GenericRefactoringHelper.java" startLine="18" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.GenericRefactoringHelper" />
   </root>
   <root nodeId="1106479162954059190">
     <nodeInfo nodeId="1106479162954059190" fileName="Default_KeymapChanges.java" startLine="15" startPosition="34" endLine="16" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
