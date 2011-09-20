@@ -68,8 +68,6 @@ public class LibraryDescriptorPersistence {
   }
 
   public static void saveLibraryDescriptor(final IFile file, final LibraryDescriptor descriptor) {
-    if (file==null) return;
-
     if (file.isReadOnly()) {
       if (log.isErrorEnabled()) {
         log.error("Can't save " + file.getPath());
