@@ -51,6 +51,7 @@ public class CheckProjectStructureHelper {
  
   private final ModelsExtractor myModelsExtractor = new ModelsExtractor(false);
   private static long myErrors;
+  private static long myWarnings;
   /**
    * An opaque token to represent testing state.
    */
@@ -142,6 +143,7 @@ public class CheckProjectStructureHelper {
     MPSProject project = new MPSProject(ideaProject);
     project.init(projectFile, new ProjectDescriptor());
     myErrors = 0;
+    myWarnings = 0;
     return new PrivToken(project);
   }
  
@@ -358,6 +360,9 @@ public class CheckProjectStructureHelper {
               myErrors++;
               errors.add("Error message: " +issue.getObject().getMessage() + "   model: "+ node.getModel()+" root: "+node.getContainingRoot()+" node: "+ node);
             }
+            if (issue.getCategoryForKind(ModelCheckerIssue.CATEGORY_KIND_SEVERITY).startsWith(jetbrains.mps.ide.modelchecker.actions.ModelChecker.SEVERITY_WARNING)) {
+              myWarnings++;
+            }
           }
         }
       }
@@ -431,6 +436,10 @@ public class CheckProjectStructureHelper {
   }
 
   public long getNumErrors() {
+    return  myErrors;
+  }
+
+  public long getNumWarnings() {
     return  myErrors;
   }
  
