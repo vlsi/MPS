@@ -80,7 +80,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
       boolean needToLoad = false;
       for (BaseSNodeDescriptor snd : descriptors.get(0)) {
         PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(snd.getConceptFqName()).getProperty(SNodeUtil.property_INamedConcept_name);
-        if (descriptor instanceof BasePropertyConstraintsDescriptor && ((BasePropertyConstraintsDescriptor) descriptor).isGetterDefault()) {
+        if (descriptor instanceof BasePropertyConstraintsDescriptor && !((BasePropertyConstraintsDescriptor) descriptor).isGetterDefault()) {
           needToLoad = true;
           break;
         }
