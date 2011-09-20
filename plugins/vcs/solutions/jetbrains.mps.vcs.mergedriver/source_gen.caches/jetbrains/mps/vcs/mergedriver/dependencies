@@ -179,14 +179,19 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.Properties" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.AbstractFileMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.EmptyMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.FileType" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.JavaDependenciesMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.ModelMerger" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.SimpleMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.TextMerger" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.apache.log4j.PropertyConfigurator" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.MergeDriverNotification" file="MergeDriverNotification.java">
     <classNode dependClassName="com.intellij.ide.BrowserUtil" />
