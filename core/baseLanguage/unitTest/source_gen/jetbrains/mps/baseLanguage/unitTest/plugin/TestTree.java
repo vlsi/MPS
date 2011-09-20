@@ -62,8 +62,8 @@ public class TestTree extends MPSTree implements TestView, Disposable {
     if (this.myState.getAvailableText() != null) {
       return;
     }
-    String loseTest = this.myState.getLoseClass();
-    String loseMethod = this.myState.getLoseMethod();
+    String loseTest = this.myState.getLostClass();
+    String loseMethod = this.myState.getLostMethod();
     String test = this.myState.getCurrentClass();
     String method = this.myState.getCurrentMethod();
     final Wrappers._T<TestMethodTreeNode> methodNode = new Wrappers._T<TestMethodTreeNode>();

@@ -88,7 +88,7 @@ public class TestEvent {
     return this.myToken.hashCode() + 10 * this.myTestCaseName.hashCode() + 10 * this.myTestMethodName.hashCode();
   }
 
-  public static String isTestEvent(String messageString) {
+  public static String getEventToken(String messageString) {
     String token = null;
     for (String expectedToken : ListSequence.fromList(TestEvent.ALL_TOKENS)) {
       if (messageString.startsWith(expectedToken)) {
@@ -101,7 +101,7 @@ public class TestEvent {
 
   public static TestEvent parse(String messageString) {
     TestEvent testEvent = null;
-    String expectedToken = isTestEvent(messageString);
+    String expectedToken = getEventToken(messageString);
     if (expectedToken != null) {
       testEvent = parse(expectedToken, messageString);
     }
