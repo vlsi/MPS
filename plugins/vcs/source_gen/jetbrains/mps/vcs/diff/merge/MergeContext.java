@@ -306,6 +306,20 @@ public class MergeContext {
 
   }
 
+  private static boolean eq_358wfv_a0a0a0a0a0a0b0c1(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_358wfv_a0a0a0a0a0a0b0k1(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
   public static interface ChangesInvalidateHandler {
     public void someChangesInvalidated();
   }
@@ -333,11 +347,11 @@ public class MergeContext {
       invalidateChanges(MapSequence.fromMap(myNodeToChanges).get(node.getSNodeId()));
     }
 
-    private void referenceModified(SModelReferenceEvent event) {
+    private void referenceModified(final SModelReferenceEvent event) {
       List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getReference().getSourceNode().getSNodeId());
       invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
-          return ch instanceof SetReferenceChange;
+          return ch instanceof SetReferenceChange && eq_358wfv_a0a0a0a0a0a0b0c1(((SetReferenceChange) ch).getRole(), event.getReference().getRole());
         }
       }));
       invalidateDeletedRoot(event);
@@ -346,13 +360,11 @@ public class MergeContext {
     @Override
     public void referenceRemoved(SModelReferenceEvent event) {
       referenceModified(event);
-      invalidateDeletedRoot(event);
     }
 
     @Override
     public void referenceAdded(SModelReferenceEvent event) {
       referenceModified(event);
-      invalidateDeletedRoot(event);
     }
 
     private List<NodeGroupChange> getRelevantNodeGroupChanges(SNode parent, final String role) {
@@ -445,11 +457,11 @@ public class MergeContext {
     }
 
     @Override
-    public void propertyChanged(SModelPropertyEvent event) {
+    public void propertyChanged(final SModelPropertyEvent event) {
       List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getNode().getSNodeId());
       invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
-          return ch instanceof SetPropertyChange;
+          return ch instanceof SetPropertyChange && eq_358wfv_a0a0a0a0a0a0b0k1(((SetPropertyChange) ch).getPropertyName(), event.getPropertyName());
         }
       }));
       invalidateDeletedRoot(event);
