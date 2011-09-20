@@ -9,24 +9,39 @@ import java.util.HashMap;
 import jetbrains.mps.findUsages.UsagesList;
 import java.util.Set;
 import java.util.HashSet;
-
-import jetbrains.mps.smodel.*;
-
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.ArrayList;
-
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.StructureModificationData;
-
+import jetbrains.mps.smodel.SNodeId;
 import java.util.Collection;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.HackSNodeUtil;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.lang.reflect.Constructor;
 
