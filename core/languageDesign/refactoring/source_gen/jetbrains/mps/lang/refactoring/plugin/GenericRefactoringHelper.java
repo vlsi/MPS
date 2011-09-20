@@ -16,6 +16,9 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 
 public class GenericRefactoringHelper {
+  public GenericRefactoringHelper() {
+  }
+
   public static String getRefactoringClassName(IRefactoring refactoring) {
     if (refactoring instanceof OldRefactoringAdapter) {
       return ((OldRefactoringAdapter) refactoring).getRefactoringClassName();
