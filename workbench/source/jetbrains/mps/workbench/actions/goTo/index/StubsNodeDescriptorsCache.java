@@ -18,12 +18,12 @@ package jetbrains.mps.workbench.actions.goTo.index;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import gnu.trove.THashMap;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.stubs.IStubRootNodeDescriptor;
+import jetbrains.mps.smodel.descriptor.NodeDescriptor;
+import jetbrains.mps.smodel.descriptor.NodesNavigationContributor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 
 public class StubsNodeDescriptorsCache implements ApplicationComponent {
-  private ReloadAdapter myReloadHandler = new ReloadAdapter(){
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
       myCache.clear();
     }
@@ -63,7 +63,7 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
     }
   };
 
-  private Map<IModule, List<BaseSNodeDescriptor>> myCache = new THashMap<IModule, List<BaseSNodeDescriptor>>();
+  private Map<SModelReference, List<BaseSNodeDescriptor>> myCache = new THashMap<SModelReference, List<BaseSNodeDescriptor>>();
 
   @NotNull
   public String getComponentName() {
@@ -82,11 +82,15 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadHandler);
   }
 
-  public List<BaseSNodeDescriptor> getSNodeDescriptors(final IModule m) {
-    if (!myCache.containsKey(m)) {
-      List<IStubRootNodeDescriptor> list = new ArrayList<IStubRootNodeDescriptor>();//StubReloadManager.getInstance().getRootNodeDescriptors(((AbstractModule) m));
+  public List<BaseSNodeDescriptor> getSNodeDescriptors(final SModelReference mr) {
+    SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(mr);
+    if (model == null) return Collections.emptyList();
+    if (!(model instanceof NodesNavigationContributor)) return Collections.emptyList();
+
+    if (!myCache.containsKey(mr)) {
+      List<NodeDescriptor> list = new ArrayList<NodeDescriptor>(((NodesNavigationContributor) model).getNodeDescriptors());
       List<BaseSNodeDescriptor> result = new ArrayList<BaseSNodeDescriptor>(list.size());
-      for (final IStubRootNodeDescriptor sd : list) {
+      for (final NodeDescriptor sd : list) {
         result.add(new BaseSNodeDescriptor(sd.getName(), 0, 0, null) {
           protected SModelReference calculateModelReference() {
             return sd.getModelReference();
@@ -97,9 +101,9 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
           }
         });
       }
-      myCache.put(m, result);
+      myCache.put(mr, result);
     }
-    return Collections.unmodifiableList(myCache.get(m));
+    return Collections.unmodifiableList(myCache.get(mr));
   }
 
   private void clearCache(SModelDescriptor modelDescriptor) {
