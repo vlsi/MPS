@@ -39,6 +39,7 @@ public class LibrariesLoader implements ApplicationComponent {
   private MPSModuleRepository myModuleRepository;
 
   private List<String> myLoadedSolutions = new ArrayList<String>();
+  private List<ModuleReference> myLoadedModules = new ArrayList<ModuleReference>();
 
   public LibrariesLoader(MPSModuleRepository moduleRepository) {
     myModuleRepository = moduleRepository;
@@ -48,6 +49,8 @@ public class LibrariesLoader implements ApplicationComponent {
     loadNewLanguageLibs();
     for (IModule m:MPSModuleRepository.getInstance().getAllModules()){
       if (!(m instanceof AbstractModule)) continue;
+      if (myLoadedModules.contains(m.getModuleReference())) continue;
+      myLoadedModules.add(m.getModuleReference());
       ((AbstractModule) m).loadNewModels();
     }
   }
