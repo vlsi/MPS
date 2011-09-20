@@ -786,7 +786,6 @@
   <dependency className="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_Handler_Behavior" file="QueryFunction_SideTransform_Handler_Behavior.java">
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
