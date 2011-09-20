@@ -32,19 +32,19 @@
       <property name="name" nameId="tpck.1169194664001" value="JDK" />
       <property name="moduleName" nameId="n3kn.7076427504342075466" value="JDK" />
       <property name="moduleId" nameId="n3kn.8529737993487825735" value="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
-      <link role="creator" roleId="n3kn.8529737993487992546" targetNodeId="5516999836374025628" resolveInfo="JavaStubs" />
+      <link role="manager" roleId="n3kn.4063774604867772842" targetNodeId="4063774604867744443" resolveInfo="CompiledJava" />
     </node>
     <node type="n3kn.LibraryStubDescriptor" typeId="n3kn.8529737993487825733" id="2974122604715433683">
       <property name="name" nameId="tpck.1169194664001" value="MPS" />
       <property name="moduleName" nameId="n3kn.7076427504342075466" value="MPS.Classpath" />
       <property name="moduleId" nameId="n3kn.8529737993487825735" value="37a3367b-1fb2-44d8-aa6b-18075e74e003" />
-      <link role="creator" roleId="n3kn.8529737993487992546" targetNodeId="5516999836374025628" resolveInfo="JavaStubs" />
+      <link role="manager" roleId="n3kn.4063774604867772842" targetNodeId="4063774604867744443" resolveInfo="CompiledJava" />
     </node>
     <node type="n3kn.LibraryStubDescriptor" typeId="n3kn.8529737993487825733" id="4381823297881500018">
       <property name="name" nameId="tpck.1169194664001" value="Testbench" />
       <property name="moduleName" nameId="n3kn.7076427504342075466" value="Testbench" />
       <property name="moduleId" nameId="n3kn.8529737993487825735" value="920eaa0e-ecca-46bc-bee7-4e5c59213dd6" />
-      <link role="creator" roleId="n3kn.8529737993487992546" targetNodeId="5516999836374025628" resolveInfo="JavaStubs" />
+      <link role="manager" roleId="n3kn.4063774604867772842" targetNodeId="4063774604867744443" resolveInfo="CompiledJava" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2076500701550114150">
       <property name="name" nameId="tpck.1169194664001" value="JavaStubsUtil" />
