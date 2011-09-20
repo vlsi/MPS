@@ -27,22 +27,25 @@
   <unitInfo fileName="LibraryStubDescriptor_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.LibraryStubDescriptor_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.BehaviorAspectDescriptor" />
   <root nodeId="2974122604715183932">
-    <nodeInfo nodeId="2974122604715185991" fileName="LibraryStubDescriptor_Behavior.java" startLine="27" startPosition="87" endLine="28" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974122604715185991" fileName="LibraryStubDescriptor_Behavior.java" startLine="33" startPosition="87" endLine="34" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2974122604715183932" fileName="LibraryStubDescriptor_Behavior.java" startLine="9" startPosition="45" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="2856649189863832616" fileName="LibraryStubDescriptor_Behavior.java" startLine="13" startPosition="82" endLine="17" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5437642622779206438" fileName="LibraryStubDescriptor_Behavior.java" startLine="20" startPosition="89" endLine="24" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974122604715183932" fileName="LibraryStubDescriptor_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedClassName_2974122604715185986#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4063774604867782396" fileName="LibraryStubDescriptor_Behavior.java" startLine="21" startPosition="74" endLine="25" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063774604867782399" fileName="LibraryStubDescriptor_Behavior.java" startLine="26" startPosition="5" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974122604715183932" fileName="LibraryStubDescriptor_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedClassName_2974122604715185986#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4063774604867782381" fileName="LibraryStubDescriptor_Behavior.java" startLine="20" startPosition="89" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2974122604715183932" fileName="LibraryStubDescriptor_Behavior.java" startLine="12" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedName_2856649189863832611#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2974122604715183932" fileName="LibraryStubDescriptor_Behavior.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedClassFQName_5437642622779198671#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2974122604715183932" fileName="LibraryStubDescriptor_Behavior.java" startLine="19" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedClassFQName_5437642622779198671#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="2974122604715183934" fileName="LibraryStubDescriptor_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="2974122604715185989" fileName="LibraryStubDescriptor_Behavior.java" startLine="27" startPosition="87" endLine="28" endPosition="79" />
+    <scopeInfo nodeId="2974122604715185989" fileName="LibraryStubDescriptor_Behavior.java" startLine="33" startPosition="87" endLine="34" endPosition="79" />
     <scopeInfo nodeId="2974122604715183932" fileName="LibraryStubDescriptor_Behavior.java" startLine="9" startPosition="45" endLine="12" endPosition="0" />
     <scopeInfo nodeId="2856649189863832614" fileName="LibraryStubDescriptor_Behavior.java" startLine="13" startPosition="82" endLine="17" endPosition="7" />
-    <scopeInfo nodeId="5437642622779198674" fileName="LibraryStubDescriptor_Behavior.java" startLine="20" startPosition="89" endLine="24" endPosition="7" />
-    <scopeInfo nodeId="2974122604715183932" fileName="LibraryStubDescriptor_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="4063774604867782382" fileName="LibraryStubDescriptor_Behavior.java" startLine="21" startPosition="74" endLine="25" endPosition="9" />
+    <scopeInfo nodeId="2974122604715183932" fileName="LibraryStubDescriptor_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="2974122604715183932" fileName="LibraryStubDescriptor_Behavior.java" startLine="12" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="2974122604715183932" fileName="LibraryStubDescriptor_Behavior.java" startLine="19" startPosition="0" endLine="26" endPosition="0" />
-    <unitInfo nodeId="2974122604715183932" fileName="LibraryStubDescriptor_Behavior.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.LibraryStubDescriptor_Behavior" />
+    <scopeInfo nodeId="5437642622779198674" fileName="LibraryStubDescriptor_Behavior.java" startLine="20" startPosition="89" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="2974122604715183932" fileName="LibraryStubDescriptor_Behavior.java" startLine="19" startPosition="0" endLine="32" endPosition="0" />
+    <unitInfo nodeId="2974122604715183932" fileName="LibraryStubDescriptor_Behavior.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.LibraryStubDescriptor_Behavior" />
   </root>
   <root nodeId="5516999836374123418">
     <nodeInfo nodeId="5516999836374123418" fileName="StubsCreatorDeclaration_Behavior.java" startLine="15" startPosition="47" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_5516999836374144781" />

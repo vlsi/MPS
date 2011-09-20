@@ -122,6 +122,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.AbstractModelCreator_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.ModelManagerDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.stubs.behavior.LibraryStubDescriptor_BehaviorDescriptor" file="LibraryStubDescriptor_BehaviorDescriptor.java">

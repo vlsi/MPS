@@ -15,7 +15,7 @@
   <import index="n3kn" modelUID="r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="562112407431569978">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Persistence.Create.ModelAdjustments" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="_Deprecated.Persistence.Create.ModelAdjustments" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="n3kn.368569065472982597" resolveInfo="LanguageRef" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7076427504342075467">

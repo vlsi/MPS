@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-k5r46dgomjwog6yk0hr5zzcvza643a">
+<dependencies version="2" modelHash="3wdxze285ykhpjuf5fr9h3yr0l3ha2x">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-3y2r6y3czb0h44qur9lgd1udqb2qdek" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6jeeuoa32c4fcnlyzfgxurlptmclvzn" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3lxfcg9w0sl635r6n0c4d5sryip3kpx" />
@@ -62,10 +62,10 @@
   <source id="368569065472982592" name="ModelDescriptorsBlock" hash="-2n3nc0kwgzjosmgumgm5bjjwb9bsaz5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="368569065472982597" name="LanguageRef" hash="1v1vk6njo76q13i5p3lrbr6jp45q9il">
+  <source id="368569065472982597" name="LanguageRef" hash="-3h429xw2l73qwr1i1gpnwtxo5hywc1d">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="368569065472982598" name="ModelCreationSettings" hash="2ptfzv9by367gl34ja95ctdmvivg5uc">
+  <source id="368569065472982598" name="ModelCreationSettings" hash="ky8es7kj64o4kf8a18wntxycjqyha3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="368569065472982602" name="RootNodeDescriptorsBlock" hash="bq7ms7ic15f19e0w2sg4jvoxbrb8tjd">
@@ -83,7 +83,7 @@
   <source id="5553449326502622462" name="ModelManagerDeclaration" hash="4t4nf0iqmodbiifwi1tws9u86xaaovm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8529737993487825733" name="LibraryStubDescriptor" hash="-bn9w2gimw048qs23jyr2711ze6ujftd">
+  <source id="8529737993487825733" name="LibraryStubDescriptor" hash="5pqe7rqvo5vbutrotoz1ziaj2bn7qub">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8529737993487825737" name="GetRootsBlock" hash="atoqnst8pce8twxs50prptd54pshwh4">

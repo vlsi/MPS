@@ -36,7 +36,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 9:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"languageId", "languageFqName"}, new String[]{});
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"moduleName", "moduleId"}, new String[]{"creator"});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"moduleName", "moduleId"}, new String[]{"creator", "manager"});
       case 11:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 12:
