@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
@@ -74,11 +75,15 @@ public class CheckModel_Action extends GeneratedAction {
     try {
       // check all models in model 
       List<SModelDescriptor> modelsToCheck = new ArrayList<SModelDescriptor>();
+      modelsToCheck.addAll(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
       for (SModelDescriptor model : ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"))) {
         String name = model.getLongName();
+        boolean isStub = SModelStereotype.isStubModelStereotype(model.getStereotype());
         for (SModelDescriptor innerModel : ListSequence.fromList(model.getModule().getOwnModelDescriptors())) {
-          if (innerModel.getLongName().startsWith(name)) {
-            modelsToCheck.add(innerModel);
+          if (innerModel.getLongName().startsWith(name + ".")) {
+            if (isStub == SModelStereotype.isStubModelStereotype(innerModel.getStereotype())) {
+              modelsToCheck.add(innerModel);
+            }
           }
         }
       }
