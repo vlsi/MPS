@@ -13,15 +13,15 @@ import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.gwt.client.stubs.GWTModulePathItem;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.platform.conf.stubs.ConfPathItem;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.gwt.client.stubs.GWTModuleReader;
+import jetbrains.mps.platform.conf.stubs.ConfReader;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -30,20 +30,18 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelReference;
 import java.io.InputStream;
 import org.jdom.input.SAXBuilder;
-import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import org.jdom.JDOMException;
-import jetbrains.mps.gwt.client.stubs.GWTModuleFormatException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.vfs.IFile;
 
-public class GWTStubsSource extends FileBasedModelDataSource {
+public class ConfStubSource extends FileBasedModelDataSource {
   private ModelRoot root;
   private IModule module;
 
-  public GWTStubsSource(ModelRoot root, IModule module) {
+  public ConfStubSource(ModelRoot root, IModule module) {
     this.root = root;
     this.module = module;
   }
@@ -56,46 +54,43 @@ public class GWTStubsSource extends FileBasedModelDataSource {
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
     model.setLoading(true);
     try {
-      ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092")).getModuleReference();
+      ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("32d0a39c-772f-4490-8142-e50f9a9f19d4")).getModuleReference();
       model.addLanguage(lang);
       module.addUsedLanguage(lang);
 
       String pkg = model.getSModelFqName().getLongName();
-      PathItem pi = GWTModulePathItem.getPathItem(root.getPath());
-      List<Tuples._3<String, String, SNode>> modlst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
-      SNode sample = SConceptOperations.createNewNode("jetbrains.mps.gwt.client.structure.GWTModule", null);
-      for (String modres : ListSequence.fromList(pi.resources(pkg))) {
-        SNodeId id = GWTModuleReader.createId(pi.baseName(modres));
-        SNode gwtModule = (SNode) model.getNodeById(id);
-        if ((gwtModule == null)) {
-          gwtModule = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.GWTModule")), sample);
-          gwtModule.setId(id);
-          SPropertyOperations.set(gwtModule, "name", pi.baseName(modres));
-          SModelOperations.addRootNode(((SModel) model), gwtModule);
+      List<Tuples._3<String, String, SNode>> doclst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
+      SNode sample = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", null);
+      PathItem pi = ConfPathItem.getPathItem(root.getPath());
+      for (String docres : ListSequence.fromList(pi.resources(pkg))) {
+        SNodeId id = ConfReader.createForeignId(pi.baseName(docres));
+        SNode doc = (SNode) model.getNodeById(id);
+        if ((doc == null)) {
+          doc = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument")), sample);
+          doc.setId(id);
+          SPropertyOperations.set(doc, "name", pi.baseName(docres));
+          SModelOperations.addRootNode(((SModel) model), doc);
         }
-        ListSequence.fromList(modlst).addElement(MultiTuple.<String,String,SNode>from(pkg, modres, gwtModule));
+        ListSequence.fromList(doclst).addElement(MultiTuple.<String,String,SNode>from(pkg, docres, doc));
       }
-      final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"), root, module, true);
-      GWTModuleReader reader = new GWTModuleReader(new GWTModuleReader.Resolver() {
+      final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf"), root, module, false);
+      ConfReader reader = new ConfReader(new ConfReader.Resolver() {
         public SModelReference stubModelReference(String pk) {
           return descs.javaStubRef(pk);
         }
-      }, new GWTModuleReader.Resolver() {
+      }, new ConfReader.Resolver() {
         public SModelReference stubModelReference(String pk) {
           return descs.smodelRefWithId(pk);
         }
       });
-      for (Tuples._3<String, String, SNode> modpair : ListSequence.fromList(modlst)) {
+      for (Tuples._3<String, String, SNode> doctuple : ListSequence.fromList(doclst)) {
         InputStream is = null;
         try {
-          is = pi.openResource(modpair._0(), modpair._1());
-          SAXBuilder saxBuilder = JDOMUtil.createBuilder();
-          reader.read(modpair._2(), saxBuilder.build(is));
+          is = pi.openResource(doctuple._0(), doctuple._1());
+          reader.read(doctuple._2(), new SAXBuilder().build(is));
         } catch (IOException e) {
           e.printStackTrace();
         } catch (JDOMException e) {
-          e.printStackTrace();
-        } catch (GWTModuleFormatException e) {
           e.printStackTrace();
         }
         if (is != null) {
@@ -106,6 +101,7 @@ public class GWTStubsSource extends FileBasedModelDataSource {
         }
       }
       SNodeOperations.deleteNode(sample);
+
     } finally {
       model.setLoading(false);
     }

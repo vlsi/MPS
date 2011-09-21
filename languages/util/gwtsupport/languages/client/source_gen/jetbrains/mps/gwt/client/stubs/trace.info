@@ -307,18 +307,18 @@
     <nodeInfo nodeId="8382013213872086278" fileName="GWTModuleStubs.java" startLine="27" startPosition="43" endLine="28" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8382013213872086358" fileName="GWTModuleStubs.java" startLine="30" startPosition="9" endLine="31" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8382013213872086246" fileName="GWTModuleStubs.java" startLine="20" startPosition="62" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GWTModuleStubs#()V" />
-    <nodeInfo nodeId="8382013213872086274" fileName="GWTModuleStubs.java" startLine="26" startPosition="219" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/String;)Ljetbrains/mps/stubs/util/PathItem;" />
+    <nodeInfo nodeId="8382013213872086274" fileName="GWTModuleStubs.java" startLine="26" startPosition="225" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/String;)Ljetbrains/mps/stubs/util/PathItem;" />
     <nodeInfo nodeId="8382013213872086374" fileName="GWTModuleStubs.java" startLine="25" startPosition="90" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8382013213872086246" fileName="GWTModuleStubs.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="load#(Ljetbrains/mps/project/structure/model/ModelRoot;Ljetbrains/mps/project/IModule;)Ljava/util/Collection;" />
     <scopeInfo nodeId="8382013213872086246" fileName="GWTModuleStubs.java" startLine="21" startPosition="27" endLine="21" endPosition="27" />
     <scopeInfo nodeId="8382013213872086277" fileName="GWTModuleStubs.java" startLine="27" startPosition="43" endLine="28" endPosition="51" />
     <scopeInfo nodeId="8382013213872086246" fileName="GWTModuleStubs.java" startLine="20" startPosition="62" endLine="22" endPosition="3" />
-    <scopeInfo nodeId="8382013213872086274" fileName="GWTModuleStubs.java" startLine="26" startPosition="219" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="8382013213872086274" fileName="GWTModuleStubs.java" startLine="26" startPosition="225" endLine="30" endPosition="0" />
     <scopeInfo nodeId="8382013213872086248" fileName="GWTModuleStubs.java" startLine="24" startPosition="85" endLine="31" endPosition="15">
       <varInfo nodeId="8382013213872086366" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213872086246" fileName="GWTModuleStubs.java" startLine="23" startPosition="0" endLine="33" endPosition="0" />
-    <unitInfo nodeId="8382013213872086274" fileName="GWTModuleStubs.java" startLine="26" startPosition="169" endLine="30" endPosition="5" unitName="jetbrains.mps.gwt.client.stubs.GWTModuleStubs$1" />
+    <unitInfo nodeId="8382013213872086274" fileName="GWTModuleStubs.java" startLine="26" startPosition="175" endLine="30" endPosition="5" unitName="jetbrains.mps.gwt.client.stubs.GWTModuleStubs$1" />
     <unitInfo nodeId="8382013213872086246" fileName="GWTModuleStubs.java" startLine="20" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
   </root>
 </debugInfo>

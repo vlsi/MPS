@@ -24,11 +24,13 @@ public class StubModelDescriptors {
   private String stubStereotype;
   private ModelRoot modelRoot;
   private IModule module;
+  private boolean gwt;
 
-  public StubModelDescriptors(String stereotype, ModelRoot mr, IModule module) {
+  public StubModelDescriptors(String stereotype, ModelRoot mr, IModule module, boolean gwt) {
     this.stubStereotype = stereotype;
     this.modelRoot = mr;
     this.module = module;
+    this.gwt = gwt;
   }
 
   public Set<BaseStubModelDescriptor> getDescriptors(_FunctionTypes._return_P1_E0<? extends PathItem, ? super String> getPathItem) {
@@ -48,7 +50,10 @@ public class StubModelDescriptors {
           assert descById.getModule() == module;
           SetSequence.fromSet(result).addElement(((BaseStubModelDescriptor) descById));
         } else {
-          BaseStubModelDescriptor desc = new BaseStubModelDescriptor(smref, new GWTStubsSource(loc, module), module);
+          BaseStubModelDescriptor desc = new BaseStubModelDescriptor(smref, (gwt ?
+            new GWTStubsSource(loc, module) :
+            new ConfStubSource(loc, module)
+          ), module);
           SModelRepository.getInstance().registerModelDescriptor(desc, module);
           SetSequence.fromSet(result).addElement(desc);
         }
