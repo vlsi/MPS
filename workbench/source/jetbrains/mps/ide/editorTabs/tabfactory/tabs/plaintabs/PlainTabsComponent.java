@@ -152,14 +152,14 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
   }
 
-  protected void nextTab() {
+  public void nextTab() {
     int i = myJbTabs.getSelectedIndex();
     if (i < myJbTabs.getTabCount() - 1) {
       myJbTabs.setSelectedIndex(i + 1);
     }
   }
 
-  protected void prevTab() {
+  public void prevTab() {
     int i = myJbTabs.getSelectedIndex();
     if (i > 0) {
       myJbTabs.setSelectedIndex(i - 1);

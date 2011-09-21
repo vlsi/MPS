@@ -81,26 +81,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
     ActionButton btn = new ActionButton(addAction, addAction.getTemplatePresentation(), ActionPlaces.UNKNOWN, new Dimension(23, 23));
     myComponent.add(btn, BorderLayout.WEST);
 
-    myComponent.registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            prevTab();
-          }
-        });
-      }
-    }, KeyStroke.getKeyStroke("ctrl alt shift LEFT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
-
-    myComponent.registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            nextTab();
-          }
-        });
-      }
-    }, KeyStroke.getKeyStroke("ctrl alt shift RIGHT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
-
     addListeners();
   }
 
@@ -174,12 +154,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
     return result;
   }
-
-  ///-------------tab navigation----------------
-
-  protected abstract void nextTab();
-
-  protected abstract void prevTab();
 
   ///-------------events----------------
 
