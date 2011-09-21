@@ -244,9 +244,16 @@ public class NodeTypesComponent {
     Set<SNode> keySet = new THashSet<SNode>(nodesToErrorsMap.keySet());
     keySet.addAll(nodesToErrorsMapNT.keySet());
     for (SNode key : keySet) {
-      List<IErrorReporter> reporter = getErrors(key);
-      if (!reporter.isEmpty()) {
-        result.add(new Pair<SNode, List<IErrorReporter>>(key, reporter));
+      List<IErrorReporter> reporters = getErrors(key);
+      if (key.getContainingRoot() == null) {
+        LOG.warning("Type system reports error for node without containing root. Node: " + key);
+        for (IErrorReporter reporter : reporters) {
+          LOG.warning("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());
+        }
+        continue;
+      }
+      if (!reporters.isEmpty()) {
+        result.add(new Pair<SNode, List<IErrorReporter>>(key, reporters));
       }
     }
     return result;
