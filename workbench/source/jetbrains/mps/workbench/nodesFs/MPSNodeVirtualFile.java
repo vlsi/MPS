@@ -59,7 +59,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
         if (node == null) {
           LOG.error(new Throwable("Cannot find node for passed SNodePointer: " + myNode.toString()));
           myName = "";
-          myPath = node.getModel().getSModelFqName() + "/" + myName;
+          myPath = myNode.getModelReference().getSModelFqName() + "/" + myName;
         } else {
           myName = "" + node.getPresentation();
           myPath = node.getModel().getSModelFqName() + "/" + myName;
