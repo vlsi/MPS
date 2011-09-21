@@ -5,12 +5,10 @@ package jetbrains.mps.baseLanguage.stubs;
 import java.util.Set;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.stubs.StubLocation;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.ClassPathFactory;
-import java.io.IOException;
-import jetbrains.mps.stubs.IStubRootNodeDescriptor;
+import java.util.Collection;
+import jetbrains.mps.smodel.descriptor.NodeDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.reloading.IClassPathItem;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
@@ -31,29 +29,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     return null;
   }
 
-  private static void getModelDescriptors(Object stubCreator, StubLocation location, String languageId, Set<BaseStubModelDescriptor> result) {
-    return;
-  }
-
-  @Nullable
-  /*package*/ static IClassPathItem createClassPathItem(StubLocation location) {
-    try {
-      return ClassPathFactory.getInstance().createFromPath(location.getPath(), location.getModuleRef().getModuleFqName());
-    } catch (IOException e) {
-      return null;
-    }
-  }
-
-  public static Set<IStubRootNodeDescriptor> iterateClassPath(ModuleReference module, IClassPathItem item) {
-    Set<IStubRootNodeDescriptor> result = new HashSet<IStubRootNodeDescriptor>();
+  public static Collection<NodeDescriptor> iterateClassPath(ModuleReference module, IClassPathItem item) {
+    Set<NodeDescriptor> result = new HashSet<NodeDescriptor>();
     iterateClassPath(module, item, result, "");
     return result;
   }
 
-  private static void iterateClassPath(final ModuleReference module, final IClassPathItem item, Set<IStubRootNodeDescriptor> result, final String pName) {
+  public static void iterateClassPath(final ModuleReference module, final IClassPathItem item, Set<NodeDescriptor> result, final String pName) {
     final SModelReference model = StubHelper.uidForPackageInStubs(pName, LanguageID.JAVA, module, false);
     for (final String cls : item.getRootClasses(pName)) {
-      result.add(new IStubRootNodeDescriptor() {
+      result.add(new NodeDescriptor() {
         public String getName() {
           return cls;
         }

@@ -16,12 +16,14 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
-import jetbrains.mps.reloading.RealClassPathItem;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
+import java.util.Collection;
+import jetbrains.mps.smodel.descriptor.NodeDescriptor;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.ClassPathFactory;
 import java.io.File;
 import java.io.IOException;
-import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
-import jetbrains.mps.stubs.StubLocation;
 
 public class JavaStubModelDataSource extends StubModelDataSource {
   public JavaStubModelDataSource() {
@@ -47,24 +49,39 @@ public class JavaStubModelDataSource extends StubModelDataSource {
         model.addLanguage(l.getModuleReference());
         module.addUsedLanguage(l.getModuleReference());
       }
-      for (String dir : getStubPaths()) {
-        RealClassPathItem cp = null;
-        try {
-          if (dir.indexOf("!") != -1) {
-            cp = ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName());
-          } else {
-            String name = descriptor.getSModelReference().getLongName().replaceAll("\\.", File.separator);
-            dir = dir.substring(0, dir.indexOf(name));
-            cp = ClassPathFactory.getInstance().createFromPath(dir, this.getClass().getName());
-          }
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
-        new ASMModelLoader(new StubLocation(dir, "", module.getModuleReference()), cp, model).updateModel();
-      }
+      CompositeClassPathItem cp = this.createClassPath(descriptor);
+      new ASMModelLoader(module, cp, model).updateModel();
     } finally {
       model.setLoading(false);
     }
     return new BaseSModelDescriptor.ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+  }
+
+  public Collection<NodeDescriptor> getNodeDescriptors(SModelDescriptor model) {
+    IClassPathItem item = createClassPath(model);
+    if (item == null) {
+      return new HashSet<NodeDescriptor>();
+    }
+    HashSet res = new HashSet();
+    JavaStubsUtil.iterateClassPath(model.getModule().getModuleReference(), item, res, model.getLongName());
+    return res;
+  }
+
+  private CompositeClassPathItem createClassPath(SModelDescriptor descriptor) {
+    CompositeClassPathItem cp = new CompositeClassPathItem();
+    for (String dir : getStubPaths()) {
+      try {
+        if (dir.indexOf("!") != -1) {
+          cp.add(ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName()));
+        } else {
+          String name = descriptor.getSModelReference().getLongName().replaceAll("\\.", File.separator);
+          dir = dir.substring(0, dir.indexOf(name));
+          cp.add(ClassPathFactory.getInstance().createFromPath(dir, this.getClass().getName()));
+        }
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+    return cp;
   }
 }

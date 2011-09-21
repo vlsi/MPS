@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource implements Cloneable {
+public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource implements Cloneable {
   private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
   private IModule myModule;
 
