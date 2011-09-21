@@ -1875,7 +1875,7 @@
   </root>
   <root id="1796275887793108017">
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1796275887793108018">
-      <property name="name" nameId="tpck.1169194664001" value="isTestEvent" />
+      <property name="name" nameId="tpck.1169194664001" value="getEventToken" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="1796275887793108019" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1796275887793108020" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1796275887793108021">
@@ -1955,7 +1955,7 @@
             <property name="name" nameId="tpck.1169194664001" value="expectedToken" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1796275887793108055" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="1796275887793108056">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1796275887793108018" resolveInfo="isTestEvent" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1796275887793108018" resolveInfo="getEventToken" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1796275887793108057">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1796275887793108071" resolveInfo="messageString" />
               </node>

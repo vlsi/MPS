@@ -5,15 +5,16 @@ package jetbrains.mps.vcs.diff.ui;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Point;
 import java.awt.Rectangle;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import javax.swing.event.ChangeListener;
@@ -34,7 +35,7 @@ public class DiffEditorsGroup {
     diffEditor.getMainEditor().getViewport().addChangeListener(new DiffEditorsGroup.MyViewportChangeListener(diffEditor));
   }
 
-  private static void synchronizeViewWithOther(final EditorComponent thisEditor, final EditorComponent otherEditor) {
+  private static void synchronizeViewWithOther(@NotNull final EditorComponent thisEditor, @NotNull final EditorComponent otherEditor) {
     if (thisEditor == otherEditor) {
       return;
     }
@@ -45,26 +46,30 @@ public class DiffEditorsGroup {
         if (viewY > thisEditor.getRootCell().getY()) {
           visibleNode = check_s6qw4f_a0a0c0a1a0(thisEditor.findCellWeak(1, viewY));
         }
+        SModel otherModel = check_s6qw4f_a0d0a1a0(otherEditor.getEditedNode());
+        if (otherModel == null) {
+          return;
+        }
+
         while (visibleNode != null) {
           SNodeId id = visibleNode.getSNodeId();
-          int newRelativePos = viewY - thisEditor.findNodeCell(visibleNode).getY();
-          SNode sNode = otherEditor.getEditedNode();
-          if (sNode == null) {
-            return;
-          }
-          SNode nodeById = sNode.getModel().getNodeById(id);
-          EditorCell oldCell = otherEditor.findNodeCell(nodeById);
-          Point position = thisEditor.getViewport().getViewPosition();
-          if (oldCell != null) {
-            otherEditor.getViewport().setViewPosition(new Point((int) position.getX(), newRelativePos + oldCell.getY()));
-            Rectangle viewRect = otherEditor.getViewport().getViewRect();
-            if (viewRect.y + viewRect.height > otherEditor.getHeight()) {
-              otherEditor.getViewport().setViewPosition(new Point(viewRect.x, otherEditor.getHeight() - viewRect.height));
+          EditorCell thisCell = thisEditor.findNodeCell(visibleNode);
+          if (thisCell != null) {
+            int newRelativePos = viewY - thisCell.getY();
+            EditorCell otherCell = otherEditor.findNodeCell(otherModel.getNodeById(id));
+            Point position = thisEditor.getViewport().getViewPosition();
+            if (otherCell != null) {
+              otherEditor.getViewport().setViewPosition(new Point((int) position.getX(), newRelativePos + otherCell.getY()));
+              Rectangle viewRect = otherEditor.getViewport().getViewRect();
+              if (viewRect.y + viewRect.height > otherEditor.getHeight()) {
+                otherEditor.getViewport().setViewPosition(new Point(viewRect.x, otherEditor.getHeight() - viewRect.height));
+              }
+              return;
             }
-            return;
           }
+
           SNode prevSibling = SNodeOperations.getPrevSibling(visibleNode);
-          if (visibleNode.getRole_().equals(check_s6qw4f_a0a9a3a0b0a(prevSibling))) {
+          if (visibleNode.getRole_().equals(check_s6qw4f_a0a5a6a0b0a(prevSibling))) {
             visibleNode = prevSibling;
           } else {
             visibleNode = visibleNode.getParent();
@@ -81,7 +86,14 @@ public class DiffEditorsGroup {
     return null;
   }
 
-  private static String check_s6qw4f_a0a9a3a0b0a(SNode checkedDotOperand) {
+  private static SModel check_s6qw4f_a0d0a1a0(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModel();
+    }
+    return null;
+  }
+
+  private static String check_s6qw4f_a0a5a6a0b0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRole_();
     }

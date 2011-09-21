@@ -23,6 +23,9 @@ import git4idea.commands.GitCommand;
 
   @NotNull
   protected AbstractInstaller.State install(boolean dryRun) {
+    if (!(PluginUtil.isGitPluginEnabled())) {
+      return AbstractInstaller.State.INSTALLED;
+    }
     try {
       String currentValue = GitConfigUtil.getValue(myProject, myProject.getBaseDir(), GitGlobalConfigFixesInstaller.CORE_AUTOCRLF);
       if (CORE_AUTOCRLF_VALUE.equals(currentValue)) {

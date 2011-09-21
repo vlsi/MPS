@@ -440,7 +440,7 @@ public class CheckProjectStructureHelper {
   }
 
   public long getNumWarnings() {
-    return  myErrors;
+    return  myWarnings;
   }
  
 }

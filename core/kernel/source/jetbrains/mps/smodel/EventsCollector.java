@@ -31,7 +31,7 @@ public class EventsCollector {
   private SModelListener myListener = createCommandEventsCollector();
   private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
   private ModelAccessListener myModelAccessListener = new MyModelAccessAdapter();
-  private boolean myDisposed;
+  private volatile boolean myDisposed;
 
   private boolean myIsInCommand;
 
@@ -128,11 +128,17 @@ public class EventsCollector {
 
   private class MyModelAccessAdapter extends ModelAccessAdapter {
     public void commandStarted() {
+      if (myDisposed) {
+        return;
+      }
       myEvents.clear();
       myIsInCommand = true;
     }
 
     public void beforeCommandFinished() {
+      if (myDisposed) {
+        return;
+      }
       flush();
       myIsInCommand = false;
     }

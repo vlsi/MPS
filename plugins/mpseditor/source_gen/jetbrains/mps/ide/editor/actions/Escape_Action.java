@@ -27,10 +27,8 @@ public class Escape_Action extends GeneratedAction {
     if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).hasNodeInformationDialog()) {
       return false;
     }
-    if (((Boolean) MapSequence.fromMap(_params).get("isModalContext"))) {
-      return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelectionStackSize() > 1;
-    }
-    return true;
+
+    return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelectionStackSize() > 1 || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().hasMessages(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
