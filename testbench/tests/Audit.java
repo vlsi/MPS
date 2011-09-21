@@ -86,8 +86,9 @@ public class Audit {
   public static void cleanUp() {
     HELPER.cleanUp(TOKEN);
     HELPER.dispose();
-    PerformanceMessenger.getInstance().report("errors", HELPER.getNumErrors());
-    PerformanceMessenger.getInstance().report("warnings", HELPER.getNumWarnings());
+    PerformanceMessenger.getInstance().report("auditErrors", HELPER.getNumErrors());
+    PerformanceMessenger.getInstance().report("auditWarnings", HELPER.getNumWarnings());
+    PerformanceMessenger.getInstance().generateReport();
     System.out.println(HELPER.getNumErrors() + " errors total");
     System.out.println(HELPER.getNumWarnings() + " warnings total");
   }
