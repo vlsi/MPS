@@ -9,6 +9,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesUtil {
+  public QueriesUtil() {
+  }
+
   public static SNode get_registerSelf_body(SNode clazz) {
     SNode regiserSelfMethod = ListSequence.fromList(SLinkOperations.getTargets(clazz, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
