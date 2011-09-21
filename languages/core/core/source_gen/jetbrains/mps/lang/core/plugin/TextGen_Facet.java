@@ -17,9 +17,6 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -113,27 +110,19 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + gres.model().getLongName())));
                   continue;
                 }
-                _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile = pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile();
-                if (getFile == null) {
-                  getFile = new _FunctionTypes._return_P1_E0<IFile, String>() {
-                    public IFile invoke(String p) {
-                      return FileSystem.getInstance().getFileByPath(p);
-                    }
-                  };
-                }
 
                 Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedFilesDelta(Sequence.fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
                   public boolean accept(SModelDescriptor smd) {
                     return !(GeneratorManager.isDoNotGenerate(smd));
                   }
-                }), gres.module(), getFile);
+                }), gres.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile());
                 Iterable<IDelta> retainedCachesDelta = RetainedUtil.retainedCachesDelta(Sequence.fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
                   public boolean accept(SModelDescriptor smd) {
                     return !(GeneratorManager.isDoNotGenerate(smd));
                   }
-                }), gres.module(), getFile);
+                }), gres.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile());
 
-                final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), getFile.invoke(output), FileGenerationUtil.getCachesDir(getFile.invoke(output)));
+                final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile().invoke(output), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile().invoke(FileGenerationUtil.getCachesPath(output)));
 
                 final Wrappers._boolean ok = new Wrappers._boolean();
                 boolean generateDI = pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo() == null || pa.global().properties(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo();
