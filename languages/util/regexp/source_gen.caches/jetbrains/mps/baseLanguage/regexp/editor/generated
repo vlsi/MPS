@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6cygswwtdplbcuqgd0qn8ofgcglzbmr">
+<dependencies version="2" modelHash="-9357017ee41t1cznrw4aqvv9rok0kah">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.editor.cellProviders(MPS.Classpath/jetbrains.mps.lang.editor.cellProviders@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.editor.generator.internal(MPS.Classpath/jetbrains.mps.lang.editor.generator.internal@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
@@ -15,32 +15,34 @@
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-3y2r6y3czb0h44qur9lgd1udqb2qdek" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-cbi04b8tjnfgqpdtujispvsebjdorr7" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="8up11uup7cci4xr9q1nszb2hx5l4c8k" />
-  <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-8os2z2k1qp28owdvbesu4uq0co2dv5y" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="-anot98j1n4cgpr0t5a3eitct448515r" />
+  <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-4a5e2kas9logbv0txvui93r13tsnpp5" />
   <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="biqb2c37zelqgli7e9q2ocrmivt95rv" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" hash="-9q433e7ubrvt0fw7aea9yy6sj5ttvhf" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="e1dzavd6sz9dhj9ewkmb93dqgqtfsw" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="cbxbas4wcql77jgbid2dra89g3u345r" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="-cdzfn4p1jcvpfs9gteqku1nwd21geb4" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-6r5i332c87x8xyc3ivazsp5i0nmdz40" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" hash="-byzz0c52ugwyc4goiy3nsskhx1zh5fm" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3lxfcg9w0sl635r6n0c4d5sryip3kpx" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="7c5ssk9ukgkps0ad18aex01o7lv119u" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="-62ku6szgmg6xldb4j97madp4p74q9sy" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="akfobdt43q9rrlj8pszut5gr07xi91o" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="33wkjgiezx0fo2ce3ik1767insl4n2e" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="90a2yqqwsbuerf4u3po1b2jxod6vyfj" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-5cvjles00jzoxdjca1wlffllu4n1taf" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="cjb3uo0m6bhznlx33d9ca1f6rshkyq2" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="d8xfna3g5ul3mdj5lmmb4ag6juunapj" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-aponn5nsgce6wtlpsam7uobqmzylfnq" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-h9u9hcbweyac955q02knzt9cgtbezg" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6wcb0wku66kauzfch9knq1rbzi73svq" />
-  <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="-8h3fz2txuftple5no6tuuqf8wtsf12" />
-  <dep model="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" hash="5dmepb35tnhhpe5wf1qyjcf3yqv3cva" />
+  <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="90582pvul3jpqwmlp2m8l0fz4qnawyz" />
+  <dep model="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" hash="-11dkwi1zp8pklpvgilvvyiujt1koaz0" />
   <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" hash="-4sxe65c4sylpkto8zfojl39s8qujo1o" />
   <dep model="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" hash="-bgznvokgb361qonnvwu1ytof1l3k61k" />
   <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" hash="-8cu48di6ep5i8o2pci10okyteyfu6hg" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="bct00ghae3tp64n9htu3qwdgbezkcbn" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="1qpl4dcq87orqyeop7drkzps9naovu7" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-3ii7k0i6rlerj3mouel8b9y5r9htj2r" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-c8o7egrhhlddj60rzgg330ecnpq5k8d" />
   <common hash="9ftjza0crg13fwistj2jta66g9htz30" dependsOnNodes="true">
     <dep root="1174482859926" />
@@ -111,11 +113,14 @@
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
   </common>
-  <source id="1174482859926" name="StringLiteralRegexp_Editor" hash="4llszcqspxaq8xy3uen01yy22p8bll7">
+  <source id="1174482859926" name="StringLiteralRegexp_Editor" hash="-cayuz9xj6u786cfisjpf4h5fxnypynz">
     <dep root="3050481019131644558" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
@@ -132,7 +137,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StringLiteralRegexp_Editor.java" />
   </source>
-  <source id="1174483140444" name="RegexpDeclaration_Editor" hash="-5wmkcoupp6q02zefx4gncdy0mk8xw6i">
+  <source id="1174483140444" name="RegexpDeclaration_Editor" hash="azga8bxiewt86p9rvxge80jtmbgldtr">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -158,7 +163,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RegexpDeclaration_Editor.java" />
   </source>
-  <source id="1174491183609" name="ParensRegexp_Editor" hash="-4x9gh03ov0hw43zlo6lwyq9bjctumtp">
+  <source id="1174491183609" name="ParensRegexp_Editor" hash="-ksumpx6gycyblau694b64liqq5virc">
     <dep root="1174902509875" />
     <dep root="3050481019131644558" />
     <dep root="5169131996393625116" />
@@ -184,11 +189,10 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ParensRegexp_Editor.java" />
   </source>
-  <source id="1174510563589" name="InlineRegexpExpression_Editor" hash="-4k6v9okjheh1jqr0ii00di6eiv1m4pb">
+  <source id="1174510563589" name="InlineRegexpExpression_Editor" hash="2bq4knd2i1x2kfsf8d6va3ekfqqqksf">
     <dep root="6129327962765651523" />
     <dep root="6129327962765754916" />
     <dep root="6129327962765858411" />
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -209,10 +213,11 @@
     <dep model="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InlineRegexpExpression_Editor.java" />
   </source>
-  <source id="1174512458522" name="MatchRegexpStatement_Editor" hash="-6e6z4hlc3uqyrc173o0i9jredxz88ya">
+  <source id="1174512458522" name="MatchRegexpStatement_Editor" hash="83p03v419mnfthxwy3mzw58dnh6vhto">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -232,7 +237,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MatchRegexpStatement_Editor.java" />
   </source>
-  <source id="1174554434889" name="PredefinedSymbolClasses_Editor" hash="-4jsp93ukhnmu162iudcqzh0h5pwvk76">
+  <source id="1174554434889" name="PredefinedSymbolClasses_Editor" hash="58gu43qbp12vn684a00ph381kb5q93d">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellProviders(MPS.Classpath/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
@@ -255,7 +260,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PredefinedSymbolClasses_Editor.java" />
   </source>
-  <source id="1174554546472" name="PredefinedSymbolClassDeclaration_Editor" hash="-7304do44uqe4y1xx322f0j1l6dyfypx">
+  <source id="1174554546472" name="PredefinedSymbolClassDeclaration_Editor" hash="eml7za2cv10ayugk5qzobw25f6qgvdf">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -276,7 +281,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PredefinedSymbolClassDeclaration_Editor.java" />
   </source>
-  <source id="1174555873257" name="PredefinedSymbolClassRegexp_Editor" hash="9ffmlmux7hahgkjkp683kuogitnor8u">
+  <source id="1174555873257" name="PredefinedSymbolClassRegexp_Editor" hash="5oig68i0217tl9wcq0v7e224ey6gvah">
     <dep root="3050481019131644558" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -297,7 +302,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PredefinedSymbolClassRegexp_Editor.java" />
   </source>
-  <source id="1174556839424" name="DotRegexp_Editor" hash="-vxyh963v2sqtd9v2wt2wu6jdk35jkk">
+  <source id="1174556839424" name="DotRegexp_Editor" hash="9tszhulld77t8y14kz3lccn93rhcb8b">
     <dep root="3050481019131644558" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -318,7 +323,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DotRegexp_Editor.java" />
   </source>
-  <source id="1174557641733" name="PositiveSymbolClassRegexp_Editor" hash="2k9273vtk4msnimlnfe2skiilu2co63">
+  <source id="1174557641733" name="PositiveSymbolClassRegexp_Editor" hash="8t1l0ivuty9gtmge27gf5i2vdfzr48i">
     <dep root="3050481019131644558" />
     <dep root="5169131996393625116" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
@@ -339,7 +344,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PositiveSymbolClassRegexp_Editor.java" />
   </source>
-  <source id="1174557669695" name="NegativeSymbolClassRegexp_Editor" hash="-1ekgzf0mbfg93hhcbzweyp391tolbg1">
+  <source id="1174557669695" name="NegativeSymbolClassRegexp_Editor" hash="-erpdwxsinszqflq8ecb27xddew9hljv">
     <dep root="3050481019131644558" />
     <dep root="4759120547780522710" />
     <dep root="5169131996393625116" />
@@ -364,7 +369,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NegativeSymbolClassRegexp_Editor.java" />
   </source>
-  <source id="1174558014576" name="CharacterSymbolClassPart_Editor" hash="7yvtr8l5lv6ofybx9ygxbkj41ed1viz">
+  <source id="1174558014576" name="CharacterSymbolClassPart_Editor" hash="-a7eemzs4stw0vyqfn0qgoq9rjpm5tfm">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -384,7 +389,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CharacterSymbolClassPart_Editor.java" />
   </source>
-  <source id="1174558321839" name="IntervalSymbolClassPart_Editor" hash="-exyixkr43sa9ba6oeo82b9tk0sc70vw">
+  <source id="1174558321839" name="IntervalSymbolClassPart_Editor" hash="dcflr8xdwtaxd3ctucsn4pgev2emyt7">
     <dep root="6129327962764883162" />
     <dep root="6129327962765122924" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -406,7 +411,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IntervalSymbolClassPart_Editor.java" />
   </source>
-  <source id="1174558830461" name="PredefinedSymbolClassSymbolClassPart_Editor" hash="-6ru2mljso7qqn5xqnbafzmgpbzc6wa0">
+  <source id="1174558830461" name="PredefinedSymbolClassSymbolClassPart_Editor" hash="a0uoebmrdaf4cgdcdv4aklq2t3ac5r9">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -426,7 +431,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PredefinedSymbolClassSymbolClassPart_Editor.java" />
   </source>
-  <source id="1174564100658" name="MatchParensRegexp_Editor" hash="-e5cy90waz6nwcwjszhcdbi2mrucvr9u">
+  <source id="1174564100658" name="MatchParensRegexp_Editor" hash="8atczkjsa69ugjqu91smgk4wezl30d7">
     <dep root="3050481019131644558" />
     <dep root="3840684028956596921" />
     <dep root="5169131996393625116" />
@@ -454,7 +459,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MatchParensRegexp_Editor.java" />
   </source>
-  <source id="1174565050899" name="MatchVariableReference_Editor" hash="5qm5cwiu7nodtmegmbh8hubiaj2xe0b">
+  <source id="1174565050899" name="MatchVariableReference_Editor" hash="endcsplo7qft7y5cgm9pp036f3cz3q6">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -474,7 +479,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MatchVariableReference_Editor.java" />
   </source>
-  <source id="1174656055179" name="ReplaceWithRegexpExpression_Editor" hash="-3kbjhfm4tdiqmlfmvep0gjo4snjhl9e">
+  <source id="1174656055179" name="ReplaceWithRegexpExpression_Editor" hash="-1ngpide5ljvv9v34xcuyvvcwy59n9b0">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -494,7 +499,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ReplaceWithRegexpExpression_Editor.java" />
   </source>
-  <source id="1174656457191" name="ReplaceBlock_Editor" hash="ajmjinjlh7w34iurfpo8ugi22qcsrqf">
+  <source id="1174656457191" name="ReplaceBlock_Editor" hash="-5f3fifudjxwfptlmzitaob8dwpncitq">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -514,7 +519,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ReplaceBlock_Editor.java" />
   </source>
-  <source id="1174662377574" name="Regexps_Editor" hash="-9c8vd5tyars2ldzh4e43m2jfbtktluv">
+  <source id="1174662377574" name="Regexps_Editor" hash="-c0j0kzk9sv9pb8cl4e1jf89un53p8mv">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellProviders(MPS.Classpath/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
@@ -537,7 +542,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Regexps_Editor.java" />
   </source>
-  <source id="1174662637544" name="RegexpDeclarationReferenceRegexp_Editor" hash="eddo7kk41zc9snpasu4y8fvdujtgiw">
+  <source id="1174662637544" name="RegexpDeclarationReferenceRegexp_Editor" hash="-3zk4lbx9cbahqvfbjulrt165gdl47l9">
     <dep root="3050481019131644558" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -558,7 +563,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RegexpDeclarationReferenceRegexp_Editor.java" />
   </source>
-  <source id="1174900297678" name="UnaryRegexp_Editor" hash="4yiolw2uinw4qldauqz26mmxrtqv8c7">
+  <source id="1174900297678" name="UnaryRegexp_Editor" hash="37y2hvymsj2clwzevpfthzrp3ml5dyu">
     <dep root="1174901330112" />
     <dep root="3050481019131644558" />
     <dep root="5169131996393625116" />
@@ -584,7 +589,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="UnaryRegexp_Editor.java" />
   </source>
-  <source id="1174900468388" name="BinaryRegexp_Editor" hash="-doul9k1nmmcdrrssxe0x8bwzczqo4u7">
+  <source id="1174900468388" name="BinaryRegexp_Editor" hash="-9w1jcj6yvnpcc7n86dns7em750q7t25">
     <dep root="1174900929182" />
     <dep root="1174900996306" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -605,7 +610,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BinaryRegexp_Editor.java" />
   </source>
-  <source id="1174900565443" name="SeqRegexp_Editor" hash="abay0dz9hqzptfy2lk6s0zl4uenyuo4">
+  <source id="1174900565443" name="SeqRegexp_Editor" hash="65zkivakcmq1phfi750b5qhsp3x8eeh">
     <dep root="1174900929182" />
     <dep root="1174900996306" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -624,7 +629,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SeqRegexp_Editor.java" />
   </source>
-  <source id="1174900929182" name="BinaryRegexp_Left_Actions" hash="33l7shh3mkjpx59szwtibagewo4b4ms">
+  <source id="1174900929182" name="BinaryRegexp_Left_Actions" hash="dwcv2lyaay386rdppadounaeb9jmcm3">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -645,7 +650,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BinaryRegexp_Left_Actions.java" />
   </source>
-  <source id="1174900996306" name="BinaryRegexp_Right_Actions" hash="-c1a9cgq5dp5y4wjnkhszzm1mmwviwrj">
+  <source id="1174900996306" name="BinaryRegexp_Right_Actions" hash="49h7r8rdw87tsedioj3qrbytk913f8o">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -666,7 +671,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BinaryRegexp_Right_Actions.java" />
   </source>
-  <source id="1174901330112" name="UnaryRegexp_Regexp_actions" hash="5xq54ev4l07e9jqem0ytubkofu7yhtr">
+  <source id="1174901330112" name="UnaryRegexp_Regexp_actions" hash="-b7t97x1ik6mlsxqsnbqpxl49v9vh024">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -688,7 +693,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="UnaryRegexp_Regexp_actions.java" />
   </source>
-  <source id="1174902509875" name="ParensRegexp_Actions" hash="-a5yf3x8h404wut21zew5jkzc7kpg5g9">
+  <source id="1174902509875" name="ParensRegexp_Actions" hash="7fyrziy5qrgh3ojal8lodh6oi9uxx6h">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -710,7 +715,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ParensRegexp_Actions.java" />
   </source>
-  <source id="1174904190236" name="NTimesRegexp_Editor" hash="-59zjf0hbey5qq3frfq4x8qx9qfp9ynm">
+  <source id="1174904190236" name="NTimesRegexp_Editor" hash="-6uz88tbyg2zkl5y8csdbdmh3bl242nl">
     <dep root="1174901330112" />
     <dep root="3050481019131644558" />
     <dep root="5169131996393625116" />
@@ -737,7 +742,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NTimesRegexp_Editor.java" />
   </source>
-  <source id="1174904496552" name="AtLeastNTimesRegexp_Editor" hash="dhxslphlodjsdb40sh6jfy2dldhro21">
+  <source id="1174904496552" name="AtLeastNTimesRegexp_Editor" hash="-eka7ik2xb73224zqxxbn58wa2w4n5n6">
     <dep root="1174901330112" />
     <dep root="3050481019131644558" />
     <dep root="5169131996393625116" />
@@ -764,7 +769,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AtLeastNTimesRegexp_Editor.java" />
   </source>
-  <source id="1174904641130" name="FromNToMTimesRegexp_Editor" hash="-9txdxhue668ce27ngdinzbf5je7sc7z">
+  <source id="1174904641130" name="FromNToMTimesRegexp_Editor" hash="7gr848hojga461d17dbeo2ynosnnfvf">
     <dep root="1174901330112" />
     <dep root="3050481019131644558" />
     <dep root="5169131996393625116" />
@@ -791,7 +796,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="FromNToMTimesRegexp_Editor.java" />
   </source>
-  <source id="1174906576476" name="LookRegexp_Editor" hash="cszm1z5c2f381aw7v58i9ibp62x1chb">
+  <source id="1174906576476" name="LookRegexp_Editor" hash="-8mm3ipgpyoqvmpvnr3aepf3z8niywfc">
     <dep root="1174908577381" />
     <dep root="3050481019131644558" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -818,7 +823,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LookRegexp_Editor.java" />
   </source>
-  <source id="1174908577381" name="LookRegexp_Actions" hash="1xcjo71paao9p6ctstptlu8l3shqv2g">
+  <source id="1174908577381" name="LookRegexp_Actions" hash="-3vdbvo6r182v2ouzj8i9s93je8gnjrb">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -839,7 +844,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LookRegexp_Actions.java" />
   </source>
-  <source id="1174909128877" name="MatchVariableReferenceRegexp_Editor" hash="-drel1fh5riwiw3p7c22edvzx4bpfhaa">
+  <source id="1174909128877" name="MatchVariableReferenceRegexp_Editor" hash="bg7bxcw57t6uwd0ytz9zon8rjge0ap4">
     <dep root="3050481019131644558" />
     <dep root="5169131996393625116" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -861,7 +866,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MatchVariableReferenceRegexp_Editor.java" />
   </source>
-  <source id="1175154899447" name="ForEachMatchStatement_Editor" hash="-armtvzwmia3rbr68gpvb41okk4t8hw2">
+  <source id="1175154899447" name="ForEachMatchStatement_Editor" hash="-e3vwisgttt9g88pstg9kafl1s9glca7">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -881,7 +886,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ForEachMatchStatement_Editor.java" />
   </source>
-  <source id="1175161285381" name="LineStartRegexp_Editor" hash="-axm3q002z3dz2ulwr6t3e5ajwfgl1ym">
+  <source id="1175161285381" name="LineStartRegexp_Editor" hash="-541ui6ev6czndt2clx6ra8wbbmdibii">
     <dep root="3050481019131644558" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -902,7 +907,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LineStartRegexp_Editor.java" />
   </source>
-  <source id="1175161321516" name="LineEndRegexp_Editor" hash="-6lzq758wq8r3v40abr76kunwfdw0wpq">
+  <source id="1175161321516" name="LineEndRegexp_Editor" hash="-dxrgsqw4advlobhhuhn9uzssc0m13ds">
     <dep root="3050481019131644558" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -923,7 +928,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LineEndRegexp_Editor.java" />
   </source>
-  <source id="1175164437386" name="SplitExpression_Editor" hash="1c43akkb9qgtofz35alqeui7t05j8tu">
+  <source id="1175164437386" name="SplitExpression_Editor" hash="-9jjusl27fc5akjqroee6no1rsz83ire">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
@@ -941,7 +946,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SplitExpression_Editor.java" />
   </source>
-  <source id="1175169033043" name="FindMatchStatement_Editor" hash="-1xr1djso8ih7y3szdbjdg777u5qp1o8">
+  <source id="1175169033043" name="FindMatchStatement_Editor" hash="ab3sr7em3699yc77b6w1a522rica2wp">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -961,7 +966,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="FindMatchStatement_Editor.java" />
   </source>
-  <source id="1179357325994" name="MatchRegexpExpression_Editor" hash="-25otu8usuvnq9ybvqcu9u541rlcadrg">
+  <source id="1179357325994" name="MatchRegexpExpression_Editor" hash="5zvej6zj2gy8699f0b159y52i3fwq8r">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
@@ -979,7 +984,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MatchRegexpExpression_Editor.java" />
   </source>
-  <source id="1179358159391" name="Regexp_Editor" hash="-blnznc7vmmspyb1l0em0lcogcy8fc83">
+  <source id="1179358159391" name="Regexp_Editor" hash="-3rmlr75j157sbcuyuay9fdb77ipppws">
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
@@ -1096,7 +1101,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SplitOperation_Editor.java" />
   </source>
-  <source id="1222261087917" name="ReplaceWithRegexpOperation_Editor" hash="enl0mjgzi6lzynkxf2n53vm21y18ijn">
+  <source id="1222261087917" name="ReplaceWithRegexpOperation_Editor" hash="c90chmvw3pl6m2v00idd6x5482ywm62">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.style(MPS.Classpath/jetbrains.mps.nodeEditor.style@java_stub)" />
@@ -1216,7 +1221,6 @@
     <file name="FindMatchExpression_Editor.java" />
   </source>
   <source id="6129327962764883162" name="IntervalSymbolClassPart_removeRight" hash="-7ffydr0kso8atcsm55e3f7z3prqh19d">
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1234,11 +1238,11 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IntervalSymbolClassPart_removeRight.java" />
   </source>
   <source id="6129327962765122924" name="IntervalSymbolClassPart_removeLeft" hash="-b3moeh2iitn3pl23p4kn0dmxfbk5flw">
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1256,6 +1260,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IntervalSymbolClassPart_removeLeft.java" />
   </source>
@@ -1294,6 +1299,7 @@
     <dep model="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" />
     <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="InlineRegexpExpression_removeM.java" />
@@ -1333,6 +1339,7 @@
     <dep model="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" />
     <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="InlineRegexpExpression_removeI.java" />
@@ -1372,6 +1379,7 @@
     <dep model="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" />
     <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="InlineRegexpExpression_removeS.java" />
@@ -1414,12 +1422,11 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NegativeSymbolClassRegexp_toPositive.java" />
   </source>
-  <source id="3796137614137159229" name="ReplaceRegexpOperation_Editor" hash="2zfhk1g3lbpm9yusny68c1djs63qyp2">
+  <source id="3796137614137159229" name="ReplaceRegexpOperation_Editor" hash="-dhnwtwn9z037obvpngul1gdkdqwimr3">
     <dep root="1767845709140465500" />
     <dep root="1767845709140471611" />
     <dep root="1767845709140471615" />
     <dep root="1767845709140471619" />
-    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellLayout(MPS.Classpath/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cellProviders(MPS.Classpath/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
@@ -1443,6 +1450,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ReplaceRegexpOperation_Editor.java" />
   </source>
@@ -1522,6 +1530,7 @@
     <dep model="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" />
     <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ReplaceRegexpOperation_removeI.java" />
@@ -1561,6 +1570,7 @@
     <dep model="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" />
     <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ReplaceRegexpOperation_removeM.java" />
@@ -1600,6 +1610,7 @@
     <dep model="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" />
     <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ReplaceRegexpOperation_removeS.java" />
@@ -1639,6 +1650,7 @@
     <dep model="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" />
     <dep model="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ReplaceRegexpOperation_removeG.java" />
