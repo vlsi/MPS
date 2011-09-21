@@ -91,6 +91,7 @@ public class FilesDelta implements IDelta {
   }
 
   private boolean acceptFilesVisitor(final FilesDelta.Visitor visitor) {
+    visitor.acceptRoot(rootDir);
     MapSequence.fromMap(files).visitAll(new IVisitor<IMapping<IFile, FilesDelta.Status>>() {
       public void visit(IMapping<IFile, FilesDelta.Status> m) {
         if (m.value() == FilesDelta.Status.KEPT && !(m.key().isDirectory())) {
@@ -235,6 +236,10 @@ public class FilesDelta implements IDelta {
 
   public static class Visitor implements IDeltaVisitor {
     public Visitor() {
+    }
+
+    public boolean acceptRoot(IFile root) {
+      return true;
     }
 
     public boolean acceptWritten(IFile file) {
