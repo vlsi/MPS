@@ -193,7 +193,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
   }
 
   public boolean hasAnythingToDo() {
-    return !(ReloadableSources.getInstance().hasInvalidated() && SetSequence.fromSet(myChangedModules).isEmpty() && SetSequence.fromSet(myChangedProjects).isEmpty() && SetSequence.fromSet(myNewModelVFiles).isEmpty() && SetSequence.fromSet(myNewModuleVFiles).isEmpty() && SetSequence.fromSet(myDeletedModules).isEmpty());
+    return ReloadableSources.getInstance().hasInvalidated() || !(SetSequence.fromSet(myChangedModules).isEmpty() && SetSequence.fromSet(myChangedProjects).isEmpty() && SetSequence.fromSet(myNewModelVFiles).isEmpty() && SetSequence.fromSet(myNewModuleVFiles).isEmpty() && SetSequence.fromSet(myDeletedModules).isEmpty());
   }
 
   public void addNewModelFile(VirtualFile vfile) {
