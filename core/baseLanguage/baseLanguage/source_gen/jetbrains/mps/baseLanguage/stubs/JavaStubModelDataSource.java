@@ -26,7 +26,12 @@ import java.io.File;
 import java.io.IOException;
 
 public class JavaStubModelDataSource extends StubModelDataSource {
-  public JavaStubModelDataSource() {
+  private boolean skipPrivate;
+  private String langId;
+
+  public JavaStubModelDataSource(String langId, boolean skipPrivate) {
+    this.skipPrivate = skipPrivate;
+    this.langId = langId;
   }
 
   protected Set<Language> getLanguagesToImport() {
@@ -50,7 +55,7 @@ public class JavaStubModelDataSource extends StubModelDataSource {
         module.addUsedLanguage(l.getModuleReference());
       }
       CompositeClassPathItem cp = this.createClassPath(descriptor);
-      new ASMModelLoader(module, cp, model).updateModel();
+      new ASMModelLoader(module, cp, model, langId, skipPrivate).updateModel();
     } finally {
       model.setLoading(false);
     }

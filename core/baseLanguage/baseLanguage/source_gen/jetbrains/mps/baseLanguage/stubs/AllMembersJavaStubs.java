@@ -22,14 +22,14 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 
-public class JavaStubs extends AbstractModelRootManager {
-  public JavaStubs() {
+public class AllMembersJavaStubs extends AbstractModelRootManager {
+  public AllMembersJavaStubs() {
   }
 
   public Collection<SModelDescriptor> load(@NotNull ModelRoot root, IModule module) {
     List<SModelDescriptor> result = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-    IClassPathItem cp = JavaStubs.this.create(root.getPath());
-    JavaStubs.this.getModelDescriptors(result, root.getPath(), cp, (root.getPrefix() == null ?
+    IClassPathItem cp = AllMembersJavaStubs.this.create(root.getPath());
+    AllMembersJavaStubs.this.getModelDescriptors(result, root.getPath(), cp, (root.getPrefix() == null ?
       "" :
       root.getPrefix()
     ), LanguageID.JAVA, module);
@@ -57,12 +57,12 @@ public class JavaStubs extends AbstractModelRootManager {
           smd = (BaseStubModelDescriptor) descriptor;
           ListSequence.fromList(result).addElement(descriptor);
         } else {
-          smd = new JavaStubModelDescriptor(modelReference, new JavaStubModelDataSource(LanguageID.JAVA, false), module);
+          smd = new JavaStubModelDescriptor(modelReference, new JavaStubModelDataSource("debugger_java", false), module);
           ListSequence.fromList(result).addElement(smd);
         }
-        smd.getSource().addPath(JavaStubs.this.child(startPath, subpackage));
+        smd.getSource().addPath(AllMembersJavaStubs.this.child(startPath, subpackage));
       }
-      JavaStubs.this.getModelDescriptors(result, startPath, cp, subpackage, languageId, module);
+      AllMembersJavaStubs.this.getModelDescriptors(result, startPath, cp, subpackage, languageId, module);
     }
   }
 
