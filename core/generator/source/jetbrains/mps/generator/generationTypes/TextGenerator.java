@@ -155,7 +155,7 @@ public class TextGenerator {
           positionInfo.setFileName(fileName);
           Map<SNode, VarInfo> varMap = positionInfo.getTempVarInfoMap();
           for (SNode varNode : varMap.keySet()) {
-            SNode originalVar = getOriginalInputNode(varNode);
+            SNode originalVar = getOriginalInputNodeForNearestParent(varNode);
             VarInfo varInfo = varMap.get(varNode);
             if (originalVar != null && !(originalVar.isDisposed())) {
               String s = originalVar.getId();
