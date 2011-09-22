@@ -46,7 +46,7 @@ public class StringLiteralRegexp_Behavior {
               return null;
             }
             c = s.charAt(i);
-            if (!(StringLiteralRegexp_Behavior.call_isHexChar_8330008649152995338(thisNode, c))) {
+            if (!(StringLiteralRegexp_Behavior.isHexChar_8949395081772969908(c))) {
               return null;
             }
             sb.append(c);
@@ -84,10 +84,6 @@ public class StringLiteralRegexp_Behavior {
     return sb.toString();
   }
 
-  public static boolean call_isHexChar_8330008649152995338(SNode thisNode, char c) {
-    return Character.isDigit(c) || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F');
-  }
-
   public static String call_getString_1222431822198(SNode thisNode, List<SNode> vars) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222431822198, vars);
@@ -104,5 +100,9 @@ public class StringLiteralRegexp_Behavior {
 
   public static boolean callSuper_isValid_4759120547781297313(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_isValid_4759120547781297301", PARAMETERS_4759120547781297313);
+  }
+
+  public static boolean isHexChar_8949395081772969908(char c) {
+    return Character.isDigit(c) || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F');
   }
 }
