@@ -30,8 +30,7 @@ public class MPSExtentions {
   public static final String CLASSFILE = "class";
   public static final String IDEA_PROJECT = "ipr";
 
-  public static final String MPS_ARCH = "mpsarch.jar";
-  public static final String RUNTIME_ARCH = "runtime.jar";
+  public static final String MPS_ARCH = "jar";
 
   public static final String DOT_MPS_PROJECT = "." + MPS_PROJECT;
   public static final String DOT_LANGUAGE = "." + LANGUAGE;
