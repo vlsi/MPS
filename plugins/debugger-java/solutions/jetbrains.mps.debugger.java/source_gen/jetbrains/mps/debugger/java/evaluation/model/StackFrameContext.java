@@ -159,7 +159,7 @@ public class StackFrameContext extends EvaluationContext {
         try {
           SNode node = TraceInfoUtil.getVar(getStaticContextTypeName(), location.sourceName(), location.lineNumber(), varName);
           if ((node != null)) {
-            return SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type");
+            return SNodeOperations.copyNode(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type"));
           }
         } catch (InvalidStackFrameException e) {
           if (log.isWarnEnabled()) {
