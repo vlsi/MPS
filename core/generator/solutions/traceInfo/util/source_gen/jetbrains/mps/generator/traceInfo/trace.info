@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="7083905570282599741">
+    <nodeInfo nodeId="7083905570282599745" fileName="TraceInfoCache.java" startLine="28" startPosition="67" endLine="29" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="7083905570282599750" fileName="TraceInfoCache.java" startLine="29" startPosition="69" endLine="30" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TRACE_FILE_NAME" />
+    <nodeInfo nodeId="5286269979303866748" fileName="TraceInfoCache.java" startLine="30" startPosition="60" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
+    <nodeInfo nodeId="7083905570282599765" fileName="TraceInfoCache.java" startLine="33" startPosition="59" endLine="34" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5286269979303867455" fileName="TraceInfoCache.java" startLine="39" startPosition="27" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5286269979303867459" fileName="TraceInfoCache.java" startLine="41" startPosition="5" endLine="42" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5286269979303867463" fileName="TraceInfoCache.java" startLine="42" startPosition="20" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5286269979303867531" fileName="TraceInfoCache.java" startLine="45" startPosition="36" endLine="46" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5286269979303867540" fileName="TraceInfoCache.java" startLine="51" startPosition="25" endLine="52" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5286269979303867543" fileName="TraceInfoCache.java" startLine="52" startPosition="20" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7083905570282599809" fileName="TraceInfoCache.java" startLine="57" startPosition="36" endLine="58" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282599818" fileName="TraceInfoCache.java" startLine="61" startPosition="62" endLine="62" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600587" fileName="TraceInfoCache.java" startLine="66" startPosition="67" endLine="67" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7083905570282600589" fileName="TraceInfoCache.java" startLine="67" startPosition="93" endLine="68" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7083905570282599829" fileName="TraceInfoCache.java" startLine="68" startPosition="22" endLine="69" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="module" />
+    <nodeInfo nodeId="7083905570282599844" fileName="TraceInfoCache.java" startLine="71" startPosition="49" endLine="72" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282599856" fileName="TraceInfoCache.java" startLine="73" startPosition="7" endLine="74" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="cache" />
+    <nodeInfo nodeId="7083905570282599862" fileName="TraceInfoCache.java" startLine="74" startPosition="59" endLine="75" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7083905570282599868" fileName="TraceInfoCache.java" startLine="75" startPosition="42" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282599877" fileName="TraceInfoCache.java" startLine="81" startPosition="54" endLine="82" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7083905570282599884" fileName="TraceInfoCache.java" startLine="82" startPosition="121" endLine="83" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5286269979303885587" fileName="TraceInfoCache.java" startLine="86" startPosition="70" endLine="87" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5286269979303885615" fileName="TraceInfoCache.java" startLine="92" startPosition="22" endLine="93" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5286269979303885617" fileName="TraceInfoCache.java" startLine="94" startPosition="5" endLine="95" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="file" />
+    <nodeInfo nodeId="5286269979303885627" fileName="TraceInfoCache.java" startLine="96" startPosition="23" endLine="97" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5286269979303885633" fileName="TraceInfoCache.java" startLine="98" startPosition="5" endLine="99" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="stream" />
+    <nodeInfo nodeId="5286269979303885665" fileName="TraceInfoCache.java" startLine="100" startPosition="9" endLine="101" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5286269979303885676" fileName="TraceInfoCache.java" startLine="102" startPosition="27" endLine="103" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5286269979303885678" fileName="TraceInfoCache.java" startLine="104" startPosition="7" endLine="105" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5286269979303885640" fileName="TraceInfoCache.java" startLine="106" startPosition="29" endLine="107" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5286269979303885660" fileName="TraceInfoCache.java" startLine="110" startPosition="29" endLine="111" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5286269979303885648" fileName="TraceInfoCache.java" startLine="113" startPosition="31" endLine="114" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5286269979303885701" fileName="TraceInfoCache.java" startLine="120" startPosition="73" endLine="121" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="classPathItem" />
+    <nodeInfo nodeId="5286269979303885724" fileName="TraceInfoCache.java" startLine="122" startPosition="101" endLine="123" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5286269979303885719" fileName="TraceInfoCache.java" startLine="124" startPosition="12" endLine="125" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5286269979303885735" fileName="TraceInfoCache.java" startLine="127" startPosition="32" endLine="128" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5286269979303885737" fileName="TraceInfoCache.java" startLine="129" startPosition="5" endLine="130" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="resourceName" />
+    <nodeInfo nodeId="5286269979303885742" fileName="TraceInfoCache.java" startLine="130" startPosition="52" endLine="131" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="url" />
+    <nodeInfo nodeId="5286269979303885768" fileName="TraceInfoCache.java" startLine="134" startPosition="72" endLine="135" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5286269979303885782" fileName="TraceInfoCache.java" startLine="136" startPosition="28" endLine="137" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5286269979303885784" fileName="TraceInfoCache.java" startLine="141" startPosition="5" endLine="142" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5286269979303898333" fileName="TraceInfoCache.java" startLine="147" startPosition="75" endLine="148" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="cacheUrl" />
+    <nodeInfo nodeId="5286269979303898346" fileName="TraceInfoCache.java" startLine="149" startPosition="27" endLine="150" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5286269979303898348" fileName="TraceInfoCache.java" startLine="151" startPosition="5" endLine="152" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600090" fileName="TraceInfoCache.java" startLine="155" startPosition="61" endLine="156" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600106" fileName="TraceInfoCache.java" startLine="160" startPosition="31" endLine="161" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600115" fileName="TraceInfoCache.java" startLine="165" startPosition="48" endLine="166" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600126" fileName="TraceInfoCache.java" startLine="170" startPosition="42" endLine="171" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282599775" fileName="TraceInfoCache.java" startLine="174" startPosition="46" endLine="175" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5286269979303898365" fileName="TraceInfoCache.java" startLine="179" startPosition="55" endLine="180" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="file" />
+    <nodeInfo nodeId="5286269979303898376" fileName="TraceInfoCache.java" startLine="181" startPosition="25" endLine="182" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5286269979303898378" fileName="TraceInfoCache.java" startLine="183" startPosition="5" endLine="184" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5286269979303898380" fileName="TraceInfoCache.java" startLine="184" startPosition="72" endLine="185" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="prefix" />
+    <nodeInfo nodeId="5286269979303898390" fileName="TraceInfoCache.java" startLine="186" startPosition="34" endLine="187" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5286269979303898399" fileName="TraceInfoCache.java" startLine="188" startPosition="5" endLine="189" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5286269979303885717" fileName="TraceInfoCache.java" startLine="124" startPosition="10" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7083905570282599757" fileName="TraceInfoCache.java" startLine="32" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TraceInfoCache#(Ljetbrains/mps/smodel/SModelRepository;)V" />
+    <nodeInfo nodeId="5286269979303867450" fileName="TraceInfoCache.java" startLine="38" startPosition="22" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7083905570282599838" fileName="TraceInfoCache.java" startLine="70" startPosition="28" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5286269979303885610" fileName="TraceInfoCache.java" startLine="91" startPosition="87" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5286269979303885622" fileName="TraceInfoCache.java" startLine="95" startPosition="50" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5286269979303885671" fileName="TraceInfoCache.java" startLine="101" startPosition="32" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5286269979303885655" fileName="TraceInfoCache.java" startLine="109" startPosition="11" endLine="112" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5286269979303885730" fileName="TraceInfoCache.java" startLine="126" startPosition="5" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5286269979303885777" fileName="TraceInfoCache.java" startLine="135" startPosition="72" endLine="138" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5286269979303898341" fileName="TraceInfoCache.java" startLine="148" startPosition="77" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5286269979303898371" fileName="TraceInfoCache.java" startLine="180" startPosition="32" endLine="183" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5286269979303898384" fileName="TraceInfoCache.java" startLine="185" startPosition="28" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5286269979303867527" fileName="TraceInfoCache.java" startLine="44" startPosition="75" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performCleanup#()V" />
+    <nodeInfo nodeId="7083905570282599812" fileName="TraceInfoCache.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generateCache#(Ljetbrains/mps/generator/GenerationStatus;)Ljetbrains/mps/traceInfo/DebugInfo;" />
+    <nodeInfo nodeId="7083905570282599891" fileName="TraceInfoCache.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readCache#(Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/project/IModule;)Ljetbrains/mps/traceInfo/DebugInfo;" />
+    <nodeInfo nodeId="7083905570282600084" fileName="TraceInfoCache.java" startLine="154" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="traceInfoResourceName#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7083905570282599771" fileName="TraceInfoCache.java" startLine="173" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/generator/traceInfo/TraceInfoCache;" />
+    <nodeInfo nodeId="5286269979303867511" fileName="TraceInfoCache.java" startLine="43" startPosition="17" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5286269979303867536" fileName="TraceInfoCache.java" startLine="50" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="7083905570282599805" fileName="TraceInfoCache.java" startLine="55" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCacheFileName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5286269979303885704" fileName="TraceInfoCache.java" startLine="121" startPosition="33" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7083905570282600102" fileName="TraceInfoCache.java" startLine="158" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCache#()Z" />
+    <nodeInfo nodeId="7083905570282600109" fileName="TraceInfoCache.java" startLine="163" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toXml#(Ljetbrains/mps/traceInfo/DebugInfo;)Lorg/jdom/Element;" />
+    <nodeInfo nodeId="7083905570282600120" fileName="TraceInfoCache.java" startLine="168" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromXml#(Lorg/jdom/Element;)Ljetbrains/mps/traceInfo/DebugInfo;" />
+    <nodeInfo nodeId="7083905570282599871" fileName="TraceInfoCache.java" startLine="79" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readCache#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/traceInfo/DebugInfo;" />
+    <nodeInfo nodeId="5286269979303885763" fileName="TraceInfoCache.java" startLine="133" startPosition="74" endLine="139" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5286269979303885645" fileName="TraceInfoCache.java" startLine="108" startPosition="15" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7083905570282599835" fileName="TraceInfoCache.java" startLine="69" startPosition="55" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="5286269979303885754" fileName="TraceInfoCache.java" startLine="132" startPosition="22" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5286269979303885749" fileName="TraceInfoCache.java" startLine="131" startPosition="54" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5286269979303898326" fileName="TraceInfoCache.java" startLine="144" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCacheFile#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/vfs/IFile;" />
+    <nodeInfo nodeId="5286269979303867446" fileName="TraceInfoCache.java" startLine="36" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="5286269979303898358" fileName="TraceInfoCache.java" startLine="177" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFileByURL#(Ljava/net/URL;)Ljetbrains/mps/vfs/IFile;" />
+    <nodeInfo nodeId="7083905570282599822" fileName="TraceInfoCache.java" startLine="64" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/traceInfo/DebugInfo;" />
+    <nodeInfo nodeId="5286269979303885637" fileName="TraceInfoCache.java" startLine="99" startPosition="30" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="5286269979303885692" fileName="TraceInfoCache.java" startLine="118" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCacheUrl#(Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/project/IModule;)Ljava/net/URL;" />
+    <nodeInfo nodeId="5286269979303885600" fileName="TraceInfoCache.java" startLine="89" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadCacheFromUrl#(Ljava/net/URL;Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/traceInfo/DebugInfo;" />
+    <scopeInfo nodeId="7083905570282599764" fileName="TraceInfoCache.java" startLine="33" startPosition="59" endLine="34" endPosition="27" />
+    <scopeInfo nodeId="5286269979303867454" fileName="TraceInfoCache.java" startLine="39" startPosition="27" endLine="40" endPosition="63" />
+    <scopeInfo nodeId="5286269979303867530" fileName="TraceInfoCache.java" startLine="45" startPosition="36" endLine="46" endPosition="18" />
+    <scopeInfo nodeId="7083905570282599808" fileName="TraceInfoCache.java" startLine="57" startPosition="36" endLine="58" endPosition="27" />
+    <scopeInfo nodeId="7083905570282599817" fileName="TraceInfoCache.java" startLine="61" startPosition="62" endLine="62" endPosition="33" />
+    <scopeInfo nodeId="7083905570282599843" fileName="TraceInfoCache.java" startLine="71" startPosition="49" endLine="72" endPosition="44" />
+    <scopeInfo nodeId="7083905570282599898" fileName="TraceInfoCache.java" startLine="86" startPosition="70" endLine="87" endPosition="57" />
+    <scopeInfo nodeId="5286269979303885614" fileName="TraceInfoCache.java" startLine="92" startPosition="22" endLine="93" endPosition="18" />
+    <scopeInfo nodeId="5286269979303885626" fileName="TraceInfoCache.java" startLine="96" startPosition="23" endLine="97" endPosition="36" />
+    <scopeInfo nodeId="5286269979303885675" fileName="TraceInfoCache.java" startLine="102" startPosition="27" endLine="103" endPosition="20" />
+    <scopeInfo nodeId="5286269979303885638" fileName="TraceInfoCache.java" startLine="106" startPosition="0" endLine="107" endPosition="18">
+      <varInfo nodeId="5286269979303885642" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="5286269979303885639" fileName="TraceInfoCache.java" startLine="106" startPosition="29" endLine="107" endPosition="18" />
+    <scopeInfo nodeId="5286269979303885659" fileName="TraceInfoCache.java" startLine="110" startPosition="29" endLine="111" endPosition="25" />
+    <scopeInfo nodeId="5286269979303885646" fileName="TraceInfoCache.java" startLine="113" startPosition="0" endLine="114" endPosition="21">
+      <varInfo nodeId="5286269979303885652" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="5286269979303885647" fileName="TraceInfoCache.java" startLine="113" startPosition="31" endLine="114" endPosition="21" />
+    <scopeInfo nodeId="5286269979303885723" fileName="TraceInfoCache.java" startLine="122" startPosition="101" endLine="123" endPosition="48" />
+    <scopeInfo nodeId="5286269979303885718" fileName="TraceInfoCache.java" startLine="124" startPosition="12" endLine="125" endPosition="52" />
+    <scopeInfo nodeId="5286269979303885734" fileName="TraceInfoCache.java" startLine="127" startPosition="32" endLine="128" endPosition="18" />
+    <scopeInfo nodeId="5286269979303885781" fileName="TraceInfoCache.java" startLine="136" startPosition="28" endLine="137" endPosition="23" />
+    <scopeInfo nodeId="5286269979303898345" fileName="TraceInfoCache.java" startLine="149" startPosition="27" endLine="150" endPosition="18" />
+    <scopeInfo nodeId="7083905570282600089" fileName="TraceInfoCache.java" startLine="155" startPosition="61" endLine="156" endPosition="70" />
+    <scopeInfo nodeId="7083905570282600105" fileName="TraceInfoCache.java" startLine="160" startPosition="31" endLine="161" endPosition="17" />
+    <scopeInfo nodeId="7083905570282600114" fileName="TraceInfoCache.java" startLine="165" startPosition="48" endLine="166" endPosition="29" />
+    <scopeInfo nodeId="7083905570282600125" fileName="TraceInfoCache.java" startLine="170" startPosition="42" endLine="171" endPosition="32" />
+    <scopeInfo nodeId="7083905570282599774" fileName="TraceInfoCache.java" startLine="174" startPosition="46" endLine="175" endPosition="20" />
+    <scopeInfo nodeId="5286269979303898375" fileName="TraceInfoCache.java" startLine="181" startPosition="25" endLine="182" endPosition="18" />
+    <scopeInfo nodeId="5286269979303898389" fileName="TraceInfoCache.java" startLine="186" startPosition="34" endLine="187" endPosition="45" />
+    <scopeInfo nodeId="5286269979303867539" fileName="TraceInfoCache.java" startLine="51" startPosition="25" endLine="53" endPosition="20" />
+    <scopeInfo nodeId="7083905570282599876" fileName="TraceInfoCache.java" startLine="81" startPosition="54" endLine="83" endPosition="41" />
+    <scopeInfo nodeId="7083905570282599757" fileName="TraceInfoCache.java" startLine="32" startPosition="0" endLine="35" endPosition="3">
+      <varInfo nodeId="7083905570282599760" varName="modelRepository" />
+    </scopeInfo>
+    <scopeInfo nodeId="5286269979303885654" fileName="TraceInfoCache.java" startLine="109" startPosition="11" endLine="112" endPosition="9" />
+    <scopeInfo nodeId="5286269979303867527" fileName="TraceInfoCache.java" startLine="44" startPosition="75" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="7083905570282599812" fileName="TraceInfoCache.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="7083905570282599815" varName="status" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282599891" fileName="TraceInfoCache.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="7083905570282599896" varName="module" />
+      <varInfo nodeId="7083905570282599894" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5286269979303885767" fileName="TraceInfoCache.java" startLine="134" startPosition="72" endLine="138" endPosition="11" />
+    <scopeInfo nodeId="7083905570282600084" fileName="TraceInfoCache.java" startLine="154" startPosition="0" endLine="158" endPosition="0">
+      <varInfo nodeId="7083905570282600087" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282599771" fileName="TraceInfoCache.java" startLine="173" startPosition="0" endLine="177" endPosition="0" />
+    <scopeInfo nodeId="5286269979303867536" fileName="TraceInfoCache.java" startLine="50" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="7083905570282599805" fileName="TraceInfoCache.java" startLine="55" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="5286269979303885664" fileName="TraceInfoCache.java" startLine="100" startPosition="9" endLine="105" endPosition="26" />
+    <scopeInfo nodeId="5286269979303898332" fileName="TraceInfoCache.java" startLine="147" startPosition="75" endLine="152" endPosition="49">
+      <varInfo nodeId="5286269979303898334" varName="cacheUrl" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600102" fileName="TraceInfoCache.java" startLine="158" startPosition="0" endLine="163" endPosition="0" />
+    <scopeInfo nodeId="7083905570282600109" fileName="TraceInfoCache.java" startLine="163" startPosition="0" endLine="168" endPosition="0">
+      <varInfo nodeId="7083905570282600112" varName="debugInfo" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600120" fileName="TraceInfoCache.java" startLine="168" startPosition="0" endLine="173" endPosition="0">
+      <varInfo nodeId="7083905570282600123" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282599837" fileName="TraceInfoCache.java" startLine="70" startPosition="28" endLine="76" endPosition="19">
+      <varInfo nodeId="7083905570282599857" varName="cache" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282599871" fileName="TraceInfoCache.java" startLine="79" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="7083905570282599874" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5286269979303885762" fileName="TraceInfoCache.java" startLine="133" startPosition="74" endLine="139" endPosition="9" />
+    <scopeInfo nodeId="5286269979303885763" fileName="TraceInfoCache.java" startLine="133" startPosition="74" endLine="139" endPosition="9">
+      <varInfo nodeId="5286269979303885765" varName="plugin" />
+    </scopeInfo>
+    <scopeInfo nodeId="5286269979303885644" fileName="TraceInfoCache.java" startLine="108" startPosition="15" endLine="115" endPosition="7" />
+    <scopeInfo nodeId="5286269979303885753" fileName="TraceInfoCache.java" startLine="132" startPosition="22" endLine="140" endPosition="7" />
+    <scopeInfo nodeId="5286269979303867449" fileName="TraceInfoCache.java" startLine="38" startPosition="22" endLine="48" endPosition="7" />
+    <scopeInfo nodeId="5286269979303898326" fileName="TraceInfoCache.java" startLine="144" startPosition="0" endLine="154" endPosition="0">
+      <varInfo nodeId="5286269979303898329" varName="modelDescriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="5286269979303898364" fileName="TraceInfoCache.java" startLine="179" startPosition="55" endLine="189" endPosition="56">
+      <varInfo nodeId="5286269979303898366" varName="file" />
+      <varInfo nodeId="5286269979303898381" varName="prefix" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282599828" fileName="TraceInfoCache.java" startLine="66" startPosition="67" endLine="77" endPosition="5">
+      <varInfo nodeId="7083905570282599830" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="5286269979303867446" fileName="TraceInfoCache.java" startLine="36" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="5286269979303898358" fileName="TraceInfoCache.java" startLine="177" startPosition="0" endLine="191" endPosition="0">
+      <varInfo nodeId="5286269979303898361" varName="url" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282599822" fileName="TraceInfoCache.java" startLine="64" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="7083905570282599825" varName="modelDescriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="5286269979303885700" fileName="TraceInfoCache.java" startLine="120" startPosition="73" endLine="142" endPosition="15">
+      <varInfo nodeId="5286269979303885702" varName="classPathItem" />
+      <varInfo nodeId="5286269979303885738" varName="resourceName" />
+      <varInfo nodeId="5286269979303885743" varName="url" />
+    </scopeInfo>
+    <scopeInfo nodeId="5286269979303885609" fileName="TraceInfoCache.java" startLine="91" startPosition="87" endLine="116" endPosition="5">
+      <varInfo nodeId="5286269979303885618" varName="file" />
+      <varInfo nodeId="5286269979303885634" varName="stream" />
+    </scopeInfo>
+    <scopeInfo nodeId="5286269979303885692" fileName="TraceInfoCache.java" startLine="118" startPosition="0" endLine="144" endPosition="0">
+      <varInfo nodeId="5286269979303885790" varName="module" />
+      <varInfo nodeId="5286269979303885695" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5286269979303885600" fileName="TraceInfoCache.java" startLine="89" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="5286269979303885606" varName="sm" />
+      <varInfo nodeId="5286269979303885603" varName="url" />
+    </scopeInfo>
+    <unitInfo nodeId="7083905570282599741" fileName="TraceInfoCache.java" startLine="28" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
+    <unitInfo nodeId="5286269979303867525" fileName="TraceInfoCache.java" startLine="44" startPosition="56" endLine="48" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoCache$1" />
+  </root>
+  <root nodeId="7083905570282600133">
+    <nodeInfo nodeId="7083905570282600155" fileName="TraceInfoUtil.java" startLine="25" startPosition="160" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="lastDot" />
+    <nodeInfo nodeId="7083905570282600182" fileName="TraceInfoUtil.java" startLine="31" startPosition="55" endLine="32" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="descriptor" />
+    <nodeInfo nodeId="7083905570282600197" fileName="TraceInfoUtil.java" startLine="33" startPosition="31" endLine="34" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7083905570282600204" fileName="TraceInfoUtil.java" startLine="36" startPosition="79" endLine="37" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7083905570282600205" fileName="TraceInfoUtil.java" startLine="38" startPosition="7" endLine="39" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="info" />
+    <nodeInfo nodeId="7083905570282600217" fileName="TraceInfoUtil.java" startLine="40" startPosition="25" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7083905570282600591" fileName="TraceInfoUtil.java" startLine="42" startPosition="7" endLine="43" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7083905570282600542" fileName="TraceInfoUtil.java" startLine="46" startPosition="28" endLine="47" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600236" fileName="TraceInfoUtil.java" startLine="50" startPosition="27" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600238" fileName="TraceInfoUtil.java" startLine="53" startPosition="5" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600550" fileName="TraceInfoUtil.java" startLine="60" startPosition="72" endLine="61" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600557" fileName="TraceInfoUtil.java" startLine="69" startPosition="73" endLine="70" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600567" fileName="TraceInfoUtil.java" startLine="78" startPosition="73" endLine="79" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600577" fileName="TraceInfoUtil.java" startLine="87" startPosition="73" endLine="88" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600364" fileName="TraceInfoUtil.java" startLine="94" startPosition="72" endLine="95" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="lastDot" />
+    <nodeInfo nodeId="7083905570282600386" fileName="TraceInfoUtil.java" startLine="99" startPosition="7" endLine="100" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="split" />
+    <nodeInfo nodeId="7083905570282600401" fileName="TraceInfoUtil.java" startLine="101" startPosition="28" endLine="102" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600411" fileName="TraceInfoUtil.java" startLine="103" startPosition="5" endLine="104" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600420" fileName="TraceInfoUtil.java" startLine="108" startPosition="57" endLine="109" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="model" />
+    <nodeInfo nodeId="7083905570282600426" fileName="TraceInfoUtil.java" startLine="109" startPosition="35" endLine="110" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="debugInfo" />
+    <nodeInfo nodeId="7083905570282600440" fileName="TraceInfoUtil.java" startLine="111" startPosition="28" endLine="112" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600442" fileName="TraceInfoUtil.java" startLine="113" startPosition="5" endLine="114" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="positionInfo" />
+    <nodeInfo nodeId="7083905570282600456" fileName="TraceInfoUtil.java" startLine="115" startPosition="31" endLine="116" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600466" fileName="TraceInfoUtil.java" startLine="117" startPosition="5" endLine="118" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="unitForNode" />
+    <nodeInfo nodeId="7083905570282600480" fileName="TraceInfoUtil.java" startLine="119" startPosition="30" endLine="120" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600490" fileName="TraceInfoUtil.java" startLine="121" startPosition="5" endLine="122" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600499" fileName="TraceInfoUtil.java" startLine="125" startPosition="48" endLine="126" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="model" />
+    <nodeInfo nodeId="7083905570282600505" fileName="TraceInfoUtil.java" startLine="126" startPosition="35" endLine="127" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="debugInfo" />
+    <nodeInfo nodeId="7083905570282600519" fileName="TraceInfoUtil.java" startLine="128" startPosition="28" endLine="129" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600521" fileName="TraceInfoUtil.java" startLine="130" startPosition="5" endLine="131" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="unitForNode" />
+    <nodeInfo nodeId="7083905570282600535" fileName="TraceInfoUtil.java" startLine="132" startPosition="30" endLine="133" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600539" fileName="TraceInfoUtil.java" startLine="134" startPosition="5" endLine="135" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600135" fileName="TraceInfoUtil.java" startLine="20" startPosition="28" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TraceInfoUtil#()V" />
+    <nodeInfo nodeId="7083905570282600192" fileName="TraceInfoUtil.java" startLine="32" startPosition="127" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7083905570282600198" fileName="TraceInfoUtil.java" startLine="35" startPosition="7" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7083905570282600212" fileName="TraceInfoUtil.java" startLine="39" startPosition="74" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7083905570282600231" fileName="TraceInfoUtil.java" startLine="49" startPosition="9" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7083905570282600394" fileName="TraceInfoUtil.java" startLine="100" startPosition="41" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7083905570282600435" fileName="TraceInfoUtil.java" startLine="110" startPosition="87" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7083905570282600451" fileName="TraceInfoUtil.java" startLine="114" startPosition="75" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7083905570282600475" fileName="TraceInfoUtil.java" startLine="118" startPosition="74" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7083905570282600514" fileName="TraceInfoUtil.java" startLine="127" startPosition="87" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7083905570282600530" fileName="TraceInfoUtil.java" startLine="131" startPosition="74" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7083905570282600162" fileName="TraceInfoUtil.java" startLine="26" startPosition="45" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="pkg" />
+    <nodeInfo nodeId="7083905570282600261" fileName="TraceInfoUtil.java" startLine="59" startPosition="104" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="value#(Ljetbrains/mps/traceInfo/DebugInfo;Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7083905570282600289" fileName="TraceInfoUtil.java" startLine="68" startPosition="103" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="value#(Ljetbrains/mps/traceInfo/DebugInfo;Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7083905570282600317" fileName="TraceInfoUtil.java" startLine="77" startPosition="103" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="value#(Ljetbrains/mps/traceInfo/DebugInfo;Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7083905570282600348" fileName="TraceInfoUtil.java" startLine="86" startPosition="103" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="value#(Ljetbrains/mps/traceInfo/DebugInfo;Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7083905570282600371" fileName="TraceInfoUtil.java" startLine="95" startPosition="50" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="pkg" />
+    <nodeInfo nodeId="7083905570282600228" fileName="TraceInfoUtil.java" startLine="44" startPosition="69" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()null" />
+    <nodeInfo nodeId="7083905570282600252" fileName="TraceInfoUtil.java" startLine="58" startPosition="102" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600280" fileName="TraceInfoUtil.java" startLine="67" startPosition="101" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600308" fileName="TraceInfoUtil.java" startLine="76" startPosition="97" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600339" fileName="TraceInfoUtil.java" startLine="85" startPosition="127" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7083905570282600218" fileName="TraceInfoUtil.java" startLine="43" startPosition="47" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" propertyString="result" />
+    <nodeInfo nodeId="7083905570282600241" fileName="TraceInfoUtil.java" startLine="56" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUnitName#(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;" />
+    <nodeInfo nodeId="7083905570282600269" fileName="TraceInfoUtil.java" startLine="65" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUnitNode#(Ljava/lang/String;Ljava/lang/String;I)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7083905570282600297" fileName="TraceInfoUtil.java" startLine="74" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNode#(Ljava/lang/String;Ljava/lang/String;I)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7083905570282600325" fileName="TraceInfoUtil.java" startLine="83" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getVar#(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7083905570282600493" fileName="TraceInfoUtil.java" startLine="124" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUnitName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7083905570282600356" fileName="TraceInfoUtil.java" startLine="92" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodes#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7083905570282600414" fileName="TraceInfoUtil.java" startLine="106" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getGeneratedFileName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7083905570282600177" fileName="TraceInfoUtil.java" startLine="30" startPosition="7" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7083905570282600139" fileName="TraceInfoUtil.java" startLine="23" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findInDebugInfo#(Ljava/lang/String;Ljetbrains/mps/util/Mapper2;)null" />
+    <scopeInfo nodeId="7083905570282600138" fileName="TraceInfoUtil.java" startLine="21" startPosition="26" endLine="21" endPosition="26" />
+    <scopeInfo nodeId="7083905570282600196" fileName="TraceInfoUtil.java" startLine="33" startPosition="31" endLine="34" endPosition="17" />
+    <scopeInfo nodeId="7083905570282600203" fileName="TraceInfoUtil.java" startLine="36" startPosition="79" endLine="37" endPosition="17" />
+    <scopeInfo nodeId="7083905570282600216" fileName="TraceInfoUtil.java" startLine="40" startPosition="25" endLine="41" endPosition="17" />
+    <scopeInfo nodeId="7083905570282600541" fileName="TraceInfoUtil.java" startLine="46" startPosition="28" endLine="47" endPosition="52" />
+    <scopeInfo nodeId="7083905570282600235" fileName="TraceInfoUtil.java" startLine="50" startPosition="27" endLine="51" endPosition="22" />
+    <scopeInfo nodeId="7083905570282600549" fileName="TraceInfoUtil.java" startLine="60" startPosition="72" endLine="61" endPosition="55" />
+    <scopeInfo nodeId="7083905570282600556" fileName="TraceInfoUtil.java" startLine="69" startPosition="73" endLine="70" endPosition="81" />
+    <scopeInfo nodeId="7083905570282600566" fileName="TraceInfoUtil.java" startLine="78" startPosition="73" endLine="79" endPosition="77" />
+    <scopeInfo nodeId="7083905570282600576" fileName="TraceInfoUtil.java" startLine="87" startPosition="73" endLine="88" endPosition="85" />
+    <scopeInfo nodeId="7083905570282600400" fileName="TraceInfoUtil.java" startLine="101" startPosition="28" endLine="102" endPosition="78" />
+    <scopeInfo nodeId="7083905570282600439" fileName="TraceInfoUtil.java" startLine="111" startPosition="28" endLine="112" endPosition="18" />
+    <scopeInfo nodeId="7083905570282600455" fileName="TraceInfoUtil.java" startLine="115" startPosition="31" endLine="116" endPosition="68" />
+    <scopeInfo nodeId="7083905570282600479" fileName="TraceInfoUtil.java" startLine="119" startPosition="30" endLine="120" endPosition="67" />
+    <scopeInfo nodeId="7083905570282600518" fileName="TraceInfoUtil.java" startLine="128" startPosition="28" endLine="129" endPosition="18" />
+    <scopeInfo nodeId="7083905570282600534" fileName="TraceInfoUtil.java" startLine="132" startPosition="30" endLine="133" endPosition="39" />
+    <scopeInfo nodeId="7083905570282600135" fileName="TraceInfoUtil.java" startLine="20" startPosition="28" endLine="22" endPosition="3" />
+    <scopeInfo nodeId="7083905570282600261" fileName="TraceInfoUtil.java" startLine="59" startPosition="104" endLine="63" endPosition="0">
+      <varInfo nodeId="7083905570282600266" varName="descriptor" />
+      <varInfo nodeId="7083905570282600264" varName="info" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600289" fileName="TraceInfoUtil.java" startLine="68" startPosition="103" endLine="72" endPosition="0">
+      <varInfo nodeId="7083905570282600294" varName="descriptor" />
+      <varInfo nodeId="7083905570282600292" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600317" fileName="TraceInfoUtil.java" startLine="77" startPosition="103" endLine="81" endPosition="0">
+      <varInfo nodeId="7083905570282600322" varName="descriptor" />
+      <varInfo nodeId="7083905570282600320" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600348" fileName="TraceInfoUtil.java" startLine="86" startPosition="103" endLine="90" endPosition="0">
+      <varInfo nodeId="7083905570282600353" varName="descriptor" />
+      <varInfo nodeId="7083905570282600351" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600228" fileName="TraceInfoUtil.java" startLine="44" startPosition="69" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="7083905570282600251" fileName="TraceInfoUtil.java" startLine="58" startPosition="102" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="7083905570282600279" fileName="TraceInfoUtil.java" startLine="67" startPosition="101" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="7083905570282600307" fileName="TraceInfoUtil.java" startLine="76" startPosition="97" endLine="81" endPosition="7" />
+    <scopeInfo nodeId="7083905570282600338" fileName="TraceInfoUtil.java" startLine="85" startPosition="127" endLine="90" endPosition="7" />
+    <scopeInfo nodeId="7083905570282600241" fileName="TraceInfoUtil.java" startLine="56" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="7083905570282600244" varName="className" />
+      <varInfo nodeId="7083905570282600247" varName="file" />
+      <varInfo nodeId="7083905570282600249" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600269" fileName="TraceInfoUtil.java" startLine="65" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="7083905570282600272" varName="className" />
+      <varInfo nodeId="7083905570282600275" varName="file" />
+      <varInfo nodeId="7083905570282600277" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600297" fileName="TraceInfoUtil.java" startLine="74" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="7083905570282600300" varName="className" />
+      <varInfo nodeId="7083905570282600303" varName="file" />
+      <varInfo nodeId="7083905570282600305" varName="position" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600325" fileName="TraceInfoUtil.java" startLine="83" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="7083905570282600328" varName="className" />
+      <varInfo nodeId="7083905570282600331" varName="file" />
+      <varInfo nodeId="7083905570282600333" varName="position" />
+      <varInfo nodeId="7083905570282600335" varName="varName" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600363" fileName="TraceInfoUtil.java" startLine="94" startPosition="72" endLine="104" endPosition="16">
+      <varInfo nodeId="7083905570282600365" varName="lastDot" />
+      <varInfo nodeId="7083905570282600372" varName="pkg" />
+      <varInfo nodeId="7083905570282600387" varName="split" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600498" fileName="TraceInfoUtil.java" startLine="125" startPosition="48" endLine="135" endPosition="16">
+      <varInfo nodeId="7083905570282600506" varName="debugInfo" />
+      <varInfo nodeId="7083905570282600500" varName="model" />
+      <varInfo nodeId="7083905570282600522" varName="unitForNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600493" fileName="TraceInfoUtil.java" startLine="124" startPosition="0" endLine="137" endPosition="0">
+      <varInfo nodeId="7083905570282600496" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600356" fileName="TraceInfoUtil.java" startLine="92" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="7083905570282600361" varName="position" />
+      <varInfo nodeId="7083905570282600359" varName="stacktraceLine" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600419" fileName="TraceInfoUtil.java" startLine="108" startPosition="57" endLine="122" endPosition="16">
+      <varInfo nodeId="7083905570282600427" varName="debugInfo" />
+      <varInfo nodeId="7083905570282600421" varName="model" />
+      <varInfo nodeId="7083905570282600443" varName="positionInfo" />
+      <varInfo nodeId="7083905570282600467" varName="unitForNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600414" fileName="TraceInfoUtil.java" startLine="106" startPosition="0" endLine="124" endPosition="0">
+      <varInfo nodeId="7083905570282600417" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600181" fileName="TraceInfoUtil.java" startLine="31" startPosition="55" endLine="52" endPosition="7">
+      <varInfo nodeId="7083905570282600183" varName="descriptor" />
+      <varInfo nodeId="7083905570282600206" varName="info" />
+      <varInfo nodeId="7083905570282600219" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600177" fileName="TraceInfoUtil.java" startLine="30" startPosition="7" endLine="53" endPosition="5">
+      <varInfo nodeId="7083905570282600179" varName="stereotype" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600154" fileName="TraceInfoUtil.java" startLine="25" startPosition="160" endLine="54" endPosition="16">
+      <varInfo nodeId="7083905570282600156" varName="lastDot" />
+      <varInfo nodeId="7083905570282600163" varName="pkg" />
+    </scopeInfo>
+    <scopeInfo nodeId="7083905570282600139" fileName="TraceInfoUtil.java" startLine="23" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="7083905570282600142" varName="className" />
+      <varInfo nodeId="7083905570282600145" varName="nodeGetter" />
+    </scopeInfo>
+    <unitInfo nodeId="7083905570282600133" fileName="TraceInfoUtil.java" startLine="20" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
+    <unitInfo nodeId="7083905570282600226" fileName="TraceInfoUtil.java" startLine="44" startPosition="52" endLine="49" endPosition="7" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$1" />
+    <unitInfo nodeId="7083905570282600257" fileName="TraceInfoUtil.java" startLine="59" startPosition="56" endLine="63" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$2" />
+    <unitInfo nodeId="7083905570282600285" fileName="TraceInfoUtil.java" startLine="68" startPosition="56" endLine="72" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$3" />
+    <unitInfo nodeId="7083905570282600313" fileName="TraceInfoUtil.java" startLine="77" startPosition="56" endLine="81" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$4" />
+    <unitInfo nodeId="7083905570282600344" fileName="TraceInfoUtil.java" startLine="86" startPosition="56" endLine="90" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoUtil$5" />
+  </root>
+</debugInfo>
+
