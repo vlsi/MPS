@@ -30,6 +30,7 @@ import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
 import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
@@ -93,7 +94,7 @@ public class GenerationSession {
     ttrace.push("analyzing dependencies", false);
     myGenerationPlan = new GenerationPlan(myOriginalInputModel.getSModel(), GlobalScope.getInstance());
     if (!checkGenerationPlan(myGenerationPlan)) {
-      if(myGenerationOptions.isStrictMode()) {
+      if (myGenerationOptions.isStrictMode()) {
         throw new GenerationCanceledException();
       }
     }
@@ -253,7 +254,7 @@ public class GenerationSession {
         TemplateModel m1 = o1.getModel();
         TemplateModel m2 = o2.getModel();
         int result = m1 == m2 ? 0 : m1.getLongName().compareTo(m2.getLongName());
-        if(result != 0) {
+        if (result != 0) {
           return result;
         }
         return o1.getName().compareTo(o2.getName());
@@ -538,11 +539,20 @@ public class GenerationSession {
   }
 
   private boolean checkGenerationPlan(GenerationPlan generationPlan) {
+    if (myOriginalInputModel.getModule() instanceof Generator && SModelStereotype.isGeneratorModel(myOriginalInputModel)) {
+      ModuleReference me = myOriginalInputModel.getModule().getModuleReference();
+      for (TemplateModule t : generationPlan.getGenerators()) {
+        if (t.getReference().equals(me)) {
+          myLogger.warning("the generator is used to generate itself: try to avoid using language constructions in its generator queries");
+          break;
+        }
+      }
+    }
     if (generationPlan.hasConflictingPriorityRules()) {
       Map<MappingPriorityRule, TemplateModule> myRule2Generator = new HashMap<MappingPriorityRule, TemplateModule>();
       for (TemplateModule generator : generationPlan.getGenerators()) {
         Collection<TemplateMappingPriorityRule> priorities = generator.getPriorities();
-        if(priorities == null) {
+        if (priorities == null) {
           continue;
         }
 
