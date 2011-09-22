@@ -177,6 +177,12 @@ public class DebugInfo {
         return var;
       }
     }
+    for (ScopePositionInfo info : sorted) {
+      TraceablePositionInfo positionInfo = getPositionForNode(info.getNodeId());
+      if (positionInfo != null && eq_exfyrk_a0a1a4a8(positionInfo.getPropertyString(), varName)) {
+        return model.getNodeById(positionInfo.getNodeId());
+      }
+    }
     return null;
   }
 
@@ -322,6 +328,13 @@ public class DebugInfo {
       throw new RuntimeException(e);
     }
     return info;
+  }
+
+  private static boolean eq_exfyrk_a0a1a4a8(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   private static boolean eq_exfyrk_a0a0a0j(Object a, Object b) {
