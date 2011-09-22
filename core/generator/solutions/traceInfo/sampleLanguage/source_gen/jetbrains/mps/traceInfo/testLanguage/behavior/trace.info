@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.traceInfo.testLanguage.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="CustomType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.traceInfo.testLanguage.behavior.CustomType_BehaviorDescriptor" />
+  <unitInfo fileName="CustomVariableDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.traceInfo.testLanguage.behavior.CustomVariableDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="CustomVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.traceInfo.testLanguage.behavior.CustomVariableReference_BehaviorDescriptor" />
+</debugInfo>
+

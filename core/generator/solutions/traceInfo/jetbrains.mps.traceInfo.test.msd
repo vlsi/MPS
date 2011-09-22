@@ -11,6 +11,7 @@
     <usedLanguage>f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</usedLanguage>
     <usedLanguage>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguage>
     <usedLanguage>8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)</usedLanguage>
+    <usedLanguage>9a1e3068-6a8e-4be8-8d85-eeee5f0e3446(jetbrains.mps.traceInfo.testLanguage)</usedLanguage>
   </usedLanguages>
 </solution>
 

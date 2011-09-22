@@ -32,4 +32,9 @@ public class TestClass {
   public static void blockStatementTest() {
     throw new RuntimeException();
   }
+
+  public static void main(String[] args) {
+    String var = "var";
+    System.out.println(var);
+  }
 }

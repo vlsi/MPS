@@ -45,6 +45,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.sun.jdi.InvalidStackFrameException;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.CopyUtil;
 
 public class LowLevelEvaluationModel extends AbstractEvaluationModel {
@@ -246,6 +247,12 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       }
     }
     myVariablesInitialized = true;
+  }
+
+  @Override
+  public List<Language> getRequiredLanguages() {
+    SModelDescriptor descriptor = SNodeOperations.getModel(myEvaluationContext.getLocationNode()).getModelDescriptor();
+    return ListSequence.fromList(super.getRequiredLanguages()).union(SetSequence.fromSet(descriptor.getModule().getImplicitlyImportedLanguages(descriptor))).toListSequence();
   }
 
   private boolean needUpdateVariables() {
