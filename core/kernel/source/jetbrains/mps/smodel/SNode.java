@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
@@ -803,7 +804,7 @@ public final class SNode {
 
     // add language because typesystem needs it to invalidate/revalidate its caches
     //todo this is a hack
-    if (model.isLoading()) return;
+    if (model.isLoading() || MPSCore.getInstance().isMergeDriverMode()) return;
     SModelOperations.validateLanguages(model, this);
   }
 
