@@ -25,16 +25,21 @@ import jetbrains.mps.smodel.DefaultScope;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
 public class EvaluationAuxModule extends AbstractModule {
-  public static boolean JAVA_STUBS = true;
+  public static boolean JAVA_STUBS = false;
   @NotNull
   private static final ModelRootManager STUBS_MANAGER = (JAVA_STUBS ?
     new ModelRootManager(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference().getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.JavaStubs") :
     new ModelRootManager(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference().getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.AllMembersJavaStubs")
   );
+  public static final String DEBUGGER_JAVA_ID = "debugger_java";
 
   private Project myProject;
   private IModule myInvocationContext;
@@ -85,10 +90,18 @@ public class EvaluationAuxModule extends AbstractModule {
     if (JAVA_STUBS) {
       return GlobalScope.getInstance();
     } else {
-      // todo when JAVA_STUBS = true, write here whatever is needed for evaluation to work 
       return new DefaultScope() {
         protected Set<IModule> getInitialModules() {
-          return SetSequence.fromSetWithValues(new HashSet<IModule>(), Sequence.<IModule>singleton(EvaluationAuxModule.this));
+          return SetSequence.fromSetAndArray(new HashSet<IModule>(), EvaluationAuxModule.this, MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("7da4580f-9d75-4603-8162-51a896d78375")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("80208897-4572-437d-b50e-8f050cba9566")));
+        }
+
+        @Override
+        public SModelDescriptor getModelDescriptor(@NotNull SModelReference reference) {
+          String stereotype = reference.getStereotype();
+          if (eq_md9kx6_a0b0b0a0a0a0a5(stereotype, SModelStereotype.getStubStereotypeForId(LanguageID.JAVA))) {
+            return super.getModelDescriptor(new SModelReference(reference.getLongName(), SModelStereotype.getStubStereotypeForId(EvaluationAuxModule.DEBUGGER_JAVA_ID)));
+          }
+          return super.getModelDescriptor(reference);
         }
       };
     }
@@ -139,5 +152,12 @@ public class EvaluationAuxModule extends AbstractModule {
   @NotNull
   public String toString() {
     return "Debug Evaluation Aux Module";
+  }
+
+  private static boolean eq_md9kx6_a0b0b0a0a0a0a5(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

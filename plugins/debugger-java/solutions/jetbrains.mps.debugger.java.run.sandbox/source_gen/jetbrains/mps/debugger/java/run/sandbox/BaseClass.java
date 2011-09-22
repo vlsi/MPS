@@ -4,6 +4,8 @@ package jetbrains.mps.debugger.java.run.sandbox;
 
 
 public class BaseClass {
+  private Object myVeryPrivateField = new UncaughtException();
+
   public BaseClass() {
   }
 
