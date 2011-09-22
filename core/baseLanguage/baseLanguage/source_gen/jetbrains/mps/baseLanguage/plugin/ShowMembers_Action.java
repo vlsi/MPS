@@ -18,8 +18,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class ShowMembers_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -64,8 +63,8 @@ public class ShowMembers_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
@@ -83,7 +82,7 @@ public class ShowMembers_Action extends GeneratedAction {
       if (snode == null) {
         return;
       }
-      ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(MPSEditorOpener.class).openNode(snode, ((IOperationContext) MapSequence.fromMap(_params).get("context")), true, true);
+      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).selectNode(snode);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowMembers", t);
     }

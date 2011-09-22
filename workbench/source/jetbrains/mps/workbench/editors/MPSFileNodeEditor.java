@@ -189,12 +189,12 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
     FileEditorState state = myNodeEditor != null ? getState(FileEditorStateLevel.FULL) : null;
 
-    if (myNodeEditor != null) {
-      myNodeEditor.dispose();
-    }
-
     IOperationContext context = createOperationContext();
+    IEditor oldNodeEditor = myNodeEditor;
     myNodeEditor = myProject.getComponent(MPSEditorOpener.class).createEditorFor(context, myFile.getNode());
+    if (oldNodeEditor != null) {
+      oldNodeEditor.dispose();
+    }
 
     if (state != null) {
       setState(state);

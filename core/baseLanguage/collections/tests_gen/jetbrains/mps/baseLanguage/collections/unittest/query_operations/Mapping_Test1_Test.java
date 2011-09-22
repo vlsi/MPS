@@ -72,7 +72,7 @@ __switch__:
     // "num:<n>" 
     // "num:<n*100>" 
     final Wrappers._int count = new Wrappers._int(0);
-    Iterable<String> strings = Sequence.fromIterable(nums).<String>translate(new ITranslator2<Integer, String>() {
+    Iterable<String> strings = Sequence.fromIterable(nums).translate(new ITranslator2<Integer, String>() {
       public Iterable<String> translate(final Integer n) {
         return new Iterable<String>() {
           public Iterator<String> iterator() {
@@ -162,7 +162,7 @@ __switch__:
   public void test__yieldNull() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       List<String> strings = ListSequence.fromListAndArray(new ArrayList<String>(), "a");
-      List<String> strings2 = ListSequence.fromList(strings).<String>translate(new ITranslator2<String, String>() {
+      List<String> strings2 = ListSequence.fromList(strings).translate(new ITranslator2<String, String>() {
         public Iterable<String> translate(final String it) {
           return new Iterable<String>() {
             public Iterator<String> iterator() {
@@ -198,7 +198,7 @@ __switch__:
       Assert.assertEquals(0, ListSequence.fromList(strings2).count());
     } else {
       List<String> strings = ListSequence.fromListAndArray(new ArrayList<String>(), "a");
-      List<String> strings2 = ListSequence.fromList(strings).<String>translate(new ITranslator2<String, String>() {
+      List<String> strings2 = ListSequence.fromList(strings).translate(new ITranslator2<String, String>() {
         public Iterable<String> translate(final String it) {
           return new Iterable<String>() {
             public Iterator<String> iterator() {
@@ -239,7 +239,7 @@ __switch__:
 
   public void test__null() throws Exception {
     List<String> s1 = null;
-    Iterable<String> s2 = ListSequence.fromList(s1).<String>translate(new ITranslator2<String, String>() {
+    Iterable<String> s2 = ListSequence.fromList(s1).translate(new ITranslator2<String, String>() {
       public Iterable<String> translate(final String it) {
         return new Iterable<String>() {
           public Iterator<String> iterator() {

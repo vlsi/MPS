@@ -22,15 +22,15 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
-import java.util.List;
-import java.util.ArrayList;
 
 public class HTMLElement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -231,6 +231,24 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty();
   }
 
+  public static class HTMLElement_name_cellMenu_a0b0a extends AbstractCellMenuPart_PropertyValues {
+    public HTMLElement_name_cellMenu_a0b0a() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
+    }
+  }
+
+  public static class HTMLElement_name_cellMenu_a0b0a_0 extends AbstractCellMenuPart_PropertyValues {
+    public HTMLElement_name_cellMenu_a0b0a_0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
+    }
+  }
+
   private static class lineListHandler_h096ql_d0a extends RefNodeListHandler {
     public lineListHandler_h096ql_d0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -264,24 +282,6 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
-    }
-  }
-
-  public static class HTMLElement_name_cellMenu_a0b0a extends AbstractCellMenuPart_PropertyValues {
-    public HTMLElement_name_cellMenu_a0b0a() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
-    }
-  }
-
-  public static class HTMLElement_name_cellMenu_a0b0a_0 extends AbstractCellMenuPart_PropertyValues {
-    public HTMLElement_name_cellMenu_a0b0a_0() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
     }
   }
 }

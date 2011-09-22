@@ -377,7 +377,7 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "classifier", false) != null);
       }
-    }).<SNode>select(new ISelector<SNode, SNode>() {
+    }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "classifier", false);
       }
@@ -389,7 +389,7 @@ public class QueriesGenerated {
       public boolean accept(SNode d) {
         return SPropertyOperations.getString_def(d, "qualifier", "BEFORE") == SEnumOperations.getEnumMemberValue(((SNode) _context.getVariable("qualifier")));
       }
-    }).<SNode>select(new ISelector<SNode, SNode>() {
+    }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode d) {
         return SLinkOperations.getTarget(d, "dependsOn", false);
       }

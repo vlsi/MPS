@@ -47,7 +47,7 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
 
     moduleIds.add("954c4d77-e24b-4e49-a5a5-5476c966c092");
 
-    Iterable<Language> languages = SetSequence.fromSet(moduleIds).<Language>select(new ISelector<String, Language>() {
+    Iterable<Language> languages = SetSequence.fromSet(moduleIds).select(new ISelector<String, Language>() {
       public Language select(String it) {
         return (Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(it));
       }

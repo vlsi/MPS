@@ -27,10 +27,7 @@ import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ClassPathFactory;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -60,7 +57,15 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private ModelLoadingState myNamesLoadingState = ModelLoadingState.NOT_LOADED;
 
-  private IClassPathItem myLanguageRuntimeClasspathCache;
+  private final Object LOCK = new Object();
+  private Runnable myClasspathInvalidator = new Runnable() {
+    public void run() {
+      synchronized (LOCK) {
+        myLanguageRuntimeClasspathCache = null;
+      }
+    }
+  };
+  private CompositeClassPathItem myLanguageRuntimeClasspathCache;
 
   private CachesInvalidator myCachesInvalidator;
 
@@ -73,6 +78,30 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       desciptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
     }
     return createLanguage(namespace, new ModuleHandle(descriptorFile, desciptor), moduleOwner);
+  }
+
+  //this is for stubs framework & tests only. Can be later converted into subclass
+  public static Language newInstance(LanguageDescriptor descriptor, MPSModuleOwner moduleOwner) {
+    Language language = new Language() {
+      public String getGeneratorOutputPath() {
+        return null;
+      }
+
+      public String getTestsGeneratorOutputPath() {
+        return null;
+      }
+    };
+
+    MPSModuleRepository repository = MPSModuleRepository.getInstance();
+    if (repository.existsModule(descriptor.getModuleReference())) {
+      LOG.error("Loading module " + descriptor.getNamespace() + " for the second time");
+      return repository.getLanguage(descriptor.getModuleReference());
+    }
+
+    language.setLanguageDescriptor(descriptor, false);
+    repository.addModule(language, moduleOwner);
+
+    return language;
   }
 
   public static Language createLanguage(String namespace, ModuleHandle handle, MPSModuleOwner moduleOwner) {
@@ -96,8 +125,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
 
     List<SolutionDescriptor> solutionDescriptors = createStubSolutionDescriptors(languageDescriptor);
-
-    addDepsOnStubSolutions(languageDescriptor, solutionDescriptors);
 
     language.setLanguageDescriptor(languageDescriptor, false);
     repository.addModule(language, moduleOwner);
@@ -130,26 +157,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  private static void addDepsOnStubSolutions(LanguageDescriptor languageDescriptor, List<SolutionDescriptor> solutionDescriptors) {
-    for (SolutionDescriptor sd : solutionDescriptors) {
-      List<Dependency> dependencies = languageDescriptor.getDependencies();
-
-      boolean hasDependency = false;
-      for (Dependency ld : dependencies) {
-        if (ObjectUtils.equals(ld.getModuleRef(), sd.getModuleReference())) {
-          hasDependency = true;
-          break;
-        }
-      }
-      if (hasDependency) continue;
-
-      Dependency dep = new Dependency();
-      dep.setModuleRef(sd.getModuleReference());
-      dep.setReexport(true);
-      dependencies.add(dep);
-    }
-  }
-
   protected ModuleDependenciesManager createDependenciesManager() {
     return new LanguageDependenciesManager(this);
   }
@@ -165,21 +172,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       generator.dispose();
     }
 
-    rereadModels();
-    updatePackagedDescriptorClasspath();
-    updateClassPath();
+    super.reloadAfterDescriptorChange();
     revalidateGenerators();
-  }
-
-  IFile newDescriptorFileByNewName(String newNamespace) {
-    IFile dir = myDescriptorFile.getParent();
-    String oldShortFileName = NameUtil.shortNameFromLongName(myDescriptorFile.getPath());
-    String newPathSuffix = NameUtil.shortNameFromLongName(newNamespace);
-    if ((dir.getPath() + MPSExtentions.DOT_LANGUAGE).endsWith(oldShortFileName)) {
-      dir = dir.getParent();
-      newPathSuffix = newPathSuffix + File.separatorChar + newPathSuffix;
-    }
-    return dir.getDescendant(newPathSuffix + MPSExtentions.DOT_LANGUAGE);
   }
 
   public List<ModuleReference> getExtendedLanguageRefs() {
@@ -215,6 +209,17 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
   }
 
+  public List<Solution> getExportedSolutions() {
+    ArrayList<Solution> res = new ArrayList<Solution>();
+    for (StubSolution ss : getModuleDescriptor().getStubSolutions()) {
+      ModuleReference solutionRef = new ModuleReference(ss.getName(), ss.getId());
+      Solution s = MPSModuleRepository.getInstance().getSolution(solutionRef);
+      if (s == null) continue;
+      res.add(s);
+    }
+    return res;
+  }
+
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
     for (ModuleReference ref : getExtendedLanguageRefs()) {
@@ -235,9 +240,9 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public List<Dependency> getRuntimeDependencies() {
+  public List<ModuleReference> getRuntimeModulesReferences() {
     LanguageDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return new ArrayList<Dependency>();
+    if (descriptor == null) return Collections.emptyList();
     return Collections.unmodifiableList(descriptor.getRuntimeModules());
   }
 
@@ -520,51 +525,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       LOG.warning("Trying to save packaged language " + getModuleFqName(), new Exception());
       return;
     }
+    if (getDescriptorFile() == null) return;
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor());
-  }
-
-  @Override
-  public List<SModelDescriptor> getEditableUserModels() {
-    List<SModelDescriptor> inputModels = new ArrayList<SModelDescriptor>();
-
-    // language aspects
-    for (LanguageAspect aspect : LanguageAspect.values()) {
-      SModelDescriptor model = aspect.get(this);
-      if (model instanceof EditableSModelDescriptor && !((EditableSModelDescriptor) model).isPackaged()) {
-        inputModels.add(model);
-      }
-    }
-
-    // accessory models
-    Set<SModelDescriptor> ownModels = new HashSet<SModelDescriptor>(getOwnModelDescriptors());
-    for (SModelDescriptor sm : getAccessoryModels()) {
-      if (!SModelStereotype.isUserModel(sm)) continue;
-      if (!(sm instanceof EditableSModelDescriptor)) continue;
-      if (((EditableSModelDescriptor) sm).isPackaged()) continue;
-
-      if (ownModels.contains(sm)) {
-        inputModels.add(sm);
-      }
-    }
-
-    // util models
-    for (EditableSModelDescriptor esmd : getUtilModels()) {
-      if (!esmd.isPackaged()) {
-        inputModels.add(esmd);
-      }
-    }
-
-    // generators
-    List<Generator> list = getGenerators();
-    for (Generator generator : list) {
-      for (SModelDescriptor smd : generator.getGeneratorModels()) {
-        if (smd instanceof EditableSModelDescriptor && !((EditableSModelDescriptor) smd).isPackaged()) {
-          inputModels.add(smd);
-        }
-      }
-    }
-
-    return inputModels;
   }
 
   public List<SModelDescriptor> getAccessoryModels() {
@@ -680,45 +642,36 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public void updateClassPath() {
-    super.updateClassPath();
-    myLanguageRuntimeClasspathCache = null;
-  }
-
-  public void invalidateClassPath() {
+  protected void invalidateClassPath() {
     super.invalidateClassPath();
-
-    Set<String> invalidate = new HashSet<String>();
-    for (StubPath path : getRuntimeStubPaths()) {
-      if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
-      invalidate.add(path.getPath());
+    synchronized (LOCK) {
+      myLanguageRuntimeClasspathCache = null;
     }
-
-    ClassPathFactory.getInstance().invalidate(invalidate);
   }
 
   public IClassPathItem getLanguageRuntimeClasspath() {
-    if (myLanguageRuntimeClasspathCache == null) {
-      CompositeClassPathItem result = new CompositeClassPathItem();
-      for (ModelRoot entry : getRuntimeModelsEntries()) {
-        String s = entry.getPath();
-        try {
-          IFile file = FileSystem.getInstance().getFileByPath(s);
-          if (!file.exists()) {
-            LOG.debug("Can't find " + s);
-            continue;
-          }
+    synchronized (LOCK) {
+      if (myLanguageRuntimeClasspathCache == null) {
+        myLanguageRuntimeClasspathCache = new CompositeClassPathItem();
+        myLanguageRuntimeClasspathCache.addInvalidationAction(myClasspathInvalidator);
+        for (ModelRoot entry : getRuntimeModelsEntries()) {
+          String s = entry.getPath();
+          try {
+            IFile file = FileSystem.getInstance().getFileByPath(s);
+            if (!file.exists()) {
+              LOG.debug("Can't find " + s);
+              continue;
+            }
 
-          result.add(ClassPathFactory.getInstance().createFromPath(s, this));
-        } catch (IOException e) {
-          LOG.debug(e.getMessage());
+            myLanguageRuntimeClasspathCache.add(ClassPathFactory.getInstance().createFromPath(s, this.getModuleFqName()));
+          } catch (IOException e) {
+            LOG.debug(e.getMessage());
+          }
         }
       }
 
-      myLanguageRuntimeClasspathCache = result;
+      return myLanguageRuntimeClasspathCache;
     }
-
-    return myLanguageRuntimeClasspathCache;
   }
 
   //todo check this code. Wy not to do it where we add jars?
@@ -741,8 +694,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
       for (String jarFile : dd.getRuntimeJars()) {
         IFile jar = jarFile.startsWith("/")
-           ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
-           : bundleParent.getDescendant(jarFile);
+          ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
+          : bundleParent.getDescendant(jarFile);
         if (jar.exists()) {
           ClassPathEntry jarEntry = new ClassPathEntry();
           jarEntry.setPath(jar.getPath());
@@ -794,10 +747,5 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     public void modelChangedDramatically(SModel model) {
       invalidateCaches();
     }
-  }
-
-  @Deprecated
-  public List<Dependency> getRuntimeDependOn() {
-    return getRuntimeDependencies();
   }
 }

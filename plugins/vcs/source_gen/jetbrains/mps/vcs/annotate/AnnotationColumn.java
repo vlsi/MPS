@@ -18,7 +18,7 @@ import com.intellij.openapi.vcs.history.VcsFileRevision;
 import com.intellij.openapi.vcs.annotate.LineAnnotationAspect;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import java.util.Set;
@@ -119,7 +119,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private LineAnnotationAspect myAuthorAnnotationAspect;
   private AbstractVcs myVcs;
   private VirtualFile myModelVirtualFile;
-  private SModelDescriptor myModelDescriptor;
+  private EditableSModelDescriptor myModelDescriptor;
   private List<LineContent> myFileLineToContent;
   private Map<OldChange, LineContent> myChangesToLineContents = MapSequence.fromMap(new HashMap<OldChange, LineContent>());
   private Set<Integer> myCurrentPseudoLines = null;
@@ -132,12 +132,12 @@ public class AnnotationColumn extends AbstractLeftColumn {
 
   public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, AbstractVcs vcs, VirtualFile modelVirtualFile) {
     super(leftEditorHighlighter);
-    Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).<SNodeId>select(new ISelector<SNode, SNodeId>() {
+    Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getSNodeId();
       }
     }));
-    final SModel model = SNodeOperations.getModel(root);
+    SModel model = SNodeOperations.getModel(root);
     myFileAnnotation = fileAnnotation;
     for (VcsFileRevision rev : ListSequence.fromList(fileAnnotation.getRevisions())) {
       MapSequence.fromMap(myRevisionNumberToRevision).put(rev.getRevisionNumber(), rev);
@@ -168,7 +168,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
         MapSequence.fromMap(nodeIdToFileLine).put(id, line);
       }
     }
-    ListSequence.fromList(myAspectSubcolumns).addSequence(Sequence.fromIterable(Sequence.fromArray(fileAnnotation.getAspects())).<AnnotationAspectSubcolumn>select(new ISelector<LineAnnotationAspect, AnnotationAspectSubcolumn>() {
+    ListSequence.fromList(myAspectSubcolumns).addSequence(Sequence.fromIterable(Sequence.fromArray(fileAnnotation.getAspects())).select(new ISelector<LineAnnotationAspect, AnnotationAspectSubcolumn>() {
       public AnnotationAspectSubcolumn select(LineAnnotationAspect a) {
         return new AnnotationAspectSubcolumn(AnnotationColumn.this, a);
       }
@@ -184,12 +184,12 @@ public class AnnotationColumn extends AbstractLeftColumn {
     myRevisionRange = new VcsRevisionRange(this, myFileAnnotation);
     ListSequence.fromList(myAspectSubcolumns).addElement(new HighlightRevisionSubcolumn(this, myRevisionRange));
     myModelVirtualFile = modelVirtualFile;
-    myModelDescriptor = model.getModelDescriptor();
+    myModelDescriptor = (EditableSModelDescriptor) model.getModelDescriptor();
     myVcs = vcs;
     final ChangesManager changesManager = ChangesManager.getInstance(getProject());
     changesManager.getCommandQueue().runTask(new Runnable() {
       public void run() {
-        ModelChangesManager modelChangesManager = changesManager.getModelChangesManager(model);
+        ModelChangesManager modelChangesManager = changesManager.getModelChangesManager(myModelDescriptor);
         ListSequence.fromList(modelChangesManager.getChangeList()).visitAll(new IVisitor<OldChange>() {
           public void visit(OldChange ch) {
             saveChange(ch);
@@ -281,7 +281,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   }
 
   public int getWidth() {
-    return ListSequence.fromList(myAspectSubcolumns).<Integer>select(new ISelector<AnnotationAspectSubcolumn, Integer>() {
+    return ListSequence.fromList(myAspectSubcolumns).select(new ISelector<AnnotationAspectSubcolumn, Integer>() {
       public Integer select(AnnotationAspectSubcolumn s) {
         return (s.isEnabled() || myShowAdditionalInfo ?
           s.getWidth() :
@@ -391,7 +391,7 @@ __switch__:
         return cell.getWidth() * cell.getHeight() != 0;
       }
     });
-    Set<Integer> yCoordinatesSet = SetSequence.fromSetWithValues(new HashSet<Integer>(), Sequence.fromIterable(nonTrivialCells).<Integer>select(new ISelector<EditorCell, Integer>() {
+    Set<Integer> yCoordinatesSet = SetSequence.fromSetWithValues(new HashSet<Integer>(), Sequence.fromIterable(nonTrivialCells).select(new ISelector<EditorCell, Integer>() {
       public Integer select(EditorCell cell) {
         return cell.getY();
       }

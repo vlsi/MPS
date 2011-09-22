@@ -555,6 +555,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getSelectionManager().addSelectionListener(new SelectionListener() {
       @Override
       public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+        deactivateSubstituteChooser();
         updateStatusBarMessage();
       }
     });
@@ -816,6 +817,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         SModel model = node == null ? null : node.getModel();
         setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
         rebuildEditorContent();
+        getTypeCheckingContext();
       }
     });
   }
@@ -1739,7 +1741,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     EditorCell selectedCell = getSelectedCell();
     if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || selectedCell == null || !selectedCell.isAncestorOf(newSelectedCell))) {
       resetLastCaretX();
-      deactivateSubstituteChooser();
       mySelectionManager.setSelection(newSelectedCell);
       newSelectedCell.processMousePressed(mouseEvent);
       revalidateAndRepaint();
@@ -1782,7 +1783,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (resetLastCaretX) {
       resetLastCaretX();
     }
-    deactivateSubstituteChooser();
     mySelectionManager.setSelection(newSelectedCell);
     showCellInViewPort(newSelectedCell);
     repaint();
@@ -1795,7 +1795,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     if (getSelectedCell() != newSelectedCell) {
-      deactivateSubstituteChooser();
       mySelectionManager.pushSelection(mySelectionManager.createSelection(newSelectedCell));
     }
 

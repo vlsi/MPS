@@ -30,7 +30,7 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
     if (SNodeOperations.isInstanceOf(sourceMethodConcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       sourceMethodConcept = null;
     }
-    Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return new OverrideConceptMethodStrategy.QuotationClass_3gioqg_a0a0a0a0d0a().createNode(it);
       }

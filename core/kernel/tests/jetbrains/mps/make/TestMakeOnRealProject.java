@@ -290,9 +290,7 @@ public class TestMakeOnRealProject {
     String languageNamespace = "TestLanguage";
     IFile descriptorFile = myTmpDir.getDescendant(languageNamespace + File.separator + languageNamespace + MPSExtentions.DOT_LANGUAGE);
     Language language = Language.createLanguage(languageNamespace, descriptorFile, myModuleOwner);
-    Dependency dependency = new Dependency();
-    dependency.setModuleRef(myCreatedRuntimeSolution.getModuleReference());
-    language.getModuleDescriptor().getRuntimeModules().add(dependency);
+    language.getModuleDescriptor().getRuntimeModules().add(myCreatedRuntimeSolution.getModuleReference());
     descriptorFile.createNewFile();
     language.save();
 

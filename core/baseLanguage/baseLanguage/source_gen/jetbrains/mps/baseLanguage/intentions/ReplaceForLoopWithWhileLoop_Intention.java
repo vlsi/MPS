@@ -58,9 +58,11 @@ public class ReplaceForLoopWithWhileLoop_Intention extends BaseIntention impleme
     SLinkOperations.setTarget(preStatement, "localVariableDeclaration", SLinkOperations.getTarget(node, "variable", true), true);
     // adjust iteration 
     // todo: multiple iterations 
-    SNode iterStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-    SLinkOperations.setTarget(iterStatement, "expression", SLinkOperations.getTarget(node, "iteration", true), true);
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(whileStatement, "body", true), "statement", true)).addElement(iterStatement);
+    for (SNode iteration : SLinkOperations.getTargets(node, "iteration", true)) {
+      SNode iterStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+      SLinkOperations.setTarget(iterStatement, "expression", iteration, true);
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(whileStatement, "body", true), "statement", true)).addElement(iterStatement);
+    }
     // adjust exit condition 
     SLinkOperations.setTarget(whileStatement, "condition", SLinkOperations.getTarget(node, "condition", true), true);
   }

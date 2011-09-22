@@ -316,7 +316,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1250389701475431822(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).<String>translate(new ITranslator2<SNode, String>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).translate(new ITranslator2<SNode, String>() {
       public Iterable<String> translate(SNode it) {
         SModelDescriptor m = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ModelReference_Behavior.call_getModelReference_6236774123822284799(it)));
         return (m == null ?
@@ -328,7 +328,7 @@ public class QueriesGenerated {
       public Comparable<?> select(String it) {
         return it;
       }
-    }, true).<SNode>select(new ISelector<String, SNode>() {
+    }, true).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
         SNode n = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.BaseConcept", null);
         n.setProperty("aa", it);

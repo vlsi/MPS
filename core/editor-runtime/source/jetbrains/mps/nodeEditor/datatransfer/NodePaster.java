@@ -168,7 +168,9 @@ public class NodePaster {
     // unique child?
     if (!SModelUtil.isMultipleLinkDeclaration(link)) {
       assert myPasteNodes.size() == 1 : "cannot paste multiple children for role '" + SModelUtil.getLinkDeclarationRole(link) + "'";
-      pasteTarget.setChild(SModelUtil.getLinkDeclarationRole(link), normalizeForLink(myPasteNodes.get(0), link));
+      SNode node = normalizeForLink(myPasteNodes.get(0), link);
+      pasteTarget.setChild(SModelUtil.getLinkDeclarationRole(link), node);
+      CopyPasteManager.getInstance().postProcessNode(node);
       return;
     }
 

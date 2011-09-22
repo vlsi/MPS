@@ -33,7 +33,7 @@ public class ScriptsFinder {
         public boolean accept(SNode it) {
           return SPropertyOperations.hasValue(it, "type", "migration", "enhancement");
         }
-      }).<SNodePointer>select(new ISelector<SNode, SNodePointer>() {
+      }).select(new ISelector<SNode, SNodePointer>() {
         public SNodePointer select(SNode it) {
           return new SNodePointer(it);
         }

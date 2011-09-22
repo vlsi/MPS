@@ -16,8 +16,8 @@ import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.io.OutputStream;
 
 public class LibraryDescriptorPersistence {
@@ -52,7 +52,7 @@ public class LibraryDescriptorPersistence {
           List<Dependency> depList = ModuleDescriptorPersistence.loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(libraryElement, "dependencies")).first());
           result_u6e1uy_a0a0g0c0a.getDependencies().addAll(depList);
 
-          result_u6e1uy_a0a0g0c0a.getUsedLanguages().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(libraryElement, "usedLanguages")).first(), "usedLanguage")).<ModuleReference>select(new ISelector<Element, ModuleReference>() {
+          result_u6e1uy_a0a0g0c0a.getUsedLanguages().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(libraryElement, "usedLanguages")).first(), "usedLanguage")).select(new ISelector<Element, ModuleReference>() {
             public ModuleReference select(Element ul) {
               return ModuleReference.fromString(ul.getText());
             }

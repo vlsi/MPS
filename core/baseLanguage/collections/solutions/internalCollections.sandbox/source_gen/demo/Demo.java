@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class Demo {
   public static void main(String[] args) {
     Iterable<Integer> seq;
-    Sequence.fromIterable(seq).<Integer>translate(new ITranslator2<Integer, Integer>() {
+    Sequence.fromIterable(seq).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer i) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -48,7 +48,7 @@ __switch__:
       public boolean accept(Integer i) {
         return true;
       }
-    }).<Iterable<Integer>>select(new ISelector<Integer, Iterable<Integer>>() {
+    }).select(new ISelector<Integer, Iterable<Integer>>() {
       public Iterable<Integer> select(final Integer i) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -81,7 +81,7 @@ __switch__:
         };
       }
     });
-    Sequence.fromIterable(seq).<Integer>translate(new ITranslator2<Integer, Integer>() {
+    Sequence.fromIterable(seq).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -117,7 +117,7 @@ __switch__:
       public boolean accept(Integer it) {
         return true;
       }
-    }).<Integer>select(new ISelector<Integer, Integer>() {
+    }).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it;
       }

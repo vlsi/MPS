@@ -4,6 +4,7 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,7 +21,7 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
   public CardinalitiesChecker() {
   }
 
-  public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext) {
+  public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext, IScope scope) {
     if (BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept")) != 0) {
       return;
     }

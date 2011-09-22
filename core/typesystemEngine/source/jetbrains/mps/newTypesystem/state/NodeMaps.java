@@ -163,7 +163,7 @@ public class NodeMaps {
       SNode type = myState.getEquations().expandNode(var, finalExpansion);
       updateNodeToType(node, type, null);
       if (finalExpansion && (type == null || TypesUtil.isVariable(type))) {
-        myState.getTypeCheckingContext().reportWarning(node, "Type was not calculated", null, null, null, new NodeMessageTarget());
+        myState.getTypeCheckingContext().reportWarning(node, "Type "+ type+ " was not calculated", null, null, null, new NodeMessageTarget());
       }
     }
   }

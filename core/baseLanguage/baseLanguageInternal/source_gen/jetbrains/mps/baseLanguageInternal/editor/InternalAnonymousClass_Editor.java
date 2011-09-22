@@ -30,6 +30,9 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -37,9 +40,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -421,6 +421,45 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     return !(ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty() && SLinkOperations.getTarget(node, "instanceInitializer", true) != null);
   }
 
+  public static class InternalAnonymousClass_generic_cellMenu_a0a6b0 extends AbstractCellMenuPart_Generic_Item {
+    public InternalAnonymousClass_generic_cellMenu_a0a6b0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNodeFactoryOperations.addNewChild(node, "field", "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    }
+
+    public String getMatchingText() {
+      return "add field";
+    }
+  }
+
+  public static class InternalAnonymousClass_generic_cellMenu_b0a6b0 extends AbstractCellMenuPart_Generic_Item {
+    public InternalAnonymousClass_generic_cellMenu_b0a6b0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNodeFactoryOperations.addNewChild(node, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+    }
+
+    public String getMatchingText() {
+      return "add method";
+    }
+  }
+
+  public static class InternalAnonymousClass_generic_cellMenu_c0a6b0 extends AbstractCellMenuPart_Generic_Item {
+    public InternalAnonymousClass_generic_cellMenu_c0a6b0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNodeFactoryOperations.setNewChild(node, "instanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
+    }
+
+    public String getMatchingText() {
+      return "add initializer";
+    }
+  }
+
   private static class typeParameterListHandler_lqrwoi_g0a extends RefNodeListHandler {
     public typeParameterListHandler_lqrwoi_g0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -621,45 +660,6 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
       }
       editorCell.setDefaultText("");
       return editorCell;
-    }
-  }
-
-  public static class InternalAnonymousClass_generic_cellMenu_a0a6b0 extends AbstractCellMenuPart_Generic_Item {
-    public InternalAnonymousClass_generic_cellMenu_a0a6b0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNodeFactoryOperations.addNewChild(node, "field", "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-    }
-
-    public String getMatchingText() {
-      return "add field";
-    }
-  }
-
-  public static class InternalAnonymousClass_generic_cellMenu_b0a6b0 extends AbstractCellMenuPart_Generic_Item {
-    public InternalAnonymousClass_generic_cellMenu_b0a6b0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNodeFactoryOperations.addNewChild(node, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-    }
-
-    public String getMatchingText() {
-      return "add method";
-    }
-  }
-
-  public static class InternalAnonymousClass_generic_cellMenu_c0a6b0 extends AbstractCellMenuPart_Generic_Item {
-    public InternalAnonymousClass_generic_cellMenu_c0a6b0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNodeFactoryOperations.setNewChild(node, "instanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
-    }
-
-    public String getMatchingText() {
-      return "add initializer";
     }
   }
 }

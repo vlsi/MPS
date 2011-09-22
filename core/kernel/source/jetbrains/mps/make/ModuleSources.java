@@ -18,13 +18,17 @@ package jetbrains.mps.make;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.util.performance.IPerformanceTracer;
+import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 import java.util.*;
 
 public class ModuleSources {
+  private final Map<IModule, ModuleSources> myAvailableSources;
   private Dependencies myDependencies;
+  private final IPerformanceTracer ttrace;
   private IModule myModule;
   private Map<String, JavaFile> myJavaFiles = new HashMap<String, JavaFile>();
   private Map<String, ResourceFile> myResourceFiles = new HashMap<String, ResourceFile>();
@@ -34,11 +38,21 @@ public class ModuleSources {
   private List<ResourceFile> myResourcesToCopy = new LinkedList<ResourceFile>();
 
   ModuleSources(IModule module, Dependencies deps) {
-    myModule = module;
-    myDependencies = deps;
+    this(module, Collections.<IModule, ModuleSources>emptyMap(), deps, new NullPerformanceTracer());
+  }
 
+  ModuleSources(IModule module, Map<IModule, ModuleSources> availableSources, Dependencies deps, IPerformanceTracer ttracer) {
+    myModule = module;
+    myAvailableSources = availableSources;
+    myDependencies = deps;
+    ttrace = ttracer;
+
+    ttrace.push("collect modules sources", false);
     collectInputFilesInfo();
+    ttrace.pop();
+    ttrace.push("checking output folder", false);
     collectOutputFilesInfo();
+    ttrace.pop();
   }
 
   public Collection<File> getFilesToDelete() {
@@ -87,10 +101,10 @@ public class ModuleSources {
       File child = new File(dir, childName);
       if (childName.endsWith(MPSExtentions.DOT_JAVAFILE)) {
         long lastModified = child.lastModified();
-        if(lastModified > 0) {
+        if (lastModified > 0) {
           String className = childName.substring(0, childName.length() - MPSExtentions.DOT_JAVAFILE.length());
           package_.setLength(initialLength);
-          if(initialLength > 0) {
+          if (initialLength > 0) {
             package_.append('.');
           }
           package_.append(className);
@@ -102,10 +116,10 @@ public class ModuleSources {
 
       String[] subList = child.list();
 
-      if(subList != null) {
+      if (subList != null) {
         path.setLength(initialLength);
         package_.setLength(initialLength);
-        if(initialLength > 0) {
+        if (initialLength > 0) {
           path.append('/');
           package_.append('.');
         }
@@ -115,7 +129,7 @@ public class ModuleSources {
 
       } else if (isResourceFileName(childName)) {
         path.setLength(initialLength);
-        if(initialLength > 0) {
+        if (initialLength > 0) {
           path.append('/');
         }
         path.append(childName);
@@ -136,20 +150,34 @@ public class ModuleSources {
   }
 
   private boolean isFileUpToDate(JavaFile javaFile, long classFileLastModified) {
-    if (javaFile.getLastModified() >= classFileLastModified) {
-      return false;
-    }
+    ttrace.push("check is up-to-date", false);
+    try {
+      if (javaFile.getLastModified() >= classFileLastModified) {
+        return false;
+      }
 
-    for (String fqName : myDependencies.getAllDependencies(javaFile.getClassName())) {
-      if (myDependencies.getModule(fqName) != null) {
-        JavaFile file = myJavaFiles.get(fqName);
-        long javaFileLastModified = file != null ? file.getLastModified() : myDependencies.getJavaFileLastModified(fqName);
-        if (javaFileLastModified == 0 || javaFileLastModified > classFileLastModified) {
-          return false;
+      for (String fqName : myDependencies.getAllDependencies(javaFile.getClassName())) {
+        final IModule module = myDependencies.getModule(fqName);
+        if (module != null) {
+          JavaFile file = myJavaFiles.get(fqName);
+          if(file == null) {
+            final ModuleSources targetModule = myAvailableSources.get(module);
+            if(targetModule != null) {
+              file = targetModule.getJavaFile(fqName);
+            }
+          }
+          ttrace.push("in dependencies", false);
+          long javaFileLastModified = file != null ? file.getLastModified() : myDependencies.getJavaFileLastModified(fqName);
+          ttrace.pop();
+          if (javaFileLastModified == 0 || javaFileLastModified > classFileLastModified) {
+            return false;
+          }
         }
       }
+      return true;
+    } finally {
+      ttrace.pop();
     }
-    return true;
   }
 
   private void collectOutput(File outputDir, String[] files, StringBuilder path, StringBuilder package_) {
@@ -169,7 +197,7 @@ public class ModuleSources {
           isInnerClass = true;
         }
         package_.setLength(initialLength);
-        if(initialLength > 0) {
+        if (initialLength > 0) {
           package_.append('.');
         }
         package_.append(containerName);
@@ -185,10 +213,10 @@ public class ModuleSources {
 
       String[] subList = file.list();
 
-      if(subList != null) {
+      if (subList != null) {
         path.setLength(initialLength);
         package_.setLength(initialLength);
-        if(initialLength > 0) {
+        if (initialLength > 0) {
           path.append('/');
           package_.append('.');
         }
@@ -198,7 +226,7 @@ public class ModuleSources {
 
       } else if (isResourceFileName(childName)) {
         path.setLength(initialLength);
-        if(initialLength > 0) {
+        if (initialLength > 0) {
           path.append('/');
         }
         path.append(childName);
@@ -219,7 +247,7 @@ public class ModuleSources {
 
   private boolean isResourceFileName(String fileName) {
     int extPos = fileName.lastIndexOf('.');
-    return extPos > 0 && !fileName.endsWith(MPSExtentions.DOT_JAVAFILE) &&
+    return extPos == -1 || extPos > 0 && !fileName.endsWith(MPSExtentions.DOT_JAVAFILE) &&
       !fileName.endsWith(MPSExtentions.DOT_CLASSFILE);
   }
 }

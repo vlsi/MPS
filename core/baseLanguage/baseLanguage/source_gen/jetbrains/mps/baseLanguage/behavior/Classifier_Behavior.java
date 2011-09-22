@@ -108,6 +108,10 @@ public class Classifier_Behavior {
       containers = newContainers;
     }
 
+    if (ListSequence.fromList(containers).count() == 1) {
+      return SPropertyOperations.getString(thisNode, "name");
+    }
+
     StringBuilder result = new StringBuilder();
     boolean first = true;
     for (SNode c : containers) {

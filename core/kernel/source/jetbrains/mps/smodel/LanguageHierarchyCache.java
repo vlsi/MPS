@@ -35,10 +35,13 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class LanguageHierarchyCache implements ApplicationComponent {
-  private static final InternAwareStringSet EMPTY_INTERN_AWARE_STRING_SET = new InternAwareStringSet(0);
+  private static LanguageHierarchyCache ourInstance = null;
 
   public static LanguageHierarchyCache getInstance() {
-    return ApplicationManager.getApplication().getComponent(LanguageHierarchyCache.class);
+    if (ourInstance == null) {
+      ourInstance = ApplicationManager.getApplication().getComponent(LanguageHierarchyCache.class);
+    }
+    return ourInstance;
   }
 
   private ConcurrentMap<String, InternAwareStringSet> myAncestorsNamesMap = new ConcurrentHashMap<String, InternAwareStringSet>();

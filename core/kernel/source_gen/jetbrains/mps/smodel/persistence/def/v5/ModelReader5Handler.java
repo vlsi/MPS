@@ -26,16 +26,16 @@ import jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4;
 public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.ModelLoadResult> {
   private static String[] EMPTY_ARRAY = new String[0];
 
-  private ModelReader5Handler.modelElementHandler modelhandler = new ModelReader5Handler.modelElementHandler();
-  private ModelReader5Handler.persistenceElementHandler persistencehandler = new ModelReader5Handler.persistenceElementHandler();
-  private ModelReader5Handler.maxImportIndexElementHandler maxImportIndexhandler = new ModelReader5Handler.maxImportIndexElementHandler();
-  private ModelReader5Handler.languageAspectElementHandler languageAspecthandler = new ModelReader5Handler.languageAspectElementHandler();
-  private ModelReader5Handler.tag_with_namespaceElementHandler tag_with_namespacehandler = new ModelReader5Handler.tag_with_namespaceElementHandler();
-  private ModelReader5Handler.importElementHandler importhandler = new ModelReader5Handler.importElementHandler();
-  private ModelReader5Handler.nodeElementHandler nodehandler = new ModelReader5Handler.nodeElementHandler();
-  private ModelReader5Handler.propertyElementHandler propertyhandler = new ModelReader5Handler.propertyElementHandler();
-  private ModelReader5Handler.linkElementHandler linkhandler = new ModelReader5Handler.linkElementHandler();
-  private ModelReader5Handler.visibleElementHandler visiblehandler = new ModelReader5Handler.visibleElementHandler();
+  private ModelReader5Handler.ModelElementHandler modelhandler = new ModelReader5Handler.ModelElementHandler();
+  private ModelReader5Handler.PersistenceElementHandler persistencehandler = new ModelReader5Handler.PersistenceElementHandler();
+  private ModelReader5Handler.MaxImportIndexElementHandler maxImportIndexhandler = new ModelReader5Handler.MaxImportIndexElementHandler();
+  private ModelReader5Handler.LanguageAspectElementHandler languageAspecthandler = new ModelReader5Handler.LanguageAspectElementHandler();
+  private ModelReader5Handler.Tag_with_namespaceElementHandler tag_with_namespacehandler = new ModelReader5Handler.Tag_with_namespaceElementHandler();
+  private ModelReader5Handler.ImportElementHandler importhandler = new ModelReader5Handler.ImportElementHandler();
+  private ModelReader5Handler.NodeElementHandler nodehandler = new ModelReader5Handler.NodeElementHandler();
+  private ModelReader5Handler.PropertyElementHandler propertyhandler = new ModelReader5Handler.PropertyElementHandler();
+  private ModelReader5Handler.LinkElementHandler linkhandler = new ModelReader5Handler.LinkElementHandler();
+  private ModelReader5Handler.VisibleElementHandler visiblehandler = new ModelReader5Handler.VisibleElementHandler();
   private Stack<ModelReader5Handler.ElementHandler> myHandlersStack = new Stack<ModelReader5Handler.ElementHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
@@ -153,10 +153,10 @@ public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class modelElementHandler extends ModelReader5Handler.ElementHandler {
+  public class ModelElementHandler extends ModelReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"modelUID"};
 
-    public modelElementHandler() {
+    public ModelElementHandler() {
     }
 
     @Override
@@ -288,10 +288,10 @@ public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class persistenceElementHandler extends ModelReader5Handler.ElementHandler {
+  public class PersistenceElementHandler extends ModelReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"version"};
 
-    public persistenceElementHandler() {
+    public PersistenceElementHandler() {
     }
 
     @Override
@@ -314,10 +314,10 @@ public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class maxImportIndexElementHandler extends ModelReader5Handler.ElementHandler {
+  public class MaxImportIndexElementHandler extends ModelReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"value"};
 
-    public maxImportIndexElementHandler() {
+    public MaxImportIndexElementHandler() {
     }
 
     @Override
@@ -340,10 +340,10 @@ public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class languageAspectElementHandler extends ModelReader5Handler.ElementHandler {
+  public class LanguageAspectElementHandler extends ModelReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"modelUID", "version"};
 
-    public languageAspectElementHandler() {
+    public LanguageAspectElementHandler() {
     }
 
     @Override
@@ -369,10 +369,10 @@ public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class tag_with_namespaceElementHandler extends ModelReader5Handler.ElementHandler {
+  public class Tag_with_namespaceElementHandler extends ModelReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"namespace"};
 
-    public tag_with_namespaceElementHandler() {
+    public Tag_with_namespaceElementHandler() {
     }
 
     @Override
@@ -395,10 +395,10 @@ public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class importElementHandler extends ModelReader5Handler.ElementHandler {
+  public class ImportElementHandler extends ModelReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"index", "version", "modelUID"};
 
-    public importElementHandler() {
+    public ImportElementHandler() {
     }
 
     @Override
@@ -429,10 +429,10 @@ public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class nodeElementHandler extends ModelReader5Handler.ElementHandler {
+  public class NodeElementHandler extends ModelReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"type"};
 
-    public nodeElementHandler() {
+    public NodeElementHandler() {
     }
 
     @Override
@@ -511,10 +511,10 @@ public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class propertyElementHandler extends ModelReader5Handler.ElementHandler {
+  public class PropertyElementHandler extends ModelReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"name"};
 
-    public propertyElementHandler() {
+    public PropertyElementHandler() {
     }
 
     @Override
@@ -541,10 +541,10 @@ public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class linkElementHandler extends ModelReader5Handler.ElementHandler {
+  public class LinkElementHandler extends ModelReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public linkElementHandler() {
+    public LinkElementHandler() {
     }
 
     @Override
@@ -571,10 +571,10 @@ public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class visibleElementHandler extends ModelReader5Handler.ElementHandler {
+  public class VisibleElementHandler extends ModelReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"index", "modelUID"};
 
-    public visibleElementHandler() {
+    public VisibleElementHandler() {
     }
 
     @Override

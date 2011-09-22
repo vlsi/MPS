@@ -59,7 +59,7 @@ public class QueriesGenerated {
       public boolean accept(SNode blk) {
         return "idea-patch.jar".equals(SPropertyOperations.getString(blk, "name")) || "mps.jar".equals(SPropertyOperations.getString(blk, "name"));
       }
-    }).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    }).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode blk) {
         return SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(blk, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true);
       }
@@ -75,7 +75,7 @@ public class QueriesGenerated {
       public boolean accept(SNode blk) {
         return "core.baseLanguage".equals(SPropertyOperations.getString(blk, "name")) || "core.languageDesign".equals(SPropertyOperations.getString(blk, "name"));
       }
-    }).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    }).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode blk) {
         return SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(blk, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true);
       }

@@ -182,7 +182,7 @@ public class DebugInfo {
 
   @Nullable
   public TraceablePositionInfo getPositionForNode(String nodeId) {
-    for (TraceablePositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<TraceablePositionInfo>translate(new ITranslator2<DebugInfoRoot, TraceablePositionInfo>() {
+    for (TraceablePositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).translate(new ITranslator2<DebugInfoRoot, TraceablePositionInfo>() {
       public Iterable<TraceablePositionInfo> translate(DebugInfoRoot it) {
         return it.getPositions();
       }
@@ -196,7 +196,7 @@ public class DebugInfo {
 
   @Nullable
   public UnitPositionInfo getUnitForNode(String nodeId) {
-    for (UnitPositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<UnitPositionInfo>translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
+    for (UnitPositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
       public Iterable<UnitPositionInfo> translate(DebugInfoRoot it) {
         return SetSequence.fromSet(it.getUnitPositions()).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
           public Comparable<?> select(UnitPositionInfo position) {
@@ -262,7 +262,7 @@ public class DebugInfo {
       public boolean accept(DebugInfoRoot it) {
         return SetSequence.fromSet(it.getFileNames()).contains(file);
       }
-    }).<T>translate(new ITranslator2<DebugInfoRoot, T>() {
+    }).translate(new ITranslator2<DebugInfoRoot, T>() {
       public Iterable<T> translate(DebugInfoRoot it) {
         return getAllPositionsForRoot.invoke(it);
       }

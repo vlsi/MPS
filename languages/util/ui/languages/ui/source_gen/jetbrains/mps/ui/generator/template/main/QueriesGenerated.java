@@ -688,7 +688,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1251509410704218302(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(UIObjectTemplate_Behavior.call_allExtendsTemplates_4007322171506129964(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"))).<SNode>select(new ISelector<SNode, SNode>() {
+    return Sequence.fromIterable(UIObjectTemplate_Behavior.call_allExtendsTemplates_4007322171506129964(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode t) {
         return t.getChild(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"));
       }

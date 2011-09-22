@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodeId.Regular;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.BufferedOutputStream;
@@ -111,6 +112,16 @@ public class ModelOutputStream extends DataOutputStream {
       writeString(id.toString());
     } else {
       throw new IOException("unknown id");
+    }
+  }
+
+  public void writeNodePointer(SNodePointer ptr) throws IOException {
+    if (ptr == null) {
+      writeByte(0x70);
+    } else {
+      writeByte(0x44);
+      writeModelReference(ptr.getModelReference());
+      writeNodeId(ptr.getNodeId());
     }
   }
 }

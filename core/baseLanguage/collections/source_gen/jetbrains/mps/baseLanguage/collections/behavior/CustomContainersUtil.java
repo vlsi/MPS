@@ -22,7 +22,7 @@ public class CustomContainersUtil {
 
   public static Iterable<SNode> containerCreators(SModel model, final SNode type) {
     return (Iterable<SNode>) (SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(type), "jetbrains.mps.baseLanguage.collections.structure.MapType") ?
-      Sequence.fromIterable(containerDeclarations(model, type)).<SNode>select(new ISelector<SNode, SNode>() {
+      Sequence.fromIterable(containerDeclarations(model, type)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode ccd) {
           SNode cmc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator", null);
           SLinkOperations.setTarget(cmc, "containerDeclaration", ccd, false);
@@ -52,7 +52,7 @@ with_ctParams:
           return cmc;
         }
       }) :
-      Sequence.fromIterable(containerDeclarations(model, type)).<SNode>select(new ISelector<SNode, SNode>() {
+      Sequence.fromIterable(containerDeclarations(model, type)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode ccd) {
           SNode ccc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator", null);
           SLinkOperations.setTarget(ccc, "containerDeclaration", ccd, false);

@@ -29,7 +29,7 @@ import java.io.IOException;
     super(project);
     myConfigDir = new File(WorkbenchPathManager.getUserHome() + File.separator + ".subversion");
     myUseIdeConfig = useIdeConfig;
-    if (CommandLineGenerator.getSvnkitJar() != null) {
+    if (PluginUtil.isSvnPluginEnabled()) {
       if (useIdeConfig) {
         myConfigDir = new File(SvnConfiguration.getInstance(project).getConfigurationDirectory());
       } else {
@@ -45,7 +45,7 @@ import java.io.IOException;
 
   @NotNull
   protected AbstractInstaller.State install(boolean dryRun) {
-    if (CommandLineGenerator.getSvnkitJar() == null) {
+    if (!(PluginUtil.isSvnPluginEnabled())) {
       return AbstractInstaller.State.INSTALLED;
     }
     AbstractInstaller.State packerState = InternalRuntimePacker.packIfNeeded(dryRun);

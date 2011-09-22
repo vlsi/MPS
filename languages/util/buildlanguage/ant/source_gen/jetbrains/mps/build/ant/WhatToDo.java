@@ -22,6 +22,7 @@ import java.io.IOException;
 import jetbrains.mps.util.FileUtil;
 
 public class WhatToDo {
+  private static final String EXCLUDE_FROM_DIFF_FILE = "EXCLUDE_FROM_DIFF_FILE";
   private static final String MODEL_FILE = "MODEL_FILE";
   private static final String MODULE_FILE = "MODULE_FILE";
   private static final String MPS_PROJECT = "MPS_PROJECT";
@@ -33,6 +34,7 @@ public class WhatToDo {
 
   private final Set<File> myModels = new LinkedHashSet<File>();
   private final Set<File> myModules = new LinkedHashSet<File>();
+  private final Set<File> myExcludedFromDiff = new LinkedHashSet<File>();
   private final Map<File, List<String>> myMPSProjects = new LinkedHashMap<File, List<String>>();
   private boolean myFailOnError = true;
   private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
@@ -52,6 +54,11 @@ public class WhatToDo {
   public void addModelFile(File file) {
     assert file.exists() && !(file.isDirectory()) : "bad file: " + file.toString();
     myModels.add(file);
+  }
+
+  public void excludeFileFromDiff(File file) {
+    assert file.exists() && !(file.isDirectory());
+    myExcludedFromDiff.add(file);
   }
 
   public void addProjectFile(File projectFile) {
@@ -77,6 +84,14 @@ public class WhatToDo {
 
   public void updateModels(Set<File> models) {
     myModels.addAll(models);
+  }
+
+  public Set<File> getExcludedFromDiffFiles() {
+    return Collections.unmodifiableSet(myExcludedFromDiff);
+  }
+
+  public void updateExcludedFromDiffFiles(Set<File> excluded) {
+    myExcludedFromDiff.addAll(excluded);
   }
 
   public Set<File> getModules() {
@@ -181,6 +196,12 @@ public class WhatToDo {
     final StringBuffer sb = new StringBuffer();
     for (File f : myModels) {
       sb.append(MODEL_FILE);
+      sb.append("=");
+      sb.append(f.getAbsolutePath());
+      sb.append(" ");
+    }
+    for (File f : myExcludedFromDiff) {
+      sb.append(EXCLUDE_FROM_DIFF_FILE);
       sb.append("=");
       sb.append(f.getAbsolutePath());
       sb.append(" ");
@@ -304,6 +325,8 @@ public class WhatToDo {
         String[] propertyValuePair = s.split("=");
         if (propertyValuePair[0].equals(MODEL_FILE)) {
           whatToDo.addModelFile(new File(propertyValuePair[1]));
+        } else if (propertyValuePair[0].equals(EXCLUDE_FROM_DIFF_FILE)) {
+          whatToDo.excludeFileFromDiff(new File(propertyValuePair[1]));
         } else
         if (propertyValuePair[0].equals(MODULE_FILE)) {
           whatToDo.addModuleFile(new File(propertyValuePair[1]));

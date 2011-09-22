@@ -22,7 +22,7 @@ public class SNODE_Design {
         public boolean accept(SNode it) {
           return "aggregation".equals(SPropertyOperations.getString_def(it, "metaClass", "reference"));
         }
-      }).<String>select(new ISelector<SNode, String>() {
+      }).select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return SPropertyOperations.getString(it, "role");
         }
@@ -69,7 +69,7 @@ public class SNODE_Design {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString_def(it, "metaClass", "reference") == null || "reference".equals(SPropertyOperations.getString_def(it, "metaClass", "reference"));
         }
-      }).<String>select(new ISelector<SNode, String>() {
+      }).select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return SPropertyOperations.getString(it, "role");
         }

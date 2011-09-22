@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.reloading.ClassPathFactory;
+import java.io.IOException;
 import jetbrains.mps.stubs.IStubRootNodeDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.LanguageID;
@@ -60,7 +61,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
   @Nullable
   /*package*/ static IClassPathItem createClassPathItem(StubLocation location) {
-    return ClassPathFactory.getInstance().createFromPath(location.getPath());
+    try {
+      return ClassPathFactory.getInstance().createFromPath(location.getPath(), location.getModuleRef().getModuleFqName());
+    } catch (IOException e) {
+      return null;
+    }
   }
 
   public static Set<IStubRootNodeDescriptor> iterateClassPath(ModuleReference module, IClassPathItem item) {

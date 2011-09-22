@@ -18,10 +18,10 @@ import java.util.HashMap;
 public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog> {
   private static String[] EMPTY_ARRAY = new String[0];
 
-  private HistoryReaderHandler.historyElementHandler historyhandler = new HistoryReaderHandler.historyElementHandler();
-  private HistoryReaderHandler.elementElementHandler elementhandler = new HistoryReaderHandler.elementElementHandler();
-  private HistoryReaderHandler.dependenciesElementHandler dependencieshandler = new HistoryReaderHandler.dependenciesElementHandler();
-  private HistoryReaderHandler.modelElementHandler modelhandler = new HistoryReaderHandler.modelElementHandler();
+  private HistoryReaderHandler.HistoryElementHandler historyhandler = new HistoryReaderHandler.HistoryElementHandler();
+  private HistoryReaderHandler.ElementElementHandler elementhandler = new HistoryReaderHandler.ElementElementHandler();
+  private HistoryReaderHandler.DependenciesElementHandler dependencieshandler = new HistoryReaderHandler.DependenciesElementHandler();
+  private HistoryReaderHandler.ModelElementHandler modelhandler = new HistoryReaderHandler.ModelElementHandler();
   private HistoryReaderHandler.MoveNodeElementHandler MoveNodehandler = new HistoryReaderHandler.MoveNodeElementHandler();
   private HistoryReaderHandler.RenameNodeElementHandler RenameNodehandler = new HistoryReaderHandler.RenameNodeElementHandler();
   private HistoryReaderHandler.RenameModelElementHandler RenameModelhandler = new HistoryReaderHandler.RenameModelElementHandler();
@@ -137,10 +137,10 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
     }
   }
 
-  public class historyElementHandler extends HistoryReaderHandler.ElementHandler {
+  public class HistoryElementHandler extends HistoryReaderHandler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public historyElementHandler() {
+    public HistoryElementHandler() {
     }
 
     @Override
@@ -168,10 +168,10 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
     }
   }
 
-  public class elementElementHandler extends HistoryReaderHandler.ElementHandler {
+  public class ElementElementHandler extends HistoryReaderHandler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public elementElementHandler() {
+    public ElementElementHandler() {
     }
 
     @Override
@@ -224,10 +224,10 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
     }
   }
 
-  public class dependenciesElementHandler extends HistoryReaderHandler.ElementHandler {
+  public class DependenciesElementHandler extends HistoryReaderHandler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public dependenciesElementHandler() {
+    public DependenciesElementHandler() {
     }
 
     @Override
@@ -257,10 +257,10 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
     }
   }
 
-  public class modelElementHandler extends HistoryReaderHandler.ElementHandler {
+  public class ModelElementHandler extends HistoryReaderHandler.ElementHandler {
     private String[] requiredAttributes = new String[]{"index", "modelUID", "version"};
 
-    public modelElementHandler() {
+    public ModelElementHandler() {
     }
 
     @Override

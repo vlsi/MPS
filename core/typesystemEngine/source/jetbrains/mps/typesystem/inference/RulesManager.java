@@ -79,6 +79,7 @@ public class RulesManager {
     myOverloadedOperationsManager.clear();
     myDependentComputations.clear();
     myDependentComputationsBlockedNodes.clear();
+    myRulesManagerNew.clear();
   }
 
   public boolean hasModelLoadedRules(SModelReference modelReference) {

@@ -25,11 +25,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
-import jetbrains.mps.ide.CustomizationSettings;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -197,8 +197,7 @@ public class MPSEditorOpener {
     assert file.hasValidMPSNode() : "Invalid file returned for: " + baseNode + ", corresponding node from SNodePointer: " + new SNodePointer(baseNode).getNode();
     // [--] assertion for http://youtrack.jetbrains.net/issue/MPS-9753
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
-    editorManager.closeFile(file);
-    FileEditor fileEditor = editorManager.openFile(file, false)[0];
+    FileEditor fileEditor = editorManager.openFile(file, true)[0];
 
     MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;
 
@@ -212,7 +211,7 @@ public class MPSEditorOpener {
   }
 
   private boolean isUseTabs() {
-    return ApplicationManager.getApplication().getComponent(CustomizationSettings.class).getState().isShow();
+    return ApplicationManager.getApplication().getComponent(EditorSettings.class).getState().isShow();
   }
 
   //----------util

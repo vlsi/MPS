@@ -33,11 +33,11 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class IterateOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -307,6 +307,42 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "paramObject", true) != null);
   }
 
+  public static class IterateOperation_component_cellMenu_a0b1a implements SubstituteInfoPart {
+    private menu_SubstituteFeatureAndParameter myComponent;
+
+    public IterateOperation_component_cellMenu_a0b1a() {
+      this.myComponent = new menu_SubstituteFeatureAndParameter();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
+  public static class IterateOperation_component_cellMenu_a0c1a implements SubstituteInfoPart {
+    private menu_SubstituteFeatureAndParameter myComponent;
+
+    public IterateOperation_component_cellMenu_a0c1a() {
+      this.myComponent = new menu_SubstituteFeatureAndParameter();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
+  public static class IterateOperation_component_cellMenu_a0d1a implements SubstituteInfoPart {
+    private menu_SubstituteFeatureAndParameter myComponent;
+
+    public IterateOperation_component_cellMenu_a0d1a() {
+      this.myComponent = new menu_SubstituteFeatureAndParameter();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
   public static class _Inline_wgzfn3_a2b0 extends InlineCellProvider {
     public _Inline_wgzfn3_a2b0() {
       super();
@@ -379,42 +415,6 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
-    }
-  }
-
-  public static class IterateOperation_component_cellMenu_a0b1a implements SubstituteInfoPart {
-    private menu_SubstituteFeatureAndParameter myComponent;
-
-    public IterateOperation_component_cellMenu_a0b1a() {
-      this.myComponent = new menu_SubstituteFeatureAndParameter();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-  }
-
-  public static class IterateOperation_component_cellMenu_a0c1a implements SubstituteInfoPart {
-    private menu_SubstituteFeatureAndParameter myComponent;
-
-    public IterateOperation_component_cellMenu_a0c1a() {
-      this.myComponent = new menu_SubstituteFeatureAndParameter();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-  }
-
-  public static class IterateOperation_component_cellMenu_a0d1a implements SubstituteInfoPart {
-    private menu_SubstituteFeatureAndParameter myComponent;
-
-    public IterateOperation_component_cellMenu_a0d1a() {
-      this.myComponent = new menu_SubstituteFeatureAndParameter();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 }

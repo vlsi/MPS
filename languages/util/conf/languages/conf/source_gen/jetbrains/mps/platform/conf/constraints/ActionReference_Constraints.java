@@ -14,9 +14,9 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class ActionReference_Constraints extends BaseConstraintsDescriptor {
@@ -41,7 +41,7 @@ public class ActionReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Sequence.fromIterable(ConfUtil.visibleConfModels(operationContext.getScope())).<SNode>translate(new ITranslator2<SModel, SNode>() {
+            return Sequence.fromIterable(ConfUtil.visibleConfModels(operationContext.getScope())).translate(new ITranslator2<SModel, SNode>() {
               public Iterable<SNode> translate(SModel m) {
                 return SModelOperations.getNodes(m, "jetbrains.mps.platform.conf.structure.AbstractAction");
               }

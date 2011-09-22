@@ -28,6 +28,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -35,9 +38,6 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class TargetDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -458,6 +458,18 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "parameters", true) != null);
   }
 
+  public static class TargetDeclaration_component_cellMenu_a0b0b1e0 implements SubstituteInfoPart {
+    private TargetDeclaration_resourcesPolicy myComponent;
+
+    public TargetDeclaration_component_cellMenu_a0b0b1e0() {
+      this.myComponent = new TargetDeclaration_resourcesPolicy();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
   public static class _Inline_xfdsch_a3a extends InlineCellProvider {
     public _Inline_xfdsch_a3a() {
       super();
@@ -535,18 +547,6 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("Constant_xfdsch_a1c1b4a");
       editorCell.setDefaultText("<no dependencies>");
       return editorCell;
-    }
-  }
-
-  public static class TargetDeclaration_component_cellMenu_a0b0b1e0 implements SubstituteInfoPart {
-    private TargetDeclaration_resourcesPolicy myComponent;
-
-    public TargetDeclaration_component_cellMenu_a0b0b1e0() {
-      this.myComponent = new TargetDeclaration_resourcesPolicy();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 }

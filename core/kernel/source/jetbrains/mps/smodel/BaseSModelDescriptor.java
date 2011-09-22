@@ -59,8 +59,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       if (myLoadingState != ModelLoadingState.NOT_LOADED) return mySModel;
 
       oldState = myLoadingState;
-      ModelLoadResult result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>(){
-        @Override
+      ModelLoadResult result = runModelLoading(new Computable<ModelLoadResult>() {
         public ModelLoadResult compute() {
           return initialLoad();
         }
@@ -77,6 +76,14 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   protected abstract ModelLoadResult initialLoad();
+
+  protected ModelLoadResult runModelLoading(final Computable<ModelLoadResult> comp) {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
+      public ModelLoadResult compute() {
+        return UndoHelper.getInstance().runNonUndoableAction(comp);
+      }
+    });
+  }
 
   @Override
   public boolean isGeneratable() {

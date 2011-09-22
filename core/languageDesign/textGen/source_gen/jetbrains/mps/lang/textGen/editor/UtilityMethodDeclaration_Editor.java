@@ -26,6 +26,12 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
+import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -33,12 +39,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -169,6 +169,22 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     return SNodeOperations.getIndexInParent(node) != 0;
   }
 
+  public static class UtilityMethodDeclaration_name_postfixCellMenu_a0e0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public UtilityMethodDeclaration_name_postfixCellMenu_a0e0() {
+    }
+
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
+      List<String> result;
+      SNode nodeType = SLinkOperations.getTarget(node, "returnType", true);
+      if (nodeType != null) {
+        result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
+      } else {
+        result = ListSequence.fromList(new ArrayList<String>());
+      }
+      return result;
+    }
+  }
+
   private static class parameterListHandler_4607in_g0 extends RefNodeListHandler {
     public parameterListHandler_4607in_g0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -228,22 +244,6 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
       }
       editorCell.setDefaultText("");
       return editorCell;
-    }
-  }
-
-  public static class UtilityMethodDeclaration_name_postfixCellMenu_a0e0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public UtilityMethodDeclaration_name_postfixCellMenu_a0e0() {
-    }
-
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> result;
-      SNode nodeType = SLinkOperations.getTarget(node, "returnType", true);
-      if (nodeType != null) {
-        result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
-      } else {
-        result = ListSequence.fromList(new ArrayList<String>());
-      }
-      return result;
     }
   }
 }

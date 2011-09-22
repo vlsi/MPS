@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="GlobalSharedPair.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.shared.GlobalSharedPair" />
+  <root nodeId="1241009437488">
+    <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="9" startPosition="29" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="13" startPosition="46" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="17" startPosition="27" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="21" startPosition="28" endLine="22" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="25" startPosition="20" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="29" startPosition="21" endLine="30" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="34" startPosition="60" endLine="35" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="8" startPosition="65" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GlobalSharedPair#()V" />
+    <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GlobalSharedPair#(nullnull)V" />
+    <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="first#(null)null" />
+    <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="second#(null)null" />
+    <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="first#()null" />
+    <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="second#()null" />
+    <nodeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/baseLanguage/tuples/shared/GlobalSharedPair;" />
+    <scopeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="9" startPosition="29" endLine="10" endPosition="12" />
+    <scopeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="13" startPosition="46" endLine="14" endPosition="25" />
+    <scopeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="17" startPosition="27" endLine="18" endPosition="27" />
+    <scopeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="21" startPosition="28" endLine="22" endPosition="27" />
+    <scopeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="25" startPosition="20" endLine="26" endPosition="22" />
+    <scopeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="29" startPosition="21" endLine="30" endPosition="22" />
+    <scopeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="34" startPosition="60" endLine="35" endPosition="49" />
+    <scopeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="8" startPosition="65" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="1241009437488" fileName="GlobalSharedPair.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.shared.GlobalSharedPair" />
+  </root>
 </debugInfo>
 

@@ -28,6 +28,7 @@ public class EditorTab extends BaseConcept implements INamedConcept, ICheckedNam
   public static final String BASE_NODE_BLOCK = "baseNodeBlock";
   public static final String IS_APPLICABLE_BLOCK = "isApplicableBlock";
   public static final String NODES_BLOCK = "nodesBlock";
+  public static final String CREATE_TAB_BLOCK = "createTabBlock";
   public static final String CONCEPTS_BLOCK = "conceptsBlock";
   public static final String CREATE_BLOCK = "createBlock";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
@@ -138,6 +139,14 @@ public class EditorTab extends BaseConcept implements INamedConcept, ICheckedNam
 
   public void setNodesBlock(NodesBlock node) {
     super.setChild(EditorTab.NODES_BLOCK, node);
+  }
+
+  public CreateTabBlock getCreateTabBlock() {
+    return (CreateTabBlock) this.getChild(CreateTabBlock.class, EditorTab.CREATE_TAB_BLOCK);
+  }
+
+  public void setCreateTabBlock(CreateTabBlock node) {
+    super.setChild(EditorTab.CREATE_TAB_BLOCK, node);
   }
 
   public GetConceptsBlock getConceptsBlock() {

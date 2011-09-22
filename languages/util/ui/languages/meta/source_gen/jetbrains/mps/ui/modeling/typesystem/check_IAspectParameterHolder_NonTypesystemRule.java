@@ -21,7 +21,7 @@ public class check_IAspectParameterHolder_NonTypesystemRule extends AbstractNonT
   }
 
   public void applyRule(final SNode hld, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(hld, "jetbrains.mps.ui.modeling.structure.ContainerTemplate", false, false), "container", false), "requiredAspect", true)).disjunction(ListSequence.fromList(SLinkOperations.getTargets(hld, "aspectParameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    if (!(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(hld, "jetbrains.mps.ui.modeling.structure.ContainerTemplate", false, false), "container", false), "requiredAspect", true)).disjunction(ListSequence.fromList(SLinkOperations.getTargets(hld, "aspectParameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "aspectDef", false);
       }

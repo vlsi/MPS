@@ -15,13 +15,17 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelFqName;
 import java.util.Collection;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class ReachableClassifiersScope extends AbstractClassifiersScope {
@@ -57,7 +61,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
 
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
-    if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))) {
+    if (SModelUtil.isAssignableConcept(targetConcept, "jetbrains.mps.baseLanguage.structure.Classifier")) {
       return new ReachableClassifiersScope.ClassifierReferenceInfoResolver(this.myModel, this.myScope);
     }
     return super.getReferenceInfoResolver(referenceNode, targetConcept);
@@ -72,27 +76,57 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       this.myScope = scope;
     }
 
-    public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
+    public SNode resolve(String referenceInfo, @Nullable SModelReference targetModelReference) {
+      String classname = referenceInfo;
+      int dotIndex = classname.lastIndexOf(".");
+      if (dotIndex >= 0 && targetModelReference == null) {
+        // try local nested classes 
+        List<SNode> localClassifiers = ClassifiersCache.getInstance(myModel.getModelDescriptor()).getClassifiersByRefName(classname);
+        if (ListSequence.fromList(localClassifiers).count() >= 1) {
+          return ListSequence.fromList(localClassifiers).first();
+        }
+
+        // search everywhere 
+        String package_ = classname.substring(0, dotIndex);
+        classname = classname.substring(dotIndex + 1);
+        if (classname.indexOf('$') >= 0) {
+          classname = classname.replace('$', '.');
+        }
+        return resolveClass(package_, null, classname);
+      }
+
+      if (targetModelReference == null) {
+        targetModelReference = myModel.getSModelReference();
+      }
       if (targetModelReference.getSModelId() != null) {
         SModelDescriptor targetModel = this.myScope.getModelDescriptor(targetModelReference);
         if (targetModel == null) {
           return null;
         }
-        return ListSequence.fromList(ClassifiersCache.getInstance(targetModel).getClassifiersByRefName(referenceInfo)).first();
+        return ListSequence.fromList(ClassifiersCache.getInstance(targetModel).getClassifiersByRefName(classname)).first();
       }
+      SModelFqName modelname = targetModelReference.getSModelFqName();
+      return resolveClass(modelname.getLongName(), modelname.getStereotype(), classname);
+    }
 
+    public SNode resolveClass(String modelname, String stereotype, String nestedClassName) {
       Collection<IModule> visibleModules = IterableUtil.asCollection(myScope.getVisibleModules());
 
       List<SNode> classifiers = new ArrayList<SNode>();
-      for (SModelDescriptor model : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
-        if (!(visibleModules.contains(model.getModule()))) {
+      for (SModelDescriptor model : Sequence.fromIterable(((Iterable<IModule>) visibleModules)).translate(new ITranslator2<IModule, SModelDescriptor>() {
+        public Iterable<SModelDescriptor> translate(IModule it) {
+          return it.getOwnModelDescriptors();
+        }
+      }).distinct()) {
+        SModelFqName modelFqName = model.getSModelReference().getSModelFqName();
+        if (!(modelFqName.getLongName().equals(modelname))) {
           continue;
         }
-        if (!(model.getSModelReference().getSModelFqName().equals(targetModelReference.getSModelFqName()))) {
+        if (stereotype != null && !(modelFqName.getStereotype().equals(stereotype))) {
           continue;
         }
 
-        ListSequence.fromList(classifiers).addSequence(ListSequence.fromList(ClassifiersCache.getInstance(model).getClassifiersByRefName(referenceInfo)));
+        ListSequence.fromList(classifiers).addSequence(ListSequence.fromList(ClassifiersCache.getInstance(model).getClassifiersByRefName(nestedClassName)));
       }
 
       if (ListSequence.fromList(classifiers).isEmpty()) {
@@ -103,11 +137,22 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
           if (SNodeOperations.getModel(cls) == myModel) {
             return cls;
           }
+          if (check_x9ho2v_a0b0a0g0b0_0(check_x9ho2v_a0a1a0a6a1a_0(myModel)) == check_x9ho2v_a0b0a0g0b0(check_x9ho2v_a0a1a0a6a1a(SNodeOperations.getModel(cls)))) {
+            return cls;
+          }
+        }
+        Iterable<SNode> userClassifiers = ListSequence.fromList(classifiers).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SModelStereotype.isUserModel(SNodeOperations.getModel(it));
+          }
+        });
+        if (Sequence.fromIterable(userClassifiers).count() == 1) {
+          return Sequence.fromIterable(userClassifiers).first();
         }
 
         final StringBuilder warn = new StringBuilder();
         warn.append("reference can't be resolved: ");
-        warn.append(referenceInfo);
+        warn.append(nestedClassName);
         warn.append(" in ");
         warn.append(myModel.getLongName());
         warn.append(" can reference nodes from models: ");
@@ -123,6 +168,34 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
         return null;
       }
       return ListSequence.fromList(classifiers).getElement(0);
+    }
+
+    private static IModule check_x9ho2v_a0b0a0g0b0(SModelDescriptor checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getModule();
+      }
+      return null;
+    }
+
+    private static SModelDescriptor check_x9ho2v_a0a1a0a6a1a(SModel checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getModelDescriptor();
+      }
+      return null;
+    }
+
+    private static IModule check_x9ho2v_a0b0a0g0b0_0(SModelDescriptor checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getModule();
+      }
+      return null;
+    }
+
+    private static SModelDescriptor check_x9ho2v_a0a1a0a6a1a_0(SModel checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getModelDescriptor();
+      }
+      return null;
     }
   }
 }

@@ -77,7 +77,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
           @Override
           public void visit(FileClassPathItem item) {
-            String path = item.getClassPath();
+            String path = item.getPath();
             StubPath stubPath = myAuxModule.addStubPath(path);
             if (stubPath != null) {
               SetSequence.fromSet(pathsToAdd).addElement(stubPath);

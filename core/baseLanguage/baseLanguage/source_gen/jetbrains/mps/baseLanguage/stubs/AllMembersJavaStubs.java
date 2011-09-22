@@ -28,7 +28,7 @@ public class AllMembersJavaStubs extends BaseStubModelRootManager {
 
     moduleIds.add("f3061a53-9226-4cc5-a443-f952ceaf5816");
 
-    Iterable<Language> languages = SetSequence.fromSet(moduleIds).<Language>select(new ISelector<String, Language>() {
+    Iterable<Language> languages = SetSequence.fromSet(moduleIds).select(new ISelector<String, Language>() {
       public Language select(String it) {
         return (Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(it));
       }

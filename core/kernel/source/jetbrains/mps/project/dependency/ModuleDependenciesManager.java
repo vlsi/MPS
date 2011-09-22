@@ -20,8 +20,11 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.IterableUtil;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class ModuleDependenciesManager<T extends AbstractModule> implements DependenciesManager {
   protected T myModule;
@@ -51,39 +54,34 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     return modules;
   }
 
+  @Override
+  public Set<IModule> getRequiredModules() {
+    Set<IModule> modules = new LinkedHashSet<IModule>();
+    for (IModule m : ModuleUtil.getDependencies(myModule)) {
+      modules.add(m);
+    }
+
+    for(Language language : ModuleUtil.getUsedLanguages(myModule)) {
+      for (ModuleReference ref : language.getRuntimeModulesReferences()) {
+        IModule m = MPSModuleRepository.getInstance().getModule(ref);
+        if (m == null) continue;
+        modules.add(m);
+      }
+    }
+    return modules;
+  }
+
   public void collectAllCompileTimeDependencies(/* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime) {
     dependencies.add(myModule);
-    for (Dependency dep : myModule.getDependencies()) {
-      IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
-      if (m == null) continue;
+    for (IModule m : ModuleUtil.getDependencies(myModule)) {
       if (!dependencies.contains(m)) {
         m.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
       }
     }
-    for (ModuleReference ref : myModule.getUsedDevkitReferences()) {
-      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
-      if (dk == null) continue;
-      for (Solution exportedSolution : dk.getAllExportedSolutions()) {
-        if (exportedSolution != null && !dependencies.contains(exportedSolution)) {
-          exportedSolution.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
-        }
-      }
-      for (Language language : dk.getAllExportedLanguages()) {
-        collectAllCompileTimeDependenciesInUsedLanguage(language, dependencies, languagesWithRuntime);
-      }
-    }
-    for (ModuleReference ref : myModule.getUsedLanguagesReferences()) {
-      Language l = MPSModuleRepository.getInstance().getLanguage(ref);
-      if (l == null) continue;
-      collectAllCompileTimeDependenciesInUsedLanguage(l, dependencies, languagesWithRuntime);
-    }
-  }
 
-  protected void collectAllCompileTimeDependenciesInUsedLanguage(Language l, /* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime) {
-    for (Language language : l.getAllExtendedLanguages()) {
-      if (language == null) continue;
-      for (Dependency dep : language.getRuntimeDependencies()) {
-        IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+    for(Language language : ModuleUtil.getUsedLanguages(myModule)) {
+      for (ModuleReference dep : language.getRuntimeModulesReferences()) {
+        IModule m = MPSModuleRepository.getInstance().getModule(dep);
         if (m == null) continue;
         if (!dependencies.contains(m)) {
           m.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
@@ -108,24 +106,24 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     dependencies.add(myModule);
 
     for (Dependency dependency : myModule.getDependencies()) {
-      if(reexportOnly && !dependency.isReexport()) continue;
+      if (reexportOnly && !dependency.isReexport()) continue;
 
       IModule m = MPSModuleRepository.getInstance().getModule(dependency.getModuleRef());
       if (m == null) continue;
 
-      if(!dependencies.contains(m)) {
+      if (!dependencies.contains(m)) {
         m.getDependenciesManager().collectVisibleModules(dependencies, true);
       }
     }
 
-    if(reexportOnly) return;
+    if (reexportOnly) return;
 
     for (ModuleReference ref : myModule.getUsedDevkitReferences()) {
       DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
       if (dk == null) continue;
 
       for (Solution solution : dk.getAllExportedSolutions()) {
-        if(!dependencies.contains(solution)) {
+        if (!dependencies.contains(solution)) {
           solution.getDependenciesManager().collectVisibleModules(dependencies, true);
         }
       }

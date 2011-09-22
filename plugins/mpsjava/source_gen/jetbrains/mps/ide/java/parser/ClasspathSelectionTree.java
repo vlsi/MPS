@@ -9,6 +9,7 @@ import java.io.File;
 import jetbrains.mps.reloading.IClassPathItem;
 import java.util.HashMap;
 import jetbrains.mps.ide.ui.CheckBoxNodeRenderer;
+import java.util.List;
 import javax.swing.event.TreeWillExpandListener;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.tree.ExpandVetoException;
@@ -54,7 +55,7 @@ public class ClasspathSelectionTree extends Tree {
     setRowHeight(16);
   }
 
-  public static ClasspathSelectionTree createClasspathSelectionTree(ClasspathObserver classpathObserver, File sourceDir) {
+  public static ClasspathSelectionTree createClasspathSelectionTree(ClasspathObserver classpathObserver, List<File> sourceDirs) {
     ClasspathSelectionTree tree = new ClasspathSelectionTree(classpathObserver);
     tree.addTreeWillExpandListener(new TreeWillExpandListener() {
       public void treeWillExpand(TreeExpansionEvent event) throws ExpandVetoException {
@@ -111,7 +112,7 @@ public class ClasspathSelectionTree extends Tree {
 
     private IClassPathItem classpathChosen() {
       try {
-        return ClassPathFactory.getInstance().createFromPath(myFile.getAbsolutePath());
+        return ClassPathFactory.getInstance().createFromPath(myFile.getAbsolutePath(), "ClasspathSelectionTree");
       } catch (Throwable ex) {
         ClasspathSelectionTree.LOG.error(ex);
         return null;

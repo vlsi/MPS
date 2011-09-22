@@ -44,4 +44,6 @@ public interface IGenerationSettings {
   boolean isIncrementalUseCache();
 
   boolean isFailOnMissingTextGen();
+
+  boolean isShowBadChildWarning();
 }

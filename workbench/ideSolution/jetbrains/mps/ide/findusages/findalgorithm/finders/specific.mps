@@ -2239,7 +2239,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7228605397000827493" resolveInfo="solution" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7228605397000827503">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~AbstractModule%dgetDependOn()%cjava%dutil%dList" resolveInfo="getDependOn" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~AbstractModule%dgetDependencies()%cjava%dutil%dList" resolveInfo="getDependencies" />
                 </node>
               </node>
             </node>
@@ -2629,7 +2629,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7228605397000827624" resolveInfo="devKit" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7228605397000827653">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~AbstractModule%dgetDependOn()%cjava%dutil%dList" resolveInfo="getDependOn" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~AbstractModule%dgetDependencies()%cjava%dutil%dList" resolveInfo="getDependencies" />
                 </node>
               </node>
             </node>

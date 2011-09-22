@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Ypath_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.plugin.Ypath_ProjectPlugin" />
-  <unitInfo fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ypath.plugin.DesignPartLoader_CustomApplicationPlugin" />
   <unitInfo fileName="Ypath_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ypath.plugin.Ypath_ApplicationPlugin" />
   <root nodeId="1216917978220">
     <nodeInfo nodeId="1216918074000" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="11" startPosition="24" endLine="12" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1216918094368" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216917978220" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="7" startPosition="91" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DesignPartLoader_CustomApplicationPlugin#()V" />
+    <nodeInfo nodeId="1216917978220" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doInit#()V" />
+    <nodeInfo nodeId="1216917978220" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doDispose#()V" />
+    <scopeInfo nodeId="1216917978220" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="8" startPosition="53" endLine="8" endPosition="53" />
     <scopeInfo nodeId="1216918006144" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="11" startPosition="24" endLine="12" endPosition="64" />
     <scopeInfo nodeId="1216918086711" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="68" />
+    <scopeInfo nodeId="1216917978220" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="7" startPosition="91" endLine="9" endPosition="3" />
+    <scopeInfo nodeId="1216917978220" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="1216917978220" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <unitInfo nodeId="1216917978220" fileName="DesignPartLoader_CustomApplicationPlugin.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ypath.plugin.DesignPartLoader_CustomApplicationPlugin" />
   </root>
   <root nodeId="6854028447099503200">
     <nodeInfo nodeId="6854028447099503215" fileName="DesignPartLoader.java" startLine="20" startPosition="31" endLine="21" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

@@ -69,7 +69,7 @@ public class CreateGroupsBuilder {
 
   public static DefaultActionGroup getCreateGroup(SNodePointer baseNode, NodeChangeCallback callback, EditorTabDescriptor d) {
     List<SNode> concepts = d.getConcepts(baseNode.getNode());
-    if (concepts.isEmpty()) return null;
+    if (concepts.isEmpty()) return new DefaultActionGroup();
 
     DefaultActionGroup group = new DefaultActionGroup(d.getTitle(), false);
     for (final SNode concept : concepts) {

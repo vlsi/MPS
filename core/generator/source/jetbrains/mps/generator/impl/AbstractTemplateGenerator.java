@@ -40,15 +40,17 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   protected final GeneratorMappings myMappings;
 
   private Set<SNode> myFailedRules = new ConcurrentHashSet<SNode>();
+  private final boolean myShowBadChildWarning;
 
   protected AbstractTemplateGenerator(IOperationContext operationContext,
                                       ProgressIndicator progressMonitor, IGeneratorLogger logger,
-                                      SModel inputModel, SModel outputModel) {
+                                      SModel inputModel, SModel outputModel, boolean showBadChildWarning) {
     myOperationContext = operationContext;
     myProgressMonitor = progressMonitor;
     myLogger = logger;
     myInputModel = inputModel;
     myOutputModel = outputModel;
+    myShowBadChildWarning = showBadChildWarning;
     myMappings = new GeneratorMappings(inputModel.registeredNodesCount());
   }
 
@@ -203,6 +205,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     if (link == null) {
       return new RoleValidationStatus(sourceNode, "concept '" + concept.getName() + "' cannot have " + relationKind + " with role '" + role + "'",
         GeneratorUtil.describe(targetNode, relationKind + (child ? "" : " (hidden in editor)")));
+    }
+    if(!myShowBadChildWarning) {
+      // ignore
+      return null;
     }
     if (!SModelUtil.isAcceptableTarget(link, targetNode)) {
       if (child && targetNode.getUserObject(DelayedChanges.MAP_SRC_TEMP_NODE) != null) {

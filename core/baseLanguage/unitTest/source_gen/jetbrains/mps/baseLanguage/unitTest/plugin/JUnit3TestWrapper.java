@@ -33,7 +33,7 @@ public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
       public boolean accept(SNode it) {
         return JUnit3MethodWrapper.isTestMethod(it);
       }
-    }).<ITestNodeWrapper>select(new ISelector<SNode, ITestNodeWrapper>() {
+    }).select(new ISelector<SNode, ITestNodeWrapper>() {
       public ITestNodeWrapper select(SNode it) {
         return TestNodeWrapperFactory.tryToWrap(it);
       }

@@ -42,7 +42,6 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -220,7 +219,7 @@ public class NewGeneratorDialog extends BaseDialog {
       templateModel.addLanguage(ModuleReference.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)"));
       templateModel.addDevKit(GeneralPurpose_DevKit.get().getModuleReference());
       templateModel.addModelImport(sourceLanguage.getStructureModelDescriptor().getSModelReference(), false);
-      templateModel.addModelImport(SModelReference.fromString("java.lang@java_stub"), false);
+      // <node> 
       SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, "jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
       SPropertyOperations.set(mappingConfiguration, "name", "main");
       SModelOperations.addRootNode(templateModel, mappingConfiguration);

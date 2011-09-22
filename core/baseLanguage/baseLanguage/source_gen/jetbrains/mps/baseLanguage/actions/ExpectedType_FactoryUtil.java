@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ExpectedType_FactoryUtil {
   public ExpectedType_FactoryUtil() {
@@ -32,5 +33,35 @@ public class ExpectedType_FactoryUtil {
       }
     }
     return originalExpression;
+  }
+
+  public static SNode getCorrespondingInstanceOf(SNode expressionOrItsParent) {
+    SNode outer = expressionOrItsParent;
+    while (SNodeOperations.isInstanceOf(outer, "jetbrains.mps.baseLanguage.structure.Expression")) {
+      outer = SNodeOperations.getParent(outer);
+    }
+    if (SNodeOperations.isInstanceOf(outer, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      outer = SNodeOperations.getParent(outer);
+    }
+    if (SNodeOperations.isInstanceOf(outer, "jetbrains.mps.baseLanguage.structure.Statement") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(outer), "jetbrains.mps.baseLanguage.structure.StatementList")) {
+      SNode list = SNodeOperations.cast(SNodeOperations.getParent(outer), "jetbrains.mps.baseLanguage.structure.StatementList");
+      if (ListSequence.fromList(SLinkOperations.getTargets(list, "statement", true)).first() == outer) {
+        outer = list;
+      } else {
+        outer = null;
+      }
+    }
+    if (SNodeOperations.isInstanceOf(outer, "jetbrains.mps.baseLanguage.structure.StatementList")) {
+      SNode condition = null;
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(outer), "jetbrains.mps.baseLanguage.structure.ElsifClause")) {
+        condition = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(outer), "jetbrains.mps.baseLanguage.structure.ElsifClause"), "condition", true);
+      } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(outer), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
+        condition = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(outer), "jetbrains.mps.baseLanguage.structure.IfStatement"), "condition", true);
+      }
+      if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression")) {
+        return SNodeOperations.cast(condition, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
+      }
+    }
+    return null;
   }
 }

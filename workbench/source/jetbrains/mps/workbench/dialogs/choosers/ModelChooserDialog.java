@@ -24,10 +24,10 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
+import jetbrains.mps.workbench.actions.goTo.matcher.ChooseByNamePanel;
+import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import org.jetbrains.annotations.Nullable;
@@ -43,7 +43,7 @@ import java.util.List;
 class ModelChooserDialog extends BaseDialog {
   private List<SModelReference> myModels = new ArrayList<SModelReference>();
   private List<SModelReference> myNonProjectModels = new ArrayList<SModelReference>();
-  private SmartChooseByNamePanel myChooser;
+  private ChooseByNamePanel myChooser;
   private boolean myIsCancelled = true;
   private boolean myOkDone = false;
   private boolean myIsMultipleSelection = false;
@@ -97,7 +97,7 @@ class ModelChooserDialog extends BaseDialog {
       }
     };
 
-    myChooser = new SmartChooseByNamePanel(goToModelModel, !myNonProjectModels.isEmpty(), DefaultMatcherFactory.createAllMatcher(goToModelModel));
+    myChooser = MpsPopupFactory.createPanelForPackage(goToModelModel, !myNonProjectModels.isEmpty());
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {

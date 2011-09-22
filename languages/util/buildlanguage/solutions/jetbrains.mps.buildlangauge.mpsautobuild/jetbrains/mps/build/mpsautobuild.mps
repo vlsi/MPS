@@ -2435,6 +2435,10 @@
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472980">
       <property name="id" nameId="tps4.1222447189012" value="dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc" />
     </node>
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="5838274581609105550">
+      <property name="id" nameId="tps4.1222447189012" value="77c9a130-703f-4530-bf21-6580757768d0" />
+      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.antsupport" />
+    </node>
   </root>
   <root id="8431776905956472981">
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472982">
@@ -2656,6 +2660,10 @@
         <property name="id" nameId="tps4.1222447189012" value="4caf0310-491e-41f5-8a9b-2006b3a94898" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.util" />
       </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="1585405235656481880">
+        <property name="id" nameId="tps4.1222447189012" value="5b247b59-8fd0-4475-a767-9e9ff6a9d01c" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.lib.startup" />
+      </node>
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2738111162319948323">
         <property name="name" nameId="tps4.1223641503366" value="execution" />
       </node>
@@ -2866,14 +2874,14 @@
         </node>
       </node>
       <node role="updateWebsite" roleId="tps4.6108265972537335245" type="tps4.UpdateWebsite" typeId="tps4.6108265972537335223" id="437343344535662885">
+        <node role="updateUrl" roleId="tps4.6108265972537335225" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8440524662291451225">
+          <property name="name" nameId="tps4.1223641503366" value="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+EAP+Download+Page" />
+        </node>
         <node role="checkUrl" roleId="tps4.6108265972537335224" type="tps4.SimpleString" typeId="tps4.1205339044029" id="437343344535662889">
           <property name="name" nameId="tps4.1223641503366" value="http://www.jetbrains.com/mps/update.xml" />
         </node>
         <node role="updateChannel" roleId="tps4.8795525031433091059" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8795525031433494621">
           <property name="name" nameId="tps4.1223641503366" value="MPS20EAP" />
-        </node>
-        <node role="updateUrl" roleId="tps4.6108265972537335225" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8440524662291451225">
-          <property name="name" nameId="tps4.1223641503366" value="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+EAP+Download+Page" />
         </node>
       </node>
       <node role="help" roleId="tps4.437343344536486297" type="tps4.Help" typeId="tps4.437343344536486293" id="437343344536578822">

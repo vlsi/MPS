@@ -178,7 +178,7 @@ public class ListPanel extends JPanel {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 synchronized (myLock) {
-                  ListPanel.this.myCandidates = ListSequence.fromList(nodesList).<ITestNodeWrapper>select(new ISelector<SNode, ITestNodeWrapper>() {
+                  ListPanel.this.myCandidates = ListSequence.fromList(nodesList).select(new ISelector<SNode, ITestNodeWrapper>() {
                     public ITestNodeWrapper select(SNode it) {
                       return TestNodeWrapperFactory.tryToWrap(it);
                     }
@@ -198,7 +198,7 @@ public class ListPanel extends JPanel {
 
     synchronized (myLock) {
       ListSequence.fromList(this.myCandidates).removeSequence(ListSequence.fromList(this.myValues));
-      return ListSequence.fromList(this.myCandidates).<SNode>select(new ISelector<ITestNodeWrapper, SNode>() {
+      return ListSequence.fromList(this.myCandidates).select(new ISelector<ITestNodeWrapper, SNode>() {
         public SNode select(ITestNodeWrapper it) {
           return it.getNode();
         }

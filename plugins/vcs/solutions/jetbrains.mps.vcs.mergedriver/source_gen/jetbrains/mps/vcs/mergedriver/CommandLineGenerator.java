@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Arrays;
 import java.io.File;
+import com.intellij.openapi.util.SystemInfo;
 import org.apache.commons.lang.StringUtils;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
@@ -31,8 +32,8 @@ public class CommandLineGenerator {
   private CommandLineGenerator() {
   }
 
-  public static String getCommandLine(boolean withSvnkit) {
-    Iterable<String> classpath = getClasspath(withSvnkit);
+  public static String getCommandLine(int vcs) {
+    Iterable<String> classpath = getClasspath(vcs == ScriptGenerator.SVN);
     if (InternalFlag.isInternalMode()) {
       classpath = Sequence.fromIterable(classpath).where(new IWhereFilter<String>() {
         public boolean accept(String cpi) {
@@ -41,25 +42,25 @@ public class CommandLineGenerator {
       }).concat(ListSequence.fromList(Arrays.asList(InternalRuntimePacker.getPath())));
     }
     String javaExecutable = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
+    if (SystemInfo.isWindows) {
+      javaExecutable = adaptPathForMsysGit(javaExecutable + ".exe");
+    }
     String classpathString = StringUtils.join(Sequence.fromIterable(classpath).toListSequence(), File.pathSeparator);
     String escapedLogPath = (PathManager.getLogPath() + File.separator + "mergedriver.log").replace("\\", "\\\\");
     return String.format("\"%s\" -D%s=\"%s\" -cp \"%s\" %s", javaExecutable, MergeDriverMain.LOG_PROPERTY, escapedLogPath, classpathString, MergeDriverMain.class.getName());
   }
 
-  /*package*/ static String getSvnkitJar() {
+  private static String getSvnkitJar() {
     IdeaPluginDescriptor svnPlugin = PluginManager.getPlugin(PluginId.getId("Subversion"));
-    if (svnPlugin == null) {
-      return null;
-    } else {
-      return svnPlugin.getPath() + File.separator + "lib" + File.separator + "svnkit.jar";
-    }
+    assert svnPlugin != null;
+    return svnPlugin.getPath() + File.separator + "lib" + File.separator + "svnkit.jar";
   }
 
   public static Set<String> getClasspath(boolean withSvnkit) {
     Set<String> classpathItems = SetSequence.fromSet(new LinkedHashSet<String>());
     final Iterable<String> OTHER_CLASSES = Arrays.asList("com.intellij.ide.projectView.impl.ProjectViewImpl", "jetbrains.mps.internal.collections.runtime.ListSequence", "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes", "org.apache.commons.logging.Log", "org.apache.log4j.Logger", "com.intellij.util.containers.ConcurrentHashSet", "gnu.trove.THash", "org.jdom.JDOMException", "com.intellij.openapi.components.ApplicationComponent", "com.intellij.idea.IdeaTestApplication", "org.picocontainer.Disposable", "com.intellij.openapi.extensions.Extensions", "com.intellij.ide.ClassloaderUtil", "jetbrains.mps.generator.TransientModelsComponent", "org.apache.xmlrpc.XmlRpcServer", "jetbrains.mps.typesystem.inference.TypeChecker", "jetbrains.mps.debug.customViewers.CustomViewersManager", "jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager", "jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager", "jetbrains.mps.intentions.IntentionsManager", "jetbrains.mps.ide.findusages.FindersManager", "jetbrains.mps.baseLanguage.index.ClassifierSuccessorsIndexer", "jetbrains.mps.execution.impl.configurations.runners.MPSProgramRunner", "com.google.common.collect.ImmutableList", "jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner", "jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin", "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple");
     Iterable<Class> classes = Arrays.<Class>asList(MergeDriverMain.class, FileUtil.class, MergeContext.class, SModel.class, StringUtils.class, IdeMain.class);
-    classes = Sequence.fromIterable(OTHER_CLASSES).<Class>select(new ISelector<String, Class>() {
+    classes = Sequence.fromIterable(OTHER_CLASSES).select(new ISelector<String, Class>() {
       public Class select(String cn) {
         try {
           return (Class) Class.forName(cn);
@@ -71,7 +72,7 @@ public class CommandLineGenerator {
         }
       }
     }).concat(Sequence.fromIterable(classes));
-    SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(classes).<String>select(new ISelector<Class, String>() {
+    SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(classes).select(new ISelector<Class, String>() {
       public String select(Class c) {
         return PathUtil.getJarPathForClass(c);
       }
@@ -83,5 +84,9 @@ public class CommandLineGenerator {
       SetSequence.fromSet(classpathItems).addElement(getSvnkitJar());
     }
     return classpathItems;
+  }
+
+  /*package*/ static String adaptPathForMsysGit(String path) {
+    return path.replaceFirst("^(\\w):\\\\", "/$1/").replace('\\', '/');
   }
 }

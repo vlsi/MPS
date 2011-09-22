@@ -23,12 +23,11 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.ide.java.parser.JavaCompiler;
 import java.io.File;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.ide.java.parser.JavaCompiler;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import javax.swing.tree.TreeNode;
@@ -131,11 +130,6 @@ public class NewModelFromSource_Action extends GeneratedAction {
         treeFileChooser.setDirectoriesAreAlwaysVisible(true);
         treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
         final SModel sModel = result.getSModel();
-        treeFileChooser.setFileFilter(new IFileFilter() {
-          public boolean accept(IFile file) {
-            return JavaCompiler.checkBaseModelMatchesSourceDirectory(sModel, new File(file.getPath()));
-          }
-        });
         String generatorOutputPath = ((IModule) MapSequence.fromMap(_params).get("module")).getGeneratorOutputPath();
         File initial = null;
         File output = new File(generatorOutputPath);

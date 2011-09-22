@@ -19,11 +19,9 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.util.TreeIterator;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public final class CopyUtil {
@@ -107,7 +105,9 @@ public final class CopyUtil {
 
   public static List<SNode> copy(List<SNode> nodes, Map<SNode, SNode> mapping) {
     List<SNode> result = clone(nodes, mapping);
-    addReferences(nodes, mapping, true, false);
+    for(SNode node : nodes) {
+      addReferences(node, mapping, true, false);
+    }
     return result;
   }
 
@@ -129,9 +129,7 @@ public final class CopyUtil {
     for (SNode sourceNode : mapping.keySet()) {
       mapping.get(sourceNode).setId(sourceNode.getSNodeId());
     }
-    List<SNode> nodes = new ArrayList<SNode>();
-    nodes.add(node);
-    addReferences(nodes, mapping, true, cloneRefs);
+    addReferences(node, mapping, true, cloneRefs);
     return result;
   }
 
@@ -141,9 +139,7 @@ public final class CopyUtil {
 
   public static SNode copy(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {
     SNode result = clone(node, mapping, copyAttributes);
-    List<SNode> nodes = new ArrayList<SNode>();
-    nodes.add(node);
-    addReferences(nodes, mapping, copyAttributes, false);
+    addReferences(node, mapping, copyAttributes, false);
     return result;
   }
 
@@ -187,16 +183,23 @@ public final class CopyUtil {
     return results;
   }
 
-  private static void addReferences(List<? extends SNode> inputNodes, Map<SNode, SNode> mapping, boolean copyAttributes, boolean forceCloneRefs) {
-    for (SNode inputNode : inputNodes) {
-      if (inputNode == null) {
+  private static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean copyAttributes, boolean forceCloneRefs) {
+    if(root == null) return;
+    final Iterator<SNode> nodesIterator = root.getDescendantsIterable(null, true).iterator();
+    while(nodesIterator.hasNext()) {
+      SNode inputNode = nodesIterator.next();
+      if (!copyAttributes && AttributeOperations.isAttribute(inputNode)) {
+        ((TreeIterator)nodesIterator).skipChildren();
         continue;
       }
       SNode outputNode = mapping.get(inputNode);
+      if(outputNode == null) {
+        throw new IllegalStateException();
+      }
 
-      for (SReference ref : inputNode.getReferencesArray()) {
+      for (SReference ref : inputNode.getReferencesIterable()) {
         boolean cloneRefs = forceCloneRefs || MPSCore.getInstance().isMergeDriverMode();
-        SNode inputTargetNode = cloneRefs ? null : ref.getTargetNode();
+        SNode inputTargetNode = cloneRefs ? null : ref.getTargetNodeSilently();
         if (inputTargetNode == null) { //broken reference or need to clone
           if (ref instanceof StaticReference) {
             StaticReference statRef = (StaticReference) ref;
@@ -208,7 +211,9 @@ public final class CopyUtil {
               statRef.getResolveInfo()));
           } else if (ref instanceof DynamicReference && cloneRefs) {
             DynamicReference dynRef = (DynamicReference) ref;
-            outputNode.addReference(new DynamicReference(dynRef.getRole(), outputNode, dynRef.getTargetSModelReference(), dynRef.getResolveInfo()));
+            DynamicReference output = new DynamicReference(dynRef.getRole(), outputNode, dynRef.getTargetSModelReference(), dynRef.getResolveInfo());
+            output.setOrigin(dynRef.getOrigin());
+            outputNode.addReference(output);
           }
         } else if (mapping.containsKey(inputTargetNode)) {
           outputNode.setReferent(ref.getRole(), mapping.get(inputTargetNode), false);
@@ -216,8 +221,6 @@ public final class CopyUtil {
           outputNode.setReferent(ref.getRole(), inputTargetNode, false);
         }
       }
-
-      addReferences(inputNode.getChildren(copyAttributes), mapping, copyAttributes, forceCloneRefs);
     }
   }
 }

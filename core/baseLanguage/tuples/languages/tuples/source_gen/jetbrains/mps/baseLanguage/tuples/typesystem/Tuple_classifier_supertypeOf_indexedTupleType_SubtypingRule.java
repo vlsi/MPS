@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -33,7 +33,7 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
     String clname = "Tuples._" + ListSequence.fromList(SLinkOperations.getTargets(itt, "componentType", true)).count();
     SModel rtmodel = SNodeOperations.getModel(SLinkOperations.getTarget(new Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.QuotationClass_tm6bn3_a0a0a2a0().createNode(typeCheckingContext), "classifier", false));
     for (SNode ct : SModelOperations.getNodes(rtmodel, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      if ((clname).equals(SPropertyOperations.getString(ct, "name"))) {
+      if ((clname).equals(Classifier_Behavior.call_getNestedName_8540045600162184125(ct))) {
         SNode supertype = new Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.QuotationClass_tm6bn3_a0a0a0a3a0().createNode(ct, typeCheckingContext);
         ListSequence.fromList(result).addElement(supertype);
         for (SNode comptype : SLinkOperations.getTargets(itt, "componentType", true)) {

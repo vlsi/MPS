@@ -140,16 +140,11 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
     if (ListSequence.fromList(genList).isEmpty()) {
       NewGeneratorDialog dialog = new NewGeneratorDialog(frame, language.value);
       dialog.showDialog();
-      final Generator createdGenerator = dialog.getResult();
+      Generator createdGenerator = dialog.getResult();
       if (createdGenerator == null) {
         return null;
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          SModel createdModel = createdGenerator.getOwnTemplateModels().get(0).getSModel();
-          SModelOperations.addRootNode(createdModel, SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.MappingConfiguration", null));
-        }
-      });
+      ListSequence.fromList(genList).addElement(createdGenerator);
     }
 
     final List<SNode> mappings = new ArrayList<SNode>();
@@ -177,9 +172,11 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
 
           if (model == null) {
             JOptionPane.showMessageDialog(frame, "create template model first");
+            return;
           }
 
           SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
+          SPropertyOperations.set(node, "name", "main");
           SModelOperations.addRootNode(model, node);
           ListSequence.fromList(mappings).addElement(node);
         }

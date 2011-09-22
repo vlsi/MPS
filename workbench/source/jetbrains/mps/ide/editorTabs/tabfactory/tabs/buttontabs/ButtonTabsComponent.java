@@ -74,7 +74,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     getComponent().add(myToolbar, BorderLayout.CENTER);
   }
 
-  protected void nextTab() {
+  public void nextTab() {
     for (ButtonEditorTab tab : myRealTabs) {
       if (!isCurrent(tab)) continue;
       int index = myRealTabs.indexOf(tab);
@@ -100,7 +100,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     return current;
   }
 
-  protected void prevTab() {
+  public void prevTab() {
     for (ButtonEditorTab tab : myRealTabs) {
       if (!isCurrent(tab)) continue;
 

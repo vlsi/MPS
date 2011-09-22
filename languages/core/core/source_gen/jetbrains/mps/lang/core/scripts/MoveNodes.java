@@ -65,7 +65,7 @@ public class MoveNodes extends BaseGeneratedRefactoring {
           return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference");
         }
       });
-      Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).<String>select(new ISelector<SNode, String>() {
+      Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return SModelUtil.getGenuineLinkRole(it);
         }

@@ -16,8 +16,8 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Container_Constraints extends BaseConstraintsDescriptor {
@@ -42,7 +42,7 @@ public class Container_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.UIObject", true, false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+            return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.UIObject", true, false))).translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode uio) {
                 return SLinkOperations.getTargets(uio, "compartment", true);
               }

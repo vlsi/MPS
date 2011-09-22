@@ -150,7 +150,7 @@ public class ReduceFold_Test extends Util_Test {
 
   public void test_mps10786() throws Exception {
     List<IntHolder> input = ListSequence.fromListAndArray(new ArrayList<IntHolder>(), new IntHolder(3), new IntHolder(5));
-    int res = ListSequence.fromList(input).<Integer>select(new ISelector<IntHolder, Integer>() {
+    int res = ListSequence.fromList(input).select(new ISelector<IntHolder, Integer>() {
       public Integer select(IntHolder it) {
         return it.getInt();
       }

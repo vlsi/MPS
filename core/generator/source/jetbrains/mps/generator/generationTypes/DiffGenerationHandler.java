@@ -181,7 +181,7 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
     }
   }
 
-  public List<String> createDiffReports() {
+  public List<String> createDiffReports(Set<File> excludedFromDiffFiles) {
     List<String> result = new ArrayList<String>();
     for (SModelReference outputModel : this.getOutputModelRefs()) {
       List<String> files = new ArrayList<String>();
@@ -198,6 +198,13 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
         }
 
         final String filePath = this.getOutputDir(outputModel) + File.separator + filename;
+        if(excludedFromDiffFiles != null) {
+          final File expectedFile = new File(filePath);
+          if(excludedFromDiffFiles.contains(expectedFile)) {
+            files.remove(filename);
+            continue;
+          }
+        }
         final File testFile = new File(filePath);
         String oldContent = null;
         String newContent = this.getSourceByNode(outputRoot, outputModel);

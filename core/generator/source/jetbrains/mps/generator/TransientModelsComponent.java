@@ -134,6 +134,16 @@ public class TransientModelsComponent implements ProjectComponent {
     });
   }
 
+  public void createModule(final IModule module) {
+    if (myModuleMap.containsKey(module)) {
+      return;
+    }
+
+    final TransientModelsModule transientModelsModule = new TransientModelsModule(module, TransientModelsComponent.this);
+    transientModelsModule.initModule();
+    myModuleMap.put(module, transientModelsModule);
+  }
+
   public TransientModelsModule getModule(final IModule module) {
     TransientModelsModule transientModelsModule = ModelAccess.instance().requireRead(new Computable<TransientModelsModule>() {
       @Override
@@ -142,16 +152,7 @@ public class TransientModelsComponent implements ProjectComponent {
           return myModuleMap.get(module);
         }
 
-        final TransientModelsModule transientModelsModule = new TransientModelsModule(module, TransientModelsComponent.this);
-        // later
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            transientModelsModule.initModule();
-          }
-        });
-        myModuleMap.put(module, transientModelsModule);
-        return transientModelsModule;
+        throw new IllegalStateException();
       }
     });
     return transientModelsModule;

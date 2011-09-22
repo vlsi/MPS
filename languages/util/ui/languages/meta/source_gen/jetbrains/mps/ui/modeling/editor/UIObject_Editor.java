@@ -335,7 +335,7 @@ public class UIObject_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_c5f0a4_c3e0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        SNode bt = Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(node)).skip(1).<SNode>select(new ISelector<SNode, SNode>() {
+        SNode bt = Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(node)).skip(1).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode o) {
             return SLinkOperations.getTarget(o, "belongsTo", false);
           }

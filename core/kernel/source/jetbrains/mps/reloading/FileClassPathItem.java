@@ -42,7 +42,12 @@ public class FileClassPathItem extends RealClassPathItem {
     myClassPath = classPath;
   }
 
+  @Deprecated
   public String getClassPath() {
+    return getPath();
+  }
+
+  public String getPath() {
     checkValidity();
     return myClassPath;
   }
@@ -182,9 +187,9 @@ public class FileClassPathItem extends RealClassPathItem {
     return result;
   }
 
-  public List<IClassPathItem> flatten() {
+  public List<RealClassPathItem> flatten() {
     checkValidity();
-    List<IClassPathItem> result = new ArrayList<IClassPathItem>();
+    List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
     result.add(this);
     return result;
   }

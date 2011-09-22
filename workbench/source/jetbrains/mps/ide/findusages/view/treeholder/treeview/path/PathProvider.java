@@ -19,14 +19,12 @@ import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 public class PathProvider {
@@ -38,6 +36,13 @@ public class PathProvider {
 
     if (o instanceof SNode) {
       SNode node = (SNode) o;
+      if (node.getContainingRoot() == null) {
+        SModel model = node.getModel();
+        LOG.error("Node with null containing root in model checker results: " +
+          "id=" + node.getSNodeId() + ", concept=" + node.getConceptFqName()
+          + ", model=" + (model != null ? model.getSModelReference(): "") + ", registered=", node.isRegistered());
+        return (List<PathItem>) Collections.EMPTY_LIST;
+      }
       res.add(new PathItem(PathItemRole.ROLE_TARGET_NODE, node));
 
       if (node.getParent() != null) {

@@ -16,8 +16,8 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TargetDeclaration_Constraints extends BaseConstraintsDescriptor {
@@ -42,7 +42,7 @@ public class TargetDeclaration_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Sequence.fromIterable(FacetDeclaration_Behavior.call_allExtends_7854369758457864780(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.make.facet.structure.FacetDeclaration"))).skip(1).<SNode>translate(new ITranslator2<SNode, SNode>() {
+            return Sequence.fromIterable(FacetDeclaration_Behavior.call_allExtends_7854369758457864780(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.make.facet.structure.FacetDeclaration"))).skip(1).translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode fd) {
                 return SLinkOperations.getTargets(fd, "targetDeclaration", true);
               }

@@ -50,7 +50,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
           if (ListSequence.fromList(requiredParameters).isEmpty()) {
             return "()";
           }
-          String joined = IterableUtils.join(ListSequence.fromList(requiredParameters).<String>select(new ISelector<SNode, String>() {
+          String joined = IterableUtils.join(ListSequence.fromList(requiredParameters).select(new ISelector<SNode, String>() {
             public String select(SNode it) {
               return SPropertyOperations.getString(it, "name") + ", ";
             }

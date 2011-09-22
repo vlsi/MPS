@@ -91,7 +91,7 @@
     <nodeInfo nodeId="3142843783245461217" fileName="NamedTupleDeclaration_Behavior.java" startLine="48" startPosition="52" endLine="49" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3142843783245461229" fileName="NamedTupleDeclaration_Behavior.java" startLine="50" startPosition="5" endLine="51" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6742265879766300886" fileName="NamedTupleDeclaration_Behavior.java" startLine="56" startPosition="39" endLine="57" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6742265879766300376" fileName="NamedTupleDeclaration_Behavior.java" startLine="59" startPosition="6" endLine="60" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6742265879766300376" fileName="NamedTupleDeclaration_Behavior.java" startLine="59" startPosition="6" endLine="60" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="63" startPosition="76" endLine="64" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="64" startPosition="113" endLine="65" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="68" startPosition="109" endLine="69" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -118,7 +118,7 @@
     <nodeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="90" startPosition="51" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_ds5lpv_a0b0d#()V" />
     <nodeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="104" startPosition="56" endLine="107" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2912004279740648829" fileName="NamedTupleDeclaration_Behavior.java" startLine="33" startPosition="187" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2912004279740648829" fileName="NamedTupleDeclaration_Behavior.java" startLine="33" startPosition="180" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="3142843783245461176" fileName="NamedTupleDeclaration_Behavior.java" startLine="46" startPosition="25" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="6742265879766300881" fileName="NamedTupleDeclaration_Behavior.java" startLine="55" startPosition="126" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getThisType_6742265879766289824#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
@@ -150,13 +150,13 @@
     <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="90" startPosition="51" endLine="92" endPosition="5" />
     <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="104" startPosition="56" endLine="107" endPosition="11" />
-    <scopeInfo nodeId="2912004279740648829" fileName="NamedTupleDeclaration_Behavior.java" startLine="33" startPosition="187" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="2912004279740648829" fileName="NamedTupleDeclaration_Behavior.java" startLine="33" startPosition="180" endLine="37" endPosition="0" />
     <scopeInfo nodeId="6742265879766300881" fileName="NamedTupleDeclaration_Behavior.java" startLine="55" startPosition="126" endLine="59" endPosition="0" />
     <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="80" startPosition="7" endLine="84" endPosition="31" />
     <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="103" startPosition="9" endLine="107" endPosition="11" />
     <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="62" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="6742265879766289826" fileName="NamedTupleDeclaration_Behavior.java" startLine="54" startPosition="79" endLine="60" endPosition="231">
+    <scopeInfo nodeId="6742265879766289826" fileName="NamedTupleDeclaration_Behavior.java" startLine="54" startPosition="79" endLine="60" endPosition="224">
       <varInfo nodeId="6742265879766300877" varName="tvd2tvr" />
     </scopeInfo>
     <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="79" startPosition="32" endLine="85" endPosition="7" />
@@ -181,7 +181,7 @@
     <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="29" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="94" startPosition="69" endLine="111" endPosition="20" />
     <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="93" startPosition="0" endLine="113" endPosition="0" />
-    <unitInfo nodeId="2912004279740648829" fileName="NamedTupleDeclaration_Behavior.java" startLine="33" startPosition="157" endLine="37" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior$1" />
+    <unitInfo nodeId="2912004279740648829" fileName="NamedTupleDeclaration_Behavior.java" startLine="33" startPosition="150" endLine="37" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior$1" />
     <unitInfo nodeId="6742265879766300881" fileName="NamedTupleDeclaration_Behavior.java" startLine="55" startPosition="79" endLine="59" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior$2" />
     <unitInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="72" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior$QuotationClass_ds5lpv_a0a0a0a0d" />
     <unitInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="90" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior$QuotationClass_ds5lpv_a0b0d" />
@@ -201,7 +201,7 @@
     <nodeInfo nodeId="1239883818843" fileName="NamedTupleType_Behavior.java" startLine="33" startPosition="17" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239883825071" fileName="NamedTupleType_Behavior.java" startLine="35" startPosition="5" endLine="36" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239617398721" fileName="NamedTupleType_Behavior.java" startLine="13" startPosition="38" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4483021482224747182" fileName="NamedTupleType_Behavior.java" startLine="20" startPosition="236" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4483021482224747182" fileName="NamedTupleType_Behavior.java" startLine="20" startPosition="229" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1239883610747" fileName="NamedTupleType_Behavior.java" startLine="30" startPosition="23" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1239617445686" fileName="NamedTupleType_Behavior.java" startLine="19" startPosition="20" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1239617398721" fileName="NamedTupleType_Behavior.java" startLine="16" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
@@ -210,7 +210,7 @@
     <scopeInfo nodeId="1239617445688" fileName="NamedTupleType_Behavior.java" startLine="24" startPosition="9" endLine="26" endPosition="17" />
     <scopeInfo nodeId="1239617398721" fileName="NamedTupleType_Behavior.java" startLine="13" startPosition="38" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1239883610748" fileName="NamedTupleType_Behavior.java" startLine="31" startPosition="77" endLine="34" endPosition="19" />
-    <scopeInfo nodeId="4483021482224747182" fileName="NamedTupleType_Behavior.java" startLine="20" startPosition="236" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="4483021482224747182" fileName="NamedTupleType_Behavior.java" startLine="20" startPosition="229" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1239883610747" fileName="NamedTupleType_Behavior.java" startLine="30" startPosition="23" endLine="35" endPosition="5">
       <varInfo nodeId="1239883610751" varName="t" />
     </scopeInfo>
@@ -223,7 +223,7 @@
       <varInfo nodeId="1239883799712" varName="suffix" />
     </scopeInfo>
     <scopeInfo nodeId="1239617398721" fileName="NamedTupleType_Behavior.java" startLine="16" startPosition="0" endLine="38" endPosition="0" />
-    <unitInfo nodeId="4483021482224747182" fileName="NamedTupleType_Behavior.java" startLine="20" startPosition="206" endLine="24" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleType_Behavior$1" />
+    <unitInfo nodeId="4483021482224747182" fileName="NamedTupleType_Behavior.java" startLine="20" startPosition="199" endLine="24" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleType_Behavior$1" />
     <unitInfo nodeId="1239617398721" fileName="NamedTupleType_Behavior.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleType_Behavior" />
   </root>
   <root nodeId="1239700191747">

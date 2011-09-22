@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 
 import java.awt.*;
-import java.util.*;
 import java.util.List;
 
 
@@ -120,6 +119,7 @@ public class NodeEditorActions {
     public void execute(EditorContext context) {
       SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
       selectionManager.setSelection(findTarget(selectionManager));
+      selectionManager.getSelection().ensureVisible();
     }
 
     private EditorCell findTarget(SelectionManager selectionManager) {
@@ -537,21 +537,15 @@ public class NodeEditorActions {
           }
           if (newSelection != null) {
             selectionManager.pushSelection(newSelection);
-            scrollToSelection(editorComponent, newSelection);
+            newSelection.ensureVisible();
           }
         }
       } else if (selection instanceof NodeRangeSelection) {
         Selection newSelection = ((NodeRangeSelection) selection).enlargeSelection(myUp);
         if (newSelection != null) {
           selectionManager.pushSelection(newSelection);
-          scrollToSelection(editorComponent, newSelection);
+          newSelection.ensureVisible();
         }
-      }
-    }
-
-    private void scrollToSelection(EditorComponent editorComponent, Selection selection) {
-      if (selection instanceof NodeRangeSelection) {
-        editorComponent.scrollToCell(((NodeRangeSelection) selection).getLastCell());
       }
     }
 

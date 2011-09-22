@@ -20,6 +20,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -87,8 +88,8 @@ public class RootNodeFileStatusManager extends AbstractProjectComponent {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
-        if (modelDescriptor != null) {
-          ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(modelDescriptor);
+        if (modelDescriptor instanceof EditableSModelDescriptor) {
+          ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager((EditableSModelDescriptor) modelDescriptor);
           if (modelChangesManager != null) {
             if (modelChangesManager.isAddedNode(root)) {
               if (modelChangesManager.isNewModel()) {
@@ -126,8 +127,8 @@ public class RootNodeFileStatusManager extends AbstractProjectComponent {
                 }
               }
             });
-            if (modelDescriptor.value != null) {
-              ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(modelDescriptor.value);
+            if (modelDescriptor.value instanceof EditableSModelDescriptor) {
+              ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager((EditableSModelDescriptor) modelDescriptor.value);
               modelChangesManager.setEnabled(true);
             }
           }

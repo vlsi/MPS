@@ -792,7 +792,7 @@
     <nodeInfo nodeId="2906282062545455191" fileName="ConfStubs.java" startLine="108" startPosition="43" endLine="109" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7467787244480120591" fileName="ConfStubs.java" startLine="114" startPosition="38" endLine="115" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7467787244480120591" fileName="ConfStubs.java" startLine="40" startPosition="57" endLine="42" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConfStubs#()V" />
-    <nodeInfo nodeId="7467787244480120591" fileName="ConfStubs.java" startLine="49" startPosition="118" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljetbrains/mps/smodel/Language;" />
+    <nodeInfo nodeId="7467787244480120591" fileName="ConfStubs.java" startLine="49" startPosition="108" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljetbrains/mps/smodel/Language;" />
     <nodeInfo nodeId="2906282062545455322" fileName="ConfStubs.java" startLine="77" startPosition="66" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stubModelReference#(Ljava/lang/String;)Ljetbrains/mps/smodel/SModelReference;" />
     <nodeInfo nodeId="2906282062545455331" fileName="ConfStubs.java" startLine="81" startPosition="34" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stubModelReference#(Ljava/lang/String;)Ljetbrains/mps/smodel/SModelReference;" />
     <nodeInfo nodeId="2906282062545455400" fileName="ConfStubs.java" startLine="96" startPosition="23" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
@@ -830,7 +830,7 @@
     <scopeInfo nodeId="7467787244480120591" fileName="ConfStubs.java" startLine="114" startPosition="38" endLine="115" endPosition="50" />
     <scopeInfo nodeId="7467787244480120591" fileName="ConfStubs.java" startLine="40" startPosition="57" endLine="42" endPosition="3" />
     <scopeInfo nodeId="2906282062545455349" fileName="ConfStubs.java" startLine="88" startPosition="11" endLine="90" endPosition="63" />
-    <scopeInfo nodeId="7467787244480120591" fileName="ConfStubs.java" startLine="49" startPosition="118" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="7467787244480120591" fileName="ConfStubs.java" startLine="49" startPosition="108" endLine="53" endPosition="0" />
     <scopeInfo nodeId="2906282062545455271" fileName="ConfStubs.java" startLine="68" startPosition="26" endLine="72" endPosition="49" />
     <scopeInfo nodeId="2906282062545455322" fileName="ConfStubs.java" startLine="77" startPosition="66" endLine="81" endPosition="0" />
     <scopeInfo nodeId="2906282062545455331" fileName="ConfStubs.java" startLine="81" startPosition="34" endLine="85" endPosition="0" />
@@ -859,7 +859,7 @@
       <varInfo nodeId="2906282062545455240" varName="sample" />
     </scopeInfo>
     <scopeInfo nodeId="7467787244480120591" fileName="ConfStubs.java" startLine="59" startPosition="0" endLine="105" endPosition="0" />
-    <unitInfo nodeId="7467787244480120591" fileName="ConfStubs.java" startLine="49" startPosition="87" endLine="53" endPosition="5" unitName="jetbrains.mps.platform.conf.stubs.ConfStubs$1" />
+    <unitInfo nodeId="7467787244480120591" fileName="ConfStubs.java" startLine="49" startPosition="77" endLine="53" endPosition="5" unitName="jetbrains.mps.platform.conf.stubs.ConfStubs$1" />
     <unitInfo nodeId="2906282062545455322" fileName="ConfStubs.java" startLine="77" startPosition="43" endLine="81" endPosition="5" unitName="jetbrains.mps.platform.conf.stubs.ConfStubs$2" />
     <unitInfo nodeId="2906282062545455331" fileName="ConfStubs.java" startLine="81" startPosition="11" endLine="85" endPosition="5" unitName="jetbrains.mps.platform.conf.stubs.ConfStubs$3" />
     <unitInfo nodeId="2906282062545455187" fileName="ConfStubs.java" startLine="107" startPosition="130" endLine="111" endPosition="5" unitName="jetbrains.mps.platform.conf.stubs.ConfStubs$4" />

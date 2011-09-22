@@ -37,7 +37,6 @@
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

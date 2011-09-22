@@ -41,6 +41,9 @@ public class SModelUtil {
   private static ConcurrentMap<SNode, Language> myConceptToLanguage = new ConcurrentHashMap<SNode, Language>();
   protected static Log log = LogFactory.getLog(SModelUtil.class);
 
+  public SModelUtil() {
+  }
+
   public static void clearCaches() {
     myFQNameToConcepDecl.clear();
     myConceptToLanguage.clear();
@@ -194,8 +197,16 @@ public class SModelUtil {
     return LanguageHierarchyCache.isAssignable(fromFqName, toFqName);
   }
 
+  public static boolean isAssignableConcept(SNode from, String toFqName) {
+    if (from == null) {
+      return false;
+    }
+    String fromFqName = NameUtil.nodeFQName(from);
+    return isAssignableConcept(fromFqName, toFqName);
+  }
+
   public static boolean isAssignableConcept(String fromFqName, String toFqName) {
-    if (eq_74see4_a0a0m(fromFqName, toFqName)) {
+    if (eq_74see4_a0a0n(fromFqName, toFqName)) {
       return true;
     }
     if (fromFqName == null || toFqName == null) {
@@ -250,7 +261,7 @@ public class SModelUtil {
     return SPropertyOperations.getString(link, "role");
   }
 
-  private static boolean eq_74see4_a0a0m(Object a, Object b) {
+  private static boolean eq_74see4_a0a0n(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

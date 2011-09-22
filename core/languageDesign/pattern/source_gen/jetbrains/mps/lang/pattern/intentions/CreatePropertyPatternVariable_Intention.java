@@ -6,9 +6,10 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.lang.pattern.editor.PatternAddingUtil;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
+import jetbrains.mps.lang.pattern.editor.PatternAddingUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -45,7 +46,8 @@ public class CreatePropertyPatternVariable_Intention extends BaseIntention imple
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (editorContext.getSelectedCell() instanceof EditorCell_Property) && PatternAddingUtil.isPatternApplicable(editorContext);
+    EditorCell selectedCell = editorContext.getSelectedCell();
+    return selectedCell instanceof EditorCell_Property && ((EditorCell_Property) selectedCell).getModelAccessor() instanceof PropertyAccessor && PatternAddingUtil.isPatternApplicable(editorContext);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

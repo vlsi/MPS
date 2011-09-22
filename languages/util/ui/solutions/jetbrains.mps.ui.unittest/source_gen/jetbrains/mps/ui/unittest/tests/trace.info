@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Widgets_ctx_Test.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.unittest.tests.Widgets_ctx_Test" />
-  <unitInfo fileName="UITestBase_Test.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ui.unittest.tests.UITestBase_Test" />
-  <unitInfo fileName="Events_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ui.unittest.tests.Events_Test" />
-  <unitInfo fileName="Views_Test.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ui.unittest.tests.Views_Test" />
-  <unitInfo fileName="Widgets_noCtx_Test.java" startLine="10" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ui.unittest.tests.Widgets_noCtx_Test" />
   <root nodeId="3633072329222756248">
     <nodeInfo nodeId="3633072329222756979" fileName="UITestBase_Test.java" startLine="12" startPosition="45" endLine="13" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.RemarkStatement" />
     <nodeInfo nodeId="3633072329222756273" fileName="UITestBase_Test.java" startLine="16" startPosition="42" endLine="17" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -32,6 +27,7 @@
       <varInfo nodeId="6876714382652044097" varName="uio" />
     </scopeInfo>
     <scopeInfo nodeId="3633072329222756975" fileName="UITestBase_Test.java" startLine="10" startPosition="56" endLine="15" endPosition="0" />
+    <unitInfo nodeId="3633072329222756248" fileName="UITestBase_Test.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ui.unittest.tests.UITestBase_Test" />
   </root>
   <root nodeId="3633072329222757661">
     <nodeInfo nodeId="3633072329222842329" fileName="Widgets_ctx_Test.java" startLine="13" startPosition="46" endLine="14" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -50,6 +46,7 @@
     <scopeInfo nodeId="3633072329222842316" fileName="Widgets_ctx_Test.java" startLine="11" startPosition="49" endLine="18" endPosition="27" />
     <scopeInfo nodeId="3633072329222842313" fileName="Widgets_ctx_Test.java" startLine="10" startPosition="55" endLine="20" endPosition="0" />
     <unitInfo nodeId="3633072329222842328" fileName="Widgets_ctx_Test.java" startLine="12" startPosition="126" endLine="18" endPosition="5" unitName="jetbrains.mps.ui.unittest.tests.Widgets_ctx_Test$1" />
+    <unitInfo nodeId="3633072329222757661" fileName="Widgets_ctx_Test.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.unittest.tests.Widgets_ctx_Test" />
   </root>
   <root nodeId="5211164146777102347">
     <nodeInfo nodeId="3633072329222755568" fileName="Widgets_noCtx_Test.java" startLine="13" startPosition="33" endLine="14" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -148,6 +145,7 @@
     <unitInfo nodeId="3633072329222755537" fileName="Widgets_noCtx_Test.java" startLine="23" startPosition="242" endLine="37" endPosition="5" unitName="jetbrains.mps.ui.unittest.tests.Widgets_noCtx_Test$2" />
     <unitInfo nodeId="3633072329222733231" fileName="Widgets_noCtx_Test.java" startLine="41" startPosition="249" endLine="55" endPosition="5" unitName="jetbrains.mps.ui.unittest.tests.Widgets_noCtx_Test$3" />
     <unitInfo nodeId="2462638993234615826" fileName="Widgets_noCtx_Test.java" startLine="59" startPosition="278" endLine="76" endPosition="5" unitName="jetbrains.mps.ui.unittest.tests.Widgets_noCtx_Test$4" />
+    <unitInfo nodeId="5211164146777102347" fileName="Widgets_noCtx_Test.java" startLine="10" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ui.unittest.tests.Widgets_noCtx_Test" />
   </root>
   <root nodeId="5520428330967866438">
     <nodeInfo nodeId="5520428330967866731" fileName="Views_Test.java" startLine="12" startPosition="57" endLine="13" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -188,6 +186,7 @@
     <unitInfo nodeId="6151000417381778104" fileName="Views_Test.java" startLine="23" startPosition="16" endLine="27" endPosition="13" unitName="jetbrains.mps.ui.unittest.tests.Views_Test$3" />
     <unitInfo nodeId="6151000417381778104" fileName="Views_Test.java" startLine="21" startPosition="59" endLine="29" endPosition="9" unitName="jetbrains.mps.ui.unittest.tests.Views_Test$2" />
     <unitInfo nodeId="6151000417381778103" fileName="Views_Test.java" startLine="16" startPosition="24" endLine="32" endPosition="5" unitName="jetbrains.mps.ui.unittest.tests.Views_Test$1" />
+    <unitInfo nodeId="5520428330967866438" fileName="Views_Test.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ui.unittest.tests.Views_Test" />
   </root>
   <root nodeId="5520428330967866691">
     <nodeInfo nodeId="5520428330967866782" fileName="FooBean.java" startLine="6" startPosition="22" endLine="7" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="foo" />
@@ -242,6 +241,7 @@
     <unitInfo nodeId="6876714382652043826" fileName="Events_Test.java" startLine="21" startPosition="66" endLine="25" endPosition="13" unitName="jetbrains.mps.ui.unittest.tests.Events_Test$3" />
     <unitInfo nodeId="6876714382652043639" fileName="Events_Test.java" startLine="19" startPosition="61" endLine="28" endPosition="9" unitName="jetbrains.mps.ui.unittest.tests.Events_Test$2" />
     <unitInfo nodeId="6876714382652043638" fileName="Events_Test.java" startLine="15" startPosition="24" endLine="31" endPosition="5" unitName="jetbrains.mps.ui.unittest.tests.Events_Test$1" />
+    <unitInfo nodeId="6876714382652043622" fileName="Events_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ui.unittest.tests.Events_Test" />
   </root>
 </debugInfo>
 

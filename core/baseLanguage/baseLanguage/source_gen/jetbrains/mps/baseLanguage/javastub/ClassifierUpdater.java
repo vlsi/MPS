@@ -443,7 +443,7 @@ public class ClassifierUpdater {
   }
 
   private void addAnnotationsToParameter(SNode pd, List<ASMAnnotation> anns) {
-    ListSequence.fromList(SLinkOperations.getTargets(pd, "annotation", true)).addSequence(ListSequence.fromList(anns).<SNode>select(new ISelector<ASMAnnotation, SNode>() {
+    ListSequence.fromList(SLinkOperations.getTargets(pd, "annotation", true)).addSequence(ListSequence.fromList(anns).select(new ISelector<ASMAnnotation, SNode>() {
       public SNode select(ASMAnnotation it) {
         return createAnnotation(it);
       }
@@ -499,7 +499,7 @@ public class ClassifierUpdater {
     }
     if (value instanceof List) {
       List<Object> list = (List<Object>) value;
-      return new ClassifierUpdater.QuotationClass_ol94f8_a0b0l0u().createNode(ListSequence.fromList(list).<SNode>select(new ISelector<Object, SNode>() {
+      return new ClassifierUpdater.QuotationClass_ol94f8_a0b0l0u().createNode(ListSequence.fromList(list).select(new ISelector<Object, SNode>() {
         public SNode select(Object it) {
           return getAnnotationValue(it);
         }

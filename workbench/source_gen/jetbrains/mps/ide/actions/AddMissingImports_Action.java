@@ -12,7 +12,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.MissingDependenciesFixer;
-import jetbrains.mps.smodel.IOperationContext;
+import java.awt.Frame;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class AddMissingImports_Action extends GeneratedAction {
@@ -20,7 +20,7 @@ public class AddMissingImports_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(AddMissingImports_Action.class);
 
   public AddMissingImports_Action() {
-    super("Fix Missing Imports", "", ICON);
+    super("Add Missing Imports", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
@@ -44,8 +44,8 @@ public class AddMissingImports_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
@@ -53,7 +53,7 @@ public class AddMissingImports_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MissingDependenciesFixer(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))).fix();
+      new MissingDependenciesFixer(((Frame) MapSequence.fromMap(_params).get("frame")), ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))).fix(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddMissingImports", t);

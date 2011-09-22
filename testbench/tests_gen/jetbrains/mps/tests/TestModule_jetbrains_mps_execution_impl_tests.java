@@ -5,7 +5,7 @@ package jetbrains.mps.tests;
 import jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite;
 import org.junit.runner.RunWith;
 
-@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"jetbrains.mps.execution.impl.tests.tests.TestConfigurationsMigration_Test"}, tests = {"test_java,test_junit"})
+@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"jetbrains.mps.execution.impl.configurations.tests.TestConfigurationsMigration_Test", "jetbrains.mps.execution.impl.configurations.tests.SplitCommandInParts_Test"}, tests = {"test_java,test_junit", "test_withoutSpaces,test_withSpaces,test_javaProperties,test_javaCommand,test_quotsInCommand,test_quotsInCommandStart,test_quotsInCommandEnd"})
 @ModuleSymbolicSuite.ModuleReference("7b15492d-a198-43e2-91e3-4a7e9116ce2b(jetbrains.mps.execution.impl.tests)")
 @RunWith(ModuleSymbolicSuite.class)
 public class TestModule_jetbrains_mps_execution_impl_tests {

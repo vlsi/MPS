@@ -17,6 +17,7 @@
     <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
     <classNode dependClassName="com.intellij.util.PathUtil" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
@@ -39,6 +40,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeContext" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.InternalRuntimePacker" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergeDriverMain" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.ScriptGenerator" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
@@ -71,6 +73,7 @@
     <classNode dependClassName="git4idea.config.GitConfigUtil" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.PluginUtil" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -93,7 +96,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.util.StringsIO" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.CommandLineGenerator" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.InternalRuntimePacker" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.PluginUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.ScriptGenerator" />
     <classNode dependClassName="jetbrains.mps.workbench.WorkbenchPathManager" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
@@ -119,6 +124,7 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.util.StringsIO" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.FileType" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.PluginUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
   </dependency>
@@ -173,14 +179,19 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.Properties" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.AbstractFileMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.EmptyMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.FileType" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.JavaDependenciesMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.ModelMerger" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.SimpleMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.TextMerger" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.apache.log4j.PropertyConfigurator" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.MergeDriverNotification" file="MergeDriverNotification.java">
     <classNode dependClassName="com.intellij.ide.BrowserUtil" />
@@ -252,6 +263,7 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -271,6 +283,13 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.SimpleMerger" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.mergedriver.PluginUtil" file="PluginUtil.java">
+    <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptor" />
+    <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptorImpl" />
+    <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.ScriptGenerator" file="ScriptGenerator.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -315,8 +334,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.util.StringsIO" />
-    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.CommandLineGenerator" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.InternalRuntimePacker" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.PluginUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.ScriptGenerator" />
     <classNode dependClassName="jetbrains.mps.workbench.WorkbenchPathManager" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

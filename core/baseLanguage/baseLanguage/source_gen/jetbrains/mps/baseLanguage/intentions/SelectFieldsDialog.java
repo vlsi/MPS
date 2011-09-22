@@ -16,7 +16,7 @@ public class SelectFieldsDialog extends SelectMembersDialog<SNode> {
   }
 
   public List<SNode> getSelectedFields() {
-    return this.getSelectedMembers();
+    return (List<SNode>) this.getSelectedMembers();
   }
 
   protected List<SNode> getMembers() {

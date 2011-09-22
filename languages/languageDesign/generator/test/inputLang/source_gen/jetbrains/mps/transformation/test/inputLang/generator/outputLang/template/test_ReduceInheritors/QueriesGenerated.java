@@ -10,8 +10,8 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
@@ -41,7 +41,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_8417539822878722925(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "inputChild", true);
       }
@@ -52,7 +52,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
   }
 
-  public static boolean mappingConfiguration_Condition_2507865635201605483(final TemplateQueryContext _context) {
+  public static boolean mappingConfiguration_Condition_2507865635201605483(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return (((Integer) _context.getGenerationParameter("r:00000000-0000-4000-0000-011c895905f9.GlobalParameters.list")) == null ?
       true :
       ((Integer) _context.getGenerationParameter("r:00000000-0000-4000-0000-011c895905f9.GlobalParameters.list")) < 2

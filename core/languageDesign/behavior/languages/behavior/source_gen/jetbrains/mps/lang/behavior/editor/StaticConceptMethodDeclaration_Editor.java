@@ -28,6 +28,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -35,9 +38,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -266,6 +266,18 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty();
   }
 
+  public static class StaticConceptMethodDeclaration_component_cellMenu_a0d2a implements SubstituteInfoPart {
+    private ConceptMethodDeclaration_Menu myComponent;
+
+    public StaticConceptMethodDeclaration_component_cellMenu_a0d2a() {
+      this.myComponent = new ConceptMethodDeclaration_Menu();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
   private static class parameterListHandler_gggi92_f2a extends RefNodeListHandler {
     public parameterListHandler_gggi92_f2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -356,18 +368,6 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
-    }
-  }
-
-  public static class StaticConceptMethodDeclaration_component_cellMenu_a0d2a implements SubstituteInfoPart {
-    private ConceptMethodDeclaration_Menu myComponent;
-
-    public StaticConceptMethodDeclaration_component_cellMenu_a0d2a() {
-      this.myComponent = new ConceptMethodDeclaration_Menu();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
     }
   }
 }

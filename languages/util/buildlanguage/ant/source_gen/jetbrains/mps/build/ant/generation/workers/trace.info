@@ -96,11 +96,11 @@
     <nodeInfo nodeId="7054305886486074608" fileName="GeneratorWorker.java" startLine="103" startPosition="53" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="3129367036791946050" fileName="GeneratorWorker.java" startLine="117" startPosition="45" endLine="121" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3767231643656621729" fileName="GeneratorWorker.java" startLine="125" startPosition="115" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/IModule;)Z" />
-    <nodeInfo nodeId="3767231643656621738" fileName="GeneratorWorker.java" startLine="129" startPosition="64" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3767231643656621738" fileName="GeneratorWorker.java" startLine="129" startPosition="55" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="3767231643656621779" fileName="GeneratorWorker.java" startLine="137" startPosition="138" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
     <nodeInfo nodeId="7874190907999511017" fileName="GeneratorWorker.java" startLine="148" startPosition="47" endLine="152" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7874190907999511041" fileName="GeneratorWorker.java" startLine="162" startPosition="144" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="7655616008808086525" fileName="GeneratorWorker.java" startLine="166" startPosition="85" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/make/resources/IResource;)Ljetbrains/mps/smodel/resources/IMResource;" />
+    <nodeInfo nodeId="7655616008808086525" fileName="GeneratorWorker.java" startLine="166" startPosition="73" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/make/resources/IResource;)Ljetbrains/mps/smodel/resources/IMResource;" />
     <nodeInfo nodeId="7795897115019498628" fileName="GeneratorWorker.java" startLine="205" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenerationErrors#()Ljava/util/List;" />
     <nodeInfo nodeId="7795897115019498632" fileName="GeneratorWorker.java" startLine="209" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenerationWarnings#()Ljava/util/List;" />
     <nodeInfo nodeId="7655616008808080934" fileName="GeneratorWorker.java" startLine="240" startPosition="58" endLine="244" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -217,14 +217,14 @@
     </scopeInfo>
     <scopeInfo nodeId="7054305886486074608" fileName="GeneratorWorker.java" startLine="103" startPosition="53" endLine="107" endPosition="0" />
     <scopeInfo nodeId="3767231643656621729" fileName="GeneratorWorker.java" startLine="125" startPosition="115" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="3767231643656621738" fileName="GeneratorWorker.java" startLine="129" startPosition="64" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="3767231643656621738" fileName="GeneratorWorker.java" startLine="129" startPosition="55" endLine="133" endPosition="0" />
     <scopeInfo nodeId="3767231643656621779" fileName="GeneratorWorker.java" startLine="137" startPosition="138" endLine="141" endPosition="0" />
     <scopeInfo nodeId="7874190907999511017" fileName="GeneratorWorker.java" startLine="148" startPosition="47" endLine="152" endPosition="11">
       <varInfo nodeId="7874190907999511028" varName="mod" />
     </scopeInfo>
     <scopeInfo nodeId="8486843261567504160" fileName="GeneratorWorker.java" startLine="148" startPosition="47" endLine="152" endPosition="11" />
     <scopeInfo nodeId="7874190907999511041" fileName="GeneratorWorker.java" startLine="162" startPosition="144" endLine="166" endPosition="0" />
-    <scopeInfo nodeId="7655616008808086525" fileName="GeneratorWorker.java" startLine="166" startPosition="85" endLine="170" endPosition="0" />
+    <scopeInfo nodeId="7655616008808086525" fileName="GeneratorWorker.java" startLine="166" startPosition="73" endLine="170" endPosition="0" />
     <scopeInfo nodeId="7795897115019498628" fileName="GeneratorWorker.java" startLine="205" startPosition="0" endLine="209" endPosition="0" />
     <scopeInfo nodeId="7795897115019498632" fileName="GeneratorWorker.java" startLine="209" startPosition="0" endLine="213" endPosition="0" />
     <scopeInfo nodeId="7655616008808081027" fileName="GeneratorWorker.java" startLine="263" startPosition="38" endLine="267" endPosition="8" />
@@ -303,10 +303,10 @@
     <unitInfo nodeId="3129367036791946058" fileName="GeneratorWorker.java" startLine="118" startPosition="58" endLine="121" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$2" />
     <unitInfo nodeId="7054305886486074608" fileName="GeneratorWorker.java" startLine="103" startPosition="41" endLine="107" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$1" />
     <unitInfo nodeId="3767231643656621729" fileName="GeneratorWorker.java" startLine="125" startPosition="90" endLine="129" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$3" />
-    <unitInfo nodeId="3767231643656621738" fileName="GeneratorWorker.java" startLine="129" startPosition="30" endLine="133" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$4" />
+    <unitInfo nodeId="3767231643656621738" fileName="GeneratorWorker.java" startLine="129" startPosition="21" endLine="133" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$4" />
     <unitInfo nodeId="3767231643656621779" fileName="GeneratorWorker.java" startLine="137" startPosition="104" endLine="141" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$5" />
     <unitInfo nodeId="7874190907999511041" fileName="GeneratorWorker.java" startLine="162" startPosition="110" endLine="166" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$7" />
-    <unitInfo nodeId="7655616008808086525" fileName="GeneratorWorker.java" startLine="166" startPosition="49" endLine="170" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$8" />
+    <unitInfo nodeId="7655616008808086525" fileName="GeneratorWorker.java" startLine="166" startPosition="37" endLine="170" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$8" />
     <unitInfo nodeId="7874190907999511015" fileName="GeneratorWorker.java" startLine="146" startPosition="45" endLine="161" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$6" />
     <unitInfo nodeId="7655616008808081047" fileName="GeneratorWorker.java" startLine="271" startPosition="17" endLine="286" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$1" />
     <unitInfo nodeId="7795897115019498611" fileName="GeneratorWorker.java" startLine="178" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker$MyMessageHandler" />
@@ -401,7 +401,7 @@
     <nodeInfo nodeId="7795897115019500203" fileName="TestGenerationWorker.java" startLine="291" startPosition="84" endLine="292" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7795897115019500210" fileName="TestGenerationWorker.java" startLine="292" startPosition="62" endLine="293" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7795897115019500214" fileName="TestGenerationWorker.java" startLine="293" startPosition="29" endLine="294" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7795897115019501597" fileName="TestGenerationWorker.java" startLine="297" startPosition="39" endLine="298" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7795897115019501597" fileName="TestGenerationWorker.java" startLine="297" startPosition="39" endLine="298" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7795897115019500232" fileName="TestGenerationWorker.java" startLine="301" startPosition="12" endLine="302" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7795897115019500254" fileName="TestGenerationWorker.java" startLine="303" startPosition="5" endLine="304" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7795897115019500261" fileName="TestGenerationWorker.java" startLine="304" startPosition="62" endLine="305" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -547,7 +547,7 @@
     <nodeInfo nodeId="8731264534482818932" fileName="TestGenerationWorker.java" startLine="666" startPosition="76" endLine="667" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8731264534482818934" fileName="TestGenerationWorker.java" startLine="670" startPosition="47" endLine="671" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7795897115019501252" fileName="TestGenerationWorker.java" startLine="676" startPosition="64" endLine="677" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7795897115019501346" fileName="TestGenerationWorker.java" startLine="680" startPosition="53" endLine="681" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7795897115019501346" fileName="TestGenerationWorker.java" startLine="680" startPosition="53" endLine="681" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7795897115019501357" fileName="TestGenerationWorker.java" startLine="685" startPosition="56" endLine="686" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7795897115019501276" fileName="TestGenerationWorker.java" startLine="688" startPosition="9" endLine="689" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7795897115019501370" fileName="TestGenerationWorker.java" startLine="696" startPosition="41" endLine="697" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -782,7 +782,7 @@
     <scopeInfo nodeId="7795897115019500100" fileName="TestGenerationWorker.java" startLine="271" startPosition="12" endLine="272" endPosition="37" />
     <scopeInfo nodeId="7795897115019500149" fileName="TestGenerationWorker.java" startLine="278" startPosition="53" endLine="279" endPosition="28" />
     <scopeInfo nodeId="7795897115019500167" fileName="TestGenerationWorker.java" startLine="285" startPosition="48" endLine="286" endPosition="56" />
-    <scopeInfo nodeId="7795897115019501596" fileName="TestGenerationWorker.java" startLine="297" startPosition="39" endLine="298" endPosition="57" />
+    <scopeInfo nodeId="7795897115019501596" fileName="TestGenerationWorker.java" startLine="297" startPosition="39" endLine="298" endPosition="94" />
     <scopeInfo nodeId="7795897115019500231" fileName="TestGenerationWorker.java" startLine="301" startPosition="12" endLine="302" endPosition="44" />
     <scopeInfo nodeId="7795897115019501619" fileName="TestGenerationWorker.java" startLine="311" startPosition="66" endLine="312" endPosition="39" />
     <scopeInfo nodeId="7795897115019500387" fileName="TestGenerationWorker.java" startLine="338" startPosition="88" endLine="339" endPosition="72" />
@@ -837,7 +837,7 @@
     <scopeInfo nodeId="8731264534482818468" fileName="TestGenerationWorker.java" startLine="662" startPosition="56" endLine="663" endPosition="22" />
     <scopeInfo nodeId="8731264534482818474" fileName="TestGenerationWorker.java" startLine="666" startPosition="76" endLine="667" endPosition="22" />
     <scopeInfo nodeId="8731264534482818478" fileName="TestGenerationWorker.java" startLine="670" startPosition="47" endLine="671" endPosition="23" />
-    <scopeInfo nodeId="7795897115019501345" fileName="TestGenerationWorker.java" startLine="680" startPosition="53" endLine="681" endPosition="62" />
+    <scopeInfo nodeId="7795897115019501345" fileName="TestGenerationWorker.java" startLine="680" startPosition="53" endLine="681" endPosition="57" />
     <scopeInfo nodeId="7795897115019501356" fileName="TestGenerationWorker.java" startLine="685" startPosition="56" endLine="686" endPosition="75" />
     <scopeInfo nodeId="7795897115019501369" fileName="TestGenerationWorker.java" startLine="696" startPosition="41" endLine="697" endPosition="96" />
     <scopeInfo nodeId="7795897115019501296" fileName="TestGenerationWorker.java" startLine="704" startPosition="30" endLine="705" endPosition="52" />

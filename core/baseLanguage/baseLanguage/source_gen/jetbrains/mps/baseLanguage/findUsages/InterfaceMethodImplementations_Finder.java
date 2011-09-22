@@ -43,7 +43,7 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     for (SNode implementor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
       ListSequence.fromList(implementorsAndAncestorsList).addElement(implementor);
     }
-    for (SNode classNode : ListSequence.fromList(implementorsAndAncestorsList).<SNode>select(new ISelector<SNode, SNode>() {
+    for (SNode classNode : ListSequence.fromList(implementorsAndAncestorsList).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       }

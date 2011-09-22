@@ -40,7 +40,7 @@ public class ModelsToResources {
 
   private Iterable<IResource> arrangeByModule(Iterable<SModelDescriptor> smds) {
     final Wrappers._T<List<SModelDescriptor>> models = new Wrappers._T<List<SModelDescriptor>>(null);
-    return (Iterable<IResource>) Sequence.fromIterable(smds).concat(Sequence.fromIterable(Sequence.<SModelDescriptor>singleton(null))).<MResource>translate(new ITranslator2<SModelDescriptor, MResource>() {
+    return (Iterable<IResource>) Sequence.fromIterable(smds).concat(Sequence.fromIterable(Sequence.<SModelDescriptor>singleton(null))).translate(new ITranslator2<SModelDescriptor, MResource>() {
       public Iterable<MResource> translate(final SModelDescriptor smd) {
         return new Iterable<MResource>() {
           public Iterator<MResource> iterator() {
@@ -139,7 +139,7 @@ __switch__:
           }
         };
       }
-    }).<IResource>select(new ISelector<MResource, IResource>() {
+    }).select(new ISelector<MResource, IResource>() {
       public IResource select(MResource r) {
         return (IResource) r;
       }

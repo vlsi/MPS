@@ -84,7 +84,7 @@ __switch__:
   }
 
   public static SNode call_mustBelongTo_1719339442171055203(SNode thisNode) {
-    return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(thisNode)).skip(1).<SNode>select(new ISelector<SNode, SNode>() {
+    return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(thisNode)).skip(1).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode o) {
         return SLinkOperations.getTarget(o, "belongsTo", false);
       }

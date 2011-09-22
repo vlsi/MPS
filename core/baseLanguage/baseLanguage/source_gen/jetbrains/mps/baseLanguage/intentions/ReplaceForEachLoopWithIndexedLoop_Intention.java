@@ -102,7 +102,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
     }
     SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(forCondition, "rightExpression", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", SNodeOperations.copyNode(iterable), true);
 
-    SNode iterationExpr = SNodeFactoryOperations.setNewChild(forStatement, "iteration", "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression");
+    SNode iterationExpr = SNodeFactoryOperations.addNewChild(forStatement, "iteration", "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression");
     SNodeFactoryOperations.setNewChild(iterationExpr, "expression", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
     SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(iterationExpr, "expression", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", forVariableDeclaration, false);
 

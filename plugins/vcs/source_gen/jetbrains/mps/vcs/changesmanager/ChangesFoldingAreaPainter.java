@@ -399,7 +399,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
           return m.isThinDeletedMessage(editorComponent);
         }
       });
-      Set<Integer> ys = SetSequence.fromSetWithValues(new HashSet<Integer>(), ListSequence.fromList(messages).<Integer>select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, Integer>() {
+      Set<Integer> ys = SetSequence.fromSetWithValues(new HashSet<Integer>(), ListSequence.fromList(messages).select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, Integer>() {
         public Integer select(EditorComponentChangesHighligher.ChangeEditorMessage m) {
           return m.getY(editorComponent);
         }

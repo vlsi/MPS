@@ -251,6 +251,10 @@ public class ClassifierTypeUtil {
       } else {
         cType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
       }
+      // avoid coercing if the classifier type is not the immediate supertype 
+      if ((cType != null) && !(TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(type).contains(cType))) {
+        cType = null;
+      }
     }
     return cType;
   }

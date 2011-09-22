@@ -4,6 +4,16 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="IssueNavigationConfiguration">
+    <option name="links">
+      <list>
+        <IssueNavigationLink>
+          <option name="issueRegexp" value="[A-Z]+\-\d+" />
+          <option name="linkRegexp" value="http://youtrack.jetbrains.net/issue/$0" />
+        </IssueNavigationLink>
+      </list>
+    </option>
+  </component>
   <component name="MPSProject">
     <projectModules>
       <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="usages.java" />
@@ -35,6 +45,7 @@
       <modulePath path="${project}/solutions/jetbrains.mps.execution.impl/impl.msd" folder="runtime" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" folder="usages" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.util/jetbrains.mps.execution.lib.msd" folder="library" />
+      <modulePath path="${project}/solutions/jetbrains.mps.execution.lib.startup/startup.msd" folder="library" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.impl.tests/tests.msd" folder="runtime" />
     </projectModules>
     <genConfs>

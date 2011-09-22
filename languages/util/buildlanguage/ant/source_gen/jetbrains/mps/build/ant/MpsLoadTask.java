@@ -88,6 +88,12 @@ public abstract class MpsLoadTask extends Task {
     }
   }
 
+  public void addConfiguredExclude(ExcludeNested excludeInner) {
+    for (File file : excludeInner.getExcludedFromDiffFiles()) {
+      myWhatToDo.excludeFileFromDiff(file);
+    }
+  }
+
   public void addConfiguredLibrary(LibraryDataType libraryInner) {
     if (libraryInner.getName() == null) {
       log("Library missing required attribute name.", Project.MSG_ERR);

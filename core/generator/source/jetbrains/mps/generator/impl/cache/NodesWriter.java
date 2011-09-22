@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.cache;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -23,13 +24,6 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Map.Entry;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/11/11
- * Time: 10:37 AM
- * To change this template use File | Settings | File Templates.
- */
 public class NodesWriter {
   protected static final SModelReference LOCAL = SModelReference.fromString("$LOCAL$");
   protected final SModelReference myModelReference;
@@ -73,7 +67,14 @@ public class NodesWriter {
         os.writeInt(1);
         os.writeNodeId(reference.getTargetNodeId());
       } else if (reference instanceof DynamicReference) {
-        os.writeInt(2);
+        DynamicReferenceOrigin origin = ((DynamicReference) reference).getOrigin();
+        if(origin != null) {
+          os.writeInt(3);
+          os.writeNodePointer(origin.getTemplate());
+          os.writeNodePointer(origin.getInputNode());
+        } else {
+          os.writeInt(2);
+        }
       } else {
         throw new IOException("cannot store reference: " + reference.toString());
       }

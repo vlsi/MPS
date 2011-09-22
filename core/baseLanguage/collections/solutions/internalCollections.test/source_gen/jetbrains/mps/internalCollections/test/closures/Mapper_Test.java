@@ -107,7 +107,7 @@ __switch__:
   }
 
   public void test_mappingOperation() throws Exception {
-    Iterable<Integer> test = Sequence.fromIterable(this.input5()).<Integer>translate(new ITranslator2<Integer, Integer>() {
+    Iterable<Integer> test = Sequence.fromIterable(this.input5()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer i) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -148,7 +148,7 @@ __switch__:
   }
 
   public void test_legacyMapper() throws Exception {
-    Iterable<Integer> test = Sequence.fromIterable(this.input5()).<Integer>translate(new ITranslator2<Integer, Integer>() {
+    Iterable<Integer> test = Sequence.fromIterable(this.input5()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -189,7 +189,7 @@ __switch__:
   }
 
   public void test_stopSkip() throws Exception {
-    Iterable<Integer> test = Sequence.fromIterable(this.input10()).<Integer>translate(new ITranslator2<Integer, Integer>() {
+    Iterable<Integer> test = Sequence.fromIterable(this.input10()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -252,7 +252,7 @@ __switch__:
       }
     });
     this.assertIterableEquals(Arrays.asList(2, 4, 6), test);
-    Iterable<Integer> test2 = Sequence.fromIterable(this.input10()).<Integer>translate(new ITranslator2<Integer, Integer>() {
+    Iterable<Integer> test2 = Sequence.fromIterable(this.input10()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -318,7 +318,7 @@ __switch__:
   }
 
   public void test_stopBug() throws Exception {
-    Iterable<Integer> test = Sequence.fromIterable(this.input5()).<Integer>translate(new ITranslator2<Integer, Integer>() {
+    Iterable<Integer> test = Sequence.fromIterable(this.input5()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -374,7 +374,7 @@ __switch__:
       }
     });
     this.assertIterableEquals(Arrays.asList(5), test);
-    Iterable<Integer> test2 = Sequence.fromIterable(this.input5()).<Integer>translate(new ITranslator2<Integer, Integer>() {
+    Iterable<Integer> test2 = Sequence.fromIterable(this.input5()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -430,7 +430,7 @@ __switch__:
       }
     });
     Assert.assertTrue(Sequence.fromIterable(test2).isEmpty());
-    Iterable<Integer> test3 = Sequence.fromIterable(this.input5()).<Integer>translate(new ITranslator2<Integer, Integer>() {
+    Iterable<Integer> test3 = Sequence.fromIterable(this.input5()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -486,7 +486,7 @@ __switch__:
       }
     });
     this.assertIterableEquals(Arrays.asList(5), test3);
-    Iterable<Integer> test4 = Sequence.fromIterable(this.input5()).<Integer>translate(new ITranslator2<Integer, Integer>() {
+    Iterable<Integer> test4 = Sequence.fromIterable(this.input5()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -547,7 +547,7 @@ __switch__:
   public void test_selectMany() throws Exception {
     //  only testing compileability of the generated code 
     Iterable<B> bs = Sequence.fromIterable(Collections.<B>emptyList());
-    Sequence.fromIterable(bs).<A>translate(new ITranslator2<B, A>() {
+    Sequence.fromIterable(bs).translate(new ITranslator2<B, A>() {
       public Iterable<A> translate(B it) {
         return it.as;
       }
@@ -557,8 +557,8 @@ __switch__:
         return it.as;
       }
     };
-    Sequence.fromIterable(bs).<A>translate(cl);
-    Sequence.fromIterable(bs).<A>translate(new ITranslator2<B, A>() {
+    Sequence.fromIterable(bs).translate(cl);
+    Sequence.fromIterable(bs).translate(new ITranslator2<B, A>() {
       public Iterable<A> translate(B it) {
         return it.listofa;
       }
@@ -568,8 +568,8 @@ __switch__:
         return it.listofa;
       }
     };
-    Sequence.fromIterable(bs).<A>translate(cl2);
-    Sequence.fromIterable(bs).<A>translate(new ITranslator2<B, A>() {
+    Sequence.fromIterable(bs).translate(cl2);
+    Sequence.fromIterable(bs).translate(new ITranslator2<B, A>() {
       public Iterable<A> translate(B it) {
         return it.seqofa;
       }
@@ -579,8 +579,8 @@ __switch__:
         return it.seqofa;
       }
     };
-    Sequence.fromIterable(bs).<A>translate(cl3);
-    Sequence.fromIterable(bs).<A>translate(new ITranslator2<B, A>() {
+    Sequence.fromIterable(bs).translate(cl3);
+    Sequence.fromIterable(bs).translate(new ITranslator2<B, A>() {
       public Iterable<A> translate(B it) {
         return it.iterableofa;
       }
@@ -590,11 +590,11 @@ __switch__:
         return it.iterableofa;
       }
     };
-    Sequence.fromIterable(bs).<A>translate(cl4);
+    Sequence.fromIterable(bs).translate(cl4);
   }
 
   public void test_nextWithoutHasNext() throws Exception {
-    this.assertIteratorYields(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 3)).<Integer>translate(new ITranslator2<Integer, Integer>() {
+    this.assertIteratorYields(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 3)).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer i) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
@@ -637,7 +637,7 @@ __switch__:
     final List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9);
     final List<Integer> plusten = ListSequence.fromList(new ArrayList<Integer>());
     final Wrappers._int idx = new Wrappers._int(0);
-    ListSequence.fromList(test).<Integer>translate(new ITranslator2<Integer, Integer>() {
+    ListSequence.fromList(test).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer i) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {

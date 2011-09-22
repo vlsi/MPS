@@ -55,7 +55,7 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_NamedTupleLiteral_1239567483801(final IOperationContext operationContext, final NodeSetupContext _context) {
-    for (SNode cd : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(_context.getNewNode(), "tupleDeclaration", false))).reversedList().<SNode>translate(new ITranslator2<SNode, SNode>() {
+    for (SNode cd : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(_context.getNewNode(), "tupleDeclaration", false))).reversedList().translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode ntd) {
         return SLinkOperations.getTargets(ntd, "component", true);
       }
@@ -119,7 +119,7 @@ public class QueriesGenerated {
                     return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0a0a0c0c0a0b0f().createNode(cmp);
                   }
                 };
-                return new QueriesGenerated.QuotationClass_x583g4_a0b0a0a0a0a0a0c0c0a0b0f().createNode(ListSequence.fromList(SLinkOperations.getTargets((item), "component", true)).<SNode>select(toRef).toListSequence(), (item));
+                return new QueriesGenerated.QuotationClass_x583g4_a0b0a0a0a0a0a0c0c0a0b0f().createNode(ListSequence.fromList(SLinkOperations.getTargets((item), "component", true)).select(toRef).toListSequence(), (item));
               }
 
               public String getMatchingText(String pattern) {

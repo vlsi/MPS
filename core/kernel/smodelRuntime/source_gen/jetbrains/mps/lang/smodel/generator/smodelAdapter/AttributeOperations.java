@@ -180,7 +180,7 @@ public class AttributeOperations {
   }
 
   public static Set<String> getPropertyNamesFromAttributes(SNode node) {
-    return SetSequence.fromSetWithValues(new HashSet<String>(), Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(null, null))).<String>select(new ISelector<SNode, String>() {
+    return SetSequence.fromSetWithValues(new HashSet<String>(), Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(null, null))).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return getPropertyName(SNodeOperations.as(it, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
       }
@@ -212,7 +212,7 @@ public class AttributeOperations {
   }
 
   public static Set<String> getLinkNamesFromAttributes(SNode node) {
-    return SetSequence.fromSetWithValues(new HashSet<String>(), Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.LinkAttributeString(null, null))).<String>select(new ISelector<SNode, String>() {
+    return SetSequence.fromSetWithValues(new HashSet<String>(), Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.LinkAttributeString(null, null))).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return getLinkRole(SNodeOperations.as(it, "jetbrains.mps.lang.core.structure.LinkAttribute"));
       }

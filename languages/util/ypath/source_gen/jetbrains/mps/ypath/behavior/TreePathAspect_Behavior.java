@@ -16,7 +16,7 @@ public class TreePathAspect_Behavior {
   }
 
   public static SNode call_getDefaultProperty_1213877241846(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeKinds", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeKinds", true)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {

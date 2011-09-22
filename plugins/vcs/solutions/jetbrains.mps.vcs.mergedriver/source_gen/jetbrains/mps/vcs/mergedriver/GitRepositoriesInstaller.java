@@ -28,11 +28,14 @@ import java.io.IOException;
 
   @NotNull
   protected AbstractInstaller.State install(final boolean dryRun) {
+    if (!(PluginUtil.isGitPluginEnabled())) {
+      return AbstractInstaller.State.INSTALLED;
+    }
     Iterable<VcsRoot> gitRoots = getGitRoots();
     if (Sequence.fromIterable(gitRoots).isEmpty()) {
       return AbstractInstaller.State.INSTALLED;
     } else {
-      List<AbstractInstaller.State> states = Sequence.fromIterable(gitRoots).<AbstractInstaller.State>select(new ISelector<VcsRoot, AbstractInstaller.State>() {
+      List<AbstractInstaller.State> states = Sequence.fromIterable(gitRoots).select(new ISelector<VcsRoot, AbstractInstaller.State>() {
         public AbstractInstaller.State select(VcsRoot r) {
           return installForRoot(r.path, dryRun);
         }
@@ -61,7 +64,7 @@ import java.io.IOException;
   }
 
   private int getRootsToInstall() {
-    return Sequence.fromIterable(getGitRoots()).<AbstractInstaller.State>select(new ISelector<VcsRoot, AbstractInstaller.State>() {
+    return Sequence.fromIterable(getGitRoots()).select(new ISelector<VcsRoot, AbstractInstaller.State>() {
       public AbstractInstaller.State select(VcsRoot r) {
         return installForRoot(r.path, true);
       }

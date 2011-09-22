@@ -13,9 +13,6 @@ import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.execution.api.commands.ListCommandPart;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.util.FileUtil;
-import java.io.PrintWriter;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
 import java.io.FileNotFoundException;
@@ -30,10 +27,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.CollectionUtil;
+import java.util.Set;
 import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleId;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.util.FileUtil;
+import java.io.PrintWriter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
@@ -101,7 +104,7 @@ public class Java_Command {
   }
 
   public ProcessHandler createProcess(String className) throws ExecutionException {
-    return new Java_Command().setWorkingDirectory(myWorkingDirectory).setJrePath(myJrePath).setProgramParameter(myProgramParameter).setVirtualMachineParameter(myVirtualMachineParameter).setDebuggerSettings(myDebuggerSettings).createProcess(className, ListSequence.fromList(myClassPath).<File>select(new ISelector<String, File>() {
+    return new Java_Command().setWorkingDirectory(myWorkingDirectory).setJrePath(myJrePath).setProgramParameter(myProgramParameter).setVirtualMachineParameter(myVirtualMachineParameter).setDebuggerSettings(myDebuggerSettings).createProcess(className, ListSequence.fromList(myClassPath).select(new ISelector<String, File>() {
       public File select(String it) {
         if (it.startsWith("\"") && it.endsWith("\"")) {
           return new File(it.substring(1, it.length() - 2));
@@ -121,18 +124,23 @@ public class Java_Command {
       throw new ExecutionException("Classname is empty");
     }
     if (check_yvpt_a0c0a2(programParameterCommand) >= Java_Command.getMaxCommandLine()) {
-      File tmpFile = FileUtil.createTmpFile();
-      // we want to be sure that file is deleted, even when process is not started 
-      tmpFile.deleteOnExit();
       try {
-        PrintWriter writer = new PrintWriter(tmpFile);
-        writer.append(IterableUtils.join(ListSequence.fromList(programParameterCommand.getCommandList()), " "));
-        writer.flush();
-        writer.close();
-        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameterCommand).append(myDebuggerSettings).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPathFiles, File.pathSeparator))).append(ClassRunner.class.getName()).append(new KeyValueCommandPart("-" + ClassRunner.CLASS_PREFIX, className)).append(new KeyValueCommandPart("-" + ClassRunner.FILE_PREFIX, tmpFile)).build(myWorkingDirectory);
+        File parametersFile = Java_Command.writeToTmpFile(programParameterCommand.getCommandList());
+        File classPathFile = Java_Command.writeToTmpFile(ListSequence.fromList(classPathFiles).select(new ISelector<File, String>() {
+          public String select(File it) {
+            return it.getAbsolutePath();
+          }
+        }));
+        List<File> classRunnerClassPath = ListSequence.fromList(Java_Command.getClassRunnerClassPath()).select(new ISelector<String, File>() {
+          public File select(String it) {
+            return new File(it);
+          }
+        }).toListSequence();
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameterCommand).append(myDebuggerSettings).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classRunnerClassPath, File.pathSeparator))).append("jetbrains.mps.execution.lib.startup.ClassRunner").append(new KeyValueCommandPart("-" + ("c"), className)).append(new KeyValueCommandPart("-" + ("f"), parametersFile)).append(new KeyValueCommandPart("-" + ("p"), classPathFile)).build(myWorkingDirectory);
       } catch (FileNotFoundException e) {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
+
     } else {
       return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameterCommand).append(myDebuggerSettings).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), classPathFiles, className), File.pathSeparator))).append(className).append(programParameterCommand).build(myWorkingDirectory);
     }
@@ -168,6 +176,9 @@ public class Java_Command {
   }
 
   private static int getMaxCommandLine() {
+    // the command line limit on win is 32767 characters 
+    // (see http://blogs.msdn.com/b/oldnewthing/archive/2003/12/10/56028.aspx) 
+    // we set the limit to 16384 (half as many) just in case 
     return 16384;
   }
 
@@ -182,12 +193,7 @@ public class Java_Command {
   }
 
   public static List<String> getClasspath(final IModule module, boolean withDependencies) {
-    List<String> result = ListSequence.fromList(new ArrayList<String>());
-    if (module.getClassesGen() != null) {
-      ListSequence.fromList(result).addElement(module.getClassesGen().getAbsolutePath());
-    }
-
-    final ClasspathStringCollector visitor = new ClasspathStringCollector(result);
+    final ClasspathStringCollector visitor = new ClasspathStringCollector();
     module.getClassPathItem().accept(visitor);
     if (withDependencies) {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -197,10 +203,20 @@ public class Java_Command {
       });
     }
 
-    List<String> visited = visitor.getResultAndReInit();
+    Set<String> visited = visitor.getClasspath();
     visited.removeAll(CommonPaths.getJDKPath());
+    return ListSequence.fromListWithValues(new ArrayList<String>(), visited);
+  }
 
-    return visited;
+  private static List<String> getClassRunnerClassPath() {
+    final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        module.value = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("5b247b59-8fd0-4475-a767-9e9ff6a9d01c"));
+      }
+    });
+
+    return Java_Command.getClasspath(module.value, false);
   }
 
   public static File getJavaCommand(@Nullable String javaHome) throws ExecutionException {
@@ -249,6 +265,25 @@ public class Java_Command {
       }
     }
     return null;
+  }
+
+  public static String protect(String result) {
+    if (result.contains(" ")) {
+      return "\"" + result + "\"";
+    }
+    return result;
+  }
+
+  private static File writeToTmpFile(Iterable<String> text) throws FileNotFoundException {
+    File tmpFile = FileUtil.createTmpFile();
+    tmpFile.deleteOnExit();
+    PrintWriter writer = new PrintWriter(tmpFile);
+    for (String line : Sequence.fromIterable(text)) {
+      writer.println(line);
+    }
+    writer.flush();
+    writer.close();
+    return tmpFile;
   }
 
   public static IDebuggerConfiguration getDebuggerConfiguration() {

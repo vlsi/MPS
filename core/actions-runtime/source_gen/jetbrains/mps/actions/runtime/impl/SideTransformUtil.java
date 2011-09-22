@@ -45,7 +45,7 @@ public class SideTransformUtil {
 
   public static Iterable<SNode> getApplicableActionsBuilders(final SNode node, Set<String> stringTags, final CellSide cellSide, final IOperationContext context) {
 
-    final Set<SNode> tags = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(stringTags).<SNode>select(new ISelector<String, SNode>() {
+    final Set<SNode> tags = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(stringTags).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
         return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "SideTransformTag"), it);
       }
@@ -61,7 +61,7 @@ public class SideTransformUtil {
         continue;
       }
       SModel model = actionsModelDescriptor.getSModel();
-      result = Sequence.fromIterable(result).concat(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(model, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions")).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      result = Sequence.fromIterable(result).concat(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(model, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions")).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "actionsBuilder", true);
         }
@@ -85,7 +85,7 @@ public class SideTransformUtil {
         public boolean accept(SNode it) {
           return (SLinkOperations.getTarget(it, "conceptToRemove", false) != null);
         }
-      }).<SNode>select(new ISelector<SNode, SNode>() {
+      }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, "conceptToRemove", false);
         }

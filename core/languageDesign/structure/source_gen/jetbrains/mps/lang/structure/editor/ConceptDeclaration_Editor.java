@@ -34,6 +34,12 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.EditorUtil;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -41,15 +47,9 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -681,6 +681,36 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return EditorUtil.createSelectIconButton(node, editorContext);
   }
 
+  public static class ConceptDeclaration_generic_cellMenu_a0g1c0 extends AbstractCellMenuPart_Generic_Item {
+    public ConceptDeclaration_generic_cellMenu_a0g1c0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
+      SPropertyOperations.set(result, "metaClass", "aggregation");
+      ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
+    }
+
+    public String getMatchingText() {
+      return "new child";
+    }
+  }
+
+  public static class ConceptDeclaration_generic_cellMenu_a0j1c0 extends AbstractCellMenuPart_Generic_Item {
+    public ConceptDeclaration_generic_cellMenu_a0j1c0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
+      SPropertyOperations.set(result, "metaClass", "reference");
+      ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
+    }
+
+    public String getMatchingText() {
+      return "new reference";
+    }
+  }
+
   public static class _Inline_ueqr71_a1a2a0 extends InlineCellProvider {
     public _Inline_ueqr71_a1a2a0() {
       super();
@@ -1034,36 +1064,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
-    }
-  }
-
-  public static class ConceptDeclaration_generic_cellMenu_a0g1c0 extends AbstractCellMenuPart_Generic_Item {
-    public ConceptDeclaration_generic_cellMenu_a0g1c0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
-      SPropertyOperations.set(result, "metaClass", "aggregation");
-      ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
-    }
-
-    public String getMatchingText() {
-      return "new child";
-    }
-  }
-
-  public static class ConceptDeclaration_generic_cellMenu_a0j1c0 extends AbstractCellMenuPart_Generic_Item {
-    public ConceptDeclaration_generic_cellMenu_a0j1c0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
-      SPropertyOperations.set(result, "metaClass", "reference");
-      ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
-    }
-
-    public String getMatchingText() {
-      return "new reference";
     }
   }
 }

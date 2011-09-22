@@ -422,7 +422,7 @@ __switch__:
         };
       }
     });
-    Iterable<String> res = Sequence.fromIterable(seq).<String>translate(new ITranslator2<_FunctionTypes._return_P0_E0<? extends String>, String>() {
+    Iterable<String> res = Sequence.fromIterable(seq).translate(new ITranslator2<_FunctionTypes._return_P0_E0<? extends String>, String>() {
       public Iterable<String> translate(_FunctionTypes._return_P0_E0<? extends String> s) {
         return Sequence.<String>singleton(s.invoke());
       }

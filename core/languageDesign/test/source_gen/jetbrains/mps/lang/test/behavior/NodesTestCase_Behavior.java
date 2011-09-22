@@ -16,7 +16,7 @@ import java.net.URI;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.StubPath;
-import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.application.PathManager;
@@ -44,7 +44,7 @@ public class NodesTestCase_Behavior {
   }
 
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testMethods", true)).union(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{})).<SNode>select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testMethods", true)).union(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{})).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return (SNode) it;
       }
@@ -71,8 +71,8 @@ public class NodesTestCase_Behavior {
     for (StubPath path : ListSequence.fromList(testsLanguage.getRuntimeStubPaths())) {
       ListSequence.fromList(result).addElement(path.getPath());
     }
-    for (Dependency dep : ListSequence.fromList(testsLanguage.getRuntimeDependencies())) {
-      AbstractModule module = (AbstractModule) MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+    for (ModuleReference dep : ListSequence.fromList(testsLanguage.getRuntimeModulesReferences())) {
+      AbstractModule module = (AbstractModule) MPSModuleRepository.getInstance().getModule(dep);
       for (StubPath path : ListSequence.fromList(module.getStubPaths())) {
         ListSequence.fromList(result).addElement(path.getPath());
       }

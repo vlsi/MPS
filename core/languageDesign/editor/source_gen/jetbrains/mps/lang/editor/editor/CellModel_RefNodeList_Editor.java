@@ -26,7 +26,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -35,6 +34,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -964,6 +964,98 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "separatorTextQuery", true) != null;
   }
 
+  public static class CellModel_RefNodeList_usesFolding_cellMenu_a0a1e3a extends AbstractCellMenuPart_PropertyValues {
+    public CellModel_RefNodeList_usesFolding_cellMenu_a0a1e3a() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
+    }
+  }
+
+  public static class CellModel_RefNodeList_generic_cellMenu_a0b6d0 extends AbstractCellMenuPart_Generic_Group {
+    public CellModel_RefNodeList_generic_cellMenu_a0b6d0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+      ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText", null));
+      return result;
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SLinkOperations.setTarget(node, "separatorTextQuery", parameterObject, true);
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+    public String getMatchingText(Object parameterObject) {
+      return this.getMatchingText_internal((SNode) parameterObject);
+    }
+
+    public String getMatchingText_internal(SNode parameterObject) {
+      return "query";
+    }
+  }
+
+  public static class CellModel_RefNodeList_generic_cellMenu_a0c6d0 extends AbstractCellMenuPart_Generic_Group {
+    public CellModel_RefNodeList_generic_cellMenu_a0c6d0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      List<String> result = ListSequence.fromList(new ArrayList<String>());
+      ListSequence.fromList(result).addElement(SPropertyOperations.getString(node, "separatorText"));
+      return result;
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "separatorTextQuery", true));
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+    public String getMatchingText(Object parameterObject) {
+      return this.getMatchingText_internal((String) parameterObject);
+    }
+
+    public String getMatchingText_internal(String parameterObject) {
+      return parameterObject;
+    }
+
+    public String getDescriptionText(Object parameterObject) {
+      return this.getDescriptionText_internal((String) parameterObject);
+    }
+
+    public String getDescriptionText_internal(String parameterObject) {
+      return "static text";
+    }
+  }
+
+  public static class CellModel_RefNodeList_generic_cellMenu_b0a1e3a extends AbstractCellMenuPart_Generic_Item {
+    public CellModel_RefNodeList_generic_cellMenu_b0a1e3a() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNodeFactoryOperations.setNewChild(node, "usesFoldingCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition");
+    }
+
+    public String getMatchingText() {
+      return "query";
+    }
+  }
+
   public static class _Inline_2v2794_a1a0c0 extends InlineCellProvider {
     public _Inline_2v2794_a1a0c0() {
       super();
@@ -1105,98 +1197,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
-    }
-  }
-
-  public static class CellModel_RefNodeList_usesFolding_cellMenu_a0a1e3a extends AbstractCellMenuPart_PropertyValues {
-    public CellModel_RefNodeList_usesFolding_cellMenu_a0a1e3a() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
-    }
-  }
-
-  public static class CellModel_RefNodeList_generic_cellMenu_a0b6d0 extends AbstractCellMenuPart_Generic_Group {
-    public CellModel_RefNodeList_generic_cellMenu_a0b6d0() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-      ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText", null));
-      return result;
-    }
-
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
-    }
-
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setTarget(node, "separatorTextQuery", parameterObject, true);
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
-
-    public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((SNode) parameterObject);
-    }
-
-    public String getMatchingText_internal(SNode parameterObject) {
-      return "query";
-    }
-  }
-
-  public static class CellModel_RefNodeList_generic_cellMenu_a0c6d0 extends AbstractCellMenuPart_Generic_Group {
-    public CellModel_RefNodeList_generic_cellMenu_a0c6d0() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> result = ListSequence.fromList(new ArrayList<String>());
-      ListSequence.fromList(result).addElement(SPropertyOperations.getString(node, "separatorText"));
-      return result;
-    }
-
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
-    }
-
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "separatorTextQuery", true));
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
-
-    public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((String) parameterObject);
-    }
-
-    public String getMatchingText_internal(String parameterObject) {
-      return parameterObject;
-    }
-
-    public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((String) parameterObject);
-    }
-
-    public String getDescriptionText_internal(String parameterObject) {
-      return "static text";
-    }
-  }
-
-  public static class CellModel_RefNodeList_generic_cellMenu_b0a1e3a extends AbstractCellMenuPart_Generic_Item {
-    public CellModel_RefNodeList_generic_cellMenu_b0a1e3a() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNodeFactoryOperations.setNewChild(node, "usesFoldingCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition");
-    }
-
-    public String getMatchingText() {
-      return "query";
     }
   }
 }

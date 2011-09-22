@@ -33,7 +33,7 @@ public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesyst
     }
     SNode declaringConcept = SNodeOperations.getAncestor(linkToCheck, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
     List<SNode> supers = SConceptOperations.getDirectSuperConcepts(declaringConcept, false);
-    Iterable<SNode> linksInSupers = ListSequence.fromList(supers).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> linksInSupers = ListSequence.fromList(supers).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode concept) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {

@@ -25,14 +25,14 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
   private static String[] EMPTY_ARRAY = new String[0];
   protected static Log log = LogFactory.getLog(ModelReader6Handler.class);
 
-  private ModelReader6Handler.modelElementHandler modelhandler = new ModelReader6Handler.modelElementHandler();
-  private ModelReader6Handler.persistenceElementHandler persistencehandler = new ModelReader6Handler.persistenceElementHandler();
-  private ModelReader6Handler.tag_with_namespaceElementHandler tag_with_namespacehandler = new ModelReader6Handler.tag_with_namespaceElementHandler();
-  private ModelReader6Handler.importElementHandler importhandler = new ModelReader6Handler.importElementHandler();
-  private ModelReader6Handler.root_stubsElementHandler root_stubshandler = new ModelReader6Handler.root_stubsElementHandler();
-  private ModelReader6Handler.nodeElementHandler nodehandler = new ModelReader6Handler.nodeElementHandler();
-  private ModelReader6Handler.propertyElementHandler propertyhandler = new ModelReader6Handler.propertyElementHandler();
-  private ModelReader6Handler.linkElementHandler linkhandler = new ModelReader6Handler.linkElementHandler();
+  private ModelReader6Handler.ModelElementHandler modelhandler = new ModelReader6Handler.ModelElementHandler();
+  private ModelReader6Handler.PersistenceElementHandler persistencehandler = new ModelReader6Handler.PersistenceElementHandler();
+  private ModelReader6Handler.Tag_with_namespaceElementHandler tag_with_namespacehandler = new ModelReader6Handler.Tag_with_namespaceElementHandler();
+  private ModelReader6Handler.ImportElementHandler importhandler = new ModelReader6Handler.ImportElementHandler();
+  private ModelReader6Handler.Root_stubsElementHandler root_stubshandler = new ModelReader6Handler.Root_stubsElementHandler();
+  private ModelReader6Handler.NodeElementHandler nodehandler = new ModelReader6Handler.NodeElementHandler();
+  private ModelReader6Handler.PropertyElementHandler propertyhandler = new ModelReader6Handler.PropertyElementHandler();
+  private ModelReader6Handler.LinkElementHandler linkhandler = new ModelReader6Handler.LinkElementHandler();
   private Stack<ModelReader6Handler.ElementHandler> myHandlersStack = new Stack<ModelReader6Handler.ElementHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
@@ -150,10 +150,10 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class modelElementHandler extends ModelReader6Handler.ElementHandler {
+  public class ModelElementHandler extends ModelReader6Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"modelUID"};
 
-    public modelElementHandler() {
+    public ModelElementHandler() {
     }
 
     @Override
@@ -265,10 +265,10 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class persistenceElementHandler extends ModelReader6Handler.ElementHandler {
+  public class PersistenceElementHandler extends ModelReader6Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"version"};
 
-    public persistenceElementHandler() {
+    public PersistenceElementHandler() {
     }
 
     @Override
@@ -291,10 +291,10 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class tag_with_namespaceElementHandler extends ModelReader6Handler.ElementHandler {
+  public class Tag_with_namespaceElementHandler extends ModelReader6Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"namespace"};
 
-    public tag_with_namespaceElementHandler() {
+    public Tag_with_namespaceElementHandler() {
     }
 
     @Override
@@ -317,10 +317,10 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class importElementHandler extends ModelReader6Handler.ElementHandler {
+  public class ImportElementHandler extends ModelReader6Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"index", "version", "modelUID"};
 
-    public importElementHandler() {
+    public ImportElementHandler() {
     }
 
     @Override
@@ -353,10 +353,10 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class root_stubsElementHandler extends ModelReader6Handler.ElementHandler {
+  public class Root_stubsElementHandler extends ModelReader6Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public root_stubsElementHandler() {
+    public Root_stubsElementHandler() {
     }
 
     @Override
@@ -381,10 +381,10 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class nodeElementHandler extends ModelReader6Handler.ElementHandler {
+  public class NodeElementHandler extends ModelReader6Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"type"};
 
-    public nodeElementHandler() {
+    public NodeElementHandler() {
     }
 
     @Override
@@ -465,10 +465,10 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class propertyElementHandler extends ModelReader6Handler.ElementHandler {
+  public class PropertyElementHandler extends ModelReader6Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"name"};
 
-    public propertyElementHandler() {
+    public PropertyElementHandler() {
     }
 
     @Override
@@ -495,10 +495,10 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
   }
 
-  public class linkElementHandler extends ModelReader6Handler.ElementHandler {
+  public class LinkElementHandler extends ModelReader6Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public linkElementHandler() {
+    public LinkElementHandler() {
     }
 
     @Override

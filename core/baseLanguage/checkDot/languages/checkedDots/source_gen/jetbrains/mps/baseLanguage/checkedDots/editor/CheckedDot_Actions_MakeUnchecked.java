@@ -34,6 +34,7 @@ public class CheckedDot_Actions_MakeUnchecked {
       SNode dotExpression = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.DotExpression");
       SLinkOperations.setTarget(dotExpression, "operand", SLinkOperations.getTarget(node, "operand", true), true);
       SLinkOperations.setTarget(dotExpression, "operation", SLinkOperations.getTarget(node, "operation", true), true);
+      editorContext.selectAndSetCaret(SLinkOperations.getTarget(dotExpression, "operation", true), 0);
     }
   }
 }

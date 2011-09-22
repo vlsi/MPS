@@ -189,7 +189,7 @@ public class Map_Test extends Util_Test {
         m.value(String.valueOf((char) ('A' - 1 + m.key())));
       }
     });
-    this.assertIterableEqualsIgnoreOrder(Sequence.fromIterable(ArrayUtils.fromCharacterArray("ABC".toCharArray())).<String>select(new ISelector<Character, String>() {
+    this.assertIterableEqualsIgnoreOrder(Sequence.fromIterable(ArrayUtils.fromCharacterArray("ABC".toCharArray())).select(new ISelector<Character, String>() {
       public String select(Character c) {
         return String.valueOf(c);
       }

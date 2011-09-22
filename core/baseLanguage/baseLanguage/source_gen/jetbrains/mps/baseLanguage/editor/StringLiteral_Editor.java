@@ -54,6 +54,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -73,6 +74,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       style.set(StyleAttributes.EDITABLE, true);
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     }
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);

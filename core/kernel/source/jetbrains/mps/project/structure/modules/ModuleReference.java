@@ -75,39 +75,21 @@ public class ModuleReference {
   }
 
   public int hashCode() {
-    if (myModuleId != null) {
-      return myModuleId.hashCode();
-    }
+    if (myModuleId != null) return myModuleId.hashCode();
     return myModuleFqName.hashCode();
   }
 
   public boolean equals(Object obj) {
-    if (!(obj instanceof ModuleReference)) {
-      return false;
-    }
-
+    if (!(obj instanceof ModuleReference)) return false;
     ModuleReference p = (ModuleReference) obj;
 
-    if (myModuleId != null && p.myModuleId != null) {
-      return ObjectUtils.equals(myModuleId, p.myModuleId);
-    }
-
-    if (myModuleId == null && p.myModuleId != null) {
-      return false;
-    }
-
-    if (myModuleId != null && p.myModuleId == null) {
-      return false;
-    }
-
-    return myModuleFqName.equals(p.myModuleFqName);
+    if (myModuleId == null && p.myModuleId == null) return myModuleFqName.equals(p.myModuleFqName);
+    return ObjectUtils.equals(myModuleId, p.myModuleId);
   }
 
   public String toString() {
-    if (myModuleId != null) {
-      return myModuleId.toString() + "(" + myModuleFqName + ")";
-    }
-    return myModuleFqName;
+    if (myModuleId == null) return myModuleFqName;
+    return myModuleId.toString() + "(" + myModuleFqName + ")";
   }
 }
 

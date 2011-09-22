@@ -32,6 +32,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -40,7 +41,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class AbstractContainerCreator_Component extends AbstractCellProvider {
   public AbstractContainerCreator_Component(SNode node) {
@@ -324,6 +324,15 @@ public class AbstractContainerCreator_Component extends AbstractCellProvider {
     return (SLinkOperations.getTarget(node, "initSize", true) != null);
   }
 
+  public static class ReplaceWith_AbstractContainerCreator_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractContainerCreator_cellMenu_a0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
+    }
+  }
+
   private static class initValueListHandler_jky4mt_b2a extends RefNodeListHandler {
     public initValueListHandler_jky4mt_b2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -386,15 +395,6 @@ public class AbstractContainerCreator_Component extends AbstractCellProvider {
       }
       editorCell.setDefaultText("");
       return editorCell;
-    }
-  }
-
-  public static class ReplaceWith_AbstractContainerCreator_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractContainerCreator_cellMenu_a0a0() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
     }
   }
 }

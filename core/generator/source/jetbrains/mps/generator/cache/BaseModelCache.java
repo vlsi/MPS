@@ -34,8 +34,8 @@ import java.util.*;
 
 public abstract class BaseModelCache<T> implements ApplicationComponent {
 
-  private final Map<SModelDescriptor, T> myCache = new WeakHashMap<SModelDescriptor, T>();
-  private final BidirectionalMap<IFile, SModelDescriptor> myFilesToModels = new BidirectionalMap<IFile, SModelDescriptor>();
+  protected final Map<SModelDescriptor, T> myCache = new WeakHashMap<SModelDescriptor, T>();
+  protected final BidirectionalMap<IFile, SModelDescriptor> myFilesToModels = new BidirectionalMap<IFile, SModelDescriptor>();
   private final BaseModelCache<T>.MyCacheGenerator myCacheGenerator;
   private SModelRepository myModelRepository;
   private final SModelRepositoryAdapter myModelRepositoryListener = new MyModelRepositoryListener();
@@ -47,8 +47,10 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
 
   protected abstract T generateCache(GenerationStatus status);
 
+  @NotNull
   public abstract String getCacheFileName();
 
+  @Nullable
   protected abstract IFile getCacheFile(SModelDescriptor modelDescriptor);
 
   protected BaseModelCache(SModelRepository modelRepository) {
@@ -75,7 +77,11 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
         return myCache.get(modelDescriptor);
       }
 
-      myFilesToModels.put(getCacheFile(modelDescriptor), modelDescriptor);
+      IFile cacheFile = getCacheFile(modelDescriptor);
+      if (cacheFile == null) {
+        return null;
+      }
+      myFilesToModels.put(cacheFile, modelDescriptor);
       T cache = readCache(modelDescriptor);
       myCache.put(modelDescriptor, cache);
 

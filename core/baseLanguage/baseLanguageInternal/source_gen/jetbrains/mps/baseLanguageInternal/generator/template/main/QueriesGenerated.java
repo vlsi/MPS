@@ -106,6 +106,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "inner", true);
   }
 
+  public static SNode sourceNodeQuery_1585405235656404797(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "constant", false), "initializer", true);
+  }
+
   public static SNode sourceNodeQuery_1238251880657(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true));
   }

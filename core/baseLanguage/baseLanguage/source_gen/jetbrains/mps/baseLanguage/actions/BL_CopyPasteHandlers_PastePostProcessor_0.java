@@ -25,7 +25,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProce
   public void postProcesNode(SNode pastedNode) {
     SNode containingClassifier = SNodeOperations.getAncestor(pastedNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     final SReference staticFieldRef = SNodeOperations.getReference(pastedNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration"));
-    Iterable<SNode> visibleStaticFields = ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(containingClassifier, pastedNode, IClassifiersSearchScope.STATIC_FIELD)).<SNode>select(new ISelector<SNode, SNode>() {
+    Iterable<SNode> visibleStaticFields = ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(containingClassifier, pastedNode, IClassifiersSearchScope.STATIC_FIELD)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
       }

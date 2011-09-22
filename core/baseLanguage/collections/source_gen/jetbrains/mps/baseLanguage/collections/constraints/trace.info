@@ -196,7 +196,7 @@
     <nodeInfo nodeId="6801639034384669018" fileName="SequenceOperation_Constraints.java" startLine="63" startPosition="15" endLine="66" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6801639034384668239" fileName="SequenceOperation_Constraints.java" startLine="50" startPosition="261" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="6801639034384669033" fileName="SequenceOperation_Constraints.java" startLine="55" startPosition="163" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6801639034384669044" fileName="SequenceOperation_Constraints.java" startLine="59" startPosition="58" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6801639034384669044" fileName="SequenceOperation_Constraints.java" startLine="59" startPosition="51" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1224668254828" fileName="SequenceOperation_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
     <nodeInfo nodeId="1224668254828" fileName="SequenceOperation_Constraints.java" startLine="33" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
     <nodeInfo nodeId="6801639034384669016" fileName="SequenceOperation_Constraints.java" startLine="54" startPosition="13" endLine="67" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -216,7 +216,7 @@
     <scopeInfo nodeId="6801639034384669017" fileName="SequenceOperation_Constraints.java" startLine="63" startPosition="15" endLine="66" endPosition="13" />
     <scopeInfo nodeId="6801639034384668239" fileName="SequenceOperation_Constraints.java" startLine="50" startPosition="261" endLine="54" endPosition="0" />
     <scopeInfo nodeId="6801639034384669033" fileName="SequenceOperation_Constraints.java" startLine="55" startPosition="163" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="6801639034384669044" fileName="SequenceOperation_Constraints.java" startLine="59" startPosition="58" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="6801639034384669044" fileName="SequenceOperation_Constraints.java" startLine="59" startPosition="51" endLine="63" endPosition="0" />
     <scopeInfo nodeId="1224668254828" fileName="SequenceOperation_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="1224668254828" fileName="SequenceOperation_Constraints.java" startLine="35" startPosition="166" endLine="42" endPosition="18" />
     <scopeInfo nodeId="1224668254828" fileName="SequenceOperation_Constraints.java" startLine="33" startPosition="0" endLine="44" endPosition="0" />
@@ -237,7 +237,7 @@
     <scopeInfo nodeId="1224668254828" fileName="SequenceOperation_Constraints.java" startLine="44" startPosition="0" endLine="75" endPosition="0" />
     <unitInfo nodeId="6801639034384668239" fileName="SequenceOperation_Constraints.java" startLine="50" startPosition="238" endLine="54" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.constraints.SequenceOperation_Constraints$1" />
     <unitInfo nodeId="6801639034384669033" fileName="SequenceOperation_Constraints.java" startLine="55" startPosition="140" endLine="59" endPosition="11" unitName="jetbrains.mps.baseLanguage.collections.constraints.SequenceOperation_Constraints$2" />
-    <unitInfo nodeId="6801639034384669044" fileName="SequenceOperation_Constraints.java" startLine="59" startPosition="31" endLine="63" endPosition="11" unitName="jetbrains.mps.baseLanguage.collections.constraints.SequenceOperation_Constraints$3" />
+    <unitInfo nodeId="6801639034384669044" fileName="SequenceOperation_Constraints.java" startLine="59" startPosition="24" endLine="63" endPosition="11" unitName="jetbrains.mps.baseLanguage.collections.constraints.SequenceOperation_Constraints$3" />
     <unitInfo nodeId="1224668254828" fileName="SequenceOperation_Constraints.java" startLine="22" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.SequenceOperation_Constraints" />
   </root>
   <root nodeId="1226566892900">

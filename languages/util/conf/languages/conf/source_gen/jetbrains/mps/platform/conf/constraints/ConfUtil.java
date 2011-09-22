@@ -7,8 +7,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.stubs.BaseStubModelRootManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -20,7 +20,7 @@ public class ConfUtil {
   }
 
   public static Iterable<SModel> visibleConfModels(IScope scope) {
-    return Sequence.fromIterable(((Iterable<IModule>) scope.getVisibleModules())).<SModelDescriptor>translate(new ITranslator2<IModule, SModelDescriptor>() {
+    return Sequence.fromIterable(((Iterable<IModule>) scope.getVisibleModules())).translate(new ITranslator2<IModule, SModelDescriptor>() {
       public Iterable<SModelDescriptor> translate(IModule m) {
         return m.getOwnModelDescriptors();
       }
@@ -31,7 +31,7 @@ public class ConfUtil {
           Sequence.fromIterable(((Iterable<ModuleReference>) smd.getSModel().importedLanguages())).contains(ConfUtil.CONF_LANG)
         );
       }
-    }).<SModel>select(new ISelector<SModelDescriptor, SModel>() {
+    }).select(new ISelector<SModelDescriptor, SModel>() {
       public SModel select(SModelDescriptor smd) {
         return (SModel) (smd.getSModel());
       }

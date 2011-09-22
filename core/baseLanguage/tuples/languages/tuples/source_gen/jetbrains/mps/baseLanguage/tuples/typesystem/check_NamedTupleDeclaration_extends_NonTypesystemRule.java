@@ -32,7 +32,7 @@ public class check_NamedTupleDeclaration_extends_NonTypesystemRule extends Abstr
       }
       for (final SNode cmp : ListSequence.fromList(SLinkOperations.getTargets(ntd, "component", true))) {
         if (cmp != null) {
-          if (!(!(ListSequence.fromList(allExtends).<SNode>translate(new ITranslator2<SNode, SNode>() {
+          if (!(!(ListSequence.fromList(allExtends).translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode td) {
               return SLinkOperations.getTargets(td, "component", true);
             }

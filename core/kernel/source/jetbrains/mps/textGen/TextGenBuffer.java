@@ -89,8 +89,11 @@ public final class TextGenBuffer {
 
   public void foundError(String error, @Nullable SNode node, @Nullable Throwable t) {
     myContainsErrors = true;
+    if (t != null) {
+      error += " (right-click to see exception)";
+    }
     Message m = prepare(MessageKind.ERROR, error, node);
-    if(t != null) {
+    if (t != null) {
       m.setException(t);
     }
     myErrors.add(m);

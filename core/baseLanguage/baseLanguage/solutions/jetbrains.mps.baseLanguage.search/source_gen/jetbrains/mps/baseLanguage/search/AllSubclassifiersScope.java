@@ -46,7 +46,7 @@ public class AllSubclassifiersScope extends AbstractClassifiersScope {
       this.visitedClassifiersMap = new HashMap<SNode, Boolean>();
       this.visitedClassifiersMap.put(this.rootClassifier, true);
       ISearchScope searchScope = new ModelAndImportedModelsScope(this.model, false, this.scope);
-      this.foundClassifiers = new ArrayList<SNode>((List) searchScope.getNodes(new Condition<SNode>() {
+      this.foundClassifiers = new ArrayList<SNode>(searchScope.getNodes(new Condition<SNode>() {
         public boolean met(SNode node) {
           return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") && AllSubclassifiersScope.this.checkSubclassifier(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"));
         }
@@ -70,7 +70,7 @@ public class AllSubclassifiersScope extends AbstractClassifiersScope {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "classifier", false) != null);
           }
-        }).<SNode>select(new ISelector<SNode, SNode>() {
+        }).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "classifier", false);
           }
@@ -87,7 +87,7 @@ public class AllSubclassifiersScope extends AbstractClassifiersScope {
         public boolean accept(SNode it) {
           return (SLinkOperations.getTarget(it, "classifier", false) != null);
         }
-      }).<SNode>select(new ISelector<SNode, SNode>() {
+      }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, "classifier", false);
         }

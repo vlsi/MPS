@@ -15,6 +15,7 @@ public class SolutionActionsEx_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       SolutionActionsEx_ActionGroup.this.addAction("jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action");
+      SolutionActionsEx_ActionGroup.this.addAction("jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

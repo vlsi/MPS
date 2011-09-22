@@ -981,8 +981,8 @@
     <nodeInfo nodeId="5122318299906045503" fileName="ClassifierUpdater.java" startLine="151" startPosition="136" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="2566197375814061886" fileName="ClassifierUpdater.java" startLine="157" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTypeVariableReference#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2566197375814063291" fileName="ClassifierUpdater.java" startLine="411" startPosition="5" endLine="415" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5122318299906072664" fileName="ClassifierUpdater.java" startLine="446" startPosition="171" endLine="450" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMAnnotation;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8325856773402625857" fileName="ClassifierUpdater.java" startLine="502" startPosition="152" endLine="506" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5122318299906072664" fileName="ClassifierUpdater.java" startLine="446" startPosition="164" endLine="450" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMAnnotation;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8325856773402625857" fileName="ClassifierUpdater.java" startLine="502" startPosition="145" endLine="506" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8325856773402625865" fileName="ClassifierUpdater.java" startLine="506" startPosition="42" endLine="510" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="5122318299906072857" fileName="ClassifierUpdater.java" startLine="524" startPosition="5" endLine="528" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2566197375814064185" fileName="ClassifierUpdater.java" startLine="598" startPosition="5" endLine="602" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1623,8 +1623,8 @@
       <varInfo nodeId="2566197375814061891" varName="name" />
       <varInfo nodeId="2566197375814061889" varName="genDecl" />
     </scopeInfo>
-    <scopeInfo nodeId="5122318299906072664" fileName="ClassifierUpdater.java" startLine="446" startPosition="171" endLine="450" endPosition="0" />
-    <scopeInfo nodeId="8325856773402625857" fileName="ClassifierUpdater.java" startLine="502" startPosition="152" endLine="506" endPosition="0" />
+    <scopeInfo nodeId="5122318299906072664" fileName="ClassifierUpdater.java" startLine="446" startPosition="164" endLine="450" endPosition="0" />
+    <scopeInfo nodeId="8325856773402625857" fileName="ClassifierUpdater.java" startLine="502" startPosition="145" endLine="506" endPosition="0" />
     <scopeInfo nodeId="8325856773402625865" fileName="ClassifierUpdater.java" startLine="506" startPosition="42" endLine="510" endPosition="0" />
     <scopeInfo nodeId="2566197375814064076" fileName="ClassifierUpdater.java" startLine="577" startPosition="39" endLine="581" endPosition="28">
       <varInfo nodeId="2566197375814064084" varName="classifierType" />
@@ -2154,8 +2154,8 @@
       <varInfo nodeId="2566197375814063872" varName="type" />
     </scopeInfo>
     <unitInfo nodeId="5122318299906045503" fileName="ClassifierUpdater.java" startLine="151" startPosition="113" endLine="155" endPosition="5" unitName="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater$1" />
-    <unitInfo nodeId="5122318299906072664" fileName="ClassifierUpdater.java" startLine="446" startPosition="136" endLine="450" endPosition="5" unitName="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater$2" />
-    <unitInfo nodeId="8325856773402625857" fileName="ClassifierUpdater.java" startLine="502" startPosition="124" endLine="506" endPosition="7" unitName="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater$3" />
+    <unitInfo nodeId="5122318299906072664" fileName="ClassifierUpdater.java" startLine="446" startPosition="129" endLine="450" endPosition="5" unitName="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater$2" />
+    <unitInfo nodeId="8325856773402625857" fileName="ClassifierUpdater.java" startLine="502" startPosition="117" endLine="506" endPosition="7" unitName="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater$3" />
     <unitInfo nodeId="8325856773402625865" fileName="ClassifierUpdater.java" startLine="506" startPosition="19" endLine="510" endPosition="7" unitName="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater$4" />
     <unitInfo nodeId="2566197375814061436" fileName="ClassifierUpdater.java" startLine="722" startPosition="0" endLine="738" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater$QuotationClass_ol94f8_a0a0f0a" />
     <unitInfo nodeId="2566197375814061436" fileName="ClassifierUpdater.java" startLine="983" startPosition="0" endLine="999" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater$QuotationClass_ol94f8_a0a1a0a01" />

@@ -94,7 +94,7 @@ public class QueriesGenerated {
     return Property_Behavior.call_isCustomImplementation_1213877383144(_context.getNode());
   }
 
-  public static boolean ifMacro_Condition_1201571423789(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5351366134229435236(final IOperationContext operationContext, final IfMacroContext _context) {
     return Property_Behavior.call_isDefaultImplementation_1213877383134(_context.getNode());
   }
 
@@ -134,7 +134,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
 
-  public static SNode sourceNodeQuery_1201570279414(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_5351366134229435225(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
 
@@ -167,7 +167,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
   }
 
-  public static SNode sourceNodeQuery_2492830749282199462(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4723230619342922324(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 

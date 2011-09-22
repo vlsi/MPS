@@ -77,8 +77,6 @@ public interface IModule extends ModelOwner {
 
   List<SModelDescriptor> getHiddenModelDescriptors();
 
-  List<SModelDescriptor> getEditableUserModels();
-
   List<SModelRoot> getSModelRoots();
 
   String getOutputFor(SModelDescriptor model);
@@ -106,10 +104,6 @@ public interface IModule extends ModelOwner {
 
   void invalidateCaches();
 
-  void updateClassPath();
-
-  void invalidateClassPath();
-
   void save();
 
   void onModuleLoad();
@@ -136,7 +130,4 @@ public interface IModule extends ModelOwner {
 
   //todo used only in solution
   String getTestsGeneratorOutputPath();
-
-  @Deprecated
-  List<Dependency> getDependOn();
 }

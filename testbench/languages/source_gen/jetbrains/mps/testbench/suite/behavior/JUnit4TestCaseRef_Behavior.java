@@ -41,7 +41,7 @@ public class JUnit4TestCaseRef_Behavior {
           }
         }));
       }
-    }).<String>select(new ISelector<SNode, String>() {
+    }).select(new ISelector<SNode, String>() {
       public String select(SNode m) {
         return SPropertyOperations.getString(m, "name");
       }

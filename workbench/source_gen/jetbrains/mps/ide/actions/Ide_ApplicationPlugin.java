@@ -22,6 +22,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new AddLanguageImport_Action());
+    addAction(new AddMissingImportsInProject_Action());
     addAction(new AddMissingImports_Action());
     addAction(new AddModelImportByRoot_Action());
     addAction(new AddModelImport_Action());

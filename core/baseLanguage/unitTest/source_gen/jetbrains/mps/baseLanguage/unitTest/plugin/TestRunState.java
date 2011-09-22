@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.annotations.NotNull;
 
 public class TestRunState {
   private static final Object lock = new Object();
@@ -199,7 +200,7 @@ public class TestRunState {
     }
   }
 
-  public void outputText(String text, Key key) {
+  public void outputText(String text, @NotNull Key key) {
     synchronized (lock) {
       this.myAvailableText = text;
       this.myKey = key;
@@ -255,11 +256,11 @@ public class TestRunState {
     return this.myCurrentToken;
   }
 
-  public String getLoseMethod() {
+  public String getLostMethod() {
     return this.myLostMethod;
   }
 
-  public String getLoseClass() {
+  public String getLostClass() {
     return this.myLostTest;
   }
 

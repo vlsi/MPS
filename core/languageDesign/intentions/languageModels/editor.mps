@@ -26,7 +26,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1240405347587">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="parameterized" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp3j.1240322627579" resolveInfo="ConceptFunctionParameter_parameter" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp3j.1240322627579" resolveInfo="IntentionParameter" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6263518417926799610">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp3j.2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
@@ -35,7 +35,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp3j.2522969319638198292" resolveInfo="GenerateIntentionDeclaration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4359456199357025378">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp3j.4359456199357025372" resolveInfo="IntentionContextParamRefOperation" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp3j.4359456199357025372" resolveInfo="IntentionContextParamReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4359456199357188673">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp3j.4359456199357017245" resolveInfo="IntentionContextParameterDeclaration" />
@@ -118,7 +118,7 @@
                           </node>
                           <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1240319640322">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="supv.~EditorCell_Collection" resolveInfo="EditorCell_Collection" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="supv.~EditorCell_Collection%dcreateVertical(jetbrains%dmps%dnodeEditor%dEditorContext,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorCellListHandler)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell_Collection" resolveInfo="createVertical" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="supv.~EditorCell_Collection%dcreateVertical(jetbrains%dmps%dnodeEditor%dEditorContext,jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell_Collection" resolveInfo="createVertical" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="1240319640323" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="1240319640324" />
                           </node>

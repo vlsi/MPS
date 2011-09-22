@@ -20,15 +20,15 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.Measure;
 
 public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -97,6 +97,27 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  public static class StaticConceptMethodCall_customReplace_cellMenu_a0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public StaticConceptMethodCall_customReplace_cellMenu_a0c0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      return StaticConceptMethodCallUtil.getParameterObjectsForMethodDeclaration(node, scope);
+    }
+
+    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext);
+    }
+
+    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      return StaticConceptMethodCallUtil.createNewNodeForMethodDeclarationParameter(node, SNodeOperations.cast(parameterObject, "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration"));
+    }
+
+    public boolean isReferentPresentation() {
+      return true;
+    }
   }
 
   public static class _Inline_fn54i1_a0a extends InlineCellProvider {
@@ -172,27 +193,6 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
-    }
-  }
-
-  public static class StaticConceptMethodCall_customReplace_cellMenu_a0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public StaticConceptMethodCall_customReplace_cellMenu_a0c0() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return StaticConceptMethodCallUtil.getParameterObjectsForMethodDeclaration(node, scope);
-    }
-
-    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext);
-    }
-
-    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return StaticConceptMethodCallUtil.createNewNodeForMethodDeclarationParameter(node, SNodeOperations.cast(parameterObject, "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration"));
-    }
-
-    public boolean isReferentPresentation() {
-      return true;
     }
   }
 }

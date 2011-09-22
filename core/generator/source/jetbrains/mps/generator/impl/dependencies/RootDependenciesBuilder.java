@@ -88,7 +88,10 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
     if (model == null || model.isTransient() || model == myBuilder.currentInputModel || model == myBuilder.originalInputModel) {
       return;
     }
-    dependsOnModels.add(model.getModelDescriptor());
+    final SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    if(modelDescriptor != null) {
+      dependsOnModels.add(modelDescriptor);
+    }
   }
 
   @Override

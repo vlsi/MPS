@@ -24,11 +24,14 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * Evgeny Gryaznov, Aug 4, 2010
@@ -64,9 +67,12 @@ public class RefactoringsPersistence {
   public static StructureModificationLog load(IFile modelFile) {
     IFile refactoringsFile = getRefactoringsFile(modelFile);
     if (!refactoringsFile.exists())  return null;
+    InputStream in = null;
     try {
       HistoryReaderHandler handler = new HistoryReaderHandler();
-      JDOMUtil.createSAXParser().parse(JDOMUtil.loadSource(refactoringsFile), handler);
+      in = refactoringsFile.openInputStream();
+      InputSource source = new InputSource(new InputStreamReader(in, "UTF-8"));
+      JDOMUtil.createSAXParser().parse(source, handler);
       return handler.getResult();
     } catch (SAXParseException e) {
       LOG.warning(refactoringsFile.getPath() + " line " + e.getLineNumber());
@@ -76,6 +82,14 @@ public class RefactoringsPersistence {
       LOG.error(e);
     } catch (ParserConfigurationException e) {
       LOG.error(e);
+    } finally {
+      if (in != null) {
+        try {
+          in.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
     }
     return null;
   }

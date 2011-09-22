@@ -22,6 +22,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -99,12 +100,12 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     if (treeNode instanceof SModelTreeNode) {
       final SModelTreeNode sModelTreeNode = ((SModelTreeNode) treeNode);
       final SModelDescriptor modelDescriptor = sModelTreeNode.getSModelDescriptor();
-      if (SModelStereotype.isUserModel(modelDescriptor)) {
+      if (modelDescriptor instanceof EditableSModelDescriptor && SModelStereotype.isUserModel(modelDescriptor)) {
         myCommandQueue.runTask(new Runnable() {
           public void run() {
             if (!(MapSequence.fromMap(mySModelDescriptorsToTreeNodes).containsKey(modelDescriptor))) {
               MapSequence.fromMap(mySModelDescriptorsToTreeNodes).put(modelDescriptor, ListSequence.fromList(new ArrayList<SModelTreeNode>()));
-              ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(modelDescriptor);
+              ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager((EditableSModelDescriptor) modelDescriptor);
               for (OldChange change : ListSequence.fromList(modelChangesManager.getChangeList())) {
                 highlightChange(change, sModelTreeNode.getSModel());
               }
@@ -160,14 +161,14 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     if (treeNode instanceof SModelTreeNode) {
       final SModelTreeNode sModelTreeNode = ((SModelTreeNode) treeNode);
       final SModelDescriptor modelDescriptor = sModelTreeNode.getSModelDescriptor();
-      if (SModelStereotype.isUserModel(modelDescriptor)) {
+      if (modelDescriptor instanceof EditableSModelDescriptor && SModelStereotype.isUserModel(modelDescriptor)) {
         myCommandQueue.runTask(new Runnable() {
           public void run() {
             if (MapSequence.fromMap(mySModelDescriptorsToTreeNodes).containsKey(modelDescriptor)) {
               ListSequence.fromList(MapSequence.fromMap(mySModelDescriptorsToTreeNodes).get(modelDescriptor)).removeElement(sModelTreeNode);
               if (ListSequence.fromList(MapSequence.fromMap(mySModelDescriptorsToTreeNodes).get(modelDescriptor)).isEmpty()) {
                 MapSequence.fromMap(mySModelDescriptorsToTreeNodes).removeKey(modelDescriptor);
-                ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(modelDescriptor);
+                ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager((EditableSModelDescriptor) modelDescriptor);
                 modelChangesManager.removeChangeListener(myChangeListener);
               }
             }
@@ -224,8 +225,12 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           myReferenceChangeCountForNode.increment(node);
         }
         if (change instanceof NewNodeChange) {
+          ModelChangesManager changesManager = myChangesManager.getModelChangesManager(model);
+          if (changesManager == null) {
+            return;
+          }
           for (SNodeTreeNode treeNode : ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node))) {
-            highlightTreeNodeWithMessage(treeNode, new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(change, myChangesManager.getModelChangesManager(model).getFileStatus())));
+            highlightTreeNodeWithMessage(treeNode, new ProjectTreeChangesHighlighter.PrimaryMessage(getColor(change, changesManager.getFileStatus())));
           }
         } else if (change instanceof OldSetPropertyChange) {
           String propertyName = ((OldSetPropertyChange) change).getProperty();
@@ -384,6 +389,9 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
                 return;
               }
               ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
+              if (modelChangesManager == null) {
+                return;
+              }
               for (OldChange c : ListSequence.fromList(modelChangesManager.getChangeList())) {
                 if ((c instanceof NewNodeChange) && node.getSNodeId().equals(c.getAffectedNodeId())) {
                   assert primaryMessage.value == null;
@@ -408,6 +416,9 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
+              if (modelChangesManager == null) {
+                return;
+              }
               for (OldChange c : ListSequence.fromList(modelChangesManager.getChangeList())) {
                 if (c instanceof OldSetPropertyChange && node.getSNodeId().equals(c.getAffectedNodeId()) && ObjectUtils.equals(((OldSetPropertyChange) c).getProperty(), ((PropertyTreeNode) treeNode).getProperty())) {
                   assert primaryMessage.value == null;
@@ -424,6 +435,9 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(SNodeOperations.getModel(node));
+              if (modelChangesManager == null) {
+                return;
+              }
               for (OldChange c : ListSequence.fromList(modelChangesManager.getChangeList())) {
                 if (c instanceof OldSetReferenceChange && node.getSNodeId().equals(c.getAffectedNodeId()) && ObjectUtils.equals(((OldSetReferenceChange) c).getRole(), ((ReferenceTreeNode) treeNode).getRef().getRole())) {
                   assert primaryMessage.value == null;
@@ -462,13 +476,13 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
   }
 
   private void updateModelHighlighting(@Nullable final SModelDescriptor modelDescriptor) {
-    if (modelDescriptor == null || !(SModelStereotype.isUserModel(modelDescriptor))) {
+    if (!(modelDescriptor instanceof EditableSModelDescriptor) || !(SModelStereotype.isUserModel(modelDescriptor))) {
       return;
     }
 
     myCommandQueue.runTask(new Runnable() {
       public void run() {
-        FileStatus fileStatus = check_ybywwq_a0a0a0a2a01(myChangesManager.getModelChangesManager(modelDescriptor));
+        FileStatus fileStatus = myChangesManager.getModelChangesManager((EditableSModelDescriptor) modelDescriptor).getFileStatus();
         Color color = check_ybywwq_a0b0a0a2a01(fileStatus);
         for (SModelTreeNode modelTreeNode : ListSequence.fromList(MapSequence.fromMap(mySModelDescriptorsToTreeNodes).get(modelDescriptor))) {
           Set<TreeMessage> wereMessages = modelTreeNode.removeTreeMessages(ProjectTreeChangesHighlighter.this, true);
@@ -549,13 +563,6 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
   private static TreeNode check_ybywwq_a0a0a0a2f0a0a0a9(MPSTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getParent();
-    }
-    return null;
-  }
-
-  private static FileStatus check_ybywwq_a0a0a0a2a01(ModelChangesManager checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getFileStatus();
     }
     return null;
   }

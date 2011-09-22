@@ -25,7 +25,7 @@ public class SymbolClassPart_Behavior {
             return null;
           }
           c = s.charAt(i);
-          if (!(StringLiteralRegexp_Behavior.call_isHexChar_8330008649152995338(thisNode, c))) {
+          if (!(StringLiteralRegexp_Behavior.isHexChar_8949395081772969908(c))) {
             return null;
           }
           sb.append(c);

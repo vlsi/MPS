@@ -22,15 +22,16 @@ import jetbrains.mps.refactoring.framework.InvalidInputValueException;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
-import jetbrains.mps.workbench.dialogs.choosers.SmartChooseByNamePanel;
+import jetbrains.mps.workbench.actions.goTo.matcher.ChooseByNamePanel;
+import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
 
 import javax.swing.JComponent;
 
 public class BaseMPSChooser<T> implements IChooser {
-  private SmartChooseByNamePanel myChooser;
+  private ChooseByNamePanel myChooser;
 
   public BaseMPSChooser(RefactoringContext context, String paramName, ChooserType<T> type, IChooserSettings<T> settings) {
-    myChooser = new SmartChooseByNamePanel(type.createChooserModel(settings, context, paramName), false);
+    myChooser = MpsPopupFactory.createPanelForPackage(type.createChooserModel(settings, context, paramName), false);
 
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {

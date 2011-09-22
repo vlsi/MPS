@@ -14,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.ThreadUtils;
@@ -25,6 +27,7 @@ import jetbrains.mps.vcs.diff.oldchanges.OldChangeType;
 import jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange;
 import jetbrains.mps.vcs.diff.oldchanges.OldAddRootChange;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -71,47 +74,45 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
 
     ChangesManager.getInstance(project).getCommandQueue().runTask(new Runnable() {
       public void run() {
-        synchronized (myDisposedLock) {
-          if (myDisposed) {
-            return;
-          }
-        }
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            SNode editedNode = editorComponent.getEditedNode();
-            if (editedNode == null || editedNode.isDisposed()) {
-              return;
-            }
-            final SModel model = editedNode.getModel();
-            if (model != null && model.getModelDescriptor() != null) {
-              myModelChangesManager = ChangesManager.getInstance(project).getModelChangesManager(model);
-              myChangeListener = new EditorComponentChangesHighligher.MyChangeListener();
-            } else {
-              return;
+            synchronized (myDisposedLock) {
+              if (myDisposed) {
+                return;
+              }
+              SNode editedNode = editorComponent.getEditedNode();
+              if (editedNode == null || editedNode.isDisposed()) {
+                return;
+              }
+              final SModel model = editedNode.getModel();
+              SModelDescriptor descriptor = (model != null ?
+                model.getModelDescriptor() :
+                null
+              );
+              if (descriptor instanceof EditableSModelDescriptor) {
+                myModelChangesManager = ChangesManager.getInstance(project).getModelChangesManager((EditableSModelDescriptor) descriptor);
+                myChangeListener = new EditorComponentChangesHighligher.MyChangeListener();
+              }
+              if (myChangeListener != null) {
+                for (OldChange change : ListSequence.fromList(myModelChangesManager.getChangeList())) {
+                  highlightChange(change);
+                }
+                synchronized (myChangesMessages) {
+                  for (EditorComponentChangesHighligher.ChangeEditorMessage message : Sequence.fromIterable(MapSequence.fromMap(myChangesMessages).values())) {
+                    getHighlightManager().mark(message);
+                  }
+                }
+                getHighlightManager().repaintAndRebuildEditorMessages();
+                ThreadUtils.runInUIThreadNoWait(new Runnable() {
+                  public void run() {
+                    myFoldingAreaPainter.relayout();
+                  }
+                });
+                myModelChangesManager.addChangeListener(myChangeListener);
+              }
             }
           }
         });
-        if (myChangeListener != null) {
-          for (OldChange change : ListSequence.fromList(myModelChangesManager.getChangeList())) {
-            highlightChange(change);
-          }
-          synchronized (myChangesMessages) {
-            for (EditorComponentChangesHighligher.ChangeEditorMessage message : Sequence.fromIterable(MapSequence.fromMap(myChangesMessages).values())) {
-              getHighlightManager().mark(message);
-            }
-          }
-          getHighlightManager().repaintAndRebuildEditorMessages();
-          ThreadUtils.runInUIThreadNoWait(new Runnable() {
-            public void run() {
-              myFoldingAreaPainter.relayout();
-            }
-          });
-          synchronized (EditorComponentChangesHighligher.this) {
-            if (myChangeListener != null) {
-              myModelChangesManager.addChangeListener(myChangeListener);
-            }
-          }
-        }
       }
     });
   }
@@ -206,23 +207,29 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   public void dispose() {
-    synchronized (myDisposedLock) {
-      myDisposed = true;
-      try {
-        for (OldChange change : SetSequence.fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence()) {
-          unhighlightChange(change);
-        }
-        getHighlightManager().clearForOwner(this);
-        myEditorComponent.getLeftEditorHighlighter().removeFoldingAreaPainter(myFoldingAreaPainter);
-      } finally {
-        if (myModelChangesManager != null) {
-          synchronized (this) {
-            myModelChangesManager.removeChangeListener(myChangeListener);
-            myChangeListener = null;
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        synchronized (myDisposedLock) {
+          myDisposed = true;
+          try {
+            synchronized (myChangesMessages) {
+              SetSequence.fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence().visitAll(new IVisitor<OldChange>() {
+                public void visit(OldChange ch) {
+                  unhighlightChange(ch);
+                }
+              });
+            }
+            getHighlightManager().clearForOwner(EditorComponentChangesHighligher.this);
+            myEditorComponent.getLeftEditorHighlighter().removeFoldingAreaPainter(myFoldingAreaPainter);
+          } finally {
+            if (myModelChangesManager != null) {
+              myModelChangesManager.removeChangeListener(myChangeListener);
+              myChangeListener = null;
+            }
           }
         }
       }
-    }
+    });
   }
 
   @NotNull
@@ -296,7 +303,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   public void rollbackChanges(@NotNull EditorContext editorContext) {
-    myModelChangesManager.rollbackChanges(ListSequence.fromList(myFoldingAreaPainter.getCurrentMessageGroup().getMessages()).<OldChange>select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, OldChange>() {
+    myModelChangesManager.rollbackChanges(ListSequence.fromList(myFoldingAreaPainter.getCurrentMessageGroup().getMessages()).select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, OldChange>() {
       public OldChange select(EditorComponentChangesHighligher.ChangeEditorMessage msg) {
         return msg.getChange();
       }

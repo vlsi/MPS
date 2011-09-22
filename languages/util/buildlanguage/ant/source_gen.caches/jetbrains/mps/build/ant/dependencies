@@ -16,6 +16,16 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="org.apache.tools.ant.ProjectComponent" />
   </dependency>
+  <dependency className="jetbrains.mps.build.ant.ExcludeNested" file="ExcludeNested.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="org.apache.tools.ant.types.FileSet" />
+    <classNode dependClassName="org.apache.tools.ant.types.resources.FileResource" />
+    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
+  </dependency>
   <dependency className="jetbrains.mps.build.ant.IBuildServerMessageFormat" file="IBuildServerMessageFormat.java">
     <classNode dependClassName="java.lang.CharSequence" />
     <classNode dependClassName="java.lang.String" />
@@ -72,6 +82,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.ant.AntBootstrap" />
     <classNode dependClassName="jetbrains.mps.build.ant.Arg" />
+    <classNode dependClassName="jetbrains.mps.build.ant.ExcludeNested" />
     <classNode dependClassName="jetbrains.mps.build.ant.JvmArgs" />
     <classNode dependClassName="jetbrains.mps.build.ant.LibraryDataType" />
     <classNode dependClassName="jetbrains.mps.build.ant.Macro" />

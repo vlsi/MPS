@@ -37,7 +37,7 @@ public class ModuleCycle_Behavior {
     }
     // getting classpath 
     IClassPathItem classpath = AbstractModule.getDependenciesClasspath(modules, false);
-    List<String> stringClasspath = ListSequence.fromList(ModuleUtil.retrieveClassPath(classpath)).<String>select(new ISelector<String, String>() {
+    List<String> stringClasspath = ListSequence.fromList(ModuleUtil.retrieveClassPath(classpath)).select(new ISelector<String, String>() {
       public String select(String it) {
         return it.replace(File.separator, Util.SEPARATOR);
       }
@@ -47,7 +47,7 @@ public class ModuleCycle_Behavior {
   }
 
   public static List<SNode> getMPSClassPath_1218716245482(String homePath, List<SNode> macro) {
-    return ModuleCycle_Behavior.createPathHolders_1218716903754(ListSequence.fromList(ModuleUtil.retrieveClassPath(CommonPaths.getMPSClassPath())).<String>select(new ISelector<String, String>() {
+    return ModuleCycle_Behavior.createPathHolders_1218716903754(ListSequence.fromList(ModuleUtil.retrieveClassPath(CommonPaths.getMPSClassPath())).select(new ISelector<String, String>() {
       public String select(String it) {
         return it.replace(File.separator, Util.SEPARATOR);
       }

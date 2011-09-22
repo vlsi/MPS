@@ -16,11 +16,11 @@ import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineContent>> {
   private static String[] EMPTY_ARRAY = new String[0];
 
-  private LineToContentMapReader5Handler.modelElementHandler modelhandler = new LineToContentMapReader5Handler.modelElementHandler();
-  private LineToContentMapReader5Handler.nodeElementHandler nodehandler = new LineToContentMapReader5Handler.nodeElementHandler();
-  private LineToContentMapReader5Handler.propertyElementHandler propertyhandler = new LineToContentMapReader5Handler.propertyElementHandler();
-  private LineToContentMapReader5Handler.linkElementHandler linkhandler = new LineToContentMapReader5Handler.linkElementHandler();
-  private LineToContentMapReader5Handler.nullElementHandler nullhandler = new LineToContentMapReader5Handler.nullElementHandler();
+  private LineToContentMapReader5Handler.ModelElementHandler modelhandler = new LineToContentMapReader5Handler.ModelElementHandler();
+  private LineToContentMapReader5Handler.NodeElementHandler nodehandler = new LineToContentMapReader5Handler.NodeElementHandler();
+  private LineToContentMapReader5Handler.PropertyElementHandler propertyhandler = new LineToContentMapReader5Handler.PropertyElementHandler();
+  private LineToContentMapReader5Handler.LinkElementHandler linkhandler = new LineToContentMapReader5Handler.LinkElementHandler();
+  private LineToContentMapReader5Handler.NullElementHandler nullhandler = new LineToContentMapReader5Handler.NullElementHandler();
   private Stack<LineToContentMapReader5Handler.ElementHandler> myHandlersStack = new Stack<LineToContentMapReader5Handler.ElementHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
@@ -139,10 +139,10 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class modelElementHandler extends LineToContentMapReader5Handler.ElementHandler {
+  public class ModelElementHandler extends LineToContentMapReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public modelElementHandler() {
+    public ModelElementHandler() {
     }
 
     @Override
@@ -219,10 +219,10 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class nodeElementHandler extends LineToContentMapReader5Handler.ElementHandler {
+  public class NodeElementHandler extends LineToContentMapReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"type"};
 
-    public nodeElementHandler() {
+    public NodeElementHandler() {
     }
 
     @Override
@@ -283,10 +283,10 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class propertyElementHandler extends LineToContentMapReader5Handler.ElementHandler {
+  public class PropertyElementHandler extends LineToContentMapReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"name"};
 
-    public propertyElementHandler() {
+    public PropertyElementHandler() {
     }
 
     @Override
@@ -309,10 +309,10 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class linkElementHandler extends LineToContentMapReader5Handler.ElementHandler {
+  public class LinkElementHandler extends LineToContentMapReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"role"};
 
-    public linkElementHandler() {
+    public LinkElementHandler() {
     }
 
     @Override
@@ -335,10 +335,10 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
     }
   }
 
-  public class nullElementHandler extends LineToContentMapReader5Handler.ElementHandler {
+  public class NullElementHandler extends LineToContentMapReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
-    public nullElementHandler() {
+    public NullElementHandler() {
     }
   }
 }

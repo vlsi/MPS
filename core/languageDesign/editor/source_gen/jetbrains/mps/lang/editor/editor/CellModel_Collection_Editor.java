@@ -29,12 +29,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -42,6 +36,12 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -571,6 +571,28 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
+  public static class CellModel_Collection_usesFolding_cellMenu_a0a1c3a extends AbstractCellMenuPart_PropertyValues {
+    public CellModel_Collection_usesFolding_cellMenu_a0a1c3a() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
+    }
+  }
+
+  public static class CellModel_Collection_generic_cellMenu_b0a1c3a extends AbstractCellMenuPart_Generic_Item {
+    public CellModel_Collection_generic_cellMenu_b0a1c3a() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNodeFactoryOperations.setNewChild(node, "usesFoldingCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition");
+    }
+
+    public String getMatchingText() {
+      return "query";
+    }
+  }
+
   private static class childCellModelListHandler_cvgoyj_b1a0a extends RefNodeListHandler {
     public childCellModelListHandler_cvgoyj_b1a0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -676,28 +698,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
-    }
-  }
-
-  public static class CellModel_Collection_usesFolding_cellMenu_a0a1c3a extends AbstractCellMenuPart_PropertyValues {
-    public CellModel_Collection_usesFolding_cellMenu_a0a1c3a() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
-    }
-  }
-
-  public static class CellModel_Collection_generic_cellMenu_b0a1c3a extends AbstractCellMenuPart_Generic_Item {
-    public CellModel_Collection_generic_cellMenu_b0a1c3a() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNodeFactoryOperations.setNewChild(node, "usesFoldingCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition");
-    }
-
-    public String getMatchingText() {
-      return "query";
     }
   }
 }

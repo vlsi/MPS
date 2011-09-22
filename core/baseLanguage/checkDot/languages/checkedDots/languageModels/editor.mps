@@ -15,13 +15,14 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
+  <import index="qxeo" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4079382982702596668">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="pxpg.4079382982702596667" resolveInfo="CheckedDot" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="pxpg.4079382982702596667" resolveInfo="CheckedDotExpression" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="4549711462049999198">
       <property name="name" nameId="tpck.1169194664001" value="CheckedDot_Actions_DeleteOperation" />
-      <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="pxpg.4079382982702596667" resolveInfo="CheckedDot" />
+      <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="pxpg.4079382982702596667" resolveInfo="CheckedDotExpression" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="5314141825909190989">
       <property name="name" nameId="tpck.1169194664001" value="CheckedDot_Actions_MakeUnchecked" />
@@ -129,6 +130,25 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="5314141825909197164">
                     <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1197027833540" />
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7827327345620418288">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7827327345620418290">
+              <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="7827327345620418289" />
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7827327345620418294">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qxeo.~EditorContext%dselectAndSetCaret(jetbrains%dmps%dsmodel%dSNode,int)%cvoid" resolveInfo="selectAndSetCaret" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7827327345620418303">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7827327345620418302">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5314141825909197142" resolveInfo="dotExpression" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7827327345620418307">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1197027833540" />
+                  </node>
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7827327345620427565">
+                  <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
               </node>
             </node>

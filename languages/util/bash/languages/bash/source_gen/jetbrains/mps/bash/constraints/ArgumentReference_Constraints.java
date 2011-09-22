@@ -60,7 +60,7 @@ public class ArgumentReference_Constraints extends BaseConstraintsDescriptor {
                     return SNodeOperations.isInstanceOf(it, "jetbrains.mps.bash.structure.ArgumentReference");
                   }
                 });
-                return Sequence.fromIterable(argumentReferences).<SNode>select(new ISelector<SNode, SNode>() {
+                return Sequence.fromIterable(argumentReferences).select(new ISelector<SNode, SNode>() {
                   public SNode select(SNode it) {
                     return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.bash.structure.ArgumentReference"), "arg", false);
                   }

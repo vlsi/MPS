@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -46,7 +47,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class NamedTupleType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -339,6 +339,15 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() > 0;
   }
 
+  public static class ReplaceWith_NamedTupleType_cellMenu_a0a1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_NamedTupleType_cellMenu_a0a1a() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
+    }
+  }
+
   public static class _Inline_2ojjgh_a1a0 extends InlineCellProvider {
     public _Inline_2ojjgh_a1a0() {
       super();
@@ -357,7 +366,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
         public String getText() {
           StringBuilder sb = new StringBuilder();
           String sep = "";
-          for (SNode ntcd : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().<SNode>translate(new ITranslator2<SNode, SNode>() {
+          for (SNode ntcd : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode ntd) {
               return SLinkOperations.getTargets(ntd, "component", true);
             }
@@ -467,11 +476,11 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     private EditorCell createReadOnlyModelAccessor_2ojjgh_a0b1a(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
-          return IterableUtils.join(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().<SNode>translate(new ITranslator2<SNode, SNode>() {
+          return IterableUtils.join(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode ntd) {
               return SLinkOperations.getTargets(ntd, "component", true);
             }
-          }).<String>select(new ISelector<SNode, String>() {
+          }).select(new ISelector<SNode, String>() {
             public String select(SNode c) {
               return ((SPropertyOperations.getBoolean(c, "final") ?
                 "final " :
@@ -537,15 +546,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
       return editorCell;
-    }
-  }
-
-  public static class ReplaceWith_NamedTupleType_cellMenu_a0a1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_NamedTupleType_cellMenu_a0a1a() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
     }
   }
 }

@@ -59,7 +59,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public boolean isApplicable(ITemplateGenerator generator) {
-    return QueriesGenerated.mappingConfiguration_Condition_2507865635201605483(new TemplateQueryContext(null, null, null, generator));
+    return QueriesGenerated.mappingConfiguration_Condition_2507865635201605483(null, new TemplateQueryContext(null, null, null, generator));
   }
 
   public Collection<TemplateReductionRule> getReductionRules() {

@@ -295,7 +295,7 @@ public class TestGenerationWorker extends MpsWorker {
     if (generationOk && Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
       diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
         public List<String> compute() {
-          return myGenerationHandler.createDiffReports();
+          return myGenerationHandler.createDiffReports(myWhatToDo.getExcludedFromDiffFiles());
         }
       });
     } else {
@@ -678,7 +678,7 @@ public class TestGenerationWorker extends MpsWorker {
       cp.accept(new EachClassPathItemVisitor() {
         @Override
         public void visit(FileClassPathItem cpItem) {
-          classPathFiles.add(new File(cpItem.getClassPath()));
+          classPathFiles.add(new File(cpItem.getPath()));
         }
 
         @Override

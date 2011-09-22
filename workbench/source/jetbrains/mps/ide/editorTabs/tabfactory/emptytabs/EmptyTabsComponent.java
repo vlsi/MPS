@@ -50,4 +50,12 @@ public class EmptyTabsComponent implements TabsComponent {
   public JComponent getComponent() {
     return null;
   }
+
+  @Override
+  public void nextTab() {
+  }
+
+  @Override
+  public void prevTab() {
+  }
 }

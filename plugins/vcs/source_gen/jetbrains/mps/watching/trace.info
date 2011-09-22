@@ -439,7 +439,7 @@
     <nodeInfo nodeId="4707157387247361901" fileName="ReloadSession.java" startLine="84" startPosition="68" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4707157387247361939" fileName="ReloadSession.java" startLine="98" startPosition="68" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="7042922670433003390" fileName="ReloadSession.java" startLine="218" startPosition="114" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/IModule;)Z" />
-    <nodeInfo nodeId="7042922670433003406" fileName="ReloadSession.java" startLine="222" startPosition="66" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/smodel/Generator;" />
+    <nodeInfo nodeId="7042922670433003406" fileName="ReloadSession.java" startLine="222" startPosition="55" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/smodel/Generator;" />
     <nodeInfo nodeId="4707157387247361651" fileName="ReloadSession.java" startLine="239" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAnythingToDo#()Z" />
     <nodeInfo nodeId="4707157387247361685" fileName="ReloadSession.java" startLine="243" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addChangedModel#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;)V" />
     <nodeInfo nodeId="4707157387247361696" fileName="ReloadSession.java" startLine="247" startPosition="0" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addNewModelFile#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
@@ -541,7 +541,7 @@
       <varInfo nodeId="4707157387247362092" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="7042922670433003390" fileName="ReloadSession.java" startLine="218" startPosition="114" endLine="222" endPosition="0" />
-    <scopeInfo nodeId="7042922670433003406" fileName="ReloadSession.java" startLine="222" startPosition="66" endLine="226" endPosition="0" />
+    <scopeInfo nodeId="7042922670433003406" fileName="ReloadSession.java" startLine="222" startPosition="55" endLine="226" endPosition="0" />
     <scopeInfo nodeId="4707157387247361651" fileName="ReloadSession.java" startLine="239" startPosition="0" endLine="243" endPosition="0" />
     <scopeInfo nodeId="4707157387247361685" fileName="ReloadSession.java" startLine="243" startPosition="0" endLine="247" endPosition="0">
       <varInfo nodeId="4707157387247361688" varName="model" />
@@ -644,7 +644,7 @@
     <unitInfo nodeId="4707157387247361900" fileName="ReloadSession.java" startLine="84" startPosition="56" endLine="88" endPosition="15" unitName="jetbrains.mps.watching.ReloadSession$2" />
     <unitInfo nodeId="4707157387247361938" fileName="ReloadSession.java" startLine="98" startPosition="56" endLine="102" endPosition="15" unitName="jetbrains.mps.watching.ReloadSession$2" />
     <unitInfo nodeId="7042922670433003390" fileName="ReloadSession.java" startLine="218" startPosition="89" endLine="222" endPosition="9" unitName="jetbrains.mps.watching.ReloadSession$6" />
-    <unitInfo nodeId="7042922670433003406" fileName="ReloadSession.java" startLine="222" startPosition="33" endLine="226" endPosition="9" unitName="jetbrains.mps.watching.ReloadSession$6" />
+    <unitInfo nodeId="7042922670433003406" fileName="ReloadSession.java" startLine="222" startPosition="22" endLine="226" endPosition="9" unitName="jetbrains.mps.watching.ReloadSession$6" />
     <unitInfo nodeId="4707157387247361608" fileName="ReloadSession.java" startLine="159" startPosition="47" endLine="168" endPosition="7" unitName="jetbrains.mps.watching.ReloadSession$3" />
     <unitInfo nodeId="4707157387247361627" fileName="ReloadSession.java" startLine="172" startPosition="48" endLine="182" endPosition="7" unitName="jetbrains.mps.watching.ReloadSession$4" />
     <unitInfo nodeId="4707157387247361578" fileName="ReloadSession.java" startLine="131" startPosition="46" endLine="152" endPosition="5" unitName="jetbrains.mps.watching.ReloadSession$2" />

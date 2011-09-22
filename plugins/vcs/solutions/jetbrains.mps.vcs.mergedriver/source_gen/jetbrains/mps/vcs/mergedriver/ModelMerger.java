@@ -36,8 +36,17 @@ import jetbrains.mps.util.FileUtil;
       SModel latestModel;
       try {
         baseModel = ModelUtils.readModel(baseFile);
+        if (baseModel == null) {
+          throw new Exception("Could not read base model");
+        }
         localModel = ModelUtils.readModel(localFile);
+        if (localModel == null) {
+          throw new Exception("Could not read local model");
+        }
         latestModel = ModelUtils.readModel(latestFile);
+        if (latestModel == null) {
+          throw new Exception("Could not read latest model");
+        }
       } catch (IOException e) {
         throw e;
       } catch (Throwable e) {

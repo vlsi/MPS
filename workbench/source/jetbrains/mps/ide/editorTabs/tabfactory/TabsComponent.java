@@ -31,4 +31,9 @@ public interface TabsComponent {
   void setLastNode(SNodePointer sNodePointer);
 
   JComponent getComponent();
+
+  ///-------------tab navigation----------------
+  abstract void nextTab();
+
+  abstract void prevTab();
 }

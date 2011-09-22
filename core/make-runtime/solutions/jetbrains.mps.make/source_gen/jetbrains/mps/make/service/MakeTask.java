@@ -145,14 +145,14 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
       }
 
       if (InternalFlag.isInternalMode()) {
-        myMessageHandler.handle(new Message(MessageKind.INFORMATION, "Modules cluster " + (idx[0] + 1) + "/" + clsize + " [" + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
+        myMessageHandler.handle(new Message(MessageKind.INFORMATION, "Modules cluster " + (idx[0] + 1) + "/" + clsize + " [" + IterableUtils.join(Sequence.fromIterable(cl).select(new ISelector<IResource, String>() {
           public String select(IResource r) {
             return ((IResource) r).describe();
           }
         }), ", ") + "]"));
       }
 
-      pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
+      pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).select(new ISelector<IResource, String>() {
         public String select(IResource r) {
           return ((IResource) r).describe();
         }

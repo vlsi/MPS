@@ -1,15 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Complex_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.Complex_Language" />
-  <unitInfo fileName="ConjugateComplexExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.ConjugateComplexExpression" />
-  <unitInfo fileName="AbsExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.AbsExpression" />
-  <unitInfo fileName="ArgExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.ArgExpression" />
-  <unitInfo fileName="ImExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.ImExpression" />
-  <unitInfo fileName="ReExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.ReExpression" />
-  <unitInfo fileName="ImaginaryUnit.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.ImaginaryUnit" />
-  <unitInfo fileName="ComplexType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.ComplexType" />
-  <unitInfo fileName="DegreeComplexExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.DegreeComplexExpression" />
-  <unitInfo fileName="SingleComplexExpression.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.SingleComplexExpression" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.StructureAspectDescriptor" />
+  <root nodeId="1196259557930">
+    <nodeInfo nodeId="1196259557930" fileName="ComplexType.java" startLine="11" startPosition="48" endLine="12" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1196259557930" fileName="ComplexType.java" startLine="14" startPosition="34" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1196259557930" fileName="ComplexType.java" startLine="18" startPosition="66" endLine="19" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196259557930" fileName="ComplexType.java" startLine="22" startPosition="52" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196259557930" fileName="ComplexType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ComplexType#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1196259557930" fileName="ComplexType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/samples/complex/structure/ComplexType;" />
+    <nodeInfo nodeId="1196259557930" fileName="ComplexType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/samples/complex/structure/ComplexType;" />
+    <scopeInfo nodeId="1196259557930" fileName="ComplexType.java" startLine="14" startPosition="34" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="1196259557930" fileName="ComplexType.java" startLine="18" startPosition="66" endLine="19" endPosition="175" />
+    <scopeInfo nodeId="1196259557930" fileName="ComplexType.java" startLine="22" startPosition="52" endLine="23" endPosition="46" />
+    <scopeInfo nodeId="1196259557930" fileName="ComplexType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1196259557930" fileName="ComplexType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1196259557930" fileName="ComplexType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="1196259557930" fileName="ComplexType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.ComplexType" />
+  </root>
+  <root nodeId="1196260743057">
+    <nodeInfo nodeId="1196260743057" fileName="ReExpression.java" startLine="10" startPosition="59" endLine="11" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1196260743057" fileName="ReExpression.java" startLine="13" startPosition="35" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1196260743057" fileName="ReExpression.java" startLine="17" startPosition="67" endLine="18" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196260743057" fileName="ReExpression.java" startLine="21" startPosition="53" endLine="22" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196260743057" fileName="ReExpression.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReExpression#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1196260743057" fileName="ReExpression.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/samples/complex/structure/ReExpression;" />
+    <nodeInfo nodeId="1196260743057" fileName="ReExpression.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/samples/complex/structure/ReExpression;" />
+    <scopeInfo nodeId="1196260743057" fileName="ReExpression.java" startLine="13" startPosition="35" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="1196260743057" fileName="ReExpression.java" startLine="17" startPosition="67" endLine="18" endPosition="177" />
+    <scopeInfo nodeId="1196260743057" fileName="ReExpression.java" startLine="21" startPosition="53" endLine="22" endPosition="47" />
+    <scopeInfo nodeId="1196260743057" fileName="ReExpression.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="1196260743057" fileName="ReExpression.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1196260743057" fileName="ReExpression.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="1196260743057" fileName="ReExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.ReExpression" />
+  </root>
+  <root nodeId="1196260832413">
+    <nodeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="11" startPosition="57" endLine="12" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="12" startPosition="105" endLine="13" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLNK_ReturnType" />
+    <nodeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="13" startPosition="60" endLine="14" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMPLEX_EXPRESSION" />
+    <nodeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="16" startPosition="46" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="20" startPosition="44" endLine="21" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="24" startPosition="53" endLine="25" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="28" startPosition="78" endLine="29" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="32" startPosition="64" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SingleComplexExpression#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComplexExpression#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setComplexExpression#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/samples/complex/structure/SingleComplexExpression;" />
+    <nodeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/samples/complex/structure/SingleComplexExpression;" />
+    <scopeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="16" startPosition="46" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="20" startPosition="44" endLine="21" endPosition="100" />
+    <scopeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="24" startPosition="53" endLine="25" endPosition="69" />
+    <scopeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="28" startPosition="78" endLine="29" endPosition="199" />
+    <scopeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="32" startPosition="64" endLine="33" endPosition="58" />
+    <scopeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="1196260832413" fileName="SingleComplexExpression.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.SingleComplexExpression" />
+  </root>
+  <root nodeId="1196261859224">
+    <nodeInfo nodeId="1196261859224" fileName="ImExpression.java" startLine="10" startPosition="59" endLine="11" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1196261859224" fileName="ImExpression.java" startLine="13" startPosition="35" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1196261859224" fileName="ImExpression.java" startLine="17" startPosition="67" endLine="18" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196261859224" fileName="ImExpression.java" startLine="21" startPosition="53" endLine="22" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196261859224" fileName="ImExpression.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ImExpression#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1196261859224" fileName="ImExpression.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/samples/complex/structure/ImExpression;" />
+    <nodeInfo nodeId="1196261859224" fileName="ImExpression.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/samples/complex/structure/ImExpression;" />
+    <scopeInfo nodeId="1196261859224" fileName="ImExpression.java" startLine="13" startPosition="35" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="1196261859224" fileName="ImExpression.java" startLine="17" startPosition="67" endLine="18" endPosition="177" />
+    <scopeInfo nodeId="1196261859224" fileName="ImExpression.java" startLine="21" startPosition="53" endLine="22" endPosition="47" />
+    <scopeInfo nodeId="1196261859224" fileName="ImExpression.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="1196261859224" fileName="ImExpression.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1196261859224" fileName="ImExpression.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="1196261859224" fileName="ImExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.ImExpression" />
+  </root>
+  <root nodeId="1196263843100">
+    <nodeInfo nodeId="1196263843100" fileName="ArgExpression.java" startLine="10" startPosition="60" endLine="11" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1196263843100" fileName="ArgExpression.java" startLine="13" startPosition="36" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1196263843100" fileName="ArgExpression.java" startLine="17" startPosition="68" endLine="18" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196263843100" fileName="ArgExpression.java" startLine="21" startPosition="54" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196263843100" fileName="ArgExpression.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ArgExpression#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1196263843100" fileName="ArgExpression.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/samples/complex/structure/ArgExpression;" />
+    <nodeInfo nodeId="1196263843100" fileName="ArgExpression.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/samples/complex/structure/ArgExpression;" />
+    <scopeInfo nodeId="1196263843100" fileName="ArgExpression.java" startLine="13" startPosition="36" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="1196263843100" fileName="ArgExpression.java" startLine="17" startPosition="68" endLine="18" endPosition="179" />
+    <scopeInfo nodeId="1196263843100" fileName="ArgExpression.java" startLine="21" startPosition="54" endLine="22" endPosition="48" />
+    <scopeInfo nodeId="1196263843100" fileName="ArgExpression.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="1196263843100" fileName="ArgExpression.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1196263843100" fileName="ArgExpression.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="1196263843100" fileName="ArgExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.ArgExpression" />
+  </root>
+  <root nodeId="1196264034207">
+    <nodeInfo nodeId="1196264034207" fileName="AbsExpression.java" startLine="10" startPosition="60" endLine="11" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1196264034207" fileName="AbsExpression.java" startLine="13" startPosition="36" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1196264034207" fileName="AbsExpression.java" startLine="17" startPosition="68" endLine="18" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196264034207" fileName="AbsExpression.java" startLine="21" startPosition="54" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196264034207" fileName="AbsExpression.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbsExpression#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1196264034207" fileName="AbsExpression.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/samples/complex/structure/AbsExpression;" />
+    <nodeInfo nodeId="1196264034207" fileName="AbsExpression.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/samples/complex/structure/AbsExpression;" />
+    <scopeInfo nodeId="1196264034207" fileName="AbsExpression.java" startLine="13" startPosition="36" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="1196264034207" fileName="AbsExpression.java" startLine="17" startPosition="68" endLine="18" endPosition="179" />
+    <scopeInfo nodeId="1196264034207" fileName="AbsExpression.java" startLine="21" startPosition="54" endLine="22" endPosition="48" />
+    <scopeInfo nodeId="1196264034207" fileName="AbsExpression.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="1196264034207" fileName="AbsExpression.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1196264034207" fileName="AbsExpression.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="1196264034207" fileName="AbsExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.AbsExpression" />
+  </root>
+  <root nodeId="1196418881524">
+    <nodeInfo nodeId="1196418881524" fileName="ConjugateComplexExpression.java" startLine="10" startPosition="73" endLine="11" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1196418881524" fileName="ConjugateComplexExpression.java" startLine="13" startPosition="49" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1196418881524" fileName="ConjugateComplexExpression.java" startLine="17" startPosition="81" endLine="18" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196418881524" fileName="ConjugateComplexExpression.java" startLine="21" startPosition="67" endLine="22" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196418881524" fileName="ConjugateComplexExpression.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConjugateComplexExpression#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1196418881524" fileName="ConjugateComplexExpression.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/samples/complex/structure/ConjugateComplexExpression;" />
+    <nodeInfo nodeId="1196418881524" fileName="ConjugateComplexExpression.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/samples/complex/structure/ConjugateComplexExpression;" />
+    <scopeInfo nodeId="1196418881524" fileName="ConjugateComplexExpression.java" startLine="13" startPosition="49" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="1196418881524" fileName="ConjugateComplexExpression.java" startLine="17" startPosition="81" endLine="18" endPosition="205" />
+    <scopeInfo nodeId="1196418881524" fileName="ConjugateComplexExpression.java" startLine="21" startPosition="67" endLine="22" endPosition="61" />
+    <scopeInfo nodeId="1196418881524" fileName="ConjugateComplexExpression.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="1196418881524" fileName="ConjugateComplexExpression.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1196418881524" fileName="ConjugateComplexExpression.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="1196418881524" fileName="ConjugateComplexExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.ConjugateComplexExpression" />
+  </root>
+  <root nodeId="1196421957108">
+    <nodeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="11" startPosition="70" endLine="12" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="12" startPosition="105" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEGREE" />
+    <nodeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="15" startPosition="46" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="19" startPosition="37" endLine="20" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="23" startPosition="46" endLine="24" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="27" startPosition="78" endLine="28" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="31" startPosition="64" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DegreeComplexExpression#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDegree#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDegree#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/samples/complex/structure/DegreeComplexExpression;" />
+    <nodeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/samples/complex/structure/DegreeComplexExpression;" />
+    <scopeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="15" startPosition="46" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="19" startPosition="37" endLine="20" endPosition="96" />
+    <scopeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="23" startPosition="46" endLine="24" endPosition="57" />
+    <scopeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="27" startPosition="78" endLine="28" endPosition="199" />
+    <scopeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="31" startPosition="64" endLine="32" endPosition="58" />
+    <scopeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="1196421957108" fileName="DegreeComplexExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.DegreeComplexExpression" />
+  </root>
+  <root nodeId="1196434001121">
+    <nodeInfo nodeId="1196434001121" fileName="ImaginaryUnit.java" startLine="11" startPosition="47" endLine="12" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1196434001121" fileName="ImaginaryUnit.java" startLine="14" startPosition="36" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1196434001121" fileName="ImaginaryUnit.java" startLine="18" startPosition="68" endLine="19" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196434001121" fileName="ImaginaryUnit.java" startLine="22" startPosition="54" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196434001121" fileName="ImaginaryUnit.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ImaginaryUnit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1196434001121" fileName="ImaginaryUnit.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/samples/complex/structure/ImaginaryUnit;" />
+    <nodeInfo nodeId="1196434001121" fileName="ImaginaryUnit.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/samples/complex/structure/ImaginaryUnit;" />
+    <scopeInfo nodeId="1196434001121" fileName="ImaginaryUnit.java" startLine="14" startPosition="36" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="1196434001121" fileName="ImaginaryUnit.java" startLine="18" startPosition="68" endLine="19" endPosition="179" />
+    <scopeInfo nodeId="1196434001121" fileName="ImaginaryUnit.java" startLine="22" startPosition="54" endLine="23" endPosition="48" />
+    <scopeInfo nodeId="1196434001121" fileName="ImaginaryUnit.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1196434001121" fileName="ImaginaryUnit.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1196434001121" fileName="ImaginaryUnit.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="1196434001121" fileName="ImaginaryUnit.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.complex.structure.ImaginaryUnit" />
+  </root>
 </debugInfo>
 

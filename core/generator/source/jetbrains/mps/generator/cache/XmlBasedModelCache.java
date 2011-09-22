@@ -26,6 +26,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
+import org.jdom.input.JDOMParseException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.xml.sax.SAXParseException;
@@ -60,7 +61,7 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
       // ignoring it - VFS was not refreshed, file doesn't exists.
     } catch (IOException e) {
       /* not a valid XML? ignore */
-      if (!(e.getCause() instanceof SAXParseException)) {
+      if (!(e.getCause() instanceof SAXParseException) && !(e.getCause() instanceof JDOMParseException)) {
         LOG.error(e);
       }
     } finally {

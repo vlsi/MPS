@@ -163,6 +163,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     return null;
   }
 
+  //why?   [Mihail Muhin]
   protected void reloadAfterDescriptorChange() {
     MPSModuleRepository.getInstance().unRegisterModules(this);
     super.reloadAfterDescriptorChange();
@@ -204,6 +205,18 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
       }
     }
     return result;
+  }
+
+  Iterable<ModuleReference> getExtendedDevKits_internal() {
+    return myDescriptor.getExtendedDevkits();
+  }
+
+  Iterable<ModuleReference> getExportedSolutions_internal() {
+    return myDescriptor.getExportedSolutions();
+  }
+
+  Iterable<ModuleReference> getExportedLanguages_internal() {
+    return myDescriptor.getExportedLanguages();
   }
 
   public List<DevKit> getExtendedDevKits() {

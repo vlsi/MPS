@@ -123,7 +123,7 @@ public class MergeContext {
   }
 
   public Iterable<ModelChange> getApplicableChangesInNonConflictingRoots() {
-    return SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).<ModelChange>translate(new ITranslator2<SNodeId, ModelChange>() {
+    return SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).translate(new ITranslator2<SNodeId, ModelChange>() {
       public Iterable<ModelChange> translate(SNodeId root) {
         Iterable<ModelChange> unresolvedForRoot = ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(root)).where(new IWhereFilter<ModelChange>() {
           public boolean accept(ModelChange ch) {
@@ -361,7 +361,7 @@ public class MergeContext {
         public boolean accept(ModelChange c) {
           return c instanceof NodeGroupChange;
         }
-      }).<NodeGroupChange>select(new ISelector<ModelChange, NodeGroupChange>() {
+      }).select(new ISelector<ModelChange, NodeGroupChange>() {
         public NodeGroupChange select(ModelChange c) {
           return (NodeGroupChange) c;
         }
@@ -410,7 +410,7 @@ public class MergeContext {
         public boolean accept(NodeGroupChange ch) {
           return ch.getBegin() + beginOffset <= baseIndex.value && baseIndex.value < ch.getEnd() + endOffset;
         }
-      }).<ModelChange>select(new ISelector<NodeGroupChange, ModelChange>() {
+      }).select(new ISelector<NodeGroupChange, ModelChange>() {
         public ModelChange select(NodeGroupChange ch) {
           return (ModelChange) ch;
         }

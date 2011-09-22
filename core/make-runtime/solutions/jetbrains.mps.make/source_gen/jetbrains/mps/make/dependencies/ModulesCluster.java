@@ -47,7 +47,7 @@ public class ModulesCluster {
   }
 
   public void collectRequired(Iterable<IModule> pool) {
-    Set<ModuleReference> allRequired = SetSequence.fromSetWithValues(new HashSet<ModuleReference>(), Sequence.fromIterable(MapSequence.fromMap(allDeps).values()).<ModuleReference>translate(new ITranslator2<ModulesCluster.ModuleDeps, ModuleReference>() {
+    Set<ModuleReference> allRequired = SetSequence.fromSetWithValues(new HashSet<ModuleReference>(), Sequence.fromIterable(MapSequence.fromMap(allDeps).values()).translate(new ITranslator2<ModulesCluster.ModuleDeps, ModuleReference>() {
       public Iterable<ModuleReference> translate(ModulesCluster.ModuleDeps dep) {
         return dep.required;
       }
@@ -78,9 +78,9 @@ public class ModulesCluster {
   public Iterable<? extends Iterable<IModule>> buildOrder() {
     List<List<ModuleReference>> order = new ModulesCluster.ModulesGraph().totalOrder();
     Iterable<? extends Iterable<ModuleReference>> compacted = this.compact(order);
-    return Sequence.fromIterable(compacted).<List<IModule>>select(new ISelector<Iterable<ModuleReference>, IListSequence<IModule>>() {
+    return Sequence.fromIterable(compacted).select(new ISelector<Iterable<ModuleReference>, IListSequence<IModule>>() {
       public IListSequence<IModule> select(Iterable<ModuleReference> cycle) {
-        return Sequence.fromIterable(cycle).<IModule>select(new ISelector<ModuleReference, IModule>() {
+        return Sequence.fromIterable(cycle).select(new ISelector<ModuleReference, IModule>() {
           public IModule select(ModuleReference mr) {
             return MapSequence.fromMap(modulesView).get(mr);
           }
@@ -91,7 +91,7 @@ public class ModulesCluster {
 
   private Iterable<Iterable<ModuleReference>> compact(List<List<ModuleReference>> order) {
     final Wrappers._T<Iterable<ModuleReference>> prev = new Wrappers._T<Iterable<ModuleReference>>(null);
-    return ListSequence.fromList(order).concat(Sequence.fromIterable(Sequence.<List<ModuleReference>>singleton(null))).<Iterable<ModuleReference>>translate(new ITranslator2<List<ModuleReference>, Iterable<ModuleReference>>() {
+    return ListSequence.fromList(order).concat(Sequence.fromIterable(Sequence.<List<ModuleReference>>singleton(null))).translate(new ITranslator2<List<ModuleReference>, Iterable<ModuleReference>>() {
       public Iterable<Iterable<ModuleReference>> translate(final List<ModuleReference> cycle) {
         return new Iterable<Iterable<ModuleReference>>() {
           public Iterator<Iterable<ModuleReference>> iterator() {
@@ -117,11 +117,11 @@ __switch__:
                       this.__CP__ = 7;
                       break;
                     case 8:
-                      if (ListSequence.fromList(cycle).<ModuleReference>translate(new ITranslator2<ModuleReference, ModuleReference>() {
+                      if (ListSequence.fromList(cycle).translate(new ITranslator2<ModuleReference, ModuleReference>() {
                         public Iterable<ModuleReference> translate(ModuleReference mr) {
                           return MapSequence.fromMap(allDeps).get(mr).required;
                         }
-                      }).intersect(Sequence.fromIterable(prev.value).<ModuleReference>translate(new ITranslator2<ModuleReference, ModuleReference>() {
+                      }).intersect(Sequence.fromIterable(prev.value).translate(new ITranslator2<ModuleReference, ModuleReference>() {
                         public Iterable<ModuleReference> translate(ModuleReference mr) {
                           return MapSequence.fromMap(allDeps).get(mr).dependent;
                         }
@@ -211,14 +211,14 @@ __switch__:
   private Iterable<ModuleReference> required(IModule mod) {
     mod.getDependenciesManager();
     DependenciesManager depman = mod.getDependenciesManager();
-    Set<IModule> reqmods = SetSequence.fromSetWithValues(new HashSet<IModule>(), Sequence.fromIterable(((Iterable<Language>) depman.getAllUsedLanguages())).<Generator>translate(new ITranslator2<Language, Generator>() {
+    Set<IModule> reqmods = SetSequence.fromSetWithValues(new HashSet<IModule>(), Sequence.fromIterable(((Iterable<Language>) depman.getAllUsedLanguages())).translate(new ITranslator2<Language, Generator>() {
       public Iterable<Generator> translate(Language lang) {
         return lang.getGenerators();
       }
     }));
     SetSequence.fromSet(reqmods).addSequence(SetSequence.fromSet(depman.getAllRequiredModules()));
     SetSequence.fromSet(reqmods).addSequence(SetSequence.fromSet(depman.getAllVisibleModules()));
-    Iterable<ModuleReference> reqs = SetSequence.fromSet(reqmods).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
+    Iterable<ModuleReference> reqs = SetSequence.fromSet(reqmods).select(new ISelector<IModule, ModuleReference>() {
       public ModuleReference select(IModule m) {
         return m.getModuleReference();
       }

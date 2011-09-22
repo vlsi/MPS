@@ -65,7 +65,7 @@ public class ModelRules {
     myReplacementRules.clear();
     myDependenciesContainer.clear();
     myVariableConverters.clear();
-    myOverloadedOperationsManager.clear();
+//    myOverloadedOperationsManager.clear();
     myDependentComputations.clear();
     myDependentComputationsBlockedNodes.clear();
   }

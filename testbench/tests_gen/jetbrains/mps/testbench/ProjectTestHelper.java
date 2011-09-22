@@ -127,7 +127,7 @@ public class ProjectTestHelper {
       public boolean accept(IModule it) {
         return it instanceof Language;
       }
-    }).<IModule>translate(new ITranslator2<IModule, IModule>() {
+    }).translate(new ITranslator2<IModule, IModule>() {
       public Iterable<IModule> translate(IModule it) {
         return Collections.<IModule>unmodifiableList(((Language) it).getGenerators());
       }

@@ -102,7 +102,7 @@ public class StandardDialogs {
         result_960thj_a0a0a0.addTab(result_960thj_a3a0a0a0);
         final BaseTabbedBindedDialog.DialogTab result_960thj_a4a0a0a0 = new BaseTabbedBindedDialog.DialogTab("Runtime");
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a4a0a0a0 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a0a4a0a0a0 = StandardComponents.createDepsPanel(dialog, "Runtime Modules", dialog.myProperties.getRuntimeModules());
+        final JComponent result_960thj_a0a0a4a0a0a0 = StandardComponents.createSolutionsPanel(dialog, "Runtime Solutions", dialog.myProperties.getRuntimeModules());
         result_960thj_a0a4a0a0a0.setComponent(result_960thj_a0a0a4a0a0a0);
         final BaseBindedDialog.ConstraintsType result_960thj_a1a0a4a0a0a0 = BaseBindedDialog.ConstraintsType.LIST;
         result_960thj_a0a4a0a0a0.setConstraints(result_960thj_a1a0a4a0a0a0);

@@ -3653,6 +3653,9 @@
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678987">
           <property name="color" nameId="tpc2.1186403713874" value="DARK_GREEN" />
         </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNoWrapClassItem" typeId="tpc2.1240253180846" id="5593980519429924700">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1079623722231">
         <property name="text" nameId="tpc2.1073389577007" value="&quot;" />
@@ -3666,6 +3669,9 @@
           <property name="color" nameId="tpc2.1186403713874" value="DARK_GREEN" />
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="1233847974878">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNoWrapClassItem" typeId="tpc2.1240253180846" id="5593980519429926111">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
       </node>

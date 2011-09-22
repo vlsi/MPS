@@ -54,7 +54,7 @@ public class MakeActionImpl {
   }
 
   private Iterable<SModelDescriptor> selectModels(Iterable<? extends IResource> inputRes) {
-    return Sequence.fromIterable(inputRes).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
+    return Sequence.fromIterable(inputRes).translate(new ITranslator2<IResource, SModelDescriptor>() {
       public Iterable<SModelDescriptor> translate(IResource it) {
         return ((MResource) it).models();
       }

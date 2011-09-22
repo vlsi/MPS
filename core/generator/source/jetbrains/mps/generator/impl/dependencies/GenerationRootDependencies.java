@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import org.jdom.Attribute;
 import org.jdom.Element;
@@ -174,7 +175,11 @@ public class GenerationRootDependencies {
 
     List<String> external = new ArrayList<String>(externalModels.size());
     for (SModelDescriptor m : externalModels) {
-      external.add(m.getSModelReference().toString());
+      final SModelReference modelRef = m.getSModelReference();
+      if(modelRef == null) {
+        continue; // TODO report error?
+      }
+      external.add(modelRef.toString());
     }
     Collections.sort(external);
     Collections.sort(generatedFiles);

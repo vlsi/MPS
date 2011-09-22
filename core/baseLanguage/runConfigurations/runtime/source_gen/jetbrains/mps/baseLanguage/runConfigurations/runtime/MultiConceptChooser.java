@@ -37,7 +37,7 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
   }
 
   public MultiConceptChooser(List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
-    ListSequence.fromList(myTargetConcepts).addSequence(ListSequence.fromList(targets).<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>select(new ISelector<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
+    ListSequence.fromList(myTargetConcepts).addSequence(ListSequence.fromList(targets).select(new ISelector<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
       public Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> select(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         return MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from((it._0() == null ?
           ModelAccess.instance().runReadAction(new Computable<SNode>() {
@@ -50,7 +50,7 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
       }
     }));
 
-    final Iterable<IModule> modules = ListSequence.fromList(myTargetConcepts).<IModule>select(new ISelector<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, IModule>() {
+    final Iterable<IModule> modules = ListSequence.fromList(myTargetConcepts).select(new ISelector<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, IModule>() {
       public IModule select(final Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -71,7 +71,7 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
   }
 
   protected List<SNode> findToChooseFromOnInit(final FindUsagesManager manager, final FindUsagesManager.ProgressAdapter progressAdapter) {
-    return ListSequence.fromList(myTargetConcepts).<SNode>translate(new ITranslator2<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, SNode>() {
+    return ListSequence.fromList(myTargetConcepts).translate(new ITranslator2<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, SNode>() {
       public Iterable<SNode> translate(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         SNode targetConcept = it._0();
         final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();

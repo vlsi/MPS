@@ -24,7 +24,8 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.vfs.*;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 
 import java.io.*;
 import java.net.MalformedURLException;
@@ -38,24 +39,29 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   //computed during init
   private boolean myIsInitialized = false;
-  private ZipFile myZipFile;
   private String myPrefix;
   private File myFile;
 
   private Map<String, ZipEntry> myEntries = new THashMap<String, ZipEntry>();
   private MyCache myCache = new MyCache();
+  private String myPath;
 
   protected JarFileClassPathItem(String path) {
+    myPath = path;
     if (path.endsWith("!/")) {
       path = path.substring(0, path.length() - 2);
     }
     try {
       myFile = transformFile(FileSystem.getInstance().getFileByPath(path));
       myPrefix = "jar:" + myFile.toURI().toURL() + "!/";
-      myZipFile = new ZipFile(myFile);
     } catch (IOException e) {
       LOG.error("invalid class path: " + path, e);
     }
+  }
+
+  public String getPath() {
+    checkValidity();
+    return myPath;
   }
 
   public String getAbsolutePath() {
@@ -74,8 +80,10 @@ public class JarFileClassPathItem extends RealClassPathItem {
     ZipEntry entry = myEntries.get(name);
     if (entry == null) return null;
     InputStream inp = null;
+    ZipFile zf = null;
     try {
-      inp = myZipFile.getInputStream(entry);
+      zf = new ZipFile(myFile);
+      inp = zf.getInputStream(entry);
       if (inp == null) return null;
 
       byte[] result = new byte[(int) entry.getSize()];
@@ -84,8 +92,16 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
       return result;
     } catch (IOException e) {
+      LOG.error(e);
       return null;
     } finally {
+      if (zf != null) {
+        try {
+          zf.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
       if (inp != null) {
         try {
           inp.close();
@@ -102,10 +118,13 @@ public class JarFileClassPathItem extends RealClassPathItem {
     ZipEntry entry = myEntries.get(name);
     if (entry == null) return null;
     InputStream inp = null;
+    ZipFile zf = null;
     try {
-      inp = myZipFile.getInputStream(entry);
+      zf = new ZipFile(myFile);
+      inp = zf.getInputStream(entry);
       return ClassifierKind.getClassifierKind(inp);
     } catch (IOException e) {
+      LOG.error(e);
       return null;
     } finally {
       if (inp != null) {
@@ -115,16 +134,37 @@ public class JarFileClassPathItem extends RealClassPathItem {
           LOG.error(e);
         }
       }
+      if (zf != null) {
+        try {
+          zf.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
     }
   }
 
   public URL getResource(String name) {
     checkValidity();
+    ZipFile zf = null;
     try {
-      if (myZipFile.getEntry(name) == null) return null;
+      zf = new ZipFile(myFile);
+      if (zf.getEntry(name) == null) return null;
       return new URL(myPrefix + name);
     } catch (MalformedURLException e) {
+      LOG.error(e);
       return null;
+    } catch (IOException e) {
+      LOG.error(e);
+      return null;
+    } finally {
+      if (zf != null) {
+        try {
+          zf.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
     }
   }
 
@@ -160,9 +200,9 @@ public class JarFileClassPathItem extends RealClassPathItem {
     return myFile.lastModified();
   }
 
-  public List<IClassPathItem> flatten() {
+  public List<RealClassPathItem> flatten() {
     checkValidity();
-    List<IClassPathItem> result = new ArrayList<IClassPathItem>();
+    List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
     result.add(this);
     return result;
   }
@@ -184,50 +224,79 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   private long getClassTimestamp(String name) {
     String path = name.replace('.', '/') + ".class";
-    ZipEntry entry = myZipFile.getEntry(path);
-    assert entry != null : path;
-    return entry.getTime();
+    ZipFile zf = null;
+    try {
+      zf = new ZipFile(myFile);
+
+      ZipEntry entry = zf.getEntry(path);
+      assert entry != null : path;
+      return entry.getTime();
+    } catch (IOException e) {
+      LOG.error(e);
+      return 0;
+    } finally {
+      if (zf != null) {
+        try {
+          zf.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
+    }
   }
 
-
   private synchronized void buildCaches() {
-    Enumeration<? extends ZipEntry> entries = myZipFile.entries();
+    ZipFile zf = null;
+    try {
+      zf = new ZipFile(myFile);
+      Enumeration<? extends ZipEntry> entries = zf.entries();
 
-    while (entries.hasMoreElements()) {
-      ZipEntry entry = entries.nextElement();
-      if (entry.isDirectory()) {
-        String name = entry.getName();
-        if (name.endsWith("/")) {
-          name = name.substring(0, name.length() - 1);
-        }
+      while (entries.hasMoreElements()) {
+        ZipEntry entry = entries.nextElement();
+        if (entry.isDirectory()) {
+          String name = entry.getName();
+          if (name.endsWith("/")) {
+            name = name.substring(0, name.length() - 1);
+          }
 
-        //directry having a '.' in its name can't contain classes.
-        // See http://youtrack.jetbrains.net/issue/MPS-7012 for details
-        if (name.contains(".")) continue;
+          //directry having a '.' in its name can't contain classes.
+          // See http://youtrack.jetbrains.net/issue/MPS-7012 for details
+          if (name.contains(".")) continue;
 
-        String pack = name.replace('/', '.');
-        buildPackageCaches(pack);
-      } else {
-        String name = entry.getName();
-
-        if (!name.endsWith(MPSExtentions.DOT_CLASSFILE)) continue;
-
-        int packEnd = name.lastIndexOf('/');
-        String pack;
-        String className;
-        if (packEnd == -1) {
-          pack = "";
-          className = name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length());
+          String pack = name.replace('/', '.');
+          buildPackageCaches(pack);
         } else {
-          pack = packEnd > 0 ? name.substring(0, packEnd).replace('/', '.') : name;
-          className = name.substring(packEnd + 1, name.length() - ".class".length());
+          String name = entry.getName();
+
+          if (!name.endsWith(MPSExtentions.DOT_CLASSFILE)) continue;
+
+          int packEnd = name.lastIndexOf('/');
+          String pack;
+          String className;
+          if (packEnd == -1) {
+            pack = "";
+            className = name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length());
+          } else {
+            pack = packEnd > 0 ? name.substring(0, packEnd).replace('/', '.') : name;
+            className = name.substring(packEnd + 1, name.length() - ".class".length());
+          }
+
+          buildPackageCaches(pack);
+          myCache.addClass(InternUtil.intern(pack), InternUtil.intern(className));
+
+          String fullClassName = pack.length() > 0 ? pack + "." + className : className;
+          myEntries.put(InternUtil.intern(fullClassName), entry);
         }
-
-        buildPackageCaches(pack);
-        myCache.addClass(InternUtil.intern(pack), InternUtil.intern(className));
-
-        String fullClassName = pack.length() > 0 ? pack + "." + className : className;
-        myEntries.put(InternUtil.intern(fullClassName), entry);
+      }
+    } catch (IOException e) {
+      LOG.error(e);
+    } finally {
+      if (zf != null) {
+        try {
+          zf.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
       }
     }
   }

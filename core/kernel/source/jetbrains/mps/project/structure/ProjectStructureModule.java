@@ -218,7 +218,7 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
   }
 
   public ProjectStructureSModelDescriptor createModel(IModule module) {
-    ProjectStructureSModelDescriptor result = new ProjectStructureSModelDescriptor(getSModelReference(module), module);
+    ProjectStructureSModelDescriptor result = new ProjectStructureSModelDescriptor(getSModelReference(module), module, this);
     myModels.put(result.getSModelReference(), result);
     SModelRepository.getInstance().registerModelDescriptor(result, this);
     invalidateCaches();
@@ -262,12 +262,14 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
     }
   }
 
-  public class ProjectStructureSModelDescriptor extends BaseSModelDescriptor {
+  public static class ProjectStructureSModelDescriptor extends BaseSModelDescriptor {
     private final IModule myModule;
+    private final ProjectStructureModule myProjectStructureModule;
 
-    private ProjectStructureSModelDescriptor(SModelReference ref, IModule module) {
+    private ProjectStructureSModelDescriptor(SModelReference ref, IModule module, @NotNull ProjectStructureModule projectStructureModule) {
       super(IModelRootManager.NULL_MANAGER, ref, false);
       myModule = module;
+      myProjectStructureModule = projectStructureModule;
     }
 
     protected ModelLoadResult initialLoad() {
@@ -327,17 +329,17 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
 
     @Override
     public IModule getModule() {
-      return ProjectStructureModule.this;
+      return myProjectStructureModule;
     }
 
     @Override
     public SModelDescriptor resolveModel(SModelReference reference) {
-      return myModels.get(reference);
+      return myProjectStructureModule.myModels.get(reference);
     }
   }
 
 
-  public class ProjectStructureSModel extends SModel {
+  public static class ProjectStructureSModel extends SModel {
     public ProjectStructureSModel(@NotNull SModelReference modelReference) {
       super(modelReference, new ForeignNodeIdMap());
     }

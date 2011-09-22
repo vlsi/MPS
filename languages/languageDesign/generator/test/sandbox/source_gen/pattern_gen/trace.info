@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="RootCustom.java" startLine="6" startPosition="0" endLine="155" endPosition="0" unitName="pattern_gen.RootCustom" />
   <root nodeId="4146564171992399879">
     <nodeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="52" startPosition="7" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="60" startPosition="7" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="68" startPosition="7" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="7" startPosition="23" endLine="8" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="8" startPosition="35" endLine="9" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="9" startPosition="35" endLine="10" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="10" startPosition="35" endLine="11" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="11" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="12" startPosition="35" endLine="13" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="13" startPosition="35" endLine="14" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="14" startPosition="35" endLine="15" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="15" startPosition="35" endLine="16" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="16" startPosition="35" endLine="17" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="17" startPosition="35" endLine="18" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="18" startPosition="35" endLine="19" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="19" startPosition="35" endLine="20" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="20" startPosition="35" endLine="21" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="21" startPosition="35" endLine="22" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="22" startPosition="35" endLine="23" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="23" startPosition="35" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="24" startPosition="35" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="25" startPosition="35" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2681305894288275125" fileName="RootCustom.java" startLine="30" startPosition="5" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4146564171992399882" fileName="RootCustom.java" startLine="31" startPosition="17" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4146564171992399888" fileName="RootCustom.java" startLine="32" startPosition="16" endLine="33" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -35,6 +53,25 @@
     <nodeInfo nodeId="6509983489804965645" fileName="RootCustom.java" startLine="72" startPosition="19" endLine="73" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="73" startPosition="49" endLine="74" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="74" startPosition="18" endLine="75" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="79" startPosition="53" endLine="80" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="83" startPosition="53" endLine="84" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="87" startPosition="53" endLine="88" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="91" startPosition="53" endLine="92" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="95" startPosition="53" endLine="96" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="99" startPosition="53" endLine="100" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="103" startPosition="53" endLine="104" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="107" startPosition="53" endLine="108" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="111" startPosition="53" endLine="112" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="115" startPosition="53" endLine="116" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="119" startPosition="53" endLine="120" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="123" startPosition="53" endLine="124" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="127" startPosition="53" endLine="128" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="131" startPosition="53" endLine="132" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="135" startPosition="53" endLine="136" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="139" startPosition="53" endLine="140" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="143" startPosition="53" endLine="144" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="147" startPosition="53" endLine="148" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="151" startPosition="53" endLine="152" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2681305894288379484" fileName="RootCustom.java" startLine="38" startPosition="27" endLine="41" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="44" startPosition="0" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="48" startPosition="7" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -42,13 +79,53 @@
     <nodeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="56" startPosition="7" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="60" startPosition="7" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="64" startPosition="7" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement2681305894288275125#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement4146564171992399882#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement4146564171992399888#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement2681305894288275132#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement2681305894288275179#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement2681305894288379455#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement2681305894288379457#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement3571912445010045823#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement6266395626233624824#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement5857536350883158504#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="118" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement6266395626233719470#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement6509983489804965801#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="126" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement2163819695913718896#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="130" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement2163819695913721858#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="134" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement5857536350883158508#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="138" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement7870321878390043349#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement6509983489804965645#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="146" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement6010543442198725792#()V" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="150" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="statement3571912445010045826#()V" />
     <nodeInfo nodeId="2681305894288379457" fileName="RootCustom.java" startLine="36" startPosition="0" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="6" startPosition="25" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootCustom#()V" />
     <nodeInfo nodeId="4146564171992399880" fileName="RootCustom.java" startLine="29" startPosition="22" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="28" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="main#()V" />
     <scopeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="52" startPosition="7" endLine="52" endPosition="7" />
     <scopeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="60" startPosition="7" endLine="60" endPosition="7" />
     <scopeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="68" startPosition="7" endLine="68" endPosition="7" />
     <scopeInfo nodeId="2681305894288379485" fileName="RootCustom.java" startLine="39" startPosition="41" endLine="40" endPosition="46" />
     <scopeInfo nodeId="3571912445010045824" fileName="RootCustom.java" startLine="42" startPosition="7" endLine="43" endPosition="15" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="79" startPosition="53" endLine="80" endPosition="78" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="83" startPosition="53" endLine="84" endPosition="78" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="87" startPosition="53" endLine="88" endPosition="64" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="91" startPosition="53" endLine="92" endPosition="64" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="95" startPosition="53" endLine="96" endPosition="64" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="99" startPosition="53" endLine="100" endPosition="54" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="103" startPosition="53" endLine="104" endPosition="56" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="107" startPosition="53" endLine="108" endPosition="59" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="111" startPosition="53" endLine="112" endPosition="54" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="115" startPosition="53" endLine="116" endPosition="78" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="119" startPosition="53" endLine="120" endPosition="78" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="123" startPosition="53" endLine="124" endPosition="78" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="127" startPosition="53" endLine="128" endPosition="78" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="131" startPosition="53" endLine="132" endPosition="78" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="135" startPosition="53" endLine="136" endPosition="78" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="139" startPosition="53" endLine="140" endPosition="78" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="143" startPosition="53" endLine="144" endPosition="78" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="147" startPosition="53" endLine="148" endPosition="78" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="151" startPosition="53" endLine="152" endPosition="62" />
     <scopeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="45" startPosition="7" endLine="47" endPosition="23" />
     <scopeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="49" startPosition="7" endLine="51" endPosition="14" />
     <scopeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="53" startPosition="7" endLine="55" endPosition="35" />
@@ -61,6 +138,27 @@
     <scopeInfo nodeId="2681305894288379458" fileName="RootCustom.java" startLine="37" startPosition="35" endLine="41" endPosition="9">
       <varInfo nodeId="2681305894288379475" varName="res" />
     </scopeInfo>
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="106" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="110" startPosition="0" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="118" startPosition="0" endLine="122" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="138" startPosition="0" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="142" startPosition="0" endLine="146" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="150" startPosition="0" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="7" startPosition="23" endLine="26" endPosition="35" />
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="6" startPosition="25" endLine="27" endPosition="3" />
     <scopeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="30" startPosition="5" endLine="75" endPosition="24">
       <varInfo nodeId="7870321878390043350" varName="e30" />
       <varInfo nodeId="6509983489804965646" varName="e29" />
@@ -70,6 +168,8 @@
       <varInfo nodeId="2163819695913718897" varName="e33" />
       <varInfo nodeId="4146564171992399883" varName="i" />
     </scopeInfo>
+    <scopeInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="28" startPosition="0" endLine="78" endPosition="0" />
+    <unitInfo nodeId="4146564171992399879" fileName="RootCustom.java" startLine="6" startPosition="0" endLine="155" endPosition="0" unitName="pattern_gen.RootCustom" />
   </root>
 </debugInfo>
 

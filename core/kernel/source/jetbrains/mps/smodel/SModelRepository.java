@@ -57,6 +57,7 @@ public class SModelRepository implements ApplicationComponent {
 
   private final Object myModelsLock = new Object();
   private final Map<SModelDescriptor, List<ModelOwner>> myModelsWithOwners = new THashMap<SModelDescriptor, List<ModelOwner>>();
+  private final Map<ModelOwner, Set<SModelDescriptor>> myModelsByOwner = new THashMap<ModelOwner, Set<SModelDescriptor>>();
 
   private final Object myListenersLock = new Object();
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
@@ -179,6 +180,13 @@ public class SModelRepository implements ApplicationComponent {
         myModelsWithOwners.put(modelDescriptor, owners);
       }
 
+      Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
+      if (ownerModels == null) {
+        ownerModels = new HashSet<SModelDescriptor>();
+        myModelsByOwner.put(owner, ownerModels);
+      }
+
+      ownerModels.add(modelDescriptor);
       owners.add(owner);
 
       if (modelReference.getSModelId() != null) {
@@ -198,6 +206,8 @@ public class SModelRepository implements ApplicationComponent {
     synchronized (myModelsLock) {
       List<ModelOwner> owners = myModelsWithOwners.get(md);
       if (!owners.remove(owner)) throw new IllegalStateException();
+      Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
+      if(!ownerModels.remove(md)) throw new IllegalStateException();
       fireModelOwnerRemoved(md, owner);
 
       if (owners.isEmpty()) {
@@ -209,6 +219,13 @@ public class SModelRepository implements ApplicationComponent {
   public void removeModelDescriptor(SModelDescriptor md) {
     synchronized (myModelsLock) {
       fireBeforeModelRemoved(md);
+      List<ModelOwner> owners = myModelsWithOwners.get(md);
+      if(owners != null) {
+        for (ModelOwner owner : owners) {
+          Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
+          if(!ownerModels.remove(md)) throw new IllegalStateException();
+        }
+      }
       myModelsWithOwners.remove(md);
       if (md.getSModelReference().getSModelId() != null) {
         myIdToModelDescriptorMap.remove(md.getSModelReference().getSModelId());
@@ -264,13 +281,9 @@ public class SModelRepository implements ApplicationComponent {
 
   public List<SModelDescriptor> getModelDescriptors(ModelOwner modelOwner) {
     synchronized (myModelsLock) {
-      ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-      for (Entry<SModelDescriptor, List<ModelOwner>> entry : myModelsWithOwners.entrySet()) {
-        if (entry.getValue().contains(modelOwner)) {
-          result.add(entry.getKey());
-        }
-      }
-      return result;
+      Set<SModelDescriptor> result = myModelsByOwner.get(modelOwner);
+      if(result == null || result.size() == 0) return Collections.emptyList();
+      return new ArrayList<SModelDescriptor>(result);
     }
   }
 
@@ -326,7 +339,8 @@ public class SModelRepository implements ApplicationComponent {
   public Set<ModelOwner> getOwners(SModelDescriptor modelDescriptor) {
     synchronized (myModelsLock) {
       List<ModelOwner> modelOwners = myModelsWithOwners.get(modelDescriptor);
-      if (modelOwners == null) return Collections.emptySet();
+      if (modelOwners == null || modelOwners.size() == 0) return Collections.emptySet();
+      if (modelOwners.size() == 1) return Collections.singleton(modelOwners.get(0));
       return new HashSet<ModelOwner>(modelOwners);
     }
   }

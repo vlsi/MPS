@@ -52,6 +52,8 @@
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="baseLanguage-index" />
     <orderEntry type="module" module-name="baseLanguage-search" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="modelchecker" />
   </component>
 </module>
 

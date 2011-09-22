@@ -25,12 +25,11 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import javax.swing.tree.TreeNode;
-import jetbrains.mps.workbench.actions.goTo.ChooseByNamePopupMPS;
-import jetbrains.mps.workbench.choose.base.FakePsiContext;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
+import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
 
@@ -95,7 +94,7 @@ public class NewRuntimeModule_Action extends GeneratedAction {
       });
       BaseModuleModel baseSolutionModel = new BaseModuleModel(((Project) MapSequence.fromMap(_params).get("project")), "runtime module") {
         public ModuleReference[] find(IScope p0) {
-          return ListSequence.fromList(modules).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
+          return ListSequence.fromList(modules).select(new ISelector<IModule, ModuleReference>() {
             public ModuleReference select(IModule it) {
               return it.getModuleReference();
             }
@@ -109,9 +108,7 @@ public class NewRuntimeModule_Action extends GeneratedAction {
                 return;
               }
               final Language language = (Language) ((IModule) MapSequence.fromMap(_params).get("contextModule"));
-              Dependency dependency = new Dependency();
-              dependency.setModuleRef(module);
-              language.getModuleDescriptor().getRuntimeModules().add(dependency);
+              language.getModuleDescriptor().getRuntimeModules().add(module);
               final MPSTree mpsTree = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getTree();
               ModelAccess.instance().runWriteInEDT(new Runnable() {
                 public void run() {
@@ -123,7 +120,7 @@ public class NewRuntimeModule_Action extends GeneratedAction {
           };
         }
       };
-      ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(((Project) MapSequence.fromMap(_params).get("project")), baseSolutionModel, new FakePsiContext());
+      ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(((Project) MapSequence.fromMap(_params).get("project")), baseSolutionModel);
       popup.invoke(new ChooseByNamePopupComponent.Callback() {
         public void elementChosen(Object p0) {
           ((NavigationItem) p0).navigate(true);

@@ -42,7 +42,7 @@ public class ModelCheckerIssueFinder implements IFinder {
       throw new IllegalArgumentException();
     }
 
-    ProgressContext progressContext = new ProgressContext(indicator, ListSequence.fromList(modelDescriptors).<String>select(new ISelector<SModelDescriptor, String>() {
+    ProgressContext progressContext = new ProgressContext(indicator, ListSequence.fromList(modelDescriptors).select(new ISelector<SModelDescriptor, String>() {
       public String select(SModelDescriptor md) {
         return getTaskName(md);
       }

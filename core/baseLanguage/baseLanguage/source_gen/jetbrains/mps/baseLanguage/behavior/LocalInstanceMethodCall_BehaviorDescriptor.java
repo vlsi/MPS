@@ -13,6 +13,10 @@ public class LocalInstanceMethodCall_BehaviorDescriptor extends BaseMethodCall_B
     return LocalInstanceMethodCall_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
   }
 
+  public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
+    return LocalInstanceMethodCall_Behavior.virtual_getInstanceType_8008512149545154471(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall";

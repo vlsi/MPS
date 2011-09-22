@@ -56,7 +56,7 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
       }
     }
 
-    Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return new OverrideClassMethodStrategy.QuotationClass_px9rr4_a0a0a0a0e0a().createNode(it);
       }

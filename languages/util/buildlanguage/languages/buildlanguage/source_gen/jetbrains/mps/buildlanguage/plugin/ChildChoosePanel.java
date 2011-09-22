@@ -115,14 +115,14 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
     }
 
     @NotNull
-    public List<C> getConfigurations() {
-      final Wrappers._T<List<C>> children = new Wrappers._T<List<C>>();
+    public List<Object> getConfigurations() {
+      final Wrappers._T<List<Object>> children = new Wrappers._T<List<Object>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           if ((ChildChoosePanel.this.myNode != null)) {
-            children.value = getChildrenNodes(ChildChoosePanel.this.myNode);
+            children.value = ListSequence.fromListWithValues(new ArrayList<Object>(), getChildrenNodes(ChildChoosePanel.this.myNode));
           } else {
-            children.value = ListSequence.fromList(new ArrayList<C>());
+            children.value = ListSequence.fromList(new ArrayList<Object>());
           }
         }
       });

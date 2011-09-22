@@ -145,21 +145,39 @@ public class MergeModelsDialog extends BaseDialog {
     List<ModelChange> allChanges = myMergeContext.getMetadataChanges();
     assert ListSequence.fromList(allChanges).isNotEmpty();
     boolean allResolved = false;
+    boolean conflictsOnly = false;
     Iterable<ModelChange> interestingChanges;
     if (ListSequence.fromList(allChanges).any(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return myMergeContext.isChangeResolved(ch);
       }
     })) {
-      assert ListSequence.fromList(allChanges).all(new IWhereFilter<ModelChange>() {
+      if (ListSequence.fromList(allChanges).all(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return myMergeContext.isChangeResolved(ch);
         }
-      });
-      interestingChanges = myAppliedMetadataChanges;
-      allResolved = true;
+      })) {
+        interestingChanges = myAppliedMetadataChanges;
+        allResolved = true;
+      } else {
+        assert ListSequence.fromList(allChanges).any(new IWhereFilter<ModelChange>() {
+          public boolean accept(ModelChange ch) {
+            return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
+          }
+        });
+        interestingChanges = ListSequence.fromList(allChanges).where(new IWhereFilter<ModelChange>() {
+          public boolean accept(ModelChange ch) {
+            return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
+          }
+        });
+        conflictsOnly = true;
+      }
     } else {
-      interestingChanges = allChanges;
+      interestingChanges = ListSequence.fromList(allChanges).where(new IWhereFilter<ModelChange>() {
+        public boolean accept(ModelChange ch) {
+          return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isEmpty();
+        }
+      });
     }
     Iterable<ModelChange> mine = Sequence.fromIterable(interestingChanges).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
@@ -186,9 +204,11 @@ public class MergeModelsDialog extends BaseDialog {
       }
     }
 
-    if (allResolved) {
+    if (conflictsOnly) {
+      Messages.showInfoMessage(this, "You have unresolved model property conflicts. Please resolve them manually using \"Accept Theirs\" or \"Accept Yours\"", "Model Properites Changes");
+    } else if (allResolved) {
       if (sb.length() == 0) {
-        Messages.showInfoMessage(this, "Yo have excluded all model property changes.", "Model Properites Changes");
+        Messages.showInfoMessage(this, "You have excluded all model property changes.", "Model Properites Changes");
       } else {
         Messages.showInfoMessage(this, "You have applied the following changes:" + sb.toString(), "Model Properites Changes");
       }
@@ -309,7 +329,7 @@ public class MergeModelsDialog extends BaseDialog {
 
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {
       List<ModelChange> changes = (rootTreeNode.getRootId() == null ?
-        ListSequence.fromList(myMergeContext.getMetadataChanges()).<ModelChange>select(new ISelector<ModelChange, ModelChange>() {
+        ListSequence.fromList(myMergeContext.getMetadataChanges()).select(new ISelector<ModelChange, ModelChange>() {
           public ModelChange select(ModelChange ch) {
             return (ModelChange) ch;
           }

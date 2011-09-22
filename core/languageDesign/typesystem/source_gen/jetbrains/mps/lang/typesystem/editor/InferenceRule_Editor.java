@@ -24,12 +24,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -38,6 +32,12 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class InferenceRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -360,6 +360,23 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public static class InferenceRule_name_cellMenu_a0b0a extends AbstractCellMenuPart_PropertyValues {
+    public InferenceRule_name_cellMenu_a0b0a() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      List<String> result = ListSequence.fromList(new ArrayList<String>());
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference")) {
+        SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
+        if ((concept != null) && SPropertyOperations.getString(concept, "name") != null) {
+          ListSequence.fromList(result).addElement("typeof_" + SPropertyOperations.getString(concept, "name"));
+          ListSequence.fromList(result).addElement("check_" + SPropertyOperations.getString(concept, "name"));
+        }
+      }
+      return result;
+    }
+  }
+
   private static class dependencyListHandler_robprv_b0 extends RefNodeListHandler {
     public dependencyListHandler_robprv_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -393,23 +410,6 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
-    }
-  }
-
-  public static class InferenceRule_name_cellMenu_a0b0a extends AbstractCellMenuPart_PropertyValues {
-    public InferenceRule_name_cellMenu_a0b0a() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> result = ListSequence.fromList(new ArrayList<String>());
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference")) {
-        SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
-        if ((concept != null) && SPropertyOperations.getString(concept, "name") != null) {
-          ListSequence.fromList(result).addElement("typeof_" + SPropertyOperations.getString(concept, "name"));
-          ListSequence.fromList(result).addElement("check_" + SPropertyOperations.getString(concept, "name"));
-        }
-      }
-      return result;
     }
   }
 }

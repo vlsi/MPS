@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
+import jetbrains.mps.vcs.diff.changes.ModelVersionChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -213,12 +214,23 @@ public class MergeConflictsBuilder {
     }, ImportedModelChange.class);
   }
 
-  public void collectSymmetricModuleDependencyChanges() {
+  private void collectSymmetricModuleDependencyChanges() {
     collectSymmetricChanges(new _FunctionTypes._return_P1_E0<Tuples._2<ModuleReference, ModuleDependencyChange.DependencyType>, ModuleDependencyChange>() {
       public Tuples._2<ModuleReference, ModuleDependencyChange.DependencyType> invoke(ModuleDependencyChange mdc) {
         return MultiTuple.<ModuleReference,ModuleDependencyChange.DependencyType>from(mdc.getModuleReference(), mdc.getDependencyType());
       }
     }, ModuleDependencyChange.class);
+  }
+
+  private void collectModelVersionConflicts() {
+    Tuples._2<Map<ModelVersionChange, ModelVersionChange>, Map<ModelVersionChange, ModelVersionChange>> arranged = this.<ModelVersionChange,ModelVersionChange>arrangeChanges(new _FunctionTypes._return_P1_E0<ModelVersionChange, ModelVersionChange>() {
+      public ModelVersionChange invoke(ModelVersionChange mvc) {
+        return mvc;
+      }
+    }, ModelVersionChange.class);
+    if (MapSequence.fromMap(arranged._0()).count() == 1 && MapSequence.fromMap(arranged._1()).count() == 1) {
+      addConflict(SetSequence.fromSet(MapSequence.fromMap(arranged._0()).keySet()).first(), SetSequence.fromSet(MapSequence.fromMap(arranged._1()).keySet()).first());
+    }
   }
 
   private void collectConflicts() {
@@ -255,6 +267,7 @@ public class MergeConflictsBuilder {
 
     collectSymmetricImportedModelChanges();
     collectSymmetricModuleDependencyChanges();
+    collectModelVersionConflicts();
   }
 
   private static Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> arrangeNodeGroupChanges(ChangeSet changeSet) {

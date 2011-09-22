@@ -26,7 +26,7 @@ public class TestCaseRef_Behavior {
     } else {
       testMethods = ITestCase_Behavior.call_getTestMethods_2148145109766218395(SLinkOperations.getTarget(thisNode, "testCase", false));
     }
-    return ListSequence.fromList(testMethods).<String>select(new ISelector<SNode, String>() {
+    return ListSequence.fromList(testMethods).select(new ISelector<SNode, String>() {
       public String select(SNode m) {
         return ITestMethod_Behavior.call_getTestName_1216136419751(m);
       }

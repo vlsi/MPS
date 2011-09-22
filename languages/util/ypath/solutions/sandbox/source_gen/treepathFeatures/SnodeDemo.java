@@ -19,7 +19,7 @@ import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
 public class SnodeDemo {
   public static void main(String[] args) {
     final SNode foo = null;
-    ListSequence.fromList((SLinkOperations.getTargets(foo, "implements", true))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    ListSequence.fromList((SLinkOperations.getTargets(foo, "implements", true))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -51,7 +51,7 @@ __switch__:
           }
         };
       }
-    }).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    }).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -105,7 +105,7 @@ __switch__:
         SNode _zzz_ = foo;
         return SLinkOperations.getTargets(_zzz_, "implements", true);
       }
-    })).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    })).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -137,7 +137,7 @@ __switch__:
           }
         };
       }
-    }).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    }).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -186,7 +186,7 @@ __switch__:
       }
     });
     // Another pair of tests 
-    ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(foo, "extends", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(foo, "extends", false))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -259,7 +259,7 @@ __switch__:
         };
       }
     });
-    ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(foo, "extends", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(foo, "extends", false))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -335,7 +335,7 @@ __switch__:
     // And another one 
     /*
       //  way too complicated 
-      ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), foo)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), foo)).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return new _FunctionTypes._return_P1_E0<Iterable<SNode>, SNode>() {
             public Iterable<SNode> invoke(final SNode _zzz_) {
@@ -456,7 +456,7 @@ __switch__:
         SNode _zzz_ = foo;
         return SLinkOperations.getTargets(_zzz_, "implements", true);
       }
-    })).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    })).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {

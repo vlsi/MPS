@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="File_TreePath.java" startLine="9" startPosition="0" endLine="99" endPosition="0" unitName="sample2.File_TreePath" />
   <root nodeId="1168883727781">
+    <nodeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="13" startPosition="33" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="17" startPosition="39" endLine="18" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168884007317" fileName="File_TreePath.java" startLine="22" startPosition="39" endLine="23" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168979720712" fileName="File_TreePath.java" startLine="28" startPosition="48" endLine="29" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1172248962392" fileName="File_TreePath.java" startLine="33" startPosition="69" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
@@ -21,10 +22,13 @@
     <nodeInfo nodeId="1175164134728" fileName="File_TreePath.java" startLine="84" startPosition="88" endLine="85" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1175164134728" fileName="File_TreePath.java" startLine="88" startPosition="7" endLine="89" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1175164142650" fileName="File_TreePath.java" startLine="93" startPosition="45" endLine="94" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="9" startPosition="51" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="File_TreePath#()V" />
     <nodeInfo nodeId="1172248962392" fileName="File_TreePath.java" startLine="35" startPosition="0" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FILE_NodeKindTrigger#()V" />
     <nodeInfo nodeId="1172248995401" fileName="File_TreePath.java" startLine="53" startPosition="0" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DIR_NodeKindTrigger#()V" />
     <nodeInfo nodeId="1172248962392" fileName="File_TreePath.java" startLine="43" startPosition="47" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1172248995401" fileName="File_TreePath.java" startLine="61" startPosition="47" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parent#(Ljava/io/File;)Ljava/io/File;" />
+    <nodeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="childrenArray#(Ljava/io/File;)[Ljava/io/File;" />
     <nodeInfo nodeId="1168883727783" fileName="File_TreePath.java" startLine="21" startPosition="31" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parent#(Ljava/io/File;)Ljava/io/File;" />
     <nodeInfo nodeId="1168883727786" fileName="File_TreePath.java" startLine="27" startPosition="33" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="childrenArray#(Ljava/io/File;)[Ljava/io/File;" />
     <nodeInfo nodeId="1172248962392" fileName="File_TreePath.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;)Z" />
@@ -39,8 +43,11 @@
     <nodeInfo nodeId="1175164134728" fileName="File_TreePath.java" startLine="80" startPosition="12" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1175164134728" fileName="File_TreePath.java" startLine="71" startPosition="21" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1175164134728" fileName="File_TreePath.java" startLine="69" startPosition="42" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMatcher#(Ljava/lang/String;)Ljetbrains/mps/ypath/runtime/IFilter;" />
+    <scopeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="10" startPosition="26" endLine="10" endPosition="26" />
     <scopeInfo nodeId="1172248962392" fileName="File_TreePath.java" startLine="36" startPosition="36" endLine="36" endPosition="36" />
     <scopeInfo nodeId="1172248995401" fileName="File_TreePath.java" startLine="54" startPosition="35" endLine="54" endPosition="35" />
+    <scopeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="13" startPosition="33" endLine="14" endPosition="45" />
+    <scopeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="17" startPosition="39" endLine="18" endPosition="51" />
     <scopeInfo nodeId="1168883727785" fileName="File_TreePath.java" startLine="22" startPosition="39" endLine="23" endPosition="15" />
     <scopeInfo nodeId="1168883727788" fileName="File_TreePath.java" startLine="28" startPosition="48" endLine="29" endPosition="27" />
     <scopeInfo nodeId="1172248962394" fileName="File_TreePath.java" startLine="39" startPosition="35" endLine="40" endPosition="24" />
@@ -48,10 +55,13 @@
     <scopeInfo nodeId="1172248995403" fileName="File_TreePath.java" startLine="57" startPosition="35" endLine="58" endPosition="29" />
     <scopeInfo nodeId="1172248995401" fileName="File_TreePath.java" startLine="62" startPosition="29" endLine="63" endPosition="59" />
     <scopeInfo nodeId="1175164134731" fileName="File_TreePath.java" startLine="93" startPosition="45" endLine="94" endPosition="27" />
+    <scopeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="9" startPosition="51" endLine="11" endPosition="3" />
     <scopeInfo nodeId="1172248962392" fileName="File_TreePath.java" startLine="35" startPosition="0" endLine="37" endPosition="5" />
     <scopeInfo nodeId="1172248995401" fileName="File_TreePath.java" startLine="53" startPosition="0" endLine="55" endPosition="5" />
     <scopeInfo nodeId="1175164134728" fileName="File_TreePath.java" startLine="74" startPosition="43" endLine="77" endPosition="50" />
     <scopeInfo nodeId="1175164134728" fileName="File_TreePath.java" startLine="82" startPosition="43" endLine="85" endPosition="39" />
+    <scopeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="1168883727783" fileName="File_TreePath.java" startLine="21" startPosition="31" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1168883727786" fileName="File_TreePath.java" startLine="27" startPosition="33" endLine="31" endPosition="0" />
     <scopeInfo nodeId="1172248962392" fileName="File_TreePath.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
@@ -75,6 +85,7 @@
     <unitInfo nodeId="1172248962392" fileName="File_TreePath.java" startLine="33" startPosition="0" endLine="50" endPosition="0" unitName="sample2.File_TreePath$FILE_NodeKindTrigger" />
     <unitInfo nodeId="1172248995401" fileName="File_TreePath.java" startLine="51" startPosition="0" endLine="68" endPosition="0" unitName="sample2.File_TreePath$DIR_NodeKindTrigger" />
     <unitInfo nodeId="1175164134728" fileName="File_TreePath.java" startLine="69" startPosition="0" endLine="98" endPosition="0" unitName="sample2.File_TreePath$FILE_name_Property" />
+    <unitInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="9" startPosition="0" endLine="99" endPosition="0" unitName="sample2.File_TreePath" />
   </root>
   <root nodeId="1168894188335">
     <nodeInfo nodeId="1227876789869" fileName="FileDemo.java" startLine="52" startPosition="27" endLine="52" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

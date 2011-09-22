@@ -222,7 +222,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.Escape_Action" file="Escape_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />

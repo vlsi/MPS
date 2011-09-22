@@ -601,7 +601,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_587287717303152839(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "pattern", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
-    return concept.getModel().getLongName() + "." + SPropertyOperations.getString(concept, "name");
+    if (concept == null) {
+      return null;
+    }
+    SModel sModel = concept.getModel();
+    if (sModel == null) {
+      return null;
+    }
+    return sModel.getLongName() + "." + SPropertyOperations.getString(concept, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_587287717303152865(final IOperationContext operationContext, final PropertyMacroContext _context) {

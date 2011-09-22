@@ -143,7 +143,7 @@ public class Junit_Command {
           public boolean accept(ITestNodeWrapper it) {
             return neq_yo2c7x_a0a0a0a0a0a0a2a0a0a0a6a2(it.getTestRunParameters(), runParams.value);
           }
-        }).<String>select(new ISelector<ITestNodeWrapper, String>() {
+        }).select(new ISelector<ITestNodeWrapper, String>() {
           public String select(ITestNodeWrapper it) {
             return it.getName();
           }

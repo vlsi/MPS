@@ -1,18 +1,667 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IContextWrapper.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.IContextWrapper" />
   <unitInfo fileName="Internal_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.Internal_Language" />
-  <unitInfo fileName="ContextControllerWrapper.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextControllerWrapper" />
-  <unitInfo fileName="ContextViewWrapper.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextViewWrapper" />
-  <unitInfo fileName="ContextCompartmentWrapper.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper" />
-  <unitInfo fileName="GeometryHandler.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.GeometryHandler" />
-  <unitInfo fileName="AuxObjectHandler.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.AuxObjectHandler" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.StructureAspectDescriptor" />
-  <unitInfo fileName="ContextBindingWrapper.java" startLine="15" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextBindingWrapper" />
-  <unitInfo fileName="ContextWrapperExpression.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextWrapperExpression" />
-  <unitInfo fileName="ContextWrapper.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextWrapper" />
-  <unitInfo fileName="StatementStub.java" startLine="18" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.StatementStub" />
-  <unitInfo fileName="ExpressionStub.java" startLine="18" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ExpressionStub" />
-  <unitInfo fileName="TypeStub.java" startLine="18" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.TypeStub" />
+  <root nodeId="1776013523070374914">
+    <nodeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="11" startPosition="63" endLine="12" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="12" startPosition="103" endLine="13" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONTAINER" />
+    <nodeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="15" startPosition="48" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="19" startPosition="35" endLine="20" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="23" startPosition="44" endLine="24" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="27" startPosition="80" endLine="28" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="31" startPosition="66" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContextCompartmentWrapper#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setContainer#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/ui/internal/structure/ContextCompartmentWrapper;" />
+    <nodeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/ui/internal/structure/ContextCompartmentWrapper;" />
+    <scopeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="15" startPosition="48" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="19" startPosition="35" endLine="20" endPosition="94" />
+    <scopeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="23" startPosition="44" endLine="24" endPosition="65" />
+    <scopeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="27" startPosition="80" endLine="28" endPosition="199" />
+    <scopeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="31" startPosition="66" endLine="32" endPosition="60" />
+    <scopeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="1776013523070374914" fileName="ContextCompartmentWrapper.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper" />
+  </root>
+  <root nodeId="1890792421275691239">
+    <nodeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="12" startPosition="49" endLine="13" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="13" startPosition="94" endLine="14" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="AUX_OBJECT_TEMPLATE" />
+    <nodeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="16" startPosition="39" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="20" startPosition="51" endLine="21" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="24" startPosition="60" endLine="25" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="28" startPosition="71" endLine="29" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="32" startPosition="57" endLine="33" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AuxObjectHandler#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAuxObjectTemplate#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAuxObjectTemplate#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/ui/internal/structure/AuxObjectHandler;" />
+    <nodeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/ui/internal/structure/AuxObjectHandler;" />
+    <scopeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="16" startPosition="39" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="20" startPosition="51" endLine="21" endPosition="111" />
+    <scopeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="24" startPosition="60" endLine="25" endPosition="66" />
+    <scopeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="28" startPosition="71" endLine="29" endPosition="181" />
+    <scopeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="32" startPosition="57" endLine="33" endPosition="51" />
+    <scopeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="1890792421275691239" fileName="AuxObjectHandler.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.AuxObjectHandler" />
+  </root>
+  <root nodeId="4587250023234230413">
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="18" startPosition="69" endLine="19" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="19" startPosition="86" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="20" startPosition="68" endLine="21" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="21" startPosition="45" endLine="22" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="22" startPosition="64" endLine="23" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="HAS_TEMPLATE" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="23" startPosition="58" endLine="24" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SELECTOR" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="24" startPosition="51" endLine="25" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ROLE" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="25" startPosition="43" endLine="26" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEMPLATE" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="26" startPosition="51" endLine="27" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="29" startPosition="31" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="33" startPosition="39" endLine="34" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="37" startPosition="49" endLine="38" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="41" startPosition="28" endLine="42" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="45" startPosition="38" endLine="46" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="49" startPosition="37" endLine="50" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="53" startPosition="47" endLine="54" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="57" startPosition="39" endLine="58" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="61" startPosition="48" endLine="62" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="65" startPosition="40" endLine="66" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="69" startPosition="49" endLine="70" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="73" startPosition="36" endLine="74" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="77" startPosition="45" endLine="78" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="81" startPosition="36" endLine="82" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="85" startPosition="45" endLine="86" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="89" startPosition="41" endLine="90" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="93" startPosition="49" endLine="94" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="97" startPosition="48" endLine="98" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="101" startPosition="50" endLine="102" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="105" startPosition="69" endLine="106" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="109" startPosition="63" endLine="110" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="113" startPosition="49" endLine="114" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="28" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeStub#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHasTemplate#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setHasTemplate#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelector#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelector#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRole#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setRole#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplate#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTemplate#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/ui/internal/structure/TypeStub;" />
+    <nodeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/ui/internal/structure/TypeStub;" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="29" startPosition="31" endLine="30" endPosition="16" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="33" startPosition="39" endLine="34" endPosition="56" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="37" startPosition="49" endLine="38" endPosition="56" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="41" startPosition="28" endLine="42" endPosition="44" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="45" startPosition="38" endLine="46" endPosition="44" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="49" startPosition="37" endLine="50" endPosition="54" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="53" startPosition="47" endLine="54" endPosition="54" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="57" startPosition="39" endLine="58" endPosition="84" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="61" startPosition="48" endLine="62" endPosition="51" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="65" startPosition="40" endLine="66" endPosition="88" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="69" startPosition="49" endLine="70" endPosition="47" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="73" startPosition="36" endLine="74" endPosition="84" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="77" startPosition="45" endLine="78" endPosition="43" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="81" startPosition="36" endLine="82" endPosition="80" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="85" startPosition="45" endLine="86" endPosition="47" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="89" startPosition="41" endLine="90" endPosition="57" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="93" startPosition="49" endLine="94" endPosition="69" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="97" startPosition="48" endLine="98" endPosition="72" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="101" startPosition="50" endLine="102" endPosition="51" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="105" startPosition="69" endLine="106" endPosition="60" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="109" startPosition="63" endLine="110" endPosition="165" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="113" startPosition="49" endLine="114" endPosition="43" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="28" startPosition="0" endLine="31" endPosition="3" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
+    <unitInfo nodeId="4587250023234230413" fileName="TypeStub.java" startLine="18" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.TypeStub" />
+  </root>
+  <root nodeId="4587250023234473480">
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="18" startPosition="81" endLine="19" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="19" startPosition="92" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="20" startPosition="68" endLine="21" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="21" startPosition="45" endLine="22" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="22" startPosition="64" endLine="23" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="HAS_TEMPLATE" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="23" startPosition="58" endLine="24" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SELECTOR" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="24" startPosition="51" endLine="25" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ROLE" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="25" startPosition="43" endLine="26" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEMPLATE" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="26" startPosition="51" endLine="27" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="29" startPosition="37" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="33" startPosition="39" endLine="34" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="37" startPosition="49" endLine="38" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="41" startPosition="28" endLine="42" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="45" startPosition="38" endLine="46" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="49" startPosition="37" endLine="50" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="53" startPosition="47" endLine="54" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="57" startPosition="39" endLine="58" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="61" startPosition="48" endLine="62" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="65" startPosition="40" endLine="66" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="69" startPosition="49" endLine="70" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="73" startPosition="36" endLine="74" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="77" startPosition="45" endLine="78" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="81" startPosition="36" endLine="82" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="85" startPosition="45" endLine="86" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="89" startPosition="41" endLine="90" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="93" startPosition="49" endLine="94" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="97" startPosition="48" endLine="98" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="101" startPosition="50" endLine="102" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="105" startPosition="69" endLine="106" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="109" startPosition="69" endLine="110" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="113" startPosition="55" endLine="114" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="28" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExpressionStub#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHasTemplate#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setHasTemplate#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelector#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelector#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRole#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setRole#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplate#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTemplate#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/ui/internal/structure/ExpressionStub;" />
+    <nodeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/ui/internal/structure/ExpressionStub;" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="29" startPosition="37" endLine="30" endPosition="16" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="33" startPosition="39" endLine="34" endPosition="62" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="37" startPosition="49" endLine="38" endPosition="62" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="41" startPosition="28" endLine="42" endPosition="50" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="45" startPosition="38" endLine="46" endPosition="50" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="49" startPosition="37" endLine="50" endPosition="60" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="53" startPosition="47" endLine="54" endPosition="60" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="57" startPosition="39" endLine="58" endPosition="90" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="61" startPosition="48" endLine="62" endPosition="57" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="65" startPosition="40" endLine="66" endPosition="94" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="69" startPosition="49" endLine="70" endPosition="53" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="73" startPosition="36" endLine="74" endPosition="90" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="77" startPosition="45" endLine="78" endPosition="49" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="81" startPosition="36" endLine="82" endPosition="86" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="85" startPosition="45" endLine="86" endPosition="53" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="89" startPosition="41" endLine="90" endPosition="63" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="93" startPosition="49" endLine="94" endPosition="75" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="97" startPosition="48" endLine="98" endPosition="78" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="101" startPosition="50" endLine="102" endPosition="57" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="105" startPosition="69" endLine="106" endPosition="66" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="109" startPosition="69" endLine="110" endPosition="177" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="113" startPosition="55" endLine="114" endPosition="49" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="28" startPosition="0" endLine="31" endPosition="3" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
+    <unitInfo nodeId="4587250023234473480" fileName="ExpressionStub.java" startLine="18" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ExpressionStub" />
+  </root>
+  <root nodeId="4587250023234487369">
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="18" startPosition="79" endLine="19" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="19" startPosition="91" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="20" startPosition="68" endLine="21" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="21" startPosition="45" endLine="22" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="22" startPosition="64" endLine="23" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="HAS_TEMPLATE" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="23" startPosition="58" endLine="24" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SELECTOR" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="24" startPosition="51" endLine="25" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ROLE" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="25" startPosition="43" endLine="26" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEMPLATE" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="26" startPosition="51" endLine="27" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="29" startPosition="36" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="33" startPosition="39" endLine="34" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="37" startPosition="49" endLine="38" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="41" startPosition="28" endLine="42" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="45" startPosition="38" endLine="46" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="49" startPosition="37" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="53" startPosition="47" endLine="54" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="57" startPosition="39" endLine="58" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="61" startPosition="48" endLine="62" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="65" startPosition="40" endLine="66" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="69" startPosition="49" endLine="70" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="73" startPosition="36" endLine="74" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="77" startPosition="45" endLine="78" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="81" startPosition="36" endLine="82" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="85" startPosition="45" endLine="86" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="89" startPosition="41" endLine="90" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="93" startPosition="49" endLine="94" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="97" startPosition="48" endLine="98" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="101" startPosition="50" endLine="102" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="105" startPosition="69" endLine="106" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="109" startPosition="68" endLine="110" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="113" startPosition="54" endLine="114" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="28" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StatementStub#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHasTemplate#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setHasTemplate#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelector#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelector#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRole#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setRole#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplate#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTemplate#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/ui/internal/structure/StatementStub;" />
+    <nodeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/ui/internal/structure/StatementStub;" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="29" startPosition="36" endLine="30" endPosition="16" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="33" startPosition="39" endLine="34" endPosition="61" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="37" startPosition="49" endLine="38" endPosition="61" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="41" startPosition="28" endLine="42" endPosition="49" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="45" startPosition="38" endLine="46" endPosition="49" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="49" startPosition="37" endLine="50" endPosition="59" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="53" startPosition="47" endLine="54" endPosition="59" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="57" startPosition="39" endLine="58" endPosition="89" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="61" startPosition="48" endLine="62" endPosition="56" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="65" startPosition="40" endLine="66" endPosition="93" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="69" startPosition="49" endLine="70" endPosition="52" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="73" startPosition="36" endLine="74" endPosition="89" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="77" startPosition="45" endLine="78" endPosition="48" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="81" startPosition="36" endLine="82" endPosition="85" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="85" startPosition="45" endLine="86" endPosition="52" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="89" startPosition="41" endLine="90" endPosition="62" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="93" startPosition="49" endLine="94" endPosition="74" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="97" startPosition="48" endLine="98" endPosition="77" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="101" startPosition="50" endLine="102" endPosition="56" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="105" startPosition="69" endLine="106" endPosition="65" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="109" startPosition="68" endLine="110" endPosition="175" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="113" startPosition="54" endLine="114" endPosition="48" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="28" startPosition="0" endLine="31" endPosition="3" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
+    <unitInfo nodeId="4587250023234487369" fileName="StatementStub.java" startLine="18" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.StatementStub" />
+  </root>
+  <root nodeId="4818101245579876200">
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="15" startPosition="70" endLine="16" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="16" startPosition="99" endLine="17" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="UI_OBJECT" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="17" startPosition="52" endLine="18" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BEFORE" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="18" startPosition="47" endLine="19" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CHILD_ASPECT" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="21" startPosition="44" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="25" startPosition="35" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="29" startPosition="44" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="33" startPosition="35" endLine="34" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="37" startPosition="44" endLine="38" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="41" startPosition="33" endLine="42" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="45" startPosition="42" endLine="46" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="49" startPosition="37" endLine="50" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="53" startPosition="47" endLine="54" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="57" startPosition="46" endLine="58" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="61" startPosition="48" endLine="62" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="65" startPosition="69" endLine="66" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="69" startPosition="76" endLine="70" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="73" startPosition="62" endLine="74" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="20" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContextBindingWrapper#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setContainer#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUiObject#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setUiObject#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBefore#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBefore#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildAspectsCount#()I" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="childAspects#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildAspects#()Ljava/util/List;" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addChildAspect#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertChildAspect#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/ui/internal/structure/ContextBindingWrapper;" />
+    <nodeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/ui/internal/structure/ContextBindingWrapper;" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="21" startPosition="44" endLine="22" endPosition="16" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="25" startPosition="35" endLine="26" endPosition="81" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="29" startPosition="44" endLine="30" endPosition="28" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="33" startPosition="35" endLine="34" endPosition="89" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="37" startPosition="44" endLine="38" endPosition="58" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="41" startPosition="33" endLine="42" endPosition="86" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="45" startPosition="42" endLine="46" endPosition="55" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="49" startPosition="37" endLine="50" endPosition="66" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="53" startPosition="47" endLine="54" endPosition="80" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="57" startPosition="46" endLine="58" endPosition="83" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="61" startPosition="48" endLine="62" endPosition="60" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="65" startPosition="69" endLine="66" endPosition="69" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="69" startPosition="76" endLine="70" endPosition="191" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="73" startPosition="62" endLine="74" endPosition="56" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="20" startPosition="0" endLine="23" endPosition="3" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <unitInfo nodeId="4818101245579876200" fileName="ContextBindingWrapper.java" startLine="15" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextBindingWrapper" />
+  </root>
+  <root nodeId="6410919744913443206">
+    <nodeInfo nodeId="6410919744913443206" fileName="IContextWrapper.java" startLine="8" startPosition="55" endLine="9" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="6410919744913443206" fileName="IContextWrapper.java" startLine="9" startPosition="93" endLine="10" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONTEXT" />
+    <nodeInfo nodeId="6410919744913443206" fileName="IContextWrapper.java" startLine="11" startPosition="0" endLine="12" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6410919744913443206" fileName="IContextWrapper.java" startLine="12" startPosition="33" endLine="13" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setContext#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <scopeInfo nodeId="6410919744913443206" fileName="IContextWrapper.java" startLine="11" startPosition="0" endLine="12" endPosition="33" />
+    <scopeInfo nodeId="6410919744913443206" fileName="IContextWrapper.java" startLine="12" startPosition="33" endLine="13" endPosition="42" />
+    <unitInfo nodeId="6410919744913443206" fileName="IContextWrapper.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.IContextWrapper" />
+  </root>
+  <root nodeId="6410919744913520683">
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="14" startPosition="85" endLine="15" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="15" startPosition="102" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="16" startPosition="68" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="17" startPosition="45" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="18" startPosition="64" endLine="19" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPRESSION" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="19" startPosition="55" endLine="20" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONTEXT" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="20" startPosition="49" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="23" startPosition="47" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="27" startPosition="39" endLine="28" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="31" startPosition="49" endLine="32" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="35" startPosition="28" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="39" startPosition="38" endLine="40" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="43" startPosition="37" endLine="44" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="47" startPosition="47" endLine="48" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="51" startPosition="37" endLine="52" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="55" startPosition="46" endLine="56" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="59" startPosition="34" endLine="60" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="63" startPosition="43" endLine="64" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="67" startPosition="41" endLine="68" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="71" startPosition="49" endLine="72" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="75" startPosition="48" endLine="76" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="79" startPosition="50" endLine="80" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="83" startPosition="69" endLine="84" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="87" startPosition="79" endLine="88" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="91" startPosition="65" endLine="92" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContextWrapperExpression#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExpression#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setExpression#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setContext#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/ui/internal/structure/ContextWrapperExpression;" />
+    <nodeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/ui/internal/structure/ContextWrapperExpression;" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="23" startPosition="47" endLine="24" endPosition="16" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="27" startPosition="39" endLine="28" endPosition="72" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="31" startPosition="49" endLine="32" endPosition="72" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="35" startPosition="28" endLine="36" endPosition="60" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="39" startPosition="38" endLine="40" endPosition="60" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="43" startPosition="37" endLine="44" endPosition="70" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="47" startPosition="47" endLine="48" endPosition="70" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="51" startPosition="37" endLine="52" endPosition="93" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="55" startPosition="46" endLine="56" endPosition="62" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="59" startPosition="34" endLine="60" endPosition="90" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="63" startPosition="43" endLine="64" endPosition="59" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="67" startPosition="41" endLine="68" endPosition="73" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="71" startPosition="49" endLine="72" endPosition="85" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="75" startPosition="48" endLine="76" endPosition="88" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="79" startPosition="50" endLine="80" endPosition="67" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="83" startPosition="69" endLine="84" endPosition="76" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="87" startPosition="79" endLine="88" endPosition="197" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="91" startPosition="65" endLine="92" endPosition="59" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="22" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <unitInfo nodeId="6410919744913520683" fileName="ContextWrapperExpression.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextWrapperExpression" />
+  </root>
+  <root nodeId="6653319296676637790">
+    <nodeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="12" startPosition="48" endLine="13" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="13" startPosition="93" endLine="14" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GEOMETRY" />
+    <nodeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="16" startPosition="38" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="20" startPosition="33" endLine="21" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="24" startPosition="42" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="28" startPosition="70" endLine="29" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="32" startPosition="56" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeometryHandler#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGeometry#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGeometry#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/ui/internal/structure/GeometryHandler;" />
+    <nodeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/ui/internal/structure/GeometryHandler;" />
+    <scopeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="16" startPosition="38" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="20" startPosition="33" endLine="21" endPosition="81" />
+    <scopeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="24" startPosition="42" endLine="25" endPosition="54" />
+    <scopeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="28" startPosition="70" endLine="29" endPosition="179" />
+    <scopeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="32" startPosition="56" endLine="33" endPosition="50" />
+    <scopeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="6653319296676637790" fileName="GeometryHandler.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.GeometryHandler" />
+  </root>
+  <root nodeId="8173290311767412491">
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="16" startPosition="74" endLine="17" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="17" startPosition="92" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="19" startPosition="45" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="20" startPosition="64" endLine="21" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BODY" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="21" startPosition="43" endLine="22" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONTEXT" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="22" startPosition="49" endLine="23" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="25" startPosition="37" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="29" startPosition="39" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="33" startPosition="49" endLine="34" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="37" startPosition="28" endLine="38" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="41" startPosition="38" endLine="42" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="45" startPosition="37" endLine="46" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="49" startPosition="47" endLine="50" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="53" startPosition="34" endLine="54" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="57" startPosition="43" endLine="58" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="61" startPosition="34" endLine="62" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="65" startPosition="43" endLine="66" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="69" startPosition="41" endLine="70" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="73" startPosition="49" endLine="74" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="77" startPosition="48" endLine="78" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="81" startPosition="50" endLine="82" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="85" startPosition="69" endLine="86" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="89" startPosition="69" endLine="90" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="93" startPosition="55" endLine="94" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="24" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContextWrapper#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBody#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBody#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setContext#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/ui/internal/structure/ContextWrapper;" />
+    <nodeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/ui/internal/structure/ContextWrapper;" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="25" startPosition="37" endLine="26" endPosition="16" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="29" startPosition="39" endLine="30" endPosition="62" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="33" startPosition="49" endLine="34" endPosition="62" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="37" startPosition="28" endLine="38" endPosition="50" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="41" startPosition="38" endLine="42" endPosition="50" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="45" startPosition="37" endLine="46" endPosition="60" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="49" startPosition="47" endLine="50" endPosition="60" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="53" startPosition="34" endLine="54" endPosition="83" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="57" startPosition="43" endLine="58" endPosition="46" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="61" startPosition="34" endLine="62" endPosition="80" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="65" startPosition="43" endLine="66" endPosition="49" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="69" startPosition="41" endLine="70" endPosition="63" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="73" startPosition="49" endLine="74" endPosition="75" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="77" startPosition="48" endLine="78" endPosition="78" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="81" startPosition="50" endLine="82" endPosition="57" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="85" startPosition="69" endLine="86" endPosition="66" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="89" startPosition="69" endLine="90" endPosition="177" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="93" startPosition="55" endLine="94" endPosition="49" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
+    <unitInfo nodeId="8173290311767412491" fileName="ContextWrapper.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextWrapper" />
+  </root>
+  <root nodeId="8173290311768364230">
+    <nodeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="11" startPosition="56" endLine="12" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="12" startPosition="96" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIEW" />
+    <nodeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="15" startPosition="41" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="19" startPosition="25" endLine="20" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="23" startPosition="34" endLine="24" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="27" startPosition="73" endLine="28" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="31" startPosition="59" endLine="32" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContextViewWrapper#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getView#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setView#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/ui/internal/structure/ContextViewWrapper;" />
+    <nodeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/ui/internal/structure/ContextViewWrapper;" />
+    <scopeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="15" startPosition="41" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="19" startPosition="25" endLine="20" endPosition="69" />
+    <scopeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="23" startPosition="34" endLine="24" endPosition="50" />
+    <scopeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="27" startPosition="73" endLine="28" endPosition="185" />
+    <scopeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="31" startPosition="59" endLine="32" endPosition="53" />
+    <scopeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="8173290311768364230" fileName="ContextViewWrapper.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextViewWrapper" />
+  </root>
+  <root nodeId="8760983568970120603">
+    <nodeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="11" startPosition="62" endLine="12" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="12" startPosition="102" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONTROLLER" />
+    <nodeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="15" startPosition="47" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="19" startPosition="37" endLine="20" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="23" startPosition="46" endLine="24" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="27" startPosition="79" endLine="28" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="31" startPosition="65" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContextControllerWrapper#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getController#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setController#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/ui/internal/structure/ContextControllerWrapper;" />
+    <nodeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/ui/internal/structure/ContextControllerWrapper;" />
+    <scopeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="15" startPosition="47" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="19" startPosition="37" endLine="20" endPosition="93" />
+    <scopeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="23" startPosition="46" endLine="24" endPosition="62" />
+    <scopeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="27" startPosition="79" endLine="28" endPosition="197" />
+    <scopeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="31" startPosition="65" endLine="32" endPosition="59" />
+    <scopeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="8760983568970120603" fileName="ContextControllerWrapper.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ui.internal.structure.ContextControllerWrapper" />
+  </root>
 </debugInfo>
 

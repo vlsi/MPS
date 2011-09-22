@@ -22,6 +22,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class ClosuresUtil {
   private static Object CLOSURE_CONTEXT_DATA = new Object();
 
+  public ClosuresUtil() {
+  }
+
   public static boolean isClosureContextOwner(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       return true;
@@ -52,7 +55,11 @@ public class ClosuresUtil {
 
   public static boolean isVariableUsedInClosure(SNode contextOwner, SNode var, ITemplateGenerator generator) {
     ensureClosureContextOwnerProcessed(contextOwner, generator);
-    return getClosureContextData(contextOwner, generator).hasVariable(var);
+    ClosuresUtil.ClosureContextData contextData = getClosureContextData(contextOwner, generator);
+    return (contextData != null ?
+      contextData.hasVariable(var) :
+      false
+    );
   }
 
   public static boolean hasVariablesUsedInClosure(SNode contextOwner, ITemplateGenerator generator) {

@@ -94,7 +94,7 @@ public class Mps_Command {
   }
 
   private static List<File> getClassPath() {
-    Iterable<String> currentClassPath = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(File.pathSeparator))).<String>select(new ISelector<String, String>() {
+    Iterable<String> currentClassPath = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(File.pathSeparator))).select(new ISelector<String, String>() {
       public String select(String it) {
         try {
           return new File(it).getCanonicalPath();
@@ -107,7 +107,7 @@ public class Mps_Command {
       public boolean accept(String it) {
         return !(it.startsWith(System.getProperty("java.home")));
       }
-    }).<File>select(new ISelector<String, File>() {
+    }).select(new ISelector<String, File>() {
       public File select(String it) {
         return new File(it);
       }

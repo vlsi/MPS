@@ -5,10 +5,11 @@ package jetbrains.mps.build.dependency.generator.buildlanguage.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -34,6 +35,18 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1216908261231(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name") + ".classpaths";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4102882025198635369(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String value = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription"), "includeResources");
+    return (StringUtils.isEmpty(value) ?
+      "**/*.png" :
+      value
+    );
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4102882025198603160(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription"), "excludeResources");
   }
 
   public static Object propertyMacro_GetPropertyValue_1216908364134(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -98,6 +111,15 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1224775901838(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "description", false), "DescriptionToProject");
+  }
+
+  public static boolean ifMacro_Condition_4102882025198635389(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode outer = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription");
+    return StringUtils.isEmpty(SPropertyOperations.getString(outer, "excludeResources")) || StringUtils.isNotEmpty(SPropertyOperations.getString(outer, "includeResources"));
+  }
+
+  public static boolean ifMacro_Condition_4102882025198635351(final IOperationContext operationContext, final IfMacroContext _context) {
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription"), "excludeResources"));
   }
 
   public static boolean ifMacro_Condition_1219772493889(final IOperationContext operationContext, final IfMacroContext _context) {

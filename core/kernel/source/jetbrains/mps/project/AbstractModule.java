@@ -33,7 +33,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.VcsMigrationUtil;
@@ -42,7 +42,6 @@ import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -60,6 +59,14 @@ public abstract class AbstractModule implements IModule {
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
   private ModuleScope myScope = createScope();
 
+  private final Object LOCK = new Object();
+  private Runnable myClasspathInvalidator = new Runnable() {
+    public void run() {
+      synchronized (LOCK) {
+        myCachedClassPathItem = null;
+      }
+    }
+  };
   private CompositeClassPathItem myCachedClassPathItem;
   private DependenciesManager myDependenciesManager;
 
@@ -178,12 +185,9 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<ModuleReference> getUsedDevkitReferences() {
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      result.addAll(descriptor.getUsedDevkits());
-    }
-    return result;
+    if (descriptor == null) return new ArrayList<ModuleReference>();
+    return new ArrayList<ModuleReference>(descriptor.getUsedDevkits());
   }
 
   //----stubs
@@ -193,23 +197,24 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<StubPath> getAllStubPaths() {
-    ArrayList<StubPath> result = new ArrayList<StubPath>();
+    LinkedHashSet<StubPath> result = new LinkedHashSet<StubPath>();
     result.addAll(getStubPaths());
     result.addAll(getOwnStubPaths());
-    return result;
+    return new ArrayList<StubPath>(result);
   }
 
   public List<StubPath> getOwnStubPaths() {
-    if (isCompileInMPS() && getClassesGen() != null) {
-      String file = getClassesGen().getPath();
-      if (file.endsWith("!/")) {
-        file = file.substring(0, file.length() - 2);
-      }
-      if (new File(file).exists()) {
-        return Collections.singletonList(new StubPath(getClassesGen().getPath(), LanguageID.JAVA_MANAGER));
-      }
+    if (!isCompileInMPS()) return Collections.emptyList();
+
+    IFile classFolder = getClassesGen();
+    if (classFolder == null) return Collections.emptyList();
+
+    String file = classFolder.getPath();
+    if (file.endsWith("!/")) {
+      file = file.substring(0, file.length() - 2);
     }
-    return Collections.emptyList();
+
+    return Collections.singletonList(new StubPath(classFolder.getPath(), LanguageID.JAVA_MANAGER));
   }
 
   public List<StubPath> getStubPaths() {
@@ -232,17 +237,10 @@ public abstract class AbstractModule implements IModule {
 
   //----classpath
 
-  public void updateClassPath() {
-    myCachedClassPathItem = null;
-  }
-
-  public void invalidateClassPath() {
-    Set<String> invalidate = new HashSet<String>();
-    for (StubPath path : getAllStubPaths()) {
-      if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
-      invalidate.add(path.getPath());
+  protected void invalidateClassPath() {
+    synchronized (LOCK) {
+      myCachedClassPathItem = null;
     }
-    ClassPathFactory.getInstance().invalidate(invalidate);
   }
 
   //todo check this code. Wy not to do it where we add jars?
@@ -258,11 +256,20 @@ public abstract class AbstractModule implements IModule {
     IFile bundleParent = bundleHomeFile.getParent();
     if (bundleParent == null || !bundleParent.exists()) return;
 
+    String packagedSourcesPath = bundleHomeFile.getPath();
+    if (packagedSourcesPath.endsWith(".jar")) {
+      packagedSourcesPath = (packagedSourcesPath.substring(0, packagedSourcesPath.length() - 4) + "-src.jar!/").toLowerCase();
+    } else {
+      packagedSourcesPath = null;
+    }
+
     List<ModelRoot> toRemove = new ArrayList<ModelRoot>();
     for (ModelRoot sme : descriptor.getStubModelEntries()) {
       String path = sme.getPath();
-      String shrinked = MacrosFactory.moduleDescriptor(this).shrinkPath(path, getDescriptorFile());
-      if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
+      if (packagedSourcesPath == null || !FileUtil.getCanonicalPath(path).toLowerCase().startsWith(packagedSourcesPath)) {
+        String shrinked = MacrosFactory.moduleDescriptor(this).shrinkPath(path, getDescriptorFile());
+        if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
+      }
       toRemove.add(sme);
     }
     descriptor.getStubModelEntries().removeAll(toRemove);
@@ -284,21 +291,26 @@ public abstract class AbstractModule implements IModule {
   }
 
   public IClassPathItem getClassPathItem() {
-    if (myCachedClassPathItem == null) {
-      myCachedClassPathItem = new CompositeClassPathItem();
-      for (StubPath path : getAllStubPaths()) {
-        //look for classes only in stub dirs with JavaStub manager
-        if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
+    synchronized (LOCK) {
+      if (myCachedClassPathItem == null) {
+        myCachedClassPathItem = new CompositeClassPathItem();
+        myCachedClassPathItem.addInvalidationAction(myClasspathInvalidator);
 
-        try {
-          IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path.getPath(), this);
-          myCachedClassPathItem.add(pathItem);
-        } catch (IOException e) {
-          LOG.debug(e.getMessage());
+        for (StubPath path : getAllStubPaths()) {
+          //look for classes only in stub dirs with JavaStub manager
+          if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
+
+          try {
+            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path.getPath(), this.getModuleFqName());
+            myCachedClassPathItem.add(pathItem);
+          } catch (IOException e) {
+            LOG.error(e.getMessage());
+          }
         }
       }
+
+      return myCachedClassPathItem;
     }
-    return myCachedClassPathItem;
   }
 
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
@@ -323,7 +335,7 @@ public abstract class AbstractModule implements IModule {
     rereadModels();
 
     updatePackagedDescriptorClasspath();
-    updateClassPath();
+    invalidateClassPath();
   }
 
   public void onModuleLoad() {
@@ -359,11 +371,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<SModelDescriptor> getHiddenModelDescriptors() {
-    return Collections.emptyList();
-  }
-
-  @Override
-  public List<SModelDescriptor> getEditableUserModels() {
     return Collections.emptyList();
   }
 
@@ -599,10 +606,5 @@ public abstract class AbstractModule implements IModule {
     public URL findResource(String name) {
       return getClassPathItem().getResource(name);
     }
-  }
-
-  @Override
-  public List<Dependency> getDependOn() {
-    return getDependencies();
   }
 }

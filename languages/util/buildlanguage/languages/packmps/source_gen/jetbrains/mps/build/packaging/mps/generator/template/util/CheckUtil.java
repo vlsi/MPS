@@ -23,7 +23,7 @@ import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.project.dependency.LanguageDependenciesManager;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class CheckUtil {
@@ -64,11 +64,11 @@ public class CheckUtil {
     ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472907"));
     ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "5297918386943402887"));
 
-    Iterable<IModule> coreModules = ListSequence.fromList(coreBlocks).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    Iterable<IModule> coreModules = ListSequence.fromList(coreBlocks).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SNodeOperations.getDescendants(it, "jetbrains.mps.build.packaging.structure.Module", false, new String[]{});
       }
-    }).<IModule>select(new ISelector<SNode, IModule>() {
+    }).select(new ISelector<SNode, IModule>() {
       public IModule select(SNode it) {
         return Module_Behavior.call_getModule_1213877515148(it);
       }
@@ -84,14 +84,15 @@ public class CheckUtil {
 
       // if we are here, this means this solution is a part of MPS core 
       for (Language language : SetSequence.fromSet(solution.getDependenciesManager().getAllUsedLanguages())) {
-        for (IModule module : ListSequence.fromList(((LanguageDependenciesManager) language.getDependenciesManager()).getRuntimeDependOnModules())) {
+        for (ModuleReference mr : ListSequence.fromList(language.getRuntimeModulesReferences())) {
+          IModule module = MPSModuleRepository.getInstance().getModule(mr);
           if (module.getDescriptorFile() == null) {
             // for filtering out modules like MPS.Classpath 
             continue;
           }
           // check that this module is in classpath on build startup 
           if (!(Sequence.fromIterable(coreModules).contains(module))) {
-            String msg = "Module " + module.getModuleFqName() + " should be in core because it's a runtime of language " + language.getModuleFqName() + ", which is used by core solution " + solution.getModuleFqName();
+            String msg = "Module " + mr.getModuleFqName() + " should be in core because it's a runtime of language " + language.getModuleFqName() + ", which is used by core solution " + solution.getModuleFqName();
             if (log.isErrorEnabled()) {
               log.error(msg);
             }

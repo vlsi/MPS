@@ -47,7 +47,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "operators", true);
         }
@@ -56,7 +56,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "operators", true);
         }

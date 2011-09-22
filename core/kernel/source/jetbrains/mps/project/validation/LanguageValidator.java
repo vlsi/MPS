@@ -16,7 +16,6 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -74,8 +73,9 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
       }
     }
     checkBehaviorAspectPresence(myModule, errors);
-    List<IModule> runtimeModules = ModuleUtil.depsToModules(myModule.getRuntimeDependencies());
-    for (IModule runtimeModule : runtimeModules) {
+    for (ModuleReference mr : myModule.getRuntimeModulesReferences()) {
+      IModule runtimeModule = MPSModuleRepository.getInstance().getModule(mr);
+      if (runtimeModule == null) continue;
       if (!(runtimeModule instanceof Solution)) {
         errors.add("Runtime module " + runtimeModule + " is not a solution");
       }
@@ -85,9 +85,9 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
         errors.add("Can't find accessory model: " + accessory.getLongName());
       }
     }
-    for (Dependency runtimeModule : myModule.getModuleDescriptor().getRuntimeModules()) {
-      if (MPSModuleRepository.getInstance().getModule(runtimeModule.getModuleRef()) == null) {
-        errors.add("Can't find runtime module: " + runtimeModule.getModuleRef().getModuleFqName());
+    for (ModuleReference ref : myModule.getModuleDescriptor().getRuntimeModules()) {
+      if (MPSModuleRepository.getInstance().getModule(ref) == null) {
+        errors.add("Can't find runtime module: " + ref.getModuleFqName());
       }
     }
     for (ModelRoot stubModelsEntry : myModule.getModuleDescriptor().getRuntimeStubModels()) {

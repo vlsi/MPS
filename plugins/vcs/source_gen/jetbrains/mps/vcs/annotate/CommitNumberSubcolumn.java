@@ -38,7 +38,7 @@ public class CommitNumberSubcolumn extends AnnotationAspectSubcolumn {
       MapSequence.fromMap(revisionNumberToRevision).put(rev.getRevisionNumber(), rev);
     }
 
-    List<VcsRevisionNumber> revisionNumbers = SetSequence.fromSet(SetSequence.fromSetWithValues(new HashSet<VcsRevisionNumber>(), Sequence.fromIterable(fileLines).<VcsRevisionNumber>select(new ISelector<Integer, VcsRevisionNumber>() {
+    List<VcsRevisionNumber> revisionNumbers = SetSequence.fromSet(SetSequence.fromSetWithValues(new HashSet<VcsRevisionNumber>(), Sequence.fromIterable(fileLines).select(new ISelector<Integer, VcsRevisionNumber>() {
       public VcsRevisionNumber select(Integer fl) {
         return myFileAnnotation.getLineRevisionNumber(fl);
       }

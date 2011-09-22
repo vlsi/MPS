@@ -209,7 +209,10 @@ public class AbstractConceptDeclaration_Behavior {
     }
     String adapterClassFqName = NameUtil.nodeFQName(thisNode);
     SNode classifier = SNodeOperations.cast(SModelUtil.findNodeByFQName(adapterClassFqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), GlobalScope.getInstance()), "jetbrains.mps.baseLanguage.structure.Classifier");
-    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new AbstractConceptDeclaration_Behavior.QuotationClass_8dqsla_a0a0a3a11().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    if (classifier == null) {
+      return new AbstractConceptDeclaration_Behavior.QuotationClass_8dqsla_a0a0d0l().createNode();
+    }
+    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new AbstractConceptDeclaration_Behavior.QuotationClass_8dqsla_a0a0a4a11().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(adapterClassType, "classifier", classifier, false);
     return adapterClassType;
   }
@@ -359,8 +362,26 @@ public class AbstractConceptDeclaration_Behavior {
     }
   }
 
-  public static class QuotationClass_8dqsla_a0a0a3a11 {
-    public QuotationClass_8dqsla_a0a0a3a11() {
+  public static class QuotationClass_8dqsla_a0a0d0l {
+    public QuotationClass_8dqsla_a0a0d0l() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#ceab5195-25ea-4f22-9b92-103b95ca8c0c#jetbrains.mps.lang.core.structure(jetbrains.mps.lang.core/jetbrains.mps.lang.core.structure@java_stub)"), SNodeId.fromString("~BaseConcept")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_8dqsla_a0a0a4a11 {
+    public QuotationClass_8dqsla_a0a0a4a11() {
     }
 
     public SNode createNode() {

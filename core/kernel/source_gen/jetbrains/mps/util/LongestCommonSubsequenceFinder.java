@@ -133,7 +133,7 @@ __switch__:
     // This methods finds pairs of subsequences of original lists a and b 
     // which are not included into longest common subsequence 
     if (myDifferentSubsequences == null) {
-      myDifferentSubsequences = ListSequence.fromList(getDifferentIndices()).<Tuples._2<Iterable<E>, Iterable<E>>>select(new ISelector<Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>>, Tuples._2<Iterable<E>, Iterable<E>>>() {
+      myDifferentSubsequences = ListSequence.fromList(getDifferentIndices()).select(new ISelector<Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>>, Tuples._2<Iterable<E>, Iterable<E>>>() {
         public Tuples._2<Iterable<E>, Iterable<E>> select(Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>> pair) {
           return MultiTuple.<Iterable<E>,Iterable<E>>from(ListSequence.fromList(myA).page((int) pair._0()._0(), (int) pair._0()._1()), ListSequence.fromList(myB).page((int) pair._1()._0(), (int) pair._1()._1()));
         }

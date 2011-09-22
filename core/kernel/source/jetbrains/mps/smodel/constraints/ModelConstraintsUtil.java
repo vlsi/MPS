@@ -218,9 +218,12 @@ public class ModelConstraintsUtil {
     }
 
     public String getText(SNode node, boolean visible, boolean smartRef, boolean inEditor) {
-      return myProvider.getPresentation(myOperationContext,
-        new PresentationReferentConstraintContext(myContext.getModel(), myContext.getEnclosingNode(),
-          myContext.getReferenceNode(), myContext.getLinkTarget(), node, visible, smartRef, inEditor));
+      if(myProvider != null) {
+        return myProvider.getPresentation(myOperationContext,
+          new PresentationReferentConstraintContext(myContext.getModel(), myContext.getEnclosingNode(),
+            myContext.getReferenceNode(), myContext.getLinkTarget(), node, visible, smartRef, inEditor));
+      }
+      return node.getPresentation();
     }
   }
 

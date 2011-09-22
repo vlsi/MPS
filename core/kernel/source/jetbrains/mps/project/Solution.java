@@ -76,8 +76,7 @@ public class Solution extends AbstractModule {
     return solution;
   }
 
-  //this is for stubs framework only
-
+  //this is for stubs framework & tests only. Can be later converted into subclass
   public static Solution newInstance(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution() {
       public String getGeneratorOutputPath() {
@@ -149,19 +148,6 @@ public class Solution extends AbstractModule {
 
   public SolutionDescriptor getModuleDescriptor() {
     return mySolutionDescriptor;
-  }
-
-  @Override
-  public List<SModelDescriptor> getEditableUserModels() {
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-    for (SModelDescriptor sm : getOwnModelDescriptors()) {
-      if (SModelStereotype.isUserModel(sm) &&
-        (sm instanceof EditableSModelDescriptor) &&
-        !((EditableSModelDescriptor) sm).isPackaged()) {
-        models.add(sm);
-      }
-    }
-    return models;
   }
 
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {

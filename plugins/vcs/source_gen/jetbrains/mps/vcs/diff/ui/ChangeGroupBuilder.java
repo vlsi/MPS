@@ -85,7 +85,7 @@ public class ChangeGroupBuilder {
     }
     myChangeGroups = ListSequence.fromList(new ArrayList<ChangeGroup>());
     for (Set<ModelChange> s : Sequence.fromIterable(ds.getSets())) {
-      Bounds lb = SetSequence.fromSet(s).<Bounds>select(new ISelector<ModelChange, Bounds>() {
+      Bounds lb = SetSequence.fromSet(s).select(new ISelector<ModelChange, Bounds>() {
         public Bounds select(ModelChange ch) {
           return MapSequence.fromMap(left).get(ch);
         }
@@ -94,7 +94,7 @@ public class ChangeGroupBuilder {
           return a.merge(b);
         }
       });
-      Bounds rb = SetSequence.fromSet(s).<Bounds>select(new ISelector<ModelChange, Bounds>() {
+      Bounds rb = SetSequence.fromSet(s).select(new ISelector<ModelChange, Bounds>() {
         public Bounds select(ModelChange ch) {
           return MapSequence.fromMap(right).get(ch);
         }
@@ -153,7 +153,7 @@ public class ChangeGroupBuilder {
   private static Bounds findBounds(Iterable<ChangeEditorMessage> messages, final EditorComponent editorComponent) {
     Bounds bounds = null;
     if (Sequence.fromIterable(messages).isNotEmpty()) {
-      bounds = Sequence.fromIterable(messages).<Bounds>select(new ISelector<ChangeEditorMessage, Bounds>() {
+      bounds = Sequence.fromIterable(messages).select(new ISelector<ChangeEditorMessage, Bounds>() {
         public Bounds select(ChangeEditorMessage m) {
           return m.getBounds(editorComponent);
         }

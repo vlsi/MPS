@@ -186,7 +186,7 @@ __switch__:
   }
 
   public static List<VirtualFile> getUnversionedFilesForModules(@NotNull final Project project, List<IModule> module) {
-    return ListSequence.fromList(module).<VirtualFile>translate(new ITranslator2<IModule, VirtualFile>() {
+    return ListSequence.fromList(module).translate(new ITranslator2<IModule, VirtualFile>() {
       public Iterable<VirtualFile> translate(IModule m) {
         return getUnversionedFilesForModule(project, m);
       }

@@ -68,15 +68,39 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.actions.AddMissingImportsInProject_Action" file="AddMissingImportsInProject_Action.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
+    <classNode dependClassName="java.awt.Frame" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.MissingDependenciesFixer" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.actions.AddMissingImports_Action" file="AddMissingImports_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.MissingDependenciesFixer" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
@@ -1448,6 +1472,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddLanguageImport_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.AddMissingImportsInProject_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddMissingImports_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddModelImportByRoot_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddModelImport_Action" />
@@ -2032,6 +2057,7 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.NewRuntimeModule_Action" file="NewRuntimeModule_Action.java">
+    <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopup" />
     <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent" />
     <classNode dependClassName="com.intellij.navigation.NavigationItem" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -2052,15 +2078,13 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.Dependency" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.ChooseByNamePopupMPS" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.base.FakePsiContext" />
+    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.modules.BaseModuleItem" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.modules.BaseModuleModel" />
     <classNode dependClassName="org.apache.commons.logging.Log" />

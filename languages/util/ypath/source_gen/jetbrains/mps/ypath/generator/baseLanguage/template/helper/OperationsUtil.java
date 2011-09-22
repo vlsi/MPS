@@ -37,7 +37,7 @@ public class OperationsUtil {
       }).toListSequence() :
       ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(wildCardOp, "usedFeature", false))
     );
-    return ListSequence.fromList(features).<SNode>translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(features).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {

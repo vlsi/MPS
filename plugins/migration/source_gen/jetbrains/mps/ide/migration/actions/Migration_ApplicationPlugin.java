@@ -19,6 +19,7 @@ public class Migration_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new AddMissingImportsInGlobalScope_Action());
     addAction(new BuildAllBehaviors_Action());
     addAction(new BuildAllConstraints_Action());
     addAction(new BuildAllGenerators_Action());
@@ -30,6 +31,7 @@ public class Migration_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new MigrateStubs_Action());
     addAction(new Migration20_Action());
     addAction(new OptimizeImportsInGlobalScope_Action());
+    addAction(new ReSaveAllModels_Action());
     addAction(new UpgradeModelPersistenceGlobally_Action());
     addAction(new UpgradeModelPersistenceInModel_Action());
     addAction(new UpgradeModelPersistenceInModule_Action());

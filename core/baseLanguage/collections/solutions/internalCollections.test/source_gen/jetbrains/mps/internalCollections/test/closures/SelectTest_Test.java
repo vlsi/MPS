@@ -58,7 +58,7 @@ public class SelectTest_Test extends Util_Test {
   }
 
   public void test_selectOperation() throws Exception {
-    this.assertIterableEquals(this.expectEven10(), Sequence.fromIterable(this.input5()).<Integer>select(new ISelector<Integer, Integer>() {
+    this.assertIterableEquals(this.expectEven10(), Sequence.fromIterable(this.input5()).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it * 2;
       }
@@ -68,11 +68,11 @@ public class SelectTest_Test extends Util_Test {
         return it * 2;
       }
     };
-    this.assertIterableEquals(this.expectEven10(), Sequence.fromIterable(this.input5()).<Integer>select(cl));
+    this.assertIterableEquals(this.expectEven10(), Sequence.fromIterable(this.input5()).select(cl));
   }
 
   public void test_legacySelector() throws Exception {
-    Iterable<Integer> test = Sequence.fromIterable(this.input5()).<Integer>select(new ISelector<Integer, Integer>() {
+    Iterable<Integer> test = Sequence.fromIterable(this.input5()).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it * 2;
       }
@@ -115,12 +115,12 @@ __switch__:
         };
       }
     });
-    Sequence.fromIterable(test).<List<Integer>>select(new ISelector<Integer, List<Integer>>() {
+    Sequence.fromIterable(test).select(new ISelector<Integer, List<Integer>>() {
       public List<Integer> select(Integer it) {
         return list;
       }
     });
-    Iterable<List<Integer>> result = Sequence.fromIterable(test).<List<Integer>>select(new ISelector<Integer, List<Integer>>() {
+    Iterable<List<Integer>> result = Sequence.fromIterable(test).select(new ISelector<Integer, List<Integer>>() {
       public List<Integer> select(Integer it) {
         return list;
       }
@@ -129,7 +129,7 @@ __switch__:
   }
 
   public void test_nextWithoutHasNext() throws Exception {
-    this.assertIteratorYields(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).<Integer>select(new ISelector<Integer, Integer>() {
+    this.assertIteratorYields(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer i) {
         return i * 2;
       }
@@ -140,7 +140,7 @@ __switch__:
     final List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9);
     final List<Integer> plusten = ListSequence.fromList(new ArrayList<Integer>());
     final Wrappers._int idx = new Wrappers._int(0);
-    ListSequence.fromList(test).<Integer>select(new ISelector<Integer, Integer>() {
+    ListSequence.fromList(test).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer i) {
         return i;
       }

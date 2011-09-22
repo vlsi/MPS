@@ -328,18 +328,18 @@ __switch__:
     });
     List<Integer> bigList = Sequence.fromIterable(bigSeq).toListSequence();
     Collections.shuffle(bigList);
-    List<Integer> anotherBigList = ListSequence.fromList(bigList).<Integer>select(new ISelector<Integer, Integer>() {
+    List<Integer> anotherBigList = ListSequence.fromList(bigList).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer i) {
         return i;
       }
     }).toListSequence();
     Collections.shuffle(anotherBigList);
     long start = System.currentTimeMillis();
-    Assert.assertTrue(ListSequence.fromList(bigList).<Integer>select(new ISelector<Integer, Integer>() {
+    Assert.assertTrue(ListSequence.fromList(bigList).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer i) {
         return i;
       }
-    }).containsSequence(ListSequence.fromList(anotherBigList).<Integer>select(new ISelector<Integer, Integer>() {
+    }).containsSequence(ListSequence.fromList(anotherBigList).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer i) {
         return i;
       }
