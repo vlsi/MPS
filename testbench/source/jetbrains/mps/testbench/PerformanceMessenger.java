@@ -43,10 +43,11 @@ public class PerformanceMessenger {
 
   public synchronized void report(String key, long value) {
     Assert.assertFalse(myPercentValues.containsKey(key));
-    Long l = mySingleValues.get(key);
+    Long l = mySingleValues.remove(key);
     if(l != null) {
       value += l;
     }
+    mySingleValues.put(key, value);
   }
 
   public synchronized void reportPercent(String key, long amount, long total) {
