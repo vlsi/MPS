@@ -803,6 +803,7 @@ public final class SNode {
 
     // add language because typesystem needs it to invalidate/revalidate its caches
     //todo this is a hack
+    if (model.isLoading()) return;
     SModelOperations.validateLanguages(model, this);
   }
 
