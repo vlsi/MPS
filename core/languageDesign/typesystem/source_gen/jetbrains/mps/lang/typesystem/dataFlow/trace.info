@@ -113,24 +113,29 @@
     <unitInfo nodeId="1207236565081" fileName="TypeOfExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.TypeOfExpression_DataFlow" />
   </root>
   <root nodeId="1207236600093">
-    <nodeInfo nodeId="1207236626893" fileName="AbstractEquationStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207236635509" fileName="AbstractEquationStatement_DataFlow.java" startLine="16" startPosition="111" endLine="17" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207236678499" fileName="AbstractEquationStatement_DataFlow.java" startLine="18" startPosition="87" endLine="19" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207236693533" fileName="AbstractEquationStatement_DataFlow.java" startLine="21" startPosition="87" endLine="22" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227268767044" fileName="AbstractEquationStatement_DataFlow.java" startLine="24" startPosition="92" endLine="25" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207236600093" fileName="AbstractEquationStatement_DataFlow.java" startLine="11" startPosition="73" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractEquationStatement_DataFlow#()V" />
-    <nodeInfo nodeId="1207236641250" fileName="AbstractEquationStatement_DataFlow.java" startLine="17" startPosition="112" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1207236684178" fileName="AbstractEquationStatement_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1227268756359" fileName="AbstractEquationStatement_DataFlow.java" startLine="23" startPosition="5" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1207236600093" fileName="AbstractEquationStatement_DataFlow.java" startLine="14" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-    <scopeInfo nodeId="1207236600093" fileName="AbstractEquationStatement_DataFlow.java" startLine="12" startPosition="47" endLine="12" endPosition="47" />
-    <scopeInfo nodeId="1207236641251" fileName="AbstractEquationStatement_DataFlow.java" startLine="18" startPosition="87" endLine="19" endPosition="110" />
-    <scopeInfo nodeId="1207236684179" fileName="AbstractEquationStatement_DataFlow.java" startLine="21" startPosition="87" endLine="22" endPosition="110" />
-    <scopeInfo nodeId="1227268756360" fileName="AbstractEquationStatement_DataFlow.java" startLine="24" startPosition="92" endLine="25" endPosition="115" />
-    <scopeInfo nodeId="1207236600093" fileName="AbstractEquationStatement_DataFlow.java" startLine="11" startPosition="73" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1207236600095" fileName="AbstractEquationStatement_DataFlow.java" startLine="15" startPosition="102" endLine="26" endPosition="5" />
-    <scopeInfo nodeId="1207236600093" fileName="AbstractEquationStatement_DataFlow.java" startLine="14" startPosition="0" endLine="28" endPosition="0" />
-    <unitInfo nodeId="1207236600093" fileName="AbstractEquationStatement_DataFlow.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.AbstractEquationStatement_DataFlow" />
+    <nodeInfo nodeId="1207236626893" fileName="AbstractEquationStatement_DataFlow.java" startLine="16" startPosition="102" endLine="17" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207236635509" fileName="AbstractEquationStatement_DataFlow.java" startLine="17" startPosition="111" endLine="18" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207236678499" fileName="AbstractEquationStatement_DataFlow.java" startLine="19" startPosition="87" endLine="20" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207236693533" fileName="AbstractEquationStatement_DataFlow.java" startLine="22" startPosition="87" endLine="23" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227268767044" fileName="AbstractEquationStatement_DataFlow.java" startLine="26" startPosition="105" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207236600093" fileName="AbstractEquationStatement_DataFlow.java" startLine="12" startPosition="73" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractEquationStatement_DataFlow#()V" />
+    <nodeInfo nodeId="1207236641250" fileName="AbstractEquationStatement_DataFlow.java" startLine="18" startPosition="112" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1207236684178" fileName="AbstractEquationStatement_DataFlow.java" startLine="21" startPosition="5" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1001111828171244173" fileName="AbstractEquationStatement_DataFlow.java" startLine="25" startPosition="119" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1227268756359" fileName="AbstractEquationStatement_DataFlow.java" startLine="24" startPosition="5" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1207236600093" fileName="AbstractEquationStatement_DataFlow.java" startLine="15" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="1207236600093" fileName="AbstractEquationStatement_DataFlow.java" startLine="13" startPosition="47" endLine="13" endPosition="47" />
+    <scopeInfo nodeId="1207236641251" fileName="AbstractEquationStatement_DataFlow.java" startLine="19" startPosition="87" endLine="20" endPosition="110" />
+    <scopeInfo nodeId="1207236684179" fileName="AbstractEquationStatement_DataFlow.java" startLine="22" startPosition="87" endLine="23" endPosition="110" />
+    <scopeInfo nodeId="1001111828171244174" fileName="AbstractEquationStatement_DataFlow.java" startLine="26" startPosition="105" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="1207236600093" fileName="AbstractEquationStatement_DataFlow.java" startLine="12" startPosition="73" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="1001111828171244173" fileName="AbstractEquationStatement_DataFlow.java" startLine="25" startPosition="119" endLine="28" endPosition="7">
+      <varInfo nodeId="1001111828171244176" varName="intetntion" />
+    </scopeInfo>
+    <scopeInfo nodeId="1227268756360" fileName="AbstractEquationStatement_DataFlow.java" startLine="25" startPosition="119" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="1207236600095" fileName="AbstractEquationStatement_DataFlow.java" startLine="16" startPosition="102" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="1207236600093" fileName="AbstractEquationStatement_DataFlow.java" startLine="15" startPosition="0" endLine="31" endPosition="0" />
+    <unitInfo nodeId="1207236600093" fileName="AbstractEquationStatement_DataFlow.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.AbstractEquationStatement_DataFlow" />
   </root>
   <root nodeId="1207237678354">
     <nodeInfo nodeId="1207237703294" fileName="NormalTypeClause_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

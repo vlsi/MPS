@@ -72,7 +72,6 @@
   <unitInfo fileName="QuickFixArgumentReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixArgumentReference_BehaviorDescriptor" />
   <unitInfo fileName="ConceptFunctionParameter_node_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
   <unitInfo fileName="QuickFixExecuteBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixExecuteBlock_BehaviorDescriptor" />
-  <unitInfo fileName="ChildTypeRestrictionReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ChildTypeRestrictionReference_BehaviorDescriptor" />
   <unitInfo fileName="TypesystemIntentionArgument_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypesystemIntentionArgument_BehaviorDescriptor" />
   <unitInfo fileName="TypesystemIntention_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypesystemIntention_BehaviorDescriptor" />
   <unitInfo fileName="WarningStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WarningStatement_BehaviorDescriptor" />
@@ -120,7 +119,6 @@
   <unitInfo fileName="OverloadedOpRulesContainer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.OverloadedOpRulesContainer_BehaviorDescriptor" />
   <unitInfo fileName="QuickFixArgument_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixArgument_BehaviorDescriptor" />
   <unitInfo fileName="TypesystemQuickFix_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypesystemQuickFix_BehaviorDescriptor" />
-  <unitInfo fileName="ChildTypeRestriction_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ChildTypeRestriction_BehaviorDescriptor" />
   <unitInfo fileName="ListVarDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ListVarDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="RuntimeListVariable_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.RuntimeListVariable_BehaviorDescriptor" />
   <unitInfo fileName="TypeVarDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypeVarDeclaration_BehaviorDescriptor" />
@@ -129,7 +127,7 @@
   <unitInfo fileName="WasSelectedNodeOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WasSelectedNodeOperation_BehaviorDescriptor" />
   <unitInfo fileName="CaretPositionOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.CaretPositionOperation_BehaviorDescriptor" />
   <unitInfo fileName="AbstractRule_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.AbstractRule_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="258" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877218089">
     <nodeInfo nodeId="1213877218089" fileName="LinkPatternVariableReference_Behavior.java" startLine="11" startPosition="52" endLine="12" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1225210740874" />
     <nodeInfo nodeId="1213877218089" fileName="LinkPatternVariableReference_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -155,23 +153,11 @@
     </scopeInfo>
     <unitInfo nodeId="1213877218089" fileName="LinkPatternVariableReference_Behavior.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.LinkPatternVariableReference_Behavior" />
   </root>
-  <root nodeId="1213877256119">
-    <nodeInfo nodeId="1213877256119" fileName="ChildTypeRestriction_Behavior.java" startLine="7" startPosition="44" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1213877256121" fileName="ChildTypeRestriction_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877256119" fileName="ChildTypeRestriction_Behavior.java" startLine="7" startPosition="44" endLine="10" endPosition="0" />
-    <unitInfo nodeId="1213877256119" fileName="ChildTypeRestriction_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ChildTypeRestriction_Behavior" />
-  </root>
   <root nodeId="1213877258153">
     <nodeInfo nodeId="1213877258153" fileName="ApplicableNodeReference_Behavior.java" startLine="7" startPosition="47" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1213877258155" fileName="ApplicableNodeReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1213877258153" fileName="ApplicableNodeReference_Behavior.java" startLine="7" startPosition="47" endLine="10" endPosition="0" />
     <unitInfo nodeId="1213877258153" fileName="ApplicableNodeReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeReference_Behavior" />
-  </root>
-  <root nodeId="1213877260164">
-    <nodeInfo nodeId="1213877260164" fileName="ChildTypeRestrictionReference_Behavior.java" startLine="7" startPosition="53" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1213877260166" fileName="ChildTypeRestrictionReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877260164" fileName="ChildTypeRestrictionReference_Behavior.java" startLine="7" startPosition="53" endLine="10" endPosition="0" />
-    <unitInfo nodeId="1213877260164" fileName="ChildTypeRestrictionReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ChildTypeRestrictionReference_Behavior" />
   </root>
   <root nodeId="1213877307632">
     <nodeInfo nodeId="1213877307632" fileName="ApplicableNodeCondition_Behavior.java" startLine="11" startPosition="47" endLine="12" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1213877307633" />
