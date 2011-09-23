@@ -4,20 +4,23 @@ package jetbrains.mps.workbench.make;
 
 import com.intellij.openapi.vfs.newvfs.impl.StubVirtualFile;
 import java.util.Map;
+import java.util.Arrays;
 import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
+import java.io.IOException;
+import java.nio.charset.Charset;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem;
-import java.io.IOException;
 import java.io.OutputStream;
 import java.io.InputStream;
 
 public class TextPreviewFile extends StubVirtualFile {
   private static TextPreviewFile.TextPreviewVirtualFileSystem FS = new TextPreviewFile.TextPreviewVirtualFileSystem();
 
+  private String[] forkNames;
   private Map<String, Object> forks;
   private String name;
   private String path;
@@ -26,10 +29,12 @@ public class TextPreviewFile extends StubVirtualFile {
     this.name = name;
     this.path = path;
     this.forks = forks;
+    this.forkNames = forks.keySet().toArray(new String[forks.size()]);
+    Arrays.sort(forkNames);
   }
 
   public String[] forkNames() {
-    return forks.keySet().toArray(new String[forks.size()]);
+    return forkNames.clone();
   }
 
   public CharSequence fork(String name) {
@@ -43,6 +48,23 @@ public class TextPreviewFile extends StubVirtualFile {
   @Override
   public Icon getIcon() {
     return Icons.GENERATED;
+  }
+
+  @NotNull
+  @Override
+  public byte[] contentsToByteArray() throws IOException {
+    if (forks.size() == 1) {
+      final Object next = forks.values().iterator().next();
+      if (next instanceof String) {
+        return ((String) next).getBytes(getCharset());
+      }
+    }
+    return "<complex content>".getBytes(getCharset());
+  }
+
+  @Override
+  public Charset getCharset() {
+    return Charset.forName("utf-8");
   }
 
   @NotNull

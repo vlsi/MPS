@@ -48,7 +48,7 @@ public class TextPreviewUtil {
           if (result.isSucessful()) {
             FResource fres = (FResource) Sequence.fromIterable(result.output()).first();
 
-            final TextPreviewFile tfile = new TextPreviewFile(md.getSModelReference().getSModelFqName().getCompactPresentation(), "Generated text for " + md.getSModelReference().getSModelFqName().getLongName(), fres.contents());
+            final TextPreviewFile tfile = new TextPreviewFile(md.getSModelReference().getSModelFqName().getCompactPresentation() + "/text", "Generated text for " + md.getSModelReference().getSModelFqName().getLongName(), fres.contents());
 
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
