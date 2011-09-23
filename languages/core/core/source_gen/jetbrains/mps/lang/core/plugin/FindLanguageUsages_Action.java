@@ -4,7 +4,6 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -21,9 +20,12 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.LanguageUsagesFinder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class FindLanguageUsages_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(FindLanguageUsages_Action.class.getResource("find.png"));
+  private static final Icon ICON = getIcon();
   private static Logger LOG = Logger.getLogger(FindLanguageUsages_Action.class);
 
   public FindLanguageUsages_Action() {
@@ -82,6 +84,15 @@ public class FindLanguageUsages_Action extends GeneratedAction {
       ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Language has no usages");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindLanguageUsages", t);
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(FindLanguageUsages_Action.class.getResourceAsStream("find.png")));
+    } catch (IOException e) {
+      LOG.warning("Couldn't load icon for FindLanguageUsages", e);
+      return null;
     }
   }
 }

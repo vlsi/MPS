@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -18,9 +17,12 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class CopyNode_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(CopyNode_Action.class.getResource("menu-copy.png"));
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(CopyNode_Action.class);
 
   public CopyNode_Action() {
@@ -81,6 +83,17 @@ public class CopyNode_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "CopyNode", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(CopyNode_Action.class.getResourceAsStream("menu-copy.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for CopyNode", e);
+      }
+      return null;
     }
   }
 }

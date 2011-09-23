@@ -4,7 +4,6 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -21,9 +20,12 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ModelUsagesFinder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class FindModelUsages_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(FindModelUsages_Action.class.getResource("find.png"));
+  private static final Icon ICON = getIcon();
   private static Logger LOG = Logger.getLogger(FindModelUsages_Action.class);
 
   public FindModelUsages_Action() {
@@ -75,6 +77,15 @@ public class FindModelUsages_Action extends GeneratedAction {
       ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Model has no usages");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindModelUsages", t);
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(FindModelUsages_Action.class.getResourceAsStream("find.png")));
+    } catch (IOException e) {
+      LOG.warning("Couldn't load icon for FindModelUsages", e);
+      return null;
     }
   }
 }

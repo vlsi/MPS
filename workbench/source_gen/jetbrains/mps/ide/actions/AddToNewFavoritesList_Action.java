@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -20,9 +19,12 @@ import com.intellij.openapi.ui.InputValidator;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import java.util.List;
 import javax.swing.tree.TreeNode;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class AddToNewFavoritesList_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(AddToNewFavoritesList_Action.class.getResource("addFavoritesList.png"));
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(AddToNewFavoritesList_Action.class);
 
   public AddToNewFavoritesList_Action() {
@@ -82,6 +84,17 @@ public class AddToNewFavoritesList_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddToNewFavoritesList", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(AddToNewFavoritesList_Action.class.getResourceAsStream("addFavoritesList.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for AddToNewFavoritesList", e);
+      }
+      return null;
     }
   }
 }
