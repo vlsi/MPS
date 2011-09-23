@@ -390,9 +390,10 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       final boolean oldFlag = ApplicationImpl.setExceptionalThreadWithReadAccessFlag(true);
       try {
         code.invoke(jobMon);
-      } catch (Throwable e) {
+      } catch (RuntimeException e) {
         WorkbenchMakeService.LOG.debug("Error running job", e);
         jobMon.reportFeedback(new IFeedback.ERROR("Error running job", e));
+        throw e;
       } finally {
         ApplicationImpl.setExceptionalThreadWithReadAccessFlag(oldFlag);
       }
