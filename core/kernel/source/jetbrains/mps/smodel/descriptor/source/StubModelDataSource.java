@@ -16,18 +16,15 @@
 package jetbrains.mps.smodel.descriptor.source;
 
 import gnu.trove.THashSet;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.StubPath;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -43,13 +40,8 @@ public abstract class StubModelDataSource extends FileBasedModelDataSource {
   }
 
   public boolean containFile(IFile file) {
-    List<IFile> parents = new ArrayList<IFile>();
-    while (file!=null){
-      parents.add(file);
-      file = file.getParent();
-    }
-    for (String p:myStubPaths){
-      if (parents.contains(FileSystem.getInstance().getFileByPath(p))) return true;
+    for (String p : myStubPaths) {
+      if (p.equals(file.getParent().getPath())) return true;
     }
     return false;
   }
