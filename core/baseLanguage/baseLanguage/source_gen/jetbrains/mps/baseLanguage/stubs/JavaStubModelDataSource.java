@@ -79,7 +79,7 @@ public class JavaStubModelDataSource extends StubModelDataSource {
         if (dir.indexOf("!") != -1) {
           cp.add(ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName()));
         } else {
-          String name = descriptor.getSModelReference().getLongName().replaceAll("\\.", File.separator);
+          String name = descriptor.getSModelReference().getLongName().replace('.', File.separatorChar);
           dir = dir.substring(0, dir.indexOf(name));
           cp.add(ClassPathFactory.getInstance().createFromPath(dir, this.getClass().getName()));
         }
