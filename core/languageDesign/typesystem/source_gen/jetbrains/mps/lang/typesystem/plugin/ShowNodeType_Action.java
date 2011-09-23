@@ -4,7 +4,6 @@ package jetbrains.mps.lang.typesystem.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -21,9 +20,12 @@ import java.awt.Frame;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.IOperationContext;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class ShowNodeType_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(ShowNodeType_Action.class.getResource("types.png"));
+  private static final Icon ICON = getIcon();
   private static Logger LOG = Logger.getLogger(ShowNodeType_Action.class);
 
   public ShowNodeType_Action() {
@@ -89,6 +91,15 @@ public class ShowNodeType_Action extends GeneratedAction {
       dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowNodeType", t);
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(ShowNodeType_Action.class.getResourceAsStream("types.png")));
+    } catch (IOException e) {
+      LOG.warning("Couldn't load icon for ShowNodeType", e);
+      return null;
     }
   }
 }

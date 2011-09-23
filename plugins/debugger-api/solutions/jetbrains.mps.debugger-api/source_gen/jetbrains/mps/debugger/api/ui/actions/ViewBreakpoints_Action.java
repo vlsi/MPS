@@ -4,7 +4,6 @@ package jetbrains.mps.debugger.api.ui.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -16,9 +15,12 @@ import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class ViewBreakpoints_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(ViewBreakpoints_Action.class.getResource("viewBreakpoints.png"));
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(ViewBreakpoints_Action.class);
 
   public ViewBreakpoints_Action() {
@@ -61,6 +63,17 @@ public class ViewBreakpoints_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ViewBreakpoints", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(ViewBreakpoints_Action.class.getResourceAsStream("viewBreakpoints.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for ViewBreakpoints", e);
+      }
+      return null;
     }
   }
 }

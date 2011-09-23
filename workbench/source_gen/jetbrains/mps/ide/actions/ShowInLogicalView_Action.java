@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -15,9 +14,12 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class ShowInLogicalView_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(ShowInLogicalView_Action.class.getResource("logical_view.png"));
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(ShowInLogicalView_Action.class);
 
   public ShowInLogicalView_Action() {
@@ -64,6 +66,17 @@ public class ShowInLogicalView_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowInLogicalView", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(ShowInLogicalView_Action.class.getResourceAsStream("logical_view.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for ShowInLogicalView", e);
+      }
+      return null;
     }
   }
 }

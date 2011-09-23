@@ -4,15 +4,17 @@ package jetbrains.mps.make.sandbox.icons;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class DummyAction_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(DummyAction_Action.class.getResource("mpsHome.png"));
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(DummyAction_Action.class);
 
   public DummyAction_Action() {
@@ -45,6 +47,17 @@ public class DummyAction_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "DummyAction", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(DummyAction_Action.class.getResourceAsStream("mpsHome.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for DummyAction", e);
+      }
+      return null;
     }
   }
 }
