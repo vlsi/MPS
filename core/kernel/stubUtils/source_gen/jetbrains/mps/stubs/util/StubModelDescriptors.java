@@ -41,6 +41,9 @@ public class StubModelDescriptors {
 
   private void collectDescriptors(ModelRoot loc, _FunctionTypes._return_P1_E0<? extends PathItem, ? super String> getPathItem, Set<BaseStubModelDescriptor> result) {
     String pkg = loc.getPrefix();
+    if (pkg == null) {
+      pkg = "";
+    }
     PathItem pi = getPathItem.invoke(loc.getPath());
     for (String subpkg : ListSequence.fromList(pi.subpackages(pkg))) {
       if (ListSequence.fromList(pi.resources(subpkg)).isNotEmpty()) {
