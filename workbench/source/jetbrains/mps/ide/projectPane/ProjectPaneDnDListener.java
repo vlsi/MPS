@@ -141,7 +141,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
       if (ObjectUtils.equals(virtualPackage + node.o2, getVirtualPackage(snode))) continue;
       SModelDescriptor sourceModel = snode.getModel().getModelDescriptor();
       if (ObjectUtils.equals(sourceModel, targetModel)) {
-        result.add(new Pair(node.o1.getNode(), node.o2));
+        result.add(new Pair(snode, node.o2));
       }
     }
     return result;
