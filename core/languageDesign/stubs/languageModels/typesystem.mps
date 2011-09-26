@@ -19,11 +19,11 @@
   <roots>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="5516999836374121358">
       <property name="name" nameId="tpck.1169194664001" value="StubsCreatorType_SubtypeOf_ModelRootManager" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Stubs" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="_Deprecated.Stubs" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="5553449326502623316">
       <property name="name" nameId="tpck.1169194664001" value="ModelManagerType_SubtypeOf_ModelRootManager" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Stubs" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Utils" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="972176972348203852">
       <property name="name" nameId="tpck.1169194664001" value="typeof_Stereotype" />

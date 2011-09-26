@@ -21,6 +21,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -28,7 +29,7 @@ import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.stubs.StubReloadManager;
+import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -115,7 +116,7 @@ public class ClassLoaderManager implements ApplicationComponent {
       SModelRepository.getInstance().refreshModels();
 
       indicator.setText2("Updating stub models...");
-      StubReloadManager.getInstance().reload();
+      LibrariesLoader.getInstance().reload();
 
       indicator.setText2("Disposing old classes...");
       callListeners(new ListenerCaller() {
@@ -224,6 +225,10 @@ public class ClassLoaderManager implements ApplicationComponent {
       RBundle<ModuleReference> bundle = new RBundle<ModuleReference>(ref, module.getBytecodeLocator());
       myRuntimeEnvironment.add(bundle);
     }
+  }
+
+  public boolean canLoadClasses(AbstractModule m) {
+    return myRuntimeEnvironment == null ? false : myRuntimeEnvironment.get(m.getModuleReference()) != null;
   }
 
   //---------------component stuff------------------

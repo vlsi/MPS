@@ -15,70 +15,18 @@
  */
 package jetbrains.mps.smodel.persistence;
 
-import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.refactoring.StructureModificationLog;
-import jetbrains.mps.smodel.ModelOwner;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Collection;
-import java.util.Set;
 
 public abstract class AbstractModelRootManager implements IModelRootManager {
-  public boolean isFindUsagesSupported() {
+  public boolean canCreateModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     return false;
   }
 
-  public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {
-    return false;
-  }
-
-  public boolean isEmpty(SModelDescriptor modelDescriptor) {
-    return modelDescriptor.getSModel().rootsCount() == 0;
-  }
-
-  public boolean containsSomeString(@NotNull SModelDescriptor modelDescriptor,
-                                    @NotNull Set<String> strings) {
-    for (String identifier : strings) {
-      if (containsString(modelDescriptor, identifier)) return true;
-    }
-    return false;
-  }
-
-  public boolean isNewModelsSupported() {
-    return false;
-  }
-
-  @NotNull
-  public SModelDescriptor createNewModel(@NotNull SModelRoot root,
-                                         @NotNull SModelFqName fqName,
-                                         @NotNull ModelOwner owner) {
+  public SModelDescriptor createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     throw new RuntimeException("can't create new model " + fqName + " manager class = " + getClass());
-  }
-
-  @Nullable
-  @Override
-  public Collection<SModelReference> collectModels(@NotNull SModelRoot root) {
-    return null;
-  }
-
-  @Override
-  public StructureModificationLog loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor) {
-    return null;
-  }
-
-  @Override
-  public void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull StructureModificationLog log) {
-    throw new UnsupportedOperationException();
-  }
-
-  public void dispose() {
-  }
-
-  public void rename(SModelDescriptor model, SModelFqName modelFqName, boolean changeFile) {
-    throw new UnsupportedOperationException();
   }
 }

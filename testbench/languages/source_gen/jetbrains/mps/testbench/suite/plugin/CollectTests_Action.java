@@ -31,7 +31,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.wm.IdeFrame;
@@ -178,7 +178,7 @@ public class CollectTests_Action extends GeneratedAction {
     if (!(SModelStereotype.isUserModel(md))) {
       return false;
     }
-    return md instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) md).isPackaged());
+    return md instanceof DefaultSModelDescriptor && !(((DefaultSModelDescriptor) md).isReadOnly());
   }
 
   private boolean isUserEditableGeneratableModel(SModelDescriptor md, final Map<String, Object> _params) {

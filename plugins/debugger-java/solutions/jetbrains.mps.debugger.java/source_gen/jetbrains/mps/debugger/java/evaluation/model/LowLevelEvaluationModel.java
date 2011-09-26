@@ -18,7 +18,7 @@ import java.util.HashSet;
 import jetbrains.mps.reloading.EachClassPathItemVisitor;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
-import jetbrains.mps.stubs.StubReloadManager;
+import jetbrains.mps.stubs.LibrariesLoader;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
@@ -84,7 +84,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
             }
           }
         });
-        StubReloadManager.getInstance().loadImmediately(myAuxModule, pathsToAdd);
+        //LibrariesLoader.getInstance().loadImmediately(myAuxModule, pathsToAdd);
 
         myAuxModel.getSModel().runLoadingAction(new Runnable() {
           public void run() {

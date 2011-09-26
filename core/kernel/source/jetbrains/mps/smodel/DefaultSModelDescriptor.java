@@ -20,16 +20,15 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.event.EventUtil;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelFileChangedEvent;
-import jetbrains.mps.smodel.persistence.BaseMPSModelRootManager;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.descriptor.MetadataContainer;
+import jetbrains.mps.smodel.descriptor.Refactorable;
+import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -39,7 +38,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class DefaultSModelDescriptor extends BaseSModelDescriptor implements EditableSModelDescriptor {
+public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor,Refactorable, MetadataContainer {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
 
   private Map<String, String> myMetadata;
@@ -50,12 +49,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   private long myLastChange;
 
-  private long myDiskTimestamp = -1;
-
-  private IFile myModelFile;
   private boolean myChanged = false;
 
   private final Object myFullLoadSync = new Object();
+  private IModule myModule;
 
   {
     this.addModelCommandListener(new SModelCommandListener() {
@@ -67,20 +64,20 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     });
   }
 
-  public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
-    this(manager, modelFile, modelReference, new DescriptorLoadResult(), true);
+  @Deprecated //todo remove
+  public DefaultSModelDescriptor(IModule module, IFile modelFile, SModelReference modelReference) {
+    this(module,new RegularModelDataSource(modelFile), modelReference, new DescriptorLoadResult(), true);
   }
 
-  public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, DescriptorLoadResult d) {
-    this(manager, modelFile, modelReference, d, true);
+  public DefaultSModelDescriptor(IModule module, ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
+    this(module,source, modelReference, d, true);
   }
 
-  protected DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, DescriptorLoadResult d, boolean checkDup) {
-    super(manager, modelReference, checkDup);
-    myModelFile = modelFile;
+  protected DefaultSModelDescriptor(IModule module, ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d, boolean checkDup) {
+    super(modelReference, source, checkDup);
+    myModule = module;
     myHeader = d.getHeader();
     myMetadata = d.getMetadata();
-    updateLastChange();
   }
 
   protected ModelLoadResult initialLoad() {
@@ -100,6 +97,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
         new Computable<ModelLoadResult>() {
           public ModelLoadResult compute() {
             SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
+            updateDiskTimestamp();
             fullModel.setLoading(true);
 
             try {
@@ -118,17 +116,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     }
   }
 
+  public boolean isReadOnly() {
+    return getSource().isReadOnly();
+  }
+
   //just loads model, w/o changing state of SModelDescriptor
   private ModelLoadResult load(ModelLoadingState loadingState) {
-    return ((BaseMPSModelRootManager) myModelRootManager).loadModel(this, loadingState);
-  }
-
-  public IFile getModelFile() {
-    return myModelFile;
-  }
-
-  public void setModelFile(IFile file) {
-    myModelFile = file;
+    return getSource().loadSModel(myModule, this, loadingState);
   }
 
   public boolean isChanged() {
@@ -139,48 +133,20 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     myChanged = changed;
   }
 
-  public void reloadFromDiskSafe() {
-    if (isChanged()) {
-      resolveDiskConflict();
-    } else {
-      reloadFromDisk();
-    }
-  }
-
-  /**
-   * This method should be called either in EDT, inside WriteAction or in any other thread
-   */
-  public void reloadFromDisk() {
-    ModelAccess.assertLegalWrite();
-
-    IFile modelFile = getModelFile();
-
-    if (modelFile == null || !modelFile.exists()) {
-      SModelRepository.getInstance().deleteModel(this);
-      return;
-    }
-
-    DescriptorLoadResult dr = ModelPersistence.loadDescriptor(modelFile);
-    myHeader = dr.getHeader();
-    myMetadata = dr.getMetadata();
-
-    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
-
-    ModelLoadResult result = load(getLoadingState());
-    replaceModel(result.getModel(), getLoadingState());
-    updateLastChange();
-    LOG.assertLog(!needsReloading());
-  }
-
   public int getPersistenceVersion() {
     return getSModelHeader().getPersistenceVersion();
+  }
+
+  @NotNull
+  public RegularModelDataSource getSource() {
+    return ((RegularModelDataSource) super.getSource());
   }
 
   @NotNull
   public StructureModificationLog getStructureModificationLog() {
     synchronized (myRefactoringHistoryLock) {
       if (myStructureModificationLog == null) {
-        myStructureModificationLog = myModelRootManager.loadModelRefactorings(this);
+        myStructureModificationLog = getSource().loadModelRefactorings(this);
       }
       if (myStructureModificationLog == null) {
         myStructureModificationLog = new StructureModificationLog();
@@ -191,33 +157,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   public void saveStructureModificationLog(@NotNull StructureModificationLog log) {
     myStructureModificationLog = log;
-    myModelRootManager.saveModelRefactorings(this, log);
-  }
-
-  public long lastChangeTime() {
-    return myLastChange;
-  }
-
-  private void resolveDiskConflict() {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myModelFile, mySModel);
-        if (needSave) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              updateDiskTimestamp();
-              save();
-            }
-          });
-        } else {
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              reloadFromDisk();
-            }
-          });
-        }
-      }
-    }, ModalityState.NON_MODAL);
+    getSource().saveModelRefactorings(this, log);
   }
 
   public void save() {
@@ -230,20 +170,14 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
     LOG.info("Saving model " + mySModel.getSModelFqName());
 
-    if (needsReloading()) {
-      LOG.warning("Model file " + mySModel.getSModelFqName() + " was modified externally!\n" +
-        "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
-      resolveDiskConflict();
-      return;
-    }
-
-    // Paranoid check to avoid saving model during update (hack for MPS-6772)
-    if (needsReloading()) return;
+    if (!checkAndResolveConflictOnSave()) return;
 
     setChanged(false);
-    SModel newData = myModelRootManager.saveModel(this);
-    if (newData != null) {
-      replaceModel(newData);
+    boolean reload = getSource().saveModel(this);
+    if (reload) {
+      ModelLoadResult res = getSource().loadSModel(myModule, this, getLoadingState());
+      updateDiskTimestamp();
+      replaceModel(res.getModel(), res.getState());
     }
 
     updateDiskTimestamp();
@@ -251,26 +185,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     fireModelSaved();
   }
 
-  public boolean needsReloading() {
-    if (myDiskTimestamp == -1) return false;
-    return fileTimestamp() != myDiskTimestamp;
-  }
-
-  public boolean isPackaged() {
-    return FileSystem.getInstance().isPackaged(getModelFile());
-  }
-
-  @Override
   public boolean isGeneratable() {
-    return !isDoNotGenerate() && !isPackaged() && SModelStereotype.isUserModel(this);
-  }
-
-  @Override
-  public String getModelHash() {
-    IFile file = getModelFile();
-    if (file == null) return null;
-
-    return ModelDigestUtil.hash(file);
+    return !isDoNotGenerate() && !isReadOnly() && SModelStereotype.isUserModel(this);
   }
 
   @Override
@@ -281,19 +197,25 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     super.replaceModel(newModel, state);
   }
 
+  public String getModelHash() {
+    return getSource().getModelHash();
+  }
+
   public void dispose() {
     UnregisteredNodes.instance().clear(getSModelReference());
     super.dispose();
   }
 
-  @Override
   public void setDoNotGenerate(boolean value) {
     ModelAccess.assertLegalWrite();
 
     getSModelHeader().setDoNotGenerate(value);
   }
 
-  @Override
+  public long lastChangeTime() {
+    return Math.max(myLastChange, getSourceTimestamp());
+  }
+
   public boolean isDoNotGenerate() {
     return getSModelHeader().isDoNotGenerate();
   }
@@ -342,10 +264,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelReference);
     if (anotherModel != null) {
       String message = "Model already registered: " + myModelReference + "\n";
-      message += "file = " + myModelFile + "\n";
+      message += "source = " + getSource() + "\n";
 
-      if (anotherModel instanceof EditableSModelDescriptor) {
-        message += "another model's file = " + ((EditableSModelDescriptor) anotherModel).getModelFile();
+      if (anotherModel instanceof BaseSModelDescriptorWithSource) {
+        message += "another model's source = " + ((BaseSModelDescriptorWithSource) anotherModel).getSource();
       } else {
         message += "another model is non-editable";
       }
@@ -353,19 +275,18 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     }
   }
 
-  protected void updateDiskTimestamp() {
-    myDiskTimestamp = fileTimestamp();
+  public IFile getModelFile() {
+    return getSource().getFile();
   }
 
   public void changeModelFile(IFile newModelFile) {
     ModelAccess.assertLegalWrite();
+    if (getModelFile().getPath().equals(newModelFile.getPath())) return;
 
-    IFile oldFile = myModelFile;
-    if (oldFile.getPath().equals(newModelFile.getPath())) return;
-
+    IFile oldFile = getSource().getFile();
     SModel model = getSModel();
     fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
-    myModelFile = newModelFile;
+    getSource().setFile(newModelFile);
     updateDiskTimestamp();
     fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
   }
@@ -387,12 +308,81 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     }
   }
 
+  public void reloadFromDisk() {
+    ModelAccess.assertLegalWrite();
+
+    if (getSource().hasModel(this)) {
+      SModelRepository.getInstance().deleteModel(this);
+      return;
+    }
+
+    reload();
+    LOG.assertLog(!needsReloading());
+  }
+  
+  protected void reload() {
+    DescriptorLoadResult dr = getSource().loadDescriptor(getModule(), getSModelReference().getSModelFqName());
+    myHeader = dr.getHeader();
+    myMetadata = dr.getMetadata();
+
+    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
+
+    ModelLoadResult result = load(getLoadingState());
+    updateDiskTimestamp();
+    replaceModel(result.getModel(), getLoadingState());
+  }
+  
+  public boolean checkAndResolveConflictOnSave() {
+    if (needsReloading()) {
+      LOG.warning("Model file " + getSModel().getSModelFqName() + " was modified externally!\n" +
+        "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
+      resolveDiskConflict();
+      return false;
+    }
+
+    // Paranoid check to avoid saving model during update (hack for MPS-6772)
+    if (needsReloading()) return false;
+    return true;
+  }
+  
+  public void resolveDiskConflict() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(getModelFile(), getSModel());
+        if (needSave) {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              updateDiskTimestamp();
+              save();
+            }
+          });
+        } else {
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              reloadFromDisk();
+            }
+          });
+        }
+      }
+    }, ModalityState.NON_MODAL);
+  }
+  
   public String toString() {
     return getSModelReference().toString();
   }
 
-  private void updateLastChange() {
-    myLastChange = myModelFile != null ? myModelFile.lastModified() : System.currentTimeMillis();
-    myDiskTimestamp = myLastChange;
+  public void rename(SModelFqName newModelFqName, boolean changeFile) {
+    ModelAccess.assertLegalWrite();
+
+    SModelFqName oldFqName = getSModelReference().getSModelFqName();
+    SModel model = getSModel();
+    fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
+
+    SModelReference newModelReference = new SModelReference(newModelFqName, myModelReference.getSModelId());
+    model.changeModelReference(newModelReference);
+    getSource().rename(this, newModelFqName, changeFile);
+    myModelReference = newModelReference;
+
+    fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
   }
 }

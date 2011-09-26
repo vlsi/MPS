@@ -90,17 +90,14 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_asco8r_b1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_asco8r_c1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_asco8r_d1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_asco8r_e1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_asco8r_e1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_asco8r_f1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_asco8r_g1b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_asco8r_h1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_asco8r_i1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_asco8r_j1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_asco8r_g1b0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_asco8r_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stubs creator");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model manager");
     editorCell.setCellId("Constant_asco8r_a0a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -135,13 +132,6 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_asco8r_h1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_asco8r_h1b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_asco8r_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_asco8r_c0");
@@ -150,16 +140,16 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_asco8r_i1b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ModelManagerDeclaration_Editor.fieldListHandler_asco8r_i1b0(node, "field", editorContext);
+  private EditorCell createRefNodeList_asco8r_e1b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ModelManagerDeclaration_Editor.fieldListHandler_asco8r_e1b0(node, "field", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_field");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_asco8r_j1b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ModelManagerDeclaration_Editor.methodListHandler_asco8r_j1b0(node, "method", editorContext);
+  private EditorCell createRefNodeList_asco8r_g1b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ModelManagerDeclaration_Editor.methodListHandler_asco8r_g1b0(node, "method", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_method");
     editorCell.setRole(handler.getElementRole());
@@ -173,8 +163,8 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_asco8r_a1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("modelDescriptorsBlock");
-    provider.setNoTargetText("<no modelDescriptorsBlock>");
+    provider.setRole("descriptorsFunc");
+    provider.setNoTargetText("<no descriptorsFunc>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -190,42 +180,8 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_asco8r_c1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("updateModelBlock");
-    provider.setNoTargetText("<no updateModelBlock>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_asco8r_e1b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("settings");
-    provider.setNoTargetText("<no settings>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_asco8r_g1b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("rootDescriptorsBlock");
-    provider.setNoTargetText("<no root descriptors block>");
+    provider.setRole("createBlock");
+    provider.setNoTargetText("<Can't create models>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -265,8 +221,8 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  private static class fieldListHandler_asco8r_i1b0 extends RefNodeListHandler {
-    public fieldListHandler_asco8r_i1b0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class fieldListHandler_asco8r_e1b0 extends RefNodeListHandler {
+    public fieldListHandler_asco8r_e1b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -283,9 +239,13 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
 
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
+      emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
+    }
+
+    public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_asco8r_a4b1a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -299,10 +259,18 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
         }
       }
     }
+
+    private EditorCell createConstant_asco8r_a4b1a(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<fields>");
+      editorCell.setCellId("Constant_asco8r_a4b1a");
+      BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
+      editorCell.setDefaultText("");
+      return editorCell;
+    }
   }
 
-  private static class methodListHandler_asco8r_j1b0 extends RefNodeListHandler {
-    public methodListHandler_asco8r_j1b0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class methodListHandler_asco8r_g1b0 extends RefNodeListHandler {
+    public methodListHandler_asco8r_g1b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -319,9 +287,13 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
 
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
+      emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
+    }
+
+    public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_asco8r_a6b1a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -343,6 +315,14 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setSelectable(false);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
+      return editorCell;
+    }
+
+    private EditorCell createConstant_asco8r_a6b1a(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<methods>");
+      editorCell.setCellId("Constant_asco8r_a6b1a");
+      BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
+      editorCell.setDefaultText("");
       return editorCell;
     }
   }

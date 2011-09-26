@@ -202,11 +202,6 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
     }
 
     @Override
-    public void modelCreated(SModelDescriptor modelDescriptor) {
-      invalidateCacheForModel(modelDescriptor);
-    }
-
-    @Override
     public void modelAdded(SModelDescriptor modelDescriptor) {
       invalidateCacheForModel(modelDescriptor);
     }
