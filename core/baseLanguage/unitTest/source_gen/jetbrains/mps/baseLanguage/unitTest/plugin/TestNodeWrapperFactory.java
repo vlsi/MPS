@@ -62,12 +62,15 @@ public enum TestNodeWrapperFactory {
 
     public boolean canWrap(@NotNull SNode node) {
       if (eq_kl7j79_a0a0b2(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+        if (SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
+          return false;
+        }
         SNode ancestor = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
         if (!(Classifier_Behavior.call_checkLoops_3980490811621705344(ancestor))) {
           return false;
         }
         while (ancestor != null && SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(INamedConcept_Behavior.call_getFqName_1213877404258(ancestor).equals(TestCase.class.getCanonicalName()))) {
-          ancestor = check_kl7j79_a0a0c0a0b2(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true));
+          ancestor = check_kl7j79_a0a0d0a0b2(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true));
         }
         return ancestor != null;
       }
@@ -219,7 +222,7 @@ public enum TestNodeWrapperFactory {
     }).toGenericArray(String.class), true, isRoot);
   }
 
-  private static SNode check_kl7j79_a0a0c0a0b2(SNode checkedDotOperand) {
+  private static SNode check_kl7j79_a0a0d0a0b2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "classifier", false);
     }

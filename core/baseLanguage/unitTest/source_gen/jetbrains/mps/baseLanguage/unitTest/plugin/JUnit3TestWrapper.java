@@ -6,8 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import org.jetbrains.annotations.NotNull;
+import java.util.List;
+import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -29,7 +32,8 @@ public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
   @NotNull
   @Override
   public Iterable<ITestNodeWrapper> getTestMethods() {
-    return ListSequence.fromList(SLinkOperations.getTargets(myNode, "method", true)).where(new IWhereFilter<SNode>() {
+    List<SNode> methodDeclarations = (List<SNode>) new ClassifierAndSuperClassifiersScope(myNode, IClassifiersSearchScope.INSTANCE_METHOD).getNodes(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+    return ListSequence.fromList(methodDeclarations).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return JUnit3MethodWrapper.isTestMethod(it);
       }

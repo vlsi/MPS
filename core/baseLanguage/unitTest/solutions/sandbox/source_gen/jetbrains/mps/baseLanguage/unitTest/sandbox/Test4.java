@@ -7,7 +7,7 @@ import org.junit.Test;
 import junit.framework.Assert;
 
 @RunWith(SimpleRunner.class)
-public class Test4 {
+public class Test4 extends AbstractTest4Class {
   public Test4() {
   }
 
