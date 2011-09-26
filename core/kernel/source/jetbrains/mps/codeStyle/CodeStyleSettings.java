@@ -33,7 +33,7 @@ public class CodeStyleSettings implements ProjectComponent {
 
   private MyState myState = new MyState();
 
-  private static final String ourSystemLineSeparator = SystemProperties.getLineSeparator();
+  private static final String ourSystemLineSeparator = System.getProperty("line.separator");
 
   public Pair<String, String> getFieldSettings() {
     return new Pair<String, String>(myState.getFieldPrefix(), myState.getFieldSuffix());
