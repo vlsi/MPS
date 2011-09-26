@@ -175,6 +175,10 @@ public abstract class FileSwapOwner implements TransientSwapOwner{
       for (SNode r: roots) {
         model.addRoot(r);
       }
+
+      // ensure imports are back
+      SModelOperations.validateLanguagesAndImports(model, false, false);
+
       // Don't enable events as this will cause TextGen to fail. See MPS-11184
   //    model.setLoading(false);
 
