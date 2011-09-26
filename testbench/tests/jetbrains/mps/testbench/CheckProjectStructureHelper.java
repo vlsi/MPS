@@ -16,16 +16,17 @@
 package jetbrains.mps.testbench;
 
 import com.intellij.ide.IdeEventQueue;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.checkers.LanguageChecker;
+import jetbrains.mps.checkers.TypesystemChecker;
+import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.ide.modelchecker.actions.*;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -44,7 +45,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.SwingUtilities;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class CheckProjectStructureHelper {
@@ -105,11 +105,7 @@ public class CheckProjectStructureHelper {
     return ((PrivToken) token).checkConstraints(files);
   }
  
-  public List<String> checkReferences(Token token, List<IFile> files) {
-    return ((PrivToken) token).checkReferences(files);
-  }
- 
-  public void cleanUp(Token tok) {
+   public void cleanUp(Token tok) {
     ((PrivToken) tok).cleanUp();
   }
  
@@ -177,17 +173,13 @@ public class CheckProjectStructureHelper {
     }
  
     public List<String> checkTypeSystem(List<IFile> files) {
-      return CheckProjectStructureHelper.this.doApplyChecker(files, new TypesystemChecker());
+      return  CheckProjectStructureHelper.this.doApplyChecker(files, new TypesystemChecker());
     }
  
     public List<String> checkConstraints(List<IFile> files) {
-      return CheckProjectStructureHelper.this.doApplyChecker(files, new LangSpecificChecker());
+      return CheckProjectStructureHelper.this.doApplyChecker(files, new LanguageChecker());
     }
- 
-    public List<String> checkReferences(List<IFile> files) {
-      return CheckProjectStructureHelper.this.doApplyChecker(files, new UnresolvedReferencesChecker());
-    }
- 
+
     public void cleanUp() {
       CheckProjectStructureHelper.this.doCleanUp(project);
     }
@@ -230,7 +222,7 @@ public class CheckProjectStructureHelper {
     return checkModules(me.getModules(files));
   }
  
-  private List<String> doApplyChecker(List<IFile> files, SpecificChecker checker) {
+  private List<String> doApplyChecker(List<IFile> files, jetbrains.mps.checkers.INodeChecker checker) {
     ModelsExtractor me = new ModelsExtractor(false);
     me.loadModels(files);
     return applyChecker(checker, me.getModels());
@@ -346,28 +338,32 @@ public class CheckProjectStructureHelper {
       }
     }
   }
- 
-  private List<String> applyChecker(final SpecificChecker checker, final Iterable<SModelDescriptor> models) {
+
+  private List<String> applyChecker(final jetbrains.mps.checkers.INodeChecker checker, final Iterable<SModelDescriptor> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModelDescriptor sm : models) {
           if (!SModelStereotype.isUserModel(sm)) continue;
           if (SModelStereotype.isGeneratorModel(sm)) continue;
-          for (SearchResult<ModelCheckerIssue> issue : checker.checkModel(sm.getSModel(), new ProgressContext(new EmptyProgressIndicator(), new LinkedList<String>()), null)) {
-            if (issue.getCategoryForKind(ModelCheckerIssue.CATEGORY_KIND_SEVERITY).startsWith(jetbrains.mps.ide.modelchecker.actions.ModelChecker.SEVERITY_ERROR)) {
-              SNode node = (SNode) issue.getPathObject();
-              myErrors++;
-              errors.add("Error message: " +issue.getObject().getMessage() + "   model: "+ node.getModel()+" root: "+node.getContainingRoot()+" node: "+ node);
-            }
-            if (issue.getCategoryForKind(ModelCheckerIssue.CATEGORY_KIND_SEVERITY).startsWith(jetbrains.mps.ide.modelchecker.actions.ModelChecker.SEVERITY_WARNING)) {
+          ModuleOperationContext operationContext = new ModuleOperationContext(sm.getModule());
+          for (SNode root : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(sm.getSModel(), null)) {
+            for (IErrorReporter reporter : checker.getErrors(root, operationContext)) {
+              if (reporter.getMessageStatus().equals(MessageStatus.ERROR)) {
+                SNode node = reporter.getSNode();
+                myErrors++;
+                errors.add("Error message: " + reporter.reportError() + "   model: "+ node.getModel()+" root: "+node.getContainingRoot()+" node: "+ node);
+              }
+            if (reporter.getMessageStatus().equals(MessageStatus.WARNING)) {
               myWarnings++;
             }
           }
         }
+
       }
-    });
-    return errors;
+    }
+  });
+  return errors;
   }
  
   private StringBuilder checkModel(final SModelDescriptor sm) {

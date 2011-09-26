@@ -110,14 +110,19 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
       if (isCheckUnresolvedReferences()) {
         ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
       }
-      if (isCheckTypesystem()) {
-        ListSequence.fromList(specificCheckers).addElement(new TypesystemChecker());
-      }
-      if (isCheckConstraints()) {
-        ListSequence.fromList(specificCheckers).addElement(new LangSpecificChecker());
-      }
+      ListSequence.fromList(specificCheckers).addElement(new SpecificModelChecker());
     }
     return specificCheckers;
+  }
+
+  public boolean checkerIsOn(String category) {
+    if (category.equals("type system")) {
+      return isCheckTypesystem();
+    }
+    if (category.equals("constraints and scopes")) {
+      return isCheckConstraints();
+    }
+    return false;
   }
 
   public boolean isCheckUnresolvedReferences() {

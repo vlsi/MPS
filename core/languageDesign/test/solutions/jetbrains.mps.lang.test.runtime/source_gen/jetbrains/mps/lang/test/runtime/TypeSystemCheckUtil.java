@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.Collections;
 import jetbrains.mps.newTypesystem.test.StateMatcher;
 
-public class TypeSystemChecker {
-  public TypeSystemChecker() {
+public class TypeSystemCheckUtil {
+  public TypeSystemCheckUtil() {
   }
 
   public static void checkGenerationMode(SNode node) {
