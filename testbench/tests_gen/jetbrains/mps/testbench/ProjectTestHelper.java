@@ -52,7 +52,8 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import difflib.Patch;
 import difflib.DiffUtils;
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.io.FileInputStream;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -321,7 +322,7 @@ public class ProjectTestHelper {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       BufferedReader in = null;
       try {
-        in = new BufferedReader(new FileReader(f));
+        in = new BufferedReader(new InputStreamReader(new FileInputStream(f), "utf-8"));
         String line;
         while ((line = in.readLine()) != null) {
           ListSequence.fromList(result).addElement(line);
