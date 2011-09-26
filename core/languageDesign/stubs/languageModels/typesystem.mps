@@ -17,10 +17,6 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <roots>
-    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="5516999836374121358">
-      <property name="name" nameId="tpck.1169194664001" value="StubsCreatorType_SubtypeOf_ModelRootManager" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="_Deprecated.Stubs" />
-    </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="5553449326502623316">
       <property name="name" nameId="tpck.1169194664001" value="ModelManagerType_SubtypeOf_ModelRootManager" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Utils" />
@@ -29,21 +25,6 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_Stereotype" />
     </node>
   </roots>
-  <root id="5516999836374121358">
-    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="5516999836374121359">
-      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5516999836374123404">
-        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="5516999836374123407">
-          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5516999836374540668">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ltn8.~BaseStubModelRootManager" resolveInfo="BaseStubModelRootManager" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5516999836374121361">
-      <property name="name" nameId="tpck.1169194664001" value="creatorType" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="n3kn.5516999836374121342" resolveInfo="StubsCreatorType" />
-    </node>
-  </root>
   <root id="5553449326502623316">
     <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="5553449326502623317">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5553449326502623318">
