@@ -4,7 +4,6 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
@@ -38,13 +37,12 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jdom.input.SAXBuilder" />
-    <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource" />
+    <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.StubModelDataSource" />
   </dependency>
   <dependency className="jetbrains.mps.stubs.util.GWTStubsSource" file="GWTStubsSource.java">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
@@ -80,7 +78,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jdom.input.SAXBuilder" />
-    <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource" />
+    <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.StubModelDataSource" />
   </dependency>
   <dependency className="jetbrains.mps.stubs.util.PathItem" file="PathItem.java">
     <classNode dependClassName="java.io.BufferedInputStream" />

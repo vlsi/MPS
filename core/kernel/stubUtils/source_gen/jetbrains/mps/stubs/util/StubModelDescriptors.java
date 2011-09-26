@@ -54,8 +54,8 @@ public class StubModelDescriptors {
           SetSequence.fromSet(result).addElement(((BaseStubModelDescriptor) descById));
         } else {
           BaseStubModelDescriptor desc = new BaseStubModelDescriptor(smref, (gwt ?
-            new GWTStubsSource(loc, module) :
-            new ConfStubSource(loc, module)
+            new GWTStubsSource(loc) :
+            new ConfStubSource(loc)
           ), module);
           SModelRepository.getInstance().registerModelDescriptor(desc, module);
           SetSequence.fromSet(result).addElement(desc);
