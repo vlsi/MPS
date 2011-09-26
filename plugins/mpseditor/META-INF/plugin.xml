@@ -32,4 +32,8 @@
   <project-components>
 
   </project-components>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/"/>
+  </extensions>
 </idea-plugin>

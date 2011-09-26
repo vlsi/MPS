@@ -1160,7 +1160,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091404">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/editor.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/solution/icons/editor.png" />
     </node>
   </root>
   <root id="1744445256079578766">
@@ -1239,7 +1239,7 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dOPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091398">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/structure.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/solution/icons/structure.png" />
     </node>
   </root>
   <root id="1744445256079578802">
@@ -3708,7 +3708,7 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dEDITOR_CELL" resolveInfo="EDITOR_CELL" />
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091372">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/cellExplorer.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/solution/icons/cellExplorer.png" />
     </node>
   </root>
   <root id="2662234144540709043">
@@ -5584,7 +5584,7 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="4zw2.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091386">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/reload.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/solution/icons/reload.png" />
     </node>
   </root>
   <root id="2191995028863072592">

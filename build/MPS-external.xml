@@ -35,9 +35,12 @@
     <mkdir dir="${deploy.dir}/MPS/lib/mpstest.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib" />
     <mkdir dir="${deploy.dir}/MPS/license" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor.jar.tmp/META-INF" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor.jar.tmp/modules" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor" />
     <mkdir dir="${deploy.dir}/MPS/plugins/cvsIntegration" />
     <mkdir dir="${deploy.dir}/MPS/plugins/git4idea" />
     <mkdir dir="${deploy.dir}/MPS/plugins/svn4idea" />
@@ -242,10 +245,12 @@
       <zipfileset dir="${mps_home}/plugins/vcs/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/vcs/classes" prefix="" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/plugins/mpsdevkit.jar" filesonly="true" duplicate="preserve" compress="true">
-      <zipfileset dir="${mps_home}/plugins/mpsdevkit/META-INF" includes="**/plugin.xml" prefix="META-INF" />
-      <zipfileset dir="${mps_home}/plugins/mpsdevkit/classes" prefix="" />
-    </jar>
+    <copy todir="${deploy.dir}/MPS/plugins/mpsdevkit/META-INF">
+      <fileset dir="${mps_home}/plugins/mpsdevkit/META-INF" excludes="**/*.zip, " includes="**/plugin.xml, " />
+    </copy>
+    <antcall target="MPS-languages.pack.jetbrains.mps.ide.mpsdevkit" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpsdevkit" />
     <jar destfile="${deploy.dir}/MPS/plugins/mpsmake.jar" filesonly="true" duplicate="preserve" compress="true">
       <zipfileset dir="${mps_home}/plugins/mpsmake/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/mpsmake/classes" prefix="" />
@@ -274,19 +279,12 @@
       <zipfileset dir="${mps_home}/plugins/debugger-java/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/debugger-java/classes" prefix="" />
     </jar>
-    <copy todir="${deploy.dir}/MPS/plugins/mpseditor.jar.tmp/META-INF">
-      <fileset dir="${mps_home}/plugins/mpseditor/META-INF" includes="**/plugin.xml, " />
+    <copy todir="${deploy.dir}/MPS/plugins/mpseditor/META-INF">
+      <fileset dir="${mps_home}/plugins/mpseditor/META-INF" excludes="**/*.zip, " includes="**/plugin.xml, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS/plugins/mpseditor.jar.tmp/modules">
-      <fileset dir="${mps_home}/plugins/mpseditor/solution" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/plugins/mpseditor.jar.tmp">
-      <fileset dir="${mps_home}/plugins/mpseditor/classes" excludes="**/*.zip, " />
-    </copy>
-    <jar destfile="${deploy.dir}/MPS/plugins/mpseditor.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/MPS/plugins/mpseditor.jar.tmp" excludes="" />
-    </jar>
-    <delete dir="${deploy.dir}/MPS/plugins/mpseditor.jar.tmp" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.ide.editor" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor/lib" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor" />
     <copy todir="${deploy.dir}/MPS/plugins/cvsIntegration">
       <fileset dir="${mps_home}/plugins/cvsIntegration" excludes="**/*.zip, " />
     </copy>
@@ -490,7 +488,6 @@
     <delete dir="${deploy.dir}/MPS/lib/mps.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mpsboot.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mpstest.jar.tmp" />
-    <delete dir="${deploy.dir}/MPS/plugins/mpseditor.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp" />
   </target>
   <target name="pack.branding_g1a">
