@@ -4,7 +4,9 @@ package jetbrains.mps.smodel.resources;
 
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public interface ITResource extends IResource, IDeltaResource {
   public IModule module();
+  public SModelDescriptor modelDescriptor();
 }
