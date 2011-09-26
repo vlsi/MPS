@@ -22,6 +22,7 @@ import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.*;
@@ -155,9 +156,20 @@ public class NodeTypesComponent {
     return null;
   }
 
-  protected boolean loadTypesystemRules(SNode root) {
-    return myTypeSystemComponent.loadTypesystemRules(root);
-  }
+  public InequalitySystem computeInequalitiesForHole(SNode hole, boolean holeIsAType) {
+     List<SNode> additionalNodes = new ArrayList<SNode>();
+     additionalNodes.add(hole);
+     State state = myTypeCheckingContext.getState();
+     if (state == null) return null;
+     try {
+       state.initHole(hole);
+       computeTypesForNode_special(hole.getParent(), additionalNodes);
+       System.out.println(state.getInequalitySystem().getPresentation());
+       return state.getInequalitySystem();
+     } finally {
+       state.disposeHole();
+     }
+   }
 
   public void computeTypes(boolean refreshTypes) {
     myTypeSystemComponent.computeTypes(refreshTypes);

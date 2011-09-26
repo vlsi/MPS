@@ -20,6 +20,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.NodeTypesComponent;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -160,6 +161,8 @@ public abstract class TypeCheckingContext {
   public abstract void dispose();
 
   public abstract SNode getNode();
+
+  public abstract State getState();
 
   public abstract NodeTypesComponent getNodeTypesComponent();
 
