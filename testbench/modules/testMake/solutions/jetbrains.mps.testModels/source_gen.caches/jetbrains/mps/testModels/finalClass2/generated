@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9x4di6dj8pjdhpvvnl97rw2r9muwz8g" parametersHash="bd2md4kisf64tmz12qeimkxk3so7ywz">
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="cbxbas4wcql77jgbid2dra89g3u345r" />
+<dependencies version="2" modelHash="-9x4di6dj8pjdhpvvnl97rw2r9muwz8g">
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="7c5ssk9ukgkps0ad18aex01o7lv119u" />
   <common hash="-dprmpyy4x9l4997mox4tb8y3il69l7g" />
   <source id="3043583937669651975" name="Superclass" hash="1r8j96gezio7s0h5x3ytwojnrirftn1">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />

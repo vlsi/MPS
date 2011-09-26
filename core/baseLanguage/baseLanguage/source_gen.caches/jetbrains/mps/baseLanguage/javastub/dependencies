@@ -9,7 +9,6 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageID" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.ASMNodeId" file="ASMNodeId.java">

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringCommandLinePart_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.StringCommandLinePart_Behavior" />
-  <unitInfo fileName="SimplePath_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.SimplePath_Behavior" />
   <unitInfo fileName="UnixConfig_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.UnixConfig_BehaviorDescriptor" />
   <unitInfo fileName="MacOsFileAssociation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.MacOsFileAssociation_BehaviorDescriptor" />
   <unitInfo fileName="MacConfig_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.MacConfig_BehaviorDescriptor" />
@@ -10,7 +8,6 @@
   <unitInfo fileName="ClassPath_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.ClassPath_BehaviorDescriptor" />
   <unitInfo fileName="AbstractCommandLinePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_BehaviorDescriptor" />
   <unitInfo fileName="AbstractPath_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.AbstractPath_BehaviorDescriptor" />
-  <unitInfo fileName="ArtifactReferenceCommandLinePart_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior" />
   <unitInfo fileName="PathCommantLinePart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.PathCommantLinePart_BehaviorDescriptor" />
   <unitInfo fileName="ArtifactReferenceCommandLinePart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_BehaviorDescriptor" />
   <unitInfo fileName="StringCommandLinePart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.StringCommandLinePart_BehaviorDescriptor" />
@@ -18,8 +15,6 @@
   <unitInfo fileName="SimplePath_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.SimplePath_BehaviorDescriptor" />
   <unitInfo fileName="Role_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.Role_BehaviorDescriptor" />
   <unitInfo fileName="FileAssociation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.FileAssociation_BehaviorDescriptor" />
-  <unitInfo fileName="AbstractCommandLinePart_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior" />
-  <unitInfo fileName="AbstractPath_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.AbstractPath_Behavior" />
   <unitInfo fileName="SystemSpecificConfig_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_BehaviorDescriptor" />
   <unitInfo fileName="ExternalVariableReference_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.ExternalVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="DistribConfiguration_BehaviorDescriptor.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.DistribConfiguration_BehaviorDescriptor" />

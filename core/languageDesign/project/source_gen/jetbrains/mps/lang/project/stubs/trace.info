@@ -141,8 +141,8 @@
       <varInfo nodeId="8382013213872079939" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213872079985" fileName="FileStubSource.java" startLine="90" startPosition="9" endLine="98" endPosition="9">
-      <varInfo nodeId="8382013213872079987" varName="sroot" />
       <varInfo nodeId="8382013213872080304" varName="module" />
+      <varInfo nodeId="8382013213872079987" varName="sroot" />
       <varInfo nodeId="8382013213872080124" varName="mds" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213872079977" fileName="FileStubSource.java" startLine="89" startPosition="85" endLine="101" endPosition="5" />
@@ -151,8 +151,8 @@
       <varInfo nodeId="8382013213872080022" varName="lang" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213872079974" fileName="FileStubSource.java" startLine="88" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="8382013213872079982" varName="root" />
       <varInfo nodeId="8382013213872080114" varName="md" />
+      <varInfo nodeId="8382013213872079982" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="8382013213872079875" fileName="FileStubSource.java" startLine="59" startPosition="128" endLine="82" endPosition="0">
       <varInfo nodeId="3778447844902364906" varName="model" />

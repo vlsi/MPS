@@ -6,7 +6,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.LanguageID;
 
 public class ASMModelLoader {
   private static final Logger LOG = Logger.getLogger(ASMModelLoader.class);
@@ -16,12 +15,6 @@ public class ASMModelLoader {
   private final IModule myModule;
   private final boolean mySkipPrivate;
   private final String myLanguageId;
-
-  public ASMModelLoader(IModule module, IClassPathItem classPathItem, SModel model) {
-    // during fix of MPS-10626 would be changed to true 
-    // but do not touch it before that 
-    this(module, classPathItem, model, LanguageID.JAVA, false);
-  }
 
   public ASMModelLoader(IModule module, IClassPathItem classPathItem, SModel model, String languageId, boolean skipPrivate) {
     myModule = module;

@@ -3,19 +3,19 @@
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-3y2r6y3czb0h44qur9lgd1udqb2qdek" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-2obg04a8cz181kb3dba004vwgdf7aie" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-8mrv73xtv4lzshhcmg84kz8p5rsy8en" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6jeeuoa32c4fcnlyzfgxurlptmclvzn" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3lxfcg9w0sl635r6n0c4d5sryip3kpx" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="cbxbas4wcql77jgbid2dra89g3u345r" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-6r5i332c87x8xyc3ivazsp5i0nmdz40" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="33wkjgiezx0fo2ce3ik1767insl4n2e" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="7c5ssk9ukgkps0ad18aex01o7lv119u" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="akfobdt43q9rrlj8pszut5gr07xi91o" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="90a2yqqwsbuerf4u3po1b2jxod6vyfj" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="cjb3uo0m6bhznlx33d9ca1f6rshkyq2" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="d8xfna3g5ul3mdj5lmmb4ag6juunapj" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-aponn5nsgce6wtlpsam7uobqmzylfnq" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-h9u9hcbweyac955q02knzt9cgtbezg" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6wcb0wku66kauzfch9knq1rbzi73svq" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="90582pvul3jpqwmlp2m8l0fz4qnawyz" />
   <dep model="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" hash="e3u9xmfzf5hgvz0a9t0f5lzwlly6jo4" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="1qpl4dcq87orqyeop7drkzps9naovu7" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
   <common hash="dg4xpqc8vag3djavhzfmsrhcv3bgara" dependsOnNodes="true">
     <dep root="1138055754698" />
@@ -1162,7 +1162,6 @@
     <file name="Model_RootsIncludingImportedOperation.java" />
   </source>
   <source id="1177026924588" name="RefConcept_Reference" hash="-37pacqhfygviibknspz5ect0uq4zfyn">
-    <dep root="1138411891628" />
     <dep root="1206659704055" />
     <dep root="2788452359612124333" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1376,7 +1375,6 @@
     <file name="IAttributeAccessQualifier.java" />
   </source>
   <source id="1204763358057" name="NodeAttributeAccessQualifier" hash="-75xfezoa1eqdkd3f6grftnevwe13kqr">
-    <dep root="1138411891628" />
     <dep root="1204762015203" />
     <dep root="2788452359612124333" />
     <dep root="4024382256428848843" />
@@ -1398,7 +1396,6 @@
     <file name="NodeAttributeAccessQualifier.java" />
   </source>
   <source id="1204832665472" name="PropertyAttributeAccessQualifier" hash="3l52ytzkfp9p5fi6aslejkv019l898x">
-    <dep root="1138411891628" />
     <dep root="1204762015203" />
     <dep root="1204834061007" />
     <dep root="2788452359612124333" />
@@ -1427,7 +1424,6 @@
     <file name="IPropertyAccessQualifier.java" />
   </source>
   <source id="1204834851141" name="PoundExpression" hash="30xgyy6xjwi2yumq7lfh6lobs44ryql">
-    <dep root="1138411891628" />
     <dep root="1204834061007" />
     <dep root="1204848879094" />
     <dep root="1206659704055" />
@@ -1451,7 +1447,6 @@
     <file name="PoundExpression.java" />
   </source>
   <source id="1204837120311" name="PropertyRefQualifier" hash="j8s8g032bn6s7i2eucd5vgq37rp6b">
-    <dep root="1138411891628" />
     <dep root="1204834061007" />
     <dep root="2788452359612124333" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1478,7 +1473,6 @@
     <file name="ILinkAccessQualifier.java" />
   </source>
   <source id="1204848911283" name="LinkAttributeAccessQualifier" hash="-5785vjpemracokfs3kcus8fwcvu283w">
-    <dep root="1138411891628" />
     <dep root="1204762015203" />
     <dep root="1204848879094" />
     <dep root="2788452359612124333" />
@@ -1502,7 +1496,6 @@
     <file name="LinkAttributeAccessQualifier.java" />
   </source>
   <source id="1204851882688" name="LinkRefQualifier" hash="-4mg4bctmu8pdyyo1wpnyev36zs7jny2">
-    <dep root="1138411891628" />
     <dep root="1204848879094" />
     <dep root="2788452359612124333" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1523,7 +1516,6 @@
     <file name="LinkRefQualifier.java" />
   </source>
   <source id="1204919674986" name="_LinkAccessT" hash="ed1r71m7o6fkkvvq5evhi5ir3erzvmk">
-    <dep root="1138411891628" />
     <dep root="2788452359612124333" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1543,7 +1535,6 @@
     <file name="_LinkAccessT.java" />
   </source>
   <source id="1205357139746" name="AllAttributesQualifier" hash="17fd4w04wf8tig6tu7tvu5ycwk58q3e">
-    <dep root="1138411891628" />
     <dep root="1204762015203" />
     <dep root="2788452359612124333" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1718,7 +1709,6 @@
     <file name="Node_GetReferentSearchScopeOperation.java" />
   </source>
   <source id="1221170373891" name="SearchScope_ContainsOperation" hash="5xwjhoqnf68hajdwexdgd3g5wan046z">
-    <dep root="1138411891628" />
     <dep root="2788452359612124333" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1794,7 +1784,6 @@
     <file name="SEnumMemberType.java" />
   </source>
   <source id="1240171359678" name="EnumMember_ValueOperation" hash="-1napmdk85i29ze66t4wzifnqlwc8d9e">
-    <dep root="1138411891628" />
     <dep root="1241015185235" />
     <dep root="2788452359612124333" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1812,7 +1801,6 @@
     <file name="EnumMember_ValueOperation.java" />
   </source>
   <source id="1240173327827" name="EnumMember_NameOperation" hash="-espqiksurtisu0hpm8abedumlb2iqy4">
-    <dep root="1138411891628" />
     <dep root="1241015185235" />
     <dep root="2788452359612124333" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1853,7 +1841,6 @@
     <file name="SEnumOperation.java" />
   </source>
   <source id="1240930444812" name="SEnum_MemberForNameOperation" hash="aspiyrbajkpz7bci1sq9y68at9kz7ba">
-    <dep root="1138411891628" />
     <dep root="1240930395965" />
     <dep root="2788452359612124333" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1873,7 +1860,6 @@
     <file name="SEnum_MemberForNameOperation.java" />
   </source>
   <source id="1240930444878" name="SEnum_MemberForValueOperation" hash="e9aaypzjcibroicj1as3cf2h39hswic">
-    <dep root="1138411891628" />
     <dep root="1240930395965" />
     <dep root="2788452359612124333" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1893,7 +1879,6 @@
     <file name="SEnum_MemberForValueOperation.java" />
   </source>
   <source id="1240930444945" name="SEnum_MemberOperation" hash="dq17qzdsettd6t20te0gpurry1g5v99">
-    <dep root="1138411891628" />
     <dep root="1240930395965" />
     <dep root="2788452359612124333" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1914,7 +1899,6 @@
     <file name="SEnum_MemberOperation.java" />
   </source>
   <source id="1240930444980" name="SEnum_MembersOperation" hash="6zzmsgr3thmexuw8jxqp3agq9tf4hlz">
-    <dep root="1138411891628" />
     <dep root="1240930395965" />
     <dep root="2788452359612124333" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1977,7 +1961,6 @@
     <file name="ILinkAccess.java" />
   </source>
   <source id="3562215692195599741" name="SLinkImplicitSelect" hash="2kgpg2acfw4ilqjt5ncr1u1azs559mz">
-    <dep root="1138411891628" />
     <dep root="2788452359612124333" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2022,7 +2005,6 @@
     <file name="SReferenceType.java" />
   </source>
   <source id="4124388153790980106" name="Reference_GetTargetOperation" hash="bt8ho2cppvs6ee6gv79ocqbaxna4ktw">
-    <dep root="1138411891628" />
     <dep root="1547759872598425074" />
     <dep root="2788452359612124333" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -2040,7 +2022,6 @@
     <file name="Reference_GetTargetOperation.java" />
   </source>
   <source id="1547759872598425067" name="Reference_GetLinkDeclarationOperation" hash="-cycl04b0h32bu5lxupjd6ltka68tisc">
-    <dep root="1138411891628" />
     <dep root="1547759872598425074" />
     <dep root="2788452359612124333" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -2065,7 +2046,6 @@
     <file name="IReferenceOperation.java" />
   </source>
   <source id="5692182839349412519" name="Reference_GetRoleOperation" hash="alhngps9mh85y5tpc6mrxectqbwdoc4">
-    <dep root="1138411891628" />
     <dep root="1547759872598425074" />
     <dep root="2788452359612124333" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -2132,7 +2112,6 @@
     <file name="ILinkAccessQualifierContainer.java" />
   </source>
   <source id="5168775467716640652" name="OperationParm_LinkQualifier" hash="3jw1f201djfgfv60nlt0kjs8urnvy3z">
-    <dep root="1138411891628" />
     <dep root="1144100743722" />
     <dep root="1204848879094" />
     <dep root="2788452359612124333" />
@@ -2154,7 +2133,6 @@
     <file name="OperationParm_LinkQualifier.java" />
   </source>
   <source id="5708036808576088033" name="Reference_GetResolveInfo" hash="-9u36fdt1tpyx0utrjd6kx9a2lv9et8h">
-    <dep root="1138411891628" />
     <dep root="1547759872598425074" />
     <dep root="2788452359612124333" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -2401,7 +2379,6 @@
     <file name="IPropertyQualifier.java" />
   </source>
   <source id="2788452359612124332" name="LinkQualifier" hash="-7rf7x59dmcbm5ezh6y5dd3ydshozz83">
-    <dep root="1138411891628" />
     <dep root="2788452359612124330" />
     <dep root="2788452359612124333" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -2422,7 +2399,6 @@
     <file name="LinkQualifier.java" />
   </source>
   <source id="2788452359612124333" name="PropertyQualifier" hash="-1yzjptbdcso83v0s1snhpjgk4jkkojc">
-    <dep root="1138411891628" />
     <dep root="2788452359612124331" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
