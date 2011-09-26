@@ -80,8 +80,14 @@ public class JavaStubModelDataSource extends StubModelDataSource {
           cp.add(ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName()));
         } else {
           String name = descriptor.getSModelReference().getLongName().replace('.', File.separatorChar);
-          assert dir.contains(name) : "Strang dir for model: model " + name + "; dir = " + dir;
-          dir = dir.substring(0, dir.indexOf(name));
+
+          // dirty hack for current problems with path separators 
+          String dirCorrected = dir.replace('/', File.separatorChar);
+          dirCorrected = dirCorrected.replace('\\', File.separatorChar);
+          assert dirCorrected.contains(name) : "Strang dir for model: model " + name + "; dir = " + dir;
+
+          int index = dirCorrected.indexOf(name);
+          dir = dir.substring(0, index);
           cp.add(ClassPathFactory.getInstance().createFromPath(dir, this.getClass().getName()));
         }
       } catch (IOException e) {
