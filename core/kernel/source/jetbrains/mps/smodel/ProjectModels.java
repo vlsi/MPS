@@ -66,6 +66,10 @@ public class ProjectModels {
 
     }
 
+    public boolean isReadOnly() {
+      return false;
+    }
+
     public IFile getModelFile() {
       return null;
     }

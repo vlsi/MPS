@@ -46,8 +46,6 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     return mySource;
   }
 
-  public abstract boolean isReadOnly();
-
   public void dispose() {
     mySource.getChangeWatcher().stopListening(mySourceListener);
     super.dispose();

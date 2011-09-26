@@ -100,10 +100,12 @@ public class SModel {
     return false;
   }
 
+  @Deprecated   //todo get rid of it
   public boolean isNotEditable() {
     assert !isDisposed();
-    return !(getModelDescriptor() instanceof BaseSModelDescriptorWithSource)
-      || ((BaseSModelDescriptorWithSource) getModelDescriptor()).isReadOnly();
+    SModelDescriptor d = getModelDescriptor();
+    if (!(d instanceof EditableSModelDescriptor)) return false;
+    return ((EditableSModelDescriptor) d).isReadOnly();
   }
 
   public boolean isDisposed() {

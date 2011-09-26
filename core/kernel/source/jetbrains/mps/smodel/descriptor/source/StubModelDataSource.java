@@ -81,10 +81,6 @@ public abstract class StubModelDataSource extends FileBasedModelDataSource {
     return max;
   }
 
-  public boolean isReadOnly() {
-    return true;
-  }
-
   public void addPath(String path) {
     myStubPaths.add(path);
     sourcesSetChanged();
