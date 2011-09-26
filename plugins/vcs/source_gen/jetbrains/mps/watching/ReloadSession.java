@@ -6,10 +6,9 @@ import jetbrains.mps.logging.Logger;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.util.Set;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.IModule;
 import com.intellij.openapi.project.Project;
 import java.util.HashSet;
@@ -23,10 +22,9 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.descriptor.source.ReloadableSources;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -35,12 +33,10 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
   private static final Logger LOG = Logger.getLogger(ReloadSession.class);
   protected static Log log = LogFactory.getLog(ReloadSession.class);
 
-  private final Set<EditableSModelDescriptor> myChangedModels = SetSequence.fromSet(new LinkedHashSet<EditableSModelDescriptor>());
   private final Set<VirtualFile> myNewModelVFiles = SetSequence.fromSet(new LinkedHashSet<VirtualFile>());
   private final Set<IModule> myChangedModules = SetSequence.fromSet(new LinkedHashSet<IModule>());
   private final Set<VirtualFile> myNewModuleVFiles = SetSequence.fromSet(new LinkedHashSet<VirtualFile>());
   private final Set<Project> myChangedProjects = SetSequence.fromSet(new LinkedHashSet<Project>());
-  private Set<EditableSModelDescriptor> myDeletedModels = SetSequence.fromSet(new HashSet<EditableSModelDescriptor>());
   private final Set<IModule> myDeletedModules = SetSequence.fromSet(new HashSet<IModule>());
   private final Set<ModelChangesWatcher.IReloadListener> myReloadListeners;
 
@@ -53,10 +49,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
       ProgressManager.getInstance().run(new Task.Modal(null, "Reloading", false) {
         public void run(@NotNull final ProgressIndicator progressIndicator) {
           fireReloadStarted();
-          ReloadSession.LOG.debug("Starting reload for:\n" + ((SetSequence.fromSet(myChangedModels).isEmpty() ?
-            "" :
-            "Changed models : " + myChangedModels + "\n"
-          )) + ((SetSequence.fromSet(myChangedModules).isEmpty() ?
+          ReloadSession.LOG.debug("Starting reload for:\n" + ((SetSequence.fromSet(myChangedModules).isEmpty() ?
             "" :
             "Changed modules : " + myChangedModules + "\n"
           )) + ((SetSequence.fromSet(myChangedProjects).isEmpty() ?
@@ -68,9 +61,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
           )) + ((SetSequence.fromSet(myNewModuleVFiles).isEmpty() ?
             "" :
             "New modules : " + myNewModuleVFiles + "\n"
-          )) + ((SetSequence.fromSet(myDeletedModels).isEmpty() ?
-            "" :
-            "Deleted models : " + myDeletedModels + "\n"
           )) + ((SetSequence.fromSet(myDeletedModules).isEmpty() ?
             "" :
             "Deleted modules : " + myDeletedModules + "\n"
@@ -131,23 +121,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         progressIndicator.setText("Reloading updated models... Please wait.");
-        for (EditableSModelDescriptor model : SetSequence.fromSet(myChangedModels).concat(SetSequence.fromSet(myDeletedModels))) {
-          if (SModelRepository.getInstance().getModelDescriptor(model.getSModelReference()) == null) {
-            continue;
-          }
-          try {
-            String text = "Reloading " + model.getSModelReference().getSModelFqName();
-            if (log.isInfoEnabled()) {
-              log.info(text);
-            }
-            progressIndicator.setText2(text);
-            model.reloadFromDiskSafe();
-          } catch (RuntimeException e) {
-            if (log.isErrorEnabled()) {
-              log.error("", e);
-            }
-          }
-        }
+        ReloadableSources.getInstance().reload(progressIndicator);
       }
     });
   }
@@ -197,24 +171,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
             SetSequence.fromSet(myChangedModules).addElement(module);
           }
         }
-        for (SModelDescriptor modelDescriptor : myDeletedModels) {
-          IModule module = modelDescriptor.getModule();
-          if (module != null) {
-            SetSequence.fromSet(myChangedModules).addElement(module);
-          }
-        }
-        Set<EditableSModelDescriptor> skip = SetSequence.fromSet(new HashSet<EditableSModelDescriptor>());
-        for (EditableSModelDescriptor modelDescriptor : myChangedModels) {
-          IModule module = modelDescriptor.getModule();
-
-          if (SetSequence.fromSet(myChangedModules).contains(module)) {
-            if (log.isDebugEnabled()) {
-              log.debug("Skip model " + modelDescriptor + " since we want to reload " + module);
-            }
-            SetSequence.fromSet(skip).addElement(modelDescriptor);
-            break;
-          }
-        }
         Iterable<Generator> generators = SetSequence.fromSet(myChangedModules).where(new IWhereFilter<IModule>() {
           public boolean accept(IModule m) {
             return m instanceof Generator;
@@ -232,17 +188,12 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
           SetSequence.fromSet(myChangedModules).addElement(gen.getSourceLanguage());
         }
         SetSequence.fromSet(myChangedModules).removeSequence(SetSequence.fromSet(myDeletedModules));
-        SetSequence.fromSet(myChangedModels).removeSequence(SetSequence.fromSet(skip));
       }
     });
   }
 
   public boolean hasAnythingToDo() {
-    return !(SetSequence.fromSet(myChangedModels).isEmpty() && SetSequence.fromSet(myChangedModules).isEmpty() && SetSequence.fromSet(myChangedProjects).isEmpty() && SetSequence.fromSet(myNewModelVFiles).isEmpty() && SetSequence.fromSet(myNewModuleVFiles).isEmpty() && SetSequence.fromSet(myDeletedModels).isEmpty() && SetSequence.fromSet(myDeletedModules).isEmpty());
-  }
-
-  public void addChangedModel(EditableSModelDescriptor model) {
-    SetSequence.fromSet(myChangedModels).addElement(model);
+    return ReloadableSources.getInstance().hasInvalidated() || !(SetSequence.fromSet(myChangedModules).isEmpty() && SetSequence.fromSet(myChangedProjects).isEmpty() && SetSequence.fromSet(myNewModelVFiles).isEmpty() && SetSequence.fromSet(myNewModuleVFiles).isEmpty() && SetSequence.fromSet(myDeletedModules).isEmpty());
   }
 
   public void addNewModelFile(VirtualFile vfile) {
@@ -259,10 +210,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 
   public void addChangedProject(Project project) {
     SetSequence.fromSet(myChangedProjects).addElement(project);
-  }
-
-  public void addDeletedModel(EditableSModelDescriptor modelDescriptor) {
-    SetSequence.fromSet(myDeletedModels).addElement(modelDescriptor);
   }
 
   public void addDeletedModule(IModule module) {

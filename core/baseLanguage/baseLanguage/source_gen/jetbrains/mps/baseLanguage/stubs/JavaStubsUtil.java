@@ -4,19 +4,14 @@ package jetbrains.mps.baseLanguage.stubs;
 
 import java.util.Set;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
-import jetbrains.mps.stubs.BaseStubModelRootManager;
 import jetbrains.mps.stubs.StubLocation;
-import java.util.HashSet;
+import java.util.Collection;
+import jetbrains.mps.smodel.descriptor.NodeDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
+import java.util.HashSet;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.reloading.ClassPathFactory;
-import java.io.IOException;
-import jetbrains.mps.stubs.IStubRootNodeDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
@@ -30,54 +25,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   public JavaStubsUtil() {
   }
 
-  /*package*/ static Set<BaseStubModelDescriptor> getModelDescriptors(BaseStubModelRootManager stubCreator, StubLocation location, String languageId) {
-    Set<BaseStubModelDescriptor> result = new HashSet<BaseStubModelDescriptor>();
-    JavaStubsUtil.getModelDescriptors(stubCreator, location, languageId, result);
-    return result;
+  /*package*/ static Set<BaseStubModelDescriptor> getModelDescriptors(Object stubCreator, StubLocation location, String languageId) {
+    return null;
   }
 
-  private static void getModelDescriptors(BaseStubModelRootManager stubCreator, StubLocation location, String languageId, Set<BaseStubModelDescriptor> result) {
-    String pack = location.getPrefix();
-    IClassPathItem cpItem = createClassPathItem(location);
-    if (cpItem == null) {
-      return;
-    }
-
-    for (String subpackage : cpItem.getSubpackages(pack)) {
-      if (cpItem.getRootClasses(subpackage).iterator().hasNext()) {
-        SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, languageId, location.getModule().getModuleReference());
-        if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
-          SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-          assert descriptor instanceof BaseStubModelDescriptor;
-          result.add((BaseStubModelDescriptor) descriptor);
-        } else {
-          result.add(new BaseStubModelDescriptor(stubCreator, null, modelReference));
-        }
-      }
-      StubLocation newLocation = new StubLocation(location.getPath(), subpackage, location.getModuleRef());
-      getModelDescriptors(stubCreator, newLocation, languageId, result);
-    }
-  }
-
-  @Nullable
-  /*package*/ static IClassPathItem createClassPathItem(StubLocation location) {
-    try {
-      return ClassPathFactory.getInstance().createFromPath(location.getPath(), location.getModuleRef().getModuleFqName());
-    } catch (IOException e) {
-      return null;
-    }
-  }
-
-  public static Set<IStubRootNodeDescriptor> iterateClassPath(ModuleReference module, IClassPathItem item) {
-    Set<IStubRootNodeDescriptor> result = new HashSet<IStubRootNodeDescriptor>();
+  public static Collection<NodeDescriptor> iterateClassPath(ModuleReference module, IClassPathItem item) {
+    Set<NodeDescriptor> result = new HashSet<NodeDescriptor>();
     iterateClassPath(module, item, result, "");
     return result;
   }
 
-  private static void iterateClassPath(final ModuleReference module, final IClassPathItem item, Set<IStubRootNodeDescriptor> result, final String pName) {
+  public static void iterateClassPath(final ModuleReference module, final IClassPathItem item, Set<NodeDescriptor> result, final String pName) {
     final SModelReference model = StubHelper.uidForPackageInStubs(pName, LanguageID.JAVA, module, false);
     for (final String cls : item.getRootClasses(pName)) {
-      result.add(new IStubRootNodeDescriptor() {
+      result.add(new NodeDescriptor() {
         public String getName() {
           return cls;
         }

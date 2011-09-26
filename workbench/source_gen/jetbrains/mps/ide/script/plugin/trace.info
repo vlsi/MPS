@@ -10,8 +10,8 @@
     <nodeInfo nodeId="7316415153790561870" fileName="AbstractMigrationScriptHelper.java" startLine="50" startPosition="76" endLine="51" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7316415153790561875" fileName="AbstractMigrationScriptHelper.java" startLine="53" startPosition="5" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7316415153790561719" fileName="AbstractMigrationScriptHelper.java" startLine="57" startPosition="57" endLine="58" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModels" />
-    <nodeInfo nodeId="7316415153790561920" fileName="AbstractMigrationScriptHelper.java" startLine="64" startPosition="59" endLine="65" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790561929" fileName="AbstractMigrationScriptHelper.java" startLine="67" startPosition="60" endLine="68" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790561920" fileName="AbstractMigrationScriptHelper.java" startLine="64" startPosition="58" endLine="65" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7316415153790561929" fileName="AbstractMigrationScriptHelper.java" startLine="67" startPosition="59" endLine="68" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7316415153790561957" fileName="AbstractMigrationScriptHelper.java" startLine="71" startPosition="199" endLine="72" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7316415153790561958" fileName="AbstractMigrationScriptHelper.java" startLine="74" startPosition="7" endLine="75" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7316415153790561977" fileName="AbstractMigrationScriptHelper.java" startLine="80" startPosition="72" endLine="81" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -56,8 +56,8 @@
     <scopeInfo nodeId="7316415153790561819" fileName="AbstractMigrationScriptHelper.java" startLine="36" startPosition="45" endLine="37" endPosition="39" />
     <scopeInfo nodeId="7316415153790561852" fileName="AbstractMigrationScriptHelper.java" startLine="43" startPosition="64" endLine="44" endPosition="48" />
     <scopeInfo nodeId="7316415153790561869" fileName="AbstractMigrationScriptHelper.java" startLine="50" startPosition="76" endLine="51" endPosition="41" />
-    <scopeInfo nodeId="7316415153790561919" fileName="AbstractMigrationScriptHelper.java" startLine="64" startPosition="59" endLine="65" endPosition="15" />
-    <scopeInfo nodeId="7316415153790561928" fileName="AbstractMigrationScriptHelper.java" startLine="67" startPosition="60" endLine="68" endPosition="15" />
+    <scopeInfo nodeId="7316415153790561919" fileName="AbstractMigrationScriptHelper.java" startLine="64" startPosition="58" endLine="65" endPosition="15" />
+    <scopeInfo nodeId="7316415153790561928" fileName="AbstractMigrationScriptHelper.java" startLine="67" startPosition="59" endLine="68" endPosition="15" />
     <scopeInfo nodeId="7316415153790561956" fileName="AbstractMigrationScriptHelper.java" startLine="71" startPosition="199" endLine="72" endPosition="17" />
     <scopeInfo nodeId="7316415153790561976" fileName="AbstractMigrationScriptHelper.java" startLine="80" startPosition="72" endLine="81" endPosition="26" />
     <scopeInfo nodeId="7316415153790561980" fileName="AbstractMigrationScriptHelper.java" startLine="86" startPosition="57" endLine="87" endPosition="55" />

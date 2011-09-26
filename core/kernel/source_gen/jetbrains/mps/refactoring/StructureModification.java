@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -29,7 +29,7 @@ public class StructureModification {
 
   public void addDependencyModel(SModelReference modelRef) {
     if (!(MapSequence.fromMap(myDependencies).containsKey(modelRef))) {
-      EditableSModelDescriptor model = as_hr78sn_a0a0a0a1(SModelRepository.getInstance().getModelDescriptor(modelRef), EditableSModelDescriptor.class);
+      DefaultSModelDescriptor model = as_hr78sn_a0a0a0a1(SModelRepository.getInstance().getModelDescriptor(modelRef), DefaultSModelDescriptor.class);
       MapSequence.fromMap(myDependencies).put(modelRef, (model == null ?
         -1 :
         model.getVersion()

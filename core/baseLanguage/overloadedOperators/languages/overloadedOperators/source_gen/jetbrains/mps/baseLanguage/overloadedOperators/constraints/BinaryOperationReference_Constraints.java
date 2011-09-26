@@ -55,7 +55,7 @@ public class BinaryOperationReference_Constraints extends BaseConstraintsDescrip
               SModel strucModel = strucModelDescriptor.getSModel();
               ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.getRoots(strucModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return SConceptOperations.isSubConceptOf(it, "jetbrains.mps.baseLanguage.structure.BinaryOperation") && !(SConceptPropertyOperations.getBoolean(it, "abstract"));
+                  return SConceptOperations.isSubConceptOf(((SNode) it), "jetbrains.mps.baseLanguage.structure.BinaryOperation") && !(SConceptPropertyOperations.getBoolean(it, "abstract"));
                 }
               }));
             }

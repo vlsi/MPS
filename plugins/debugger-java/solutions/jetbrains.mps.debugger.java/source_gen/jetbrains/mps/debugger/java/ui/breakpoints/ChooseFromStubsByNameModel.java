@@ -41,7 +41,10 @@ import org.jetbrains.annotations.NotNull;
           if (!(hasStubs)) {
             continue;
           }
-          final List<BaseSNodeDescriptor> descriptors = StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(m);
+          final List<BaseSNodeDescriptor> descriptors = new ArrayList<BaseSNodeDescriptor>();
+          for (SModelDescriptor model:m.getOwnModelDescriptors()){
+            descriptors.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(model.getSModelReference()));
+          }
           for (BaseSNodeDescriptor descriptor : descriptors) {
             String name = getName(descriptor);
             List<BaseSNodeDescriptor> descriptorList = myPossibleNodes.get(name);

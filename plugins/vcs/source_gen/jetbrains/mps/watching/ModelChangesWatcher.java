@@ -291,10 +291,8 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
 
     private void processAfterEvent(String filePath, VFileEvent event, ReloadSession reloadSession) {
-      if (MPSFileTypesManager.instance().isModelFile(filePath)) {
-        ModelChangesWatcher.LOG.debug("Process after event for " + filePath);
-        ModelFileProcessor.getInstance().process(event, reloadSession);
-      } else
+      ModelChangesWatcher.LOG.debug("Process after event for " + filePath);
+      ModelFileProcessor.getInstance().process(event, reloadSession);
       if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
         ModelChangesWatcher.LOG.debug("Process after event for " + filePath);
         ModuleFileProcessor.getInstance().process(event, reloadSession);

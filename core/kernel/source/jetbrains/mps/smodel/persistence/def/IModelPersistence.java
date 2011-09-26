@@ -37,6 +37,4 @@ public interface IModelPersistence {
   XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler();
 
   SModelReference upgradeModelUID(SModelReference modelReference);
-
-  boolean needsRecreating(IFile file);
 }

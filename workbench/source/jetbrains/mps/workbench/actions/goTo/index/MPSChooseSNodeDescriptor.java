@@ -103,8 +103,8 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
     }
 
     //java stubs
-    for (IModule m : scope.getVisibleModules()) {
-      keys.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(m));
+    for (SModelDescriptor m : scope.getModelDescriptors()) {
+      keys.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(m.getSModelReference()));
     }
 
     return keys.toArray(new BaseSNodeDescriptor[keys.size()]);

@@ -15,39 +15,27 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.persistence.BaseMPSModelRootManager;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.annotations.NotNull;
 
 public class ProjectModels {
   private static long ourProjectModelDescriptorCount = 0;
-  private static final IModelRootManager ourModelRootManager = new BaseMPSModelRootManager() {
-    public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner) {
-      throw new RuntimeException();
-    }
-
-    @NotNull
-    public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
-      return new SModel(modelDescriptor.getSModelReference());
-    }
-
-    public SModel saveModel(@NotNull SModelDescriptor modelDescriptor) {
-      return null;
-    }
-  };
 
   @NotNull
-  public static EditableSModelDescriptor createDescriptorFor(@NotNull ModelOwner owner) {
-    SModelFqName fqName = new SModelFqName("projectModel" + ourProjectModelDescriptorCount++, SModelStereotype.INTERNAL); // "$internal$"
-    EditableSModelDescriptor result = new DefaultSModelDescriptor(ourModelRootManager, null, new SModelReference(fqName, SModelId.generate()));
+  public static BaseSModelDescriptor createDescriptorFor(@NotNull ModelOwner owner) {
+    SModelFqName fqName = new SModelFqName("projectModel" + ourProjectModelDescriptorCount++, SModelStereotype.INTERNAL);
+
+    SModelReference ref = new SModelReference(fqName, SModelId.generate());
+    BaseSModelDescriptor result = new BaseSModelDescriptor(ref, false) {
+      protected ModelLoadResult initialLoad() {
+        SModel model = new SModel(this.getSModelReference());
+        return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+      }
+    };
     SModelRepository.getInstance().registerModelDescriptor(result, owner);
     return result;
   }
 
   public static boolean isProjectModel(@NotNull SModelReference reference) {
-    return SModelStereotype.INTERNAL.equals(reference.getStereotype()); // "$internal$"
+    return SModelStereotype.INTERNAL.equals(reference.getStereotype());
   }
 }

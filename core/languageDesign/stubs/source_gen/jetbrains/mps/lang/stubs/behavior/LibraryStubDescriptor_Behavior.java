@@ -18,10 +18,7 @@ public class LibraryStubDescriptor_Behavior {
   }
 
   public static String call_getGeneratedClassFQName_5437642622779198671(SNode thisNode) {
-    return AbstractModelCreator_Behavior.call_getGeneratedClassFQName_5553449326502826666(SLinkOperations.getTarget(thisNode, "creator", false)) + (((SLinkOperations.getTarget(thisNode, "export", true) == null) ?
-      "" :
-      "_" + SPropertyOperations.getString(thisNode, "name")
-    ));
+    return ModelManagerDeclaration_Behavior.call_getGeneratedClassFQName_4063774604867753801(SLinkOperations.getTarget(thisNode, "manager", false));
   }
 
   public static String call_getGeneratedClassName_2974122604715185986(SNode thisNode) {
