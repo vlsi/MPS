@@ -37,6 +37,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.util.ManyToManyMap;
 
 import java.util.*;
@@ -57,6 +58,8 @@ public class State {
   private AbstractOperation myOperation;
   private List<AbstractOperation> myOperationsAsList;
   private boolean myInsideStateChangeAction = false;
+
+  private InequalitySystem myInequalitySystem = null;
 
   @StateObject
   private final Map<ConditionKind, ManyToManyMap<SNode, Block>> myBlocksAndInputs =
@@ -223,6 +226,15 @@ public class State {
   }
 
   public boolean addEquation(SNode left, SNode right, EquationInfo info) {
+    if (myInequalitySystem != null) {
+      if (myEquations.getRepresentative(myInequalitySystem.getHoleType())== left) {
+        myInequalitySystem.addEquation(left);
+      }
+      if (myEquations.getRepresentative(myInequalitySystem.getHoleType())== right) {
+        myInequalitySystem.addEquation(right);
+      }
+      return true;
+    }
     return myEquations.addEquation(left, right, info);
   }
 
@@ -235,6 +247,15 @@ public class State {
   }
 
   public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info, boolean lessThan) {
+    if (myInequalitySystem != null) {
+      if (myEquations.getRepresentative(myInequalitySystem.getHoleType())== subType) {
+        myInequalitySystem.addSupertype(superType, isWeak);
+      }
+      if (myInequalitySystem.getHoleType()== superType) {
+        myInequalitySystem.addSubtype(subType, isWeak);
+      }
+      return;
+    }
     addBlock(new InequalityBlock(this, subType, superType, lessThan, RelationKind.fromFlags(isWeak, check, false), info));
   }
 
@@ -474,5 +495,20 @@ public class State {
     } else if (fromIndex < toIndex) {
       executeOperationsFromTo(fromIndex, toIndex);
     }
+  }
+
+  public void initHole(SNode hole) {
+    SNode var = typeOf(hole, null);
+    myNodeMaps.addNodeToType(hole, var, null);
+    myInequalitySystem = new InequalitySystem(var);
+
+  }
+
+  public InequalitySystem getInequalitySystem() {
+    return myInequalitySystem;
+  }
+
+  public void disposeHole() {
+    myInequalitySystem = null;
   }
 }

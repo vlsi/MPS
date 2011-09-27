@@ -20,6 +20,14 @@ public class PrimitiveType_Behavior {
     return ListSequence.fromListAndArray(new ArrayList<String>(), SConceptPropertyOperations.getString(thisNode, "alias").substring(0, 1));
   }
 
+  public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
+    return SConceptPropertyOperations.getString(thisNode, "alias");
+  }
+
+  public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
+    return thisNode;
+  }
+
   public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {
     return thisNode;
   }

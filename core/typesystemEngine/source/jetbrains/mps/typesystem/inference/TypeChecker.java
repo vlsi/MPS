@@ -261,6 +261,13 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
     }
   }
 
+  public InequalitySystem getInequalitiesForHole(SNode hole, boolean holeIsAType) {
+    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(hole.getContainingRoot());
+    InequalitySystem inequalitySystem = typeCheckingContext.getBaseNodeTypesComponent().computeInequalitiesForHole(hole, holeIsAType);
+    typeCheckingContext.dispose();
+    return inequalitySystem;
+  }
+
   public SNode getInferredTypeOf(final SNode node) {
     if (node == null) return null;
     TypeCheckingContext typeCheckingContext =

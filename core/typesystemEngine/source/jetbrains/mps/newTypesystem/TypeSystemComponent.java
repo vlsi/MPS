@@ -249,7 +249,7 @@ class TypeSystemComponent extends CheckingComponent {
       if (prevNode != null) {
         additionalNodes.add(prevNode);
       }
-      computeTypes(node, true, false, additionalNodes, false, initialNode);
+      computeTypes(node, false, false, additionalNodes, false, initialNode);
       type = getType(initialNode);
       if (type == null || HUtil.hasVariablesInside(type)) {
         if (node.isRoot()) {

@@ -21,6 +21,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.typesystem.inference.InequalitySystem;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
@@ -104,10 +106,26 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     });
   }
 
+  public InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
+    return null;
+  }
+
   public List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
-    // InequationSystem inequationSystem = getInequationSystem(contextCell);
+    InequalitySystem inequalitiesSystem = getInequalitiesSystem(contextCell);
+
     List<INodeSubstituteAction> substituteActionList = getMatchingActions(pattern, strictMatching);
-    return substituteActionList;
+    if (inequalitiesSystem == null) return substituteActionList;
+
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    TypeChecker.getInstance().enableTypesComputingForCompletion();
+    for (INodeSubstituteAction nodeSubstituteAction : substituteActionList) {
+      SNode type = nodeSubstituteAction.getActionType(pattern, contextCell);
+      if (type != null && inequalitiesSystem.satisfies(type)) {
+        result.add(nodeSubstituteAction);
+      }
+    }
+    TypeChecker.getInstance().clearTypesComputedForCompletion();
+    return result;
   }
 
   public List<INodeSubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
