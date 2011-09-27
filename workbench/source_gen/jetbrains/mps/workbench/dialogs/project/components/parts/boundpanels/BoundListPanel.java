@@ -10,7 +10,7 @@ import javax.swing.JComponent;
 import org.jdesktop.swingbinding.SwingBindings;
 import org.jdesktop.beansbinding.AutoBinding;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;

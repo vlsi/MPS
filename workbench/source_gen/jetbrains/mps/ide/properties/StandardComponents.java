@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelChooser;
 import javax.swing.DefaultListCellRenderer;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRenderer;

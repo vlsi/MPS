@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;

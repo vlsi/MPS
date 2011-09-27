@@ -42,7 +42,7 @@ import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModel;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import jetbrains.mps.compiler.CompilationResultAdapter;

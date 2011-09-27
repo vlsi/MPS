@@ -11,7 +11,7 @@ import jetbrains.mps.project.IModule;
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.make.MPSCompilationResult;

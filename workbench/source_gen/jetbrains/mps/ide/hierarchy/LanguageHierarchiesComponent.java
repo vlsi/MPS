@@ -48,7 +48,7 @@ import javax.swing.SwingConstants;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import java.awt.Font;

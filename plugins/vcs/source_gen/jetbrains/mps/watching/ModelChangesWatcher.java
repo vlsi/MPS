@@ -29,7 +29,7 @@ import jetbrains.mps.library.LibraryManager;
 import java.io.File;
 import com.intellij.openapi.util.io.FileUtil;
 import java.io.IOException;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import java.util.List;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.openapi.vfs.VfsUtil;

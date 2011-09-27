@@ -260,7 +260,6 @@
   <dependency className="jetbrains.mps.baseLanguage.plugin.GoToHelper" file="GoToHelper.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.PopupChooserBuilder" />
-    <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
     <classNode dependClassName="com.intellij.ui.components.JBList" />
     <classNode dependClassName="java.lang.Object" />
@@ -280,6 +279,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.presentation.NodePresentationUtil" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.plugin.DefaultNodeNavigationItemCellRenderer" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.plugin.NodeListCellRenderer" />
   </dependency>

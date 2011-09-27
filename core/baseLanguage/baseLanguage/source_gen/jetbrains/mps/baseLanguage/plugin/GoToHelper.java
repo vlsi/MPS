@@ -14,7 +14,7 @@ import javax.swing.JList;
 import com.intellij.ui.components.JBList;
 import com.intellij.openapi.ui.popup.PopupChooserBuilder;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;

@@ -9,7 +9,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.ant.make.MakeWorker" file="MakeWorker.java">
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
-    <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -24,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsWorker" />

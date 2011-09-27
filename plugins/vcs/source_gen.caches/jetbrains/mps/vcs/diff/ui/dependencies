@@ -454,7 +454,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractAdditionalPainter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.OldDiffEditorComponent" file="OldDiffEditorComponent.java">
-    <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.awt.Rectangle" />
@@ -482,6 +481,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange" />
@@ -684,7 +684,6 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog" file="OldModelDifferenceDialog.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="com.intellij.openapi.wm.FocusWatcher" />
     <classNode dependClassName="com.intellij.ui.FocusTrackback" />
     <classNode dependClassName="java.awt.Frame" />
@@ -701,6 +700,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldModelDifferenceComponent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldRootDifferenceDialog" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />

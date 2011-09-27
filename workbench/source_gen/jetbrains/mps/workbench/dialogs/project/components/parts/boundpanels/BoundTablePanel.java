@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import javax.swing.JComponent;
 import jetbrains.mps.workbench.dialogs.project.components.parts.diffrowtable.DiffRowTable;
 import com.intellij.ui.table.JBTable;

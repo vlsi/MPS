@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModel;
 import java.awt.HeadlessException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.FocusEvent;

@@ -5,7 +5,7 @@ package jetbrains.mps.refactoring.framework;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;

@@ -14,7 +14,7 @@ import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.execution.Location;
 import com.intellij.execution.configurations.RunConfiguration;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import com.intellij.execution.impl.RunnerAndConfigurationSettingsImpl;
 import com.intellij.execution.impl.RunManagerImpl;
 import org.apache.commons.lang.ObjectUtils;

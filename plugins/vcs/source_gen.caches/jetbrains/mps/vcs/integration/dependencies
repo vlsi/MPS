@@ -22,7 +22,6 @@
     <classNode dependClassName="com.intellij.openapi.diff.DocumentContent" />
     <classNode dependClassName="com.intellij.openapi.diff.FileContent" />
     <classNode dependClassName="com.intellij.openapi.fileTypes.FileType" />
-    <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
@@ -40,6 +39,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.vcs.ModelUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog" />
@@ -87,7 +87,6 @@
   <dependency className="jetbrains.mps.vcs.integration.ModuleVcsPathPresenter" file="ModuleVcsPathPresenter.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="com.intellij.openapi.util.io.FileUtil" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsRoot" />
@@ -96,6 +95,7 @@
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode extendsClassName="com.intellij.openapi.vcs.impl.VcsPathPresenter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.integration.OptimizeImportsCheckinHandler" file="OptimizeImportsCheckinHandler.java">

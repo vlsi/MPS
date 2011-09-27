@@ -10,7 +10,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.IModule;

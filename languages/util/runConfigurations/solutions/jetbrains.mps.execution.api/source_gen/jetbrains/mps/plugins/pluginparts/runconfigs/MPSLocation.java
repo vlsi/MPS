@@ -5,7 +5,7 @@ package jetbrains.mps.plugins.pluginparts.runconfigs;
 import com.intellij.execution.Location;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.module.Module;
 import java.util.Iterator;

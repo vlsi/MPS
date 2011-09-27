@@ -13,7 +13,7 @@ import java.awt.Graphics;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.language.ConceptRegistry;

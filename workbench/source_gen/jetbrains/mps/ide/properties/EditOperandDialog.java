@@ -31,7 +31,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.ArrayList;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 
 public class EditOperandDialog extends BaseDialog {
   private MappingConfig_AbstractRef myResult;

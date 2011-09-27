@@ -20,7 +20,7 @@ import jetbrains.mps.project.SModelRoot;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.Language;

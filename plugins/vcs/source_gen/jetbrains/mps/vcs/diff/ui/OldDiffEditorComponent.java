@@ -31,7 +31,7 @@ import java.util.Iterator;
 import java.util.Collections;
 import java.util.Comparator;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import java.awt.Point;
 import java.awt.Rectangle;
 
