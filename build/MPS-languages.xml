@@ -341,6 +341,7 @@
   </target>
   <target name="pack.jetbrains.mps.ide.editor">
     <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${base_dir}/plugins/mpseditor/classes" />
     <mkdir dir="${deploy.dir}/MPS/plugins/mpseditor/lib/jetbrains.mps.ide.editor.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/plugins/mpseditor/lib/jetbrains.mps.ide.editor.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.ide.editor" uuid="5b1f863d-65a0-41a6-a801-33896be24202" type="solution">
@@ -459,18 +460,20 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
+        <library jar="jetbrains.mps.ide.editor.jar" />
         <sources jar="jetbrains.mps.ide.editor-src.jar" descriptor="jetbrains.mps.ide.editor.msd" />
       </module>
     </echoxml>
     <jar destfile="${deploy.dir}/MPS/plugins/mpseditor/lib/jetbrains.mps.ide.editor-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/plugins/mpseditor/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/plugins/mpseditor/solution/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/plugins/mpseditor/solution/jetbrains.mps.ide.editor.msd" prefix="module" />
-      <zipfileset dir="${base_dir}/plugins/mpseditor/solution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
+      <zipfileset dir="${base_dir}/plugins/mpseditor/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/plugins/mpseditor/jetbrains.mps.ide.editor.msd" prefix="module" />
+      <zipfileset dir="${base_dir}/plugins/mpseditor/solution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/solution" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/plugins/mpseditor/lib/jetbrains.mps.ide.editor.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/plugins/mpseditor/lib/jetbrains.mps.ide.editor.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/plugins/mpseditor/solution" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/plugins/mpseditor" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/plugins/mpseditor/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/mpseditor/lib/jetbrains.mps.ide.editor.jar.jtmp" />
   </target>
