@@ -32,7 +32,7 @@ import jetbrains.mps.smodel.MissingDependenciesFixer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.SModelDescriptor;

@@ -17,13 +17,13 @@ package jetbrains.mps.ide.undo;
 
 import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHandler;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.LinkedList;

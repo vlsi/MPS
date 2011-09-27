@@ -7,7 +7,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.util.Computable;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VfsUtil;
 import java.io.File;
 import com.intellij.openapi.vcs.VcsRoot;

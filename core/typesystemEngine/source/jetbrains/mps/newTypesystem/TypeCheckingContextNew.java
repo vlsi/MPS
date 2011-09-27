@@ -33,6 +33,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
@@ -442,7 +443,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
-  public <T> T runTypeCheckingAction(com.intellij.openapi.util.Computable<T> c) {
+  public <T> T runTypeCheckingAction(Computable<T> c) {
     synchronized (TYPECHECKING_LOCK) {
       return c.compute();
     }

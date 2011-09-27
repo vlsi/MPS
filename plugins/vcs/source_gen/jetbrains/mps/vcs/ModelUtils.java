@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jdom.Document;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import java.io.ByteArrayOutputStream;
 import jetbrains.mps.util.JDOMUtil;

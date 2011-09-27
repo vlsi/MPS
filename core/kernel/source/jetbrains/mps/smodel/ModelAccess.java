@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 
 import java.util.Set;

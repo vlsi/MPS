@@ -77,7 +77,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   protected abstract ModelLoadResult initialLoad();
 
-  protected ModelLoadResult runModelLoading(final com.intellij.openapi.util.Computable<ModelLoadResult> comp) {
+  protected ModelLoadResult runModelLoading(final Computable<ModelLoadResult> comp) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
       public ModelLoadResult compute() {
         return UndoHelper.getInstance().runNonUndoableAction(comp);

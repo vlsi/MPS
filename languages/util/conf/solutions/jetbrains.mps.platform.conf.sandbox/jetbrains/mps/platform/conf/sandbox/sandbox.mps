@@ -14,13 +14,13 @@
     <node role="root" roleId="cs0q.7130790807395857418" type="cs0q.Plugin" typeId="cs0q.6536266708345244486" id="7208030699524859782">
       <property name="name" nameId="tpck.1169194664001" value="NNNNN" />
       <node role="depends" roleId="cs0q.6536266708345244499" type="cs0q.PluginDependency" typeId="cs0q.6536266708345244487" id="6191093908411707946">
-        <link role="plugin" roleId="cs0q.6536266708345244489" targetNodeId="2wu3.4455495789557343236" resolveInfo="IDEA CORE" />
+        <link role="plugin" roleId="cs0q.6536266708345244489" targetNodeId="2wu3.2116786884968182298" resolveInfo="plugin$com-intellij" />
       </node>
       <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.Actions" typeId="cs0q.4383174161801812099" id="5246455451713223851" />
       <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.ExtensionPoints" typeId="cs0q.7130790807395857422" id="5246455451713223852" />
       <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.Extensions" typeId="cs0q.1740160309778208723" id="5246455451713223854">
         <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.BeanExtension" typeId="cs0q.6121364846593763655" id="5246455451713229103">
-          <link role="extensionPoint" roleId="cs0q.6121364846593763607" targetNodeId="2wu3.~extensionPoint$referenceProviderType" resolveInfo="referenceProviderType" />
+          <link role="extensionPoint" roleId="cs0q.6121364846593763607" targetNodeId="2wu3.~extensionPoint$referenceProviderType" resolveInfo="extensionPoint$referenceProviderType" />
         </node>
       </node>
       <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.ConfigurationXmlNode" typeId="cs0q.5066720069350533029" id="5246455451713265878" />
@@ -35,16 +35,16 @@
           <property name="id" nameId="cs0q.4383174161802026699" value="343434" />
           <node role="actionItem" roleId="cs0q.8605160448688984317" type="cs0q.Separator" typeId="cs0q.8605160448688984324" id="3886786302241755448" />
           <node role="actionItem" roleId="cs0q.8605160448688984317" type="cs0q.ActionReference" typeId="cs0q.4383174161802026707" id="4146194781600604415">
-            <link role="action" roleId="cs0q.4383174161802026708" targetNodeId="4146194781600412277" />
+            <link role="action" roleId="cs0q.4383174161802026708" targetNodeId="4146194781600412277" resolveInfo="group$343434" />
           </node>
           <node role="actionItem" roleId="cs0q.8605160448688984317" type="cs0q.ActionReference" typeId="cs0q.4383174161802026707" id="4146194781600611065">
-            <link role="action" roleId="cs0q.4383174161802026708" targetNodeId="7208030699524868312" />
+            <link role="action" roleId="cs0q.4383174161802026708" targetNodeId="7208030699524868312" resolveInfo="action$adasdas" />
           </node>
           <node role="actionItem" roleId="cs0q.8605160448688984317" type="cs0q.ActionReference" typeId="cs0q.4383174161802026707" id="4146194781600611067">
-            <link role="action" roleId="cs0q.4383174161802026708" targetNodeId="4146194781600412277" />
+            <link role="action" roleId="cs0q.4383174161802026708" targetNodeId="4146194781600412277" resolveInfo="group$343434" />
           </node>
           <node role="actionItem" roleId="cs0q.8605160448688984317" type="cs0q.ActionReference" typeId="cs0q.4383174161802026707" id="4146194781600611063">
-            <link role="action" roleId="cs0q.4383174161802026708" targetNodeId="4146194781600412277" />
+            <link role="action" roleId="cs0q.4383174161802026708" targetNodeId="4146194781600412277" resolveInfo="group$343434" />
           </node>
           <node role="addToGroup" roleId="cs0q.8605160448688984311" type="cs0q.GroupReference" typeId="cs0q.4383174161802026705" id="8087864013722247579">
             <link role="group" roleId="cs0q.4383174161802026706" targetNodeId="8087864013722247578" resolveInfo="group$sdsad" />

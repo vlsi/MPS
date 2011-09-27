@@ -17,7 +17,6 @@ package jetbrains.mps.typesystem.inference;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.util.Computable;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
@@ -28,6 +27,7 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -162,10 +162,10 @@ public class TypeContextManager implements ApplicationComponent {
           List<ITypeContextOwner> owners = new ArrayList<ITypeContextOwner>(1);
           contextWithOwners = new Pair<TypeCheckingContext, List<ITypeContextOwner>>(newTypeCheckingContext, owners);
           owners.add(owner);
-          if (owners.size()>100){
-            if (!myReported){
+          if (owners.size() > 100) {
+            if (!myReported) {
               myReported = true;
-              LOG.warning("Type checking context for node "+ node.getPresentation()+" has too much owners");
+              LOG.warning("Type checking context for node " + node.getPresentation() + " has too much owners");
             }
           }
           myTypeCheckingContexts.put(node, contextWithOwners);
@@ -253,7 +253,8 @@ public class TypeContextManager implements ApplicationComponent {
   @Nullable
   public SNode getTypeOf(final SNode node, boolean generationMode, IPerformanceTracer tracer) {
     if (node == null) return null;
-    ITypeContextOwner owner = new ITypeContextOwner(){};
+    ITypeContextOwner owner = new ITypeContextOwner() {
+    };
     SNode root = node.getContainingRoot();
     Stack<Object> resolve = getMyResolveStack();
     Set<SNode> resolveNodes = getMyResolveNodes();

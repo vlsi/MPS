@@ -18,7 +18,7 @@ package jetbrains.mps.util;
 /**
  * Evgeny Gryaznov, 9/27/11
  */
-public interface Computable<T> extends com.intellij.openapi.util.Computable<T> {
+public interface Computable<T> {
 
-//  T compute();
+  T compute();
 }

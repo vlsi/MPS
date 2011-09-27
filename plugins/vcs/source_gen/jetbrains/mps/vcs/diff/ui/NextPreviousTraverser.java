@@ -27,7 +27,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;

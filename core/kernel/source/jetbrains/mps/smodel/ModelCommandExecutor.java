@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,10 +31,11 @@ public interface ModelCommandExecutor {
    * Enables canRead() without actually acquiring the read lock (screw you, ReadWriteLock!).
    * Requires read lock in the "parent" thread.
    * Thread local. Returns previous value, to which it must be reset after use (in finally{}).
+   *
    * @param flag
    * @return
    */
-  boolean setReadEnabledFlag (boolean flag);
+  boolean setReadEnabledFlag(boolean flag);
 
   boolean isInEDT();
 
@@ -107,6 +108,7 @@ public interface ModelCommandExecutor {
 
   /**
    * Returns true iff the locking and the operation were successful.
+   *
    * @param r
    * @return
    */
@@ -114,6 +116,7 @@ public interface ModelCommandExecutor {
 
   /**
    * Returns the result of the computation, null if locking was unsuccessful.
+   *
    * @param c
    * @param <T>
    * @return
@@ -123,6 +126,7 @@ public interface ModelCommandExecutor {
   /**
    * Does everything to ensure the locking and the operation success, including asking for the user confirmation.
    * Throws a RuntimeException if nothing helped.
+   *
    * @param r
    * @return
    */
@@ -132,6 +136,7 @@ public interface ModelCommandExecutor {
    * Does everything to ensure the locking and the operation success, including asking for the user confirmation.
    * Throws a RuntimeException if nothing helped.
    * Returns the result of the computation.
+   *
    * @param c
    * @return
    */
@@ -141,6 +146,7 @@ public interface ModelCommandExecutor {
 
   /**
    * Returns true iff the locking and the operation were successful.
+   *
    * @param r
    * @return
    */
@@ -148,6 +154,7 @@ public interface ModelCommandExecutor {
 
   /**
    * Returns the result of the computation, null if locking was unsuccessful.
+   *
    * @param c
    * @param <T>
    * @return
@@ -157,6 +164,7 @@ public interface ModelCommandExecutor {
   /**
    * Does everything to ensure the locking and the operation success, including asking for the user confirmation.
    * Throws a RuntimeException if nothing helped.
+   *
    * @param r
    */
   void requireWrite(Runnable r);
@@ -165,6 +173,7 @@ public interface ModelCommandExecutor {
    * Does everything to ensure the locking and the operation success, including asking for the user confirmation.
    * Throws a RuntimeException if nothing helped.
    * Returns the result of the computation.
+   *
    * @param c
    * @return
    */

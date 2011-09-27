@@ -18,8 +18,8 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -148,8 +148,9 @@ public class DefaultModelAccess extends ModelAccess {
     int MAX_TRIES = 4;
     for (i = 0; i < MAX_TRIES && !tryRead(r); ++i) {
       try {
-        Thread.sleep((1<<i)*100);
-      } catch (InterruptedException ignore) {}
+        Thread.sleep((1 << i) * 100);
+      } catch (InterruptedException ignore) {
+      }
     }
     if (i >= MAX_TRIES) {
       throw new RuntimeException("Failed to acquire read lock");
@@ -163,8 +164,9 @@ public class DefaultModelAccess extends ModelAccess {
     int MAX_TRIES = 4;
     for (i = 0; i < MAX_TRIES && (result = tryRead(c)) == null; ++i) {
       try {
-        Thread.sleep((1<<i)*100);
-      } catch (InterruptedException ignore) {}
+        Thread.sleep((1 << i) * 100);
+      } catch (InterruptedException ignore) {
+      }
     }
     if (i >= MAX_TRIES) {
       throw new RuntimeException("Failed to acquire read lock");
@@ -205,8 +207,9 @@ public class DefaultModelAccess extends ModelAccess {
     int MAX_TRIES = 4;
     for (i = 0; i < MAX_TRIES && !tryWrite(r); ++i) {
       try {
-        Thread.sleep((1<<i)*100);
-      } catch (InterruptedException ignore) {}
+        Thread.sleep((1 << i) * 100);
+      } catch (InterruptedException ignore) {
+      }
     }
     if (i >= MAX_TRIES) {
       throw new RuntimeException("Failed to acquire write lock");
@@ -220,8 +223,9 @@ public class DefaultModelAccess extends ModelAccess {
     int MAX_TRIES = 4;
     for (i = 0; i < MAX_TRIES && (result = tryWrite(c)) == null; ++i) {
       try {
-        Thread.sleep((1<<i)*100);
-      } catch (InterruptedException ignore) {}
+        Thread.sleep((1 << i) * 100);
+      } catch (InterruptedException ignore) {
+      }
     }
     if (i >= MAX_TRIES) {
       throw new RuntimeException("Failed to acquire write lock");

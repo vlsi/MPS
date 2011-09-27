@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -23,6 +22,7 @@ import jetbrains.mps.newTypesystem.NodeTypesComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 

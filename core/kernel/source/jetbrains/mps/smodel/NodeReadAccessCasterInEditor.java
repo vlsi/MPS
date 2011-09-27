@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 
 import java.util.Stack;
 

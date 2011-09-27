@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.Hack;
 
 public class PropertyAccessor implements ModelAccessor {

@@ -335,7 +335,7 @@ public class EditorContext {
     myNodeEditorComponent.executeCommand(r);
   }
 
-  public <T> T executeCommand(com.intellij.openapi.util.Computable<T> c) {
+  public <T> T executeCommand(Computable<T> c) {
     return myNodeEditorComponent.executeCommand(c);
   }
 }

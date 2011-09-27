@@ -2185,7 +2185,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     relayout();
   }
 
-  <T> T executeCommand(final com.intellij.openapi.util.Computable<T> c) {
+  <T> T executeCommand(final Computable<T> c) {
     myInsideOfCommand = true;
     try {
       return ModelAccess.instance().runWriteActionInCommand(c, getCurrentProject());
