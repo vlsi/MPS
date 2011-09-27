@@ -608,6 +608,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInequationReplacementRules.add(eliminationRule);
     }
     {
+      InequationReplacementRule_Runtime eliminationRule = new listSubtypeOfNodeList_InequationReplacementRule();
+      this.myInequationReplacementRules.add(eliminationRule);
+    }
+    {
       InequationReplacementRule_Runtime eliminationRule = new listType_with_vars_subtypeOf_listType_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
