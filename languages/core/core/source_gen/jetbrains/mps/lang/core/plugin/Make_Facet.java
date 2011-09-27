@@ -138,7 +138,7 @@ public class Make_Facet extends IFacet.Stub {
     }
 
     public boolean producesOutput() {
-      return false;
+      return true;
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
