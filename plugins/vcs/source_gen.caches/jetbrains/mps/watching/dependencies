@@ -87,6 +87,9 @@
     <classNode dependClassName="jetbrains.mps.library.LibraryManager" />
     <classNode dependClassName="jetbrains.mps.library.ProjectLibraryManager" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.make.IMakeNotificationListener" />
+    <classNode dependClassName="jetbrains.mps.make.IMakeService" />
+    <classNode dependClassName="jetbrains.mps.make.MakeNotification" />
     <classNode dependClassName="jetbrains.mps.watching.BeforeModelEventProcessor" />
     <classNode dependClassName="jetbrains.mps.watching.BeforeModuleEventProcessor" />
     <classNode dependClassName="jetbrains.mps.watching.ModelFileProcessor" />
