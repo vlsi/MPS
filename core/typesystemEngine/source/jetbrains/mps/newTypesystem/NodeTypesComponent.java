@@ -164,6 +164,7 @@ public class NodeTypesComponent {
      try {
        state.initHole(hole);
        computeTypesForNode_special(hole.getParent(), additionalNodes);
+       state.getInequalitySystem().expandAll(state.getEquations());
        for (String s : state.getInequalitySystem().getPresentation()) {
          System.out.println(s);
        }

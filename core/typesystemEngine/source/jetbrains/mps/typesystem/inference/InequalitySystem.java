@@ -17,7 +17,10 @@ package jetbrains.mps.typesystem.inference;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.newTypesystem.TypesUtil;
+import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.misc.hash.HashSet;
 
 import java.util.Set;
 
@@ -80,51 +83,26 @@ public class InequalitySystem {
     }
     return true;
   }
-                  /*
-  public void normalize() {
-    SModel runtimeTypesModel = TypeChecker.getInstance().getRuntimeTypesModel();
 
-    {
-      Set<SNode> wrappers = new THashSet<SNode>(myEquals);
-      myEquals.clear();
-      for (SNode wrapper : wrappers) {
-        myEquals.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
+  private Set<SNode> expandSet(Set<SNode> set, Equations equations) {
+    if (set.isEmpty()) return set;
+    Set<SNode> result = new HashSet<SNode>();
+    for (SNode node : set) {
+      SNode expanded = equations.expandNode(node, true);
+      if (!TypesUtil.isVariable(expanded)) {
+        result.add(expanded);
       }
     }
+    return result;
+  }
 
-    {
-      Set<SNode> wrappers = new THashSet<SNode>(mySubtypes);
-      mySubtypes.clear();
-      for (SNode wrapper : wrappers) {
-        mySubtypes.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
-      }
-    }
-
-    {
-      Set<SNode> wrappers = new THashSet<SNode>(mySupertypes);
-      mySupertypes.clear();
-      for (SNode wrapper : wrappers) {
-        mySupertypes.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
-      }
-    }
-
-    {
-      Set<SNode> wrappers = new THashSet<SNode>(myStrongSubtypes);
-      myStrongSubtypes.clear();
-      for (SNode wrapper : wrappers) {
-        myStrongSubtypes.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
-      }
-    }
-
-    {
-      Set<SNode> wrappers = new THashSet<SNode>(myStrongSupertypes);
-      myStrongSupertypes.clear();
-      for (SNode wrapper : wrappers) {
-        myStrongSupertypes.add(getEquationManager().expandWrapper(null, wrapper, runtimeTypesModel));
-      }
-    }
-
-  }             */
+  public void expandAll(Equations equations) {
+    myEquals = expandSet(myEquals, equations);
+    mySubTypes = expandSet(mySubTypes, equations);
+    mySuperTypes = expandSet(mySuperTypes, equations);
+    myStrongSubTypes = expandSet(myStrongSubTypes, equations);
+    myStrongSuperTypes = expandSet(myStrongSuperTypes, equations);
+  }
 
   public boolean isEmpty() {
     return myEquals.isEmpty() && mySubTypes.isEmpty() && mySuperTypes.isEmpty()
