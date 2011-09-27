@@ -29,6 +29,9 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GeneratorManager;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -161,6 +164,7 @@ public class ProjectTestHelper {
   }
 
   private class PrivToken extends ProjectTestHelper.Token {
+    private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "trace.info", "dependencies", ".dependencies", ".generated", ".debug");
     private final Project project;
     private final IModule module;
     private String tmpPath;
@@ -275,7 +279,7 @@ public class ProjectTestHelper {
       if (Sequence.fromIterable(onames).disjunction(Sequence.fromIterable(rnames)).isNotEmpty()) {
         Sequence.fromIterable(onames).subtract(Sequence.fromIterable(rnames)).visitAll(new IVisitor<String>() {
           public void visit(String it) {
-            if ("trace.info".equals(it)) {
+            if (ignoredFile(it)) {
               return;
             }
             ListSequence.fromList(diffs).addElement("Removed: " + new File(orig, it));
@@ -283,7 +287,7 @@ public class ProjectTestHelper {
         });
         Sequence.fromIterable(rnames).subtract(Sequence.fromIterable(onames)).visitAll(new IVisitor<String>() {
           public void visit(String it) {
-            if ("trace.info".equals(it)) {
+            if (ignoredFile(it)) {
               return;
             }
             ListSequence.fromList(diffs).addElement("Created: " + new File(orig, it));
@@ -291,7 +295,7 @@ public class ProjectTestHelper {
         });
       }
       for (String name : Sequence.fromIterable(onames).intersect(Sequence.fromIterable(rnames))) {
-        if ("trace.info".equals(name)) {
+        if (ignoredFile(name)) {
           continue;
         }
 
@@ -311,6 +315,10 @@ public class ProjectTestHelper {
           ListSequence.fromList(diffs).addElement("Something weird here: " + onext + " or here " + rnext);
         }
       }
+    }
+
+    private boolean ignoredFile(String fileName) {
+      return SetSequence.fromSet(ignoredFiles).contains(fileName) || (fileName != null && fileName.startsWith(".hash"));
     }
 
     private List<String> fileToStrings(File f) {
