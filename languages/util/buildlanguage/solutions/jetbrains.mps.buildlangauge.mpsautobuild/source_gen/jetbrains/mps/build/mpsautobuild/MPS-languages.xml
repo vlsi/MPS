@@ -235,6 +235,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -384,6 +385,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -677,6 +679,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -824,6 +827,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -976,6 +980,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -1124,6 +1129,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -1272,6 +1278,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -1420,6 +1427,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -1569,6 +1577,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -1718,6 +1727,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -1867,6 +1877,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -2022,6 +2033,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -2169,6 +2181,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -2316,6 +2329,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -2466,6 +2480,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -2613,6 +2628,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -2851,6 +2867,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -3028,6 +3045,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -3177,6 +3195,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -3325,6 +3344,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -3474,6 +3494,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -3622,6 +3643,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
           <module ref="40aea410-4b11-411f-9197-07da76ee0e82(jetbrains.mps.plugin.runtime)" />
@@ -3770,6 +3792,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -3917,6 +3940,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -4066,6 +4090,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -4214,6 +4239,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -4362,6 +4388,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -4510,6 +4537,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -4658,6 +4686,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -4806,6 +4835,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -4954,6 +4984,7 @@
           <module ref="34f23130-e35c-4795-a45a-85d828b16016(jetbrains.mps.gtext.runtime)" />
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -5102,6 +5133,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -5250,6 +5282,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -5404,6 +5437,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -5557,6 +5591,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -5702,6 +5737,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -5851,6 +5887,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -6005,6 +6042,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -6157,6 +6195,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
           <module ref="40aea410-4b11-411f-9197-07da76ee0e82(jetbrains.mps.plugin.runtime)" />
@@ -6305,6 +6344,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -6453,6 +6493,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -6600,6 +6641,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -6749,6 +6791,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -6897,6 +6940,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -7046,6 +7090,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -7193,6 +7238,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -7341,6 +7387,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -7489,6 +7536,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -7637,6 +7685,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -7784,6 +7833,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -7933,6 +7983,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -8147,6 +8198,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -8298,6 +8350,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -8450,6 +8503,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -8598,6 +8652,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -8745,6 +8800,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -8892,6 +8948,7 @@
           <module ref="34f23130-e35c-4795-a45a-85d828b16016(jetbrains.mps.gtext.runtime)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -9037,6 +9094,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -9184,6 +9242,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -9332,6 +9391,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -9479,6 +9539,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -9627,6 +9688,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -9808,6 +9870,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -9956,6 +10019,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -10110,6 +10174,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -10261,6 +10326,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -10414,6 +10480,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -10564,6 +10631,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -10718,6 +10786,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -10883,6 +10952,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -11077,6 +11147,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -11271,6 +11342,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -11421,6 +11493,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -11575,6 +11648,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -11730,6 +11804,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -11881,6 +11956,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -12033,6 +12109,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -12182,6 +12259,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -12329,6 +12407,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -12427,6 +12506,7 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
         <library jar="jetbrains.mps.build.antsupport.jar" />
+        <library jar="/lib/java-diff-utils-1.2.jar" />
         <library jar="/lib/bootstrap.jar" />
         <sources jar="jetbrains.mps.build.antsupport-src.jar" descriptor="jetbrains.mps.build.antsupport.msd" />
       </module>
@@ -12625,6 +12705,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -12778,6 +12859,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -12930,6 +13012,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -13080,6 +13163,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -13230,6 +13314,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -13385,6 +13470,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -13599,6 +13685,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -13748,6 +13835,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -13897,6 +13985,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -14046,6 +14135,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -14196,6 +14286,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -14345,6 +14436,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -14560,6 +14652,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -14708,6 +14801,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -14856,6 +14950,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -15005,6 +15100,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -15153,6 +15249,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -15338,6 +15435,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -15488,6 +15586,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -15665,6 +15764,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -15824,6 +15924,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -15999,6 +16100,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -16150,6 +16252,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -16300,6 +16403,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -16484,6 +16588,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -16634,6 +16739,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -16783,6 +16889,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -16932,6 +17039,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />
@@ -17083,6 +17191,7 @@
           <module ref="36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)" />
           <module ref="37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)" />
           <module ref="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+          <module ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.build.gentest)" />
           <module ref="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
           <module ref="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
           <module ref="40844709-b5b9-4c70-8f1d-a2e8ab542065(jetbrains.mps.buildlanguage#1197036391807)" />

@@ -9,7 +9,6 @@
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._0" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />

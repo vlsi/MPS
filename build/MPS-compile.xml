@@ -588,6 +588,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -622,6 +623,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -736,6 +738,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -770,6 +773,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -839,6 +843,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -873,6 +878,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -942,6 +948,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -976,6 +983,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -1044,6 +1052,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/contracts/languages/contracts/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
@@ -1079,6 +1088,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -1147,6 +1157,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/classes_gen" />
     <path path="${base_dir}/languages/util/dates/internal/classes_gen" />
@@ -1183,6 +1194,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -1264,6 +1276,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/internal/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
@@ -1299,6 +1312,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -1367,6 +1381,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -1402,6 +1417,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -1471,6 +1487,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -1505,6 +1522,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -1573,6 +1591,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -1607,6 +1626,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -1675,6 +1695,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -1710,6 +1731,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -1803,6 +1825,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -1838,6 +1861,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -1914,6 +1938,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -1948,6 +1973,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -2049,6 +2075,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -2083,6 +2110,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -2152,6 +2180,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -2186,6 +2215,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -2258,6 +2288,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/distrib/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
@@ -2293,6 +2324,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -2362,6 +2394,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -2396,6 +2429,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -2466,6 +2500,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -2500,14 +2535,16 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.gentest_tjc.classpaths">
     <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
     <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -2598,6 +2635,7 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -2671,6 +2709,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
@@ -2706,6 +2745,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -2777,6 +2817,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -2811,6 +2852,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -2881,6 +2923,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -2915,6 +2958,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -2984,6 +3028,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -3018,6 +3063,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -3097,6 +3143,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -3131,6 +3178,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -3208,6 +3256,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -3247,6 +3296,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -3315,6 +3365,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -3349,6 +3400,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/workbench/ideUiLanguage/classes_gen" />
@@ -3426,6 +3478,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -3460,6 +3513,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -3529,6 +3583,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -3563,6 +3618,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -3632,6 +3688,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -3666,6 +3723,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -3734,6 +3792,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -3768,6 +3827,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -3837,6 +3897,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -3871,6 +3932,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -3939,6 +4001,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -3973,6 +4036,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -4042,6 +4106,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -4076,6 +4141,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -4144,6 +4210,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -4178,6 +4245,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -4246,6 +4314,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -4281,6 +4350,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -4349,6 +4419,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
@@ -4384,6 +4455,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -4459,6 +4531,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -4494,6 +4567,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -4563,6 +4637,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -4600,6 +4675,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -4668,6 +4744,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -4711,6 +4788,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -4779,6 +4857,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -4814,6 +4893,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -4882,6 +4962,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -4926,6 +5007,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -5003,6 +5085,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -5050,6 +5133,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -5127,6 +5211,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -5161,6 +5246,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -5230,6 +5316,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -5267,6 +5354,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -5335,6 +5423,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -5369,6 +5458,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -5438,6 +5528,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -5476,6 +5567,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -5544,6 +5636,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -5579,6 +5672,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -5647,6 +5741,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -5685,6 +5780,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -5776,6 +5872,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -5811,6 +5908,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -5879,6 +5977,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -5914,6 +6013,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
@@ -5982,6 +6082,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -6018,6 +6119,7 @@
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
+    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />

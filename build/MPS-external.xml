@@ -12,8 +12,12 @@
   <target name="compile">
     <antcall target="compile.all" />
   </target>
+  <target name="clean">
+    <property name="to.clean" value="${deploy.dir}" />
+    <echo>Removing directory ${to.clean}</echo>
+    <delete dir="${to.clean}" />
+  </target>
   <target name="clean.before" depends="compile">
-    <delete dir="${deploy.dir}" />
     <tstamp />
   </target>
   <target name="folders.create" depends="clean.before">
@@ -157,7 +161,10 @@
       <fileset dir="${mps_home}/core/make-runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
-      <fileset dir="${mps_home}/core/baseLanguage/baseLanguage/classes" />
+      <fileset dir="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
+      <fileset dir="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/core/baseLanguage/closures/runtime/classes" />
@@ -175,13 +182,13 @@
       <fileset dir="${mps_home}/core/baseLanguage/tuples/runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
-      <fileset dir="${mps_home}/core/kernel/classes" excludes="idea/IdeaApplicationInfo.xml, " />
+      <fileset dir="${mps_home}/core/kernel/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/core/languageDesign/test/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
-      <fileset dir="${mps_home}/workbench/classes" />
+      <fileset dir="${mps_home}/workbench/classes" excludes="idea/IdeaApplicationInfo.xml, " />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/languages/util/runConfigurations/classes" />
@@ -398,6 +405,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.build.packaging" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.dependency" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.property" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.build.antsupport" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.gentest" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlQuery" />
@@ -503,8 +511,8 @@
     <echo file="${idea.application.info}">${idea.application.info.contents}</echo>
     <jar destfile="${deploy.dir}/MPS/lib/branding.jar" duplicate="preserve" compress="true">
       <zipfileset file="${idea.application.info}" prefix="idea" />
-      <zipfileset file="${mps_home}/core/kernel/source/MPS_16.png" />
-      <zipfileset file="${mps_home}/core/kernel/source/MPS_32.png" />
+      <zipfileset file="${mps_home}/workbench/source/MPS_16.png" />
+      <zipfileset file="${mps_home}/workbench/source/MPS_32.png" />
       <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/splash.png" />
       <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/mpsAbout.png" />
       <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png" />
