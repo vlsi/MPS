@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -54,8 +55,12 @@ public class SNodeType_Behavior {
     return (SLinkOperations.getTarget(thisNode, "concept", false) == null);
   }
 
-  public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
-    return "jetbrains.mps.smodel.SNode";
+  public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
+    return Type_Behavior.call_getJavaType_1213877337345(thisNode);
+  }
+
+  public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {
+    return new SNodeType_Behavior.QuotationClass_4ouf01_a0a0h().createNode();
   }
 
   public static class QuotationClass_4ouf01_a0a0e {
@@ -68,6 +73,24 @@ public class SNodeType_Behavior {
       SNode quotedNode_1 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_4ouf01_a0a0h {
+    public QuotationClass_4ouf01_a0a0h() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
         result = quotedNode1_2;

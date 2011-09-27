@@ -26,18 +26,11 @@ public class TypeVariableReference_Behavior {
     return "?typevar_ref?";
   }
 
-  public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
-    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true) != null)) {
-      return Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true));
-    }
-    return "java.lang.Object";
-  }
-
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true) != null)) {
       return Type_Behavior.call_getErasure_702942408396803226(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true));
     }
-    return new TypeVariableReference_Behavior.QuotationClass_6i211a_a0b0d().createNode();
+    return new TypeVariableReference_Behavior.QuotationClass_6i211a_a0b0c().createNode();
   }
 
   public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode) {
@@ -51,8 +44,8 @@ public class TypeVariableReference_Behavior {
 
   }
 
-  public static class QuotationClass_6i211a_a0b0d {
-    public QuotationClass_6i211a_a0b0d() {
+  public static class QuotationClass_6i211a_a0b0c {
+    public QuotationClass_6i211a_a0b0c() {
     }
 
     public SNode createNode() {

@@ -8,8 +8,12 @@ public class StringType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public StringType_BehaviorDescriptor() {
   }
 
-  public String virtual_getErasureSignature_1213877337313(SNode thisNode) {
-    return StringType_Behavior.virtual_getErasureSignature_1213877337313(thisNode);
+  public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
+    return StringType_Behavior.virtual_getErasure_702942408396803226(thisNode);
+  }
+
+  public SNode virtual_getJavaType_1213877337345(SNode thisNode) {
+    return StringType_Behavior.virtual_getJavaType_1213877337345(thisNode);
   }
 
   public String virtual_getPresentation_1213877396640(SNode thisNode) {

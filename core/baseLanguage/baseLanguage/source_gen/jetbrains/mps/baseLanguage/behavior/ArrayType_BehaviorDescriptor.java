@@ -33,6 +33,10 @@ public class ArrayType_BehaviorDescriptor extends Type_BehaviorDescriptor {
     return ArrayType_Behavior.virtual_getJavaType_1213877337345(thisNode);
   }
 
+  public String virtual_getErasureSignature_1213877337313(SNode thisNode) {
+    return ArrayType_Behavior.virtual_getErasureSignature_1213877337313(thisNode);
+  }
+
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return ArrayType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }

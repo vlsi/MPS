@@ -23,6 +23,10 @@ public class ArrayType_Behavior {
     return BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "componentType", true)) + "[]";
   }
 
+  public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
+    return Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(thisNode, "componentType", true)) + "[]";
+  }
+
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     SNode result = SNodeOperations.copyNode(thisNode);
     SLinkOperations.setTarget(result, "componentType", Type_Behavior.call_getErasure_702942408396803226(SLinkOperations.getTarget(result, "componentType", true)), true);
@@ -30,7 +34,9 @@ public class ArrayType_Behavior {
   }
 
   public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {
-    return thisNode;
+    SNode result = SNodeOperations.copyNode(thisNode);
+    SLinkOperations.setTarget(result, "componentType", Type_Behavior.call_getJavaType_1213877337345(SLinkOperations.getTarget(result, "componentType", true)), true);
+    return result;
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {

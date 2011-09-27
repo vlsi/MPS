@@ -62,12 +62,17 @@ public class Type_Behavior {
   }
 
   public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
-    // <node> 
-    return BaseConcept_Behavior.call_getPresentation_1213877396640(Type_Behavior.call_getErasure_702942408396803226(thisNode));
+    SNode javaType = Type_Behavior.call_getErasure_702942408396803226(thisNode);
+    if ((javaType == null)) {
+      return "?no erasure?";
+    }
+    if (javaType == thisNode) {
+      return BaseConcept_Behavior.call_getPresentation_1213877396640(javaType);
+    }
+    return Type_Behavior.call_getErasureSignature_1213877337313(javaType);
   }
 
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
-    // <node> 
     // all 'JavaType's should have getErasure() implemented 
     SNode javaType = Type_Behavior.call_getJavaType_1213877337345(thisNode);
     return ((javaType == null) ?
