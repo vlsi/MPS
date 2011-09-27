@@ -135,6 +135,13 @@ public class DiffEditor implements EditorMessageOwner {
     MapSequence.fromMap(myChangeToMessages).clear();
   }
 
+  public void dispose() {
+    myMainEditorComponent.dispose();
+    myMainEditorComponent = null;
+    myInspector.dispose();
+    myInspector = null;
+  }
+
   private Iterable<EditorComponent> getEditorComponents() {
     return Sequence.fromArray(new EditorComponent[]{myMainEditorComponent, myInspector});
   }

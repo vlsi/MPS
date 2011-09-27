@@ -131,6 +131,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myMappings;
   }
 
+  public void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode) {
+    myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
+  }
+
   public SNode findOutputNodeByTemplateNodeUnique(SNode templateNode) {
     return myMappings.findOutputNodeByTemplateNodeUnique(templateNode);
   }

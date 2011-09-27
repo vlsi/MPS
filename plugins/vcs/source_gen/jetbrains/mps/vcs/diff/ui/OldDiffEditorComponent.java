@@ -303,4 +303,11 @@ public abstract class OldDiffEditorComponent extends EditorComponent {
   public List<OldChange> getChanges() {
     return myChanges;
   }
+
+  @Override
+  public void dispose() {
+    myInspector.dispose();
+    myInspector = null;
+    super.dispose();
+  }
 }

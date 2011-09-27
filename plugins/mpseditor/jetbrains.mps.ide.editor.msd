@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ide.editor" uuid="5b1f863d-65a0-41a6-a801-33896be24202" compileInMPS="false" generatorOutputPath="${mps_home}/plugins/mpseditor/source_gen">
+<solution name="jetbrains.mps.ide.editor" uuid="5b1f863d-65a0-41a6-a801-33896be24202" compileInMPS="false" generatorOutputPath="${solution_descriptor}/source_gen">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.ide.editor" />
+    <modelRoot path="${solution_descriptor}/solution" namespacePrefix="jetbrains.mps.ide.editor" />
   </models>
+  <stubModelEntries>
+    <stubModelEntry path="${solution_descriptor}/classes">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+  </stubModelEntries>
+  <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">34e84b8f-afa8-4364-abcd-a279fddddbe7(jetbrains.mps.editor.runtime)</dependency>

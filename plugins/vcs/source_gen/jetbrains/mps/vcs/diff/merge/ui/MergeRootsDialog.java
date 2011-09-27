@@ -286,6 +286,12 @@ public class MergeRootsDialog extends BaseDialog {
       resetState();
     }
     myModelsDialog.rootsDialogClosed();
+    myMineEditor.dispose();
+    myMineEditor = null;
+    myResultEditor.dispose();
+    myResultEditor = null;
+    myRepositoryEditor.dispose();
+    myRepositoryEditor = null;
     myDisposed = true;
     super.dispose();
   }

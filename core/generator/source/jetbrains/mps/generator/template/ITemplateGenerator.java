@@ -44,6 +44,8 @@ public interface ITemplateGenerator {
 
   boolean areMappingsAvailable();
 
+  void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode);
+
   SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName);
 
   List<SNode> findAllOutputNodesByInputNodeAndMappingName(SNode inputNode, String mappingName);
