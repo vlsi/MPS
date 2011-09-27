@@ -240,7 +240,12 @@ public class State {
 
   public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info, boolean lessThan) {
     if (myInequalitySystem != null) {
-      myEquations.getRepresentative(subType);
+      if (myEquations.getRepresentative(myInequalitySystem.getHoleType())== subType) {
+        myInequalitySystem.addSupertype(superType, isWeak);
+      }
+      if (myInequalitySystem.getHoleType()== superType) {
+        myInequalitySystem.addSubtype(subType, isWeak);
+      }
     }
     addBlock(new InequalityBlock(this, subType, superType, lessThan, RelationKind.fromFlags(isWeak, check, false), info));
   }
@@ -484,7 +489,9 @@ public class State {
   }
 
   public void initHole(SNode hole) {
-    myInequalitySystem = new InequalitySystem(hole);
+    SNode var = typeOf(hole, null);
+    myNodeMaps.addNodeToType(hole, var, null);
+    myInequalitySystem = new InequalitySystem(var);
 
   }
 

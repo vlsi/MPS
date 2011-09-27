@@ -28,6 +28,10 @@ public class InequalitySystem {
     myHoleType = holeType;
   }
 
+  public SNode getHoleType() {
+    return myHoleType;
+  }
+
   private Set<SNode> myEquals = new THashSet<SNode>();
   private Set<SNode> mySubTypes = new THashSet<SNode>();
   private Set<SNode> myStrongSubTypes = new THashSet<SNode>();

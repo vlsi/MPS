@@ -164,7 +164,9 @@ public class NodeTypesComponent {
      try {
        state.initHole(hole);
        computeTypesForNode_special(hole.getParent(), additionalNodes);
-       System.out.println(state.getInequalitySystem().getPresentation());
+       for (String s : state.getInequalitySystem().getPresentation()) {
+         System.out.println(s);
+       }
        return state.getInequalitySystem();
      } finally {
        state.disposeHole();
@@ -257,14 +259,14 @@ public class NodeTypesComponent {
     keySet.addAll(nodesToErrorsMapNT.keySet());
     for (SNode key : keySet) {
       List<IErrorReporter> reporters = getErrors(key);
-      if (key.getContainingRoot() == null) {
-        LOG.warning("Type system reports error for node without containing root. Node: " + key);
-        for (IErrorReporter reporter : reporters) {
-          LOG.warning("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());
-        }
-        continue;
-      }
       if (!reporters.isEmpty()) {
+        if (key.getContainingRoot() == null) {
+          LOG.warning("Type system reports error for node without containing root. Node: " + key);
+          for (IErrorReporter reporter : reporters) {
+            LOG.warning("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());
+          }
+          continue;
+        }
         result.add(new Pair<SNode, List<IErrorReporter>>(key, reporters));
       }
     }

@@ -100,13 +100,15 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
       boolean holeIsAType = SModelUtil.isAssignableConcept(NameUtil.nodeFQName(SModelUtil.getLinkDeclarationTarget(myLinkDeclaration)), "jetbrains.mps.lang.core.structure.IType");
       SNode hole = null;
       SNode parent = mapping.get(myParentNode);
-      if (myCurrentChild != null) {
-        SNode child = mapping.get(myCurrentChild);
-        parent.removeChild(child);
-      }
       String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
       hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
-      parent.setChild(role, hole);
+      if (myCurrentChild != null) {
+        SNode child = mapping.get(myCurrentChild);
+        parent.insertChild(child, role, hole, true);
+        parent.removeChild(child);
+      } else {
+        parent.setChild(role, hole);
+      }
       InequalitySystem inequationsForHole = TypeChecker.getInstance().getInequalitiesForHole(hole, holeIsAType);
       auxModel.removeRoot(nodeCopyRoot);
       return inequationsForHole;
