@@ -19,10 +19,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.util.Computable;
-
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard;
 import junit.extensions.jfcunit.finder.DialogFinder;
 
@@ -83,7 +82,7 @@ public class TestUtil {
         }
       });
 
-      conditionalWaitAndFlush(test,new Computable<Boolean>() {
+      conditionalWaitAndFlush(test, new Computable<Boolean>() {
         public Boolean compute() {
           return project[0] != null;
         }
@@ -92,7 +91,7 @@ public class TestUtil {
       ideaProject[0] = project[0];
     }
 
-    conditionalWaitAndFlush(test,new Computable<Boolean>() {
+    conditionalWaitAndFlush(test, new Computable<Boolean>() {
       public Boolean compute() {
         return ideaProject[0].getComponent(MPSProject.class) != null;
       }
@@ -105,7 +104,7 @@ public class TestUtil {
       }
     });
 
-    conditionalWaitAndFlush(test,new Computable<Boolean>() {
+    conditionalWaitAndFlush(test, new Computable<Boolean>() {
       public Boolean compute() {
         return loaded[0];
       }
@@ -146,13 +145,13 @@ public class TestUtil {
     });
   }
 
-  public static void conditionalWaitAndFlush(UITestsBase test,Computable<Boolean> cond){
+  public static void conditionalWaitAndFlush(UITestsBase test, Computable<Boolean> cond) {
     while (!cond.compute()) {
       test.flushAWT();
       try {
         Thread.sleep(300);
       } catch (InterruptedException e) {
-        
+
       }
     }
     test.flushAWT();

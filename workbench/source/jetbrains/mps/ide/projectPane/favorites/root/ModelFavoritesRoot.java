@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.ide.projectPane.favorites.root;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +47,7 @@ class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
     });
     if (model == null) return result;
 
-    for (SNode node:model.roots()){
+    for (SNode node : model.roots()) {
       result.add(node);
     }
     return result;

@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
 import org.jetbrains.annotations.NotNull;
 

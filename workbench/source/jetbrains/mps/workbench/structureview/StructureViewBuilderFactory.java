@@ -18,12 +18,12 @@ package jetbrains.mps.workbench.structureview;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;

@@ -16,7 +16,6 @@
 package jetbrains.mps;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -30,6 +29,7 @@ import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -39,7 +39,7 @@ public class ReferencesTest extends BaseMPSTest {
   private static final Logger LOG = Logger.getLogger(ReferencesTest.class);
 
   public void testBrokenReferences() {
-    IdeMain.setTestMode(TestMode.CORE_TEST) ;
+    IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -57,10 +57,10 @@ public class ReferencesTest extends BaseMPSTest {
     final List<String> fatals = new ArrayList<String>();
 
     ILoggingHandler handler = new ILoggingHandler() {
-      public void  info(LogEntry e) {
+      public void info(LogEntry e) {
       }
 
-      public void warning(LogEntry e) {        
+      public void warning(LogEntry e) {
       }
 
       public void debug(LogEntry e) {
@@ -120,7 +120,7 @@ public class ReferencesTest extends BaseMPSTest {
       for (SReference ref : node.getReferences()) {
         if (SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
           continue;
-        }                      
+        }
 
         if (ref.getTargetNode() == null) {
           LOG.error("Error in model " + sm.getSModelReference().getSModelFqName() + " : Broken reference in node " + node);

@@ -15,20 +15,18 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
-import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.Computable;
 
 import java.util.List;
-
-import com.intellij.openapi.util.Computable;
 
 public class IntelligentInputUtil {
 
@@ -118,7 +116,7 @@ public class IntelligentInputUtil {
       EditorCell_Label label = (EditorCell_Label) nextCell;
       label.changeText(pattern);
       label.end();
-      editorContext.getNodeEditorComponent().changeSelection(label);      
+      editorContext.getNodeEditorComponent().changeSelection(label);
     } else {
       if (isInOneStepAmbigousPosition(info, smallPattern + tail)) {
         editorContext.getNodeEditorComponent().activateNodeSubstituteChooser(cell, info, false);
@@ -214,8 +212,8 @@ public class IntelligentInputUtil {
       return false;
     }
 
-    if (cellForNewNode instanceof EditorCell_Label) {      
-      ((EditorCell_Label)cellForNewNode).changeText(smallPattern);
+    if (cellForNewNode instanceof EditorCell_Label) {
+      ((EditorCell_Label) cellForNewNode).changeText(smallPattern);
     }
 
     rtAction.execute(editorContext);
@@ -227,7 +225,7 @@ public class IntelligentInputUtil {
       final NodeSubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
       assert rtSubstituteInfo != null;
       List<INodeSubstituteAction> rtMatchingActions =
-        TypeContextManager.getInstance().runResolveAction(new Computable<List<INodeSubstituteAction>>(){
+        TypeContextManager.getInstance().runResolveAction(new Computable<List<INodeSubstituteAction>>() {
           @Override
           public List<INodeSubstituteAction> compute() {
             return rtSubstituteInfo.getMatchingActions(tail, true);
@@ -279,7 +277,7 @@ public class IntelligentInputUtil {
     String property = concept.getConceptProperty("substituteInAmbigousPosition");
     if ("true".equals(property)) {
       SNode outputConcept = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept();
-      for (INodeSubstituteAction action: substituteInfo.getMatchingActions(text, true)) {
+      for (INodeSubstituteAction action : substituteInfo.getMatchingActions(text, true)) {
         if (outputConcept != action.getOutputConcept()) {
           return false;
         }
@@ -343,7 +341,7 @@ public class IntelligentInputUtil {
     }
 
     if (sourceCellRemains) {
-      ((EditorCell_Label) cellForNewNode).changeText(smallPattern);      
+      ((EditorCell_Label) cellForNewNode).changeText(smallPattern);
     }
 
     ltAction.execute(editorContext);
@@ -401,7 +399,7 @@ public class IntelligentInputUtil {
     }
     rtCell.changeText(textToSet);
     rtCell.end();
-    
+
     return rtCell;
   }
 
@@ -422,7 +420,7 @@ public class IntelligentInputUtil {
       if (errorCell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) errorCell;
         if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
-          label.changeText(textToSet);          
+          label.changeText(textToSet);
         }
         label.end();
       }

@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
@@ -28,6 +28,7 @@ import jetbrains.mps.testbench.ProjectTestHelper;
 import jetbrains.mps.testbench.ProjectTestHelper.Token;
 import jetbrains.mps.testbench.junit.Order;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
+import jetbrains.mps.util.Computable;
 import org.junit.*;
 import org.junit.rules.TestName;
 import org.junit.rules.TestWatchman;
@@ -37,7 +38,10 @@ import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.TestClass;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 
 /**

@@ -16,23 +16,16 @@
 package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.mock.MockProject;
-import com.intellij.openapi.command.impl.DummyProject;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ProjectScope;
-import jetbrains.mps.project.StandaloneMPSContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.VcsMergeVersion;
 import jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog;
@@ -40,7 +33,6 @@ import jetbrains.mps.vcs.integration.ModelDiffTool.ReadException;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.JDOMException;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;

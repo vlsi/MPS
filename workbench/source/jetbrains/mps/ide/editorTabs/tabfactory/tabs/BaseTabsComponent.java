@@ -18,22 +18,24 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.util.Computable;
 import gnu.trove.THashMap;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening.ModelListener;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.util.Computable;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -212,7 +214,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   private class MySModelCommandListener implements SModelCommandListener {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
-      for (SModelEvent e: events){
+      for (SModelEvent e : events) {
         if (!(e instanceof SModelRootEvent)) continue;
         SModelRootEvent re = (SModelRootEvent) e;
         if (!re.isAdded()) continue;

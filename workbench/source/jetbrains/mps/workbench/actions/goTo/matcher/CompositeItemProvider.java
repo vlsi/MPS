@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.actions.goTo.matcher;
 
 import com.intellij.ide.util.gotoByName.temp.ChooseByNameBase;
 import com.intellij.ide.util.gotoByName.temp.ItemProvider;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 
 import java.util.ArrayList;
 import java.util.List;

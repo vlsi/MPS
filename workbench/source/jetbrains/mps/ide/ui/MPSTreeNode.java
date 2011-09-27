@@ -17,8 +17,6 @@ package jetbrains.mps.ide.ui;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
-import com.intellij.ui.treeStructure.Tree;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.treeMessages.TreeMessage;
@@ -26,6 +24,7 @@ import jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -219,7 +218,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     if (myAdded) {
       throw new IllegalStateException(
         String.format("Trying to add tree node which have already been added, tree=%s, node=%s",
-        myTree != null ? myTree.getClass().getName() : "null", getClass().getName()));
+          myTree != null ? myTree.getClass().getName() : "null", getClass().getName()));
     }
     try {
       onAdd();
@@ -467,7 +466,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
         parentId = ((MPSTreeNode) getParent()).getNodeIdentifier();
       }
       throw new IllegalStateException("MPSTreeNode identifier cannot be null, class="
-        + getClass().getName()+ ", parent id=" + parentId);
+        + getClass().getName() + ", parent id=" + parentId);
     } else {
       return myNodeIdentifier;
     }

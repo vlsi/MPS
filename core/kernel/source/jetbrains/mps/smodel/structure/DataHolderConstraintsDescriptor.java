@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel.structure;
 
-import com.intellij.util.Function;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.constraints.*;
+import jetbrains.mps.util.Function;
 import jetbrains.mps.util.SmallMap;
 import jetbrains.mps.util.misc.hash.HashMap;
 

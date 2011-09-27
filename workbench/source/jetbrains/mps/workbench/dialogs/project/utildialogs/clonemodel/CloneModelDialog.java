@@ -16,7 +16,6 @@
 package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -28,6 +27,7 @@ import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
 import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;

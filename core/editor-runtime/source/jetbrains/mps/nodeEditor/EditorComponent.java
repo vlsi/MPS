@@ -22,7 +22,6 @@ import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.IdeGlassPane;
@@ -70,6 +69,7 @@ import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
@@ -1720,7 +1720,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myLeftMarginPressListeners.remove(listener);
   }
 
-  public List<LeftMarginMouseListener> getLeftMarginPressListeners(){
+  public List<LeftMarginMouseListener> getLeftMarginPressListeners() {
     return Collections.unmodifiableList(myLeftMarginPressListeners);
   }
 
@@ -2185,7 +2185,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     relayout();
   }
 
-  <T> T executeCommand(final Computable<T> c) {
+  <T> T executeCommand(final com.intellij.openapi.util.Computable<T> c) {
     myInsideOfCommand = true;
     try {
       return ModelAccess.instance().runWriteActionInCommand(c, getCurrentProject());

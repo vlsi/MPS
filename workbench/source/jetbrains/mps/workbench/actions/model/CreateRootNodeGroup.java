@@ -23,7 +23,6 @@ import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.actions.AddLanguageImport_Action;
@@ -37,6 +36,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -107,12 +107,12 @@ public class CreateRootNodeGroup extends BaseGroup {
         final PackageNode node = (PackageNode) treeNode;
         myPackage = node.getPackage();
       }
-    } else{
+    } else {
       SNode node = event.getData(MPSDataKeys.NODE);
       myPackage = null;
-      if (node!=null){
+      if (node != null) {
         SNode root = node.getContainingRoot();
-        if (root!=null){
+        if (root != null) {
           myPackage = root.getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
         }
       }

@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.packaged;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import org.junit.Assert;
 import org.junit.Test;
@@ -93,7 +93,8 @@ public class PackagedLanguageTest {
     Assert.assertEquals(16, icon.getIconHeight());
     Assert.assertEquals(16, icon.getIconWidth());
     final BufferedImage buf = new BufferedImage(16, 16, BufferedImage.TYPE_INT_RGB);
-    icon.paintIcon(new Component() {}, buf.getGraphics(), 0, 0);
+    icon.paintIcon(new Component() {
+    }, buf.getGraphics(), 0, 0);
 
     for (int i = 0; i < 16; i++) {
       final Color color = new Color(buf.getRGB(i, i));

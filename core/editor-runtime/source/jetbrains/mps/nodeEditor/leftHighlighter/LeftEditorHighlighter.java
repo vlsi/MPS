@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.leftHighlighter;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.UIUtil;
 import gnu.trove.TIntObjectHashMap;
@@ -37,6 +36,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -516,7 +516,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   public void removeIconRenderer(SNode snode, IconRendererType type) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.removeIconRenderer() should be called in eventDispatchThread";
     boolean wasModified = false;
-    for (Iterator<EditorMessageIconRenderer> it = myIconRenderers.iterator(); it.hasNext();) {
+    for (Iterator<EditorMessageIconRenderer> it = myIconRenderers.iterator(); it.hasNext(); ) {
       EditorMessageIconRenderer renderer = it.next();
       if (renderer.getNode() == snode && (type == null || renderer.getType() == type)) {
         it.remove();
@@ -538,7 +538,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   public void removeAllIconRenderers(IconRendererType type) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.removeAllIconRenderers() should be called in eventDispatchThread";
     boolean wasModified = false;
-    for (Iterator<EditorMessageIconRenderer> it = myIconRenderers.iterator(); it.hasNext();) {
+    for (Iterator<EditorMessageIconRenderer> it = myIconRenderers.iterator(); it.hasNext(); ) {
       EditorMessageIconRenderer renderer = it.next();
       if (renderer.getType() == type) {
         it.remove();
@@ -580,7 +580,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       }
       myMaxIconHeight = Math.max(myMaxIconHeight, maxIconHeight);
       int offset = initialOffset + LEFT_GAP;
-      for (Iterator<IconRendererLayoutConstraint> it = row.iterator(); it.hasNext();) {
+      for (Iterator<IconRendererLayoutConstraint> it = row.iterator(); it.hasNext(); ) {
         IconRendererLayoutConstraint rendererConstraint = it.next();
         rendererConstraint.setX(offset);
         offset += rendererConstraint.getIconRenderer().getIcon().getIconWidth();
@@ -719,7 +719,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   }
 
   private void mousePressedInFoldingArea(MouseEvent e) {
-    for (Iterator<AbstractFoldingAreaPainter> it = myFoldingAreaPainters.descendingIterator(); it.hasNext();) {
+    for (Iterator<AbstractFoldingAreaPainter> it = myFoldingAreaPainters.descendingIterator(); it.hasNext(); ) {
       AbstractFoldingAreaPainter painter = it.next();
       painter.mousePressed(e);
       if (e.isConsumed()) {
@@ -747,7 +747,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
   private void mouseMovedInFoldingArea(MouseEvent e) {
     myMouseIsInFoldingArea = true;
-    for (Iterator<AbstractFoldingAreaPainter> it = myFoldingAreaPainters.descendingIterator(); it.hasNext();) {
+    for (Iterator<AbstractFoldingAreaPainter> it = myFoldingAreaPainters.descendingIterator(); it.hasNext(); ) {
       AbstractFoldingAreaPainter painter = it.next();
       painter.mouseMoved(e);
       if (e.isConsumed()) {

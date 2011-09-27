@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;

@@ -15,15 +15,14 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeletePropertyOrNode;
 import jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanPropertySubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
@@ -32,6 +31,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 
 public class PropertyCellProvider extends CellProviderWithRole {

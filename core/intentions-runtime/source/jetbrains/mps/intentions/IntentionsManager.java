@@ -21,7 +21,6 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
@@ -35,6 +34,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -202,7 +202,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       for (Intention intention : intentions) {
         if (terminated.compute()) return new ArrayList<Intention>();
         Language language = getIntentionLanguage(intention);
-        if (!intention.getType().equals(IntentionType.MIGRATION) && language != null && !visibleLanguages.contains(language)) continue;
+        if (!intention.getType().equals(IntentionType.MIGRATION) && language != null && !visibleLanguages.contains(language))
+          continue;
         result.add(intention);
       }
     }

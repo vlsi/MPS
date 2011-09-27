@@ -18,7 +18,6 @@ package jetbrains.mps.ide.projectPane.logicalview;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.util.ArrayUtil;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
@@ -28,6 +27,7 @@ import jetbrains.mps.ide.projectPane.logicalview.highlighting.ProjectPaneTreeHig
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
 import javax.swing.tree.TreePath;

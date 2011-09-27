@@ -20,7 +20,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -34,6 +33,7 @@ import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
@@ -235,7 +235,7 @@ public class RefactoringFacade {
     final IOperationContext operationContext = ProjectOperationContext.get(refactoringContext.getSelectedProject());
     new Thread() {
       public void run() {
-        try{
+        try {
           MakeSession sess = new MakeSession(operationContext);
           if (IMakeService.INSTANCE.get().openNewSession(sess)) {
             Future<IResult> result = IMakeService.INSTANCE.get().make(sess, new ModelsToResources(operationContext, descriptors).resources(false));

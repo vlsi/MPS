@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.search;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.FlattenIterable;
 import org.jetbrains.annotations.NotNull;
@@ -103,7 +103,7 @@ public class SModelSearchUtil {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
     for (SNode c : concepts) {
-      for(SNode conceptPropertyDeclaration : SNodeUtil.getConcept_ConceptPropertyDeclarations(c)) {
+      for (SNode conceptPropertyDeclaration : SNodeUtil.getConcept_ConceptPropertyDeclarations(c)) {
         result.add(conceptPropertyDeclaration);
       }
     }

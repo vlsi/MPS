@@ -17,13 +17,13 @@ package jetbrains.mps.workbench.nodesFs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterator;
 import jetbrains.mps.util.Pair;
@@ -246,7 +246,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
       Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
       Collection<Pair<MPSNodeVirtualFile, String>> renamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
-      for (Iterator<Entry<SNodePointer, MPSNodeVirtualFile>> it = myVirtualFiles.entrySet().iterator(); it.hasNext();) {
+      for (Iterator<Entry<SNodePointer, MPSNodeVirtualFile>> it = myVirtualFiles.entrySet().iterator(); it.hasNext(); ) {
         Entry<SNodePointer, MPSNodeVirtualFile> entry = it.next();
         if (entry.getKey().getModel() != sm) continue;
 

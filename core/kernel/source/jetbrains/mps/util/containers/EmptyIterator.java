@@ -1,5 +1,5 @@
 /*
- * Copyright 2000-2009 JetBrains s.r.o.
+ * Copyright 2000-2011 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,22 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package jetbrains.mps.util.containers;
 
-package jetbrains.mps.workbench.actions.goTo.matcher;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-import com.intellij.ide.util.gotoByName.temp.IdeaItemProvider;
-import com.intellij.psi.PsiElement;
-
-public class MPSNodeItemProvider extends IdeaItemProvider {
-  public MPSNodeItemProvider(PsiElement context) {
-    super(context);
+public class EmptyIterator<T> implements Iterator<T> {
+  private static final EmptyIterator INSTANCE = new EmptyIterator();
+  public static <T> EmptyIterator<T> getInstance() {
+    return INSTANCE;
+  }
+  public boolean hasNext() {
+    return false;
   }
 
-  public String getNamePattern(String pattern) {
-    return pattern;
+  public T next() {
+    throw new NoSuchElementException();
   }
 
-  public String getQualifierPattern(String pattern) {
-    return "";
+  public void remove() {
+    throw new IllegalStateException();
   }
 }

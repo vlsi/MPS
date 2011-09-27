@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -77,7 +77,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   protected abstract ModelLoadResult initialLoad();
 
-  protected ModelLoadResult runModelLoading(final Computable<ModelLoadResult> comp) {
+  protected ModelLoadResult runModelLoading(final com.intellij.openapi.util.Computable<ModelLoadResult> comp) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
       public ModelLoadResult compute() {
         return UndoHelper.getInstance().runNonUndoableAction(comp);

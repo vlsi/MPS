@@ -23,7 +23,6 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -177,9 +176,9 @@ public class TestMain {
   private static void waitUntilAllEventsFlushed() {
     // Wait until last invokeLater() is executed
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-        public void run() {
-        }
-      }, ModalityState.NON_MODAL);
+      public void run() {
+      }
+    }, ModalityState.NON_MODAL);
     ModelAccess.instance().flushEventQueue();
   }
 
@@ -238,10 +237,10 @@ public class TestMain {
 
     final MPSProject project = loadProject(projectFile);
     return testActionForLeaks(new Runnable() {
-        public void run() {
-          new ProjectTester(project.getProject()).testProject();
-        }
-      }, leakThreshold);
+      public void run() {
+        new ProjectTester(project.getProject()).testProject();
+      }
+    }, leakThreshold);
   }
 
 
@@ -326,12 +325,12 @@ public class TestMain {
     TestMain.configureMPS();
 
     return testActionForLeaks(new Runnable() {
-        public void run() {
-          MPSProject project = loadProject(projectFile);
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-          project.dispose();
-        }
-      }, leakThreshold);
+      public void run() {
+        MPSProject project = loadProject(projectFile);
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+        project.dispose();
+      }
+    }, leakThreshold);
   }
 
   public static boolean testActionForLeaks(Runnable action, int leakThreshold) {
@@ -466,7 +465,7 @@ public class TestMain {
     System.setProperty("plugin.path", pluginPath.toString());
     // Value of this property is comma-separated list of plugin IDs intended to load by platform
     System.setProperty("idea.load.plugins.id", StringUtils.join(plugins, ","));
-    if(!cachesInvalidated) {
+    if (!cachesInvalidated) {
       FSRecords.invalidateCaches();
       cachesInvalidated = true;
     }

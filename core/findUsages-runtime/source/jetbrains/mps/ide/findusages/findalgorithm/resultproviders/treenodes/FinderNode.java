@@ -17,7 +17,6 @@ package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
@@ -31,6 +30,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.jdom.Element;
 
 public class FinderNode extends BaseLeaf {

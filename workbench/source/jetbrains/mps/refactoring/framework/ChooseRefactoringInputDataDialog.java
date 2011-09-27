@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.refactoring.framework;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;

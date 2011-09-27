@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.smodel.presentation;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.util.Computable;
 
 import java.util.List;
 import java.util.regex.Pattern;

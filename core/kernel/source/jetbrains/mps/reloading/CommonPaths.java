@@ -29,6 +29,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CommonPaths {
+  private static final String OS_NAME = System.getProperty("os.name").toLowerCase();
+  public static final boolean isMac = OS_NAME.startsWith("mac");
+
   private static final Logger LOG = Logger.getLogger(CommonPaths.class);
 
   //--------paths-----------
@@ -63,7 +66,7 @@ public class CommonPaths {
   private static List<String> getJDKJars() {
     List<String> result = new ArrayList<String>();
 
-    if (!com.intellij.openapi.util.SystemInfo.isMac) {
+    if (!isMac) {
       result.add("rt.jar");
     } else {
       result.add("classes.jar");

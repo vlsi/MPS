@@ -18,19 +18,19 @@ package jetbrains.mps.ide.make.actions.generate;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.generator.GenParameters;
-import jetbrains.mps.ide.generator.GenerationCheckHelper;
-import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.ide.generator.GenerationCheckHelper;
 import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.ide.projectPane.ModuleChangingOperationContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
@@ -59,7 +59,7 @@ public abstract class BaseGenerateAction extends BaseAction {
 
   abstract String getObject();
 
-  protected void doUpdate(AnActionEvent e,Map<String, Object> _params) {
+  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
     for (IModule module : myModules) {
       if ((!(module instanceof Solution)) && (!(module instanceof Language)) && (!(module instanceof Generator))) {
         disable(e.getPresentation());
@@ -72,8 +72,8 @@ public abstract class BaseGenerateAction extends BaseAction {
     e.getPresentation().setText(newText);
   }
 
-  protected boolean collectActionData(AnActionEvent e,Map<String, Object> _params) {
-    if (!super.collectActionData(e,_params)) return false;
+  protected boolean collectActionData(AnActionEvent e, Map<String, Object> _params) {
+    if (!super.collectActionData(e, _params)) return false;
     myProject = e.getData(MPSDataKeys.PROJECT);
     myOperationContext = e.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (myOperationContext == null) return false;

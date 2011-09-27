@@ -17,7 +17,6 @@ package jetbrains.mps.typesystem.uiActions;
 
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.IEditor;
@@ -29,6 +28,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.highlighter.EditorsHelper;
 

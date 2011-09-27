@@ -1,5 +1,5 @@
 /*
- * Copyright 2000-2009 JetBrains s.r.o.
+ * Copyright 2003-2011 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,22 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package jetbrains.mps.util;
 
-package jetbrains.mps.workbench.actions.goTo.matcher;
+/**
+ * Evgeny Gryaznov, 9/27/11
+ */
+public interface Computable<T> extends com.intellij.openapi.util.Computable<T> {
 
-import com.intellij.ide.util.gotoByName.temp.IdeaItemProvider;
-import com.intellij.psi.PsiElement;
-
-public class MPSNodeItemProvider extends IdeaItemProvider {
-  public MPSNodeItemProvider(PsiElement context) {
-    super(context);
-  }
-
-  public String getNamePattern(String pattern) {
-    return pattern;
-  }
-
-  public String getQualifierPattern(String pattern) {
-    return "";
-  }
+//  T compute();
 }

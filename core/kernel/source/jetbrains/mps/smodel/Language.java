@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
@@ -27,18 +26,20 @@ import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.reloading.*;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

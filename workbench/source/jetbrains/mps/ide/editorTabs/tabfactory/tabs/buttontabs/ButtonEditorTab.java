@@ -16,13 +16,13 @@
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs;
 
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.Computable;
 
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;

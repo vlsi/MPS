@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.reloading;
 
-import com.intellij.util.containers.EmptyIterable;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.*;
+import jetbrains.mps.util.containers.EmptyIterable;
 
 import java.io.File;
 import java.io.FileInputStream;

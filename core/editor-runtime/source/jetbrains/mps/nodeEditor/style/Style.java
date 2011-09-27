@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.style;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 

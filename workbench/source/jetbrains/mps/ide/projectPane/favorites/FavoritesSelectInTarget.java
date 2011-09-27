@@ -18,7 +18,6 @@ package jetbrains.mps.ide.projectPane.favorites;
 import com.intellij.ide.SelectInContext;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
 import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
@@ -28,6 +27,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 
 import java.util.ArrayList;

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import com.intellij.openapi.util.Computable;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.MPSCore;
@@ -28,6 +27,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.WindowsUtil;
 
 import javax.swing.*;
@@ -262,7 +262,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           try {
             textLength = Math.max(textLength, getTextLength(item, pattern));
             descriptionLength = Math.max(descriptionLength, getDescriptionLength(item, pattern));
-          } catch(Throwable t) {
+          } catch (Throwable t) {
             LOG.error(t, t);
           }
         }
@@ -456,7 +456,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (myNodeSubstituteInfo.hasExactlyNActions(pattern, false, 0) &&
       myNodeSubstituteInfo.hasExactlyNActions(prefix, true, 1)) {
 
-      EditorCell cell = myEditorComponent.getSelectedCell();      
+      EditorCell cell = myEditorComponent.getSelectedCell();
       if (cell instanceof EditorCell_Label) {
         IntelligentInputUtil.processCell((EditorCell_Label) cell, myEditorComponent.getEditorContext(), pattern, CellSide.RIGHT);
       }

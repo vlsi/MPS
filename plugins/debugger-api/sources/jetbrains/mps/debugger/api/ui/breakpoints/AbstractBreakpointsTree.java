@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.debugger.api.ui.breakpoints;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.BreakpointManagerComponent.BreakpointManagerListener;
 import jetbrains.mps.debug.api.BreakpointManagerComponent.IBreakpointManagerListener;
@@ -27,6 +26,7 @@ import jetbrains.mps.ide.ui.CheckBoxNodeRenderer.NodeData;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

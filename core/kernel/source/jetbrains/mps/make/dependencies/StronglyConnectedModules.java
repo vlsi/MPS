@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.make.dependencies;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.make.dependencies.graph.Graph;
 import jetbrains.mps.make.dependencies.graph.Graphs;
 import jetbrains.mps.make.dependencies.graph.IVertex;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 
 import java.util.*;
 

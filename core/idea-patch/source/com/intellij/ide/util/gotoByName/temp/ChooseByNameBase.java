@@ -32,7 +32,6 @@ import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.popup.*;
 import com.intellij.openapi.util.ActionCallback;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.registry.Registry;
 import com.intellij.openapi.wm.IdeFocusManager;
@@ -50,6 +49,7 @@ import com.intellij.ui.popup.PopupUpdateProcessor;
 import com.intellij.util.Alarm;
 import com.intellij.util.diff.Diff;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
@@ -122,9 +122,8 @@ public abstract class ChooseByNameBase {
 
   /**
    * @param initialText initial text which will be in the lookup text field
-   * @param context
    */
-  protected ChooseByNameBase(Project project, ChooseByNameModel model,ItemProvider provider, String initialText) {
+  protected ChooseByNameBase(Project project, ChooseByNameModel model, ItemProvider provider, String initialText) {
     myProject = project;
     myModel = model;
     myProvider = provider;
@@ -586,7 +585,7 @@ public abstract class ChooseByNameBase {
       (10, (paneHeight - (y + preferredTextFieldPanelSize.height)) / (preferredTextFieldPanelSize.height / 2) - 1);
 
     ComponentPopupBuilder builder = JBPopupFactory.getInstance().createComponentPopupBuilder(myTextFieldPanel, myTextField);
-    builder.setCancelCallback(new Computable<Boolean>() {
+    builder.setCancelCallback(new com.intellij.openapi.util.Computable<Boolean>() {
       @Override
       public Boolean compute() {
         myTextPopup = null;
@@ -1164,8 +1163,7 @@ public abstract class ChooseByNameBase {
     }
   }
 
-  public
-  boolean canShowListForEmptyPattern() {
+  public boolean canShowListForEmptyPattern() {
     return isShowListForEmptyPattern() || (isShowListAfterCompletionKeyStroke() && lastKeyStrokeIsCompletion());
   }
 

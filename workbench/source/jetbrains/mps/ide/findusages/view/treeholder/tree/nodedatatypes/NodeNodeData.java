@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -30,6 +29,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.util.Computable;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.jdom.Element;
 
@@ -104,7 +104,7 @@ public class NodeNodeData extends BaseNodeData {
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     List children = element.getChild(NODE).getChildren();
-    myNodePointer = new SNodePointer((SNode)null);
+    myNodePointer = new SNodePointer((SNode) null);
     if (!children.isEmpty()) {
       myNodePointer = ComponentsUtil.nodePointerFromElement((Element) children.get(0));
     }

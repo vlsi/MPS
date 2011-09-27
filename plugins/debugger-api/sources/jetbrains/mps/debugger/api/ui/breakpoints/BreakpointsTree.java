@@ -15,33 +15,11 @@
  */
 package jetbrains.mps.debugger.api.ui.breakpoints;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
-import jetbrains.mps.debug.api.BreakpointManagerComponent.BreakpointManagerListener;
-import jetbrains.mps.debug.api.BreakpointManagerComponent.IBreakpointManagerListener;
-import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.debugger.api.ui.breakpoints.GroupedTree.GroupKind;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.ui.CheckBoxNodeRenderer.NodeData;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.UIManager;
-import javax.swing.event.TreeSelectionEvent;
-import javax.swing.event.TreeSelectionListener;
-import javax.swing.tree.TreePath;
-import java.awt.Color;
-import java.util.ArrayList;
-import java.util.Collection;
+import jetbrains.mps.smodel.IOperationContext;
 
 class BreakpointsTree extends AbstractBreakpointsTree {
 

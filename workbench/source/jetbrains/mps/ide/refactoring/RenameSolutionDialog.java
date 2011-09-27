@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.ide.refactoring;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.refactoring.renameSolution.SolutionRenamer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;

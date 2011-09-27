@@ -17,7 +17,6 @@ package jetbrains.mps.codeStyle;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.util.SystemProperties;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 

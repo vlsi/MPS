@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.undo;
 
-import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;

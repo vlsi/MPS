@@ -15,18 +15,16 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Pair;
 
 import java.util.*;
-
-import com.intellij.openapi.util.Computable;
 
 /**
  * Author: Sergey Dmitriev.
@@ -101,13 +99,13 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
           if (count > n) return false;
         }
 
-        return n == count; 
+        return n == count;
       }
     });
   }
 
   public List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
-   // InequationSystem inequationSystem = getInequationSystem(contextCell);
+    // InequationSystem inequationSystem = getInequationSystem(contextCell);
     List<INodeSubstituteAction> substituteActionList = getMatchingActions(pattern, strictMatching);
     return substituteActionList;
   }
@@ -136,7 +134,7 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
           myPatternsToActionListsCache.put(pattern, new ArrayList<INodeSubstituteAction>(result));
         }
 
-        return (List)result;
+        return (List) result;
       }
     });
   }

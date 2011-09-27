@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.workbench.choose.nodes;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
 

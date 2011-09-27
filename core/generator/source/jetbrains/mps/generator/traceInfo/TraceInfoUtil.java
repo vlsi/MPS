@@ -15,20 +15,14 @@
  */
 package jetbrains.mps.generator.traceInfo;
 
-import com.intellij.openapi.util.Computable;
-import jetbrains.mps.traceInfo.UnitPositionInfo;
-import jetbrains.mps.util.Mapper2;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.traceInfo.PositionInfo;
+import jetbrains.mps.traceInfo.UnitPositionInfo;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Mapper2;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class TraceInfoUtil {
   public TraceInfoUtil() {

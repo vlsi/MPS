@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.DependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
@@ -32,10 +30,7 @@ import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.*;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
