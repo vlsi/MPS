@@ -2689,16 +2689,13 @@
           <property name="name" nameId="tps4.1220976068141" value="mps_home" />
         </node>
         <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="437343344535643871">
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="437343344535644765">
-            <property name="path" nameId="tps4.1220974398640" value="core" />
+          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4030717766997434128">
+            <property name="path" nameId="tps4.1220974398640" value="workbench" />
           </node>
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="437343344535644767">
-            <property name="path" nameId="tps4.1220974398640" value="kernel" />
-          </node>
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="437343344535644769">
+          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4030717766997434129">
             <property name="path" nameId="tps4.1220974398640" value="source" />
           </node>
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="437343344535662809">
+          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4030717766997434130">
             <property name="path" nameId="tps4.1220974398640" value="MPS_32.png" />
           </node>
         </node>
@@ -2708,16 +2705,13 @@
           <property name="name" nameId="tps4.1220976068141" value="mps_home" />
         </node>
         <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="437343344535643874">
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="437343344535662810">
-            <property name="path" nameId="tps4.1220974398640" value="core" />
-          </node>
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="437343344535662812">
-            <property name="path" nameId="tps4.1220974398640" value="kernel" />
+          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4030717766997434131">
+            <property name="path" nameId="tps4.1220974398640" value="workbench" />
           </node>
           <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="437343344535662814">
             <property name="path" nameId="tps4.1220974398640" value="source" />
           </node>
-          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="437343344535662816">
+          <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4030717766997434132">
             <property name="path" nameId="tps4.1220974398640" value="MPS_16.png" />
           </node>
         </node>

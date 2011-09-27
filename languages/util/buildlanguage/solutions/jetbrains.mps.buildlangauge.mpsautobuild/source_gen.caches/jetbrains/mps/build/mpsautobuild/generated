@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-8anew3peai9s1zehia1s8erhjfhm3vf">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-3y2r6y3czb0h44qur9lgd1udqb2qdek" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="90a2yqqwsbuerf4u3po1b2jxod6vyfj" />
+  <dep model="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" hash="caob73bt010qamop72qesq01lhfoeik" />
+  <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" hash="8g7jr66fpehu1ow28sl9xtkh09xtft6" />
+  <dep model="r:00000000-0000-4000-0000-011c895904d0(jetbrains.mps.build.dependency.generator.buildlanguage.template.main@generator)" hash="-9rsbjmkjj49drdz7g9898f4k0nd7rry" />
+  <dep model="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" hash="-bfpi0tgg0wahu5wls18idthaeq78t2w" />
+  <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" hash="9ziypou2p9vgbfgqpj70bifhrulwa7i" />
+  <dep model="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" hash="-c9jn14xx3eznqfw6w68svvps1coym58" />
+  <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" hash="-coyjgggc791tg1q7dbwzvqbohizkucv" />
+  <dep model="r:00000000-0000-4000-0000-011c89590576(jetbrains.mps.gtext.generator.baseLanguage.template.main@generator)" hash="-5gilomj0upz2lx6vzb38bqslvfu9564" />
+  <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" hash="-6gp28vaw63qfqvwgnadvk9mnqkcuyo7" />
+  <dep model="r:19a13561-830e-4400-a084-e2990744f9e1(jetbrains.mps.build.packaging.defaultVariables)" />
+  <dep model="r:1e7ada09-c25e-41ea-a9b5-398e142ef533(jetbrains.mps.build.generictasks.structure)" hash="b8k1mxflrp64naij87k9jibjbfrxn8d" />
+  <dep model="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" hash="-nd94gi6z5fz5w95hykknur1recekjc" />
+  <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" hash="bwmjz6jfqthof5let6n6muyszz3emqf" />
+  <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" hash="44q062npwcdwcg2fbq3jgkcumoal0ol" />
+  <dep model="r:5e2666e0-c7c7-4002-9ed9-38805719453d(jetbrains.mps.build.custommps.generator.template.main@generator)" hash="b9rari7o8r0qdelaueouubryqguf3s7" />
+  <dep model="r:77d362e8-0519-479e-a414-6d18b8d2c0d4(jetbrains.mps.build.distrib.generator.template.main@generator)" hash="-2gnacjwdsenedibywbaek4fvzzc3tkm" />
+  <dep model="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" />
+  <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
+  <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" hash="2b4jjjrnr7bceadck9wnsuiped27re6" />
+  <dep model="r:e4eacb3c-606c-4e9e-bd5e-ca89808d18ab(jetbrains.mps.build.packaging.mps.generator.template.main@generator)" hash="-43vb867373ke79rsdidadt7eb2wkchv" />
+  <dep model="r:ea5ebe15-8287-48fa-903b-179b2fdbe69c(jetbrains.mps.build.property.generator.template.main@generator)" hash="bvdhm2jo5t4eh10gbtqxm6t1d778xll" />
+  <common hash="97vax5pzrtkxfew54mt6n7nw0b88h3b" dependsOnNodes="true">
+    <dep root="1479728067424032862" />
+    <dep root="2235195415637073459" />
+    <dep root="2738111162319948310" />
+    <dep root="5297918386943402887" />
+    <dep root="5358686142361317193" />
+    <dep root="6108265972537541352" />
+    <dep root="7715871110555971738" />
+    <dep root="8431776905956472400" />
+    <dep root="8431776905956472682" />
+    <dep root="8431776905956472694" />
+    <dep root="8431776905956472723" />
+    <dep root="8431776905956472858" />
+    <dep root="8431776905956472865" />
+    <dep root="8431776905956472896" />
+    <dep root="8431776905956472902" />
+    <dep root="8431776905956472907" />
+    <dep root="8431776905956472940" />
+    <dep root="8431776905956472948" />
+    <dep root="8431776905956472964" />
+    <dep root="8431776905956472972" />
+    <dep root="8431776905956472981" />
+    <dep root="8431776905956472985" />
+    <dep root="8431776905956472996" />
+    <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590576(jetbrains.mps.gtext.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:e4eacb3c-606c-4e9e-bd5e-ca89808d18ab(jetbrains.mps.build.packaging.mps.generator.template.main@generator)" />
+    <file name="idea.additional.classpath.txt" />
+  </common>
+  <source id="2235195415637073459" name="MPS" hash="efplfdh4x051ticw5a95laur1d81b2y" dependsOnNodes="true">
+    <dep root="1479728067424032862" />
+    <dep root="2235195415637076848" />
+    <dep root="2738111162319948310" />
+    <dep root="5297918386943402887" />
+    <dep root="5358686142361317193" />
+    <dep root="6108265972537541352" />
+    <dep root="7715871110555971738" />
+    <dep root="8431776905956472400" />
+    <dep root="8431776905956472682" />
+    <dep root="8431776905956472694" />
+    <dep root="8431776905956472723" />
+    <dep root="8431776905956472858" />
+    <dep root="8431776905956472865" />
+    <dep root="8431776905956472896" />
+    <dep root="8431776905956472902" />
+    <dep root="8431776905956472907" />
+    <dep root="8431776905956472940" />
+    <dep root="8431776905956472948" />
+    <dep root="8431776905956472964" />
+    <dep root="8431776905956472972" />
+    <dep root="8431776905956472981" />
+    <dep root="8431776905956472985" />
+    <dep root="8431776905956472996" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895904d0(jetbrains.mps.build.dependency.generator.buildlanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590576(jetbrains.mps.gtext.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" />
+    <dep model="r:19a13561-830e-4400-a084-e2990744f9e1(jetbrains.mps.build.packaging.defaultVariables)" />
+    <dep model="r:1e7ada09-c25e-41ea-a9b5-398e142ef533(jetbrains.mps.build.generictasks.structure)" />
+    <dep model="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" />
+    <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
+    <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" />
+    <dep model="r:5e2666e0-c7c7-4002-9ed9-38805719453d(jetbrains.mps.build.custommps.generator.template.main@generator)" />
+    <dep model="r:77d362e8-0519-479e-a414-6d18b8d2c0d4(jetbrains.mps.build.distrib.generator.template.main@generator)" />
+    <dep model="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" />
+    <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
+    <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" />
+    <dep model="r:ea5ebe15-8287-48fa-903b-179b2fdbe69c(jetbrains.mps.build.property.generator.template.main@generator)" />
+    <file name="Info.plist" />
+    <file name="MPS-compile.xml" />
+    <file name="MPS-external-dist.xml" />
+    <file name="MPS-external.xml" />
+    <file name="MPS-languages.xml" />
+    <file name="MPS.properties" />
+    <file name="branding_g1a.xml" />
+    <file name="installer.nsi" />
+    <file name="mps.bat" />
+    <file name="mps.sh" />
+    <file name="mps.vmoptions" />
+  </source>
+  <source id="2235195415637076848" name="help-build" hash="a5g0dzwcznjhavdu45inguok5ahev0h">
+    <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" />
+    <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" />
+    <dep model="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" />
+    <file name="help-build.xml" />
+  </source>
+  <source id="8431776905956472400" name="MPS-src.zip" hash="co0htfvm6j94vuq75wwaj5m3rst8obq" />
+  <source id="8431776905956472682" name="generate.ant.task.jar" hash="-372flqjo13v1py529o307zzqibjmp3b" />
+  <source id="8431776905956472694" name="idea-patch.jar" hash="-8l5bsllbunfpy8c5nv4xr4f1cmfnuq9" />
+  <source id="8431776905956472723" name="mps.jar" hash="abvq3nrd06jk4xhow28dsmco8myg0ua">
+    <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
+  </source>
+  <source id="8431776905956472858" name="core" hash="7doeb43fv7gnnr6oce1l93sg4h3rsh8">
+    <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
+  </source>
+  <source id="8431776905956472865" name="core.baseLanguage" hash="dwv2sw9mf6zkpxylwm49i5u4ds8x1w3" />
+  <source id="8431776905956472896" name="core.debug" hash="-auyz6re82qro8aa4ooda5g5nvtd7mrx" />
+  <source id="8431776905956472902" name="core.devkits" hash="-3dozzxmmj18vh3hapr8pg9tl62nxrhu" />
+  <source id="8431776905956472907" name="core.languageDesign" hash="-9n5377xjdazgwknkkydilha1gssth34" />
+  <source id="8431776905956472940" name="core.usages" hash="-5m3rjjs6015v0uwmr51qt315zn49lka" />
+  <source id="8431776905956472948" name="util" hash="uxeyq3lmskde1zzyc0j31ixwkax082">
+    <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
+  </source>
+  <source id="8431776905956472964" name="platform.baseLanguage" hash="d4uqw66zulyrhrug5seg2nffzv3dkjw" />
+  <source id="8431776905956472972" name="platform.build" hash="-a3fxv8vp02ceedesw0exi36xde3vim3" />
+  <source id="8431776905956472981" name="platform.deprecated" hash="b76lo3qxste74n5y2er0lih8jbm3a22" />
+  <source id="8431776905956472985" name="platform.ui" hash="-8j96rcc5bt0ucq7soqtwlm9m5d136sj" />
+  <source id="8431776905956472996" name="platform.xml" hash="2t6fy38syji8iyqcqy7v426dc6if9qg" />
+  <source id="7715871110555971738" name="mpsboot.jar" hash="-dds5ofvqkdt9dgy15h2hfn544nnxfud" />
+  <source id="1479728067424032862" name="platform.editor" hash="jq8nmwhwn8jrk87xihw4to7xsjthkd" />
+  <source id="5297918386943402887" name="mps.solutions" hash="561j34yzldjp87lyhbpetbhhk4o0hj6" />
+  <source id="2738111162319948310" name="core.execution" hash="b1xcjc0moz623fgehnlvpfljt54zkax" />
+  <source id="5358686142361317193" name="mpstest.jar" hash="4vpee808y9rwnvbgsra02ga724ixu7b" />
+  <source id="6108265972537541352" name="branding" hash="28rdwcrom6klu4bvsnvpg4p967fasce" />
+</dependencies>
+
