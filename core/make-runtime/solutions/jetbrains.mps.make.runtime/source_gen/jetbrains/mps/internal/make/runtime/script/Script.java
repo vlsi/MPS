@@ -299,11 +299,11 @@ __switch__:
             monit.currentProgress().finishWork(trg.getName().toString());
           } catch (TimeOutRuntimeException to) {
             LOG.debug("Timeout executing target " + trg.getName(), to);
-            monit.reportFeedback(new IFeedback.ERROR("Target execution aborted " + trg.getName()));
+            monit.reportFeedback(new IFeedback.ERROR("Target execution aborted " + trg.getName(), to));
             results.addResult(trg.getName(), new IResult.FAILURE(null));
             return;
           } catch (RuntimeException rex) {
-            LOG.debug("Exception executing target " + trg.getName(), rex);
+            LOG.error("Exception executing target " + trg.getName(), rex);
             monit.reportFeedback(new IFeedback.ERROR("Exception executing target " + trg.getName(), rex));
             results.addResult(trg.getName(), new IResult.FAILURE(null));
             return;

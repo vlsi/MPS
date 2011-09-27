@@ -23,8 +23,15 @@ import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.delta.IInternalDelta;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class Make_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -96,7 +103,6 @@ public class Make_Facet extends IFacet.Stub {
                           return d instanceof IInternalDelta;
                         }
                       })).reconcileAll();
-                      // void 
                     }
                   });
                 }
@@ -138,7 +144,7 @@ public class Make_Facet extends IFacet.Stub {
     }
 
     public boolean producesOutput() {
-      return false;
+      return true;
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
@@ -182,7 +188,23 @@ public class Make_Facet extends IFacet.Stub {
     }
 
     public IConfig createConfig() {
-      return null;
+      return new IConfig.Stub() {
+        @Override
+        public boolean configure(final IConfigMonitor cmonitor, final IPropertiesAccessor pa) {
+          switch (0) {
+            case 0:
+              if (pa.global().properties(Target_make.this.getName(), Make_Facet.Target_make.Parameters.class).pathToFile() == null) {
+                pa.global().properties(Target_make.this.getName(), Make_Facet.Target_make.Parameters.class).pathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
+                  public IFile invoke(String p) {
+                    return FileSystem.getInstance().getFileByPath(p);
+                  }
+                });
+              }
+            default:
+              return true;
+          }
+        }
+      };
     }
 
     public Iterable<ITarget.Name> notAfter() {
@@ -222,12 +244,38 @@ public class Make_Facet extends IFacet.Stub {
     }
 
     public <T> T createParameters(Class<T> cls) {
-      return null;
+      return cls.cast(new Parameters());
     }
 
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
+      if (t != null) {
+        ((Tuples._1) t).assign((Tuples._1) copyFrom);
+      }
       return t;
+    }
+
+    public static class Parameters extends MultiTuple._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> {
+      public Parameters() {
+        super();
+      }
+
+      public Parameters(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile) {
+        super(pathToFile);
+      }
+
+      public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> value) {
+        return super._0(value);
+      }
+
+      public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile() {
+        return super._0();
+      }
+
+      @SuppressWarnings(value = "unchecked")
+      public Make_Facet.Target_make.Parameters assignFrom(Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> from) {
+        return (Make_Facet.Target_make.Parameters) super.assign(from);
+      }
     }
   }
 
@@ -236,10 +284,24 @@ public class Make_Facet extends IFacet.Stub {
     }
 
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
+      {
+        ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Make.make");
+        if (properties.hasProperties(name)) {
+          Make_Facet.Target_make.Parameters props = properties.properties(name, Make_Facet.Target_make.Parameters.class);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Make.make.pathToFile", null);
+        }
+      }
     }
 
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
+        {
+          ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Make.make");
+          Make_Facet.Target_make.Parameters props = properties.properties(name, Make_Facet.Target_make.Parameters.class);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Make.make.pathToFile")) {
+            props.pathToFile(null);
+          }
+        }
       } catch (RuntimeException re) {
       }
     }
