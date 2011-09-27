@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ArrayType_Behavior {
   public static void init(SNode thisNode) {
@@ -21,6 +21,16 @@ public class ArrayType_Behavior {
       return "???[]";
     }
     return BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "componentType", true)) + "[]";
+  }
+
+  public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
+    SNode result = SNodeOperations.copyNode(thisNode);
+    SLinkOperations.setTarget(result, "componentType", Type_Behavior.call_getErasure_702942408396803226(SLinkOperations.getTarget(result, "componentType", true)), true);
+    return result;
+  }
+
+  public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {
+    return thisNode;
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {

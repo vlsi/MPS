@@ -8,6 +8,10 @@ public class LowerBoundType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public LowerBoundType_BehaviorDescriptor() {
   }
 
+  public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
+    return LowerBoundType_Behavior.virtual_getErasure_702942408396803226(thisNode);
+  }
+
   public boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
     return LowerBoundType_Behavior.virtual_isReifiable_2817265908000464118(thisNode);
   }
