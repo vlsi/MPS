@@ -88,7 +88,7 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
   }
 
   protected Iterable<SNode> findNodes(SModel model, final String fqName) {
-    return ListSequence.fromList(SModelOperations.getNodes(model, null)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getNodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         if (!(it.isInstanceOfConcept(MainNodeChooser.this.myTargetConcept))) {
           return false;

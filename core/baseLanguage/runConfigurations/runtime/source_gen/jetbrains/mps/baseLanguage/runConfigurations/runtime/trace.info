@@ -968,7 +968,7 @@
     <nodeInfo nodeId="747009152929061572" fileName="MainNodeChooser.java" startLine="77" startPosition="10" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7247071346992921616" fileName="MainNodeChooser.java" startLine="47" startPosition="7" endLine="54" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="747009152929061556" fileName="MainNodeChooser.java" startLine="74" startPosition="104" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="747009152929061699" fileName="MainNodeChooser.java" startLine="91" startPosition="106" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="747009152929061699" fileName="MainNodeChooser.java" startLine="91" startPosition="117" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="747009152929061693" fileName="MainNodeChooser.java" startLine="90" startPosition="74" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="747009152929061521" fileName="MainNodeChooser.java" startLine="72" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findToChooseFromOnInit#(Ljetbrains/mps/findUsages/FindUsagesManager;Ljetbrains/mps/findUsages/FindUsagesManager/ProgressAdapter;)Ljava/util/List;" />
     <nodeInfo nodeId="747009152929061536" fileName="MainNodeChooser.java" startLine="89" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findNodes#(Ljetbrains/mps/smodel/SModel;Ljava/lang/String;)Ljava/lang/Iterable;" />
@@ -1006,7 +1006,7 @@
     <scopeInfo nodeId="747009152929061528" fileName="MainNodeChooser.java" startLine="73" startPosition="126" endLine="83" endPosition="5">
       <varInfo nodeId="747009152929061544" varName="instances" />
     </scopeInfo>
-    <scopeInfo nodeId="747009152929061699" fileName="MainNodeChooser.java" startLine="91" startPosition="106" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="747009152929061699" fileName="MainNodeChooser.java" startLine="91" startPosition="117" endLine="102" endPosition="0" />
     <scopeInfo nodeId="747009152929061540" fileName="MainNodeChooser.java" startLine="90" startPosition="74" endLine="102" endPosition="7" />
     <scopeInfo nodeId="747009152929061521" fileName="MainNodeChooser.java" startLine="72" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="747009152929061524" varName="manager" />
@@ -1026,7 +1026,7 @@
     <unitInfo nodeId="8687286369497022273" fileName="MainNodeChooser.java" startLine="43" startPosition="45" endLine="47" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$1" />
     <unitInfo nodeId="747009152929061616" fileName="MainNodeChooser.java" startLine="78" startPosition="113" endLine="82" endPosition="7" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$3" />
     <unitInfo nodeId="8687286369497022218" fileName="MainNodeChooser.java" startLine="48" startPosition="18" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$2" />
-    <unitInfo nodeId="747009152929061699" fileName="MainNodeChooser.java" startLine="91" startPosition="83" endLine="102" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$4" />
+    <unitInfo nodeId="747009152929061699" fileName="MainNodeChooser.java" startLine="91" startPosition="94" endLine="102" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$4" />
     <unitInfo nodeId="6937689104170748691" fileName="MainNodeChooser.java" startLine="25" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
   </root>
   <root nodeId="747009152928990231">
@@ -1255,9 +1255,9 @@
     <nodeInfo nodeId="747009152929080705" fileName="MultiConceptChooser.java" startLine="39" startPosition="126" endLine="51" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="747009152929081028" fileName="MultiConceptChooser.java" startLine="99" startPosition="167" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
     <nodeInfo nodeId="747009152929081021" fileName="MultiConceptChooser.java" startLine="98" startPosition="47" endLine="112" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="747009152929080824" fileName="MultiConceptChooser.java" startLine="74" startPosition="170" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="747009152929080817" fileName="MultiConceptChooser.java" startLine="73" startPosition="138" endLine="89" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="747009152929080966" fileName="MultiConceptChooser.java" startLine="97" startPosition="106" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="747009152929080824" fileName="MultiConceptChooser.java" startLine="74" startPosition="185" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="747009152929080817" fileName="MultiConceptChooser.java" startLine="73" startPosition="138" endLine="89" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="747009152929080966" fileName="MultiConceptChooser.java" startLine="97" startPosition="117" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="747009152929080960" fileName="MultiConceptChooser.java" startLine="96" startPosition="74" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="747009152929080497" fileName="MultiConceptChooser.java" startLine="72" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findToChooseFromOnInit#(Ljetbrains/mps/findUsages/FindUsagesManager;Ljetbrains/mps/findUsages/FindUsagesManager/ProgressAdapter;)Ljava/util/List;" />
     <nodeInfo nodeId="747009152929080512" fileName="MultiConceptChooser.java" startLine="95" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findNodes#(Ljetbrains/mps/smodel/SModel;Ljava/lang/String;)Ljava/lang/Iterable;" />
@@ -1300,9 +1300,9 @@
     </scopeInfo>
     <scopeInfo nodeId="747009152929081028" fileName="MultiConceptChooser.java" startLine="99" startPosition="167" endLine="112" endPosition="0" />
     <scopeInfo nodeId="747009152929080967" fileName="MultiConceptChooser.java" startLine="98" startPosition="47" endLine="112" endPosition="19" />
-    <scopeInfo nodeId="747009152929080824" fileName="MultiConceptChooser.java" startLine="74" startPosition="170" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="747009152929080504" fileName="MultiConceptChooser.java" startLine="73" startPosition="138" endLine="89" endPosition="24" />
-    <scopeInfo nodeId="747009152929080966" fileName="MultiConceptChooser.java" startLine="97" startPosition="106" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="747009152929080824" fileName="MultiConceptChooser.java" startLine="74" startPosition="185" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="747009152929080504" fileName="MultiConceptChooser.java" startLine="73" startPosition="138" endLine="89" endPosition="25" />
+    <scopeInfo nodeId="747009152929080966" fileName="MultiConceptChooser.java" startLine="97" startPosition="117" endLine="114" endPosition="0" />
     <scopeInfo nodeId="747009152929080520" fileName="MultiConceptChooser.java" startLine="96" startPosition="74" endLine="114" endPosition="7" />
     <scopeInfo nodeId="747009152929080497" fileName="MultiConceptChooser.java" startLine="72" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="747009152929080500" varName="manager" />
@@ -1325,8 +1325,8 @@
     <unitInfo nodeId="747009152929080790" fileName="MultiConceptChooser.java" startLine="53" startPosition="89" endLine="63" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MultiConceptChooser$2" />
     <unitInfo nodeId="747009152929080921" fileName="MultiConceptChooser.java" startLine="40" startPosition="98" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MultiConceptChooser$1" />
     <unitInfo nodeId="747009152929081028" fileName="MultiConceptChooser.java" startLine="99" startPosition="69" endLine="112" endPosition="9" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MultiConceptChooser$6" />
-    <unitInfo nodeId="747009152929080824" fileName="MultiConceptChooser.java" startLine="74" startPosition="65" endLine="89" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MultiConceptChooser$4" />
-    <unitInfo nodeId="747009152929080966" fileName="MultiConceptChooser.java" startLine="97" startPosition="83" endLine="114" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MultiConceptChooser$5" />
+    <unitInfo nodeId="747009152929080824" fileName="MultiConceptChooser.java" startLine="74" startPosition="80" endLine="89" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MultiConceptChooser$4" />
+    <unitInfo nodeId="747009152929080966" fileName="MultiConceptChooser.java" startLine="97" startPosition="94" endLine="114" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MultiConceptChooser$5" />
     <unitInfo nodeId="747009152929080490" fileName="MultiConceptChooser.java" startLine="30" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MultiConceptChooser" />
   </root>
   <root nodeId="8255351389869681567">
