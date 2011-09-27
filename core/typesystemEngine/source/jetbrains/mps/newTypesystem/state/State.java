@@ -226,7 +226,15 @@ public class State {
   }
 
   public boolean addEquation(SNode left, SNode right, EquationInfo info) {
-    //todo holes
+    if (myInequalitySystem != null) {
+      if (myEquations.getRepresentative(myInequalitySystem.getHoleType())== left) {
+        myInequalitySystem.addEquation(left);
+      }
+      if (myEquations.getRepresentative(myInequalitySystem.getHoleType())== right) {
+        myInequalitySystem.addEquation(right);
+      }
+      return true;
+    }
     return myEquations.addEquation(left, right, info);
   }
 
@@ -246,6 +254,7 @@ public class State {
       if (myInequalitySystem.getHoleType()== superType) {
         myInequalitySystem.addSubtype(subType, isWeak);
       }
+      return;
     }
     addBlock(new InequalityBlock(this, subType, superType, lessThan, RelationKind.fromFlags(isWeak, check, false), info));
   }
