@@ -3,6 +3,12 @@
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.baseLanguage" />
     <modelRoot path="${language_descriptor}/utilModels" namespacePrefix="" />
+    <modelRoot path="${language_descriptor}/classes_gen" namespacePrefix="">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </modelRoot>
+    <modelRoot path="${mps_home}/lib/asm.jar" namespacePrefix="">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </modelRoot>
   </models>
   <accessoryModels>
     <model modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -11,6 +17,9 @@
     <generator name="java" generatorUID="jetbrains.mps.baseLanguage#1129914002933" uuid="985c8c6a-64b4-486d-a91e-7d4112742556">
       <models>
         <modelRoot path="${language_descriptor}/generator/java/templates" namespacePrefix="jetbrains.mps.baseLanguage.generator.java" />
+        <modelRoot path="${mps_home}/lib/commons-lang-2.4.jar" namespacePrefix="">
+          <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+        </modelRoot>
       </models>
       <external-templates />
       <dependencies>
@@ -71,6 +80,7 @@
     <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
     <dependency reexport="false">df9d410f-2ebb-43f7-893a-483a4f085250(jetbrains.mps.smodel.resources)</dependency>
     <dependency reexport="false">20c6e580-bdc5-4067-8049-d7e3265a86de(jetbrains.mps.typesystemEngine)</dependency>
+    <dependency reexport="false">b55d8dfc-0d9d-43d5-886d-c644e7083bff(stubUtils)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>97a52717-898f-4598-8150-573d9fd03868(jetbrains.mps.analyzers)</usedLanguage>
@@ -92,6 +102,7 @@
     <usedLanguage>95f8a3e6-f994-4ca0-a65e-763c9bae2d3b(jetbrains.mps.make.script)</usedLanguage>
     <usedLanguage>5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)</usedLanguage>
     <usedLanguage>a8fdde77-2e6c-41f6-ac79-8e9b6449c271(jetbrains.mps.xmlQuery)</usedLanguage>
+    <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>
   </usedLanguages>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
