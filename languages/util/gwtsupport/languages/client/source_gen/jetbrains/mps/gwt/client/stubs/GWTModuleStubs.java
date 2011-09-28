@@ -16,6 +16,7 @@ import jetbrains.mps.stubs.util.StubModelDescriptors;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.stubs.util.PathItem;
+import jetbrains.mps.stubs.util.GWTModulePathItem;
 
 public class GWTModuleStubs extends AbstractModelRootManager {
   public GWTModuleStubs() {

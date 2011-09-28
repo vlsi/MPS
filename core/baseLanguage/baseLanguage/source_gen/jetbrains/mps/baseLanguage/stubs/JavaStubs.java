@@ -19,6 +19,8 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.stubs.util.JavaStubModelDescriptor;
+import jetbrains.mps.stubs.util.JavaStubModelDataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 
