@@ -1627,8 +1627,8 @@
     <nodeInfo nodeId="4355241322422981954" fileName="MergeDriverNotification.java" startLine="32" startPosition="28" endLine="33" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCompositeState" />
     <nodeInfo nodeId="7307809004211494603" fileName="MergeDriverNotification.java" startLine="33" startPosition="51" endLine="34" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLastNotification" />
     <nodeInfo nodeId="6989360587247930311" fileName="MergeDriverNotification.java" startLine="36" startPosition="52" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6989360587248001322" fileName="MergeDriverNotification.java" startLine="40" startPosition="46" endLine="41" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6989360587248001335" fileName="MergeDriverNotification.java" startLine="44" startPosition="57" endLine="45" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6989360587248001322" fileName="MergeDriverNotification.java" startLine="40" startPosition="46" endLine="41" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6989360587248001335" fileName="MergeDriverNotification.java" startLine="44" startPosition="57" endLine="45" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4355241322422981963" fileName="MergeDriverNotification.java" startLine="48" startPosition="42" endLine="49" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6989360587248001361" fileName="MergeDriverNotification.java" startLine="53" startPosition="37" endLine="54" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7307809004211496306" fileName="MergeDriverNotification.java" startLine="56" startPosition="74" endLine="57" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1675,8 +1675,8 @@
     <nodeInfo nodeId="6989360587248025273" fileName="MergeDriverNotification.java" startLine="78" startPosition="8" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6989360587248012822" fileName="MergeDriverNotification.java" startLine="68" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showNotifications#()V" />
     <scopeInfo nodeId="6989360587247930288" fileName="MergeDriverNotification.java" startLine="36" startPosition="52" endLine="37" endPosition="24" />
-    <scopeInfo nodeId="6989360587247930342" fileName="MergeDriverNotification.java" startLine="40" startPosition="46" endLine="41" endPosition="104" />
-    <scopeInfo nodeId="6989360587248001333" fileName="MergeDriverNotification.java" startLine="44" startPosition="57" endLine="45" endPosition="107" />
+    <scopeInfo nodeId="6989360587247930342" fileName="MergeDriverNotification.java" startLine="40" startPosition="46" endLine="41" endPosition="95" />
+    <scopeInfo nodeId="6989360587248001333" fileName="MergeDriverNotification.java" startLine="44" startPosition="57" endLine="45" endPosition="98" />
     <scopeInfo nodeId="4355241322422981961" fileName="MergeDriverNotification.java" startLine="48" startPosition="42" endLine="49" endPosition="80" />
     <scopeInfo nodeId="6989360587248001359" fileName="MergeDriverNotification.java" startLine="53" startPosition="37" endLine="54" endPosition="13" />
     <scopeInfo nodeId="7307809004211494617" fileName="MergeDriverNotification.java" startLine="56" startPosition="74" endLine="57" endPosition="13" />
