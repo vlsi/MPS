@@ -180,7 +180,6 @@
     <file name="Path.java" />
   </source>
   <source id="1572321421811299617" name="Attr" hash="-5ngaig29wuxegut34mi6lyzmglkp7k3">
-    <dep root="1572321421811286040" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

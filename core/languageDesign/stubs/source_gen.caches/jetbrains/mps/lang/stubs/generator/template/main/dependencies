@@ -13,11 +13,10 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.AbstractModelCreator_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.LibraryStubDescriptor_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.stubs.behavior.ModelManagerDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
 </dependenciesRoot>
