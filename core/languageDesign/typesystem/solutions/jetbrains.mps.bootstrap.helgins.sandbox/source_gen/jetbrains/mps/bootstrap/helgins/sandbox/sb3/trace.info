@@ -53,22 +53,24 @@
     <unitInfo nodeId="761955517644210340" fileName="Example.java" startLine="7" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.Example" />
   </root>
   <root nodeId="7656658799535004846">
-    <nodeInfo nodeId="7656658799535009608" fileName="F.java" startLine="8" startPosition="14" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7656658799535009610" fileName="F.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7656658799535009611" fileName="F.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7656658799535009609" fileName="F.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7656658799535004860" fileName="F.java" startLine="14" startPosition="25" endLine="15" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7656658799535004858" fileName="F.java" startLine="13" startPosition="96" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7656658799535004852" fileName="F.java" startLine="12" startPosition="0" endLine="17" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7656658799535004848" fileName="F.java" startLine="7" startPosition="16" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="F#()V" />
-    <scopeInfo nodeId="7656658799535004859" fileName="F.java" startLine="14" startPosition="25" endLine="15" endPosition="11" />
-    <scopeInfo nodeId="7656658799535004858" fileName="F.java" startLine="13" startPosition="96" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="7656658799535004851" fileName="F.java" startLine="8" startPosition="14" endLine="17" endPosition="7">
+    <nodeInfo nodeId="7656658799535009608" fileName="F.java" startLine="9" startPosition="14" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7656658799535009610" fileName="F.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7656658799535009611" fileName="F.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7656658799535004860" fileName="F.java" startLine="14" startPosition="31" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7656658799535009609" fileName="F.java" startLine="17" startPosition="7" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7656658799535004852" fileName="F.java" startLine="18" startPosition="0" endLine="19" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7859727328490283877" fileName="F.java" startLine="19" startPosition="28" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7656658799535004858" fileName="F.java" startLine="13" startPosition="80" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7859727328490283878" fileName="F.java" startLine="12" startPosition="0" endLine="17" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7656658799535004848" fileName="F.java" startLine="8" startPosition="16" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="F#()V" />
+    <scopeInfo nodeId="7656658799535004859" fileName="F.java" startLine="14" startPosition="31" endLine="15" endPosition="18" />
+    <scopeInfo nodeId="7656658799535004858" fileName="F.java" startLine="13" startPosition="80" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="7656658799535004851" fileName="F.java" startLine="9" startPosition="14" endLine="20" endPosition="0">
       <varInfo nodeId="7656658799535004853" varName="runResolveAction" />
     </scopeInfo>
-    <scopeInfo nodeId="7656658799535004848" fileName="F.java" startLine="7" startPosition="16" endLine="18" endPosition="3" />
-    <unitInfo nodeId="7656658799535004858" fileName="F.java" startLine="13" startPosition="84" endLine="17" endPosition="5" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.F$1" />
-    <unitInfo nodeId="7656658799535004846" fileName="F.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.F" />
+    <scopeInfo nodeId="7656658799535004848" fileName="F.java" startLine="8" startPosition="16" endLine="21" endPosition="3" />
+    <unitInfo nodeId="7656658799535004858" fileName="F.java" startLine="13" startPosition="58" endLine="17" endPosition="5" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.F$1" />
+    <unitInfo nodeId="7656658799535004846" fileName="F.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb3.F" />
   </root>
   <root nodeId="8270377549769674720">
     <nodeInfo nodeId="8270377549769674742" fileName="ErrorClosure.java" startLine="14" startPosition="103" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
