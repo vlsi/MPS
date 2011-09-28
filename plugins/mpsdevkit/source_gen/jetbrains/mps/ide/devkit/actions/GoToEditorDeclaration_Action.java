@@ -4,7 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -31,9 +30,12 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class GoToEditorDeclaration_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(GoToEditorDeclaration_Action.class.getResource("editor.png"));
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(GoToEditorDeclaration_Action.class);
 
   public GoToEditorDeclaration_Action() {
@@ -145,5 +147,16 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
   /*package*/ void navigateToEditorDeclaration(SNode editorNode, IOperationContext oContext, IEditor editor, final Map<String, Object> _params) {
     oContext.getComponent(MPSEditorOpener.class).editNode(editorNode, oContext);
     ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectNode(editorNode, false);
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(GoToEditorDeclaration_Action.class.getResourceAsStream("editor.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for GoToEditorDeclaration", e);
+      }
+      return null;
+    }
   }
 }

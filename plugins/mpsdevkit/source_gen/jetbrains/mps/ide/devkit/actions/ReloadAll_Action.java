@@ -4,7 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -18,9 +17,12 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class ReloadAll_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(ReloadAll_Action.class.getResource("reload.png"));
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(ReloadAll_Action.class);
 
   public ReloadAll_Action() {
@@ -67,6 +69,17 @@ public class ReloadAll_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ReloadAll", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(ReloadAll_Action.class.getResourceAsStream("reload.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for ReloadAll", e);
+      }
+      return null;
     }
   }
 }

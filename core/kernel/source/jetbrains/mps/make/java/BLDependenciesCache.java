@@ -40,6 +40,7 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
     super(modelRepository);
   }
 
+  @NotNull
   public String getCacheFileName() {
     return "dependencies";
   }

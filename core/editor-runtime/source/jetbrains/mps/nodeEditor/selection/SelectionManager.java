@@ -211,6 +211,5 @@ public class SelectionManager {
       mySelectionStack.peek().deactivate();
     }
     mySelectionStack.clear();
-    mySelectionStack = null;
   }
 }

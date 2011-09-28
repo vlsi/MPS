@@ -69,6 +69,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     });
   }
 
+  @NotNull
   public String getCacheFileName() {
     return TRACE_FILE_NAME;
   }

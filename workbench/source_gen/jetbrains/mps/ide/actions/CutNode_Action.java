@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -20,9 +19,12 @@ import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class CutNode_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(CutNode_Action.class.getResource("menu-cut.png"));
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(CutNode_Action.class);
 
   public CutNode_Action() {
@@ -106,5 +108,16 @@ public class CutNode_Action extends GeneratedAction {
 
   private ProjectPane getProjectPane(final Map<String, Object> _params) {
     return ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(CutNode_Action.class.getResourceAsStream("menu-cut.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for CutNode", e);
+      }
+      return null;
+    }
   }
 }

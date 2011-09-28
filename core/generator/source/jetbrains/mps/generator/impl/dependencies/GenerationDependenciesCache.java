@@ -57,6 +57,7 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
     });
   }
 
+  @NotNull
   public String getCacheFileName() {
     return "generated";
   }

@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Arrays;
 import java.io.File;
+import com.intellij.openapi.util.SystemInfo;
 import org.apache.commons.lang.StringUtils;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
@@ -31,8 +32,8 @@ public class CommandLineGenerator {
   private CommandLineGenerator() {
   }
 
-  public static String getCommandLine(boolean withSvnkit) {
-    Iterable<String> classpath = getClasspath(withSvnkit);
+  public static String getCommandLine(int vcs) {
+    Iterable<String> classpath = getClasspath(vcs == ScriptGenerator.SVN);
     if (InternalFlag.isInternalMode()) {
       classpath = Sequence.fromIterable(classpath).where(new IWhereFilter<String>() {
         public boolean accept(String cpi) {
@@ -41,18 +42,18 @@ public class CommandLineGenerator {
       }).concat(ListSequence.fromList(Arrays.asList(InternalRuntimePacker.getPath())));
     }
     String javaExecutable = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
+    if (SystemInfo.isWindows) {
+      javaExecutable = adaptPathForMsysGit(javaExecutable + ".exe");
+    }
     String classpathString = StringUtils.join(Sequence.fromIterable(classpath).toListSequence(), File.pathSeparator);
     String escapedLogPath = (PathManager.getLogPath() + File.separator + "mergedriver.log").replace("\\", "\\\\");
     return String.format("\"%s\" -D%s=\"%s\" -cp \"%s\" %s", javaExecutable, MergeDriverMain.LOG_PROPERTY, escapedLogPath, classpathString, MergeDriverMain.class.getName());
   }
 
-  /*package*/ static String getSvnkitJar() {
+  private static String getSvnkitJar() {
     IdeaPluginDescriptor svnPlugin = PluginManager.getPlugin(PluginId.getId("Subversion"));
-    if (svnPlugin == null) {
-      return null;
-    } else {
-      return svnPlugin.getPath() + File.separator + "lib" + File.separator + "svnkit.jar";
-    }
+    assert svnPlugin != null;
+    return svnPlugin.getPath() + File.separator + "lib" + File.separator + "svnkit.jar";
   }
 
   public static Set<String> getClasspath(boolean withSvnkit) {
@@ -83,5 +84,9 @@ public class CommandLineGenerator {
       SetSequence.fromSet(classpathItems).addElement(getSvnkitJar());
     }
     return classpathItems;
+  }
+
+  /*package*/ static String adaptPathForMsysGit(String path) {
+    return path.replaceFirst("^(\\w):\\\\", "/$1/").replace('\\', '/');
   }
 }

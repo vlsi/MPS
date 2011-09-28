@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -18,9 +17,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class FastFindNodeUsages_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(FastFindNodeUsages_Action.class.getResource("find.png"));
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(FastFindNodeUsages_Action.class);
 
   public FastFindNodeUsages_Action() {
@@ -87,6 +89,17 @@ public class FastFindNodeUsages_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "FastFindNodeUsages", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(FastFindNodeUsages_Action.class.getResourceAsStream("find.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for FastFindNodeUsages", e);
+      }
+      return null;
     }
   }
 }

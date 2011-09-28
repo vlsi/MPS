@@ -15,16 +15,14 @@
  */
 package jetbrains.mps.ide.editorTabs;
 
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.actionSystem.Separator;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.ShadowAction;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.BaseNodeEditor;
@@ -58,6 +56,8 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   private SNodePointer myBaseNode;
   private Set<EditorTabDescriptor> myPossibleTabs;
   private IOperationContext myContext;
+  private BaseNavigationAction myNextTabAction;
+  private BaseNavigationAction myPrevTabAction;
 
   public TabbedEditor(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, IOperationContext context) {
     super(context);
@@ -86,9 +86,25 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     if (c != null) {
       getComponent().add(c, BorderLayout.SOUTH);
     }
+
+    myNextTabAction = new BaseNavigationAction(IdeActions.ACTION_NEXT_EDITOR_TAB, getComponent()) {
+      @Override
+      public void actionPerformed(AnActionEvent e) {
+        myTabsComponent.nextTab();
+      }
+    };
+    myPrevTabAction = new BaseNavigationAction(IdeActions.ACTION_PREVIOUS_EDITOR_TAB, getComponent()) {
+      @Override
+      public void actionPerformed(AnActionEvent e) {
+        myTabsComponent.prevTab();
+      }
+    };
+
   }
 
   public void dispose() {
+    myNextTabAction.dispose();
+    myPrevTabAction.dispose();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModelDescriptor model = getCurrentNodeModel();
@@ -266,6 +282,19 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
       if (!(obj instanceof TabbedEditorState)) return false;
       if (!super.equals(obj)) return false;
       return ObjectUtils.equals(myCurrentNode, ((TabbedEditorState) obj).myCurrentNode);
+    }
+  }
+
+  private abstract static class BaseNavigationAction extends AnAction {
+    private final ShadowAction myShadow;
+
+    protected BaseNavigationAction(String copyFromID, JComponent component) {
+      myShadow = new ShadowAction(this, ActionManager.getInstance().getAction(copyFromID), component);
+      setEnabledInModalContext(true);
+    }
+
+    public void dispose() {
+      myShadow.dispose();
     }
   }
 }

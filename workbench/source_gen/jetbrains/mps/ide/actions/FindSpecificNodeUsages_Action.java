@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -18,9 +17,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class FindSpecificNodeUsages_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(FindSpecificNodeUsages_Action.class.getResource("find.png"));
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(FindSpecificNodeUsages_Action.class);
 
   public FindSpecificNodeUsages_Action() {
@@ -88,6 +90,17 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "FindSpecificNodeUsages", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(FindSpecificNodeUsages_Action.class.getResourceAsStream("find.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for FindSpecificNodeUsages", e);
+      }
+      return null;
     }
   }
 }

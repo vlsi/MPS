@@ -44,7 +44,7 @@
     <nodeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="145" startPosition="100" endLine="146" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="149" startPosition="163" endLine="150" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="150" startPosition="80" endLine="151" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="151" startPosition="114" endLine="152" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="151" startPosition="114" endLine="152" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="89" startPosition="68" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootMappingRule0#()V" />
     <nodeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="122" startPosition="60" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WeavingRule0#()V" />
     <nodeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="109" startPosition="127" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -105,7 +105,7 @@
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="116" startPosition="142" endLine="118" endPosition="20" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="122" startPosition="60" endLine="124" endPosition="5" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="35" startPosition="43" endLine="38" endPosition="94" />
-    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="149" startPosition="163" endLine="152" endPosition="60" />
+    <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="149" startPosition="163" endLine="152" endPosition="51" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1218738629621" fileName="Mappingmain.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />

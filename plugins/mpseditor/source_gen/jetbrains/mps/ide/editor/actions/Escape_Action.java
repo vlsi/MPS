@@ -10,6 +10,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 
@@ -27,7 +28,7 @@ public class Escape_Action extends GeneratedAction {
     if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).hasNodeInformationDialog()) {
       return false;
     }
-    if (((Boolean) MapSequence.fromMap(_params).get("isModalContext"))) {
+    if (((Boolean) MapSequence.fromMap(_params).get("isModalContext")) || (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) instanceof InspectorEditorComponent)) {
       return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelectionStackSize() > 1;
     }
     return true;
