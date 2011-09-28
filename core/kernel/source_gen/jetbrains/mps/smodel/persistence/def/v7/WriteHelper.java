@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.util.NameUtil;
 
 public class WriteHelper {
   public static final char MODEL_SEPARATOR_CHAR = '.';
@@ -33,12 +32,10 @@ public class WriteHelper {
   protected static Log log = LogFactory.getLog(WriteHelper.class);
 
   private SModelReference myModelRef;
-  private Map<String, SModelReference> myModelFqNameToReference;
   private Map<SModelReference, String> myModelIndex;
   private Set<Integer> myUsedIndexes;
 
   public WriteHelper(SModelReference modelRef) {
-    myModelFqNameToReference = MapSequence.fromMap(new HashMap<String, SModelReference>());
     myModelIndex = MapSequence.fromMap(new HashMap<SModelReference, String>());
     myUsedIndexes = SetSequence.fromSet(new HashSet<Integer>());
     myModelRef = modelRef;
@@ -54,7 +51,6 @@ public class WriteHelper {
     }
     SetSequence.fromSet(myUsedIndexes).addElement(hash);
     MapSequence.fromMap(myModelIndex).put(model, Integer.toString(hash, HASH_BASE));
-    MapSequence.fromMap(myModelFqNameToReference).put(model.getLongName(), model);
   }
 
   public String getImportIndex(@NotNull SModelReference model) {
@@ -109,7 +105,7 @@ public class WriteHelper {
     if (RoleIdsComponent.isEnabled()) {
       // return fqName prefixed with "." if we can't find model or name of concept 
       String fqName = node.getConceptFqName();
-      String index = MapSequence.fromMap(myModelIndex).get(getModelReferenceForConcept(node));
+      String index = MapSequence.fromMap(myModelIndex).get(RoleIdsComponent.getConceptPointer(node).getModelReference());
       if (index == null) {
         return MODEL_SEPARATOR_CHAR + fqName;
       }
@@ -201,10 +197,6 @@ public class WriteHelper {
       }
     }
     return ref.getResolveInfo();
-  }
-
-  private SModelReference getModelReferenceForConcept(SNode node) {
-    return MapSequence.fromMap(myModelFqNameToReference).get(NameUtil.namespaceFromLongName(node.getConceptFqName()));
   }
 
   public static String encode(String s) {
