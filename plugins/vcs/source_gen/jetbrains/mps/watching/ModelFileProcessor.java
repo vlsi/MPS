@@ -4,7 +4,7 @@ package jetbrains.mps.watching;
 
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
-import com.intellij.openapi.fileEditor.FileDocumentManager;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.FileSystem;
@@ -23,7 +23,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 
   @Override
   protected void processContentChanged(VFileEvent event, ReloadSession reloadSession) {
-    if (event.isFromRefresh() || event.getRequestor() instanceof FileDocumentManager) {
+    if (!(VirtualFileUtils.isEventFromSave(event))) {
       EditableSModelDescriptor model = SModelRepository.getInstance().findModel(FileSystem.getInstance().getFileByPath(event.getPath()));
       LOG.debug("Content change event for model file " + event.getPath() + ". Found model " + model + "." + ((model != null ?
         " Needs reloading " + model.needsReloading() :

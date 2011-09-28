@@ -3,7 +3,7 @@
   <root nodeId="4707157387247360639">
     <nodeInfo nodeId="4707157387247360641" fileName="ModelFileProcessor.java" startLine="17" startPosition="61" endLine="18" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4707157387247360646" fileName="ModelFileProcessor.java" startLine="18" startPosition="79" endLine="19" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="4707157387247360679" fileName="ModelFileProcessor.java" startLine="26" startPosition="87" endLine="27" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247360679" fileName="ModelFileProcessor.java" startLine="26" startPosition="53" endLine="27" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4707157387247360729" fileName="ModelFileProcessor.java" startLine="32" startPosition="54" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247360743" fileName="ModelFileProcessor.java" startLine="39" startPosition="77" endLine="40" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247360756" fileName="ModelFileProcessor.java" startLine="44" startPosition="77" endLine="45" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -55,7 +55,7 @@
       <varInfo nodeId="4707157387247360849" varName="model" />
       <varInfo nodeId="4707157387247360842" varName="ifile" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247360678" fileName="ModelFileProcessor.java" startLine="26" startPosition="87" endLine="34" endPosition="7">
+    <scopeInfo nodeId="4707157387247360678" fileName="ModelFileProcessor.java" startLine="26" startPosition="53" endLine="34" endPosition="7">
       <varInfo nodeId="4707157387247360680" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247360748" fileName="ModelFileProcessor.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
@@ -83,7 +83,7 @@
   </root>
   <root nodeId="4707157387247360865">
     <nodeInfo nodeId="4707157387247360867" fileName="ModuleFileProcessor.java" startLine="14" startPosition="62" endLine="15" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="4707157387247360900" fileName="ModuleFileProcessor.java" startLine="22" startPosition="87" endLine="23" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247360900" fileName="ModuleFileProcessor.java" startLine="22" startPosition="53" endLine="23" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4707157387247360916" fileName="ModuleFileProcessor.java" startLine="24" startPosition="57" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247360930" fileName="ModuleFileProcessor.java" startLine="31" startPosition="77" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247360943" fileName="ModuleFileProcessor.java" startLine="36" startPosition="77" endLine="37" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -119,7 +119,7 @@
     <scopeInfo nodeId="4707157387247360878" fileName="ModuleFileProcessor.java" startLine="60" startPosition="51" endLine="61" endPosition="20" />
     <scopeInfo nodeId="4707157387247361024" fileName="ModuleFileProcessor.java" startLine="66" startPosition="32" endLine="67" endPosition="122" />
     <scopeInfo nodeId="4707157387247360872" fileName="ModuleFileProcessor.java" startLine="16" startPosition="0" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="4707157387247360899" fileName="ModuleFileProcessor.java" startLine="22" startPosition="87" endLine="26" endPosition="7">
+    <scopeInfo nodeId="4707157387247360899" fileName="ModuleFileProcessor.java" startLine="22" startPosition="53" endLine="26" endPosition="7">
       <varInfo nodeId="4707157387247360901" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247360990" fileName="ModuleFileProcessor.java" startLine="53" startPosition="79" endLine="57" endPosition="5">
