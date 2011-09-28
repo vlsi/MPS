@@ -25,7 +25,10 @@ import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening.ModelListener;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -33,7 +36,6 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -137,7 +139,11 @@ public abstract class BaseTabsComponent implements TabsComponent {
     Map<EditorTabDescriptor, List<SNode>> result = new THashMap<EditorTabDescriptor, List<SNode>>();
     getTabRemovalListener().clearAspects();
     for (EditorTabDescriptor d : myPossibleTabs) {
-      List<SNode> nodes = d.getNodes(myBaseNode.getNode());
+      List<SNode> nodes = new ArrayList<SNode>();
+      for (SNode n : d.getNodes(myBaseNode.getNode())) {
+        if (n == null) continue;
+        nodes.add(n);
+      }
       if (nodes.isEmpty()) continue;
 
       result.put(d, nodes);
@@ -212,7 +218,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   private class MySModelCommandListener implements SModelCommandListener {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
-      for (SModelEvent e: events){
+      for (SModelEvent e : events) {
         if (!(e instanceof SModelRootEvent)) continue;
         SModelRootEvent re = (SModelRootEvent) e;
         if (!re.isAdded()) continue;
