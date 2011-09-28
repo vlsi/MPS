@@ -79,16 +79,28 @@ public class StaticReference extends SReferenceBase {
 
     if (targetModel.isDisposed()) {
       Logger log = Logger.getLogger(this.getClass());
-      log.error("target model " + targetModel.toString() + " is disposed ");
+      StringBuilder sb = new StringBuilder();
+      sb.append("target model ");
+      sb.append(targetModel.toString());
+      sb.append(" is disposed\n");
       SNode sourceNode = getSourceNode();
-      log.error("source node is: name = " + sourceNode.getPersistentProperty(SNodeUtil.property_INamedConcept_name) +
-        ", model = " + sourceNode.getModel() +
-        ", id = " + sourceNode.getId());
-      log.error("target node id = " + targetNodeId);
+      sb.append("source node is: name = ");
+      sb.append(sourceNode.getPersistentProperty(SNodeUtil.property_INamedConcept_name));
+      sb.append(", model = ");
+      sb.append(sourceNode.getModel());
+      sb.append(", id = ");
+      sb.append(sourceNode.getId());
+      sb.append("\ntarget node id = ");
+      sb.append(targetNodeId);
       String canRead = ModelAccess.instance().canRead() ? "can read" : "can not read";
-      log.error("current thread " + canRead);
-      log.error("stacktrace of model disposing is: ");
-      log.error(targetModel.getDisposedStacktrace());
+      sb.append("\ncurrent thread ");
+      sb.append(canRead);
+      sb.append("\nstack trace of model disposing is: ");
+      for (StackTraceElement ste: targetModel.getDisposedStacktrace()) {
+        sb.append(ste);
+        sb.append("\n");
+      }
+      log.error(sb.toString());
       log.errorWithTrace("=============current trace:=============");
       return null;
     }
