@@ -22,6 +22,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
@@ -32,16 +33,8 @@ import java.awt.GridBagLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 25.12.2009
- * Time: 16:18:36
- * To change this template use File | Settings | File Templates.
- */
 public class UpdatePersistenceDialog extends BaseDialog {
   private boolean mySetVersion = false;
-  private String myUnitDescription;
   List<SModelDescriptor> myModelDescriptors;
   private JRadioButton myButtonYes =
     new JRadioButton("Yes, I want to set new persistence version to application. All old-persistence models will be upgraded automatically on load.");
@@ -56,9 +49,8 @@ public class UpdatePersistenceDialog extends BaseDialog {
     }
   };
 
-  public UpdatePersistenceDialog(List<EditableSModelDescriptor> modelDescriptors, Frame mainFrame, String unitDescription, boolean needsAskToSetVersion) {
+  public UpdatePersistenceDialog(List<DefaultSModelDescriptor> modelDescriptors, Frame mainFrame, String unitDescription, boolean needsAskToSetVersion) {
     super(mainFrame, "Upgrade Model Persistence In " + unitDescription);
-    myUnitDescription = unitDescription;
     myModelDescriptors = new ArrayList<SModelDescriptor>(modelDescriptors);
     myNeedsAskToSetVersion = needsAskToSetVersion;
   }

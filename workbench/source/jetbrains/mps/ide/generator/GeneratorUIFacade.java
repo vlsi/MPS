@@ -218,7 +218,8 @@ public class GeneratorUIFacade {
               }
               EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
 
-              IFile modelFile = esm.getModelFile();
+              if (!(esm instanceof DefaultSModelDescriptor)) return null;
+              IFile modelFile = ((DefaultSModelDescriptor) esm).getModelFile();
               if (modelFile == null) return null;
 
               return ModelDigestHelper.getInstance().getGenerationHashes(modelFile, operationContext);

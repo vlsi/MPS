@@ -124,16 +124,6 @@ public class Library extends AbstractModule {
     return solution;
   }
 
-  protected void readModels() {
-    if (!isInitialized()) {
-      super.readModels();
-
-      if (isInitialized()) {
-        fireModuleInitialized();
-      }
-    }
-  }
-
   public LibraryDescriptor getModuleDescriptor() {
     return myDescriptor;
   }

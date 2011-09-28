@@ -139,7 +139,11 @@ public abstract class BaseTabsComponent implements TabsComponent {
     Map<EditorTabDescriptor, List<SNode>> result = new THashMap<EditorTabDescriptor, List<SNode>>();
     getTabRemovalListener().clearAspects();
     for (EditorTabDescriptor d : myPossibleTabs) {
-      List<SNode> nodes = d.getNodes(myBaseNode.getNode());
+      List<SNode> nodes = new ArrayList<SNode>();
+      for (SNode n : d.getNodes(myBaseNode.getNode())) {
+        if (n == null) continue;
+        nodes.add(n);
+      }
       if (nodes.isEmpty()) continue;
 
       result.put(d, nodes);

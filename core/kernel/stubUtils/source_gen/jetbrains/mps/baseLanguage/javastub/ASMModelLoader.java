@@ -5,26 +5,19 @@ package jetbrains.mps.baseLanguage.javastub;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.stubs.StubLocation;
-import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.project.IModule;
 
 public class ASMModelLoader {
   private static final Logger LOG = Logger.getLogger(ASMModelLoader.class);
 
   private final IClassPathItem myCpItem;
   private final SModel myModel;
-  private final StubLocation myLocation;
+  private final IModule myModule;
   private final boolean mySkipPrivate;
   private final String myLanguageId;
 
-  public ASMModelLoader(StubLocation location, IClassPathItem classPathItem, SModel model) {
-    // during fix of MPS-10626 would be changed to true 
-    // but do not touch it before that 
-    this(location, classPathItem, model, LanguageID.JAVA, false);
-  }
-
-  public ASMModelLoader(StubLocation location, IClassPathItem classPathItem, SModel model, String languageId, boolean skipPrivate) {
-    myLocation = location;
+  public ASMModelLoader(IModule module, IClassPathItem classPathItem, SModel model, String languageId, boolean skipPrivate) {
+    myModule = module;
     myCpItem = classPathItem;
     myModel = model;
     myLanguageId = languageId;
@@ -34,7 +27,7 @@ public class ASMModelLoader {
   public void updateModel() {
     try {
       String pack = myModel.getLongName();
-      ClassifierLoader loader = new ClassifierLoader(myLocation, myModel, myCpItem, new ClassifierUpdater(myLanguageId, mySkipPrivate));
+      ClassifierLoader loader = new ClassifierLoader(myModule, myModel, myCpItem, new ClassifierUpdater(myLanguageId, mySkipPrivate));
       for (String name : myCpItem.getRootClasses(pack)) {
         if (myModel.getNodeById(ASMNodeId.createId(name)) != null) {
           continue;

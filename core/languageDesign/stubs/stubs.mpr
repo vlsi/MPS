@@ -25,11 +25,10 @@
     </option>
   </component>
   <component name="MPSProject">
-    <projectSolutions />
-    <projectLanguages>
-      <languagePath path="${project}/stubs.mpl" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/stubs.mpl" />
+      <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
+    </projectModules>
     <genConfs>
       <genConfModule name="stubs" moduleRef="jetbrains.mps.lang.stubs" />
     </genConfs>

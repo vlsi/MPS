@@ -92,10 +92,6 @@ public class MPSModuleRepository implements ApplicationComponent {
     });
   }
 
-  public boolean isKnownModule(IModule m) {
-    return myModules.contains(m);
-  }
-
   public boolean existsModule(ModuleReference ref) {
     return getModule(ref) != null;
   }

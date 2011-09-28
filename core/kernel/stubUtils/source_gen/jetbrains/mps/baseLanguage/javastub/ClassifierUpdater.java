@@ -6,7 +6,8 @@ import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
@@ -58,7 +59,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ClassifierUpdater {
   private static Set<Tuples._2<String, String>> reported = SetSequence.fromSet(new HashSet());
-  private static Logger LOG = Logger.getLogger(ClassifierUpdater.class);
+  protected static Log log = LogFactory.getLog(ClassifierUpdater.class);
 
   private IModule myModule;
   private SNode myClassifier;
@@ -522,10 +523,12 @@ public class ClassifierUpdater {
       addClassifierReference(res, "classifier", (ASMClassType) value);
       return res;
     }
-    LOG.error("couldn't create annotation value from " + ((value == null ?
-      "" :
-      value.getClass().getName()
-    )) + " : " + value);
+    if (log.isErrorEnabled()) {
+      log.error("couldn't create annotation value from " + ((value == null ?
+        "" :
+        value.getClass().getName()
+      )) + " : " + value);
+    }
     return null;
   }
 
@@ -603,7 +606,9 @@ public class ClassifierUpdater {
     if (type instanceof ASMUnboundedType) {
       return new ClassifierUpdater.QuotationClass_ol94f8_a0a0q0v().createNode();
     }
-    LOG.error("Can't convert type " + type + " class : ");
+    if (log.isErrorEnabled()) {
+      log.error("Can't convert type " + type + " class : ");
+    }
     return new ClassifierUpdater.QuotationClass_ol94f8_a0s0v().createNode();
   }
 
@@ -699,7 +704,9 @@ public class ClassifierUpdater {
         if (IdeMain.getTestMode() == IdeMain.TestMode.NO_TEST) {
           String modelName = SNodeOperations.getModel(myClassifier).getLongName();
           String rootName = SNodeOperations.getContainingRoot(myClassifier).getPresentation();
-          LOG.warning("no module found for: " + packageName + " in " + moduleName + "(referenced from " + modelName + "/" + rootName + ")");
+          if (log.isWarnEnabled()) {
+            log.warn("no module found for: " + packageName + " in " + moduleName + "(referenced from " + modelName + "/" + rootName + ")");
+          }
         }
       }
     }
