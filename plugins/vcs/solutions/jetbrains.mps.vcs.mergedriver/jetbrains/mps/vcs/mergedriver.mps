@@ -11592,6 +11592,27 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zmzd.~VcsException" resolveInfo="VcsException" />
       </node>
     </node>
+    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="5262371584936313197">
+      <property name="name" nameId="tpck.1169194664001" value="getCoreAutocrlfValue" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="5262371584936313201" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5262371584936313199">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5262371584936313207">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="5262371584936313209">
+            <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5262371584936313213">
+              <property name="value" nameId="tpee.1070475926801" value="true" />
+            </node>
+            <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5262371584936313214">
+              <property name="value" nameId="tpee.1070475926801" value="input" />
+            </node>
+            <node role="condition" roleId="tpee.1163668914799" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5262371584936313208">
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="8a0f.~SystemInfo" resolveInfo="SystemInfo" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8a0f.~SystemInfo%disWindows" resolveInfo="isWindows" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5262371584936313200" />
+    </node>
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="6590770702563546492">
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6590770702563546493">
         <property name="name" nameId="tpck.1169194664001" value="project" />
@@ -11673,8 +11694,8 @@
                 </node>
               </node>
               <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8098913440253374746">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="8098913440253411910">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8098913440253411906" resolveInfo="CORE_AUTOCRLF_VALUE" />
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="5262371584936313215">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5262371584936313197" resolveInfo="getCoreAutocrlfValue" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8098913440253374750">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
@@ -11747,8 +11768,8 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="8098913440253398295">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8098913440253374804" resolveInfo="CORE_AUTOCRLF" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="8098913440253411911">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8098913440253411906" resolveInfo="CORE_AUTOCRLF_VALUE" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="5262371584936313216">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5262371584936313197" resolveInfo="getCoreAutocrlfValue" />
                 </node>
               </node>
             </node>
@@ -11869,15 +11890,6 @@
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="8098913440253374806" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8098913440253374807">
         <property name="value" nameId="tpee.1070475926801" value="core.autocrlf" />
-      </node>
-    </node>
-    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="8098913440253411906">
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="CORE_AUTOCRLF_VALUE" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8098913440253411907" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="8098913440253411908" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8098913440253411909">
-        <property name="value" nameId="tpee.1070475926801" value="input" />
       </node>
     </node>
   </root>
