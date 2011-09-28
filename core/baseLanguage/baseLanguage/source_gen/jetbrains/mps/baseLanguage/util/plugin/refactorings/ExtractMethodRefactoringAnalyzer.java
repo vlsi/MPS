@@ -272,7 +272,9 @@ public class ExtractMethodRefactoringAnalyzer {
         } else {
           reference = ((SNode) read.getSource());
         }
-        MapSequence.fromMap(result).put(declaration, new MethodParameter(declaration, type, SPropertyOperations.getString(declaration, "name"), reference));
+        if (SNodeOperations.isInstanceOf(reference, "jetbrains.mps.baseLanguage.structure.Expression")) {
+          MapSequence.fromMap(result).put(declaration, new MethodParameter(declaration, type, SPropertyOperations.getString(declaration, "name"), reference));
+        }
       }
     }
   }
@@ -294,7 +296,9 @@ public class ExtractMethodRefactoringAnalyzer {
                 } else {
                   reference = ((SNode) read.getSource());
                 }
-                MapSequence.fromMap(result).put(declaration, new MethodParameter(declaration, type, SPropertyOperations.getString(declaration, "name"), reference));
+                if (SNodeOperations.isInstanceOf(reference, "jetbrains.mps.baseLanguage.structure.Expression")) {
+                  MapSequence.fromMap(result).put(declaration, new MethodParameter(declaration, type, SPropertyOperations.getString(declaration, "name"), reference));
+                }
               }
             }
           }
