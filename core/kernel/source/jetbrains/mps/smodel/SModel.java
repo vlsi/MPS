@@ -60,7 +60,7 @@ public class SModel {
 
   private SModelDescriptor myModelDescriptor;
 
-  private Throwable myDisposedStacktrace = null;
+  private StackTraceElement[] myDisposedStacktrace = null;
 
   public SModel(@NotNull SModelReference modelReference) {
     this(modelReference, new UniversalOptimizedNodeIdMap());
@@ -110,7 +110,7 @@ public class SModel {
     return myDisposed;
   }
 
-  public Throwable getDisposedStacktrace() {
+  public StackTraceElement[] getDisposedStacktrace() {
     return myDisposedStacktrace;
   }
 
@@ -845,7 +845,7 @@ public class SModel {
     if (myDisposed) return;
 
     myDisposed = true;
-    myDisposedStacktrace = new Throwable();
+    myDisposedStacktrace = new Throwable().getStackTrace();
     for (SNode sn : myIdToNodeMap.values()) {
       sn.dispose();
     }
