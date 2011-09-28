@@ -6,6 +6,8 @@ import com.intellij.openapi.application.PathManager;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.InternalFlag;
 
 public class InternalRuntimePacker {
@@ -26,10 +28,17 @@ public class InternalRuntimePacker {
   private static void pack() {
     File tmpDir = FileUtil.createTmpDir();
     getFile().delete();
-    for (String cpi : SetSequence.fromSet(CommandLineGenerator.getClasspath(false))) {
-      if (!(cpi.endsWith(".jar"))) {
-        FileUtil.copyDir(new File(cpi), tmpDir);
+    Iterable<String> classpathDirs = SetSequence.fromSet(CommandLineGenerator.getClasspath(false)).where(new IWhereFilter<String>() {
+      public boolean accept(String cpi) {
+        return !(cpi.endsWith(".jar"));
       }
+    });
+    for (String classpathDir : Sequence.fromIterable(classpathDirs)) {
+      FileUtil.copyDir(new File(classpathDir), tmpDir);
+    }
+    // Workaround for rare case when MPS build is invoked with internal flag (MPS-13819) 
+    if (Sequence.fromIterable(classpathDirs).isEmpty()) {
+      FileUtil.write(new File(tmpDir, "dummy.txt"), new byte[0]);
     }
     FileUtil.zip(tmpDir, getFile());
     tmpDir.delete();
