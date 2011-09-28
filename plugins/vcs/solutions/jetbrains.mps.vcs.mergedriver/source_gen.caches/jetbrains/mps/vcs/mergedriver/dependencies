@@ -67,6 +67,7 @@
   <dependency className="jetbrains.mps.vcs.mergedriver.GitGlobalConfigFixesInstaller" file="GitGlobalConfigFixesInstaller.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
     <classNode dependClassName="git4idea.commands.GitCommand" />
     <classNode dependClassName="git4idea.commands.GitSimpleHandler" />
