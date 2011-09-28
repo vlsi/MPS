@@ -926,7 +926,7 @@
                 <property name="value" nameId="tpee.1070475926801" value="log4j.appender.file.layout.conversionPattern" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6442525078792212479">
-                <property name="value" nameId="tpee.1070475926801" value="%d{ABSOLUTE} %5p %t %c{1}:%M:%L - %m%n" />
+                <property name="value" nameId="tpee.1070475926801" value="%d{DATE} %5p %t %c{1}:%M:%L - %m%n" />
               </node>
             </node>
           </node>

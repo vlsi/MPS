@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.MPSCore;
 
 public class WriteHelper {
   public static final char MODEL_SEPARATOR_CHAR = '.';
@@ -186,14 +187,16 @@ public class WriteHelper {
   }
 
   public String genResolveInfo(@NotNull SReference ref) {
-    SNode target = (ref instanceof StaticReference ?
-      ref.getTargetNode() :
-      null
-    );
-    if ((target != null)) {
-      String resolveInfo = target.getResolveInfo();
-      if (resolveInfo != null) {
-        return resolveInfo;
+    if (!(MPSCore.getInstance().isMergeDriverMode())) {
+      SNode target = (ref instanceof StaticReference ?
+        ref.getTargetNode() :
+        null
+      );
+      if ((target != null)) {
+        String resolveInfo = target.getResolveInfo();
+        if (resolveInfo != null) {
+          return resolveInfo;
+        }
       }
     }
     return ref.getResolveInfo();
