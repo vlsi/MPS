@@ -22,10 +22,23 @@
       <modulePath path="${mps_home}/core/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="usages.junit" />
       <modulePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" folder="usages.junit" />
       <modulePath path="${mps_home}/core/debug-api/languages/api/api.mpl" />
+      <modulePath path="${mps_home}/core/dependencies/dependencies.msd" />
       <modulePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" folder="old" />
       <modulePath path="${mps_home}/languages/util/buildlanguage/languages/buildlanguage/buildlanguage.mpl" folder="usages.ant" />
       <modulePath path="${mps_home}/languages/util/buildlanguage/languages/custommps/custommps.mpl" folder="usages.ant" />
       <modulePath path="${mps_home}/languages/util/buildlanguage/languages/packaging/packaging.mpl" folder="usages.ant" />
+      <modulePath path="${project}/languages/commands/commands.mpl" folder="" />
+      <modulePath path="${project}/languages/common/common.mpl" folder="" />
+      <modulePath path="${project}/languages/configurations/configurations.mpl" />
+      <modulePath path="${project}/languages/demo/demo.mpl" folder="usages" />
+      <modulePath path="${project}/languages/settings/settings.mpl" folder="" />
+      <modulePath path="${project}/languages/util/util.mpl" folder="" />
+      <modulePath path="${project}/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" folder="runtime" />
+      <modulePath path="${project}/solutions/jetbrains.mps.execution.impl.tests/tests.msd" folder="runtime" />
+      <modulePath path="${project}/solutions/jetbrains.mps.execution.impl/impl.msd" folder="runtime" />
+      <modulePath path="${project}/solutions/jetbrains.mps.execution.lib.startup/startup.msd" folder="library" />
+      <modulePath path="${project}/solutions/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" folder="usages" />
+      <modulePath path="${project}/solutions/jetbrains.mps.execution.util/jetbrains.mps.execution.lib.msd" folder="library" />
       <modulePath path="${mps_home}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java.run.sandbox/jetbrains.mps.debugger.java.run.sandbox.msd" />
       <modulePath path="${mps_home}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" folder="usages.java" />
       <modulePath path="${mps_home}/samples/lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="usages.implicit" />
@@ -35,18 +48,6 @@
       <modulePath path="${mps_home}/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="usages" />
       <modulePath path="${mps_home}/samples/sampleLanguage/sampleLanguage.mpl" folder="usages.implicit" />
       <modulePath path="${mps_home}/samples/sampleLanguage/solutions/sandbox/jetbrains.mps.samples.sampleLanguage.sandbox.msd" folder="usages.implicit" />
-      <modulePath path="${project}/languages/commands/commands.mpl" folder="" />
-      <modulePath path="${project}/languages/common/common.mpl" folder="" />
-      <modulePath path="${project}/languages/configurations/configurations.mpl" />
-      <modulePath path="${project}/languages/demo/demo.mpl" folder="usages" />
-      <modulePath path="${project}/languages/settings/settings.mpl" folder="" />
-      <modulePath path="${project}/languages/util/util.mpl" folder="" />
-      <modulePath path="${project}/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" folder="runtime" />
-      <modulePath path="${project}/solutions/jetbrains.mps.execution.impl/impl.msd" folder="runtime" />
-      <modulePath path="${project}/solutions/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" folder="usages" />
-      <modulePath path="${project}/solutions/jetbrains.mps.execution.util/jetbrains.mps.execution.lib.msd" folder="library" />
-      <modulePath path="${project}/solutions/jetbrains.mps.execution.lib.startup/startup.msd" folder="library" />
-      <modulePath path="${project}/solutions/jetbrains.mps.execution.impl.tests/tests.msd" folder="runtime" />
     </projectModules>
     <genConfs>
       <genConfModule name="api" moduleRef="jetbrains.mps.execution.api" />
