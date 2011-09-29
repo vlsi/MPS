@@ -46,6 +46,7 @@ public class MergeTestCase extends TestCase {
           String fileToSave = zipfile.getParent() + File.separator + zipfile.getName() + ".result";
           MergeTestUtil.saveTestModel(resultModel, new File(fileToSave));
         }
+        resultModel.calculateImplicitImports(); //this is a bit hacky but saving model will do the same thing since test are in persistence v4
         ModelAssert.assertDeepModelEquals(getExpected(models), resultModel);
       }
     });
