@@ -625,7 +625,7 @@ public class Matrix<T> {
   }
 
   public void setRow(final int i, Matrix vector) {
-    if (vector.myColumns != 1 || vector.myRows != myColumns || i < 0 | i >= myRows) {
+    if (vector.myColumns != 1 || vector.myRows != myColumns || i < 0 || i >= myRows) {
       throw new IndexOutOfBoundsException();
     }
     for (int j = 0; j < vector.myRows; j++) {
@@ -634,7 +634,7 @@ public class Matrix<T> {
   }
 
   public void setCol(final int i, Matrix vector) {
-    if (vector.myColumns != 1 || vector.myRows != myRows || i < 0 | i >= myColumns) {
+    if (vector.myColumns != 1 || vector.myRows != myRows || i < 0 || i >= myColumns) {
       throw new IndexOutOfBoundsException();
     }
     for (int j = 0; j < vector.myRows; j++) {
@@ -887,9 +887,9 @@ public class Matrix<T> {
     if (oper == null) {
       throw new IllegalArgumentException();
     }
+    Object leader = null;
     switch (n) {
       case Norm1:
-        Object leader = null;
         for (int j = 0; j < myColumns; j++) {
           Object o1 = 0;
           for (int i = 0; i < myRows; i++) {
