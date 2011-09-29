@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public abstract class DuplicatesProcessor<T> {
   protected EditorContext myEditorContext;
@@ -20,7 +21,7 @@ public abstract class DuplicatesProcessor<T> {
       if (!(replaceAll)) {
         List<EditorMessage> messages = this.createEditorMessages(duplicate);
         this.myEditorContext.getNodeEditorComponent().getHighlightManager().mark(messages);
-        AskDialog dialog = new AskDialog(this.myEditorContext.getOperationContext().getMainFrame(), "Process Duplicates");
+        AskDialog dialog = new AskDialog(ProjectHelper.toMainFrame(this.myEditorContext.getOperationContext().getProject()), "Process Duplicates");
         dialog.showDialog();
         AskDialog.DialogResults shouldSubstitute = dialog.getResult();
         for (EditorMessage message : ListSequence.fromList(messages)) {

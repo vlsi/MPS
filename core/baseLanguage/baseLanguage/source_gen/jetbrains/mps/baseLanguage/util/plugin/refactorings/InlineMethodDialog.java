@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -28,7 +29,7 @@ public class InlineMethodDialog extends BaseDialog {
   private InlineMethodDialogModel myModel;
 
   public InlineMethodDialog(SNode node, Project project, IOperationContext operationContext) {
-    super(operationContext.getMainFrame(), "Inline Method");
+    super(ProjectHelper.toMainFrame(operationContext.getProject()), "Inline Method");
     this.myModel = new InlineMethodDialogModel(node, operationContext);
     this.myPanel = new JPanel(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints();

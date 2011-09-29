@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JComponent;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
@@ -78,7 +79,7 @@ public class OldRootMergeDialog extends BaseDialog implements EditorMessageOwner
   private boolean myVeiwportSetInProgress = false;
 
   public OldRootMergeDialog(IOperationContext context, SModel change1, SModel change2, boolean modal) {
-    super(context.getMainFrame(), "Merge");
+    super(ProjectHelper.toMainFrame(context.getProject()), "Merge");
     setModal(modal);
     myContext = context;
     myChange1Model = change1;

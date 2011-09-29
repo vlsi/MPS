@@ -16,12 +16,8 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.smodel.IOperationContext;
-
-import java.awt.Frame;
 
 public abstract class StandaloneMPSContext implements IOperationContext {
 
@@ -31,12 +27,6 @@ public abstract class StandaloneMPSContext implements IOperationContext {
 
   public <T> T getComponent(Class<T> clazz) {
     return ApplicationManager.getApplication().getComponent(clazz);
-  }
-
-  public final Frame getMainFrame() {
-    Project project = getIdeaProject();
-    if (project == null) return null;
-    return WindowManager.getInstance().getFrame(project);
   }
 
   public boolean isValid() {

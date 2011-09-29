@@ -33,6 +33,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
@@ -102,7 +103,7 @@ public class GeneratorUIFacade {
         "Save Transient Models",
         "Not this time",
         "No, and cancel saving"};
-      int option = JOptionPane.showOptionDialog(invocationContext.getMainFrame(),
+      int option = JOptionPane.showOptionDialog(ProjectHelper.toMainFrame(invocationContext.getProject()),
         "Would you like to save transient models?",
         "",
         JOptionPane.YES_NO_CANCEL_OPTION,

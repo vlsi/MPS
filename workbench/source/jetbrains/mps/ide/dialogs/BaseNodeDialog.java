@@ -20,6 +20,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.util.JSplitPaneWithoutBorders;
 import jetbrains.mps.logging.Logger;
@@ -46,7 +47,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
   private JSplitPane mySplitter;
 
   protected BaseNodeDialog(String text, IOperationContext operationContext) throws HeadlessException {
-    super(operationContext.getMainFrame(), text);
+    super(ProjectHelper.toMainFrame(operationContext.getProject()), text);
     myOperationContext = operationContext;
     InspectorEditorComponent inspector = new InspectorEditorComponent();
     myEditorComponent = new UIEditorComponent(getOperationContext(), inspector);

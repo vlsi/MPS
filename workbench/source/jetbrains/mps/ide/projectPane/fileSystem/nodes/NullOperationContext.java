@@ -23,8 +23,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.Frame;
-
 class NullOperationContext implements IOperationContext {
   public NullOperationContext() {
   }
@@ -46,10 +44,6 @@ class NullOperationContext implements IOperationContext {
   @NotNull
   public IScope getScope() {
     return GlobalScope.getInstance();
-  }
-
-  public Frame getMainFrame() {
-    return null;
   }
 
   public boolean isValid() {

@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.awt.HeadlessException;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
@@ -39,7 +40,7 @@ public class NewModelDialog extends BaseDialog {
   private String myNamespace;
 
   public NewModelDialog(IModule module, String namespace, IOperationContext context, String stereotype, boolean strict) throws HeadlessException {
-    super(context.getMainFrame(), "New Model");
+    super(ProjectHelper.toMainFrame(context.getProject()), "New Model");
     myContext = context;
     myModule = module;
     myNamespace = namespace;

@@ -12,6 +12,7 @@ import java.awt.HeadlessException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.FocusEvent;
@@ -37,7 +38,7 @@ public class OldModelDifferenceDialog extends BaseDialog {
                 return node.getContainingRoot();
               }
             });
-            final OldRootDifferenceDialog dialog = new OldRootDifferenceDialog(context.getMainFrame(), newModel, oldModel, false, modal);
+            final OldRootDifferenceDialog dialog = new OldRootDifferenceDialog(ProjectHelper.toMainFrame(context.getProject()), newModel, oldModel, false, modal);
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 dialog.init(context, rootNode, contentTitles[1], contentTitles[0]);

@@ -17,6 +17,7 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
 
 import javax.swing.JComponent;
@@ -34,7 +35,7 @@ public class AskDialog extends BaseDialog {
   private IChooseComponent myLastChooser = null;
 
   public AskDialog(final RefactoringContext refactoringContext, IChooser... choosers) throws HeadlessException {
-    super(refactoringContext.getCurrentOperationContext().getMainFrame(), refactoringContext.getRefactoring().getUserFriendlyName());
+    super(ProjectHelper.toMainFrame(refactoringContext.getCurrentOperationContext().getProject()), refactoringContext.getRefactoring().getUserFriendlyName());
     myChoosers = new ArrayList<IChooser>(Arrays.asList(choosers));
     myInnerPanel = new JPanel();
     GridBagLayout layout = new GridBagLayout();

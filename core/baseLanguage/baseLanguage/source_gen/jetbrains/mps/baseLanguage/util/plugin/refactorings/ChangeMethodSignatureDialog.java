@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import java.util.List;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -43,8 +44,8 @@ public class ChangeMethodSignatureDialog extends BaseDialog {
   private List<ChangeMethodSignatureRefactoring> myRefactorings = null;
 
   public ChangeMethodSignatureDialog(SNode node, IOperationContext operationContext) {
-    super(operationContext.getMainFrame(), "Change Method Signature");
-    assert operationContext.getMainFrame() != null;
+    super(ProjectHelper.toMainFrame(operationContext.getProject()), "Change Method Signature");
+    assert ProjectHelper.toMainFrame(operationContext.getProject()) != null;
     this.myOperationContext = operationContext;
     this.myPanel = new JPanel(new GridBagLayout());
     this.myDeclaration = node;
@@ -140,7 +141,7 @@ public class ChangeMethodSignatureDialog extends BaseDialog {
       }
     });
     if (baseMethod.value != null) {
-      int result = Messages.showYesNoDialog(this.myOperationContext.getMainFrame(), message.value, "Warinig", null);
+      int result = Messages.showYesNoDialog(ProjectHelper.toMainFrame(this.myOperationContext.getProject()), message.value, "Warinig", null);
       if (result == 0) {
         this.myDeclaration = baseMethod.value;
       }

@@ -7,6 +7,7 @@ import jetbrains.mps.debugger.java.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.runtime.SessionStopDisposer;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.debug.runtime.DebugSession;
 import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.JComponent;
@@ -18,7 +19,7 @@ public abstract class AbstractEvaluationDialog extends BaseDialog {
   private final SessionStopDisposer mySessionStopDisposer;
 
   public AbstractEvaluationDialog(IOperationContext context, EvaluationProvider provider, AbstractEvaluationModel model, String title) {
-    super(context.getMainFrame(), title);
+    super(ProjectHelper.toMainFrame(context.getProject()), title);
 
     setModal(false);
 

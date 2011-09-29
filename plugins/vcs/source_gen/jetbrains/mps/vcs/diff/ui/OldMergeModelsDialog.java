@@ -6,6 +6,7 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import java.awt.HeadlessException;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import javax.swing.JComponent;
 import com.intellij.openapi.application.ApplicationManager;
@@ -18,7 +19,7 @@ public class OldMergeModelsDialog extends BaseDialog {
   private boolean myCanceled;
 
   public OldMergeModelsDialog(IOperationContext context, SModel base, SModel mineModel, SModel repoModel) throws HeadlessException {
-    super(context.getMainFrame(), "Merge Model Changes : " + base.getSModelReference());
+    super(ProjectHelper.toMainFrame(context.getProject()), "Merge Model Changes : " + base.getSModelReference());
     myMergeView = new OldMergeView(context, base, mineModel, repoModel);
   }
 

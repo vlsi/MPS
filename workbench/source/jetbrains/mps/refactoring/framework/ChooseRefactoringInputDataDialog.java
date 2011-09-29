@@ -17,6 +17,7 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 
@@ -40,7 +41,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   private IChooseComponent myLastComponent = null;
 
   public ChooseRefactoringInputDataDialog(AbstractLoggableRefactoring refactoring, final RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
-    super(refactoringContext.getCurrentOperationContext().getMainFrame(), "Input Data for " + refactoring.getUserFriendlyName());
+    super(ProjectHelper.toMainFrame(refactoringContext.getCurrentOperationContext().getProject()), "Input Data for " + refactoring.getUserFriendlyName());
     myRefactoring = refactoring;
     myRefactoringContext = refactoringContext;
     myComponents = new ArrayList<IChooseComponent>(components);

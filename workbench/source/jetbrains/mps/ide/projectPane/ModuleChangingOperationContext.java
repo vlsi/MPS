@@ -22,8 +22,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.Frame;
-
 public class ModuleChangingOperationContext implements IOperationContext {
   private final IModule myModule;
   private IOperationContext myOperationContext;
@@ -35,10 +33,6 @@ public class ModuleChangingOperationContext implements IOperationContext {
 
   public <T> T getComponent(Class<T> clazz) {
     return myOperationContext.getComponent(clazz);
-  }
-
-  public Frame getMainFrame() {
-    return myOperationContext.getMainFrame();
   }
 
   public boolean isValid() {

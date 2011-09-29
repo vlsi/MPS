@@ -19,8 +19,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.Frame;
-
 public interface IOperationContext {
 
   Project getProject();
@@ -33,10 +31,6 @@ public interface IOperationContext {
 
   @NotNull
   IScope getScope();
-
-  // TODO get rid of
-  @Deprecated
-  Frame getMainFrame();
 
   boolean isValid();
 

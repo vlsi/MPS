@@ -23,6 +23,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
@@ -79,7 +80,7 @@ public class RefactoringFacade {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         IRefactoring refactoring = refactoringContext.getRefactoring();
-        Frame mainFrame = refactoringContext.getCurrentOperationContext().getMainFrame();
+        Frame mainFrame = ProjectHelper.toMainFrame(refactoringContext.getCurrentOperationContext().getProject());
         List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, refactoringContext);
         RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(mainFrame, refactoringContext, refactoring, !modelsToGenerate.isEmpty());
         if (dialog.needToBeShown()) {

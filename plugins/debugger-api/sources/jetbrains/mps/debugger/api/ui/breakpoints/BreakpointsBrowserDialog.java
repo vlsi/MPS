@@ -26,6 +26,7 @@ import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsView.BreakpointSelec
 import jetbrains.mps.debugger.api.ui.icons.Icons;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -62,7 +63,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   };
 
   public BreakpointsBrowserDialog(IOperationContext context) {
-    super(context.getMainFrame(), "Breakpoints");
+    super(ProjectHelper.toMainFrame(context.getProject()), "Breakpoints");
 
     setModal(false);
 

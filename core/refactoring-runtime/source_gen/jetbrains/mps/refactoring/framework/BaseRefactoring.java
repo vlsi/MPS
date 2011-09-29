@@ -7,6 +7,7 @@ import java.util.HashSet;
 import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
 import javax.swing.JOptionPane;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ public abstract class BaseRefactoring implements IRefactoring {
     String[] options = {"Yes", "No", "Cancel"};
     Boolean value = settings.getInitialValue();
     boolean bValue = value != null && value;
-    int option = JOptionPane.showOptionDialog(refactoringContext.getCurrentOperationContext().getMainFrame(), text, settings.getTitle(), JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[(bValue ?
+    int option = JOptionPane.showOptionDialog(ProjectHelper.toMainFrame(refactoringContext.getCurrentOperationContext().getProject()), text, settings.getTitle(), JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[(bValue ?
       0 :
       1
     )]);

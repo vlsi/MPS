@@ -5,6 +5,7 @@ package jetbrains.mps.debugger.api.ui.actions;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import javax.swing.JComponent;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JTextArea;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
@@ -15,7 +16,7 @@ public class ExportThreadsDialog extends BaseDialog {
   private final JComponent myMainComponent;
 
   public ExportThreadsDialog(IOperationContext context, StringBuffer threads) {
-    super(context.getMainFrame(), "Export Threads");
+    super(ProjectHelper.toMainFrame(context.getProject()), "Export Threads");
     setModal(false);
 
     myThreads = threads;
