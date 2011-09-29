@@ -15,15 +15,14 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class ProjectOperationContext extends StandaloneMPSContext {
-  private Project myProject;
+  private com.intellij.openapi.project.Project myProject;
 
-  private ProjectOperationContext(Project project) {
+  private ProjectOperationContext(com.intellij.openapi.project.Project project) {
     myProject = project;
   }
 
@@ -38,7 +37,13 @@ public class ProjectOperationContext extends StandaloneMPSContext {
     return null;
   }
 
-  public Project getIdeaProject() {
+  @Override
+  public Project getProject() {
+    return myProject.getComponent(MPSProject.class);
+  }
+
+  @Deprecated
+  public com.intellij.openapi.project.Project getIdeaProject() {
     return myProject;
   }
 
@@ -51,7 +56,7 @@ public class ProjectOperationContext extends StandaloneMPSContext {
     return "project context";
   }
 
-  public static ProjectOperationContext get(Project project) {
+  public static ProjectOperationContext get(com.intellij.openapi.project.Project project) {
     return new ProjectOperationContext(project);
   }
 }

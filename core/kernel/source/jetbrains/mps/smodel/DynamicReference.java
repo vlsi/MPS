@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
@@ -159,7 +159,12 @@ public class DynamicReference extends SReferenceBase {
     }
 
     @Override
-    public Project getIdeaProject() {
+    public Project getProject() {
+      return null;
+    }
+
+    @Override
+    public com.intellij.openapi.project.Project getIdeaProject() {
       return null;
     }
 

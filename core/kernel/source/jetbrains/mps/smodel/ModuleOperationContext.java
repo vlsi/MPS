@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.annotations.NotNull;
@@ -38,7 +38,13 @@ public class ModuleOperationContext extends StandaloneMPSContext {
     });
   }
 
-  public Project getIdeaProject() {
+  @Override
+  public Project getProject() {
+    return null;
+  }
+
+  @Deprecated
+  public com.intellij.openapi.project.Project getIdeaProject() {
     return null;
   }
 
