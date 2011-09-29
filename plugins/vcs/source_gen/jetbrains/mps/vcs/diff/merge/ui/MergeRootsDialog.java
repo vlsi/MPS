@@ -119,6 +119,9 @@ public class MergeRootsDialog extends BaseDialog {
   }
 
   public void rehighlight() {
+    if (myDisposed) {
+      return;
+    }
     myMineEditor.unhighlightAllChanges();
     myResultEditor.unhighlightAllChanges();
     myRepositoryEditor.unhighlightAllChanges();
