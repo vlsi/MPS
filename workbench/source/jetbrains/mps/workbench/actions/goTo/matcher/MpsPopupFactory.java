@@ -29,6 +29,10 @@ public abstract class MpsPopupFactory {
     return ChooseByNamePopup.createPopup(p, m, nodeProvider(), CONTEXT);
   }
 
+  public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m, String initialText) {
+    return ChooseByNamePopup.createPopup(p, m, nodeProvider(), CONTEXT, initialText);
+  }
+
   public static ChooseByNamePopup createPackagePopup(Project p, ChooseByNameModel m) {
     return ChooseByNamePopup.createPopup(p, m, packageProvider(), CONTEXT);
   }
