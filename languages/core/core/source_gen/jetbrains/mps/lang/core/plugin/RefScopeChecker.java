@@ -15,9 +15,6 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.GlobalScope;
 
 public class RefScopeChecker extends AbstractConstraintsChecker {
   public RefScopeChecker() {
@@ -57,16 +54,6 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
           " " + name
         )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", searchScopeStatus.getReferenceValidatorNode(), new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
       }
-      SModelReference uid = ref.getTargetSModelReference();
-      if (uid == null) {
-        continue;
-      }
-      SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(uid);
-      if (scope.getModelDescriptor(uid) == null && descriptor != null) {
-        component.addError(node, "Target module " + descriptor.getModule() + " should be imported", null);
-      }
-
-
     }
   }
 }
