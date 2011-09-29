@@ -49,8 +49,8 @@ public class ModuleChangingOperationContext implements IOperationContext {
     return myModule;
   }
 
-  public Project getProject() {
-    return myOperationContext.getProject();
+  public Project getIdeaProject() {
+    return myOperationContext.getIdeaProject();
   }
 
   @NotNull

@@ -123,7 +123,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                         int caretY = 0;
 
                         Project p = (editorContext != null && editorContext.getOperationContext() != null ?
-                          editorContext.getOperationContext().getProject() :
+                          editorContext.getOperationContext().getIdeaProject() :
                           null
                         );
                         if (p == null) {

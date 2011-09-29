@@ -52,7 +52,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8529737993487833472">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Libs" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="n3kn.8529737993487825733" resolveInfo="LibraryRoots" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="n3kn.8529737993487825733" resolveInfo="LibraryStubDescriptor" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="972176972348203842">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="n3kn.972176972348203840" resolveInfo="Stereotype" />
@@ -815,7 +815,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4293145514664643862" resolveInfo="context" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4293145514664643858">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~IOperationContext%dgetProject()%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="getProject" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~IOperationContext%dgetIdeaProject()%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="getIdeaProject" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4293145514664643859">

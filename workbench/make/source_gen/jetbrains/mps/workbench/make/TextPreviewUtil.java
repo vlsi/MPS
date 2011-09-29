@@ -52,7 +52,7 @@ public class TextPreviewUtil {
 
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                FileEditorManager.getInstance(context.getProject()).openTextEditor(new OpenFileDescriptor(context.getProject(), tfile), true);
+                FileEditorManager.getInstance(context.getIdeaProject()).openTextEditor(new OpenFileDescriptor(context.getIdeaProject(), tfile), true);
               }
             });
           }

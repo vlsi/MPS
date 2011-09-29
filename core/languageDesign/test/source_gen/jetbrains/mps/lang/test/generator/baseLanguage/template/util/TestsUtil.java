@@ -20,7 +20,7 @@ public class TestsUtil {
     if (projectPath != null) {
       return projectPath;
     }
-    String url = operationContext.getProject().getPresentableUrl();
+    String url = operationContext.getIdeaProject().getPresentableUrl();
     if (url != null) {
       return MacrosFactory.mpsHomeMacros().shrinkPath(url, (IFile) null);
     }

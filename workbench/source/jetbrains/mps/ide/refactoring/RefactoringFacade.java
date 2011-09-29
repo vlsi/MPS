@@ -128,7 +128,7 @@ public class RefactoringFacade {
     final SearchResults[] result = new SearchResults[]{null};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getProject(), "Finding usages...", false) {
+        ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getIdeaProject(), "Finding usages...", false) {
           public void run(@NotNull ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             ModelAccess.instance().runReadAction(new Runnable() {

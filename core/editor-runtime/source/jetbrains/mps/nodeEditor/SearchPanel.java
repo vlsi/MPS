@@ -59,7 +59,7 @@ public class SearchPanel extends AbstractSearchPanel {
     if (operationContext == null) {
       return new SearchHistoryComponent();
     }
-    return operationContext.getProject().getComponent(SearchHistoryComponent.class);
+    return operationContext.getIdeaProject().getComponent(SearchHistoryComponent.class);
   }
 
   private Pair<List<EditorCell_Label>, String> allCellsAndContent() {
@@ -296,7 +296,7 @@ public class SearchPanel extends AbstractSearchPanel {
         return i1.compareTo(i2);
       }
     });
-    UsagesViewTool usagesViewTool = new UsagesViewTool(myEditor.getOperationContext().getProject());
+    UsagesViewTool usagesViewTool = new UsagesViewTool(myEditor.getOperationContext().getIdeaProject());
     BaseNode baseNode = new BaseNode() {
       public SearchResults doGetResults(SearchQuery query, ProgressIndicator indicator) {
         SearchResults<SNode> searchResults = new SearchResults<SNode>();

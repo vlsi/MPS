@@ -136,7 +136,7 @@ public class StandardDialogs {
   public static GeneratorPropertiesDialog createGeneratorPropertiesDialog(final Generator g, final IOperationContext context) {
     return new _FunctionTypes._return_P0_E0<GeneratorPropertiesDialog>() {
       public GeneratorPropertiesDialog invoke() {
-        final GeneratorPropertiesDialog result_960thj_a0a0a1 = new GeneratorPropertiesDialog(context.getProject(), g);
+        final GeneratorPropertiesDialog result_960thj_a0a0a1 = new GeneratorPropertiesDialog(context.getIdeaProject(), g);
         GeneratorPropertiesDialog dialog = result_960thj_a0a0a1;
         final BaseTabbedBindedDialog.DialogTab result_960thj_a1a0a0a1 = new BaseTabbedBindedDialog.DialogTab("Common");
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a1a0a0a1 = new BaseTabbedBindedDialog.ComponentDescriptor();

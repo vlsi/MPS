@@ -54,7 +54,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   private IOperationContext myContext;
 
   public MPSFileNodeEditor(IOperationContext context, final MPSNodeVirtualFile file) {
-    this(context.getProject(), file, context);
+    this(context.getIdeaProject(), file, context);
   }
 
   public MPSFileNodeEditor(final Project project, final MPSNodeVirtualFile file) {

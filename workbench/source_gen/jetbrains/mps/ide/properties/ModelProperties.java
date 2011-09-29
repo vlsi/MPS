@@ -93,7 +93,7 @@ public class ModelProperties extends BaseBean {
         ((EditableSModelDescriptor) myModelDescriptor).save();
       }
     });
-    JFrame frame = WindowManager.getInstance().getFrame(myContext.getProject());
+    JFrame frame = WindowManager.getInstance().getFrame(myContext.getIdeaProject());
     new MissingDependenciesFixer(frame, myModelDescriptor).fix(true);
   }
 

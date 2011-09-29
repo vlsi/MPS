@@ -191,7 +191,7 @@ public class ShowImplementationComponent extends JPanel {
       IOperationContext operationContext = myEditor.getEditor().getOperationContext();
       final SNode selectedNode = myItemToNode.get((String) myNodeChooser.getSelectedItem());
       operationContext.getComponent(MPSEditorOpener.class).editNode(selectedNode, operationContext);
-      ProjectPane.getInstance(operationContext.getProject()).selectNode(selectedNode, false);
+      ProjectPane.getInstance(operationContext.getIdeaProject()).selectNode(selectedNode, false);
       if (myClosePopup) {
         myPopup.cancel();
       }

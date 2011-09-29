@@ -66,7 +66,7 @@ public class AnnotationHelper {
       return false;
     }
     final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
-    final Project project = editorComponent.getOperationContext().getProject();
+    final Project project = editorComponent.getOperationContext().getIdeaProject();
     final AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
     if (vcs == null) {
       return false;

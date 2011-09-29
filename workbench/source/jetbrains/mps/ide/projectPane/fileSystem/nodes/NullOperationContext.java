@@ -29,7 +29,7 @@ class NullOperationContext implements IOperationContext {
   public NullOperationContext() {
   }
 
-  public Project getProject() {
+  public Project getIdeaProject() {
     return null;
   }
 

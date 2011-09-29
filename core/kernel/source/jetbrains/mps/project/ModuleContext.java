@@ -52,7 +52,7 @@ public class ModuleContext extends StandaloneMPSContext {
     return super.getComponent(clazz);
   }
 
-  public Project getProject() {
+  public Project getIdeaProject() {
     return myProject;
   }
 

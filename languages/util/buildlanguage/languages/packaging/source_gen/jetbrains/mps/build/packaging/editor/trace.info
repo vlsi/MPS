@@ -3150,8 +3150,8 @@
     <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="50" startPosition="62" endLine="51" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1211529688554" fileName="Module_KeyMap.java" startLine="54" startPosition="146" endLine="55" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7360913708305787120" fileName="Module_KeyMap.java" startLine="55" startPosition="79" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7360913708305789089" fileName="Module_KeyMap.java" startLine="56" startPosition="0" endLine="57" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1211529709717" fileName="Module_KeyMap.java" startLine="57" startPosition="54" endLine="58" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7360913708305789089" fileName="Module_KeyMap.java" startLine="56" startPosition="0" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1211529709717" fileName="Module_KeyMap.java" startLine="57" startPosition="58" endLine="58" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="61" startPosition="34" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="20" startPosition="34" endLine="22" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1209469283133" fileName="Module_KeyMap.java" startLine="25" startPosition="76" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Module_KeyMap_Action0#()V" />

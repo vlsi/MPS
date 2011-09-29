@@ -68,7 +68,7 @@ public class MPSEditorOpener {
   }
 
   private MPSEditorOpenHandler getOpenHandler(IOperationContext operationContext) {
-    return operationContext.getProject().getComponent(ProjectPluginManager.class).getEditorOpenHandler();
+    return operationContext.getIdeaProject().getComponent(ProjectPluginManager.class).getEditorOpenHandler();
   }
 
   @Deprecated
@@ -117,7 +117,7 @@ public class MPSEditorOpener {
   }
 
   private IEditor openNode(final SNode node, @NotNull final IOperationContext context, final boolean focus, final boolean select, final boolean openBaseNode) {
-    final Project ideaProject = context.getProject();
+    final Project ideaProject = context.getIdeaProject();
     ideaProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
     /* TODO use SNodePointer instead of SNode */
     /* temp hack: runWriteAction instead of read, TODO move sync into doOpenNode */

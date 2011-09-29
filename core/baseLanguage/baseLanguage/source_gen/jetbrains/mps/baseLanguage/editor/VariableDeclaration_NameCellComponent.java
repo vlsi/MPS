@@ -86,7 +86,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
       if (nodeType != null) {
         List<String> names = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
-        Project project = operationContext.getProject();
+        Project project = operationContext.getIdeaProject();
         for (String name : names) {
           String prefix = VariableDeclaration_Behavior.call_getPrefix_3012473318495495520(node, project);
           String suffix = VariableDeclaration_Behavior.call_getSuffix_3012473318495499856(node, project);

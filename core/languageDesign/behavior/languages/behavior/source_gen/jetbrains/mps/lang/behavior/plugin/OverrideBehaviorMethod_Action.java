@@ -74,7 +74,7 @@ public class OverrideBehaviorMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
+      Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getIdeaProject();
       Frame frame = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getMainFrame();
       new StratergyAddMethodDialog(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), frame, new AddConceptMethodStrategy(((SNode) MapSequence.fromMap(_params).get("selectedNode"))), new MethodsToOverrideStrategy(), new OverrideConceptMethodStrategy(project)).showDialog();
     } catch (Throwable t) {

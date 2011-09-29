@@ -159,7 +159,7 @@ public class DynamicReference extends SReferenceBase {
     }
 
     @Override
-    public Project getProject() {
+    public Project getIdeaProject() {
       return null;
     }
 

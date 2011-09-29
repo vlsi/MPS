@@ -186,7 +186,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   private boolean showPropertiesAndReferences() {
-    Project project = getOperationContext().getProject();
+    Project project = getOperationContext().getIdeaProject();
     return getTree() instanceof LogicalViewTree &&
       ProjectPane.getInstance(project).isShowPropertiesAndReferences();
   }

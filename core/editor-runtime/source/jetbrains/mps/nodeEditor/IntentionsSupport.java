@@ -238,7 +238,7 @@ public class IntentionsSupport {
 
       @Override
       public void actionPerformed(AnActionEvent e) {
-        Project project = myEditor.getOperationContext().getProject();
+        Project project = myEditor.getOperationContext().getIdeaProject();
         if (project == null) {
           return;
         }
@@ -258,12 +258,12 @@ public class IntentionsSupport {
           public void run() {
             SNode intentionNode = intentionsManager.getNodeByIntention(intention);
             if (intentionNode == null) {
-              Messages.showErrorDialog(myEditor.getOperationContext().getProject(),
+              Messages.showErrorDialog(myEditor.getOperationContext().getIdeaProject(),
                 "Could not find declaration for " + intention.getClass().getSimpleName()
                   + " intention (" + intention.getClass().getName() + ")", "Intention Declaration");
             } else {
               myEditor.getOperationContext().getComponent(MPSEditorOpener.class).editNode(intentionNode, myEditor.getOperationContext());
-              ProjectPane.getInstance(myEditor.getOperationContext().getProject()).selectNode(intentionNode, false);
+              ProjectPane.getInstance(myEditor.getOperationContext().getIdeaProject()).selectNode(intentionNode, false);
             }
           }
         });

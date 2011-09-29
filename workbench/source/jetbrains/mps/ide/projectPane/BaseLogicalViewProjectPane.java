@@ -353,7 +353,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
         assert opener != null;
         opener.openNode(node, context, focus, select);
       }
-    }, context != null ? context.getProject() : null);
+    }, context != null ? context.getIdeaProject() : null);
   }
 
   public <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {

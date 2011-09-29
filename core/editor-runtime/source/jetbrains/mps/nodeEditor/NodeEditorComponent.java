@@ -61,7 +61,7 @@ public class NodeEditorComponent extends EditorComponent {
         }
         if (!isShowing()) return;
 
-        ToolWindowManager toolWindowManager = ToolWindowManager.getInstance(operationContext.getProject());
+        ToolWindowManager toolWindowManager = ToolWindowManager.getInstance(operationContext.getIdeaProject());
         toolWindowManager.getFocusManager().requestFocus(NodeEditorComponent.this,false);
         
         adjustInspector();
@@ -141,7 +141,7 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   public InspectorTool getInspectorTool() {
-    if (getOperationContext().getProject().isDisposed()) return null;
+    if (getOperationContext().getIdeaProject().isDisposed()) return null;
     return getOperationContext().getComponent(InspectorTool.class);
   }
 

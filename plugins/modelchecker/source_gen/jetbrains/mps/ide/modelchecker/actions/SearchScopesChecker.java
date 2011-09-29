@@ -48,7 +48,7 @@ public class SearchScopesChecker extends SpecificChecker {
 
           IModule thisModelModule = model.getModelDescriptor().getModule();
           if (checkScope(concept, node, targetNode, genuineLinkDeclaration, operationContext)) {
-          } else if (checkScope(concept, node, targetNode, genuineLinkDeclaration, new ModuleContext(thisModelModule, operationContext.getProject()))) {
+          } else if (checkScope(concept, node, targetNode, genuineLinkDeclaration, new ModuleContext(thisModelModule, operationContext.getIdeaProject()))) {
           } else {
             addIssue(results, node, "Reference in role \"" + SPropertyOperations.getString(genuineLinkDeclaration, "role") + "\" is out of search scope", ModelChecker.SEVERITY_WARNING, "wrong scope", null);
           }

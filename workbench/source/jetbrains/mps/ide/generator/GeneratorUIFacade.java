@@ -89,7 +89,7 @@ public class GeneratorUIFacade {
                                                    final boolean rebuildAll, boolean skipRequirementsGeneration) {
     if (inputModels.isEmpty()) return true;
 
-    final Project project = invocationContext.getProject();
+    final Project project = invocationContext.getIdeaProject();
     assert project != null : "Cannot generate models without a project";
 
     final DefaultMessageHandler messages = new DefaultMessageHandler(project);
@@ -252,7 +252,7 @@ public class GeneratorUIFacade {
 
           result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, progress, messages, options);
         }
-      }, "Generation", true, invocationContext.getProject());
+      }, "Generation", true, invocationContext.getIdeaProject());
 
     return result[0];
   }

@@ -38,7 +38,7 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     myContainerStrategy = containerStrategy;
     myCollectStrategy = collectStrategy;
     myAdditionStrategy = additionStrategy;
-    myProject = context.getOperationContext().getProject();
+    myProject = context.getOperationContext().getIdeaProject();
     mySortByNameAction = new StratergyAddMethodDialog.SortByNameAction(myProject);
   }
 

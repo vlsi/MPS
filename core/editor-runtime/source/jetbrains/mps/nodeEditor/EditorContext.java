@@ -91,7 +91,7 @@ public class EditorContext {
   }
 
   public final Frame getMainFrame() {
-    Project project = getOperationContext().getProject();
+    Project project = getOperationContext().getIdeaProject();
     if (project == null) return null;
     return WindowManager.getInstance().getFrame(project);
   }

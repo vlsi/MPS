@@ -34,7 +34,7 @@ public abstract class StandaloneMPSContext implements IOperationContext {
   }
 
   public final Frame getMainFrame() {
-    Project project = getProject();
+    Project project = getIdeaProject();
     if (project == null) return null;
     return WindowManager.getInstance().getFrame(project);
   }

@@ -72,7 +72,7 @@ public class EditorCell_Property extends EditorCell_Label {
           public void run() {
             commit();
           }
-        }, getOperationContext().getProject());
+        }, getOperationContext().getIdeaProject());
       } else {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {

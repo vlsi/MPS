@@ -61,7 +61,7 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
   }
 
   public IScope getProjectScope() {
-    return getOperationContext().getProject().getComponent(ProjectScope.class);
+    return getOperationContext().getIdeaProject().getComponent(ProjectScope.class);
   }
 
   public void addNotify() {
@@ -115,7 +115,7 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
       }
     });
 
-    ProgressManager.getInstance().run(new Modal(getOperationContext().getProject(), "Applying changes", false) {
+    ProgressManager.getInstance().run(new Modal(getOperationContext().getIdeaProject(), "Applying changes", false) {
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         try {

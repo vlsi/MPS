@@ -5754,7 +5754,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5503298173333995893" resolveInfo="mpsProject" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333997609">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~MPSProject%dgetModules()%cjava%dutil%dList" resolveInfo="getModules" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~Project%dgetModules()%cjava%dutil%dList" resolveInfo="getModules" />
                 </node>
               </node>
               <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="5503298173333997603">
@@ -5806,7 +5806,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5503298173333995893" resolveInfo="mpsProject" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333998804">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~MPSProject%dgetProjectFile()%cjava%dio%dFile" resolveInfo="getProjectFile" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~Project%dgetProjectFile()%cjava%dio%dFile" resolveInfo="getProjectFile" />
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333998809">
@@ -5893,7 +5893,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5503298173333995893" resolveInfo="mpsProject" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333998846">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~MPSProject%dgetProjectModels()%cjava%dutil%dList" resolveInfo="getProjectModels" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~Project%dgetProjectModels()%cjava%dutil%dList" resolveInfo="getProjectModels" />
                 </node>
               </node>
             </node>
@@ -5908,7 +5908,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5503298173333995893" resolveInfo="mpsProject" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333999599">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~MPSProject%dgetProjectFile()%cjava%dio%dFile" resolveInfo="getProjectFile" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~Project%dgetProjectFile()%cjava%dio%dFile" resolveInfo="getProjectFile" />
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333999600">
@@ -5947,7 +5947,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5503298173333995893" resolveInfo="mpsProject" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333998827">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~MPSProject%dgetProjectModels()%cjava%dutil%dList" resolveInfo="getProjectModels" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~Project%dgetProjectModels()%cjava%dutil%dList" resolveInfo="getProjectModels" />
             </node>
           </node>
         </node>

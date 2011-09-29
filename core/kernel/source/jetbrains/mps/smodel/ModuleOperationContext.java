@@ -38,7 +38,7 @@ public class ModuleOperationContext extends StandaloneMPSContext {
     });
   }
 
-  public Project getProject() {
+  public Project getIdeaProject() {
     return null;
   }
 

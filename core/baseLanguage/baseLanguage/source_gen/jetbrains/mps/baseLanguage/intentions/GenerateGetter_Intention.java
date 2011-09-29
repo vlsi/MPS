@@ -59,7 +59,7 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
     }
     boolean allGettersImplemented = true;
     for (SNode fieldDeclaration : fields) {
-      Project project = editorContext.getOperationContext().getProject();
+      Project project = editorContext.getOperationContext().getIdeaProject();
       final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(fieldDeclaration, project);
       boolean fieldHasGetter = false;
       if (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
@@ -81,7 +81,7 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode lastAdded = null;
     for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
-      Project ideaProject = editorContext.getOperationContext().getProject();
+      Project ideaProject = editorContext.getOperationContext().getIdeaProject();
       final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, ideaProject);
       if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {

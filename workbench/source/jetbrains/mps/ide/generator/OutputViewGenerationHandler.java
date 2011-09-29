@@ -40,7 +40,7 @@ import java.util.List;
  */
 public class OutputViewGenerationHandler extends TextGenerationHandler {
   public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ITaskProgressHelper progressHelper) {
-    final OutputViewTool viewTool = OutputViewTool.getOutputViewTool(context.getProject());
+    final OutputViewTool viewTool = OutputViewTool.getOutputViewTool(context.getIdeaProject());
     viewTool.clear();
 
     SModel outputModel = status.getOutputModel();

@@ -47,7 +47,7 @@ public class InlineMethodDialogModel {
 
   private void findUssages() {
     if (this.myForAll) {
-      ProgressManager.getInstance().run(new Task.Modal(InlineMethodDialogModel.this.myOperationContext.getProject(), "Searching for ussages", true) {
+      ProgressManager.getInstance().run(new Task.Modal(InlineMethodDialogModel.this.myOperationContext.getIdeaProject(), "Searching for ussages", true) {
         public void run(@NotNull final ProgressIndicator indiactor) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
@@ -144,6 +144,6 @@ public class InlineMethodDialogModel {
         InlineMethodDialogModel.this.doRefactoring();
       }
     };
-    this.myOperationContext.getComponent(RefactoringView.class).showRefactoringView(myOperationContext.getProject(), refactoringViewAction, this.myResults, false);
+    this.myOperationContext.getComponent(RefactoringView.class).showRefactoringView(myOperationContext.getIdeaProject(), refactoringViewAction, this.myResults, false);
   }
 }

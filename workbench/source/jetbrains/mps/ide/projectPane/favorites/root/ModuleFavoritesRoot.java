@@ -34,7 +34,7 @@ class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
   public MPSTreeNode getTreeNode(IOperationContext context) {
     IModule module = MPSModuleRepository.getInstance().getModule(getValue());
     if (module == null) return null;
-    MPSProject mpsProject = context.getProject().getComponent(MPSProject.class);
+    MPSProject mpsProject = context.getIdeaProject().getComponent(MPSProject.class);
     if (mpsProject == null) return null;
     ProjectModuleTreeNode moduleTreeNode = ProjectModuleTreeNode.createFor(mpsProject, module);
     return moduleTreeNode;

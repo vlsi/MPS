@@ -52,6 +52,6 @@ public class StubSolutionCreateHelper {
       }
     });
 
-    context.getProject().save();
+    context.getIdeaProject().save();
   }
 }

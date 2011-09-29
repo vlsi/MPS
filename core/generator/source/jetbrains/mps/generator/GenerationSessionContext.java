@@ -101,8 +101,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   @NotNull
-  public Project getProject() {
-    return myInvocationContext.getProject();
+  public Project getIdeaProject() {
+    return myInvocationContext.getIdeaProject();
   }
 
   @NotNull

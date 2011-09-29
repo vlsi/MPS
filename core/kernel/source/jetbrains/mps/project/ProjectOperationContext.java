@@ -38,13 +38,13 @@ public class ProjectOperationContext extends StandaloneMPSContext {
     return null;
   }
 
-  public Project getProject() {
+  public Project getIdeaProject() {
     return myProject;
   }
 
   @NotNull
   public IScope getScope() {
-    return getProject().getComponent(ProjectScope.class);
+    return getIdeaProject().getComponent(ProjectScope.class);
   }
 
   public String toString() {

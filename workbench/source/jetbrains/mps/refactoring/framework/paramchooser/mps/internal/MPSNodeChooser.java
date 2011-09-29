@@ -61,7 +61,7 @@ public class MPSNodeChooser implements IChooser {
     myContext = context;
     mySettings = settings;
 
-    initUI(myContext.getCurrentOperationContext().getProject());
+    initUI(myContext.getCurrentOperationContext().getIdeaProject());
 
     Object value = settings.getInitialValue();
     if (value == null) {

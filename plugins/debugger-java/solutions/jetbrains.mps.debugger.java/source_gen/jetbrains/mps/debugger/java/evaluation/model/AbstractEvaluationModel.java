@@ -237,7 +237,7 @@ public abstract class AbstractEvaluationModel {
       String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.") + "tools.jar";
       classpaths.add(ClassPathFactory.getInstance().createFromPath(path, "AbstractEvaluationModel"));
 
-      Project project = myContext.getProject();
+      Project project = myContext.getIdeaProject();
       final String fullClassName = this.myAuxModel.getLongName() + "." + AbstractEvaluationModel.EVALUATOR_NAME;
       InMemoryJavaGenerationHandler handler = new AbstractEvaluationModel.MyInMemoryJavaGenerationHandler(false, true, classpaths);
       Project ideaProject = this.myAuxModule.getMPSProject().getProject();

@@ -25,7 +25,7 @@ public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
     boolean compiledSuccessfully = generationOK;
     boolean[] ideaIsFresh = new boolean[]{false};
     writeFiles();
-    IProjectHandler projectHandler = getProjectHandler(operationContext.getProject());
+    IProjectHandler projectHandler = getProjectHandler(operationContext.getIdeaProject());
     if (generationOK) {
       long compilationStart = System.currentTimeMillis();
       boolean needToReload = false;

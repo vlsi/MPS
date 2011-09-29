@@ -22,13 +22,17 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.Frame;
 
 public interface IOperationContext {
-  Project getProject();
+
+  // TODO get rid of
+  @Deprecated
+  Project getIdeaProject();
 
   IModule getModule();
 
   @NotNull
   IScope getScope();
 
+  // TODO get rid of
   @Deprecated
   Frame getMainFrame();
 

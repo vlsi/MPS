@@ -85,7 +85,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private void updateWarnings(@NotNull final MPSFileNodeEditor editor) {
-    final Project project = editor.getNodeEditor().getOperationContext().getProject();
+    final Project project = editor.getNodeEditor().getOperationContext().getIdeaProject();
 
     DumbService.getInstance(project).smartInvokeLater(new Runnable() {
       public void run() {

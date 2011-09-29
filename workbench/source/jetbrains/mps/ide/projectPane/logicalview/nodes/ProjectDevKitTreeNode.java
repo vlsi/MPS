@@ -84,7 +84,7 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
-    MPSProject project = getOperationContext().getProject().getComponent(MPSProject.class);
+    MPSProject project = getOperationContext().getIdeaProject().getComponent(MPSProject.class);
 
     TextTreeNode extendedDevkits = new TextTreeNode("extended devkits");
     for (DevKit d : myDevKit.getExtendedDevKits()) {

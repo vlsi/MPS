@@ -125,7 +125,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
           Messages.showInfoMessage("There are no quick fixes for current problems", "No Quick Fixes");
           return;
         }
-        int dialogAnswer = Messages.showYesNoDialog(myOperationContext.getProject(), "You are going to remove undeclared properties, children from nodes and resolve references. " + "You may not be able to undo it. Are you sure?", "Warning", null);
+        int dialogAnswer = Messages.showYesNoDialog(myOperationContext.getIdeaProject(), "You are going to remove undeclared properties, children from nodes and resolve references. " + "You may not be able to undo it. Are you sure?", "Warning", null);
         if (dialogAnswer != 0) {
           return;
         }
@@ -146,7 +146,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
 
     // Perform recheck if needed 
     if (fixedTotal.value != 0) {
-      int dialogAnswer1 = Messages.showYesNoDialog(myOperationContext.getProject(), "Model checker fixed " + fixedTotal.value + " issues. Do you wish to recheck?", "Recheck", null);
+      int dialogAnswer1 = Messages.showYesNoDialog(myOperationContext.getIdeaProject(), "Model checker fixed " + fixedTotal.value + " issues. Do you wish to recheck?", "Recheck", null);
       if (dialogAnswer1 != 0) {
         return;
       }

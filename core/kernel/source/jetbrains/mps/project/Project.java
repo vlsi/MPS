@@ -44,7 +44,8 @@ import java.util.List;
  */
 public class Project implements MPSModuleOwner {
 
-  private static final Logger LOG = Logger.getLogger(MPSProject.class);
+  private static final Logger LOG = Logger.getLogger(Project.class);
+
   protected Element myProjectElement;
   protected File myProjectFile;
   protected ProjectDescriptor myProjectDescriptor;

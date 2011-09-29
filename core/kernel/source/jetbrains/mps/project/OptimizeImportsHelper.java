@@ -30,7 +30,7 @@ public class OptimizeImportsHelper {
 
   //----public optimizeX methods--------
 
-  public String optimizeProjectImports(MPSProject p) {
+  public String optimizeProjectImports(Project p) {
     return optimizeProjectImports_internal(p).myReport;
   }
 
@@ -52,7 +52,7 @@ public class OptimizeImportsHelper {
 
   //----internal optimizeX methods--------
 
-  private Result optimizeProjectImports_internal(MPSProject p) {
+  private Result optimizeProjectImports_internal(Project p) {
     Result result = new Result();
 
     for (Language l : p.getProjectModules(Language.class)) {

@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 
 public class GlobalOperationContext extends StandaloneMPSContext {
-  public Project getProject() {
+  public Project getIdeaProject() {
     return null;
   }
 

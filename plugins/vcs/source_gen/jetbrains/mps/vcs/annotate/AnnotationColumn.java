@@ -738,7 +738,7 @@ __switch__:
                     public void run() {
                       final Wrappers._T<BaseDialog> dialog = new Wrappers._T<BaseDialog>();
                       if (ModelDiffTool.isNewDiffEnabled()) {
-                        dialog.value = new ModelDifferenceDialog(beforeModel.value, afterModel, new SimpleDiffRequest(operationContext.getProject(), beforeRevNumber, afterRevNumber));
+                        dialog.value = new ModelDifferenceDialog(beforeModel.value, afterModel, new SimpleDiffRequest(operationContext.getIdeaProject(), beforeRevNumber, afterRevNumber));
                       } else {
                         dialog.value = new OldModelDifferenceDialog(operationContext, frame, beforeModel.value, afterModel, "Model Difference", false, new String[]{beforeRevNumber, afterRevNumber});
                       }

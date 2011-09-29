@@ -17,8 +17,6 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
@@ -30,20 +28,22 @@ import java.util.Set;
 public class ProjectScope extends DefaultScope implements ProjectComponent {
   private Project myProject;
 
-  public ProjectScope(Project project) {
-    myProject = project;
+//  public ProjectScope(Project project) {
+//    myProject = project;
+//  }
+
+  public ProjectScope(com.intellij.openapi.project.Project project) {
+    myProject = project.getComponent(MPSProject.class);
   }
 
   protected Set<IModule> getInitialModules() {
     Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
     assert Arrays.asList(openProjects).contains(myProject) : "trying to get scope on a not-yet-loaded project";
 
-    MPSProject mpsProject = myProject.getComponent(MPSProject.class);
-
     Set<IModule> result = new HashSet<IModule>();
-    result.addAll(mpsProject.getProjectModules(IModule.class));
+    result.addAll(myProject.getProjectModules(IModule.class));
 
-    for (Language l : mpsProject.getProjectModules(Language.class)) {
+    for (Language l : myProject.getProjectModules(Language.class)) {
       result.addAll(l.getGenerators());
     }
     return result;

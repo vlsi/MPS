@@ -142,7 +142,7 @@ public class FindInstancesDialog extends BaseDialog {
     final IScope scope = this.myScope.getOptions().getScope(this.myContext, model.value.getModelDescriptor());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        FindInstancesDialog.this.execute(FindInstancesDialog.this.myContext.getProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
+        FindInstancesDialog.this.execute(FindInstancesDialog.this.myContext.getIdeaProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
       }
     });
   }

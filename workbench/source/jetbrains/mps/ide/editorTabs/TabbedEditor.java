@@ -155,7 +155,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
       SModelDescriptor md = containingRoot.getModel().getModelDescriptor();
       IModule module = md.getModule();
       assert module != null : md.getSModelReference().toString() + "; node is disposed = " + node.isDisposed();
-      editor.editNode(containingRoot, new ModuleContext(module, myContext.getProject()));
+      editor.editNode(containingRoot, new ModuleContext(module, myContext.getIdeaProject()));
 
       model = getCurrentNodeModel();
       assert model != null;
@@ -181,7 +181,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   }
 
   private boolean updateProperties() {
-    final Project project = getOperationContext().getProject();
+    final Project project = getOperationContext().getIdeaProject();
     FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
     VirtualFile virtualFile = manager.getCurrentFile();
     if (virtualFile == null) return true;

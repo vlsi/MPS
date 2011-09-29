@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3xx2i41zk6f7d2m7fhdt3uhz030kc4b">
+<dependencies version="2" modelHash="-1p478vecxu14593ixr72z92n1e83cyl">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.progress(MPS.Classpath/com.intellij.openapi.progress@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.common(MPS.Classpath/jetbrains.mps.ide.common@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" />
@@ -32,7 +32,7 @@
   <common hash="609m8jlsq54dga3t665jy7wgwimhs8g">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
   </common>
-  <source id="5890305283801268194" name="NewModuleUtil" hash="-5hp663htpvjmaq0xjkv7bgafw0iy4mr">
+  <source id="5890305283801268194" name="NewModuleUtil" hash="-5mgvjpfgns5xowoumwwuj0i74imdyu1">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project.structure.modules(MPS.Classpath/jetbrains.mps.project.structure.modules@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -82,7 +82,7 @@
     <file name="NewSolutionDialog.java" />
     <file name="NewSolutionDialogContentPane.java" />
   </source>
-  <source id="7619659760484896449" name="NewSolutionDialog_Controller" hash="-b1dx4xd7w2khap7ii38dks72gp6ciji">
+  <source id="7619659760484896449" name="NewSolutionDialog_Controller" hash="4aww3l7mikjh7rkqbo9vuf39nc0026s">
     <dep root="7619659760484896415" />
     <dep model="r:00000000-0000-4000-0000-011c895904b2(jetbrains.mps.ide.uiLanguage.generator.baseLanguage.template.main@generator)" />
   </source>

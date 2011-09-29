@@ -27,7 +27,7 @@ public class MethodRefactoringUtils {
 
   public static List<SNode> findOverridingMethods(final SNode method, IOperationContext operationContext) {
     final Wrappers._T<List<SNode>> results = new Wrappers._T<List<SNode>>(new ArrayList<SNode>());
-    ProgressManager.getInstance().run(new Task.Modal(operationContext.getProject(), "Search for overriding methods", true) {
+    ProgressManager.getInstance().run(new Task.Modal(operationContext.getIdeaProject(), "Search for overriding methods", true) {
       public void run(@NotNull final ProgressIndicator indicator) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {

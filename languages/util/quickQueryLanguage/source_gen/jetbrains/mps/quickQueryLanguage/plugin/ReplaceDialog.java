@@ -123,7 +123,7 @@ public class ReplaceDialog extends BaseDialog {
     final IScope scope = this.myScope.getOptions().getScope(this.myContext, model.value.getModelDescriptor());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ReplaceDialog.this.execute(ReplaceDialog.this.myContext.getProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
+        ReplaceDialog.this.execute(ReplaceDialog.this.myContext.getIdeaProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
       }
     });
     this.myEditor.disposeEditor();

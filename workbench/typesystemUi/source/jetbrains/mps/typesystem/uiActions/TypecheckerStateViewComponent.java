@@ -70,7 +70,7 @@ public class TypecheckerStateViewComponent extends JPanel {
     //upper panel
     JButton debugCurrentRootButton = new JButton(new AbstractAction("Debug Current Root") {
       public void actionPerformed(ActionEvent e) {
-        Project project = myOperationContext.getProject();
+        Project project = myOperationContext.getIdeaProject();
         IEditor currentEditor = EditorsHelper.getSelectedEditors(FileEditorManager.getInstance(project)).get(0);
         if (currentEditor != null) {
           EditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
@@ -181,7 +181,7 @@ public class TypecheckerStateViewComponent extends JPanel {
       public void run() {
         myOperationContext.getComponent(MPSEditorOpener.class).openNode(rule);
       }
-    }, myOperationContext.getProject());
+    }, myOperationContext.getIdeaProject());
   }
 
   public class SNodeTree extends MPSTree {

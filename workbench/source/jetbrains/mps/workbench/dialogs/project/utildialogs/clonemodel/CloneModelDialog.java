@@ -168,7 +168,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     final IModule module = operationContext.getModule();
     assert module != null;
 
-    Project project = getOperationContext().getProject();
+    Project project = getOperationContext().getIdeaProject();
     assert project != null;
 
     for (SModelDescriptor model : module.getOwnModelDescriptors()) {

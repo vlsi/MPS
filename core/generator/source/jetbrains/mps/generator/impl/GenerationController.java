@@ -137,7 +137,7 @@ public class GenerationController implements ITaskPoolProvider {
     boolean currentGenerationOK = true;
 
     // TODO fix context
-    IOperationContext invocationContext = new ModuleContext(module, myOperationContext.getProject());
+    IOperationContext invocationContext = new ModuleContext(module, myOperationContext.getIdeaProject());
     myGenerationHandler.startModule(module, inputModels, myOperationContext, progressHelper);
 
     //++ generation
