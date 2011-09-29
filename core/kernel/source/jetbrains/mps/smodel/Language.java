@@ -25,7 +25,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.LanguageDependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.*;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -649,6 +649,9 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
       if (!bundleHomeFile.exists()) return;
 
+      for (GeneratorDescriptor g:myLanguageDescriptor.getGenerators()){
+        g.getModelRoots().removeAll(myLanguageDescriptor.getRuntimeStubModels());
+      }
       myLanguageDescriptor.getRuntimeStubModels().clear();
 
       DeploymentDescriptor dd = myLanguageDescriptor.getDeploymentDescriptor();
@@ -661,7 +664,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         if (jar.exists()) {
           ClassPathEntry jarEntry = new ClassPathEntry();
           jarEntry.setPath(jar.getPath());
-          myLanguageDescriptor.getRuntimeStubModels().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry));
+          ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry);
+          myLanguageDescriptor.getRuntimeStubModels().add(mr);
+          for (GeneratorDescriptor g:myLanguageDescriptor.getGenerators()){
+            g.getModelRoots().add(mr);
+          }
         }
       }
     }

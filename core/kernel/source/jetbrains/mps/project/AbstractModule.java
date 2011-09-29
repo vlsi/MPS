@@ -21,7 +21,7 @@ import jetbrains.mps.project.dependency.DependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.*;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -267,6 +267,7 @@ public abstract class AbstractModule implements IModule {
       toRemove.add(sme);
     }
     descriptor.getStubModelEntries().removeAll(toRemove);
+    descriptor.getModelRoots().removeAll(toRemove);
 
 
     DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
@@ -279,7 +280,9 @@ public abstract class AbstractModule implements IModule {
       if (jar.exists()) {
         ClassPathEntry jarEntry = new ClassPathEntry();
         jarEntry.setPath(jar.getPath());
-        descriptor.getStubModelEntries().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry));
+        ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry);
+        descriptor.getStubModelEntries().add(mr);
+        descriptor.getModelRoots().add(mr);
       }
     }
   }
