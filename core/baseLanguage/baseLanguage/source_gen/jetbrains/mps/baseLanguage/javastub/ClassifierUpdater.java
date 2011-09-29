@@ -661,9 +661,11 @@ public class ClassifierUpdater {
   }
 
   private SReference createSReference(SNode source, String packageName, SNodeId targetNodeId, String role, String resolveInfo) {
-    SNode nodeInSameModel = SNodeOperations.getModel(myClassifier).getNodeById(targetNodeId);
-    if (nodeInSameModel != null) {
-      return SReference.create(role, source, SNodeOperations.getModel(myClassifier).getSModelReference(), targetNodeId, resolveInfo);
+    if (packageName.equals(SNodeOperations.getModel(myClassifier).getLongName())) {
+      SNode nodeInSameModel = SNodeOperations.getModel(myClassifier).getNodeById(targetNodeId);
+      if (nodeInSameModel != null) {
+        return SReference.create(role, source, SNodeOperations.getModel(myClassifier).getSModelReference(), targetNodeId, resolveInfo);
+      }
     }
 
     Set<SModelReference> models = getModelReferencesFor(packageName);

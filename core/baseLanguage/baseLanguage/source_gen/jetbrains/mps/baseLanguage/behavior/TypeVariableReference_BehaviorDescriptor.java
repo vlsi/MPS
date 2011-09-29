@@ -16,10 +16,6 @@ public class TypeVariableReference_BehaviorDescriptor extends Type_BehaviorDescr
     return TypeVariableReference_Behavior.virtual_getLooseType_5744862332972792015(thisNode);
   }
 
-  public String virtual_getErasureSignature_1213877337313(SNode thisNode) {
-    return TypeVariableReference_Behavior.virtual_getErasureSignature_1213877337313(thisNode);
-  }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return TypeVariableReference_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }

@@ -18,100 +18,62 @@ package jetbrains.mps.build.ant.generation.unittest;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import junit.framework.*;
 import junit.runner.BaseTestRunner;
+import org.junit.runner.Description;
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Request;
+import org.junit.runner.Result;
+import org.junit.runner.notification.Failure;
+import org.junit.runner.notification.RunListener;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class UnitTestRunner extends BaseTestRunner {
+public class UnitTestRunner extends RunListener {
   public static final String START_TEST_PREFIX = "<START_TEST>";
   public static final String END_TEST_PREFIX = "<END_TEST>";
   public static final String FAILURE_TEST_PREFIX = "<TEST_FAILURE_BEGIN>";
   public static final String FAILURE_TEST_SUFFIX = "<TEST_FAILURE_END>";
+  private Description currentDesc;
 
   public void start(String[] argv) throws Throwable {
     runTests(collectTestsToRun(argv));
   }
 
-  private void runTests(List<Test> tests) {
-    TestResult testResult = new TestResult();
-    testResult.addListener(this);
-    for (Test test : tests) {
+  private void runTests(List<Request> tests) {
+    JUnitCore jUnitCore = new JUnitCore();
+    jUnitCore.addListener(this);
+    for (Request test : tests) {
       if (test == null) {
         System.err.println("Can't run. Test is Null");
         continue;
       }
-      if (test.countTestCases() == 0) {
-        System.err.println("No tests found in " + test.getClass().getName());
-        continue;
-      }
-      try {
-        test.run(testResult);
-      } catch (Throwable t) {
-        t.printStackTrace();
-      }
+      jUnitCore.run(test);
     }
   }
 
-  private List<Test> collectTestsToRun(String[] argv) throws ClassNotFoundException {
-    List<Test> tests = new ArrayList<Test>();
+  private List<Request> collectTestsToRun(String[] argv) throws ClassNotFoundException {
+    List<Request> tests = new ArrayList<Request>();
     for (int i = 0; i < argv.length; i++) {
       if ("-c".equals(argv[i])) {
         i++;
-        Test test = this.getTest(argv[i]);
-        ListSequence.fromList(tests).addElement(test);
+        Class<?> testClass = Class.forName(argv[i]);
+        tests.add(Request.aClass(testClass));
       } else if ("-m".equals(argv[i])) {
         i++;
         String s = argv[i];
         int index = s.lastIndexOf('.');
         String testCase = s.substring(0, index);
         String method = s.substring(index + 1);
-        Class<? extends TestCase> testClass = (Class<? extends TestCase>) this.loadSuiteClass(testCase);
-        Test test = TestSuite.createTest(testClass, method);
-        tests.add(test);
+        Class<?> testClass = Class.forName(testCase);
+        tests.add(Request.aClass(testClass).filterWith(Description.createTestDescription(testClass, method)));
       }
     }
     return tests;
-  }
-
-  private String getTestName(Test test) {
-    String testName = test.getClass().getName();
-    if (test instanceof TestCase) {
-      testName += "." + ((TestCase) test).getName();
-    }
-    return testName;
-  }
-
-  private void testFailed(Test test, Throwable t) {
-    System.out.flush();
-    String testName = getTestName(test);
-    System.err.println(FAILURE_TEST_PREFIX + t.getMessage());
-    t.printStackTrace(System.err);
-    System.err.println(FAILURE_TEST_SUFFIX + testName);
-    System.err.flush();
-  }
-
-  public void testFailed(int status, Test test, Throwable t) {
-  }
-
-  @Override
-  public void addError(Test test, Throwable t) {
-    testFailed(test, t);
-  }
-
-  @Override
-  public void addFailure(Test test, AssertionFailedError t) {
-    testFailed(test, t);
-  }
-
-  public void testStarted(String testName) {
-    System.out.println(START_TEST_PREFIX + getTestName(testName));
-    System.out.flush();
-  }
-
-  public void testEnded(String testName) {
-    System.out.println(END_TEST_PREFIX + getTestName(testName));
-    System.out.flush();
   }
 
   private String getTestName(String testName) {
@@ -119,12 +81,63 @@ public class UnitTestRunner extends BaseTestRunner {
     return parts[1] + "." + parts[0];
   }
 
-  public void runFailed(String message) {
+  private void testFailed(Failure failure) {
     System.out.flush();
-    System.err.println(message);
+    String testName = getTestName(failure.getTestHeader());
+    System.err.println(FAILURE_TEST_PREFIX + failure.getMessage());
+    failure.getException().printStackTrace(System.err);
+    System.err.println(FAILURE_TEST_SUFFIX + testName);
+    System.err.flush();
+  }
+
+  @Override
+  public void testRunStarted(Description description) throws Exception {
+    this.currentDesc = description;
+  }
+
+  @Override
+  public void testRunFinished(Result result) throws Exception {
+    if (result.getRunCount() == 0) {
+       System.err.println("No tests found in " + currentDesc.getDisplayName());
+    }
+  }
+
+  @Override
+  public void testStarted(Description description) throws Exception {
+    System.out.println(START_TEST_PREFIX + getTestName(description.getDisplayName()));
+    System.out.flush();
+  }
+
+  @Override
+  public void testFinished(Description description) throws Exception {
+    System.out.println(END_TEST_PREFIX + getTestName(description.getDisplayName()));
+    System.out.flush();
+  }
+
+  @Override
+  public void testFailure(Failure failure) throws Exception {
+    testFailed(failure);
+  }
+
+  @Override
+  public void testAssumptionFailure(Failure failure) {
+    testFailed(failure);
+  }
+
+  @Override
+  public void testIgnored(Description description) throws Exception {
+    super.testIgnored(description);
   }
 
   public static void main(String[] argv) {
+    if (argv.length > 0 && "-w".equals(argv[0])) {
+      try {
+        BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
+        r.readLine();
+        r.close();
+      } catch (IOException ignore) {}
+    }
+
     UnitTestRunner runner = new UnitTestRunner();
     try {
       runner.start(argv);

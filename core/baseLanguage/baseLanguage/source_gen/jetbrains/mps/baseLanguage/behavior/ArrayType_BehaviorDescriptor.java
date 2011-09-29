@@ -21,8 +21,20 @@ public class ArrayType_BehaviorDescriptor extends Type_BehaviorDescriptor {
     return ArrayType_Behavior.virtual_getAbstractCreator_1213877337340(thisNode);
   }
 
+  public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
+    return ArrayType_Behavior.virtual_getErasure_702942408396803226(thisNode);
+  }
+
   public boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
     return ArrayType_Behavior.virtual_isReifiable_2817265908000464118(thisNode);
+  }
+
+  public SNode virtual_getJavaType_1213877337345(SNode thisNode) {
+    return ArrayType_Behavior.virtual_getJavaType_1213877337345(thisNode);
+  }
+
+  public String virtual_getErasureSignature_1213877337313(SNode thisNode) {
+    return ArrayType_Behavior.virtual_getErasureSignature_1213877337313(thisNode);
   }
 
   public String virtual_getPresentation_1213877396640(SNode thisNode) {

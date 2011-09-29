@@ -29,6 +29,9 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GeneratorManager;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -52,7 +55,8 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import difflib.Patch;
 import difflib.DiffUtils;
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.io.FileInputStream;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -160,6 +164,7 @@ public class ProjectTestHelper {
   }
 
   private class PrivToken extends ProjectTestHelper.Token {
+    private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "trace.info", "dependencies", ".dependencies", ".generated", ".debug");
     private final Project project;
     private final IModule module;
     private String tmpPath;
@@ -190,20 +195,15 @@ public class ProjectTestHelper {
       final IScriptController ctl = new IScriptController.Stub() {
         @Override
         public void setup(IPropertiesPool ppool) {
-          Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> bparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.plugin.Binaries.copyBinaries"), Object.class);
-          bparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
-            public IFile invoke(String path) {
-              return tmpFile(path);
-            }
-          });
+          Tuples._1<Boolean> tparams = (Tuples._1<Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
+          tparams._0(false);
 
-          Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> tparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
-          tparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
+          Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> makeparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Object.class);
+          makeparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
             public IFile invoke(String path) {
               return tmpFile(path);
             }
           });
-          tparams._1(false);
 
           Tuples._2<Boolean, GenerationOptions.OptionsBuilder> params = (Tuples._2<Boolean, GenerationOptions.OptionsBuilder>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Object.class);
           params._1(optBuilder);
@@ -279,7 +279,7 @@ public class ProjectTestHelper {
       if (Sequence.fromIterable(onames).disjunction(Sequence.fromIterable(rnames)).isNotEmpty()) {
         Sequence.fromIterable(onames).subtract(Sequence.fromIterable(rnames)).visitAll(new IVisitor<String>() {
           public void visit(String it) {
-            if ("trace.info".equals(it)) {
+            if (ignoredFile(it)) {
               return;
             }
             ListSequence.fromList(diffs).addElement("Removed: " + new File(orig, it));
@@ -287,7 +287,7 @@ public class ProjectTestHelper {
         });
         Sequence.fromIterable(rnames).subtract(Sequence.fromIterable(onames)).visitAll(new IVisitor<String>() {
           public void visit(String it) {
-            if ("trace.info".equals(it)) {
+            if (ignoredFile(it)) {
               return;
             }
             ListSequence.fromList(diffs).addElement("Created: " + new File(orig, it));
@@ -295,7 +295,7 @@ public class ProjectTestHelper {
         });
       }
       for (String name : Sequence.fromIterable(onames).intersect(Sequence.fromIterable(rnames))) {
-        if ("trace.info".equals(name)) {
+        if (ignoredFile(name)) {
           continue;
         }
 
@@ -317,11 +317,15 @@ public class ProjectTestHelper {
       }
     }
 
+    private boolean ignoredFile(String fileName) {
+      return SetSequence.fromSet(ignoredFiles).contains(fileName) || (fileName != null && fileName.startsWith(".hash"));
+    }
+
     private List<String> fileToStrings(File f) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       BufferedReader in = null;
       try {
-        in = new BufferedReader(new FileReader(f));
+        in = new BufferedReader(new InputStreamReader(new FileInputStream(f), "utf-8"));
         String line;
         while ((line = in.readLine()) != null) {
           ListSequence.fromList(result).addElement(line);

@@ -19,12 +19,16 @@ public class StringType_Behavior {
     return "string";
   }
 
-  public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
-    return Type_Behavior.call_getErasureSignature_1213877337313(new StringType_Behavior.QuotationClass_h5fjpv_a0a0a2().createNode());
+  public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
+    return Type_Behavior.call_getJavaType_1213877337345(thisNode);
   }
 
-  public static class QuotationClass_h5fjpv_a0a0a2 {
-    public QuotationClass_h5fjpv_a0a0a2() {
+  public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {
+    return new StringType_Behavior.QuotationClass_h5fjpv_a0a0d().createNode();
+  }
+
+  public static class QuotationClass_h5fjpv_a0a0d {
+    public QuotationClass_h5fjpv_a0a0d() {
     }
 
     public SNode createNode() {

@@ -51,7 +51,6 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
@@ -349,6 +348,12 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
       return task;
     }
+
+    @Override
+    protected IScript toScript(ScriptBuilder scriptBuilder) {
+      MakeSession session = WorkbenchMakeService.this.getSession();
+      return session.toScript(scriptBuilder);
+    }
   }
 
   private class Controller extends IScriptController.Stub {
@@ -390,9 +395,10 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       final boolean oldFlag = ApplicationImpl.setExceptionalThreadWithReadAccessFlag(true);
       try {
         code.invoke(jobMon);
-      } catch (Throwable e) {
+      } catch (RuntimeException e) {
         WorkbenchMakeService.LOG.debug("Error running job", e);
         jobMon.reportFeedback(new IFeedback.ERROR("Error running job", e));
+        throw e;
       } finally {
         ApplicationImpl.setExceptionalThreadWithReadAccessFlag(oldFlag);
       }
@@ -415,10 +421,10 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         });
       }
 
-      Tuples._3<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean, Boolean> tparams = (Tuples._3<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
+      Tuples._2<Boolean, Boolean> tparams = (Tuples._2<Boolean, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
       if (tparams != null) {
-        tparams._1(GenerationSettings.getInstance().isFailOnMissingTextGen());
-        tparams._2(GenerationSettings.getInstance().isGenerateDebugInfo());
+        tparams._0(GenerationSettings.getInstance().isFailOnMissingTextGen());
+        tparams._1(GenerationSettings.getInstance().isGenerateDebugInfo());
       }
 
       if (delegateScrCtr != null) {

@@ -62,11 +62,23 @@ public class Type_Behavior {
   }
 
   public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
-    return BaseConcept_Behavior.call_getPresentation_1213877396640(thisNode);
+    SNode javaType = Type_Behavior.call_getErasure_702942408396803226(thisNode);
+    if ((javaType == null)) {
+      return "?no erasure?";
+    }
+    if (javaType == thisNode) {
+      return BaseConcept_Behavior.call_getPresentation_1213877396640(javaType);
+    }
+    return Type_Behavior.call_getErasureSignature_1213877337313(javaType);
   }
 
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
-    return thisNode;
+    // all 'JavaType's should have getErasure() implemented 
+    SNode javaType = Type_Behavior.call_getJavaType_1213877337345(thisNode);
+    return ((javaType == null) ?
+      null :
+      Type_Behavior.call_getErasure_702942408396803226(javaType)
+    );
   }
 
   public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {

@@ -19,13 +19,14 @@ import jetbrains.mps.logging.Logger;
 import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.InputStream;
+import java.io.*;
 import java.util.Scanner;
 
 public class UnitTestOutputReader {
   private final Process myUnitTestProcess;
   private final BaseOutputReader myInputReader;
   private final BaseOutputReader myErrorReader;
+  private final BufferedWriter myOutputWriter;
   private final UnitTestListener myUnitTestListener;
   private boolean myInsideTestError = false;
   private StringBuffer myLastError = new StringBuffer();
@@ -45,6 +46,7 @@ public class UnitTestOutputReader {
         parseMessage(message, true);
       }
     };
+    myOutputWriter =  new BufferedWriter(new OutputStreamWriter(myUnitTestProcess.getOutputStream()));
   }
 
   private void parseMessage(String text, boolean error) {
@@ -90,9 +92,12 @@ public class UnitTestOutputReader {
     myInputReader.start();
     myErrorReader.start();
     try {
+      myOutputWriter.newLine();
+      myOutputWriter.close();
       return myUnitTestProcess.waitFor();
     } catch (InterruptedException e) {
       //
+    } catch (IOException ignore) {
     }
     return -1;
   }

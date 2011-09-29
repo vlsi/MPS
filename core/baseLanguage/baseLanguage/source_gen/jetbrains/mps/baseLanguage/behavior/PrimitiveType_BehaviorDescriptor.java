@@ -13,8 +13,16 @@ public abstract class PrimitiveType_BehaviorDescriptor extends Type_BehaviorDesc
     return PrimitiveType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
   }
 
+  public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
+    return PrimitiveType_Behavior.virtual_getErasure_702942408396803226(thisNode);
+  }
+
   public SNode virtual_getJavaType_1213877337345(SNode thisNode) {
     return PrimitiveType_Behavior.virtual_getJavaType_1213877337345(thisNode);
+  }
+
+  public String virtual_getErasureSignature_1213877337313(SNode thisNode) {
+    return PrimitiveType_Behavior.virtual_getErasureSignature_1213877337313(thisNode);
   }
 
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
