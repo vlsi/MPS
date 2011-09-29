@@ -227,7 +227,6 @@ public class EditorManager {
     EditorComponent editorComponent = context.getNodeEditorComponent();
     EditorCell nodeCell = null;
     NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
-    nodeAccessListener.addNodesToDependOn(new HashSet<SNode>(node.getAncestors(false)));
     try {
       //voodoo for editor incremental rebuild support
       NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
