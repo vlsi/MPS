@@ -19,6 +19,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.stubs.util.FileStubSource;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 

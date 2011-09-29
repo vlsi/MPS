@@ -395,15 +395,19 @@
   </source>
   <source id="1068390468198" name="ClassConcept" hash="2n55qbdt7je3c66f1e5h131gd9oxkso">
     <dep root="1068390468200" />
+    <dep root="1068431474542" />
     <dep root="1068431790189" />
     <dep root="1068431790191" />
     <dep root="1068498886292" />
+    <dep root="1068498886296" />
     <dep root="1068580123132" />
     <dep root="1068580123136" />
     <dep root="1068580123140" />
     <dep root="1068580123155" />
     <dep root="1068580123157" />
     <dep root="1068581242878" />
+    <dep root="1070462154015" />
+    <dep root="1070533707846" />
     <dep root="1070534934090" />
     <dep root="1081236700938" />
     <dep root="1107461130800" />
@@ -4562,6 +4566,7 @@
     <dep root="1068498886292" />
     <dep root="1068580123132" />
     <dep root="1068580123136" />
+    <dep root="1070534644030" />
     <dep root="1146644584814" />
     <dep root="1178549954367" />
     <dep root="4972933694980447171" />
@@ -4709,6 +4714,7 @@
     <dep root="1068431790191" />
     <dep root="1068581242863" />
     <dep root="1070475926800" />
+    <dep root="1083260308424" />
     <dep root="1107535904670" />
     <dep root="1145552809883" />
     <dep root="1145552977093" />
@@ -4724,6 +4730,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
