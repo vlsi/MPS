@@ -5,10 +5,12 @@
   </models>
   <accessoryModels />
   <generators />
+  <sourcePath />
   <dependencies>
     <dependency reexport="false">a0c108f0-1637-416e-a249-3effbaa4c998(jetbrains.mps.baseLanguage.search)</dependency>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
     <dependency reexport="false">b55d8dfc-0d9d-43d5-886d-c644e7083bff(stubUtils)</dependency>
+    <dependency reexport="false">954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>5dc5fc0d-37ef-4782-8192-8b5ce1f69f80(jetbrains.mps.baseLanguage.extensionMethods)</usedLanguage>

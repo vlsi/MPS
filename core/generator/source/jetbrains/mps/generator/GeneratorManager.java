@@ -23,10 +23,7 @@ import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 
@@ -200,11 +197,12 @@ public class GeneratorManager {
   }
 
   public static boolean isDoNotGenerate(SModelDescriptor sm) {
-    return sm instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) sm).isDoNotGenerate();
+    if (!(sm instanceof DefaultSModelDescriptor)) return false;
+    return ((DefaultSModelDescriptor) sm).isDoNotGenerate();
   }
 
   public static void setDoNotGenerate(SModelDescriptor sm, boolean value) {
-    if (!(sm instanceof EditableSModelDescriptor)) return;
-    ((EditableSModelDescriptor) sm).setDoNotGenerate(value);
+    if (!(sm instanceof DefaultSModelDescriptor)) return;
+    ((DefaultSModelDescriptor) sm).setDoNotGenerate(value);
   }
 }

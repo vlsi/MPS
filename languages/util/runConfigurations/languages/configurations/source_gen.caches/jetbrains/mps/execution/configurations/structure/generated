@@ -132,7 +132,6 @@
   </source>
   <source id="6139196002333163564" name="ExecuteConfiguration_Function" hash="blevaalsm7hinwjynqbj9s9ertqb8fr">
     <dep root="5453800039284219178" />
-    <dep root="7037083547576022975" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -512,7 +511,6 @@
     <file name="ConsoleCreator.java" />
   </source>
   <source id="5453800039284219178" name="GetProjectOperation" hash="3f67rmlb0jk9oz0hofi530v6qiq5asz">
-    <dep root="7037083547576022975" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

@@ -29,7 +29,7 @@ import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import com.intellij.openapi.vcs.changes.ChangeListManagerGate;
 import com.intellij.openapi.vcs.changes.LocalChangeList;
 import org.jetbrains.annotations.Nullable;
@@ -144,8 +144,8 @@ public class MPSVcsManager implements ProjectComponent {
 
     public void beforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
       for (SModelDescriptor smodelDescriptor : inputModels) {
-        if (smodelDescriptor instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) smodelDescriptor).needsReloading()) {
-          ((EditableSModelDescriptor) smodelDescriptor).reloadFromDisk();
+        if (smodelDescriptor instanceof DefaultSModelDescriptor && ((DefaultSModelDescriptor) smodelDescriptor).needsReloading()) {
+          ((DefaultSModelDescriptor) smodelDescriptor).reloadFromDisk();
           MPSVcsManager.LOG.info("Model " + smodelDescriptor + " reloaded from disk.");
         }
       }

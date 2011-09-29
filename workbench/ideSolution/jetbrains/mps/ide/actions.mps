@@ -3756,7 +3756,7 @@
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="1216120752904">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1216120752905">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1216120783441">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1216120785101">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2896881808974467689">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1201295565039998657">
               <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1201295565039998658">
                 <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1201295565039998659">
@@ -3765,13 +3765,13 @@
                     <link role="member" roleId="tp4f.1205756909548" targetNodeId="1217420649451" resolveInfo="model" />
                   </node>
                 </node>
-                <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9094453971530657529">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="aoly.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
+                <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2896881808974467748">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lkfb.~DefaultSModelDescriptor" resolveInfo="DefaultSModelDescriptor" />
                 </node>
               </node>
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216120800780">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="aoly.~EditableSModelDescriptor%dreloadFromDisk()%cvoid" resolveInfo="reloadFromDisk" />
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2896881808974467695">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~DefaultSModelDescriptor%dreloadFromDisk()%cvoid" resolveInfo="reloadFromDisk" />
             </node>
           </node>
         </node>
@@ -3785,8 +3785,8 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="257555896712961360">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7793469387662800201">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="7793469387662800202">
-            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7793469387662800203">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="aoly.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
+            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2896881808974467747">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lkfb.~DefaultSModelDescriptor" resolveInfo="DefaultSModelDescriptor" />
             </node>
             <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7793469387662800204">
               <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7793469387662800205" />
@@ -12396,7 +12396,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6840593892233917919">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6840593892233915868">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6840593892233915869">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tqgb.~RenameModelDialog%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,java%dawt%dFrame,jetbrains%dmps%dproject%dSModelRoot,jetbrains%dmps%dsmodel%dSModelDescriptor)" resolveInfo="RenameModelDialog" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tqgb.~RenameModelDialog%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,java%dawt%dFrame,jetbrains%dmps%dproject%dSModelRoot,jetbrains%dmps%dsmodel%ddescriptor%dEditableSModelDescriptor)" resolveInfo="RenameModelDialog" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6840593892233915873">
                   <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="6840593892233915874" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="6840593892233915875">
@@ -12412,10 +12412,17 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6840593892233917929">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6840593892233915900" resolveInfo="root" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6840593892233917931">
-                  <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="6840593892233917932" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="6840593892233917933">
-                    <link role="member" roleId="tp4f.1205756909548" targetNodeId="6840593892233915895" resolveInfo="model" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2896881808974460773">
+                  <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2896881808974460774">
+                    <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2896881808974460775">
+                      <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2896881808974460776" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="2896881808974460777">
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="6840593892233915895" resolveInfo="model" />
+                      </node>
+                    </node>
+                    <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2896881808974467688">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lkfb.~DefaultSModelDescriptor" resolveInfo="DefaultSModelDescriptor" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -12467,13 +12474,35 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3557929875030382001">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3557929875030382080">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~Language%disLanguageOwnedAccessoryModel(jetbrains%dmps%dsmodel%dSModelDescriptor)%cboolean" resolveInfo="isLanguageOwnedAccessoryModel" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lkfb.~Language" resolveInfo="Language" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3557929875030382084">
-              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="3557929875030382085" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="3557929875030382086">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="2896881808974460754">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2896881808974460755">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2896881808974460760">
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2896881808974460762">
+                <property name="value" nameId="tpee.1068580123138" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="2896881808974460758">
+            <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3557929875030382080">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~Language%disLanguageOwnedAccessoryModel(jetbrains%dmps%dsmodel%dSModelDescriptor)%cboolean" resolveInfo="isLanguageOwnedAccessoryModel" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lkfb.~Language" resolveInfo="Language" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3557929875030382084">
+                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="3557929875030382085" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="3557929875030382086">
+                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="6840593892233915895" resolveInfo="model" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2896881808974460764">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="2896881808974460769">
+            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2896881808974460772">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lkfb.~DefaultSModelDescriptor" resolveInfo="DefaultSModelDescriptor" />
+            </node>
+            <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2896881808974460766">
+              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2896881808974460767" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="2896881808974460768">
                 <link role="member" roleId="tp4f.1205756909548" targetNodeId="6840593892233915895" resolveInfo="model" />
               </node>
             </node>
