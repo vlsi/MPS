@@ -75,7 +75,7 @@ public class EmbeddableEditor {
     myOwner = owner;
     myContext = context;
     myIsEditable = editable;
-    myModel = ProjectModels.createDescriptorFor(myOwner);
+    myModel = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor(myOwner));
     myModel.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
     setNode(rootNode, targetNode, true);
   }

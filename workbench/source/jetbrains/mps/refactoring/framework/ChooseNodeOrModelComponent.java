@@ -127,9 +127,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
       if (!(model instanceof EditableSModelDescriptor)) {
         models.remove(model);
-      } else if (!SModelStereotype.isUserModel(model)) {
-        models.remove(model);
-      } else if (((EditableSModelDescriptor) model).isPackaged()) {
+      } else if (((EditableSModelDescriptor) model).isReadOnly()) {
         models.remove(model);
       } else if (myReturnLoadedModels && !condition.met(model.getSModel())) {
         models.remove(model);

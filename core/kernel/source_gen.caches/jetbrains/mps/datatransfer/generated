@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bkebc214gkxqlk2h77xk8enrl9t38bv">
+<dependencies version="2" modelHash="8fbvnuokfq2oj8e6eotape4zv3b8ozx">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" />
@@ -29,7 +29,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="PastePostProcessor.java" />
   </source>
-  <source id="1622834379618551046" name="CopyPasteManager" hash="6gbfdesllpvd15lsp7xx07utackq3pb">
+  <source id="1622834379618551046" name="CopyPasteManager" hash="-bue3zwb93243nqolifkcdqqgs0dj3t2">
     <dep root="1058093769518980128" />
     <dep root="1315898236614019768" />
     <dep root="5948027493682472176" />
@@ -55,7 +55,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CopyPasteManager.java" />
   </source>
-  <source id="1058093769518980128" name="AbstractManager" hash="1d9u6iwa0p0h0rzxsp02q3p3u5u06u1">
+  <source id="1058093769518980128" name="AbstractManager" hash="-6g5adh3w6scf690knj7tj69v3whuife">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

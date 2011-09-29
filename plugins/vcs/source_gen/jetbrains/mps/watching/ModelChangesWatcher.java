@@ -13,6 +13,9 @@ import com.intellij.util.ui.Timer;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener;
+import jetbrains.mps.make.IMakeNotificationListener;
+import jetbrains.mps.make.MakeNotification;
+import jetbrains.mps.make.IMakeService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import org.jetbrains.annotations.NonNls;
@@ -59,8 +62,28 @@ public class ModelChangesWatcher implements ApplicationComponent {
   };
   private MessageBusConnection myConnection;
   private BulkFileListener myBusListener = new ModelChangesWatcher.BulkFileChangesListener();
+  private IMakeNotificationListener myMakeListener = new IMakeNotificationListener() {
+    public void handleNotification(MakeNotification notification) {
+    }
 
-  public ModelChangesWatcher(MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager) {
+    public void scriptAboutToStart(MakeNotification notification) {
+    }
+
+    public void scriptFinished(MakeNotification notification) {
+    }
+
+    public void sessionOpened(MakeNotification notification) {
+      suspendTasksProcessing();
+    }
+
+    public void sessionClosed(MakeNotification notification) {
+      tryToResumeTasksProcessing();
+    }
+  };
+  private IMakeService myMakeService;
+
+  public ModelChangesWatcher(IMakeService ms, MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager) {
+    myMakeService = ms;
     myBus = bus;
     myVirtualFileManager = virtualFileManager;
     myProjectManager = projectManager;
@@ -119,14 +142,16 @@ public class ModelChangesWatcher implements ApplicationComponent {
     myConnection = myBus.connect();
     myConnection.subscribe(VirtualFileManager.VFS_CHANGES, myBusListener);
     myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
+    myMakeService.addListener(this.myMakeListener);
   }
 
   public void disposeComponent() {
     if (MPSCore.getInstance().isTestMode()) {
       return;
     }
-    myConnection.disconnect();
+    myMakeService.removeListener(this.myMakeListener);
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
+    myConnection.disconnect();
   }
 
   private void doReload() {
@@ -291,10 +316,8 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
 
     private void processAfterEvent(String filePath, VFileEvent event, ReloadSession reloadSession) {
-      if (MPSFileTypesManager.instance().isModelFile(filePath)) {
-        ModelChangesWatcher.LOG.debug("Process after event for " + filePath);
-        ModelFileProcessor.getInstance().process(event, reloadSession);
-      } else
+      ModelChangesWatcher.LOG.debug("Process after event for " + filePath);
+      ModelFileProcessor.getInstance().process(event, reloadSession);
       if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
         ModelChangesWatcher.LOG.debug("Process after event for " + filePath);
         ModuleFileProcessor.getInstance().process(event, reloadSession);

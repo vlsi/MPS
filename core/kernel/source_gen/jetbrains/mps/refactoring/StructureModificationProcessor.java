@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelOperations;
@@ -37,7 +37,7 @@ public class StructureModificationProcessor {
     return result;
   }
 
-  private boolean playModelRefactorings(EditableSModelDescriptor model, int usedVersion) {
+  private boolean playModelRefactorings(DefaultSModelDescriptor model, int usedVersion) {
     int modelVersion = model.getVersion();
     if (modelVersion > usedVersion) {
       boolean played = false;
@@ -80,7 +80,7 @@ public class StructureModificationProcessor {
     do {
       played = false;
       for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(myModel))) {
-        EditableSModelDescriptor usedModel = as_etzqsh_a0a0a1a5a2(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), EditableSModelDescriptor.class);
+        DefaultSModelDescriptor usedModel = as_etzqsh_a0a0a1a5a2(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), DefaultSModelDescriptor.class);
         if (usedModel != null && playModelRefactorings(usedModel, importElement.getUsedVersion())) {
           result = played = true;
         }
@@ -100,7 +100,7 @@ public class StructureModificationProcessor {
     }
     // add modification to all dependent models 
     for (IMapping<SModelReference, Integer> dependency : MapSequence.fromMap(data.getDependencies())) {
-      EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(dependency.key());
+      DefaultSModelDescriptor model = (DefaultSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(dependency.key());
       StructureModificationLog modificationLog = model.getStructureModificationLog();
       modificationLog.addStructureModification(data);
       model.setVersion(dependency.value() + 1);
@@ -112,7 +112,7 @@ public class StructureModificationProcessor {
   public static boolean hasRefactoringsToPlay(@NotNull SModel model) {
     if (refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(model)) {
       for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model))) {
-        EditableSModelDescriptor usedModel = as_etzqsh_a0a0a0a0a1(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), EditableSModelDescriptor.class);
+        DefaultSModelDescriptor usedModel = as_etzqsh_a0a0a0a0a1(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), DefaultSModelDescriptor.class);
         if (usedModel != null && importElement.getUsedVersion() < usedModel.getVersion()) {
           return true;
         }

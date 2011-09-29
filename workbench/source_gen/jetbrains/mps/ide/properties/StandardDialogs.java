@@ -326,8 +326,7 @@ public class StandardDialogs {
         result_960thj_a1a3a0a0a3.setComponent(result_960thj_a0a1a3a0a0a3);
         final BaseBindedDialog.ConstraintsType result_960thj_a1a1a3a0a0a3 = BaseBindedDialog.ConstraintsType.LIST;
         result_960thj_a1a3a0a0a3.setConstraints(result_960thj_a1a1a3a0a0a3);
-        final boolean result_960thj_a2a1a3a0a0a3 = s.isStub();
-        if (result_960thj_a2a1a3a0a0a3) {
+        if (s.isStub()) {
           result_960thj_a1a3a0a0a3.setReadOnly();
         }
         result_960thj_a3a0a0a3.addComponent(result_960thj_a1a3a0a0a3);

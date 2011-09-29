@@ -15,9 +15,10 @@ import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import com.intellij.openapi.vfs.VirtualFile;
 import java.io.OutputStream;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.smodel.ModelLoadingState;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.UnzipUtil;
@@ -31,7 +32,6 @@ import java.io.StringReader;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.BaseSModelDescriptor;
-import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.vcs.integration.ModelDiffTool;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -87,13 +87,13 @@ public class ModelUtils {
   }
 
   private static void replaceModelWithBytes(VirtualFile modelFile, byte[] bytesToReplaceWith) {
-    final EditableSModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(modelFile));
+    final DefaultSModelDescriptor modelDescriptor = ((DefaultSModelDescriptor) SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(modelFile)));
     if (modelDescriptor == null) {
       return;
     }
     try {
       SModel model = ModelUtils.readModel(bytesToReplaceWith, modelFile.getPath());
-      modelDescriptor.replaceModel(model);
+      modelDescriptor.replaceModel(model, ModelLoadingState.FULLY_LOADED);
     } catch (IOException e) {
       if (log.isErrorEnabled()) {
         log.error("", e);
