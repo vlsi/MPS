@@ -17,7 +17,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.MissingDependenciesFixer;
 import java.awt.Frame;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;

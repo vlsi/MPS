@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.MissingDependenciesFixer;
+import jetbrains.mps.ide.actions.MissingDependenciesFixer;
 import java.awt.Frame;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;

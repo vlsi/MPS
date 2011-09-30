@@ -2167,7 +2167,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1215868124324">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1215868051542">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1215868088420">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~MissingDependenciesFixer%d&lt;init&gt;(java%dawt%dFrame,jetbrains%dmps%dsmodel%dSModelDescriptor)" resolveInfo="MissingDependenciesFixer" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tprs.9213276763682647861" resolveInfo="MissingDependenciesFixer" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1837328083653668374">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1837328083653668375" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1837328083653807826">
@@ -2180,7 +2180,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1215868135920">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~MissingDependenciesFixer%dfix(boolean)%cvoid" resolveInfo="fix" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tprs.9213276763682647885" resolveInfo="fix" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1837328083653698326" />
                 </node>
               </node>
