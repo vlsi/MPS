@@ -42,11 +42,9 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   private static Logger LOG = Logger.getLogger(TraceInfoCache.class);
 
   public static final String TRACE_FILE_NAME = "trace.info";
-  private final CleanupManager myCleanupManager;
 
-  public TraceInfoCache(SModelRepository modelRepository, CleanupManager cleanupManager) {
+  public TraceInfoCache(SModelRepository modelRepository) {
     super(modelRepository);
-    myCleanupManager = cleanupManager;
   }
 
   public static TraceInfoCache getInstance() {
@@ -62,7 +60,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   @Override
   public void initComponent() {
     super.initComponent();
-    myCleanupManager.addCleanupListener(new CleanupListener() {
+    CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
       public void performCleanup() {
         cleanup();
       }

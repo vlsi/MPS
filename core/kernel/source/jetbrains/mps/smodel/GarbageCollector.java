@@ -22,12 +22,10 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class GarbageCollector implements ApplicationComponent {
-  private final CleanupManager myCleanupManager;
   private final SModelRepository mySModelRepository;
   private final MPSModuleRepository myMPSModuleRepository;
 
-  public GarbageCollector(CleanupManager cleanupManager, SModelRepository repository, MPSModuleRepository mpsModuleRepository) {
-    myCleanupManager = cleanupManager;
+  public GarbageCollector(SModelRepository repository, MPSModuleRepository mpsModuleRepository) {
     mySModelRepository = repository;
     myMPSModuleRepository = mpsModuleRepository;
   }
@@ -39,7 +37,7 @@ public class GarbageCollector implements ApplicationComponent {
   }
 
   public void initComponent() {
-    myCleanupManager.addCleanupListener(new CleanupListener() {
+    CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
       public void performCleanup() {
         myMPSModuleRepository.removeUnusedModules();
       }
