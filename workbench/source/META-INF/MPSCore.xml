@@ -55,10 +55,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.smodel.behaviour.BehaviorManager</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.smodel.behaviour.OldBehaviorManager</implementation-class>
     </component>
 

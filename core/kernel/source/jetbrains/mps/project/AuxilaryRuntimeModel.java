@@ -17,7 +17,6 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 
 /**
  * Igor Alshannikov
