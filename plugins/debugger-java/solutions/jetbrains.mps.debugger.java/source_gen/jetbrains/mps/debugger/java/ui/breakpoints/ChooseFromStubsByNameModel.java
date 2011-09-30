@@ -12,8 +12,9 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.workbench.actions.goTo.index.StubsNodeDescriptorsCache;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.actions.goTo.index.StubsNodeDescriptorsCache;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.generator.JavaModelUtil_new;
@@ -41,7 +42,10 @@ import org.jetbrains.annotations.NotNull;
           if (!(hasStubs)) {
             continue;
           }
-          final List<BaseSNodeDescriptor> descriptors = StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(m);
+          List<BaseSNodeDescriptor> descriptors = ListSequence.fromList(new ArrayList<BaseSNodeDescriptor>());
+          for (SModelDescriptor model : ListSequence.fromList(m.getOwnModelDescriptors())) {
+            ListSequence.fromList(descriptors).addSequence(ListSequence.fromList(StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(model.getSModelReference())));
+          }
           for (BaseSNodeDescriptor descriptor : descriptors) {
             String name = getName(descriptor);
             List<BaseSNodeDescriptor> descriptorList = myPossibleNodes.get(name);

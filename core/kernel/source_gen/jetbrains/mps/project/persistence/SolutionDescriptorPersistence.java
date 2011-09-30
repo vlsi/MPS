@@ -15,6 +15,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.LanguageID;
 import java.io.OutputStream;
@@ -59,7 +60,9 @@ public class SolutionDescriptorPersistence {
           result_8ckma3_a0a0g0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "models")).first(), "modelRoot"), file, macros));
 
           if (ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "stubModelEntries")).isNotEmpty()) {
-            result_8ckma3_a0a0g0c0a.getStubModelEntries().addAll(ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(solutionElement, "stubModelEntries"), file, macros));
+            List<ModelRoot> roots = ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(solutionElement, "stubModelEntries"), file, macros);
+            result_8ckma3_a0a0g0c0a.getModelRoots().addAll(roots);
+            result_8ckma3_a0a0g0c0a.getStubModelEntries().addAll(roots);
           }
 
           ModuleDescriptorPersistence.loadDependencies(result_8ckma3_a0a0g0c0a, solutionElement);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Smodel_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Smodel_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="327" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="329" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.StructureAspectDescriptor" />
   <root nodeId="1138055754698">
     <nodeInfo nodeId="1138055754698" fileName="SNodeType.java" startLine="12" startPosition="37" endLine="13" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1138055754698" fileName="SNodeType.java" startLine="13" startPosition="87" endLine="14" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONCEPT" />
@@ -4381,6 +4381,49 @@
     <scopeInfo nodeId="5253134957341870583" fileName="PropertyNameRefExpression.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="5253134957341870583" fileName="PropertyNameRefExpression.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <unitInfo nodeId="5253134957341870583" fileName="PropertyNameRefExpression.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression" />
+  </root>
+  <root nodeId="559557797393017698">
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="11" startPosition="58" endLine="12" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="12" startPosition="102" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="13" startPosition="43" endLine="14" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STEREOTYPE" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="14" startPosition="55" endLine="15" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FQ_NAME" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="17" startPosition="47" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="21" startPosition="27" endLine="22" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="25" startPosition="37" endLine="26" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="29" startPosition="33" endLine="30" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="33" startPosition="43" endLine="34" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="37" startPosition="29" endLine="38" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="41" startPosition="39" endLine="42" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="45" startPosition="79" endLine="46" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="49" startPosition="65" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelReferenceExpression#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStereotype#()Ljava/lang/String;" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStereotype#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFqName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/smodel/structure/ModelReferenceExpression;" />
+    <nodeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/smodel/structure/ModelReferenceExpression;" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="17" startPosition="47" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="21" startPosition="27" endLine="22" endPosition="59" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="25" startPosition="37" endLine="26" endPosition="59" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="29" startPosition="33" endLine="30" endPosition="65" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="33" startPosition="43" endLine="34" endPosition="65" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="37" startPosition="29" endLine="38" endPosition="62" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="41" startPosition="39" endLine="42" endPosition="62" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="45" startPosition="79" endLine="46" endPosition="197" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="49" startPosition="65" endLine="50" endPosition="59" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <unitInfo nodeId="559557797393017698" fileName="ModelReferenceExpression.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.ModelReferenceExpression" />
   </root>
   <root nodeId="5692182839349412519">
     <nodeInfo nodeId="5692182839349412519" fileName="Reference_GetRoleOperation.java" startLine="14" startPosition="92" endLine="15" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

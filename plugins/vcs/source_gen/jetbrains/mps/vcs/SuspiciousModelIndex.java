@@ -8,7 +8,7 @@ import jetbrains.mps.watching.ModelChangesWatcher;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.vcs.queue.TaskQueue;
 import jetbrains.mps.vcs.conflictable.Conflictable;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.vcs.conflictable.ConflictableModelAdapter;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vcs.conflictable.ConflictableModuleAdapter;
@@ -45,7 +45,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     myVirtualFileManager = vfManager;
   }
 
-  public void addModel(EditableSModelDescriptor model, boolean isInConflict) {
+  public void addModel(DefaultSModelDescriptor model, boolean isInConflict) {
     myTaskQueue.addTask(new ConflictableModelAdapter(model, isInConflict));
   }
 
