@@ -16,11 +16,12 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
 import jetbrains.mps.project.dependency.DependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.model.*;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -45,9 +46,6 @@ public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
   public static final String MODULE_DIR = "module";
-
-  private boolean myModelsRead = false;
-  private boolean myInitialized = false;
 
   protected IFile myDescriptorFile;
   private ModuleReference myModuleReference;
@@ -76,12 +74,13 @@ public abstract class AbstractModule implements IModule {
   public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root) {
     IModelRootManager manager = root.getManager();
 
-    if (!manager.isNewModelsSupported()) {
+    if (!manager.canCreateModel(this, root.getModelRoot(), name)) {
       LOG.error("Trying to create model root manager in root which doesn't support new models");
       return null;
     }
 
-    EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createNewModel(root, name, this);
+    EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createModel(this, root.getModelRoot(), name);
+    SModelRepository.getInstance().registerModelDescriptor(model, this);
     model.setChanged(true);
 
     for (ModelCreationListener listener : ourModelCreationListeners) {
@@ -140,7 +139,7 @@ public abstract class AbstractModule implements IModule {
 
     descriptor.getUsedLanguages().add(langRef);
 //    setModuleDescriptor(descriptor, true);// removed as it follows to models disposing even after addChild()
-    save();
+    //save();
   }
 
   public void addUsedDevkit(ModuleReference devkitRef) {
@@ -268,6 +267,7 @@ public abstract class AbstractModule implements IModule {
       toRemove.add(sme);
     }
     descriptor.getStubModelEntries().removeAll(toRemove);
+    descriptor.getModelRoots().removeAll(toRemove);
 
 
     DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
@@ -280,7 +280,9 @@ public abstract class AbstractModule implements IModule {
       if (jar.exists()) {
         ClassPathEntry jarEntry = new ClassPathEntry();
         jarEntry.setPath(jar.getPath());
-        descriptor.getStubModelEntries().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry));
+        ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry);
+        descriptor.getStubModelEntries().add(mr);
+        descriptor.getModelRoots().add(mr);
       }
     }
   }
@@ -327,7 +329,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void reloadAfterDescriptorChange() {
-    rereadModels();
+    loadNewModels();
 
     updatePackagedDescriptorClasspath();
     invalidateClassPath();
@@ -394,37 +396,7 @@ public abstract class AbstractModule implements IModule {
     return myScope;
   }
 
-  protected void readModels() {
-    if (myModelsRead) return;
-
-    myModelsRead = true;
-    for (SModelRoot root : mySModelRoots) {
-      root.dispose();
-    }
-    mySModelRoots.clear();
-
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      List<jetbrains.mps.project.structure.model.ModelRoot> roots = descriptor.getModelRoots();
-      for (jetbrains.mps.project.structure.model.ModelRoot modelRoot : roots) {
-        try {
-          SModelRoot root = new SModelRoot(modelRoot);
-          mySModelRoots.add(root);
-          IModelRootManager manager = root.getManager();
-          manager.updateModels(root, this);
-        } catch (Exception e) {
-          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
-        }
-      }
-    }
-
-    myInitialized = true;
-  }
-
   public void dispose() {
-    for (SModelRoot root : mySModelRoots) {
-      root.dispose();
-    }
     mySModelRoots.clear();
   }
 
@@ -445,18 +417,43 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  protected void rereadModels() {
-    myModelsRead = false;
-    myInitialized = false;
-    readModels();
-  }
+  public void loadNewModels() {
+    mySModelRoots.clear();
 
-  protected boolean isInitialized() {
-    return myInitialized;
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      SModelRepository smRepo = SModelRepository.getInstance();
+      List<ModelRoot> roots = descriptor.getModelRoots();
+      for (ModelRoot modelRoot : roots) {
+        try {
+          SModelRoot root = new SModelRoot(modelRoot);
+          mySModelRoots.add(root);
+          IModelRootManager manager = root.getManager();
+          if (manager != null) {
+            for (SModelDescriptor model : manager.load(root.getModelRoot(), this)) {
+              if (smRepo.getModelDescriptor(model.getSModelReference()) == null) {
+                smRepo.registerModelDescriptor(model, this);
+              }
+            }
+          }
+          //model with model root manager not yet loaded - should be loaded after classes reloading
+        } catch (ManagerNotFoundException e) {
+          //LOG.warning("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
+        } catch (Exception e) {
+          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
+        }
+      }
+    }
+
+    fireModuleInitialized();
   }
 
   protected void fireModuleInitialized() {
     MPSModuleRepository.getInstance().fireModuleInitialized(this);
+  }
+
+  public boolean canLoadClasses() {
+    return ClassLoaderManager.getInstance().canLoadClasses(this);
   }
 
   public Class getClass(String fqName) {

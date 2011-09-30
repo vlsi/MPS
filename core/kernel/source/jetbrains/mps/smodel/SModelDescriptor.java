@@ -26,19 +26,19 @@ import org.jetbrains.annotations.NotNull;
  */
 public interface SModelDescriptor {
   /**
-   * After model loading call SModelRepostiory.fireModelRepositoryChanged
+   * After model loading call SModelRepository.fireModelRepositoryChanged
    */
   SModel getSModel();
 
   IModule getModule();
+
+  //------
 
   boolean isGeneratable();
 
   String getModelHash();
 
   //------
-
-  IModelRootManager getModelRootManager();
 
   SModelReference getSModelReference();
 
@@ -55,10 +55,6 @@ public interface SModelDescriptor {
   void refresh();
 
   //------
-
-  boolean isEmpty();
-
-  void rename(SModelFqName newModelFqName, boolean changeFile);
 
   SModelDescriptor resolveModel(SModelReference reference);
 

@@ -59,8 +59,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
+import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
 import com.intellij.openapi.application.PathManager;
@@ -445,11 +444,12 @@ public abstract class MpsWorker {
         modelReference = SModelReference.fromPath(ifile.getPath());
       }
       info("Read model " + modelReference);
-      SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new DefaultModelRootManager(), ifile, modelReference);
-      if (smodelDescriptor.getModule() == null) {
+      DescriptorLoadResult d = new RegularModelDataSource(ifile).loadDescriptor(null, modelReference.getSModelFqName());
+      SModelDescriptor existingDescr = SModelRepository.getInstance().getModelDescriptor(d.getHeader().getModelReference());
+      if (existingDescr == null) {
         error("Module for " + ifile.getPath() + " was not found. Use \"library\" tag to load required modules.");
       } else {
-        modelDescriptors.add(smodelDescriptor);
+        modelDescriptors.add(existingDescr);
       }
     } catch (ModelFileReadException e) {
       log(e);
