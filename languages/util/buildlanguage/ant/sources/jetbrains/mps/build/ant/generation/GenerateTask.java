@@ -21,11 +21,13 @@ import jetbrains.mps.build.ant.generation.workers.GeneratorWorker;
 
 public class GenerateTask extends MpsLoadTask {
   public static final String COMPILE = "COMPILE";
-  public static final String PER_ROOT_GENERATION = "PER_ROOT_GENERATION";
+  public static final String STRICT_MODE = "STRICT_MODE";
+  public static final String PARALLEL_MODE = "PARALLEL_MODE";
 
   {
     myWhatToDo.putProperty(COMPILE, Boolean.toString(true));
-    myWhatToDo.putProperty(PER_ROOT_GENERATION, Boolean.toString(false));
+    myWhatToDo.putProperty(STRICT_MODE, Boolean.toString(true));
+    myWhatToDo.putProperty(PARALLEL_MODE, Boolean.toString(false));
   }
 
   protected Class<? extends MpsWorker> getWorkerClass() {
@@ -40,11 +42,19 @@ public class GenerateTask extends MpsLoadTask {
     return Boolean.parseBoolean(myWhatToDo.getProperty(COMPILE));
   }
 
-  public void setUsePerRootGeneration(boolean usePerRootGeneration) {
-    myWhatToDo.putProperty(PER_ROOT_GENERATION, Boolean.toString(usePerRootGeneration));
+  public void setStrictMode(boolean strictMode) {
+    myWhatToDo.putProperty(STRICT_MODE, Boolean.toString(strictMode));
   }
 
-  protected boolean getUsePerRootGeneration() {
-    return Boolean.parseBoolean(myWhatToDo.getProperty(PER_ROOT_GENERATION));
+  protected boolean getStrictMode() {
+    return Boolean.parseBoolean(myWhatToDo.getProperty(STRICT_MODE));
+  }
+
+  public void setParallelMode(boolean parallelMode) {
+    myWhatToDo.putProperty(PARALLEL_MODE, Boolean.toString(parallelMode));
+  }
+
+  protected boolean getParallelMode() {
+    return Boolean.parseBoolean(myWhatToDo.getProperty(PARALLEL_MODE));
   }
 }

@@ -95,14 +95,18 @@ public class TestGenerationWorker extends MpsWorker {
   }
 
   private void setGenerationProperties() {
-    if (myWhatToDo.getProperty(GenerateTask.PER_ROOT_GENERATION) != null) {
-      boolean perRootGeneration = Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.PER_ROOT_GENERATION));
-      GenerationSettings.getInstance().setParallelGenerator(perRootGeneration);
-      GenerationSettings.getInstance().setStrictMode(perRootGeneration);
-      if (perRootGeneration) {
+    boolean strictMode = Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.STRICT_MODE));
+    GenerationSettings.getInstance().setStrictMode(strictMode);
+    if (strictMode) {
+      boolean parallelMode = Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.PARALLEL_MODE));
+      GenerationSettings.getInstance().setParallelGenerator(parallelMode);
+      if (parallelMode) {
         GenerationSettings.getInstance().setNumberOfParallelThreads(8);
       }
-      info("Per-root generation set to " + perRootGeneration);
+      info("Generating in strict mode, parallel generation = " + ((parallelMode ?
+        "on" :
+        "off"
+      )));
     }
   }
 
