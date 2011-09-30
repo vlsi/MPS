@@ -31,7 +31,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
     this(modelReference, true, source, module);
   }
 
-  protected BaseStubModelDescriptor(SModelReference modelReference, boolean checkDup, ModelDataSource source, IModule module) {
+  public BaseStubModelDescriptor(SModelReference modelReference, boolean checkDup, ModelDataSource source, IModule module) {
     super(modelReference, source, checkDup);
     myModule = module;
   }
