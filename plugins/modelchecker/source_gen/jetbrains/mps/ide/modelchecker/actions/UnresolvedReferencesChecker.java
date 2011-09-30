@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
@@ -18,6 +19,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.resolve.Resolver;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class UnresolvedReferencesChecker extends SpecificChecker {
   public UnresolvedReferencesChecker() {
@@ -25,7 +31,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
 
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, final IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
-
+    final IScope scope = operationContext.getScope();
     String title = "Checking " + SModelOperations.getModelName(model) + " for unresolved references...";
     for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
       if (!(progressContext.checkAndUpdateIndicator(title))) {
@@ -43,9 +49,26 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
             }
           });
         }
+        final SModelReference uid = ref.getTargetSModelReference();
+        if (uid == null) {
+          continue;
+        }
+        SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(uid);
+        if (scope.getModelDescriptor(uid) == null && descriptor != null) {
+          addIssue(results, node, "Target module " + descriptor.getModule() + " should be imported", ModelChecker.SEVERITY_ERROR, "unresolved reference", new IModelCheckerFix() {
+            public boolean doFix() {
+              if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
+                SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
+                operationContext.getModule().addDependency(sm.getModule().getModuleReference(), false);
+                ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+                return true;
+              }
+              return false;
+            }
+          });
+        }
       }
     }
-
     return results;
   }
 }

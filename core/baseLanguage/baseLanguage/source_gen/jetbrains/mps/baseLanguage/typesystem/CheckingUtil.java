@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class CheckingUtil {
   public CheckingUtil() {
@@ -17,7 +16,11 @@ public class CheckingUtil {
       return false;
     }
     SNode lValue = SLinkOperations.getTarget(assignment, "lValue", true);
-    if (ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).contains(lValue)) {
+    if (node == lValue) {
+      return true;
+    }
+    SNode parent = SNodeOperations.getParent(node);
+    if (parent == lValue && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression") && SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true) == node) {
       return true;
     }
     return false;
