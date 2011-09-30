@@ -715,263 +715,225 @@
     <unitInfo nodeId="4834901852399193565" fileName="JUnitConfigEditor.java" startLine="493" startPosition="66" endLine="528" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor$17" />
   </root>
   <root nodeId="1208270545572">
-    <nodeInfo nodeId="3191465790742314241" fileName="UnitTestViewComponent.java" startLine="51" startPosition="73" endLine="52" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SPLITTER_SIZE_PROPERTY" />
-    <nodeInfo nodeId="1717728468090417910" fileName="UnitTestViewComponent.java" startLine="53" startPosition="0" endLine="54" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestState" />
-    <nodeInfo nodeId="1208368159301" fileName="UnitTestViewComponent.java" startLine="54" startPosition="41" endLine="55" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOutputComponent" />
-    <nodeInfo nodeId="4403789015609949601" fileName="UnitTestViewComponent.java" startLine="55" startPosition="54" endLine="56" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeComponent" />
-    <nodeInfo nodeId="2542933092629994972" fileName="UnitTestViewComponent.java" startLine="56" startPosition="41" endLine="57" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProgressLineComponent" />
-    <nodeInfo nodeId="8174031806067720769" fileName="UnitTestViewComponent.java" startLine="57" startPosition="53" endLine="58" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActionToolComponent" />
-    <nodeInfo nodeId="1239641226187" fileName="UnitTestViewComponent.java" startLine="58" startPosition="55" endLine="59" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="2542933092629640309" fileName="UnitTestViewComponent.java" startLine="59" startPosition="34" endLine="60" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestNavigator" />
-    <nodeInfo nodeId="1239644147818" fileName="UnitTestViewComponent.java" startLine="60" startPosition="61" endLine="61" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListeners" />
-    <nodeInfo nodeId="1594211126127614882" fileName="UnitTestViewComponent.java" startLine="63" startPosition="166" endLine="64" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127614888" fileName="UnitTestViewComponent.java" startLine="64" startPosition="29" endLine="65" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127614896" fileName="UnitTestViewComponent.java" startLine="65" startPosition="36" endLine="66" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1594211126127614904" fileName="UnitTestViewComponent.java" startLine="66" startPosition="86" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1594211126127614905" fileName="UnitTestViewComponent.java" startLine="67" startPosition="0" endLine="68" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127614920" fileName="UnitTestViewComponent.java" startLine="68" startPosition="89" endLine="69" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127614930" fileName="UnitTestViewComponent.java" startLine="69" startPosition="82" endLine="70" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127614946" fileName="UnitTestViewComponent.java" startLine="70" startPosition="114" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1594211126127614947" fileName="UnitTestViewComponent.java" startLine="71" startPosition="0" endLine="72" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1594211126127614955" fileName="UnitTestViewComponent.java" startLine="72" startPosition="92" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1594211126127614956" fileName="UnitTestViewComponent.java" startLine="73" startPosition="0" endLine="74" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127614966" fileName="UnitTestViewComponent.java" startLine="74" startPosition="70" endLine="75" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127614982" fileName="UnitTestViewComponent.java" startLine="75" startPosition="120" endLine="76" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127614997" fileName="UnitTestViewComponent.java" startLine="76" startPosition="102" endLine="77" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127615012" fileName="UnitTestViewComponent.java" startLine="77" startPosition="144" endLine="78" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127615027" fileName="UnitTestViewComponent.java" startLine="78" startPosition="136" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1594211126127615028" fileName="UnitTestViewComponent.java" startLine="79" startPosition="0" endLine="80" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1594211126127615040" fileName="UnitTestViewComponent.java" startLine="80" startPosition="136" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1594211126127615041" fileName="UnitTestViewComponent.java" startLine="81" startPosition="0" endLine="82" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3191465790742413921" fileName="UnitTestViewComponent.java" startLine="82" startPosition="44" endLine="83" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127615052" fileName="UnitTestViewComponent.java" startLine="83" startPosition="51" endLine="84" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127615057" fileName="UnitTestViewComponent.java" startLine="84" startPosition="42" endLine="85" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127615062" fileName="UnitTestViewComponent.java" startLine="85" startPosition="44" endLine="86" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127615068" fileName="UnitTestViewComponent.java" startLine="86" startPosition="39" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1594211126127615069" fileName="UnitTestViewComponent.java" startLine="87" startPosition="0" endLine="88" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127615075" fileName="UnitTestViewComponent.java" startLine="88" startPosition="44" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1594211126127615076" fileName="UnitTestViewComponent.java" startLine="89" startPosition="0" endLine="90" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127615085" fileName="UnitTestViewComponent.java" startLine="90" startPosition="51" endLine="91" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127615094" fileName="UnitTestViewComponent.java" startLine="91" startPosition="59" endLine="92" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127615103" fileName="UnitTestViewComponent.java" startLine="92" startPosition="53" endLine="93" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127615116" fileName="UnitTestViewComponent.java" startLine="96" startPosition="136" endLine="97" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="2380206470256882170" fileName="UnitTestViewComponent.java" startLine="100" startPosition="63" endLine="101" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5360151489983197229" fileName="UnitTestViewComponent.java" startLine="101" startPosition="86" endLine="102" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5360151489983197236" fileName="UnitTestViewComponent.java" startLine="102" startPosition="56" endLine="103" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7769255876742449725" fileName="UnitTestViewComponent.java" startLine="103" startPosition="92" endLine="104" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5360151489983197261" fileName="UnitTestViewComponent.java" startLine="104" startPosition="62" endLine="105" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1208772399967" fileName="UnitTestViewComponent.java" startLine="108" startPosition="79" endLine="109" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6664441350960522790" fileName="UnitTestViewComponent.java" startLine="109" startPosition="108" endLine="110" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1208772399981" fileName="UnitTestViewComponent.java" startLine="110" startPosition="70" endLine="111" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962511501" fileName="UnitTestViewComponent.java" startLine="111" startPosition="51" endLine="112" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1208772425812" fileName="UnitTestViewComponent.java" startLine="112" startPosition="47" endLine="113" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1208801381525" fileName="UnitTestViewComponent.java" startLine="116" startPosition="90" endLine="117" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1208878129367" fileName="UnitTestViewComponent.java" startLine="117" startPosition="62" endLine="118" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1208802450695" fileName="UnitTestViewComponent.java" startLine="118" startPosition="93" endLine="119" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1208802501521" fileName="UnitTestViewComponent.java" startLine="119" startPosition="57" endLine="120" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1208772580906" fileName="UnitTestViewComponent.java" startLine="120" startPosition="54" endLine="121" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2887501847890680545" fileName="UnitTestViewComponent.java" startLine="124" startPosition="40" endLine="125" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2887501847890680555" fileName="UnitTestViewComponent.java" startLine="125" startPosition="38" endLine="126" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5928813260156612719" fileName="UnitTestViewComponent.java" startLine="126" startPosition="100" endLine="127" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2281887280934079612" fileName="UnitTestViewComponent.java" startLine="130" startPosition="47" endLine="131" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1214211891017" fileName="UnitTestViewComponent.java" startLine="134" startPosition="25" endLine="135" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8640331875043838001" fileName="UnitTestViewComponent.java" startLine="135" startPosition="37" endLine="136" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8337757094861284550" fileName="UnitTestViewComponent.java" startLine="136" startPosition="35" endLine="137" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239644211304" fileName="UnitTestViewComponent.java" startLine="140" startPosition="69" endLine="141" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239644783710" fileName="UnitTestViewComponent.java" startLine="145" startPosition="89" endLine="146" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512895" fileName="UnitTestViewComponent.java" startLine="150" startPosition="147" endLine="151" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7784214098962513042" fileName="UnitTestViewComponent.java" startLine="151" startPosition="56" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7784214098962513046" fileName="UnitTestViewComponent.java" startLine="152" startPosition="0" endLine="153" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7784214098962513053" fileName="UnitTestViewComponent.java" startLine="153" startPosition="70" endLine="154" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962552551" fileName="UnitTestViewComponent.java" startLine="154" startPosition="118" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7784214098962552545" fileName="UnitTestViewComponent.java" startLine="155" startPosition="0" endLine="156" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5099110028047091235" fileName="UnitTestViewComponent.java" startLine="156" startPosition="59" endLine="157" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962552558" fileName="UnitTestViewComponent.java" startLine="157" startPosition="71" endLine="158" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962552567" fileName="UnitTestViewComponent.java" startLine="158" startPosition="58" endLine="159" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7784214098962552574" fileName="UnitTestViewComponent.java" startLine="159" startPosition="76" endLine="160" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962513043" fileName="UnitTestViewComponent.java" startLine="160" startPosition="59" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7784214098962513044" fileName="UnitTestViewComponent.java" startLine="161" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7784214098962512905" fileName="UnitTestViewComponent.java" startLine="162" startPosition="0" endLine="163" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7784214098962512910" fileName="UnitTestViewComponent.java" startLine="163" startPosition="52" endLine="164" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512915" fileName="UnitTestViewComponent.java" startLine="164" startPosition="31" endLine="165" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512921" fileName="UnitTestViewComponent.java" startLine="165" startPosition="41" endLine="166" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512927" fileName="UnitTestViewComponent.java" startLine="166" startPosition="45" endLine="167" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512933" fileName="UnitTestViewComponent.java" startLine="167" startPosition="16" endLine="168" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512939" fileName="UnitTestViewComponent.java" startLine="168" startPosition="16" endLine="169" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512945" fileName="UnitTestViewComponent.java" startLine="169" startPosition="18" endLine="170" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512951" fileName="UnitTestViewComponent.java" startLine="170" startPosition="18" endLine="171" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512957" fileName="UnitTestViewComponent.java" startLine="171" startPosition="41" endLine="172" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512963" fileName="UnitTestViewComponent.java" startLine="172" startPosition="43" endLine="173" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512969" fileName="UnitTestViewComponent.java" startLine="173" startPosition="16" endLine="174" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512975" fileName="UnitTestViewComponent.java" startLine="174" startPosition="16" endLine="175" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512981" fileName="UnitTestViewComponent.java" startLine="175" startPosition="18" endLine="176" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512987" fileName="UnitTestViewComponent.java" startLine="176" startPosition="18" endLine="177" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512993" fileName="UnitTestViewComponent.java" startLine="177" startPosition="36" endLine="178" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512999" fileName="UnitTestViewComponent.java" startLine="178" startPosition="37" endLine="179" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962513005" fileName="UnitTestViewComponent.java" startLine="179" startPosition="16" endLine="180" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962513011" fileName="UnitTestViewComponent.java" startLine="180" startPosition="16" endLine="181" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962513017" fileName="UnitTestViewComponent.java" startLine="181" startPosition="18" endLine="182" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962513023" fileName="UnitTestViewComponent.java" startLine="182" startPosition="18" endLine="183" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7784214098962512887" fileName="UnitTestViewComponent.java" startLine="183" startPosition="47" endLine="184" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3191465790742392228" fileName="UnitTestViewComponent.java" startLine="187" startPosition="105" endLine="188" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3191465790742398466" fileName="UnitTestViewComponent.java" startLine="188" startPosition="86" endLine="189" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3191465790742398476" fileName="UnitTestViewComponent.java" startLine="189" startPosition="105" endLine="190" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3191465790742398513" fileName="UnitTestViewComponent.java" startLine="192" startPosition="11" endLine="193" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3191465790742398526" fileName="UnitTestViewComponent.java" startLine="196" startPosition="5" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3191465790742398572" fileName="UnitTestViewComponent.java" startLine="200" startPosition="71" endLine="201" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3191465790742398599" fileName="UnitTestViewComponent.java" startLine="204" startPosition="7" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3191465790742398591" fileName="UnitTestViewComponent.java" startLine="205" startPosition="0" endLine="206" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8256878423276572290" fileName="UnitTestViewComponent.java" startLine="209" startPosition="40" endLine="210" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5928813260156624734" fileName="UnitTestViewComponent.java" startLine="212" startPosition="25" endLine="213" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5928813260156624760" fileName="UnitTestViewComponent.java" startLine="215" startPosition="7" endLine="216" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6638278271607605348" fileName="UnitTestViewComponent.java" startLine="220" startPosition="47" endLine="221" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6638278271607605586" fileName="UnitTestViewComponent.java" startLine="226" startPosition="45" endLine="227" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4632317321135813567" fileName="UnitTestViewComponent.java" startLine="228" startPosition="34" endLine="229" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6638278271607605808" fileName="UnitTestViewComponent.java" startLine="230" startPosition="9" endLine="231" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6638278271607605464" fileName="UnitTestViewComponent.java" startLine="232" startPosition="7" endLine="233" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1208271155269" fileName="UnitTestViewComponent.java" startLine="95" startPosition="0" endLine="98" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnitTestViewComponent#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/IOperationContext;Lcom/intellij/execution/impl/ConsoleViewImpl;Ljetbrains/mps/baseLanguage/unitTest/plugin/UnitTestExecutionController;)V" />
-    <nodeInfo nodeId="1239644763263" fileName="UnitTestViewComponent.java" startLine="144" startPosition="38" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3191465790742398556" fileName="UnitTestViewComponent.java" startLine="199" startPosition="61" endLine="202" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6638278271607554958" fileName="UnitTestViewComponent.java" startLine="219" startPosition="67" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTreePanel#(Ljava/awt/LayoutManager;)V" />
-    <nodeInfo nodeId="4632317321135813558" fileName="UnitTestViewComponent.java" startLine="227" startPosition="94" endLine="230" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2281887280934079598" fileName="UnitTestViewComponent.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProcessListener#()Lcom/intellij/execution/process/ProcessListener;" />
-    <nodeInfo nodeId="1239644060349" fileName="UnitTestViewComponent.java" startLine="139" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addCloseListener#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
-    <nodeInfo nodeId="3191465790742398506" fileName="UnitTestViewComponent.java" startLine="191" startPosition="40" endLine="195" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5928813260156624704" fileName="UnitTestViewComponent.java" startLine="211" startPosition="57" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5928813260156624703" fileName="UnitTestViewComponent.java" startLine="210" startPosition="67" endLine="215" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2887501847890680533" fileName="UnitTestViewComponent.java" startLine="123" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#(Ljava/lang/String;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="1214211870988" fileName="UnitTestViewComponent.java" startLine="133" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="1239644052867" fileName="UnitTestViewComponent.java" startLine="143" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeCloseListeners#()V" />
-    <nodeInfo nodeId="3191465790742398481" fileName="UnitTestViewComponent.java" startLine="190" startPosition="41" endLine="196" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3191465790742398540" fileName="UnitTestViewComponent.java" startLine="198" startPosition="69" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertyChange#(Ljava/beans/PropertyChangeEvent;)V" />
-    <nodeInfo nodeId="3191465790742398528" fileName="UnitTestViewComponent.java" startLine="197" startPosition="0" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6638278271607605453" fileName="UnitTestViewComponent.java" startLine="225" startPosition="50" endLine="232" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5360151489983182431" fileName="UnitTestViewComponent.java" startLine="99" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActionsToolbar#(Lcom/intellij/execution/ui/ConsoleView;)Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="1208772377397" fileName="UnitTestViewComponent.java" startLine="107" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTreeComponent#(Ljavax/swing/JComponent;Ljavax/swing/JComponent;)Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="1208772560134" fileName="UnitTestViewComponent.java" startLine="115" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createStatisticsComponent#(Ljetbrains/mps/baseLanguage/unitTest/plugin/StatisticsTableModel;)Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="5928813260156624671" fileName="UnitTestViewComponent.java" startLine="208" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLanguage#()Ljetbrains/mps/smodel/Language;" />
-    <nodeInfo nodeId="6638278271607605351" fileName="UnitTestViewComponent.java" startLine="223" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="3191465790742392235" fileName="UnitTestViewComponent.java" startLine="186" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initSplitterProportion#(Lcom/intellij/openapi/ui/Splitter;FLjava/lang/String;)V" />
-    <nodeInfo nodeId="1594211126127614858" fileName="UnitTestViewComponent.java" startLine="62" startPosition="0" endLine="94" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnitTestViewComponent#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/IOperationContext;Lcom/intellij/execution/ui/ConsoleView;Ljetbrains/mps/baseLanguage/unitTest/plugin/TestRunState;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
-    <nodeInfo nodeId="7784214098962512883" fileName="UnitTestViewComponent.java" startLine="149" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createOutputComponent#(Lcom/intellij/execution/ui/ConsoleView;Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljetbrains/mps/baseLanguage/unitTest/plugin/StatisticsTableModel;)Ljavax/swing/JPanel;" />
-    <scopeInfo nodeId="3191465790742398509" fileName="UnitTestViewComponent.java" startLine="194" startPosition="0" endLine="194" endPosition="46">
-      <varInfo nodeId="3191465790742398510" varName="ignore" />
-    </scopeInfo>
-    <scopeInfo nodeId="3191465790742398512" fileName="UnitTestViewComponent.java" startLine="194" startPosition="46" endLine="194" endPosition="46" />
-    <scopeInfo nodeId="1208271155272" fileName="UnitTestViewComponent.java" startLine="96" startPosition="136" endLine="97" endPosition="80" />
-    <scopeInfo nodeId="2281887280934079601" fileName="UnitTestViewComponent.java" startLine="130" startPosition="47" endLine="131" endPosition="61" />
-    <scopeInfo nodeId="1239644060352" fileName="UnitTestViewComponent.java" startLine="140" startPosition="69" endLine="141" endPosition="65" />
-    <scopeInfo nodeId="1239644763266" fileName="UnitTestViewComponent.java" startLine="145" startPosition="89" endLine="146" endPosition="24" />
-    <scopeInfo nodeId="3191465790742398507" fileName="UnitTestViewComponent.java" startLine="192" startPosition="11" endLine="193" endPosition="45" />
-    <scopeInfo nodeId="3191465790742398557" fileName="UnitTestViewComponent.java" startLine="200" startPosition="71" endLine="201" endPosition="138" />
-    <scopeInfo nodeId="5928813260156624705" fileName="UnitTestViewComponent.java" startLine="212" startPosition="25" endLine="213" endPosition="194" />
-    <scopeInfo nodeId="6638278271607554961" fileName="UnitTestViewComponent.java" startLine="220" startPosition="47" endLine="221" endPosition="21" />
-    <scopeInfo nodeId="4632317321135813559" fileName="UnitTestViewComponent.java" startLine="228" startPosition="34" endLine="229" endPosition="22" />
-    <scopeInfo nodeId="1208271155269" fileName="UnitTestViewComponent.java" startLine="95" startPosition="0" endLine="98" endPosition="3">
+    <nodeInfo nodeId="1717728468090417910" fileName="UnitTestViewComponent.java" startLine="47" startPosition="73" endLine="48" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestState" />
+    <nodeInfo nodeId="1208368159301" fileName="UnitTestViewComponent.java" startLine="48" startPosition="41" endLine="49" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOutputComponent" />
+    <nodeInfo nodeId="4403789015609949601" fileName="UnitTestViewComponent.java" startLine="49" startPosition="54" endLine="50" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeComponent" />
+    <nodeInfo nodeId="2542933092629994972" fileName="UnitTestViewComponent.java" startLine="50" startPosition="41" endLine="51" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProgressLineComponent" />
+    <nodeInfo nodeId="8174031806067720769" fileName="UnitTestViewComponent.java" startLine="51" startPosition="53" endLine="52" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActionToolComponent" />
+    <nodeInfo nodeId="1239641226187" fileName="UnitTestViewComponent.java" startLine="52" startPosition="55" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="2542933092629640309" fileName="UnitTestViewComponent.java" startLine="53" startPosition="34" endLine="54" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestNavigator" />
+    <nodeInfo nodeId="1239644147818" fileName="UnitTestViewComponent.java" startLine="54" startPosition="61" endLine="55" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListeners" />
+    <nodeInfo nodeId="1594211126127614882" fileName="UnitTestViewComponent.java" startLine="57" startPosition="166" endLine="58" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127614888" fileName="UnitTestViewComponent.java" startLine="58" startPosition="29" endLine="59" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127614896" fileName="UnitTestViewComponent.java" startLine="59" startPosition="36" endLine="60" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1594211126127614904" fileName="UnitTestViewComponent.java" startLine="60" startPosition="86" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1594211126127614905" fileName="UnitTestViewComponent.java" startLine="61" startPosition="0" endLine="62" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127614920" fileName="UnitTestViewComponent.java" startLine="62" startPosition="89" endLine="63" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127614930" fileName="UnitTestViewComponent.java" startLine="63" startPosition="82" endLine="64" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127614946" fileName="UnitTestViewComponent.java" startLine="64" startPosition="114" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1594211126127614947" fileName="UnitTestViewComponent.java" startLine="65" startPosition="0" endLine="66" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1594211126127614955" fileName="UnitTestViewComponent.java" startLine="66" startPosition="92" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1594211126127614956" fileName="UnitTestViewComponent.java" startLine="67" startPosition="0" endLine="68" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127614966" fileName="UnitTestViewComponent.java" startLine="68" startPosition="70" endLine="69" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127614982" fileName="UnitTestViewComponent.java" startLine="69" startPosition="120" endLine="70" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127614997" fileName="UnitTestViewComponent.java" startLine="70" startPosition="102" endLine="71" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127615012" fileName="UnitTestViewComponent.java" startLine="71" startPosition="144" endLine="72" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127615027" fileName="UnitTestViewComponent.java" startLine="72" startPosition="136" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1594211126127615028" fileName="UnitTestViewComponent.java" startLine="73" startPosition="0" endLine="74" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1594211126127615040" fileName="UnitTestViewComponent.java" startLine="74" startPosition="136" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1594211126127615041" fileName="UnitTestViewComponent.java" startLine="75" startPosition="0" endLine="76" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1594211126127615047" fileName="UnitTestViewComponent.java" startLine="76" startPosition="44" endLine="77" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127615052" fileName="UnitTestViewComponent.java" startLine="77" startPosition="33" endLine="78" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127615057" fileName="UnitTestViewComponent.java" startLine="78" startPosition="42" endLine="79" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127615062" fileName="UnitTestViewComponent.java" startLine="79" startPosition="44" endLine="80" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127615068" fileName="UnitTestViewComponent.java" startLine="80" startPosition="39" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1594211126127615069" fileName="UnitTestViewComponent.java" startLine="81" startPosition="0" endLine="82" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127615075" fileName="UnitTestViewComponent.java" startLine="82" startPosition="44" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1594211126127615076" fileName="UnitTestViewComponent.java" startLine="83" startPosition="0" endLine="84" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127615085" fileName="UnitTestViewComponent.java" startLine="84" startPosition="51" endLine="85" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127615094" fileName="UnitTestViewComponent.java" startLine="85" startPosition="59" endLine="86" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127615103" fileName="UnitTestViewComponent.java" startLine="86" startPosition="53" endLine="87" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127615116" fileName="UnitTestViewComponent.java" startLine="90" startPosition="136" endLine="91" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="2380206470256882170" fileName="UnitTestViewComponent.java" startLine="94" startPosition="63" endLine="95" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5360151489983197229" fileName="UnitTestViewComponent.java" startLine="95" startPosition="86" endLine="96" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5360151489983197236" fileName="UnitTestViewComponent.java" startLine="96" startPosition="56" endLine="97" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7769255876742449725" fileName="UnitTestViewComponent.java" startLine="97" startPosition="92" endLine="98" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5360151489983197261" fileName="UnitTestViewComponent.java" startLine="98" startPosition="62" endLine="99" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1208772399967" fileName="UnitTestViewComponent.java" startLine="102" startPosition="79" endLine="103" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6664441350960522790" fileName="UnitTestViewComponent.java" startLine="103" startPosition="108" endLine="104" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1208772399981" fileName="UnitTestViewComponent.java" startLine="104" startPosition="70" endLine="105" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962511501" fileName="UnitTestViewComponent.java" startLine="105" startPosition="51" endLine="106" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1208772425812" fileName="UnitTestViewComponent.java" startLine="106" startPosition="47" endLine="107" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1208801381525" fileName="UnitTestViewComponent.java" startLine="110" startPosition="90" endLine="111" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1208878129367" fileName="UnitTestViewComponent.java" startLine="111" startPosition="62" endLine="112" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1208802450695" fileName="UnitTestViewComponent.java" startLine="112" startPosition="93" endLine="113" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1208802501521" fileName="UnitTestViewComponent.java" startLine="113" startPosition="57" endLine="114" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1208772580906" fileName="UnitTestViewComponent.java" startLine="114" startPosition="54" endLine="115" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2887501847890680545" fileName="UnitTestViewComponent.java" startLine="118" startPosition="40" endLine="119" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2887501847890680555" fileName="UnitTestViewComponent.java" startLine="119" startPosition="38" endLine="120" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5928813260156612719" fileName="UnitTestViewComponent.java" startLine="120" startPosition="100" endLine="121" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2281887280934079612" fileName="UnitTestViewComponent.java" startLine="124" startPosition="47" endLine="125" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1214211891017" fileName="UnitTestViewComponent.java" startLine="128" startPosition="25" endLine="129" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8640331875043838001" fileName="UnitTestViewComponent.java" startLine="129" startPosition="37" endLine="130" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8337757094861284550" fileName="UnitTestViewComponent.java" startLine="130" startPosition="35" endLine="131" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239644211304" fileName="UnitTestViewComponent.java" startLine="134" startPosition="69" endLine="135" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239644783710" fileName="UnitTestViewComponent.java" startLine="139" startPosition="89" endLine="140" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512895" fileName="UnitTestViewComponent.java" startLine="144" startPosition="147" endLine="145" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7784214098962513042" fileName="UnitTestViewComponent.java" startLine="145" startPosition="56" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7784214098962513046" fileName="UnitTestViewComponent.java" startLine="146" startPosition="0" endLine="147" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7784214098962513053" fileName="UnitTestViewComponent.java" startLine="147" startPosition="70" endLine="148" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962552551" fileName="UnitTestViewComponent.java" startLine="148" startPosition="118" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7784214098962552545" fileName="UnitTestViewComponent.java" startLine="149" startPosition="0" endLine="150" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7784214098962552558" fileName="UnitTestViewComponent.java" startLine="150" startPosition="59" endLine="151" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962552567" fileName="UnitTestViewComponent.java" startLine="151" startPosition="58" endLine="152" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7784214098962552574" fileName="UnitTestViewComponent.java" startLine="152" startPosition="76" endLine="153" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962513043" fileName="UnitTestViewComponent.java" startLine="153" startPosition="59" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7784214098962513044" fileName="UnitTestViewComponent.java" startLine="154" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7784214098962512905" fileName="UnitTestViewComponent.java" startLine="155" startPosition="0" endLine="156" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7784214098962512910" fileName="UnitTestViewComponent.java" startLine="156" startPosition="52" endLine="157" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512915" fileName="UnitTestViewComponent.java" startLine="157" startPosition="31" endLine="158" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512921" fileName="UnitTestViewComponent.java" startLine="158" startPosition="41" endLine="159" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512927" fileName="UnitTestViewComponent.java" startLine="159" startPosition="45" endLine="160" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512933" fileName="UnitTestViewComponent.java" startLine="160" startPosition="16" endLine="161" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512939" fileName="UnitTestViewComponent.java" startLine="161" startPosition="16" endLine="162" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512945" fileName="UnitTestViewComponent.java" startLine="162" startPosition="18" endLine="163" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512951" fileName="UnitTestViewComponent.java" startLine="163" startPosition="18" endLine="164" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512957" fileName="UnitTestViewComponent.java" startLine="164" startPosition="41" endLine="165" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512963" fileName="UnitTestViewComponent.java" startLine="165" startPosition="43" endLine="166" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512969" fileName="UnitTestViewComponent.java" startLine="166" startPosition="16" endLine="167" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512975" fileName="UnitTestViewComponent.java" startLine="167" startPosition="16" endLine="168" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512981" fileName="UnitTestViewComponent.java" startLine="168" startPosition="18" endLine="169" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512987" fileName="UnitTestViewComponent.java" startLine="169" startPosition="18" endLine="170" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512993" fileName="UnitTestViewComponent.java" startLine="170" startPosition="36" endLine="171" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512999" fileName="UnitTestViewComponent.java" startLine="171" startPosition="37" endLine="172" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962513005" fileName="UnitTestViewComponent.java" startLine="172" startPosition="16" endLine="173" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962513011" fileName="UnitTestViewComponent.java" startLine="173" startPosition="16" endLine="174" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962513017" fileName="UnitTestViewComponent.java" startLine="174" startPosition="18" endLine="175" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962513023" fileName="UnitTestViewComponent.java" startLine="175" startPosition="18" endLine="176" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7784214098962512887" fileName="UnitTestViewComponent.java" startLine="176" startPosition="47" endLine="177" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8256878423276572290" fileName="UnitTestViewComponent.java" startLine="180" startPosition="40" endLine="181" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5928813260156624734" fileName="UnitTestViewComponent.java" startLine="183" startPosition="25" endLine="184" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5928813260156624760" fileName="UnitTestViewComponent.java" startLine="186" startPosition="7" endLine="187" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6638278271607605348" fileName="UnitTestViewComponent.java" startLine="191" startPosition="47" endLine="192" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6638278271607605586" fileName="UnitTestViewComponent.java" startLine="197" startPosition="45" endLine="198" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4632317321135813567" fileName="UnitTestViewComponent.java" startLine="199" startPosition="34" endLine="200" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6638278271607605808" fileName="UnitTestViewComponent.java" startLine="201" startPosition="9" endLine="202" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6638278271607605464" fileName="UnitTestViewComponent.java" startLine="203" startPosition="7" endLine="204" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1208271155269" fileName="UnitTestViewComponent.java" startLine="89" startPosition="0" endLine="92" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnitTestViewComponent#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/IOperationContext;Lcom/intellij/execution/impl/ConsoleViewImpl;Ljetbrains/mps/baseLanguage/unitTest/plugin/UnitTestExecutionController;)V" />
+    <nodeInfo nodeId="1239644763263" fileName="UnitTestViewComponent.java" startLine="138" startPosition="38" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6638278271607554958" fileName="UnitTestViewComponent.java" startLine="190" startPosition="67" endLine="193" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTreePanel#(Ljava/awt/LayoutManager;)V" />
+    <nodeInfo nodeId="4632317321135813558" fileName="UnitTestViewComponent.java" startLine="198" startPosition="94" endLine="201" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2281887280934079598" fileName="UnitTestViewComponent.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProcessListener#()Lcom/intellij/execution/process/ProcessListener;" />
+    <nodeInfo nodeId="1239644060349" fileName="UnitTestViewComponent.java" startLine="133" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addCloseListener#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+    <nodeInfo nodeId="5928813260156624704" fileName="UnitTestViewComponent.java" startLine="182" startPosition="57" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5928813260156624703" fileName="UnitTestViewComponent.java" startLine="181" startPosition="67" endLine="186" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2887501847890680533" fileName="UnitTestViewComponent.java" startLine="117" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#(Ljava/lang/String;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="1214211870988" fileName="UnitTestViewComponent.java" startLine="127" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="1239644052867" fileName="UnitTestViewComponent.java" startLine="137" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeCloseListeners#()V" />
+    <nodeInfo nodeId="6638278271607605453" fileName="UnitTestViewComponent.java" startLine="196" startPosition="50" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5360151489983182431" fileName="UnitTestViewComponent.java" startLine="93" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActionsToolbar#(Lcom/intellij/execution/ui/ConsoleView;)Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="1208772377397" fileName="UnitTestViewComponent.java" startLine="101" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTreeComponent#(Ljavax/swing/JComponent;Ljavax/swing/JComponent;)Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="1208772560134" fileName="UnitTestViewComponent.java" startLine="109" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createStatisticsComponent#(Ljetbrains/mps/baseLanguage/unitTest/plugin/StatisticsTableModel;)Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="5928813260156624671" fileName="UnitTestViewComponent.java" startLine="179" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLanguage#()Ljetbrains/mps/smodel/Language;" />
+    <nodeInfo nodeId="6638278271607605351" fileName="UnitTestViewComponent.java" startLine="194" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="1594211126127614858" fileName="UnitTestViewComponent.java" startLine="56" startPosition="0" endLine="88" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnitTestViewComponent#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/IOperationContext;Lcom/intellij/execution/ui/ConsoleView;Ljetbrains/mps/baseLanguage/unitTest/plugin/TestRunState;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+    <nodeInfo nodeId="7784214098962512883" fileName="UnitTestViewComponent.java" startLine="143" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createOutputComponent#(Lcom/intellij/execution/ui/ConsoleView;Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljetbrains/mps/baseLanguage/unitTest/plugin/StatisticsTableModel;)Ljavax/swing/JPanel;" />
+    <scopeInfo nodeId="1208271155272" fileName="UnitTestViewComponent.java" startLine="90" startPosition="136" endLine="91" endPosition="80" />
+    <scopeInfo nodeId="2281887280934079601" fileName="UnitTestViewComponent.java" startLine="124" startPosition="47" endLine="125" endPosition="61" />
+    <scopeInfo nodeId="1239644060352" fileName="UnitTestViewComponent.java" startLine="134" startPosition="69" endLine="135" endPosition="65" />
+    <scopeInfo nodeId="1239644763266" fileName="UnitTestViewComponent.java" startLine="139" startPosition="89" endLine="140" endPosition="24" />
+    <scopeInfo nodeId="5928813260156624705" fileName="UnitTestViewComponent.java" startLine="183" startPosition="25" endLine="184" endPosition="194" />
+    <scopeInfo nodeId="6638278271607554961" fileName="UnitTestViewComponent.java" startLine="191" startPosition="47" endLine="192" endPosition="21" />
+    <scopeInfo nodeId="4632317321135813559" fileName="UnitTestViewComponent.java" startLine="199" startPosition="34" endLine="200" endPosition="22" />
+    <scopeInfo nodeId="1208271155269" fileName="UnitTestViewComponent.java" startLine="89" startPosition="0" endLine="92" endPosition="3">
       <varInfo nodeId="1210182472374" varName="project" />
       <varInfo nodeId="2281887280934076168" varName="model" />
       <varInfo nodeId="6738681183458600657" varName="console" />
       <varInfo nodeId="1200269551723334082" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="2887501847890680536" fileName="UnitTestViewComponent.java" startLine="124" startPosition="40" endLine="127" endPosition="50">
+    <scopeInfo nodeId="2887501847890680536" fileName="UnitTestViewComponent.java" startLine="118" startPosition="40" endLine="121" endPosition="50">
       <varInfo nodeId="2887501847890680556" varName="pathToIcon" />
       <varInfo nodeId="2887501847890680546" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="1214211870991" fileName="UnitTestViewComponent.java" startLine="134" startPosition="25" endLine="137" endPosition="32" />
-    <scopeInfo nodeId="1239644052870" fileName="UnitTestViewComponent.java" startLine="144" startPosition="38" endLine="147" endPosition="5" />
-    <scopeInfo nodeId="1239644763263" fileName="UnitTestViewComponent.java" startLine="144" startPosition="38" endLine="147" endPosition="5" />
-    <scopeInfo nodeId="3191465790742398545" fileName="UnitTestViewComponent.java" startLine="199" startPosition="61" endLine="202" endPosition="9" />
-    <scopeInfo nodeId="6638278271607554958" fileName="UnitTestViewComponent.java" startLine="219" startPosition="67" endLine="222" endPosition="5">
+    <scopeInfo nodeId="1214211870991" fileName="UnitTestViewComponent.java" startLine="128" startPosition="25" endLine="131" endPosition="32" />
+    <scopeInfo nodeId="1239644052870" fileName="UnitTestViewComponent.java" startLine="138" startPosition="38" endLine="141" endPosition="5" />
+    <scopeInfo nodeId="1239644763263" fileName="UnitTestViewComponent.java" startLine="138" startPosition="38" endLine="141" endPosition="5" />
+    <scopeInfo nodeId="6638278271607554958" fileName="UnitTestViewComponent.java" startLine="190" startPosition="67" endLine="193" endPosition="5">
       <varInfo nodeId="6638278271607604484" varName="manager" />
     </scopeInfo>
-    <scopeInfo nodeId="2281887280934079598" fileName="UnitTestViewComponent.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="1239644060349" fileName="UnitTestViewComponent.java" startLine="139" startPosition="0" endLine="143" endPosition="0">
+    <scopeInfo nodeId="2281887280934079598" fileName="UnitTestViewComponent.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="1239644060349" fileName="UnitTestViewComponent.java" startLine="133" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="1239644115291" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="3191465790742398482" fileName="UnitTestViewComponent.java" startLine="191" startPosition="40" endLine="195" endPosition="7" />
-    <scopeInfo nodeId="5928813260156624704" fileName="UnitTestViewComponent.java" startLine="211" startPosition="57" endLine="215" endPosition="0" />
-    <scopeInfo nodeId="5360151489983182434" fileName="UnitTestViewComponent.java" startLine="100" startPosition="63" endLine="105" endPosition="34">
+    <scopeInfo nodeId="5928813260156624704" fileName="UnitTestViewComponent.java" startLine="182" startPosition="57" endLine="186" endPosition="0" />
+    <scopeInfo nodeId="5360151489983182434" fileName="UnitTestViewComponent.java" startLine="94" startPosition="63" endLine="99" endPosition="34">
       <varInfo nodeId="5360151489983197237" varName="toolbar" />
       <varInfo nodeId="5360151489983197230" varName="manager" />
       <varInfo nodeId="2380206470256882171" varName="group" />
     </scopeInfo>
-    <scopeInfo nodeId="1208772377400" fileName="UnitTestViewComponent.java" startLine="108" startPosition="79" endLine="113" endPosition="21">
+    <scopeInfo nodeId="1208772377400" fileName="UnitTestViewComponent.java" startLine="102" startPosition="79" endLine="107" endPosition="21">
       <varInfo nodeId="1208772399968" varName="treePanel" />
       <varInfo nodeId="6664441350960522791" varName="scrollPane" />
     </scopeInfo>
-    <scopeInfo nodeId="1208772560137" fileName="UnitTestViewComponent.java" startLine="116" startPosition="90" endLine="121" endPosition="22">
+    <scopeInfo nodeId="1208772560137" fileName="UnitTestViewComponent.java" startLine="110" startPosition="90" endLine="115" endPosition="22">
       <varInfo nodeId="1208802450696" varName="tablePanel" />
       <varInfo nodeId="1208801381526" varName="statisticsTable" />
     </scopeInfo>
-    <scopeInfo nodeId="6638278271607605455" fileName="UnitTestViewComponent.java" startLine="226" startPosition="45" endLine="231" endPosition="129">
+    <scopeInfo nodeId="6638278271607605455" fileName="UnitTestViewComponent.java" startLine="197" startPosition="45" endLine="202" endPosition="129">
       <varInfo nodeId="6638278271607605587" varName="currentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2887501847890680533" fileName="UnitTestViewComponent.java" startLine="123" startPosition="0" endLine="129" endPosition="0">
+    <scopeInfo nodeId="2887501847890680533" fileName="UnitTestViewComponent.java" startLine="117" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="2887501847890704155" varName="iconName" />
     </scopeInfo>
-    <scopeInfo nodeId="1214211870988" fileName="UnitTestViewComponent.java" startLine="133" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="1239644052867" fileName="UnitTestViewComponent.java" startLine="143" startPosition="0" endLine="149" endPosition="0" />
-    <scopeInfo nodeId="3191465790742398540" fileName="UnitTestViewComponent.java" startLine="198" startPosition="69" endLine="204" endPosition="0">
-      <varInfo nodeId="3191465790742398543" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="5928813260156624674" fileName="UnitTestViewComponent.java" startLine="209" startPosition="40" endLine="216" endPosition="22">
+    <scopeInfo nodeId="1214211870988" fileName="UnitTestViewComponent.java" startLine="127" startPosition="0" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="1239644052867" fileName="UnitTestViewComponent.java" startLine="137" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="5928813260156624674" fileName="UnitTestViewComponent.java" startLine="180" startPosition="40" endLine="187" endPosition="22">
       <varInfo nodeId="8256878423276572291" varName="lang" />
     </scopeInfo>
-    <scopeInfo nodeId="5360151489983182431" fileName="UnitTestViewComponent.java" startLine="99" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="5360151489983182431" fileName="UnitTestViewComponent.java" startLine="93" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="8154690840524795622" varName="console" />
     </scopeInfo>
-    <scopeInfo nodeId="1208772377397" fileName="UnitTestViewComponent.java" startLine="107" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="1208772377397" fileName="UnitTestViewComponent.java" startLine="101" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="7784214098962511497" varName="toolbar" />
       <varInfo nodeId="7784214098962511513" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="1208772560134" fileName="UnitTestViewComponent.java" startLine="115" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="1208772560134" fileName="UnitTestViewComponent.java" startLine="109" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="1717728468090417950" varName="testStatisticsModel" />
     </scopeInfo>
-    <scopeInfo nodeId="6638278271607605358" fileName="UnitTestViewComponent.java" startLine="225" startPosition="50" endLine="233" endPosition="18" />
-    <scopeInfo nodeId="5928813260156624671" fileName="UnitTestViewComponent.java" startLine="208" startPosition="0" endLine="218" endPosition="0" />
-    <scopeInfo nodeId="6638278271607605351" fileName="UnitTestViewComponent.java" startLine="223" startPosition="0" endLine="235" endPosition="0">
+    <scopeInfo nodeId="6638278271607605358" fileName="UnitTestViewComponent.java" startLine="196" startPosition="50" endLine="204" endPosition="18" />
+    <scopeInfo nodeId="5928813260156624671" fileName="UnitTestViewComponent.java" startLine="179" startPosition="0" endLine="189" endPosition="0" />
+    <scopeInfo nodeId="6638278271607605351" fileName="UnitTestViewComponent.java" startLine="194" startPosition="0" endLine="206" endPosition="0">
       <varInfo nodeId="6638278271607605354" varName="dataId" />
     </scopeInfo>
-    <scopeInfo nodeId="3191465790742392238" fileName="UnitTestViewComponent.java" startLine="187" startPosition="105" endLine="206" endPosition="39">
-      <varInfo nodeId="3191465790742398477" varName="proportion" />
-      <varInfo nodeId="3191465790742398467" varName="value" />
-      <varInfo nodeId="3191465790742392229" varName="propertiesComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="3191465790742392235" fileName="UnitTestViewComponent.java" startLine="186" startPosition="0" endLine="208" endPosition="0">
-      <varInfo nodeId="5099110028046998651" varName="id" />
-      <varInfo nodeId="9014089623233957884" varName="defaultProportion" />
-      <varInfo nodeId="3191465790742398524" varName="splitter" />
-    </scopeInfo>
-    <scopeInfo nodeId="1594211126127614861" fileName="UnitTestViewComponent.java" startLine="63" startPosition="166" endLine="93" endPosition="41">
+    <scopeInfo nodeId="1594211126127614861" fileName="UnitTestViewComponent.java" startLine="57" startPosition="166" endLine="87" endPosition="41">
       <varInfo nodeId="1594211126127615029" varName="rightPanel" />
       <varInfo nodeId="1594211126127614948" varName="leftPanel" />
       <varInfo nodeId="1594211126127615042" varName="splitter" />
       <varInfo nodeId="1594211126127614897" varName="statisticsModel" />
     </scopeInfo>
-    <scopeInfo nodeId="1594211126127614858" fileName="UnitTestViewComponent.java" startLine="62" startPosition="0" endLine="94" endPosition="3">
+    <scopeInfo nodeId="1594211126127614858" fileName="UnitTestViewComponent.java" startLine="56" startPosition="0" endLine="88" endPosition="3">
       <varInfo nodeId="1594211126127614873" varName="closeListener" />
       <varInfo nodeId="1594211126127614862" varName="project" />
       <varInfo nodeId="1594211126127614867" varName="console" />
       <varInfo nodeId="1594211126127614870" varName="testRunState" />
       <varInfo nodeId="1594211126127614864" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="7784214098962512886" fileName="UnitTestViewComponent.java" startLine="150" startPosition="147" endLine="184" endPosition="22">
+    <scopeInfo nodeId="7784214098962512886" fileName="UnitTestViewComponent.java" startLine="144" startPosition="147" endLine="177" endPosition="22">
       <varInfo nodeId="7784214098962512906" varName="c" />
       <varInfo nodeId="7784214098962512896" varName="rightPanel" />
       <varInfo nodeId="7784214098962552546" varName="outputStatisticSplitter" />
       <varInfo nodeId="7784214098962513047" varName="stackTraceActions" />
       <varInfo nodeId="7784214098962552568" varName="statistics" />
     </scopeInfo>
-    <scopeInfo nodeId="7784214098962512883" fileName="UnitTestViewComponent.java" startLine="149" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="7784214098962512883" fileName="UnitTestViewComponent.java" startLine="143" startPosition="0" endLine="179" endPosition="0">
       <varInfo nodeId="7784214098962513067" varName="console" />
       <varInfo nodeId="7784214098962552581" varName="testOutput" />
       <varInfo nodeId="7784214098962513031" varName="progressLine" />
       <varInfo nodeId="7784214098962552552" varName="statisticsModel" />
     </scopeInfo>
-    <unitInfo nodeId="5928813260156624704" fileName="UnitTestViewComponent.java" startLine="211" startPosition="45" endLine="215" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestViewComponent$1" />
-    <unitInfo nodeId="3191465790742398538" fileName="UnitTestViewComponent.java" startLine="198" startPosition="43" endLine="204" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestViewComponent$2" />
-    <unitInfo nodeId="6638278271607554956" fileName="UnitTestViewComponent.java" startLine="219" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestViewComponent$MyTreePanel" />
-    <unitInfo nodeId="1208270545572" fileName="UnitTestViewComponent.java" startLine="51" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestViewComponent" />
+    <unitInfo nodeId="5928813260156624704" fileName="UnitTestViewComponent.java" startLine="182" startPosition="45" endLine="186" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestViewComponent$1" />
+    <unitInfo nodeId="6638278271607554956" fileName="UnitTestViewComponent.java" startLine="190" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestViewComponent$MyTreePanel" />
+    <unitInfo nodeId="1208270545572" fileName="UnitTestViewComponent.java" startLine="47" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestViewComponent" />
   </root>
   <root nodeId="1208284702582">
     <nodeInfo nodeId="5833852325396220495" fileName="TestTree.java" startLine="24" startPosition="71" endLine="25" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
@@ -4476,43 +4438,40 @@
     <unitInfo nodeId="4087070200985064315" fileName="LanguageTestWrapper.java" startLine="17" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.LanguageTestWrapper" />
   </root>
   <root nodeId="4087070200985064360">
-    <nodeInfo nodeId="4087070200985073718" fileName="JUnit3TestWrapper.java" startLine="18" startPosition="48" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2595782876361240371" fileName="JUnit3TestWrapper.java" startLine="22" startPosition="31" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1772682388919041534" fileName="JUnit3TestWrapper.java" startLine="28" startPosition="29" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7055390039634171301" fileName="JUnit3TestWrapper.java" startLine="34" startPosition="54" endLine="35" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7524575410242123594" fileName="JUnit3TestWrapper.java" startLine="37" startPosition="39" endLine="38" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2595782876361293249" fileName="JUnit3TestWrapper.java" startLine="41" startPosition="48" endLine="42" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7524575410242123609" fileName="JUnit3TestWrapper.java" startLine="45" startPosition="50" endLine="46" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4087070200985064362" fileName="JUnit3TestWrapper.java" startLine="17" startPosition="67" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JUnit3TestWrapper#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="2595782876361229636" fileName="JUnit3TestWrapper.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTestCase#()Z" />
-    <nodeInfo nodeId="2595782876361293262" fileName="JUnit3TestWrapper.java" startLine="36" startPosition="86" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2595782876361293245" fileName="JUnit3TestWrapper.java" startLine="40" startPosition="56" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
-    <nodeInfo nodeId="7524575410242123605" fileName="JUnit3TestWrapper.java" startLine="44" startPosition="51" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;)Z" />
-    <nodeInfo nodeId="1772682388919041526" fileName="JUnit3TestWrapper.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2595782876361293222" fileName="JUnit3TestWrapper.java" startLine="35" startPosition="239" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2595782876361293190" fileName="JUnit3TestWrapper.java" startLine="31" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestMethods#()Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="4087070200985064365" fileName="JUnit3TestWrapper.java" startLine="18" startPosition="48" endLine="19" endPosition="24" />
-    <scopeInfo nodeId="2595782876361229639" fileName="JUnit3TestWrapper.java" startLine="22" startPosition="31" endLine="23" endPosition="16" />
-    <scopeInfo nodeId="1772682388919041530" fileName="JUnit3TestWrapper.java" startLine="28" startPosition="29" endLine="29" endPosition="71" />
-    <scopeInfo nodeId="2595782876361293263" fileName="JUnit3TestWrapper.java" startLine="37" startPosition="39" endLine="38" endPosition="52" />
-    <scopeInfo nodeId="2595782876361293246" fileName="JUnit3TestWrapper.java" startLine="41" startPosition="48" endLine="42" endPosition="52" />
-    <scopeInfo nodeId="7524575410242123606" fileName="JUnit3TestWrapper.java" startLine="45" startPosition="50" endLine="46" endPosition="26" />
-    <scopeInfo nodeId="4087070200985064362" fileName="JUnit3TestWrapper.java" startLine="17" startPosition="67" endLine="20" endPosition="3">
+    <nodeInfo nodeId="4087070200985073718" fileName="JUnit3TestWrapper.java" startLine="15" startPosition="48" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2595782876361240371" fileName="JUnit3TestWrapper.java" startLine="19" startPosition="31" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1772682388919041534" fileName="JUnit3TestWrapper.java" startLine="25" startPosition="29" endLine="26" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7524575410242123594" fileName="JUnit3TestWrapper.java" startLine="33" startPosition="39" endLine="34" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2595782876361293249" fileName="JUnit3TestWrapper.java" startLine="37" startPosition="48" endLine="38" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7524575410242123609" fileName="JUnit3TestWrapper.java" startLine="41" startPosition="50" endLine="42" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4087070200985064362" fileName="JUnit3TestWrapper.java" startLine="14" startPosition="67" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JUnit3TestWrapper#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2595782876361229636" fileName="JUnit3TestWrapper.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTestCase#()Z" />
+    <nodeInfo nodeId="2595782876361293262" fileName="JUnit3TestWrapper.java" startLine="32" startPosition="118" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2595782876361293245" fileName="JUnit3TestWrapper.java" startLine="36" startPosition="56" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
+    <nodeInfo nodeId="7524575410242123605" fileName="JUnit3TestWrapper.java" startLine="40" startPosition="51" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;)Z" />
+    <nodeInfo nodeId="1772682388919041526" fileName="JUnit3TestWrapper.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2595782876361293222" fileName="JUnit3TestWrapper.java" startLine="31" startPosition="54" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2595782876361293190" fileName="JUnit3TestWrapper.java" startLine="28" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestMethods#()Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="4087070200985064365" fileName="JUnit3TestWrapper.java" startLine="15" startPosition="48" endLine="16" endPosition="24" />
+    <scopeInfo nodeId="2595782876361229639" fileName="JUnit3TestWrapper.java" startLine="19" startPosition="31" endLine="20" endPosition="16" />
+    <scopeInfo nodeId="1772682388919041530" fileName="JUnit3TestWrapper.java" startLine="25" startPosition="29" endLine="26" endPosition="71" />
+    <scopeInfo nodeId="2595782876361293263" fileName="JUnit3TestWrapper.java" startLine="33" startPosition="39" endLine="34" endPosition="52" />
+    <scopeInfo nodeId="2595782876361293246" fileName="JUnit3TestWrapper.java" startLine="37" startPosition="48" endLine="38" endPosition="52" />
+    <scopeInfo nodeId="7524575410242123606" fileName="JUnit3TestWrapper.java" startLine="41" startPosition="50" endLine="42" endPosition="26" />
+    <scopeInfo nodeId="4087070200985064362" fileName="JUnit3TestWrapper.java" startLine="14" startPosition="67" endLine="17" endPosition="3">
       <varInfo nodeId="4087070200985064369" varName="classConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="2595782876361229636" fileName="JUnit3TestWrapper.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="2595782876361293262" fileName="JUnit3TestWrapper.java" startLine="36" startPosition="86" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="2595782876361293245" fileName="JUnit3TestWrapper.java" startLine="40" startPosition="56" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="7524575410242123605" fileName="JUnit3TestWrapper.java" startLine="44" startPosition="51" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1772682388919041526" fileName="JUnit3TestWrapper.java" startLine="25" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2595782876361293195" fileName="JUnit3TestWrapper.java" startLine="34" startPosition="54" endLine="48" endPosition="7">
-      <varInfo nodeId="7055390039634171302" varName="methodDeclarations" />
-    </scopeInfo>
-    <scopeInfo nodeId="2595782876361293190" fileName="JUnit3TestWrapper.java" startLine="31" startPosition="0" endLine="50" endPosition="0" />
-    <unitInfo nodeId="2595782876361293262" fileName="JUnit3TestWrapper.java" startLine="36" startPosition="63" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3TestWrapper$1" />
-    <unitInfo nodeId="2595782876361293245" fileName="JUnit3TestWrapper.java" startLine="40" startPosition="18" endLine="44" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3TestWrapper$2" />
-    <unitInfo nodeId="7524575410242123605" fileName="JUnit3TestWrapper.java" startLine="44" startPosition="17" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3TestWrapper$3" />
-    <unitInfo nodeId="4087070200985064360" fileName="JUnit3TestWrapper.java" startLine="17" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3TestWrapper" />
+    <scopeInfo nodeId="2595782876361229636" fileName="JUnit3TestWrapper.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2595782876361293262" fileName="JUnit3TestWrapper.java" startLine="32" startPosition="118" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="2595782876361293245" fileName="JUnit3TestWrapper.java" startLine="36" startPosition="56" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="7524575410242123605" fileName="JUnit3TestWrapper.java" startLine="40" startPosition="51" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1772682388919041526" fileName="JUnit3TestWrapper.java" startLine="22" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="2595782876361293195" fileName="JUnit3TestWrapper.java" startLine="31" startPosition="54" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="2595782876361293190" fileName="JUnit3TestWrapper.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
+    <unitInfo nodeId="2595782876361293262" fileName="JUnit3TestWrapper.java" startLine="32" startPosition="95" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3TestWrapper$1" />
+    <unitInfo nodeId="2595782876361293245" fileName="JUnit3TestWrapper.java" startLine="36" startPosition="18" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3TestWrapper$2" />
+    <unitInfo nodeId="7524575410242123605" fileName="JUnit3TestWrapper.java" startLine="40" startPosition="17" endLine="44" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3TestWrapper$3" />
+    <unitInfo nodeId="4087070200985064360" fileName="JUnit3TestWrapper.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit3TestWrapper" />
   </root>
   <root nodeId="4087070200985067154">
     <nodeInfo nodeId="4087070200985073316" fileName="AbstractTestWrapper.java" startLine="15" startPosition="91" endLine="16" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
@@ -4604,98 +4563,96 @@
     <nodeInfo nodeId="4697028063981375409" fileName="TestNodeWrapperFactory.java" startLine="47" startPosition="38" endLine="48" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4697028063981378458" fileName="TestNodeWrapperFactory.java" startLine="51" startPosition="29" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4087070200985109015" fileName="TestNodeWrapperFactory.java" startLine="59" startPosition="62" endLine="60" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2213297802761054243" fileName="TestNodeWrapperFactory.java" startLine="65" startPosition="143" endLine="66" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6617896599631870565" fileName="TestNodeWrapperFactory.java" startLine="67" startPosition="9" endLine="68" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8852113381329067914" fileName="TestNodeWrapperFactory.java" startLine="69" startPosition="83" endLine="70" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6617896599631973719" fileName="TestNodeWrapperFactory.java" startLine="72" startPosition="239" endLine="73" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6617896599631973737" fileName="TestNodeWrapperFactory.java" startLine="74" startPosition="9" endLine="75" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6617896599631870560" fileName="TestNodeWrapperFactory.java" startLine="76" startPosition="7" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7524575410242168414" fileName="TestNodeWrapperFactory.java" startLine="80" startPosition="38" endLine="81" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="381475396620986364" fileName="TestNodeWrapperFactory.java" startLine="84" startPosition="29" endLine="85" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2595782876361242243" fileName="TestNodeWrapperFactory.java" startLine="92" startPosition="62" endLine="93" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2595782876361293105" fileName="TestNodeWrapperFactory.java" startLine="96" startPosition="49" endLine="97" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7524575410242168420" fileName="TestNodeWrapperFactory.java" startLine="100" startPosition="38" endLine="101" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="381475396620986373" fileName="TestNodeWrapperFactory.java" startLine="104" startPosition="29" endLine="105" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732304342817820694" fileName="TestNodeWrapperFactory.java" startLine="112" startPosition="62" endLine="113" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732304342817820767" fileName="TestNodeWrapperFactory.java" startLine="117" startPosition="170" endLine="118" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732304342817820751" fileName="TestNodeWrapperFactory.java" startLine="119" startPosition="7" endLine="120" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732304342817820756" fileName="TestNodeWrapperFactory.java" startLine="123" startPosition="38" endLine="124" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732304342817820763" fileName="TestNodeWrapperFactory.java" startLine="127" startPosition="29" endLine="128" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732304342817820181" fileName="TestNodeWrapperFactory.java" startLine="135" startPosition="62" endLine="136" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732304342817820193" fileName="TestNodeWrapperFactory.java" startLine="139" startPosition="49" endLine="140" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732304342817820205" fileName="TestNodeWrapperFactory.java" startLine="143" startPosition="38" endLine="144" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732304342817820212" fileName="TestNodeWrapperFactory.java" startLine="147" startPosition="29" endLine="148" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7524575410242167247" fileName="TestNodeWrapperFactory.java" startLine="159" startPosition="47" endLine="160" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2595782876361293071" fileName="TestNodeWrapperFactory.java" startLine="170" startPosition="34" endLine="171" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2595782876361293081" fileName="TestNodeWrapperFactory.java" startLine="173" startPosition="5" endLine="174" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2061291769221021672" fileName="TestNodeWrapperFactory.java" startLine="179" startPosition="56" endLine="180" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2061291769221021641" fileName="TestNodeWrapperFactory.java" startLine="183" startPosition="54" endLine="184" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2061291769221022991" fileName="TestNodeWrapperFactory.java" startLine="191" startPosition="61" endLine="192" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2061291769221022998" fileName="TestNodeWrapperFactory.java" startLine="199" startPosition="61" endLine="200" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2061291769221023013" fileName="TestNodeWrapperFactory.java" startLine="207" startPosition="61" endLine="208" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2061291769220997552" fileName="TestNodeWrapperFactory.java" startLine="219" startPosition="38" endLine="220" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="226" startPosition="36" endLine="227" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="228" startPosition="5" endLine="229" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4087070200985108970" fileName="TestNodeWrapperFactory.java" startLine="152" startPosition="0" endLine="154" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestNodeWrapperFactory#()V" />
-    <nodeInfo nodeId="7524575410242134197" fileName="TestNodeWrapperFactory.java" startLine="162" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="381475396620933202" fileName="TestNodeWrapperFactory.java" startLine="164" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
+    <nodeInfo nodeId="6617896599631870565" fileName="TestNodeWrapperFactory.java" startLine="64" startPosition="170" endLine="65" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8852113381329067914" fileName="TestNodeWrapperFactory.java" startLine="66" startPosition="83" endLine="67" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6617896599631973719" fileName="TestNodeWrapperFactory.java" startLine="69" startPosition="239" endLine="70" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6617896599631973737" fileName="TestNodeWrapperFactory.java" startLine="71" startPosition="9" endLine="72" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6617896599631870560" fileName="TestNodeWrapperFactory.java" startLine="73" startPosition="7" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7524575410242168414" fileName="TestNodeWrapperFactory.java" startLine="77" startPosition="38" endLine="78" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="381475396620986364" fileName="TestNodeWrapperFactory.java" startLine="81" startPosition="29" endLine="82" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2595782876361242243" fileName="TestNodeWrapperFactory.java" startLine="89" startPosition="62" endLine="90" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2595782876361293105" fileName="TestNodeWrapperFactory.java" startLine="93" startPosition="49" endLine="94" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7524575410242168420" fileName="TestNodeWrapperFactory.java" startLine="97" startPosition="38" endLine="98" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="381475396620986373" fileName="TestNodeWrapperFactory.java" startLine="101" startPosition="29" endLine="102" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732304342817820694" fileName="TestNodeWrapperFactory.java" startLine="109" startPosition="62" endLine="110" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732304342817820767" fileName="TestNodeWrapperFactory.java" startLine="114" startPosition="170" endLine="115" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732304342817820751" fileName="TestNodeWrapperFactory.java" startLine="116" startPosition="7" endLine="117" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732304342817820756" fileName="TestNodeWrapperFactory.java" startLine="120" startPosition="38" endLine="121" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732304342817820763" fileName="TestNodeWrapperFactory.java" startLine="124" startPosition="29" endLine="125" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732304342817820181" fileName="TestNodeWrapperFactory.java" startLine="132" startPosition="62" endLine="133" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732304342817820193" fileName="TestNodeWrapperFactory.java" startLine="136" startPosition="49" endLine="137" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732304342817820205" fileName="TestNodeWrapperFactory.java" startLine="140" startPosition="38" endLine="141" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732304342817820212" fileName="TestNodeWrapperFactory.java" startLine="144" startPosition="29" endLine="145" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7524575410242167247" fileName="TestNodeWrapperFactory.java" startLine="156" startPosition="47" endLine="157" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2595782876361293071" fileName="TestNodeWrapperFactory.java" startLine="167" startPosition="34" endLine="168" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2595782876361293081" fileName="TestNodeWrapperFactory.java" startLine="170" startPosition="5" endLine="171" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2061291769221021672" fileName="TestNodeWrapperFactory.java" startLine="176" startPosition="56" endLine="177" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2061291769221021641" fileName="TestNodeWrapperFactory.java" startLine="180" startPosition="54" endLine="181" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2061291769221022991" fileName="TestNodeWrapperFactory.java" startLine="188" startPosition="61" endLine="189" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2061291769221022998" fileName="TestNodeWrapperFactory.java" startLine="196" startPosition="61" endLine="197" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2061291769221023013" fileName="TestNodeWrapperFactory.java" startLine="204" startPosition="61" endLine="205" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2061291769220997552" fileName="TestNodeWrapperFactory.java" startLine="216" startPosition="38" endLine="217" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="223" startPosition="36" endLine="224" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="225" startPosition="5" endLine="226" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4087070200985108970" fileName="TestNodeWrapperFactory.java" startLine="149" startPosition="0" endLine="151" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestNodeWrapperFactory#()V" />
+    <nodeInfo nodeId="7524575410242134197" fileName="TestNodeWrapperFactory.java" startLine="159" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="381475396620933202" fileName="TestNodeWrapperFactory.java" startLine="161" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
     <nodeInfo nodeId="2595782876361314416" fileName="TestNodeWrapperFactory.java" startLine="24" startPosition="62" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2213297802761054239" fileName="TestNodeWrapperFactory.java" startLine="64" startPosition="170" endLine="67" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8852113381329067902" fileName="TestNodeWrapperFactory.java" startLine="68" startPosition="103" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6617896599631966908" fileName="TestNodeWrapperFactory.java" startLine="71" startPosition="9" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7732304342817820706" fileName="TestNodeWrapperFactory.java" startLine="116" startPosition="49" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4087070200985108974" fileName="TestNodeWrapperFactory.java" startLine="155" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
-    <nodeInfo nodeId="2595782876361293061" fileName="TestNodeWrapperFactory.java" startLine="169" startPosition="119" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="225" startPosition="73" endLine="228" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8852113381329067902" fileName="TestNodeWrapperFactory.java" startLine="65" startPosition="103" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6617896599631966908" fileName="TestNodeWrapperFactory.java" startLine="68" startPosition="9" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7732304342817820706" fileName="TestNodeWrapperFactory.java" startLine="113" startPosition="49" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4087070200985108974" fileName="TestNodeWrapperFactory.java" startLine="152" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
+    <nodeInfo nodeId="2595782876361293061" fileName="TestNodeWrapperFactory.java" startLine="166" startPosition="96" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="222" startPosition="73" endLine="225" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7524575410242134202" fileName="TestNodeWrapperFactory.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="381475396620986351" fileName="TestNodeWrapperFactory.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
     <nodeInfo nodeId="4697028063981375407" fileName="TestNodeWrapperFactory.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="4697028063981375413" fileName="TestNodeWrapperFactory.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
-    <nodeInfo nodeId="7524575410242168412" fileName="TestNodeWrapperFactory.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="381475396620986361" fileName="TestNodeWrapperFactory.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
-    <nodeInfo nodeId="2595782876361293100" fileName="TestNodeWrapperFactory.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7524575410242168418" fileName="TestNodeWrapperFactory.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="381475396620986367" fileName="TestNodeWrapperFactory.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
-    <nodeInfo nodeId="7732304342817820754" fileName="TestNodeWrapperFactory.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7732304342817820760" fileName="TestNodeWrapperFactory.java" startLine="126" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
-    <nodeInfo nodeId="7732304342817820187" fileName="TestNodeWrapperFactory.java" startLine="138" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7732304342817820203" fileName="TestNodeWrapperFactory.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7732304342817820209" fileName="TestNodeWrapperFactory.java" startLine="146" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
-    <nodeInfo nodeId="2595782876361293028" fileName="TestNodeWrapperFactory.java" startLine="158" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2061291769221021662" fileName="TestNodeWrapperFactory.java" startLine="178" startPosition="136" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/plugin/TestNodeWrapperFactory;)Z" />
-    <nodeInfo nodeId="2061291769221021639" fileName="TestNodeWrapperFactory.java" startLine="182" startPosition="62" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/unitTest/plugin/TestNodeWrapperFactory;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2061291769221021682" fileName="TestNodeWrapperFactory.java" startLine="190" startPosition="99" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/baseLanguage/unitTest/plugin/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="2061291769221022996" fileName="TestNodeWrapperFactory.java" startLine="198" startPosition="99" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/baseLanguage/unitTest/plugin/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="2061291769221023011" fileName="TestNodeWrapperFactory.java" startLine="206" startPosition="99" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/baseLanguage/unitTest/plugin/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="2061291769221086753" fileName="TestNodeWrapperFactory.java" startLine="213" startPosition="75" endLine="217" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2061291769220997550" fileName="TestNodeWrapperFactory.java" startLine="218" startPosition="136" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="232" startPosition="63" endLine="236" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="239" startPosition="63" endLine="243" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7524575410242168412" fileName="TestNodeWrapperFactory.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="381475396620986361" fileName="TestNodeWrapperFactory.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
+    <nodeInfo nodeId="2595782876361293100" fileName="TestNodeWrapperFactory.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7524575410242168418" fileName="TestNodeWrapperFactory.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="381475396620986367" fileName="TestNodeWrapperFactory.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
+    <nodeInfo nodeId="7732304342817820754" fileName="TestNodeWrapperFactory.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7732304342817820760" fileName="TestNodeWrapperFactory.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
+    <nodeInfo nodeId="7732304342817820187" fileName="TestNodeWrapperFactory.java" startLine="135" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7732304342817820203" fileName="TestNodeWrapperFactory.java" startLine="139" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7732304342817820209" fileName="TestNodeWrapperFactory.java" startLine="143" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
+    <nodeInfo nodeId="2595782876361293028" fileName="TestNodeWrapperFactory.java" startLine="155" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2061291769221021662" fileName="TestNodeWrapperFactory.java" startLine="175" startPosition="136" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/plugin/TestNodeWrapperFactory;)Z" />
+    <nodeInfo nodeId="2061291769221021639" fileName="TestNodeWrapperFactory.java" startLine="179" startPosition="62" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/unitTest/plugin/TestNodeWrapperFactory;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2061291769221021682" fileName="TestNodeWrapperFactory.java" startLine="187" startPosition="99" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/baseLanguage/unitTest/plugin/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="2061291769221022996" fileName="TestNodeWrapperFactory.java" startLine="195" startPosition="99" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/baseLanguage/unitTest/plugin/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="2061291769221023011" fileName="TestNodeWrapperFactory.java" startLine="203" startPosition="99" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/baseLanguage/unitTest/plugin/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="2061291769221086753" fileName="TestNodeWrapperFactory.java" startLine="210" startPosition="75" endLine="214" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2061291769220997550" fileName="TestNodeWrapperFactory.java" startLine="215" startPosition="136" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="229" startPosition="63" endLine="233" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="236" startPosition="63" endLine="240" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4697028063981375381" fileName="TestNodeWrapperFactory.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
     <nodeInfo nodeId="4087070200985109009" fileName="TestNodeWrapperFactory.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
-    <nodeInfo nodeId="2595782876361242237" fileName="TestNodeWrapperFactory.java" startLine="90" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
-    <nodeInfo nodeId="7732304342817820687" fileName="TestNodeWrapperFactory.java" startLine="110" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
-    <nodeInfo nodeId="7732304342817820174" fileName="TestNodeWrapperFactory.java" startLine="133" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
-    <nodeInfo nodeId="2595782876361293011" fileName="TestNodeWrapperFactory.java" startLine="168" startPosition="65" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2061291769221021680" fileName="TestNodeWrapperFactory.java" startLine="189" startPosition="54" endLine="194" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2061291769221022994" fileName="TestNodeWrapperFactory.java" startLine="197" startPosition="58" endLine="202" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2061291769221023009" fileName="TestNodeWrapperFactory.java" startLine="205" startPosition="61" endLine="210" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2061291769221086751" fileName="TestNodeWrapperFactory.java" startLine="217" startPosition="6" endLine="222" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732304342817820700" fileName="TestNodeWrapperFactory.java" startLine="115" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="224" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_kl7j79_a0a0d0a0b2#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="231" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_kl7j79_a0a0b2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="238" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_kl7j79_a0a0b4#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="2595782876361242237" fileName="TestNodeWrapperFactory.java" startLine="87" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
+    <nodeInfo nodeId="7732304342817820687" fileName="TestNodeWrapperFactory.java" startLine="107" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
+    <nodeInfo nodeId="7732304342817820174" fileName="TestNodeWrapperFactory.java" startLine="130" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
+    <nodeInfo nodeId="2595782876361293011" fileName="TestNodeWrapperFactory.java" startLine="165" startPosition="65" endLine="170" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2061291769221021680" fileName="TestNodeWrapperFactory.java" startLine="186" startPosition="54" endLine="191" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2061291769221022994" fileName="TestNodeWrapperFactory.java" startLine="194" startPosition="58" endLine="199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2061291769221023009" fileName="TestNodeWrapperFactory.java" startLine="202" startPosition="61" endLine="207" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2061291769221086751" fileName="TestNodeWrapperFactory.java" startLine="214" startPosition="6" endLine="219" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732304342817820700" fileName="TestNodeWrapperFactory.java" startLine="112" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="221" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_kl7j79_a0a0c0a0b2#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="228" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_kl7j79_a0a0b2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="235" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_kl7j79_a0a0b4#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="4087070200985108991" fileName="TestNodeWrapperFactory.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
-    <nodeInfo nodeId="7524575410242168424" fileName="TestNodeWrapperFactory.java" startLine="188" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedConcepts#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4549155866737422219" fileName="TestNodeWrapperFactory.java" startLine="196" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedRootConcepts#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2061291769220981539" fileName="TestNodeWrapperFactory.java" startLine="204" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedNonRootConcepts#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2061291769221021632" fileName="TestNodeWrapperFactory.java" startLine="177" startPosition="150" endLine="186" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2595782876361293003" fileName="TestNodeWrapperFactory.java" startLine="166" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryToWrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
-    <nodeInfo nodeId="2061291769221021629" fileName="TestNodeWrapperFactory.java" startLine="176" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedConcepts#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2061291769221023021" fileName="TestNodeWrapperFactory.java" startLine="212" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findWrappableAncestor#(Ljetbrains/mps/smodel/SNode;Z)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6617896599631870550" fileName="TestNodeWrapperFactory.java" startLine="63" startPosition="49" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2595782876361293088" fileName="TestNodeWrapperFactory.java" startLine="62" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <scopeInfo nodeId="4087070200985108973" fileName="TestNodeWrapperFactory.java" startLine="153" startPosition="28" endLine="153" endPosition="28" />
+    <nodeInfo nodeId="7524575410242168424" fileName="TestNodeWrapperFactory.java" startLine="185" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedConcepts#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4549155866737422219" fileName="TestNodeWrapperFactory.java" startLine="193" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedRootConcepts#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2061291769220981539" fileName="TestNodeWrapperFactory.java" startLine="201" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedNonRootConcepts#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2061291769221021632" fileName="TestNodeWrapperFactory.java" startLine="174" startPosition="150" endLine="183" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6617896599631870550" fileName="TestNodeWrapperFactory.java" startLine="63" startPosition="49" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2595782876361293003" fileName="TestNodeWrapperFactory.java" startLine="163" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryToWrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
+    <nodeInfo nodeId="2061291769221021629" fileName="TestNodeWrapperFactory.java" startLine="173" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedConcepts#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2061291769221023021" fileName="TestNodeWrapperFactory.java" startLine="209" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findWrappableAncestor#(Ljetbrains/mps/smodel/SNode;Z)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2595782876361293088" fileName="TestNodeWrapperFactory.java" startLine="62" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="4087070200985108973" fileName="TestNodeWrapperFactory.java" startLine="150" startPosition="28" endLine="150" endPosition="28" />
     <scopeInfo nodeId="2595782876361314417" fileName="TestNodeWrapperFactory.java" startLine="25" startPosition="244" endLine="26" endPosition="20" />
     <scopeInfo nodeId="7524575410242134204" fileName="TestNodeWrapperFactory.java" startLine="31" startPosition="38" endLine="32" endPosition="114" />
     <scopeInfo nodeId="381475396620986353" fileName="TestNodeWrapperFactory.java" startLine="35" startPosition="29" endLine="36" endPosition="18" />
@@ -4703,131 +4660,130 @@
     <scopeInfo nodeId="4697028063981375408" fileName="TestNodeWrapperFactory.java" startLine="47" startPosition="38" endLine="48" endPosition="116" />
     <scopeInfo nodeId="4697028063981375415" fileName="TestNodeWrapperFactory.java" startLine="51" startPosition="29" endLine="52" endPosition="19" />
     <scopeInfo nodeId="4087070200985109014" fileName="TestNodeWrapperFactory.java" startLine="59" startPosition="62" endLine="60" endPosition="41" />
-    <scopeInfo nodeId="2213297802761054240" fileName="TestNodeWrapperFactory.java" startLine="65" startPosition="143" endLine="66" endPosition="23" />
-    <scopeInfo nodeId="8852113381329067903" fileName="TestNodeWrapperFactory.java" startLine="69" startPosition="83" endLine="70" endPosition="23" />
-    <scopeInfo nodeId="6617896599631966910" fileName="TestNodeWrapperFactory.java" startLine="72" startPosition="239" endLine="73" endPosition="177" />
-    <scopeInfo nodeId="7524575410242168413" fileName="TestNodeWrapperFactory.java" startLine="80" startPosition="38" endLine="81" endPosition="108" />
-    <scopeInfo nodeId="381475396620986363" fileName="TestNodeWrapperFactory.java" startLine="84" startPosition="29" endLine="85" endPosition="18" />
-    <scopeInfo nodeId="2595782876361242242" fileName="TestNodeWrapperFactory.java" startLine="92" startPosition="62" endLine="93" endPosition="43" />
-    <scopeInfo nodeId="2595782876361293104" fileName="TestNodeWrapperFactory.java" startLine="96" startPosition="49" endLine="97" endPosition="244" />
-    <scopeInfo nodeId="7524575410242168419" fileName="TestNodeWrapperFactory.java" startLine="100" startPosition="38" endLine="101" endPosition="121" />
-    <scopeInfo nodeId="381475396620986369" fileName="TestNodeWrapperFactory.java" startLine="104" startPosition="29" endLine="105" endPosition="19" />
-    <scopeInfo nodeId="7732304342817820693" fileName="TestNodeWrapperFactory.java" startLine="112" startPosition="62" endLine="113" endPosition="41" />
-    <scopeInfo nodeId="7732304342817820707" fileName="TestNodeWrapperFactory.java" startLine="117" startPosition="170" endLine="118" endPosition="56" />
-    <scopeInfo nodeId="7732304342817820755" fileName="TestNodeWrapperFactory.java" startLine="123" startPosition="38" endLine="124" endPosition="108" />
-    <scopeInfo nodeId="7732304342817820762" fileName="TestNodeWrapperFactory.java" startLine="127" startPosition="29" endLine="128" endPosition="18" />
-    <scopeInfo nodeId="7732304342817820180" fileName="TestNodeWrapperFactory.java" startLine="135" startPosition="62" endLine="136" endPosition="43" />
-    <scopeInfo nodeId="7732304342817820192" fileName="TestNodeWrapperFactory.java" startLine="139" startPosition="49" endLine="140" endPosition="250" />
-    <scopeInfo nodeId="7732304342817820204" fileName="TestNodeWrapperFactory.java" startLine="143" startPosition="38" endLine="144" endPosition="121" />
-    <scopeInfo nodeId="7732304342817820211" fileName="TestNodeWrapperFactory.java" startLine="147" startPosition="29" endLine="148" endPosition="19" />
-    <scopeInfo nodeId="2595782876361293031" fileName="TestNodeWrapperFactory.java" startLine="159" startPosition="47" endLine="160" endPosition="57" />
-    <scopeInfo nodeId="2595782876361293063" fileName="TestNodeWrapperFactory.java" startLine="170" startPosition="34" endLine="171" endPosition="34" />
-    <scopeInfo nodeId="2061291769221021663" fileName="TestNodeWrapperFactory.java" startLine="179" startPosition="56" endLine="180" endPosition="36" />
-    <scopeInfo nodeId="2061291769221021640" fileName="TestNodeWrapperFactory.java" startLine="183" startPosition="54" endLine="184" endPosition="38" />
-    <scopeInfo nodeId="2061291769221021683" fileName="TestNodeWrapperFactory.java" startLine="191" startPosition="61" endLine="192" endPosition="20" />
-    <scopeInfo nodeId="2061291769221022997" fileName="TestNodeWrapperFactory.java" startLine="199" startPosition="61" endLine="200" endPosition="32" />
-    <scopeInfo nodeId="2061291769221023012" fileName="TestNodeWrapperFactory.java" startLine="207" startPosition="61" endLine="208" endPosition="35" />
-    <scopeInfo nodeId="2061291769220997551" fileName="TestNodeWrapperFactory.java" startLine="219" startPosition="38" endLine="220" endPosition="71" />
-    <scopeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="226" startPosition="36" endLine="227" endPosition="79" />
-    <scopeInfo nodeId="4087070200985108970" fileName="TestNodeWrapperFactory.java" startLine="152" startPosition="0" endLine="154" endPosition="3" />
-    <scopeInfo nodeId="7524575410242134197" fileName="TestNodeWrapperFactory.java" startLine="162" startPosition="0" endLine="164" endPosition="0" />
-    <scopeInfo nodeId="381475396620933202" fileName="TestNodeWrapperFactory.java" startLine="164" startPosition="0" endLine="166" endPosition="0" />
-    <scopeInfo nodeId="4087070200985108974" fileName="TestNodeWrapperFactory.java" startLine="155" startPosition="0" endLine="158" endPosition="0">
+    <scopeInfo nodeId="8852113381329067903" fileName="TestNodeWrapperFactory.java" startLine="66" startPosition="83" endLine="67" endPosition="23" />
+    <scopeInfo nodeId="6617896599631966910" fileName="TestNodeWrapperFactory.java" startLine="69" startPosition="239" endLine="70" endPosition="177" />
+    <scopeInfo nodeId="7524575410242168413" fileName="TestNodeWrapperFactory.java" startLine="77" startPosition="38" endLine="78" endPosition="108" />
+    <scopeInfo nodeId="381475396620986363" fileName="TestNodeWrapperFactory.java" startLine="81" startPosition="29" endLine="82" endPosition="18" />
+    <scopeInfo nodeId="2595782876361242242" fileName="TestNodeWrapperFactory.java" startLine="89" startPosition="62" endLine="90" endPosition="43" />
+    <scopeInfo nodeId="2595782876361293104" fileName="TestNodeWrapperFactory.java" startLine="93" startPosition="49" endLine="94" endPosition="244" />
+    <scopeInfo nodeId="7524575410242168419" fileName="TestNodeWrapperFactory.java" startLine="97" startPosition="38" endLine="98" endPosition="121" />
+    <scopeInfo nodeId="381475396620986369" fileName="TestNodeWrapperFactory.java" startLine="101" startPosition="29" endLine="102" endPosition="19" />
+    <scopeInfo nodeId="7732304342817820693" fileName="TestNodeWrapperFactory.java" startLine="109" startPosition="62" endLine="110" endPosition="41" />
+    <scopeInfo nodeId="7732304342817820707" fileName="TestNodeWrapperFactory.java" startLine="114" startPosition="170" endLine="115" endPosition="56" />
+    <scopeInfo nodeId="7732304342817820755" fileName="TestNodeWrapperFactory.java" startLine="120" startPosition="38" endLine="121" endPosition="108" />
+    <scopeInfo nodeId="7732304342817820762" fileName="TestNodeWrapperFactory.java" startLine="124" startPosition="29" endLine="125" endPosition="18" />
+    <scopeInfo nodeId="7732304342817820180" fileName="TestNodeWrapperFactory.java" startLine="132" startPosition="62" endLine="133" endPosition="43" />
+    <scopeInfo nodeId="7732304342817820192" fileName="TestNodeWrapperFactory.java" startLine="136" startPosition="49" endLine="137" endPosition="250" />
+    <scopeInfo nodeId="7732304342817820204" fileName="TestNodeWrapperFactory.java" startLine="140" startPosition="38" endLine="141" endPosition="121" />
+    <scopeInfo nodeId="7732304342817820211" fileName="TestNodeWrapperFactory.java" startLine="144" startPosition="29" endLine="145" endPosition="19" />
+    <scopeInfo nodeId="2595782876361293031" fileName="TestNodeWrapperFactory.java" startLine="156" startPosition="47" endLine="157" endPosition="57" />
+    <scopeInfo nodeId="2595782876361293063" fileName="TestNodeWrapperFactory.java" startLine="167" startPosition="34" endLine="168" endPosition="34" />
+    <scopeInfo nodeId="2061291769221021663" fileName="TestNodeWrapperFactory.java" startLine="176" startPosition="56" endLine="177" endPosition="36" />
+    <scopeInfo nodeId="2061291769221021640" fileName="TestNodeWrapperFactory.java" startLine="180" startPosition="54" endLine="181" endPosition="38" />
+    <scopeInfo nodeId="2061291769221021683" fileName="TestNodeWrapperFactory.java" startLine="188" startPosition="61" endLine="189" endPosition="20" />
+    <scopeInfo nodeId="2061291769221022997" fileName="TestNodeWrapperFactory.java" startLine="196" startPosition="61" endLine="197" endPosition="32" />
+    <scopeInfo nodeId="2061291769221023012" fileName="TestNodeWrapperFactory.java" startLine="204" startPosition="61" endLine="205" endPosition="35" />
+    <scopeInfo nodeId="2061291769220997551" fileName="TestNodeWrapperFactory.java" startLine="216" startPosition="38" endLine="217" endPosition="71" />
+    <scopeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="223" startPosition="36" endLine="224" endPosition="79" />
+    <scopeInfo nodeId="4087070200985108970" fileName="TestNodeWrapperFactory.java" startLine="149" startPosition="0" endLine="151" endPosition="3" />
+    <scopeInfo nodeId="7524575410242134197" fileName="TestNodeWrapperFactory.java" startLine="159" startPosition="0" endLine="161" endPosition="0" />
+    <scopeInfo nodeId="381475396620933202" fileName="TestNodeWrapperFactory.java" startLine="161" startPosition="0" endLine="163" endPosition="0" />
+    <scopeInfo nodeId="4087070200985108974" fileName="TestNodeWrapperFactory.java" startLine="152" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="4087070200985108982" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2595782876361293014" fileName="TestNodeWrapperFactory.java" startLine="169" startPosition="119" endLine="172" endPosition="7" />
+    <scopeInfo nodeId="2595782876361293014" fileName="TestNodeWrapperFactory.java" startLine="166" startPosition="96" endLine="169" endPosition="7" />
     <scopeInfo nodeId="4087070200985108993" fileName="TestNodeWrapperFactory.java" startLine="24" startPosition="62" endLine="28" endPosition="43" />
     <scopeInfo nodeId="7524575410242134202" fileName="TestNodeWrapperFactory.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="381475396620986351" fileName="TestNodeWrapperFactory.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="4697028063981375407" fileName="TestNodeWrapperFactory.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="4697028063981375413" fileName="TestNodeWrapperFactory.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="7524575410242168412" fileName="TestNodeWrapperFactory.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="381475396620986361" fileName="TestNodeWrapperFactory.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="2595782876361293100" fileName="TestNodeWrapperFactory.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="7524575410242168412" fileName="TestNodeWrapperFactory.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="381475396620986361" fileName="TestNodeWrapperFactory.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="2595782876361293100" fileName="TestNodeWrapperFactory.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="2595782876361293101" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7524575410242168418" fileName="TestNodeWrapperFactory.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="381475396620986367" fileName="TestNodeWrapperFactory.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="7732304342817820705" fileName="TestNodeWrapperFactory.java" startLine="116" startPosition="49" endLine="120" endPosition="19" />
-    <scopeInfo nodeId="7732304342817820754" fileName="TestNodeWrapperFactory.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="7732304342817820760" fileName="TestNodeWrapperFactory.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="7732304342817820187" fileName="TestNodeWrapperFactory.java" startLine="138" startPosition="0" endLine="142" endPosition="0">
+    <scopeInfo nodeId="7524575410242168418" fileName="TestNodeWrapperFactory.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="381475396620986367" fileName="TestNodeWrapperFactory.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="7732304342817820705" fileName="TestNodeWrapperFactory.java" startLine="113" startPosition="49" endLine="117" endPosition="19" />
+    <scopeInfo nodeId="7732304342817820754" fileName="TestNodeWrapperFactory.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="7732304342817820760" fileName="TestNodeWrapperFactory.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="7732304342817820187" fileName="TestNodeWrapperFactory.java" startLine="135" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="7732304342817820188" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7732304342817820203" fileName="TestNodeWrapperFactory.java" startLine="142" startPosition="0" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="7732304342817820209" fileName="TestNodeWrapperFactory.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="2595782876361293028" fileName="TestNodeWrapperFactory.java" startLine="158" startPosition="0" endLine="162" endPosition="0">
+    <scopeInfo nodeId="7732304342817820203" fileName="TestNodeWrapperFactory.java" startLine="139" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="7732304342817820209" fileName="TestNodeWrapperFactory.java" startLine="143" startPosition="0" endLine="147" endPosition="0" />
+    <scopeInfo nodeId="2595782876361293028" fileName="TestNodeWrapperFactory.java" startLine="155" startPosition="0" endLine="159" endPosition="0">
       <varInfo nodeId="2595782876361293033" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2061291769221021662" fileName="TestNodeWrapperFactory.java" startLine="178" startPosition="136" endLine="182" endPosition="0" />
-    <scopeInfo nodeId="2061291769221021639" fileName="TestNodeWrapperFactory.java" startLine="182" startPosition="62" endLine="186" endPosition="0" />
-    <scopeInfo nodeId="2061291769221021682" fileName="TestNodeWrapperFactory.java" startLine="190" startPosition="99" endLine="194" endPosition="0" />
-    <scopeInfo nodeId="2061291769221022996" fileName="TestNodeWrapperFactory.java" startLine="198" startPosition="99" endLine="202" endPosition="0" />
-    <scopeInfo nodeId="2061291769221023011" fileName="TestNodeWrapperFactory.java" startLine="206" startPosition="99" endLine="210" endPosition="0" />
-    <scopeInfo nodeId="2061291769220997550" fileName="TestNodeWrapperFactory.java" startLine="218" startPosition="136" endLine="222" endPosition="0" />
-    <scopeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="225" startPosition="73" endLine="229" endPosition="16" />
-    <scopeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="232" startPosition="63" endLine="236" endPosition="6" />
-    <scopeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="239" startPosition="63" endLine="243" endPosition="6" />
+    <scopeInfo nodeId="2061291769221021662" fileName="TestNodeWrapperFactory.java" startLine="175" startPosition="136" endLine="179" endPosition="0" />
+    <scopeInfo nodeId="2061291769221021639" fileName="TestNodeWrapperFactory.java" startLine="179" startPosition="62" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="2061291769221021682" fileName="TestNodeWrapperFactory.java" startLine="187" startPosition="99" endLine="191" endPosition="0" />
+    <scopeInfo nodeId="2061291769221022996" fileName="TestNodeWrapperFactory.java" startLine="195" startPosition="99" endLine="199" endPosition="0" />
+    <scopeInfo nodeId="2061291769221023011" fileName="TestNodeWrapperFactory.java" startLine="203" startPosition="99" endLine="207" endPosition="0" />
+    <scopeInfo nodeId="2061291769220997550" fileName="TestNodeWrapperFactory.java" startLine="215" startPosition="136" endLine="219" endPosition="0" />
+    <scopeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="222" startPosition="73" endLine="226" endPosition="16" />
+    <scopeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="229" startPosition="63" endLine="233" endPosition="6" />
+    <scopeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="236" startPosition="63" endLine="240" endPosition="6" />
     <scopeInfo nodeId="4697028063981375381" fileName="TestNodeWrapperFactory.java" startLine="41" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="4697028063981375382" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4087070200985109009" fileName="TestNodeWrapperFactory.java" startLine="57" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="4087070200985109010" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2595782876361242237" fileName="TestNodeWrapperFactory.java" startLine="90" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="2595782876361242237" fileName="TestNodeWrapperFactory.java" startLine="87" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="2595782876361242238" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7732304342817820687" fileName="TestNodeWrapperFactory.java" startLine="110" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="7732304342817820687" fileName="TestNodeWrapperFactory.java" startLine="107" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="7732304342817820688" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7732304342817820174" fileName="TestNodeWrapperFactory.java" startLine="133" startPosition="0" endLine="138" endPosition="0">
+    <scopeInfo nodeId="7732304342817820174" fileName="TestNodeWrapperFactory.java" startLine="130" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="7732304342817820175" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2595782876361293011" fileName="TestNodeWrapperFactory.java" startLine="168" startPosition="65" endLine="173" endPosition="5" />
-    <scopeInfo nodeId="7524575410242168427" fileName="TestNodeWrapperFactory.java" startLine="189" startPosition="54" endLine="194" endPosition="7" />
-    <scopeInfo nodeId="4549155866737422222" fileName="TestNodeWrapperFactory.java" startLine="197" startPosition="58" endLine="202" endPosition="7" />
-    <scopeInfo nodeId="2061291769220981543" fileName="TestNodeWrapperFactory.java" startLine="205" startPosition="61" endLine="210" endPosition="7" />
-    <scopeInfo nodeId="2595782876361293006" fileName="TestNodeWrapperFactory.java" startLine="168" startPosition="65" endLine="174" endPosition="16" />
-    <scopeInfo nodeId="7732304342817820700" fileName="TestNodeWrapperFactory.java" startLine="115" startPosition="0" endLine="122" endPosition="0">
+    <scopeInfo nodeId="2595782876361293011" fileName="TestNodeWrapperFactory.java" startLine="165" startPosition="65" endLine="170" endPosition="5" />
+    <scopeInfo nodeId="7524575410242168427" fileName="TestNodeWrapperFactory.java" startLine="186" startPosition="54" endLine="191" endPosition="7" />
+    <scopeInfo nodeId="4549155866737422222" fileName="TestNodeWrapperFactory.java" startLine="194" startPosition="58" endLine="199" endPosition="7" />
+    <scopeInfo nodeId="2061291769220981543" fileName="TestNodeWrapperFactory.java" startLine="202" startPosition="61" endLine="207" endPosition="7" />
+    <scopeInfo nodeId="2595782876361293006" fileName="TestNodeWrapperFactory.java" startLine="165" startPosition="65" endLine="171" endPosition="16" />
+    <scopeInfo nodeId="7732304342817820700" fileName="TestNodeWrapperFactory.java" startLine="112" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="7732304342817820701" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="224" startPosition="0" endLine="231" endPosition="0" />
-    <scopeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="231" startPosition="0" endLine="238" endPosition="0" />
-    <scopeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="238" startPosition="0" endLine="245" endPosition="0" />
+    <scopeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="221" startPosition="0" endLine="228" endPosition="0" />
+    <scopeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="228" startPosition="0" endLine="235" endPosition="0" />
+    <scopeInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="235" startPosition="0" endLine="242" endPosition="0" />
     <scopeInfo nodeId="4087070200985108991" fileName="TestNodeWrapperFactory.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="4087070200985109000" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7524575410242168424" fileName="TestNodeWrapperFactory.java" startLine="188" startPosition="0" endLine="196" endPosition="0" />
-    <scopeInfo nodeId="4549155866737422219" fileName="TestNodeWrapperFactory.java" startLine="196" startPosition="0" endLine="204" endPosition="0" />
-    <scopeInfo nodeId="2061291769220981539" fileName="TestNodeWrapperFactory.java" startLine="204" startPosition="0" endLine="212" endPosition="0" />
-    <scopeInfo nodeId="2061291769221021631" fileName="TestNodeWrapperFactory.java" startLine="177" startPosition="150" endLine="186" endPosition="18" />
-    <scopeInfo nodeId="2061291769221023024" fileName="TestNodeWrapperFactory.java" startLine="213" startPosition="75" endLine="222" endPosition="51">
-      <varInfo nodeId="2061291769221086754" varName="concepts" />
-    </scopeInfo>
-    <scopeInfo nodeId="2595782876361293003" fileName="TestNodeWrapperFactory.java" startLine="166" startPosition="0" endLine="176" endPosition="0">
-      <varInfo nodeId="2595782876361293008" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="6617896599631870552" fileName="TestNodeWrapperFactory.java" startLine="64" startPosition="170" endLine="75" endPosition="32">
+    <scopeInfo nodeId="6617896599631870552" fileName="TestNodeWrapperFactory.java" startLine="64" startPosition="170" endLine="72" endPosition="32">
       <varInfo nodeId="6617896599631870566" varName="ancestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2061291769221021629" fileName="TestNodeWrapperFactory.java" startLine="176" startPosition="0" endLine="188" endPosition="0">
+    <scopeInfo nodeId="7524575410242168424" fileName="TestNodeWrapperFactory.java" startLine="185" startPosition="0" endLine="193" endPosition="0" />
+    <scopeInfo nodeId="4549155866737422219" fileName="TestNodeWrapperFactory.java" startLine="193" startPosition="0" endLine="201" endPosition="0" />
+    <scopeInfo nodeId="2061291769220981539" fileName="TestNodeWrapperFactory.java" startLine="201" startPosition="0" endLine="209" endPosition="0" />
+    <scopeInfo nodeId="2061291769221021631" fileName="TestNodeWrapperFactory.java" startLine="174" startPosition="150" endLine="183" endPosition="18" />
+    <scopeInfo nodeId="2061291769221023024" fileName="TestNodeWrapperFactory.java" startLine="210" startPosition="75" endLine="219" endPosition="51">
+      <varInfo nodeId="2061291769221086754" varName="concepts" />
+    </scopeInfo>
+    <scopeInfo nodeId="2595782876361293003" fileName="TestNodeWrapperFactory.java" startLine="163" startPosition="0" endLine="173" endPosition="0">
+      <varInfo nodeId="2595782876361293008" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2595782876361293092" fileName="TestNodeWrapperFactory.java" startLine="63" startPosition="49" endLine="74" endPosition="19" />
+    <scopeInfo nodeId="2061291769221021629" fileName="TestNodeWrapperFactory.java" startLine="173" startPosition="0" endLine="185" endPosition="0">
       <varInfo nodeId="2061291769221021650" varName="condition" />
     </scopeInfo>
-    <scopeInfo nodeId="2061291769221023021" fileName="TestNodeWrapperFactory.java" startLine="212" startPosition="0" endLine="224" endPosition="0">
+    <scopeInfo nodeId="2061291769221023021" fileName="TestNodeWrapperFactory.java" startLine="209" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="2061291769221086744" varName="source" />
       <varInfo nodeId="2061291769221086747" varName="isRoot" />
     </scopeInfo>
-    <scopeInfo nodeId="2595782876361293092" fileName="TestNodeWrapperFactory.java" startLine="63" startPosition="49" endLine="77" endPosition="19" />
-    <scopeInfo nodeId="2595782876361293088" fileName="TestNodeWrapperFactory.java" startLine="62" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="2595782876361293088" fileName="TestNodeWrapperFactory.java" startLine="62" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="2595782876361293089" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2061291769221021662" fileName="TestNodeWrapperFactory.java" startLine="178" startPosition="96" endLine="182" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$1" />
-    <unitInfo nodeId="2061291769221021639" fileName="TestNodeWrapperFactory.java" startLine="182" startPosition="18" endLine="186" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$2" />
-    <unitInfo nodeId="2061291769221021682" fileName="TestNodeWrapperFactory.java" startLine="190" startPosition="34" endLine="194" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$3" />
-    <unitInfo nodeId="2061291769221022996" fileName="TestNodeWrapperFactory.java" startLine="198" startPosition="34" endLine="202" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$4" />
-    <unitInfo nodeId="2061291769221023011" fileName="TestNodeWrapperFactory.java" startLine="206" startPosition="34" endLine="210" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$5" />
-    <unitInfo nodeId="2061291769220997550" fileName="TestNodeWrapperFactory.java" startLine="218" startPosition="108" endLine="222" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$6" />
-    <unitInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="20" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory" />
+    <unitInfo nodeId="2061291769221021662" fileName="TestNodeWrapperFactory.java" startLine="175" startPosition="96" endLine="179" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$1" />
+    <unitInfo nodeId="2061291769221021639" fileName="TestNodeWrapperFactory.java" startLine="179" startPosition="18" endLine="183" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$2" />
+    <unitInfo nodeId="2061291769221021682" fileName="TestNodeWrapperFactory.java" startLine="187" startPosition="34" endLine="191" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$3" />
+    <unitInfo nodeId="2061291769221022996" fileName="TestNodeWrapperFactory.java" startLine="195" startPosition="34" endLine="199" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$4" />
+    <unitInfo nodeId="2061291769221023011" fileName="TestNodeWrapperFactory.java" startLine="203" startPosition="34" endLine="207" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$5" />
+    <unitInfo nodeId="2061291769220997550" fileName="TestNodeWrapperFactory.java" startLine="215" startPosition="108" endLine="219" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory$6" />
+    <unitInfo nodeId="4087070200985108968" fileName="TestNodeWrapperFactory.java" startLine="20" startPosition="0" endLine="243" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory" />
   </root>
   <root nodeId="4087070200985119220">
     <nodeInfo nodeId="7615767134446791872" fileName="TestUtils.java" startLine="117" startPosition="27" endLine="117" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -6453,58 +6409,52 @@
     <unitInfo nodeId="7732304342817720285" fileName="JUnit4MethodWrapper.java" startLine="21" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4MethodWrapper" />
   </root>
   <root nodeId="7732304342817753051">
-    <nodeInfo nodeId="7732304342817753062" fileName="JUnit4TestWrapper.java" startLine="21" startPosition="41" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7732304342817753070" fileName="JUnit4TestWrapper.java" startLine="25" startPosition="31" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4006663891965209822" fileName="JUnit4TestWrapper.java" startLine="31" startPosition="29" endLine="32" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2213297802761100233" fileName="JUnit4TestWrapper.java" startLine="37" startPosition="54" endLine="38" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6209993917109468543" fileName="JUnit4TestWrapper.java" startLine="40" startPosition="39" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6209993917109553271" fileName="JUnit4TestWrapper.java" startLine="44" startPosition="48" endLine="45" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6209993917109553286" fileName="JUnit4TestWrapper.java" startLine="48" startPosition="50" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2213297802761109397" fileName="JUnit4TestWrapper.java" startLine="55" startPosition="140" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732304342817774182" fileName="JUnit4TestWrapper.java" startLine="59" startPosition="59" endLine="60" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732304342817774074" fileName="JUnit4TestWrapper.java" startLine="62" startPosition="5" endLine="63" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7732304342817753053" fileName="JUnit4TestWrapper.java" startLine="20" startPosition="67" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JUnit4TestWrapper#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="2213297802761109395" fileName="JUnit4TestWrapper.java" startLine="54" startPosition="55" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7732304342817774177" fileName="JUnit4TestWrapper.java" startLine="58" startPosition="99" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7732304342817753064" fileName="JUnit4TestWrapper.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTestCase#()Z" />
-    <nodeInfo nodeId="6209993917109468539" fileName="JUnit4TestWrapper.java" startLine="39" startPosition="86" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6209993917109553267" fileName="JUnit4TestWrapper.java" startLine="43" startPosition="56" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
-    <nodeInfo nodeId="6209993917109553282" fileName="JUnit4TestWrapper.java" startLine="47" startPosition="51" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;)Z" />
-    <nodeInfo nodeId="7732304342817753092" fileName="JUnit4TestWrapper.java" startLine="57" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4006663891965209814" fileName="JUnit4TestWrapper.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7732304342817753072" fileName="JUnit4TestWrapper.java" startLine="53" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isJUnit4TestCase#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6209993917109468527" fileName="JUnit4TestWrapper.java" startLine="38" startPosition="239" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6209993917109410425" fileName="JUnit4TestWrapper.java" startLine="34" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestMethods#()Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="7732304342817753056" fileName="JUnit4TestWrapper.java" startLine="21" startPosition="41" endLine="22" endPosition="17" />
-    <scopeInfo nodeId="7732304342817753067" fileName="JUnit4TestWrapper.java" startLine="25" startPosition="31" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="4006663891965209818" fileName="JUnit4TestWrapper.java" startLine="31" startPosition="29" endLine="32" endPosition="71" />
-    <scopeInfo nodeId="6209993917109468540" fileName="JUnit4TestWrapper.java" startLine="40" startPosition="39" endLine="41" endPosition="58" />
-    <scopeInfo nodeId="6209993917109553268" fileName="JUnit4TestWrapper.java" startLine="44" startPosition="48" endLine="45" endPosition="52" />
-    <scopeInfo nodeId="6209993917109553283" fileName="JUnit4TestWrapper.java" startLine="48" startPosition="50" endLine="49" endPosition="26" />
-    <scopeInfo nodeId="2213297802761109396" fileName="JUnit4TestWrapper.java" startLine="55" startPosition="140" endLine="56" endPosition="19" />
-    <scopeInfo nodeId="7732304342817774179" fileName="JUnit4TestWrapper.java" startLine="59" startPosition="59" endLine="60" endPosition="20" />
-    <scopeInfo nodeId="7732304342817753053" fileName="JUnit4TestWrapper.java" startLine="20" startPosition="67" endLine="23" endPosition="3">
+    <nodeInfo nodeId="7732304342817753062" fileName="JUnit4TestWrapper.java" startLine="15" startPosition="41" endLine="16" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7732304342817753070" fileName="JUnit4TestWrapper.java" startLine="19" startPosition="31" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4006663891965209822" fileName="JUnit4TestWrapper.java" startLine="25" startPosition="29" endLine="26" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6209993917109468543" fileName="JUnit4TestWrapper.java" startLine="33" startPosition="39" endLine="34" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6209993917109553271" fileName="JUnit4TestWrapper.java" startLine="37" startPosition="48" endLine="38" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6209993917109553286" fileName="JUnit4TestWrapper.java" startLine="41" startPosition="50" endLine="42" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732304342817774182" fileName="JUnit4TestWrapper.java" startLine="49" startPosition="59" endLine="50" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732304342817774074" fileName="JUnit4TestWrapper.java" startLine="52" startPosition="5" endLine="53" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7732304342817753053" fileName="JUnit4TestWrapper.java" startLine="14" startPosition="67" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JUnit4TestWrapper#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7732304342817774177" fileName="JUnit4TestWrapper.java" startLine="48" startPosition="99" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7732304342817753064" fileName="JUnit4TestWrapper.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTestCase#()Z" />
+    <nodeInfo nodeId="6209993917109468539" fileName="JUnit4TestWrapper.java" startLine="32" startPosition="118" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="6209993917109553267" fileName="JUnit4TestWrapper.java" startLine="36" startPosition="56" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;" />
+    <nodeInfo nodeId="6209993917109553282" fileName="JUnit4TestWrapper.java" startLine="40" startPosition="51" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/plugin/ITestNodeWrapper;)Z" />
+    <nodeInfo nodeId="7732304342817753092" fileName="JUnit4TestWrapper.java" startLine="47" startPosition="55" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4006663891965209814" fileName="JUnit4TestWrapper.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7732304342817753072" fileName="JUnit4TestWrapper.java" startLine="46" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isJUnit4TestCase#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="6209993917109468527" fileName="JUnit4TestWrapper.java" startLine="31" startPosition="54" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6209993917109410425" fileName="JUnit4TestWrapper.java" startLine="28" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestMethods#()Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="7732304342817753056" fileName="JUnit4TestWrapper.java" startLine="15" startPosition="41" endLine="16" endPosition="17" />
+    <scopeInfo nodeId="7732304342817753067" fileName="JUnit4TestWrapper.java" startLine="19" startPosition="31" endLine="20" endPosition="16" />
+    <scopeInfo nodeId="4006663891965209818" fileName="JUnit4TestWrapper.java" startLine="25" startPosition="29" endLine="26" endPosition="71" />
+    <scopeInfo nodeId="6209993917109468540" fileName="JUnit4TestWrapper.java" startLine="33" startPosition="39" endLine="34" endPosition="58" />
+    <scopeInfo nodeId="6209993917109553268" fileName="JUnit4TestWrapper.java" startLine="37" startPosition="48" endLine="38" endPosition="52" />
+    <scopeInfo nodeId="6209993917109553283" fileName="JUnit4TestWrapper.java" startLine="41" startPosition="50" endLine="42" endPosition="26" />
+    <scopeInfo nodeId="7732304342817774179" fileName="JUnit4TestWrapper.java" startLine="49" startPosition="59" endLine="50" endPosition="20" />
+    <scopeInfo nodeId="7732304342817753053" fileName="JUnit4TestWrapper.java" startLine="14" startPosition="67" endLine="17" endPosition="3">
       <varInfo nodeId="7732304342817753060" varName="clazz" />
     </scopeInfo>
-    <scopeInfo nodeId="7732304342817753095" fileName="JUnit4TestWrapper.java" startLine="58" startPosition="99" endLine="61" endPosition="7" />
-    <scopeInfo nodeId="7732304342817753064" fileName="JUnit4TestWrapper.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="6209993917109468539" fileName="JUnit4TestWrapper.java" startLine="39" startPosition="86" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="6209993917109553267" fileName="JUnit4TestWrapper.java" startLine="43" startPosition="56" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="6209993917109553282" fileName="JUnit4TestWrapper.java" startLine="47" startPosition="51" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="7732304342817753092" fileName="JUnit4TestWrapper.java" startLine="57" startPosition="5" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="4006663891965209814" fileName="JUnit4TestWrapper.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="7732304342817753075" fileName="JUnit4TestWrapper.java" startLine="54" startPosition="55" endLine="63" endPosition="17" />
-    <scopeInfo nodeId="7732304342817753072" fileName="JUnit4TestWrapper.java" startLine="53" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="7732304342817753095" fileName="JUnit4TestWrapper.java" startLine="48" startPosition="99" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="7732304342817753064" fileName="JUnit4TestWrapper.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6209993917109468539" fileName="JUnit4TestWrapper.java" startLine="32" startPosition="118" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="6209993917109553267" fileName="JUnit4TestWrapper.java" startLine="36" startPosition="56" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="6209993917109553282" fileName="JUnit4TestWrapper.java" startLine="40" startPosition="51" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="7732304342817753092" fileName="JUnit4TestWrapper.java" startLine="47" startPosition="55" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="4006663891965209814" fileName="JUnit4TestWrapper.java" startLine="22" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="7732304342817753075" fileName="JUnit4TestWrapper.java" startLine="47" startPosition="55" endLine="53" endPosition="17" />
+    <scopeInfo nodeId="7732304342817753072" fileName="JUnit4TestWrapper.java" startLine="46" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="7732304342817753077" varName="clazz" />
     </scopeInfo>
-    <scopeInfo nodeId="6209993917109410430" fileName="JUnit4TestWrapper.java" startLine="37" startPosition="54" endLine="51" endPosition="7">
-      <varInfo nodeId="2213297802761100234" varName="methodDeclarations" />
-    </scopeInfo>
-    <scopeInfo nodeId="6209993917109410425" fileName="JUnit4TestWrapper.java" startLine="34" startPosition="0" endLine="53" endPosition="0" />
-    <unitInfo nodeId="6209993917109468539" fileName="JUnit4TestWrapper.java" startLine="39" startPosition="63" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4TestWrapper$1" />
-    <unitInfo nodeId="6209993917109553267" fileName="JUnit4TestWrapper.java" startLine="43" startPosition="18" endLine="47" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4TestWrapper$2" />
-    <unitInfo nodeId="6209993917109553282" fileName="JUnit4TestWrapper.java" startLine="47" startPosition="17" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4TestWrapper$3" />
-    <unitInfo nodeId="7732304342817753051" fileName="JUnit4TestWrapper.java" startLine="20" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4TestWrapper" />
+    <scopeInfo nodeId="6209993917109410430" fileName="JUnit4TestWrapper.java" startLine="31" startPosition="54" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="6209993917109410425" fileName="JUnit4TestWrapper.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
+    <unitInfo nodeId="6209993917109468539" fileName="JUnit4TestWrapper.java" startLine="32" startPosition="95" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4TestWrapper$1" />
+    <unitInfo nodeId="6209993917109553267" fileName="JUnit4TestWrapper.java" startLine="36" startPosition="18" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4TestWrapper$2" />
+    <unitInfo nodeId="6209993917109553282" fileName="JUnit4TestWrapper.java" startLine="40" startPosition="17" endLine="44" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4TestWrapper$3" />
+    <unitInfo nodeId="7732304342817753051" fileName="JUnit4TestWrapper.java" startLine="14" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit4TestWrapper" />
   </root>
   <root nodeId="8208276292079557090">
     <nodeInfo nodeId="8208276292079622529" fileName="ClonableList.java" startLine="11" startPosition="75" endLine="12" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myData" />

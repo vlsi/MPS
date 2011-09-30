@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.dataFlow.framework.Program;
@@ -27,12 +26,12 @@ public class WrappersUtils {
     SNode wrpPrgNode = SNodeOperations.getAncestorWhereConceptInList(closure, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
     if ((wrpPrgNode != null)) {
       Map<SNode, Integer> clsMap = collectVariableUsages(SLinkOperations.getTarget(closure, "body", true));
-      for (IMapping<SNode, Integer> m : SetSequence.fromSet(MapSequence.fromMap(clsMap).mappingsSet())) {
+      for (IMapping<SNode, Integer> m : MapSequence.fromMap(clsMap).mappingsSet()) {
         ListSequence.fromList(resVdecls).addElement(SNodeOperations.cast(m.key(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
       }
       if (MapSequence.fromMap(clsMap).isNotEmpty()) {
         Map<SNode, Integer> wrpMap = collectVariableUsages(wrpPrgNode);
-        for (IMapping<SNode, Integer> m : SetSequence.fromSet(MapSequence.fromMap(clsMap).mappingsSet())) {
+        for (IMapping<SNode, Integer> m : MapSequence.fromMap(clsMap).mappingsSet()) {
           if (m.value() == 0) {
             if (!(MapSequence.fromMap(wrpMap).containsKey(m.key())) || MapSequence.fromMap(wrpMap).get(m.key()) <= 1) {
               ListSequence.fromList(resVdecls).removeElement(SNodeOperations.cast(m.key(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));

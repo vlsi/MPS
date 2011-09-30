@@ -1107,7 +1107,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1234544998538(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     String[] extensions = SPropertyOperations.getString(_context.getNode(), "extensions").split("\\s");
     List<SNode> elements = ListSequence.fromList(new LinkedList<SNode>());
-    for (String ext : Sequence.fromIterable(Sequence.fromArray(extensions))) {
+    for (String ext : Sequence.fromArray(extensions)) {
       SNode element = SConceptOperations.createNewNode("jetbrains.mps.xml.deprecated.structure.Element", null);
       SPropertyOperations.set(element, "name", "string");
       SNode text = SConceptOperations.createNewNode("jetbrains.mps.xml.deprecated.structure.Text", null);

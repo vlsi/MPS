@@ -116,7 +116,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 4:
-                      this._5_child_it = Sequence.fromIterable(Sequence.fromArray(dir.getChildren())).iterator();
+                      this._5_child_it = Sequence.fromArray(dir.getChildren()).iterator();
                     case 6:
                       if (!(this._5_child_it.hasNext())) {
                         this.__CP__ = 1;

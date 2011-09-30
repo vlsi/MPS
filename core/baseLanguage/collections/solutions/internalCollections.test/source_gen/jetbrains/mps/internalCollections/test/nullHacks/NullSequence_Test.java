@@ -75,15 +75,15 @@ public class NullSequence_Test extends Util_Test {
 
   public void test_nullArray() throws Exception {
     int[] arr = null;
-    for (int i : Sequence.fromIterable(ArrayUtils.fromIntegerArray(arr))) {
+    for (Integer i : ArrayUtils.fromIntegerArray(arr)) {
       Assert.assertTrue(false);
     }
     Integer[] iarr = null;
-    for (Integer i : Sequence.fromIterable(Sequence.fromArray(iarr))) {
+    for (Integer i : Sequence.fromArray(iarr)) {
       Assert.assertTrue(false);
     }
     Object[] oarr = null;
-    for (Object i : Sequence.fromIterable(Sequence.fromArray(oarr))) {
+    for (Object i : Sequence.fromArray(oarr)) {
       Assert.assertTrue(false);
     }
   }

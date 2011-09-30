@@ -7321,8 +7321,11 @@
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e2lb.~Character" resolveInfo="Character" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227381813521">
                     <node role="type" roleId="tpee.1070534934091" type="tpee.CharType" typeId="tpee.1070534555686" id="1227381813522" />
-                    <node role="expression" roleId="tpee.1070534934092" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1227381813523">
-                      <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1227381759516" resolveInfo="k" />
+                    <node role="expression" roleId="tpee.1070534934092" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2598462190833321907">
+                      <node role="expression" roleId="tpee.1070534934092" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="2598462190833321908">
+                        <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1227381759516" resolveInfo="k" />
+                      </node>
+                      <node role="type" roleId="tpee.1070534934091" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2598462190833321909" />
                     </node>
                   </node>
                 </node>

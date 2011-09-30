@@ -83,7 +83,7 @@ public class ScriptBuilder_Test extends MockTestCase {
 
   @After
   public void tearDown() throws Exception {
-    for (IFacet fn : Sequence.fromIterable(Sequence.fromArray(facets))) {
+    for (IFacet fn : Sequence.fromArray(facets)) {
       FacetRegistry.getInstance().unregister(fn);
     }
     context.assertIsSatisfied();

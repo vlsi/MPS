@@ -31,7 +31,7 @@ public class ProcessHandlerBuilder {
   }
 
   public ProcessHandlerBuilder append(String... command) {
-    for (String commandPart : Sequence.fromIterable(Sequence.fromArray(command))) {
+    for (String commandPart : Sequence.fromArray(command)) {
       append(commandPart);
     }
     return this;
