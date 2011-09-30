@@ -19,6 +19,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
+import jetbrains.mps.cleanup.CleanupListener;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
@@ -65,6 +67,11 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public void initComponent() {
+    CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
+      public void performCleanup() {
+        removeUnusedModules();
+      }
+    });
   }
 
   @NonNls
