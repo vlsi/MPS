@@ -111,11 +111,27 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.smodel.LanguageHierarchyCache</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.project.structure.ProjectStructureModule</implementation-class>
     </component>
 
     <component>
       <implementation-class>jetbrains.mps.project.structure.LanguageDescriptorModelProvider</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.lang.dataFlow.DataFlowManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.datatransfer.PasteWrappersManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.findusages.FindersManager</implementation-class>
     </component>
   </application-components>
 

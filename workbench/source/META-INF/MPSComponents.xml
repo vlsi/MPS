@@ -116,18 +116,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.datatransfer.PasteWrappersManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.lang.dataFlow.DataFlowManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.ide.findusages.FindersManager</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.ide.findusages.UsagesViewTracker</implementation-class>
     </component>
 
@@ -199,10 +187,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.ide.blame.dialog.BlameDialogComponent</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.smodel.LanguageHierarchyCache</implementation-class>
     </component>
 
     <component>
