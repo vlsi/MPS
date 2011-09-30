@@ -16,7 +16,6 @@
 package jetbrains.mps.findUsages;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
@@ -27,7 +26,7 @@ import jetbrains.mps.smodel.SReference;
 import java.util.List;
 import java.util.Set;
 
-public abstract class FindUsagesManager implements ApplicationComponent {
+public abstract class FindUsagesManager {
 
   public static FindUsagesManager getInstance() {
     return ApplicationManager.getApplication().getComponent(ProxyFindUsagesManager.class);

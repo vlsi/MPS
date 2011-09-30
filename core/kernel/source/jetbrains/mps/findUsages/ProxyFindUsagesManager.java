@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Set;
@@ -28,7 +29,7 @@ import java.util.Set;
 public class ProxyFindUsagesManager extends FindUsagesManager {
   private static boolean ourUseFastManager = true;
 
-  private FindUsagesManager myDefault;
+  private DefaultFindUsagesManager myDefault;
   private FindUsagesManager myFast;
 
   public ProxyFindUsagesManager(ClassLoaderManager manager) {
@@ -44,7 +45,7 @@ public class ProxyFindUsagesManager extends FindUsagesManager {
     ourUseFastManager = useFastManager;
   }
 
-  public void setFastManager(FindUsagesManager fast) {
+  public void setFastManager(@Nullable FindUsagesManager fast) {
     myFast = fast;
   }
 
@@ -53,11 +54,11 @@ public class ProxyFindUsagesManager extends FindUsagesManager {
   }
 
   public void initComponent() {
-    myDefault.initComponent();
+    myDefault.init();
   }
 
   public void disposeComponent() {
-    myDefault.disposeComponent();
+    myDefault.dispose();
   }
 
   public Set<SNode> findDescendants(SNode node, IScope scope) {

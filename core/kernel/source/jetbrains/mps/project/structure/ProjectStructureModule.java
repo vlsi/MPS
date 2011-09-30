@@ -27,7 +27,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages;
 
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
@@ -42,7 +43,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class FastFindUsagesManager extends FindUsagesManager {
+public class FastFindUsagesManager extends FindUsagesManager implements ApplicationComponent {
   private static final String TARGET_NODE_ID_PREFIX = "targetNodeId=\"";
   private static final String TYPE_PREFIX = "type=\"";
   private final ProxyFindUsagesManager myProxyManager;
@@ -190,22 +191,22 @@ public class FastFindUsagesManager extends FindUsagesManager {
           return true;
         }
       }, new GlobalSearchScope(null) {
-        public boolean contains(VirtualFile file) {
-          return scopeFiles.contains(file);
-        }
-
-        public int compare(VirtualFile file1, VirtualFile file2) {
-          return file1.getPath().compareTo(file2.getPath());
-        }
-
-        public boolean isSearchInModuleContent(@NotNull Module aModule) {
-          return true;
-        }
-
-        public boolean isSearchInLibraries() {
-          return false;
-        }
+      public boolean contains(VirtualFile file) {
+        return scopeFiles.contains(file);
       }
+
+      public int compare(VirtualFile file1, VirtualFile file2) {
+        return file1.getPath().compareTo(file2.getPath());
+      }
+
+      public boolean isSearchInModuleContent(@NotNull Module aModule) {
+        return true;
+      }
+
+      public boolean isSearchInLibraries() {
+        return false;
+      }
+    }
     );
     return candidates;
   }
@@ -220,7 +221,7 @@ public class FastFindUsagesManager extends FindUsagesManager {
       Set<String> fqNames = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(concept));
       for (String fqName : fqNames) {
 //        candidates.addAll(getCandidates(scopeFiles, fqName));
-        candidates.addAll(getCandidates(scopeFiles, fqName.substring(fqName.lastIndexOf('.')+1)));
+        candidates.addAll(getCandidates(scopeFiles, fqName.substring(fqName.lastIndexOf('.') + 1)));
       }
     }
     Set<SNode> result = new HashSet<SNode>();
@@ -301,7 +302,7 @@ public class FastFindUsagesManager extends FindUsagesManager {
 //            }
 //          }
 //          result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
-          while (e < end && chars[e] != '.')  ++e;
+          while (e < end && chars[e] != '.') ++e;
           if (e > offset && e + 1 < end && chars[e] == '.')
             offset = e + 1;
           String test = unescape(new String(chars, offset, end - offset)).replace("%d", ".").replace("%c", ":");
@@ -316,16 +317,16 @@ public class FastFindUsagesManager extends FindUsagesManager {
         // quick temporary fix for new persistences, todo: should be persistence dependent
 //        int qend = indices[1];
 //        if (end > offset && contains(chars, charsLength, qend + 1, " id=\"")) {
-          // report
+        // report
 //          result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
         // use only the name part of type="abcd.name" or type="model.structure.name:0"
-          int start = end;
-          while (start >= offset && chars[start] != '.')  --start;
-          offset = start + 1;
+        int start = end;
+        while (start >= offset && chars[start] != '.') --start;
+        offset = start + 1;
         if (end > offset) {
           result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
         }
-  //      }
+        //      }
       }
     }
 

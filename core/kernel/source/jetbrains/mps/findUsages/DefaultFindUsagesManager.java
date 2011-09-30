@@ -22,8 +22,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -42,17 +40,11 @@ class DefaultFindUsagesManager extends FindUsagesManager {
     myClassLoaderManager = manager;
   }
 
-  public void initComponent() {
+  public void init() {
     myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "MPS Find Usages Manager";
-  }
-
-  public void disposeComponent() {
+  public void dispose() {
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
