@@ -13,6 +13,9 @@ public class ImportAntStuffUtil {
   private static final String GENERATED_MODEL_SUFFIX = ".generated";
   private static final String OPTIONAL_MODEL_SUFFIX = ".optional";
 
+  public ImportAntStuffUtil() {
+  }
+
   public static SModelDescriptor getGenerated(Language l) {
     SModelReference modelRef = SModelReference.fromString(LANGUAGE_NAMESPACE + GENERATED_MODEL_SUFFIX);
     return l.getScope().getModelDescriptor(modelRef);

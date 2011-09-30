@@ -70,35 +70,38 @@
     <nodeInfo nodeId="353793545803155654" fileName="ImportAntStuffUtil.java" startLine="11" startPosition="33" endLine="12" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LANGUAGE_NAMESPACE" />
     <nodeInfo nodeId="353793545803155658" fileName="ImportAntStuffUtil.java" startLine="12" startPosition="86" endLine="13" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GENERATED_MODEL_SUFFIX" />
     <nodeInfo nodeId="353793545803155662" fileName="ImportAntStuffUtil.java" startLine="13" startPosition="68" endLine="14" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OPTIONAL_MODEL_SUFFIX" />
-    <nodeInfo nodeId="353793545803155670" fileName="ImportAntStuffUtil.java" startLine="16" startPosition="59" endLine="17" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="353793545803155677" fileName="ImportAntStuffUtil.java" startLine="17" startPosition="103" endLine="18" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="353793545803155690" fileName="ImportAntStuffUtil.java" startLine="21" startPosition="58" endLine="22" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="353793545803155697" fileName="ImportAntStuffUtil.java" startLine="22" startPosition="102" endLine="23" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8233904257588562489" fileName="ImportAntStuffUtil.java" startLine="26" startPosition="49" endLine="27" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="353793545803155711" fileName="ImportAntStuffUtil.java" startLine="30" startPosition="51" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8233904257588557402" fileName="ImportAntStuffUtil.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLanguageReference#()Ljetbrains/mps/smodel/Language;" />
-    <nodeInfo nodeId="353793545803155706" fileName="ImportAntStuffUtil.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAllModels#(Ljetbrains/mps/smodel/Language;)[Ljetbrains/mps/smodel/SModel;" />
-    <nodeInfo nodeId="353793545803155666" fileName="ImportAntStuffUtil.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getGenerated#(Ljetbrains/mps/smodel/Language;)Ljetbrains/mps/smodel/SModelDescriptor;" />
-    <nodeInfo nodeId="353793545803155686" fileName="ImportAntStuffUtil.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOptional#(Ljetbrains/mps/smodel/Language;)Ljetbrains/mps/smodel/SModelDescriptor;" />
-    <scopeInfo nodeId="8233904257588557405" fileName="ImportAntStuffUtil.java" startLine="26" startPosition="49" endLine="27" endPosition="77" />
-    <scopeInfo nodeId="353793545803155710" fileName="ImportAntStuffUtil.java" startLine="30" startPosition="51" endLine="31" endPosition="81" />
-    <scopeInfo nodeId="353793545803155669" fileName="ImportAntStuffUtil.java" startLine="16" startPosition="59" endLine="18" endPosition="53">
+    <nodeInfo nodeId="353793545803155670" fileName="ImportAntStuffUtil.java" startLine="19" startPosition="59" endLine="20" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="353793545803155677" fileName="ImportAntStuffUtil.java" startLine="20" startPosition="103" endLine="21" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="353793545803155690" fileName="ImportAntStuffUtil.java" startLine="24" startPosition="58" endLine="25" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="353793545803155697" fileName="ImportAntStuffUtil.java" startLine="25" startPosition="102" endLine="26" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8233904257588562489" fileName="ImportAntStuffUtil.java" startLine="29" startPosition="49" endLine="30" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="353793545803155711" fileName="ImportAntStuffUtil.java" startLine="33" startPosition="51" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="654578824815538949" fileName="ImportAntStuffUtil.java" startLine="15" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ImportAntStuffUtil#()V" />
+    <nodeInfo nodeId="8233904257588557402" fileName="ImportAntStuffUtil.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLanguageReference#()Ljetbrains/mps/smodel/Language;" />
+    <nodeInfo nodeId="353793545803155706" fileName="ImportAntStuffUtil.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAllModels#(Ljetbrains/mps/smodel/Language;)[Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="353793545803155666" fileName="ImportAntStuffUtil.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getGenerated#(Ljetbrains/mps/smodel/Language;)Ljetbrains/mps/smodel/SModelDescriptor;" />
+    <nodeInfo nodeId="353793545803155686" fileName="ImportAntStuffUtil.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOptional#(Ljetbrains/mps/smodel/Language;)Ljetbrains/mps/smodel/SModelDescriptor;" />
+    <scopeInfo nodeId="654578824815538951" fileName="ImportAntStuffUtil.java" startLine="16" startPosition="31" endLine="16" endPosition="31" />
+    <scopeInfo nodeId="8233904257588557405" fileName="ImportAntStuffUtil.java" startLine="29" startPosition="49" endLine="30" endPosition="77" />
+    <scopeInfo nodeId="353793545803155710" fileName="ImportAntStuffUtil.java" startLine="33" startPosition="51" endLine="34" endPosition="81" />
+    <scopeInfo nodeId="654578824815538949" fileName="ImportAntStuffUtil.java" startLine="15" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="353793545803155669" fileName="ImportAntStuffUtil.java" startLine="19" startPosition="59" endLine="21" endPosition="53">
       <varInfo nodeId="353793545803155671" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="353793545803155689" fileName="ImportAntStuffUtil.java" startLine="21" startPosition="58" endLine="23" endPosition="53">
+    <scopeInfo nodeId="353793545803155689" fileName="ImportAntStuffUtil.java" startLine="24" startPosition="58" endLine="26" endPosition="53">
       <varInfo nodeId="353793545803155691" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="8233904257588557402" fileName="ImportAntStuffUtil.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="353793545803155706" fileName="ImportAntStuffUtil.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="8233904257588557402" fileName="ImportAntStuffUtil.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="353793545803155706" fileName="ImportAntStuffUtil.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="353793545803155723" varName="l" />
     </scopeInfo>
-    <scopeInfo nodeId="353793545803155666" fileName="ImportAntStuffUtil.java" startLine="15" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="353793545803155666" fileName="ImportAntStuffUtil.java" startLine="18" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="353793545803155684" varName="l" />
     </scopeInfo>
-    <scopeInfo nodeId="353793545803155686" fileName="ImportAntStuffUtil.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="353793545803155686" fileName="ImportAntStuffUtil.java" startLine="23" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="353793545803155704" varName="l" />
     </scopeInfo>
-    <unitInfo nodeId="353793545803155653" fileName="ImportAntStuffUtil.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.generictasks.plugin.ImportAntStuffUtil" />
+    <unitInfo nodeId="353793545803155653" fileName="ImportAntStuffUtil.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.generictasks.plugin.ImportAntStuffUtil" />
   </root>
   <root nodeId="353793545803155726">
     <nodeInfo nodeId="353793545803155726" fileName="ProjectPaneLanguageAddition_ActionGroup.java" startLine="8" startPosition="83" endLine="9" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

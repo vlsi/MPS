@@ -25,7 +25,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="vgj4.2838654975957155508" resolveInfo="BinaryOperationReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="2838654975957402179">
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="vgj4.2838654975957402167" resolveInfo="CustomOperatorReference" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="vgj4.2838654975957402167" resolveInfo="CustomOperator" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1569627462441400262">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="vgj4.1569627462441399919" resolveInfo="CustomOperatorUsage" />
@@ -39,10 +39,14 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2838654975957288978">
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2838654975957288979">
               <property name="name" nameId="tpck.1169194664001" value="result" />
-              <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="2838654975957288980" />
+              <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="2838654975957288980">
+                <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
+              </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2838654975957288981">
                 <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeListCreator" typeId="tp25.1145567426890" id="2838654975957288982">
-                  <node role="createdType" roleId="tp25.1145567471833" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="2838654975957288983" />
+                  <node role="createdType" roleId="tp25.1145567471833" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="2838654975957288983">
+                    <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
+                  </node>
                 </node>
               </node>
             </node>
