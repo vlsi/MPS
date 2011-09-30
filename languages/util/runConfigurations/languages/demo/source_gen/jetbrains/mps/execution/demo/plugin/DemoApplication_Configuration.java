@@ -68,7 +68,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
     {
-      Element fieldElement = new Element("myNode");
+      Element fieldElement = new Element("node");
       myNode.writeExternal(fieldElement);
       element.addContent(fieldElement);
     }
@@ -81,7 +81,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
     {
-      Element fieldElement = element.getChild("myNode");
+      Element fieldElement = element.getChild("node");
       myNode.readExternal(fieldElement);
     }
   }
