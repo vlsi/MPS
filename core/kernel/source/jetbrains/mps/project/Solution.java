@@ -86,6 +86,10 @@ public class Solution extends AbstractModule {
       public String getTestsGeneratorOutputPath() {
         return null;
       }
+
+      protected SolutionDescriptor loadDescriptor() {
+        return getModuleDescriptor();
+      }
     };
 
     MPSModuleRepository repository = MPSModuleRepository.getInstance();
