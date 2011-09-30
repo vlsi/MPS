@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.cache;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -53,7 +53,7 @@ public class CachesManager implements ApplicationComponent {
   };
 
   public static CachesManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(CachesManager.class);
+    return ComponentManager.getInstance().getComponent(CachesManager.class);
   }
 
   public CachesManager(ClassLoaderManager classLoaderManager, SModelRepository repo) {

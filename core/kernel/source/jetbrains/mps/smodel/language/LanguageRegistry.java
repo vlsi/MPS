@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.language;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -47,7 +47,7 @@ public class LanguageRegistry implements ApplicationComponent {
   private final List<LanguageRegistryListener> myLanguageListeners = new CopyOnWriteArrayList<LanguageRegistryListener>();
 
   public static LanguageRegistry getInstance() {
-    return ApplicationManager.getApplication().getComponent(LanguageRegistry.class);
+    return ComponentManager.getInstance().getComponent(LanguageRegistry.class);
   }
 
   public LanguageRegistry(MPSModuleRepository repository, ClassLoaderManager loaderManager, ConceptRegistry registry) {

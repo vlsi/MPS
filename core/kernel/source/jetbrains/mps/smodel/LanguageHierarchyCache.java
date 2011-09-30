@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -35,7 +35,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
   public static LanguageHierarchyCache getInstance() {
     if (ourInstance == null) {
-      ourInstance = ApplicationManager.getApplication().getComponent(LanguageHierarchyCache.class);
+      ourInstance = ComponentManager.getInstance().getComponent(LanguageHierarchyCache.class);
     }
     return ourInstance;
   }

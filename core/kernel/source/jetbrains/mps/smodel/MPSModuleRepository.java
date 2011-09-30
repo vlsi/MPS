@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
@@ -46,7 +46,7 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   public static MPSModuleRepository getInstance() {
     if (ourInstance == null) {
-      ourInstance = ApplicationManager.getApplication().getComponent(MPSModuleRepository.class);
+      ourInstance = ComponentManager.getInstance().getComponent(MPSModuleRepository.class);
     }
     return ourInstance;
   }
@@ -153,7 +153,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   @Deprecated
   public <TM extends IModule> TM registerModule(IFile file, MPSModuleOwner owner, Class<TM> cls) {
     ModuleDescriptor moduleDescriptor = ModulesMiner.getInstance().loadModuleDescriptor(file);
-    if(moduleDescriptor == null) {
+    if (moduleDescriptor == null) {
       throw new IllegalArgumentException("Unknown module " + file.getName());
     }
     return this.<TM>registerModule(new ModuleHandle(file, moduleDescriptor), owner);

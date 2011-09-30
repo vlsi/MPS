@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -36,7 +36,7 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(GlobalSModelEventsManager.class);
 
   public static GlobalSModelEventsManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(GlobalSModelEventsManager.class);
+    return ComponentManager.getInstance().getComponent(GlobalSModelEventsManager.class);
   }
 
   private SModelRepository mySModelRepository;

@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.reloading;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
@@ -49,7 +49,7 @@ public class ClassLoaderManager implements ApplicationComponent {
   };
 
   public static ClassLoaderManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(ClassLoaderManager.class);
+    return ComponentManager.getInstance().getComponent(ClassLoaderManager.class);
   }
 
   private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();

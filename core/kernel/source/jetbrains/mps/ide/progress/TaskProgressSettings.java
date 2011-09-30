@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.ide.progress;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.ide.progress.TaskProgressSettings.MyState;
 import jetbrains.mps.logging.Logger;
 
@@ -35,7 +35,7 @@ import java.util.Map;
 )
 public class TaskProgressSettings implements PersistentStateComponent<MyState> {
   public static TaskProgressSettings getInstance() {
-    return ApplicationManager.getApplication().getComponent(TaskProgressSettings.class);
+    return ComponentManager.getInstance().getComponent(TaskProgressSettings.class);
   }
 
   private static final Logger LOG = Logger.getLogger(TaskProgressSettings.class);

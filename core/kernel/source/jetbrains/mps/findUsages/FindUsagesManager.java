@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.findUsages;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.IScope;
@@ -29,7 +29,7 @@ import java.util.Set;
 public abstract class FindUsagesManager {
 
   public static FindUsagesManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(ProxyFindUsagesManager.class);
+    return ComponentManager.getInstance().getComponent(ProxyFindUsagesManager.class);
   }
 
   public abstract Set<SNode> findDescendants(SNode node, IScope scope);

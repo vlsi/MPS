@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.smodel.*;
 
 /**
@@ -36,7 +36,7 @@ public class AuxilaryRuntimeModel implements ModelOwner {
     if (ourInstance != null) return ourInstance;
     synchronized (LOCK) {
       if (ourInstance != null) return ourInstance;
-      AuxilaryRuntimeModel instance = ApplicationManager.getApplication().getComponent(AuxilaryRuntimeModel.class);
+      AuxilaryRuntimeModel instance = ComponentManager.getInstance().getComponent(AuxilaryRuntimeModel.class);
       ourInstance = SModelRepository.getInstance().getModelDescriptor(MY_MODEL_REFERENCE);
       if (ourInstance == null) {
         ourInstance = new AuxModelDescriptor();

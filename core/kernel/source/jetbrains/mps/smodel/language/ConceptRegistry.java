@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.language;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
@@ -62,7 +62,7 @@ public class ConceptRegistry implements ApplicationComponent {
 
   public static ConceptRegistry getInstance() {
     if (ourInstance == null) {
-      ourInstance = ApplicationManager.getApplication().getComponent(ConceptRegistry.class);
+      ourInstance = ComponentManager.getInstance().getComponent(ConceptRegistry.class);
     }
     return ourInstance;
   }

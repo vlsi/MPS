@@ -13,23 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.components;
 
-import jetbrains.mps.MPSCore;
-import jetbrains.mps.components.ComponentManager;
-import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.application.ApplicationManager;
 
-public abstract class StandaloneMPSContext implements IOperationContext {
+/**
+ * Evgeny Gryaznov, 9/30/11
+ */
+public class ComponentManager {
 
-  public boolean isTestMode() {
-    return MPSCore.getInstance().isTestMode();
+  private static final ComponentManager INSTANCE = new ComponentManager();
+
+  public static ComponentManager getInstance() {
+    return INSTANCE;
   }
 
-  public <T> T getComponent(Class<T> clazz) {
-    return ComponentManager.getInstance().getComponent(clazz);
+  private ComponentManager() {
   }
 
-  public boolean isValid() {
-    return true;
+  public <T> T getComponent(Class<T> interfaceClass) {
+    return ApplicationManager.getApplication().getComponent(interfaceClass);
   }
+
+
 }
