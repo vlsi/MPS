@@ -32,6 +32,10 @@ import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.execution.process.ProcessListener;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import com.intellij.ide.util.PropertiesComponent;
+import org.apache.commons.lang.StringUtils;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -45,6 +49,8 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSLocation;
 
 public class UnitTestViewComponent extends JPanel implements Disposable {
+  private static final String SPLITTER_SIZE_PROPERTY = UnitTestViewComponent.class.getName() + ".splitter";
+
   private final TestRunState myTestState;
   private final TestOutputComponent myOutputComponent;
   private final TestTree myTreeComponent;
@@ -74,7 +80,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     JPanel rightPanel = this.createOutputComponent(console, myProgressLineComponent, myOutputComponent.getComponent(), statisticsModel);
 
     Splitter splitter = new Splitter(false);
-    splitter.setProportion(0.2f);
+    initSplitterProportion(splitter, 0.2f, "tree");
     splitter.setFirstComponent(leftPanel);
     splitter.setSecondComponent(rightPanel);
     this.setLayout(new BorderLayout());
@@ -148,6 +154,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     stackTraceActions.setMaximumSize(new Dimension(rightPanel.getWidth(), stackTraceActions.getMaximumSize().height));
 
     Splitter outputStatisticSplitter = new Splitter(false);
+    initSplitterProportion(outputStatisticSplitter, 0.5f, "statistic");
     outputStatisticSplitter.setFirstComponent(testOutput);
     JComponent statistics = this.createStatisticsComponent(statisticsModel);
     outputStatisticSplitter.setSecondComponent(statistics);
@@ -175,6 +182,28 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     c.weightx = 1;
     rightPanel.add(outputStatisticSplitter, c);
     return rightPanel;
+  }
+
+  public void initSplitterProportion(final Splitter splitter, float defaultProportion, final String id) {
+    final PropertiesComponent propertiesComponent = PropertiesComponent.getInstance();
+    String value = propertiesComponent.getValue(UnitTestViewComponent.SPLITTER_SIZE_PROPERTY + "." + id);
+    float proportion = defaultProportion;
+    if (StringUtils.isNotEmpty(value)) {
+      try {
+        proportion = Float.parseFloat(value);
+      } catch (NumberFormatException ignore) {
+      }
+    }
+
+    splitter.addPropertyChangeListener(new PropertyChangeListener() {
+      public void propertyChange(PropertyChangeEvent event) {
+        if (event.getPropertyName().equals(Splitter.PROP_PROPORTION)) {
+          propertiesComponent.setValue(UnitTestViewComponent.SPLITTER_SIZE_PROPERTY + "." + id, String.valueOf(splitter.getProportion()));
+        }
+      }
+    });
+
+    splitter.setProportion(proportion);
   }
 
   public static Language getLanguage() {

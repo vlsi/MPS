@@ -8,6 +8,8 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Make_BeforeTask extends BaseMpsBeforeTaskProvider<Make_BeforeTask.Make_BeforeTask_RunTask> {
   private static final Key<Make_BeforeTask.Make_BeforeTask_RunTask> KEY = Key.create("jetbrains.mps.execution.configurations.plugin.Make_BeforeTask");
@@ -36,7 +38,11 @@ public class Make_BeforeTask extends BaseMpsBeforeTaskProvider<Make_BeforeTask.M
     }
 
     public boolean execute(Project project) {
-      return RunUtil.makeBeforeRun(project, myNodes);
+      return RunUtil.makeBeforeRun(project, ListSequence.fromList(myNodes).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return (it != null);
+        }
+      }).toListSequence());
     }
   }
 }
