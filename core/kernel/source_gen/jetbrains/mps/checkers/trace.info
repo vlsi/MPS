@@ -90,76 +90,64 @@
     <unitInfo nodeId="7390982340086718154" fileName="TargetConceptChecker.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.checkers.TargetConceptChecker" />
   </root>
   <root nodeId="7390982340086718297">
-    <nodeInfo nodeId="7390982340086718316" fileName="RefScopeChecker.java" startLine="27" startPosition="35" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7390982340086718322" fileName="RefScopeChecker.java" startLine="30" startPosition="44" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7390982340086718329" fileName="RefScopeChecker.java" startLine="32" startPosition="5" endLine="33" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086718339" fileName="RefScopeChecker.java" startLine="34" startPosition="64" endLine="35" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086718345" fileName="RefScopeChecker.java" startLine="35" startPosition="56" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086718351" fileName="RefScopeChecker.java" startLine="36" startPosition="58" endLine="37" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7390982340086718355" fileName="RefScopeChecker.java" startLine="38" startPosition="43" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7390982340086718363" fileName="RefScopeChecker.java" startLine="40" startPosition="7" endLine="41" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718368" fileName="RefScopeChecker.java" startLine="41" startPosition="38" endLine="42" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718373" fileName="RefScopeChecker.java" startLine="42" startPosition="34" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086718378" fileName="RefScopeChecker.java" startLine="43" startPosition="58" endLine="44" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086718384" fileName="RefScopeChecker.java" startLine="44" startPosition="78" endLine="45" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086718398" fileName="RefScopeChecker.java" startLine="47" startPosition="43" endLine="48" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7390982340086718412" fileName="RefScopeChecker.java" startLine="51" startPosition="40" endLine="52" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718444" fileName="RefScopeChecker.java" startLine="53" startPosition="108" endLine="54" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209385276369" fileName="RefScopeChecker.java" startLine="59" startPosition="7" endLine="60" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1222430244831" fileName="RefScopeChecker.java" startLine="61" startPosition="24" endLine="62" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4723230619342965855" fileName="RefScopeChecker.java" startLine="63" startPosition="7" endLine="64" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4723230619342965842" fileName="RefScopeChecker.java" startLine="65" startPosition="72" endLine="66" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4723230619342965817" fileName="RefScopeChecker.java" startLine="67" startPosition="7" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4665554825186265893" fileName="RefScopeChecker.java" startLine="68" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7390982340086718299" fileName="RefScopeChecker.java" startLine="22" startPosition="65" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefScopeChecker#()V" />
-    <nodeInfo nodeId="7390982340086718314" fileName="RefScopeChecker.java" startLine="26" startPosition="134" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086718320" fileName="RefScopeChecker.java" startLine="29" startPosition="5" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086718353" fileName="RefScopeChecker.java" startLine="37" startPosition="97" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1222430227713" fileName="RefScopeChecker.java" startLine="60" startPosition="59" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209385276375" fileName="RefScopeChecker.java" startLine="64" startPosition="86" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086718396" fileName="RefScopeChecker.java" startLine="46" startPosition="127" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/smodel/constraints/SearchScopeStatus;" />
-    <nodeInfo nodeId="7390982340086718451" fileName="RefScopeChecker.java" startLine="54" startPosition="39" endLine="58" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718390" fileName="RefScopeChecker.java" startLine="45" startPosition="124" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086718410" fileName="RefScopeChecker.java" startLine="50" startPosition="9" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086718335" fileName="RefScopeChecker.java" startLine="33" startPosition="64" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7390982340086718304" fileName="RefScopeChecker.java" startLine="25" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/checkers/LanguageErrorsComponent;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/IScope;)V" />
-    <scopeInfo nodeId="7390982340086718302" fileName="RefScopeChecker.java" startLine="23" startPosition="28" endLine="23" endPosition="28" />
-    <scopeInfo nodeId="7390982340086718315" fileName="RefScopeChecker.java" startLine="27" startPosition="35" endLine="28" endPosition="13" />
-    <scopeInfo nodeId="7390982340086718321" fileName="RefScopeChecker.java" startLine="30" startPosition="44" endLine="31" endPosition="13" />
-    <scopeInfo nodeId="7390982340086718354" fileName="RefScopeChecker.java" startLine="38" startPosition="43" endLine="39" endPosition="17" />
-    <scopeInfo nodeId="7390982340086718397" fileName="RefScopeChecker.java" startLine="47" startPosition="43" endLine="48" endPosition="172" />
-    <scopeInfo nodeId="7390982340086718411" fileName="RefScopeChecker.java" startLine="51" startPosition="40" endLine="52" endPosition="137" />
-    <scopeInfo nodeId="1222430227714" fileName="RefScopeChecker.java" startLine="61" startPosition="24" endLine="62" endPosition="17" />
-    <scopeInfo nodeId="1209385276389" fileName="RefScopeChecker.java" startLine="65" startPosition="72" endLine="66" endPosition="106" />
-    <scopeInfo nodeId="7390982340086718299" fileName="RefScopeChecker.java" startLine="22" startPosition="65" endLine="24" endPosition="3" />
-    <scopeInfo nodeId="7390982340086718396" fileName="RefScopeChecker.java" startLine="46" startPosition="127" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="7390982340086718443" fileName="RefScopeChecker.java" startLine="53" startPosition="108" endLine="58" endPosition="184">
+    <nodeInfo nodeId="7390982340086718316" fileName="RefScopeChecker.java" startLine="24" startPosition="35" endLine="25" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7390982340086718322" fileName="RefScopeChecker.java" startLine="27" startPosition="44" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7390982340086718329" fileName="RefScopeChecker.java" startLine="29" startPosition="5" endLine="30" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086718339" fileName="RefScopeChecker.java" startLine="31" startPosition="64" endLine="32" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086718345" fileName="RefScopeChecker.java" startLine="32" startPosition="56" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086718351" fileName="RefScopeChecker.java" startLine="33" startPosition="58" endLine="34" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7390982340086718355" fileName="RefScopeChecker.java" startLine="35" startPosition="43" endLine="36" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7390982340086718363" fileName="RefScopeChecker.java" startLine="37" startPosition="7" endLine="38" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718368" fileName="RefScopeChecker.java" startLine="38" startPosition="38" endLine="39" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718373" fileName="RefScopeChecker.java" startLine="39" startPosition="34" endLine="40" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086718378" fileName="RefScopeChecker.java" startLine="40" startPosition="58" endLine="41" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086718384" fileName="RefScopeChecker.java" startLine="41" startPosition="78" endLine="42" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086718398" fileName="RefScopeChecker.java" startLine="44" startPosition="43" endLine="45" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7390982340086718412" fileName="RefScopeChecker.java" startLine="48" startPosition="40" endLine="49" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718444" fileName="RefScopeChecker.java" startLine="50" startPosition="108" endLine="51" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086718299" fileName="RefScopeChecker.java" startLine="19" startPosition="65" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefScopeChecker#()V" />
+    <nodeInfo nodeId="7390982340086718314" fileName="RefScopeChecker.java" startLine="23" startPosition="134" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086718320" fileName="RefScopeChecker.java" startLine="26" startPosition="5" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086718353" fileName="RefScopeChecker.java" startLine="34" startPosition="97" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086718396" fileName="RefScopeChecker.java" startLine="43" startPosition="127" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/smodel/constraints/SearchScopeStatus;" />
+    <nodeInfo nodeId="7390982340086718451" fileName="RefScopeChecker.java" startLine="51" startPosition="39" endLine="55" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718390" fileName="RefScopeChecker.java" startLine="42" startPosition="124" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086718410" fileName="RefScopeChecker.java" startLine="47" startPosition="9" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086718335" fileName="RefScopeChecker.java" startLine="30" startPosition="64" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7390982340086718304" fileName="RefScopeChecker.java" startLine="22" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/checkers/LanguageErrorsComponent;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/IScope;)V" />
+    <scopeInfo nodeId="7390982340086718302" fileName="RefScopeChecker.java" startLine="20" startPosition="28" endLine="20" endPosition="28" />
+    <scopeInfo nodeId="7390982340086718315" fileName="RefScopeChecker.java" startLine="24" startPosition="35" endLine="25" endPosition="13" />
+    <scopeInfo nodeId="7390982340086718321" fileName="RefScopeChecker.java" startLine="27" startPosition="44" endLine="28" endPosition="13" />
+    <scopeInfo nodeId="7390982340086718354" fileName="RefScopeChecker.java" startLine="35" startPosition="43" endLine="36" endPosition="17" />
+    <scopeInfo nodeId="7390982340086718397" fileName="RefScopeChecker.java" startLine="44" startPosition="43" endLine="45" endPosition="172" />
+    <scopeInfo nodeId="7390982340086718411" fileName="RefScopeChecker.java" startLine="48" startPosition="40" endLine="49" endPosition="137" />
+    <scopeInfo nodeId="7390982340086718299" fileName="RefScopeChecker.java" startLine="19" startPosition="65" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="7390982340086718396" fileName="RefScopeChecker.java" startLine="43" startPosition="127" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="7390982340086718443" fileName="RefScopeChecker.java" startLine="50" startPosition="108" endLine="55" endPosition="184">
       <varInfo nodeId="7390982340086718445" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718338" fileName="RefScopeChecker.java" startLine="34" startPosition="64" endLine="69" endPosition="0">
-      <varInfo nodeId="1209385276370" varName="uid" />
+    <scopeInfo nodeId="7390982340086718338" fileName="RefScopeChecker.java" startLine="31" startPosition="64" endLine="56" endPosition="7">
       <varInfo nodeId="7390982340086718374" varName="linkRole" />
-      <varInfo nodeId="4723230619342965856" varName="descriptor" />
       <varInfo nodeId="7390982340086718346" varName="ld" />
       <varInfo nodeId="7390982340086718391" varName="searchScopeStatus" />
       <varInfo nodeId="7390982340086718340" varName="target" />
       <varInfo nodeId="7390982340086718385" varName="scopeProvider" />
       <varInfo nodeId="7390982340086718379" varName="linkTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718335" fileName="RefScopeChecker.java" startLine="33" startPosition="64" endLine="70" endPosition="5">
+    <scopeInfo nodeId="7390982340086718335" fileName="RefScopeChecker.java" startLine="30" startPosition="64" endLine="57" endPosition="5">
       <varInfo nodeId="7390982340086718336" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718313" fileName="RefScopeChecker.java" startLine="26" startPosition="134" endLine="70" endPosition="5">
+    <scopeInfo nodeId="7390982340086718313" fileName="RefScopeChecker.java" startLine="23" startPosition="134" endLine="57" endPosition="5">
       <varInfo nodeId="7390982340086718330" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718304" fileName="RefScopeChecker.java" startLine="25" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="7390982340086718304" fileName="RefScopeChecker.java" startLine="22" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="7390982340086718307" varName="node" />
       <varInfo nodeId="4723230619342979467" varName="scope" />
       <varInfo nodeId="7390982340086718309" varName="component" />
       <varInfo nodeId="7390982340086718311" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="7390982340086718396" fileName="RefScopeChecker.java" startLine="46" startPosition="76" endLine="50" endPosition="7" unitName="jetbrains.mps.checkers.RefScopeChecker$1" />
-    <unitInfo nodeId="7390982340086718297" fileName="RefScopeChecker.java" startLine="22" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.checkers.RefScopeChecker" />
+    <unitInfo nodeId="7390982340086718396" fileName="RefScopeChecker.java" startLine="43" startPosition="76" endLine="47" endPosition="7" unitName="jetbrains.mps.checkers.RefScopeChecker$1" />
+    <unitInfo nodeId="7390982340086718297" fileName="RefScopeChecker.java" startLine="19" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.checkers.RefScopeChecker" />
   </root>
   <root nodeId="7390982340086718486">
     <nodeInfo nodeId="7390982340086719359" fileName="LanguageErrorsComponent.java" startLine="35" startPosition="38" endLine="36" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodesToErrors" />

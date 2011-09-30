@@ -1091,10 +1091,10 @@
   <root id="3382625879346929484">
     <node role="fieldDeclaration" roleId="tp4k.1206112250032" type="tp4f.DefaultClassifierFieldDeclaration" typeId="tp4f.1213999088275" id="3382625879346929515">
       <property name="name" nameId="tpck.1169194664001" value="myConstraintsChecker" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3382625879346929516" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2790128043133330668">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wsw7.7390982340086719450" resolveInfo="LanguageChecker" />
       </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3382625879346929516" />
     </node>
     <node role="fieldDeclaration" roleId="tp4k.1206112250032" type="tp4f.DefaultClassifierFieldDeclaration" typeId="tp4f.1213999088275" id="1436978233839335348">
       <property name="name" nameId="tpck.1169194664001" value="myTypesystemChecer" />
@@ -1209,8 +1209,8 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5069861141050097244">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g1dt.~ExtensionsArea%dgetExtensionPoint(com%dintellij%dopenapi%dextensions%dExtensionPointName)%ccom%dintellij%dopenapi%dextensions%dExtensionPoint" resolveInfo="getExtensionPoint" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5069861141050097245">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="wsw7.135987422146913546" resolveInfo="INodeChecker" />
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="wsw7.135987422146913548" resolveInfo="CHECKERS" />
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="wsw7.135987422146913546" resolveInfo="INodeChecker" />
                 </node>
               </node>
             </node>
@@ -1312,8 +1312,8 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5069861141050097259">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g1dt.~ExtensionsArea%dgetExtensionPoint(com%dintellij%dopenapi%dextensions%dExtensionPointName)%ccom%dintellij%dopenapi%dextensions%dExtensionPoint" resolveInfo="getExtensionPoint" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5069861141050097260">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="wsw7.135987422146913546" resolveInfo="INodeChecker" />
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="wsw7.135987422146913548" resolveInfo="CHECKERS" />
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="wsw7.135987422146913546" resolveInfo="INodeChecker" />
                 </node>
               </node>
             </node>
