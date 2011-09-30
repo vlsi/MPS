@@ -7,9 +7,9 @@ import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.configurations.lib.Node_Configuration;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
@@ -38,11 +38,17 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
 
   @NotNull
   private BuildLanguageProject_Configuration.MyState myState = new BuildLanguageProject_Configuration.MyState();
-  private Node_Configuration myNode = new Node_Configuration(ModelAccess.instance().runReadAction(new Computable<SNode>() {
-    public SNode compute() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildlanguage.structure.Project");
+  private Node_Configuration myNode = new Node_Configuration(new _FunctionTypes._return_P0_E0<SNode>() {
+    public SNode invoke() {
+      final SNode[] conceptDeclaration = new SNode[1];
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          conceptDeclaration[0] = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildlanguage.structure.Project");
+        }
+      });
+      return conceptDeclaration[0];
     }
-  }), null);
+  }.invoke(), null);
   private AntSettings_Configuration mySettings = new AntSettings_Configuration();
 
   public BuildLanguageProject_Configuration(Project project, BuildLanguageProject_Configuration_Factory factory, String name) {

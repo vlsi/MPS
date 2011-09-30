@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -40,11 +39,17 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
     ListSequence.fromList(myTargetConcepts).addSequence(ListSequence.fromList(targets).select(new ISelector<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
       public Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> select(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         return MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from((it._0() == null ?
-          ModelAccess.instance().runReadAction(new Computable<SNode>() {
-            public SNode compute() {
-              return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
+          new _FunctionTypes._return_P0_E0<SNode>() {
+            public SNode invoke() {
+              final SNode[] conceptDeclaration = new SNode[1];
+              ModelAccess.instance().runReadAction(new Runnable() {
+                public void run() {
+                  conceptDeclaration[0] = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
+                }
+              });
+              return conceptDeclaration[0];
             }
-          }) :
+          }.invoke() :
           it._0()
         ), it._1());
       }

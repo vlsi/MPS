@@ -11,8 +11,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Executor_TabDescriptor extends EditorTabDescriptor {
@@ -62,11 +62,17 @@ public class Executor_TabDescriptor extends EditorTabDescriptor {
   }
 
   public List<SNode> getConcepts(final SNode node) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), ModelAccess.instance().runReadAction(new Computable<SNode>() {
-      public SNode compute() {
-        return SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor");
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        final SNode[] conceptDeclaration = new SNode[1];
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            conceptDeclaration[0] = SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor");
+          }
+        });
+        return conceptDeclaration[0];
       }
-    }));
+    }.invoke());
   }
 
   public SNode createNode(final SNode node, final SNode concept) {

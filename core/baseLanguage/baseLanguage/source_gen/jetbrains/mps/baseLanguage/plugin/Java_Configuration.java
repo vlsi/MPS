@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -46,19 +45,31 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
 
   @NotNull
   private Java_Configuration.MyState myState = new Java_Configuration.MyState();
-  private MultiConceptNode_Configuration myNode = new MultiConceptNode_Configuration(Sequence.fromIterable(Sequence.fromArray(ArrayUtils.asArray(MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from(ModelAccess.instance().runReadAction(new Computable<SNode>() {
-    public SNode compute() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept");
+  private MultiConceptNode_Configuration myNode = new MultiConceptNode_Configuration(Sequence.fromIterable(Sequence.fromArray(ArrayUtils.asArray(MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from(new _FunctionTypes._return_P0_E0<SNode>() {
+    public SNode invoke() {
+      final SNode[] conceptDeclaration = new SNode[1];
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          conceptDeclaration[0] = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept");
+        }
+      });
+      return conceptDeclaration[0];
     }
-  }), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+  }.invoke(), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return BaseConcept_Behavior.call_isRunnable_7941158526576616752(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"));
     }
-  }), MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from(ModelAccess.instance().runReadAction(new Computable<SNode>() {
-    public SNode compute() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.util.structure.IMainClass");
+  }), MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from(new _FunctionTypes._return_P0_E0<SNode>() {
+    public SNode invoke() {
+      final SNode[] conceptDeclaration = new SNode[1];
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          conceptDeclaration[0] = SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.util.structure.IMainClass");
+        }
+      });
+      return conceptDeclaration[0];
     }
-  }), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+  }.invoke(), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return IMainClass_Behavior.call_isNodeRunnable_4666195181811081448(SNodeOperations.cast(node, "jetbrains.mps.execution.util.structure.IMainClass")) && Java_Command.isUnitNode(node);
     }

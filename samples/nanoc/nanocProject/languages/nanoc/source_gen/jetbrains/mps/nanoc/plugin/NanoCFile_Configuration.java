@@ -7,11 +7,10 @@ import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.configurations.lib.Node_Configuration;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
@@ -37,11 +36,17 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
 
   @NotNull
   private NanoCFile_Configuration.MyState myState = new NanoCFile_Configuration.MyState();
-  private Node_Configuration myNode = new Node_Configuration(ModelAccess.instance().runReadAction(new Computable<SNode>() {
-    public SNode compute() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.nanoc.structure.File");
+  private Node_Configuration myNode = new Node_Configuration(new _FunctionTypes._return_P0_E0<SNode>() {
+    public SNode invoke() {
+      final SNode[] conceptDeclaration = new SNode[1];
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          conceptDeclaration[0] = SConceptOperations.findConceptDeclaration("jetbrains.mps.nanoc.structure.File");
+        }
+      });
+      return conceptDeclaration[0];
     }
-  }), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+  }.invoke(), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode file) {
       return true;
     }
