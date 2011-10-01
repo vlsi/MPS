@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.vcs.diff.ui.BaseDiffModelTreeAction" file="BaseDiffModelTreeAction.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.util.Ref" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffModelTree" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.Bounds" file="Bounds.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Math" />
@@ -222,8 +234,13 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.DiffModelTree" file="DiffModelTree.java">
+    <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataKey" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.Presentation" />
     <classNode dependClassName="com.intellij.openapi.util.Ref" />
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -320,11 +337,11 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.BaseDiffModelTreeAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.InvokeTextDiffAction" file="InvokeTextDiffAction.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
