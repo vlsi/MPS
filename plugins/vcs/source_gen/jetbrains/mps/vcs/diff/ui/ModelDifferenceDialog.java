@@ -171,8 +171,8 @@ public class ModelDifferenceDialog extends BaseDialog {
       super(DiffTemporaryModule.getOperationContext(myProject, myChangeSet.getNewModel()));
     }
 
-    protected Iterable<BaseAction> getRootActions(@Nullable SNodeId rootId) {
-      return Arrays.<BaseAction>asList(new InvokeRootDifferenceAction(ModelDifferenceDialog.this, rootId));
+    protected Iterable<BaseAction> getRootActions() {
+      return Arrays.<BaseAction>asList(new InvokeRootDifferenceAction(ModelDifferenceDialog.this));
     }
 
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {

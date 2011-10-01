@@ -26,8 +26,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.icons.IconManager;
-import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionGroup;
 
 public abstract class DiffModelTree extends MPSTree implements DataProvider {
   public static DataKey<Ref<SNodeId>> NODE_ID_DATAKEY = DataKey.create("MPS_SNodeId");
@@ -97,7 +102,7 @@ public abstract class DiffModelTree extends MPSTree implements DataProvider {
 
   protected abstract void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode);
 
-  protected abstract Iterable<BaseAction> getRootActions(@Nullable SNodeId rootId);
+  protected abstract Iterable<BaseAction> getRootActions();
 
   protected boolean isMultipleRootNames() {
     return false;
@@ -211,12 +216,12 @@ public abstract class DiffModelTree extends MPSTree implements DataProvider {
 
     @Override
     public void doubleClick() {
-      Sequence.fromIterable(getRootActions(myRootId)).first().actionPerformed(null);
+      ActionUtils.updateAndPerformAction(Sequence.fromIterable(getRootActions()).first(), new AnActionEvent(null, DataManager.getInstance().getDataContext(DiffModelTree.this), ActionPlaces.UNKNOWN, new Presentation(), ActionManager.getInstance(), 0));
     }
 
     @Override
     public ActionGroup getActionGroup() {
-      return ActionUtils.groupFromActions(Sequence.fromIterable(getRootActions(myRootId)).toGenericArray(BaseAction.class));
+      return ActionUtils.groupFromActions(Sequence.fromIterable(getRootActions()).toGenericArray(BaseAction.class));
     }
 
     @Nullable
