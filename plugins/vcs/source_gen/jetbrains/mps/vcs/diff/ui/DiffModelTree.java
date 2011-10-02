@@ -9,15 +9,16 @@ import com.intellij.openapi.util.Ref;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -39,11 +40,18 @@ public abstract class DiffModelTree extends MPSTree implements DataProvider {
 
   private IOperationContext myOperationContext;
   private List<DiffModelTree.RootTreeNode> myRootNodes;
+  private Iterable<BaseAction> myActions;
 
   public DiffModelTree(IOperationContext operationContext) {
     rebuildNow();
     expandAll();
     myOperationContext = operationContext;
+    myActions = getRootActions();
+    Sequence.fromIterable(myActions).visitAll(new IVisitor<BaseAction>() {
+      public void visit(BaseAction a) {
+        a.registerCustomShortcutSet(a.getShortcutSet(), DiffModelTree.this);
+      }
+    });
   }
 
   protected MPSTreeNode rebuild() {
@@ -216,12 +224,12 @@ public abstract class DiffModelTree extends MPSTree implements DataProvider {
 
     @Override
     public void doubleClick() {
-      ActionUtils.updateAndPerformAction(Sequence.fromIterable(getRootActions()).first(), new AnActionEvent(null, DataManager.getInstance().getDataContext(DiffModelTree.this), ActionPlaces.UNKNOWN, new Presentation(), ActionManager.getInstance(), 0));
+      ActionUtils.updateAndPerformAction(Sequence.fromIterable(myActions).first(), new AnActionEvent(null, DataManager.getInstance().getDataContext(DiffModelTree.this), ActionPlaces.UNKNOWN, new Presentation(), ActionManager.getInstance(), 0));
     }
 
     @Override
     public ActionGroup getActionGroup() {
-      return ActionUtils.groupFromActions(Sequence.fromIterable(getRootActions()).toGenericArray(BaseAction.class));
+      return ActionUtils.groupFromActions(Sequence.fromIterable(myActions).toGenericArray(BaseAction.class));
     }
 
     @Nullable
