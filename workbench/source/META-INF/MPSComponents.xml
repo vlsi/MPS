@@ -367,6 +367,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.workbench.editors.IconUpdater</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool
       </implementation-class>
     </component>
