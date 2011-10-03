@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.util;
+package jetbrains.mps.progress;
 
-public class EqualUtil {
-
-  public static boolean equals(Object o1, Object o2) {
-    if (o1 == o2) return true;
-    if (o1 == null || o2 == null) return false;
-    return o1.equals(o2);
-  }
+/**
+ * Evgeny Gryaznov, 10/3/11
+ */
+public enum SubProgressKind {
+  DEFAULT,
+  AS_COMMENT,
+  IGNORED
 }

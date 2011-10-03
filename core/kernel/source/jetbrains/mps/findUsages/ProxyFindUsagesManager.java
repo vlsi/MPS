@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
@@ -70,27 +70,27 @@ public class ProxyFindUsagesManager extends FindUsagesManager {
     return getRealManager().findUsages(node, scope);
   }
 
-  public Set<SReference> findUsages(SNode node, IScope scope, IAdaptiveProgressMonitor progress) {
-    return getRealManager().findUsages(node, scope, progress);
+  public Set<SReference> findUsages(SNode node, IScope scope, ProgressMonitor monitor) {
+    return getRealManager().findUsages(node, scope, monitor);
   }
 
-  public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
-    return getRealManager().findUsages(nodes, scope, progress, manageTasks);
+  public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, ProgressMonitor monitor, boolean manageTasks) {
+    return getRealManager().findUsages(nodes, scope, monitor, manageTasks);
   }
 
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope) {
     return getRealManager().findInstances(conceptDeclaration, scope);
   }
 
-  public List<SNode> findInstances(SNode conceptDeclaration, IScope scope, IAdaptiveProgressMonitor monitor) {
+  public List<SNode> findInstances(SNode conceptDeclaration, IScope scope, ProgressMonitor monitor) {
     return getRealManager().findInstances(conceptDeclaration, scope, monitor);
   }
 
-  public Set<SNode> findInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
-    return getRealManager().findInstances(concept, scope, progress, manageTasks);
+  public Set<SNode> findInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks) {
+    return getRealManager().findInstances(concept, scope, monitor, manageTasks);
   }
 
-  public Set<SNode> findExactInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
-    return getRealManager().findExactInstances(concept, scope, progress, manageTasks);
+  public Set<SNode> findExactInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks) {
+    return getRealManager().findExactInstances(concept, scope, monitor, manageTasks);
   }
 }

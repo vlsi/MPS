@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 
 public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
@@ -41,7 +42,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
       SetSequence.fromSet(nodes).addElement(child);
     }
     // 
-    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, scope, new FindUsagesManager.ProgressAdapter(indicator), false);
+    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, scope, new ProgressMonitorAdapter(indicator), false);
     for (SReference reference : resRefs) {
       if (!(SetSequence.fromSet(nodes).contains(reference.getSourceNode()))) {
         ListSequence.fromList(_results).addElement(reference.getSourceNode());

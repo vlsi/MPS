@@ -33,6 +33,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import javax.swing.AbstractListModel;
@@ -154,7 +155,7 @@ public class ListPanel extends JPanel {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 // todo be smarter 
-                ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(FindUsagesManager.getInstance().findInstances(concept, GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(ProgressManager.getInstance().getProgressIndicator()), false)));
+                ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(FindUsagesManager.getInstance().findInstances(concept, GlobalScope.getInstance(), new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()), false)));
               }
             });
           }

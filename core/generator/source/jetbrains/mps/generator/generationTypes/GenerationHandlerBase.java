@@ -17,8 +17,13 @@ package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
+
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, Jan 20, 2010
@@ -33,8 +38,11 @@ public abstract class GenerationHandlerBase implements IGenerationHandler {
     myLogger = logger;
   }
 
+  public void startModule(IModule module, List<SModelDescriptor> inputModels, IOperationContext operationContext) {
+  }
+
   @Override
-  public void finishGeneration(ITaskProgressHelper progressHelper) {
+  public void finishGeneration() {
     myLogger = null;
   }
 
@@ -50,8 +58,8 @@ public abstract class GenerationHandlerBase implements IGenerationHandler {
     myLogger.error(text);
   }
 
-  protected void checkMonitorCanceled(ITaskProgressHelper progressHelper) throws GenerationCanceledException {
-    if (progressHelper.isCancelled()) throw new GenerationCanceledException();
+  protected void checkMonitorCanceled(ProgressMonitor progressMonitor) throws GenerationCanceledException {
+    if (progressMonitor.isCanceled()) throw new GenerationCanceledException();
   }
 
   @Override

@@ -17,7 +17,7 @@ package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
@@ -47,12 +47,12 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
   }
 
   @Override
-  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) {
+  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ProgressMonitor progressMonitor) {
     return true;
   }
 
   @Override
-  public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
+  public int estimateCompilationMillis() {
     return 0;
   }
 

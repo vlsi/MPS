@@ -59,7 +59,7 @@ import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.debug.evaluation.transform.Transformator;
 
 public abstract class AbstractEvaluationModel {
@@ -335,7 +335,7 @@ public abstract class AbstractEvaluationModel {
     }
 
     @Override
-    public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ITaskProgressHelper helper) {
+    public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ProgressMonitor monitor) {
       SModel model = status.getOutputModel();
       if (model != null) {
         final SNode evaluator = SModelOperations.getRootByName(model, AbstractEvaluationModel.EVALUATOR_NAME);
@@ -354,7 +354,7 @@ public abstract class AbstractEvaluationModel {
 
         }
       }
-      return super.handleOutput(module, inputModel, status, context, helper);
+      return super.handleOutput(module, inputModel, status, context, monitor);
     }
   }
 }

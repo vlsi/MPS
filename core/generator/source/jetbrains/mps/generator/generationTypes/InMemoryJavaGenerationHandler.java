@@ -22,8 +22,7 @@ import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
-import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -79,7 +78,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ITaskProgressHelper progressHelper) {
+  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor progressMonitor) {
     info("handling output...");
 
     SModel outputModel = status.getOutputModel();
@@ -94,35 +93,25 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     return true;
   }
 
-  public void startModule(IModule module, List<SModelDescriptor> inputModels, IOperationContext operationContext, ITaskProgressHelper progressHelper) {
-    progressHelper.setText2("module " + module);
-  }
-
-  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
-    return compile(progressHelper);
+  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
+    try {
+      monitor.start("compiling in memory..", 1);
+      return compile(monitor, null);
+    } finally {
+      monitor.done();
+    }
   }
 
   @Override
-  public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
-    long totalJob = 0;
-    for (Pair<IModule, List<SModelDescriptor>> pair : input) {
-      IModule module = pair.o1;
-      if (module != null) {
-        long jobTime = ModelsProgressUtil.estimateCompilationMillis(!module.isCompileInMPS());
-        totalJob += jobTime;
-      }
-    }
-    if (myReloadClasses) {
-      totalJob += ModelsProgressUtil.estimateReloadAllTimeMillis();
-    }
-    return totalJob;
+  public int estimateCompilationMillis() {
+    return 1;
   }
 
   protected boolean collectSources(IModule module, SModelDescriptor inputModel, IOperationContext context, SModel outputModel) {
     boolean wereErrors = false;
 
     myContextModules.add(context.getModule());
-    Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.roots(),new Condition<SNode>() {
+    Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.roots(), new Condition<SNode>() {
       public boolean met(SNode node) {
         return node.getName() != null;
       }
@@ -133,7 +122,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       wereErrors |= genResult.hasErrors();
       String key = getKey(outputModel.getSModelReference(), root);
       Object result = genResult.getResult();
-      if(result instanceof String) {
+      if (result instanceof String) {
         mySources.put(key, (String) result);
         if (isJavaSource(outputNode)) {
           myJavaSources.add(key);
@@ -161,18 +150,18 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Deprecated
-  public boolean compile(ITaskProgressHelper progress) {
+  public boolean compile(ProgressMonitor progress) {
     return compile(progress, null);
   }
 
-  public boolean compile(ITaskProgressHelper progress, @Nullable CompilationResultListener listener) {
+  public boolean compile(ProgressMonitor progress, @Nullable CompilationResultListener listener) {
     myCompiler = createJavaCompiler();
 
     for (String key : myJavaSources) {
       myCompiler.addSource(getJavaNameFromKey(key), mySources.get(key));
     }
 
-    progress.setText2("Compiling...");
+    progress.step("Compiling...");
     MyCompilationResultListener innerListener = new MyCompilationResultListener();
     myCompiler.addCompilationResultListener(innerListener);
     if (listener != null) {
@@ -183,7 +172,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       myCompiler.removeCompilationResultListener(listener);
     }
     myCompiler.removeCompilationResultListener(innerListener);
-    progress.setText2("Compilation finished.");
+    progress.step("Compilation finished.");
 
     if (!myKeepSources) {
       mySources.clear();
@@ -191,7 +180,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     }
     myContextModules.clear();
 
-    progress.setText2("reloading MPS classes...");
+    progress.step("reloading MPS classes...");
     if (myReloadClasses && !innerListener.hasErrors()) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     }
@@ -260,7 +249,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     @Override
     public void onFatalError(String error) {
       myHasErrors = true;
-      error("Fatal error: "+error);
+      error("Fatal error: " + error);
       info("Compilation aborted.");
     }
 

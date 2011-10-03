@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.TimePresentationUtil;
-import jetbrains.mps.ide.progress.TaskProgressSettings;
 
 public class ProgressContext {
   private long myStartTime;
@@ -76,7 +75,7 @@ public class ProgressContext {
   }
 
   private static long getEstimatedTimeMillis(String taskName) {
-    return TaskProgressSettings.getInstance().getEstimatedTimeMillis(taskName);
+    return 1;
   }
 
   private static long getEstimatedTimeMillis(Iterable<String> taskNames) {
@@ -88,6 +87,6 @@ public class ProgressContext {
   }
 
   private static void addEstimatedTimeMillis(String taskName, long startTime) {
-    TaskProgressSettings.getInstance().addEstimatedTimeMillis(taskName, System.currentTimeMillis() - startTime);
+    // TODO get rid of 
   }
 }

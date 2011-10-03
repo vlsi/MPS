@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.findUsages;
 
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.components.ComponentManager;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
@@ -36,32 +34,15 @@ public abstract class FindUsagesManager {
 
   public abstract Set<SReference> findUsages(SNode node, IScope scope);
 
-  public abstract Set<SReference> findUsages(SNode node, IScope scope, IAdaptiveProgressMonitor progress);
+  public abstract Set<SReference> findUsages(SNode node, IScope scope, ProgressMonitor monitor);
 
-  public abstract Set<SReference> findUsages(Set<SNode> nodes, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks);
+  public abstract Set<SReference> findUsages(Set<SNode> nodes, IScope scope, ProgressMonitor monitor, boolean manageTasks);
 
   public abstract List<SNode> findInstances(SNode conceptDeclaration, IScope scope);
 
-  public abstract List<SNode> findInstances(SNode conceptDeclaration, IScope scope, IAdaptiveProgressMonitor monitor);
+  public abstract List<SNode> findInstances(SNode conceptDeclaration, IScope scope, ProgressMonitor monitor);
 
-  public abstract Set<SNode> findInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks);
+  public abstract Set<SNode> findInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks);
 
-  public abstract Set<SNode> findExactInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks);
-
-  public static class ProgressAdapter extends NullAdaptiveProgressMonitor {
-    private final ProgressIndicator myProgress;
-
-    public ProgressAdapter(ProgressIndicator progress) {
-      myProgress = progress;
-    }
-
-    public void addText(String text) {
-      myProgress.setText(text);
-    }
-
-    public boolean isCanceled() {
-      return myProgress.isCanceled();
-    }
-  }
-
+  public abstract Set<SNode> findExactInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks);
 }

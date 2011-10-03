@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.generator.test;
 
-import jetbrains.mps.generator.impl.IncrementalGenerationHandler;
-import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationStatus;
@@ -24,15 +22,17 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
+import jetbrains.mps.generator.impl.IncrementalGenerationHandler;
 import jetbrains.mps.generator.impl.IncrementalGenerationHandler.IncrementalReporter;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
@@ -55,13 +55,13 @@ import java.util.Map;
 
 /**
  * Records generation results as Map<String,String>
- *
+ * <p/>
  * Evgeny Gryaznov, Oct 4, 2010
  */
 public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
-  private Map<String,String> generatedContent = new HashMap<String,String>();
-  private Map<String,String> existingContent;
+  private Map<String, String> generatedContent = new HashMap<String, String>();
+  private Map<String, String> existingContent;
   private IFile myFilesDir;
   private int timesCalled = 0;
   private boolean myCheckIncremental = false;
@@ -72,7 +72,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
   public IncrementalTestGenerationHandler() {
   }
 
-  public IncrementalTestGenerationHandler(Map<String,String> existingContent) {
+  public IncrementalTestGenerationHandler(Map<String, String> existingContent) {
     this.existingContent = existingContent;
   }
 
@@ -94,19 +94,19 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
   }
 
   public Map<String, String> getExistingContent() {
-    if(existingContent == null) {
-      existingContent = new HashMap<String,String>();
+    if (existingContent == null) {
+      existingContent = new HashMap<String, String>();
       collectExistingContent(existingContent);
     }
     return existingContent;
   }
 
   private void collectExistingContent(Map<String, String> existingContent) {
-    if(myFilesDir != null) {
+    if (myFilesDir != null) {
       for (IFile f : myFilesDir.getChildren()) {
         try {
-          if (f.isDirectory() || f.getName().equals(TraceInfoCache.TRACE_FILE_NAME))  continue;
-          if (f.getName().endsWith(".png"))  continue; // temp fix: icons are generated in another facet
+          if (f.isDirectory() || f.getName().equals(TraceInfoCache.TRACE_FILE_NAME)) continue;
+          if (f.getName().endsWith(".png")) continue; // temp fix: icons are generated in another facet
           String s = FileUtil.read(new InputStreamReader(f.openInputStream(), FileUtil.DEFAULT_CHARSET));
           existingContent.put(f.getName(), s);
         } catch (IOException e) {
@@ -122,20 +122,16 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public void startModule(IModule module, List<SModelDescriptor> inputModels, IOperationContext operationContext, ITaskProgressHelper progressHelper) {
-  }
-
-  @Override
-  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ITaskProgressHelper progressHelper) {
+  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor progressMonitor) {
     myLastDependencies = null;
     IFile targetDir = FileSystem.getInstance().getFileByPath(module.getOutputFor(inputModel));
 
     Assert.assertTrue(status.isOk());
     Assert.assertTrue("should be called once", timesCalled++ == 0);
 
-    if(myCheckIncremental) {
+    if (myCheckIncremental) {
       GenerationDependencies dep = status.getDependencies();
-      if(dep.getFromCacheCount() + dep.getSkippedCount() == 0) {
+      if (dep.getFromCacheCount() + dep.getSkippedCount() == 0) {
         final StringBuilder sb = new StringBuilder("Not optimized:\n");
         new IncrementalGenerationHandler(inputModel, invocationContext, myGenOptions, new GenerationPlan(inputModel.getSModel(), GlobalScope.getInstance()).getSignature(), null, new IncrementalReporter() {
           @Override
@@ -171,12 +167,12 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
+  public int estimateCompilationMillis() {
     return 0;
   }
 
   @Override
-  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws GenerationCanceledException, IOException {
+  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ProgressMonitor progressMonitor) throws GenerationCanceledException, IOException {
     return true;
   }
 
@@ -187,7 +183,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
     @Override
     public void saveStream(String name, String content, boolean isCache) {
-      if(!isCache) {
+      if (!isCache) {
         generatedContent.put(name, content);
       }
     }

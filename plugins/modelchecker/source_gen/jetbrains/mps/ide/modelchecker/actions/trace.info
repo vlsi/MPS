@@ -1728,116 +1728,116 @@
     <unitInfo nodeId="1453248744423275727" fileName="ModuleChecker.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.ModuleChecker" />
   </root>
   <root nodeId="1453248744423275871">
-    <nodeInfo nodeId="1453248744423275943" fileName="ProgressContext.java" startLine="13" startPosition="30" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStartTime" />
-    <nodeInfo nodeId="1453248744423275946" fileName="ProgressContext.java" startLine="14" startPosition="27" endLine="15" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEstimatedTime" />
-    <nodeInfo nodeId="1453248744423275949" fileName="ProgressContext.java" startLine="15" startPosition="31" endLine="16" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTaskNames" />
-    <nodeInfo nodeId="1453248744423275956" fileName="ProgressContext.java" startLine="16" startPosition="84" endLine="17" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentTaskIndex" />
-    <nodeInfo nodeId="1453248744423275960" fileName="ProgressContext.java" startLine="17" startPosition="37" endLine="18" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProgressIndicator" />
-    <nodeInfo nodeId="1453248744423275968" fileName="ProgressContext.java" startLine="20" startPosition="87" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423275972" fileName="ProgressContext.java" startLine="21" startPosition="28" endLine="22" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423275976" fileName="ProgressContext.java" startLine="22" startPosition="44" endLine="23" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423275980" fileName="ProgressContext.java" startLine="23" startPosition="45" endLine="24" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423275994" fileName="ProgressContext.java" startLine="27" startPosition="91" endLine="28" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="1453248744423276008" fileName="ProgressContext.java" startLine="31" startPosition="80" endLine="32" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="1453248744423275925" fileName="ProgressContext.java" startLine="35" startPosition="56" endLine="36" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423275931" fileName="ProgressContext.java" startLine="36" startPosition="112" endLine="37" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423275940" fileName="ProgressContext.java" startLine="40" startPosition="35" endLine="41" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423276024" fileName="ProgressContext.java" startLine="44" startPosition="30" endLine="45" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423276030" fileName="ProgressContext.java" startLine="48" startPosition="34" endLine="49" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423276036" fileName="ProgressContext.java" startLine="52" startPosition="51" endLine="53" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423276042" fileName="ProgressContext.java" startLine="56" startPosition="55" endLine="57" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423276046" fileName="ProgressContext.java" startLine="57" startPosition="57" endLine="58" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423276050" fileName="ProgressContext.java" startLine="58" startPosition="44" endLine="59" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1453248744423276054" fileName="ProgressContext.java" startLine="60" startPosition="33" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423276059" fileName="ProgressContext.java" startLine="62" startPosition="5" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1453248744423276060" fileName="ProgressContext.java" startLine="63" startPosition="0" endLine="64" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423276066" fileName="ProgressContext.java" startLine="64" startPosition="67" endLine="65" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423276071" fileName="ProgressContext.java" startLine="65" startPosition="100" endLine="66" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423276076" fileName="ProgressContext.java" startLine="66" startPosition="96" endLine="67" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423276081" fileName="ProgressContext.java" startLine="67" startPosition="28" endLine="68" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423276101" fileName="ProgressContext.java" startLine="69" startPosition="38" endLine="70" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423276106" fileName="ProgressContext.java" startLine="70" startPosition="40" endLine="71" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423276095" fileName="ProgressContext.java" startLine="72" startPosition="12" endLine="73" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423276118" fileName="ProgressContext.java" startLine="74" startPosition="5" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423275874" fileName="ProgressContext.java" startLine="78" startPosition="63" endLine="79" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423275887" fileName="ProgressContext.java" startLine="82" startPosition="74" endLine="83" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1453248744423275895" fileName="ProgressContext.java" startLine="84" startPosition="62" endLine="85" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423275900" fileName="ProgressContext.java" startLine="86" startPosition="5" endLine="87" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1453248744423275907" fileName="ProgressContext.java" startLine="90" startPosition="79" endLine="91" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423276093" fileName="ProgressContext.java" startLine="72" startPosition="10" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1453248744423275990" fileName="ProgressContext.java" startLine="26" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProgressContext#(Lcom/intellij/openapi/progress/ProgressIndicator;Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="1453248744423276004" fileName="ProgressContext.java" startLine="30" startPosition="0" endLine="33" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProgressContext#(Lcom/intellij/openapi/progress/ProgressIndicator;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1453248744423276052" fileName="ProgressContext.java" startLine="59" startPosition="47" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1453248744423275891" fileName="ProgressContext.java" startLine="83" startPosition="20" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1453248744423275936" fileName="ProgressContext.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveEstimatedTime#()V" />
-    <nodeInfo nodeId="1453248744423276020" fileName="ProgressContext.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStartTime#()J" />
-    <nodeInfo nodeId="1453248744423276026" fileName="ProgressContext.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEstimatedTime#()J" />
-    <nodeInfo nodeId="1453248744423276032" fileName="ProgressContext.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProgressIndicator#()Lcom/intellij/openapi/progress/ProgressIndicator;" />
-    <nodeInfo nodeId="1453248744423275872" fileName="ProgressContext.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEstimatedTimeMillis#(Ljava/lang/String;)J" />
-    <nodeInfo nodeId="1453248744423275905" fileName="ProgressContext.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addEstimatedTimeMillis#(Ljava/lang/String;J)V" />
-    <nodeInfo nodeId="1453248744423275921" fileName="ProgressContext.java" startLine="34" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveEstimatedTime#(J)V" />
-    <nodeInfo nodeId="1453248744423275964" fileName="ProgressContext.java" startLine="19" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProgressContext#(Lcom/intellij/openapi/progress/ProgressIndicator;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1453248744423276092" fileName="ProgressContext.java" startLine="68" startPosition="106" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1453248744423275883" fileName="ProgressContext.java" startLine="81" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEstimatedTimeMillis#(Ljava/lang/Iterable;)J" />
-    <nodeInfo nodeId="1453248744423276038" fileName="ProgressContext.java" startLine="55" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkAndUpdateIndicator#(Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="1453248744423275993" fileName="ProgressContext.java" startLine="27" startPosition="91" endLine="28" endPosition="79" />
-    <scopeInfo nodeId="1453248744423276007" fileName="ProgressContext.java" startLine="31" startPosition="80" endLine="32" endPosition="72" />
-    <scopeInfo nodeId="1453248744423275939" fileName="ProgressContext.java" startLine="40" startPosition="35" endLine="41" endPosition="35" />
-    <scopeInfo nodeId="1453248744423276023" fileName="ProgressContext.java" startLine="44" startPosition="30" endLine="45" endPosition="23" />
-    <scopeInfo nodeId="1453248744423276029" fileName="ProgressContext.java" startLine="48" startPosition="34" endLine="49" endPosition="27" />
-    <scopeInfo nodeId="1453248744423276035" fileName="ProgressContext.java" startLine="52" startPosition="51" endLine="53" endPosition="31" />
-    <scopeInfo nodeId="1453248744423276053" fileName="ProgressContext.java" startLine="60" startPosition="33" endLine="61" endPosition="19" />
-    <scopeInfo nodeId="1453248744423276094" fileName="ProgressContext.java" startLine="72" startPosition="12" endLine="73" endPosition="39" />
-    <scopeInfo nodeId="1453248744423275873" fileName="ProgressContext.java" startLine="78" startPosition="63" endLine="79" endPosition="79" />
-    <scopeInfo nodeId="1453248744423275894" fileName="ProgressContext.java" startLine="84" startPosition="62" endLine="85" endPosition="49" />
-    <scopeInfo nodeId="1453248744423275906" fileName="ProgressContext.java" startLine="90" startPosition="79" endLine="91" endPosition="112" />
-    <scopeInfo nodeId="1453248744423275924" fileName="ProgressContext.java" startLine="35" startPosition="56" endLine="37" endPosition="25" />
-    <scopeInfo nodeId="1453248744423276100" fileName="ProgressContext.java" startLine="69" startPosition="38" endLine="71" endPosition="63" />
-    <scopeInfo nodeId="1453248744423275990" fileName="ProgressContext.java" startLine="26" startPosition="0" endLine="29" endPosition="3">
+    <nodeInfo nodeId="1453248744423275943" fileName="ProgressContext.java" startLine="12" startPosition="30" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStartTime" />
+    <nodeInfo nodeId="1453248744423275946" fileName="ProgressContext.java" startLine="13" startPosition="27" endLine="14" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEstimatedTime" />
+    <nodeInfo nodeId="1453248744423275949" fileName="ProgressContext.java" startLine="14" startPosition="31" endLine="15" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTaskNames" />
+    <nodeInfo nodeId="1453248744423275956" fileName="ProgressContext.java" startLine="15" startPosition="84" endLine="16" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentTaskIndex" />
+    <nodeInfo nodeId="1453248744423275960" fileName="ProgressContext.java" startLine="16" startPosition="37" endLine="17" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProgressIndicator" />
+    <nodeInfo nodeId="1453248744423275968" fileName="ProgressContext.java" startLine="19" startPosition="87" endLine="20" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423275972" fileName="ProgressContext.java" startLine="20" startPosition="28" endLine="21" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423275976" fileName="ProgressContext.java" startLine="21" startPosition="44" endLine="22" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423275980" fileName="ProgressContext.java" startLine="22" startPosition="45" endLine="23" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423275994" fileName="ProgressContext.java" startLine="26" startPosition="91" endLine="27" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="1453248744423276008" fileName="ProgressContext.java" startLine="30" startPosition="80" endLine="31" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="1453248744423275925" fileName="ProgressContext.java" startLine="34" startPosition="56" endLine="35" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423275931" fileName="ProgressContext.java" startLine="35" startPosition="112" endLine="36" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423275940" fileName="ProgressContext.java" startLine="39" startPosition="35" endLine="40" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423276024" fileName="ProgressContext.java" startLine="43" startPosition="30" endLine="44" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1453248744423276030" fileName="ProgressContext.java" startLine="47" startPosition="34" endLine="48" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1453248744423276036" fileName="ProgressContext.java" startLine="51" startPosition="51" endLine="52" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1453248744423276042" fileName="ProgressContext.java" startLine="55" startPosition="55" endLine="56" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1453248744423276046" fileName="ProgressContext.java" startLine="56" startPosition="57" endLine="57" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1453248744423276050" fileName="ProgressContext.java" startLine="57" startPosition="44" endLine="58" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1453248744423276054" fileName="ProgressContext.java" startLine="59" startPosition="33" endLine="60" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1453248744423276059" fileName="ProgressContext.java" startLine="61" startPosition="5" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1453248744423276060" fileName="ProgressContext.java" startLine="62" startPosition="0" endLine="63" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1453248744423276066" fileName="ProgressContext.java" startLine="63" startPosition="67" endLine="64" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1453248744423276071" fileName="ProgressContext.java" startLine="64" startPosition="100" endLine="65" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1453248744423276076" fileName="ProgressContext.java" startLine="65" startPosition="96" endLine="66" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423276081" fileName="ProgressContext.java" startLine="66" startPosition="28" endLine="67" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423276101" fileName="ProgressContext.java" startLine="68" startPosition="38" endLine="69" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423276106" fileName="ProgressContext.java" startLine="69" startPosition="40" endLine="70" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423276095" fileName="ProgressContext.java" startLine="71" startPosition="12" endLine="72" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423276118" fileName="ProgressContext.java" startLine="73" startPosition="5" endLine="74" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1453248744423275874" fileName="ProgressContext.java" startLine="77" startPosition="63" endLine="78" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1453248744423275887" fileName="ProgressContext.java" startLine="81" startPosition="74" endLine="82" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1453248744423275895" fileName="ProgressContext.java" startLine="83" startPosition="62" endLine="84" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423275900" fileName="ProgressContext.java" startLine="85" startPosition="5" endLine="86" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4041293538393206754" fileName="ProgressContext.java" startLine="89" startPosition="79" endLine="90" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1453248744423276093" fileName="ProgressContext.java" startLine="71" startPosition="10" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1453248744423275990" fileName="ProgressContext.java" startLine="25" startPosition="0" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProgressContext#(Lcom/intellij/openapi/progress/ProgressIndicator;Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="1453248744423276004" fileName="ProgressContext.java" startLine="29" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProgressContext#(Lcom/intellij/openapi/progress/ProgressIndicator;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1453248744423276052" fileName="ProgressContext.java" startLine="58" startPosition="47" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423275891" fileName="ProgressContext.java" startLine="82" startPosition="20" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1453248744423275936" fileName="ProgressContext.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveEstimatedTime#()V" />
+    <nodeInfo nodeId="1453248744423276020" fileName="ProgressContext.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStartTime#()J" />
+    <nodeInfo nodeId="1453248744423276026" fileName="ProgressContext.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEstimatedTime#()J" />
+    <nodeInfo nodeId="1453248744423276032" fileName="ProgressContext.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProgressIndicator#()Lcom/intellij/openapi/progress/ProgressIndicator;" />
+    <nodeInfo nodeId="1453248744423275872" fileName="ProgressContext.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEstimatedTimeMillis#(Ljava/lang/String;)J" />
+    <nodeInfo nodeId="1453248744423275905" fileName="ProgressContext.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addEstimatedTimeMillis#(Ljava/lang/String;J)V" />
+    <nodeInfo nodeId="1453248744423275921" fileName="ProgressContext.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveEstimatedTime#(J)V" />
+    <nodeInfo nodeId="1453248744423275964" fileName="ProgressContext.java" startLine="18" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProgressContext#(Lcom/intellij/openapi/progress/ProgressIndicator;Ljava/util/List;)V" />
+    <nodeInfo nodeId="1453248744423276092" fileName="ProgressContext.java" startLine="67" startPosition="106" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423275883" fileName="ProgressContext.java" startLine="80" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEstimatedTimeMillis#(Ljava/lang/Iterable;)J" />
+    <nodeInfo nodeId="1453248744423276038" fileName="ProgressContext.java" startLine="54" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkAndUpdateIndicator#(Ljava/lang/String;)Z" />
+    <scopeInfo nodeId="1453248744423275993" fileName="ProgressContext.java" startLine="26" startPosition="91" endLine="27" endPosition="79" />
+    <scopeInfo nodeId="1453248744423276007" fileName="ProgressContext.java" startLine="30" startPosition="80" endLine="31" endPosition="72" />
+    <scopeInfo nodeId="1453248744423275939" fileName="ProgressContext.java" startLine="39" startPosition="35" endLine="40" endPosition="35" />
+    <scopeInfo nodeId="1453248744423276023" fileName="ProgressContext.java" startLine="43" startPosition="30" endLine="44" endPosition="23" />
+    <scopeInfo nodeId="1453248744423276029" fileName="ProgressContext.java" startLine="47" startPosition="34" endLine="48" endPosition="27" />
+    <scopeInfo nodeId="1453248744423276035" fileName="ProgressContext.java" startLine="51" startPosition="51" endLine="52" endPosition="31" />
+    <scopeInfo nodeId="1453248744423276053" fileName="ProgressContext.java" startLine="59" startPosition="33" endLine="60" endPosition="19" />
+    <scopeInfo nodeId="1453248744423276094" fileName="ProgressContext.java" startLine="71" startPosition="12" endLine="72" endPosition="39" />
+    <scopeInfo nodeId="1453248744423275873" fileName="ProgressContext.java" startLine="77" startPosition="63" endLine="78" endPosition="13" />
+    <scopeInfo nodeId="1453248744423275894" fileName="ProgressContext.java" startLine="83" startPosition="62" endLine="84" endPosition="49" />
+    <scopeInfo nodeId="1453248744423275906" fileName="ProgressContext.java" startLine="89" startPosition="79" endLine="90" endPosition="23" />
+    <scopeInfo nodeId="1453248744423275924" fileName="ProgressContext.java" startLine="34" startPosition="56" endLine="36" endPosition="25" />
+    <scopeInfo nodeId="1453248744423276100" fileName="ProgressContext.java" startLine="68" startPosition="38" endLine="70" endPosition="63" />
+    <scopeInfo nodeId="1453248744423275990" fileName="ProgressContext.java" startLine="25" startPosition="0" endLine="28" endPosition="3">
       <varInfo nodeId="1453248744423275999" varName="progressIndicator" />
       <varInfo nodeId="1453248744423276001" varName="taskNames" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423276004" fileName="ProgressContext.java" startLine="30" startPosition="0" endLine="33" endPosition="3">
+    <scopeInfo nodeId="1453248744423276004" fileName="ProgressContext.java" startLine="29" startPosition="0" endLine="32" endPosition="3">
       <varInfo nodeId="1453248744423276016" varName="progressIndicator" />
       <varInfo nodeId="1453248744423276018" varName="taskName" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423275891" fileName="ProgressContext.java" startLine="83" startPosition="20" endLine="86" endPosition="5" />
-    <scopeInfo nodeId="1453248744423275967" fileName="ProgressContext.java" startLine="20" startPosition="87" endLine="24" endPosition="56" />
-    <scopeInfo nodeId="1453248744423275936" fileName="ProgressContext.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1453248744423276020" fileName="ProgressContext.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1453248744423276026" fileName="ProgressContext.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1453248744423276032" fileName="ProgressContext.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1453248744423275872" fileName="ProgressContext.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="1453248744423275891" fileName="ProgressContext.java" startLine="82" startPosition="20" endLine="85" endPosition="5" />
+    <scopeInfo nodeId="1453248744423275967" fileName="ProgressContext.java" startLine="19" startPosition="87" endLine="23" endPosition="56" />
+    <scopeInfo nodeId="1453248744423275936" fileName="ProgressContext.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1453248744423276020" fileName="ProgressContext.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1453248744423276026" fileName="ProgressContext.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1453248744423276032" fileName="ProgressContext.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1453248744423275872" fileName="ProgressContext.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="1453248744423275880" varName="taskName" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423275905" fileName="ProgressContext.java" startLine="89" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="1453248744423275905" fileName="ProgressContext.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="1453248744423275918" varName="startTime" />
       <varInfo nodeId="1453248744423275916" varName="taskName" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423275921" fileName="ProgressContext.java" startLine="34" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="1453248744423275921" fileName="ProgressContext.java" startLine="33" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1453248744423275934" varName="subtaskStartTime" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423275886" fileName="ProgressContext.java" startLine="82" startPosition="74" endLine="87" endPosition="18">
+    <scopeInfo nodeId="1453248744423275886" fileName="ProgressContext.java" startLine="81" startPosition="74" endLine="86" endPosition="18">
       <varInfo nodeId="1453248744423275888" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423275964" fileName="ProgressContext.java" startLine="19" startPosition="0" endLine="25" endPosition="3">
+    <scopeInfo nodeId="1453248744423275964" fileName="ProgressContext.java" startLine="18" startPosition="0" endLine="24" endPosition="3">
       <varInfo nodeId="1453248744423275985" varName="progressIndicator" />
       <varInfo nodeId="1453248744423275987" varName="taskNames" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423275883" fileName="ProgressContext.java" startLine="81" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="1453248744423275883" fileName="ProgressContext.java" startLine="80" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="1453248744423275902" varName="taskNames" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423276041" fileName="ProgressContext.java" startLine="56" startPosition="55" endLine="75" endPosition="16">
+    <scopeInfo nodeId="1453248744423276041" fileName="ProgressContext.java" startLine="55" startPosition="55" endLine="74" endPosition="16">
       <varInfo nodeId="1453248744423276047" varName="estimatedTime" />
       <varInfo nodeId="1453248744423276043" varName="indicator" />
       <varInfo nodeId="1453248744423276072" varName="elapsedTimeString" />
       <varInfo nodeId="1453248744423276067" varName="estimatedTimeString" />
       <varInfo nodeId="1453248744423276061" varName="elapsedTime" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423276038" fileName="ProgressContext.java" startLine="55" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="1453248744423276038" fileName="ProgressContext.java" startLine="54" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="1453248744423276120" varName="text" />
     </scopeInfo>
-    <unitInfo nodeId="1453248744423275871" fileName="ProgressContext.java" startLine="13" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.ProgressContext" />
+    <unitInfo nodeId="1453248744423275871" fileName="ProgressContext.java" startLine="12" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.ProgressContext" />
   </root>
   <root nodeId="1453248744423276122">
     <nodeInfo nodeId="1453248744423276122" fileName="ShowModelCheckerTool_ActionGroup.java" startLine="8" startPosition="76" endLine="9" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

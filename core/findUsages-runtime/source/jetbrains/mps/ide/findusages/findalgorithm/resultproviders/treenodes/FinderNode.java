@@ -24,7 +24,6 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IScope;
@@ -82,7 +81,7 @@ public class FinderNode extends BaseLeaf {
   }
 
   public long getEstimatedTime(IScope scope) {
-    return TaskProgressSettings.getInstance().getEstimatedTimeMillis(getTaskName());
+    return 1;
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {

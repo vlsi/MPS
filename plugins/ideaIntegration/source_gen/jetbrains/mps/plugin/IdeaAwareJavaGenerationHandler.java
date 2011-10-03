@@ -8,10 +8,9 @@ import java.util.List;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.progress.ProgressMonitor;
 import java.io.IOException;
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.MPSCore;
 import com.intellij.openapi.project.Project;
@@ -21,45 +20,61 @@ public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
   }
 
   @Override
-  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
-    boolean compiledSuccessfully = generationOK;
-    boolean[] ideaIsFresh = new boolean[]{false};
-    writeFiles();
-    IProjectHandler projectHandler = getProjectHandler(operationContext.getIdeaProject());
-    if (generationOK) {
-      long compilationStart = System.currentTimeMillis();
-      boolean needToReload = false;
-      for (Pair<IModule, List<SModelDescriptor>> moduleListPair : input) {
-        IModule module = moduleListPair.o1;
-        if (module != null && module.reloadClassesAfterGeneration()) {
-          needToReload = true;
+  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
+    try {
+      int amount = 2;
+      if (generationOK) {
+        amount += input.size() + 1;
+      }
+      monitor.start("Compiling in IDEA", amount);
+
+      boolean compiledSuccessfully = generationOK;
+      boolean[] ideaIsFresh = new boolean[]{false};
+      writeFiles(monitor.subTask(1));
+      monitor.advance(0);
+      IProjectHandler projectHandler = getProjectHandler(operationContext.getIdeaProject());
+      if (generationOK) {
+        long compilationStart = System.currentTimeMillis();
+        boolean needToReload = false;
+        for (Pair<IModule, List<SModelDescriptor>> moduleListPair : input) {
+          IModule module = moduleListPair.o1;
+          if (module != null && module.reloadClassesAfterGeneration()) {
+            needToReload = true;
+          }
+          boolean compilationResult = compileModule(module, projectHandler, ideaIsFresh, monitor.subTask(1));
+          monitor.advance(0);
+          compiledSuccessfully = compiledSuccessfully && compilationResult;
         }
-        boolean compilationResult = compileModule(module, projectHandler, ideaIsFresh, progressHelper);
-        compiledSuccessfully = compiledSuccessfully && compilationResult;
+        if (compiledSuccessfully && needToReload) {
+          reloadClasses(monitor.subTask(1));
+          monitor.advance(0);
+        } else {
+          monitor.advance(1);
+        }
+        info("Compilation finished in " + (System.currentTimeMillis() - compilationStart) + " ms");
       }
-      if (compiledSuccessfully && needToReload) {
-        reloadClasses(progressHelper);
+      if (isIDEAPresent(projectHandler) && !(ideaIsFresh[0])) {
+        projectHandler.refreshFS();
+        monitor.advance(1);
       }
-      info("Compilation finished in " + (System.currentTimeMillis() - compilationStart) + " ms");
+      return compiledSuccessfully;
+    } finally {
+      monitor.done();
     }
-    if (isIDEAPresent(projectHandler) && !(ideaIsFresh[0])) {
-      projectHandler.refreshFS();
-    }
-    return compiledSuccessfully;
   }
 
-  protected boolean compileModule(IModule module, IProjectHandler projectHandler, boolean[] ideaIsFresh, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
+  protected boolean compileModule(IModule module, IProjectHandler projectHandler, boolean[] ideaIsFresh, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
     if (module != null) {
       if (module.isCompileInMPS()) {
-        return compileModuleInMPS(module, progressHelper);
+        return compileModuleInMPS(module, monitor);
       } else {
-        return compileModuleInIDEA(module, projectHandler, ideaIsFresh, progressHelper);
+        return compileModuleInIDEA(module, projectHandler, ideaIsFresh, monitor);
       }
     }
     return true;
   }
 
-  protected boolean compileModuleInIDEA(IModule module, IProjectHandler projectHandler, boolean[] ideaIsFresh, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
+  protected boolean compileModuleInIDEA(IModule module, IProjectHandler projectHandler, boolean[] ideaIsFresh, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
     boolean compiledSuccessfully = true;
     if (module != null) {
       if (!(isIDEAPresent(projectHandler))) {
@@ -67,17 +82,22 @@ public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
         error("Can't compile it.");
         compiledSuccessfully = false;
       } else {
-        checkMonitorCanceled(progressHelper);
-        progressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
-        projectHandler.refreshFS();
-        ideaIsFresh[0] = true;
-        progressHelper.finishTask();
+        checkMonitorCanceled(monitor);
         String info = "compiling in IntelliJ IDEA...";
-        progressHelper.setText2(info);
-        info(info);
-        progressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
-        CompilationResult compilationResult = projectHandler.buildModule(module.getGeneratorOutputPath());
-        progressHelper.finishTask();
+        CompilationResult compilationResult = null;
+        try {
+          monitor.start(info, 4);
+          monitor.step("refreshing filesystem..");
+          projectHandler.refreshFS();
+          ideaIsFresh[0] = true;
+          monitor.advance(1);
+          monitor.step("compiling..");
+          info(info);
+          compilationResult = projectHandler.buildModule(module.getGeneratorOutputPath());
+
+        } finally {
+          monitor.done();
+        }
         if (compilationResult == null || compilationResult.getErrors() > 0) {
           compiledSuccessfully = false;
         }
@@ -92,8 +112,7 @@ public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
           }
         }
       }
-      progressHelper.setText2("");
-      checkMonitorCanceled(progressHelper);
+      checkMonitorCanceled(monitor);
     }
     return compiledSuccessfully;
   }

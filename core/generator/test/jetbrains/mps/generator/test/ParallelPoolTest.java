@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.generator.test;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GenerationTaskPool;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 import org.apache.log4j.Logger;
@@ -50,7 +50,7 @@ public class ParallelPoolTest extends TestCase {
     public boolean isFinished() {
       return isFinished.get();
     }
-    
+
     public boolean isCancelled() {
       return isCancelled.get();
     }
@@ -67,7 +67,7 @@ public class ParallelPoolTest extends TestCase {
       fract = (fract >> 6);
       long fractCounter;
       long start = System.currentTimeMillis();
-      while(localCounter > 0) {
+      while (localCounter > 0) {
         fractCounter = fract;
         while (fractCounter > 0) {
           fractCounter--;
@@ -76,7 +76,7 @@ public class ParallelPoolTest extends TestCase {
         if (taskPool.isCancelled()) return;
       }
       long end = System.currentTimeMillis();
-      LOG.info("Took " + (end-start)/1000. + " secs");
+      LOG.info("Took " + (end - start) / 1000. + " secs");
       isCancelled.set(false);
       isFinished.set(true);
     }
@@ -93,9 +93,9 @@ public class ParallelPoolTest extends TestCase {
     long count2secs = 0;
     long startTime = System.currentTimeMillis();
     long endTime = startTime + measureTime;
-    while(System.currentTimeMillis() < endTime) {
+    while (System.currentTimeMillis() < endTime) {
       long localCounter = 0;
-      while(localCounter < 10000000l) {
+      while (localCounter < 10000000l) {
         localCounter++;
       }
       count2secs += localCounter;
@@ -104,7 +104,7 @@ public class ParallelPoolTest extends TestCase {
     long amountOfWork = count2secs * measureTime / (endTime - startTime);
     long localCounter = amountOfWork;
     startTime = System.currentTimeMillis();
-    while(localCounter > 0) {
+    while (localCounter > 0) {
       localCounter--;
     }
     endTime = System.currentTimeMillis();
@@ -114,7 +114,7 @@ public class ParallelPoolTest extends TestCase {
 
   private CustomTask[] createTasks(long amountOfWork, int numberOfTasks, GenerationTaskPool taskPool) {
     List<GenerationTask> tasks = new ArrayList<GenerationTask>();
-    for(int i = 0; i < numberOfTasks; i++) {
+    for (int i = 0; i < numberOfTasks; i++) {
       tasks.add(new CustomTask(amountOfWork, taskPool));
     }
     return tasks.toArray(new CustomTask[numberOfTasks]);
@@ -122,7 +122,7 @@ public class ParallelPoolTest extends TestCase {
 
   public void testPoolSpeed() {
     int cores = Runtime.getRuntime().availableProcessors();
-    if(cores < 3) {
+    if (cores < 3) {
       // cannot proceed
       return;
     }
@@ -131,9 +131,9 @@ public class ParallelPoolTest extends TestCase {
     LOG.info("Work amount: " + amountFor2secs + " ticks");
 
     long start = System.currentTimeMillis();
-    GenerationTaskPool pool = new GenerationTaskPool(new EmptyProgressIndicator(), 4);
+    GenerationTaskPool pool = new GenerationTaskPool(new EmptyProgressMonitor(), 4);
     final CustomTask[] generationTasks = createTasks(amountFor2secs, 4, pool);
-    for(GenerationTask t : generationTasks) {
+    for (GenerationTask t : generationTasks) {
       pool.addTask(t);
     }
 
@@ -147,18 +147,18 @@ public class ParallelPoolTest extends TestCase {
 
     long end = System.currentTimeMillis();
 
-    for(CustomTask t : generationTasks) {
+    for (CustomTask t : generationTasks) {
       Assert.assertTrue(t.isFinished());
     }
 
-    LOG.info("Total " + (end-start)/1000. + " seconds to complete 4 x 2secs tasks");
-    Assert.assertTrue("too slow: "+(end-start), (end-start) < 4500); // at least 2 core cpu
+    LOG.info("Total " + (end - start) / 1000. + " seconds to complete 4 x 2secs tasks");
+    Assert.assertTrue("too slow: " + (end - start), (end - start) < 4500); // at least 2 core cpu
     pool.dispose();
   }
 
   public void testPoolCancelling() {
     int cores = Runtime.getRuntime().availableProcessors();
-    if(cores < 3) {
+    if (cores < 3) {
       // cannot proceed
       return;
     }
@@ -166,14 +166,14 @@ public class ParallelPoolTest extends TestCase {
     long amountFor2secs = get2SecsOperation();
 
     long start = System.currentTimeMillis();
-    GenerationTaskPool pool = new GenerationTaskPool(new EmptyProgressIndicator() {
+    GenerationTaskPool pool = new GenerationTaskPool(new EmptyProgressMonitor() {
       @Override
       public boolean isCanceled() {
         return true;
       }
     }, 4);
-    final CustomTask[] generationTasks = createTasks(amountFor2secs*4, 4, pool);
-    for(GenerationTask t : generationTasks) {
+    final CustomTask[] generationTasks = createTasks(amountFor2secs * 4, 4, pool);
+    for (GenerationTask t : generationTasks) {
       pool.addTask(t);
     }
 
@@ -187,36 +187,36 @@ public class ParallelPoolTest extends TestCase {
     } catch (InterruptedException e) {
     }
     Assert.assertTrue(canceledExc);
-    
+
     long end = System.currentTimeMillis();
 
-    for(CustomTask t : generationTasks) {
+    for (CustomTask t : generationTasks) {
       Assert.assertTrue("task should be cancelled", t.isCancelled());
       Assert.assertFalse("task should not be finished", t.isFinished());
     }
 
-    LOG.info("Total " + (end-start)/1000. + " seconds, when cancelled after 1 sec.");
-    Assert.assertTrue((end-start) < 1500 && (end-start) > 970);
+    LOG.info("Total " + (end - start) / 1000. + " seconds, when cancelled after 1 sec.");
+    Assert.assertTrue((end - start) < 1500 && (end - start) > 970);
     pool.dispose();
   }
 
   public void testPoolCancelling2() {
     int cores = Runtime.getRuntime().availableProcessors();
-    if(cores < 3) {
+    if (cores < 3) {
       // cannot proceed
       return;
     }
 
     long amountFor2secs = get2SecsOperation();
     final long start = System.currentTimeMillis();
-    GenerationTaskPool pool = new GenerationTaskPool(new EmptyProgressIndicator() {
+    GenerationTaskPool pool = new GenerationTaskPool(new EmptyProgressMonitor() {
       @Override
       public boolean isCanceled() {
         return (System.currentTimeMillis() - start > 1600);
       }
     }, 4);
-    final CustomTask[] generationTasks = createTasks(amountFor2secs*4, 4, pool);
-    for(GenerationTask t : generationTasks) {
+    final CustomTask[] generationTasks = createTasks(amountFor2secs * 4, 4, pool);
+    for (GenerationTask t : generationTasks) {
       pool.addTask(t);
     }
 
@@ -231,13 +231,13 @@ public class ParallelPoolTest extends TestCase {
 
     long end = System.currentTimeMillis();
 
-    for(CustomTask t : generationTasks) {
+    for (CustomTask t : generationTasks) {
       Assert.assertTrue("task should be cancelled", t.isCancelled());
       Assert.assertFalse("task should not be finished", t.isFinished());
     }
 
-    LOG.info("Total " + (end-start)/1000. + " seconds (should be 2 secs), when cancelled after 1.6 secs");
-    Assert.assertTrue((end-start) < 2300 && (end-start) > 1700);
+    LOG.info("Total " + (end - start) / 1000. + " seconds (should be 2 secs), when cancelled after 1.6 secs");
+    Assert.assertTrue((end - start) < 2300 && (end - start) > 1700);
     pool.dispose();
   }
 }

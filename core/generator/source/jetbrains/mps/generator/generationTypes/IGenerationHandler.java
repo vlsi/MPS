@@ -18,7 +18,7 @@ package jetbrains.mps.generator.generationTypes;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -34,29 +34,29 @@ public interface IGenerationHandler {
 
   void startGeneration(IGeneratorLogger logger);
 
-  void finishGeneration(ITaskProgressHelper progressHelper);
+  void finishGeneration();
 
   boolean canHandle(SModelDescriptor inputModel);
 
   /**
    * Next module started.
    */
-  void startModule(IModule module, List<SModelDescriptor> inputModels, IOperationContext operationContext, ITaskProgressHelper progressHelper);
+  void startModule(IModule module, List<SModelDescriptor> inputModels, IOperationContext operationContext);
 
   /**
    * Handle generation result of a model.
    */
-  boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ITaskProgressHelper progressHelper);
+  boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor progressMonitor);
 
   /**
    * Estimates execution time of compile() method in milliseconds.
    */
-  long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input);
+  int estimateCompilationMillis();
 
   /**
    * Post-process generated output: compile, reload, etc. Once per generation cycle.
    */
-  boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws GenerationCanceledException, IOException;
+  boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ProgressMonitor progressMonitor) throws GenerationCanceledException, IOException;
 
   /**
    * This method is invoked outside of a model lock after generation

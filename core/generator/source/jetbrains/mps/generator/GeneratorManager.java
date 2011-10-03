@@ -23,6 +23,8 @@ import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.progress.CancellationMonitor;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 
@@ -103,14 +105,15 @@ public class GeneratorManager {
 
     GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings(), options.isKeepModelsWithWarnings());
 
-    final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext, progress);
+    final ProgressMonitorAdapter monitor = new ProgressMonitorAdapter(progress);
+    final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext, new CancellationMonitor(monitor));
     ModelAccess.instance().requireRead(new Runnable() {
       @Override
       public void run() {
         result[0] = UndoHelper.getInstance().runNonUndoableAction(new Computable<Boolean>() {
           @Override
           public Boolean compute() {
-            final boolean success = gc.generate();
+            final boolean success = gc.generate(monitor);
             return success;
           }
         });

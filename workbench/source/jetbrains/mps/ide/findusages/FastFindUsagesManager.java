@@ -29,10 +29,10 @@ import com.intellij.util.text.CharArrayUtil;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.ProxyFindUsagesManager;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
@@ -67,49 +67,70 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
   }
 
   @Override
-  public Set<SNode> findInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
+  public Set<SNode> findInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks) {
+    if (monitor == null) monitor = new EmptyProgressMonitor();
     Set<SNode> result = new HashSet<SNode>();
-    if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
-    progressTasks(manageTasks, ModelsProgressUtil.TASK_KIND_FIND_INSTANCES, "Finding instances...", progress, scope);
 
-    result.addAll(findInstancesOfNodeInCache(concept, scope, false));
-
-    for (SModelDescriptor model : scope.getModelDescriptors()) {
-      String taskName = ModelsProgressUtil.findInstancesModelTaskName(model);
-      if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
+    final Iterable<SModelDescriptor> models = scope.getModelDescriptors();
+    int count = 0;
+    for (SModelDescriptor model : models) {
       if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
-        result.addAll(new ModelFindOperations(model).findInstances(concept, scope));
+        count++;
       }
-      if (progress.isCanceled()) {
-        if (manageTasks) progress.finishAnyway();
-        return result;
-      } else {
-        if (manageTasks) progress.finishTask(taskName);
+    }
+
+    monitor.start("Finding instances...", 5 + count);
+    try {
+      monitor.step("Loading cache");
+      result.addAll(findInstancesOfNodeInCache(concept, scope, false));
+      monitor.advance(5);
+
+      for (SModelDescriptor model : models) {
+        if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
+          monitor.step(model.getLongName());
+          result.addAll(new ModelFindOperations(model).findInstances(concept, scope));
+          monitor.advance(1);
+        }
+        if (monitor.isCanceled()) {
+          return result;
+        }
       }
+    } finally {
+      monitor.done();
     }
     return result;
   }
 
   @Override
-  public Set<SNode> findExactInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
+  public Set<SNode> findExactInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks) {
     Set<SNode> result = new HashSet<SNode>();
-    if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
-    progressTasks(manageTasks, ModelsProgressUtil.TASK_KIND_FIND_EXACT_INSTANCES, "Finding exact instances...", progress, scope);
+    if (monitor == null) monitor = new EmptyProgressMonitor();
 
-    result.addAll(findInstancesOfNodeInCache(concept, scope, true));
-
-    for (SModelDescriptor model : scope.getModelDescriptors()) {
-      String taskName = ModelsProgressUtil.findExactInstancesModelTaskName(model);
-      if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_EXACT_INSTANCES);
+    final Iterable<SModelDescriptor> models = scope.getModelDescriptors();
+    int count = 0;
+    for (SModelDescriptor model : models) {
       if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
-        result.addAll(new ModelFindOperations(model).findExactInstances(concept, scope));
+        count++;
       }
-      if (progress.isCanceled()) {
-        if (manageTasks) progress.finishAnyway();
-        return result;
-      } else {
-        if (manageTasks) progress.finishTask(taskName);
+    }
+
+    monitor.start("Finding exact instances...", 5 + count);
+    try {
+      monitor.step("Loading cache");
+      result.addAll(findInstancesOfNodeInCache(concept, scope, true));
+
+      for (SModelDescriptor model : models) {
+        if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
+          monitor.step(model.getLongName());
+          result.addAll(new ModelFindOperations(model).findExactInstances(concept, scope));
+          monitor.advance(1);
+        }
+        if (monitor.isCanceled()) {
+          return result;
+        }
       }
+    } finally {
+      monitor.done();
     }
     return result;
   }
@@ -126,28 +147,46 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
   }
 
   public Set<SReference> findUsages(SNode node, IScope scope) {
-    return findUsages(node, scope, (IAdaptiveProgressMonitor) null);
+    return findUsages(node, scope, (ProgressMonitor) null);
   }
 
-  public Set<SReference> findUsages(SNode node, IScope scope, IAdaptiveProgressMonitor progress) {
-    return findUsages(CollectionUtil.set(node), scope, progress, true);
+  public Set<SReference> findUsages(SNode node, IScope scope, ProgressMonitor monitor) {
+    return findUsages(CollectionUtil.set(node), scope, monitor, true);
   }
 
-  public Set<SReference> findUsages(Set<SNode> nodes, final IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
+  public Set<SReference> findUsages(Set<SNode> nodes, final IScope scope, ProgressMonitor monitor, boolean manageTasks) {
     Set<SReference> result = new HashSet<SReference>();
-    if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
-    progressTasks(manageTasks, ModelsProgressUtil.TASK_KIND_FIND_NODE_USAGES, "Finding usages...", progress, scope);
+    if (monitor == null) monitor = new EmptyProgressMonitor();
 
-    for (SNode node : nodes) {
-      result.addAll(findUsagesOfNodeInCache(node, scope));
-    }
-    for (SModelDescriptor sm : scope.getModelDescriptors()) {
-      if (!(sm instanceof EditableSModelDescriptor)) continue;
-      EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
-      if (esm.isChanged()) {
-        sm.getSModel();
-        result.addAll(new ModelFindOperations(sm).findUsages(nodes));
+    final Iterable<SModelDescriptor> models = scope.getModelDescriptors();
+    int count = 0;
+    for (SModelDescriptor model : models) {
+      if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
+        count++;
       }
+    }
+
+    monitor.start("Finding usages...", nodes.size() + count);
+    try {
+      monitor.step("Loading cache");
+
+      for (SNode node : nodes) {
+        result.addAll(findUsagesOfNodeInCache(node, scope));
+        monitor.advance(1);
+      }
+      for (SModelDescriptor model : models) {
+        if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
+          monitor.step(model.getLongName());
+          model.getSModel();
+          result.addAll(new ModelFindOperations(model).findUsages(nodes));
+          monitor.advance(1);
+        }
+        if (monitor.isCanceled()) {
+          return result;
+        }
+      }
+    } finally {
+      monitor.done();
     }
     return result;
   }
@@ -157,17 +196,9 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
     return new ArrayList<SNode>(set);
   }
 
-  public List<SNode> findInstances(SNode conceptDeclaration, IScope scope, IAdaptiveProgressMonitor monitor) {
+  public List<SNode> findInstances(SNode conceptDeclaration, IScope scope, ProgressMonitor monitor) {
     Set<SNode> set = findInstances(conceptDeclaration, scope, monitor, true);
     return new ArrayList<SNode>(set);
-  }
-
-  private void progressTasks(boolean manageTasks, String task, String text, IAdaptiveProgressMonitor progress, IScope scope) {
-    if (manageTasks) {
-      long estimatedTime = ModelsProgressUtil.estimateFindNodeUsagesTimeMillis(scope.getModelDescriptors());
-      progress.startTaskAnyway(task, null, estimatedTime);
-      progress.addText(text);
-    }
   }
 
   private Set<VirtualFile> getScopeFiles(IScope scope) {
