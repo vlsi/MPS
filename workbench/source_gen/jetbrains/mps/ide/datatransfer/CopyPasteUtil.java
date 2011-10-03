@@ -71,7 +71,6 @@ public class CopyPasteUtil {
     SModel model = sourceNodes.get(0).getModel();
     IModule module = model.getModelDescriptor().getModule();
     List<SNode> result = new ArrayList<SNode>();
-    model.setLoading(true);
     Map<SNode, SNode> sourceNodesToNewNodes = new HashMap<SNode, SNode>();
     Set<SReference> allReferences = new HashSet<SReference>();
     for (SNode sourceNode : sourceNodes) {
@@ -94,7 +93,6 @@ public class CopyPasteUtil {
     for (SNode newNode : result) {
       CopyPasteManager.getInstance().preProcessNode(newNode, newNodesToSourceNodes);
     }
-    model.setLoading(false);
     return new PasteNodeData(result, null, module, fakeModel, necessaryLanguages, necessaryModels);
   }
 
@@ -103,27 +101,19 @@ public class CopyPasteUtil {
       return PasteNodeData.emptyPasteNodeData(null, null);
     }
     List<SNode> result = new ArrayList<SNode>();
-    model.setLoading(true);
     Set<SReference> referencesRequireResolve = new HashSet<SReference>();
     Map<SNode, SNode> sourceNodesToNewNodes = new HashMap<SNode, SNode>();
     Set<SReference> allReferences = new HashSet<SReference>();
     SModel originalModel = sourceNodes.get(0).getModel();
-    originalModel.setLoading(true);
     for (SNode sourceNode : sourceNodes) {
       assert sourceNode.getModel() == originalModel;
       SNode nodeToPaste = CopyPasteUtil.copyNode_internal(sourceNode, null, sourceNodesToNewNodes, allReferences);
       result.add(nodeToPaste);
     }
-    SNode firstNodeToPaste = result.get(0);
-    SModel fakeModel = firstNodeToPaste.getModel();
-    fakeModel.setLoading(true);
     for (SNode nodeToPaste : result) {
       nodeToPaste.changeModel(model);
     }
     CopyPasteUtil.processReferencesOut(sourceNodesToNewNodes, allReferences, referencesRequireResolve);
-    model.setLoading(false);
-    originalModel.setLoading(false);
-    fakeModel.setLoading(false);
     return new PasteNodeData(result, referencesRequireResolve, sourceModule, modelProperties, necessaryLanguages, necessaryModels);
   }
 

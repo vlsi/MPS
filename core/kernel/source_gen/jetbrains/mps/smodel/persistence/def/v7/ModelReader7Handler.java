@@ -275,8 +275,8 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
       new StructureModificationProcessor(fieldlinkMap, fieldmodel).updateModelOnLoad();
       fieldlinkMap.fillRoleIdsComponent();
       result.setState(ModelLoadingState.FULLY_LOADED);
-      fieldmodel.setLoading(false);
       return true;
+    }
   }
 
   public class PersistenceElementHandler extends ModelReader7Handler.ElementHandler {

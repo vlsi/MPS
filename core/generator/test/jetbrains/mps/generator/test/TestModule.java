@@ -194,7 +194,6 @@ public class TestModule extends AbstractModule {
         LOG.error(e);
         result = new StubModel(getSModelReference());
       }
-      result.setLoading(true);
       return new ModelLoadResult(result, ModelLoadingState.FULLY_LOADED);
     }
 

@@ -219,12 +219,7 @@ public class SModel {
   //---------loading state--------
 
   public void runLoadingAction(@NotNull Runnable runnable) {
-    boolean wasLoading = setLoading(true);
-    try {
-      runnable.run();
-    } finally {
-      setLoading(wasLoading);
-    }
+    123
   }
 
   public synchronized boolean setLoading(boolean loading) {

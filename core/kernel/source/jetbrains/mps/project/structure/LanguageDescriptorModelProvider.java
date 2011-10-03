@@ -191,8 +191,11 @@ public class LanguageDescriptorModelProvider implements ApplicationComponent {
     }
 
     protected ModelLoadResult initialLoad() {
-      SModel model = new SModel(getSModelReference());
-      model.setLoading(true);
+      SModel model = new SModel(getSModelReference()){
+        protected boolean canFireEvent() {
+          return false;
+        }
+      };
       model.addEngagedOnGenerationLanguage(BootstrapLanguages.DESCRIPTOR);
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
