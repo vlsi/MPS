@@ -311,7 +311,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
 
-    if (getSource().hasModel(this)) {
+    if (!getSource().hasModel(this)) {
       SModelRepository.getInstance().deleteModel(this);
       return;
     }
