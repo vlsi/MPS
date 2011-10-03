@@ -150,7 +150,7 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
   }
 
   public boolean hasModel(SModelDescriptor md) {
-    return myFile == null || !myFile.exists();
+    return myFile != null && myFile.exists();
   }
 
   public boolean containsSomeString(@NotNull SModelDescriptor sm, @NotNull Set<String> strings) {
