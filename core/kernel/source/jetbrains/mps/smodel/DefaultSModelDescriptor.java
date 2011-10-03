@@ -325,10 +325,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     myHeader = dr.getHeader();
     myMetadata = dr.getMetadata();
 
+    updateDiskTimestamp();
+
     if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
 
     ModelLoadResult result = load(getLoadingState());
-    updateDiskTimestamp();
     replaceModel(result.getModel(), getLoadingState());
   }
   
