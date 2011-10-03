@@ -262,10 +262,10 @@ public class NodeTypesComponent {
       List<IErrorReporter> reporters = getErrors(key);
       if (!reporters.isEmpty()) {
         if (key.getContainingRoot() == null) {
-          LOG.warning("Type system reports error for node without containing root. Node: " + key);
+        /*  LOG.warning("Type system reports error for node without containing root. Node: " + key);
           for (IErrorReporter reporter : reporters) {
             LOG.warning("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());
-          }
+          }     */
           continue;
         }
         result.add(new Pair<SNode, List<IErrorReporter>>(key, reporters));
@@ -273,6 +273,8 @@ public class NodeTypesComponent {
     }
     return result;
   }
+
+
 
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
     myTypeSystemComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
