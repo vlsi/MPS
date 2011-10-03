@@ -14,6 +14,7 @@ import java.util.List;
 import jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip;
 import jetbrains.mps.vcs.diff.ui.DiffEditorsGroup;
 import jetbrains.mps.vcs.diff.merge.MergeContextState;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
@@ -34,7 +35,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.vcs.diff.ui.DiffTemporaryModule;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JComponent;
@@ -57,6 +57,7 @@ public class MergeRootsDialog extends BaseDialog {
   private DiffEditor myMineEditor;
   private DiffEditor myRepositoryEditor;
   private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.fromList(new ArrayList<ChangeGroupBuilder>());
+  private List<ChangeTrapeciumStrip> myTrapeciumStrips = ListSequence.fromList(new ArrayList<ChangeTrapeciumStrip>());
   private DiffEditorsGroup myDiffEditorsGroup = new DiffEditorsGroup();
   private MergeContextState myStateToRestore;
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.MERGE_TYPES);
@@ -190,6 +191,7 @@ public class MergeRootsDialog extends BaseDialog {
       3
     ), 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0);
     panel.add(strip, gbc);
+    ListSequence.fromList(myTrapeciumStrips).addElement(strip);
     MergeButtonsPainter.addTo(this, (mine ?
       myMineEditor :
       myRepositoryEditor
@@ -296,6 +298,12 @@ public class MergeRootsDialog extends BaseDialog {
     myResultEditor = null;
     myRepositoryEditor.dispose();
     myRepositoryEditor = null;
+    ListSequence.fromList(myTrapeciumStrips).visitAll(new IVisitor<ChangeTrapeciumStrip>() {
+      public void visit(ChangeTrapeciumStrip s) {
+        s.dispose();
+      }
+    });
+    ListSequence.fromList(myTrapeciumStrips).clear();
     myDisposed = true;
     super.dispose();
   }

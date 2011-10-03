@@ -42,6 +42,7 @@ public class RootDifferenceDialog extends BaseDialog {
   private DiffEditor myOldEditor;
   private DiffEditor myNewEditor;
   private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.fromList(new ArrayList<ChangeGroupBuilder>());
+  private List<ChangeTrapeciumStrip> myTrapeciumStrips = ListSequence.fromList(new ArrayList<ChangeTrapeciumStrip>());
   private DiffEditorsGroup myDiffEditorsGroup = new DiffEditorsGroup();
   private JPanel myTopPanel = new JPanel(new GridBagLayout());
   private JPanel myBottomPanel = new JPanel(new GridBagLayout());
@@ -140,6 +141,7 @@ public class RootDifferenceDialog extends BaseDialog {
       myBottomPanel :
       myTopPanel
     )).add(strip, gbc);
+    ListSequence.fromList(myTrapeciumStrips).addElement(strip);
     if (!(myModelDialog.getChangeSet().getNewModel().isNotEditable())) {
       DiffButtonsPainter.addTo(this, myOldEditor, changeGroupBuilder, inspector);
       DiffButtonsPainter.addTo(this, myNewEditor, changeGroupBuilder, inspector);
@@ -205,6 +207,12 @@ public class RootDifferenceDialog extends BaseDialog {
       myOldEditor = null;
       myNewEditor.dispose();
       myNewEditor = null;
+      ListSequence.fromList(myTrapeciumStrips).visitAll(new IVisitor<ChangeTrapeciumStrip>() {
+        public void visit(ChangeTrapeciumStrip s) {
+          s.dispose();
+        }
+      });
+      ListSequence.fromList(myTrapeciumStrips).clear();
     }
     myClosed = true;
     super.dispose();
