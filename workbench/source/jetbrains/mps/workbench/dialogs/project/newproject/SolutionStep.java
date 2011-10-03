@@ -18,11 +18,11 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.workbench.dialogs.project.newproject.icons.Icons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.lang.model.SourceVersion;
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
@@ -150,6 +150,9 @@ public class SolutionStep extends BaseStep {
       }
       if (myNamespace.getText().length() == 0) {
         throw new CommitStepException("Enter solution name");
+      }
+      if (!(SourceVersion.isName(myNamespace.getText()))) {
+        throw new CommitStepException("Solution namespace should be valid Java package");
       }
       if (MPSModuleRepository.getInstance().getModuleByUID(myNamespace.getText()) != null) {
         throw new CommitStepException("Duplicate solution name");
