@@ -129,6 +129,7 @@ class NonTypeSystemComponent extends CheckingComponent {
     //typed terms
     for (SNode node : myCurrentTypedTermsToInvalidate) {
       doInvalidate(myTypedTermsToDependentNodesWithNTRules.get(node), invalidatedNodesAndRules);
+      doInvalidate(myNodesToDependentNodesWithNTRules.get(node), invalidatedNodesAndRules);
     }
 
     //cache-dependent
