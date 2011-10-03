@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.editors;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
 import com.intellij.openapi.project.Project;
@@ -26,6 +27,7 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
+import javax.swing.SwingUtilities;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -72,14 +74,16 @@ public class IconUpdater extends AbstractProjectComponent {
   private class MyCommandListener implements SModelCommandListener {
     @Override
     public void eventsHappenedInCommand(List<SModelEvent> events) {
-      UIUtil.invokeLaterIfNeeded(new Runnable() {
+      ModelAccess.instance().runReadInEDT(new Runnable() {
         @Override
         public void run() {
           synchronized (myUpdatedRoots) {
             for (SNodePointer root : myUpdatedRoots) {
-              MPSNodeVirtualFile vf = MPSNodesVirtualFileSystem.getInstance().getFileFor(root);
-              if (vf != null) {
-                myFileEditorManagerEx.updateFilePresentation(vf);
+              if (root.getNode() != null) {
+                MPSNodesVirtualFileSystem nodeVfs = MPSNodesVirtualFileSystem.getInstance();
+                if (nodeVfs.hasVirtualFileFor(root)) {
+                  myFileEditorManagerEx.updateFilePresentation(nodeVfs.getFileFor(root));
+                }
               }
             }
             myUpdatedRoots.clear();
