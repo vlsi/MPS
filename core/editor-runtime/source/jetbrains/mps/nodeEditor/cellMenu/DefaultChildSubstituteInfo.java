@@ -89,32 +89,26 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   public InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
-    boolean wasLoading = auxModel.isLoading();
-    auxModel.setLoading(true);
-    try {
-      SNode nodeCopyRoot = CopyUtil.copy(Arrays.asList(myParentNode.getContainingRoot()), mapping).get(0);
-      if (!nodeCopyRoot.isRoot()) {
-        auxModel.addRoot(nodeCopyRoot);
-      }
-
-      boolean holeIsAType = SModelUtil.isAssignableConcept(NameUtil.nodeFQName(SModelUtil.getLinkDeclarationTarget(myLinkDeclaration)), "jetbrains.mps.lang.core.structure.IType");
-      SNode hole = null;
-      SNode parent = mapping.get(myParentNode);
-      String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
-      hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
-      if (myCurrentChild != null) {
-        SNode child = mapping.get(myCurrentChild);
-        parent.insertChild(child, role, hole, true);
-        parent.removeChild(child);
-      } else {
-        parent.setChild(role, hole);
-      }
-      InequalitySystem inequationsForHole = TypeChecker.getInstance().getInequalitiesForHole(hole, holeIsAType);
-      auxModel.removeRoot(nodeCopyRoot);
-      return inequationsForHole;
-    } finally {
-      auxModel.setLoading(wasLoading);
+    SNode nodeCopyRoot = CopyUtil.copy(Arrays.asList(myParentNode.getContainingRoot()), mapping).get(0);
+    if (!nodeCopyRoot.isRoot()) {
+      auxModel.addRoot(nodeCopyRoot);
     }
+
+    boolean holeIsAType = SModelUtil.isAssignableConcept(NameUtil.nodeFQName(SModelUtil.getLinkDeclarationTarget(myLinkDeclaration)), "jetbrains.mps.lang.core.structure.IType");
+    SNode hole = null;
+    SNode parent = mapping.get(myParentNode);
+    String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
+    hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
+    if (myCurrentChild != null) {
+      SNode child = mapping.get(myCurrentChild);
+      parent.insertChild(child, role, hole, true);
+      parent.removeChild(child);
+    } else {
+      parent.setChild(role, hole);
+    }
+    InequalitySystem inequationsForHole = TypeChecker.getInstance().getInequalitiesForHole(hole, holeIsAType);
+    auxModel.removeRoot(nodeCopyRoot);
+    return inequationsForHole;
   }
 
   protected DefaultChildNodeSetter createDefaultNodeSetter() {

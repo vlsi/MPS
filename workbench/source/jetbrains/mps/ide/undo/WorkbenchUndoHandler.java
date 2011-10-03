@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHandler;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.LinkedList;
@@ -53,15 +54,8 @@ public class WorkbenchUndoHandler implements UndoHandler {
     }
   }
 
-  public boolean needRegisterUndo(@Nullable SModel model) {
-    if (model == null) return false;
-    if (!isInsideUndoableCommand()) return false;
-
-    //todo these two should be moved to a model.hasUndo() method
-    if (AuxilaryRuntimeModel.isAuxModel(model)) return true;
-    if (model.isLoading()) return false;
-
-    return true;
+  public boolean needRegisterUndo(@NotNull SModel model) {
+    return isInsideUndoableCommand();
   }
 
   public boolean isInsideUndoableCommand() {

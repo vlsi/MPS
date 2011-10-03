@@ -58,11 +58,15 @@ public class AuxilaryRuntimeModel implements ModelOwner {
     }
 
     protected ModelLoadResult initialLoad() {
-      SModel model = new SModel(getSModelReference());
-      model.setLoading(true);
-
+      SModel model = new SModel(getSModelReference()){
+        protected void performUndoableAction(SNodeUndoableAction action) {
+          if (!UndoHelper.getInstance().needRegisterUndo(this)) return;
+          UndoHelper.getInstance().addUndoableAction(action);
+        }
+      };
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
+
 
     @Override
     protected void setLoadingState(ModelLoadingState state) {

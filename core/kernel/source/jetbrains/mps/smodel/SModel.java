@@ -41,7 +41,6 @@ public class SModel {
   private SModelReference myReference;
 
   private boolean myDisposed;
-  private volatile boolean myLoading;
 
   private FastNodeFinder myFastNodeFinder;
 
@@ -72,6 +71,10 @@ public class SModel {
   }
 
   //---------common properties--------
+
+  public boolean hasUndo(){
+    return
+  }
 
   @NotNull
   public SModelReference getSModelReference() {
@@ -170,9 +173,7 @@ public class SModel {
 
     myRoots.add(node);
     node.registerInModel(this);
-    if (UndoHelper.getInstance().needRegisterUndo(this)) {
-      UndoHelper.getInstance().addUndoableAction(new AddRootUndoableAction(node));
-    }
+    performUndoableAction(new AddRootUndoableAction(node));
     fireRootAddedEvent(node);
   }
 
@@ -182,15 +183,19 @@ public class SModel {
     if (myRoots.contains(node)) {
       myRoots.remove(node);
       node.unRegisterFromModel();
-      if (UndoHelper.getInstance().needRegisterUndo(this)) {
-        UndoHelper.getInstance().addUndoableAction(new RemoveRootUndoableAction(node));
-      }
+      performUndoableAction(new RemoveRootUndoableAction(node));
       fireRootRemovedEvent(node);
     }
   }
 
   public int rootsCount() {
     return myRoots.size();
+  }
+
+  protected void performUndoableAction(SNodeUndoableAction action){
+    if (!canFireEvent()) return;
+    if (!UndoHelper.getInstance().needRegisterUndo(this)) return;
+    UndoHelper.getInstance().addUndoableAction(action);
   }
 
   //---------nodes manipulation--------
@@ -239,7 +244,7 @@ public class SModel {
     return myLoading;
   }
 
-  private boolean canFireEvent() {
+  protected boolean canFireEvent() {
     return !myLoading;
   }
 
