@@ -20,8 +20,11 @@ import jetbrains.mps.smodel.SModelReference;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.project.Project;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -31,6 +34,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class MoveConcepts extends BaseLoggableRefactoring {
   public MoveConcepts() {
@@ -83,6 +87,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     List<SNode> behaviors = new ArrayList<SNode>();
     List<SNode> constraints = new ArrayList<SNode>();
     List<SNode> dataFlows = new ArrayList<SNode>();
+    List<SNode> intentions = new ArrayList<SNode>();
     // collecting editors: 
     SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
     if (editorModelDescriptor != null) {
@@ -123,6 +128,14 @@ public class MoveConcepts extends BaseLoggableRefactoring {
         }
       }
     }
+    // collecting intentions: 
+    SModel intentionsModel = check_u6ijv2_a0v0a(LanguageAspect.INTENTIONS.get(sourceLanguage));
+    ListSequence.fromList(intentions).addSequence(ListSequence.fromList(SModelOperations.getRoots(intentionsModel, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return ListSequence.fromList(refactoringContext.getSelectedNodes()).contains(SLinkOperations.getTarget(it, "forConcept", false));
+      }
+    }));
+
     // refactoring itself 
     for (SNode node : refactoringContext.getSelectedNodes()) {
       refactoringContext.changeFeatureName(node, ((SModelReference) refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
@@ -168,6 +181,17 @@ public class MoveConcepts extends BaseLoggableRefactoring {
       refactoringContext.moveNodesToModel(dataFlows, dataFlowModel);
       refactoringContext.updateByDefault(dataFlowModel);
     }
+    if (ListSequence.fromList(intentions).isNotEmpty()) {
+      refactoringContext.updateByDefault(intentionsModel);
+      SModelDescriptor targetIntentionsModelDescriptor = LanguageAspect.INTENTIONS.get(targetLanguage);
+      if (targetIntentionsModelDescriptor == null) {
+        targetIntentionsModelDescriptor = LanguageAspect.INTENTIONS.createNew(targetLanguage);
+      }
+      SModel intentionsTargetModel = targetIntentionsModelDescriptor.getSModel();
+      refactoringContext.moveNodesToModel(intentions, intentionsTargetModel);
+      refactoringContext.updateByDefault(intentionsTargetModel);
+    }
+
     // todo: move other concept-related aspect stuff 
   }
 
@@ -207,5 +231,12 @@ public class MoveConcepts extends BaseLoggableRefactoring {
 
   public static String getKeyStroke_static() {
     return MoveNodes.getKeyStroke_static();
+  }
+
+  private static SModel check_u6ijv2_a0v0a(EditableSModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModel();
+    }
+    return null;
   }
 }
