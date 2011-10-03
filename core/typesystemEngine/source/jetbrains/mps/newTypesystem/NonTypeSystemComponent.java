@@ -147,7 +147,7 @@ class NonTypeSystemComponent extends CheckingComponent {
     boolean result = !invalidatedNodesAndRules.isEmpty();
     for (Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule : invalidatedNodesAndRules) {
       myCheckedNodes.remove(nodeAndRule);
-      Map<NonTypesystemRule_Runtime, Set<IErrorReporter>> rulesAndErrors = myNodesAndNTRulesToErrors.get(nodeAndRule.o1);
+      Map<NonTypesystemRule_Runtime, Set<IErrorReporter>> rulesAndErrors = myNodesAndNTRulesToErrors.remove(nodeAndRule.o1);
       if (rulesAndErrors != null) {
         Set<IErrorReporter> errors = rulesAndErrors.get(nodeAndRule.o2);
         if (errors != null) {
