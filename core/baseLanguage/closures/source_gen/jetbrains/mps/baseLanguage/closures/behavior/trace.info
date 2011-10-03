@@ -887,8 +887,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1229704266233" fileName="ControlMethodUtil.java" startLine="23" startPosition="140" endLine="82" endPosition="8">
       <varInfo nodeId="1229704266256" varName="controlClosures" />
-      <varInfo nodeId="1229704266243" varName="inf" />
       <varInfo nodeId="1229704266248" varName="functionParams" />
+      <varInfo nodeId="1229704266243" varName="inf" />
       <varInfo nodeId="1229704266260" varName="closureParamTypes" />
       <varInfo nodeId="1229704266252" varName="initClosures" />
       <varInfo nodeId="1229704266235" varName="params" />
