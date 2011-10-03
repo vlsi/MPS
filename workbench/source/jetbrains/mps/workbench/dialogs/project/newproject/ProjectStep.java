@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
 import com.intellij.ide.wizard.CommitStepException;
+import com.intellij.util.PathUtil;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.workbench.WorkbenchPathManager;
 import jetbrains.mps.workbench.dialogs.project.newproject.icons.Icons;
@@ -115,6 +116,9 @@ public class ProjectStep extends BaseStep {
     }
     if (myProjectName.getText().length() == 0) {
       throw new CommitStepException("Project name shouldn't be empty");
+    }
+    if (!PathUtil.isValidFileName(myProjectName.getText())) {
+      throw new CommitStepException("Project name should not contain special characters");
     }
   }
 

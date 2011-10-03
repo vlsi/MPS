@@ -21,6 +21,7 @@ import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
+import javax.lang.model.SourceVersion;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.Language;
@@ -118,6 +119,10 @@ public class NewModelDialog extends BaseDialog {
         String modelName = myModelName.getText();
         if (modelName.length() == 0) {
           setErrorText("Empty model name isn't allowed");
+          return null;
+        }
+        if (!(SourceVersion.isName(modelName))) {
+          setErrorText("Model name should be valid Java package");
           return null;
         }
         SModelFqName modelUID = new SModelFqName(modelName, myModelStereotype.getSelectedItem().toString());
