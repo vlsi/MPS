@@ -101,6 +101,10 @@ public class FileStubSource extends FileBasedModelDataSource {
     }
   }
 
+  public boolean hasModel(SModelDescriptor descriptor) {
+    return myFile != null && myFile.exists();
+  }
+
   private static boolean eq_9hjfki_a0a0b(Object a, Object b) {
     return (a != null ?
       a.equals(b) :

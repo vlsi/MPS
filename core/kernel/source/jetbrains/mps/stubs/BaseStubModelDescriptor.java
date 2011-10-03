@@ -41,8 +41,8 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @NotNull
-  public StubModelDataSource getSource() {
-    return ((StubModelDataSource) super.getSource());
+  public ModelDataSource getSource() {
+    return super.getSource();
   }
 
   //------------common descriptor stuff-------------------

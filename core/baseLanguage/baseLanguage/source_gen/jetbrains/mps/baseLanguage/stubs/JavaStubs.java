@@ -62,7 +62,7 @@ public class JavaStubs extends AbstractModelRootManager {
           smd = new JavaStubModelDescriptor(modelReference, new JavaStubModelDataSource(LanguageID.JAVA, false), module);
           ListSequence.fromList(result).addElement(smd);
         }
-        smd.getSource().addPath(JavaStubs.this.child(startPath, subpackage));
+        ((JavaStubModelDataSource) smd.getSource()).addPath(JavaStubs.this.child(startPath, subpackage));
       }
       JavaStubs.this.getModelDescriptors(result, startPath, cp, subpackage, languageId, module);
     }
