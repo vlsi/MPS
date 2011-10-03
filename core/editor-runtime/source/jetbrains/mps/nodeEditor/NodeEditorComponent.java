@@ -92,7 +92,7 @@ public class NodeEditorComponent extends EditorComponent {
           return;
         }
 
-        if (selectedNode.getModel().isDisposed()) return;
+        if (selectedNode.isDisposed() || selectedNode.getModel().isDisposed()) return;
 
         assert getOperationContext() == null || getOperationContext().getModule() != null : "No module for: " + getOperationContext() + ", but model was not disposed: " + selectedNode.getModel();
         inspect(selectedNode);
