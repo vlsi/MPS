@@ -171,7 +171,6 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
       fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")), new RegularNodeIdMap());
       fieldmodel.setPersistenceVersion(7);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
-      fieldmodel.setLoading(true);
       fieldhelper = new ReadHelper(fieldmodel.getSModelReference());
       fieldlinkMap = new ModelLinkMap(fieldmodel);
       return new BaseSModelDescriptor.ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
@@ -255,7 +254,6 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
         Object child = (Object) value;
         if (fieldtoState == ModelLoadingState.ROOTS_LOADED && !(StructureModificationProcessor.hasRefactoringsToPlay(fieldmodel))) {
           result.setState(ModelLoadingState.ROOTS_LOADED);
-          fieldmodel.setLoading(false);
           throw new BreakParseSAXException();
         }
         return;
@@ -279,7 +277,6 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
       result.setState(ModelLoadingState.FULLY_LOADED);
       fieldmodel.setLoading(false);
       return true;
-    }
   }
 
   public class PersistenceElementHandler extends ModelReader7Handler.ElementHandler {
