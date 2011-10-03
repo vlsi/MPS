@@ -132,10 +132,6 @@ public final class SNode {
     return myModel;
   }
 
-  public boolean isModelLoading() {
-    return myModel.isLoading();
-  }
-
   public String getRoleOf(SNode node) {
     ModelAccess.assertLegalRead(this);
 

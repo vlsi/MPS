@@ -72,10 +72,6 @@ public class SModel {
 
   //---------common properties--------
 
-  public boolean hasUndo(){
-    return
-  }
-
   @NotNull
   public SModelReference getSModelReference() {
     return myReference;
