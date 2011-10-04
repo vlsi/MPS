@@ -151,10 +151,11 @@ class NonTypeSystemComponent extends CheckingComponent {
       if (rulesAndErrors != null) {
         Set<IErrorReporter> errors = rulesAndErrors.get(nodeAndRule.o2);
         if (errors != null) {
-          for (IErrorReporter errorReporter : errors) {
+          for (IErrorReporter errorReporter : new HashSet<IErrorReporter>(errors)) {
             List<IErrorReporter> iErrorReporters = myNodesToErrorsMap.get(errorReporter.getSNode());
             if (iErrorReporters != null) {
               iErrorReporters.remove(errorReporter);
+              errors.remove(errorReporter);
             }
           }
         }
