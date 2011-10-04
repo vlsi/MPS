@@ -62,7 +62,7 @@ public class SNodeOperation_Behavior {
       return result;
     }
     SNode operandType = TypeChecker.getInstance().getTypeOf(operand);
-    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false);
+    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
     if (nodeType != null) {
       return SLinkOperations.getTarget(nodeType, "concept", false);
     }

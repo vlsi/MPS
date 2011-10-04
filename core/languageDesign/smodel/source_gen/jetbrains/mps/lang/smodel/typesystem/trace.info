@@ -702,10 +702,10 @@
       <varInfo nodeId="1222433764793" varName="subTypesToSuperTypes" />
     </scopeInfo>
     <scopeInfo nodeId="1222429456642" fileName="RulesUtil.java" startLine="282" startPosition="69" endLine="338" endPosition="47">
-      <varInfo nodeId="1222431738453" varName="newFrontier" />
       <varInfo nodeId="1222431701168" varName="frontier" />
-      <varInfo nodeId="1222433406360" varName="result" />
+      <varInfo nodeId="1222431738453" varName="newFrontier" />
       <varInfo nodeId="1222431656641" varName="keyset" />
+      <varInfo nodeId="1222433406360" varName="result" />
       <varInfo nodeId="1222431543222" varName="subTypesToSuperTypes" />
       <varInfo nodeId="1222432138655" varName="allTypes" />
     </scopeInfo>
@@ -5631,8 +5631,8 @@
     <scopeInfo nodeId="1193943556383" fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="63" startPosition="43" endLine="68" endPosition="9" />
     <scopeInfo nodeId="1193943556383" fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="81" startPosition="43" endLine="86" endPosition="9" />
     <scopeInfo nodeId="1193943556384" fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="28" startPosition="125" endLine="34" endPosition="18">
-      <varInfo nodeId="1193944857497" varName="classifierType" />
       <varInfo nodeId="1193947530696" varName="result" />
+      <varInfo nodeId="1193944857497" varName="classifierType" />
     </scopeInfo>
     <scopeInfo nodeId="1193943556383" fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="100" startPosition="32" endLine="106" endPosition="7" />
     <scopeInfo nodeId="1193943556383" fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="113" startPosition="32" endLine="119" endPosition="7" />
@@ -7648,8 +7648,8 @@
     <scopeInfo nodeId="1226071491798" fileName="check_SConceptPropertyAccess_NonTypesystemRule.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1226071491799" fileName="check_SConceptPropertyAccess_NonTypesystemRule.java" startLine="18" startPosition="115" endLine="26" endPosition="146">
       <varInfo nodeId="1226071815006" varName="conceptPropertyDecl" />
-      <varInfo nodeId="1226071804507" varName="declaringConcept" />
       <varInfo nodeId="1226071858413" varName="concreteConcept" />
+      <varInfo nodeId="1226071804507" varName="declaringConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1226071491798" fileName="check_SConceptPropertyAccess_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="28" endPosition="0" />
     <unitInfo nodeId="1226071491798" fileName="check_SConceptPropertyAccess_NonTypesystemRule.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SConceptPropertyAccess_NonTypesystemRule" />
@@ -7682,8 +7682,8 @@
     <scopeInfo nodeId="1226071920272" fileName="check_SConceptLinkAccess_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="1226071920273" fileName="check_SConceptLinkAccess_NonTypesystemRule.java" startLine="18" startPosition="115" endLine="25" endPosition="146">
       <varInfo nodeId="1226072030642" varName="conceptLinkDecl" />
-      <varInfo nodeId="1226072015539" varName="declaringConcept" />
       <varInfo nodeId="1226072046722" varName="concreteConcept" />
+      <varInfo nodeId="1226072015539" varName="declaringConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1226071920272" fileName="check_SConceptLinkAccess_NonTypesystemRule.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="1226071920272" fileName="check_SConceptLinkAccess_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="27" endPosition="0" />
