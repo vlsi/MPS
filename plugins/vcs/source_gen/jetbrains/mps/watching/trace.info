@@ -1145,13 +1145,13 @@
     <scopeInfo nodeId="4707157387247362663" fileName="ModelChangesWatcher.java" startLine="286" startPosition="0" endLine="317" endPosition="0">
       <varInfo nodeId="4707157387247362666" varName="events" />
     </scopeInfo>
-    <unitInfo nodeId="1979264918307420754" fileName="ModelChangesWatcher.java" startLine="161" startPosition="58" endLine="165" endPosition="7" unitName="jetbrains.mps.watching.ModelChangesWatcher$3" />
+    <unitInfo nodeId="1979264918307420754" fileName="ModelChangesWatcher.java" startLine="161" startPosition="58" endLine="165" endPosition="7" unitName="jetbrains.mps.watching.ModelChangesWatcher$4" />
     <unitInfo nodeId="4707157387247362679" fileName="ModelChangesWatcher.java" startLine="328" startPosition="0" endLine="332" endPosition="0" unitName="jetbrains.mps.watching.ModelChangesWatcher$IReloadListener" />
     <unitInfo nodeId="4707157387247363239" fileName="ModelChangesWatcher.java" startLine="261" startPosition="56" endLine="266" endPosition="15" unitName="jetbrains.mps.watching.ModelChangesWatcher$1" />
     <unitInfo nodeId="4707157387247363363" fileName="ModelChangesWatcher.java" startLine="302" startPosition="57" endLine="307" endPosition="15" unitName="jetbrains.mps.watching.ModelChangesWatcher$2" />
     <unitInfo nodeId="4707157387247362728" fileName="ModelChangesWatcher.java" startLine="54" startPosition="78" endLine="62" endPosition="3" unitName="jetbrains.mps.watching.ModelChangesWatcher$1" />
-    <unitInfo nodeId="4707157387247362846" fileName="ModelChangesWatcher.java" startLine="90" startPosition="18" endLine="99" endPosition="5" unitName="jetbrains.mps.watching.ModelChangesWatcher$2" />
-    <unitInfo nodeId="2467186091877008043" fileName="ModelChangesWatcher.java" startLine="65" startPosition="57" endLine="82" endPosition="3" unitName="jetbrains.mps.watching.ModelChangesWatcher$4" />
+    <unitInfo nodeId="4707157387247362846" fileName="ModelChangesWatcher.java" startLine="90" startPosition="18" endLine="99" endPosition="5" unitName="jetbrains.mps.watching.ModelChangesWatcher$3" />
+    <unitInfo nodeId="2467186091877008043" fileName="ModelChangesWatcher.java" startLine="65" startPosition="57" endLine="82" endPosition="3" unitName="jetbrains.mps.watching.ModelChangesWatcher$2" />
     <unitInfo nodeId="4707157387247362641" fileName="ModelChangesWatcher.java" startLine="243" startPosition="0" endLine="327" endPosition="0" unitName="jetbrains.mps.watching.ModelChangesWatcher$BulkFileChangesListener" />
     <unitInfo nodeId="4707157387247362638" fileName="ModelChangesWatcher.java" startLine="43" startPosition="0" endLine="333" endPosition="0" unitName="jetbrains.mps.watching.ModelChangesWatcher" />
   </root>

@@ -1,3 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <root nodeId="2413200550064256033">
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="1" startPosition="0" endLine="1" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="2" startPosition="0" endLine="2" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="2" startPosition="2" endLine="2" endPosition="8" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="3" startPosition="0" endLine="3" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="3" startPosition="4" endLine="3" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="4" startPosition="0" endLine="4" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="4" startPosition="4" endLine="4" endPosition="101" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="5" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="5" startPosition="0" endLine="5" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="6" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="6" startPosition="0" endLine="6" endPosition="71" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="6" startPosition="71" endLine="6" endPosition="71" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="6" startPosition="71" endLine="6" endPosition="111" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="7" startPosition="0" endLine="7" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="1" startPosition="16" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="2" startPosition="8" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="3" startPosition="52" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="4" startPosition="101" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="5" startPosition="1" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="6" startPosition="111" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="7" startPosition="9" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="1" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <unitInfo nodeId="2413200550064256033" fileName="runtime-gwt.gwt.xml" startLine="1" startPosition="0" endLine="8" endPosition="0" unitName="runtime-gwt.gwt.xml" />
+  </root>
+</debugInfo>
 
