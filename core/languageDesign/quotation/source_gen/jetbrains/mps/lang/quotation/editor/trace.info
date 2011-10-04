@@ -1453,7 +1453,10 @@
   </root>
   <root nodeId="1196351105861">
     <nodeInfo nodeId="1196351105862" fileName="Colors.java" startLine="7" startPosition="21" endLine="8" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BROWN" />
-    <unitInfo nodeId="1196351105861" fileName="Colors.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.Colors" />
+    <nodeInfo nodeId="7801979459094172604" fileName="Colors.java" startLine="9" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Colors#()V" />
+    <scopeInfo nodeId="7801979459094172606" fileName="Colors.java" startLine="10" startPosition="19" endLine="10" endPosition="19" />
+    <scopeInfo nodeId="7801979459094172604" fileName="Colors.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
+    <unitInfo nodeId="1196351105861" fileName="Colors.java" startLine="7" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.Colors" />
   </root>
   <root nodeId="1196866651896">
     <nodeInfo nodeId="1196866651896" fileName="PropertyAntiquotation_Editor.java" startLine="193" startPosition="58" endLine="193" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
