@@ -14,6 +14,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.smodel.ModelAccess;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.awt.Graphics;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.awt.Color;
@@ -27,6 +32,7 @@ public class ChangeTrapeciumStrip extends JComponent implements TooltipComponent
 
   private ChangeGroupBuilder myChangeGroupBuilder;
   private Map<ChangeGroup, Tuples._2<Bounds, Bounds>> myGroupsWithBounds;
+  private Map<ChangeGroup, String> myChangeGroupDescriptions;
 
   public ChangeTrapeciumStrip(ChangeGroupBuilder changeGroupBuilder) {
     myChangeGroupBuilder = changeGroupBuilder;
@@ -62,6 +68,19 @@ public class ChangeTrapeciumStrip extends JComponent implements TooltipComponent
       int rightEnd = (int) group.getRightBounds().end() + rightOffset;
       MapSequence.fromMap(myGroupsWithBounds).put(group, MultiTuple.<Bounds,Bounds>from(new Bounds(leftStart, leftEnd), new Bounds(rightStart, rightEnd)));
     }
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myChangeGroupDescriptions = MapSequence.fromMap(new HashMap<ChangeGroup, String>());
+        for (ChangeGroup group : ListSequence.fromList(myChangeGroupBuilder.getChangeGroups())) {
+          MapSequence.fromMap(myChangeGroupDescriptions).put(group, IterableUtils.join(ListSequence.fromList(group.getChanges()).select(new ISelector<ModelChange, String>() {
+            public String select(ModelChange ch) {
+              return ch.getDescription();
+            }
+          }), "\n\n"));
+        }
+      }
+    });
   }
 
   @Override
@@ -87,6 +106,7 @@ public class ChangeTrapeciumStrip extends JComponent implements TooltipComponent
   private void invalidateAndRepaint() {
     synchronized (this) {
       myGroupsWithBounds = null;
+      myChangeGroupDescriptions = null;
     }
     repaint();
   }
@@ -119,7 +139,7 @@ public class ChangeTrapeciumStrip extends JComponent implements TooltipComponent
       if (group == null) {
         return null;
       } else {
-        return "Found group number " + ListSequence.fromList(myChangeGroupBuilder.getChangeGroups()).indexOf(group.key());
+        return MapSequence.fromMap(myChangeGroupDescriptions).get(group.key());
       }
     }
   }

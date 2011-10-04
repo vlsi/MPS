@@ -149,9 +149,13 @@
   <dependency className="jetbrains.mps.vcs.diff.ui.ChangeGroupInvalidateListener" file="ChangeGroupInvalidateListener.java" />
   <dependency className="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip" file="ChangeTrapeciumStrip.java">
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroup" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="javax.swing.event.ChangeListener" />
     <classNode dependClassName="javax.swing.event.ChangeEvent" />
@@ -161,11 +165,13 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupInvalidateListener" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.Bounds" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeColors" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder" />
     <classNode dependClassName="java.util.LinkedHashMap" />
     <classNode dependClassName="javax.swing.JViewport" />
