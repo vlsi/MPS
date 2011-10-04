@@ -2434,8 +2434,8 @@
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
+    <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
-    <path path="${base_dir}/lib/java-diff-utils-1.2.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
