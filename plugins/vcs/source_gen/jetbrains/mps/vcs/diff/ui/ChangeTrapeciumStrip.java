@@ -4,26 +4,35 @@ package jetbrains.mps.vcs.diff.ui;
 
 import javax.swing.JComponent;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
+import java.util.Map;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import java.awt.Dimension;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
-import java.awt.Graphics;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.awt.Graphics;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.awt.Color;
 import javax.swing.JViewport;
 import java.awt.event.MouseEvent;
+import java.awt.Point;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ChangeTrapeciumStrip extends JComponent implements TooltipComponent {
   private static final int WIDTH = 30;
 
   private ChangeGroupBuilder myChangeGroupBuilder;
+  private Map<ChangeGroup, Tuples._2<Bounds, Bounds>> myGroupsWithBounds;
 
   public ChangeTrapeciumStrip(ChangeGroupBuilder changeGroupBuilder) {
     myChangeGroupBuilder = changeGroupBuilder;
     ChangeListener viewportListener = new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
-        repaint();
+        invalidateAndRepaint();
       }
     };
     getLeftViewport().addChangeListener(viewportListener);
@@ -32,14 +41,17 @@ public class ChangeTrapeciumStrip extends JComponent implements TooltipComponent
     setPreferredSize(new Dimension(WIDTH, 1));
     myChangeGroupBuilder.addInvalidateListener(new ChangeGroupInvalidateListener() {
       public void changeGroupsInvalidated() {
-        repaint();
+        invalidateAndRepaint();
       }
     });
     MPSToolTipManager.getInstance().registerComponent(this);
   }
 
-  @Override
-  protected void paintComponent(Graphics g) {
+  private void ensureBoundsCalculated() {
+    if (myGroupsWithBounds != null) {
+      return;
+    }
+    myGroupsWithBounds = MapSequence.fromMap(new LinkedHashMap<ChangeGroup, Tuples._2<Bounds, Bounds>>(16, (float) 0.75, false));
     int leftOffset = getOffset(getLeftViewport());
     int rightOffset = getOffset(getRightViewport());
 
@@ -48,16 +60,35 @@ public class ChangeTrapeciumStrip extends JComponent implements TooltipComponent
       int leftEnd = (int) group.getLeftBounds().end() + leftOffset;
       int rightStart = (int) group.getRightBounds().start() + rightOffset;
       int rightEnd = (int) group.getRightBounds().end() + rightOffset;
-
-      int[] xx = new int[]{0, getWidth(), getWidth(), 0};
-      int[] yy = new int[]{leftStart, rightStart, rightEnd, leftEnd};
-
-      g.setColor(ChangeColors.get(group.getChangeType()));
-      g.fillPolygon(xx, yy, 4);
-      g.setColor(Color.GRAY);
-      g.drawLine(0, leftStart, getWidth() - 1, rightStart);
-      g.drawLine(0, leftEnd, getWidth() - 1, rightEnd);
+      MapSequence.fromMap(myGroupsWithBounds).put(group, MultiTuple.<Bounds,Bounds>from(new Bounds(leftStart, leftEnd), new Bounds(rightStart, rightEnd)));
     }
+  }
+
+  @Override
+  protected void paintComponent(Graphics g) {
+    synchronized (this) {
+      ensureBoundsCalculated();
+
+      for (IMapping<ChangeGroup, Tuples._2<Bounds, Bounds>> groupWithBounds : MapSequence.fromMap(myGroupsWithBounds)) {
+        Bounds left = groupWithBounds.value()._0();
+        Bounds right = groupWithBounds.value()._1();
+        int[] xx = new int[]{0, getWidth(), getWidth(), 0};
+        int[] yy = new int[]{(int) left.start(), (int) right.start(), (int) right.end(), (int) left.end()};
+
+        g.setColor(ChangeColors.get(groupWithBounds.key().getChangeType()));
+        g.fillPolygon(xx, yy, 4);
+        g.setColor(Color.GRAY);
+        g.drawLine(0, (int) left.start(), getWidth() - 1, (int) right.start());
+        g.drawLine(0, (int) left.end(), getWidth() - 1, (int) right.end());
+      }
+    }
+  }
+
+  private void invalidateAndRepaint() {
+    synchronized (this) {
+      myGroupsWithBounds = null;
+    }
+    repaint();
   }
 
   private JViewport getLeftViewport() {
@@ -73,10 +104,36 @@ public class ChangeTrapeciumStrip extends JComponent implements TooltipComponent
   }
 
   public String getMPSTooltipText(MouseEvent mouseEvent) {
-    return "I am strip";
+    synchronized (this) {
+      ensureBoundsCalculated();
+      final Point p = mouseEvent.getPoint();
+      IMapping<ChangeGroup, Tuples._2<Bounds, Bounds>> group = MapSequence.fromMap(myGroupsWithBounds).findFirst(new IWhereFilter<IMapping<ChangeGroup, Tuples._2<Bounds, Bounds>>>() {
+        public boolean accept(IMapping<ChangeGroup, Tuples._2<Bounds, Bounds>> g) {
+          Bounds left = g.value()._0();
+          Bounds right = g.value()._1();
+          int v1 = vectorProduct((int) left.start(), (int) right.start(), p.x, p.y);
+          int v2 = vectorProduct((int) left.end(), (int) right.end(), p.x, p.y);
+          return v1 > 0 && v2 < 0;
+        }
+      });
+      if (group == null) {
+        return null;
+      } else {
+        return "Found group number " + ListSequence.fromList(myChangeGroupBuilder.getChangeGroups()).indexOf(group.key());
+      }
+    }
   }
 
   public void dispose() {
     MPSToolTipManager.getInstance().unregisterComponent(this);
+  }
+
+  private int vectorProduct(int left, int right, int x, int y) {
+    int x1 = getWidth();
+    int y1 = right - left;
+    int x2 = x;
+    int y2 = y - left;
+    int z = x1 * y2 - x2 * y1;
+    return z;
   }
 }
