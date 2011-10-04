@@ -137,7 +137,7 @@ public class SModel {
   //---------roots manipulation--------
 
   private void fireModelNodesReadAccess() {
-    if (isLoading()) return;
+    if (!canFireEvent()) return;
     NodeReadEventsCaster.fireModelNodesReadAccess(this);
   }
 
@@ -222,10 +222,6 @@ public class SModel {
     123
   }
 
-
-  public boolean isLoading() {
-    return myLoading;
-  }
 
   protected boolean canFireEvent() {
     return !myLoading;
@@ -670,7 +666,7 @@ public class SModel {
     if (!myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.add(ref);
       // don't send event but mark model as changed
-      if (!isLoading()) {
+      if (canFireEvent()) {
         SModelRepository.getInstance().markChanged(this);
       }
     }
@@ -682,7 +678,7 @@ public class SModel {
     if (myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.remove(ref);
       // don't send event but mark model as changed
-      if (!isLoading()) {
+      if (canFireEvent()) {
         SModelRepository.getInstance().markChanged(this);
       }
     }

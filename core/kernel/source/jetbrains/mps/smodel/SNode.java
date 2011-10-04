@@ -426,7 +426,7 @@ public final class SNode {
     if (usePropertySetter) {
       Set<Pair<SNode, String>> threadSet = ourPropertySettersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, propertyName);
-      if (!threadSet.contains(pair) && !myModel.isLoading()) {
+      if (!threadSet.contains(pair) && myModel.canFireEvent()) {
         PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConceptFqName()).getProperty(propertyName);
         threadSet.add(pair);
         try {
@@ -639,7 +639,7 @@ public final class SNode {
   }
 
   private void fireNodeUnclassifiedReadAccess() {
-    if (myModel.isLoading()) return;
+    if (!myModel.canFireEvent()) return;
     NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
   }
 
@@ -658,7 +658,7 @@ public final class SNode {
   }
 
   private void fireNodeReadAccess() {
-    if (myModel.isLoading()) return;
+    if (!myModel.canFireEvent()) return;
     NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
   }
 
@@ -803,7 +803,7 @@ public final class SNode {
 
     // add language because typesystem needs it to invalidate/revalidate its caches
     //todo this is a hack
-    if (model.isLoading() || MPSCore.getInstance().isMergeDriverMode()) return;
+    if (!myModel.canFireEvent() || MPSCore.getInstance().isMergeDriverMode()) return;
     SModelOperations.validateLanguages(model, this);
   }
 
@@ -914,7 +914,7 @@ public final class SNode {
     SReference resultReference = null;
     boolean handlerFound = false;
 
-    if (useHandler && !getModel().isLoading()) {
+    if (useHandler && myModel.canFireEvent()) {
       // invoke custom referent set event handler
       Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, role);
