@@ -7,6 +7,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 /*package*/ class UIObject_editor_Helper {
+  public UIObject_editor_Helper() {
+  }
+
   public static SNode getBaseNode(SNode node) {
     return SLinkOperations.getTarget(SNodeOperations.as(node, "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "uiObject", false);
   }

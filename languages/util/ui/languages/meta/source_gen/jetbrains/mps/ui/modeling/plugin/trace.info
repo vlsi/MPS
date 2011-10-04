@@ -203,22 +203,28 @@
     <unitInfo nodeId="2542706524531725743" fileName="Code_TabDescriptor.java" startLine="20" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Code_TabDescriptor" />
   </root>
   <root nodeId="4639535695229333599">
-    <nodeInfo nodeId="4639535695229333608" fileName="Event_editor_Helper.java" startLine="10" startPosition="47" endLine="11" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4639535695229333600" fileName="Event_editor_Helper.java" startLine="9" startPosition="39" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBaseNode#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="4639535695229333607" fileName="Event_editor_Helper.java" startLine="10" startPosition="47" endLine="11" endPosition="139" />
-    <scopeInfo nodeId="4639535695229333600" fileName="Event_editor_Helper.java" startLine="9" startPosition="39" endLine="13" endPosition="0">
+    <nodeInfo nodeId="4639535695229333608" fileName="Event_editor_Helper.java" startLine="13" startPosition="47" endLine="14" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7801979459094004285" fileName="Event_editor_Helper.java" startLine="9" startPosition="39" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Event_editor_Helper#()V" />
+    <nodeInfo nodeId="4639535695229333600" fileName="Event_editor_Helper.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBaseNode#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="7801979459094004287" fileName="Event_editor_Helper.java" startLine="10" startPosition="32" endLine="10" endPosition="32" />
+    <scopeInfo nodeId="4639535695229333607" fileName="Event_editor_Helper.java" startLine="13" startPosition="47" endLine="14" endPosition="139" />
+    <scopeInfo nodeId="7801979459094004285" fileName="Event_editor_Helper.java" startLine="9" startPosition="39" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="4639535695229333600" fileName="Event_editor_Helper.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="4639535695229333601" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4639535695229333599" fileName="Event_editor_Helper.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Event_editor_Helper" />
+    <unitInfo nodeId="4639535695229333599" fileName="Event_editor_Helper.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Event_editor_Helper" />
   </root>
   <root nodeId="4639535695229333613">
-    <nodeInfo nodeId="4639535695229333622" fileName="UIObject_editor_Helper.java" startLine="10" startPosition="47" endLine="11" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4639535695229333614" fileName="UIObject_editor_Helper.java" startLine="9" startPosition="42" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBaseNode#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="4639535695229333621" fileName="UIObject_editor_Helper.java" startLine="10" startPosition="47" endLine="11" endPosition="138" />
-    <scopeInfo nodeId="4639535695229333614" fileName="UIObject_editor_Helper.java" startLine="9" startPosition="42" endLine="13" endPosition="0">
+    <nodeInfo nodeId="4639535695229333622" fileName="UIObject_editor_Helper.java" startLine="13" startPosition="47" endLine="14" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7801979459094042633" fileName="UIObject_editor_Helper.java" startLine="9" startPosition="42" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UIObject_editor_Helper#()V" />
+    <nodeInfo nodeId="4639535695229333614" fileName="UIObject_editor_Helper.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBaseNode#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="7801979459094042635" fileName="UIObject_editor_Helper.java" startLine="10" startPosition="35" endLine="10" endPosition="35" />
+    <scopeInfo nodeId="4639535695229333621" fileName="UIObject_editor_Helper.java" startLine="13" startPosition="47" endLine="14" endPosition="138" />
+    <scopeInfo nodeId="7801979459094042633" fileName="UIObject_editor_Helper.java" startLine="9" startPosition="42" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="4639535695229333614" fileName="UIObject_editor_Helper.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="4639535695229333615" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4639535695229333613" fileName="UIObject_editor_Helper.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.UIObject_editor_Helper" />
+    <unitInfo nodeId="4639535695229333613" fileName="UIObject_editor_Helper.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.UIObject_editor_Helper" />
   </root>
   <root nodeId="5630235838746747244">
     <nodeInfo nodeId="6661832029303071773" fileName="IObjectsProvider.java" startLine="6" startPosition="41" endLine="7" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="info#()Ljava/lang/Object;" />

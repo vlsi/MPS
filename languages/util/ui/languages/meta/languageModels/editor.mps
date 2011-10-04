@@ -30,44 +30,44 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8381258131358158044" resolveInfo="UIObject" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8381258131358158116">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8381258131358158045" resolveInfo="Property" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8381258131358158045" resolveInfo="UIProperty" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8381258131358663706">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8381258131358158046" resolveInfo="Event" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8381258131358709476">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8381258131358709474" resolveInfo="EventRef" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8381258131358709474" resolveInfo="EventProducer" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="9014158157447011060">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.9014158157447011054" resolveInfo="EditableProperty" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.9014158157447011054" resolveInfo="EditableUIProperty" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4643695836678898391">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4643695836678898389" resolveInfo="Template" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4643695836678898389" resolveInfo="UIObjectTemplate" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4643695836678934013">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects.properties" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4643695836678934010" resolveInfo="PropertyInitializer" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4643695836678934010" resolveInfo="UIPropertyAccessCode" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4643695836679547656">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4643695836679547627" resolveInfo="ThisUIObject" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4643695836679547627" resolveInfo="ThisUIObjectParam" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4643695836679547664">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects.properties" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4643695836679547628" resolveInfo="PropertyValue" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4643695836679547628" resolveInfo="PropertyValueParam" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4643695836679547702">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects.properties" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4643695836679547626" resolveInfo="PropertySetter" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4643695836679547626" resolveInfo="UIPropertySetter" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4643695836679547749">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects.properties" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4643695836679547748" resolveInfo="PropertyGetter" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4643695836679547748" resolveInfo="UIPropertyGetter" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8115675450774717286">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.events" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8115675450774717215" resolveInfo="EventHandlingCode" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8115675450774717215" resolveInfo="EventHandlerTemplate" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8115675450774859615">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.events" />
@@ -82,7 +82,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8938819815716165295">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects.properties" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8938819815716165293" resolveInfo="PropertyChangeHandler" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8938819815716165293" resolveInfo="PropertyChangeHandlerSetup" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8938819815716373441">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects.properties" />
@@ -97,11 +97,11 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4391079257750550372">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4391079257750550368" resolveInfo="ThatUIObjectParameter" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4391079257750550368" resolveInfo="ItemUIObjectParam" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4391079257750550397">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4391079257750550393" resolveInfo="UIObjectContainerAdder" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4391079257750550393" resolveInfo="ContainerItemAdder" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7655275107718250841">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
@@ -166,10 +166,10 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.4033850706585269152" resolveInfo="ForceLayoutCode" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2663453265345747929">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.2663453265345747738" resolveInfo="HLayoutConstraint" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.2663453265345747738" resolveInfo="HorizontalConstraint" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2663453265345756594">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.2663453265345756447" resolveInfo="VLayoutConstraint" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.2663453265345756447" resolveInfo="VerticalConstraint" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2663453265345756695">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.2663453265345756661" resolveInfo="LayoutConstraintType" />
@@ -190,10 +190,10 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.7617727720684733989" resolveInfo="ApplyConstraintStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8508807536211371483">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8508807536211371477" resolveInfo="XCellLayoutConstraint" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8508807536211371477" resolveInfo="ColumnLayoutConstraint" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8508807536211444916">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8508807536211371480" resolveInfo="YCellLayoutConstraint" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8508807536211371480" resolveInfo="RowLayoutConstraint" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8508807536211444939">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.8508807536211371475" resolveInfo="CellLayoutConstraint" />
@@ -222,7 +222,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.3619322115897256358" resolveInfo="AlignmentLayoutConstraint" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5572604531249544012">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.5572604531249464313" resolveInfo="AspectParameter" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="sqp9.5572604531249464313" resolveInfo="AspectParameterDecl" />
     </node>
     <node type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="5572604531249544121">
       <property name="name" nameId="tpck.1169194664001" value="IAspectParameterHolder_Component" />
@@ -648,7 +648,7 @@
           <property name="text" nameId="tpc2.1073389577007" value="=" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5263857617435651285">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="sqp9.5263857617435649274" resolveInfo="abstract" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="sqp9.5263857617435649274" resolveInfo="handleable" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="5263857617435651287" />
@@ -938,7 +938,7 @@
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="5703963167136664519">
                             <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="5703963167136664520">
                               <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="5703963167136664523">
-                                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="sqp9.4643695836678934010" resolveInfo="PropertyAccessCode" />
+                                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="sqp9.4643695836678934010" resolveInfo="UIPropertyAccessCode" />
                               </node>
                             </node>
                           </node>
@@ -1027,7 +1027,7 @@
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="4643695836679547780">
                             <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="4643695836679547781">
                               <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="4643695836679547784">
-                                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="sqp9.4643695836678934010" resolveInfo="PropertyAccessor" />
+                                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="sqp9.4643695836678934010" resolveInfo="UIPropertyAccessCode" />
                               </node>
                             </node>
                           </node>
@@ -1239,7 +1239,7 @@
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="8115675450774864534">
                           <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="8115675450774864535">
                             <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8115675450774864536">
-                              <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="sqp9.8115675450774717215" resolveInfo="EventHandlingCode" />
+                              <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="sqp9.8115675450774717215" resolveInfo="EventHandlerTemplate" />
                             </node>
                           </node>
                         </node>
@@ -1421,7 +1421,7 @@
         <property name="text" nameId="tpc2.1073389577007" value=":" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="5263857617434627071">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="sqp9.9014158157446451474" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="sqp9.5263857617434463754" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="5263857617434627072" />
     </node>
@@ -1479,7 +1479,7 @@
                           <node role="parameterType" roleId="tp2c.1199542501692" type="tpee.Type" typeId="tpee.1068431790189" id="8938819815716373324">
                             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="8938819815716373325">
                               <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8938819815716373326">
-                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8938819815716373310" resolveInfo="et" />
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8938819815716373310" resolveInfo="pt" />
                               </node>
                             </node>
                           </node>
@@ -1551,7 +1551,7 @@
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="8938819815716373447">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="sqp9.4643695836678934012" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="sqp9.8938819815716373280" />
           <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="8938819815716373448">
             <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="8938819815716373449">
               <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
@@ -1853,7 +1853,7 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1055897155339721755">
                     <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="1055897155339721756" />
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1055897155339721757">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t8yi.1055897155339717884" resolveInfo="allAspectDefs" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t8yi.1055897155339717884" resolveInfo="aspectDefs" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp2q.IsNotEmptyOperation" typeId="tp2q.1176501494711" id="5572604531249544162" />
