@@ -120,9 +120,6 @@ public class SModelAdapter implements SModelListener {
     eventFired(event);
   }
 
-  public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
-  }
-
   public void modelLoadingStateChanged(SModelDescriptor sm, ModelLoadingState oldState, ModelLoadingState newState) {
   }
 

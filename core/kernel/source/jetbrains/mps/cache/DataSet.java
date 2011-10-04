@@ -56,9 +56,6 @@ public abstract class DataSet extends SModelAdapter {
 
   // model listener
 
-  public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
-  }
-
   public void languageAdded(SModelLanguageEvent event) {
   }
 

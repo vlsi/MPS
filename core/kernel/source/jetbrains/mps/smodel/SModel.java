@@ -222,14 +222,6 @@ public class SModel {
     123
   }
 
-  public synchronized boolean setLoading(boolean loading) {
-    boolean wasLoading = myLoading;
-    myLoading = loading;
-    if (wasLoading != loading) {
-      fireLoadingStateChanged();
-    }
-    return wasLoading;
-  }
 
   public boolean isLoading() {
     return myLoading;
@@ -244,16 +236,6 @@ public class SModel {
   private List<SModelListener> getModelListeners() {
     BaseSModelDescriptor modelDescriptor = (BaseSModelDescriptor) getModelDescriptor();
     return modelDescriptor != null ? modelDescriptor.getModelListeners() : Collections.<SModelListener>emptyList();
-  }
-
-  private void fireLoadingStateChanged() {
-    for (SModelListener sModelListener : getModelListeners()) {
-      try {
-        sModelListener.loadingStateChanged(getModelDescriptor(), isLoading());
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
   }
 
   //todo code in the following methods should be written w/o duplication
