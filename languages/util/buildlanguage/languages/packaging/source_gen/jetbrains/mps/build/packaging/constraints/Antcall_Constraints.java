@@ -14,8 +14,8 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 
@@ -42,7 +42,7 @@ public class Antcall_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             if ((SLinkOperations.getTarget(_context.getReferenceNode(), "project", false) == null)) {
-              return new SimpleSearchScope(new ArrayList<SNode>());
+              return Sequence.fromIterable(Collections.<SNode>emptyList());
             }
             return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getReferenceNode(), "project", false), "target", true);
           }
