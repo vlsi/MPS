@@ -31,7 +31,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
 
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, final IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
-    final IScope scope = operationContext.getScope();
+    final IScope scope = model.getModelDescriptor().getModule().getScope();
     String title = "Checking " + SModelOperations.getModelName(model) + " for unresolved references...";
     for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
       if (!(progressContext.checkAndUpdateIndicator(title))) {
