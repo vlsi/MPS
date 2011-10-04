@@ -154,7 +154,9 @@
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.LinkedHashMap" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.JViewport" />
@@ -164,9 +166,13 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.ide.tooltips.MPSToolTipManager" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.Bounds" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeColors" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroup" />
