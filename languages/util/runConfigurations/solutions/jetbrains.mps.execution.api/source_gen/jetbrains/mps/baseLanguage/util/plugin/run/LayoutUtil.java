@@ -8,6 +8,10 @@ import java.awt.GridBagConstraints;
 @Deprecated
 @ToRemove(version = 2.0)
 public class LayoutUtil {
+  @Deprecated
+  public LayoutUtil() {
+  }
+
   public static GridBagConstraints createFieldConstraints(int y) {
     // LayoutUtil was moved to j.m.ide.common model 
     // unfortunately, LayoutUtil is used in generated code (see JavaEditorComponent, root template for JavaRunConfiguration 
