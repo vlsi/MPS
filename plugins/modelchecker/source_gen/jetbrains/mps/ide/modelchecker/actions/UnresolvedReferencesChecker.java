@@ -24,6 +24,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public class UnresolvedReferencesChecker extends SpecificChecker {
   public UnresolvedReferencesChecker() {
@@ -59,7 +61,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
             public boolean doFix() {
               if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
                 SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
-                operationContext.getModule().addDependency(sm.getModule().getModuleReference(), false);
+                check_xiru3y_a1a0a5a0a5a2a3a0(check_xiru3y_a0b0a0f0a0f0c0d0a(operationContext), sm);
                 ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
                 return true;
               }
@@ -70,5 +72,33 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
       }
     }
     return results;
+  }
+
+  private static void check_xiru3y_a1a0a5a0a5a2a3a0(IModule checkedDotOperand, SModelDescriptor sm) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.addDependency(check_xiru3y_a0a1a0a5a0a5a2a3a0(check_xiru3y_a0a0b0a0f0a0f0c0d0a(sm)), false);
+    }
+
+  }
+
+  private static ModuleReference check_xiru3y_a0a1a0a5a0a5a2a3a0(IModule checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModuleReference();
+    }
+    return null;
+  }
+
+  private static IModule check_xiru3y_a0a0b0a0f0a0f0c0d0a(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static IModule check_xiru3y_a0b0a0f0a0f0c0d0a(IOperationContext checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
   }
 }
