@@ -188,7 +188,7 @@ public class SModel {
     return myRoots.size();
   }
 
-  protected void performUndoableAction(SNodeUndoableAction action){
+  protected void performUndoableAction(SNodeUndoableAction action) {
     if (!canFireEvent()) return;
     if (!UndoHelper.getInstance().needRegisterUndo(this)) return;
     UndoHelper.getInstance().addUndoableAction(action);
@@ -218,13 +218,8 @@ public class SModel {
 
   //---------loading state--------
 
-  public void runLoadingAction(@NotNull Runnable runnable) {
-    123
-  }
-
-
   protected boolean canFireEvent() {
-    return !myLoading;
+    return SModelRepository.getInstance().getModelDescriptor(this.getSModelReference()) != null;
   }
 
   //---------listeners--------
