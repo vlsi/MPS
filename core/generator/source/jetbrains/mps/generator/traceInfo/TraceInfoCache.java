@@ -29,6 +29,8 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -86,7 +88,6 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
         return myCache.get(modelDescriptor);
       }
 
-      myFilesToModels.put(getCacheFile(modelDescriptor), modelDescriptor);
       DebugInfo cache = readCache(modelDescriptor, module);
       myCache.put(modelDescriptor, cache);
 
@@ -101,28 +102,16 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   }
 
   protected DebugInfo readCache(SModelDescriptor sm, IModule module) {
-    IClassPathItem classPathItem = module.getClassPathItem();
-    if (classPathItem == null) {
-      return null;
-    }
-    DebugInfo info = getCacheFromClassPathItem(sm, classPathItem);
-    if (info == null) {
-      if (InternalFlag.isInternalMode() && !(module.isCompileInMPS())) {
-        for (IdeaPluginDescriptor plugin : PluginManager.getPlugins()) {
-          info = TraceInfoCache.getInstance().getCacheFromClassloader(sm, plugin.getPluginClassLoader());
-          if (info != null) {
-            return info;
-          }
-        }
-      }
-    }
-    return info;
+    return loadCacheFromUrl(getCacheUrl(sm, module), sm);
   }
 
   @Nullable
-  public DebugInfo getCacheFromClassPathItem(@NotNull SModelDescriptor sm, @NotNull IClassPathItem classPathItem) {
-    URL url = classPathItem.getResource(traceInfoResourceName(sm));
+  private DebugInfo loadCacheFromUrl(@Nullable URL url, @NotNull SModelDescriptor sm) {
     if (url == null) return null;
+    IFile file = getFileByURL(url);
+    if (file != null) {
+      myFilesToModels.put(file, sm);
+    }
     InputStream stream = null;
     try {
       stream = url.openStream();
@@ -142,20 +131,34 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   }
 
   @Nullable
-  public DebugInfo getCacheFromClassloader(@NotNull SModelDescriptor sm, @NotNull ClassLoader classLoader) {
-    InputStream stream = classLoader.getResourceAsStream(traceInfoResourceName(sm));
-    if (stream == null) return null;
-    try {
-      return load(stream);
-    } catch (IOException e) {
+  private URL getCacheUrl(@NotNull SModelDescriptor sm, IModule module) {
+    IClassPathItem classPathItem = module.getClassPathItem();
+    if (classPathItem == null) {
       return null;
-    } finally {
-      try {
-        stream.close();
-      } catch (IOException e) {
-        LOG.error(e);
+    }
+    String resourceName = traceInfoResourceName(sm);
+    URL url = classPathItem.getResource(resourceName);
+    if (url == null) {
+      if (InternalFlag.isInternalMode() && !(module.isCompileInMPS())) {
+        for (IdeaPluginDescriptor plugin : PluginManager.getPlugins()) {
+          url = plugin.getPluginClassLoader().getResource(resourceName);
+          if (url != null) {
+            return url;
+          }
+        }
       }
     }
+    return url;
+  }
+
+  @Override
+  @Nullable
+  protected IFile getCacheFile(@NotNull SModelDescriptor modelDescriptor) {
+    URL cacheUrl = getCacheUrl(modelDescriptor, modelDescriptor.getModule());
+    if (cacheUrl == null) {
+      return null;
+    }
+    return getFileByURL(cacheUrl);
   }
 
   private String traceInfoResourceName(SModelDescriptor sm) {
@@ -175,5 +178,19 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   @Override
   protected DebugInfo fromXml(Element e) {
     return DebugInfo.fromXml(e);
+  }
+
+  @Nullable
+  private static IFile getFileByURL(@NotNull URL url) {
+    String file = url.getFile();
+    if (file.isEmpty()) {
+      return null;
+    }
+    // if this is a jar, it starts with file:, so we remove the prefix
+    String prefix = "file:";
+    if (file.startsWith(prefix)) {
+      file = file.substring(prefix.length());
+    }
+    return FileSystem.getInstance().getFileByPath(file);
   }
 }

@@ -1796,8 +1796,8 @@
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1168979597372">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1168979601076">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1168979619111">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1168979165563" resolveInfo="isProperty_hasValueEnum_notNullDefaultValue" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1168979621799" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1227746497436">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1227746497437">
@@ -1826,8 +1826,8 @@
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1168979716444">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1168979716445">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1168979716446">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1168979519274" resolveInfo="isProperty_hasValueEnum_nullDefaultValue" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1168979716447" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1227746497414">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1227746497415">
@@ -2603,8 +2603,8 @@
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1173123556620">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1173123556621">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1173123556622">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1168968334480" resolveInfo="nodeOp_noParm_conceptList" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1173123556623" />
             </node>
           </node>
