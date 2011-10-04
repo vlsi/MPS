@@ -129,7 +129,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     return null;
   }
 
-  boolean hasVirtualFileFor(SNodePointer nodePointer) {
+  public boolean hasVirtualFileFor(SNodePointer nodePointer) {
     return myVirtualFiles.containsKey(nodePointer);
   }
 
