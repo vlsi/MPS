@@ -25,8 +25,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.CollectionUtil;
-import java.util.Set;
 import jetbrains.mps.reloading.CommonPaths;
+import java.util.Set;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.annotations.Nullable;
@@ -176,9 +176,13 @@ public class Java_Command {
     if (withDependencies) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          AbstractModule.getDependenciesClasspath(CollectionUtil.set(module), true).accept(visitor);
+          AbstractModule.getDependenciesClasspath(CollectionUtil.set(module), false).accept(visitor);
         }
       });
+    }
+
+    if (!(module.isCompileInMPS())) {
+      CommonPaths.getMPSClassPath().accept(visitor);
     }
 
     Set<String> visited = visitor.getClasspath();
