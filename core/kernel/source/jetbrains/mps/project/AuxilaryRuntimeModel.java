@@ -63,6 +63,10 @@ public class AuxilaryRuntimeModel implements ModelOwner {
           if (!UndoHelper.getInstance().needRegisterUndo(this)) return;
           UndoHelper.getInstance().addUndoableAction(action);
         }
+
+        protected boolean canFireEvent() {
+          return false;
+        }
       };
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }

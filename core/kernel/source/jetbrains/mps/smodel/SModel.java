@@ -219,7 +219,7 @@ public class SModel {
   //---------loading state--------
 
   protected boolean canFireEvent() {
-    return SModelRepository.getInstance().getModelDescriptor(this.getSModelReference()) != null;
+    return myModelDescriptor!=null && SModelRepository.getInstance().getModelDescriptor(getSModelReference()) != null;
   }
 
   //---------listeners--------

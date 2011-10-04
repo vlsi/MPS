@@ -100,7 +100,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
             updateDiskTimestamp();
 
             myIsLoading = true;
+
+            mySModel.setModelDescriptor(null);
             new ModelLoader(mySModel, fullModel).update();
+            mySModel.setModelDescriptor(DefaultSModelDescriptor.this);
+
             setLoadingState(ModelLoadingState.FULLY_LOADED);
             fireModelStateChanged(ModelLoadingState.ROOTS_LOADED, ModelLoadingState.FULLY_LOADED);
             myIsLoading = false;
