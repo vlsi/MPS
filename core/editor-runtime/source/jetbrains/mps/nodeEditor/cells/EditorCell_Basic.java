@@ -325,6 +325,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void setY(int y) {
+    if (myY == y) {
+      return;
+    }
     myY = y;
     requestRelayout();
   }
@@ -334,6 +337,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void setX(int x) {
+    if (myX == x) {
+      return;
+    }
     myX = x;
     requestRelayout();
   }
