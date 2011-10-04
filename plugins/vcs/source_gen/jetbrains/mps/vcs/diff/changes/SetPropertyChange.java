@@ -43,4 +43,8 @@ public class SetPropertyChange extends NodeChange {
   public String toString() {
     return String.format("Set property %s to %s in node %s", myPropertyName, myNewValue, getAffectedNodeId());
   }
+
+  public String getDescription() {
+    return String.format("Changed %s of #%s from '%s' to '%s'", myPropertyName, getAffectedNodeId(), getChangeSet().getOldModel().getNodeById(getAffectedNodeId()).getProperty(myPropertyName), getChangeSet().getNewModel().getNodeById(getAffectedNodeId()).getProperty(myPropertyName));
+  }
 }

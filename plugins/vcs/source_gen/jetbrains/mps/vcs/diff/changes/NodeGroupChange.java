@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.util.NameUtil;
 
 public class NodeGroupChange extends ModelChange {
   private SNodeId myParentNodeId;
@@ -131,6 +134,40 @@ public class NodeGroupChange extends ModelChange {
     return String.format("Replace %s with nodes %s in role %s of node %s", nodeRange(myBegin, myEnd), nodeRange(myResultBegin, myResultEnd), myRole, myParentNodeId);
   }
 
+  public String getDescription() {
+    List<SNode> newChildren = getChangeSet().getNewModel().getNodeById(myParentNodeId).getChildren(myRole);
+    String newIds = IterableUtils.join(ListSequence.fromList(newChildren).page(myResultBegin, myResultEnd).select(new ISelector<SNode, String>() {
+      public String select(SNode n) {
+        return "#" + n.getSNodeId();
+      }
+    }), ", ");
+
+    String oldStuff = (myEnd - myBegin == 1 ?
+      myRole :
+      NameUtil.formatNumericalString(myEnd - myBegin, myRole)
+    );
+    String newStuff = (myResultEnd - myResultBegin == 1 ?
+      myRole :
+      NameUtil.formatNumericalString(myResultEnd - myResultBegin, myRole)
+    );
+    if (eq_yjf6x2_a0a5a11(newStuff, myRole) && eq_yjf6x2_a0a5a11_0(oldStuff, myRole)) {
+      newStuff = "another";
+    } else if (myEnd != myBegin) {
+      newStuff = "another " + newStuff;
+    }
+    if (myEnd == myBegin) {
+      String addedOrInserted = (myResultEnd == ListSequence.fromList(newChildren).count() ?
+        "Added" :
+        "Inserted"
+      );
+      return String.format("%s %s: %s", addedOrInserted, newStuff, newIds);
+    }
+    if (myResultEnd == myResultBegin) {
+      return String.format("Removed %s", oldStuff);
+    }
+    return String.format("Replaced %s with %s: %s", oldStuff, newStuff, newIds);
+  }
+
   @NotNull
   protected ModelChange createOppositeChange() {
     return new NodeGroupChange(getChangeSet().getOppositeChangeSet(), myParentNodeId, myRole, myResultBegin, myResultEnd, myBegin, myEnd);
@@ -140,6 +177,20 @@ public class NodeGroupChange extends ModelChange {
     return (begin + 1 == end ?
       String.format("node #%d", begin) :
       String.format("nodes #%d-%d", begin, end - 1)
+    );
+  }
+
+  private static boolean eq_yjf6x2_a0a5a11(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_yjf6x2_a0a5a11_0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
     );
   }
 }

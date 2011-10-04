@@ -16,4 +16,8 @@ public abstract class MetadataChange extends ModelChange {
   public final SNodeId getRootId() {
     return null;
   }
+
+  public String getDescription() {
+    return toString();
+  }
 }
