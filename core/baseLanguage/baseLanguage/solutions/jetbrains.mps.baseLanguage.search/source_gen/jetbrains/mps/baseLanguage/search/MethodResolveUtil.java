@@ -142,9 +142,9 @@ public class MethodResolveUtil {
           });
           nodesAndTypes.put(term, typeOfArg);
         }
-        List<SNode> candidates1 = MethodResolveUtil.selectByParameterTypeNode(typeOfArg, indexOfArg, candidates, typeByTypeVar, mostSpecific, false);
-        if (candidates1.isEmpty()) {
-          candidates1 =  MethodResolveUtil.selectByParameterTypeNode(typeOfArg, indexOfArg, candidates, typeByTypeVar, mostSpecific, true);
+        List<SNode> candidates1 = selectByParameterTypeNode(typeOfArg, indexOfArg, candidates, typeByTypeVar, mostSpecific, false);
+        if (ListSequence.fromList(candidates1).isEmpty()) {
+          candidates1 = selectByParameterTypeNode(typeOfArg, indexOfArg, candidates, typeByTypeVar, mostSpecific, true);
         }
         if (candidates1.isEmpty()) {
           good = false;
