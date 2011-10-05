@@ -22,13 +22,13 @@ import java.util.Stack;
 
 public class ReferencedNodeContext {
   private Stack<SNode> myContextRefererNodes = null;
-  private SNode myNodePointer = null;
+  private SNode myNode = null;
   private Stack<String> myContextRoles = null;
-  private Stack<SNode> myAttributesStack = null;
+  private boolean myIsNodeAttribute = false;
 
   private ReferencedNodeContext(SNode node) {
     assert node != null;
-    myNodePointer = node;
+    myNode = node;
   }
 
   private ReferencedNodeContext(SNode node, ReferencedNodeContext prototype) {
@@ -47,6 +47,12 @@ public class ReferencedNodeContext {
     return new ReferencedNodeContext(node);
   }
 
+  public static ReferencedNodeContext createNodeAttributeContext(SNode nodeAttribute) {
+    ReferencedNodeContext result = new ReferencedNodeContext(nodeAttribute);
+    result.myIsNodeAttribute = true;
+    return result;
+  }
+
   public ReferencedNodeContext sameContextButAnotherNode(SNode newNode) {
     return new ReferencedNodeContext(newNode, this);
   }
@@ -62,18 +68,12 @@ public class ReferencedNodeContext {
     return myContextRoles != null;
   }
 
-  public ReferencedNodeContext contextWithOneMoreAttribute(SNode attribute) {
-    ReferencedNodeContext result = new ReferencedNodeContext(getNode(), this);
-    result.addAttribute(attribute);
-    return result;
-  }
-
-  public ReferencedNodeContext contextWihtNoAttributes() {
-    return new ReferencedNodeContext(getNode());
-  }
-
   public SNode getNode() {
-    return myNodePointer;
+    return myNode;
+  }
+
+  public boolean isNodeAttribute() {
+    return myIsNodeAttribute;
   }
 
   private void addContextRole(String contextRole) {
@@ -90,30 +90,38 @@ public class ReferencedNodeContext {
     myContextRefererNodes.push(contextRefererNode);
   }
 
-  private void addAttribute(SNode attribute) {
-    if (myAttributesStack == null) {
-      myAttributesStack = new Stack<SNode>();
-    }
-    myAttributesStack.push(attribute);
-  }
-
   public int hashCode() {
-    return ObjectUtils.hashCode(myNodePointer) +
+    return ObjectUtils.hashCode(myNode) +
       31 * (ObjectUtils.hashCode(myContextRefererNodes) +
-        31 * (ObjectUtils.hashCode(myContextRoles) +
-          31 * ObjectUtils.hashCode(myAttributesStack)));
+        31 * ObjectUtils.hashCode(myContextRoles));
   }
 
   public boolean equals(Object obj) {
     if (obj == this) return true;
     if (obj instanceof ReferencedNodeContext) {
       ReferencedNodeContext o = (ReferencedNodeContext) obj;
-      return ObjectUtils.equals(myNodePointer, o.myNodePointer)
+      return ObjectUtils.equals(myNode, o.myNode)
         && ObjectUtils.equals(myContextRoles, o.myContextRoles)
         && ObjectUtils.equals(myContextRefererNodes, o.myContextRefererNodes)
-        && ObjectUtils.equals(myAttributesStack, o.myAttributesStack);
+        && myIsNodeAttribute == o.myIsNodeAttribute;
     } else {
       return false;
     }
+  }
+
+  @Override
+  public String toString() {
+    String result = (myIsNodeAttribute ? "NodeAttribute: " : "Node: ") + myNode.toString();
+    if (myContextRoles != null) {
+      for (String contextRole : myContextRoles) {
+        result += ", context role: " + contextRole;
+      }
+    }
+    if (myContextRefererNodes != null) {
+      for (SNode contextReferer : myContextRefererNodes) {
+        result += ", context referer: " + contextReferer.toString();
+      }
+    }
+    return result;
   }
 }

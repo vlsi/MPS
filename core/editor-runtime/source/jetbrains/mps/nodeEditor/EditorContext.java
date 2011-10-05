@@ -26,6 +26,8 @@ import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.util.performance.IPerformanceTracer;
+import jetbrains.mps.util.performance.PerformanceTracer;
 
 import java.awt.Frame;
 import java.util.List;
@@ -40,6 +42,7 @@ public class EditorContext {
   private IOperationContext myOperationContext;
   private EditorCell myContextCell;
   private List<SModelEvent> mySModelEvents = null;
+  private IPerformanceTracer myPerformanceTracer = null;
 
   private ReferencedNodeContext myCurrentRefNodeContext;
 
@@ -324,7 +327,7 @@ public class EditorContext {
         return cellWithRole;
     }
     
-    return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, cellWithRole, this, roleAttribute);
+    return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, cellWithRole, this, roleAttribute, mySModelEvents);
   }
 
   public List<SNode> getSelectedNodes() {
@@ -337,5 +340,35 @@ public class EditorContext {
 
   public <T> T executeCommand(Computable<T> c) {
     return myNodeEditorComponent.executeCommand(c);
+  }
+
+  void startTracing(String name) {
+    assert myPerformanceTracer == null;
+    myPerformanceTracer = new PerformanceTracer(name);
+  }
+
+  String stopTracing() {
+    assert myPerformanceTracer != null;
+    String result = myPerformanceTracer.report();
+    myPerformanceTracer = null;
+    return result;
+  }
+
+  boolean isTracing() {
+    return myPerformanceTracer != null;
+  }
+
+  public void pushTracerTask(String message, boolean isMajor) {
+    if (myPerformanceTracer == null) {
+      return;
+    }
+    myPerformanceTracer.push(message, isMajor);
+  }
+
+  public void popTracerTask() {
+    if (myPerformanceTracer == null) {
+      return;
+    }
+    myPerformanceTracer.pop();
   }
 }
