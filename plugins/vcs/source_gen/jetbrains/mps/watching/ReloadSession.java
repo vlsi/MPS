@@ -179,7 +179,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
           public Generator select(IModule m) {
             return (Generator) m;
           }
-        });
+        }).toListSequence();
         for (Generator gen : generators) {
           if (log.isDebugEnabled()) {
             log.debug("Skip generator " + gen + " since we want to reload " + gen.getSourceLanguage());
