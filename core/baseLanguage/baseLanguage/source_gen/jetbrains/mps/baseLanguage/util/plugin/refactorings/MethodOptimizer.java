@@ -29,14 +29,18 @@ public class MethodOptimizer {
 
   public static void removeUnusedDeclarations(SNode body) {
     List<SNode> references = SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{});
-    for (final SNode declaration : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{}))) {
-      if (ListSequence.fromList(references).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SLinkOperations.getTarget(it, "variableDeclaration", false) == declaration;
-        }
-      }).isEmpty() && SNodeOperations.isInstanceOf(SNodeOperations.getParent(declaration), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
-        SNodeOperations.deleteNode(SNodeOperations.getParent(declaration));
+    for (SNode declaration : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{}))) {
+      removeUnusedDeclaration(references, declaration);
+    }
+  }
+
+  public static void removeUnusedDeclaration(List<SNode> references, final SNode declaration) {
+    if (ListSequence.fromList(references).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, "variableDeclaration", false) == declaration;
       }
+    }).isEmpty() && SNodeOperations.isInstanceOf(SNodeOperations.getParent(declaration), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
+      SNodeOperations.deleteNode(SNodeOperations.getParent(declaration));
     }
   }
 
@@ -46,6 +50,7 @@ public class MethodOptimizer {
     if (size < 2) {
       return;
     }
+    // what if statement is not on line of size -2? 
     SNode beforeLastStatement = ListSequence.fromList(statements).getElement(size - 2);
     if (SNodeOperations.isInstanceOf(beforeLastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       SNode expressionStatement = SNodeOperations.cast(beforeLastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
@@ -56,6 +61,12 @@ public class MethodOptimizer {
           if (SLinkOperations.getTarget(variableReference, "variableDeclaration", false) == SLinkOperations.getTarget(reference2, "variableDeclaration", false)) {
             SLinkOperations.setTarget(lastReturn, "expression", SLinkOperations.getTarget(assignment, "rValue", true), true);
             SNodeOperations.deleteNode(beforeLastStatement);
+
+            if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+              removeUnusedDeclaration(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{}), SNodeOperations.cast(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+
+            }
+
           }
         }
       }
