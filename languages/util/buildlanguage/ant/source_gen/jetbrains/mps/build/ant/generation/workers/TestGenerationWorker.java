@@ -16,15 +16,17 @@ import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IProgress;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.make.facet.ITarget;
 import java.util.Set;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestListener;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -47,7 +49,6 @@ import java.util.LinkedHashSet;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
@@ -62,9 +63,13 @@ import jetbrains.mps.build.ant.TeamCityMessageFormat;
 import jetbrains.mps.build.ant.generation.ConsoleMessageFormat;
 import org.apache.tools.ant.BuildException;
 import jetbrains.mps.messages.IMessageHandler;
-import java.util.ArrayList;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestAdapter;
+import jetbrains.mps.build.ant.generation.unittest.ITestReporter;
+import jetbrains.mps.build.ant.generation.unittest.XmlTestReporter;
+import jetbrains.mps.build.ant.generation.unittest.ConsoleTestReporter;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
 
 public class TestGenerationWorker extends MpsWorker {
   private final TestGenerationWorker.MyMessageHandler myMessageHandler = new TestGenerationWorker.MyMessageHandler();
@@ -72,6 +77,7 @@ public class TestGenerationWorker extends MpsWorker {
   private IBuildServerMessageFormat myBuildServerMessageFormat;
   private Map<String, String> path2tmp = MapSequence.fromMap(new HashMap<String, String>());
   private String tmpPath;
+  private TestGenerationWorker.MyReporter myReporter = new TestGenerationWorker.MyReporter();
 
   public TestGenerationWorker(WhatToDo whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
@@ -126,19 +132,17 @@ public class TestGenerationWorker extends MpsWorker {
     }
     info(s.toString());
 
-    final String[] currentTestName = new String[1];
     final _FunctionTypes._void_P1_E0<? super String> startTestFormat = new _FunctionTypes._void_P1_E0<String>() {
       public void invoke(String msg) {
-        currentTestName[0] = myBuildServerMessageFormat.escapeBuildMessage(new StringBuffer(msg)).toString();
-        System.out.println(myBuildServerMessageFormat.formatTestStart(currentTestName[0]));
+        myReporter.testStarted(StringUtils.trim(msg));
       }
     };
     final _FunctionTypes._void_P1_E0<? super String> finishTestFormat = new _FunctionTypes._void_P1_E0<String>() {
       public void invoke(String msg) {
-        System.out.println(myBuildServerMessageFormat.formatTestFinish(myBuildServerMessageFormat.escapeBuildMessage(new StringBuffer(msg)).toString()));
-        currentTestName[0] = null;
+        myReporter.testFinished(StringUtils.trim(msg));
       }
     };
+    final int[] count = new int[]{1};
 
     final IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(new IProgress.Stub() {
       @Override
@@ -158,23 +162,35 @@ public class TestGenerationWorker extends MpsWorker {
           if (done > 1) {
             format = finishTestFormat;
           }
-          reportIfStartsWith("Diffing", name + " " + comment, format);
+          reportIfStartsWith("Diffing ", name + " " + comment, format);
         }
       }
     }) {
       @Override
       public void reportFeedback(IFeedback fdbk) {
         if (fdbk.getSeverity() == IFeedback.Severity.ERROR) {
-          String test = currentTestName[0];
+          String test = myReporter.getCurrentTestName();
           if (test == null) {
             test = "unknown";
           }
-          System.out.println(myBuildServerMessageFormat.formatTestFailure(test, fdbk.getMessage(), myBuildServerMessageFormat.escapeBuildMessage(new StringBuffer(String.valueOf(fdbk.getException())))));
+          Throwable thr = fdbk.getException();
+          String msg = fdbk.getMessage();
+          String details = (thr == null ?
+            "(no details)" :
+            String.valueOf(MpsWorker.extractStackTrace(thr))
+          );
+          int eol = msg.indexOf("\n");
+          if (eol >= 0) {
+            details = msg.substring(eol + 1) + "\n" + details;
+            msg = msg.substring(0, eol);
+          }
+          myReporter.testFailed(test, msg, details);
         }
       }
     }) {
       @Override
-      public void setup(IPropertiesPool ppool) {
+      public void setup(IPropertiesPool ppool, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
+        super.setup(ppool, toExecute, input);
         Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> makeparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Object.class);
         makeparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
           public IFile invoke(String path) {
@@ -201,6 +217,8 @@ public class TestGenerationWorker extends MpsWorker {
           Tuples._1<UnitTestListener> testParams = (Tuples._1<UnitTestListener>) ppool.properties(new ITarget.Name("jetbrains.mps.build.gentest.Test.runTests"), Object.class);
           testParams._0(new TestGenerationWorker.MyUnitTestAdapter());
         }
+        myReporter.finishRun();
+        myReporter.startRun("Module cluster " + String.valueOf(count[0]++));
       }
     };
     final Wrappers._T<IResult> result = new Wrappers._T<IResult>();
@@ -233,12 +251,13 @@ public class TestGenerationWorker extends MpsWorker {
 
   private void reportIfStartsWith(String prefix, String work, _FunctionTypes._void_P1_E0<? super String> format) {
     if (work != null && work.startsWith(prefix)) {
-      format.invoke(work);
+      format.invoke(work.substring(prefix.length()) + ".Test." + StringUtils.trim(prefix));
     }
   }
 
   public void work() {
     setupEnvironment();
+    myReporter.init();
     //  for each project 
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
     for (File file : mpsProjects.keySet()) {
@@ -273,6 +292,7 @@ public class TestGenerationWorker extends MpsWorker {
       // <node> 
     }
 
+    myReporter.finishRun();
     cleanUp();
     dispose();
     showStatistic();
@@ -436,9 +456,6 @@ public class TestGenerationWorker extends MpsWorker {
   }
 
   private class MyMessageHandler implements IMessageHandler {
-    private final List<String> myGenerationErrors = ListSequence.fromList(new ArrayList<String>());
-    private final List<String> myGenerationWarnings = ListSequence.fromList(new ArrayList<String>());
-
     public MyMessageHandler() {
     }
 
@@ -446,34 +463,18 @@ public class TestGenerationWorker extends MpsWorker {
       switch (msg.getKind()) {
         case ERROR:
           TestGenerationWorker.this.error(msg.getText());
-          if (msg.getException() != null) {
-            myGenerationErrors.add(MpsWorker.extractStackTrace(msg.getException()).toString());
-          } else {
-            myGenerationErrors.add(msg.getText());
-          }
+          myReporter.errorLine("[ERROR] " + msg.getText());
           break;
         case WARNING:
           TestGenerationWorker.this.warning(msg.getText());
-          myGenerationWarnings.add(msg.getText());
+          myReporter.outputLine("[WARNING]" + msg.getText());
           break;
         case INFORMATION:
           TestGenerationWorker.this.verbose(msg.getText());
+          myReporter.outputLine("[INFO]" + msg.getText());
           break;
         default:
       }
-    }
-
-    public List<String> getGenerationErrors() {
-      return myGenerationErrors;
-    }
-
-    public List<String> getGenerationWarnings() {
-      return myGenerationWarnings;
-    }
-
-    public void clean() {
-      myGenerationErrors.clear();
-      myGenerationWarnings.clear();
     }
 
     public void clear() {
@@ -486,24 +487,25 @@ public class TestGenerationWorker extends MpsWorker {
 
     @Override
     public void testStarted(String testName) {
-      System.out.println(myBuildServerMessageFormat.formatTestStart(myBuildServerMessageFormat.escapeBuildMessage(testName)));
+      myReporter.testStarted(testName);
     }
 
     @Override
     public void testFailed(String test, String message, String details) {
-      System.out.println(myBuildServerMessageFormat.formatTestFailure(myBuildServerMessageFormat.escapeBuildMessage(test), myBuildServerMessageFormat.escapeBuildMessage(message), myBuildServerMessageFormat.escapeBuildMessage(details)));
+      myReporter.testFailed(test, message, details);
       myTestFailed = true;
     }
 
     @Override
     public void testFinished(String testName) {
-      System.out.println(myBuildServerMessageFormat.formatTestFinish(myBuildServerMessageFormat.escapeBuildMessage(testName)));
+      myReporter.testFinished(testName);
     }
 
     @Override
     public void logMessage(String message) {
       if (message != null && !(message.isEmpty())) {
         info(message);
+        myReporter.outputLine(message);
       }
     }
 
@@ -511,6 +513,119 @@ public class TestGenerationWorker extends MpsWorker {
     public void logError(String errorMessage) {
       if (errorMessage != null && !(errorMessage.isEmpty())) {
         error(errorMessage);
+        myReporter.errorLine(errorMessage);
+      }
+    }
+  }
+
+  private class MyReporter {
+    private ITestReporter testReporter;
+    private String currentTestName;
+    private File gentestdir;
+
+    private MyReporter() {
+    }
+
+    private void init() {
+      if (gentestdir != null) {
+        return;
+      }
+      if (isRunningOnTeamCity()) {
+        String wd = myWhatToDo.getProperty("mps.gentest.reportsDir");
+        wd = (wd == null ?
+          System.getProperty("user.dir") :
+          wd
+        );
+        gentestdir = new File(wd, ".gentest");
+        if (!(gentestdir.exists())) {
+          if (!(gentestdir.mkdirs())) {
+            File tmpDir;
+            try {
+              tmpDir = File.createTempFile("gentest", "reports");
+              tmpDir.delete();
+              tmpDir.mkdir();
+            } catch (IOException ex) {
+              throw new RuntimeException(ex);
+            }
+            gentestdir = tmpDir;
+          }
+        } else if (gentestdir.isDirectory()) {
+          for (File f : gentestdir.listFiles()) {
+            f.delete();
+          }
+        }
+      }
+    }
+
+    private String getCurrentTestName() {
+      return currentTestName;
+    }
+
+    private void startRun(String name) {
+      this.testReporter = (isRunningOnTeamCity() ?
+        new XmlTestReporter(name) :
+        new ConsoleTestReporter()
+      );
+    }
+
+    private void finishRun() {
+      if (testReporter == null) {
+        return;
+      }
+      if (currentTestName != null) {
+        testReporter.testFinished(currentTestName);
+      }
+      testReporter.runFinished();
+      if (isRunningOnTeamCity()) {
+        BufferedOutputStream os = null;
+        try {
+          File reportFile = File.createTempFile("gentest_report-", ".xml", gentestdir);
+          os = new BufferedOutputStream(new FileOutputStream(reportFile));
+          ((XmlTestReporter) testReporter).dump(os);
+          System.out.println("##teamcity[importData type='junit' path='" + reportFile.getAbsolutePath() + "']");
+        } catch (IOException ex) {
+        } finally {
+          if (os != null) {
+            try {
+              os.close();
+            } catch (IOException ignore) {
+            }
+          }
+        }
+      }
+      this.testReporter = null;
+    }
+
+    private void testStarted(String testname) {
+      if (currentTestName != null) {
+        testReporter.testFinished(currentTestName);
+      }
+      this.currentTestName = testname;
+      testReporter.testStarted(testname);
+    }
+
+    private void testFinished(String testname) {
+      testReporter.testFinished(testname);
+      this.currentTestName = null;
+    }
+
+    private void testFailed(String testname, String msg, String longmsg) {
+      testReporter.testFailed(testname, msg, longmsg);
+    }
+
+    private void outputLine(String out) {
+      if (currentTestName != null) {
+        testReporter.testOutputLine(currentTestName, out);
+      } else {
+        testReporter.outputLine(out);
+      }
+    }
+
+    private void errorLine(String err) {
+      if (currentTestName != null) {
+        testReporter.testErrorLine(currentTestName, err);
+      } else {
+        testReporter.errorLine(err);
       }
     }
   }

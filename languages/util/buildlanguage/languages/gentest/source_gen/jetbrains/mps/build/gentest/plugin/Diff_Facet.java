@@ -95,15 +95,19 @@ public class Diff_Facet extends IFacet.Stub {
                     }
                   });
                   final Differ differ = new Differ(retainedPaths, pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).excludedFiles());
+                  final StringBuilder errors = new StringBuilder();
                   dr.visitAll(new FilesDelta.Visitor() {
                     @Override
                     public boolean acceptRoot(IFile root) {
                       for (String diff : differ.diff(pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).fileToPath().invoke(root), root.getPath())) {
-                        monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(diff)));
+                        errors.append("\n").append(diff);
                       }
                       return true;
                     }
                   });
+                  if (errors.length() > 0) {
+                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Differences\n" + errors.toString())));
+                  }
                   monitor.currentProgress().advanceWork("Diffing", 99, fqn);
                 }
                 monitor.currentProgress().finishWork("Diffing");
