@@ -13,6 +13,9 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_PropertyDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -31,6 +34,20 @@ public class check_PropertyDeclaration_NonTypesystemRule extends AbstractNonType
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(prop, "property '" + SPropertyOperations.getString(prop, "name") + "' is already declared in " + SPropertyOperations.getString(SNodeOperations.getAncestor(propInConcept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false), "name"), "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1212182341577", null, errorTarget);
       }
+      return;
+    }
+    // check constant names generated in adapters 
+    final String name = NameUtil.toConstantName(SPropertyOperations.getString(prop, "name"));
+    SNode node = ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(concept)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it != prop && eq_lxacuo_a0a0a0a0a0a0h0a(name, NameUtil.toConstantName(SPropertyOperations.getString(it, "name")));
+      }
+    });
+    if ((node != null)) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(prop, "similar property '" + SPropertyOperations.getString(node, "name") + "' is declared in " + SPropertyOperations.getString(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false), "name"), "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "576141512674073565", null, errorTarget);
+      }
     }
   }
 
@@ -47,5 +64,12 @@ public class check_PropertyDeclaration_NonTypesystemRule extends AbstractNonType
 
   public boolean overrides() {
     return false;
+  }
+
+  private static boolean eq_lxacuo_a0a0a0a0a0a0h0a(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }
