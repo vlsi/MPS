@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 /*package*/ class ReloadSession {
   private static final Logger LOG = Logger.getLogger(ReloadSession.class);
@@ -223,8 +224,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
           public Generator select(IModule m) {
             return (Generator) m;
           }
-        });
-        for (Generator gen : generators) {
+        }).toListSequence();
+        for (Generator gen : Sequence.fromIterable(generators)) {
           if (log.isDebugEnabled()) {
             log.debug("Skip generator " + gen + " since we want to reload " + gen.getSourceLanguage());
           }
