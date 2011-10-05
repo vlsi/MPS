@@ -24,7 +24,7 @@ public class MethodOptimizer {
         optimizeVariableFollowedByReturn(body, lastReturn, SNodeOperations.cast(SLinkOperations.getTarget(lastReturn, "expression", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
       }
     }
-    removeUnusedDeclarations(body);
+    // <node> 
   }
 
   public static void removeUnusedDeclarations(SNode body) {
