@@ -142,7 +142,10 @@ public class MethodResolveUtil {
           });
           nodesAndTypes.put(term, typeOfArg);
         }
-        List<SNode> candidates1 = MethodResolveUtil.selectByParameterTypeNode(typeOfArg, indexOfArg, candidates, typeByTypeVar, mostSpecific);
+        List<SNode> candidates1 = MethodResolveUtil.selectByParameterTypeNode(typeOfArg, indexOfArg, candidates, typeByTypeVar, mostSpecific, false);
+        if (candidates1.isEmpty()) {
+          candidates1 =  MethodResolveUtil.selectByParameterTypeNode(typeOfArg, indexOfArg, candidates, typeByTypeVar, mostSpecific, true);
+        }
         if (candidates1.isEmpty()) {
           good = false;
           break;
@@ -157,7 +160,7 @@ public class MethodResolveUtil {
     return new Pair<SNode, Boolean>(ListSequence.fromList(candidates).first(), good);
   }
 
-  private static List<SNode> selectByParameterTypeNode(@Nullable SNode typeOfArg, int indexOfArg, List<SNode> candidates, final Map<SNode, SNode> typeByTypeVar, boolean mostSpecific) {
+  private static List<SNode> selectByParameterTypeNode(@Nullable SNode typeOfArg, int indexOfArg, List<SNode> candidates, final Map<SNode, SNode> typeByTypeVar, boolean mostSpecific, boolean isWeak) {
     List<SNode> result = new ArrayList<SNode>();
     StructuralNodeMap<Set<SNode>> typesOfParamToMethods = new StructuralNodeMap<Set<SNode>>();
     SubtypingManager subtypingManager = TypeChecker.getInstance().getSubtypingManager();
@@ -191,7 +194,7 @@ public class MethodResolveUtil {
           typeByTypeVar.remove(tvd);
         }
       });
-      if (subtypingManager.isSubtype(typeOfArg, typeOfParam)) {
+      if (subtypingManager.isSubtype(typeOfArg, typeOfParam, isWeak)) {
         Set<SNode> methods = typesOfParamToMethods.get(typeOfParam);
         if (methods == null) {
           methods = new HashSet<SNode>();
