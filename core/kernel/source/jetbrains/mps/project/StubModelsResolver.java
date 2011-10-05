@@ -46,7 +46,7 @@ public class StubModelsResolver {
     });
   }
 
-  public Set<SModelReference> resolveModel(IModule module, SModelFqName name, @Nullable SNodeId nodeId) {
+  public synchronized Set<SModelReference> resolveModel(IModule module, SModelFqName name, @Nullable SNodeId nodeId) {
     Pair<ModuleReference, SModelFqName> key = new Pair<ModuleReference, SModelFqName>(module.getModuleReference(), name);
     ensureInitialized(key);
 
