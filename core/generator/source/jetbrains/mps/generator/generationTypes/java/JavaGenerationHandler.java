@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.generationTypes.java;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;

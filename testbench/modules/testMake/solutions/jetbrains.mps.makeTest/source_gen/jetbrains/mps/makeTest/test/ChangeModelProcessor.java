@@ -19,8 +19,8 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.generator.GenerationFacade;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -113,7 +113,7 @@ public class ChangeModelProcessor {
       }
     };
     model.getModule().getModuleDescriptor().setCompileInMPS(false);
-    GenerationFacade.generateModels(this.myProject, models, new ModuleContext(model.getModule(), this.myProject), generationHandler, new EmptyProgressIndicator(), handler, GenerationOptions.getDefaults().create());
+    GenerationFacade.generateModels(this.myProject.getComponent(MPSProject.class), models, new ModuleContext(model.getModule(), this.myProject), generationHandler, new EmptyProgressMonitor(), handler, GenerationOptions.getDefaults().create());
     model.getModule().getModuleDescriptor().setCompileInMPS(true);
     return results;
   }

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.newTypesystem.state.blocks;
 
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
@@ -30,6 +29,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Pair;
 
 import java.util.LinkedList;
 import java.util.List;

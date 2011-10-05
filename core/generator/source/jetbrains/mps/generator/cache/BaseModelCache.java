@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.cache;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.util.containers.BidirectionalMap;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
@@ -25,6 +24,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.util.containers.BidirectionalMap;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;

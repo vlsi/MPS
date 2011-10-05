@@ -20,7 +20,6 @@ import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.DumbService;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
@@ -34,7 +33,9 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -90,10 +91,11 @@ public class GeneratorUIFacade {
                                                    final boolean rebuildAll, boolean skipRequirementsGeneration) {
     if (inputModels.isEmpty()) return true;
 
-    final Project project = invocationContext.getIdeaProject();
+    final Project project = invocationContext.getProject();
     assert project != null : "Cannot generate models without a project";
 
-    final DefaultMessageHandler messages = new DefaultMessageHandler(project);
+    final com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(project);
+    final DefaultMessageHandler messages = new DefaultMessageHandler(ideaProject);
     final GenerationSettings settings = GenerationSettings.getInstance();
 
     // confirm saving transient models
@@ -103,7 +105,7 @@ public class GeneratorUIFacade {
         "Save Transient Models",
         "Not this time",
         "No, and cancel saving"};
-      int option = JOptionPane.showOptionDialog(ProjectHelper.toMainFrame(invocationContext.getProject()),
+      int option = JOptionPane.showOptionDialog(ProjectHelper.toMainFrame(project),
         "Would you like to save transient models?",
         "",
         JOptionPane.YES_NO_CANCEL_OPTION,
@@ -127,8 +129,8 @@ public class GeneratorUIFacade {
       saveTransientModels = false;
     }
 
-    if (DumbService.getInstance(project).isDumb()) {
-      DumbService.getInstance(project).showDumbModeNotification("Generation is not available until indices are built.");
+    if (DumbService.getInstance(ideaProject).isDumb()) {
+      DumbService.getInstance(ideaProject).showDumbModeNotification("Generation is not available until indices are built.");
       return false;
     }
 
@@ -159,7 +161,7 @@ public class GeneratorUIFacade {
             }
 
             if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
-              DialogWrapper questionDialog = new GenerateRequirementsDialog(project, settings, message.toString());
+              DialogWrapper questionDialog = new GenerateRequirementsDialog(ideaProject, settings, message.toString());
               questionDialog.show();
               result = questionDialog.getExitCode();
             }
@@ -185,81 +187,81 @@ public class GeneratorUIFacade {
       }
     });
 
-    showMessageView(project);
+    showMessageView(ideaProject);
     IdeEventQueue.getInstance().flushQueue();
 
     final boolean[] result = new boolean[]{false};
 
     ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
-        public void run(@NotNull ProgressIndicator progress) {
-          if (!saveTransientModels) {
-            IGenerationTracer component = project.getComponent(IGenerationTracer.class);
-            if (component != null) {
-              component.discardTracing();
-            }
+      public void run(@NotNull ProgressIndicator progress) {
+        if (!saveTransientModels) {
+          IGenerationTracer component = ideaProject.getComponent(IGenerationTracer.class);
+          if (component != null) {
+            component.discardTracing();
           }
-
-          IGenerationTracer tracer = saveTransientModels
-            ? project.getComponent(IGenerationTracer.class)
-            : null;
-
-          if (tracer == null) {
-            tracer = new NullGenerationTracer();
-          }
-
-          final boolean incremental = settings.isIncremental();
-          final GenerationCacheContainer cache = incremental && settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null;
-          IncrementalGenerationStrategy strategy = new IncrementalGenerationStrategy() {
-            @Override
-            public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
-              if (!sm.isGeneratable()) return null;
-              if (!(sm instanceof EditableSModelDescriptor)) {
-                String hash = sm.getModelHash();
-                return hash != null ? Collections.singletonMap(ModelDigestHelper.FILE, hash) : null;
-              }
-              EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
-
-              if (!(esm instanceof DefaultSModelDescriptor)) return null;
-              IFile modelFile = ((DefaultSModelDescriptor) esm).getModelFile();
-              if (modelFile == null) return null;
-
-              return ModelDigestHelper.getInstance().getGenerationHashes(modelFile, operationContext);
-            }
-
-            @Override
-            public GenerationCacheContainer getContainer() {
-              return cache;
-            }
-
-            @Override
-            public GenerationDependencies getDependencies(SModelDescriptor sm) {
-              return incremental ? GenerationDependenciesCache.getInstance().get(sm) : null;
-            }
-
-            @Override
-            public boolean isIncrementalEnabled() {
-              return incremental;
-            }
-          };
-
-          GenerationOptions options = GenerationOptions.getDefaults()
-            .saveTransientModels(saveTransientModels)
-            .strictMode(settings.isStrictMode())
-            .rebuildAll(rebuildAll)
-            .incremental(strategy)
-            .generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads())
-            .tracing(settings.getPerformanceTracingLevel(), tracer)
-            .reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep())
-            .create();
-
-          result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, progress, messages, options);
         }
-      }, "Generation", true, invocationContext.getIdeaProject());
+
+        IGenerationTracer tracer = saveTransientModels
+          ? ideaProject.getComponent(IGenerationTracer.class)
+          : null;
+
+        if (tracer == null) {
+          tracer = new NullGenerationTracer();
+        }
+
+        final boolean incremental = settings.isIncremental();
+        final GenerationCacheContainer cache = incremental && settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null;
+        IncrementalGenerationStrategy strategy = new IncrementalGenerationStrategy() {
+          @Override
+          public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
+            if (!sm.isGeneratable()) return null;
+            if (!(sm instanceof EditableSModelDescriptor)) {
+              String hash = sm.getModelHash();
+              return hash != null ? Collections.singletonMap(ModelDigestHelper.FILE, hash) : null;
+            }
+            EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+
+            if (!(esm instanceof DefaultSModelDescriptor)) return null;
+            IFile modelFile = ((DefaultSModelDescriptor) esm).getModelFile();
+            if (modelFile == null) return null;
+
+            return ModelDigestHelper.getInstance().getGenerationHashes(modelFile, operationContext);
+          }
+
+          @Override
+          public GenerationCacheContainer getContainer() {
+            return cache;
+          }
+
+          @Override
+          public GenerationDependencies getDependencies(SModelDescriptor sm) {
+            return incremental ? GenerationDependenciesCache.getInstance().get(sm) : null;
+          }
+
+          @Override
+          public boolean isIncrementalEnabled() {
+            return incremental;
+          }
+        };
+
+        GenerationOptions options = GenerationOptions.getDefaults()
+          .saveTransientModels(saveTransientModels)
+          .strictMode(settings.isStrictMode())
+          .rebuildAll(rebuildAll)
+          .incremental(strategy)
+          .generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads())
+          .tracing(settings.getPerformanceTracingLevel(), tracer)
+          .reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep())
+          .create();
+
+        result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, new ProgressMonitorAdapter(progress), messages, options);
+      }
+    }, "Generation", true, invocationContext.getIdeaProject());
 
     return result[0];
   }
 
-  private void showMessageView(Project project) {
+  private void showMessageView(com.intellij.openapi.project.Project project) {
     MessagesViewTool messagesView = project.getComponent(MessagesViewTool.class);
     if (messagesView != null) {
       messagesView.openToolLater(false);
@@ -291,6 +293,6 @@ public class GeneratorUIFacade {
       }
     }
 
-    return GenerationFacade.getModifiedModels(result, ProjectOperationContext.get(project));
+    return GenerationFacade.getModifiedModels(result, ProjectOperationContext.get(ProjectHelper.toIdeaProject(project)));
   }
 }

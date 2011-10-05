@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.make;
 
-import com.intellij.openapi.fileTypes.FileTypeManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
@@ -242,7 +242,7 @@ public class ModuleSources {
   }
 
   private boolean isIgnoredFileName(String fileName) {
-    return FileTypeManager.getInstance().isFileIgnored(fileName);
+    return FileSystem.getInstance().isFileIgnored(fileName);
   }
 
   private boolean isResourceFileName(String fileName) {

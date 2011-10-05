@@ -42,4 +42,10 @@ public class IoFileSystemProvider implements FileSystemProvider {
       return new IoFile(path);
     }
   }
+
+  @Override
+  public boolean isFileIgnored(String name) {
+    // TODO ??
+    return false;
+  }
 }

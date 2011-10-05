@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.library;
 
-import com.intellij.openapi.fileTypes.FileTypeManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
@@ -119,7 +118,7 @@ public class ModulesMiner {
 
     String dirName = dir.getName();
 
-    if (FileTypeManager.getInstance().isFileIgnored(dirName)) return;
+    if (FileSystem.getInstance().isFileIgnored(dirName)) return;
 
     List<IFile> files = dir.getChildren();
     if (files == null) {
@@ -139,7 +138,7 @@ public class ModulesMiner {
     }
 
     for (IFile childDir : files) {
-      if (FileTypeManager.getInstance().isFileIgnored(childDir.getName())) continue;
+      if (FileSystem.getInstance().isFileIgnored(childDir.getName())) continue;
       if (hasModuleExtension(childDir.getName())) continue;
       if (excludes.contains(childDir)) continue;
 

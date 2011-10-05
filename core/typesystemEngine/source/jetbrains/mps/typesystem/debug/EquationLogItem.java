@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.typesystem.debug;
 
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;

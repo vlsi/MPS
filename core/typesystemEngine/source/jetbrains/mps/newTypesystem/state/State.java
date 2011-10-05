@@ -16,7 +16,6 @@
 package jetbrains.mps.newTypesystem.state;
 
 
-import com.intellij.openapi.util.Pair;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
@@ -39,6 +38,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.util.ManyToManyMap;
+import jetbrains.mps.util.Pair;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -209,8 +209,8 @@ public class State {
   public void collectVarsExecuteIfNecessary(Block block) {
     Set<Pair<SNode, ConditionKind>> initialInputs = block.getInitialInputs();
     for (Pair<SNode, ConditionKind> input : initialInputs) {
-      SNode type = input.first;
-      ConditionKind conditionKind = input.second;
+      SNode type = input.o1;
+      ConditionKind conditionKind = input.o2;
       for (SNode variable : conditionKind.getUnresolvedInputs(type, this)) {
         addInputAndTrack(block, variable, conditionKind);
       }

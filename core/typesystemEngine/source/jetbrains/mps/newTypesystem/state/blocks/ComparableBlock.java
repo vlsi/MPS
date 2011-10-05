@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.newTypesystem.state.blocks;
 
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Pair;
 
 import java.util.LinkedList;
 import java.util.List;

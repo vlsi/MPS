@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.vfs;
 
+import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.FileSystemProvider;
@@ -30,6 +31,11 @@ public class IdeaFileSystemProvider implements FileSystemProvider {
   @Override
   public IFile getFile(@NotNull String path) {
     return new IdeaFile(path);
+  }
+
+  @Override
+  public boolean isFileIgnored(String name) {
+    return FileTypeManager.getInstance().isFileIgnored(name);
   }
 
   public IFile getFile(@NotNull VirtualFile file) {

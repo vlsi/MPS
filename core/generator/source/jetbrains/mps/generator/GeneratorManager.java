@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
@@ -24,7 +23,8 @@ import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.progress.CancellationMonitor;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 
@@ -51,7 +51,7 @@ public class GeneratorManager {
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
-                                final ProgressIndicator progress,
+                                final ProgressMonitor progress,
                                 final IMessageHandler messages) {
     return generateModels(inputModels, invocationContext, generationHandler, progress, messages, GenerationOptions.getDefaults().create());
   }
@@ -63,7 +63,7 @@ public class GeneratorManager {
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
-                                final ProgressIndicator progress,
+                                final ProgressMonitor progress,
                                 final IMessageHandler messages,
                                 final boolean saveTransientModels,
                                 final boolean rebuildAll) {
@@ -83,7 +83,7 @@ public class GeneratorManager {
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
-                                final ProgressIndicator progress,
+                                final ProgressMonitor monitor,
                                 final IMessageHandler messages,
                                 final GenerationOptions options) {
     final boolean[] result = new boolean[1];
@@ -105,7 +105,6 @@ public class GeneratorManager {
 
     GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings(), options.isKeepModelsWithWarnings());
 
-    final ProgressMonitorAdapter monitor = new ProgressMonitorAdapter(progress);
     final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext, new CancellationMonitor(monitor));
     ModelAccess.instance().requireRead(new Runnable() {
       @Override
@@ -163,6 +162,8 @@ public class GeneratorManager {
   }
 
   private void fireAfterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
+    CachesManager.getInstance().removeGenerationCaches();
+
     for (GenerationListener l : myGenerationListeners) {
       try {
         l.afterGeneration(inputModels, options, operationContext);

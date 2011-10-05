@@ -25,12 +25,14 @@ import org.jetbrains.annotations.Nullable;
 public class ModuleContext extends StandaloneMPSContext {
   private static final Logger LOG = Logger.getLogger(ModuleContext.class);
 
+  // TODO use mps.Project
   private com.intellij.openapi.project.Project myProject;
 
   //we need to store module reference this way because generator are recreated on every reload
   //and if we store generator reference here it will be stale
   private ModuleReference myModuleReference;
 
+  @Deprecated
   public ModuleContext(@NotNull final IModule module, @NotNull final com.intellij.openapi.project.Project project) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -40,9 +42,9 @@ public class ModuleContext extends StandaloneMPSContext {
     myProject = project;
   }
 
-  @Deprecated
-  public ModuleContext(@NotNull final IModule module, @NotNull final MPSProject project) {
-    this(module, project.getProject());
+  public ModuleContext(@NotNull final IModule module, @NotNull final Project project) {
+    // TODO do not cast!!
+    this(module, ((MPSProject)project).getProject());
   }
 
   public <T> T getComponent(Class<T> clazz) {

@@ -49,6 +49,7 @@ import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
 import jetbrains.mps.generator.GeneratorManager;
 import java.util.Collections;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import java.util.Map;
@@ -244,7 +245,7 @@ public abstract class AbstractEvaluationModel {
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
       GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-      boolean successful = generatorManager.generateModels(Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, progressWindow, messageHandler, GenerationOptions.getDefaults().incremental(new IncrementalGenerationStrategy() {
+      boolean successful = generatorManager.generateModels(Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new IncrementalGenerationStrategy() {
         public Map<String, String> getModelHashes(SModelDescriptor p0, IOperationContext p1) {
           return Collections.emptyMap();
         }

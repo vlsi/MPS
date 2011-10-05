@@ -23,7 +23,6 @@ import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.progress.CancellationMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
@@ -144,7 +143,7 @@ public class GenerationController implements ITaskPoolProvider {
     monitor.start("Generating " + module.getModuleFqName(), inputModels.size());
 
     // TODO fix context
-    IOperationContext invocationContext = new ModuleContext(module, myOperationContext.getIdeaProject());
+    IOperationContext invocationContext = new ModuleContext(module, myOperationContext.getProject());
     myGenerationHandler.startModule(module, inputModels, myOperationContext);
 
     //++ generation

@@ -658,7 +658,7 @@ public class TestMain {
                 parms.getModelDescriptors(),
                 new ModuleContext(parms.getModule(), myProject),
                 generationHandler,
-                new EmptyProgressIndicator(),
+                new EmptyProgressMonitor(),
                 handler,
                 GenerationOptions.getDefaults().create()
               );

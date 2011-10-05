@@ -48,6 +48,11 @@ public class FileSystemImpl extends FileSystem {
   }
 
   @Override
+  public boolean isFileIgnored(@NotNull String name) {
+    return myFileSystemProvider.isFileIgnored(name);
+  }
+
+  @Override
   public IFile getBundleHome(IFile file) {
     if (file instanceof IFileEx) {
       return ((IFileEx) file).getBundleHome();

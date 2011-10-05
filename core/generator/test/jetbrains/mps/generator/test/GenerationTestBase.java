@@ -17,7 +17,6 @@ package jetbrains.mps.generator.test;
 
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.application.PathManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
@@ -25,6 +24,7 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
@@ -80,10 +80,10 @@ public class GenerationTestBase {
       .generateInParallel(false, 1)
       .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new MyNonIncrementalGenerationStrategy()).create();
     IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
-    GenerationFacade.generateModels(p.getProject(),
+    GenerationFacade.generateModels(p,
       Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
       generationHandler,
-      new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
+      new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
 
     assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
 
@@ -94,10 +94,10 @@ public class GenerationTestBase {
       .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new MyNonIncrementalGenerationStrategy()).create();
     generationHandler = new IncrementalTestGenerationHandler();
     long start = System.nanoTime();
-    GenerationFacade.generateModels(p.getProject(),
+    GenerationFacade.generateModels(p,
       Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
       generationHandler,
-      new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
+      new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
     long singleThread = System.nanoTime() - start;
 
     // Stage 3. Regenerate in parallel
@@ -107,10 +107,10 @@ public class GenerationTestBase {
       .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new MyNonIncrementalGenerationStrategy()).create();
     generationHandler = new IncrementalTestGenerationHandler();
     start = System.nanoTime();
-    GenerationFacade.generateModels(p.getProject(),
+    GenerationFacade.generateModels(p,
       Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
       generationHandler,
-      new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
+      new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
     long severalThreads = System.nanoTime() - start;
 
     assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
@@ -126,7 +126,7 @@ public class GenerationTestBase {
     String randomName = "testxw" + Math.abs(UUID.randomUUID().getLeastSignificantBits()) + "." + originalModel.getModule().getModuleFqName();
     String randomId = UUID.randomUUID().toString();
     final TestModule tm = new TestModule(randomName, randomId, originalModel.getModule());
-    final SModelDescriptor[] descr1 = new SModelDescriptor[] { null };
+    final SModelDescriptor[] descr1 = new SModelDescriptor[]{null};
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
@@ -158,12 +158,12 @@ public class GenerationTestBase {
       GenerationOptions options = GenerationOptions.getDefaults()
         .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
       IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
-      GenerationFacade.generateModels(p.getProject(),
+      GenerationFacade.generateModels(p,
         Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
         generationHandler,
-        new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
+        new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
 
-      Map<String,String> generated = replaceInContent(generationHandler.getGeneratedContent(), new String[] { randomName, originalModel.getModule().getModuleFqName() }, new String[] { randomId, originalModel.getModule().getModuleReference().getModuleId().toString() });
+      Map<String, String> generated = replaceInContent(generationHandler.getGeneratedContent(), new String[]{randomName, originalModel.getModule().getModuleFqName()}, new String[]{randomId, originalModel.getModule().getModuleReference().getModuleId().toString()});
       assertNoDiff(generationHandler.getExistingContent(), generated);
 
       // Stage 2. Modify model
@@ -176,7 +176,7 @@ public class GenerationTestBase {
         ThreadUtils.runInUIThreadAndWait(new Runnable() {
           @Override
           public void run() {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable(){
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               @Override
               public void run() {
                 r.run(descr);
@@ -202,14 +202,14 @@ public class GenerationTestBase {
         generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
         generationHandler.checkIncremental(options);
         long start = System.nanoTime();
-        GenerationFacade.generateModels(p.getProject(),
+        GenerationFacade.generateModels(p,
           Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
           generationHandler,
-          new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
+          new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
         time.add(System.nanoTime() - start);
 
         incrementalGenerationResults = generationHandler.getGeneratedContent();
-        assertDiff(generationHandler.getExistingContent(), incrementalGenerationResults,1);
+        assertDiff(generationHandler.getExistingContent(), incrementalGenerationResults, 1);
       }
 
       // Stage 4. Regenerate. Check incremental results.
@@ -219,10 +219,10 @@ public class GenerationTestBase {
         .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
       generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
       long start = System.nanoTime();
-      GenerationFacade.generateModels(p.getProject(),
+      GenerationFacade.generateModels(p,
         Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
         generationHandler,
-        new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
+        new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options);
       time.add(System.nanoTime() - start);
 
       assertNoDiff(incrementalGenerationResults, generationHandler.getGeneratedContent());
@@ -242,11 +242,11 @@ public class GenerationTestBase {
     }
   }
 
-  private Map<String, String> replaceInContent(Map<String, String> content, String[] ...pairs) {
-    Map<String,String> result = new HashMap<String, String>(content.size());
-    for(Entry<String,String> e : content.entrySet()) {
+  private Map<String, String> replaceInContent(Map<String, String> content, String[]... pairs) {
+    Map<String, String> result = new HashMap<String, String>(content.size());
+    for (Entry<String, String> e : content.entrySet()) {
       String s = e.getValue();
-      for(String[] p : pairs) {
+      for (String[] p : pairs) {
         s = s.replaceAll(p[0], p[1]);
       }
       result.put(e.getKey(), s);
@@ -299,7 +299,7 @@ public class GenerationTestBase {
     return ModelDigestUtil.getDigestMap(os.toByteArray());
   }
 
-  private static Map<String,String> getEmptyDigest() {
+  private static Map<String, String> getEmptyDigest() {
     Map<String, String> result = new HashMap<String, String>();
     result.put(ModelDigestHelper.FILE, ModelDigestUtil.hash(""));
     result.put(ModelDigestHelper.HEADER, ModelDigestUtil.hash(""));
@@ -375,7 +375,7 @@ public class GenerationTestBase {
 
     void buildHash() {
       Map<String, String> hashes = getHashes(myModel.getSModel());
-      if(myHash != null) {
+      if (myHash != null) {
         Assert.assertEquals("header's SHA1 shouldn't change after model change", myHash.get(ModelDigestHelper.HEADER), hashes.get(ModelDigestHelper.HEADER));
         Assert.assertNotSame("file's SHA1 should change after model change", myHash.get(ModelDigestHelper.FILE), hashes.get(ModelDigestHelper.FILE));
       }
