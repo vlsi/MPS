@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.LanguageDependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.structure.model.*;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -36,7 +35,7 @@ import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
@@ -290,7 +289,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     MPSModuleRepository.getInstance().fireModuleChanged(this);
 
     if (reloadClasses) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     }
 
     MPSModuleRepository.getInstance().invalidateCaches();
@@ -649,7 +648,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
       if (!bundleHomeFile.exists()) return;
 
-      for (GeneratorDescriptor g:myLanguageDescriptor.getGenerators()){
+      for (GeneratorDescriptor g : myLanguageDescriptor.getGenerators()) {
         g.getModelRoots().removeAll(myLanguageDescriptor.getRuntimeStubModels());
       }
       myLanguageDescriptor.getRuntimeStubModels().clear();
@@ -666,7 +665,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
           jarEntry.setPath(jar.getPath());
           ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry);
           myLanguageDescriptor.getRuntimeStubModels().add(mr);
-          for (GeneratorDescriptor g:myLanguageDescriptor.getGenerators()){
+          for (GeneratorDescriptor g : myLanguageDescriptor.getGenerators()) {
             g.getModelRoots().add(mr);
           }
         }

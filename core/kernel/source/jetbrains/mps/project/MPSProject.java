@@ -20,10 +20,10 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -37,7 +37,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 
 /**
- *  TODO move to workbench
+ * TODO move to workbench
  */
 @State(
   name = "MPSProject",
@@ -134,14 +134,14 @@ public class MPSProject extends Project implements ProjectComponent, PersistentS
   public void dispose() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        ClassLoaderManager.getInstance().unloadAll(new EmptyProgressIndicator());
+        ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
 
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
 
         CleanupManager.getInstance().cleanup();
 
         if (ProjectManager.getInstance().getOpenProjects().length > 0) {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         }
         ClassLoaderManager.getInstance().updateClassPath();
       }

@@ -3865,7 +3865,7 @@
     <nodeInfo nodeId="6648795410103967151" fileName="JavaCompile_Facet.java" startLine="125" startPosition="0" endLine="126" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6648795410103967160" fileName="JavaCompile_Facet.java" startLine="126" startPosition="125" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6648795410103967161" fileName="JavaCompile_Facet.java" startLine="127" startPosition="0" endLine="128" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6648795410103967167" fileName="JavaCompile_Facet.java" startLine="130" startPosition="37" endLine="131" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6648795410103967167" fileName="JavaCompile_Facet.java" startLine="130" startPosition="37" endLine="131" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6648795410103967182" fileName="JavaCompile_Facet.java" startLine="134" startPosition="39" endLine="135" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6648795410103967196" fileName="JavaCompile_Facet.java" startLine="136" startPosition="63" endLine="137" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6648795410103967212" fileName="JavaCompile_Facet.java" startLine="142" startPosition="51" endLine="143" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4165,7 +4165,7 @@
     <scopeInfo nodeId="6648795410103967115" fileName="JavaCompile_Facet.java" startLine="113" startPosition="30" endLine="114" endPosition="63" />
     <scopeInfo nodeId="6648795410103967134" fileName="JavaCompile_Facet.java" startLine="119" startPosition="44" endLine="120" endPosition="65" />
     <scopeInfo nodeId="6648795410103967142" fileName="JavaCompile_Facet.java" startLine="122" startPosition="56" endLine="123" endPosition="27" />
-    <scopeInfo nodeId="6648795410103967166" fileName="JavaCompile_Facet.java" startLine="130" startPosition="37" endLine="131" endPosition="119" />
+    <scopeInfo nodeId="6648795410103967166" fileName="JavaCompile_Facet.java" startLine="130" startPosition="37" endLine="131" endPosition="117" />
     <scopeInfo nodeId="6648795410103967195" fileName="JavaCompile_Facet.java" startLine="136" startPosition="63" endLine="137" endPosition="71" />
     <scopeInfo nodeId="6648795410103967211" fileName="JavaCompile_Facet.java" startLine="142" startPosition="51" endLine="143" endPosition="92" />
     <scopeInfo nodeId="6648795410103967225" fileName="JavaCompile_Facet.java" startLine="144" startPosition="60" endLine="145" endPosition="94" />
@@ -4438,7 +4438,7 @@
     <nodeInfo nodeId="6648795410103987962" fileName="ReloadClasses_Facet.java" startLine="75" startPosition="377" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6648795410103987990" fileName="ReloadClasses_Facet.java" startLine="78" startPosition="53" endLine="79" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6648795410103987965" fileName="ReloadClasses_Facet.java" startLine="81" startPosition="19" endLine="82" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6648795410103987974" fileName="ReloadClasses_Facet.java" startLine="86" startPosition="41" endLine="87" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6648795410103987974" fileName="ReloadClasses_Facet.java" startLine="86" startPosition="41" endLine="87" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6648795410103987980" fileName="ReloadClasses_Facet.java" startLine="91" startPosition="19" endLine="92" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6648795410103987982" fileName="ReloadClasses_Facet.java" startLine="92" startPosition="78" endLine="93" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6648795410103988001" fileName="ReloadClasses_Facet.java" startLine="94" startPosition="15" endLine="95" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4504,7 +4504,7 @@
     <scopeInfo nodeId="6648795410103987945" fileName="ReloadClasses_Facet.java" startLine="52" startPosition="32" endLine="53" endPosition="21" />
     <scopeInfo nodeId="6648795410103987945" fileName="ReloadClasses_Facet.java" startLine="56" startPosition="57" endLine="57" endPosition="54" />
     <scopeInfo nodeId="6648795410103987989" fileName="ReloadClasses_Facet.java" startLine="78" startPosition="53" endLine="79" endPosition="82" />
-    <scopeInfo nodeId="6702766394052739082" fileName="ReloadClasses_Facet.java" startLine="86" startPosition="41" endLine="87" endPosition="97" />
+    <scopeInfo nodeId="6702766394052739082" fileName="ReloadClasses_Facet.java" startLine="86" startPosition="41" endLine="87" endPosition="95" />
     <scopeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="96" startPosition="20" endLine="97" endPosition="61" />
     <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="103" startPosition="35" endLine="104" endPosition="18" />
     <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="107" startPosition="46" endLine="108" endPosition="18" />

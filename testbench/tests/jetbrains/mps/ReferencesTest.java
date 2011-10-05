@@ -15,7 +15,6 @@
  */
 package jetbrains.mps;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -23,6 +22,7 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.validation.ModelValidator;
@@ -46,9 +46,9 @@ public class ReferencesTest extends BaseMPSTest {
       public void run() {
         new ModuleMaker().make(
           new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()),
-          new EmptyProgressIndicator());
+          new EmptyProgressMonitor());
 
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
     });
 

@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.migration20.stages;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.OptimizeImportsHelper;
@@ -35,7 +35,7 @@ public class OptimizeImportsStage implements MigrationStage {
       module.save();
     }
     SModelRepository.getInstance().saveAll();
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 
   public boolean needsCommand() {

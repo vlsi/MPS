@@ -20,7 +20,7 @@ import jetbrains.mps.ide.actions.MissingDependenciesFixer;
 import java.awt.Frame;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class AddMissingImportsInGlobalScope_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -72,7 +72,7 @@ public class AddMissingImportsInGlobalScope_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         }
       });
     } catch (Throwable t) {

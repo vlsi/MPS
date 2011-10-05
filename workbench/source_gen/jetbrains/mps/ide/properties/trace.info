@@ -1163,7 +1163,7 @@
     <nodeInfo nodeId="5923576889075039160" fileName="DevKitPropertiesDialog.java" startLine="36" startPosition="25" endLine="37" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5923576889075039171" fileName="DevKitPropertiesDialog.java" startLine="37" startPosition="60" endLine="38" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5923576889075039182" fileName="DevKitPropertiesDialog.java" startLine="38" startPosition="75" endLine="39" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075039188" fileName="DevKitPropertiesDialog.java" startLine="39" startPosition="24" endLine="40" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075039188" fileName="DevKitPropertiesDialog.java" startLine="39" startPosition="24" endLine="40" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5923576889075039194" fileName="DevKitPropertiesDialog.java" startLine="42" startPosition="47" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5923576889075039141" fileName="DevKitPropertiesDialog.java" startLine="31" startPosition="37" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5923576889075039124" fileName="DevKitPropertiesDialog.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorString#()Ljava/lang/String;" />
@@ -1177,7 +1177,7 @@
     <scopeInfo nodeId="5923576889075039105" fileName="DevKitPropertiesDialog.java" startLine="22" startPosition="42" endLine="24" endPosition="58" />
     <scopeInfo nodeId="5923576889075039052" fileName="DevKitPropertiesDialog.java" startLine="16" startPosition="89" endLine="19" endPosition="30" />
     <scopeInfo nodeId="5923576889075039124" fileName="DevKitPropertiesDialog.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="5923576889075039159" fileName="DevKitPropertiesDialog.java" startLine="36" startPosition="25" endLine="40" endPosition="81" />
+    <scopeInfo nodeId="5923576889075039159" fileName="DevKitPropertiesDialog.java" startLine="36" startPosition="25" endLine="40" endPosition="79" />
     <scopeInfo nodeId="5923576889075039047" fileName="DevKitPropertiesDialog.java" startLine="15" startPosition="0" endLine="20" endPosition="3">
       <varInfo nodeId="5923576889075039050" varName="operationContext" />
       <varInfo nodeId="5923576889075039048" varName="devKit" />

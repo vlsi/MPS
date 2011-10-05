@@ -10,7 +10,7 @@ import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.Collections;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,6 +20,7 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.project.ModuleContext;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -73,7 +74,7 @@ public class ChangeModelProcessor {
     final MPSCompilationResult[] cr = new MPSCompilationResult[]{null};
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        cr[0] = new ModuleMaker().make(Collections.singleton(ChangeModelProcessor.this.myTestModel.getModule()), new EmptyProgressIndicator());
+        cr[0] = new ModuleMaker().make(Collections.singleton(ChangeModelProcessor.this.myTestModel.getModule()), new EmptyProgressMonitor());
       }
     });
     if (cr[0].isOk()) {

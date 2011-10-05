@@ -17,6 +17,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.util.io.StreamUtil;
 import java.io.IOException;
@@ -57,10 +58,9 @@ public class ReloadAll_Action extends GeneratedAction {
     try {
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Reloading Classes", false) {
         public void run(@NotNull final ProgressIndicator indicator) {
-          indicator.setIndeterminate(true);
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
-              ClassLoaderManager.getInstance().reloadAll(indicator);
+              ClassLoaderManager.getInstance().reloadAll(new ProgressMonitorAdapter(indicator));
             }
           });
         }

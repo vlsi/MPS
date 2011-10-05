@@ -76,7 +76,7 @@
     <nodeInfo nodeId="668792151828692360" fileName="AddMissingDependency_Intention.java" startLine="76" startPosition="114" endLine="77" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="668792151828692355" fileName="AddMissingDependency_Intention.java" startLine="77" startPosition="42" endLine="78" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="668792151828692357" fileName="AddMissingDependency_Intention.java" startLine="78" startPosition="18" endLine="79" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="668792151828683952" fileName="AddMissingDependency_Intention.java" startLine="79" startPosition="18" endLine="80" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="668792151828683952" fileName="AddMissingDependency_Intention.java" startLine="79" startPosition="18" endLine="80" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1209384963618" fileName="AddMissingDependency_Intention.java" startLine="85" startPosition="37" endLine="86" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209384963618" fileName="AddMissingDependency_Intention.java" startLine="17" startPosition="88" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddMissingDependency_Intention#()V" />
     <nodeInfo nodeId="1209384963618" fileName="AddMissingDependency_Intention.java" startLine="49" startPosition="84" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -118,7 +118,7 @@
     <scopeInfo nodeId="1209384972502" fileName="AddMissingDependency_Intention.java" startLine="39" startPosition="49" endLine="44" endPosition="7">
       <varInfo nodeId="1209385154010" varName="uid" />
     </scopeInfo>
-    <scopeInfo nodeId="1209385301010" fileName="AddMissingDependency_Intention.java" startLine="74" startPosition="111" endLine="80" endPosition="81">
+    <scopeInfo nodeId="1209385301010" fileName="AddMissingDependency_Intention.java" startLine="74" startPosition="111" endLine="80" endPosition="79">
       <varInfo nodeId="1209385301012" varName="sm" />
     </scopeInfo>
     <scopeInfo nodeId="1209384972498" fileName="AddMissingDependency_Intention.java" startLine="38" startPosition="44" endLine="45" endPosition="5">

@@ -19,7 +19,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.smodel.descriptor.source.ReloadableSources;
@@ -87,7 +87,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
               }
               ModelAccess.instance().runWriteAction(new Runnable() {
                 public void run() {
-                  ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+                  ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
                 }
               });
             }

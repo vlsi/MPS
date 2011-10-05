@@ -16,7 +16,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.io.File;
 
 public class MakeWorker extends MpsWorker {
@@ -62,15 +62,15 @@ public class MakeWorker extends MpsWorker {
     info(sb.toString());
     MPSCompilationResult result = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
       public MPSCompilationResult compute() {
-        return new ModuleMaker().make(finalToCompile, new EmptyProgressIndicator() {
+        return new ModuleMaker().make(finalToCompile, new EmptyProgressMonitor() {
           @Override
-          public void setText2(String text) {
+          public void step(String text) {
             info("    " + text);
           }
 
           @Override
-          public void setText(String text) {
-            info(text);
+          public void start(String taskName, int work) {
+            info(taskName);
           }
         });
       }

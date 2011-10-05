@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.generator.generationTypes;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.CompilationResultListener;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
@@ -182,7 +182,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
 
     progress.step("reloading MPS classes...");
     if (myReloadClasses && !innerListener.hasErrors()) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     }
 
     return !innerListener.hasErrors();

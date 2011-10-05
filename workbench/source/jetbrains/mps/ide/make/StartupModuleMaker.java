@@ -23,6 +23,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -36,31 +39,34 @@ public class StartupModuleMaker extends AbstractProjectComponent {
   public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm) {
     super(project);
 
-    final ProgressIndicator[] indicator = {ProgressManager.getInstance().getProgressIndicator()};
-    if (indicator[0] == null) {
-      indicator[0] = new EmptyProgressIndicator();
+    final ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();
+    final ProgressMonitor monitor = indicator != null ? new ProgressMonitorAdapter(indicator) : new EmptyProgressMonitor();
+
+    monitor.start("Making modules", 10);
+    try {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          ClassLoaderManager.getInstance().updateClassPath();
+          monitor.advance(1);
+
+          ModuleMaker maker = new ModuleMaker();
+          maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), monitor.subTask(9));
+        }
+      });
+
+      //the pre-startup activity is needed because all project components must be already instantiated when first class reload happens
+      StartupManager.getInstance(project).registerPreStartupActivity(new Runnable() {
+        public void run() {
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              ClassLoaderManager.getInstance().reloadAll(indicator != null ? new ProgressMonitorAdapter(indicator) : new EmptyProgressMonitor());
+            }
+          });
+        }
+      });
+
+    } finally {
+      monitor.done();
     }
-    indicator[0].pushState();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        ClassLoaderManager.getInstance().updateClassPath();
-
-        ModuleMaker maker = new ModuleMaker();
-        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator[0]);
-      }
-    });
-
-    //the pre-startup activity is needed because all project components must be already instantiated when first class reload happens
-    StartupManager.getInstance(project).registerPreStartupActivity(new Runnable() {
-      public void run() {
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            ClassLoaderManager.getInstance().reloadAll(indicator[0]);
-          }
-        });
-      }
-    });
-
-    indicator[0].popState();
   }
 }

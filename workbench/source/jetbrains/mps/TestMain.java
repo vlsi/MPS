@@ -218,7 +218,7 @@ public class TestMain {
       public void run() {
         new ModuleMaker().make(
           new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()),
-          new EmptyProgressIndicator());
+          new EmptyProgressMonitor());
       }
     });
 
@@ -327,7 +327,7 @@ public class TestMain {
     return testActionForLeaks(new Runnable() {
       public void run() {
         MPSProject project = loadProject(projectFile);
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         project.dispose();
       }
     }, leakThreshold);
@@ -603,7 +603,7 @@ public class TestMain {
     }
 
     public TestResult testProject(final String[] configurationsGiven) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
 
       final List<String> errors = new ArrayList<String>();
       final List<String> warnings = new ArrayList<String>();

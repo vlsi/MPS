@@ -11,7 +11,7 @@ import jetbrains.mps.make.MPSCompilationResult;
 import java.util.LinkedHashSet;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.junit.runner.notification.Failure;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.vfs.LocalFileSystem;
@@ -29,7 +29,7 @@ public class MakeRunner extends Runner {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ModuleMaker maker = new ModuleMaker();
-        MPSCompilationResult compilationResult = maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressIndicator());
+        MPSCompilationResult compilationResult = maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
         if (compilationResult != null && compilationResult.getErrors() > 0) {
           notifier.fireTestFailure(new Failure(myDescription, new Exception("Compilation errors: " + compilationResult)));
         }

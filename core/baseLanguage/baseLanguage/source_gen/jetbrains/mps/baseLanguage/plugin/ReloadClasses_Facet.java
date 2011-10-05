@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.script.IConfig;
 import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -84,7 +84,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
                   public void run() {
                     ModelAccess.instance().requireWrite(new Runnable() {
                       public void run() {
-                        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+                        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
                       }
                     });
                   }

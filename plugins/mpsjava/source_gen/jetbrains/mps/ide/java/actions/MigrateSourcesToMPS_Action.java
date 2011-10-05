@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.java.util.StubResolver;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class MigrateSourcesToMPS_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -90,7 +90,7 @@ public class MigrateSourcesToMPS_Action extends GeneratedAction {
 
       moduleDescr.getSourcePaths().clear();
 
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MigrateSourcesToMPS", t);

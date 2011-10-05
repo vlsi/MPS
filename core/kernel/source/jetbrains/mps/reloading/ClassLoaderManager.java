@@ -16,11 +16,11 @@
 package jetbrains.mps.reloading;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -98,70 +98,72 @@ public class ClassLoaderManager implements ApplicationComponent {
     }
   }
 
-  public void reloadAll(@NotNull ProgressIndicator indicator) {
+  public void reloadAll(@NotNull ProgressMonitor monitor) {
     LOG.assertCanWrite();
 
-    indicator.pushState();
+    monitor.start("Reloading classes...", 8);
     try {
-      indicator.setIndeterminate(true);
-      indicator.setText("Reloading classes...");
-
-      indicator.setText2("Performing cleanup...");
+      monitor.step("Performing cleanup...");
       CleanupManager.getInstance().cleanup();
+      monitor.advance(1);
 
-      indicator.setText2("Updating classpath...");
+      monitor.step("Updating classpath...");
       updateClassPath();
+      monitor.advance(1);
 
-      indicator.setText2("Refreshing models...");
+      monitor.step("Refreshing models...");
       SModelRepository.getInstance().refreshModels();
+      monitor.advance(1);
 
-      indicator.setText2("Updating stub models...");
+      monitor.step("Updating stub models...");
       LibrariesLoader.getInstance().reload();
+      monitor.advance(1);
 
-      indicator.setText2("Disposing old classes...");
+      monitor.step("Disposing old classes...");
       callListeners(new ListenerCaller() {
         public void call(ReloadListener l) {
           l.unload();
         }
       });
+      monitor.advance(1);
 
-      indicator.setText2("Updating language registry...");
+      monitor.step("Updating language registry...");
       LanguageRegistry.getInstance().reloadLanguages();
+      monitor.advance(1);
 
-      indicator.setText2("Reloading classes...");
+      monitor.step("Reloading classes...");
       callListeners(new ListenerCaller() {
         public void call(ReloadListener l) {
           l.load();
         }
       });
+      monitor.advance(1);
 
-      indicator.setText2("Rebuilding ui...");
+      monitor.step("Rebuilding ui...");
       callListeners(new ListenerCaller() {
         public void call(ReloadListener l) {
           l.onAfterReload();
         }
       });
+      monitor.advance(1);
     } finally {
-      indicator.popState();
+      monitor.done();
     }
   }
 
-  public void unloadAll(@NotNull ProgressIndicator indicator) {
+  public void unloadAll(@NotNull ProgressMonitor monitor) {
     LOG.assertCanWrite();
 
-    indicator.pushState();
+    monitor.start("Unloading classes...", 1);
     try {
-      indicator.setIndeterminate(true);
-      indicator.setText("Reloading classes...");
-
-      indicator.setText2("Disposing old classes...");
+      monitor.step("Disposing old classes...");
       callListeners(new ListenerCaller() {
         public void call(ReloadListener l) {
           l.unload();
         }
       });
     } finally {
-      indicator.popState();
+      monitor.done();
     }
   }
 

@@ -1288,7 +1288,7 @@
     <nodeInfo nodeId="1218643777550" fileName="OptimizeProjectImports_Action.java" startLine="75" startPosition="27" endLine="76" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5111529450593748832" fileName="OptimizeProjectImports_Action.java" startLine="77" startPosition="132" endLine="78" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5111529450593677667" fileName="OptimizeProjectImports_Action.java" startLine="79" startPosition="11" endLine="80" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4530482653928169461" fileName="OptimizeProjectImports_Action.java" startLine="80" startPosition="51" endLine="81" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4530482653928169461" fileName="OptimizeProjectImports_Action.java" startLine="80" startPosition="51" endLine="81" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8711271696997892132" fileName="OptimizeProjectImports_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215889139721" fileName="OptimizeProjectImports_Action.java" startLine="86" startPosition="33" endLine="87" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215889139721" fileName="OptimizeProjectImports_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1334,7 +1334,7 @@
     <scopeInfo nodeId="1215889139721" fileName="OptimizeProjectImports_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" />
     <scopeInfo nodeId="1215889139721" fileName="OptimizeProjectImports_Action.java" startLine="63" startPosition="5" endLine="67" endPosition="5" />
     <scopeInfo nodeId="1215889139721" fileName="OptimizeProjectImports_Action.java" startLine="30" startPosition="0" endLine="35" endPosition="3" />
-    <scopeInfo nodeId="1218643764395" fileName="OptimizeProjectImports_Action.java" startLine="75" startPosition="27" endLine="81" endPosition="83" />
+    <scopeInfo nodeId="1218643764395" fileName="OptimizeProjectImports_Action.java" startLine="75" startPosition="27" endLine="81" endPosition="81" />
     <scopeInfo nodeId="1215889139721" fileName="OptimizeProjectImports_Action.java" startLine="37" startPosition="89" endLine="45" endPosition="5" />
     <scopeInfo nodeId="1218643764394" fileName="OptimizeProjectImports_Action.java" startLine="74" startPosition="69" endLine="83" endPosition="0" />
     <scopeInfo nodeId="1215889139721" fileName="OptimizeProjectImports_Action.java" startLine="36" startPosition="0" endLine="47" endPosition="0" />
@@ -3883,7 +3883,7 @@
     <nodeInfo nodeId="3842475829469248536" fileName="OptimizeModuleImports_Action.java" startLine="75" startPosition="98" endLine="76" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5111529450593749239" fileName="OptimizeModuleImports_Action.java" startLine="77" startPosition="11" endLine="78" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5111529450593749248" fileName="OptimizeModuleImports_Action.java" startLine="78" startPosition="51" endLine="79" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4530482653928169454" fileName="OptimizeModuleImports_Action.java" startLine="79" startPosition="72" endLine="80" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4530482653928169454" fileName="OptimizeModuleImports_Action.java" startLine="79" startPosition="72" endLine="80" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8711271696997892121" fileName="OptimizeModuleImports_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236349476737" fileName="OptimizeModuleImports_Action.java" startLine="85" startPosition="33" endLine="86" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236349476737" fileName="OptimizeModuleImports_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3926,7 +3926,7 @@
     <scopeInfo nodeId="1236349476737" fileName="OptimizeModuleImports_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" />
     <scopeInfo nodeId="1236349476737" fileName="OptimizeModuleImports_Action.java" startLine="30" startPosition="0" endLine="35" endPosition="3" />
     <scopeInfo nodeId="1236349476737" fileName="OptimizeModuleImports_Action.java" startLine="37" startPosition="89" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="1236354582397" fileName="OptimizeModuleImports_Action.java" startLine="71" startPosition="27" endLine="80" endPosition="83">
+    <scopeInfo nodeId="1236354582397" fileName="OptimizeModuleImports_Action.java" startLine="71" startPosition="27" endLine="80" endPosition="81">
       <varInfo nodeId="3842475829469248508" varName="helper" />
     </scopeInfo>
     <scopeInfo nodeId="1236349476737" fileName="OptimizeModuleImports_Action.java" startLine="36" startPosition="0" endLine="47" endPosition="0" />
@@ -12114,7 +12114,7 @@
     <nodeInfo nodeId="9164503229271487748" fileName="AddMissingImportsInProject_Action.java" startLine="72" startPosition="11" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="9164503229271455486" fileName="AddMissingImportsInProject_Action.java" startLine="73" startPosition="0" endLine="74" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9164503229271532412" fileName="AddMissingImportsInProject_Action.java" startLine="74" startPosition="110" endLine="75" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9164503229271487753" fileName="AddMissingImportsInProject_Action.java" startLine="77" startPosition="7" endLine="78" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9164503229271487753" fileName="AddMissingImportsInProject_Action.java" startLine="77" startPosition="7" endLine="78" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="80" startPosition="33" endLine="81" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="37" startPosition="27" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="37" startPosition="27" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -12162,7 +12162,7 @@
     <scopeInfo nodeId="9164503229271455507" fileName="AddMissingImportsInProject_Action.java" startLine="62" startPosition="125" endLine="76" endPosition="9" />
     <scopeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="44" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="9164503229271455504" fileName="AddMissingImportsInProject_Action.java" startLine="61" startPosition="9" endLine="77" endPosition="7" />
-    <scopeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="61" startPosition="9" endLine="78" endPosition="79" />
+    <scopeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="61" startPosition="9" endLine="78" endPosition="77" />
     <scopeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="60" startPosition="96" endLine="83" endPosition="5" />
     <scopeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="59" startPosition="0" endLine="85" endPosition="0" />
     <unitInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="24" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.ide.actions.AddMissingImportsInProject_Action" />

@@ -158,7 +158,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
         try {
           monitor.start(info, 10);
           info(info);
-          MPSCompilationResult compilationResult = new ModuleMaker().make(CollectionUtil.set(module), new EmptyProgressIndicator());
+          MPSCompilationResult compilationResult = new ModuleMaker().make(CollectionUtil.set(module), new EmptyProgressMonitor());
           if (compilationResult == null || compilationResult.getErrors() > 0) {
             compiledSuccessfully = false;
           }
@@ -195,7 +195,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
 
     monitor.start(info, 1);
     try {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     } finally {
       monitor.done();
     }

@@ -20,7 +20,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -68,7 +68,7 @@ public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
         SModelRepository.getInstance().saveAll();
         System.out.println(report);
       }
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "OptimizeImportsInGlobalScope", t);
