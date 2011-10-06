@@ -68,7 +68,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     }
     if (work == 0) return;
 
-    myDone = Math.max(myTotal, Math.min(0, myDone + work));
+    myDone = Math.min(myTotal, Math.max(0, myDone + work));
     update();
   }
 

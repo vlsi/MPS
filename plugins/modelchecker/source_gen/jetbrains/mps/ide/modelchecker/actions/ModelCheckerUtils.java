@@ -17,6 +17,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ModelCheckerUtils {
+  private ModelCheckerUtils() {
+  }
+
   public static List<SModelDescriptor> getModelDescriptors(SModelDescriptor modelDescriptor) {
     List<SModelDescriptor> modelDescrpitors = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);

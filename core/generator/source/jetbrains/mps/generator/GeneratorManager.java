@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
@@ -28,15 +27,11 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class GeneratorManager {
 
   private static final Logger LOG = Logger.getLogger(GeneratorManager.class);
-
-  private final List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
 
   private Project myProject;
 
@@ -96,8 +91,11 @@ public class GeneratorManager {
 
     ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
-        fireBeforeGeneration(inputModels, options, invocationContext);
         for (SModelDescriptor d : inputModels) {
+          if (d instanceof DefaultSModelDescriptor && ((DefaultSModelDescriptor) d).needsReloading()) {
+            ((DefaultSModelDescriptor) d).reloadFromDisk();
+            LOG.info("Model " + d + " reloaded from disk.");
+          }
           transientModelsComponent.createModule(d.getModule());
         }
       }
@@ -129,7 +127,7 @@ public class GeneratorManager {
       try {
         ModelAccess.instance().requireWrite(new Runnable() {
           public void run() {
-            fireModelsGenerated(Collections.unmodifiableList(inputModels), result[0]);
+            //fireModelsGenerated(Collections.unmodifiableList(inputModels), result[0]);
           }
         });
       } catch (RuntimeException e) {
@@ -141,7 +139,7 @@ public class GeneratorManager {
 
     ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
-        fireAfterGeneration(inputModels, options, invocationContext);
+        //fireAfterGeneration(inputModels, options, invocationContext);
         transientModelsComponent.publishAll();
         CleanupManager.getInstance().cleanup();
       }
@@ -149,54 +147,6 @@ public class GeneratorManager {
 
     generationHandler.generationCompleted();
     return result[0];
-  }
-
-  private void fireBeforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
-    for (GenerationListener l : myGenerationListeners) {
-      try {
-        l.beforeGeneration(inputModels, options, operationContext);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireAfterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
-    CachesManager.getInstance().removeGenerationCaches();
-
-    for (GenerationListener l : myGenerationListeners) {
-      try {
-        l.afterGeneration(inputModels, options, operationContext);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireModelsGenerated(List<SModelDescriptor> models, boolean success) {
-    for (GenerationListener l : myGenerationListeners) {
-      try {
-        l.modelsGenerated(models, success);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  public void addGenerationListener(GenerationListener l) {
-    myGenerationListeners.add(l);
-  }
-
-  public void removeGenerationListener(GenerationListener l) {
-    myGenerationListeners.remove(l);
-  }
-
-  @Deprecated
-  public void addCompilationListener(CompilationListener l) {
-  }
-
-  @Deprecated
-  public void removeCompilationListener(CompilationListener l) {
   }
 
   public static boolean isDoNotGenerate(SModelDescriptor sm) {

@@ -6,10 +6,11 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class ModelChecker {
@@ -19,46 +20,45 @@ public class ModelChecker {
 
   private SearchResults<ModelCheckerIssue> myResults;
   private IOperationContext myOperationContext;
-  private ProgressContext myProgressContext;
   private List<SpecificChecker> mySpecificCheckers;
 
-  public ModelChecker(IOperationContext operationContext, ProgressContext progressContext) {
-    this(operationContext, progressContext, new SearchResults<ModelCheckerIssue>());
+  public ModelChecker(IOperationContext operationContext) {
+    this(operationContext, new SearchResults<ModelCheckerIssue>());
   }
 
-  public ModelChecker(IOperationContext operationContext, ProgressContext progressContext, SearchResults<ModelCheckerIssue> results) {
+  public ModelChecker(IOperationContext operationContext, SearchResults<ModelCheckerIssue> results) {
     myResults = results;
     myOperationContext = operationContext;
-    myProgressContext = progressContext;
   }
 
-  public void checkModel(final SModelDescriptor modelDescriptor) {
+  public void checkModel(final SModelDescriptor modelDescriptor, final ProgressMonitor monitor) {
     final Wrappers._T<List<SpecificChecker>> specificCheckers = new Wrappers._T<List<SpecificChecker>>(mySpecificCheckers);
     if (specificCheckers.value == null) {
       specificCheckers.value = ModelCheckerSettings.getInstance().getSpecificCheckers();
     }
 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SModel model = modelDescriptor.getSModel();
+    monitor.start("Checking " + modelDescriptor.getLongName(), ListSequence.fromList(specificCheckers.value).count());
+    try {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          SModel model = modelDescriptor.getSModel();
 
-        for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers.value)) {
-          List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, myProgressContext, myOperationContext);
-          myResults.getSearchResults().addAll(specificCheckerResults);
-          if (isCancelled()) {
-            break;
+          for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers.value)) {
+            List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1), myOperationContext);
+            myResults.getSearchResults().addAll(specificCheckerResults);
+            if (monitor.isCanceled()) {
+              break;
+            }
           }
         }
-      }
-    });
+      });
+    } finally {
+      monitor.done();
+    }
   }
 
   public SearchResults<ModelCheckerIssue> getSearchResults() {
     return myResults;
-  }
-
-  public boolean isCancelled() {
-    return myProgressContext.getProgressIndicator().isCanceled();
   }
 
   public IOperationContext getOperationContext() {

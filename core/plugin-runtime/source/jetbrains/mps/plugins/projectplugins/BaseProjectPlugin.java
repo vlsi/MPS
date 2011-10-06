@@ -19,8 +19,6 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.Tag;
-import jetbrains.mps.generator.GenerationListener;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
@@ -29,7 +27,9 @@ import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import org.jdom.Element;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public abstract class BaseProjectPlugin implements PersistentStateComponent<PluginState> {
   private static final Logger LOG = Logger.getLogger(BaseProjectPlugin.class);
@@ -40,9 +40,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   private List<BaseGeneratedTool> myInitializedTools = new ArrayList<BaseGeneratedTool>();
   private List<BaseCustomProjectPlugin> myCustomPartsToDispose = new ArrayList<BaseCustomProjectPlugin>();
   private List<BaseProjectPrefsComponent> myPrefsComponents = new ArrayList<BaseProjectPrefsComponent>();
-  private List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
   private List<EditorTabDescriptor> myTabDescriptors = new ArrayList<EditorTabDescriptor>();
-  private GeneratorManager myGenManager;
 
   public Project getProject() {
     return myProject;
@@ -71,14 +69,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   public final void init(final Project project) {
     myProject = project;
 
-    myGenManager = myProject.getComponent(GeneratorManager.class);
-
     myCustomPartsToDispose = initCustomParts(project);
-
-    myGenerationListeners = new ArrayList<GenerationListener>();
-    for (GenerationListener listener : myGenerationListeners) {
-      myGenManager.addGenerationListener(listener);
-    }
 
     for (EditorTabDescriptor d : initTabbedEditors(project)) {
       myTabDescriptors.add(d);
@@ -122,10 +113,6 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     myTools.clear();
 
     myTabDescriptors.clear();
-
-    for (GenerationListener listener : myGenerationListeners) {
-      myGenManager.removeGenerationListener(listener);
-    }
 
     for (BaseCustomProjectPlugin customPart : myCustomPartsToDispose) {
       customPart.dispose();
