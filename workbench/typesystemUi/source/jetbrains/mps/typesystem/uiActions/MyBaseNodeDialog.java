@@ -19,11 +19,11 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ide.dialogs.BaseNodeDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.util.JSplitPaneWithoutBorders;
+import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 import jetbrains.mps.util.Computable;
 
 import javax.swing.AbstractAction;

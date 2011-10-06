@@ -68,7 +68,6 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
