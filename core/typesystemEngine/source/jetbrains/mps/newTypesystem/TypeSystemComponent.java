@@ -250,8 +250,8 @@ class TypeSystemComponent extends CheckingComponent {
         additionalNodes.add(prevNode);
       }
       computeTypes(node, false, false, additionalNodes, false, initialNode);
-      type = getType(initialNode);
-      if (type == null || HUtil.hasVariablesInside(type)) {
+      type = typeCalculated(initialNode);
+      if (type == null) {
         if (node.isRoot()) {
           computeTypes(node, true, true, new ArrayList<SNode>(0), true, initialNode);
           type = getType(initialNode);
@@ -361,9 +361,16 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   private SNode typeCalculated(SNode initialNode) {
-    if (initialNode== null) return null;
-    SNode type = getType(initialNode);
-    if (type!= null && !TypesUtil.hasVariablesInside(type)) return type;
+    if (myState.getInequalitySystem()!=null) {
+      SNode expectedType = myState.getInequalitySystem().getExpectedType();
+      if (expectedType != null && !TypesUtil.hasVariablesInside(expectedType)) {
+        return expectedType;
+      }
+    } else {
+      if (initialNode== null) return null;
+      SNode type = getType(initialNode);
+      if (type!= null && !TypesUtil.hasVariablesInside(type)) return type;
+    }
     return null;
   }
 

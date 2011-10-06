@@ -16,19 +16,25 @@
 package jetbrains.mps.typesystem.inference;
 
 import gnu.trove.THashSet;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.Equations;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.misc.hash.HashSet;
 
+import java.util.List;
 import java.util.Set;
 
 public class InequalitySystem {
   private SNode myHoleType;
+  private State myState;
 
-  public InequalitySystem(SNode holeType) {
+  public InequalitySystem(SNode holeType, State state) {
     myHoleType = holeType;
+    myState = state;
   }
 
   public SNode getHoleType() {
@@ -89,9 +95,9 @@ public class InequalitySystem {
     Set<SNode> result = new HashSet<SNode>();
     for (SNode node : set) {
       SNode expanded = equations.expandNode(node, true);
-      if (!TypesUtil.isVariable(expanded)) {
+      //if (!TypesUtil.isVariable(expanded)) {
         result.add(expanded);
-      }
+      //}
     }
     return result;
   }
@@ -133,7 +139,13 @@ public class InequalitySystem {
     return result;
   }
 
-  void setHoleWrapper(SNode holeWrapper) {
-    myHoleType = holeWrapper;
-  }
+   public SNode getExpectedType() {
+     if (isEmpty()) return null;
+     SubTypingManagerNew subtypingManager = (SubTypingManagerNew)TypeChecker.getInstance().getSubtypingManager();
+     List<SNode> superTypes = new LinkedList<SNode>();
+     expandAll(myState.getEquations());
+     superTypes.addAll(mySuperTypes);
+     superTypes.addAll(myStrongSuperTypes);
+     return subtypingManager.createLCS(superTypes, myState.getTypeCheckingContext());
+   }
 }

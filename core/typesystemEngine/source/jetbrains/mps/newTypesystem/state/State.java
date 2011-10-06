@@ -38,6 +38,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.ManyToManyMap;
 
 import java.util.*;
@@ -51,6 +53,7 @@ public class State {
   private final Equations myEquations;
   private final Inequalities myInequalities;
   private final NodeMaps myNodeMaps;
+  private SNode myHole;
 
   private final VariableIdentifier myVariableIdentifier;
 
@@ -227,13 +230,14 @@ public class State {
 
   public boolean addEquation(SNode left, SNode right, EquationInfo info) {
     if (myInequalitySystem != null) {
-      if (myEquations.getRepresentative(myInequalitySystem.getHoleType())== left) {
+      if (myInequalitySystem.getHoleType()== left) {
         myInequalitySystem.addEquation(left);
+        return true;
       }
       if (myEquations.getRepresentative(myInequalitySystem.getHoleType())== right) {
         myInequalitySystem.addEquation(right);
+        return true;
       }
-      return true;
     }
     return myEquations.addEquation(left, right, info);
   }
@@ -250,11 +254,12 @@ public class State {
     if (myInequalitySystem != null) {
       if (myEquations.getRepresentative(myInequalitySystem.getHoleType())== subType) {
         myInequalitySystem.addSupertype(superType, isWeak);
+        return;
       }
       if (myInequalitySystem.getHoleType()== superType) {
         myInequalitySystem.addSubtype(subType, isWeak);
+        return;
       }
-      return;
     }
     addBlock(new InequalityBlock(this, subType, superType, lessThan, RelationKind.fromFlags(isWeak, check, false), info));
   }
@@ -341,6 +346,12 @@ public class State {
     if (clearDiff) {
       clearOperations();
     }
+    if (myInequalitySystem != null) {
+      //reset hole
+      SNode hole = myHole;
+      disposeHole();
+      initHole(hole);
+    }
   }
 
   public void clearOperations() {
@@ -351,7 +362,7 @@ public class State {
 
 
   public void clearStateObjects() {
-    if (!myTypeCheckingContext.isInTraceMode()) {
+    if (!myTypeCheckingContext.isInTraceMode() && myInequalitySystem == null) {
       for (Entry<ConditionKind, ManyToManyMap<SNode, Block>> map : myBlocksAndInputs.entrySet()) {
         map.getValue().clear();
       }
@@ -498,10 +509,13 @@ public class State {
   }
 
   public void initHole(SNode hole) {
-    SNode var = typeOf(hole, null);
-    myNodeMaps.addNodeToType(hole, var, null);
-    myInequalitySystem = new InequalitySystem(var);
-
+    SNode holeVar = typeOf(hole, null);
+    SNode holeType = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType",
+      myTypeCheckingContext.getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+    myNodeMaps.addNodeToType(hole, holeVar, null);
+    myEquations.addEquation(holeVar, holeType, null);
+    myHole = hole;
+    myInequalitySystem = new InequalitySystem(holeType, this);
   }
 
   public InequalitySystem getInequalitySystem() {
@@ -510,5 +524,6 @@ public class State {
 
   public void disposeHole() {
     myInequalitySystem = null;
+    myHole = null;
   }
 }
