@@ -28,7 +28,7 @@ public class IValidIdentifier_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "name";
-        return (SPropertyOperations.getString(propertyValue)).matches("[a-zA-Z$[_]][a-zA-Z0-9$[_]]*") && !(ConstraintsUtil.isJavaKeyword((SPropertyOperations.getString(propertyValue))));
+        return (SPropertyOperations.getString(propertyValue)).matches("[a-zA-Z$[_]][a-zA-Z0-9$[_]]*") && !(ConstraintsUtil.isJavaReserved((SPropertyOperations.getString(propertyValue))));
       }
     });
     return properties;

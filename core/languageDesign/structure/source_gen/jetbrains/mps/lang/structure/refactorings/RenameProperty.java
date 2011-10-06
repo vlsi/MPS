@@ -18,6 +18,10 @@ import jetbrains.mps.smodel.Language;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.project.GlobalScope;
 
 public class RenameProperty extends BaseLoggableRefactoring {
   public RenameProperty() {
@@ -70,6 +74,10 @@ public class RenameProperty extends BaseLoggableRefactoring {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(modelList));
     }
     return result;
+  }
+
+  public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
+    return FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.PropertyInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
