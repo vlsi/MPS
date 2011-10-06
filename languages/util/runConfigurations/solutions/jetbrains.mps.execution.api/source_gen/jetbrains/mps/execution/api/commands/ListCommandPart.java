@@ -32,27 +32,37 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
   private Iterable<String> getCommands(List<? extends Object> list) {
     return ListSequence.fromList(list).translate(new ITranslator2<Object, String>() {
       public Iterable<String> translate(Object it) {
-        if (it == null) {
-          return ListSequence.fromList(new ArrayList<String>());
-        }
-        if (it instanceof String) {
-          if (StringUtils.isNotEmpty(((String) it))) {
-            return ProcessHandlerBuilder.splitCommandInParts((String) it);
-          }
-        } else if (it instanceof File) {
-          String path = ((File) it).getAbsolutePath();
-          if (StringUtils.isNotEmpty(path)) {
-            return Sequence.<String>singleton(path);
-          }
-        } else if (it instanceof CommandPart) {
-          return ((CommandPart) it).getCommandList();
-        } else {
-          if (log.isErrorEnabled()) {
-            log.error("Unknown type of command part " + it);
-          }
-        }
-        return ListSequence.fromList(new ArrayList<String>());
+        return ListCommandPart.this.getCommandsFromItem(it);
       }
     });
+  }
+
+  private Iterable<String> getCommandsFromItem(Object item) {
+    if (item == null) {
+      return ListSequence.fromList(new ArrayList<String>());
+    }
+    if (item instanceof String) {
+      if (StringUtils.isNotEmpty(((String) item))) {
+        return ProcessHandlerBuilder.splitCommandInParts((String) item);
+      }
+    } else if (item instanceof File) {
+      String path = ((File) item).getAbsolutePath();
+      if (StringUtils.isNotEmpty(path)) {
+        return Sequence.<String>singleton(path);
+      }
+    } else if (item instanceof CommandPart) {
+      return ((CommandPart) item).getCommandList();
+    } else if (item instanceof Iterable) {
+      List<String> result = ListSequence.fromList(new ArrayList<String>());
+      for (Object it : (Iterable) item) {
+        ListSequence.fromList(result).addSequence(Sequence.fromIterable(getCommandsFromItem(it)));
+      }
+      return result;
+    } else {
+      if (log.isErrorEnabled()) {
+        log.error("Unknown type of command part " + item);
+      }
+    }
+    return ListSequence.fromList(new ArrayList<String>());
   }
 }

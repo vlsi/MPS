@@ -27,7 +27,6 @@ import java.util.Set;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.LinkedHashSet;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import org.jetbrains.annotations.Nullable;
@@ -202,7 +201,7 @@ public class Junit_Command {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (ITestNodeWrapper testable : tests) {
-          IModule module = SNodeOperations.getModel(testable.getNode()).getModelDescriptor().getModule();
+          IModule module = testable.getNodePointer().getModel().getModule();
           SetSequence.fromSet(uniqueModules).addElement(module);
         }
       }

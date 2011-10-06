@@ -687,11 +687,8 @@
                           <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fxg7.~File" resolveInfo="File" />
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fxg7.~File%dpathSeparator" resolveInfo="pathSeparator" />
                         </node>
-                        <node role="items" roleId="rzqf.2168104298250244983" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="2168104298250369585">
+                        <node role="list" roleId="rzqf.6868250101935610315" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="20421432219300331">
                           <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="8234001627573899236" resolveInfo="classPath" />
-                        </node>
-                        <node role="items" roleId="rzqf.2168104298250244983" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="2168104298250369584">
-                          <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="8234001627573899234" resolveInfo="className" />
                         </node>
                       </node>
                     </node>

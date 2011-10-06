@@ -31,9 +31,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JUnitConfigEditor extends JPanel {
   public JUnitConfigEditor myThis;
@@ -501,11 +499,11 @@ public class JUnitConfigEditor extends JPanel {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             for (ITestNodeWrapper testMethod : editorMethodList) {
-              testMethods.add(TestUtils.pointerToString(new SNodePointer(testMethod.getNode())));
+              testMethods.add(TestUtils.pointerToString(testMethod.getNodePointer()));
             }
 
             for (ITestNodeWrapper testCase : editorTestCasesList) {
-              testCases.add(TestUtils.pointerToString(new SNodePointer(testCase.getNode())));
+              testCases.add(TestUtils.pointerToString(testCase.getNodePointer()));
             }
 
             if (editorModel != null) {
@@ -589,7 +587,7 @@ public class JUnitConfigEditor extends JPanel {
       if (wrapperToTakeModelFrom.value != null) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            myThis.resetEditorModelWith(SNodeOperations.getModel(wrapperToTakeModelFrom.value.getNode()).getSModelFqName().toString());
+            myThis.resetEditorModelWith(wrapperToTakeModelFrom.value.getNodePointer().getModelReference().getSModelFqName().toString());
           }
         });
       }

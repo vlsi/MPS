@@ -26,12 +26,12 @@ import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider;
 import jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.execution.configurations.behavior.ConfigurationFromExecutorReference_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.execution.configurations.behavior.StartProcessHandlerStatement_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -246,6 +246,9 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4929913054057211122(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "alias"))) {
+      return SPropertyOperations.getString(_context.getNode(), "alias");
+    }
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 

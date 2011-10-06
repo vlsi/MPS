@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
@@ -13,6 +12,7 @@ import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
   public JUnit3TestWrapper(SNode classConcept) {
@@ -26,13 +26,13 @@ public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
   @NonNls
   @Override
   public String getFqName() {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(myNode);
+    return check_qb7e7i_a0a1(getNode(), this);
   }
 
   @NotNull
   @Override
   public Iterable<ITestNodeWrapper> getTestMethods() {
-    List<SNode> methodDeclarations = (List<SNode>) new ClassifierAndSuperClassifiersScope(myNode, IClassifiersSearchScope.INSTANCE_METHOD).getNodes(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+    List<SNode> methodDeclarations = (List<SNode>) new ClassifierAndSuperClassifiersScope(getNode(), IClassifiersSearchScope.INSTANCE_METHOD).getNodes(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
     return ListSequence.fromList(methodDeclarations).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return JUnit3MethodWrapper.isTestMethod(it);
@@ -46,5 +46,12 @@ public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
         return it != null;
       }
     });
+  }
+
+  private static String check_qb7e7i_a0a1(SNode checkedDotOperand, JUnit3TestWrapper checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return INamedConcept_Behavior.call_getFqName_1213877404258(checkedDotOperand);
+    }
+    return null;
   }
 }

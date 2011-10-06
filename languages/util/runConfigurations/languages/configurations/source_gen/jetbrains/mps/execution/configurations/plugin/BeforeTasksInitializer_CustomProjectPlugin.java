@@ -25,6 +25,11 @@ public class BeforeTasksInitializer_CustomProjectPlugin extends BaseCustomProjec
       ListSequence.fromList(BeforeTasksInitializer_CustomProjectPlugin.this.myRegisteredBeforeTasks).addElement(beforeTask);
       beforeTasksExtensionPoint.registerExtension(beforeTask);
     }
+    {
+      BeforeRunTaskProvider beforeTask = (BeforeRunTaskProvider) new MakeNodePointers_BeforeTask();
+      ListSequence.fromList(BeforeTasksInitializer_CustomProjectPlugin.this.myRegisteredBeforeTasks).addElement(beforeTask);
+      beforeTasksExtensionPoint.registerExtension(beforeTask);
+    }
   }
 
   public void doDispose(MPSProject project) {

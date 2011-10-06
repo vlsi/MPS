@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressManager;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -160,16 +160,16 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     return stuffToTest;
   }
 
-  public List<SNode> getTestsToMake() {
+  public List<SNodePointer> getTestsToMake() {
     final List<ITestNodeWrapper>[] stuffToTest = (List<ITestNodeWrapper>[]) new List[1];
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         stuffToTest[0] = getTestsUnderProgress();
       }
     }, ModalityState.NON_MODAL);
-    return ListSequence.fromList(stuffToTest[0]).select(new ISelector<ITestNodeWrapper, SNode>() {
-      public SNode select(ITestNodeWrapper it) {
-        return it.getNode();
+    return ListSequence.fromList(stuffToTest[0]).select(new ISelector<ITestNodeWrapper, SNodePointer>() {
+      public SNodePointer select(ITestNodeWrapper it) {
+        return it.getNodePointer();
       }
     }).toListSequence();
   }
@@ -219,7 +219,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     return JUnitTests_Configuration_RunProfileState.canExecute(executorId);
   }
 
-  public Object[] createMakeTask() {
+  public Object[] createMakeNodePointersTask() {
     return new Object[]{this.getTestsToMake()};
   }
 
