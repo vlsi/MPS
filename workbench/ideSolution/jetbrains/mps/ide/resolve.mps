@@ -1484,6 +1484,9 @@
                         <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2706803607794581487">
                           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5h2r.3161373106581142361" resolveInfo="MethodResolveUtil" />
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5h2r.2706803607794599559" resolveInfo="chooseByParameterTypeReportNoGoodMethodNode" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2591347611701149991">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2378204549815375680" resolveInfo="baseMethodDeclaration" />
+                          </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2706803607794581488">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2378204549815375778" resolveInfo="methodDeclarationsGoodParams" />
                           </node>
