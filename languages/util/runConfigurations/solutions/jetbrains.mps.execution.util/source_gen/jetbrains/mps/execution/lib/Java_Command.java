@@ -8,6 +8,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.execution.api.commands.CommandPart;
+import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -43,68 +44,138 @@ import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
 
 public class Java_Command {
-  private File myWorkingDirectory = new File(SystemProperties.getUserHome());
-  private String myJrePath = Java_Command.getJdkHome();
-  private String myProgramParameter;
-  private String myVirtualMachineParameter;
-  private List<String> myClassPath = ListSequence.fromList(new ArrayList<String>());
-  private String myDebuggerSettings;
-  private CommandPart myVirtualMachineParameterCommand;
+  private File myWorkingDirectory_File = new File(SystemProperties.getUserHome());
+  private String myJrePath_String = Java_Command.getJdkHome();
+  private String myProgramParameter_String;
+  private String myVirtualMachineParameter_String;
+  private List<String> myClassPath_ListString = ListSequence.fromList(new ArrayList<String>());
+  private String myDebuggerSettings_String;
+  private CommandPart myVirtualMachineParameter_ProcessBuilderCommandPart;
 
   public Java_Command() {
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public Java_Command setWorkingDirectory(File workingDirectory) {
+    // this methods only exist to not make users regenerate their code 
     if (workingDirectory != null) {
-      myWorkingDirectory = workingDirectory;
+      myWorkingDirectory_File = workingDirectory;
     }
     return this;
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public Java_Command setJrePath(String jrePath) {
+    // this methods only exist to not make users regenerate their code 
     if (jrePath != null) {
-      myJrePath = jrePath;
+      myJrePath_String = jrePath;
     }
     return this;
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public Java_Command setProgramParameter(String programParameter) {
+    // this methods only exist to not make users regenerate their code 
     if (programParameter != null) {
-      myProgramParameter = programParameter;
+      myProgramParameter_String = programParameter;
     }
     return this;
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public Java_Command setVirtualMachineParameter(String virtualMachineParameter) {
+    // this methods only exist to not make users regenerate their code 
     if (virtualMachineParameter != null) {
-      myVirtualMachineParameter = virtualMachineParameter;
+      myVirtualMachineParameter_String = virtualMachineParameter;
     }
     return this;
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public Java_Command setClassPath(List<String> classPath) {
+    // this methods only exist to not make users regenerate their code 
     if (classPath != null) {
-      myClassPath = classPath;
+      myClassPath_ListString = classPath;
     }
     return this;
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public Java_Command setDebuggerSettings(String debuggerSettings) {
+    // this methods only exist to not make users regenerate their code 
     if (debuggerSettings != null) {
-      myDebuggerSettings = debuggerSettings;
+      myDebuggerSettings_String = debuggerSettings;
     }
     return this;
   }
 
-  public Java_Command setVirtualMachineParameterCommand(CommandPart virtualMachineParameterCommand) {
-    if (virtualMachineParameterCommand != null) {
-      myVirtualMachineParameterCommand = virtualMachineParameterCommand;
+  @Deprecated
+  @ToRemove(version = 2.1)
+  public Java_Command setVirtualMachineParameter(CommandPart virtualMachineParameter) {
+    // this methods only exist to not make users regenerate their code 
+    if (virtualMachineParameter != null) {
+      myVirtualMachineParameter_ProcessBuilderCommandPart = virtualMachineParameter;
+    }
+    return this;
+  }
+
+  public Java_Command setWorkingDirectory_File(File workingDirectory) {
+    if (workingDirectory != null) {
+      myWorkingDirectory_File = workingDirectory;
+    }
+    return this;
+  }
+
+  public Java_Command setJrePath_String(String jrePath) {
+    if (jrePath != null) {
+      myJrePath_String = jrePath;
+    }
+    return this;
+  }
+
+  public Java_Command setProgramParameter_String(String programParameter) {
+    if (programParameter != null) {
+      myProgramParameter_String = programParameter;
+    }
+    return this;
+  }
+
+  public Java_Command setVirtualMachineParameter_String(String virtualMachineParameter) {
+    if (virtualMachineParameter != null) {
+      myVirtualMachineParameter_String = virtualMachineParameter;
+    }
+    return this;
+  }
+
+  public Java_Command setClassPath_ListString(List<String> classPath) {
+    if (classPath != null) {
+      myClassPath_ListString = classPath;
+    }
+    return this;
+  }
+
+  public Java_Command setDebuggerSettings_String(String debuggerSettings) {
+    if (debuggerSettings != null) {
+      myDebuggerSettings_String = debuggerSettings;
+    }
+    return this;
+  }
+
+  public Java_Command setVirtualMachineParameter_ProcessBuilderCommandPart(CommandPart virtualMachineParameter) {
+    if (virtualMachineParameter != null) {
+      myVirtualMachineParameter_ProcessBuilderCommandPart = virtualMachineParameter;
     }
     return this;
   }
 
   public ProcessHandler createProcess(String className) throws ExecutionException {
-    return new Java_Command().setWorkingDirectory(myWorkingDirectory).setJrePath(myJrePath).setProgramParameter(myProgramParameter).setVirtualMachineParameter(myVirtualMachineParameter).setDebuggerSettings(myDebuggerSettings).createProcess(className, ListSequence.fromList(myClassPath).select(new ISelector<String, File>() {
+    return new Java_Command().setWorkingDirectory_File(myWorkingDirectory_File).setJrePath_String(myJrePath_String).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(className, ListSequence.fromList(myClassPath_ListString).select(new ISelector<String, File>() {
       public File select(String it) {
         if (it.startsWith("\"") && it.endsWith("\"")) {
           return new File(it.substring(1, it.length() - 2));
@@ -114,19 +185,19 @@ public class Java_Command {
     }).toListSequence());
   }
 
-  public ProcessHandler createProcess(String className, List<File> classPathFiles) throws ExecutionException {
-    return new Java_Command().setWorkingDirectory(myWorkingDirectory).setJrePath(myJrePath).setVirtualMachineParameterCommand(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameter))).setDebuggerSettings(myDebuggerSettings).createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myProgramParameter)), className, classPathFiles);
+  public ProcessHandler createProcess(String className, List<File> classPath) throws ExecutionException {
+    return new Java_Command().setWorkingDirectory_File(myWorkingDirectory_File).setJrePath_String(myJrePath_String).setVirtualMachineParameter_ProcessBuilderCommandPart(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameter_String))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myProgramParameter_String)), className, classPath);
   }
 
-  public ProcessHandler createProcess(CommandPart programParameterCommand, String className, List<File> classPathFiles) throws ExecutionException {
-    File java = Java_Command.getJavaCommand(myJrePath);
+  public ProcessHandler createProcess(CommandPart programParameter, String className, List<File> classPath) throws ExecutionException {
+    File java = Java_Command.getJavaCommand(myJrePath_String);
     if (StringUtils.isEmpty(className)) {
       throw new ExecutionException("Classname is empty");
     }
-    if (check_yvpt_a0c0a2(programParameterCommand) >= Java_Command.getMaxCommandLine()) {
+    if (check_yvpt_a0c0a2(programParameter) >= Java_Command.getMaxCommandLine()) {
       try {
-        File parametersFile = Java_Command.writeToTmpFile(programParameterCommand.getCommandList());
-        File classPathFile = Java_Command.writeToTmpFile(ListSequence.fromList(classPathFiles).select(new ISelector<File, String>() {
+        File parametersFile = Java_Command.writeToTmpFile(programParameter.getCommandList());
+        File classPathFile = Java_Command.writeToTmpFile(ListSequence.fromList(classPath).select(new ISelector<File, String>() {
           public String select(File it) {
             return it.getAbsolutePath();
           }
@@ -136,25 +207,25 @@ public class Java_Command {
             return new File(it);
           }
         }).toListSequence();
-        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameterCommand).append(myDebuggerSettings).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classRunnerClassPath, File.pathSeparator))).append("jetbrains.mps.execution.lib.startup.ClassRunner").append(new KeyValueCommandPart("-" + ("c"), className)).append(new KeyValueCommandPart("-" + ("f"), parametersFile)).append(new KeyValueCommandPart("-" + ("p"), classPathFile)).build(myWorkingDirectory);
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_String).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classRunnerClassPath, File.pathSeparator))).append("jetbrains.mps.execution.lib.startup.ClassRunner").append(new KeyValueCommandPart("-" + ("c"), className)).append(new KeyValueCommandPart("-" + ("f"), parametersFile)).append(new KeyValueCommandPart("-" + ("p"), classPathFile)).build(myWorkingDirectory_File);
       } catch (FileNotFoundException e) {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
 
     } else {
-      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameterCommand).append(myDebuggerSettings).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), classPathFiles, className), File.pathSeparator))).append(className).append(programParameterCommand).build(myWorkingDirectory);
+      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_String).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), classPath, className), File.pathSeparator))).append(className).append(programParameter).build(myWorkingDirectory_File);
     }
   }
 
   public ProcessHandler createProcess(SNode node) throws ExecutionException {
-    return new Java_Command().setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setProgramParameter(myProgramParameter).setVirtualMachineParameter(myVirtualMachineParameter).setClassPath(Java_Command.getClasspath(node)).setDebuggerSettings(myDebuggerSettings).createProcess(Java_Command.getClassName(node));
+    return new Java_Command().setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setClassPath_ListString(Java_Command.getClasspath(node)).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(Java_Command.getClassName(node));
   }
 
   public ProcessHandler createProcess(JavaRunParameters runParameters, SNode node) throws ExecutionException {
-    return new Java_Command().setJrePath(check_yvpt_a0a0a0e(runParameters)).setProgramParameter(check_yvpt_a2a0a0e(runParameters)).setVirtualMachineParameter(check_yvpt_a3a0a0e(runParameters)).setWorkingDirectory((check_yvpt_a0a4a0a0e(runParameters) == null ?
+    return new Java_Command().setJrePath_String(check_yvpt_a0a0a0e(runParameters)).setProgramParameter_String(check_yvpt_a2a0a0e(runParameters)).setVirtualMachineParameter_String(check_yvpt_a3a0a0e(runParameters)).setWorkingDirectory_File((check_yvpt_a0a4a0a0e(runParameters) == null ?
       null :
       new File(check_yvpt_a0a0e0a0a4(runParameters))
-    )).setDebuggerSettings(myDebuggerSettings).createProcess(node);
+    )).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(node);
   }
 
   public static IDebugger getDebugger() {

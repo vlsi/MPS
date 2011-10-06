@@ -52,7 +52,7 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
     Project project = myEnvironment.getProject();
     List<ITestNodeWrapper> nodeWrappers = ListSequence.fromList(myRunConfiguration.getTests()).toListSequence();
 
-    final ProcessHandler process = new Junit_Command().setDebuggerSettings(myDebuggerSettings.getCommandLine(true)).createProcess(nodeWrappers, myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
+    final ProcessHandler process = new Junit_Command().setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(nodeWrappers, myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
 
     TestRunState runState = new TestRunState(nodeWrappers);
     TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);

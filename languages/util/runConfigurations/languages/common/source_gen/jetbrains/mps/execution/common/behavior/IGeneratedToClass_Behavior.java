@@ -5,7 +5,6 @@ package jetbrains.mps.execution.common.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.regex.Pattern;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NodeNameUtil;
@@ -14,14 +13,16 @@ import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
 
 public class IGeneratedToClass_Behavior {
   private static Class[] PARAMETERS_946964771156905483 = {SNode.class};
   private static Class[] PARAMETERS_946964771156905488 = {SNode.class};
   private static Class[] PARAMETERS_946964771156905503 = {SNode.class};
   private static Class[] PARAMETERS_4366236229294148974 = {SNode.class};
-  private static Pattern REGEXP_tq53pp_b0a0a3 = Pattern.compile("(\\w)\\W+(\\w)", 0);
-  private static Pattern REGEXP_tq53pp_b0a1a3 = Pattern.compile("(.)\\W+$", 0);
+  private static Pattern REGEXP_tq53pp_b0a1a71 = Pattern.compile("(\\w)\\W+(\\w)", 0);
+  private static Pattern REGEXP_tq53pp_b0a3a71 = Pattern.compile("(.)\\W+$", 0);
+  private static Pattern REGEXP_tq53pp_b0a5a71 = Pattern.compile("^\\W+(\\w)", 0);
 
   public static void init(SNode thisNode) {
   }
@@ -36,9 +37,7 @@ public class IGeneratedToClass_Behavior {
   }
 
   public static String call_getValidClassName_2572811016744662265(SNode thisNode, @NonNls String name) {
-    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a0a3, new _Replacer_tq53pp_a0a0a0d(null, null));
-    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a1a3, new _Replacer_tq53pp_a0a0b0d(null, null));
-    return IGeneratedToClass_Behavior.makeUpperCase_946964771156905431(name, 0);
+    return IGeneratedToClass_Behavior.getValidClassName_3754131050835940481(name);
   }
 
   public static String call_getGeneratedClassName_946964771156905516(SNode thisNode, String name) {
@@ -108,5 +107,15 @@ public class IGeneratedToClass_Behavior {
       string.substring(index + 1) :
       ""
     ));
+  }
+
+  public static String getValidClassName_3754131050835940481(@NonNls String name) {
+    // in between 
+    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a1a71, new _Replacer_tq53pp_a0a0b0r(null, null));
+    // in the end 
+    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a3a71, new _Replacer_tq53pp_a0a0d0r(null, null));
+    // in the beggining 
+    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a5a71, new _Replacer_tq53pp_a0a0f0r(null, null));
+    return IGeneratedToClass_Behavior.makeUpperCase_946964771156905431(name, 0);
   }
 }

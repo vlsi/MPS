@@ -71,7 +71,7 @@ public class Mps_Command {
   }
 
   public ProcessHandler createProcess() throws ExecutionException {
-    return new Java_Command().setVirtualMachineParameterCommand(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameters, new PropertyCommandPart("idea.system.path", mySystemPath), new PropertyCommandPart("idea.config.path", myConfigurationPath)))).setDebuggerSettings(myDebuggerSettings).setWorkingDirectory(new File(System.getProperty("user.dir"))).setJrePath(myJrePath).createProcess(null, "jetbrains.mps.Launcher", Mps_Command.getClassPath());
+    return new Java_Command().setVirtualMachineParameter_ProcessBuilderCommandPart(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameters, new PropertyCommandPart("idea.system.path", mySystemPath), new PropertyCommandPart("idea.config.path", myConfigurationPath)))).setDebuggerSettings(myDebuggerSettings).setWorkingDirectory(new File(System.getProperty("user.dir"))).setJrePath(myJrePath).createProcess(null, "jetbrains.mps.Launcher", Mps_Command.getClassPath());
   }
 
   public static IDebugger getDebugger() {

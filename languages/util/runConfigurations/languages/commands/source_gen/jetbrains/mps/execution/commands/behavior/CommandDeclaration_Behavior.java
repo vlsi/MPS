@@ -7,12 +7,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.annotations.NonNls;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -45,15 +45,7 @@ public class CommandDeclaration_Behavior {
 
   public static List<SNode> call_getDistinctFieldParameters_6129022259108623165(SNode thisNode) {
     // we get all parameters generated into fields and select a list with uniquie names 
-    final Iterable<SNode> parameterDeclarations = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "executePart", true)).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode it) {
-        return ListSequence.fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(it)).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return CommandParameterDeclaration_Behavior.call_generateField_8478830098674441876(it);
-          }
-        });
-      }
-    });
+    final Iterable<SNode> parameterDeclarations = CommandDeclaration_Behavior.call_getFieldParameters_3754131050835964275(thisNode);
     Iterable<String> fieldNames = Sequence.fromIterable(parameterDeclarations).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return CommandParameterDeclaration_Behavior.call_getFieldName_7327337331549117850(it);
@@ -72,6 +64,40 @@ public class CommandDeclaration_Behavior {
         return Sequence.<SNode>singleton(first);
       }
     }).toListSequence();
+  }
+
+  public static List<SNode> call_getDistinctByNameAndTypeFieldParameters_3754131050835964183(SNode thisNode) {
+    final Iterable<SNode> parameterDeclarations = CommandDeclaration_Behavior.call_getFieldParameters_3754131050835964275(thisNode);
+    Iterable<String> fieldNames = Sequence.fromIterable(parameterDeclarations).select(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return CommandParameterDeclaration_Behavior.call_getSetterLongName_3754131050835964459(it);
+      }
+    }).distinct();
+    return Sequence.fromIterable(fieldNames).translate(new ITranslator2<String, SNode>() {
+      public Iterable<SNode> translate(final String it) {
+        SNode first = Sequence.fromIterable(parameterDeclarations).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode decl) {
+            return eq_5aznw1_a0a0a0a0a0a0a0a0a0a0c0f(CommandParameterDeclaration_Behavior.call_getSetterLongName_3754131050835964459(decl), it);
+          }
+        });
+        if (first == null) {
+          return new ArrayList<SNode>();
+        }
+        return Sequence.<SNode>singleton(first);
+      }
+    }).toListSequence();
+  }
+
+  public static Iterable<SNode> call_getFieldParameters_3754131050835964275(SNode thisNode) {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "executePart", true)).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return ListSequence.fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(it)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return CommandParameterDeclaration_Behavior.call_generateField_8478830098674441876(it);
+          }
+        });
+      }
+    });
   }
 
   public static String call_getSuffix_856705193941282112(SNode thisNode) {
@@ -105,6 +131,13 @@ public class CommandDeclaration_Behavior {
   }
 
   private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0e(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0c0f(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

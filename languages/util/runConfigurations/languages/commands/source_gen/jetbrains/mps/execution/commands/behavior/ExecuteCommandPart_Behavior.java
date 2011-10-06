@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
+import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -58,6 +59,10 @@ public class ExecuteCommandPart_Behavior {
 
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return new ExecuteCommandPart_Behavior.QuotationClass_qal9w4_a0a0g().createNode();
+  }
+
+  public static String call_getSuffix_3754131050835940463(SNode thisNode) {
+    return "_" + IGeneratedToClass_Behavior.getValidClassName_3754131050835940481(thisNode.getId());
   }
 
   public static List<SNode> call_getThrowableTypes_558680274511380755(SNode thisNode) {

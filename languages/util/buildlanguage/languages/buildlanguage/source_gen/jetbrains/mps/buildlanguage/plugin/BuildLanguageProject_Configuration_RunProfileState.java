@@ -45,10 +45,10 @@ public class BuildLanguageProject_Configuration_RunProfileState implements RunPr
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
     {
-      ProcessHandler _processHandler = new Ant_Command().setAntLocation((myRunConfiguration.getSettings().getUseOtherAntLocation() ?
+      ProcessHandler _processHandler = new Ant_Command().setAntLocation_String((myRunConfiguration.getSettings().getUseOtherAntLocation() ?
         myRunConfiguration.getSettings().getOtherAntLocation() :
         null
-      )).setOptions(myRunConfiguration.getSettings().getAntOptions()).setTarget(myRunConfiguration.getTarget()).createProcess(myRunConfiguration.getNode().getNode());
+      )).setOptions_String(myRunConfiguration.getSettings().getAntOptions()).setTarget_NodeTargetDeclaration(myRunConfiguration.getTarget()).createProcess(myRunConfiguration.getNode().getNode());
       final ConsoleView _consoleView = ConsoleCreator.createConsoleView(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import jetbrains.mps.logging.Logger;
 import java.io.File;
+import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.process.ProcessHandler;
 import java.util.List;
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaRunParameters;
@@ -37,50 +38,90 @@ import jetbrains.mps.debug.api.Debuggers;
 public class Junit_Command {
   private static Logger LOG = Logger.getLogger(Junit_Command.class);
 
-  private String myDebuggerSettings;
-  private String myVirtualMachineParameter;
-  private String myJrePath;
-  private File myWorkingDirectory = new File(System.getProperty("user.home"));
+  private String myDebuggerSettings_String;
+  private String myVirtualMachineParameter_String;
+  private String myJrePath_String;
+  private File myWorkingDirectory_File = new File(System.getProperty("user.home"));
 
   public Junit_Command() {
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public Junit_Command setDebuggerSettings(String debuggerSettings) {
+    // this methods only exist to not make users regenerate their code 
     if (debuggerSettings != null) {
-      myDebuggerSettings = debuggerSettings;
+      myDebuggerSettings_String = debuggerSettings;
     }
     return this;
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public Junit_Command setVirtualMachineParameter(String virtualMachineParameter) {
+    // this methods only exist to not make users regenerate their code 
     if (virtualMachineParameter != null) {
-      myVirtualMachineParameter = virtualMachineParameter;
+      myVirtualMachineParameter_String = virtualMachineParameter;
     }
     return this;
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public Junit_Command setJrePath(String jrePath) {
+    // this methods only exist to not make users regenerate their code 
     if (jrePath != null) {
-      myJrePath = jrePath;
+      myJrePath_String = jrePath;
     }
     return this;
   }
 
+  @Deprecated
+  @ToRemove(version = 2.1)
   public Junit_Command setWorkingDirectory(File workingDirectory) {
+    // this methods only exist to not make users regenerate their code 
     if (workingDirectory != null) {
-      myWorkingDirectory = workingDirectory;
+      myWorkingDirectory_File = workingDirectory;
+    }
+    return this;
+  }
+
+  public Junit_Command setDebuggerSettings_String(String debuggerSettings) {
+    if (debuggerSettings != null) {
+      myDebuggerSettings_String = debuggerSettings;
+    }
+    return this;
+  }
+
+  public Junit_Command setVirtualMachineParameter_String(String virtualMachineParameter) {
+    if (virtualMachineParameter != null) {
+      myVirtualMachineParameter_String = virtualMachineParameter;
+    }
+    return this;
+  }
+
+  public Junit_Command setJrePath_String(String jrePath) {
+    if (jrePath != null) {
+      myJrePath_String = jrePath;
+    }
+    return this;
+  }
+
+  public Junit_Command setWorkingDirectory_File(File workingDirectory) {
+    if (workingDirectory != null) {
+      myWorkingDirectory_File = workingDirectory;
     }
     return this;
   }
 
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests, JavaRunParameters javaRunParameters) throws ExecutionException {
-    return new Junit_Command().setVirtualMachineParameter(check_u7m9j_a1a0a0a(javaRunParameters)).setJrePath((check_u7m9j_a0c0a0a0(javaRunParameters) ?
+    return new Junit_Command().setVirtualMachineParameter_String(check_u7m9j_a1a0a0a(javaRunParameters)).setJrePath_String((check_u7m9j_a0c0a0a0(javaRunParameters) ?
       javaRunParameters.jrePath() :
       null
-    )).setWorkingDirectory((StringUtils.isEmpty(check_u7m9j_a0a3a0a0a(javaRunParameters)) ?
+    )).setWorkingDirectory_File((StringUtils.isEmpty(check_u7m9j_a0a3a0a0a(javaRunParameters)) ?
       null :
       new File(javaRunParameters.workingDirectory())
-    )).setDebuggerSettings(myDebuggerSettings).createProcess(tests);
+    )).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(tests);
   }
 
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests) throws ExecutionException {
@@ -91,10 +132,10 @@ public class Junit_Command {
     if (ListSequence.fromList(testsToRun._0()).isEmpty()) {
       throw new ExecutionException("Could not find tests to run.");
     }
-    return new Java_Command().setVirtualMachineParameter(IterableUtils.join(ListSequence.fromList(testsToRun._1().getVmParameters()), " ") + ((StringUtils.isNotEmpty(myVirtualMachineParameter) ?
-      " " + myVirtualMachineParameter :
+    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun._1().getVmParameters()), " ") + ((StringUtils.isNotEmpty(myVirtualMachineParameter_String) ?
+      " " + myVirtualMachineParameter_String :
       ""
-    ))).setDebuggerSettings(myDebuggerSettings).setClassPath(ListSequence.fromList(testsToRun._1().getClassPath()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setProgramParameter(Junit_Command.getProgramParameters(testsToRun._0())).createProcess(testsToRun._1().getTestRunner());
+    ))).setDebuggerSettings_String(myDebuggerSettings_String).setClassPath_ListString(ListSequence.fromList(testsToRun._1().getClassPath()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(Junit_Command.getProgramParameters(testsToRun._0())).createProcess(testsToRun._1().getTestRunner());
   }
 
   public static IDebugger getDebugger() {
