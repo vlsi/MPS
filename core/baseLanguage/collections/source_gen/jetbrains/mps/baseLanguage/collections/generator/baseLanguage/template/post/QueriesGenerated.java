@@ -102,7 +102,7 @@ public class QueriesGenerated {
       IMatchingPattern pattern_x583g4_a0m = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_x583g4_a0m = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true)), pattern_x583g4_a0m);
       if (coercedNode_x583g4_a0m != null) {
-        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_x583g4_a0m, "elementType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_x583g4_a0m, "elementType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_x583g4_a0m, "elementType", true), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
           return SLinkOperations.getTarget(coercedNode_x583g4_a0m, "elementType", true);
         }
         SNode ct = ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_x583g4_a0m, "elementType", true));
@@ -153,7 +153,7 @@ public class QueriesGenerated {
       IMatchingPattern pattern_x583g4_a0t = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_x583g4_a0t = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true)), pattern_x583g4_a0t);
       if (coercedNode_x583g4_a0t != null) {
-        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_x583g4_a0t, "elementType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_x583g4_a0t, "elementType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_x583g4_a0t, "elementType", true), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
           return SLinkOperations.getTarget(coercedNode_x583g4_a0t, "elementType", true);
         }
         SNode ct = ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_x583g4_a0t, "elementType", true));

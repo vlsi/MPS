@@ -5,6 +5,10 @@ package jetbrains.mps.internalCollections.test.closures;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import junit.framework.Assert;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ArrayUtils;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 
 public class ForEach_Test extends Util_Test {
   public void test_legacyForeach() throws Exception {
@@ -43,6 +47,19 @@ public class ForEach_Test extends Util_Test {
       Assert.assertTrue(Sequence.fromIterable(exp).contains(i));
       this.accept(i);
     }
+  }
+
+  public void test_mps14282() throws Exception {
+    List<int[]> lints = ListSequence.fromListAndArray(new ArrayList<int[]>(), new int[]{1001}, new int[]{1001, 1002}, new int[]{1001, 1002, 1003});
+    int sum = 0;
+    for (int[] ints : ListSequence.fromList(lints)) {
+      sum += Sequence.fromIterable(ArrayUtils.fromIntegerArray(ints)).reduceLeft(new ILeftCombinator<Integer, Integer>() {
+        public Integer combine(Integer a, Integer b) {
+          return a + b;
+        }
+      });
+    }
+    Assert.assertEquals(6010, sum);
   }
 
   public void test_mps10737() throws Exception {
