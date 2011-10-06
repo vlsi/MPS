@@ -132,10 +132,6 @@ public final class SNode {
     return myModel;
   }
 
-  public boolean isModelLoading() {
-    return myModel.isLoading();
-  }
-
   public String getRoleOf(SNode node) {
     ModelAccess.assertLegalRead(this);
 
@@ -430,7 +426,7 @@ public final class SNode {
     if (usePropertySetter) {
       Set<Pair<SNode, String>> threadSet = ourPropertySettersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, propertyName);
-      if (!threadSet.contains(pair) && !myModel.isLoading()) {
+      if (!threadSet.contains(pair) && myModel.canFireEvent()) {
         PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConceptFqName()).getProperty(propertyName);
         threadSet.add(pair);
         try {
@@ -458,12 +454,13 @@ public final class SNode {
       myProperties[index + 1] = propertyValue;
     }
 
-    if (UndoHelper.getInstance().needRegisterUndo(getModel())) {
-      UndoHelper.getInstance().addUndoableAction(new PropertyChangeUndoableAction(this, propertyName, oldValue, propertyValue));
-    }
+    SModel model = getModel();
+    if (model == null) return;
 
-    if (ModelChange.needFireEvents(getModel(), this)) {
-      getModel().firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
+    model.performUndoableAction(new PropertyChangeUndoableAction(this, propertyName, oldValue, propertyValue));
+
+    if (ModelChange.needFireEvents(model, this)) {
+      model.firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
     }
   }
 
@@ -642,7 +639,7 @@ public final class SNode {
   }
 
   private void fireNodeUnclassifiedReadAccess() {
-    if (myModel.isLoading()) return;
+    if (!myModel.canFireEvent()) return;
     NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
   }
 
@@ -661,7 +658,7 @@ public final class SNode {
   }
 
   private void fireNodeReadAccess() {
-    if (myModel.isLoading()) return;
+    if (!myModel.canFireEvent()) return;
     NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
   }
 
@@ -725,20 +722,21 @@ public final class SNode {
     SNode anchor = getFirstChild() == wasChild ? null : wasChild.myPrevSibling;
 
     assert wasRole != null;
-    if (ModelChange.needFireEvents(getModel(), this)) {
-      getModel().fireBeforeChildRemovedEvent(this, wasRole, wasChild, anchor);
+    SModel model = getModel();
+    if (model!=null && ModelChange.needFireEvents(model, this)) {
+      model.fireBeforeChildRemovedEvent(this, wasRole, wasChild, anchor);
     }
 
     children_remove(wasChild);
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
-    if (UndoHelper.getInstance().needRegisterUndo(getModel())) {
-      UndoHelper.getInstance().addUndoableAction(new RemoveChildUndoableAction(this, anchor, wasRole, wasChild));
-    }
+    if(model == null) return;
 
-    if (ModelChange.needFireEvents(getModel(), this)) {
-      getModel().fireChildRemovedEvent(this, wasRole, wasChild, anchor);
+    model.performUndoableAction(new RemoveChildUndoableAction(this, anchor, wasRole, wasChild));
+
+    if (ModelChange.needFireEvents(model, this)) {
+      model.fireChildRemovedEvent(this, wasRole, wasChild, anchor);
     }
   }
 
@@ -768,18 +766,19 @@ public final class SNode {
     children_insertAfter(anchor, child);
     child.myRoleInParent = InternUtil.intern(role);
 
+    SModel model = getModel();
     if (isRegistered()) {
-      child.registerInModel(getModel());
+      child.registerInModel(model);
     } else {
-      child.changeModel(getModel());
+      child.changeModel(model);
     }
 
-    if (UndoHelper.getInstance().needRegisterUndo(getModel())) {
-      UndoHelper.getInstance().addUndoableAction(new InsertChildAtUndoableAction(this, anchor, _role, child));
-    }
+    if (model==null) return;
 
-    if (ModelChange.needFireEvents(getModel(), this)) {
-      getModel().fireChildAddedEvent(this, role, child, anchor);
+    model.performUndoableAction(new InsertChildAtUndoableAction(this, anchor, _role, child));
+
+    if (ModelChange.needFireEvents(model, this)) {
+      model.fireChildAddedEvent(this, role, child, anchor);
     }
   }
 
@@ -804,7 +803,7 @@ public final class SNode {
 
     // add language because typesystem needs it to invalidate/revalidate its caches
     //todo this is a hack
-    if (model.isLoading() || MPSCore.getInstance().isMergeDriverMode()) return;
+    if (!myModel.canFireEvent() || MPSCore.getInstance().isMergeDriverMode()) return;
     SModelOperations.validateLanguages(model, this);
   }
 
@@ -915,7 +914,7 @@ public final class SNode {
     SReference resultReference = null;
     boolean handlerFound = false;
 
-    if (useHandler && !getModel().isLoading()) {
+    if (useHandler && myModel.canFireEvent()) {
       // invoke custom referent set event handler
       Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, role);
@@ -1067,12 +1066,13 @@ public final class SNode {
     ModelChange.assertLegalNodeChange(this);
     _reference().add(i, reference);
 
-    if (UndoHelper.getInstance().needRegisterUndo(getModel())) {
-      UndoHelper.getInstance().addUndoableAction(new InsertReferenceAtUndoableAction(this, i, reference));
-    }
+    SModel model = getModel();
+    if (model==null) return;
 
-    if (ModelChange.needFireEvents(getModel(), this)) {
-      getModel().fireReferenceAddedEvent(reference);
+    model.performUndoableAction(new InsertReferenceAtUndoableAction(this, i, reference));
+
+    if (ModelChange.needFireEvents(model, this)) {
+      model.fireReferenceAddedEvent(reference);
     }
   }
 
@@ -1092,12 +1092,13 @@ public final class SNode {
     final SReference reference = myReferences[i];
     _reference().remove(reference);
 
-    if (UndoHelper.getInstance().needRegisterUndo(getModel())) {
-      UndoHelper.getInstance().addUndoableAction(new RemoveReferenceAtUndoableAction(this, i, reference));
-    }
+    SModel model = getModel();
+    if (model == null) return;
 
-    if (ModelChange.needFireEvents(getModel(), this)) {
-      getModel().fireReferenceRemovedEvent(reference);
+    model.performUndoableAction(new RemoveReferenceAtUndoableAction(this, i, reference));
+
+    if (ModelChange.needFireEvents(model, this)) {
+      model.fireReferenceRemovedEvent(reference);
     }
   }
 
@@ -1588,7 +1589,7 @@ public final class SNode {
     }
 
     public void skipChildren() {
-      if(prev == null) throw new IllegalStateException("no element");
+      if (prev == null) throw new IllegalStateException("no element");
       current = nextInternal(prev, true);
       while (current != null && condition != null && !condition.met(current)) {
         current = nextInternal(current, false);

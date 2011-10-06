@@ -21,6 +21,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelOperations;
@@ -89,12 +90,10 @@ public abstract class AbstractEvaluationModel {
     }
     myAuxModule = auxModule;
 
-    final EditableSModelDescriptor modelDescriptor = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor(myAuxModule));
-    modelDescriptor.getSModel().runLoadingAction(new Runnable() {
-      public void run() {
-        modelDescriptor.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
-      }
-    });
+    final EditableSModelDescriptor modelDescriptor = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor());
+    modelDescriptor.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
+    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myAuxModule);
+
     myAuxModel = modelDescriptor;
     myEvaluationContext = context;
     myShowContext = isShowContext;

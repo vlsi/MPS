@@ -303,7 +303,6 @@ public class GenerationSession {
     // -----------------------
     // primary mapping
     // -----------------------
-    currentInputModel.setLoading(false);
     if (myLogger.needsInfo()) {
       myLogger.info("generating model '" + currentInputModel.getSModelFqName() + "' --> '" + currentOutputModel.getSModelFqName() + "'");
     }
@@ -328,7 +327,6 @@ public class GenerationSession {
       // probably we can forget about former input model here
       recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
-      currentInputModel.setLoading(false);
       currentInputModel.disposeFastNodeFinder();
 
       SModel transientModel = createTransientModel();
@@ -367,7 +365,6 @@ public class GenerationSession {
       // next iteration ...
       currentOutputModel = transientModel;
     }
-    currentOutputModel.setLoading(true);
 
     // -----------------------
     // run post-processing scripts
@@ -539,7 +536,6 @@ public class GenerationSession {
     String longName = myOriginalInputModel.getLongName();
     String stereotype = Integer.toString(myMajorStep + 1) + "_" + ++myMinorStep;
     SModelDescriptor transientModel = mySessionContext.getModule().createTransientModel(longName, stereotype);
-    transientModel.getSModel().setLoading(true); // we dont need any events to be cast
     return transientModel.getSModel();
   }
 

@@ -41,7 +41,6 @@ public class SModel {
   private SModelReference myReference;
 
   private boolean myDisposed;
-  private volatile boolean myLoading;
 
   private FastNodeFinder myFastNodeFinder;
 
@@ -138,7 +137,7 @@ public class SModel {
   //---------roots manipulation--------
 
   private void fireModelNodesReadAccess() {
-    if (isLoading()) return;
+    if (!canFireEvent()) return;
     NodeReadEventsCaster.fireModelNodesReadAccess(this);
   }
 
@@ -170,9 +169,7 @@ public class SModel {
 
     myRoots.add(node);
     node.registerInModel(this);
-    if (UndoHelper.getInstance().needRegisterUndo(this)) {
-      UndoHelper.getInstance().addUndoableAction(new AddRootUndoableAction(node));
-    }
+    performUndoableAction(new AddRootUndoableAction(node));
     fireRootAddedEvent(node);
   }
 
@@ -182,15 +179,19 @@ public class SModel {
     if (myRoots.contains(node)) {
       myRoots.remove(node);
       node.unRegisterFromModel();
-      if (UndoHelper.getInstance().needRegisterUndo(this)) {
-        UndoHelper.getInstance().addUndoableAction(new RemoveRootUndoableAction(node));
-      }
+      performUndoableAction(new RemoveRootUndoableAction(node));
       fireRootRemovedEvent(node);
     }
   }
 
   public int rootsCount() {
     return myRoots.size();
+  }
+
+  protected void performUndoableAction(SNodeUndoableAction action) {
+    if (!canFireEvent()) return;
+    if (!UndoHelper.getInstance().needRegisterUndo(this)) return;
+    UndoHelper.getInstance().addUndoableAction(action);
   }
 
   //---------nodes manipulation--------
@@ -217,30 +218,8 @@ public class SModel {
 
   //---------loading state--------
 
-  public void runLoadingAction(@NotNull Runnable runnable) {
-    boolean wasLoading = setLoading(true);
-    try {
-      runnable.run();
-    } finally {
-      setLoading(wasLoading);
-    }
-  }
-
-  public synchronized boolean setLoading(boolean loading) {
-    boolean wasLoading = myLoading;
-    myLoading = loading;
-    if (wasLoading != loading) {
-      fireLoadingStateChanged();
-    }
-    return wasLoading;
-  }
-
-  public boolean isLoading() {
-    return myLoading;
-  }
-
-  private boolean canFireEvent() {
-    return !myLoading;
+  protected boolean canFireEvent() {
+    return myModelDescriptor!=null && SModelRepository.getInstance().getModelDescriptor(getSModelReference()) != null;
   }
 
   //---------listeners--------
@@ -248,16 +227,6 @@ public class SModel {
   private List<SModelListener> getModelListeners() {
     BaseSModelDescriptor modelDescriptor = (BaseSModelDescriptor) getModelDescriptor();
     return modelDescriptor != null ? modelDescriptor.getModelListeners() : Collections.<SModelListener>emptyList();
-  }
-
-  private void fireLoadingStateChanged() {
-    for (SModelListener sModelListener : getModelListeners()) {
-      try {
-        sModelListener.loadingStateChanged(getModelDescriptor(), isLoading());
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
   }
 
   //todo code in the following methods should be written w/o duplication
@@ -692,7 +661,7 @@ public class SModel {
     if (!myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.add(ref);
       // don't send event but mark model as changed
-      if (!isLoading()) {
+      if (canFireEvent()) {
         SModelRepository.getInstance().markChanged(this);
       }
     }
@@ -704,7 +673,7 @@ public class SModel {
     if (myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.remove(ref);
       // don't send event but mark model as changed
-      if (!isLoading()) {
+      if (canFireEvent()) {
         SModelRepository.getInstance().markChanged(this);
       }
     }

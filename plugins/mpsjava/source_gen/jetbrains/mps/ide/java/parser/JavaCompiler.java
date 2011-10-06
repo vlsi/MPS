@@ -215,7 +215,7 @@ public class JavaCompiler {
   }
 
   private SModel createModel(SModelFqName modelFqName) {
-    SModelDescriptor modelDescriptor = myModule.createModel(modelFqName, myModule.getSModelRoots().get(0));
+    SModelDescriptor modelDescriptor = myModule.createModel(modelFqName, myModule.getSModelRoots().get(0), null);
     return modelDescriptor.getSModel();
   }
 

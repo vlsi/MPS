@@ -58,20 +58,6 @@ public class
         myModel = myType.getModel();
       }
     });
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        if (!myType.isRegistered()) {
-          boolean wasLoading = myModel.isLoading();
-          try {
-            myModel.setLoading(true);
-            myWasRegistered = false;
-            myModel.addRoot(myType.getTopmostAncestor());
-          } finally {
-            myModel.setLoading(wasLoading);
-          }
-        }
-      }
-    });
     myError = error;
     supertypesView.showItemInHierarchy(myType, operationContext);
   }
@@ -140,14 +126,8 @@ public class
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         if (!myWasRegistered) {
-          boolean wasLoading = myModel.isLoading();
-          try {
-            myModel.setLoading(true);
-            myModel.removeRoot(myType.getTopmostAncestor());
-            myWasRegistered = true;
-          } finally {
-            myModel.setLoading(wasLoading);
-          }
+          myModel.removeRoot(myType.getTopmostAncestor());
+          myWasRegistered = true;
         }
         MyBaseNodeDialog.super.dispose();
       }

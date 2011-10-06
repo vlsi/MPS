@@ -50,33 +50,27 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
     SNode nodeCopyRoot = CopyUtil.copy(Arrays.asList(mySourceNode.getContainingRoot()), mapping).get(0);
-    boolean wasLoading = auxModel.isLoading();
-    auxModel.setLoading(true);
-    try {
-      if (!nodeCopyRoot.isRoot()) {
-        auxModel.addRoot(nodeCopyRoot);
-      }
-      SNode nodeToEquatePeer = mySourceNode;
-      TypeChecker typeChecker = TypeChecker.getInstance();
-      while (nodeToEquatePeer != null && typeChecker.getTypeOf(nodeToEquatePeer) == null) {
-        nodeToEquatePeer = nodeToEquatePeer.getParent();
-      }
-      if (nodeToEquatePeer == null) {
-        return null;
-      }
-      SNode nodeToEquate = mapping.get(nodeToEquatePeer);
-      SNode parent = nodeToEquate.getParent();
-      if (parent == null) {
-        return null;
-      }
-      SNode hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
-      parent.replaceChild(nodeToEquate, hole);
-      InequalitySystem inequalitiesForHole = TypeChecker.getInstance().getInequalitiesForHole(hole, false);
-      auxModel.removeRoot(nodeCopyRoot);
-      return inequalitiesForHole;
-    } finally {
-      auxModel.setLoading(wasLoading);
+    if (!nodeCopyRoot.isRoot()) {
+      auxModel.addRoot(nodeCopyRoot);
     }
+    SNode nodeToEquatePeer = mySourceNode;
+    TypeChecker typeChecker = TypeChecker.getInstance();
+    while (nodeToEquatePeer != null && typeChecker.getTypeOf(nodeToEquatePeer) == null) {
+      nodeToEquatePeer = nodeToEquatePeer.getParent();
+    }
+    if (nodeToEquatePeer == null) {
+      return null;
+    }
+    SNode nodeToEquate = mapping.get(nodeToEquatePeer);
+    SNode parent = nodeToEquate.getParent();
+    if (parent == null) {
+      return null;
+    }
+    SNode hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
+    parent.replaceChild(nodeToEquate, hole);
+    InequalitySystem inequalitiesForHole = TypeChecker.getInstance().getInequalitiesForHole(hole, false);
+    auxModel.removeRoot(nodeCopyRoot);
+    return inequalitiesForHole;
   }
 
   public List<INodeSubstituteAction> createActions() {

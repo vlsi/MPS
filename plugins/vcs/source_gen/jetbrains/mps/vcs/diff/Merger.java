@@ -290,38 +290,33 @@ public class Merger {
 
   public void rebuldResultModel() {
     myResultModel = CopyUtil.copyModel(getBase(mySourceModels));
-    boolean wasLoading = myResultModel.setLoading(true);
-    try {
-      ModuleReference languageNamespace = ModuleReference.fromString("jetbrains.mps.core");
-      SNode tmp = new SNode(myResultModel, NameUtil.conceptFQNameFromNamespaceAndShortName(languageNamespace.getModuleFqName(), "BaseConcept"));
-      boolean notRemoveLanguage = false;
-      if (myResultModel.importedLanguages().contains(languageNamespace)) {
-        notRemoveLanguage = true;
+    ModuleReference languageNamespace = ModuleReference.fromString("jetbrains.mps.core");
+    SNode tmp = new SNode(myResultModel, NameUtil.conceptFQNameFromNamespaceAndShortName(languageNamespace.getModuleFqName(), "BaseConcept"));
+    boolean notRemoveLanguage = false;
+    if (myResultModel.importedLanguages().contains(languageNamespace)) {
+      notRemoveLanguage = true;
+    }
+    myResultModel.addRoot(tmp);
+    myUnresolvedConflictingChanges = new LinkedHashSet<OldChange>();
+    for (Conflict conflict : myConflicts) {
+      if (!(myExcludedChanges.contains(conflict.getChange1())) && !(myExcludedChanges.contains(conflict.getChange2()))) {
+        myUnresolvedConflictingChanges.add(conflict.getChange1());
+        myUnresolvedConflictingChanges.add(conflict.getChange2());
       }
-      myResultModel.addRoot(tmp);
-      myUnresolvedConflictingChanges = new LinkedHashSet<OldChange>();
-      for (Conflict conflict : myConflicts) {
-        if (!(myExcludedChanges.contains(conflict.getChange1())) && !(myExcludedChanges.contains(conflict.getChange2()))) {
-          myUnresolvedConflictingChanges.add(conflict.getChange1());
-          myUnresolvedConflictingChanges.add(conflict.getChange2());
-        }
-      }
-      for (OldChange change : new ArrayList<OldChange>(myUnresolvedConflictingChanges)) {
-        myUnresolvedConflictingChanges.addAll(getChangeGroupOf(change));
-      }
-      applyChangesByClass(UsedLanguagesChange.class);
-      applyChangesByClass(ModelImportChange.class);
-      applyChangesByClass(AddLanguageAspectChange.class);
-      applyStructuralChanges();
-      applyChangesByClass(ChangeConceptChange.class);
-      applyChangesByClass(OldSetPropertyChange.class);
-      applyChangesByClass(OldSetReferenceChange.class);
-      myResultModel.removeRoot(tmp);
-      if (!(notRemoveLanguage)) {
-        myResultModel.deleteLanguage(languageNamespace);
-      }
-    } finally {
-      myResultModel.setLoading(wasLoading);
+    }
+    for (OldChange change : new ArrayList<OldChange>(myUnresolvedConflictingChanges)) {
+      myUnresolvedConflictingChanges.addAll(getChangeGroupOf(change));
+    }
+    applyChangesByClass(UsedLanguagesChange.class);
+    applyChangesByClass(ModelImportChange.class);
+    applyChangesByClass(AddLanguageAspectChange.class);
+    applyStructuralChanges();
+    applyChangesByClass(ChangeConceptChange.class);
+    applyChangesByClass(OldSetPropertyChange.class);
+    applyChangesByClass(OldSetReferenceChange.class);
+    myResultModel.removeRoot(tmp);
+    if (!(notRemoveLanguage)) {
+      myResultModel.deleteLanguage(languageNamespace);
     }
   }
 

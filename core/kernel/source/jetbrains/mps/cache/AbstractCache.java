@@ -78,9 +78,6 @@ public abstract class AbstractCache extends SModelAdapter {
 
   // model listener
 
-  public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
-  }
-
   public void languageAdded(SModelLanguageEvent event) {
   }
 

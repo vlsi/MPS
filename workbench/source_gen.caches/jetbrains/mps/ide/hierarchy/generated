@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2x436s2r3gcmywyprmokevw721j9awl">
+<dependencies version="2" modelHash="3xktvol9dzpsqnkruu07y16xm5telx5">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.dnd(MPS.Classpath/com.intellij.ide.dnd@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.dnd.aware(MPS.Classpath/com.intellij.ide.dnd.aware@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi(MPS.Classpath/com.intellij.openapi@java_stub)" />
@@ -48,8 +48,7 @@
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="1qpl4dcq87orqyeop7drkzps9naovu7" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-e2ctrc4mz9pg097lenxn0rny4sknz3b" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="3ogbc94405e1j8mrhp8fnrksbak1c2a" />
-  <common hash="7cqha3xx7w4rl9uj45k4hey9rz4o9ot" dependsOnNodes="true">
-    <dep root="5797068448049411442" />
+  <common hash="7cqha3xx7w4rl9uj45k4hey9rz4o9ot">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -63,8 +62,6 @@
     <file name="IconContainer.java" />
   </common>
   <source id="5797068448049410631" name="HierarchyViewTool" hash="-1jzmu5izmo63h8vgwna1nt9kub2wgnf">
-    <dep root="5797068448049410622" />
-    <dep root="5797068448049410624" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.projectPane(MPS.Classpath/jetbrains.mps.ide.projectPane@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -81,7 +78,6 @@
     <file name="HierarchyViewTool.java" />
   </source>
   <source id="5797068448049410622" name="AbstractHierarchyView" hash="-5fl4ti106c044u0k6xm2fma55lxqd64">
-    <dep root="5797068448049410624" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(MPS.Classpath/com.intellij.openapi.actionSystem@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" />
@@ -108,7 +104,6 @@
     <file name="AbstractHierarchyView.java" />
   </source>
   <source id="5797068448049411442" name="BaseLanguageHierarchyViewTool" hash="-eai0gf57bd89zu3yvmd0sa5m4qvvbu6" dependsOnCreated="true">
-    <dep root="5797068448049410623" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -158,8 +153,6 @@
     <file name="LanguageHierarchiesComponent.java" />
   </source>
   <source id="5797068448049410628" name="ChildHierarchyTreeNode" hash="bivicceiwwy4566e9jqmuy9nmnzc0hn">
-    <dep root="5797068448049410622" />
-    <dep root="5797068448049410624" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.messages(MPS.Classpath/jetbrains.mps.ide.messages@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.ui(MPS.Classpath/jetbrains.mps.ide.ui@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -202,8 +195,6 @@
     <file name="ConceptHierarchyTree.java" />
   </source>
   <source id="5797068448049410623" name="AbstractHierarchyTree" hash="-8zfqo4kyaz10zjajkufbcfvd2nimf7j">
-    <dep root="5797068448049410622" />
-    <dep root="5797068448049410624" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.dnd(MPS.Classpath/com.intellij.ide.dnd@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.dnd.aware(MPS.Classpath/com.intellij.ide.dnd.aware@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi(MPS.Classpath/com.intellij.openapi@java_stub)" />
@@ -268,8 +259,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CircularHierarchyException.java" />
   </source>
-  <source id="5797068448049410624" name="HierarchyTreeNode" hash="-7pi6gkf2q6j5fsci7gyr0eq5pajdgxw">
-    <dep root="5797068448049410622" />
+  <source id="5797068448049410624" name="HierarchyTreeNode" hash="-c0wogf240zwyisrsxf40xpf41ivoquc">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.icons(MPS.Classpath/jetbrains.mps.ide.icons@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />

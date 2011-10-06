@@ -48,17 +48,12 @@ public class JavaStubModelDataSource extends StubModelDataSource {
   @Override
   public BaseSModelDescriptor.ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState targetState) {
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
-    model.setLoading(true);
-    try {
-      for (Language l : getLanguagesToImport()) {
-        model.addLanguage(l.getModuleReference());
-        module.addUsedLanguage(l.getModuleReference());
-      }
-      CompositeClassPathItem cp = this.createClassPath(descriptor);
-      new ASMModelLoader(module, cp, model, langId, skipPrivate).updateModel();
-    } finally {
-      model.setLoading(false);
+    for (Language l : getLanguagesToImport()) {
+      model.addLanguage(l.getModuleReference());
+      module.addUsedLanguage(l.getModuleReference());
     }
+    CompositeClassPathItem cp = this.createClassPath(descriptor);
+    new ASMModelLoader(module, cp, model, langId, skipPrivate).updateModel();
     return new BaseSModelDescriptor.ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
   }
 

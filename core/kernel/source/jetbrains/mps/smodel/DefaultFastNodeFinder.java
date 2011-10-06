@@ -179,13 +179,6 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       }
     }
 
-    public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
-      synchronized (myLock) {
-        myInitialized = false;
-        myNodes.clear();
-      }
-    }
-
     @Override
     public void modelReplaced(SModelDescriptor md) {
       synchronized (myLock) {

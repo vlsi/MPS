@@ -28683,7 +28683,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420331689" resolveInfo="myModule" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5646944109420332340">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~IModule%dcreateModel(jetbrains%dmps%dsmodel%dSModelFqName,jetbrains%dmps%dproject%dSModelRoot)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="createModel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~IModule%dcreateModel(jetbrains%dmps%dsmodel%dSModelFqName,jetbrains%dmps%dproject%dSModelRoot,jetbrains%dmps%dproject%dIModule$ModelAdjuster)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="createModel" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5646944109420332341">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420332332" resolveInfo="modelFqName" />
                 </node>
@@ -28703,6 +28703,7 @@
                     </node>
                   </node>
                 </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1405729901652866320" />
               </node>
             </node>
           </node>

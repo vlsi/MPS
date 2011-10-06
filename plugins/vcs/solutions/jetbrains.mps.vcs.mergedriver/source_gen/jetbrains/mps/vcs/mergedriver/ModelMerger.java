@@ -82,7 +82,6 @@ import jetbrains.mps.util.FileUtil;
           if (log.isInfoEnabled()) {
             log.info(String.format("%s: %d changes detected: %d local and %d latest", baseModel.getLongName(), Sequence.fromIterable(mergeContext.getAllChanges()).count(), ListSequence.fromList(mergeContext.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeContext.getRepositoryChangeSet().getModelChanges()).count()));
           }
-          mergeContext.getResultModel().setLoading(true);
           Runnable applyAction = new Runnable() {
             public void run() {
               mergeContext.applyChanges(mergeContext.getAllChanges());

@@ -22,7 +22,6 @@ public class MergeContextState {
 
   /*package*/ MergeContextState(SModel resultModel, Set<ModelChange> resolvedChanges, Map<SNodeId, SNodeId> idReplacementCache) {
     myResultModel = CopyUtil.copyModel(resultModel);
-    myResultModel.setLoading(true);
     myResolvedChanges = SetSequence.fromSetWithValues(new HashSet<ModelChange>(), resolvedChanges);
     myIdReplacementCache = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>(MapSequence.fromMap(idReplacementCache).count()));
     MapSequence.fromMap(idReplacementCache).visitAll(new IVisitor<IMapping<SNodeId, SNodeId>>() {

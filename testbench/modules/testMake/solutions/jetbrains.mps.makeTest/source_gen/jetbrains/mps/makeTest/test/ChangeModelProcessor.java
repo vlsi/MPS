@@ -47,11 +47,7 @@ public class ChangeModelProcessor {
     final SModel modelToChange = this.getModelToChange();
     return this.step(new Runnable() {
       public void run() {
-        modelToChange.runLoadingAction(new Runnable() {
-          public void run() {
-            ChangeModelProcessor.this.myChangeModel.change(modelToChange);
-          }
-        });
+        ChangeModelProcessor.this.myChangeModel.change(modelToChange);
       }
     }, STEP_TYPE_CHANGE, generationHandler);
   }
@@ -60,11 +56,7 @@ public class ChangeModelProcessor {
     final SModel modelToChange = this.getModelToChange();
     return this.step(new Runnable() {
       public void run() {
-        modelToChange.runLoadingAction(new Runnable() {
-          public void run() {
-            ChangeModelProcessor.this.myChangeModel.rollback(modelToChange);
-          }
-        });
+        ChangeModelProcessor.this.myChangeModel.change(modelToChange);
       }
     }, STEP_TYPE_REVERT, generationHandler);
   }

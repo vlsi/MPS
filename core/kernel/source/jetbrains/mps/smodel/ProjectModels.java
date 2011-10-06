@@ -23,12 +23,11 @@ public class ProjectModels {
   private static long ourProjectModelDescriptorCount = 0;
 
   @NotNull
-  public static BaseSModelDescriptor createDescriptorFor(@NotNull ModelOwner owner) {
+  public static BaseSModelDescriptor createDescriptorFor() {
     SModelFqName fqName = new SModelFqName("projectModel" + ourProjectModelDescriptorCount++, SModelStereotype.INTERNAL);
 
     SModelReference ref = new SModelReference(fqName, SModelId.generate());
     BaseSModelDescriptor result = new MyBaseSModelDescriptor(ref);
-    SModelRepository.getInstance().registerModelDescriptor(result, owner);
     return result;
   }
 

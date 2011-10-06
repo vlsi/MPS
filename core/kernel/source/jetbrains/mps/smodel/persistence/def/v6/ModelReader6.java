@@ -51,7 +51,6 @@ public class ModelReader6 implements IModelReader {
     model.getSModelHeader().updateDefaults(header);
     myHelper = new VersionUtil(modelReference);
 
-    model.setLoading(true);
 
     // languages
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.LANGUAGE)) {
@@ -87,7 +86,6 @@ public class ModelReader6 implements IModelReader {
       }
     }
 
-    model.setLoading(false);
     return model;
   }
 
