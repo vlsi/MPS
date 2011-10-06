@@ -58,13 +58,6 @@ public class
         myModel = myType.getModel();
       }
     });
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        if (!myType.isRegistered()) {
-          myModel.addRoot(myType.getTopmostAncestor());
-        }
-      }
-    });
     myError = error;
     supertypesView.showItemInHierarchy(myType, operationContext);
   }
