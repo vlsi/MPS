@@ -5,7 +5,7 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.validators;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 
 public class ModelValidator implements Validator {
   private IScope myModuleScope;

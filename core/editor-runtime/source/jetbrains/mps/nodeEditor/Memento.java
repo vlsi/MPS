@@ -105,8 +105,8 @@ class Memento {
       if (cell != null) {
         String text = cell.getText();
         String oldText = entry.getValue();
-        if (!ObjectUtils.equals(text, oldText)) {
-          cell.changeText(entry.getValue());
+        if (!ObjectUtils.equals(text, oldText) && (!cell.isValidText(oldText) || !cell.isEditable())) {
+          cell.changeText(oldText);
           needsRelayout = true;
         }
       }

@@ -27,6 +27,7 @@ import java.awt.event.ActionEvent;
 import jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import java.awt.Frame;
+import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JComponent;
 import java.util.LinkedHashSet;
 
@@ -82,7 +83,7 @@ public class UIComponents {
 
     @Override
     public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-      Frame mainFrame = getOperationContext().getMainFrame();
+      Frame mainFrame = ProjectHelper.toMainFrame(getOperationContext().getProject());
       return new DialogDimensionsSettings.DialogDimensions(mainFrame.getX() + mainFrame.getWidth() / 2, mainFrame.getY() + mainFrame.getHeight() / 2, 600, 300);
     }
 

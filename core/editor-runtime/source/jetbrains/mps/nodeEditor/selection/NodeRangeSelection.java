@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -24,6 +23,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

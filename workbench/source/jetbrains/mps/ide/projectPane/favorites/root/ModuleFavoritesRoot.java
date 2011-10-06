@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.ide.projectPane.favorites.root;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +34,7 @@ class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
   public MPSTreeNode getTreeNode(IOperationContext context) {
     IModule module = MPSModuleRepository.getInstance().getModule(getValue());
     if (module == null) return null;
-    MPSProject mpsProject = context.getProject().getComponent(MPSProject.class);
+    MPSProject mpsProject = context.getIdeaProject().getComponent(MPSProject.class);
     if (mpsProject == null) return null;
     ProjectModuleTreeNode moduleTreeNode = ProjectModuleTreeNode.createFor(mpsProject, module);
     return moduleTreeNode;
@@ -52,7 +52,7 @@ class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
       });
       if (model == null) continue;
 
-      for (SNode node:model.roots()){
+      for (SNode node : model.roots()) {
         result.add(node);
       }
     }

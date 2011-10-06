@@ -15,22 +15,22 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.Frame;
-
 public interface IOperationContext {
+
   Project getProject();
+
+  // TODO get rid of
+  @Deprecated
+  com.intellij.openapi.project.Project getIdeaProject();
 
   IModule getModule();
 
   @NotNull
   IScope getScope();
-
-  @Deprecated
-  Frame getMainFrame();
 
   boolean isValid();
 

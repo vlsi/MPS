@@ -83,7 +83,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
       }
     };
     if (getModelDescriptor() instanceof EditableSModelDescriptor) {
-      myTreeUpdater = new MySNodeTreeUpdater(getOperationContext().getProject(), this);
+      myTreeUpdater = new MySNodeTreeUpdater(getOperationContext().getIdeaProject(), this);
     }
     addListeners();
   }

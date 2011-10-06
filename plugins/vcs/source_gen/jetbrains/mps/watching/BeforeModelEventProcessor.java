@@ -6,6 +6,7 @@ import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.project.IModule;
 
 /*package*/ class BeforeModelEventProcessor extends EventProcessor {
   private static final BeforeModelEventProcessor INSTANCE = new BeforeModelEventProcessor();
@@ -16,9 +17,14 @@ import jetbrains.mps.vfs.FileSystem;
   @Override
   protected void processDelete(VFileEvent event, ReloadSession reloadSession) {
     final EditableSModelDescriptor model = SModelRepository.getInstance().findModel(FileSystem.getInstance().getFileByPath(event.getPath()));
-    if (model != null) {
-      reloadSession.addDeletedModel(model);
+    if (model == null) {
+      return;
     }
+    IModule module = model.getModule();
+    if (module == null) {
+      return;
+    }
+    reloadSession.addChangedModule(module);
   }
 
   public static BeforeModelEventProcessor getInstance() {

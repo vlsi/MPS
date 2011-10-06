@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.awt.HeadlessException;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
@@ -20,7 +21,8 @@ import jetbrains.mps.project.SModelRoot;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
+import javax.lang.model.SourceVersion;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.Language;
@@ -39,7 +41,7 @@ public class NewModelDialog extends BaseDialog {
   private String myNamespace;
 
   public NewModelDialog(IModule module, String namespace, IOperationContext context, String stereotype, boolean strict) throws HeadlessException {
-    super(context.getMainFrame(), "New Model");
+    super(ProjectHelper.toMainFrame(context.getProject()), "New Model");
     myContext = context;
     myModule = module;
     myNamespace = namespace;
@@ -120,6 +122,10 @@ public class NewModelDialog extends BaseDialog {
           setErrorText("Empty model name isn't allowed");
           return null;
         }
+        if (!(SourceVersion.isName(modelName))) {
+          setErrorText("Model name should be valid Java package");
+          return null;
+        }
         SModelFqName modelUID = new SModelFqName(modelName, myModelStereotype.getSelectedItem().toString());
         if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
           setErrorText("Model with an uid " + modelName + " already exists");
@@ -149,7 +155,7 @@ public class NewModelDialog extends BaseDialog {
         }
         return myModule.createModel(modelUID, wrapper.getModelRoot());
       }
-    }, myContext.getProject());
+    }, myContext.getIdeaProject());
     if (myResult == null) {
       return;
     }

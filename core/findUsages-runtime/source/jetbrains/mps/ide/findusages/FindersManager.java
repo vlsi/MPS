@@ -17,7 +17,6 @@ package jetbrains.mps.ide.findusages;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.logging.Logger;
@@ -26,6 +25,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -122,7 +122,7 @@ public class FindersManager implements ApplicationComponent, LanguageRegistryLis
 
   private void load() {
     Collection<LanguageRuntime> availableLanguages = LanguageRegistry.getInstance().getAvailableLanguages();
-    if(availableLanguages == null) {
+    if (availableLanguages == null) {
       return;
     }
     for (LanguageRuntime language : availableLanguages) {
@@ -143,7 +143,7 @@ public class FindersManager implements ApplicationComponent, LanguageRegistryLis
   private void initFindersDescriptor(LanguageRuntime language) {
     try {
       BaseFindUsagesDescriptor descr = language.getFindUsages();
-      if(descr != null) {
+      if (descr != null) {
         descr.init();
       }
     } catch (Throwable throwable) {

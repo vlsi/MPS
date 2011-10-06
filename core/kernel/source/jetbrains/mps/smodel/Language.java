@@ -15,30 +15,32 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.LanguageDependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.reloading.*;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -105,7 +107,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public static Language createLanguage(String namespace, ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    Language language = new Language();
     LanguageDescriptor languageDescriptor;
     if (handle.getDescriptor() != null) {
       languageDescriptor = (LanguageDescriptor) handle.getDescriptor();
@@ -116,7 +117,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     } else {
       languageDescriptor = createNewDescriptor(namespace, handle.getFile());
     }
-    language.myDescriptorFile = handle.getFile();
 
     MPSModuleRepository repository = MPSModuleRepository.getInstance();
     if (repository.existsModule(languageDescriptor.getModuleReference())) {
@@ -124,37 +124,19 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       return repository.getLanguage(languageDescriptor.getModuleReference());
     }
 
-    List<SolutionDescriptor> solutionDescriptors = createStubSolutionDescriptors(languageDescriptor);
+    Language language = new Language();
+    language.myDescriptorFile = handle.getFile();
 
     language.setLanguageDescriptor(languageDescriptor, false);
     repository.addModule(language, moduleOwner);
 
-    for (SolutionDescriptor sd : solutionDescriptors) {
-      Solution.newInstance(sd, language);
-    }
+    LibrariesLoader.createLanguageLibs(moduleOwner, language, languageDescriptor, repository);
 
     return language;
   }
 
   private Language() {
 
-  }
-
-  private static List<SolutionDescriptor> createStubSolutionDescriptors(LanguageDescriptor ld) {
-    List<SolutionDescriptor> result = new ArrayList<SolutionDescriptor>();
-    for (StubSolution ss : ld.getStubSolutions()) {
-      SolutionDescriptor descriptor = new SolutionDescriptor();
-      descriptor.setUUID(ss.getId().toString());
-      descriptor.setNamespace(ss.getName());
-
-      descriptor.setCompileInMPS(false);
-
-      //todo what should be here?
-      descriptor.setDontLoadClasses(true);
-
-      result.add(descriptor);
-    }
-    return result;
   }
 
   protected ModuleDependenciesManager createDependenciesManager() {
@@ -207,17 +189,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     for (Language l : getExtendedLanguages()) {
       l.collectAllExtendedLanguages(result);
     }
-  }
-
-  public List<Solution> getExportedSolutions() {
-    ArrayList<Solution> res = new ArrayList<Solution>();
-    for (StubSolution ss : getModuleDescriptor().getStubSolutions()) {
-      ModuleReference solutionRef = new ModuleReference(ss.getName(), ss.getId());
-      Solution s = MPSModuleRepository.getInstance().getSolution(solutionRef);
-      if (s == null) continue;
-      res.add(s);
-    }
-    return res;
   }
 
   public List<Dependency> getDependencies() {
@@ -276,16 +247,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
   }
 
-  protected void readModels() {
-    if (!isInitialized()) {
-      super.readModels();
-
-      if (isInitialized()) {
-        fireModuleInitialized();
-      }
-    }
-  }
-
   private void revalidateGenerators() {
     myGenerators.clear();
     for (GeneratorDescriptor generatorDescriptor : getModuleDescriptor().getGenerators()) {
@@ -328,7 +289,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     MPSModuleRepository.getInstance().fireModuleChanged(this);
 
     if (reloadClasses) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     }
 
     MPSModuleRepository.getInstance().invalidateCaches();
@@ -435,31 +396,31 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public EditableSModelDescriptor getStructureModelDescriptor() {
+  public DefaultSModelDescriptor getStructureModelDescriptor() {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
-  public EditableSModelDescriptor getActionsModelDescriptor() {
+  public DefaultSModelDescriptor getActionsModelDescriptor() {
     return LanguageAspect.ACTIONS.get(this);
   }
 
-  public EditableSModelDescriptor getConstraintsModelDescriptor() {
+  public DefaultSModelDescriptor getConstraintsModelDescriptor() {
     return LanguageAspect.CONSTRAINTS.get(this);
   }
 
-  public EditableSModelDescriptor getBehaviorModelDescriptor() {
+  public DefaultSModelDescriptor getBehaviorModelDescriptor() {
     return LanguageAspect.BEHAVIOR.get(this);
   }
 
-  public EditableSModelDescriptor getDataFlowModelDescriptor() {
+  public DefaultSModelDescriptor getDataFlowModelDescriptor() {
     return LanguageAspect.DATA_FLOW.get(this);
   }
 
-  public EditableSModelDescriptor getEditorModelDescriptor() {
+  public DefaultSModelDescriptor getEditorModelDescriptor() {
     return LanguageAspect.EDITOR.get(this);
   }
 
-  public EditableSModelDescriptor getTextgenModelDescriptor() {
+  public DefaultSModelDescriptor getTextgenModelDescriptor() {
     return LanguageAspect.TEXT_GEN.get(this);
   }
 
@@ -687,6 +648,9 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
       if (!bundleHomeFile.exists()) return;
 
+      for (GeneratorDescriptor g : myLanguageDescriptor.getGenerators()) {
+        g.getModelRoots().removeAll(myLanguageDescriptor.getRuntimeStubModels());
+      }
       myLanguageDescriptor.getRuntimeStubModels().clear();
 
       DeploymentDescriptor dd = myLanguageDescriptor.getDeploymentDescriptor();
@@ -699,7 +663,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         if (jar.exists()) {
           ClassPathEntry jarEntry = new ClassPathEntry();
           jarEntry.setPath(jar.getPath());
-          myLanguageDescriptor.getRuntimeStubModels().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry));
+          ModelRoot mr = jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry);
+          myLanguageDescriptor.getRuntimeStubModels().add(mr);
+          for (GeneratorDescriptor g : myLanguageDescriptor.getGenerators()) {
+            g.getModelRoots().add(mr);
+          }
         }
       }
     }

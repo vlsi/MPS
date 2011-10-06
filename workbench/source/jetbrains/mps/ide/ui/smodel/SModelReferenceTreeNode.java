@@ -32,7 +32,7 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
 
   public SModelReferenceTreeNode(SModelDescriptor modelDescriptor, IOperationContext operationContext) {
     super(operationContext);
-    myProject = operationContext.getProject();
+    myProject = operationContext.getIdeaProject();
     myModelDescriptor = modelDescriptor;
     String name = modelDescriptor.getLongName();
     if (modelDescriptor.getStereotype().length() > 0) {

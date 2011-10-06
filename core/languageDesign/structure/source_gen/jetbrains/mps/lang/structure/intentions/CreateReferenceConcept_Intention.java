@@ -76,7 +76,7 @@ public class CreateReferenceConcept_Intention extends BaseIntention implements I
     SPropertyOperations.set(editor, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
 
     IOperationContext context = editorContext.getOperationContext();
-    new MPSEditorOpener(context.getProject()).editNode(concept, context);
+    new MPSEditorOpener(context.getIdeaProject()).editNode(concept, context);
   }
 
   public String getLocationString() {

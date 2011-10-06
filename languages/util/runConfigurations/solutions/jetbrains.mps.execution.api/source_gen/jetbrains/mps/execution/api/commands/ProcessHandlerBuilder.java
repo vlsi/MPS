@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.io.File;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
-import java.io.File;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.io.IOException;
 import com.intellij.execution.process.ProcessNotCreatedException;
@@ -53,10 +53,7 @@ public class ProcessHandlerBuilder {
 
   @Deprecated
   public ProcessHandlerBuilder appendKey(@Nullable String key, @Nullable String parameter) {
-    if (StringUtils.isNotEmpty(key) && StringUtils.isNotEmpty(parameter)) {
-      return append("-" + key).append(parameter);
-    }
-    return this;
+    return append(new KeyValueCommandPart(key, parameter));
   }
 
   @Deprecated

@@ -267,18 +267,10 @@
       <property name="name" nameId="tpck.1169194664001" value="InequationPriority" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1212573344738">
-      <property name="name" nameId="tpck.1169194664001" value="ChildTypeRestriction" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1212573620175">
       <property name="name" nameId="tpck.1169194664001" value="RestrictionKind" />
       <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="derive_from_internal_value" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1212763614690">
-      <property name="name" nameId="tpck.1169194664001" value="ChildTypeRestrictionReference" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1216383170661">
       <property name="name" nameId="tpck.1169194664001" value="TypesystemQuickFix" />
@@ -1431,28 +1423,6 @@
       <property name="internalValue" nameId="tpce.1083923523171" value="500" />
     </node>
   </root>
-  <root id="1212573344738">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1212575801821">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="childLinkDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1212573745114">
-      <property name="name" nameId="tpck.1169194664001" value="restrictionKind" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1212573620175" resolveInfo="RestrictionKind" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1212573461488">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="type" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1212671198487">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="843338424126759621" />
-  </root>
   <root id="1212573620175">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1212573620176">
       <property name="internalValue" nameId="tpce.1083923523171" value="equals" />
@@ -1461,14 +1431,6 @@
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1212573652489">
       <property name="internalValue" nameId="tpce.1083923523171" value="subtype" />
       <property name="externalValue" nameId="tpce.1083923523172" value=":&lt;=:" />
-    </node>
-  </root>
-  <root id="1212763614690">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1212763674348">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <property name="role" nameId="tpce.1071599776563" value="typeRestriction" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1212573344738" resolveInfo="ChildTypeRestriction" />
     </node>
   </root>
   <root id="1216383170661">

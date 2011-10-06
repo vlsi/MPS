@@ -11,6 +11,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.Dimension;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -45,7 +46,7 @@ public class FindInstancesDialog extends BaseDialog {
   private TemporaryModelOwner myModelOwner = new TemporaryModelOwner();
 
   public FindInstancesDialog(final IOperationContext context, final IModule module) {
-    super(context.getMainFrame(), "Find Instances by condition");
+    super(ProjectHelper.toMainFrame(context.getProject()), "Find Instances by condition");
     this.myContext = context;
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
@@ -142,7 +143,7 @@ public class FindInstancesDialog extends BaseDialog {
     final IScope scope = this.myScope.getOptions().getScope(this.myContext, model.value.getModelDescriptor());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        FindInstancesDialog.this.execute(FindInstancesDialog.this.myContext.getProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
+        FindInstancesDialog.this.execute(FindInstancesDialog.this.myContext.getIdeaProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
       }
     });
   }

@@ -440,11 +440,11 @@
     <nodeInfo nodeId="5210914756411638023" fileName="RollBacksNewTypeSystem_Test.java" startLine="15" startPosition="54" endLine="16" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5210914756411638023" fileName="RollBacksNewTypeSystem_Test.java" startLine="16" startPosition="116" endLine="17" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5210914756411638054" fileName="RollBacksNewTypeSystem_Test.java" startLine="22" startPosition="56" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5210914756411638057" fileName="RollBacksNewTypeSystem_Test.java" startLine="23" startPosition="46" endLine="24" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5210914756411638057" fileName="RollBacksNewTypeSystem_Test.java" startLine="23" startPosition="46" endLine="24" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5210914756411638054" fileName="RollBacksNewTypeSystem_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_GenerationMode#()V" />
     <nodeInfo nodeId="5210914756411638023" fileName="RollBacksNewTypeSystem_Test.java" startLine="13" startPosition="73" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_GenerationMode#()V" />
     <scopeInfo nodeId="5210914756411638023" fileName="RollBacksNewTypeSystem_Test.java" startLine="15" startPosition="54" endLine="17" endPosition="118" />
-    <scopeInfo nodeId="5210914756411638054" fileName="RollBacksNewTypeSystem_Test.java" startLine="22" startPosition="56" endLine="24" endPosition="165" />
+    <scopeInfo nodeId="5210914756411638054" fileName="RollBacksNewTypeSystem_Test.java" startLine="22" startPosition="56" endLine="24" endPosition="167" />
     <scopeInfo nodeId="5210914756411638054" fileName="RollBacksNewTypeSystem_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
     <scopeInfo nodeId="5210914756411638023" fileName="RollBacksNewTypeSystem_Test.java" startLine="13" startPosition="73" endLine="19" endPosition="0" />
     <unitInfo nodeId="5210914756411638023" fileName="RollBacksNewTypeSystem_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test$TestBody" />
@@ -584,15 +584,29 @@
     <unitInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="93" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody" />
     <unitInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="13" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test" />
   </root>
+  <root nodeId="6639374232683434563">
+    <nodeInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="16" startPosition="44" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6639374232683434579" fileName="hasSameSignatureTest_Test.java" startLine="23" startPosition="46" endLine="24" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5157939743593410699" fileName="hasSameSignatureTest_Test.java" startLine="24" startPosition="46" endLine="25" endPosition="350" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6639374232683434579" fileName="hasSameSignatureTest_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_list#()V" />
+    <nodeInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="14" startPosition="71" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_list#()V" />
+    <scopeInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="16" startPosition="44" endLine="18" endPosition="106" />
+    <scopeInfo nodeId="6639374232683434579" fileName="hasSameSignatureTest_Test.java" startLine="23" startPosition="46" endLine="25" endPosition="350" />
+    <scopeInfo nodeId="6639374232683434579" fileName="hasSameSignatureTest_Test.java" startLine="22" startPosition="53" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="14" startPosition="71" endLine="20" endPosition="0" />
+    <unitInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.hasSameSignatureTest_Test$TestBody" />
+    <unitInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.hasSameSignatureTest_Test" />
+  </root>
   <root nodeId="7187651930235347758">
     <nodeInfo nodeId="7187651930235347758" fileName="TestGenerationMode_Test.java" startLine="15" startPosition="54" endLine="16" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7187651930235347758" fileName="TestGenerationMode_Test.java" startLine="16" startPosition="116" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7187651930235347795" fileName="TestGenerationMode_Test.java" startLine="22" startPosition="56" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5210914756411573029" fileName="TestGenerationMode_Test.java" startLine="23" startPosition="46" endLine="24" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5210914756411573029" fileName="TestGenerationMode_Test.java" startLine="23" startPosition="46" endLine="24" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7187651930235347795" fileName="TestGenerationMode_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_GenerationMode#()V" />
     <nodeInfo nodeId="7187651930235347758" fileName="TestGenerationMode_Test.java" startLine="13" startPosition="69" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_GenerationMode#()V" />
     <scopeInfo nodeId="7187651930235347758" fileName="TestGenerationMode_Test.java" startLine="15" startPosition="54" endLine="17" endPosition="114" />
-    <scopeInfo nodeId="7187651930235347795" fileName="TestGenerationMode_Test.java" startLine="22" startPosition="56" endLine="24" endPosition="170" />
+    <scopeInfo nodeId="7187651930235347795" fileName="TestGenerationMode_Test.java" startLine="22" startPosition="56" endLine="24" endPosition="172" />
     <scopeInfo nodeId="7187651930235347795" fileName="TestGenerationMode_Test.java" startLine="21" startPosition="53" endLine="26" endPosition="0" />
     <scopeInfo nodeId="7187651930235347758" fileName="TestGenerationMode_Test.java" startLine="13" startPosition="69" endLine="19" endPosition="0" />
     <unitInfo nodeId="7187651930235347758" fileName="TestGenerationMode_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TestGenerationMode_Test$TestBody" />

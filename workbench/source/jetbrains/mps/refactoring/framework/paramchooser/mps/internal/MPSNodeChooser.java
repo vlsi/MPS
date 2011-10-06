@@ -16,7 +16,6 @@
 package jetbrains.mps.refactoring.framework.paramchooser.mps.internal;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
@@ -30,6 +29,7 @@ import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
@@ -61,7 +61,7 @@ public class MPSNodeChooser implements IChooser {
     myContext = context;
     mySettings = settings;
 
-    initUI(myContext.getCurrentOperationContext().getProject());
+    initUI(myContext.getCurrentOperationContext().getIdeaProject());
 
     Object value = settings.getInitialValue();
     if (value == null) {

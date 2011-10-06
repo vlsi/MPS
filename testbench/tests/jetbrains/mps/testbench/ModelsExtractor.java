@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.testbench;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.library.ModulesMiner;
@@ -23,6 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
@@ -38,7 +38,7 @@ public class ModelsExtractor {
     myIncludeDoNotGenerate = includeDoNotGenerate;
   }
 
-  public Iterable<SModelDescriptor> getModels () {
+  public Iterable<SModelDescriptor> getModels() {
     if (!modelLoaded) throw new IllegalStateException("Models not loaded");
     return models;
   }
@@ -47,14 +47,14 @@ public class ModelsExtractor {
     return collectFromModuleFiles(files);
   }
 
-  public void loadModels (Iterable<IFile> files) {
+  public void loadModels(Iterable<IFile> files) {
     if (modelLoaded) throw new IllegalStateException("Models already loaded");
     doLoadModels(files, models);
     this.modelLoaded = true;
   }
 
 
-  public void clear () {
+  public void clear() {
     this.models.clear();
     this.modelLoaded = false;
   }

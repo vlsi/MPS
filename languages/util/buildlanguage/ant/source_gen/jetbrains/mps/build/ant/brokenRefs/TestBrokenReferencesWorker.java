@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;

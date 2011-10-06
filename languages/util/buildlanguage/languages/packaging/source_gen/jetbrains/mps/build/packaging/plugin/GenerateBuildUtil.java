@@ -20,7 +20,8 @@ import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.project.ProjectOperationContext;
 import java.util.ArrayList;
 import jetbrains.mps.generator.GenerationFacade;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.generator.GenerationOptions;
 import com.intellij.openapi.application.ApplicationManager;
@@ -77,7 +78,7 @@ public class GenerateBuildUtil {
         if (false && showWindow) {
           result.value = GeneratorUIFacade.getInstance().generateModels(ProjectOperationContext.get(project), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), new BuildGenerationHandler(baseFolder.value), true, true);
         } else {
-          result.value = GenerationFacade.generateModels(project, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), ProjectOperationContext.get(project), new BuildGenerationHandler(baseFolder.value), new EmptyProgressIndicator(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create());
+          result.value = GenerationFacade.generateModels(project.getComponent(MPSProject.class), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), ProjectOperationContext.get(project), new BuildGenerationHandler(baseFolder.value), new EmptyProgressMonitor(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create());
         }
       }
     };

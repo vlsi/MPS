@@ -113,7 +113,7 @@ public class Ant_Command {
       public Iterable<String> iterable() {
         return pathMacros.getUserMacroNames();
       }
-    })).<CommandPart>select(new ISelector<String, CommandPart>() {
+    })).select(new ISelector<String, CommandPart>() {
       public CommandPart select(String it) {
         return (CommandPart) new PropertyCommandPart(it, pathMacros.getValue(it));
       }

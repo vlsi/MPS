@@ -22,4 +22,6 @@ import org.jetbrains.annotations.NotNull;
  */
 public interface FileSystemProvider {
   public IFile getFile(@NotNull String path);
+
+  boolean isFileIgnored(String name);
 }

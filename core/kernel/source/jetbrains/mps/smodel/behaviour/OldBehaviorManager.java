@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
@@ -49,7 +49,7 @@ public final class OldBehaviorManager implements ApplicationComponent {
   };
 
   public static OldBehaviorManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(OldBehaviorManager.class);
+    return ComponentManager.getInstance().getComponent(OldBehaviorManager.class);
   }
 
   private final ConcurrentMap<MethodInfo, Object> myMethods = new ConcurrentHashMap<MethodInfo, Object>();

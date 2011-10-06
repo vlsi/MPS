@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.debug.api.breakpoints;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

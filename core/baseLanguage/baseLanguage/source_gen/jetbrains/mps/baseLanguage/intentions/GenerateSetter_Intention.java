@@ -58,7 +58,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
       return false;
     }
     boolean allSettersImplemented = true;
-    Project project = editorContext.getOperationContext().getProject();
+    Project project = editorContext.getOperationContext().getIdeaProject();
     for (SNode fieldDeclaration : fields) {
       final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(fieldDeclaration, project);
       boolean fieldHasSetter = false;
@@ -79,7 +79,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode lastAdded = null;
-    Project ideaProject = editorContext.getOperationContext().getProject();
+    Project ideaProject = editorContext.getOperationContext().getIdeaProject();
     for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
       final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, ideaProject);
       boolean setterIsAbsent = true;

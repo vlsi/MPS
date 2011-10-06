@@ -70,10 +70,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ChildTypeRestrictionReference_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_ComparisonRule_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -222,7 +218,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_DuplicatedCheckingRules_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_DuplicatedRules_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {

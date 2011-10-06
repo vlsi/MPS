@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.util.containers.EmptyIterator;
+import jetbrains.mps.util.containers.EmptyIterator;
 
 import java.util.Iterator;
 

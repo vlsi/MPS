@@ -24,7 +24,7 @@
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="m9wl" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
-  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
+  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
@@ -601,6 +601,10 @@
     <node type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="7707298106572005943">
       <property name="name" nameId="tpck.1169194664001" value="set_covariant_with_extends" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
+    </node>
+    <node type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="2938222244302954884">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="list" />
+      <property name="name" nameId="tpck.1169194664001" value="listSubtypeOfNodeList" />
     </node>
   </roots>
   <root id="1178725704623">
@@ -11614,6 +11618,49 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="2938222244302954884">
+    <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2938222244302954889">
+      <property name="name" nameId="tpck.1169194664001" value="sNodeListType" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp25.1145383075378" resolveInfo="SNodeListType" />
+    </node>
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="2938222244302954886">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="2938222244302954902">
+        <property name="strong" nameId="tpd4.7739208407757103785" value="1" />
+        <property name="orientation" nameId="tpd4.7739208407757103786" value="1" />
+        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="2938222244302954905">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2938222244302954897">
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2938222244302954896">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="2938222244302954888" resolveInfo="listType" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2938222244302954901">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.1151688676805" />
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="2938222244302954913">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2938222244302954914">
+            <node role="quotedNode" roleId="tp3r.1196350785114" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2938222244302954916">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2938222244302954917">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
+                <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2938222244302954920">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2938222244302954919">
+                    <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="2938222244302954889" resolveInfo="sNodeListType" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2938222244302954924">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tp25.1145383142433" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2938222244302954888">
+      <property name="name" nameId="tpck.1169194664001" value="listType" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2q.1151688443754" resolveInfo="ListType" />
     </node>
   </root>
 </model>

@@ -18,7 +18,6 @@ package jetbrains.mps.ide.projectPane.logicalview;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.util.ArrayUtil;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
@@ -26,11 +25,11 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneDnDListener;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.ProjectPaneTreeHighlighter;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.smodel.*;
+import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
-import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
@@ -39,7 +38,9 @@ import java.awt.dnd.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
   private ProjectPane myProjectPane;
@@ -134,45 +135,48 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
   }
 
   private class MyDragGestureListener implements DragGestureListener {
-    public void dragGestureRecognized(DragGestureEvent dge) {
+    public void dragGestureRecognized(final DragGestureEvent dge) {
       if ((dge.getDragAction() & DnDConstants.ACTION_COPY_OR_MOVE) == 0) return;
       ProjectView projectView = ProjectView.getInstance(myProjectPane.getProject());
       if (projectView == null) return;
       final AbstractProjectViewPane currentPane = projectView.getCurrentProjectViewPane();
       if (!(currentPane instanceof BaseLogicalViewProjectPane)) return;
-      List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>();
-      for (SNode node : myProjectPane.getSelectedSNodes()) {
-        result.add(new Pair(node, ""));
-      }
-      SModelDescriptor contextDescriptor = myProjectPane.getContextModel();
-      if (contextDescriptor != null) {
-        for (PackageNode treeNode : myProjectPane.getSelectedTreeNodes(PackageNode.class)) {
-          String searchedPack = treeNode.getFullPackage();
-          if (treeNode.getChildCount() == 0 || searchedPack == null) continue;
-          for (final SNode node : contextDescriptor.getSModel().roots()) {
-            String nodePack = ModelAccess.instance().runReadAction(new Computable<String>() {
-              public String compute() {
-                return node.getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
-              }
-            });
-            if (nodePack == null) continue;
-            if (!nodePack.startsWith(searchedPack)) continue;
 
-            StringBuilder basePack = new StringBuilder();
-            String firstPart = treeNode.getPackage();
-            String secondPart = "";
-            if (nodePack.startsWith(searchedPack + ".")) {
-              secondPart = nodePack.replaceFirst(searchedPack + ".", "");
+      final List<Pair<SNodePointer, String>> result = new ArrayList<Pair<SNodePointer, String>>();
+
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          for (SNode node : myProjectPane.getSelectedSNodes()) {
+            result.add(new Pair(new SNodePointer(node), ""));
+          }
+          SModelDescriptor contextDescriptor = myProjectPane.getContextModel();
+          if (contextDescriptor != null) {
+            for (PackageNode treeNode : myProjectPane.getSelectedTreeNodes(PackageNode.class)) {
+              String searchedPack = treeNode.getFullPackage();
+              if (treeNode.getChildCount() == 0 || searchedPack == null) continue;
+              for (final SNode node : contextDescriptor.getSModel().roots()) {
+                String nodePack = node.getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
+                if (nodePack == null) continue;
+                if (!nodePack.startsWith(searchedPack)) continue;
+
+                StringBuilder basePack = new StringBuilder();
+                String firstPart = treeNode.getPackage();
+                String secondPart = "";
+                if (nodePack.startsWith(searchedPack + ".")) {
+                  secondPart = nodePack.replaceFirst(searchedPack + ".", "");
+                }
+                basePack.append(firstPart);
+                if (!firstPart.isEmpty() && !secondPart.isEmpty()) {
+                  basePack.append(".");
+                }
+                basePack.append(secondPart);
+                result.add(new Pair(new SNodePointer(node), basePack.toString()));
+              }
             }
-            basePack.append(firstPart);
-            if (!firstPart.isEmpty() && !secondPart.isEmpty()) {
-              basePack.append(".");
-            }
-            basePack.append(secondPart);
-            result.add(new Pair(node, basePack.toString()));
           }
         }
-      }
+      });
+
       try {
         dge.startDrag(DragSource.DefaultMoveNoDrop, new MyTransferable(result), new MyDragSourceListener());
       } catch (InvalidDnDOperationException ignored) {

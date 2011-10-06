@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import com.intellij.openapi.util.Computable;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
@@ -30,7 +29,11 @@ import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.*;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.SubtypingManager;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;

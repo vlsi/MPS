@@ -10,6 +10,8 @@ import java.util.LinkedHashSet;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.make.MPSCompilationResult;
@@ -25,24 +27,34 @@ public class DefaultMakeTask extends Task.Modal {
     SetSequence.fromSet(this.modules).addSequence(SetSequence.fromSet(modules));
   }
 
-  public void run(@NotNull final ProgressIndicator indicator) {
+  public void run(@NotNull ProgressIndicator indicator) {
     final boolean[] reloadingNeeded = new boolean[1];
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        ModuleMaker maker = new ModuleMaker();
-        if (needClean) {
-          maker.clean(modules, indicator);
-        }
-        MPSCompilationResult compilationResult = maker.make(modules, indicator);
-        reloadingNeeded[0] = compilationResult.isReloadingNeeded();
-      }
-    });
-    if (reloadingNeeded[0]) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
+    final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
+
+    monitor.start("", (needClean ?
+      10 :
+      9
+    ));
+    try {
+      ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ClassLoaderManager.getInstance().reloadAll(indicator);
+          ModuleMaker maker = new ModuleMaker();
+          if (needClean) {
+            maker.clean(modules, monitor.subTask(1));
+          }
+          MPSCompilationResult compilationResult = maker.make(modules, monitor.subTask(7));
+          reloadingNeeded[0] = compilationResult.isReloadingNeeded();
         }
       });
+      if (reloadingNeeded[0]) {
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            ClassLoaderManager.getInstance().reloadAll(monitor.subTask(2));
+          }
+        });
+      }
+    } finally {
+      monitor.done();
     }
   }
 }

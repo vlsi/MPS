@@ -424,9 +424,67 @@
     <unitInfo nodeId="1366781238034273720" fileName="NewModelFromSource_Action.java" startLine="36" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.ide.java.actions.NewModelFromSource_Action" />
   </root>
   <root nodeId="2298514111603286867">
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="1" startPosition="0" endLine="1" endPosition="21" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="2" startPosition="0" endLine="2" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="2" startPosition="2" endLine="2" endPosition="8" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="3" startPosition="0" endLine="3" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="3" startPosition="4" endLine="3" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="4" startPosition="0" endLine="4" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="4" startPosition="4" endLine="4" endPosition="44" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="5" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="5" startPosition="0" endLine="5" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="6" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="6" startPosition="0" endLine="6" endPosition="56" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="6" startPosition="56" endLine="6" endPosition="56" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="6" startPosition="56" endLine="6" endPosition="86" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="7" startPosition="0" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="7" startPosition="0" endLine="7" endPosition="29" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="8" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="8" startPosition="0" endLine="8" endPosition="70" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="9" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="9" startPosition="0" endLine="9" endPosition="22" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="10" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="10" startPosition="0" endLine="10" endPosition="62" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="11" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="11" startPosition="0" endLine="11" endPosition="48" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="12" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="12" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="13" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="13" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="14" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="14" startPosition="0" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="14" startPosition="24" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="14" startPosition="24" endLine="14" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="14" startPosition="35" endLine="14" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="14" startPosition="35" endLine="14" endPosition="133" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="15" startPosition="0" endLine="15" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="16" startPosition="0" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="17" startPosition="0" endLine="17" endPosition="14" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="1" startPosition="21" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="2" startPosition="8" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="3" startPosition="16" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="4" startPosition="44" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="5" startPosition="1" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="6" startPosition="86" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="7" startPosition="29" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="8" startPosition="70" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="9" startPosition="22" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="10" startPosition="62" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="11" startPosition="48" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="14" startPosition="133" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="15" startPosition="12" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="16" startPosition="25" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="16" startPosition="62" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="17" startPosition="14" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="20" startPosition="54" endLine="21" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="28" startPosition="36" endLine="29" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
     <nodeInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
     <nodeInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="15" startPosition="61" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createApplicationPlugin#()Ljetbrains/mps/plugins/applicationplugins/BaseApplicationPlugin;" />
@@ -434,6 +492,7 @@
     <nodeInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
     <nodeInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="14" startPosition="35" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="13" startPosition="69" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Java_PluginInitializer#()V" />
+    <nodeInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="1" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <scopeInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="32" startPosition="31" endLine="32" endPosition="31" />
     <scopeInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="35" startPosition="34" endLine="35" endPosition="34" />
     <scopeInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="16" startPosition="62" endLine="17" endPosition="44" />
@@ -447,6 +506,7 @@
     <scopeInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="14" startPosition="35" endLine="23" endPosition="7" />
     <scopeInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="13" startPosition="69" endLine="24" endPosition="3" />
     <unitInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="15" startPosition="40" endLine="23" endPosition="5" unitName="jetbrains.mps.ide.java.actions.Java_PluginInitializer$1" />
+    <unitInfo nodeId="2298514111603286867" fileName="plugin.xml" startLine="1" startPosition="0" endLine="18" endPosition="0" unitName="plugin.xml" />
     <unitInfo nodeId="2298514111603286867" fileName="Java_PluginInitializer.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.java.actions.Java_PluginInitializer" />
   </root>
   <root nodeId="2367017510988792886">
@@ -750,7 +810,7 @@
     <nodeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="50" startPosition="62" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="52" startPosition="5" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9073603541474871907" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="57" startPosition="9" endLine="58" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8883975518329342584" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="58" startPosition="169" endLine="59" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8883975518329342584" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="58" startPosition="169" endLine="59" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="61" startPosition="33" endLine="62" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="33" startPosition="27" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="33" startPosition="27" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -773,7 +833,7 @@
     <scopeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="46" startPosition="62" endLine="47" endPosition="19" />
     <scopeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="50" startPosition="62" endLine="51" endPosition="19" />
     <scopeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="61" startPosition="33" endLine="62" endPosition="106" />
-    <scopeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="57" startPosition="9" endLine="59" endPosition="79" />
+    <scopeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="57" startPosition="9" endLine="59" endPosition="77" />
     <scopeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="24" startPosition="52" endLine="27" endPosition="41" />
     <scopeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="33" startPosition="27" endLine="36" endPosition="7" />
     <scopeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="60" startPosition="0" endLine="63" endPosition="7" />
@@ -823,7 +883,7 @@
     <nodeInfo nodeId="8250409733214735639" fileName="MigrateSourcesToMPS_Action.java" startLine="89" startPosition="201" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="9073603541474055357" fileName="MigrateSourcesToMPS_Action.java" startLine="90" startPosition="0" endLine="91" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8883975518329349197" fileName="MigrateSourcesToMPS_Action.java" startLine="91" startPosition="43" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8883975518329349199" fileName="MigrateSourcesToMPS_Action.java" startLine="92" startPosition="0" endLine="93" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8883975518329349199" fileName="MigrateSourcesToMPS_Action.java" startLine="92" startPosition="0" endLine="93" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4326588611400156604" fileName="MigrateSourcesToMPS_Action.java" startLine="95" startPosition="33" endLine="96" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4326588611400156604" fileName="MigrateSourcesToMPS_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4326588611400156604" fileName="MigrateSourcesToMPS_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -874,7 +934,7 @@
     <scopeInfo nodeId="4326588611400156604" fileName="MigrateSourcesToMPS_Action.java" startLine="42" startPosition="89" endLine="53" endPosition="5" />
     <scopeInfo nodeId="4326588611400156604" fileName="MigrateSourcesToMPS_Action.java" startLine="41" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="4326588611400156604" fileName="MigrateSourcesToMPS_Action.java" startLine="56" startPosition="95" endLine="72" endPosition="16" />
-    <scopeInfo nodeId="4326588611400156604" fileName="MigrateSourcesToMPS_Action.java" startLine="76" startPosition="9" endLine="93" endPosition="79">
+    <scopeInfo nodeId="4326588611400156604" fileName="MigrateSourcesToMPS_Action.java" startLine="76" startPosition="9" endLine="93" endPosition="77">
       <varInfo nodeId="4326588611400279166" varName="javaCompiler" />
       <varInfo nodeId="3217365328467445397" varName="moduleDescr" />
       <varInfo nodeId="8250409733214735687" varName="sourcePaths" />
@@ -901,7 +961,7 @@
     <nodeInfo nodeId="5175352797999992329" fileName="ResolveStubReferencesToMPS_Action.java" startLine="51" startPosition="62" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5175352797999992329" fileName="ResolveStubReferencesToMPS_Action.java" startLine="53" startPosition="5" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9073603541474871890" fileName="ResolveStubReferencesToMPS_Action.java" startLine="58" startPosition="9" endLine="59" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9164503229271487753" fileName="ResolveStubReferencesToMPS_Action.java" startLine="59" startPosition="179" endLine="60" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9164503229271487753" fileName="ResolveStubReferencesToMPS_Action.java" startLine="59" startPosition="179" endLine="60" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5175352797999992329" fileName="ResolveStubReferencesToMPS_Action.java" startLine="62" startPosition="33" endLine="63" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5175352797999992329" fileName="ResolveStubReferencesToMPS_Action.java" startLine="34" startPosition="27" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5175352797999992329" fileName="ResolveStubReferencesToMPS_Action.java" startLine="34" startPosition="27" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -924,7 +984,7 @@
     <scopeInfo nodeId="5175352797999992329" fileName="ResolveStubReferencesToMPS_Action.java" startLine="47" startPosition="61" endLine="48" endPosition="19" />
     <scopeInfo nodeId="5175352797999992329" fileName="ResolveStubReferencesToMPS_Action.java" startLine="51" startPosition="62" endLine="52" endPosition="19" />
     <scopeInfo nodeId="5175352797999992329" fileName="ResolveStubReferencesToMPS_Action.java" startLine="62" startPosition="33" endLine="63" endPosition="100" />
-    <scopeInfo nodeId="5175352797999992329" fileName="ResolveStubReferencesToMPS_Action.java" startLine="58" startPosition="9" endLine="60" endPosition="79" />
+    <scopeInfo nodeId="5175352797999992329" fileName="ResolveStubReferencesToMPS_Action.java" startLine="58" startPosition="9" endLine="60" endPosition="77" />
     <scopeInfo nodeId="5175352797999992329" fileName="ResolveStubReferencesToMPS_Action.java" startLine="25" startPosition="46" endLine="28" endPosition="41" />
     <scopeInfo nodeId="5175352797999992329" fileName="ResolveStubReferencesToMPS_Action.java" startLine="34" startPosition="27" endLine="37" endPosition="7" />
     <scopeInfo nodeId="5175352797999992329" fileName="ResolveStubReferencesToMPS_Action.java" startLine="61" startPosition="0" endLine="64" endPosition="7" />

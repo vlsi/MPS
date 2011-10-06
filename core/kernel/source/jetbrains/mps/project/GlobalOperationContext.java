@@ -15,12 +15,18 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 
 public class GlobalOperationContext extends StandaloneMPSContext {
+
+  @Override
   public Project getProject() {
+    return null;
+  }
+
+  @Deprecated
+  public com.intellij.openapi.project.Project getIdeaProject() {
     return null;
   }
 

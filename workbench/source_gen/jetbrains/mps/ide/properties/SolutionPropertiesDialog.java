@@ -53,7 +53,7 @@ public class SolutionPropertiesDialog extends BasePropertiesDialog {
         mySolution.setSolutionDescriptor(solutionDescriptor, true);
         mySolution.save();
       }
-    }, getOperationContext().getProject());
+    }, getOperationContext().getIdeaProject());
     return true;
   }
 

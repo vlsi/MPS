@@ -15,23 +15,23 @@
     <unitInfo nodeId="3908032508224771790" fileName="ITemplatePersistentConfiguration.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration" />
   </root>
   <root nodeId="3908032508224771799">
-    <nodeInfo nodeId="4342433276614940177" fileName="SettingsEditorEx.java" startLine="14" startPosition="54" endLine="15" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2013126310013254461" fileName="SettingsEditorEx.java" startLine="14" startPosition="54" endLine="15" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3908032508224771812" fileName="SettingsEditorEx.java" startLine="19" startPosition="9" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3908032508224771819" fileName="SettingsEditorEx.java" startLine="21" startPosition="40" endLine="22" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4342433276614940068" fileName="SettingsEditorEx.java" startLine="10" startPosition="83" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SettingsEditorEx#()V" />
-    <nodeInfo nodeId="4342433276614940073" fileName="SettingsEditorEx.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SettingsEditorEx#(Lcom/intellij/openapi/util/Factory;)V" />
+    <nodeInfo nodeId="2013126310013254449" fileName="SettingsEditorEx.java" startLine="10" startPosition="83" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SettingsEditorEx#()V" />
+    <nodeInfo nodeId="2013126310013254454" fileName="SettingsEditorEx.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SettingsEditorEx#(Lcom/intellij/openapi/util/Factory;)V" />
     <nodeInfo nodeId="3908032508224771810" fileName="SettingsEditorEx.java" startLine="18" startPosition="40" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="3908032508224771804" fileName="SettingsEditorEx.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(null)V" />
-    <scopeInfo nodeId="4342433276614940070" fileName="SettingsEditorEx.java" startLine="11" startPosition="29" endLine="11" endPosition="29" />
-    <scopeInfo nodeId="4342433276614940075" fileName="SettingsEditorEx.java" startLine="14" startPosition="54" endLine="15" endPosition="19" />
+    <scopeInfo nodeId="2013126310013254452" fileName="SettingsEditorEx.java" startLine="11" startPosition="29" endLine="11" endPosition="29" />
+    <scopeInfo nodeId="2013126310013254457" fileName="SettingsEditorEx.java" startLine="14" startPosition="54" endLine="15" endPosition="19" />
     <scopeInfo nodeId="3908032508224771811" fileName="SettingsEditorEx.java" startLine="19" startPosition="9" endLine="20" endPosition="24" />
     <scopeInfo nodeId="3908032508224771815" fileName="SettingsEditorEx.java" startLine="21" startPosition="0" endLine="22" endPosition="86">
       <varInfo nodeId="3908032508224771816" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="3908032508224771818" fileName="SettingsEditorEx.java" startLine="21" startPosition="40" endLine="22" endPosition="86" />
-    <scopeInfo nodeId="4342433276614940068" fileName="SettingsEditorEx.java" startLine="10" startPosition="83" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="4342433276614940073" fileName="SettingsEditorEx.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
-      <varInfo nodeId="4342433276614940173" varName="factory" />
+    <scopeInfo nodeId="2013126310013254449" fileName="SettingsEditorEx.java" startLine="10" startPosition="83" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="2013126310013254454" fileName="SettingsEditorEx.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="2013126310013254458" varName="factory" />
     </scopeInfo>
     <scopeInfo nodeId="3908032508224771809" fileName="SettingsEditorEx.java" startLine="18" startPosition="40" endLine="23" endPosition="5" />
     <scopeInfo nodeId="3908032508224771804" fileName="SettingsEditorEx.java" startLine="17" startPosition="0" endLine="25" endPosition="0">

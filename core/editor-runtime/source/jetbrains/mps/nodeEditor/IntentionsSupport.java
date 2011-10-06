@@ -22,7 +22,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -35,6 +34,7 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -238,8 +238,8 @@ public class IntentionsSupport {
 
       @Override
       public void actionPerformed(AnActionEvent e) {
-        Project project = myEditor.getOperationContext().getProject();
-        if(project == null) {
+        Project project = myEditor.getOperationContext().getIdeaProject();
+        if (project == null) {
           return;
         }
 
@@ -258,12 +258,12 @@ public class IntentionsSupport {
           public void run() {
             SNode intentionNode = intentionsManager.getNodeByIntention(intention);
             if (intentionNode == null) {
-              Messages.showErrorDialog(myEditor.getOperationContext().getProject(),
+              Messages.showErrorDialog(myEditor.getOperationContext().getIdeaProject(),
                 "Could not find declaration for " + intention.getClass().getSimpleName()
                   + " intention (" + intention.getClass().getName() + ")", "Intention Declaration");
             } else {
               myEditor.getOperationContext().getComponent(MPSEditorOpener.class).editNode(intentionNode, myEditor.getOperationContext());
-              ProjectPane.getInstance(myEditor.getOperationContext().getProject()).selectNode(intentionNode, false);
+              ProjectPane.getInstance(myEditor.getOperationContext().getIdeaProject()).selectNode(intentionNode, false);
             }
           }
         });

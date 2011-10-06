@@ -13,6 +13,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.ui.evaluation.EvaluationPanel" />
     <classNode dependClassName="jetbrains.mps.debugger.java.ui.evaluation.EvaluationUi" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>

@@ -48,7 +48,7 @@ public class CommitUtil {
       }
     });
     refactoringContext.setSelectedModule(context.getModule());
-    refactoringContext.setSelectedProject(context.getProject());
+    refactoringContext.setSelectedProject(context.getIdeaProject());
 
     // set new name parameter for refactoring to skip initial dialog 
     refactoringContext.setParameter("myNewName", newName);

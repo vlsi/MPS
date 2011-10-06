@@ -85,11 +85,29 @@ public class NodesTestCase_Behavior {
     List<String> path = ListSequence.fromList(new ArrayList<String>());
     String pluginsPath = PathManager.getPreinstalledPluginsPath();
     File pluginsDir = new File(pluginsPath);
-    for (File pluginDir : pluginsDir.listFiles()) {
-      if (pluginDir.isDirectory()) {
-        ListSequence.fromList(path).addElement(new File(pluginDir, "classes").getAbsolutePath());
+    for (File pluginDirFile : pluginsDir.listFiles()) {
+      if (pluginDirFile.isDirectory()) {
+        // adding classes dir 
+        File classesDir = new File(pluginDirFile, "classes");
+        if (classesDir.exists()) {
+          ListSequence.fromList(path).addElement(classesDir.getAbsolutePath());
+        }
+        // adding contents of lib dir 
+        File libDir = new File(pluginDirFile, "lib");
+        if (libDir.exists()) {
+          for (File libChild : libDir.listFiles()) {
+            if (libChild.isFile()) {
+              String name = libChild.getName();
+              if (name.toLowerCase().endsWith(".jar") || name.toLowerCase().endsWith(".zip")) {
+                ListSequence.fromList(path).addElement(libChild.getAbsolutePath());
+              }
+            } else {
+              ListSequence.fromList(path).addElement(libChild.getAbsolutePath());
+            }
+          }
+        }
       } else {
-        ListSequence.fromList(path).addElement(pluginDir.getAbsolutePath());
+        ListSequence.fromList(path).addElement(pluginDirFile.getAbsolutePath());
       }
     }
     return path;

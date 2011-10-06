@@ -132,6 +132,13 @@ public class TemplateQueryContext {
     return myGenerator.findAllOutputNodesByInputNodeAndMappingName(inputNode, label);
   }
 
+  public void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode) {
+    if (myGenerator.areMappingsAvailable()) {
+      myGenerator.getLogger().error(getTemplateNodeForLogging(), "cannot register label anymore");
+    }
+    myGenerator.registerMappingLabel(inputNode, mappingName, outputNode);
+  }
+
   public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode inputNode, String label, IOperationContext operationContext) {
     throw new UnsupportedOperationException("use this method only in reference macros");
   }

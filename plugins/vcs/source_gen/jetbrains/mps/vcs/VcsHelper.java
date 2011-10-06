@@ -6,7 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.watching.ModelChangesWatcher;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import java.io.File;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;

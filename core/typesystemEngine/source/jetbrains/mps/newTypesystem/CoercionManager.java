@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
 import java.util.List;

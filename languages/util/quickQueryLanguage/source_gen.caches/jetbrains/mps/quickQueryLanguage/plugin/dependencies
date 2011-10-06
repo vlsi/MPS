@@ -30,6 +30,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -60,6 +61,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesViewTool" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.kernel.model.TemporaryModelOwner" />
@@ -139,6 +141,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.NodeHolder" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.kernel.model.TemporaryModelOwner" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />

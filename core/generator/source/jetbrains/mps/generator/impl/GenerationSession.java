@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl;
 
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
@@ -29,7 +28,9 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
 import jetbrains.mps.messages.NodeWithContext;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
@@ -54,7 +55,7 @@ public class GenerationSession {
   private final IGenerationTracer myGenerationTracer;
   private final boolean myDiscardTransients;
   private final boolean myKeepFinalOutput;
-  private final ProgressIndicator myProgressMonitor;
+  private final ProgressMonitor myProgressMonitor;
   private ILoggingHandler myLoggingHandler;
   private final GenerationSessionLogger myLogger;
   private DependenciesBuilder myDependenciesBuilder;
@@ -69,7 +70,7 @@ public class GenerationSession {
   private GenerationOptions myGenerationOptions;
 
   public GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
-                           ProgressIndicator progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
+                           ProgressMonitor progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
                            IPerformanceTracer tracer, GenerationOptions generationOptions) {
     myTaskPoolProvider = taskPoolProvider;
     myOriginalInputModel = inputModel;
@@ -84,7 +85,7 @@ public class GenerationSession {
     myGenerationOptions = generationOptions;
   }
 
-  public GenerationStatus generateModel() throws GenerationCanceledException {
+  public GenerationStatus generateModel(ProgressMonitor monitor) throws GenerationCanceledException {
     if (myMajorStep != 0) {
       throw new GenerationCanceledException();
     }
@@ -93,114 +94,131 @@ public class GenerationSession {
     ttrace.push("analyzing dependencies", false);
     myGenerationPlan = new GenerationPlan(myOriginalInputModel.getSModel(), GlobalScope.getInstance());
     if (!checkGenerationPlan(myGenerationPlan)) {
-      if(myGenerationOptions.isStrictMode()) {
+      if (myGenerationOptions.isStrictMode()) {
         throw new GenerationCanceledException();
       }
     }
 
-    // generation parameters
-    GenerationParametersProvider parametersProvider = myGenerationOptions.getParametersProvider();
-    if (parametersProvider != null) {
-      myParameters = parametersProvider.getParameters(myOriginalInputModel);
-    } else {
-      myParameters = null;
-    }
-
-    IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, myInvocationContext, myGenerationOptions, myGenerationPlan.getSignature(), myParameters, null);
-    myDependenciesBuilder = incrementalHandler.createDependenciesBuilder();
-
-    if (incrementalHandler.canOptimize()) {
-      int ignored = incrementalHandler.getIgnoredRoots().size();
-      int total = incrementalHandler.getRootsCount();
-      myLogger.info((!incrementalHandler.canIgnoreConditionals() ? "" : "descriptors and ") + ignored + " of " + total + " roots are unchanged");
-
-      if (total > 0 && ignored == total && incrementalHandler.canIgnoreConditionals()) {
-        myLogger.info("generated files are up-to-date");
-        ttrace.pop();
-        return new GenerationStatus(myOriginalInputModel, null,
-          myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), false, false, false);
+    monitor.start("", 1 + myGenerationPlan.getStepCount());
+    try {
+      // generation parameters
+      GenerationParametersProvider parametersProvider = myGenerationOptions.getParametersProvider();
+      if (parametersProvider != null) {
+        myParameters = parametersProvider.getParameters(myOriginalInputModel);
+      } else {
+        myParameters = null;
       }
 
-      if (!incrementalHandler.getRequiredRoots().isEmpty() || incrementalHandler.requireConditionals()) {
-        myLogger.info((!incrementalHandler.requireConditionals() ? "" : "descriptors and ") + incrementalHandler.getRequiredRoots().size() + " roots can be used from cache");
-      }
+      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, myInvocationContext, myGenerationOptions, myGenerationPlan.getSignature(), myParameters, null);
+      myDependenciesBuilder = incrementalHandler.createDependenciesBuilder();
 
-      if (myGenerationOptions.getTracingMode() != GenerationOptions.TRACE_OFF) {
-        myLogger.info("Processing:");
-        for (SNode node : myOriginalInputModel.getSModel().roots()) {
-          if (incrementalHandler.getRequiredRoots().contains(node)) {
-            myLogger.info(node.getName() + " (cache)");
-          } else if (!incrementalHandler.getIgnoredRoots().contains(node)) {
-            myLogger.info(node.getName());
+      if (incrementalHandler.canOptimize()) {
+        int ignored = incrementalHandler.getIgnoredRoots().size();
+        int total = incrementalHandler.getRootsCount();
+        myLogger.info((!incrementalHandler.canIgnoreConditionals() ? "" : "descriptors and ") + ignored + " of " + total + " roots are unchanged");
+
+        if (total > 0 && ignored == total && incrementalHandler.canIgnoreConditionals()) {
+          myLogger.info("generated files are up-to-date");
+          ttrace.pop();
+          return new GenerationStatus(myOriginalInputModel, null,
+            myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), false, false, false);
+        }
+
+        if (!incrementalHandler.getRequiredRoots().isEmpty() || incrementalHandler.requireConditionals()) {
+          myLogger.info((!incrementalHandler.requireConditionals() ? "" : "descriptors and ") + incrementalHandler.getRequiredRoots().size() + " roots can be used from cache");
+        }
+
+        if (myGenerationOptions.getTracingMode() != GenerationOptions.TRACE_OFF) {
+          myLogger.info("Processing:");
+          for (SNode node : myOriginalInputModel.getSModel().roots()) {
+            if (incrementalHandler.getRequiredRoots().contains(node)) {
+              myLogger.info(node.getName() + " (cache)");
+            } else if (!incrementalHandler.getIgnoredRoots().contains(node)) {
+              myLogger.info(node.getName());
+            }
           }
         }
       }
-    }
+      monitor.advance(1);
 
-    boolean success = false;
+      boolean success = false;
 
-    myNewCache = incrementalHandler.createNewCache();
-    ttrace.pop();
-    try {
-      SModel currInputModel = myOriginalInputModel.getSModel();
-      SModel currOutput = null;
-
-      ttrace.push("steps", false);
-      myGenerationPlan.createSwitchGraph();
-
-      for (myMajorStep = 0; myMajorStep < myGenerationPlan.getStepCount(); myMajorStep++) {
-        if (myLogger.needsInfo()) {
-          myLogger.info("executing step " + (myMajorStep + 1));
-        }
-        //ttrace.push("step " + (myMajorStep + 1), false);
-        currOutput = executeMajorStep(currInputModel);
-        //ttrace.pop();
-        if (currOutput == null || myLogger.getErrorCount() > 0) {
-          break;
-        }
-        if (myGenerationPlan.getMappingConfigurations(myMajorStep).isEmpty()) {
-          break;
-        }
-        currInputModel = currOutput;
-      }
+      myNewCache = incrementalHandler.createNewCache();
       ttrace.pop();
+      try {
+        SModel currInputModel = myOriginalInputModel.getSModel();
+        SModel currOutput = null;
 
-      // we need this in order to prevent memory leaks from nodes which are reported to message view
-      // since session objects might include objects with disposed class loaders
-      if (mySessionContext != null) {
-        mySessionContext.clearTransientObjects();
-      }
+        ttrace.push("steps", false);
+        myGenerationPlan.createSwitchGraph();
 
-      if (myKeepFinalOutput && mySessionContext != null) {
-        mySessionContext.keepTransientModel(currOutput, true);
-      }
+        for (myMajorStep = 0; myMajorStep < myGenerationPlan.getStepCount(); myMajorStep++) {
+          final List<TemplateMappingConfiguration> mappingConfigurations = myGenerationPlan.getMappingConfigurations(myMajorStep);
+          String title = "step " + (myMajorStep);
+          if (mappingConfigurations.size() >= 1) {
+            final TemplateMappingConfiguration first = mappingConfigurations.get(0);
+            if (first != null) {
+              title += " (" + first.getModel().getLongName() + "#" + first.getName() + (mappingConfigurations.size() == 1 ? ")" : ",..)");
+            }
+          }
+          monitor.step(title);
 
-      GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput.getModelDescriptor(),
-        myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
-        myLogger.getWarningCount() > 0, false);
-      success = generationStatus.isOk();
-      return generationStatus;
-    } catch (GenerationCanceledException gce) {
-      throw gce;
-    } catch (GenerationFailureException gfe) {
-      if (gfe.getMessage() != null && gfe.getCause() == null) {
-        myLogger.error(gfe.getMessage());
-      }
-      myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed : " + gfe);
-      return new GenerationStatus.ERROR(myOriginalInputModel);
-    } catch (Exception e) {
-      myLogger.handleException(e);
-      myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed (see exception)");
-      return new GenerationStatus.ERROR(myOriginalInputModel);
-    } finally {
-      if (myNewCache != null) {
-        if (success) {
-          myNewCache.store();
-        } else {
-          myNewCache.remove();
+          if (myLogger.needsInfo()) {
+            myLogger.info("executing step " + (myMajorStep + 1));
+          }
+          //ttrace.push("step " + (myMajorStep + 1), false);
+          currOutput = executeMajorStep(currInputModel);
+          monitor.advance(1);
+          //ttrace.pop();
+          if (currOutput == null || myLogger.getErrorCount() > 0) {
+            break;
+          }
+          if (mappingConfigurations.isEmpty()) {
+            break;
+          }
+          currInputModel = currOutput;
         }
-        myLogger.info("time spent saving cache: " + myNewCache.getTimeSpent());
+        ttrace.pop();
+
+        // we need this in order to prevent memory leaks from nodes which are reported to message view
+        // since session objects might include objects with disposed class loaders
+        if (mySessionContext != null) {
+          mySessionContext.clearTransientObjects();
+        }
+
+        if (myKeepFinalOutput && mySessionContext != null) {
+          mySessionContext.keepTransientModel(currOutput, true);
+        }
+
+        GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput.getModelDescriptor(),
+          myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
+          myLogger.getWarningCount() > 0, false);
+        success = generationStatus.isOk();
+        return generationStatus;
+      } catch (GenerationCanceledException gce) {
+        throw gce;
+      } catch (GenerationFailureException gfe) {
+        if (gfe.getMessage() != null && gfe.getCause() == null) {
+          myLogger.error(gfe.getMessage());
+        }
+        myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed : " + gfe);
+        return new GenerationStatus.ERROR(myOriginalInputModel);
+      } catch (Exception e) {
+        myLogger.handleException(e);
+        myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed (see exception)");
+        return new GenerationStatus.ERROR(myOriginalInputModel);
+      } finally {
+        if (myNewCache != null) {
+          if (success) {
+            myNewCache.store();
+          } else {
+            myNewCache.remove();
+          }
+          myLogger.info("time spent saving cache: " + myNewCache.getTimeSpent());
+        }
       }
+    } finally {
+      monitor.done();
     }
   }
 
@@ -253,7 +271,7 @@ public class GenerationSession {
         TemplateModel m1 = o1.getModel();
         TemplateModel m2 = o2.getModel();
         int result = m1 == m2 ? 0 : m1.getLongName().compareTo(m2.getLongName());
-        if(result != 0) {
+        if (result != 0) {
           return result;
         }
         return o1.getName().compareTo(o2.getName());
@@ -538,11 +556,20 @@ public class GenerationSession {
   }
 
   private boolean checkGenerationPlan(GenerationPlan generationPlan) {
+    if (myOriginalInputModel.getModule() instanceof Generator && SModelStereotype.isGeneratorModel(myOriginalInputModel)) {
+      ModuleReference me = myOriginalInputModel.getModule().getModuleReference();
+      for (TemplateModule t : generationPlan.getGenerators()) {
+        if (t.getReference().equals(me)) {
+          myLogger.warning("the generator is used to generate itself: try to avoid using language constructions in its generator queries");
+          break;
+        }
+      }
+    }
     if (generationPlan.hasConflictingPriorityRules()) {
       Map<MappingPriorityRule, TemplateModule> myRule2Generator = new HashMap<MappingPriorityRule, TemplateModule>();
       for (TemplateModule generator : generationPlan.getGenerators()) {
         Collection<TemplateMappingPriorityRule> priorities = generator.getPriorities();
-        if(priorities == null) {
+        if (priorities == null) {
           continue;
         }
 

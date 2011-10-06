@@ -22602,6 +22602,11 @@
                 </node>
               </node>
             </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1766957291275170025">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1766957291275170026">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6974242407276777260" resolveInfo="b" />
+              </node>
+            </node>
           </node>
           <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6974242407276777266">
             <property name="name" nameId="tpck.1169194664001" value="a" />
@@ -22633,6 +22638,11 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1766957291275170028">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1766957291275170029">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6974242407276777274" resolveInfo="b" />
               </node>
             </node>
           </node>
@@ -22670,6 +22680,11 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1766957291275170031">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1766957291275172746">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6974242407276777289" resolveInfo="b" />
               </node>
             </node>
           </node>

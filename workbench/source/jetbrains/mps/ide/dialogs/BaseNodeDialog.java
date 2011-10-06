@@ -19,8 +19,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.util.JSplitPaneWithoutBorders;
 import jetbrains.mps.logging.Logger;
@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -46,7 +47,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
   private JSplitPane mySplitter;
 
   protected BaseNodeDialog(String text, IOperationContext operationContext) throws HeadlessException {
-    super(operationContext.getMainFrame(), text);
+    super(ProjectHelper.toMainFrame(operationContext.getProject()), text);
     myOperationContext = operationContext;
     InspectorEditorComponent inspector = new InspectorEditorComponent();
     myEditorComponent = new UIEditorComponent(getOperationContext(), inspector);
@@ -127,7 +128,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
   private boolean doSaveChanges() {
     if (!validateNode()) return true;
     final boolean[] dontCloseDialog = new boolean[]{true};
-    ProgressManager.getInstance().run(new Modal(getOperationContext().getProject(), "Applying changes", false) {
+    ProgressManager.getInstance().run(new Modal(getOperationContext().getIdeaProject(), "Applying changes", false) {
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         try {

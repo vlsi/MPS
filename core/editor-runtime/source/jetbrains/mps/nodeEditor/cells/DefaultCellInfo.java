@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.Computable;
 import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -49,7 +49,7 @@ public class DefaultCellInfo implements CellInfo {
       public void run() {
         myNodePointer = new SNodePointer(cell.getSNode());
       }
-      
+
     });
 
     myCellId = cell.getCellId();
@@ -78,7 +78,7 @@ public class DefaultCellInfo implements CellInfo {
     e.addContent(nodeElement);
     if (myParentInfo instanceof DefaultCellInfo) {
       Element parentElement = new Element(PARENT);
-      ((DefaultCellInfo)myParentInfo).saveTo(parentElement);
+      ((DefaultCellInfo) myParentInfo).saveTo(parentElement);
       e.addContent(parentElement);
     }
   }
@@ -126,19 +126,19 @@ public class DefaultCellInfo implements CellInfo {
 
   public int hashCode() {
     return (myParentInfo == null ? 0 : myParentInfo.hashCode()) +
-         myNodePointer.hashCode() + (myCellId == null?0:myCellId.hashCode()) + myCellNumber;
+      myNodePointer.hashCode() + (myCellId == null ? 0 : myCellId.hashCode()) + myCellNumber;
   }
 
   public EditorCell findCell(final EditorComponent editorComponent) {
     if (myCellId != null) {
-      return ModelAccess.instance().runReadAction(new Computable<EditorCell>(){
+      return ModelAccess.instance().runReadAction(new Computable<EditorCell>() {
         public EditorCell compute() {
           // This is needed while merging: if node pointer points to node from current model,
           // it should be used instead of model in model repository.
           SNode node;
           if (editorComponent.getEditedNode() != null &&
-              ObjectUtils.equals(myNodePointer.getModelReference(),
-                                 editorComponent.getEditedNode().getModel().getSModelReference())) {
+            ObjectUtils.equals(myNodePointer.getModelReference(),
+              editorComponent.getEditedNode().getModel().getSModelReference())) {
             node = editorComponent.getEditedNode().getModel().getNodeById(myNodePointer.getNodeId());
           } else {
             node = myNodePointer.getNode();
@@ -167,7 +167,7 @@ public class DefaultCellInfo implements CellInfo {
   }
 
   public EditorCell findClosestCell(EditorComponent editorComponent) {
-    return findCell(editorComponent);    
+    return findCell(editorComponent);
   }
 
   public boolean equals(Object o) {
@@ -178,8 +178,8 @@ public class DefaultCellInfo implements CellInfo {
     boolean idsBothNull = false;
     if (cellInfo.myCellId == null && myCellId == null) idsBothNull = true;
     return (cellInfo.myCellId == null ? idsBothNull : cellInfo.myCellId.equals(myCellId))
-            && (cellInfo.myNodePointer.equals(myNodePointer))
-            && cellInfo.myCellNumber == myCellNumber;
+      && (cellInfo.myNodePointer.equals(myNodePointer))
+      && cellInfo.myCellNumber == myCellNumber;
   }
 
   @Override
@@ -189,7 +189,7 @@ public class DefaultCellInfo implements CellInfo {
       ", myCellId='" + myCellId + '\'' +
       ", myCellNumber=" + myCellNumber +
       ", myIsInList=" + myIsInList +
-      ", myParentInfo=" + myParentInfo + 
+      ", myParentInfo=" + myParentInfo +
       ']';
   }
 }

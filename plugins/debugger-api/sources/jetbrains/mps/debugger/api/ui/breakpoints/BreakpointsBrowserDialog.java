@@ -26,6 +26,7 @@ import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsView.BreakpointSelec
 import jetbrains.mps.debugger.api.ui.icons.Icons;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -62,15 +63,15 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   };
 
   public BreakpointsBrowserDialog(IOperationContext context) {
-    super(context.getMainFrame(), "Breakpoints");
+    super(ProjectHelper.toMainFrame(context.getProject()), "Breakpoints");
 
     setModal(false);
 
     myContext = context;
-    myBreakpointsManager = BreakpointManagerComponent.getInstance(myContext.getProject());
-    myBreakpointsUi = BreakpointsUiComponent.getInstance(myContext.getProject());
+    myBreakpointsManager = BreakpointManagerComponent.getInstance(myContext.getIdeaProject());
+    myBreakpointsUi = BreakpointsUiComponent.getInstance(myContext.getIdeaProject());
     myProvidersManager = myContext.getComponent(BreakpointProvidersManager.class);
-    myCurrentViewIndex = BreakpointViewSettingsComponent.getInstance(myContext.getProject()).getViewIndex();
+    myCurrentViewIndex = BreakpointViewSettingsComponent.getInstance(myContext.getIdeaProject()).getViewIndex();
     myViews = new BreakpointsView[]{new BreakpointsTable(myContext, myBreakpointsManager), new BreakpointsTree(myContext, myBreakpointsManager)};
 
     myMainPanel = new JPanel(new BorderLayout());
@@ -103,7 +104,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   }
 
   private void saveState() {
-    if (myContext.getProject().isDisposed()) return;
+    if (myContext.getIdeaProject().isDisposed()) return;
     for (BreakpointsView view : myViews) {
       view.saveState();
     }
@@ -352,7 +353,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
 
   private void switchView() {
     myCurrentViewIndex = 1 - myCurrentViewIndex;
-    BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setViewIndex(myCurrentViewIndex);
+    BreakpointViewSettingsComponent.getInstance(myContext.getIdeaProject()).setViewIndex(myCurrentViewIndex);
     myBreakpointsScrollPane.setViewportView(myViews[myCurrentViewIndex].getMainComponent());
   }
 
@@ -401,7 +402,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   }
 
   private void openNode(final IBreakpoint breakpoint, final boolean focus, final boolean select) {
-    final Project project = myContext.getProject();
+    final Project project = myContext.getIdeaProject();
     if (!(breakpoint instanceof ILocationBreakpoint)) return;
     ModelAccess.instance().executeCommand(new Runnable() {
       public void run() {

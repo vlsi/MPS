@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
 import com.intellij.ide.wizard.CommitStepException;
+import com.intellij.util.PathUtil;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
@@ -24,6 +25,7 @@ import jetbrains.mps.workbench.dialogs.project.newproject.icons.Icons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.lang.model.SourceVersion;
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
@@ -142,6 +144,9 @@ public class LanguageStep extends BaseStep {
       }
       if (NameUtil.shortNameFromLongName(myNamespace.getText()).length() == 0) {
         throw new CommitStepException("Enter valid namespace");
+      }
+      if (!(SourceVersion.isName(myNamespace.getText()))) {
+        throw new CommitStepException("Language namespace should be valid Java package");
       }
     }
   }

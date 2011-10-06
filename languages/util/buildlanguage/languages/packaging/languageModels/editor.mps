@@ -1182,9 +1182,9 @@
   </root>
   <root id="1205339390796">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1205339395970">
-      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
       <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1205343740058" resolveInfo="string" />
       <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1205343437256" resolveInfo="CompositeString_RT" />
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tps4.1223641503366" resolveInfo="name" />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PaddingLeftStyleClassItem" typeId="tpc2.1215007883204" id="1226330394988">
         <property name="value" nameId="tpc2.1215007802031" value="0.2" />
       </node>
@@ -1375,7 +1375,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1211529688555" resolveInfo="operationContext" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7360913708305789094">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~IOperationContext%dgetProject()%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="getProject" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~IOperationContext%dgetIdeaProject()%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="getIdeaProject" />
                 </node>
               </node>
             </node>

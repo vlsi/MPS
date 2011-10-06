@@ -17,6 +17,7 @@ package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
@@ -45,5 +46,9 @@ public class VirtualFileUtils {
     } else {
       throw new RuntimeException("Attempt to get File for non local file.");
     }
+  }
+
+  public static boolean isEventFromSave(VFileEvent event) {
+    return event.getRequestor() == IdeaFileSystemProvider.class;
   }
 }

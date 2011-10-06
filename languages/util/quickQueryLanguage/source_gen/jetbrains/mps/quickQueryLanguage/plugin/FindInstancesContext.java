@@ -9,13 +9,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
 
 public class FindInstancesContext extends StandaloneMPSContext {
   private Project myProject;
   private IModule myModule;
 
   public FindInstancesContext(IOperationContext oldContext) {
-    this.myProject = oldContext.getProject();
+    this.myProject = oldContext.getIdeaProject();
     this.myModule = oldContext.getModule();
   }
 
@@ -36,7 +37,11 @@ public class FindInstancesContext extends StandaloneMPSContext {
     return super.getComponent(c);
   }
 
-  public Project getProject() {
+  public jetbrains.mps.project.Project getProject() {
+    return this.myProject.getComponent(MPSProject.class);
+  }
+
+  public Project getIdeaProject() {
     return this.myProject;
   }
 }

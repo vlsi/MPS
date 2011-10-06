@@ -17,8 +17,8 @@ package jetbrains.mps.vcs;
 
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
 public interface VCSHandler {
@@ -26,7 +26,7 @@ public interface VCSHandler {
 
   void addSuspiciousModule(AbstractModule abstractModule, boolean isInConflict);
 
-  void addSuspiciousModel(EditableSModelDescriptor modelDescriptor, boolean isInConflict);
+  void addSuspiciousModel(DefaultSModelDescriptor modelDescriptor, boolean isInConflict);
 
   //-----misc
 

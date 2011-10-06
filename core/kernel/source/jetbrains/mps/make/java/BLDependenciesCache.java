@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.make.java;
 
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.smodel.SModelRepository;
@@ -33,7 +33,7 @@ import java.io.InputStreamReader;
 
 public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
   public static BLDependenciesCache getInstance() {
-    return ApplicationManager.getApplication().getComponent(BLDependenciesCache.class);
+    return ComponentManager.getInstance().getComponent(BLDependenciesCache.class);
   }
 
   public BLDependenciesCache(SModelRepository modelRepository) {

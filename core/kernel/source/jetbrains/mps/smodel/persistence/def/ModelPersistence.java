@@ -95,7 +95,7 @@ public class ModelPersistence {
     null,
     null,
     null,
-    new ModelPersistence3(),
+    null,
     new ModelPersistence4(),
     new ModelPersistence5(),
     new ModelPersistence6(),
@@ -380,10 +380,6 @@ public class ModelPersistence {
 
   //-------- --------
 
-
-  public static boolean needsRecreating(IFile file) {
-    return getCurrentModelPersistence().needsRecreating(file);
-  }
 
   public static SModelReference upgradeModelUID(SModelReference modelReference) {
     return getCurrentModelPersistence().upgradeModelUID(modelReference);

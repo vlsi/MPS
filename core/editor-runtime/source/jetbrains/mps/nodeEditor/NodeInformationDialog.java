@@ -15,16 +15,15 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 
 import java.awt.Frame;
 import java.awt.Point;
-
-import com.intellij.openapi.util.Computable;
 
 public class NodeInformationDialog extends AbstractNodeInformationDialog {
   private EditorComponent myEditorComponent;
@@ -37,7 +36,7 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
   @Override
   public void setVisible(boolean b) {
     super.setVisible(b);
-    myEditorComponent.setNodeInformationDialog( b ? this : null);
+    myEditorComponent.setNodeInformationDialog(b ? this : null);
   }
 
   @Override

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.AbstractTest4Class" file="AbstractTest4Class.java">
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.AbstractTestClass" file="AbstractTestClass.java">
+    <classNode extendsClassName="junit.framework.TestCase" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.SimpleRunner" file="SimpleRunner.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
@@ -11,7 +18,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.Test3" file="Test3.java">
     <classNode dependClassName="java.lang.System" />
-    <classNode extendsClassName="junit.framework.TestCase" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.sandbox.AbstractTestClass" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.Test4" file="Test4.java">
     <classNode dependClassName="java.lang.RuntimeException" />
@@ -19,6 +26,7 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="org.junit.runner.RunWith" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.sandbox.AbstractTest4Class" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.TestMain" file="TestMain.java">
     <classNode dependClassName="java.lang.String" />

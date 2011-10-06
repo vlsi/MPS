@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.compiler.IClassesData;
@@ -41,7 +42,7 @@ public class ReplaceDialog extends BaseDialog {
   private TemporaryModelOwner myModelOwner = new TemporaryModelOwner();
 
   public ReplaceDialog(final IOperationContext context, final Language language) {
-    super(context.getMainFrame(), "Modify Instances by condition");
+    super(ProjectHelper.toMainFrame(context.getProject()), "Modify Instances by condition");
     this.myContext = context;
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -123,7 +124,7 @@ public class ReplaceDialog extends BaseDialog {
     final IScope scope = this.myScope.getOptions().getScope(this.myContext, model.value.getModelDescriptor());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ReplaceDialog.this.execute(ReplaceDialog.this.myContext.getProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
+        ReplaceDialog.this.execute(ReplaceDialog.this.myContext.getIdeaProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
       }
     });
     this.myEditor.disposeEditor();

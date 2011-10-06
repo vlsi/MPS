@@ -18,6 +18,10 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -72,16 +76,33 @@ public class ModulesClusterizer {
   }
 
   private Iterable<String> allNamespaces(Iterable<IModule> modules) {
-    Set<String> namespaces = SetSequence.fromSet(new HashSet<String>());
+    final Set<String> namespaces = SetSequence.fromSet(new HashSet<String>());
     Set<TemplateModule> seen = SetSequence.fromSet(new HashSet<TemplateModule>());
     Queue<String> nsq = QueueSequence.fromQueue(new LinkedList<String>());
     for (IModule mod : modules) {
-      Iterable<Language> langs = mod.getDependenciesManager().getAllUsedLanguages();
-      QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(langs).select(new ISelector<Language, String>() {
-        public String select(Language it) {
-          return it.getModuleDescriptor().getNamespace();
-        }
-      }));
+      if (mod instanceof Generator) {
+        Iterable<SModelDescriptor> genModels = mod.getOwnModelDescriptors();
+        QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(genModels).translate(new ITranslator2<SModelDescriptor, String>() {
+          public Iterable<String> translate(SModelDescriptor smd) {
+            return ModelContentUtil.getUsedLanguageNamespaces(smd.getSModel(), false);
+          }
+        }).where(new IWhereFilter<String>() {
+          public boolean accept(String ns) {
+            return !(SetSequence.fromSet(namespaces).contains(ns));
+          }
+        }));
+      } else {
+        Iterable<Language> langs = mod.getDependenciesManager().getAllUsedLanguages();
+        QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(langs).select(new ISelector<Language, String>() {
+          public String select(Language lang) {
+            return lang.getModuleDescriptor().getNamespace();
+          }
+        }).where(new IWhereFilter<String>() {
+          public boolean accept(String ns) {
+            return !(SetSequence.fromSet(namespaces).contains(ns));
+          }
+        }));
+      }
       while (QueueSequence.fromQueue(nsq).isNotEmpty()) {
         String ns = QueueSequence.fromQueue(nsq).removeFirstElement();
         LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(ns);

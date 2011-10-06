@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 
 /**
  * Igor Alshannikov
@@ -37,7 +36,7 @@ public class AuxilaryRuntimeModel implements ModelOwner {
     if (ourInstance != null) return ourInstance;
     synchronized (LOCK) {
       if (ourInstance != null) return ourInstance;
-      AuxilaryRuntimeModel instance = ApplicationManager.getApplication().getComponent(AuxilaryRuntimeModel.class);
+      AuxilaryRuntimeModel instance = ComponentManager.getInstance().getComponent(AuxilaryRuntimeModel.class);
       ourInstance = SModelRepository.getInstance().getModelDescriptor(MY_MODEL_REFERENCE);
       if (ourInstance == null) {
         ourInstance = new AuxModelDescriptor();
@@ -55,7 +54,7 @@ public class AuxilaryRuntimeModel implements ModelOwner {
 
   private static class AuxModelDescriptor extends BaseSModelDescriptor {
     public AuxModelDescriptor() {
-      super(IModelRootManager.NULL_MANAGER, AuxilaryRuntimeModel.MY_MODEL_REFERENCE, false);
+      super(AuxilaryRuntimeModel.MY_MODEL_REFERENCE, false);
     }
 
     protected ModelLoadResult initialLoad() {

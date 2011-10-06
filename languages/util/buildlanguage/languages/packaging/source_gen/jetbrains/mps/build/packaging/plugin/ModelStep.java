@@ -9,7 +9,7 @@ import jetbrains.mps.project.Solution;
 import java.util.List;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;

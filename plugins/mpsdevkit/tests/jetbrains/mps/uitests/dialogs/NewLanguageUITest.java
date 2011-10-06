@@ -16,12 +16,12 @@
 package jetbrains.mps.uitests.dialogs;
 
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialog;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.MPSDataKeys;
 import junit.extensions.jfcunit.eventdata.StringEventData;
 
@@ -31,7 +31,7 @@ import java.awt.Frame;
 import java.lang.reflect.InvocationTargetException;
 
 public class NewLanguageUITest extends NewDialogsUITestsBase {
-   public void testLanguageCreation() throws InvocationTargetException, InterruptedException {
+  public void testLanguageCreation() throws InvocationTargetException, InterruptedException {
     Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
     assertNotNull("Main frame not found", frame);
 
@@ -63,11 +63,11 @@ public class NewLanguageUITest extends NewDialogsUITestsBase {
       }
     });
 
-     TestUtil.conditionalWaitAndFlush(this,new Computable<Boolean>() {
-       public Boolean compute() {
-         return loaded[0];
-       }
-     });
+    TestUtil.conditionalWaitAndFlush(this, new Computable<Boolean>() {
+      public Boolean compute() {
+        return loaded[0];
+      }
+    });
 
     final Language l = dialog.getResult();
     assertNotNull("Language is not created", l);

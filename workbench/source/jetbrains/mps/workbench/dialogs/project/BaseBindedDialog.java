@@ -22,6 +22,7 @@ import com.intellij.openapi.progress.Task.Modal;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.IOperationContext;
@@ -45,9 +46,9 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
   private List<AutoBinding> myBindings = new ArrayList<AutoBinding>();
 
   protected BaseBindedDialog(String text, IOperationContext operationContext) throws HeadlessException {
-    super(operationContext.getMainFrame(), text, false);
+    super(ProjectHelper.toMainFrame(operationContext.getProject()), text, false);
     myOperationContext = operationContext;
-    doInit(operationContext.getMainFrame());
+    doInit(ProjectHelper.toMainFrame(operationContext.getProject()));
   }
 
   public abstract JComponent getMainComponent();
@@ -61,7 +62,7 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
   }
 
   public IScope getProjectScope() {
-    return getOperationContext().getProject().getComponent(ProjectScope.class);
+    return getOperationContext().getIdeaProject().getComponent(ProjectScope.class);
   }
 
   public void addNotify() {
@@ -115,7 +116,7 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
       }
     });
 
-    ProgressManager.getInstance().run(new Modal(getOperationContext().getProject(), "Applying changes", false) {
+    ProgressManager.getInstance().run(new Modal(getOperationContext().getIdeaProject(), "Applying changes", false) {
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         try {

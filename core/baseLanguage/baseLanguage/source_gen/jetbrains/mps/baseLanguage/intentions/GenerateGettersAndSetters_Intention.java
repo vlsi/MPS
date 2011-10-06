@@ -60,7 +60,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       return false;
     }
     boolean allGettersImplemented = true;
-    Project project = editorContext.getOperationContext().getProject();
+    Project project = editorContext.getOperationContext().getIdeaProject();
     for (SNode fieldDeclaration : fields) {
       boolean hasCurrentFieldGetter = false;
       final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(fieldDeclaration, project);
@@ -102,7 +102,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode lastAdded = null;
-    Project ideaProject = editorContext.getOperationContext().getProject();
+    Project ideaProject = editorContext.getOperationContext().getIdeaProject();
     for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
       final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, ideaProject);
       final Wrappers._boolean getterIsAbsent = new Wrappers._boolean(true);

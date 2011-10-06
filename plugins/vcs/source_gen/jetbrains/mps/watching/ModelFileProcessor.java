@@ -4,15 +4,17 @@ package jetbrains.mps.watching;
 
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
-import com.intellij.openapi.fileEditor.FileDocumentManager;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.smodel.descriptor.source.ReloadableSources;
 import jetbrains.mps.vfs.FileSystem;
 import com.intellij.openapi.vfs.newvfs.events.VFileMoveEvent;
 import java.io.File;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.project.IModule;
 
 /*package*/ class ModelFileProcessor extends EventProcessor {
   private static final Logger LOG = Logger.getLogger(ModelFileProcessor.class);
@@ -23,15 +25,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 
   @Override
   protected void processContentChanged(VFileEvent event, ReloadSession reloadSession) {
-    if (event.isFromRefresh() || event.getRequestor() instanceof FileDocumentManager) {
-      EditableSModelDescriptor model = SModelRepository.getInstance().findModel(FileSystem.getInstance().getFileByPath(event.getPath()));
-      LOG.debug("Content change event for model file " + event.getPath() + ". Found model " + model + "." + ((model != null ?
-        " Needs reloading " + model.needsReloading() :
-        ""
-      )));
-      if (model != null && (model.needsReloading())) {
-        reloadSession.addChangedModel(model);
-      }
+    if (!(VirtualFileUtils.isEventFromSave(event))) {
+      ReloadableSources.getInstance().invalidate(FileSystem.getInstance().getFileByPath(event.getPath()));
     }
   }
 
@@ -64,9 +59,14 @@ import com.intellij.openapi.vfs.VirtualFile;
   private void fileDeleted(String path, ReloadSession reloadSession) {
     IFile ifile = FileSystem.getInstance().getFileByPath(path);
     final EditableSModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
-    if (model != null) {
-      reloadSession.addDeletedModel(model);
+    if (model == null) {
+      return;
     }
+    IModule module = model.getModule();
+    if (module == null) {
+      return;
+    }
+    reloadSession.addChangedModule(module);
   }
 
   public static ModelFileProcessor getInstance() {

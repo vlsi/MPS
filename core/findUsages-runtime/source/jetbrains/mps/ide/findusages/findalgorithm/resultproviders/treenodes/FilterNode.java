@@ -22,7 +22,6 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.filters.BaseFilter;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
@@ -80,7 +79,7 @@ public class FilterNode extends BaseNode {
   }
 
   public long getEstimatedTime(IScope scope) {
-    return TaskProgressSettings.getInstance().getEstimatedTimeMillis(getTaskName());
+    return 1;
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {

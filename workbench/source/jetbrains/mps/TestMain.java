@@ -23,7 +23,6 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -37,13 +36,13 @@ import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -177,9 +176,9 @@ public class TestMain {
   private static void waitUntilAllEventsFlushed() {
     // Wait until last invokeLater() is executed
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-        public void run() {
-        }
-      }, ModalityState.NON_MODAL);
+      public void run() {
+      }
+    }, ModalityState.NON_MODAL);
     ModelAccess.instance().flushEventQueue();
   }
 
@@ -219,7 +218,7 @@ public class TestMain {
       public void run() {
         new ModuleMaker().make(
           new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()),
-          new EmptyProgressIndicator());
+          new EmptyProgressMonitor());
       }
     });
 
@@ -238,10 +237,10 @@ public class TestMain {
 
     final MPSProject project = loadProject(projectFile);
     return testActionForLeaks(new Runnable() {
-        public void run() {
-          new ProjectTester(project.getProject()).testProject();
-        }
-      }, leakThreshold);
+      public void run() {
+        new ProjectTester(project.getProject()).testProject();
+      }
+    }, leakThreshold);
   }
 
 
@@ -326,12 +325,12 @@ public class TestMain {
     TestMain.configureMPS();
 
     return testActionForLeaks(new Runnable() {
-        public void run() {
-          MPSProject project = loadProject(projectFile);
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-          project.dispose();
-        }
-      }, leakThreshold);
+      public void run() {
+        MPSProject project = loadProject(projectFile);
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+        project.dispose();
+      }
+    }, leakThreshold);
   }
 
   public static boolean testActionForLeaks(Runnable action, int leakThreshold) {
@@ -466,7 +465,7 @@ public class TestMain {
     System.setProperty("plugin.path", pluginPath.toString());
     // Value of this property is comma-separated list of plugin IDs intended to load by platform
     System.setProperty("idea.load.plugins.id", StringUtils.join(plugins, ","));
-    if(!cachesInvalidated) {
+    if (!cachesInvalidated) {
       FSRecords.invalidateCaches();
       cachesInvalidated = true;
     }
@@ -604,7 +603,7 @@ public class TestMain {
     }
 
     public TestResult testProject(final String[] configurationsGiven) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
 
       final List<String> errors = new ArrayList<String>();
       final List<String> warnings = new ArrayList<String>();
@@ -659,7 +658,7 @@ public class TestMain {
                 parms.getModelDescriptors(),
                 new ModuleContext(parms.getModule(), myProject),
                 generationHandler,
-                new EmptyProgressIndicator(),
+                new EmptyProgressMonitor(),
                 handler,
                 GenerationOptions.getDefaults().create()
               );
@@ -680,7 +679,7 @@ public class TestMain {
                     compilationResultList.add(r);
                   }
                 };
-                generationHandler.compile(ITaskProgressHelper.EMPTY, listener);
+                generationHandler.compile(new EmptyProgressMonitor(), listener);
 
                 System.out.println("Compiled " + compilationResultList.size() + " compilation units in " + (System.currentTimeMillis() - start));
                 compilationResults.addAll(createCompilationProblemsList(compilationResultList));

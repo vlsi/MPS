@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.lang.typesystem.runtime.performance;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.Computable;
 
 /**
  * Created by IntelliJ IDEA.

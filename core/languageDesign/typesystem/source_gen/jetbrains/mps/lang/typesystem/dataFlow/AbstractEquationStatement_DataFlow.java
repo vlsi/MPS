@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class AbstractEquationStatement_DataFlow extends DataFlowBuilder {
   public AbstractEquationStatement_DataFlow() {
@@ -21,8 +22,10 @@ public class AbstractEquationStatement_DataFlow extends DataFlowBuilder {
     if ((SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true) != null)) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true));
     }
-    if ((SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null)) {
-      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true));
+    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "helginsIntention", true)).isNotEmpty()) {
+      for (SNode intetntion : SLinkOperations.getTargets(_context.getNode(), "helginsIntention", true)) {
+        _context.getBuilder().build((SNode) intetntion);
+      }
     }
   }
 }

@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 
 public class UndoHelper {
   private static final UndoHandler DEFAULT = new DefaultUndoHandler();
@@ -43,12 +43,12 @@ public class UndoHelper {
     myHandler.addUndoableAction(action);
   }
 
-  public void flushCommand(Project p){
+  public void flushCommand(Project p) {
     myHandler.flushCommand(p);
   }
 
   public <T> T runNonUndoableAction(Computable<T> t) {
-    if(ModelAccess.instance().canWrite() && myHandler != DEFAULT) {
+    if (ModelAccess.instance().canWrite() && myHandler != DEFAULT) {
       // locks optimization, install temporary dummy handler
       UndoHandler old = myHandler;
       try {

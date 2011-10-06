@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.structure;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -23,6 +22,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.smodel.constraints.*;
 import jetbrains.mps.smodel.structure.ConstraintsDescriptor.CanBeRoles;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

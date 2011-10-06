@@ -9,7 +9,7 @@ import jetbrains.mps.util.Condition;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.TransferHandler;
 import jetbrains.mps.workbench.dialogs.project.components.parts.validators.Validator;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction;
 import org.jetbrains.annotations.NotNull;
 import java.util.Collections;

@@ -31,7 +31,7 @@ import java.util.Iterator;
 import java.util.Collections;
 import java.util.Comparator;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import java.awt.Point;
 import java.awt.Rectangle;
 
@@ -302,5 +302,12 @@ public abstract class OldDiffEditorComponent extends EditorComponent {
 
   public List<OldChange> getChanges() {
     return myChanges;
+  }
+
+  @Override
+  public void dispose() {
+    myInspector.dispose();
+    myInspector = null;
+    super.dispose();
   }
 }

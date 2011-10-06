@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.components.ComponentManager;
 
 public class CopyPasteManager extends AbstractManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(CopyPasteManager.class);
@@ -129,6 +129,6 @@ public class CopyPasteManager extends AbstractManager implements ApplicationComp
   }
 
   public static CopyPasteManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(CopyPasteManager.class);
+    return ComponentManager.getInstance().getComponent(CopyPasteManager.class);
   }
 }

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ide.dialogs.BaseNodeDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
@@ -25,6 +24,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
+import jetbrains.mps.util.Computable;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -45,7 +45,7 @@ public class
   public MyBaseNodeDialog(IOperationContext operationContext, SNode node, SNode type, IErrorReporter error) throws HeadlessException {
     super(getTitle(node), operationContext);
 
-    SupertypesViewTool supertypesView = operationContext.getProject().getComponent(SupertypesViewTool.class);
+    SupertypesViewTool supertypesView = operationContext.getIdeaProject().getComponent(SupertypesViewTool.class);
 
     mySupertypesViewComponent = supertypesView.getComponent();
     myMainComponent = new JSplitPaneWithoutBorders(JSplitPane.HORIZONTAL_SPLIT, getSuperMainComponent(), mySupertypesViewComponent);

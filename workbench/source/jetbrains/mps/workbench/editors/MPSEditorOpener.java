@@ -22,7 +22,6 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.IEditor;
@@ -39,6 +38,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -68,7 +68,7 @@ public class MPSEditorOpener {
   }
 
   private MPSEditorOpenHandler getOpenHandler(IOperationContext operationContext) {
-    return operationContext.getProject().getComponent(ProjectPluginManager.class).getEditorOpenHandler();
+    return operationContext.getIdeaProject().getComponent(ProjectPluginManager.class).getEditorOpenHandler();
   }
 
   @Deprecated
@@ -117,7 +117,7 @@ public class MPSEditorOpener {
   }
 
   private IEditor openNode(final SNode node, @NotNull final IOperationContext context, final boolean focus, final boolean select, final boolean openBaseNode) {
-    final Project ideaProject = context.getProject();
+    final Project ideaProject = context.getIdeaProject();
     ideaProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
     /* TODO use SNodePointer instead of SNode */
     /* temp hack: runWriteAction instead of read, TODO move sync into doOpenNode */

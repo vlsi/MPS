@@ -25,17 +25,15 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
       SPropertyOperations.set(SLinkOperations.getTarget(var, "localVariableDeclaration", true), "isFinal", "" + true);
     }
     SNode varDeclaration = SLinkOperations.getTarget(var, "localVariableDeclaration", true);
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(this.getExpression()), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-      SNodeOperations.replaceWithAnother(SNodeOperations.getParent(this.getExpression()), var);
-    } else {
-      SNode parentStatement = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.Statement", false, false);
-      while (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(parentStatement), "jetbrains.mps.baseLanguage.structure.StatementList"))) {
-        parentStatement = SNodeOperations.getAncestor(parentStatement, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
-      }
-      SNodeOperations.insertPrevSiblingChild(parentStatement, var);
-      replaceNode(getExpression(), varDeclaration);
-      // <node> 
+    // <node> 
+    SNode parentStatement = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+    while (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(parentStatement), "jetbrains.mps.baseLanguage.structure.StatementList"))) {
+      parentStatement = SNodeOperations.getAncestor(parentStatement, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
     }
+    SNodeOperations.insertPrevSiblingChild(parentStatement, var);
+    replaceNode(getExpression(), varDeclaration);
+    // <node> 
+
     if (myIsReplacingAll) {
       for (SNode duplicate : ListSequence.fromList(myDuplicates)) {
         replaceNode(duplicate, varDeclaration);

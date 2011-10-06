@@ -16,12 +16,12 @@
 package jetbrains.mps.util;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -61,7 +61,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
     String packageName = JavaNameUtil.packageNameForModelUID(sm.getSModel().getSModelReference());
     String queriesClassName = packageName + ".QueriesGenerated";
     IModule module = sm.getModule();
-    if(module == null) {
+    if (module == null) {
       if (!suppressErrorLogging) {
         if (needReport(queriesClassName)) {
           LOG.error("couldn't find class 'QueriesGenerated' for model '" + sm.getSModelReference() + "' : no module");
@@ -84,13 +84,13 @@ public class QueryMethodGenerated implements ApplicationComponent {
   }
 
   private static Method getQueryMethod(SModel sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    Map<String,Method> methods = ourMethods.get(sourceModel.getSModelReference());
+    Map<String, Method> methods = ourMethods.get(sourceModel.getSModelReference());
 
-    if(methods == null) {
+    if (methods == null) {
       Class queriesClass = getQueriesGeneratedClassFor(sourceModel.getModelDescriptor(), suppressErrorLogging);
 
       methods = ourMethods.get(sourceModel.getSModelReference());
-      if(methods == null) {
+      if (methods == null) {
         methods = new HashMap<String, Method>();
         Method[] declaredMethods = queriesClass.getDeclaredMethods();
         for (Method declaredMethod : declaredMethods) {
@@ -161,7 +161,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
       }
 
       Constructor ctor;
-      if(cls.isInterface()) {
+      if (cls.isInterface()) {
         ctor = className.equals(SNodeUtil.concept_BaseConcept) ? null : getAdapterConstructor(SNodeUtil.concept_BaseConcept);
       } else {
         ctor = cls.getConstructor(SNode.class);

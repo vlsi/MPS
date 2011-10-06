@@ -20,10 +20,10 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
@@ -34,6 +34,7 @@ import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
@@ -79,7 +80,7 @@ public class RefactoringFacade {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         IRefactoring refactoring = refactoringContext.getRefactoring();
-        Frame mainFrame = refactoringContext.getCurrentOperationContext().getMainFrame();
+        Frame mainFrame = ProjectHelper.toMainFrame(refactoringContext.getCurrentOperationContext().getProject());
         List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, refactoringContext);
         RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(mainFrame, refactoringContext, refactoring, !modelsToGenerate.isEmpty());
         if (dialog.needToBeShown()) {
@@ -128,7 +129,7 @@ public class RefactoringFacade {
     final SearchResults[] result = new SearchResults[]{null};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getProject(), "Finding usages...", false) {
+        ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getIdeaProject(), "Finding usages...", false) {
           public void run(@NotNull ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             ModelAccess.instance().runReadAction(new Runnable() {
@@ -235,7 +236,7 @@ public class RefactoringFacade {
     final IOperationContext operationContext = ProjectOperationContext.get(refactoringContext.getSelectedProject());
     new Thread() {
       public void run() {
-        try{
+        try {
           MakeSession sess = new MakeSession(operationContext);
           if (IMakeService.INSTANCE.get().openNewSession(sess)) {
             Future<IResult> result = IMakeService.INSTANCE.get().make(sess, new ModelsToResources(operationContext, descriptors).resources(false));

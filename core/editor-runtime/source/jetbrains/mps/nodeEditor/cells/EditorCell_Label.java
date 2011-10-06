@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
-import com.intellij.openapi.util.Computable;
 import com.intellij.util.LocalTimeCounter;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
@@ -35,6 +34,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.apache.commons.lang.ObjectUtils;
@@ -49,7 +49,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   protected boolean myNoTextSet;
   protected TextLine myTextLine;
   protected TextLine myNullTextLine;
-  protected boolean myCaretIsVisible = true;  
+  protected boolean myCaretIsVisible = true;
 
   protected EditorCell_Label(@NotNull EditorContext editorContext, SNode node, String text) {
     super(editorContext, node);
@@ -101,7 +101,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public void setSelected(boolean selected) {
-    super.setSelected(selected);            
+    super.setSelected(selected);
     if (!selected && !getEditor().selectionStackContains(this)) {
       myTextLine.resetSelection();
     }
@@ -448,7 +448,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
             result[0] = true;
           }
         }
-      }, null, groupId, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, getOperationContext().getProject());
+      }, null, groupId, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, getOperationContext().getIdeaProject());
       getEditor().relayout();
       if (result[0]) {
         return true;
@@ -705,7 +705,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
       EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(editor);
       if (cell != null) {
-        cell.changeText(myText);        
+        cell.changeText(myText);
       }
     }
   }
@@ -833,7 +833,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       final String s = TextPasteUtil.getStringFromClipboard();
       cell.insertText(s);
       context.getNodeEditorComponent().resetLastCaretX();
-      cell.ensureCaretVisible();      
+      cell.ensureCaretVisible();
     }
   }
 

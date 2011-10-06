@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 public class ChildrenCollectionFinder {

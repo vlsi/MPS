@@ -151,7 +151,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
 
       public void setup(IPropertiesPool pool) {
         Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
-        vars._0(TestMakeService.this.context.getProject());
+        vars._0(TestMakeService.this.context.getIdeaProject());
         vars._1(TestMakeService.this.context);
         vars._2(true);
         vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
@@ -196,7 +196,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
     protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller) {
       IScriptController ctl = TestMakeService.this.completeController(controller);
 
-      MakeTask task = new MakeTask(context.getProject(), taskName, scripts, taskName, clustRes, ctl, mh, PerformInBackgroundOption.DEAF);
+      MakeTask task = new MakeTask(context.getIdeaProject(), taskName, scripts, taskName, clustRes, ctl, mh, PerformInBackgroundOption.DEAF);
       ProgressManager.getInstance().run(task);
 
       return task;

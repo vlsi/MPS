@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorCellKeyMap.ActionKey;
@@ -24,6 +23,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
 import javax.swing.JMenuItem;
@@ -49,7 +49,8 @@ public class KeyMapUtil {
   static List<Pair<EditorCellKeyMapAction, EditorCell>> getKeyMapActionsForEvent(final EditorCell selectedCell, final KeyEvent keyEvent, final EditorContext editorContext) {
     return ModelAccess.instance().runReadAction(new Computable<List<Pair<EditorCellKeyMapAction, EditorCell>>>() {
       public List<Pair<EditorCellKeyMapAction, EditorCell>> compute() {
-        if (keyEvent.getID() != KeyEvent.KEY_PRESSED && keyEvent.getID() != KeyEvent.KEY_TYPED) return Collections.emptyList();
+        if (keyEvent.getID() != KeyEvent.KEY_PRESSED && keyEvent.getID() != KeyEvent.KEY_TYPED)
+          return Collections.emptyList();
 
         int keyCode = keyEvent.getKeyCode();
         if (keyCode == KeyEvent.VK_CONTROL || keyCode == KeyEvent.VK_ALT || keyCode == KeyEvent.VK_SHIFT ||

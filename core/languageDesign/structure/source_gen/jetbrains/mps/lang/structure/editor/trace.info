@@ -6082,8 +6082,8 @@
     <nodeInfo nodeId="2754395556039700599" fileName="CommitUtil.java" startLine="43" startPosition="59" endLine="44" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2165772098013573684" fileName="CommitUtil.java" startLine="46" startPosition="25" endLine="47" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2165772098013539701" fileName="CommitUtil.java" startLine="49" startPosition="7" endLine="50" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2754395556039700608" fileName="CommitUtil.java" startLine="50" startPosition="62" endLine="51" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2165772098013539715" fileName="CommitUtil.java" startLine="51" startPosition="64" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2754395556039700608" fileName="CommitUtil.java" startLine="50" startPosition="62" endLine="51" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2165772098013539715" fileName="CommitUtil.java" startLine="51" startPosition="68" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2165772098013717950" fileName="CommitUtil.java" startLine="52" startPosition="0" endLine="53" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2165772098013717939" fileName="CommitUtil.java" startLine="53" startPosition="69" endLine="54" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2165772098013717937" fileName="CommitUtil.java" startLine="54" startPosition="58" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />

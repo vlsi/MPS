@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.refactoring.framework;
 
-import com.intellij.openapi.util.Computable;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
@@ -23,9 +22,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.tree.TreePath;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;

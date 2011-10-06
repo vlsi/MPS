@@ -322,9 +322,9 @@ public class MergeModelsDialog extends BaseDialog {
       super(DiffTemporaryModule.getOperationContext(myProject, myMergeContext.getResultModel()));
     }
 
-    protected Iterable<BaseAction> getRootActions(@Nullable final SNodeId rootId) {
+    protected Iterable<BaseAction> getRootActions() {
       MergeModelsDialog md = MergeModelsDialog.this;
-      return Arrays.asList(new InvokeMergeRootsAction(md, rootId), AcceptYoursTheirs.yoursInstance(md), AcceptYoursTheirs.theirsInstance(md));
+      return Arrays.asList(new InvokeMergeRootsAction(md), AcceptYoursTheirs.yoursInstance(md), AcceptYoursTheirs.theirsInstance(md));
     }
 
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {

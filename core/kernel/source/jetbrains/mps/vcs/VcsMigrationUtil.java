@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.components.ComponentManager;
 
 public class VcsMigrationUtil {
   private static final VoidVCSHandler VOID_HANDLER = new VoidVCSHandler();
 
   public static VCSHandler getHandler() {
-    VCSHandler handler = ApplicationManager.getApplication().getComponent(VCSHandler.class);
+    VCSHandler handler = ComponentManager.getInstance().getComponent(VCSHandler.class);
     return handler == null ? VOID_HANDLER : handler;
   }
 }

@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.LibraryDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.LibraryDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -124,16 +124,6 @@ public class Library extends AbstractModule {
     return solution;
   }
 
-  protected void readModels() {
-    if (!isInitialized()) {
-      super.readModels();
-
-      if (isInitialized()) {
-        fireModuleInitialized();
-      }
-    }
-  }
-
   public LibraryDescriptor getModuleDescriptor() {
     return myDescriptor;
   }
@@ -160,7 +150,7 @@ public class Library extends AbstractModule {
     MPSModuleRepository.getInstance().fireModuleChanged(this);
 
     if (reloadClasses) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     }
 
     invalidateDependencies();

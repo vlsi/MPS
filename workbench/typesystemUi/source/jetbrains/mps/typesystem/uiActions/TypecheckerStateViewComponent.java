@@ -17,8 +17,6 @@ package jetbrains.mps.typesystem.uiActions;
 
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.Pair;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -29,6 +27,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.highlighter.EditorsHelper;
 
@@ -70,7 +70,7 @@ public class TypecheckerStateViewComponent extends JPanel {
     //upper panel
     JButton debugCurrentRootButton = new JButton(new AbstractAction("Debug Current Root") {
       public void actionPerformed(ActionEvent e) {
-        Project project = myOperationContext.getProject();
+        Project project = myOperationContext.getIdeaProject();
         IEditor currentEditor = EditorsHelper.getSelectedEditors(FileEditorManager.getInstance(project)).get(0);
         if (currentEditor != null) {
           EditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
@@ -181,7 +181,7 @@ public class TypecheckerStateViewComponent extends JPanel {
       public void run() {
         myOperationContext.getComponent(MPSEditorOpener.class).openNode(rule);
       }
-    }, myOperationContext.getProject());
+    }, myOperationContext.getIdeaProject());
   }
 
   public class SNodeTree extends MPSTree {
@@ -320,9 +320,9 @@ public class TypecheckerStateViewComponent extends JPanel {
     protected MPSTreeNode rebuild() {
       TextTreeNode root = new TextTreeNode("causes", myOperationContext);
       for (final Pair<String, String> cause : myCauses) {
-        TextTreeNode child = new TextTreeNode(cause.first + " : " + cause.second) {
+        TextTreeNode child = new TextTreeNode(cause.o1 + " : " + cause.o2) {
           public void doubleClick() {
-            openRule(cause.first, cause.second);
+            openRule(cause.o1, cause.o2);
           }
         };
         root.add(child);

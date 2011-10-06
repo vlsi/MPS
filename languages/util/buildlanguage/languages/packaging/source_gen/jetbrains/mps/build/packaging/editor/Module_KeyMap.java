@@ -54,7 +54,7 @@ public class Module_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       IOperationContext operationContext = editorContext.getOperationContext();
 
-      Project project = operationContext.getProject();
+      Project project = operationContext.getIdeaProject();
       ProjectPane.getInstance(project).selectModule(Module_Behavior.call_getModule_1213877515148(node), false);
     }
 

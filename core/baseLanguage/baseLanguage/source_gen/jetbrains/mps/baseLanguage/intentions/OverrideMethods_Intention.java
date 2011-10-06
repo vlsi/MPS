@@ -54,7 +54,7 @@ public class OverrideMethods_Intention extends BaseIntention implements Intentio
   public void execute(final SNode node, final EditorContext editorContext) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        Project project = editorContext.getOperationContext().getProject();
+        Project project = editorContext.getOperationContext().getIdeaProject();
         Frame frame = editorContext.getMainFrame();
         new StratergyAddMethodDialog(editorContext, frame, new AddClassMethodStrategy(node), new MethodsToOverrideStrategy(), new OverrideClassMethodStrategy(project)).showDialog();
       }

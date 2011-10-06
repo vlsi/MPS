@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -15,9 +14,12 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class GoToRule_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(GoToRule_Action.class.getResource("rule.png"));
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(GoToRule_Action.class);
 
   public GoToRule_Action() {
@@ -59,6 +61,17 @@ public class GoToRule_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToRule", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(GoToRule_Action.class.getResourceAsStream("rule.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for GoToRule", e);
+      }
+      return null;
     }
   }
 }

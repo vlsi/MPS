@@ -16,7 +16,6 @@
 package jetbrains.mps.newTypesystem.state;
 
 
-import com.intellij.openapi.util.Pair;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
@@ -37,7 +36,9 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.util.ManyToManyMap;
+import jetbrains.mps.util.Pair;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -57,6 +58,8 @@ public class State {
   private AbstractOperation myOperation;
   private List<AbstractOperation> myOperationsAsList;
   private boolean myInsideStateChangeAction = false;
+
+  private InequalitySystem myInequalitySystem = null;
 
   @StateObject
   private final Map<ConditionKind, ManyToManyMap<SNode, Block>> myBlocksAndInputs =
@@ -206,8 +209,8 @@ public class State {
   public void collectVarsExecuteIfNecessary(Block block) {
     Set<Pair<SNode, ConditionKind>> initialInputs = block.getInitialInputs();
     for (Pair<SNode, ConditionKind> input : initialInputs) {
-      SNode type = input.first;
-      ConditionKind conditionKind = input.second;
+      SNode type = input.o1;
+      ConditionKind conditionKind = input.o2;
       for (SNode variable : conditionKind.getUnresolvedInputs(type, this)) {
         addInputAndTrack(block, variable, conditionKind);
       }
@@ -223,6 +226,15 @@ public class State {
   }
 
   public boolean addEquation(SNode left, SNode right, EquationInfo info) {
+    if (myInequalitySystem != null) {
+      if (myEquations.getRepresentative(myInequalitySystem.getHoleType())== left) {
+        myInequalitySystem.addEquation(left);
+      }
+      if (myEquations.getRepresentative(myInequalitySystem.getHoleType())== right) {
+        myInequalitySystem.addEquation(right);
+      }
+      return true;
+    }
     return myEquations.addEquation(left, right, info);
   }
 
@@ -235,6 +247,15 @@ public class State {
   }
 
   public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info, boolean lessThan) {
+    if (myInequalitySystem != null) {
+      if (myEquations.getRepresentative(myInequalitySystem.getHoleType())== subType) {
+        myInequalitySystem.addSupertype(superType, isWeak);
+      }
+      if (myInequalitySystem.getHoleType()== superType) {
+        myInequalitySystem.addSubtype(subType, isWeak);
+      }
+      return;
+    }
     addBlock(new InequalityBlock(this, subType, superType, lessThan, RelationKind.fromFlags(isWeak, check, false), info));
   }
 
@@ -474,5 +495,20 @@ public class State {
     } else if (fromIndex < toIndex) {
       executeOperationsFromTo(fromIndex, toIndex);
     }
+  }
+
+  public void initHole(SNode hole) {
+    SNode var = typeOf(hole, null);
+    myNodeMaps.addNodeToType(hole, var, null);
+    myInequalitySystem = new InequalitySystem(var);
+
+  }
+
+  public InequalitySystem getInequalitySystem() {
+    return myInequalitySystem;
+  }
+
+  public void disposeHole() {
+    myInequalitySystem = null;
   }
 }

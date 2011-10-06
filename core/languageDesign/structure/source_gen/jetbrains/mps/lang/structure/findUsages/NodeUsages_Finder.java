@@ -12,6 +12,7 @@ import java.util.Set;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class NodeUsages_Finder extends GeneratedFinder {
@@ -33,7 +34,7 @@ public class NodeUsages_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(CollectionUtil.set(node), scope, new FindUsagesManager.ProgressAdapter(indicator), false);
+    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(CollectionUtil.set(node), scope, new ProgressMonitorAdapter(indicator), false);
     for (SReference reference : resRefs) {
       ListSequence.fromList(_results).addElement(reference.getSourceNode());
     }

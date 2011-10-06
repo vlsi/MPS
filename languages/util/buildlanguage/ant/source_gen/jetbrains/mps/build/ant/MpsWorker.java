@@ -20,12 +20,12 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.ConsoleAppender;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.LinkedHashSet;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.plugins.PluginUtil;
@@ -50,7 +50,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.generator.GeneratorManager;
 import java.util.Collection;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.library.ModulesMiner;
@@ -59,8 +59,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
+import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
 import com.intellij.openapi.application.PathManager;
@@ -182,10 +181,9 @@ public abstract class MpsWorker {
   protected void make() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        EmptyProgressIndicator indicator = new EmptyProgressIndicator();
         ClassLoaderManager.getInstance().updateClassPath();
         ModuleMaker maker = new ModuleMaker();
-        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
+        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
       }
     });
   }
@@ -193,8 +191,7 @@ public abstract class MpsWorker {
   protected void reload() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        EmptyProgressIndicator indicator = new EmptyProgressIndicator();
-        ClassLoaderManager.getInstance().reloadAll(indicator);
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
     });
   }
@@ -445,11 +442,12 @@ public abstract class MpsWorker {
         modelReference = SModelReference.fromPath(ifile.getPath());
       }
       info("Read model " + modelReference);
-      SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new DefaultModelRootManager(), ifile, modelReference);
-      if (smodelDescriptor.getModule() == null) {
+      DescriptorLoadResult d = new RegularModelDataSource(ifile).loadDescriptor(null, modelReference.getSModelFqName());
+      SModelDescriptor existingDescr = SModelRepository.getInstance().getModelDescriptor(d.getHeader().getModelReference());
+      if (existingDescr == null) {
         error("Module for " + ifile.getPath() + " was not found. Use \"library\" tag to load required modules.");
       } else {
-        modelDescriptors.add(smodelDescriptor);
+        modelDescriptors.add(existingDescr);
       }
     } catch (ModelFileReadException e) {
       log(e);

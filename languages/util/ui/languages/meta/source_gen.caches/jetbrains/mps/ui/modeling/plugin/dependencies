@@ -21,7 +21,6 @@
     <classNode extendsClassName="jetbrains.mps.ide.editorTabs.EditorTabDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ui.modeling.plugin.EditorExtensionHelper" file="EditorExtensionHelper.java">
-    <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />

@@ -20,6 +20,7 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Pair;
 
 import java.util.List;
 import java.util.Set;
@@ -90,5 +91,5 @@ public abstract class RelationBlock extends Block {
     return variables;
   }
 
-  public abstract List<com.intellij.openapi.util.Pair<SNode, SNode>> getInputsAndOutputs();
+  public abstract List<Pair<SNode, SNode>> getInputsAndOutputs();
 }

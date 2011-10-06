@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator;
 
-import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.generator.TransientModelsComponent.TransientSwapSpace;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
@@ -24,8 +23,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -243,7 +242,7 @@ public class TransientModelsModule extends AbstractModule {
     private boolean wasUnloaded = false;
 
     private TransientSModelDescriptor(SModelFqName fqName, String longName) {
-      super(IModelRootManager.NULL_MANAGER, new SModelReference(fqName, SModelId.generate()), false);
+      super(new SModelReference(fqName, SModelId.generate()), false);
       myLongName = longName;
     }
 

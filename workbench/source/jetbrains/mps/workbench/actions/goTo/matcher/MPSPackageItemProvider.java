@@ -17,8 +17,8 @@
 package jetbrains.mps.workbench.actions.goTo.matcher;
 
 import com.intellij.ide.util.gotoByName.temp.IdeaItemProvider;
-import com.intellij.openapi.util.Computable;
 import com.intellij.psi.PsiElement;
+import jetbrains.mps.util.Computable;
 
 import java.util.List;
 

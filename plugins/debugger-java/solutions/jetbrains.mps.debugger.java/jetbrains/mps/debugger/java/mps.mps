@@ -697,7 +697,7 @@
   </root>
   <root id="3271576760503788622">
     <node role="icon" roleId="uhxm.7966814097310618131" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="3271576760503788623">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/core/kernel/source/MPS_16.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/source/MPS_16.png" />
     </node>
   </root>
   <root id="3271576760503799855">
@@ -816,6 +816,7 @@
     </node>
     <node role="method" roleId="rzqf.856705193941281774" type="rzqf.CommandMethod" typeId="rzqf.856705193941281767" id="6269383727488505973">
       <property name="name" nameId="tpck.1169194664001" value="getDefaultVirtualMachineParameters" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="2168104298250619574" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6269383727488505977" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6269383727488505976">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2168104298250619554">
@@ -868,7 +869,6 @@
           </node>
         </node>
       </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="2168104298250619574" />
     </node>
     <node role="method" roleId="rzqf.856705193941281774" type="rzqf.CommandMethod" typeId="rzqf.856705193941281767" id="2397785969255970519">
       <property name="name" nameId="tpck.1169194664001" value="getDefaultConfigurationPath" />

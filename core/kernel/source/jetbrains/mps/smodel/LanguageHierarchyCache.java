@@ -15,18 +15,14 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.InternAwareStringSet;
-import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -39,7 +35,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
   public static LanguageHierarchyCache getInstance() {
     if (ourInstance == null) {
-      ourInstance = ApplicationManager.getApplication().getComponent(LanguageHierarchyCache.class);
+      ourInstance = ComponentManager.getInstance().getComponent(LanguageHierarchyCache.class);
     }
     return ourInstance;
   }

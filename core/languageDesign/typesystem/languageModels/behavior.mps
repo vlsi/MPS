@@ -30,14 +30,8 @@
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877218089">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpd4.1174989777619" resolveInfo="LinkPatternVariableReference" />
     </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877256119">
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpd4.1212573344738" resolveInfo="ChildTypeRestriction" />
-    </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877258153">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpd4.1174650418652" resolveInfo="ApplicableNodeReference" />
-    </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877260164">
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpd4.1212763614690" resolveInfo="ChildTypeRestrictionReference" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877307632">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpd4.1174642743670" resolveInfo="ApplicableNodeCondition" />
@@ -52,7 +46,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpd4.1174989799417" resolveInfo="PropertyPatternVariableReference" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877387420">
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpd4.1210784384552" resolveInfo="HelginsIntentionArgument" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpd4.1210784384552" resolveInfo="TypesystemIntentionArgument" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877428165">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpd4.1188473524530" resolveInfo="MeetType" />
@@ -139,19 +133,9 @@
       </node>
     </node>
   </root>
-  <root id="1213877256119">
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1213877256120">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877256121" />
-    </node>
-  </root>
   <root id="1213877258153">
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1213877258154">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877258155" />
-    </node>
-  </root>
-  <root id="1213877260164">
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1213877260165">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877260166" />
     </node>
   </root>
   <root id="1213877307632">

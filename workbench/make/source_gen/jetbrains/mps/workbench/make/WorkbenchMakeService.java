@@ -51,7 +51,6 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
@@ -270,7 +269,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   }
 
   private void displayInfo(String info) {
-    IdeFrame frame = WindowManager.getInstance().getIdeFrame(this.getSession().getContext().getProject());
+    IdeFrame frame = WindowManager.getInstance().getIdeFrame(this.getSession().getContext().getIdeaProject());
     if (frame != null) {
       frame.getStatusBar().setInfo(info);
     }
@@ -297,7 +296,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller) {
       final ProgressIndicatorProgressStrategy pips = new ProgressIndicatorProgressStrategy();
       WorkbenchMakeService.this.getSession();
-      final MakeTask task = new MakeTask(WorkbenchMakeService.this.getSession().getContext().getProject(), taskName, scripts, taskName, clustRes, new WorkbenchMakeService.Controller(controller, mh, pips), mh, PerformInBackgroundOption.DEAF) {
+      final MakeTask task = new MakeTask(WorkbenchMakeService.this.getSession().getContext().getIdeaProject(), taskName, scripts, taskName, clustRes, new WorkbenchMakeService.Controller(controller, mh, pips), mh, PerformInBackgroundOption.DEAF) {
         @Override
         protected void aboutToStart() {
           notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.SCRIPT_ABOUT_TO_START));
@@ -349,6 +348,12 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
       return task;
     }
+
+    @Override
+    protected IScript toScript(ScriptBuilder scriptBuilder) {
+      MakeSession session = WorkbenchMakeService.this.getSession();
+      return session.toScript(scriptBuilder);
+    }
   }
 
   private class Controller extends IScriptController.Stub {
@@ -390,9 +395,10 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       final boolean oldFlag = ApplicationImpl.setExceptionalThreadWithReadAccessFlag(true);
       try {
         code.invoke(jobMon);
-      } catch (Throwable e) {
+      } catch (RuntimeException e) {
         WorkbenchMakeService.LOG.debug("Error running job", e);
         jobMon.reportFeedback(new IFeedback.ERROR("Error running job", e));
+        throw e;
       } finally {
         ApplicationImpl.setExceptionalThreadWithReadAccessFlag(oldFlag);
       }
@@ -405,7 +411,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       final ProgressIndicator pind = new JobMonitorProgressIndicator(jobMon);
       Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
       if (vars != null) {
-        vars._0(getSession().getContext().getProject());
+        vars._0(getSession().getContext().getIdeaProject());
         vars._1(getSession().getContext());
         vars._2(getSession().isCleanMake());
         vars._3(new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
@@ -415,10 +421,10 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         });
       }
 
-      Tuples._3<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean, Boolean> tparams = (Tuples._3<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
+      Tuples._2<Boolean, Boolean> tparams = (Tuples._2<Boolean, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
       if (tparams != null) {
-        tparams._1(GenerationSettings.getInstance().isFailOnMissingTextGen());
-        tparams._2(GenerationSettings.getInstance().isGenerateDebugInfo());
+        tparams._0(GenerationSettings.getInstance().isFailOnMissingTextGen());
+        tparams._1(GenerationSettings.getInstance().isGenerateDebugInfo());
       }
 
       if (delegateScrCtr != null) {
@@ -468,7 +474,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
     public MessageHandler(String name, IOperationContext context) {
       this.name = name;
-      this.mvt = context.getProject().getComponent(MessagesViewTool.class);
+      this.mvt = context.getIdeaProject().getComponent(MessagesViewTool.class);
     }
 
     public void clear() {

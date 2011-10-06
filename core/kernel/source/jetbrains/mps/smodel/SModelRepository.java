@@ -33,7 +33,6 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SModelRepository implements ApplicationComponent {
@@ -135,17 +134,6 @@ public class SModelRepository implements ApplicationComponent {
     return result;
   }
 
-  /**
-   * do not call this method unless you do it from some ModelRootManager
-   */
-  public void createNewModel(EditableSModelDescriptor modelDescriptor, ModelOwner owner) {
-    ModelAccess.assertLegalWrite();
-
-    registerModelDescriptor(modelDescriptor, owner);
-    modelDescriptor.setChanged(true);
-    fireModelCreatedEvent(modelDescriptor);
-  }
-
   public void deleteModel(SModelDescriptor modelDescriptor) {
     ModelAccess.assertLegalWrite();
 
@@ -207,7 +195,7 @@ public class SModelRepository implements ApplicationComponent {
       List<ModelOwner> owners = myModelsWithOwners.get(md);
       if (!owners.remove(owner)) throw new IllegalStateException();
       Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
-      if(!ownerModels.remove(md)) throw new IllegalStateException();
+      if (!ownerModels.remove(md)) throw new IllegalStateException();
       fireModelOwnerRemoved(md, owner);
 
       if (owners.isEmpty()) {
@@ -220,10 +208,10 @@ public class SModelRepository implements ApplicationComponent {
     synchronized (myModelsLock) {
       fireBeforeModelRemoved(md);
       List<ModelOwner> owners = myModelsWithOwners.get(md);
-      if(owners != null) {
+      if (owners != null) {
         for (ModelOwner owner : owners) {
           Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
-          if(!ownerModels.remove(md)) throw new IllegalStateException();
+          if (!ownerModels.remove(md)) throw new IllegalStateException();
         }
       }
       myModelsWithOwners.remove(md);
@@ -282,7 +270,7 @@ public class SModelRepository implements ApplicationComponent {
   public List<SModelDescriptor> getModelDescriptors(ModelOwner modelOwner) {
     synchronized (myModelsLock) {
       Set<SModelDescriptor> result = myModelsByOwner.get(modelOwner);
-      if(result == null || result.size() == 0) return Collections.emptyList();
+      if (result == null || result.size() == 0) return Collections.emptyList();
       return new ArrayList<SModelDescriptor>(result);
     }
   }
@@ -303,10 +291,10 @@ public class SModelRepository implements ApplicationComponent {
   private List<EditableSModelDescriptor> getModelsToSave() {
     List<EditableSModelDescriptor> modelsToSave = new ArrayList<EditableSModelDescriptor>();
     for (SModelDescriptor md : myModelsWithOwners.keySet()) {
-      if (md instanceof EditableSModelDescriptor) {
-        EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);
+      if (md instanceof DefaultSModelDescriptor) {
+        DefaultSModelDescriptor emd = ((DefaultSModelDescriptor) md);
         // HOTFIX MPS-13326
-        if (emd.isChanged() && !emd.isPackaged()) {
+        if (emd.isChanged() && !emd.isReadOnly()) {
           modelsToSave.add(emd);
         }
       }
@@ -409,18 +397,6 @@ public class SModelRepository implements ApplicationComponent {
     for (SModelRepositoryListener l : listeners()) {
       try {
         l.modelOwnerRemoved(modelDescriptor, owner);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private void fireModelCreatedEvent(SModelDescriptor modelDescriptor) {
-    MPSModuleRepository.getInstance().invalidateCaches();
-
-    for (SModelRepositoryListener listener : listeners()) {
-      try {
-        listener.modelCreated(modelDescriptor);
       } catch (Throwable t) {
         LOG.error(t);
       }

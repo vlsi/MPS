@@ -11,10 +11,10 @@ import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.ui.Messages;
 import git4idea.commands.GitSimpleHandler;
 import git4idea.commands.GitCommand;
+import com.intellij.openapi.util.SystemInfo;
 
 /*package*/ class GitGlobalConfigFixesInstaller extends AbstractInstaller {
   private static final String CORE_AUTOCRLF = "core.autocrlf";
-  private static final String CORE_AUTOCRLF_VALUE = "input";
   protected static Log log = LogFactory.getLog(GitGlobalConfigFixesInstaller.class);
 
   public GitGlobalConfigFixesInstaller(Project project) {
@@ -28,7 +28,7 @@ import git4idea.commands.GitCommand;
     }
     try {
       String currentValue = GitConfigUtil.getValue(myProject, myProject.getBaseDir(), GitGlobalConfigFixesInstaller.CORE_AUTOCRLF);
-      if (CORE_AUTOCRLF_VALUE.equals(currentValue)) {
+      if (getCoreAutocrlfValue().equals(currentValue)) {
         return AbstractInstaller.State.INSTALLED;
       }
     } catch (VcsException e) {
@@ -45,7 +45,7 @@ import git4idea.commands.GitCommand;
     }
 
     try {
-      setGlobalProperty(myProject, CORE_AUTOCRLF, CORE_AUTOCRLF_VALUE);
+      setGlobalProperty(myProject, CORE_AUTOCRLF, getCoreAutocrlfValue());
       return AbstractInstaller.State.INSTALLED;
     } catch (VcsException e) {
       if (log.isWarnEnabled()) {
@@ -76,5 +76,12 @@ import git4idea.commands.GitCommand;
     h.ignoreErrorCode(1);
     h.addParameters("--global", key, value);
     h.run();
+  }
+
+  private static String getCoreAutocrlfValue() {
+    return (SystemInfo.isWindows ?
+      "true" :
+      "input"
+    );
   }
 }

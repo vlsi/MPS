@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.ComponentManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map.Entry;
@@ -33,7 +33,7 @@ class ImmatureReferences implements ApplicationComponent {
   private static final Object PRESENT = new Object();
 
   static ImmatureReferences getInstance() {
-    return ApplicationManager.getApplication().getComponent(ImmatureReferences.class);
+    return ComponentManager.getInstance().getComponent(ImmatureReferences.class);
   }
 
   private SModelRepositoryAdapter myReposListener = new MySModelRepositoryAdapter();
@@ -108,8 +108,7 @@ class ImmatureReferences implements ApplicationComponent {
     ConcurrentMap<SReferenceBase, Object> pooledSet;
     try {
       pooledSet = myReferencesSetPool.remove();
-    }
-    catch (NoSuchElementException e) {
+    } catch (NoSuchElementException e) {
       pooledSet = new ConcurrentHashMap<SReferenceBase, Object>();
     }
     ConcurrentMap<SReferenceBase, Object> usedSet = myReferences.putIfAbsent(modelRef, pooledSet);

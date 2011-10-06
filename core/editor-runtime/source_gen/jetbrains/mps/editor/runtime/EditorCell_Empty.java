@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.CellSide;
 import com.intellij.util.ui.UIUtil;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellActionType;

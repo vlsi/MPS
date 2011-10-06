@@ -62,7 +62,7 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode constructorDeclaration = null;
-    Project project = editorContext.getOperationContext().getProject();
+    Project project = editorContext.getOperationContext().getIdeaProject();
     for (SNode selectedSuperConstructor : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedConstructors"))) {
       SNode constructor = SNodeFactoryOperations.addNewChild(classConcept, "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
       constructorDeclaration = constructor;

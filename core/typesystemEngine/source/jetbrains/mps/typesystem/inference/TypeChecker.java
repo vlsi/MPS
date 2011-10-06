@@ -17,7 +17,6 @@ package jetbrains.mps.typesystem.inference;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.util.Computable;
 import gnu.trove.THashMap;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
@@ -34,6 +33,7 @@ import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NonNls;
@@ -259,6 +259,13 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
     } else {
       return c.compute();
     }
+  }
+
+  public InequalitySystem getInequalitiesForHole(SNode hole, boolean holeIsAType) {
+    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(hole.getContainingRoot());
+    InequalitySystem inequalitySystem = typeCheckingContext.getBaseNodeTypesComponent().computeInequalitiesForHole(hole, holeIsAType);
+    typeCheckingContext.dispose();
+    return inequalitySystem;
   }
 
   public SNode getInferredTypeOf(final SNode node) {

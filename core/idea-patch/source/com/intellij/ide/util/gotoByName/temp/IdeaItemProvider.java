@@ -16,12 +16,10 @@
 package com.intellij.ide.util.gotoByName.temp;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.CustomMatcherModel;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.util.Comparing;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.psi.PsiElement;
@@ -31,10 +29,14 @@ import com.intellij.psi.util.proximity.PsiProximityComparator;
 import com.intellij.util.Function;
 import com.intellij.util.SmartList;
 import com.intellij.util.containers.ContainerUtil;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.ref.WeakReference;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class IdeaItemProvider implements ItemProvider {
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.util.gotoByName.ChooseByNameIdea");
@@ -189,9 +191,9 @@ public class IdeaItemProvider implements ItemProvider {
     return true;
   }
 
-  public List<String> getNamesByPattern(String[] names, String pattern){
+  public List<String> getNamesByPattern(String[] names, String pattern) {
     ArrayList<String> res = new ArrayList<String>();
-    getNamesByPattern(names,null, res, pattern);
+    getNamesByPattern(names, null, res, pattern);
     return res;
   }
 

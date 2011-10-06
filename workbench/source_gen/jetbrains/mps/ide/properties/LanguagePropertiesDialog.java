@@ -55,10 +55,10 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
         myLanguage.validateExtends();
         myLanguage.save();
       }
-    }, getOperationContext().getProject());
+    }, getOperationContext().getIdeaProject());
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
-        Project project = LanguagePropertiesDialog.this.getOperationContext().getProject();
+        Project project = LanguagePropertiesDialog.this.getOperationContext().getIdeaProject();
         ProjectPane.getInstance(project).selectModule(myLanguage, false);
       }
     });

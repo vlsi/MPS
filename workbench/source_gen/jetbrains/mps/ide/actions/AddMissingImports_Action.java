@@ -11,7 +11,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.MissingDependenciesFixer;
 import java.awt.Frame;
 import jetbrains.mps.smodel.SModelDescriptor;
 

@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
   public BaseLanguageHierarchyViewTool(Project project) {
@@ -79,7 +79,7 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
     }
 
     protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
-      Set<SReference> usages = myUsagesManager.findUsages(node, GlobalScope.getInstance(), IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
+      Set<SReference> usages = myUsagesManager.findUsages(node, GlobalScope.getInstance(), new EmptyProgressMonitor());
       Set<SNode> result = new HashSet<SNode>();
       for (SReference usage : usages) {
         SNode sourceNode = usage.getSourceNode();

@@ -30,7 +30,7 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
   }
 
   private Iterable<String> getCommands(List<? extends Object> list) {
-    return ListSequence.fromList(list).<String>translate(new ITranslator2<Object, String>() {
+    return ListSequence.fromList(list).translate(new ITranslator2<Object, String>() {
       public Iterable<String> translate(Object it) {
         if (it == null) {
           return ListSequence.fromList(new ArrayList<String>());

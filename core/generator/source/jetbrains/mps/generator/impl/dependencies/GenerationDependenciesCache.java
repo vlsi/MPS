@@ -34,11 +34,9 @@ import java.util.Arrays;
  * Evgeny Gryaznov, May 14, 2010
  */
 public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDependencies> {
-  private final CleanupManager myCleanupManager;
 
-  public GenerationDependenciesCache(SModelRepository modelRepository, CleanupManager cleanupManager) {
+  public GenerationDependenciesCache(SModelRepository modelRepository) {
     super(modelRepository);
-    myCleanupManager = cleanupManager;
   }
 
   @NonNls
@@ -50,7 +48,7 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
   @Override
   public void initComponent() {
     super.initComponent();
-    myCleanupManager.addCleanupListener(new CleanupListener() {
+    CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
       public void performCleanup() {
         cleanup();
       }

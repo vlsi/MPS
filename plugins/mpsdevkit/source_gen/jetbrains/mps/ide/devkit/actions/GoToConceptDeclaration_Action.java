@@ -4,7 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -17,9 +16,12 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class GoToConceptDeclaration_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(GoToConceptDeclaration_Action.class.getResource("structure.png"));
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(GoToConceptDeclaration_Action.class);
 
   public GoToConceptDeclaration_Action() {
@@ -68,6 +70,17 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToConceptDeclaration", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(GoToConceptDeclaration_Action.class.getResourceAsStream("structure.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for GoToConceptDeclaration", e);
+      }
+      return null;
     }
   }
 }

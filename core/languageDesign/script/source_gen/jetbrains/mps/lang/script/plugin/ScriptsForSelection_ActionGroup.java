@@ -40,7 +40,7 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
       ScriptsForSelection_ActionGroup.this.removeAll();
       event.getPresentation().setVisible(true);
       IOperationContext context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-      if (context == null || context.getProject() == null) {
+      if (context == null || context.getIdeaProject() == null) {
         event.getPresentation().setEnabled(false);
         return;
       }

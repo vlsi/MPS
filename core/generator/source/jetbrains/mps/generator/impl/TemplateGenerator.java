@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl;
 
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
@@ -31,6 +30,7 @@ import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -67,7 +67,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private IPerformanceTracer ttrace;
   private DependenciesBuilder myDependenciesBuilder;
 
-  public TemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
+  public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
                            IGeneratorLogger logger, RuleManager ruleManager,
                            SModel inputModel, SModel outputModel, GenerationOptions options,
                            DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {

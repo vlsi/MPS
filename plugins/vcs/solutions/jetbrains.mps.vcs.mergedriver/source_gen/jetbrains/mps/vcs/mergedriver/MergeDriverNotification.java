@@ -38,11 +38,11 @@ public class MergeDriverNotification {
   }
 
   private boolean isNotificationSuppressed() {
-    return "true".equals(PropertiesComponent.getInstance(myProject).getValue(SUPPRESSED_PROPERTY_NAME));
+    return "true".equals(PropertiesComponent.getInstance().getValue(SUPPRESSED_PROPERTY_NAME));
   }
 
   public void setNotificationsSuppressed(boolean value) {
-    PropertiesComponent.getInstance(myProject).setValue(SUPPRESSED_PROPERTY_NAME, Boolean.toString(value));
+    PropertiesComponent.getInstance().setValue(SUPPRESSED_PROPERTY_NAME, Boolean.toString(value));
   }
 
   private void calculateCompositeState() {

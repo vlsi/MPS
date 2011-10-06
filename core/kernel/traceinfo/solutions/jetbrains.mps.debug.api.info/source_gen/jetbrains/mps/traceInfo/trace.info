@@ -37,7 +37,7 @@
     <nodeInfo nodeId="2897370900776703290" fileName="TraceInfoManager.java" startLine="135" startPosition="48" endLine="136" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2897370900776703299" fileName="TraceInfoManager.java" startLine="136" startPosition="82" endLine="137" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2897370900776703313" fileName="TraceInfoManager.java" startLine="141" startPosition="36" endLine="142" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2897370900776703050" fileName="TraceInfoManager.java" startLine="151" startPosition="48" endLine="152" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2897370900776703050" fileName="TraceInfoManager.java" startLine="151" startPosition="48" endLine="152" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2897370900776703042" fileName="TraceInfoManager.java" startLine="26" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TraceInfoManager#()V" />
     <nodeInfo nodeId="2897370900776703066" fileName="TraceInfoManager.java" startLine="32" startPosition="57" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2897370900776703088" fileName="TraceInfoManager.java" startLine="41" startPosition="63" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -90,7 +90,7 @@
     <scopeInfo nodeId="2897370900776703235" fileName="TraceInfoManager.java" startLine="122" startPosition="85" endLine="123" endPosition="54" />
     <scopeInfo nodeId="2897370900776703277" fileName="TraceInfoManager.java" startLine="131" startPosition="79" endLine="132" endPosition="60" />
     <scopeInfo nodeId="2897370900776703312" fileName="TraceInfoManager.java" startLine="141" startPosition="36" endLine="142" endPosition="32" />
-    <scopeInfo nodeId="2897370900776703049" fileName="TraceInfoManager.java" startLine="151" startPosition="48" endLine="152" endPosition="84" />
+    <scopeInfo nodeId="2897370900776703049" fileName="TraceInfoManager.java" startLine="151" startPosition="48" endLine="152" endPosition="79" />
     <scopeInfo nodeId="394642332330695218" fileName="TraceInfoManager.java" startLine="63" startPosition="0" endLine="65" endPosition="16">
       <varInfo nodeId="394642332330695219" varName="t" />
     </scopeInfo>

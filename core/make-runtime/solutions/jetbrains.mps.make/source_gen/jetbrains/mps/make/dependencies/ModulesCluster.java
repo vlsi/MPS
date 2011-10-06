@@ -77,7 +77,7 @@ public class ModulesCluster {
 
   public Iterable<? extends Iterable<IModule>> buildOrder() {
     List<List<ModuleReference>> order = new ModulesCluster.ModulesGraph().totalOrder();
-    Iterable<? extends Iterable<ModuleReference>> compacted = this.compact(order);
+    Iterable<? extends Iterable<ModuleReference>> compacted = Sequence.fromIterable(this.compact(order)).toListSequence();
     return Sequence.fromIterable(compacted).select(new ISelector<Iterable<ModuleReference>, IListSequence<IModule>>() {
       public IListSequence<IModule> select(Iterable<ModuleReference> cycle) {
         return Sequence.fromIterable(cycle).select(new ISelector<ModuleReference, IModule>() {
@@ -111,12 +111,12 @@ __switch__:
                         this.__CP__ = 3;
                         break;
                       } else if (prev.value == null) {
-                        this.__CP__ = 5;
+                        this.__CP__ = 6;
                         break;
                       }
-                      this.__CP__ = 7;
+                      this.__CP__ = 8;
                       break;
-                    case 8:
+                    case 9:
                       if (ListSequence.fromList(cycle).translate(new ITranslator2<ModuleReference, ModuleReference>() {
                         public Iterable<ModuleReference> translate(ModuleReference mr) {
                           return MapSequence.fromMap(allDeps).get(mr).required;
@@ -126,17 +126,17 @@ __switch__:
                           return MapSequence.fromMap(allDeps).get(mr).dependent;
                         }
                       })).isEmpty()) {
-                        this.__CP__ = 9;
+                        this.__CP__ = 10;
                         break;
                       }
-                      this.__CP__ = 11;
+                      this.__CP__ = 12;
                       break;
                     case 4:
-                      this.__CP__ = 1;
+                      this.__CP__ = 5;
                       this.yield(prev.value);
                       return true;
-                    case 12:
-                      this.__CP__ = 13;
+                    case 13:
+                      this.__CP__ = 14;
                       this.yield(prev.value);
                       return true;
                     case 0:
@@ -146,21 +146,25 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
+                      prev.value = null;
+                      this.__CP__ = 1;
+                      break;
+                    case 6:
                       prev.value = ListSequence.fromList(cycle).toListSequence();
                       this.__CP__ = 1;
                       break;
-                    case 7:
-                      this.__CP__ = 8;
+                    case 8:
+                      this.__CP__ = 9;
                       break;
-                    case 9:
+                    case 10:
                       prev.value = Sequence.fromIterable(prev.value).concat(ListSequence.fromList(cycle).toListSequence());
                       this.__CP__ = 1;
                       break;
-                    case 11:
-                      this.__CP__ = 12;
+                    case 12:
+                      this.__CP__ = 13;
                       break;
-                    case 13:
-                      prev.value = cycle;
+                    case 14:
+                      prev.value = ListSequence.fromList(cycle).toListSequence();
                       this.__CP__ = 1;
                       break;
                     default:

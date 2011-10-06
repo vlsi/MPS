@@ -18,7 +18,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.psi.PsiElement;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import java.util.ArrayList;
 
 public class MPSPsiElement<T> extends FakePsiElement {

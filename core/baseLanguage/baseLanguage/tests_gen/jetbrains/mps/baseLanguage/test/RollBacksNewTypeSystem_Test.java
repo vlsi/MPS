@@ -6,7 +6,7 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.lang.test.runtime.TypeSystemChecker;
+import jetbrains.mps.lang.test.runtime.TypeSystemCheckUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 @MPSLaunch
@@ -21,7 +21,7 @@ public class RollBacksNewTypeSystem_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_GenerationMode() throws Exception {
       this.addNodeById("5210914756411638024");
-      TypeSystemChecker.checkRollBacks(SNodeOperations.cast(this.getNodeById("5210914756411638027"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+      TypeSystemCheckUtil.checkRollBacks(SNodeOperations.cast(this.getNodeById("5210914756411638027"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
     }
   }
 }

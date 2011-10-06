@@ -5,7 +5,7 @@ package jetbrains.mps.bootstrap.helgins.sandbox.sb3;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 
 public class ErrorClosure<Q> {
   public ErrorClosure() {

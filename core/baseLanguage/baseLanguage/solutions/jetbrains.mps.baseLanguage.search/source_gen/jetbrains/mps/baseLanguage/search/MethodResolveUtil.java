@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeMap;

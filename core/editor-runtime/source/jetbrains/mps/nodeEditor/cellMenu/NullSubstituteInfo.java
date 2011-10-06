@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.typesystem.inference.InequalitySystem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,5 +60,9 @@ public class NullSubstituteInfo implements NodeSubstituteInfo {
 
   public boolean hasNoActionsWithPrefix(String pattern) {
     return true;
+  }
+
+  public InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
+    return null;
   }
 }

@@ -30,7 +30,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_4112907264514778044(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(!(!(SNodeOperations.getConceptDeclaration(((SNode) _context.getPatternVariable("patternVar_yy"))) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.getConceptDeclaration(((SNode) _context.getPatternVariable("patternVar_xx"))) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference"))) || SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getPatternVariable("patternVar_xx")), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false) != SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getPatternVariable("patternVar_yy")), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false));
+    return SNodeOperations.getConceptDeclaration(((SNode) _context.getPatternVariable("patternVar_yy"))) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference") && SNodeOperations.getConceptDeclaration(((SNode) _context.getPatternVariable("patternVar_xx"))) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference") && SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getPatternVariable("patternVar_xx")), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false) == SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getPatternVariable("patternVar_yy")), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false);
   }
 
   public static boolean baseMappingRule_Condition_8900764248744322639(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -311,7 +311,7 @@ public class QueriesGenerated {
     }
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (!(!(pattern != null) || pattern.getClass() != this.getClass())) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_right = (SNode) pattern.getFieldValue("patternVar_right");
         patternVar_xx = (SNode) pattern.getFieldValue("patternVar_xx");
         patternVar_yy = (SNode) pattern.getFieldValue("patternVar_yy");
@@ -378,7 +378,7 @@ public class QueriesGenerated {
     }
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (!(!(pattern != null) || pattern.getClass() != this.getClass())) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_left = (SNode) pattern.getFieldValue("patternVar_left");
         patternVar_right = (SNode) pattern.getFieldValue("patternVar_right");
       }
@@ -457,7 +457,7 @@ public class QueriesGenerated {
     }
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (!(!(pattern != null) || pattern.getClass() != this.getClass())) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_right = (SNode) pattern.getFieldValue("patternVar_right");
         patternVar_left = (SNode) pattern.getFieldValue("patternVar_left");
       }
@@ -511,7 +511,7 @@ public class QueriesGenerated {
     }
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (!(!(pattern != null) || pattern.getClass() != this.getClass())) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_myExpr = (SNode) pattern.getFieldValue("patternVar_myExpr");
         patternVar_jobName = (String) pattern.getFieldValue("patternVar_jobName");
       }
@@ -559,7 +559,7 @@ public class QueriesGenerated {
     }
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (!(!(pattern != null) || pattern.getClass() != this.getClass())) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_aaa = (SNode) pattern.getFieldValue("patternVar_aaa");
         patternVar_null = (String) pattern.getFieldValue("patternVar_null");
       }
@@ -605,7 +605,7 @@ public class QueriesGenerated {
     }
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (!(!(pattern != null) || pattern.getClass() != this.getClass())) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_ref = (SNode) pattern.getFieldValue("patternVar_ref");
       }
     }
@@ -647,7 +647,7 @@ public class QueriesGenerated {
     }
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (!(!(pattern != null) || pattern.getClass() != this.getClass())) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_ref = (SNode) pattern.getFieldValue("patternVar_ref");
       }
     }
@@ -689,7 +689,7 @@ public class QueriesGenerated {
     }
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (!(!(pattern != null) || pattern.getClass() != this.getClass())) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_ref = (SNode) pattern.getFieldValue("patternVar_ref");
       }
     }

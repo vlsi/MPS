@@ -194,11 +194,11 @@ public enum LanguageAspect {
     return Language.getModelAspect(sm) == this;
   }
 
-  public EditableSModelDescriptor get(Language l) {
+  public DefaultSModelDescriptor get(Language l) {
     SModelFqName fqName = new SModelFqName(l.getModuleFqName() + "." + myName, null);
     EditableSModelDescriptor md = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(fqName);
     if (md == null) return null;
-    if (SModelRepository.getInstance().getOwners(md).contains(l)) return md;
+    if (SModelRepository.getInstance().getOwners(md).contains(l)) return ((DefaultSModelDescriptor) md);
     return null;
   }
 

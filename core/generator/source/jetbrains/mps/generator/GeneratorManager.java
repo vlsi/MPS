@@ -15,17 +15,18 @@
  */
 package jetbrains.mps.generator;
 
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.progress.CancellationMonitor;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.util.Computable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,7 +51,7 @@ public class GeneratorManager {
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
-                                final ProgressIndicator progress,
+                                final ProgressMonitor progress,
                                 final IMessageHandler messages) {
     return generateModels(inputModels, invocationContext, generationHandler, progress, messages, GenerationOptions.getDefaults().create());
   }
@@ -62,7 +63,7 @@ public class GeneratorManager {
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
-                                final ProgressIndicator progress,
+                                final ProgressMonitor progress,
                                 final IMessageHandler messages,
                                 final boolean saveTransientModels,
                                 final boolean rebuildAll) {
@@ -82,7 +83,7 @@ public class GeneratorManager {
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
-                                final ProgressIndicator progress,
+                                final ProgressMonitor monitor,
                                 final IMessageHandler messages,
                                 final GenerationOptions options) {
     final boolean[] result = new boolean[1];
@@ -96,7 +97,7 @@ public class GeneratorManager {
     ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
         fireBeforeGeneration(inputModels, options, invocationContext);
-        for(SModelDescriptor d : inputModels) {
+        for (SModelDescriptor d : inputModels) {
           transientModelsComponent.createModule(d.getModule());
         }
       }
@@ -104,14 +105,14 @@ public class GeneratorManager {
 
     GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings(), options.isKeepModelsWithWarnings());
 
-    final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext, progress);
+    final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext, new CancellationMonitor(monitor));
     ModelAccess.instance().requireRead(new Runnable() {
       @Override
       public void run() {
         result[0] = UndoHelper.getInstance().runNonUndoableAction(new Computable<Boolean>() {
           @Override
           public Boolean compute() {
-            final boolean success = gc.generate();
+            final boolean success = gc.generate(monitor);
             return success;
           }
         });
@@ -124,15 +125,16 @@ public class GeneratorManager {
       }
     });
 
-    if(result[0]) {
+    if (result[0]) {
       try {
         ModelAccess.instance().requireWrite(new Runnable() {
           public void run() {
             fireModelsGenerated(Collections.unmodifiableList(inputModels), result[0]);
           }
         });
+      } catch (RuntimeException e) {
+        LOG.error(e);
       }
-      catch (RuntimeException e) {LOG.error(e);}
     }
 
     options.getGenerationTracer().finishTracing();
@@ -160,6 +162,8 @@ public class GeneratorManager {
   }
 
   private void fireAfterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
+    CachesManager.getInstance().removeGenerationCaches();
+
     for (GenerationListener l : myGenerationListeners) {
       try {
         l.afterGeneration(inputModels, options, operationContext);
@@ -196,11 +200,12 @@ public class GeneratorManager {
   }
 
   public static boolean isDoNotGenerate(SModelDescriptor sm) {
-    return sm instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) sm).isDoNotGenerate();
+    if (!(sm instanceof DefaultSModelDescriptor)) return false;
+    return ((DefaultSModelDescriptor) sm).isDoNotGenerate();
   }
 
   public static void setDoNotGenerate(SModelDescriptor sm, boolean value) {
-    if (!(sm instanceof EditableSModelDescriptor)) return;
-    ((EditableSModelDescriptor) sm).setDoNotGenerate(value);
+    if (!(sm instanceof DefaultSModelDescriptor)) return;
+    ((DefaultSModelDescriptor) sm).setDoNotGenerate(value);
   }
 }

@@ -41,4 +41,8 @@ public class AddRootChange extends ModelChange {
   public String toString() {
     return "Add root " + myNodeId;
   }
+
+  public String getDescription() {
+    return "Added root #" + myNodeId;
+  }
 }

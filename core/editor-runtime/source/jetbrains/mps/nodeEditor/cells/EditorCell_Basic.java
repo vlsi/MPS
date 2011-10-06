@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import com.intellij.openapi.util.Computable;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
@@ -33,10 +32,7 @@ import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.ListMap;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.*;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -325,6 +321,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void setY(int y) {
+    if (myY == y) {
+      return;
+    }
     myY = y;
     requestRelayout();
   }
@@ -334,6 +333,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void setX(int x) {
+    if (myX == x) {
+      return;
+    }
     myX = x;
     requestRelayout();
   }
@@ -602,7 +604,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   private void collectCellsWithY(EditorCell current, int y, Set<EditorCell> cells, boolean leafsOnly) {
-    if (y >= current.getY() && y <= current.getY() + current.getHeight() &&  (!leafsOnly || current.isLeaf())) {
+    if (y >= current.getY() && y <= current.getY() + current.getHeight() && (!leafsOnly || current.isLeaf())) {
       cells.add(current);
     }
 
@@ -788,7 +790,7 @@ public abstract class EditorCell_Basic implements EditorCell {
         return null;
       }
 
-      assert anchorCell.getParent() != null : "No cell parent for node " + node.getId() +  " " + node.getModel();
+      assert anchorCell.getParent() != null : "No cell parent for node " + node.getId() + " " + node.getModel();
 
       int indexInParent = anchorCell.getParent().indexOf(anchorCell);
 
@@ -913,6 +915,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public Iterator<EditorCell_Collection> parents() {
     return new Iterator<EditorCell_Collection>() {
       private EditorCell myCurrentCell = EditorCell_Basic.this;
+
       public boolean hasNext() {
         return myCurrentCell.getParent() != null;
       }
@@ -1342,6 +1345,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public void setLeftGap(int gap) {
     myGapLeft = gap;
   }
+
   public void setRightGap(int gap) {
     myGapRight = gap;
   }

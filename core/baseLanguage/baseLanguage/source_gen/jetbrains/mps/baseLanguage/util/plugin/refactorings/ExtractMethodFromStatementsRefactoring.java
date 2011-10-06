@@ -23,7 +23,7 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
   protected SNode createMethodBody() {
     SNode body = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
     this.modifyPartToExtract();
-    ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addSequence(ListSequence.fromList(CopyUtil.copy(this.myStatements)));
+    ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addSequence(ListSequence.fromList((List<SNode>) CopyUtil.copy(this.myStatements)));
     return body;
   }
 

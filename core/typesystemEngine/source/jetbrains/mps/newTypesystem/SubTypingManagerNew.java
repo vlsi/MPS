@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import com.intellij.openapi.util.Computable;
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.*;
@@ -30,6 +29,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 

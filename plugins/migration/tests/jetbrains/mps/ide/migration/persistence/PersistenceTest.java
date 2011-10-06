@@ -15,20 +15,17 @@
  */
 package jetbrains.mps.ide.migration.persistence;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.BaseMPSTest;
 import jetbrains.mps.ModelAssert;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelLoadingState;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -61,7 +58,7 @@ public class PersistenceTest extends BaseMPSTest {
           ModelAccess.instance().runWriteInEDT(new Runnable() {
             public void run() {
               try {
-                EditableSModelDescriptor testModel = (EditableSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
+                DefaultSModelDescriptor testModel = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
                 assertTrue(testModel.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
                 SModel model = testModel.getSModel();
                 for (int i = START_PERSISTENCE_TEST_VERSION; i <=  ModelPersistence.LAST_VERSION; ++i) {
@@ -100,16 +97,16 @@ public class PersistenceTest extends BaseMPSTest {
           new ProjectRunnable() {
             public boolean execute(final MPSProject project) {
 
-              final EditableSModelDescriptor testModel = ModelAccess.instance().runWriteAction(new Computable<EditableSModelDescriptor>() {
-                public EditableSModelDescriptor compute() {
-                  EditableSModelDescriptor modelDescr = (EditableSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
+              final DefaultSModelDescriptor testModel = ModelAccess.instance().runReadAction(new Computable<DefaultSModelDescriptor>() {
+                public DefaultSModelDescriptor compute() {
+                  DefaultSModelDescriptor modelDescr = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
                   modelDescr.reloadFromDisk();   // no way to remove model from repository, so reloading
                   assertTrue(modelDescr.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
                   return modelDescr;
                 }
               });
 
-              final List<EditableSModelDescriptor> list = new ArrayList<EditableSModelDescriptor>(1);
+              final List<DefaultSModelDescriptor> list = new ArrayList<DefaultSModelDescriptor>(1);
               list.add(testModel);
 
               if (version[0] > START_PERSISTENCE_TEST_VERSION) {

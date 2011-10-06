@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.newTypesystem.TypeSystemException;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.ERROR;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.OK;
@@ -28,6 +26,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.UndefinedSearchScope;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.util.Computable;
 
 /**
  * Igor Alshannikov
@@ -218,7 +217,7 @@ public class ModelConstraintsUtil {
     }
 
     public String getText(SNode node, boolean visible, boolean smartRef, boolean inEditor) {
-      if(myProvider != null) {
+      if (myProvider != null) {
         return myProvider.getPresentation(myOperationContext,
           new PresentationReferentConstraintContext(myContext.getModel(), myContext.getEnclosingNode(),
             myContext.getReferenceNode(), myContext.getLinkTarget(), node, visible, smartRef, inEditor));

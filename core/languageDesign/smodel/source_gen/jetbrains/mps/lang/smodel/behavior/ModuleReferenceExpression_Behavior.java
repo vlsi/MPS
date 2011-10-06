@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ModuleReferenceExpression_Behavior {
   private static Class[] PARAMETERS_4040588429969394404 = {SNode.class, IScope.class};
@@ -47,7 +46,7 @@ public class ModuleReferenceExpression_Behavior {
   @NotNull
   public static List<IModule> getVisibleModules_4040588429969394431(IScope scope) {
     List<IModule> result = ListSequence.fromList(new ArrayList<IModule>());
-    ListSequence.fromList(result).addSequence(Sequence.fromIterable(scope.getVisibleModules()));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules()));
     return result;
   }
 }

@@ -102,7 +102,7 @@ public class RetainedUtil {
   /*package*/ static class RetainedFilesDelta {
     private IModule module;
     protected Map<String, FilesDelta> dir2delta = MapSequence.fromMap(new HashMap<String, FilesDelta>());
-    private _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile;
+    protected _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile;
 
     public RetainedFilesDelta(IModule module, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
       this.module = module;
@@ -146,7 +146,7 @@ public class RetainedUtil {
 
     @Override
     protected IFile getRootOutputDir(String output) {
-      return FileGenerationUtil.getCachesDir(super.getRootOutputDir(output));
+      return getFile.invoke(FileGenerationUtil.getCachesPath(output));
     }
   }
 }

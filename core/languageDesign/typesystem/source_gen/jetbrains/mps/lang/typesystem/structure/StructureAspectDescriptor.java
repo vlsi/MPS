@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement", "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", "jetbrains.mps.lang.typesystem.structure.AbstractRule", "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", "jetbrains.mps.lang.typesystem.structure.AssertStatement", "jetbrains.mps.lang.typesystem.structure.CaretPositionOperation", "jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction", "jetbrains.mps.lang.typesystem.structure.ChildTypeRestrictionReference", "jetbrains.mps.lang.typesystem.structure.CoerceExpression", "jetbrains.mps.lang.typesystem.structure.CoerceStatement", "jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression", "jetbrains.mps.lang.typesystem.structure.ComparisonRule", "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_BlockingComputationNode", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_DependentComputationNode", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var", "jetbrains.mps.lang.typesystem.structure.ConceptReference", "jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement", "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong", "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement", "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference", "jetbrains.mps.lang.typesystem.structure.Dependency", "jetbrains.mps.lang.typesystem.structure.DependentComputationItem", "jetbrains.mps.lang.typesystem.structure.DependentComputationItem_ApplicableBlock", "jetbrains.mps.lang.typesystem.structure.DependentComputationItem_BlockingBlock", "jetbrains.mps.lang.typesystem.structure.DependentComputationItem_FindMasterBlock", "jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression", "jetbrains.mps.lang.typesystem.structure.FindSourceBlock", "jetbrains.mps.lang.typesystem.structure.FindSourceBlockParameter", "jetbrains.mps.lang.typesystem.structure.GetOperationType", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode", "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes", "jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression", "jetbrains.mps.lang.typesystem.structure.InequationReference", "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", "jetbrains.mps.lang.typesystem.structure.InequationsGroup", "jetbrains.mps.lang.typesystem.structure.InequationsGroupReference", "jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry", "jetbrains.mps.lang.typesystem.structure.InferenceRule", "jetbrains.mps.lang.typesystem.structure.InfoStatement", "jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction", "jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.JoinContainer", "jetbrains.mps.lang.typesystem.structure.JoinType", "jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter", "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.ListVarDeclaration", "jetbrains.mps.lang.typesystem.structure.MatchStatement", "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", "jetbrains.mps.lang.typesystem.structure.MeetContainer", "jetbrains.mps.lang.typesystem.structure.MeetType", "jetbrains.mps.lang.typesystem.structure.MessageStatement", "jetbrains.mps.lang.typesystem.structure.MessageTarget", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable", "jetbrains.mps.lang.typesystem.structure.NodeInfo", "jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation", "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation", "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", "jetbrains.mps.lang.typesystem.structure.OperationContextExpression", "jetbrains.mps.lang.typesystem.structure.Operation_parameter", "jetbrains.mps.lang.typesystem.structure.OrStatement", "jetbrains.mps.lang.typesystem.structure.OriginalNodeId", "jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction", "jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer", "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified", "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction", "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", "jetbrains.mps.lang.typesystem.structure.PatternCondition", "jetbrains.mps.lang.typesystem.structure.PatternVariableReference", "jetbrains.mps.lang.typesystem.structure.PrintToTrace", "jetbrains.mps.lang.typesystem.structure.Processed", "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.QuickFixArgument", "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", "jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock", "jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", "jetbrains.mps.lang.typesystem.structure.QuickFixField", "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference", "jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock", "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", "jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference", "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", "jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter", "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType", "jetbrains.mps.lang.typesystem.structure.RuntimeListVariable", "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", "jetbrains.mps.lang.typesystem.structure.SelectionType", "jetbrains.mps.lang.typesystem.structure.SubtypingRule", "jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression", "jetbrains.mps.lang.typesystem.structure.TypeClause", "jetbrains.mps.lang.typesystem.structure.TypeOfExpression", "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypesystemIntention", "jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock", "jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer", "jetbrains.mps.lang.typesystem.structure.WarningStatement", "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"};
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement", "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", "jetbrains.mps.lang.typesystem.structure.AbstractRule", "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", "jetbrains.mps.lang.typesystem.structure.AssertStatement", "jetbrains.mps.lang.typesystem.structure.CaretPositionOperation", "jetbrains.mps.lang.typesystem.structure.CoerceExpression", "jetbrains.mps.lang.typesystem.structure.CoerceStatement", "jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression", "jetbrains.mps.lang.typesystem.structure.ComparisonRule", "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_BlockingComputationNode", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_DependentComputationNode", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var", "jetbrains.mps.lang.typesystem.structure.ConceptReference", "jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement", "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong", "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement", "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference", "jetbrains.mps.lang.typesystem.structure.Dependency", "jetbrains.mps.lang.typesystem.structure.DependentComputationItem", "jetbrains.mps.lang.typesystem.structure.DependentComputationItem_ApplicableBlock", "jetbrains.mps.lang.typesystem.structure.DependentComputationItem_BlockingBlock", "jetbrains.mps.lang.typesystem.structure.DependentComputationItem_FindMasterBlock", "jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression", "jetbrains.mps.lang.typesystem.structure.FindSourceBlock", "jetbrains.mps.lang.typesystem.structure.FindSourceBlockParameter", "jetbrains.mps.lang.typesystem.structure.GetOperationType", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode", "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes", "jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression", "jetbrains.mps.lang.typesystem.structure.InequationReference", "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", "jetbrains.mps.lang.typesystem.structure.InequationsGroup", "jetbrains.mps.lang.typesystem.structure.InequationsGroupReference", "jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry", "jetbrains.mps.lang.typesystem.structure.InferenceRule", "jetbrains.mps.lang.typesystem.structure.InfoStatement", "jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction", "jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.JoinContainer", "jetbrains.mps.lang.typesystem.structure.JoinType", "jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter", "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.ListVarDeclaration", "jetbrains.mps.lang.typesystem.structure.MatchStatement", "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", "jetbrains.mps.lang.typesystem.structure.MeetContainer", "jetbrains.mps.lang.typesystem.structure.MeetType", "jetbrains.mps.lang.typesystem.structure.MessageStatement", "jetbrains.mps.lang.typesystem.structure.MessageTarget", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable", "jetbrains.mps.lang.typesystem.structure.NodeInfo", "jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation", "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation", "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", "jetbrains.mps.lang.typesystem.structure.OperationContextExpression", "jetbrains.mps.lang.typesystem.structure.Operation_parameter", "jetbrains.mps.lang.typesystem.structure.OrStatement", "jetbrains.mps.lang.typesystem.structure.OriginalNodeId", "jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction", "jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer", "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified", "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction", "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", "jetbrains.mps.lang.typesystem.structure.PatternCondition", "jetbrains.mps.lang.typesystem.structure.PatternVariableReference", "jetbrains.mps.lang.typesystem.structure.PrintToTrace", "jetbrains.mps.lang.typesystem.structure.Processed", "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.QuickFixArgument", "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", "jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock", "jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", "jetbrains.mps.lang.typesystem.structure.QuickFixField", "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference", "jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock", "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", "jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference", "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", "jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter", "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType", "jetbrains.mps.lang.typesystem.structure.RuntimeListVariable", "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", "jetbrains.mps.lang.typesystem.structure.SelectionType", "jetbrains.mps.lang.typesystem.structure.SubtypingRule", "jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression", "jetbrains.mps.lang.typesystem.structure.TypeClause", "jetbrains.mps.lang.typesystem.structure.TypeOfExpression", "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypesystemIntention", "jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock", "jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer", "jetbrains.mps.lang.typesystem.structure.WarningStatement", "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"};
 
   public StructureAspectDescriptor() {
   }
@@ -40,238 +40,234 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 11:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.CaretPositionOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"restrictionKind"}, new String[]{"childLinkDeclaration"});
-      case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ChildTypeRestrictionReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"typeRestriction"});
-      case 14:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.CoerceExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{"strong"}, new String[]{});
-      case 15:
+      case 13:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.CoerceStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{"strong"}, new String[]{});
-      case 16:
+      case 14:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression", "jetbrains.mps.lang.typesystem.structure.CoerceExpression", false, new String[]{"jetbrains.mps.lang.typesystem.structure.CoerceExpression"}, new String[]{}, new String[]{});
-      case 17:
+      case 15:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ComparisonRule", "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"}, new String[]{}, new String[]{});
-      case 18:
+      case 16:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"linkDeclaration"});
-      case 19:
+      case 17:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_BlockingComputationNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 20:
+      case 18:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 21:
+      case 19:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_DependentComputationNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 22:
+      case 20:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 23:
+      case 21:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 24:
+      case 22:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 25:
+      case 23:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 26:
+      case 24:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 27:
+      case 25:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 28:
+      case 26:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptReference", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", false, new String[]{"jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"}, new String[]{}, new String[]{"concept"});
-      case 29:
+      case 27:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", "jetbrains.mps.lang.typesystem.structure.TypeClause", false, new String[]{"jetbrains.mps.lang.typesystem.structure.TypeClause"}, new String[]{}, new String[]{"matchingConcept"});
-      case 30:
+      case 28:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement"}, new String[]{}, new String[]{});
-      case 31:
+      case 29:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong", "jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement"}, new String[]{}, new String[]{});
-      case 32:
+      case 30:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.CreateEquationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"}, new String[]{"direction"}, new String[]{});
-      case 33:
+      case 31:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"}, new String[]{}, new String[]{});
-      case 34:
+      case 32:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"}, new String[]{}, new String[]{});
-      case 35:
+      case 33:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"}, new String[]{}, new String[]{});
-      case 36:
+      case 34:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"}, new String[]{}, new String[]{});
-      case 37:
+      case 35:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.DefaultGroupReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
-      case 38:
+      case 36:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.Dependency", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"targetConcept", "sourceConcept"});
-      case 39:
+      case 37:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.DependentComputationItem", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"applicableConcept", "blockingNodeConcept"});
-      case 40:
+      case 38:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_ApplicableBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 41:
+      case 39:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_BlockingBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 42:
+      case 40:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.DependentComputationItem_FindMasterBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 43:
+      case 41:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
-      case 44:
+      case 42:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.FindSourceBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 45:
+      case 43:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.FindSourceBlockParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 46:
+      case 44:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.GetOperationType", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
-      case 47:
+      case 45:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode", null, true, new String[]{}, new String[]{}, new String[]{});
-      case 48:
+      case 46:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes", null, true, new String[]{}, new String[]{}, new String[]{});
-      case 49:
+      case 47:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
-      case 50:
+      case 48:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.InequationReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"inequation"});
-      case 51:
+      case 49:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"}, new String[]{}, new String[]{});
-      case 52:
+      case 50:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.InequationsGroup", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
-      case 53:
+      case 51:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.InequationsGroupReference", "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference", false, new String[]{"jetbrains.mps.lang.typesystem.structure.DefaultGroupReference"}, new String[]{}, new String[]{"group"});
-      case 54:
+      case 52:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
-      case 55:
+      case 53:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.InferenceRule", "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode"}, new String[]{}, new String[]{});
-      case 56:
+      case 54:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.InfoStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.typesystem.structure.MessageStatement"}, new String[]{}, new String[]{});
-      case 57:
+      case 55:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 58:
+      case 56:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression", false, new String[]{"jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"}, new String[]{}, new String[]{});
-      case 59:
+      case 57:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
-      case 60:
+      case 58:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.JoinContainer", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{});
-      case 61:
+      case 59:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.JoinType", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
-      case 62:
+      case 60:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 63:
+      case 61:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"patternVarDecl"});
-      case 64:
+      case 62:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ListVarDeclaration", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
-      case 65:
+      case 63:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.MatchStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
-      case 66:
+      case 64:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.MatchStatementItem", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
-      case 67:
+      case 65:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.MeetContainer", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{});
-      case 68:
+      case 66:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.MeetType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
-      case 69:
+      case 67:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.MessageStatement", null, true, new String[]{}, new String[]{}, new String[]{});
-      case 70:
+      case 68:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.MessageTarget", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
-      case 71:
+      case 69:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop", "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"}, new String[]{}, new String[]{});
-      case 72:
+      case 70:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
-      case 73:
+      case 71:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.NodeInfo", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"modelId", "nodeId"}, new String[]{});
-      case 74:
+      case 72:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{});
-      case 75:
+      case 73:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.Node_TypeOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{});
-      case 76:
+      case 74:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode"}, new String[]{}, new String[]{});
-      case 77:
+      case 75:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.NormalTypeClause", "jetbrains.mps.lang.typesystem.structure.TypeClause", false, new String[]{"jetbrains.mps.lang.typesystem.structure.TypeClause"}, new String[]{}, new String[]{});
-      case 78:
+      case 76:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.OperationContextExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
-      case 79:
+      case 77:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.Operation_parameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 80:
+      case 78:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.OrStatement", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
-      case 81:
+      case 79:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.OriginalNodeId", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{"nodeId", "modelId"}, new String[]{});
-      case 82:
+      case 80:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 83:
+      case 81:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
-      case 84:
+      case 82:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified", "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule"}, new String[]{"isExact", "isStrong"}, new String[]{});
-      case 85:
+      case 83:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 86:
+      case 84:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule"}, new String[]{"leftIsExact", "rightIsExact", "rightIsStrong", "leftIsStrong"}, new String[]{});
-      case 87:
+      case 85:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.PatternCondition", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", false, new String[]{"jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"}, new String[]{}, new String[]{});
-      case 88:
+      case 86:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.PatternVariableReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"patternVarDecl"});
-      case 89:
+      case 87:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.PrintToTrace", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
-      case 90:
+      case 88:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.Processed", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{});
-      case 91:
+      case 89:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", "jetbrains.mps.lang.typesystem.structure.MessageTarget", false, new String[]{"jetbrains.mps.lang.typesystem.structure.MessageTarget"}, new String[]{}, new String[]{"propertyDeclaration"});
-      case 92:
+      case 90:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", "jetbrains.mps.lang.typesystem.structure.MessageTarget", false, new String[]{"jetbrains.mps.lang.typesystem.structure.MessageTarget"}, new String[]{}, new String[]{});
-      case 93:
+      case 91:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"patternVarDecl"});
-      case 94:
+      case 92:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixArgument", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
-      case 95:
+      case 93:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"quickFixArgument"});
-      case 96:
+      case 94:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 97:
+      case 95:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 98:
+      case 96:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixField", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
-      case 99:
+      case 97:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"quickFixField"});
-      case 100:
+      case 98:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 101:
+      case 99:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", "jetbrains.mps.lang.typesystem.structure.MessageTarget", false, new String[]{"jetbrains.mps.lang.typesystem.structure.MessageTarget"}, new String[]{}, new String[]{"linkDeclaration"});
-      case 102:
+      case 100:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", "jetbrains.mps.lang.typesystem.structure.MessageTarget", false, new String[]{"jetbrains.mps.lang.typesystem.structure.MessageTarget"}, new String[]{}, new String[]{});
-      case 103:
+      case 101:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"fqName"}, new String[]{"replacementRule"});
-      case 104:
+      case 102:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.typesystem.structure.MessageStatement"}, new String[]{}, new String[]{});
-      case 105:
+      case 103:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 106:
+      case 104:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", false, new String[]{"jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"}, new String[]{"errorText", "nodeId", "nodeModel"}, new String[]{});
-      case 107:
+      case 105:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
-      case 108:
+      case 106:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.RuntimeListVariable", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
-      case 109:
+      case 107:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
-      case 110:
+      case 108:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.SelectionType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
-      case 111:
+      case 109:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.SubtypingRule", "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", false, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode"}, new String[]{}, new String[]{});
-      case 112:
+      case 110:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
-      case 113:
+      case 111:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.TypeClause", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
-      case 114:
+      case 112:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.TypeOfExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{"skipDependencyOnCurrent"}, new String[]{});
-      case 115:
+      case 113:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"nullable"}, new String[]{});
-      case 116:
+      case 114:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"typeVarDeclaration"});
-      case 117:
+      case 115:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.TypesystemIntention", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"applyImmediately"}, new String[]{"quickFix"});
-      case 118:
+      case 116:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"quickFixArgument"});
-      case 119:
+      case 117:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
-      case 120:
+      case 118:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.VariableConverterItem", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
-      case 121:
+      case 119:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 122:
+      case 120:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 123:
+      case 121:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
-      case 124:
+      case 122:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.WarningStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.typesystem.structure.MessageStatement"}, new String[]{}, new String[]{});
-      case 125:
+      case 123:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
-      case 126:
+      case 124:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.Closureoid"}, new String[]{"isShallow", "skipsError"}, new String[]{});
-      case 127:
+      case 125:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration", "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"}, new String[]{}, new String[]{});
-      case 128:
+      case 126:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"whenConcreteVar"});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);

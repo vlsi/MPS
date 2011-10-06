@@ -35,7 +35,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.smodel.SNode;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.eclipse.jdt.internal.compiler.Compiler;
 import java.util.LinkedHashSet;

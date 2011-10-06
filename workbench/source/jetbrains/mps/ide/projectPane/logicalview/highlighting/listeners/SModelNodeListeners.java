@@ -16,8 +16,6 @@
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
@@ -63,7 +61,7 @@ public class SModelNodeListeners implements NodeListeners {
     mySimpleModelListener = new MySimpleModelListener(modelNode);
     myStatusListener = new MyGenerationStatusListener();
     if (myModel instanceof EditableSModelDescriptor) {
-      myTreeUpdater = new MySNodeTreeUpdater(modelNode.getOperationContext().getProject(), modelNode);
+      myTreeUpdater = new MySNodeTreeUpdater(modelNode.getOperationContext().getIdeaProject(), modelNode);
       myTreeUpdater.setDependencyRecorder(modelNode.getDependencyRecorder());
     }
     myEventsListener = new MySModelEventsListener();
@@ -158,7 +156,7 @@ public class SModelNodeListeners implements NodeListeners {
     }
 
     private boolean showPropertiesAndReferences(SModelTreeNode node) {
-      Project project = node.getOperationContext().getProject();
+      Project project = node.getOperationContext().getIdeaProject();
       return node.getTree() instanceof LogicalViewTree &&
         ProjectPane.getInstance(project).isShowPropertiesAndReferences();
     }

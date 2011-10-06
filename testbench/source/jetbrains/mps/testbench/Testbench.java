@@ -16,7 +16,6 @@
 package jetbrains.mps.testbench;
 
 import com.intellij.openapi.application.PathMacros;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.util.PathUtil;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.library.LibraryInitializer;
@@ -24,6 +23,8 @@ import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -51,14 +52,14 @@ public class Testbench {
   public static void makeAll() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        EmptyProgressIndicator indicator = new EmptyProgressIndicator();
+        ProgressMonitor monitor = new EmptyProgressMonitor();
 
         ClassLoaderManager.getInstance().updateClassPath();
 
         ModuleMaker maker = new ModuleMaker();
-        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
+        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), monitor);
 
-        ClassLoaderManager.getInstance().reloadAll(indicator);
+        ClassLoaderManager.getInstance().reloadAll(monitor);
       }
     });
   }
@@ -66,8 +67,7 @@ public class Testbench {
   public static void reloadAll() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        EmptyProgressIndicator indicator = new EmptyProgressIndicator();
-        ClassLoaderManager.getInstance().reloadAll(indicator);
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
     });
   }

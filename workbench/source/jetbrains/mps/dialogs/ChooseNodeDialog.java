@@ -18,6 +18,7 @@ package jetbrains.mps.dialogs;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -97,12 +98,12 @@ public final class ChooseNodeDialog extends BaseDialog {
       SNode sNode = ((SNodeTreeNode) node).getSNode();
       if (mySourceNodes != null && !mySourceNodes.isEmpty()) {
         if (mySourceNodes.contains(sNode)) {
-          JOptionPane.showMessageDialog(myContext.getMainFrame(), "Can't refactor node onto itself");
+          JOptionPane.showMessageDialog(ProjectHelper.toMainFrame(myContext.getProject()), "Can't refactor node onto itself");
           return;
         }
         String role = getRoleInTarget(mySourceNodes.get(0), sNode, myContext.getScope());
         if (role == null) {
-          JOptionPane.showMessageDialog(myContext.getMainFrame(), "Can't find suitable role");
+          JOptionPane.showMessageDialog(ProjectHelper.toMainFrame(myContext.getProject()), "Can't find suitable role");
           return;
         }
       }

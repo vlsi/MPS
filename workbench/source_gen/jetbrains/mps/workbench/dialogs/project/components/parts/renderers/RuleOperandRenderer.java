@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelChooser;
 import javax.swing.DefaultListCellRenderer;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRenderer;
@@ -37,6 +37,7 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelRootChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.EditableStringDescriptor;
+import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor;
 import javax.swing.JComponent;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubSolutionChooser;
@@ -44,7 +45,6 @@ import javax.swing.JOptionPane;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.VoidColumnDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
-import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor;
 import jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.ImportProperties;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModelDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModuleImportDescriptor;
@@ -227,6 +227,8 @@ public class StandardComponents {
         result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a2a0a0a8);
         final ColumnDescriptor result_wf5hwp_a3a0a0a8 = new EditableStringDescriptor(ModelRoot.PREFIX, "Prefix", 250);
         result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a3a0a0a8);
+        final ColumnDescriptor result_wf5hwp_a4a0a0a8 = new ManagerDescriptor(owner, ModelRoot.MANAGER, "Manager", 250);
+        result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a4a0a0a8);
         result_wf5hwp_a0a0a8.init();
         return result_wf5hwp_a0a0a8;
       }
@@ -426,7 +428,7 @@ public class StandardComponents {
         final JList jlist = result_wf5hwp_a0a0a81.getList();
         final BaseValidatedAction result_wf5hwp_a3a0a0a81 = new ListAddAction(jlist) {
           protected int doAdd(AnActionEvent e) {
-            TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getProject(), null);
+            TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getIdeaProject(), null);
             dialog.showDialog();
             BaseTestConfiguration config = dialog.getResult();
             if (config == null) {
@@ -453,7 +455,7 @@ public class StandardComponents {
             if (value == null) {
               return;
             }
-            TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getProject(), (BaseTestConfiguration) value);
+            TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getIdeaProject(), (BaseTestConfiguration) value);
             dialog.showDialog();
             BaseTestConfiguration config = dialog.getResult();
             if (config == null) {

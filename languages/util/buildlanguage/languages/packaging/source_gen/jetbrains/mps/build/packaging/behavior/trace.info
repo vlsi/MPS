@@ -362,9 +362,9 @@
     <nodeInfo nodeId="1224592963591" fileName="Copy_Behavior.java" startLine="57" startPosition="5" endLine="58" endPosition="305" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877251338" fileName="Copy_Behavior.java" startLine="21" startPosition="68" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1224592963579" fileName="Copy_Behavior.java" startLine="54" startPosition="83" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877251369" fileName="Copy_Behavior.java" startLine="29" startPosition="139" endLine="33" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877251369" fileName="Copy_Behavior.java" startLine="29" startPosition="139" endLine="33" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877251402" fileName="Copy_Behavior.java" startLine="34" startPosition="5" endLine="38" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877251426" fileName="Copy_Behavior.java" startLine="42" startPosition="139" endLine="46" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877251426" fileName="Copy_Behavior.java" startLine="42" startPosition="139" endLine="46" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877251459" fileName="Copy_Behavior.java" startLine="47" startPosition="5" endLine="51" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877251335" fileName="Copy_Behavior.java" startLine="14" startPosition="28" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1213877251361" fileName="Copy_Behavior.java" startLine="28" startPosition="71" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -377,8 +377,8 @@
     <scopeInfo nodeId="1224592963588" fileName="Copy_Behavior.java" startLine="55" startPosition="119" endLine="56" endPosition="19" />
     <scopeInfo nodeId="1213877251473" fileName="Copy_Behavior.java" startLine="15" startPosition="43" endLine="18" endPosition="148" />
     <scopeInfo nodeId="1213877251337" fileName="Copy_Behavior.java" startLine="21" startPosition="68" endLine="25" endPosition="24" />
-    <scopeInfo nodeId="1213877251368" fileName="Copy_Behavior.java" startLine="29" startPosition="139" endLine="33" endPosition="177" />
-    <scopeInfo nodeId="1213877251425" fileName="Copy_Behavior.java" startLine="42" startPosition="139" endLine="46" endPosition="177" />
+    <scopeInfo nodeId="1213877251368" fileName="Copy_Behavior.java" startLine="29" startPosition="139" endLine="33" endPosition="192" />
+    <scopeInfo nodeId="1213877251425" fileName="Copy_Behavior.java" startLine="42" startPosition="139" endLine="46" endPosition="192" />
     <scopeInfo nodeId="1224592963578" fileName="Copy_Behavior.java" startLine="54" startPosition="83" endLine="58" endPosition="305" />
     <scopeInfo nodeId="1213877251335" fileName="Copy_Behavior.java" startLine="14" startPosition="28" endLine="20" endPosition="0" />
     <scopeInfo nodeId="1213877251335" fileName="Copy_Behavior.java" startLine="20" startPosition="0" endLine="27" endPosition="0" />

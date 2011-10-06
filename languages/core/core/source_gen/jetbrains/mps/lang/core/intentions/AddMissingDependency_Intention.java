@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class AddMissingDependency_Intention extends BaseIntention implements Intention {
   public AddMissingDependency_Intention() {
@@ -77,7 +77,7 @@ public class AddMissingDependency_Intention extends BaseIntention implements Int
         // TODO better update than reload 
         // <node> 
         // <node> 
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
     }
   }

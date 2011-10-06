@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.ErrorState;
@@ -26,6 +25,7 @@ import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
 import javax.swing.SwingUtilities;

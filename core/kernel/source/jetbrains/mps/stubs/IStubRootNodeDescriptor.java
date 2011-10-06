@@ -17,11 +17,8 @@ package jetbrains.mps.stubs;
 
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.descriptor.NodeDescriptor;
 
-public interface IStubRootNodeDescriptor {
-  String getName();
-
-  SNode getConcept();
-
-  SModelReference getModelReference();
+@Deprecated //for compatibiliy till 2.1
+public interface IStubRootNodeDescriptor extends NodeDescriptor{
 }

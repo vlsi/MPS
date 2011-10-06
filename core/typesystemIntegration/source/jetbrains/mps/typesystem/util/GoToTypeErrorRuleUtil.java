@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.typesystem.util;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 

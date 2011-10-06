@@ -64,7 +64,7 @@ class ConceptTreeNode extends MPSTreeNodeEx {
       public void run() {
         SNode concept = getSNode();
         if (concept == null) return;
-        Project project = getOperationContext().getProject();
+        Project project = getOperationContext().getIdeaProject();
         new MPSEditorOpener(project).editNode(concept, ModuleContext.create(concept, project));
       }
     });

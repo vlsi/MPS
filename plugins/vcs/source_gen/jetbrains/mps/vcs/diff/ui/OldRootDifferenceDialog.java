@@ -210,7 +210,7 @@ public class OldRootDifferenceDialog extends BaseDialog implements EditorMessage
         myNewEditorComponent.makeChangeBlocks();
         myOldEditorComponent.makeChangeBlocks();
       }
-    }, myOldEditorComponent.getOperationContext().getProject());
+    }, myOldEditorComponent.getOperationContext().getIdeaProject());
   }
 
   protected JComponent getMainComponent() {

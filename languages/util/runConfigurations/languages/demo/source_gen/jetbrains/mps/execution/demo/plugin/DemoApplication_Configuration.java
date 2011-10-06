@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.configurations.lib.Node_Configuration;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -63,7 +63,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
     {
-      Element fieldElement = new Element("myNode");
+      Element fieldElement = new Element("node");
       myNode.writeExternal(fieldElement);
       element.addContent(fieldElement);
     }
@@ -76,7 +76,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
     {
-      Element fieldElement = element.getChild("myNode");
+      Element fieldElement = element.getChild("node");
       myNode.readExternal(fieldElement);
     }
   }

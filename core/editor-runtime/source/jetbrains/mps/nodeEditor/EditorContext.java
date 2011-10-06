@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -26,6 +25,7 @@ import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.util.Computable;
 
 import java.awt.Frame;
 import java.util.List;
@@ -91,7 +91,7 @@ public class EditorContext {
   }
 
   public final Frame getMainFrame() {
-    Project project = getOperationContext().getProject();
+    Project project = getOperationContext().getIdeaProject();
     if (project == null) return null;
     return WindowManager.getInstance().getFrame(project);
   }
@@ -143,7 +143,7 @@ public class EditorContext {
     EditorCell nodeCell = createNodeCell(mySModelEvents);
     myCurrentRefNodeContext = oldNodeContext;
     return nodeCell;
-  }  
+  }
 
   public EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role) {
     if (myCurrentRefNodeContext == null) {
@@ -241,7 +241,7 @@ public class EditorContext {
 
   public void openInspector() {
     InspectorTool inspector = getOperationContext().getComponent(InspectorTool.class);
-    if(inspector != null) {
+    if (inspector != null) {
       inspector.openTool(true);
     }
   }
@@ -323,7 +323,7 @@ public class EditorContext {
         //Do not show attributes on reference cells.
         return cellWithRole;
     }
-    
+
     return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, cellWithRole, this, roleAttribute);
   }
 

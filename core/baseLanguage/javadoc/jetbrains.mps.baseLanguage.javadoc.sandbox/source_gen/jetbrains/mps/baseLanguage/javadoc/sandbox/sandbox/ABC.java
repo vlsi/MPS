@@ -36,7 +36,7 @@ public class ABC<TT> {
    * And then... {@link jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox.ABC#SOME_CONSTANT } {@value}
    * Blah {@value java.awt.GridBagConstraints#NORTH} blah
    * {{
-      int a = 5;
+      int t = 5;
    * }}
    * 
    * 

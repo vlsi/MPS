@@ -63,7 +63,7 @@ public class CreateNewBuildLanguageProject_Intention extends BaseIntention imple
     model.addRoot(project);
     SLinkOperations.setTarget(node, "project", project, false);
     SLinkOperations.setTarget(node, "targetDeclaration", SLinkOperations.getTarget(SLinkOperations.getTarget(project, "default", true), "targetDeclaration", false), false);
-    MPSEditorOpener opener = editorContext.getOperationContext().getProject().getComponent(MPSEditorOpener.class);
+    MPSEditorOpener opener = editorContext.getOperationContext().getIdeaProject().getComponent(MPSEditorOpener.class);
     opener.openNode(project);
   }
 

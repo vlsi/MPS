@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import java.util.Set;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;

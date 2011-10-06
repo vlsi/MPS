@@ -25,11 +25,9 @@
     </option>
   </component>
   <component name="MPSProject">
-    <projectSolutions />
-    <projectLanguages>
-      <languagePath path="${project}/languageDescriptor.mpl" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/languageDescriptor.mpl" />
+    </projectModules>
     <genConfs>
       <genConfModule name="core" moduleRef="jetbrains.mps.lang.core" />
     </genConfs>

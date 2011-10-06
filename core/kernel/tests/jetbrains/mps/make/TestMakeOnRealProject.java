@@ -17,7 +17,6 @@ package jetbrains.mps.make;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Condition;
 import com.intellij.util.CommonProcessors.CollectProcessor;
 import com.intellij.util.FilteringProcessor;
@@ -25,12 +24,12 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -100,7 +99,7 @@ public class TestMakeOnRealProject {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        MPSCompilationResult result = new ModuleMaker().make(toCompile, new EmptyProgressIndicator());
+        MPSCompilationResult result = new ModuleMaker().make(toCompile, new EmptyProgressMonitor());
         Assert.assertTrue("Compilation is not ok!", result.isOk());
       }
     });

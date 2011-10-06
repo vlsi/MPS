@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.generator.template;
 
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -26,7 +26,7 @@ import java.util.List;
 
 public interface ITemplateGenerator {
 
-  ProgressIndicator getProgressMonitor();
+  ProgressMonitor getProgressMonitor();
 
   SModel getInputModel();
 
@@ -43,6 +43,8 @@ public interface ITemplateGenerator {
   SModel getTargetModel();
 
   boolean areMappingsAvailable();
+
+  void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode);
 
   SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName);
 

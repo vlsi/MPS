@@ -11,6 +11,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.refactoring.RefactoringViewAction;
@@ -47,7 +48,7 @@ public class InlineMethodDialogModel {
 
   private void findUssages() {
     if (this.myForAll) {
-      ProgressManager.getInstance().run(new Task.Modal(InlineMethodDialogModel.this.myOperationContext.getProject(), "Searching for ussages", true) {
+      ProgressManager.getInstance().run(new Task.Modal(InlineMethodDialogModel.this.myOperationContext.getIdeaProject(), "Searching for ussages", true) {
         public void run(@NotNull final ProgressIndicator indiactor) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
@@ -63,7 +64,7 @@ public class InlineMethodDialogModel {
     String problems = this.findProblems();
     if (problems.length() > 0) {
       this.myIsPreview = false;
-      ProblemsDialog dialog = new ProblemsDialog(this.myOperationContext.getMainFrame(), problems, this);
+      ProblemsDialog dialog = new ProblemsDialog(ProjectHelper.toMainFrame(this.myOperationContext.getProject()), problems, this);
       dialog.showDialog();
     } else {
       this.doRefactoring();
@@ -91,7 +92,7 @@ public class InlineMethodDialogModel {
     String problems = this.findProblems();
     if (problems.length() > 0) {
       this.myIsPreview = true;
-      ProblemsDialog dialog = new ProblemsDialog(this.myOperationContext.getMainFrame(), problems, this);
+      ProblemsDialog dialog = new ProblemsDialog(ProjectHelper.toMainFrame(this.myOperationContext.getProject()), problems, this);
       dialog.showDialog();
     } else {
       this.doPreview();
@@ -144,6 +145,6 @@ public class InlineMethodDialogModel {
         InlineMethodDialogModel.this.doRefactoring();
       }
     };
-    this.myOperationContext.getComponent(RefactoringView.class).showRefactoringView(myOperationContext.getProject(), refactoringViewAction, this.myResults, false);
+    this.myOperationContext.getComponent(RefactoringView.class).showRefactoringView(myOperationContext.getIdeaProject(), refactoringViewAction, this.myResults, false);
   }
 }

@@ -198,7 +198,7 @@ public class Java_Command {
     if (withDependencies) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          AbstractModule.getDependenciesClasspath(CollectionUtil.set(module), true).accept(visitor);
+          AbstractModule.getDependenciesClasspath(CollectionUtil.set(module), false).accept(visitor);
         }
       });
     }

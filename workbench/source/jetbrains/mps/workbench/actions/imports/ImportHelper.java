@@ -21,15 +21,16 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.IterableUtil;
@@ -154,7 +155,7 @@ public class ImportHelper {
           ModuleReference ref = getModuleReference();
           if (myContextModule.getScope().getLanguage(ref) == null) {
             myContextModule.addUsedLanguage(ref);
-            ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+            ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
           }
           myModel.getSModel().addLanguage(ref);
         }
@@ -224,7 +225,7 @@ public class ImportHelper {
         }
       };
     }
-    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel);
+    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel, initialText);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -280,7 +281,7 @@ public class ImportHelper {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
               myModule.addDependency(moduleToImport, false);
-              ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+              ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
             }
           });
         }

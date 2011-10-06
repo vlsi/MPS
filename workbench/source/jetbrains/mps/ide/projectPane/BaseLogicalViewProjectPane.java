@@ -23,7 +23,6 @@ import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.impl.ProjectViewImpl;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
@@ -53,6 +52,7 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -353,7 +353,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
         assert opener != null;
         opener.openNode(node, context, focus, select);
       }
-    }, context != null ? context.getProject() : null);
+    }, context != null ? context.getIdeaProject() : null);
   }
 
   public <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {

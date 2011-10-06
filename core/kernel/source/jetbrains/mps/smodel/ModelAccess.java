@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.util.Computable;
-import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 
 import java.util.Set;
 import java.util.concurrent.locks.Lock;
@@ -181,7 +181,8 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     return Boolean.TRUE == myReadEnabledFlag.get();
   }
 
-  public void dispose() {}
+  public void dispose() {
+  }
 
   private static class ReentrantReadWriteLockEx extends ReentrantReadWriteLock {
 

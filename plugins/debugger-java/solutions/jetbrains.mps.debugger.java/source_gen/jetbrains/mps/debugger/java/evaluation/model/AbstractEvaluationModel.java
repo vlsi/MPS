@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.annotations.Nullable;
@@ -49,6 +49,7 @@ import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
 import jetbrains.mps.generator.GeneratorManager;
 import java.util.Collections;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import java.util.Map;
@@ -59,7 +60,7 @@ import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.debug.evaluation.transform.Transformator;
 
 public abstract class AbstractEvaluationModel {
@@ -88,7 +89,7 @@ public abstract class AbstractEvaluationModel {
     }
     myAuxModule = auxModule;
 
-    final EditableSModelDescriptor modelDescriptor = ProjectModels.createDescriptorFor(myAuxModule);
+    final EditableSModelDescriptor modelDescriptor = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor(myAuxModule));
     modelDescriptor.getSModel().runLoadingAction(new Runnable() {
       public void run() {
         modelDescriptor.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
@@ -237,14 +238,14 @@ public abstract class AbstractEvaluationModel {
       String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.") + "tools.jar";
       classpaths.add(ClassPathFactory.getInstance().createFromPath(path, "AbstractEvaluationModel"));
 
-      Project project = myContext.getProject();
+      Project project = myContext.getIdeaProject();
       final String fullClassName = this.myAuxModel.getLongName() + "." + AbstractEvaluationModel.EVALUATOR_NAME;
       InMemoryJavaGenerationHandler handler = new AbstractEvaluationModel.MyInMemoryJavaGenerationHandler(false, true, classpaths);
       Project ideaProject = this.myAuxModule.getMPSProject().getProject();
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
       GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-      boolean successful = generatorManager.generateModels(Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, progressWindow, messageHandler, GenerationOptions.getDefaults().incremental(new IncrementalGenerationStrategy() {
+      boolean successful = generatorManager.generateModels(Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new IncrementalGenerationStrategy() {
         public Map<String, String> getModelHashes(SModelDescriptor p0, IOperationContext p1) {
           return Collections.emptyMap();
         }
@@ -335,7 +336,7 @@ public abstract class AbstractEvaluationModel {
     }
 
     @Override
-    public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ITaskProgressHelper helper) {
+    public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ProgressMonitor monitor) {
       SModel model = status.getOutputModel();
       if (model != null) {
         final SNode evaluator = SModelOperations.getRootByName(model, AbstractEvaluationModel.EVALUATOR_NAME);
@@ -354,7 +355,7 @@ public abstract class AbstractEvaluationModel {
 
         }
       }
-      return super.handleOutput(module, inputModel, status, context, helper);
+      return super.handleOutput(module, inputModel, status, context, monitor);
     }
   }
 }

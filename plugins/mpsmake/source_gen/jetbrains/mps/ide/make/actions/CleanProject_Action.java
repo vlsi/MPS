@@ -23,6 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 
 public class CleanProject_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -73,7 +74,7 @@ public class CleanProject_Action extends GeneratedAction {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               ModuleMaker maker = new ModuleMaker();
-              maker.clean(modulesToBuild, indicator);
+              maker.clean(modulesToBuild, new ProgressMonitorAdapter(indicator));
             }
           });
         }

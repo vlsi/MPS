@@ -4,7 +4,6 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -15,9 +14,12 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class MakeProject_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(MakeProject_Action.class.getResource("make.png"));
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(MakeProject_Action.class);
 
   public MakeProject_Action() {
@@ -66,6 +68,17 @@ public class MakeProject_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MakeProject", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(MakeProject_Action.class.getResourceAsStream("make.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for MakeProject", e);
+      }
+      return null;
     }
   }
 }

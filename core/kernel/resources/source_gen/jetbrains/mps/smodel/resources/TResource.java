@@ -5,18 +5,19 @@ package jetbrains.mps.smodel.resources;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.make.delta.IDelta;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.resources.IResourceWithProperties;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.resources.IPropertiesIO;
 
-public class TResource extends MultiTuple._2<IModule, Iterable<IDelta>> implements IResource, ITResource, IResourceWithProperties {
+public class TResource extends MultiTuple._3<IModule, Iterable<IDelta>, SModelDescriptor> implements IResource, ITResource, IResourceWithProperties {
   public TResource() {
     super();
   }
 
-  public TResource(IModule module, Iterable<IDelta> delta) {
-    super(module, delta);
+  public TResource(IModule module, Iterable<IDelta> delta, SModelDescriptor modelDescriptor) {
+    super(module, delta, modelDescriptor);
   }
 
   public IModule module(IModule value) {
@@ -27,6 +28,10 @@ public class TResource extends MultiTuple._2<IModule, Iterable<IDelta>> implemen
     return super._1(value);
   }
 
+  public SModelDescriptor modelDescriptor(SModelDescriptor value) {
+    return super._2(value);
+  }
+
   public IModule module() {
     return super._0();
   }
@@ -35,8 +40,12 @@ public class TResource extends MultiTuple._2<IModule, Iterable<IDelta>> implemen
     return super._1();
   }
 
+  public SModelDescriptor modelDescriptor() {
+    return super._2();
+  }
+
   @SuppressWarnings(value = "unchecked")
-  public TResource assignFrom(Tuples._2<IModule, Iterable<IDelta>> from) {
+  public TResource assignFrom(Tuples._3<IModule, Iterable<IDelta>, SModelDescriptor> from) {
     return (TResource) super.assign(from);
   }
 

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.refactoring.framework.paramchooser.mps;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.framework.InvalidInputValueException;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -25,9 +24,9 @@ import jetbrains.mps.refactoring.framework.paramchooser.mps.internal.ChooserType
 import jetbrains.mps.refactoring.framework.paramchooser.mps.internal.ChooserType.ModuleChooserType;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.internal.MPSNodeChooser;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -116,7 +115,7 @@ public class MPSChooserFactory {
       String value = myTextField.getText();
       if (mySettings.met(value)) {
         myContext.setParameter(myParamName, value);
-      } else throw new InvalidInputValueException(mySettings.getTitle()+": wrong value");
+      } else throw new InvalidInputValueException(mySettings.getTitle() + ": wrong value");
     }
   }
 
@@ -155,7 +154,7 @@ public class MPSChooserFactory {
       boolean value = myCheckBox.isSelected();
       if (mySettings.met(value)) {
         myContext.setParameter(myParamName, value);
-      } else throw new InvalidInputValueException(mySettings.getTitle()+": wrong value");
+      } else throw new InvalidInputValueException(mySettings.getTitle() + ": wrong value");
     }
   }
 }

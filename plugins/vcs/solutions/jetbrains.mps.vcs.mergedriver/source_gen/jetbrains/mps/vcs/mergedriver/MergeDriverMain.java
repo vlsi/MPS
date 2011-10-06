@@ -97,7 +97,7 @@ public class MergeDriverMain {
     p.setProperty("log4j.appender.file.MaxFileSize", "2MB");
     p.setProperty("log4j.appender.file.MaxBackupIndex", "2");
     p.setProperty("log4j.appender.file.layout", "org.apache.log4j.PatternLayout");
-    p.setProperty("log4j.appender.file.layout.conversionPattern", "%d{ABSOLUTE} %5p %t %c{1}:%M:%L - %m%n");
+    p.setProperty("log4j.appender.file.layout.conversionPattern", "%d{DATE} %5p %t %c{1}:%M:%L - %m%n");
     PropertyConfigurator.configure(p);
   }
 }

@@ -108,7 +108,7 @@ public class GeneratedTextPreviewEditor extends UserDataHolderBase implements Fi
   @NonNls
   @NotNull
   public String getName() {
-    return null;
+    return file.getName();
   }
 
   @Nullable

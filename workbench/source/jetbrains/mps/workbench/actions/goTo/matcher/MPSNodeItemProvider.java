@@ -17,10 +17,7 @@
 package jetbrains.mps.workbench.actions.goTo.matcher;
 
 import com.intellij.ide.util.gotoByName.temp.IdeaItemProvider;
-import com.intellij.openapi.util.Computable;
 import com.intellij.psi.PsiElement;
-
-import java.util.List;
 
 public class MPSNodeItemProvider extends IdeaItemProvider {
   public MPSNodeItemProvider(PsiElement context) {

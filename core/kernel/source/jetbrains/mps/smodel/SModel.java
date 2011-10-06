@@ -60,7 +60,7 @@ public class SModel {
 
   private SModelDescriptor myModelDescriptor;
 
-  private Throwable myDisposedStacktrace = null;
+  private StackTraceElement[] myDisposedStacktrace = null;
 
   public SModel(@NotNull SModelReference modelReference) {
     this(modelReference, new UniversalOptimizedNodeIdMap());
@@ -100,17 +100,19 @@ public class SModel {
     return false;
   }
 
+  @Deprecated   //todo get rid of it
   public boolean isNotEditable() {
     assert !isDisposed();
-    return !(getModelDescriptor() instanceof EditableSModelDescriptor)
-      || ((EditableSModelDescriptor) getModelDescriptor()).isPackaged();
+    SModelDescriptor d = getModelDescriptor();
+    if (!(d instanceof EditableSModelDescriptor)) return false;
+    return ((EditableSModelDescriptor) d).isReadOnly();
   }
 
   public boolean isDisposed() {
     return myDisposed;
   }
 
-  public Throwable getDisposedStacktrace() {
+  public StackTraceElement[] getDisposedStacktrace() {
     return myDisposedStacktrace;
   }
 
@@ -570,8 +572,8 @@ public class SModel {
     if (importElement == null) {
       SModelDescriptor modelDescriptor = MPSCore.getInstance().isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
       int usedVersion = -1;
-      if (modelDescriptor instanceof EditableSModelDescriptor) {
-        usedVersion = ((EditableSModelDescriptor) modelDescriptor).getVersion();
+      if (modelDescriptor instanceof DefaultSModelDescriptor) {
+        usedVersion = ((DefaultSModelDescriptor) modelDescriptor).getVersion();
       }
       importElement = new ImportElement(modelReference, ++myMaxImportIndex, firstVersion ? -1 : usedVersion);
     }
@@ -673,7 +675,7 @@ public class SModel {
         version = RoleIdsComponent.getModelVersion(ref);
       } else {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(ref);
-        version = modelDescriptor instanceof EditableSModelDescriptor ? ((EditableSModelDescriptor) modelDescriptor).getVersion() : -1;
+        version = modelDescriptor instanceof DefaultSModelDescriptor ? ((DefaultSModelDescriptor) modelDescriptor).getVersion() : -1;
       }
       implicitImports.add(new ImportElement(ref, -1, version));  // for compatibility index will be assigned on save
     }
@@ -845,7 +847,7 @@ public class SModel {
     if (myDisposed) return;
 
     myDisposed = true;
-    myDisposedStacktrace = new Throwable();
+    myDisposedStacktrace = new Throwable().getStackTrace();
     for (SNode sn : myIdToNodeMap.values()) {
       sn.dispose();
     }

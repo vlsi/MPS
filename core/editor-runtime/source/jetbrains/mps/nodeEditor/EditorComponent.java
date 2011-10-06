@@ -22,7 +22,6 @@ import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.IdeGlassPane;
@@ -70,6 +69,7 @@ import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
@@ -565,10 +565,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myOperationContext == null) {
       LOG.warning("Trying to notify EditorComponent creation with null operation context");
     } else {
-      if (myOperationContext.getProject() == null) {
+      if (myOperationContext.getIdeaProject() == null) {
         return;
       }
-      EditorComponentCreateListener listener = myOperationContext.getProject().getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
+      EditorComponentCreateListener listener = myOperationContext.getIdeaProject().getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
       listener.editorComponentCreated(this);
     }
   }
@@ -578,14 +578,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       LOG.warning("Trying to notify disposal with empty operation context");
       return;
     }
-    if (myOperationContext.getProject() == null) {
+    if (myOperationContext.getIdeaProject() == null) {
       return;
     }
-    if (myOperationContext.getProject().isDisposed()) {
+    if (myOperationContext.getIdeaProject().isDisposed()) {
       LOG.error("Trying to notify disposal of EditorComponent related to disposed project. This may cause memory leaks.");
       return;
     }
-    EditorComponentCreateListener listener = myOperationContext.getProject().getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
+    EditorComponentCreateListener listener = myOperationContext.getIdeaProject().getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
     listener.editorComponentDisposed(this);
   }
 
@@ -726,7 +726,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         if (!isFocusOwner()) return;
-        if (getOperationContext() == null || getOperationContext().getProject() == null) return;
+        if (getOperationContext() == null || getOperationContext().getIdeaProject() == null) return;
         if (isProjectDisposed()) return;
 
         EditorCell selection = getSelectedCell();
@@ -738,7 +738,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           }
         }
 
-        Project project = getOperationContext().getProject();
+        Project project = getOperationContext().getIdeaProject();
         IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(project);
         StatusBarEx statusBar = (StatusBarEx) ideFrame.getStatusBar();
 
@@ -1720,7 +1720,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myLeftMarginPressListeners.remove(listener);
   }
 
-  public List<LeftMarginMouseListener> getLeftMarginPressListeners(){
+  public List<LeftMarginMouseListener> getLeftMarginPressListeners() {
     return Collections.unmodifiableList(myLeftMarginPressListeners);
   }
 
@@ -2198,7 +2198,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (getEditorContext() == null || getEditorContext().getOperationContext() == null) {
       return null;
     }
-    return getEditorContext().getOperationContext().getProject();
+    return getEditorContext().getOperationContext().getIdeaProject();
   }
 
   boolean isForcedFocusChangeEnabled() {
@@ -2765,7 +2765,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (getOperationContext() == null) {
       return;
     }
-    Project project = getOperationContext().getProject();
+    Project project = getOperationContext().getIdeaProject();
     if (project == null) {
       return;
     }
@@ -2800,7 +2800,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private boolean isProjectDisposed() {
-    return getOperationContext() != null && getOperationContext().getProject() != null && getOperationContext().getProject().isDisposed();
+    return getOperationContext() != null && getOperationContext().getIdeaProject() != null && getOperationContext().getIdeaProject().isDisposed();
   }
 
   private boolean isNodeDisposed() {

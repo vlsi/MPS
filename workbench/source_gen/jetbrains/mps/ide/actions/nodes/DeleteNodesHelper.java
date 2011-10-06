@@ -31,7 +31,7 @@ public class DeleteNodesHelper {
     if (myNodes.size() == 0) {
       return;
     }
-    ProjectPane projectPane = ProjectPane.getInstance(myContext.getProject());
+    ProjectPane projectPane = ProjectPane.getInstance(myContext.getIdeaProject());
     if (myNodes.size() == 1) {
       deleteSingle(projectPane, fromProjectPane, myNodes.get(0));
     } else {
@@ -101,7 +101,7 @@ public class DeleteNodesHelper {
       }
     });
     refactoringContext.setSelectedModule(context.getModule());
-    refactoringContext.setSelectedProject(context.getProject());
+    refactoringContext.setSelectedProject(context.getIdeaProject());
     new Thread() {
       public void run() {
         new RefactoringFacade().execute(refactoring, refactoringContext);

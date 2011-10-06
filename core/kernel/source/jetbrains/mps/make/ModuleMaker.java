@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.make;
 
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.logging.Logger;
@@ -24,6 +23,7 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
@@ -70,66 +70,78 @@ public class ModuleMaker {
     this.handler = handler;
   }
 
-  public void clean(final Set<IModule> modules, @NotNull final ProgressIndicator indicator) {
-    indicator.pushState();
+  public void clean(final Set<IModule> modules, @NotNull final ProgressMonitor monitor) {
+    monitor.start("Cleaning...", modules.size());
     try {
-      indicator.setIndeterminate(true);
-      indicator.setText("Cleaning...");
       for (IModule m : modules) {
-        if (isExcluded(m)) continue;
-        if (indicator.isCanceled()) break;
+        if (isExcluded(m)) {
+          monitor.advance(1);
+          continue;
+        }
+        if (monitor.isCanceled()) break;
 
-        indicator.setText2("Cleaning " + m.getModuleFqName() + "...");
+        monitor.step(m.getModuleFqName());
         String path = m.getClassesGen().getPath();
         FileUtil.delete(new File(path));
         ClassPathFactory.getInstance().invalidate(Collections.singleton(path));
+        monitor.advance(1);
       }
     } finally {
-      indicator.popState();
+      monitor.done();
     }
   }
 
-  public MPSCompilationResult make(Set<IModule> modules, @NotNull final ProgressIndicator indicator) {
-    indicator.pushState();
+  public MPSCompilationResult make(Set<IModule> modules, @NotNull final ProgressMonitor monitor) {
+    monitor.start("Compiling", 12);
     ttrace.push("making " + modules.size() + " modules", false);
     try {
-      indicator.setText("Compiling...");
-      indicator.setIndeterminate(true);
-
+      monitor.step("Collecting candidates");
       ttrace.push("collecting candidates", false);
       Set<IModule> candidates = collectCandidates(modules);
       ttrace.pop();
+      monitor.advance(1);
 
       ttrace.push("loading deps", false);
-      indicator.setText2("Loading dependencies..");
+      monitor.step("Loading dependencies");
       myDependencies = new Dependencies(candidates);
       ttrace.pop();
+      monitor.advance(1);
 
       ttrace.push("modules to compile", false);
-      indicator.setText2("Calculating modules to compile...");
+      monitor.step("Calculating modules to compile");
       Set<IModule> toCompile = getModulesToCompile(candidates);
       ttrace.pop();
+      monitor.advance(1);
 
       int errorCount = 0;
       int warnCount = 0;
       boolean compiled = false;
       List<IMessage> messages = new ArrayList<IMessage>();
 
+      monitor.step("Building module cycles");
       ttrace.push("building cycles", false);
       List<Set<IModule>> schedule = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(toCompile);
       ttrace.pop();
+      monitor.advance(1);
 
-      for (Set<IModule> cycle : schedule) {
-        if (indicator.isCanceled()) break;
+      ProgressMonitor inner = monitor.subTask(8);
+      inner.start("", toCompile.size());
+      try {
+        for (Set<IModule> cycle : schedule) {
+          if (monitor.isCanceled()) break;
 
-        indicator.setText2("Compiling modules " + cycle + "...");
-        ttrace.push("processing cycle", false);
-        MPSCompilationResult result = compile(cycle);
-        ttrace.pop();
-        errorCount += result.getErrors();
-        warnCount += result.getWarnings();
-        compiled = compiled || result.isCompiledAnything();
-        messages.addAll(result.getMessages());
+          inner.step("compiling " + cycle);
+          ttrace.push("processing cycle", false);
+          MPSCompilationResult result = compile(cycle);
+          inner.advance(cycle.size());
+          ttrace.pop();
+          errorCount += result.getErrors();
+          warnCount += result.getWarnings();
+          compiled = compiled || result.isCompiledAnything();
+          messages.addAll(result.getMessages());
+        }
+      } finally {
+        inner.done();
       }
 
       return new MPSCompilationResult(errorCount, warnCount, false, compiled, messages);
@@ -139,7 +151,7 @@ public class ModuleMaker {
       if (report != null) {
         handler.handle(new Message(MessageKind.INFORMATION, report));
       }
-      indicator.popState();
+      monitor.done();
     }
   }
 
