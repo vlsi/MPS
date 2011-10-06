@@ -148,6 +148,9 @@ public class State {
   }
 
   public void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status) {
+    if (myHole!=null && myHole == node) {
+      return;
+    }
     try {
       executeOperation(new ApplyRuleOperation(node, rule, status));
     } catch (Throwable t) {
