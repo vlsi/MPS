@@ -47,6 +47,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new NewAccessoryModel_Action());
     addAction(new NewDevKit_Action());
     addAction(new NewGenerator_Action());
+    addAction(new NewLanguage_Action());
     addAction(new PrintNodeID_Action());
     addAction(new ReloadAll_Action());
     addAction(new RenameLanguage_Action());

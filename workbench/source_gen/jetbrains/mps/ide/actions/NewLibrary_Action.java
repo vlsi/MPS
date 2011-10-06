@@ -23,11 +23,8 @@ public class NewLibrary_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewLibrary_Action.class);
 
-  private String folder;
-
-  public NewLibrary_Action(String folder_par) {
+  public NewLibrary_Action() {
     super("Library", "", ICON);
-    this.folder = folder_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -66,6 +63,10 @@ public class NewLibrary_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("namespace", event.getData(MPSDataKeys.NAMESPACE));
+    if (MapSequence.fromMap(_params).get("namespace") == null) {
+      return false;
+    }
     return true;
   }
 
@@ -80,7 +81,10 @@ public class NewLibrary_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(s, NewLibrary_Action.this.folder);
+          ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(s, (((String) MapSequence.fromMap(_params).get("namespace")) == null ?
+            "" :
+            ((String) MapSequence.fromMap(_params).get("namespace"))
+          ));
         }
       });
       ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
@@ -91,19 +95,5 @@ public class NewLibrary_Action extends GeneratedAction {
         log.error("User's action execute method failed. Action:" + "NewLibrary", t);
       }
     }
-  }
-
-  @NotNull
-  public String getActionId() {
-    StringBuilder res = new StringBuilder();
-    res.append(super.getActionId());
-    res.append("#");
-    res.append(folder_State((String) this.folder));
-    res.append("!");
-    return res.toString();
-  }
-
-  public static String folder_State(String object) {
-    return object;
   }
 }

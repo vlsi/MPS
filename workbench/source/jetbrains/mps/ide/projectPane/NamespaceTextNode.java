@@ -89,7 +89,7 @@ public class NamespaceTextNode extends TextTreeNode {
     DefaultActionGroup newGroup = new DefaultActionGroup("New", true);
 
     if (hasModulesUnder) {
-      newGroup.add(new NewSolution_Action(myName));
+      newGroup.add(new NewSolution_Action());
       // FIXME
       //newGroup.add(new NewLanguage_Action(myName));
     }

@@ -6,10 +6,10 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialog;
 import java.awt.Frame;
@@ -28,9 +28,17 @@ public class NewDevKit_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    // should be enabled only in project new action group 
+    return ((String) MapSequence.fromMap(_params).get("namespace")) == null;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "NewDevKit", t);
@@ -55,6 +63,7 @@ public class NewDevKit_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("namespace", event.getData(MPSDataKeys.NAMESPACE));
     return true;
   }
 
