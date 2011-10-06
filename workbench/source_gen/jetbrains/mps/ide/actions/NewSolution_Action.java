@@ -57,9 +57,6 @@ public class NewSolution_Action extends GeneratedAction {
       return false;
     }
     MapSequence.fromMap(_params).put("namespace", event.getData(MPSDataKeys.NAMESPACE));
-    if (MapSequence.fromMap(_params).get("namespace") == null) {
-      return false;
-    }
     return true;
   }
 

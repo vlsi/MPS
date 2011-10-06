@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.util.Pair;
+import jetbrains.mps.ide.actions.NamespaceNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.NewModel_Action;
 import jetbrains.mps.ide.actions.NewSolution_Action;
 import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNodeBuilder;
@@ -89,9 +90,7 @@ public class NamespaceTextNode extends TextTreeNode {
     DefaultActionGroup newGroup = new DefaultActionGroup("New", true);
 
     if (hasModulesUnder) {
-      newGroup.add(new NewSolution_Action());
-      // FIXME
-      //newGroup.add(new NewLanguage_Action(myName));
+      newGroup.addAll(ActionUtils.getGroup(NamespaceNewActions_ActionGroup.ID));
     }
     if (hasModelsUnder && hasModulesUnder) {
       newGroup.addSeparator();

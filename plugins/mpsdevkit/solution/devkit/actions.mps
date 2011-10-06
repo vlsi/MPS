@@ -345,6 +345,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="typesystem" />
       <property name="name" nameId="tpck.1169194664001" value="TraceActions" />
     </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="4032646381570777493">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="New.Group" />
+      <property name="name" nameId="tpck.1169194664001" value="NamespaceNewActionsEx" />
+    </node>
   </roots>
   <root id="8586967776370449177">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="8586967776370449178">
@@ -6793,6 +6797,16 @@
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8513716958726604215">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8513716958726604216">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="8513716958726547154" resolveInfo="ShowTypeSystemTrace" />
+      </node>
+    </node>
+  </root>
+  <root id="4032646381570777493">
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4032646381570777495">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.4032646381570858340" resolveInfo="NamespaceNewActions" />
+    </node>
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="4032646381570777498">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4032646381570777499">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5883033498657845969" resolveInfo="NewLanguage" />
       </node>
     </node>
   </root>

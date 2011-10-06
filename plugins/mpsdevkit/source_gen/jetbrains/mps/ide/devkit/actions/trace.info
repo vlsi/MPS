@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Mpsdevkit_ProjectPlugin.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ProjectPlugin" />
-  <unitInfo fileName="Mpsdevkit_ApplicationPlugin.java" startLine="24" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
+  <unitInfo fileName="Mpsdevkit_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
   <root nodeId="1212767491070836940">
     <nodeInfo nodeId="1212767491070836940" fileName="RepositoryToolsGroup_ActionGroup.java" startLine="8" startPosition="76" endLine="9" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1212767491070836940" fileName="RepositoryToolsGroup_ActionGroup.java" startLine="9" startPosition="87" endLine="10" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
@@ -2203,6 +2203,23 @@
     <scopeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="14" startPosition="53" endLine="24" endPosition="5" />
     <scopeInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="13" startPosition="0" endLine="25" endPosition="3" />
     <unitInfo nodeId="3465865320786328040" fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.LanguageNewCustomPartActions_ActionGroup" />
+  </root>
+  <root nodeId="4032646381570777493">
+    <nodeInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="8" startPosition="77" endLine="9" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="9" startPosition="88" endLine="10" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="12" startPosition="46" endLine="13" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="13" startPosition="39" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4032646381570777499" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="15" startPosition="25" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NamespaceNewActionsEx_ActionGroup#()V" />
+    <scopeInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="110" />
+    <scopeInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39" />
+    <scopeInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" />
+    <scopeInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="12" startPosition="46" endLine="20" endPosition="5" />
+    <scopeInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
+    <unitInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.NamespaceNewActionsEx_ActionGroup" />
   </root>
   <root nodeId="5883033498657755836">
     <nodeInfo nodeId="5883033498657755836" fileName="ProjectNewActionsEx_ActionGroup.java" startLine="8" startPosition="75" endLine="9" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
