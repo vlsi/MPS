@@ -5,29 +5,29 @@ package jetbrains.mps.vcs.diff.ui;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.diff.DiffRequest;
 import jetbrains.mps.ide.dialogs.BaseDialog;
+import com.intellij.openapi.diff.DiffTool;
 import jetbrains.mps.ide.projectPane.Icons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import com.intellij.openapi.diff.DiffTool;
-import com.intellij.openapi.diff.DiffManager;
 
 public class InvokeTextDiffAction extends BaseAction {
   private DiffRequest myDiffRequest;
   private BaseDialog myDialog;
+  private DiffTool myDiffTool;
 
-  public InvokeTextDiffAction(String title, String description, BaseDialog dialog, DiffRequest diffRequest) {
+  public InvokeTextDiffAction(String title, String description, BaseDialog dialog, DiffRequest diffRequest, DiffTool diffTool) {
     super(title, description, Icons.TEXT_ICON);
     myDialog = dialog;
     myDiffRequest = diffRequest;
+    myDiffTool = diffTool;
     setDisableOnNoProject(false);
     setExecuteOutsideCommand(true);
   }
 
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-    DiffTool ideaDiffTool = DiffManager.getInstance().getIdeaDiffTool();
-    if (ideaDiffTool.canShow(myDiffRequest)) {
+    if (myDiffTool.canShow(myDiffRequest)) {
       myDialog.dispose();
-      ideaDiffTool.show(myDiffRequest);
+      myDiffTool.show(myDiffRequest);
     }
   }
 }
