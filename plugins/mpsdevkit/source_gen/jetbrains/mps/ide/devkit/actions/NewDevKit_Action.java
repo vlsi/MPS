@@ -17,9 +17,12 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class NewDevKit_Action extends GeneratedAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(NewDevKit_Action.class);
 
   public NewDevKit_Action() {
@@ -83,6 +86,17 @@ public class NewDevKit_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "NewDevKit", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(NewDevKit_Action.class.getResourceAsStream("devkit.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for NewDevKit", e);
+      }
+      return null;
     }
   }
 }

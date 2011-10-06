@@ -17,9 +17,12 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class NewLanguage_Action extends GeneratedAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(NewLanguage_Action.class);
 
   public NewLanguage_Action() {
@@ -79,6 +82,17 @@ public class NewLanguage_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "NewLanguage", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(NewLanguage_Action.class.getResourceAsStream("projectLanguage.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for NewLanguage", e);
+      }
+      return null;
     }
   }
 }

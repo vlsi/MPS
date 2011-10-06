@@ -18,9 +18,12 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class NewSolution_Action extends GeneratedAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(NewSolution_Action.class);
 
   public NewSolution_Action() {
@@ -84,6 +87,17 @@ public class NewSolution_Action extends GeneratedAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "NewSolution", t);
       }
+    }
+  }
+
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(NewSolution_Action.class.getResourceAsStream("solution.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for NewSolution", e);
+      }
+      return null;
     }
   }
 }
