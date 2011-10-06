@@ -317,7 +317,15 @@
     <classNode dependClassName="java.io.FileInputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="java.io.UnsupportedEncodingException" />
+    <classNode dependClassName="java.lang.AssertionError" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.regex.Matcher" />
+    <classNode dependClassName="java.util.regex.Pattern" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.ReadUtil" />
     <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.AbstractFileMerger" />

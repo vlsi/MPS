@@ -8,6 +8,12 @@ import java.io.OutputStream;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Arrays;
+import java.io.UnsupportedEncodingException;
 
 /*package*/ class SimpleMerger extends AbstractFileMerger {
   private static byte[] LINE_SEPARATOR = System.getProperty("line.separator").getBytes();
@@ -29,6 +35,9 @@ import java.io.IOException;
       FileUtil.closeFileSafe(localIS);
 
       out = getResultStream(localFile);
+
+      // Make possible to load model id correctly when model is in conflicting state 
+      out.write(extractHeader(localContent));
 
       out.write(myConflictStart);
       out.write(LINE_SEPARATOR);
@@ -58,5 +67,28 @@ import java.io.IOException;
       FileUtil.closeFileSafe(latestIS);
       FileUtil.closeFileSafe(out);
     }
+  }
+
+  private static byte[] extractHeader(byte[] xmlContent) {
+    try {
+      String header = new String(xmlContent, 0, 1024, "UTF-8");
+
+      // Pattern for finds text like _<persistence version="7"_ (without underscores) 
+      Matcher matcher = Pattern.compile("<" + ModelPersistence.PERSISTENCE + "\\s+" + ModelPersistence.PERSISTENCE_VERSION + "=\"\\d+\"").matcher(header);
+      if (matcher.find()) {
+        int end = matcher.end();
+        // Try to find _</persistence>_ or _/>_ (without underscores 
+        for (String possibleEnd : ListSequence.fromList(Arrays.asList("</" + ModelPersistence.PERSISTENCE + ">", "/>"))) {
+          int indexOf = header.indexOf(possibleEnd, end + 1);
+          if (indexOf != -1) {
+            header = header.substring(0, indexOf + possibleEnd.length()) + System.getProperty("line.separator");
+            return header.getBytes("UTF-8");
+          }
+        }
+      }
+    } catch (UnsupportedEncodingException e) {
+      throw new AssertionError("Panic! UTF-8 is not supported!");
+    }
+    return new byte[0];
   }
 }
