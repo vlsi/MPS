@@ -20,7 +20,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -138,7 +138,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
   private void regenerate() {
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : myTreeComponent.getIncludedModels()) {
-      if (GeneratorManager.isDoNotGenerate(modelDescriptor) || !modelDescriptor.isGeneratable()) continue;
+      if (!GenerationFacade.canGenerate(modelDescriptor)) continue;
       models.add(modelDescriptor);
     }
 
@@ -148,8 +148,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
         if (IMakeService.INSTANCE.get().openNewSession(myMakeSession.get())) {
           IMakeService.INSTANCE.get().make(myMakeSession.get(), new ModelsToResources(context, models).resources(false));
         }
-      }
-      finally {
+      } finally {
         myMakeSession.set(null);
       }
     }

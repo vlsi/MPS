@@ -28,7 +28,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.GenerationFacade;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -153,7 +153,7 @@ public class ProjectTestHelper {
     });
     return new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor smd) {
-        return !(GeneratorManager.isDoNotGenerate(smd));
+        return GenerationFacade.canGenerate(smd);
       }
     })).resources(false);
   }

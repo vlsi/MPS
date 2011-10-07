@@ -20,7 +20,6 @@ import com.intellij.idea.IdeaTestApplication;
 import com.intellij.idea.LoggerFactory;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.util.InvalidDataException;
@@ -29,8 +28,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.generator.GenParameters;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.IdeMain;
@@ -653,8 +652,8 @@ public class TestMain {
 
               int numErrorsBeforeGeneration = errors.size();
 
-              GeneratorManager gm = myProject.getComponent(GeneratorManager.class);
-              gm.generateModels(
+              GenerationFacade.generateModels(
+                myProject.getComponent(MPSProject.class),
                 parms.getModelDescriptors(),
                 new ModuleContext(parms.getModule(), myProject),
                 generationHandler,
