@@ -15762,9 +15762,9 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="uhxm.StartProcessHandlerStatement" typeId="uhxm.946964771156870353" id="6226796386650407364">
           <node role="expression" roleId="tpee.1068581517676" type="rzqf.CommandBuilderExpression" typeId="rzqf.856705193941281780" id="6226796386650407365">
-            <link role="commandPart" roleId="rzqf.6129022259108621329" targetNodeId="awpe.1715641077095363602" resolveInfo="java" />
+            <link role="commandPart" roleId="rzqf.6129022259108621329" targetNodeId="awpe.3445893456318084392" resolveInfo="java" />
             <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="6226796386650407366">
-              <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.1715641077095367948" resolveInfo="node" />
+              <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.3445893456318084395" resolveInfo="nodePointer" />
               <node role="value" roleId="rzqf.856705193941281766" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6226796386650407367">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6226796386650407368">
                   <node role="operand" roleId="tpee.1197027771414" type="uhxm.ConfigurationFromExecutorReference" typeId="uhxm.7806358006983738927" id="6226796386650503144" />
@@ -15772,13 +15772,13 @@
                     <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="1375871677229945065" resolveInfo="myNode" />
                   </node>
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="1375871677230199644">
-                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="qsa3.747009152929086178" resolveInfo="getNode" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="3445893456318122410">
+                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="qsa3.8581421505100460209" resolveInfo="getNodePointer" />
                 </node>
               </node>
             </node>
             <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="6226796386650407372">
-              <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.1715641077095367946" resolveInfo="runParameters" />
+              <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.3445893456318084393" resolveInfo="runParameters" />
               <node role="value" roleId="rzqf.856705193941281766" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6226796386650407373">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6226796386650407374">
                   <node role="operand" roleId="tpee.1197027771414" type="uhxm.ConfigurationFromExecutorReference" typeId="uhxm.7806358006983738927" id="6226796386650503146" />

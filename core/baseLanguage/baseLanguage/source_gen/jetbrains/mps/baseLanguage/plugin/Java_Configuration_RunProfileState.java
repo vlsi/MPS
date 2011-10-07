@@ -52,7 +52,7 @@ public class Java_Configuration_RunProfileState extends DebuggerRunProfileState 
     ConsoleView console = ConsoleCreator.createConsoleView(project, false);
     console.addMessageFilter(new JavaStackTraceFilter());
     {
-      ProcessHandler _processHandler = new Java_Command().setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(myRunConfiguration.getRunParameters().getJavaRunParameters(), myRunConfiguration.getNode().getNode());
+      ProcessHandler _processHandler = new Java_Command().setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(myRunConfiguration.getRunParameters().getJavaRunParameters(), myRunConfiguration.getNode().getNodePointer());
       final ConsoleView _consoleView = console;
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {

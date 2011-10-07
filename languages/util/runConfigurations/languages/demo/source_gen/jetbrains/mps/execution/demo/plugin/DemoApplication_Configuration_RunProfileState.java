@@ -53,7 +53,7 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
     {
-      ProcessHandler _processHandler = new Java_Command().setProgramParameter_String("Julia").setVirtualMachineParameter_String(myDebuggerSettings.getCommandLine(true)).createProcess(myConfiguration.getNode().getNode());
+      ProcessHandler _processHandler = new Java_Command().setProgramParameter_String("Julia").setVirtualMachineParameter_String(myDebuggerSettings.getCommandLine(true)).createProcess(myConfiguration.getNode().getNodePointer());
       final ConsoleView _consoleView = ConsoleCreator.createConsoleView(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {

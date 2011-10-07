@@ -436,6 +436,9 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="558680274511380754">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1239354281271" resolveInfo="IMethodLike" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3445893456318070461">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpce.1224848324737" resolveInfo="IStructureDeprecatable" />
+    </node>
   </root>
   <root id="612376536074296995">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="612376536074296996">

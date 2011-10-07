@@ -48,7 +48,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 15:
         return new CompiledConceptDescriptor("jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration", false, new String[]{"jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"}, new String[]{}, new String[]{});
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.execution.commands.structure.ExecuteCommandPart", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.execution.commands.structure.ExecuteCommandPart", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"}, new String[]{}, new String[]{});
       case 17:
         return new CompiledConceptDescriptor("jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration", false, new String[]{"jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"}, new String[]{"isRequired"}, new String[]{});
       case 18:
