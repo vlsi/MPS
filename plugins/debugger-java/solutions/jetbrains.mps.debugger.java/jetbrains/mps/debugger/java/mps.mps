@@ -942,7 +942,7 @@
     </node>
     <node role="method" roleId="rzqf.856705193941281774" type="rzqf.CommandMethod" typeId="rzqf.856705193941281767" id="6600548944311449756">
       <property name="name" nameId="tpck.1169194664001" value="getClassPath" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="6600548944311449757" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2886740409198900432" />
       <node role="returnType" roleId="tpee.1068580123133" type="tp2q.ListType" typeId="tp2q.1151688443754" id="6600548944311449760">
         <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8234001627574046928">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fxg7.~File" resolveInfo="File" />
@@ -1134,7 +1134,7 @@
                 </node>
               </node>
               <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="7986696453016948274">
-                <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.8234001627573899236" resolveInfo="classPathFiles" />
+                <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.8234001627573899236" resolveInfo="classPath" />
                 <node role="value" roleId="rzqf.856705193941281766" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7986696453016948276">
                   <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7986696453016948277" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="7986696453016948278">
@@ -1143,7 +1143,7 @@
                 </node>
               </node>
               <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="7986696453016948279">
-                <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.8234001627573899232" resolveInfo="virtualMachineParameterCommand" />
+                <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.8234001627573899232" resolveInfo="virtualMachineParameter" />
                 <node role="value" roleId="rzqf.856705193941281766" type="rzqf.ListCommandPart" typeId="rzqf.6868250101935610313" id="7986696453016996702">
                   <node role="items" roleId="rzqf.2168104298250244983" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="7986696453016996708">
                     <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1715641077095443975" resolveInfo="virtualMachineParameters" />
@@ -1194,7 +1194,7 @@
                 </node>
               </node>
               <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="7986696453017081108">
-                <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.8234001627573899230" resolveInfo="programParameterCommand" />
+                <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.8234001627573899230" resolveInfo="programParameter" />
                 <node role="value" roleId="rzqf.856705193941281766" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7986696453017081111" />
               </node>
             </node>
