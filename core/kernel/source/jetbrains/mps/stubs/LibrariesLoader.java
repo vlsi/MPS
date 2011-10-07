@@ -95,6 +95,7 @@ public class LibrariesLoader implements ApplicationComponent {
         root.setPath(path);
         root.setManager(d.getManager());
         sd.getModelRoots().add(root);
+        sd.getStubModelEntries().add(root);
       }
 
       d.init(sd);
