@@ -692,7 +692,7 @@ public class Matrix<T> {
   public Matrix<T> conjugate() {
     return new Matrix<T>(myColumns, myRows, new _FunctionTypes._return_P2_E0<T, Integer, Integer>() {
       public T invoke(Integer a, Integer b) {
-        return (T) myOperations.conj(myCarrier[(Integer) b][(Integer) a]);
+        return (T) myOperations.conj(myCarrier[b][a]);
       }
     }, myOperations);
   }

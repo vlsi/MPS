@@ -16,7 +16,7 @@ public class MathRuntime {
     }
     int scale = bd.scale() / 2;
     BigInteger bi = bd.unscaledValue();
-    double l = (double) context.getPrecision() * 10.0 / 3.0;
+    double l = context.getPrecision() * 10.0 / 3.0;
     int i = (int) (Math.round(l));
     bi = bi.shiftLeft(2 * i);
     BigInteger op = bi;
