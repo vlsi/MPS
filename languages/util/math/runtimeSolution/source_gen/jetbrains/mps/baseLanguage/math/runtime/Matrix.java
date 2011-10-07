@@ -887,9 +887,9 @@ public class Matrix<T> {
     if (oper == null) {
       throw new IllegalArgumentException();
     }
-    Object leader = null;
     switch (n) {
       case Norm1:
+        Object leader = null;
         for (int j = 0; j < myColumns; j++) {
           Object o1 = 0;
           for (int i = 0; i < myRows; i++) {
