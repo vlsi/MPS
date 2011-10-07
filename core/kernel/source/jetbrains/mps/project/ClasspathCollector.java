@@ -55,11 +55,13 @@ public class ClasspathCollector {
       result.add(CommonPaths.getMPSClassPath());
       result.add(CommonPaths.getTestbenchClassPath());
 
+/*
       for (Solution s : MPSModuleRepository.getInstance().getAllSolutions()) {
         if (s.isStub()) {
           result.add(s.getClassPathItem());
         }
       }
+*/
     }
 
     for (IClassPathItem item : myResult) {
