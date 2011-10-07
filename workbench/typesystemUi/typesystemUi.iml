@@ -18,6 +18,7 @@
     <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="typesystemIntegration" />
     <orderEntry type="module" module-name="editor-runtime" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
   </component>
 </module>
 
