@@ -213,7 +213,7 @@ public class Java_Command {
       }
 
     } else {
-      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_String).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), classPath), File.pathSeparator))).append(className).append(programParameter).build(myWorkingDirectory_File);
+      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_String).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPath, File.pathSeparator))).append(className).append(programParameter).build(myWorkingDirectory_File);
     }
   }
 
