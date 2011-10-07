@@ -13,7 +13,8 @@ import java.util.ArrayList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
@@ -36,7 +37,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
       public void actionPerformed(ActionEvent p0) {
 
         final FindUsagesManager findUsegesManager = FindUsagesManager.getInstance();
-        final FindUsagesManager.ProgressAdapter progressAdapter = new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator());
+        final ProgressMonitor progressAdapter = new EmptyProgressMonitor();
 
         final Wrappers._T<List<SNode>> toChooseFrom = new Wrappers._T<List<SNode>>();
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -86,7 +87,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
 
   protected abstract List<SModelDescriptor> getModelDescriptors(String model);
 
-  protected abstract List<SNode> findToChooseFromOnInit(FindUsagesManager manager, FindUsagesManager.ProgressAdapter progressAdapter);
+  protected abstract List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor);
 
   public SNode getNode() {
     return this.myNode;

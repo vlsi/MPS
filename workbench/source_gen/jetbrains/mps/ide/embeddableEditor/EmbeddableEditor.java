@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
+import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.ide.IEditor;
@@ -51,7 +52,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
 
 public class EmbeddableEditor {
   private MPSFileNodeEditor myFileNodeEditor;
@@ -75,8 +75,9 @@ public class EmbeddableEditor {
     myOwner = owner;
     myContext = context;
     myIsEditable = editable;
-    myModel = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor(myOwner));
+    myModel = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor());
     myModel.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
+    SModelRepository.getInstance().registerModelDescriptor(myModel, myOwner);
     setNode(rootNode, targetNode, true);
   }
 
@@ -92,11 +93,7 @@ public class EmbeddableEditor {
     myRootNode = rootNode;
     myNode = targetNode;
     if (addToModel) {
-      myModel.getSModel().runLoadingAction(new Runnable() {
-        public void run() {
-          myModel.getSModel().addRoot(rootNode);
-        }
-      });
+      myModel.getSModel().addRoot(rootNode);
     }
     myFileNodeEditor = new MPSFileNodeEditor(myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(myNode));
     IEditor editor = myFileNodeEditor.getNodeEditor();

@@ -7,6 +7,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SNode;
@@ -32,12 +33,13 @@ public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
     public AdapterUsagesChecker() {
     }
 
-    public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
+    public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, IOperationContext operationContext) {
       List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
       String title = "Checking " + SModelOperations.getModelName(model) + " for adapter usages...";
+      monitor.start(title, 1);
       for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
-        if (!(progressContext.checkAndUpdateIndicator(title))) {
+        if (monitor.isCanceled()) {
           break;
         }
         // Check for adapter references 
@@ -58,7 +60,7 @@ public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
           }
         }
       }
-
+      monitor.done();
       return results;
     }
   }

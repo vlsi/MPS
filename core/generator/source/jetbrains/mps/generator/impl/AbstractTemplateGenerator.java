@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.generator.impl;
 
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 
 import java.util.List;
 import java.util.Set;
@@ -31,7 +31,7 @@ import java.util.Set;
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   private IOperationContext myOperationContext;
-  private ProgressIndicator myProgressMonitor;
+  private ProgressMonitor myProgressMonitor;
   protected final IGeneratorLogger myLogger;
 
   protected final SModel myInputModel;
@@ -43,7 +43,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private final boolean myShowBadChildWarning;
 
   protected AbstractTemplateGenerator(IOperationContext operationContext,
-                                      ProgressIndicator progressMonitor, IGeneratorLogger logger,
+                                      ProgressMonitor progressMonitor, IGeneratorLogger logger,
                                       SModel inputModel, SModel outputModel, boolean showBadChildWarning) {
     myOperationContext = operationContext;
     myProgressMonitor = progressMonitor;
@@ -65,7 +65,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return null;
   }
 
-  public ProgressIndicator getProgressMonitor() {
+  public ProgressMonitor getProgressMonitor() {
     return myProgressMonitor;
   }
 

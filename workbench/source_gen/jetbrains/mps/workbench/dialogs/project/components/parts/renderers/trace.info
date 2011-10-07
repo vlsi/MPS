@@ -47,8 +47,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1560298786499489484" fileName="RuleTypeRenderer.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1560298786499489491" varName="isSelected" />
-      <varInfo nodeId="1560298786499489489" varName="value" />
       <varInfo nodeId="1560298786499489497" varName="column" />
+      <varInfo nodeId="1560298786499489489" varName="value" />
       <varInfo nodeId="1560298786499489487" varName="table" />
       <varInfo nodeId="1560298786499489493" varName="hasFocus" />
       <varInfo nodeId="1560298786499489495" varName="row" />
@@ -266,8 +266,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1560298786499494322" fileName="ListRendererAdapter.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1560298786499494329" varName="isSelected" />
-      <varInfo nodeId="1560298786499494327" varName="value" />
       <varInfo nodeId="1560298786499494335" varName="column" />
+      <varInfo nodeId="1560298786499494327" varName="value" />
       <varInfo nodeId="1560298786499494325" varName="table" />
       <varInfo nodeId="1560298786499494331" varName="hasFocus" />
       <varInfo nodeId="1560298786499494333" varName="row" />

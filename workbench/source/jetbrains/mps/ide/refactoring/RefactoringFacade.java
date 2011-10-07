@@ -295,24 +295,20 @@ public class RefactoringFacade {
   }
 
   protected static void updateModel(final SModel model, final RefactoringContext refactoringContext) {
-    model.runLoadingAction(new Runnable() {
-      public void run() {
-        IRefactoring refactoring = refactoringContext.getRefactoring();
-        try {
-          ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
-        } catch (Throwable t) {
-          LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.", t);
-        }
+    IRefactoring refactoring = refactoringContext.getRefactoring();
+    try {
+      ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
+    } catch (Throwable t) {
+      LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.", t);
+    }
 
-        if (!refactoringContext.isLocal()) {
-          Map<SModelReference, Integer> dependencies = refactoringContext.getStructureModification().getDependencies();
-          for (SModelReference modelRef : dependencies.keySet()) {
-            model.updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
-          }
-        }
-        SModelRepository.getInstance().markChanged(model);
+    if (!refactoringContext.isLocal()) {
+      Map<SModelReference, Integer> dependencies = refactoringContext.getStructureModification().getDependencies();
+      for (SModelReference modelRef : dependencies.keySet()) {
+        model.updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
       }
-    });
+    }
+    SModelRepository.getInstance().markChanged(model);
   }
 
   public static void writeIntoLog(RefactoringContext refactoringContext) {

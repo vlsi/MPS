@@ -20,7 +20,6 @@ import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.EverythingGlobalScope;
-import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
 import jetbrains.mps.generator.ModelDigestHelper;

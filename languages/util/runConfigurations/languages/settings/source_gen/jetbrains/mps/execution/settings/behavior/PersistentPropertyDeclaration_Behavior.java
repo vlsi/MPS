@@ -75,12 +75,12 @@ public class PersistentPropertyDeclaration_Behavior {
 
   public static String addMyPrefix_6314556899428615272(String name) {
     String prefix = "my";
-    if (!(name.startsWith(prefix))) {
-      if (name.length() > 1) {
-        name = "my" + name.substring(0, 1).toUpperCase() + name.substring(1);
-      } else {
-        name = "my" + name;
+    if (name.length() > 2) {
+      if (!(name.startsWith(prefix))) {
+        name = prefix + name.substring(0, 1).toUpperCase() + name.substring(1);
       }
+    } else {
+      name = prefix + name;
     }
     return name;
   }

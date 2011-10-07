@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.lang.reflect.Method;
 import java.io.File;
 import jetbrains.mps.ide.IdeMain;
@@ -36,7 +36,6 @@ public class MakeAssert {
     IGenerationHandler genType = getFilesGenHandler();
     boolean baseIsOk = changeModelProcessor.changeStep(genType);
     boolean newIsOk = changeModelProcessor.revertStep(genType);
-    changeModelProcessor.getModelToChange().setLoading(false);
     changeModelProcessor.generateModelToChange(genType);
     disposeProject(project);
     assertNoProblems(baseIsOk);
@@ -59,7 +58,7 @@ public class MakeAssert {
         try {
           SNode test = ListSequence.fromList(SModelOperations.getRoots(testModel, null)).first();
           String className = NameUtil.nodeFQName(test);
-          genHandler.compile(ITaskProgressHelper.EMPTY);
+          genHandler.compile(new EmptyProgressMonitor());
           ClassLoader classLoader = genHandler.getCompiler().getClassLoader(MakeAssert.class.getClassLoader());
           Class testClass = classLoader.loadClass(className);
           Method method = testClass.getMethods()[0];

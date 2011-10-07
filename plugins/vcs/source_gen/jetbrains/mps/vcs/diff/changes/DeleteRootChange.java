@@ -39,4 +39,8 @@ public class DeleteRootChange extends ModelChange {
   public String toString() {
     return "Delete root " + myNodeId;
   }
+
+  public String getDescription() {
+    return "Deleted root #" + myNodeId;
+  }
 }

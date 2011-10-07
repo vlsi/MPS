@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.smodel.IOperationContext;
 
 public abstract class StandaloneMPSContext implements IOperationContext {
@@ -26,7 +26,7 @@ public abstract class StandaloneMPSContext implements IOperationContext {
   }
 
   public <T> T getComponent(Class<T> clazz) {
-    return ApplicationManager.getApplication().getComponent(clazz);
+    return ComponentManager.getInstance().getComponent(clazz);
   }
 
   public boolean isValid() {

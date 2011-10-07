@@ -32,6 +32,8 @@ public abstract class FileSystem {
 
   public abstract boolean isPackaged(IFile file);
 
+  public abstract boolean isFileIgnored(@NotNull String name);
+
   public abstract IFile getBundleHome(IFile file);
 
   public abstract boolean setTimeStamp(IFile file, long time);

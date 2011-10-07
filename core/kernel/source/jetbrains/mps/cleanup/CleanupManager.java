@@ -15,38 +15,24 @@
  */
 package jetbrains.mps.cleanup;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.logging.Logger;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CleanupManager implements ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(CleanupManager.class);
+public class CleanupManager {
+
+  private static final CleanupManager INSTANCE = new CleanupManager();
 
   public static CleanupManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(CleanupManager.class);
+    return INSTANCE;
+  }
+
+  private CleanupManager() {
   }
 
   private final Object myLock = new Object();
   private List<CleanupListener> myCleanupListeners = new ArrayList<CleanupListener>();
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "MPS Cleanup Manager";
-  }
-
-  public void initComponent() {
-
-  }
-
-  public void disposeComponent() {
-
-  }
 
   public void addCleanupListener(CleanupListener l) {
     synchronized (myLock) {
@@ -61,7 +47,8 @@ public class CleanupManager implements ApplicationComponent {
   }
 
   public void cleanup() {
-    LOG.assertCanWrite();
+    ModelAccess.assertLegalWrite();
+
     List<CleanupListener> listenersToInvoke = new ArrayList<CleanupListener>();
     synchronized (myLock) {
       listenersToInvoke.addAll(myCleanupListeners);

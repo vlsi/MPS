@@ -5,6 +5,7 @@ package jetbrains.mps.ide.modelchecker.actions;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,14 +20,13 @@ public class ModelPropertiesChecker extends SpecificChecker {
   public ModelPropertiesChecker() {
   }
 
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
-    progressContext.getProgressIndicator().setText("Checking " + SModelOperations.getModelName(model) + " model properties...");
-    progressContext.getProgressIndicator().setText2("");
+  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, IOperationContext operationContext) {
+    monitor.start("Checking " + SModelOperations.getModelName(model) + " model properties...", 1);
 
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
-    IScope scope = check_t4d01o_a0g0a(check_t4d01o_a0a6a0(modelDescriptor));
+    IScope scope = check_t4d01o_a0f0a(check_t4d01o_a0a5a0(modelDescriptor));
     if (scope != null) {
       List<String> errors = new ModelValidator(modelDescriptor.getSModel()).validate(scope);
       if (!(ListSequence.fromList(errors).isEmpty())) {
@@ -39,17 +39,18 @@ public class ModelPropertiesChecker extends SpecificChecker {
         ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, SModelOperations.getModelName(model) + ": " + NameUtil.formatNumericalString(ListSequence.fromList(errors).count(), "unresolved dependency") + " (" + extraMessage + "; see model properties)", null, ModelChecker.SEVERITY_ERROR, "Model properties"));
       }
     }
+    monitor.done();
     return results;
   }
 
-  private static IScope check_t4d01o_a0g0a(IModule checkedDotOperand) {
+  private static IScope check_t4d01o_a0f0a(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static IModule check_t4d01o_a0a6a0(SModelDescriptor checkedDotOperand) {
+  private static IModule check_t4d01o_a0a5a0(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

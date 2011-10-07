@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JFrame;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.smodel.MissingDependenciesFixer;
+import jetbrains.mps.ide.actions.MissingDependenciesFixer;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.DevKit;

@@ -36,13 +36,13 @@ import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -218,7 +218,7 @@ public class TestMain {
       public void run() {
         new ModuleMaker().make(
           new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()),
-          new EmptyProgressIndicator());
+          new EmptyProgressMonitor());
       }
     });
 
@@ -327,7 +327,7 @@ public class TestMain {
     return testActionForLeaks(new Runnable() {
       public void run() {
         MPSProject project = loadProject(projectFile);
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         project.dispose();
       }
     }, leakThreshold);
@@ -603,7 +603,7 @@ public class TestMain {
     }
 
     public TestResult testProject(final String[] configurationsGiven) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
 
       final List<String> errors = new ArrayList<String>();
       final List<String> warnings = new ArrayList<String>();
@@ -658,7 +658,7 @@ public class TestMain {
                 parms.getModelDescriptors(),
                 new ModuleContext(parms.getModule(), myProject),
                 generationHandler,
-                new EmptyProgressIndicator(),
+                new EmptyProgressMonitor(),
                 handler,
                 GenerationOptions.getDefaults().create()
               );
@@ -679,7 +679,7 @@ public class TestMain {
                     compilationResultList.add(r);
                   }
                 };
-                generationHandler.compile(ITaskProgressHelper.EMPTY, listener);
+                generationHandler.compile(new EmptyProgressMonitor(), listener);
 
                 System.out.println("Compiled " + compilationResultList.size() + " compilation units in " + (System.currentTimeMillis() - start));
                 compilationResults.addAll(createCompilationProblemsList(compilationResultList));

@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.runtime.interpreted;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
@@ -46,7 +46,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Ap
   }
 
   public static StructureAspectInterpreted getInstance() {
-    return ApplicationManager.getApplication().getComponent(StructureAspectInterpreted.class);
+    return ComponentManager.getInstance().getComponent(StructureAspectInterpreted.class);
   }
 
   @Override

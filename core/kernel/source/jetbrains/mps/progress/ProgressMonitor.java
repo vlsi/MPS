@@ -13,39 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.progress;
+package jetbrains.mps.progress;
 
 /**
- * Evgeny Gryaznov, Jan 22, 2010
+ * Evgeny Gryaznov, 9/30/11
  */
-public interface ITaskProgressHelper {
+public interface ProgressMonitor {
 
-  public static final ITaskProgressHelper EMPTY = new NullTaskProgressHelper();
+  void start(String taskName, int totalWork);
 
-  void startLeafTask(String taskName);
+  void advance(int work);
 
-  void finishTask();
+  void step(String title);
 
-  void setText2(String text);
+  void done();
 
-  boolean isCancelled();
+  ProgressMonitor subTask(int work);
 
-  /**
-   * Empty helper.
-   */
-  public static class NullTaskProgressHelper implements ITaskProgressHelper {
+  ProgressMonitor subTask(int work, SubProgressKind kind);
 
-    public void startLeafTask(String taskName) {
-    }
+  boolean isCanceled();
 
-    public void finishTask() {
-    }
-
-    public void setText2(String text) {
-    }
-
-    public boolean isCancelled() {
-      return false;
-    }
-  }
+  void cancel();
 }

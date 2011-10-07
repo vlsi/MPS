@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.components.ComponentManager;
 
 public class DataFlowManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(DataFlowManager.class);
@@ -95,6 +95,6 @@ public class DataFlowManager implements ApplicationComponent {
   }
 
   public static DataFlowManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(DataFlowManager.class);
+    return ComponentManager.getInstance().getComponent(DataFlowManager.class);
   }
 }

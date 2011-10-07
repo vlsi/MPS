@@ -5,11 +5,12 @@ package jetbrains.mps.ide.modelchecker.actions;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -17,11 +18,12 @@ public class UnavailableConceptsChecker extends SpecificChecker {
   public UnavailableConceptsChecker() {
   }
 
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
+  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
+    monitor.start("Checking " + SModelOperations.getModelName(model) + " for instances of unavailable concepts...", 1);
     for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
-      if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for instances of unavailable concepts..."))) {
+      if (monitor.isCanceled()) {
         break;
       }
       SNode concept = SNodeOperations.getConceptDeclaration(node);
@@ -29,6 +31,7 @@ public class UnavailableConceptsChecker extends SpecificChecker {
         addIssue(results, node, "Cannot find concept \"" + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(concept, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})) + "\"", ModelChecker.SEVERITY_ERROR, "unavailable concept", null);
       }
     }
+    monitor.done();
 
     return results;
   }

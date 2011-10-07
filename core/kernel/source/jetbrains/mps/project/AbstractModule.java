@@ -21,7 +21,7 @@ import jetbrains.mps.project.dependency.DependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
-import jetbrains.mps.project.structure.model.*;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -71,7 +71,7 @@ public abstract class AbstractModule implements IModule {
     ourModelCreationListeners.add(listener);
   }
 
-  public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root) {
+  public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root, ModelAdjuster adj) {
     IModelRootManager manager = root.getManager();
 
     if (!manager.canCreateModel(this, root.getModelRoot(), name)) {
@@ -80,6 +80,9 @@ public abstract class AbstractModule implements IModule {
     }
 
     EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createModel(this, root.getModelRoot(), name);
+    if (adj != null) {
+      adj.adjust(model);
+    }
     SModelRepository.getInstance().registerModelDescriptor(model, this);
     model.setChanged(true);
 

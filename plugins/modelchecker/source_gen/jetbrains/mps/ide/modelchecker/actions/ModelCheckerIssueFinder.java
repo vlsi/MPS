@@ -7,6 +7,8 @@ import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -14,7 +16,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ModelCheckerIssueFinder implements IFinder {
   public ModelCheckerIssueFinder() {
@@ -25,6 +26,7 @@ public class ModelCheckerIssueFinder implements IFinder {
   }
 
   public SearchResults find(SearchQuery searchQuery, ProgressIndicator indicator) {
+    ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
     IHolder objectHolder = searchQuery.getObjectHolder();
     IOperationContext operationContext;
     List<SModelDescriptor> modelDescriptors;
@@ -42,45 +44,42 @@ public class ModelCheckerIssueFinder implements IFinder {
       throw new IllegalArgumentException();
     }
 
-    ProgressContext progressContext = new ProgressContext(indicator, ListSequence.fromList(modelDescriptors).select(new ISelector<SModelDescriptor, String>() {
-      public String select(SModelDescriptor md) {
-        return getTaskName(md);
+    int work = ((modules != null ?
+      ListSequence.fromList(modules).count() :
+      0
+    )) + ListSequence.fromList(modelDescriptors).count() + 1;
+    monitor.start("Checking", work);
+
+    try {
+      ModuleChecker moduleChecker = null;
+      if (modules != null) {
+        moduleChecker = new ModuleChecker();
+        for (IModule module : ListSequence.fromList(modules)) {
+          moduleChecker.checkModule(module, monitor.subTask(1));
+          if (monitor.isCanceled()) {
+            break;
+          }
+        }
       }
-    }));
-    ModuleChecker moduleChecker = null;
-    if (modules != null) {
-      moduleChecker = new ModuleChecker(progressContext);
-      indicator.setIndeterminate(true);
-      for (IModule module : ListSequence.fromList(modules)) {
-        moduleChecker.checkModule(module);
-        if (moduleChecker.isCancelled()) {
+      monitor.advance(0);
+      ModelChecker modelChecker;
+      if (moduleChecker != null) {
+        modelChecker = new ModelChecker(operationContext, moduleChecker.getSearchResults());
+      } else {
+        modelChecker = new ModelChecker(operationContext);
+      }
+      modelChecker.setSpecificCheckers(getSpecificCheckers());
+      monitor.advance(1);
+
+      for (SModelDescriptor modelDescriptor : ListSequence.fromList(modelDescriptors)) {
+        modelChecker.checkModel(modelDescriptor, monitor.subTask(1));
+        if (monitor.isCanceled()) {
           break;
         }
       }
+      return modelChecker.getSearchResults();
+    } finally {
+      monitor.done();
     }
-    ModelChecker modelChecker;
-    if (moduleChecker != null) {
-      modelChecker = new ModelChecker(operationContext, progressContext, moduleChecker.getSearchResults());
-    } else {
-      modelChecker = new ModelChecker(operationContext, progressContext);
-    }
-    modelChecker.setSpecificCheckers(getSpecificCheckers());
-
-    for (SModelDescriptor modelDescriptor : ListSequence.fromList(modelDescriptors)) {
-      long modelStartTime = System.currentTimeMillis();
-
-      modelChecker.checkModel(modelDescriptor);
-      if (modelChecker.isCancelled()) {
-        break;
-      }
-
-      progressContext.saveEstimatedTime(modelStartTime);
-    }
-
-    return modelChecker.getSearchResults();
-  }
-
-  private static String getTaskName(SModelDescriptor modelDescriptor) {
-    return modelDescriptor.getLongName() + "_modelcheck";
   }
 }

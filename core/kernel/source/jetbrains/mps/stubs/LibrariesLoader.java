@@ -15,20 +15,21 @@
  */
 package jetbrains.mps.stubs;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
-import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
-import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +48,7 @@ public class LibrariesLoader implements ApplicationComponent {
 
   public void reload() {
     loadNewLanguageLibs();
-    for (IModule m:MPSModuleRepository.getInstance().getAllModules()){
+    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
       if (!(m instanceof AbstractModule)) continue;
       if (myLoadedModules.contains(m.getModuleReference())) continue;
       myLoadedModules.add(m.getModuleReference());
@@ -136,7 +137,7 @@ public class LibrariesLoader implements ApplicationComponent {
   //---------component stuff----------
 
   public static LibrariesLoader getInstance() {
-    return ApplicationManager.getApplication().getComponent(LibrariesLoader.class);
+    return ComponentManager.getInstance().getComponent(LibrariesLoader.class);
   }
 
   @NotNull

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.TestDialog;
@@ -28,7 +27,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
 import org.junit.Assert;
@@ -308,7 +306,7 @@ public class DiskMemoryConflictsTest {
       // Restore model
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         public void run() {
-          myModelDescriptor = ((DefaultSModelDescriptor) myModule.createModel(MODEL_REFERENCE.getSModelFqName(), myModule.getSModelRoots().get(0)));
+          myModelDescriptor = ((DefaultSModelDescriptor) myModule.createModel(MODEL_REFERENCE.getSModelFqName(), myModule.getSModelRoots().get(0), null));
           myModelDescriptor.getSModel().addRoot(CopyUtil.copyAndPreserveId(myNodeBackup));
           myModelDescriptor.save();
         }

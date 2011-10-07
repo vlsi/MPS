@@ -161,7 +161,6 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
       fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(6);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
-      fieldmodel.setLoading(true);
       fieldhelper = new VersionUtil(fieldmodel.getSModelReference());
       return new BaseSModelDescriptor.ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
     }
@@ -243,7 +242,6 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
         Object child = (Object) value;
         if (fieldtoState == ModelLoadingState.ROOTS_LOADED) {
           result.setState(ModelLoadingState.ROOTS_LOADED);
-          fieldmodel.setLoading(false);
           throw new BreakParseSAXException();
         }
         return;
@@ -260,7 +258,6 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
 
     private boolean validateInternal(BaseSModelDescriptor.ModelLoadResult result) throws SAXException {
       result.setState(ModelLoadingState.FULLY_LOADED);
-      fieldmodel.setLoading(false);
       return true;
     }
   }

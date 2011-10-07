@@ -31,7 +31,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
     this(modelReference, true, source, module);
   }
 
-  protected BaseStubModelDescriptor(SModelReference modelReference, boolean checkDup, ModelDataSource source, IModule module) {
+  public BaseStubModelDescriptor(SModelReference modelReference, boolean checkDup, ModelDataSource source, IModule module) {
     super(modelReference, source, checkDup);
     myModule = module;
   }
@@ -41,8 +41,8 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @NotNull
-  public StubModelDataSource getSource() {
-    return ((StubModelDataSource) super.getSource());
+  public ModelDataSource getSource() {
+    return super.getSource();
   }
 
   //------------common descriptor stuff-------------------

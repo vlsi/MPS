@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.generator;
 
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
@@ -25,6 +23,8 @@ import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 
 import java.util.*;
@@ -61,7 +61,7 @@ public class GenerationFacade {
       }
 
       // TODO regenerating all dependant models can be slow, option?
-      if(!(SModelStereotype.DESCRIPTOR.equals(sm.getStereotype()) || LanguageAspect.BEHAVIOR.is(sm) || LanguageAspect.CONSTRAINTS.is(sm))) {
+      if (!(SModelStereotype.DESCRIPTOR.equals(sm.getStereotype()) || LanguageAspect.BEHAVIOR.is(sm) || LanguageAspect.CONSTRAINTS.is(sm))) {
         // temporary solution: only descriptor/behavior/constraints models
         continue;
       }
@@ -116,7 +116,7 @@ public class GenerationFacade {
                                        List<SModelDescriptor> inputModels,
                                        IOperationContext invocationContext,
                                        IGenerationHandler generationHandler,
-                                       ProgressIndicator progress,
+                                       ProgressMonitor progress,
                                        IMessageHandler messages,
                                        GenerationOptions options) {
     return p.getComponent(GeneratorManager.class).

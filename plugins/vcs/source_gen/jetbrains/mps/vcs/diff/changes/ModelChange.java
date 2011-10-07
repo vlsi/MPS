@@ -43,4 +43,6 @@ public abstract class ModelChange {
 
   @Override
   public abstract String toString();
+
+  public abstract String getDescription();
 }

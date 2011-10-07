@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.project.Path;
@@ -42,7 +42,7 @@ import java.util.List;
 /**
  * Evgeny Gryaznov, 9/29/11
  */
-public class Project implements MPSModuleOwner {
+public abstract class Project implements MPSModuleOwner {
 
   private static final Logger LOG = Logger.getLogger(Project.class);
 
@@ -122,7 +122,7 @@ public class Project implements MPSModuleOwner {
     myProjectDescriptor = descriptor;
 
     readModules();
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 
   @NotNull
@@ -206,4 +206,7 @@ public class Project implements MPSModuleOwner {
       }
     }
   }
+  @Deprecated
+  // should be left for compatibility with generated plugins (editor openers)
+  public abstract <T> T getComponent(Class<T> t);
 }

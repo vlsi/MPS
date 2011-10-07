@@ -43,6 +43,7 @@
     <orderEntry type="module" module-name="migration" />
     <orderEntry type="module" module-name="baseLanguage-index" />
     <orderEntry type="module" module-name="baseLanguage-search" />
+    <orderEntry type="module" module-name="typesystemIntegration" />
   </component>
 </module>
 

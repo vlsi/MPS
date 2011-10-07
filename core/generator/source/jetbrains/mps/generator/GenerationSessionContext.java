@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.generator;
 
-import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;

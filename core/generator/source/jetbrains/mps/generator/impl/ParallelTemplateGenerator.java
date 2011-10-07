@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl;
 
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationSessionContext;
@@ -29,6 +28,7 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -52,7 +52,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private Map<SNode, RootBasedQueryExectionContext> myRootContext;
   private Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
-  public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
+  public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
                                    IGeneratorLogger logger, RuleManager ruleManager,
                                    SModel inputModel, SModel outputModel, GenerationOptions options,
                                    DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {

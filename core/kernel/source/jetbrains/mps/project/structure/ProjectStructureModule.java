@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.project.structure;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.generator.TransientModelNodeFinder;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -27,7 +27,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -39,13 +38,13 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ProjectStructureModule extends AbstractModule implements ApplicationComponent {
 
-//  private static final Logger LOG = Logger.getLogger(ProjectStructureModule.class);
+  //  private static final Logger LOG = Logger.getLogger(ProjectStructureModule.class);
   private static final ModuleReference MODULE_REFERENCE = ModuleReference.fromString("642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)");
 
   private Map<SModelReference, ProjectStructureSModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, ProjectStructureSModelDescriptor>();
 
   public static ProjectStructureModule getInstance() {
-    return ApplicationManager.getApplication().getComponent(ProjectStructureModule.class);
+    return ComponentManager.getInstance().getComponent(ProjectStructureModule.class);
   }
 
   public ProjectStructureModule(MPSModuleRepository repository, SModelRepository modelRepository) {
@@ -81,7 +80,7 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
   private void refreshModule(IModule module, boolean isDeleted) {
     ModelAccess.assertLegalWrite();
 
-    if(!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) {
+    if (!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) {
       return;
     }
 
@@ -102,7 +101,7 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
   public SModel getModelByModule(IModule module) {
     ModelAccess.assertLegalRead();
 
-    if(module == null) return null;
+    if (module == null) return null;
     SModelReference ref = getSModelReference(module);
 
     ProjectStructureSModelDescriptor descriptor = myModels.get(ref);
@@ -114,7 +113,7 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
 
     Set<SModelReference> old = new HashSet<SModelReference>(myModels.keySet());
     for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
-      if(!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) {
+      if (!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) {
         continue;
       }
 
@@ -274,7 +273,6 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
 
     protected ModelLoadResult initialLoad() {
       ProjectStructureSModel model = new ProjectStructureSModel(getSModelReference());
-      model.setLoading(true);
       final ModuleDescriptor moduleDescriptor = myModule.getModuleDescriptor();
       IFile file = myModule.getDescriptorFile();
 
@@ -284,7 +282,7 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
           public Iterable<SModelReference> loadReferences(SNode m, ModuleDescriptor descriptor) {
             IModule module = moduleDescriptor == descriptor ? myModule :
               MPSModuleRepository.getInstance().getModule(descriptor.getModuleReference());
-            if(module == null) {
+            if (module == null) {
               return Collections.emptyList();
             }
 
@@ -342,6 +340,10 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
   public static class ProjectStructureSModel extends SModel {
     public ProjectStructureSModel(@NotNull SModelReference modelReference) {
       super(modelReference, new ForeignNodeIdMap());
+    }
+
+    protected boolean canFireEvent() {
+      return false;
     }
 
     @Override

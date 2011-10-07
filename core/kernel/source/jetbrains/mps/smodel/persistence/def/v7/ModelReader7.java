@@ -55,8 +55,6 @@ public class ModelReader7 implements IModelReader {
     myHelper = new ReadHelper(modelReference);
     myLinkMap = new ModelLinkMap(model);
 
-    model.setLoading(true);
-
     // languages
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.LANGUAGE)) {
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
@@ -102,7 +100,6 @@ public class ModelReader7 implements IModelReader {
     }
 
     new StructureModificationProcessor(myLinkMap, model).updateModelOnLoad();
-    model.setLoading(false);
     return model;
   }
 

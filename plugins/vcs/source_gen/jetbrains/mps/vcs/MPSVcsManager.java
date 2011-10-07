@@ -7,7 +7,6 @@ import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
-import jetbrains.mps.generator.GenerationListener;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
 import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -23,13 +22,8 @@ import jetbrains.mps.vcs.mergedriver.MergeDriverNotification;
 import com.intellij.openapi.vcs.VcsListener;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.generator.GeneratorManager;
 import java.util.List;
 import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import com.intellij.openapi.vcs.changes.ChangeListManagerGate;
 import com.intellij.openapi.vcs.changes.LocalChangeList;
 import org.jetbrains.annotations.Nullable;
@@ -47,7 +41,6 @@ public class MPSVcsManager implements ProjectComponent {
   private final ProjectLevelVcsManager myManager;
   private final ChangeListManager myChangeListManager;
   private volatile boolean myChangeListManagerInitialized = false;
-  private final GenerationListener myGenerationListener = new MPSVcsManager.GenerationWatcher();
   private final ChangeListAdapter myChangeListUpdateListener = new ChangeListAdapter() {
     public void changeListUpdateDone() {
       myChangeListManagerInitialized = true;
@@ -114,12 +107,10 @@ public class MPSVcsManager implements ProjectComponent {
   }
 
   public void initComponent() {
-    myProject.getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
     myChangeListManager.addChangeListListener(myChangeListUpdateListener);
   }
 
   public void disposeComponent() {
-    myProject.getComponent(GeneratorManager.class).removeGenerationListener(myGenerationListener);
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
   }
 
@@ -136,26 +127,6 @@ public class MPSVcsManager implements ProjectComponent {
       checkedDotOperand.disconnect();
     }
 
-  }
-
-  private class GenerationWatcher implements GenerationListener {
-    private GenerationWatcher() {
-    }
-
-    public void beforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
-      for (SModelDescriptor smodelDescriptor : inputModels) {
-        if (smodelDescriptor instanceof DefaultSModelDescriptor && ((DefaultSModelDescriptor) smodelDescriptor).needsReloading()) {
-          ((DefaultSModelDescriptor) smodelDescriptor).reloadFromDisk();
-          MPSVcsManager.LOG.info("Model " + smodelDescriptor + " reloaded from disk.");
-        }
-      }
-    }
-
-    public void modelsGenerated(List<SModelDescriptor> models, boolean success) {
-    }
-
-    public void afterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
-    }
   }
 
   public static class StubChangeListManagerGate implements ChangeListManagerGate {

@@ -55,7 +55,7 @@ public abstract class BaseDialog extends JDialog {
   }
 
   protected BaseDialog(Dialog owner, String title) throws HeadlessException {
-    super(owner, title);
+    super(owner, title, true);
     Disposer.register(myDisposableParent, myDisposableChild);
     doInit(owner);
   }

@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 
 /**
  * Igor Alshannikov
@@ -37,7 +36,7 @@ public class AuxilaryRuntimeModel implements ModelOwner {
     if (ourInstance != null) return ourInstance;
     synchronized (LOCK) {
       if (ourInstance != null) return ourInstance;
-      AuxilaryRuntimeModel instance = ApplicationManager.getApplication().getComponent(AuxilaryRuntimeModel.class);
+      AuxilaryRuntimeModel instance = ComponentManager.getInstance().getComponent(AuxilaryRuntimeModel.class);
       ourInstance = SModelRepository.getInstance().getModelDescriptor(MY_MODEL_REFERENCE);
       if (ourInstance == null) {
         ourInstance = new AuxModelDescriptor();
@@ -59,11 +58,19 @@ public class AuxilaryRuntimeModel implements ModelOwner {
     }
 
     protected ModelLoadResult initialLoad() {
-      SModel model = new SModel(getSModelReference());
-      model.setLoading(true);
+      SModel model = new SModel(getSModelReference()){
+        protected void performUndoableAction(SNodeUndoableAction action) {
+          if (!UndoHelper.getInstance().needRegisterUndo(this)) return;
+          UndoHelper.getInstance().addUndoableAction(action);
+        }
 
+        protected boolean canFireEvent() {
+          return false;
+        }
+      };
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
+
 
     @Override
     protected void setLoadingState(ModelLoadingState state) {

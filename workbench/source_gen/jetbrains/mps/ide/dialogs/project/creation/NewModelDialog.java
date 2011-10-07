@@ -22,6 +22,7 @@ import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import javax.lang.model.SourceVersion;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.Language;
@@ -121,6 +122,10 @@ public class NewModelDialog extends BaseDialog {
           setErrorText("Empty model name isn't allowed");
           return null;
         }
+        if (!(SourceVersion.isName(modelName))) {
+          setErrorText("Model name should be valid Java package");
+          return null;
+        }
         SModelFqName modelUID = new SModelFqName(modelName, myModelStereotype.getSelectedItem().toString());
         if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
           setErrorText("Model with an uid " + modelName + " already exists");
@@ -148,7 +153,7 @@ public class NewModelDialog extends BaseDialog {
             }
           }
         }
-        return myModule.createModel(modelUID, wrapper.getModelRoot());
+        return myModule.createModel(modelUID, wrapper.getModelRoot(), null);
       }
     }, myContext.getIdeaProject());
     if (myResult == null) {

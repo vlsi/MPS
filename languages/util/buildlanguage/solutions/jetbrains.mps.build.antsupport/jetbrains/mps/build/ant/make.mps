@@ -7,6 +7,7 @@
   <import index="c123" modelUID="f:java_stub#77c9a130-703f-4530-bf21-6580757768d0#jetbrains.mps.build.ant(jetbrains.mps.build.antsupport/jetbrains.mps.build.ant@java_stub)" version="-1" />
   <import index="644x" modelUID="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="k6pq" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.progress(MPS.Classpath/jetbrains.mps.progress@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="i82i" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" implicit="yes" />
@@ -551,7 +552,7 @@
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4003657351907889157">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xirj.~ModuleMaker%dmake(java%dutil%dSet,com%dintellij%dopenapi%dprogress%dProgressIndicator)%cjetbrains%dmps%dmake%dMPSCompilationResult" resolveInfo="make" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xirj.~ModuleMaker%dmake(java%dutil%dSet,jetbrains%dmps%dprogress%dProgressMonitor)%cjetbrains%dmps%dmake%dMPSCompilationResult" resolveInfo="make" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4003657351907889158">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4003657351907889057" resolveInfo="finalToCompile" />
                                 </node>
@@ -560,12 +561,12 @@
                                     <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="4003657351907889161">
                                       <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
                                       <property name="name" nameId="tpck.1169194664001" value="" />
-                                      <link role="classifier" roleId="tpee.1170346070688" targetNodeId="i82i.~EmptyProgressIndicator" resolveInfo="EmptyProgressIndicator" />
                                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i82i.~EmptyProgressIndicator%d&lt;init&gt;()" resolveInfo="EmptyProgressIndicator" />
+                                      <link role="classifier" roleId="tpee.1170346070688" targetNodeId="k6pq.~EmptyProgressMonitor" resolveInfo="EmptyProgressMonitor" />
                                       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4003657351907889162">
                                         <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
                                         <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-                                        <property name="name" nameId="tpck.1169194664001" value="setText2" />
+                                        <property name="name" nameId="tpck.1169194664001" value="step" />
                                         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4003657351907889163" />
                                         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4003657351907889164" />
                                         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4003657351907889165">
@@ -595,20 +596,24 @@
                                       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4003657351907889167">
                                         <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
                                         <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-                                        <property name="name" nameId="tpck.1169194664001" value="setText" />
+                                        <property name="name" nameId="tpck.1169194664001" value="start" />
                                         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4003657351907889168" />
                                         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4003657351907889169" />
                                         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4003657351907889170">
-                                          <property name="name" nameId="tpck.1169194664001" value="text" />
+                                          <property name="name" nameId="tpck.1169194664001" value="taskName" />
                                           <property name="isFinal" nameId="tpee.1176718929932" value="false" />
                                           <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2862682737715391358" />
+                                        </node>
+                                        <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1637160376125512437">
+                                          <property name="name" nameId="tpck.1169194664001" value="work" />
+                                          <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1637160376125512439" />
                                         </node>
                                         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4003657351907889179">
                                           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4003657351907889180">
                                             <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="4003657351907889181">
                                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="644x.4003657351907888318" resolveInfo="info" />
                                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4003657351907889182">
-                                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4003657351907889170" resolveInfo="text" />
+                                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4003657351907889170" resolveInfo="taskName" />
                                               </node>
                                             </node>
                                           </node>

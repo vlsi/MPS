@@ -123,7 +123,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7806358006983709820(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "configurationName");
+    return PersistentPropertyDeclaration_Behavior.addMyPrefix_6314556899428615272(SPropertyOperations.getString(_context.getNode(), "configurationName"));
   }
 
   public static Object propertyMacro_GetPropertyValue_3754890006475707276(final IOperationContext operationContext, final PropertyMacroContext _context) {

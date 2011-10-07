@@ -21,6 +21,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelOperations;
@@ -49,6 +50,7 @@ import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
 import jetbrains.mps.generator.GeneratorManager;
 import java.util.Collections;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import java.util.Map;
@@ -59,7 +61,7 @@ import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.debug.evaluation.transform.Transformator;
 
 public abstract class AbstractEvaluationModel {
@@ -88,12 +90,10 @@ public abstract class AbstractEvaluationModel {
     }
     myAuxModule = auxModule;
 
-    final EditableSModelDescriptor modelDescriptor = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor(myAuxModule));
-    modelDescriptor.getSModel().runLoadingAction(new Runnable() {
-      public void run() {
-        modelDescriptor.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
-      }
-    });
+    final EditableSModelDescriptor modelDescriptor = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor());
+    modelDescriptor.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
+    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myAuxModule);
+
     myAuxModel = modelDescriptor;
     myEvaluationContext = context;
     myShowContext = isShowContext;
@@ -244,7 +244,7 @@ public abstract class AbstractEvaluationModel {
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
       GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-      boolean successful = generatorManager.generateModels(Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, progressWindow, messageHandler, GenerationOptions.getDefaults().incremental(new IncrementalGenerationStrategy() {
+      boolean successful = generatorManager.generateModels(Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new IncrementalGenerationStrategy() {
         public Map<String, String> getModelHashes(SModelDescriptor p0, IOperationContext p1) {
           return Collections.emptyMap();
         }
@@ -335,7 +335,7 @@ public abstract class AbstractEvaluationModel {
     }
 
     @Override
-    public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ITaskProgressHelper helper) {
+    public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ProgressMonitor monitor) {
       SModel model = status.getOutputModel();
       if (model != null) {
         final SNode evaluator = SModelOperations.getRootByName(model, AbstractEvaluationModel.EVALUATOR_NAME);
@@ -354,7 +354,7 @@ public abstract class AbstractEvaluationModel {
 
         }
       }
-      return super.handleOutput(module, inputModel, status, context, helper);
+      return super.handleOutput(module, inputModel, status, context, monitor);
     }
   }
 }

@@ -22,7 +22,7 @@ import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.CollectionUtil;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
@@ -128,7 +128,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 final Wrappers._T<MPSCompilationResult> cr = new Wrappers._T<MPSCompilationResult>();
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
-                    cr.value = new ModuleMaker().make(CollectionUtil.set(tres.module()), new EmptyProgressIndicator());
+                    cr.value = new ModuleMaker().make(CollectionUtil.set(tres.module()), new EmptyProgressMonitor());
                   }
                 });
                 if (cr.value != null) {

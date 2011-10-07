@@ -87,11 +87,9 @@ public final class CopyUtil {
 
   public static SModel copyModel(SModel model) {
     SModel copy = new SModel(model.getSModelReference());
-    copy.setLoading(true);
     copyModelContentAndPreserveIds(model, copy);
     copyModelProperties(model, copy);
     copy.setMaxImportIndex(model.getMaxImportIndex());
-    copy.setLoading(false);
     return copy;
   }
 

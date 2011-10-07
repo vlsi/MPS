@@ -812,8 +812,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         IOperationContext operationContext = getOperationContext();
         disposeTypeCheckingContext();
         myNode = node;
-        myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
-        myVirtualFile = myNode != null && !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
+        //todo this is because of type system nodes, which are not registered in models. This code should be removed ASAP
+        if (node.isRegistered()){
+          myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
+          myVirtualFile = myNode != null && !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
+        }else {
+          myNodePointer = null;
+          myVirtualFile = null;
+        }
         SModel model = node == null ? null : node.getModel();
         setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
         rebuildEditorContent();

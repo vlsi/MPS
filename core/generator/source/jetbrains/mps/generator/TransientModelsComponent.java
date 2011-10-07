@@ -16,9 +16,9 @@
 package jetbrains.mps.generator;
 
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.Computable;
@@ -44,7 +44,7 @@ public class TransientModelsComponent implements ProjectComponent {
   private TransientSwapOwner myTransientSwapOwner;
   private String mySessionId;
 
-  public TransientModelsComponent(Project project, MPSProject mpsProject) {
+  public TransientModelsComponent(com.intellij.openapi.project.Project ideaProject, MPSProject project) {
     myProject = project;
   }
 
@@ -192,7 +192,7 @@ public class TransientModelsComponent implements ProjectComponent {
   }
 
   private String newSessionId() {
-    return myProject.getLocationHash() + Long.toHexString(System.currentTimeMillis());
+    return myProject.getProjectFile().getAbsolutePath().hashCode() + Long.toHexString(System.currentTimeMillis());
   }
 
 

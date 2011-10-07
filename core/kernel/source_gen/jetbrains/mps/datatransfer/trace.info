@@ -102,7 +102,7 @@
     <nodeInfo nodeId="5948027493682745626" fileName="CopyPasteManager.java" startLine="119" startPosition="27" endLine="120" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1720905492960356473" fileName="CopyPasteManager.java" startLine="123" startPosition="31" endLine="124" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1720905492960354576" fileName="CopyPasteManager.java" startLine="127" startPosition="34" endLine="128" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1617630891477333003" fileName="CopyPasteManager.java" startLine="131" startPosition="48" endLine="132" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1617630891477333003" fileName="CopyPasteManager.java" startLine="131" startPosition="48" endLine="132" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1622834379618551048" fileName="CopyPasteManager.java" startLine="33" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CopyPasteManager#(Ljetbrains/mps/reloading/ClassLoaderManager;)V" />
     <nodeInfo nodeId="1058093769519026445" fileName="CopyPasteManager.java" startLine="82" startPosition="23" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1058093769519026220" fileName="CopyPasteManager.java" startLine="89" startPosition="85" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -145,7 +145,7 @@
     <scopeInfo nodeId="1622834379618764288" fileName="CopyPasteManager.java" startLine="113" startPosition="36" endLine="114" endPosition="33" />
     <scopeInfo nodeId="1720905492960354563" fileName="CopyPasteManager.java" startLine="123" startPosition="31" endLine="124" endPosition="11" />
     <scopeInfo nodeId="1720905492960354571" fileName="CopyPasteManager.java" startLine="127" startPosition="34" endLine="128" endPosition="14" />
-    <scopeInfo nodeId="1617630891477332991" fileName="CopyPasteManager.java" startLine="131" startPosition="48" endLine="132" endPosition="84" />
+    <scopeInfo nodeId="1617630891477332991" fileName="CopyPasteManager.java" startLine="131" startPosition="48" endLine="132" endPosition="79" />
     <scopeInfo nodeId="1622834379618551048" fileName="CopyPasteManager.java" startLine="33" startPosition="0" endLine="35" endPosition="3">
       <varInfo nodeId="1622834379618764256" varName="classLoaderManager" />
     </scopeInfo>

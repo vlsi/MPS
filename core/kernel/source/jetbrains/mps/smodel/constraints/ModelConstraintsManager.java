@@ -16,8 +16,8 @@
 package jetbrains.mps.smodel.constraints;
 
 import com.google.common.collect.ImmutableMap;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -60,7 +60,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private final Object myLock = new Object();
 
   public static ModelConstraintsManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(ModelConstraintsManager.class);
+    return ComponentManager.getInstance().getComponent(ModelConstraintsManager.class);
   }
 
   private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new ConcurrentHashMap<String, List<IModelConstraints>>();

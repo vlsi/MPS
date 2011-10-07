@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.generator.impl;
 
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
@@ -100,11 +100,11 @@ public class GenerationTaskPool implements IGenerationTaskPool {
 //    }
   }
 
-  private final ProgressIndicator progressMonitor;
+  private final ProgressMonitor cancellationMonitor;
   private volatile boolean isCancelled = false;
 
-  public GenerationTaskPool(ProgressIndicator progressMonitor, int numberOfThreads) {
-    this.progressMonitor = progressMonitor;
+  public GenerationTaskPool(ProgressMonitor cancellationMonitor, int numberOfThreads) {
+    this.cancellationMonitor = cancellationMonitor;
     myExecutor = new ThreadPoolExecutor(numberOfThreads, numberOfThreads, 10, TimeUnit.SECONDS, queue, new ModelReadThreadFactory()) {
       @Override
       protected void afterExecute(Runnable r, Throwable t) {
@@ -135,7 +135,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
   public void waitForCompletion() throws GenerationCanceledException, GenerationFailureException {
     Throwable th = null;
     synchronized (objectLock) {
-      while (exceptions.size() == 0 && tasksInQueue.get() != 0 && !progressMonitor.isCanceled()) {
+      while (exceptions.size() == 0 && tasksInQueue.get() != 0 && !cancellationMonitor.isCanceled()) {
         try {
           objectLock.wait(1000);
         } catch (InterruptedException e) {
@@ -144,7 +144,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       }
       if (exceptions.size() != 0) {
         th = exceptions.get(0);
-      } else if (progressMonitor.isCanceled()) {
+      } else if (cancellationMonitor.isCanceled()) {
         th = new GenerationCanceledException();
       }
 

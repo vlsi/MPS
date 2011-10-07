@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.progress.ProgressMonitor;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -70,8 +71,8 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
     myAcceptor = acceptor;
   }
 
-  protected List<SNode> findToChooseFromOnInit(FindUsagesManager manager, FindUsagesManager.ProgressAdapter progressAdapter) {
-    Set<SNode> instances = manager.findInstances(this.myTargetConcept, myScope, progressAdapter, false);
+  protected List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor) {
+    Set<SNode> instances = manager.findInstances(this.myTargetConcept, myScope, monitor, false);
     if (this.myAcceptor == null) {
       return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
     } else {

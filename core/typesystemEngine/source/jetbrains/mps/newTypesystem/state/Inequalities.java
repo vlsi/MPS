@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.newTypesystem.state;
 
-import com.intellij.openapi.util.Pair;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.newTypesystem.TypesUtil;
@@ -26,6 +25,7 @@ import jetbrains.mps.newTypesystem.relations.SubTypingRelation;
 import jetbrains.mps.newTypesystem.state.blocks.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ManyToManyMap;
+import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
@@ -157,8 +157,8 @@ public class Inequalities {
     if (!solvingInProcess) return;
     if (inequality.isCheckOnly()) { return; }
     for (Pair<SNode, SNode> pair : inequality.getInputsAndOutputs()) {
-      SNode input = myState.getRepresentative(pair.first);
-      SNode output = myState.getRepresentative(pair.second);
+      SNode input = myState.getRepresentative(pair.o1);
+      SNode output = myState.getRepresentative(pair.o2);
       if (input == null || output == null) continue;
       if (TypesUtil.isVariable(input)) {
         myNodesInc.add(input);

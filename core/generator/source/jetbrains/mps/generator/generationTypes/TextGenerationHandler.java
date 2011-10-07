@@ -17,12 +17,12 @@ package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.textGen.TextGenerationResult;
-import jetbrains.mps.textGen.TextGenerationUtil;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.textGen.TextGenerationResult;
+import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Pair;
 
@@ -44,7 +44,7 @@ public class TextGenerationHandler extends GenerationHandlerBase {
     info("generating text");
   }
 
-  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext ocontext, ITaskProgressHelper progressHelper) {
+  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext ocontext, ProgressMonitor progressMonitor) {
     String targetDir = module.getOutputFor(inputModel);
     SModel outputModel = status.getOutputModel();
     if (outputModel == null) return true;
@@ -66,27 +66,26 @@ public class TextGenerationHandler extends GenerationHandlerBase {
   protected void fileGenerated(String targetDir, String fileName, TextGenerationResult result) {
     File target = new File(targetDir + File.separator + fileName);
     Object value = result.getResult();
-    if(value instanceof String) {
+    if (value instanceof String) {
       FileUtil.write(target, (String) value);
     } else {
-      FileUtil.write(target, (byte []) value);
+      FileUtil.write(target, (byte[]) value);
     }
   }
 
   @Override
-  public void startModule(IModule module, List<SModelDescriptor> inputModels, IOperationContext operationContext, ITaskProgressHelper progressHelper) {
+  public void startModule(IModule module, List<SModelDescriptor> inputModels, IOperationContext operationContext) {
     String message = "module " + module;
-    progressHelper.setText2(message);
     info(message);
   }
 
   @Override
-  public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
+  public int estimateCompilationMillis() {
     return 0;
   }
 
   @Override
-  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) {
+  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ProgressMonitor progressMonitor) {
     return true;
   }
 

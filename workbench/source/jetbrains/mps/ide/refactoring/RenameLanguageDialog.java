@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
+import javax.lang.model.SourceVersion;
 import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedHashSet;
@@ -89,6 +90,11 @@ public class RenameLanguageDialog extends BaseDialog {
     final String fqName = myLanguageNameField.getText();
     if (MPSModuleRepository.getInstance().getModuleByUID(fqName) != null) {
       setErrorText("Duplicate language name");
+      return;
+    }
+
+    if (!(SourceVersion.isName(fqName))) {
+      setErrorText("Language namespace should be valid Java package");
       return;
     }
 

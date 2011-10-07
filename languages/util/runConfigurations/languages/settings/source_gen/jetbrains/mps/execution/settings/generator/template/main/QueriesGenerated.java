@@ -84,7 +84,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5041115067675810090(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return PersistentPropertyDeclaration_Behavior.addMyPrefix_6314556899428615272(SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_5041115067675810099(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -116,7 +116,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5041115067675810884(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return PersistentPropertyDeclaration_Behavior.addMyPrefix_6314556899428615272(SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_5041115067675810893(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -129,7 +129,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5041115067675810998(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return PersistentPropertyDeclaration_Behavior.addMyPrefix_6314556899428615272(SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_5041115067675811075(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -138,7 +138,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5041115067675811111(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return PersistentPropertyDeclaration_Behavior.addMyPrefix_6314556899428615272(SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_5041115067675811135(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -175,11 +175,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5041115067675811479(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return PersistentPropertyDeclaration_Behavior.addMyPrefix_6314556899428615272(SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_5041115067675811533(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return PersistentPropertyDeclaration_Behavior.addMyPrefix_6314556899428615272(SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object referenceMacro_GetReferent_5041115067675810108(final IOperationContext operationContext, final ReferenceMacroContext _context) {

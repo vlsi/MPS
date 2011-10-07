@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.components.ComponentManager;
 
 @Deprecated
 public class TraceInfoManager implements ApplicationComponent {
@@ -149,6 +149,6 @@ public class TraceInfoManager implements ApplicationComponent {
   }
 
   public static TraceInfoManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(TraceInfoManager.class);
+    return ComponentManager.getInstance().getComponent(TraceInfoManager.class);
   }
 }

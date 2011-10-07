@@ -20,6 +20,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -70,12 +71,12 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
     };
   }
 
-  protected List<SNode> findToChooseFromOnInit(final FindUsagesManager manager, final FindUsagesManager.ProgressAdapter progressAdapter) {
+  protected List<SNode> findToChooseFromOnInit(final FindUsagesManager manager, final ProgressMonitor monitor) {
     return (List<SNode>) (ListSequence.fromList(myTargetConcepts).translate(new ITranslator2<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, SNode>() {
       public Iterable<SNode> translate(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         SNode targetConcept = it._0();
         final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
-        Set<SNode> instances = manager.findInstances(targetConcept, myScope, progressAdapter, false);
+        Set<SNode> instances = manager.findInstances(targetConcept, myScope, monitor, false);
         if (function == null) {
           return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
         } else {

@@ -10,7 +10,7 @@ import java.util.List;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.generator.GenerationCanceledException;
 import java.io.IOException;
 import jetbrains.mps.generator.GenerationStatus;
@@ -24,19 +24,16 @@ public class MakeGenerationHandler extends GenerationHandlerBase {
     this.resourceHandler = resourceHandler;
   }
 
-  public boolean compile(IOperationContext context, List<Pair<IModule, List<SModelDescriptor>>> list, boolean b, ITaskProgressHelper helper) throws GenerationCanceledException, IOException {
+  public boolean compile(IOperationContext context, List<Pair<IModule, List<SModelDescriptor>>> list, boolean b, ProgressMonitor helper) throws GenerationCanceledException, IOException {
     return true;
   }
 
-  public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> list) {
-    return 0L;
+  public int estimateCompilationMillis() {
+    return 0;
   }
 
-  public boolean handleOutput(IModule module, SModelDescriptor descriptor, GenerationStatus status, IOperationContext context, ITaskProgressHelper helper) {
+  public boolean handleOutput(IModule module, SModelDescriptor descriptor, GenerationStatus status, IOperationContext context, ProgressMonitor helper) {
     return resourceHandler.invoke(new GResource(module, descriptor, null, status));
-  }
-
-  public void startModule(IModule module, List<SModelDescriptor> list, IOperationContext context, ITaskProgressHelper helper) {
   }
 
   public boolean canHandle(SModelDescriptor descriptor) {

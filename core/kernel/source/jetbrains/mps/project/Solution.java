@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -27,11 +27,8 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 /**
@@ -85,6 +82,10 @@ public class Solution extends AbstractModule {
 
       public String getTestsGeneratorOutputPath() {
         return null;
+      }
+
+      protected SolutionDescriptor loadDescriptor() {
+        return getModuleDescriptor();
       }
     };
 
@@ -162,7 +163,7 @@ public class Solution extends AbstractModule {
     MPSModuleRepository.getInstance().fireModuleChanged(this);
 
     if (reloadClasses) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     }
 
     invalidateDependencies();

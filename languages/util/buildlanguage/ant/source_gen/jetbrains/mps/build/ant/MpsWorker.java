@@ -20,12 +20,12 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.ConsoleAppender;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.LinkedHashSet;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.plugins.PluginUtil;
@@ -181,10 +181,9 @@ public abstract class MpsWorker {
   protected void make() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        EmptyProgressIndicator indicator = new EmptyProgressIndicator();
         ClassLoaderManager.getInstance().updateClassPath();
         ModuleMaker maker = new ModuleMaker();
-        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
+        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
       }
     });
   }
@@ -192,8 +191,7 @@ public abstract class MpsWorker {
   protected void reload() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        EmptyProgressIndicator indicator = new EmptyProgressIndicator();
-        ClassLoaderManager.getInstance().reloadAll(indicator);
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
     });
   }

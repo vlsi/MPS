@@ -15,21 +15,19 @@
  */
 package jetbrains.mps.generator.generationTypes.java;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
-import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.make.java.BLDependenciesCache;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
@@ -68,39 +66,42 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ITaskProgressHelper progressHelper) {
-    info("handling output...");
-    IFile targetDir = FileSystem.getInstance().getFileByPath(module.getOutputFor(inputModel));
+  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor monitor) {
+    monitor.start("generating files", 1);
+    try {
+      info("handling output...");
+      IFile targetDir = FileSystem.getInstance().getFileByPath(module.getOutputFor(inputModel));
 
-    long startJobTime = System.currentTimeMillis();
+      long startJobTime = System.currentTimeMillis();
 
-    boolean result = false;
-    if (status.isOk()) {
-      JavaStreamHandler javaStreamHandler = new JavaStreamHandler(inputModel, targetDir, myProcessor);
-      try {
-        result = new TextGenerator(javaStreamHandler,
-          BLDependenciesCache.getInstance().getGenerator(),
-          TraceInfoCache.getInstance().getGenerator(),
-          GenerationDependenciesCache.getInstance().getGenerator()
-        ).handleOutput(invocationContext, status);
-      } finally {
-        javaStreamHandler.dispose();
+      boolean result = false;
+      if (status.isOk()) {
+        JavaStreamHandler javaStreamHandler = new JavaStreamHandler(inputModel, targetDir, myProcessor);
+        try {
+          result = new TextGenerator(javaStreamHandler,
+            BLDependenciesCache.getInstance().getGenerator(),
+            TraceInfoCache.getInstance().getGenerator(),
+            GenerationDependenciesCache.getInstance().getGenerator()
+          ).handleOutput(invocationContext, status);
+        } finally {
+          javaStreamHandler.dispose();
+        }
       }
-    }
 
-    if (!result) {
-      info("there were errors.");
-      return false;
+      if (!result) {
+        info("there were errors.");
+        return false;
+      }
+      if (myLogger.needsInfo()) {
+        myLogger.info("output generated in " + (System.currentTimeMillis() - startJobTime) + " ms");
+      }
+      return true;
+    } finally {
+      monitor.done();
     }
-    if (myLogger.needsInfo()) {
-      myLogger.info("output generated in " + (System.currentTimeMillis() - startJobTime) + " ms");
-    }
-    return true;
   }
 
-  public void startModule(IModule module, List<SModelDescriptor> inputModels, IOperationContext operationContext, ITaskProgressHelper progressHelper) {
-    progressHelper.setText2("module " + module);
-
+  public void startModule(IModule module, List<SModelDescriptor> inputModels, IOperationContext operationContext) {
     String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
 
     if (myLogger.needsInfo()) {
@@ -109,33 +110,41 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
+  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
     boolean compiledSuccessfully = generationOK;
 
-    writeFiles();
+    monitor.start("", 3 + (generationOK ? input.size() * 4 : 0));
+    try {
+      writeFiles(monitor.subTask(1));
+      monitor.advance(0);
 
-    if (generationOK) {
-      long compilationStart = System.currentTimeMillis();
-      boolean needToReload = false;
+      if (generationOK) {
+        long compilationStart = System.currentTimeMillis();
+        boolean needToReload = false;
 
-      for (Pair<IModule, List<SModelDescriptor>> moduleListPair : input) {
-        IModule module = moduleListPair.o1;
-        if (module != null && module.reloadClassesAfterGeneration()) {
-          needToReload = true;
+        for (Pair<IModule, List<SModelDescriptor>> moduleListPair : input) {
+          IModule module = moduleListPair.o1;
+          if (module != null && module.reloadClassesAfterGeneration()) {
+            needToReload = true;
+          }
+          boolean compilationResult = compileModuleInMPS(module, monitor.subTask(4));
+          monitor.advance(0);
+          compiledSuccessfully = compiledSuccessfully && compilationResult;
         }
-        boolean compilationResult = compileModuleInMPS(module, progressHelper);
-        compiledSuccessfully = compiledSuccessfully && compilationResult;
-      }
-      if (compiledSuccessfully && needToReload) {
-        reloadClasses(progressHelper);
-      }
+        if (compiledSuccessfully && needToReload) {
+          reloadClasses(monitor.subTask(2));
+          monitor.advance(0);
+        }
 
-      info("Compilation finished in " + (System.currentTimeMillis() - compilationStart) + " ms");
+        info("Compilation finished in " + (System.currentTimeMillis() - compilationStart) + " ms");
+      }
+      return compiledSuccessfully;
+    } finally {
+      monitor.done();
     }
-    return compiledSuccessfully;
   }
 
-  protected boolean compileModuleInMPS(IModule module, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
+  protected boolean compileModuleInMPS(IModule module, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
     boolean compiledSuccessfully = true;
 
     if (module != null) {
@@ -143,35 +152,36 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
         error("Module is compiled in IntelliJ IDEA, can't compile it.");
         compiledSuccessfully = false;
       } else {
-        checkMonitorCanceled(progressHelper);
-        progressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
+        checkMonitorCanceled(monitor);
         String info = "compiling in JetBrains MPS...";
-        progressHelper.setText2(info);
-        info(info);
-        MPSCompilationResult compilationResult = new ModuleMaker().make(CollectionUtil.set(module), new EmptyProgressIndicator());
-        progressHelper.finishTask();
-        if (compilationResult == null || compilationResult.getErrors() > 0) {
-          compiledSuccessfully = false;
-        }
-
-        if (compilationResult != null) {
-          if (compilationResult.getErrors() > 0) {
-            error("" + compilationResult);
-          } else if (compilationResult.getWarnings() > 0) {
-            warning("" + compilationResult);
-          } else {
-            info("" + compilationResult);
+        try {
+          monitor.start(info, 10);
+          info(info);
+          MPSCompilationResult compilationResult = new ModuleMaker().make(CollectionUtil.set(module), new EmptyProgressMonitor());
+          if (compilationResult == null || compilationResult.getErrors() > 0) {
+            compiledSuccessfully = false;
           }
+
+          if (compilationResult != null) {
+            if (compilationResult.getErrors() > 0) {
+              error("" + compilationResult);
+            } else if (compilationResult.getWarnings() > 0) {
+              warning("" + compilationResult);
+            } else {
+              info("" + compilationResult);
+            }
+          }
+        } finally {
+          monitor.done();
         }
       }
 
-      progressHelper.setText2("");
-      checkMonitorCanceled(progressHelper);
+      checkMonitorCanceled(monitor);
     }
     return compiledSuccessfully;
   }
 
-  protected void reloadClasses(ITaskProgressHelper progressHelper) {
+  protected void reloadClasses(ProgressMonitor monitor) {
     if (MPSCore.getInstance().isTestMode()) {
       return;
     }
@@ -182,38 +192,35 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     String info = "reloading MPS classes...";
     info(info);
 
-    progressHelper.setText2(info);
-    progressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-    progressHelper.finishTask();
-    progressHelper.setText2("");
+    monitor.start(info, 1);
+    try {
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+    } finally {
+      monitor.done();
+    }
 
     info("Reloaded in " + (System.currentTimeMillis() - start) + " ms");
   }
 
   @Override
-  public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
-    long totalJob = 0;
-    for (Pair<IModule, List<SModelDescriptor>> pair : input) {
-      IModule module = pair.o1;
-      if (module != null) {
-        long jobTime = ModelsProgressUtil.estimateCompilationMillis(!module.isCompileInMPS());
-        totalJob += jobTime;
-      }
-    }
-    totalJob += ModelsProgressUtil.estimateReloadAllTimeMillis();
-    return totalJob;
+  public int estimateCompilationMillis() {
+    return 1;
   }
 
-  protected void writeFiles() {
+  protected void writeFiles(ProgressMonitor monitor) {
     if (myProcessor != null) {
-      performWritingFilesTask(new Runnable() {
-        @Override
-        public void run() {
-          myProcessor.saveGeneratedFiles();
-        }
-      });
-      myProcessor = null;
+      monitor.start("Writing files", 1);
+      try {
+        performWritingFilesTask(new Runnable() {
+          @Override
+          public void run() {
+            myProcessor.saveGeneratedFiles();
+          }
+        });
+      } finally {
+        myProcessor = null;
+        monitor.done();
+      }
     }
   }
 
@@ -223,7 +230,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
 
   @Override
   public void generationCompleted() {
-    writeFiles();
+    writeFiles(new EmptyProgressMonitor());
   }
 
   @Override

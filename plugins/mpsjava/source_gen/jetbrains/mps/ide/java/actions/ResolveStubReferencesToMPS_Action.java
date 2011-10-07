@@ -16,7 +16,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class ResolveStubReferencesToMPS_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -57,7 +57,7 @@ public class ResolveStubReferencesToMPS_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       new StubResolver().resolveInModels(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ResolveStubReferencesToMPS", t);

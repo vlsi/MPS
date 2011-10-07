@@ -31,14 +31,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.cleanup.CleanupManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.smodel.GarbageCollector</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.smodel.GlobalSModelEventsManager</implementation-class>
     </component>
 
@@ -60,10 +52,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.smodel.behaviour.BehaviorManager</implementation-class>
     </component>
 
     <component>
@@ -123,11 +111,27 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.smodel.LanguageHierarchyCache</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.project.structure.ProjectStructureModule</implementation-class>
     </component>
 
     <component>
       <implementation-class>jetbrains.mps.project.structure.LanguageDescriptorModelProvider</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.lang.dataFlow.DataFlowManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.datatransfer.PasteWrappersManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.findusages.FindersManager</implementation-class>
     </component>
   </application-components>
 
@@ -142,10 +146,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.generator.GeneratorManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.cache.CachesClearer</implementation-class>
     </component>
 
     <component>

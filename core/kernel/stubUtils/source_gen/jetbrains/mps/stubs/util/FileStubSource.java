@@ -58,28 +58,21 @@ public class FileStubSource extends FileBasedModelDataSource {
 
   public BaseSModelDescriptor.ModelLoadResult loadSModel(IModule module, SModelDescriptor descriptor, ModelLoadingState state) {
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
-    model.setLoading(true);
+    final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(myFile);
+    new ProjectStructureBuilder(moduleDesc, myFile, model) {
+      public Iterable<SModelReference> loadReferences(SNode m, final ModuleDescriptor d) {
+        return Sequence.fromIterable(((Iterable<ModelRoot>) d.getModelRoots())).translate(new ITranslator2<ModelRoot, SModelReference>() {
+          public Iterable<SModelReference> translate(ModelRoot it) {
+            return loadModels(it, d);
+          }
+        });
+      }
+    }.convert();
 
-    try {
-      final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(myFile);
-      new ProjectStructureBuilder(moduleDesc, myFile, model) {
-        public Iterable<SModelReference> loadReferences(SNode m, final ModuleDescriptor d) {
-          return Sequence.fromIterable(((Iterable<ModelRoot>) d.getModelRoots())).translate(new ITranslator2<ModelRoot, SModelReference>() {
-            public Iterable<SModelReference> translate(ModelRoot it) {
-              return loadModels(it, d);
-            }
-          });
-        }
-      }.convert();
-
-      ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86ef8290-12bb-4ca7-947f-093788f263a9")).getModuleReference();
-      model.addLanguage(lang);
-      module.addUsedLanguage(lang);
-    } finally {
-      model.setLoading(false);
-    }
+    ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86ef8290-12bb-4ca7-947f-093788f263a9")).getModuleReference();
+    model.addLanguage(lang);
+    module.addUsedLanguage(lang);
     return new BaseSModelDescriptor.ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
-
   }
 
   public boolean saveModel(SModelDescriptor descriptor) {
@@ -99,6 +92,10 @@ public class FileStubSource extends FileBasedModelDataSource {
     } catch (Exception e) {
       return Collections.emptySet();
     }
+  }
+
+  public boolean hasModel(SModelDescriptor descriptor) {
+    return myFile != null && myFile.exists();
   }
 
   private static boolean eq_9hjfki_a0a0b(Object a, Object b) {

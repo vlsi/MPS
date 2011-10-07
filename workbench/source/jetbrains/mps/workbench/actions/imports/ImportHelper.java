@@ -24,6 +24,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -154,7 +155,7 @@ public class ImportHelper {
           ModuleReference ref = getModuleReference();
           if (myContextModule.getScope().getLanguage(ref) == null) {
             myContextModule.addUsedLanguage(ref);
-            ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+            ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
           }
           myModel.getSModel().addLanguage(ref);
         }
@@ -280,7 +281,7 @@ public class ImportHelper {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
               myModule.addDependency(moduleToImport, false);
-              ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+              ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
             }
           });
         }

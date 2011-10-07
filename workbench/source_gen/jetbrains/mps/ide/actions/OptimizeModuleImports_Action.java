@@ -20,7 +20,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.project.Project;
 
@@ -77,7 +77,7 @@ public class OptimizeModuleImports_Action extends GeneratedAction {
           }
           SModelRepository.getInstance().saveAll();
           ((IModule) MapSequence.fromMap(_params).get("module")).save();
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         }
       });
       Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), report.value, "Optimize Imports", Messages.getInformationIcon());

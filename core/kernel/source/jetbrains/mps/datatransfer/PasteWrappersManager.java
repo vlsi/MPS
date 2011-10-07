@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.datatransfer;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.ComponentManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -31,7 +31,7 @@ import java.util.Map;
 
 public class PasteWrappersManager implements ApplicationComponent {
   public static PasteWrappersManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(PasteWrappersManager.class);
+    return ComponentManager.getInstance().getComponent(PasteWrappersManager.class);
   }
 
   public static final String PASTE_WRAPPER_CLASS_NAME = "PasteWrappers";

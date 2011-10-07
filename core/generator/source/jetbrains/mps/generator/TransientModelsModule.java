@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator;
 
-import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.generator.TransientModelsComponent.TransientSwapSpace;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
@@ -24,8 +23,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

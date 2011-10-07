@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.MissingDependenciesFixer;
+import jetbrains.mps.ide.actions.MissingDependenciesFixer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
