@@ -36,6 +36,18 @@ public class CommonPaths {
 
   //--------paths-----------
 
+  public static List<String> getMPSCorePaths(){
+    return new ArrayList<String>();
+  }
+
+  public static List<String> getMPSEditorPaths(){
+    return new ArrayList<String>();
+  }
+
+  public static List<String> getMPSWorkbenchPaths(){
+    return new ArrayList<String>();
+  }
+
   public static String getBaseMPSPath() {
     String classesPath = PathManager.getHomePath() + File.separator + "classes";
     if (new File(classesPath).exists()) {
@@ -48,6 +60,7 @@ public class CommonPaths {
     return null;
   }
 
+  @Deprecated
   public static List<String> getMPSPaths() {
     return itemToPath(getMPSClassPath());
   }

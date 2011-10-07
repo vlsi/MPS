@@ -14,9 +14,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.reloading.CommonPaths;
 
-public class MPS_StubDescriptor extends BaseLibStubDescriptor {
-  public MPS_StubDescriptor() {
-    super("MPS.Classpath", "37a3367b-1fb2-44d8-aa6b-18075e74e003", new ModelRootManager("f3061a53-9226-4cc5-a443-f952ceaf5816", "jetbrains.mps.baseLanguage.stubs.JavaStubs"));
+public class MPS_Editor_StubDescriptor extends BaseLibStubDescriptor {
+  public MPS_Editor_StubDescriptor() {
+    super("MPS.Editor", "1ed103c3-3aa6-49b7-9c21-6765ee11f224", new ModelRootManager("f3061a53-9226-4cc5-a443-f952ceaf5816", "jetbrains.mps.baseLanguage.stubs.JavaStubs"));
   }
 
   public void init(SolutionDescriptor solution) {
@@ -25,6 +25,6 @@ public class MPS_StubDescriptor extends BaseLibStubDescriptor {
   }
 
   public List<String> getPaths() {
-    return ListSequence.fromListWithValues(new ArrayList<String>(), CommonPaths.getMPSPaths());
+    return ListSequence.fromListWithValues(new ArrayList<String>(), CommonPaths.getMPSEditorPaths());
   }
 }
