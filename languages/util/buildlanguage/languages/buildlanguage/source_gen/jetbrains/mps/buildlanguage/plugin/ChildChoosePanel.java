@@ -77,7 +77,7 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
       this.myChild = null;
       return;
     }
-    this.myChild = (C) SNodeOperations.getModel(this.myNode).getNodeById(childId);
+    this.myChild = (C) (SNodeOperations.getModel(myNode).getNodeById(childId));
   }
 
   @Nullable
