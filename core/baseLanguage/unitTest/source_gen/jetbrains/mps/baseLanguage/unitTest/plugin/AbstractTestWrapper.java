@@ -6,12 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.ModelAccess;
 
 public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeWrapper<N> {
   @NotNull
@@ -28,13 +27,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
 
   @Nullable
   public N getNode() {
-    final Wrappers._T<N> node = new Wrappers._T<N>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        node.value = (N) myNodePointer.getNode();
-      }
-    });
-    return node.value;
+    return (N) myNodePointer.getNode();
   }
 
   @NotNull
