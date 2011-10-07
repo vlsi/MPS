@@ -134,7 +134,7 @@ public class Junit_Command {
     return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun._1().getVmParameters()), " ") + ((StringUtils.isNotEmpty(myVirtualMachineParameter_String) ?
       " " + myVirtualMachineParameter_String :
       ""
-    ))).setDebuggerSettings_String(myDebuggerSettings_String).setClassPath_ListString(ListSequence.fromList(testsToRun._1().getClassPath()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(Junit_Command.getProgramParameters(testsToRun._0())).createProcess(testsToRun._1().getTestRunner());
+    ))).setClassPath_ListString(ListSequence.fromList(testsToRun._1().getClassPath()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(Junit_Command.getProgramParameters(testsToRun._0())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun._1().getTestRunner());
   }
 
   public static IDebugger getDebugger() {

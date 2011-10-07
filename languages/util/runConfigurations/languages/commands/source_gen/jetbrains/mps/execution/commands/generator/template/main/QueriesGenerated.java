@@ -576,7 +576,38 @@ public class QueriesGenerated {
     }
   }
 
+  public static void mappingScript_CodeBlock_3445893456317717322(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for (SNode declaration : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.execution.commands.structure.CommandDeclaration"))) {
+      if (CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(declaration)) {
+        for (SNode part : ListSequence.fromList(SLinkOperations.getTargets(declaration, "executePart", true))) {
+          for (SNode commandBuilder : ListSequence.fromList(SNodeOperations.getDescendants(part, "jetbrains.mps.execution.commands.structure.CommandBuilderExpression", false, new String[]{}))) {
+            SNode calledDeclaration = ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(commandBuilder, "commandPart", false));
+            if (CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(calledDeclaration)) {
+              final SNode calledDebuggerParameter = SLinkOperations.getTarget(calledDeclaration, "debuggerParameter", true);
+              if (ListSequence.fromList(SLinkOperations.getTargets(commandBuilder, "argument", true)).findFirst(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return eq_x583g4_a0a0a0a0a0a1a1a0a0a0a0a401(SLinkOperations.getTarget(it, "parameterDeclaration", false), calledDebuggerParameter);
+                }
+              }) == null) {
+                SNode reference = SConceptOperations.createNewNode("jetbrains.mps.execution.commands.structure.CommandParameterReference", null);
+                SLinkOperations.setTarget(reference, "parameter", SLinkOperations.getTarget(declaration, "debuggerParameter", true), false);
+                ListSequence.fromList(SLinkOperations.getTargets(commandBuilder, "argument", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0c0b0b0a0a0a0a0ae().createNode(calledDebuggerParameter, reference));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   private static boolean eq_x583g4_a0a0a0a0a0a0a0ab(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_x583g4_a0a0a0a0a0a1a1a0a0a0a0a401(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
@@ -1033,6 +1064,38 @@ public class QueriesGenerated {
           quotedNode_1.addChild("operation", quotedNode1_8);
         }
         result = quotedNode1_6;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_x583g4_a0a0c0b0b0a0a0a0a0ae {
+    public QuotationClass_x583g4_a0a0c0b0b0a0a0a0a0ae() {
+    }
+
+    public SNode createNode(Object parameter_5, Object parameter_6) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterAssignment", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        quotedNode1_3.setReferent("parameterDeclaration", (SNode) parameter_5);
+        {
+          quotedNode_2 = (SNode) parameter_6;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_4 = quotedNode_2;
+          }
+          if (quotedNode1_4 != null) {
+            quotedNode_1.addChild("value", HUtil.copyIfNecessary(quotedNode1_4));
+          }
+        }
+        result = quotedNode1_3;
       }
       return result;
     }
