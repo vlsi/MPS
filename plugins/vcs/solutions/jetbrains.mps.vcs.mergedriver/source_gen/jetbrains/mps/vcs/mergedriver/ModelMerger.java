@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.ModelUtils;
 import java.io.IOException;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.vcs.diff.merge.MergeContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -35,6 +36,9 @@ import jetbrains.mps.util.FileUtil;
       SModel localModel;
       SModel latestModel;
       try {
+        if (log.isInfoEnabled()) {
+          log.info("Reading models...");
+        }
         baseModel = ModelUtils.readModel(baseFile);
         if (baseModel == null) {
           throw new Exception("Could not read base model");
@@ -56,16 +60,23 @@ import jetbrains.mps.util.FileUtil;
         return super.mergeFiles(baseFile, localFile, latestFile);
       }
 
+      SModelFqName modelFqName = baseModel.getSModelFqName();
       int baseP = baseModel.getPersistenceVersion();
       int localP = localModel.getPersistenceVersion();
       int latestP = latestModel.getPersistenceVersion();
       if (baseP >= 7 && localP >= 7 && latestP >= 7 || baseP < 7 && localP < 7 && latestP < 7) {
         // ok, can merge 
       } else {
-        return CONFLICTS;
+        if (log.isErrorEnabled()) {
+          log.error(String.format("%s: Conflicting model persistence versions", modelFqName));
+        }
+        return super.mergeFiles(baseFile, localFile, latestFile);
       }
       if (!(roleIdsHandler.isConsistent())) {
-        return CONFLICTS;
+        if (log.isErrorEnabled()) {
+          log.error(String.format("%s: Inconsistent structure ids or import versions", modelFqName));
+        }
+        return super.mergeFiles(baseFile, localFile, latestFile);
       }
 
       try {
@@ -80,7 +91,7 @@ import jetbrains.mps.util.FileUtil;
         }).count();
         if (conflictingChangesCount == 0) {
           if (log.isInfoEnabled()) {
-            log.info(String.format("%s: %d changes detected: %d local and %d latest", baseModel.getLongName(), Sequence.fromIterable(mergeContext.getAllChanges()).count(), ListSequence.fromList(mergeContext.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeContext.getRepositoryChangeSet().getModelChanges()).count()));
+            log.info(String.format("%s: %d changes detected: %d local and %d latest.", modelFqName, Sequence.fromIterable(mergeContext.getAllChanges()).count(), ListSequence.fromList(mergeContext.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeContext.getRepositoryChangeSet().getModelChanges()).count()));
           }
           mergeContext.getResultModel().setLoading(true);
           Runnable applyAction = new Runnable() {
@@ -91,12 +102,12 @@ import jetbrains.mps.util.FileUtil;
           ModelAccess.instance().runReadAction(applyAction);
           if (mergeContext.hasIdsToRestore()) {
             if (log.isInfoEnabled()) {
-              log.info(String.format("%s: node id duplication detected, should merge in UI", baseModel.getLongName()));
+              log.info(String.format("%s: node id duplication detected, should merge in UI.", modelFqName));
             }
           } else {
             byte[] bytes = ModelUtils.modelToBytes(mergeContext.getResultModel());
             if (log.isInfoEnabled()) {
-              log.info(String.format("%s: merged successfully", baseModel.getLongName()));
+              log.info(String.format("%s: merged successfully.", modelFqName));
             }
             OutputStream out = null;
             try {
@@ -112,7 +123,7 @@ import jetbrains.mps.util.FileUtil;
           }
         } else {
           if (log.isInfoEnabled()) {
-            log.info(String.format("%s: %d changes detected, %d of them are conflicting", baseModel.getLongName(), Sequence.fromIterable(mergeContext.getAllChanges()).count(), conflictingChangesCount));
+            log.info(String.format("%s: %d changes detected, %d of them are conflicting", modelFqName, Sequence.fromIterable(mergeContext.getAllChanges()).count(), conflictingChangesCount));
           }
         }
       } catch (Throwable e) {
