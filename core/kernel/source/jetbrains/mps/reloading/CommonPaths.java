@@ -64,7 +64,6 @@ public class CommonPaths {
     addIfExists(result, "/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar");
     addIfExists(result, "/core/baseLanguage/tuples/runtime/classes");
     addIfExists(result, "/core/runtime/classes");
-    addIfExists(result, "");
     return itemToPath(result);
   }
 
