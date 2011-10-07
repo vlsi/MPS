@@ -339,8 +339,8 @@
     <nodeInfo nodeId="877422884702861203" fileName="MathRuntime.java" startLine="14" startPosition="30" endLine="15" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="877422884702861214" fileName="MathRuntime.java" startLine="16" startPosition="5" endLine="17" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="877422884702861222" fileName="MathRuntime.java" startLine="17" startPosition="31" endLine="18" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="877422884702861228" fileName="MathRuntime.java" startLine="18" startPosition="39" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="877422884702861240" fileName="MathRuntime.java" startLine="19" startPosition="60" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="877422884702861228" fileName="MathRuntime.java" startLine="18" startPosition="39" endLine="19" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="877422884702861240" fileName="MathRuntime.java" startLine="19" startPosition="51" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="877422884702861248" fileName="MathRuntime.java" startLine="20" startPosition="34" endLine="21" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="877422884702861257" fileName="MathRuntime.java" startLine="21" startPosition="29" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="877422884702861261" fileName="MathRuntime.java" startLine="22" startPosition="23" endLine="23" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -576,9 +576,9 @@
     <nodeInfo nodeId="877422884702863117" fileName="Matrix.java" startLine="612" startPosition="5" endLine="613" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="877422884702863143" fileName="Matrix.java" startLine="617" startPosition="30" endLine="618" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="3840741013873810284" fileName="Matrix.java" startLine="621" startPosition="45" endLine="622" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="877422884702863195" fileName="Matrix.java" startLine="628" startPosition="85" endLine="629" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="877422884702863195" fileName="Matrix.java" startLine="628" startPosition="86" endLine="629" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="877422884702863210" fileName="Matrix.java" startLine="631" startPosition="45" endLine="632" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="877422884702863253" fileName="Matrix.java" startLine="637" startPosition="85" endLine="638" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="877422884702863253" fileName="Matrix.java" startLine="637" startPosition="86" endLine="638" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="877422884702863268" fileName="Matrix.java" startLine="640" startPosition="45" endLine="641" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="877422884702863298" fileName="Matrix.java" startLine="646" startPosition="33" endLine="647" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="3840741013873810299" fileName="Matrix.java" startLine="650" startPosition="45" endLine="651" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -591,7 +591,7 @@
     <nodeInfo nodeId="877422884702863391" fileName="Matrix.java" startLine="676" startPosition="5" endLine="677" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="877422884702863403" fileName="Matrix.java" startLine="680" startPosition="43" endLine="681" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3840741013873810318" fileName="Matrix.java" startLine="686" startPosition="45" endLine="687" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3840741013873810334" fileName="Matrix.java" startLine="694" startPosition="45" endLine="695" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3840741013873810334" fileName="Matrix.java" startLine="694" startPosition="45" endLine="695" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="877422884702863482" fileName="Matrix.java" startLine="701" startPosition="71" endLine="702" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="877422884702863495" fileName="Matrix.java" startLine="704" startPosition="41" endLine="705" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="877422884702863541" fileName="Matrix.java" startLine="710" startPosition="51" endLine="711" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
@@ -1068,9 +1068,9 @@
     <scopeInfo nodeId="877422884702863113" fileName="Matrix.java" startLine="610" startPosition="56" endLine="611" endPosition="44" />
     <scopeInfo nodeId="877422884702863142" fileName="Matrix.java" startLine="617" startPosition="30" endLine="618" endPosition="44" />
     <scopeInfo nodeId="3840741013873810278" fileName="Matrix.java" startLine="621" startPosition="45" endLine="622" endPosition="35" />
-    <scopeInfo nodeId="877422884702863194" fileName="Matrix.java" startLine="628" startPosition="85" endLine="629" endPosition="44" />
+    <scopeInfo nodeId="877422884702863194" fileName="Matrix.java" startLine="628" startPosition="86" endLine="629" endPosition="44" />
     <scopeInfo nodeId="877422884702863209" fileName="Matrix.java" startLine="631" startPosition="45" endLine="632" endPosition="47" />
-    <scopeInfo nodeId="877422884702863252" fileName="Matrix.java" startLine="637" startPosition="85" endLine="638" endPosition="44" />
+    <scopeInfo nodeId="877422884702863252" fileName="Matrix.java" startLine="637" startPosition="86" endLine="638" endPosition="44" />
     <scopeInfo nodeId="877422884702863267" fileName="Matrix.java" startLine="640" startPosition="45" endLine="641" endPosition="47" />
     <scopeInfo nodeId="877422884702863297" fileName="Matrix.java" startLine="646" startPosition="33" endLine="647" endPosition="44" />
     <scopeInfo nodeId="3840741013873810298" fileName="Matrix.java" startLine="650" startPosition="45" endLine="651" endPosition="35" />
@@ -1080,7 +1080,7 @@
     <scopeInfo nodeId="877422884702863386" fileName="Matrix.java" startLine="673" startPosition="27" endLine="674" endPosition="23" />
     <scopeInfo nodeId="877422884702863402" fileName="Matrix.java" startLine="680" startPosition="43" endLine="681" endPosition="24" />
     <scopeInfo nodeId="3840741013873810317" fileName="Matrix.java" startLine="686" startPosition="45" endLine="687" endPosition="35" />
-    <scopeInfo nodeId="3840741013873810333" fileName="Matrix.java" startLine="694" startPosition="45" endLine="695" endPosition="74" />
+    <scopeInfo nodeId="3840741013873810333" fileName="Matrix.java" startLine="694" startPosition="45" endLine="695" endPosition="54" />
     <scopeInfo nodeId="877422884702863481" fileName="Matrix.java" startLine="701" startPosition="71" endLine="702" endPosition="44" />
     <scopeInfo nodeId="877422884702863494" fileName="Matrix.java" startLine="704" startPosition="41" endLine="705" endPosition="112" />
     <scopeInfo nodeId="877422884702863540" fileName="Matrix.java" startLine="710" startPosition="51" endLine="711" endPosition="44" />

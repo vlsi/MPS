@@ -625,7 +625,7 @@ public class Matrix<T> {
   }
 
   public void setRow(final int i, Matrix vector) {
-    if (vector.myColumns != 1 || vector.myRows != myColumns || i < 0 | i >= myRows) {
+    if (vector.myColumns != 1 || vector.myRows != myColumns || i < 0 || i >= myRows) {
       throw new IndexOutOfBoundsException();
     }
     for (int j = 0; j < vector.myRows; j++) {
@@ -634,7 +634,7 @@ public class Matrix<T> {
   }
 
   public void setCol(final int i, Matrix vector) {
-    if (vector.myColumns != 1 || vector.myRows != myRows || i < 0 | i >= myColumns) {
+    if (vector.myColumns != 1 || vector.myRows != myRows || i < 0 || i >= myColumns) {
       throw new IndexOutOfBoundsException();
     }
     for (int j = 0; j < vector.myRows; j++) {
@@ -692,7 +692,7 @@ public class Matrix<T> {
   public Matrix<T> conjugate() {
     return new Matrix<T>(myColumns, myRows, new _FunctionTypes._return_P2_E0<T, Integer, Integer>() {
       public T invoke(Integer a, Integer b) {
-        return (T) myOperations.conj(myCarrier[(Integer) b][(Integer) a]);
+        return (T) myOperations.conj(myCarrier[b][a]);
       }
     }, myOperations);
   }
