@@ -11696,6 +11696,7 @@
           <module ref="4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)" />
           <module ref="4df1d09b-d6ae-453e-8622-14c0d6e4c038(jetbrains.mps.baseLanguage.money.runtime)" />
           <module ref="51736086-833e-4b0d-b9a6-a1dbbfda2131(jetbrains.mps.lang.sharedConcepts#1161623873951)" />
+          <module ref="54e8601c-dee3-4b7a-94f7-5ee53b3f2dcb(jetbrains.mps.xmlInternal#1165632612566)" />
           <module ref="5b247b59-8fd0-4475-a767-9e9ff6a9d01c(jetbrains.mps.execution.lib.startup)" />
           <module ref="5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)" />
           <module ref="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
@@ -11840,6 +11841,7 @@
           <module ref="4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)" />
           <module ref="4df1d09b-d6ae-453e-8622-14c0d6e4c038(jetbrains.mps.baseLanguage.money.runtime)" />
           <module ref="51736086-833e-4b0d-b9a6-a1dbbfda2131(jetbrains.mps.lang.sharedConcepts#1161623873951)" />
+          <module ref="54e8601c-dee3-4b7a-94f7-5ee53b3f2dcb(jetbrains.mps.xmlInternal#1165632612566)" />
           <module ref="5b247b59-8fd0-4475-a767-9e9ff6a9d01c(jetbrains.mps.execution.lib.startup)" />
           <module ref="5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)" />
           <module ref="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
@@ -11983,6 +11985,7 @@
           <module ref="4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)" />
           <module ref="4df1d09b-d6ae-453e-8622-14c0d6e4c038(jetbrains.mps.baseLanguage.money.runtime)" />
           <module ref="51736086-833e-4b0d-b9a6-a1dbbfda2131(jetbrains.mps.lang.sharedConcepts#1161623873951)" />
+          <module ref="54e8601c-dee3-4b7a-94f7-5ee53b3f2dcb(jetbrains.mps.xmlInternal#1165632612566)" />
           <module ref="5b247b59-8fd0-4475-a767-9e9ff6a9d01c(jetbrains.mps.execution.lib.startup)" />
           <module ref="5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)" />
           <module ref="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
