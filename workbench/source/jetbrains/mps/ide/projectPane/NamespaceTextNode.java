@@ -16,15 +16,12 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.DataKey;
-import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.ide.actions.NamespaceNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.NewModel_Action;
-import jetbrains.mps.ide.actions.NewSolution_Action;
 import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNodeBuilder;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -33,7 +30,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
-import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.workbench.action.BaseGroup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,6 +85,11 @@ public class NamespaceTextNode extends TextTreeNode {
     if (!hasModelsUnder && !hasModulesUnder) return null;
 
     DefaultActionGroup newGroup = new DefaultActionGroup("New", true);
+
+    // Actions should be disabled for modules pool
+    if (getPath().length > 1 && getPath()[1] instanceof ProjectModulesPoolTreeNode) {
+      return null;
+    }
 
     if (hasModulesUnder) {
       newGroup.addAll(ActionUtils.getGroup(NamespaceNewActions_ActionGroup.ID));
