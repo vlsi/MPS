@@ -18,7 +18,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent"}, new String[]{"configurationName", "canRun"}, new String[]{"runConfiguration"});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.execution.configurations.structure.BeforeTask", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.execution.common.structure.IGeneratedToClass"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.execution.configurations.structure.BeforeTask", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IDeprecatable", "jetbrains.mps.execution.common.structure.IGeneratedToClass"}, new String[]{}, new String[]{});
       case 2:
         return new CompiledConceptDescriptor("jetbrains.mps.execution.configurations.structure.BeforeTaskCall", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"beforeTask"});
       case 3:

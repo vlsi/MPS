@@ -19,16 +19,22 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
   protected static Log log = LogFactory.getLog(BaseMpsBeforeTaskProvider.class);
 
   private final String myName;
+  private final String myAlias;
 
   public BaseMpsBeforeTaskProvider(String name) {
+    this(name, name);
+  }
+
+  public BaseMpsBeforeTaskProvider(String name, String alias) {
     myName = name;
+    myAlias = alias;
   }
 
   protected abstract T createTaskImpl();
 
   @Override
   public String getDescription(RunConfiguration runConfiguration, T task) {
-    return myName;
+    return myAlias;
   }
 
   @Override
@@ -58,7 +64,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
       return task.execute(PlatformDataKeys.PROJECT.getData(context));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("Error during executing provider " + myName, t);
+        log.error("Error during executing provider " + (myAlias + "(" + this.getClass().getName() + ")"), t);
       }
     }
     return false;

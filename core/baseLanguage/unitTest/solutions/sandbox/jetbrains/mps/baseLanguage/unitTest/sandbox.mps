@@ -51,7 +51,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8243879142738608072">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolveInfo="println" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8243879142738608073">
-                <property name="value" nameId="tpee.1070475926801" value="setup test!" />
+                <property name="value" nameId="tpee.1070475926801" value="setup test!!" />
               </node>
             </node>
           </node>
@@ -69,7 +69,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8243879142738608091">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolveInfo="println" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8243879142738608092">
-                <property name="value" nameId="tpee.1070475926801" value="teardown test!" />
+                <property name="value" nameId="tpee.1070475926801" value="teardown test!!" />
               </node>
             </node>
           </node>

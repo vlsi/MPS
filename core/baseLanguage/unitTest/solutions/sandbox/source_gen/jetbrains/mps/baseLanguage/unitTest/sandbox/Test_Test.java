@@ -15,10 +15,10 @@ public class Test_Test extends TestCase {
   }
 
   public void setUp() {
-    System.err.println("setup test!");
+    System.err.println("setup test!!");
   }
 
   public void tearDown() {
-    System.err.println("teardown test!");
+    System.err.println("teardown test!!");
   }
 }

@@ -13,7 +13,7 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
   private static final Key<MakeNodePointers_BeforeTask.MakeNodePointers_BeforeTask_RunTask> KEY = Key.create("jetbrains.mps.execution.configurations.plugin.MakeNodePointers_BeforeTask");
 
   public MakeNodePointers_BeforeTask() {
-    super("Make");
+    super("MakeNodePointers", "Make");
   }
 
   protected MakeNodePointers_BeforeTask.MakeNodePointers_BeforeTask_RunTask createTaskImpl() {
