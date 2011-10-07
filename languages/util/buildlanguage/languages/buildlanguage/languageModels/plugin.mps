@@ -202,7 +202,7 @@
                 </node>
               </node>
               <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="7986696453017060187">
-                <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.8234001627573899236" resolveInfo="classPathFiles" />
+                <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.8234001627573899236" resolveInfo="classPath" />
                 <node role="value" roleId="rzqf.856705193941281766" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7986696453017060189">
                   <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7986696453017060190" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="7986696453017060191">
@@ -214,7 +214,7 @@
                 </node>
               </node>
               <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="7986696453017060194">
-                <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.8234001627573899230" resolveInfo="programParameterCommand" />
+                <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.8234001627573899230" resolveInfo="programParameter" />
                 <node role="value" roleId="rzqf.856705193941281766" type="rzqf.ListCommandPart" typeId="rzqf.6868250101935610313" id="7986696453017060196">
                   <node role="items" roleId="rzqf.2168104298250244983" type="rzqf.PropertyCommandPart" typeId="rzqf.8234001627574071406" id="7986696453017060207">
                     <node role="key" roleId="rzqf.8234001627574071407" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7986696453017060210">
@@ -1333,10 +1333,9 @@
       </node>
     </node>
     <node role="beforeTask" roleId="uhxm.6550182048787537895" type="uhxm.BeforeTaskCall" typeId="uhxm.6550182048787537880" id="2228878981387191328">
-      <link role="beforeTask" roleId="uhxm.6550182048787537881" targetNodeId="879s.247026320694134524" resolveInfo="Make" />
+      <link role="beforeTask" roleId="uhxm.6550182048787537881" targetNodeId="879s.259833884788814900" resolveInfo="MakeNodePointers" />
       <node role="parameter" roleId="uhxm.5475888311765521408" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2228878981387191335">
         <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="2228878981387191337">
-          <node role="elementType" roleId="tp2q.1237721435807" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2228878981387191339" />
           <node role="initValue" roleId="tp2q.1237721435808" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2228878981387191344">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2228878981387191341">
               <node role="operand" roleId="tpee.1197027771414" type="uhxm.ConfigurationFromExecutorReference" typeId="uhxm.7806358006983738927" id="2228878981387191342" />
@@ -1344,9 +1343,12 @@
                 <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="2228878981387110412" resolveInfo="myNode" />
               </node>
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="2228878981387191348">
-              <link role="member" roleId="tp4f.1205756909548" targetNodeId="qsa3.3822284879781071686" resolveInfo="getNode" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="5039342337170368347">
+              <link role="member" roleId="tp4f.1205756909548" targetNodeId="qsa3.5039342337170364823" resolveInfo="getNodePointer" />
             </node>
+          </node>
+          <node role="elementType" roleId="tp2q.1237721435807" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5039342337170369475">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lkfb.~SNodePointer" resolveInfo="SNodePointer" />
           </node>
         </node>
       </node>

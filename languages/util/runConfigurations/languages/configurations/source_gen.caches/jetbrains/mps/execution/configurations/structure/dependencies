@@ -26,7 +26,7 @@
     <classNode dependClassName="jetbrains.mps.execution.configurations.structure.BeforeTaskParameter" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.structure.ExecuteBeforeTask_ConceptFunction" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.IDeprecatable" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.structure.IStructureDeprecatable" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

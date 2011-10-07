@@ -82,16 +82,20 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
 
   @Nullable
   public SNode getNode() {
+    final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
+    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        return node.value = check_q2vl_a0a0a1a0(getNodePointer());
+      }
+    }));
+    return node.value;
+  }
+
+  public SNodePointer getNodePointer() {
     if (this.getModelId() == null || this.getNodeId() == null) {
       return null;
     }
-    final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        node.value = new SNodePointer(Node_Configuration.this.getModelId(), Node_Configuration.this.getNodeId()).getNode();
-      }
-    });
-    return node.value;
+    return new SNodePointer(this.getModelId(), this.getNodeId());
   }
 
   public void setNode(@Nullable final SNode node) {
@@ -134,6 +138,13 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
       myEditorEx = getEditor();
     }
     return myEditorEx;
+  }
+
+  private static SNode check_q2vl_a0a0a1a0(SNodePointer checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNode();
+    }
+    return null;
   }
 
   public class MyState {

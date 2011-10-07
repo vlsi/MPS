@@ -855,7 +855,7 @@
     <unitInfo nodeId="6550182048787583936" fileName="BeforeTaskParameterReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference" />
   </root>
   <root nodeId="7037083547576022975">
-    <nodeInfo nodeId="7037083547576022975" fileName="BeforeTask.java" startLine="16" startPosition="89" endLine="17" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="7037083547576022975" fileName="BeforeTask.java" startLine="16" startPosition="98" endLine="17" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="7037083547576022975" fileName="BeforeTask.java" startLine="17" startPosition="101" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="7037083547576022975" fileName="BeforeTask.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
     <nodeInfo nodeId="7037083547576022975" fileName="BeforeTask.java" startLine="19" startPosition="45" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
