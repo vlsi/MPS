@@ -106,7 +106,6 @@ public class ExtractMethodDialog extends BaseDialog {
 
   private void initPanel() {
     this.myPanel = new JPanel(new GridBagLayout());
-
     GridBagConstraints c = new GridBagConstraints();
     c.fill = GridBagConstraints.BOTH;
     c.anchor = GridBagConstraints.NORTHWEST;
@@ -124,6 +123,7 @@ public class ExtractMethodDialog extends BaseDialog {
     c.weightx = 1;
     c.weighty = 1;
     c.gridwidth = 1;
+
     this.myPanel.add(this.createParametersPanel(), c);
 
     c.gridx = 1;
@@ -172,6 +172,8 @@ public class ExtractMethodDialog extends BaseDialog {
         ExtractMethodDialog.this.update();
       }
     });
+
+
     return parametersPanel;
   }
 
