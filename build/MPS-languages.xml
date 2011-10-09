@@ -974,9 +974,9 @@
       <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/core/baseLanguage/baseLanguage/baseLanguage.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/classes_gen" />
       <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/utilModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/utilModels" />
-      <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/classes_gen" />
       <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/generator/java/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/java/templates" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" compress="true" duplicate="preserve" filesonly="true">
