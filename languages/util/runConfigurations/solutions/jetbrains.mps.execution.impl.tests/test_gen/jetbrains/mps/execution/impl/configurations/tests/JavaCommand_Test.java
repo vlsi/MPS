@@ -6,75 +6,67 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import com.intellij.execution.process.ProcessEvent;
-import java.util.concurrent.CountDownLatch;
-import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.execution.lib.Java_Command;
-import com.intellij.execution.process.ProcessAdapter;
-import com.intellij.openapi.util.Key;
-import com.intellij.execution.process.ProcessOutputTypes;
-import junit.framework.Assert;
-import com.intellij.execution.ExecutionException;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.io.File;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.io.IOException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import com.intellij.execution.process.ProcessHandler;
+import com.intellij.execution.process.ProcessEvent;
+import java.util.concurrent.CountDownLatch;
+import jetbrains.mps.execution.api.commands.OutputRedirector;
+import com.intellij.execution.process.ProcessAdapter;
+import com.intellij.openapi.util.Key;
+import com.intellij.execution.process.ProcessOutputTypes;
+import junit.framework.Assert;
 
 @MPSLaunch
 public class JavaCommand_Test extends BaseTransformationTest {
   @Test
-  public void test_startJava() throws Throwable {
+  public void test_startByClassName() throws Throwable {
     this.initTest("${mps_home}/languages/util/runConfigurations/runConfigurations.mpr", "r:00c1e1d0-e3c4-4d43-82f5-4c4f80539a57(jetbrains.mps.execution.impl.configurations.tests@tests)");
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.JavaCommand_Test$TestBody", "test_startJava", true);
+    this.runTest("jetbrains.mps.execution.impl.configurations.tests.JavaCommand_Test$TestBody", "test_startByClassName", true);
+  }
+
+  @Test
+  public void test_startByNode() throws Throwable {
+    this.initTest("${mps_home}/languages/util/runConfigurations/runConfigurations.mpr", "r:00c1e1d0-e3c4-4d43-82f5-4c4f80539a57(jetbrains.mps.execution.impl.configurations.tests@tests)");
+    this.runTest("jetbrains.mps.execution.impl.configurations.tests.JavaCommand_Test$TestBody", "test_startByNode", true);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_startJava() throws Exception {
-      final ProcessEvent[] failed = new ProcessEvent[1];
-      final boolean[] printed = new boolean[1];
-      try {
-        // todo show progress window 
-        final CountDownLatch countDown = new CountDownLatch(1);
-        ProcessHandler process = OutputRedirector.redirect(new Java_Command().createProcess(Main.class.getName(), this.getClasspath()), new ProcessAdapter() {
-          @Override
-          public void processTerminated(ProcessEvent event) {
-            countDown.countDown();
-          }
+    public void test_startByClassName() throws Exception {
+      this.checkProcess(new Java_Command().createProcess(Main.class.getName(), this.getClasspath()), Main.MESSAGE + "\n");
+    }
 
-          @Override
-          public void onTextAvailable(ProcessEvent event, Key key) {
-            if (ProcessOutputTypes.STDERR.equals(key)) {
-              if (neq_849b2c_a0a0a0b0a1a0c0c0a0(event.getText(), (Main.MESSAGE + "\n"))) {
-                failed[0] = event;
-              } else {
-                printed[0] = true;
-              }
-            } else if (!(ProcessOutputTypes.SYSTEM.equals(key))) {
-              failed[0] = event;
+    public void test_startByNode() throws Exception {
+      final Wrappers._T<SNodePointer> pointer = new Wrappers._T<SNodePointer>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          SModel model = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.execution.impl.configurations.tests", "tests")).getSModel();
+          SNode mainNode = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return eq_849b2c_a0a0a0a0a0a1a0a0a0a1a1a(SPropertyOperations.getString(it, "name"), Main.class.getSimpleName());
             }
-          }
-        });
-        process.startNotify();
-        countDown.await();
-        if (failed[0] != null) {
-          Assert.fail(failed[0].getText());
+          });
+          pointer.value = new SNodePointer(mainNode);
         }
-        if (!(printed[0])) {
-          Assert.fail("Did not print required message!");
-        }
-      } catch (ExecutionException e) {
-        e.printStackTrace();
-        Assert.fail(e.getMessage());
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-        Assert.fail(e.getMessage());
-      }
+      });
+      this.checkProcess(new Java_Command().createProcess(pointer.value), Main.MESSAGE + "\n");
     }
 
     public List<File> getClasspath() {
@@ -98,7 +90,53 @@ public class JavaCommand_Test extends BaseTransformationTest {
       }).toListSequence();
     }
 
-    private static boolean neq_849b2c_a0a0a0b0a1a0c0c0a0(Object a, Object b) {
+    public void checkProcess(ProcessHandler process, final String expectedSysErr) {
+      final ProcessEvent[] failed = new ProcessEvent[1];
+      final boolean[] printed = new boolean[1];
+      try {
+        // todo show progress window 
+        final CountDownLatch countDown = new CountDownLatch(1);
+        OutputRedirector.redirect(process, new ProcessAdapter() {
+          @Override
+          public void processTerminated(ProcessEvent event) {
+            countDown.countDown();
+          }
+
+          @Override
+          public void onTextAvailable(ProcessEvent event, Key key) {
+            if (ProcessOutputTypes.STDERR.equals(key)) {
+              if (neq_849b2c_a0a0a0b0a1a2a2a3a(event.getText(), expectedSysErr)) {
+                failed[0] = event;
+              } else {
+                printed[0] = true;
+              }
+            } else if (!(ProcessOutputTypes.SYSTEM.equals(key))) {
+              failed[0] = event;
+            }
+          }
+        });
+        process.startNotify();
+        countDown.await();
+        if (failed[0] != null) {
+          Assert.fail(failed[0].getText());
+        }
+        if (!(printed[0])) {
+          Assert.fail("Did not print required message!");
+        }
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+        Assert.fail(e.getMessage());
+      }
+    }
+
+    private static boolean eq_849b2c_a0a0a0a0a0a1a0a0a0a1a1a(Object a, Object b) {
+      return (a != null ?
+        a.equals(b) :
+        a == b
+      );
+    }
+
+    private static boolean neq_849b2c_a0a0a0b0a1a2a2a3a(Object a, Object b) {
       return !((a != null ?
         a.equals(b) :
         a == b
