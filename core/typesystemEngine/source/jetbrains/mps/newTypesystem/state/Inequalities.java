@@ -186,20 +186,6 @@ public class Inequalities {
     }
   }
 
-  private boolean compareMap (ManyToManyMap m1, ManyToManyMap m2) {
-    Set first1 = m1.getFirst();
-    Set first2 = m2.getFirst();
-
-    if (!(first1.containsAll(first2) && first2.containsAll(first1))) {
-      return false;
-    }
-    for (Object f : first1) {
-      if (!m1.getByFirst(f).containsAll(m2.getByFirst(f))) return false;
-      if (!m2.getByFirst(f).containsAll(m1.getByFirst(f))) return false;
-    }
-    return true;
-  }
-
   private boolean chooseVarAndSolve(Set<SNode> nodes) {
     //Solves relation for an independent node
     //first tries to solve for when concrete waiting node
