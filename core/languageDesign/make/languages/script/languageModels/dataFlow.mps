@@ -26,7 +26,7 @@
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="187226666892820043">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="job.progress" />
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="q9ra.187226666892683652" resolveInfo="DoneWorkStatement" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="q9ra.187226666892683652" resolveInfo="AdvanceWorkStatement" />
     </node>
   </roots>
   <root id="7077360340906499756">
@@ -80,6 +80,14 @@
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="187226666892820048" />
             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="187226666892820053">
               <link role="link" roleId="tp25.1138056516764" targetNodeId="q9ra.187226666892735700" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="532238834071743791">
+          <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="532238834071743794">
+            <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="532238834071743793" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="532238834071743798">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="q9ra.1906791586424011776" />
             </node>
           </node>
         </node>
