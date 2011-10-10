@@ -144,7 +144,7 @@ public class Mps_Command {
     return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug2x/system";
   }
 
-  public static List<File> getClassPath() {
+  private static List<File> getClassPath() {
     Iterable<String> currentClassPath = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(File.pathSeparator))).select(new ISelector<String, String>() {
       public String select(String it) {
         try {
