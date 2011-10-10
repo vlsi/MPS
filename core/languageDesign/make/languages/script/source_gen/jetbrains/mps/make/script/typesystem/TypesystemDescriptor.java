@@ -38,6 +38,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new IResource_subtypeOf_ResourceType_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new ResourceType_subtypeOf_IResource_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
