@@ -19,6 +19,7 @@ public class MethodModel {
   private List<ChangeListener> myListeners = ListSequence.fromList(new ArrayList<ChangeListener>());
   private Map<String, SNode> myTypesMap = MapSequence.fromMap(new HashMap<String, SNode>());
   private List<String> myExceptions = ListSequence.fromList(new ArrayList<String>());
+  private boolean isStatic = false;
 
   public MethodModel() {
   }
@@ -39,6 +40,15 @@ public class MethodModel {
   public void setReturnType(SNode type) {
     this.myType = type;
     this.fireChange();
+  }
+
+  public void setStatic(boolean isStatic) {
+    this.isStatic = isStatic;
+    this.fireChange();
+  }
+
+  public boolean isStatic() {
+    return this.isStatic;
   }
 
   public void fireChange() {
@@ -72,6 +82,9 @@ public class MethodModel {
       }
     });
     text.append(" ");
+    if (this.isStatic) {
+      text.append("static ");
+    }
     text.append(this.getName());
     text.append("(");
     if (ListSequence.fromList(this.getParametersNames()).count() > 0) {

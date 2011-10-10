@@ -161,7 +161,6 @@ public abstract class BaseDialog extends JDialog {
     }
 
     prepareDialog();
-    this.pack();
     setVisible(true);
   }
 

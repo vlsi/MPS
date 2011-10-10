@@ -45,6 +45,8 @@ public class ExtractMethodRefactoringAnalyzer {
   private AnalysisResult<VarSet> myLiveVariables;
   private AnalysisResult<Set<WriteInstruction>> myReachingDefinitions;
   private IExtractMethodRefactoringProcessor myProcessor;
+  private boolean shouldBeStatic;
+  private boolean canBeStatic;
 
   public ExtractMethodRefactoringAnalyzer(List<SNode> nodes) {
     this.myPartToExtract = nodes;
@@ -54,6 +56,8 @@ public class ExtractMethodRefactoringAnalyzer {
     this.myInternalExitPoints = this.calculateInternalExitPoints();
     this.myLiveVariables = this.myProgram.analyze(new LivenessAnalyzer());
     this.myReachingDefinitions = this.myProgram.analyze(new ReachingDefinitionsAnalyzer());
+    this.shouldBeStatic = this.findIfShouldBeStatic();
+    this.canBeStatic = this.findIfCanBeStatic();
   }
 
   /*package*/ boolean hasExitPoints() {
@@ -69,6 +73,37 @@ public class ExtractMethodRefactoringAnalyzer {
       current = SNodeOperations.getParent(current);
     }
     return false;
+  }
+
+  public boolean shouldBeStatic() {
+    return shouldBeStatic;
+  }
+
+  public boolean canBeStatic() {
+    return canBeStatic;
+  }
+
+  private boolean findIfShouldBeStatic() {
+    SNode containerMethod = this.myProcessor.getContainerMethod();
+    if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  private boolean findIfCanBeStatic() {
+    SNode first = ListSequence.fromList(this.myPartToExtract).first();
+    SNode classConcept = SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    if ((classConcept == null)) {
+      return false;
+    }
+    for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
+      if (ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.ThisExpression", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{})).isNotEmpty()) {
+        return false;
+      }
+    }
+    return true;
   }
 
   private List<SNode> calculateInternalExitPoints() {

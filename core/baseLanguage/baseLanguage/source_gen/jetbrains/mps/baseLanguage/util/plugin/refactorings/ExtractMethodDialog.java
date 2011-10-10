@@ -22,6 +22,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import com.intellij.ui.DocumentAdapter;
 import javax.swing.event.DocumentEvent;
+import javax.swing.JCheckBox;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.TitledBorder;
@@ -201,7 +204,48 @@ public class ExtractMethodDialog extends BaseDialog {
         ExtractMethodDialog.this.update();
       }
     });
+
+    c.fill = GridBagConstraints.NONE;
+    c.gridx = 0;
+    c.gridy = 2;
+    c.weightx = 1;
+    c.weighty = 1;
+    c.anchor = GridBagConstraints.FIRST_LINE_START;
+    final JCheckBox declareStatic = createDeclareStaticCheckBox();
+    methodPanel.add(declareStatic, c);
+    declareStatic.addItemListener(new ItemListener() {
+      public void itemStateChanged(ItemEvent p0) {
+        if (declareStatic.isSelected()) {
+          ExtractMethodDialog.this.myParameters.setStatic(true);
+        } else {
+          ExtractMethodDialog.this.myParameters.setStatic(false);
+        }
+        ExtractMethodDialog.this.update();
+      }
+    });
+
+
+
+
+
+
     return methodPanel;
+  }
+
+  public JCheckBox createDeclareStaticCheckBox() {
+    JCheckBox result = new JCheckBox("Declare static");
+    int canBeStatic = myRefactoring.canBeStatic();
+    if (canBeStatic == 0) {
+      result.setSelected(false);
+      result.setEnabled(false);
+    } else if (canBeStatic == 1) {
+      result.setSelected(false);
+      result.setEnabled(true);
+    } else if (canBeStatic == 2) {
+      result.setSelected(true);
+      result.setEnabled(false);
+    }
+    return result;
   }
 
   private Border createBorder(String title) {
@@ -263,6 +307,11 @@ public class ExtractMethodDialog extends BaseDialog {
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
     return new DialogDimensionsSettings.DialogDimensions(100, 200, 500, 400);
+  }
+
+  protected void prepareDialog() {
+    super.prepareDialog();
+    this.pack();
   }
 
   public class MyMethodDuplicatesProcessor extends MethodDuplicatesProcessor {

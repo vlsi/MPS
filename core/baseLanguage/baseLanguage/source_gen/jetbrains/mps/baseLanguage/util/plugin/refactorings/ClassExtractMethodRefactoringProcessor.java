@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ClassExtractMethodRefactoringProcessor extends AbstractExtractMethodRefactoringProcessor {
@@ -19,7 +19,7 @@ public class ClassExtractMethodRefactoringProcessor extends AbstractExtractMetho
   }
 
   public SNode createMethodCall(SNode declaration, List<SNode> parameters) {
-    if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+    if (!(isStatic)) {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
       SLinkOperations.setTarget(result, "operand", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), true);
       SNode callOperation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
@@ -27,24 +27,24 @@ public class ClassExtractMethodRefactoringProcessor extends AbstractExtractMetho
       SLinkOperations.setTarget(callOperation, "baseMethodDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false);
       ListSequence.fromList(SLinkOperations.getTargets(callOperation, "actualArgument", true)).addSequence(ListSequence.fromList(parameters));
       return result;
-    }
-    if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+    } else {
       SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(call, "classConcept", SNodeOperations.cast(SNodeOperations.getParent(declaration), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
       SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
       ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addSequence(ListSequence.fromList(parameters));
       return call;
     }
-    return null;
   }
 
   public SNode createNewMethod() {
     SNode containerMethod = this.getContainerMethod();
-    if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+    // <node> 
+    if (isStatic) {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
     } else {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
     }
+
   }
 
   @Override

@@ -82,6 +82,7 @@ public abstract class ExtractMethodRefactoring {
       myMethod = this.myStaticContainer.createNewMethod();
     } else {
       IExtractMethodRefactoringProcessor processor = this.myAnalyzer.getExtractMethodReafactoringProcessor();
+      processor.setStatic(this.myParameters.isStatic());
       myMethod = processor.createNewMethod();
     }
     this.fillBaseMethodDeclaration(myMethod, returnType, params, body);
@@ -249,6 +250,26 @@ public abstract class ExtractMethodRefactoring {
   }
 
   public abstract SNode getMethodType();
+
+  public int canBeStatic() {
+    if (!(this.myAnalyzer.canBeStatic())) {
+      return 0;
+    } else {
+      if (!(this.myAnalyzer.shouldBeStatic())) {
+        return 1;
+      } else {
+        return 2;
+      }
+    }
+  }
+
+  public boolean getStatic() {
+    if (this.myAnalyzer.canBeStatic() && this.myAnalyzer.shouldBeStatic()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   public static class QuotationClass_jq3ovj_a0a0a0a0a2a6 {
     public QuotationClass_jq3ovj_a0a0a0a0a2a6() {

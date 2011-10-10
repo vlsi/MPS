@@ -92,6 +92,7 @@ public class ExtractMethod_Action extends GeneratedAction {
           params.value = ExtractMethodFactory.createParameters(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
           refactoring.value = ExtractMethodFactory.createRefactoring(params.value);
           params.value.setReturnType(refactoring.value.getMethodType());
+          params.value.setStatic(refactoring.value.getStatic());
         }
       });
       ExtractMethodDialog dialog = new ExtractMethodDialog(((Frame) MapSequence.fromMap(_params).get("frame")), ((EditorContext) MapSequence.fromMap(_params).get("context")), params.value, refactoring.value);

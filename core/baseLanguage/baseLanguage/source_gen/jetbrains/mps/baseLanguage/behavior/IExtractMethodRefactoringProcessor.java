@@ -11,4 +11,5 @@ public interface IExtractMethodRefactoringProcessor {
   public void addMethod(SNode method);
   public SNode createMethodCall(SNode method, List<SNode> params);
   public SNode getContainerReturnType();
+  public void setStatic(boolean isStatic);
 }
