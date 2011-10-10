@@ -167,7 +167,6 @@ public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
       fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(5);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
-      fieldmodel.setLoading(true);
       return new BaseSModelDescriptor.ModelLoadResult(fieldmodel, ModelLoadingState.FULLY_LOADED);
     }
 
@@ -283,7 +282,6 @@ public class ModelReader5Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
       for (IReferencePersister referencePersister : fieldreferenceDescriptors) {
         referencePersister.createReferenceInModel(fieldmodel, fieldvisibleModelElements);
       }
-      fieldmodel.setLoading(false);
       return true;
     }
   }

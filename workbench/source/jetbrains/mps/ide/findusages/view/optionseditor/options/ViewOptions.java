@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import org.jdom.Element;
 
 public class ViewOptions extends BaseOptions {

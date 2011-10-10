@@ -71,7 +71,6 @@ public class ModelReader3 implements IModelReader {
     model.setPersistenceVersion(getVersion());
     model.getSModelHeader().updateDefaults(header);
 
-    model.setLoading(true);
     try {
       Element maxImportIndex = rootElement.getChild(ModelPersistence.MAX_IMPORT_INDEX);
       if (maxImportIndex == null) {
@@ -174,7 +173,6 @@ public class ModelReader3 implements IModelReader {
       referencePersister.createReferenceInModel(model, visibleModelElements);
     }
 
-    model.setLoading(false);
     return model;
   }
 

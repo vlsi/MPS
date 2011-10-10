@@ -68,8 +68,10 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new MoveFileOrDirectory_Action());
     addAction(new NewDirectory_Action());
     addAction(new NewFile_Action());
+    addAction(new NewLibrary_Action());
     addAction(new NewModel_Action());
     addAction(new NewRuntimeModule_Action());
+    addAction(new NewSolution_Action());
     addAction(new NewSubModel_Action());
     addAction(new NewSubTestModel_Action());
     addAction(new OptimizeModelImports_Action());
@@ -145,6 +147,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new NamespaceActions_ActionGroup());
     addGroup(new NamespaceInternalActions_ActionGroup());
     addGroup(new NamespaceMakeActions_ActionGroup());
+    addGroup(new NamespaceNewActions_ActionGroup());
     addGroup(new NodeActionsInternal_ActionGroup());
     addGroup(new NodeActions_ActionGroup());
     addGroup(new PackageActions_ActionGroup());

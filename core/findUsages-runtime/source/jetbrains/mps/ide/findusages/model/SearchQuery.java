@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.findusages.model;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.BootstrapScope;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;

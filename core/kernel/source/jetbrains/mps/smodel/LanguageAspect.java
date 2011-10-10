@@ -224,7 +224,7 @@ public enum LanguageAspect {
     } else {
       modelRoot = ModelRootUtil.getSModelRoot(structureModel);
     }
-    final SModelDescriptor model = l.createModel(getModuleUID(l), modelRoot);
+    final SModelDescriptor model = l.createModel(getModuleUID(l), modelRoot, null);
     return model;
   }
 

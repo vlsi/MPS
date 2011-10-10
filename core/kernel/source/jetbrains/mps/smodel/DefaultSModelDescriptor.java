@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.StructureModificationLog;
@@ -30,7 +29,6 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -38,7 +36,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor,Refactorable, MetadataContainer {
+public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor, Refactorable, MetadataContainer {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
 
   private Map<String, String> myMetadata;
@@ -54,6 +52,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   private final Object myFullLoadSync = new Object();
   private IModule myModule;
 
+  private boolean myIsLoading = false;
+
   {
     this.addModelCommandListener(new SModelCommandListener() {
       public void eventsHappenedInCommand(List<SModelEvent> events) {
@@ -66,11 +66,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   @Deprecated //todo remove
   public DefaultSModelDescriptor(IModule module, IFile modelFile, SModelReference modelReference) {
-    this(module,new RegularModelDataSource(modelFile), modelReference, new DescriptorLoadResult(), true);
+    this(module, new RegularModelDataSource(modelFile), modelReference, new DescriptorLoadResult(), true);
   }
 
   public DefaultSModelDescriptor(IModule module, ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
-    this(module,source, modelReference, d, true);
+    this(module, source, modelReference, d, true);
   }
 
   protected DefaultSModelDescriptor(IModule module, ModelDataSource source, SModelReference modelReference, DescriptorLoadResult d, boolean checkDup) {
@@ -90,7 +90,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   //updates model with loading state == ROOTS_LOADED
   public void enforceFullLoad() {
     synchronized (myFullLoadSync) {
-      if (mySModel.isLoading()) return;
+      if (myIsLoading) return;
       if (getLoadingState() == ModelLoadingState.FULLY_LOADED) return;
 
       runModelLoading(
@@ -98,16 +98,16 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
           public ModelLoadResult compute() {
             SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
             updateDiskTimestamp();
-            fullModel.setLoading(true);
 
-            try {
-              mySModel.setLoading(true);
-              new ModelLoader(mySModel, fullModel).update();
-              setLoadingState(ModelLoadingState.FULLY_LOADED);
-              fireModelStateChanged(ModelLoadingState.ROOTS_LOADED, ModelLoadingState.FULLY_LOADED);
-            } finally {
-              mySModel.setLoading(false);
-            }
+            myIsLoading = true;
+
+            mySModel.setModelDescriptor(null);
+            new ModelLoader(mySModel, fullModel).update();
+            mySModel.setModelDescriptor(DefaultSModelDescriptor.this);
+
+            setLoadingState(ModelLoadingState.FULLY_LOADED);
+            fireModelStateChanged(ModelLoadingState.ROOTS_LOADED, ModelLoadingState.FULLY_LOADED);
+            myIsLoading = false;
 
             return null;
           }
@@ -319,7 +319,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     reload();
     LOG.assertLog(!needsReloading());
   }
-  
+
   protected void reload() {
     DescriptorLoadResult dr = getSource().loadDescriptor(getModule(), getSModelReference().getSModelFqName());
     myHeader = dr.getHeader();
@@ -332,7 +332,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     ModelLoadResult result = load(getLoadingState());
     replaceModel(result.getModel(), getLoadingState());
   }
-  
+
   public boolean checkAndResolveConflictOnSave() {
     if (needsReloading()) {
       LOG.warning("Model file " + getSModel().getSModelFqName() + " was modified externally!\n" +
@@ -345,7 +345,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     if (needsReloading()) return false;
     return true;
   }
-  
+
   public void resolveDiskConflict() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
@@ -367,7 +367,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
       }
     }, ModalityState.NON_MODAL);
   }
-  
+
   public String toString() {
     return getSModelReference().toString();
   }

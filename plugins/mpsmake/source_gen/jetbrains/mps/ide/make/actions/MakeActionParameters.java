@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
@@ -241,7 +241,7 @@ __switch__:
       }
     })).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor md) {
-        return !(GeneratorManager.isDoNotGenerate(md));
+        return GenerationFacade.canGenerate(md);
       }
     });
     return new ModelsToResources(context, Sequence.fromIterable(smds).toListSequence()).resources(dirtyOnly);

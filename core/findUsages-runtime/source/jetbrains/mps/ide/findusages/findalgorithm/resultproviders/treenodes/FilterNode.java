@@ -16,14 +16,13 @@
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.filters.BaseFilter;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
@@ -95,7 +94,7 @@ public class FilterNode extends BaseNode {
     String filterName = filterXML.getAttribute(CLASS_NAME).getValue();
     try {
       Class filterClass = null;
-      for (Language l : project.getComponent(MPSProject.class).getProjectModules(Language.class)) {
+      for (Language l : project.getProjectModules(Language.class)) {
         filterClass = l.getClass(filterName);
         if (filterClass != null) break;
       }

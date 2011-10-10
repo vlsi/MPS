@@ -58,6 +58,11 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_PropertiesAccessorParameter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
     </node>
+    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="6284324196595852592">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
+      <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="IResource_subtypeOf_ResourceType" />
+    </node>
   </roots>
   <root id="2360002718792535571">
     <node role="anotherNode" roleId="tpd4.1188820750135" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="2360002718792535575">
@@ -374,6 +379,23 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8170824575195246251">
       <property name="name" nameId="tpck.1169194664001" value="pap" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="q9ra.8170824575195231721" resolveInfo="PropertiesAccessorParameter" />
+    </node>
+  </root>
+  <root id="6284324196595852592">
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="6284324196595852593">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6284324196595852604">
+        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6284324196595852606">
+          <node role="quotedNode" roleId="tp3r.1196350785114" type="q9ra.ResourceType" typeId="q9ra.2360002718792446594" id="6284324196595852608" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="6284324196595852595">
+      <property name="name" nameId="tpck.1169194664001" value="iRes" />
+      <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="6284324196595852596">
+        <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6284324196595852600">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yo81.6168415856807657256" resolveInfo="IResource" />
+        </node>
+      </node>
     </node>
   </root>
 </model>

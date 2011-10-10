@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import org.jetbrains.annotations.NonNls;
@@ -59,7 +60,7 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
   public Element getState() {
     Element defaultFindOptionsXML = new Element(DEFAULT_SEARCH_OPTIONS);
     try {
-      myDefaultSearchOptions.write(defaultFindOptionsXML, myProject);
+      myDefaultSearchOptions.write(defaultFindOptionsXML, myProject.getComponent(MPSProject.class));
     } catch (CantSaveSomethingException e) {
       throw new RuntimeException("this exception shouldn't be thrown");
     }
@@ -68,7 +69,7 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
 
   public void loadState(Element state) {
     try {
-      myDefaultSearchOptions.read(state, myProject);
+      myDefaultSearchOptions.read(state, myProject.getComponent(MPSProject.class));
     } catch (CantLoadSomethingException e) {
       myDefaultSearchOptions = new FindUsagesOptions(new FindersOptions(), new ScopeOptions(), new ViewOptions());
     }

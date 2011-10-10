@@ -170,7 +170,6 @@ public abstract class FileSwapOwner implements TransientSwapOwner{
         return null;
       }
 
-      model.setLoading(true);
       List<SNode> roots = new NodesAndUserObjectsReader(modelReference).readNodes(model, is);
       for (SNode r: roots) {
         model.addRoot(r);
@@ -178,9 +177,6 @@ public abstract class FileSwapOwner implements TransientSwapOwner{
 
       // ensure imports are back
       SModelOperations.validateLanguagesAndImports(model, false, false);
-
-      // Don't enable events as this will cause TextGen to fail. See MPS-11184
-  //    model.setLoading(false);
 
       return model;
     }

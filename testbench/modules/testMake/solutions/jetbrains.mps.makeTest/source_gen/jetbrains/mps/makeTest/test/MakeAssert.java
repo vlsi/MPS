@@ -36,7 +36,6 @@ public class MakeAssert {
     IGenerationHandler genType = getFilesGenHandler();
     boolean baseIsOk = changeModelProcessor.changeStep(genType);
     boolean newIsOk = changeModelProcessor.revertStep(genType);
-    changeModelProcessor.getModelToChange().setLoading(false);
     changeModelProcessor.generateModelToChange(genType);
     disposeProject(project);
     assertNoProblems(baseIsOk);

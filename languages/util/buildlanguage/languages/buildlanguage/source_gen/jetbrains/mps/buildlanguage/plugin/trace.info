@@ -492,7 +492,7 @@
     <nodeInfo nodeId="4251154893541676670" fileName="ChildChoosePanel.java" startLine="71" startPosition="7" endLine="72" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4251154893541676682" fileName="ChildChoosePanel.java" startLine="76" startPosition="64" endLine="77" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4251154893541676688" fileName="ChildChoosePanel.java" startLine="77" startPosition="26" endLine="78" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4251154893541676698" fileName="ChildChoosePanel.java" startLine="79" startPosition="5" endLine="80" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4251154893541676698" fileName="ChildChoosePanel.java" startLine="79" startPosition="5" endLine="80" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4251154893541676721" fileName="ChildChoosePanel.java" startLine="85" startPosition="33" endLine="86" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4251154893541676728" fileName="ChildChoosePanel.java" startLine="87" startPosition="5" endLine="88" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4251154893541676734" fileName="ChildChoosePanel.java" startLine="90" startPosition="25" endLine="91" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -571,7 +571,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4251154893541676835" fileName="ChildChoosePanel.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
     <scopeInfo nodeId="4251154893541676601" fileName="ChildChoosePanel.java" startLine="44" startPosition="45" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="4251154893541676679" fileName="ChildChoosePanel.java" startLine="75" startPosition="54" endLine="80" endPosition="82" />
+    <scopeInfo nodeId="4251154893541676679" fileName="ChildChoosePanel.java" startLine="75" startPosition="54" endLine="80" endPosition="79" />
     <scopeInfo nodeId="4251154893541676807" fileName="ChildChoosePanel.java" startLine="121" startPosition="27" endLine="126" endPosition="11" />
     <scopeInfo nodeId="4251154893541676866" fileName="ChildChoosePanel.java" startLine="32" startPosition="41" endLine="39" endPosition="61">
       <varInfo nodeId="4251154893541676881" varName="comboBox" />

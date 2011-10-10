@@ -213,7 +213,7 @@ public class NewGeneratorDialog extends BaseDialog {
       }
     }
     if (!(alreadyOwnsTemplateModel)) {
-      EditableSModelDescriptor templateModelDescriptor = newGenerator.createModel(new SModelFqName(getTemplateModelPrefix(sourceLanguage) + "." + "main", SModelStereotype.GENERATOR), newGenerator.getSModelRoots().get(0));
+      EditableSModelDescriptor templateModelDescriptor = newGenerator.createModel(new SModelFqName(getTemplateModelPrefix(sourceLanguage) + "." + "main", SModelStereotype.GENERATOR), newGenerator.getSModelRoots().get(0), null);
       SModel templateModel = templateModelDescriptor.getSModel();
       templateModel.addLanguage(BootstrapLanguages.GENERATOR);
       templateModel.addLanguage(ModuleReference.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)"));

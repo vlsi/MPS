@@ -107,7 +107,6 @@ public class QueriesGenerated {
     SModel constraintsModel = language.getConstraintsModelDescriptor().getSModel();
     // 
     // setting roots and deleting input roots 
-    structureModel.setLoading(true);
     for (SNode root : ListSequence.fromListWithValues(new ArrayList<SNode>(), SModelOperations.getRoots(structureModel, null))) {
       structureModel.removeRoot(root);
     }
@@ -119,8 +118,6 @@ public class QueriesGenerated {
       SNode concept = MapSequence.fromMap(additionalConceptsToTargets).get(conceptDeclaration);
       SModelOperations.addRootNode(structureModel, concept);
     }
-    structureModel.setLoading(false);
-    editorModel.setLoading(true);
     for (SNode root : ListSequence.fromListWithValues(new ArrayList<SNode>(), SModelOperations.getRoots(editorModel, null))) {
       editorModel.removeRoot(root);
     }
@@ -132,14 +129,10 @@ public class QueriesGenerated {
       SNode editorDeclaration = MapSequence.fromMap(conceptsToEditors).get(MapSequence.fromMap(additionalConceptsToTargets).get(conceptDeclaration));
       SModelOperations.addRootNode(editorModel, editorDeclaration);
     }
-    editorModel.setLoading(false);
-    actionsModel.setLoading(true);
     for (SNode root : ListSequence.fromListWithValues(new ArrayList<SNode>(), SModelOperations.getRoots(actionsModel, null))) {
       actionsModel.removeRoot(root);
     }
     SModelOperations.addRootNode(actionsModel, actions);
-    actionsModel.setLoading(false);
-    constraintsModel.setLoading(true);
     for (SNode root : ListSequence.fromListWithValues(new ArrayList<SNode>(), SModelOperations.getRoots(constraintsModel, null))) {
       constraintsModel.removeRoot(root);
     }
@@ -147,7 +140,6 @@ public class QueriesGenerated {
       SNode conceptConstraints = MapSequence.fromMap(conceptsToConstraints).get(conceptDeclaration);
       SModelOperations.addRootNode(constraintsModel, conceptConstraints);
     }
-    constraintsModel.setLoading(false);
     SModelRepository.getInstance().markChanged(structureModel);
     SModelRepository.getInstance().markChanged(editorModel);
     SModelRepository.getInstance().markChanged(actionsModel);

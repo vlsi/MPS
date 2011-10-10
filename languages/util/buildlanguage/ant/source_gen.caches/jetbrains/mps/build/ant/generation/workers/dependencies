@@ -76,7 +76,7 @@
     <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.GenerateTask" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.workers.BuildMakeService" />
-    <classNode dependClassName="jetbrains.mps.generator.GeneratorManager" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

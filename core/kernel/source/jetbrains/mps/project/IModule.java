@@ -24,6 +24,7 @@ import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Set;
@@ -46,6 +47,7 @@ public interface IModule extends ModelOwner {
    * Explicitly declared deps +
    * <p>explicitly extended languages + all the generators (for a lang)
    * <p>explicitly ref'd generators + source lang + runtime modules of the source lang (for a generator)
+   *
    * @return
    */
   List<Dependency> getDependencies();
@@ -53,12 +55,14 @@ public interface IModule extends ModelOwner {
   /**
    * Explicitly used langs +
    * <p>all bootstrap langs (for a generator)
+   *
    * @return
    */
   List<ModuleReference> getUsedLanguagesReferences();
 
   /**
    * Explicitly used devkits
+   *
    * @return
    */
   List<ModuleReference> getUsedDevkitReferences();
@@ -71,7 +75,7 @@ public interface IModule extends ModelOwner {
 
   //----
 
-  SModelDescriptor createModel(SModelFqName fqName, SModelRoot root);
+  SModelDescriptor createModel(SModelFqName fqName, SModelRoot root, @Nullable ModelAdjuster adj);
 
   List<SModelDescriptor> getOwnModelDescriptors();
 
@@ -118,7 +122,12 @@ public interface IModule extends ModelOwner {
 
   boolean canLoadClasses();
 
+  public static interface ModelAdjuster {
+    void adjust(SModelDescriptor model);
+  }
+
   //-----todo ret rid of
+
   String getModuleFqName();
 
   //todo move to model

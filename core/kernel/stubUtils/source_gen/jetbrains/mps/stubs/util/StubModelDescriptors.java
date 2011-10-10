@@ -4,6 +4,7 @@ package jetbrains.mps.stubs.util;
 
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -13,29 +14,36 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.project.StubModelsResolver;
-import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.project.StubModelsResolver;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public class StubModelDescriptors {
   private String stubStereotype;
-  private ModelRoot modelRoot;
+  private Iterable<ModelRoot> modelRoot;
   private IModule module;
   private boolean gwt;
 
   public StubModelDescriptors(String stereotype, ModelRoot mr, IModule module, boolean gwt) {
+    this(stereotype, Sequence.<ModelRoot>singleton(mr), module, gwt);
+  }
+
+  public StubModelDescriptors(String stereotype, Iterable<ModelRoot> roots, IModule module, boolean gwt) {
     this.stubStereotype = stereotype;
-    this.modelRoot = mr;
+    this.modelRoot = roots;
     this.module = module;
     this.gwt = gwt;
   }
 
   public Set<BaseStubModelDescriptor> getDescriptors(_FunctionTypes._return_P1_E0<? extends PathItem, ? super String> getPathItem) {
     Set<BaseStubModelDescriptor> result = SetSequence.fromSet(new HashSet<BaseStubModelDescriptor>());
-    collectDescriptors(modelRoot, getPathItem, result);
+    for (ModelRoot mr : modelRoot) {
+      collectDescriptors(mr, getPathItem, result);
+    }
     return result;
   }
 
@@ -52,6 +60,10 @@ public class StubModelDescriptors {
         if (descById != null) {
           assert descById.getModule() == module;
           SetSequence.fromSet(result).addElement(((BaseStubModelDescriptor) descById));
+          ModelDataSource dataSource = ((BaseStubModelDescriptor) descById).getSource();
+          if (dataSource instanceof ConfStubSource) {
+            ((ConfStubSource) dataSource).addRoot(loc);
+          }
         } else {
           BaseStubModelDescriptor desc = new BaseStubModelDescriptor(smref, (gwt ?
             new GWTStubsSource(loc) :
@@ -62,7 +74,7 @@ public class StubModelDescriptors {
         }
       }
       ModelRoot mr = new ModelRoot();
-      mr.setPath(modelRoot.getPath());
+      mr.setPath(loc.getPath());
       mr.setPrefix(subpkg);
       collectDescriptors(mr, getPathItem, result);
     }
@@ -79,7 +91,8 @@ public class StubModelDescriptors {
   }
 
   public SModelReference javaStubRef(String pkg) {
-    Set<SModelReference> models = StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pkg, LanguageID.JAVA), null);
+    String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
+    Set<SModelReference> models = StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pkg, stereo), null);
     SModelReference mr = (models.isEmpty() ?
       null :
       models.iterator().next()
@@ -97,7 +110,6 @@ public class StubModelDescriptors {
       mfq = moduleRef.getModuleFqName();
       muid = moduleRef.getModuleId().toString();
     }
-    String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
     SModelFqName fqname = new SModelFqName(mfq, pkg, stereo);
     SModelId modelId = SModelId.foreign(stereo, muid, pkg);
     return new SModelReference(fqname, modelId);

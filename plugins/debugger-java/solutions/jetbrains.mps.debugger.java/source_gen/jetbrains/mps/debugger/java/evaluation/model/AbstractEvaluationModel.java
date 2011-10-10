@@ -21,6 +21,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelOperations;
@@ -47,7 +48,7 @@ import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
-import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.GenerationFacade;
 import java.util.Collections;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.generator.GenerationOptions;
@@ -89,12 +90,10 @@ public abstract class AbstractEvaluationModel {
     }
     myAuxModule = auxModule;
 
-    final EditableSModelDescriptor modelDescriptor = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor(myAuxModule));
-    modelDescriptor.getSModel().runLoadingAction(new Runnable() {
-      public void run() {
-        modelDescriptor.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
-      }
-    });
+    final EditableSModelDescriptor modelDescriptor = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor());
+    modelDescriptor.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
+    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myAuxModule);
+
     myAuxModel = modelDescriptor;
     myEvaluationContext = context;
     myShowContext = isShowContext;
@@ -238,14 +237,12 @@ public abstract class AbstractEvaluationModel {
       String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.") + "tools.jar";
       classpaths.add(ClassPathFactory.getInstance().createFromPath(path, "AbstractEvaluationModel"));
 
-      Project project = myContext.getIdeaProject();
       final String fullClassName = this.myAuxModel.getLongName() + "." + AbstractEvaluationModel.EVALUATOR_NAME;
       InMemoryJavaGenerationHandler handler = new AbstractEvaluationModel.MyInMemoryJavaGenerationHandler(false, true, classpaths);
       Project ideaProject = this.myAuxModule.getMPSProject().getProject();
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
-      GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-      boolean successful = generatorManager.generateModels(Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new IncrementalGenerationStrategy() {
+      boolean successful = GenerationFacade.generateModels(myContext.getProject(), Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new IncrementalGenerationStrategy() {
         public Map<String, String> getModelHashes(SModelDescriptor p0, IOperationContext p1) {
           return Collections.emptyMap();
         }

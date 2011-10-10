@@ -114,13 +114,11 @@ public abstract class BaseTransformationTest extends TestCase {
 
   private final void setModelDescriptor(SModelDescriptor modelDescriptor) {
     myModel = modelDescriptor;
-    myTransidentModel = ProjectModels.createDescriptorFor(myModelOwner = new TemporaryModelOwner());
-    myTransidentModel.getSModel().runLoadingAction(new Runnable() {
-      public void run() {
-        CloneUtil.cloneModel(myModel.getSModel(), myTransidentModel.getSModel(), false);
-      }
-    });
+    myModelOwner = new TemporaryModelOwner();
+    myTransidentModel = ProjectModels.createDescriptorFor();
+    CloneUtil.cloneModel(myModel.getSModel(), myTransidentModel.getSModel(), false);
     SModelOperations.validateLanguagesAndImports(myTransidentModel.getSModel(), false, false);
+    SModelRepository.getInstance().registerModelDescriptor(myTransidentModel, myModelOwner);
   }
 
   public void runTest(final String className, final String methodName, final boolean runInCommand) throws Throwable {

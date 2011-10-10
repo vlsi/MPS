@@ -352,7 +352,7 @@ public class CheckProjectStructureHelper {
               if (reporter.getMessageStatus().equals(MessageStatus.ERROR)) {
                 SNode node = reporter.getSNode();
                 myErrors++;
-                errors.add("Error message: " + reporter.reportError() + "   model: " + node.getModel() + " root: " + node.getContainingRoot() + " node: " + node);
+                errors.add("Error message: " + reporter.reportError() + "   model: " + node.getModel().getLongName() + " root: " + node.getContainingRoot() + " node: " + node);
               }
               if (reporter.getMessageStatus().equals(MessageStatus.WARNING)) {
                 myWarnings++;

@@ -15,17 +15,23 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.generator.impl.GenerationController;
+import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.progress.CancellationMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -34,6 +40,8 @@ import java.util.Map.Entry;
  * Evgeny Gryaznov, 1/25/11
  */
 public class GenerationFacade {
+
+  private static final Logger LOG = Logger.getLogger(GenerationFacade.class);
 
   public static List<SNode/*MappingConfiguration*/> getOwnMappings(Generator generator) {
     List<SModelDescriptor> list = generator.getOwnTemplateModels();
@@ -112,14 +120,84 @@ public class GenerationFacade {
     return result;
   }
 
-  public static boolean generateModels(Project p,
-                                       List<SModelDescriptor> inputModels,
-                                       IOperationContext invocationContext,
-                                       IGenerationHandler generationHandler,
-                                       ProgressMonitor progress,
-                                       IMessageHandler messages,
-                                       GenerationOptions options) {
-    return p.getComponent(GeneratorManager.class).
-      generateModels(inputModels, invocationContext, generationHandler, progress, messages, options);
+  public static boolean canGenerate(SModelDescriptor sm) {
+    if (sm instanceof DefaultSModelDescriptor && ((DefaultSModelDescriptor) sm).isDoNotGenerate()) {
+      return false;
+    }
+    return sm.isGeneratable();
+  }
+
+  public static boolean generateModels(final Project p,
+                                       final List<SModelDescriptor> inputModels,
+                                       final IOperationContext invocationContext,
+                                       final IGenerationHandler generationHandler,
+                                       final ProgressMonitor monitor,
+                                       final IMessageHandler messages,
+                                       final GenerationOptions options) {
+    final boolean[] result = new boolean[1];
+    final TransientModelsComponent transientModelsComponent = p.getComponent(TransientModelsComponent.class);
+
+    // Calls requireWrite at some point
+    transientModelsComponent.startGeneration(options.getNumberOfModelsToKeep());
+
+    options.getGenerationTracer().startTracing();
+
+    ModelAccess.instance().requireWrite(new Runnable() {
+      public void run() {
+        for (SModelDescriptor d : inputModels) {
+          if (d instanceof DefaultSModelDescriptor && ((DefaultSModelDescriptor) d).needsReloading()) {
+            ((DefaultSModelDescriptor) d).reloadFromDisk();
+            LOG.info("Model " + d + " reloaded from disk.");
+          }
+          transientModelsComponent.createModule(d.getModule());
+        }
+      }
+    });
+
+    GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings(), options.isKeepModelsWithWarnings());
+
+    final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext, new CancellationMonitor(monitor));
+    ModelAccess.instance().requireRead(new Runnable() {
+      @Override
+      public void run() {
+        result[0] = UndoHelper.getInstance().runNonUndoableAction(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            return gc.generate(monitor);
+          }
+        });
+      }
+    });
+    ModelAccess.instance().requireWrite(new Runnable() {
+      @Override
+      public void run() {
+        CleanupManager.getInstance().cleanup();
+      }
+    });
+
+    if (result[0]) {
+      try {
+        ModelAccess.instance().requireWrite(new Runnable() {
+          public void run() {
+            //fireModelsGenerated(Collections.unmodifiableList(inputModels), result[0]);
+          }
+        });
+      } catch (RuntimeException e) {
+        LOG.error(e);
+      }
+    }
+
+    options.getGenerationTracer().finishTracing();
+
+    ModelAccess.instance().requireWrite(new Runnable() {
+      public void run() {
+        //fireAfterGeneration(inputModels, options, invocationContext);
+        transientModelsComponent.publishAll();
+        CleanupManager.getInstance().cleanup();
+      }
+    });
+
+    generationHandler.generationCompleted();
+    return result[0];
   }
 }

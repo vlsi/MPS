@@ -190,7 +190,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         newTarget = ListSequence.fromList(methodDeclarationsGoodParams).first();
         good = parmCountPair.o2;
       } else {
-        jetbrains.mps.util.Pair<SNode, Boolean> parmTypesPair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
+        jetbrains.mps.util.Pair<SNode, Boolean> parmTypesPair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(baseMethodDeclaration, methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
         newTarget = parmTypesPair.o1;
         good = parmTypesPair.o2;
       }

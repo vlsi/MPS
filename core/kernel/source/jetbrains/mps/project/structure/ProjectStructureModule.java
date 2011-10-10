@@ -273,7 +273,6 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
 
     protected ModelLoadResult initialLoad() {
       ProjectStructureSModel model = new ProjectStructureSModel(getSModelReference());
-      model.setLoading(true);
       final ModuleDescriptor moduleDescriptor = myModule.getModuleDescriptor();
       IFile file = myModule.getDescriptorFile();
 
@@ -341,6 +340,10 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
   public static class ProjectStructureSModel extends SModel {
     public ProjectStructureSModel(@NotNull SModelReference modelReference) {
       super(modelReference, new ForeignNodeIdMap());
+    }
+
+    protected boolean canFireEvent() {
+      return false;
     }
 
     @Override

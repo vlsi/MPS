@@ -103,9 +103,12 @@ import java.util.Arrays;
       if (onext.isDirectory() == rnext.isDirectory()) {
         if (!(onext.isDirectory())) {
           List<String> olines = fileToStrings(onext);
-          Patch patch = DiffUtils.diff(olines, fileToStrings(rnext));
-          if (!(patch.getDeltas().isEmpty())) {
-            ListSequence.fromList(diffs).addSequence(ListSequence.fromList(DiffUtils.generateUnifiedDiff(onext.getPath(), rnext.getPath(), olines, patch, 5)));
+          List<String> rlines = fileToStrings(rnext);
+          if (ListSequence.fromList(olines).isNotEmpty() && ListSequence.fromList(rlines).isNotEmpty()) {
+            Patch patch = DiffUtils.diff(olines, rlines);
+            if (!(patch.getDeltas().isEmpty())) {
+              ListSequence.fromList(diffs).addSequence(ListSequence.fromList(DiffUtils.generateUnifiedDiff(onext.getPath(), rnext.getPath(), olines, patch, 5)));
+            }
           }
         } else {
           diffDirs(onext, rnext, diffs);

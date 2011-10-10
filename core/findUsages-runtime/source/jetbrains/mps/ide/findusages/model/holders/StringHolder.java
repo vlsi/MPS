@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.ide.findusages.model.holders;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.project.Project;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 

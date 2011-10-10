@@ -16,7 +16,6 @@
 package jetbrains.mps.testbench;
 
 import jetbrains.mps.TestMain;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
@@ -147,6 +146,11 @@ public class ModelsExtractor {
 
   private boolean includeModel(SModelDescriptor modelDescriptor) {
     return SModelStereotype.isUserModel(modelDescriptor) &&
-      (myIncludeDoNotGenerate || !(GeneratorManager.isDoNotGenerate(modelDescriptor)));
+      (myIncludeDoNotGenerate || !(isDoNotGenerate(modelDescriptor)));
+  }
+
+  public static boolean isDoNotGenerate(SModelDescriptor sm) {
+    if (!(sm instanceof DefaultSModelDescriptor)) return false;
+    return ((DefaultSModelDescriptor) sm).isDoNotGenerate();
   }
 }

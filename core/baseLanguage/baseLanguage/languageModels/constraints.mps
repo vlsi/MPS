@@ -1645,7 +1645,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.AndExpression" typeId="tpee.1080120340718" id="748086721413444313">
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="748086721413444316">
                 <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="748086721413490671">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="748086721413435667" resolveInfo="isJavaKeyword" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="748086721413435667" resolveInfo="isJavaReserved" />
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="2043122710974596217" resolveInfo="ConstraintsUtil" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp1t.ConstraintsFunctionParameter_propertyValue" typeId="tp1t.1153138554286" id="748086721413490672" />
                 </node>
@@ -2463,7 +2463,7 @@
   </root>
   <root id="2043122710974596217">
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="748086721413444233">
-      <property name="name" nameId="tpck.1169194664001" value="javaKeywords" />
+      <property name="name" nameId="tpck.1169194664001" value="javaKeywordsAndConstants" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="748086721413444234" />
       <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SetType" typeId="tp2q.1226511727824" id="748086721413444236">
         <node role="elementType" roleId="tp2q.1226511765987" type="tpee.StringType" typeId="tpee.1225271177708" id="748086721413444238" />
@@ -2623,6 +2623,15 @@
               <node role="initValue" roleId="tpee.1154542803372" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="748086721413529880">
                 <property name="value" nameId="tpee.1070475926801" value="while" />
               </node>
+              <node role="initValue" roleId="tpee.1154542803372" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="576141512673829814">
+                <property name="value" nameId="tpee.1070475926801" value="true" />
+              </node>
+              <node role="initValue" roleId="tpee.1154542803372" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="576141512673829816">
+                <property name="value" nameId="tpee.1070475926801" value="false" />
+              </node>
+              <node role="initValue" roleId="tpee.1154542803372" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="576141512673829818">
+                <property name="value" nameId="tpee.1070475926801" value="null" />
+              </node>
               <node role="componentType" roleId="tpee.1154542793668" type="tpee.StringType" typeId="tpee.1225271177708" id="748086721413529828" />
             </node>
           </node>
@@ -2734,14 +2743,14 @@
       </node>
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="748086721413435667">
-      <property name="name" nameId="tpck.1169194664001" value="isJavaKeyword" />
+      <property name="name" nameId="tpck.1169194664001" value="isJavaReserved" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="748086721413444135" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="748086721413435669" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="748086721413435670">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="748086721413444221">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="748086721413444304">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="748086721413444294">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="748086721413444233" resolveInfo="javaKeywords" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="748086721413444233" resolveInfo="javaKeywordsAndConstants" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.ContainsOperation" typeId="tp2q.1172254888721" id="748086721413444308">
               <node role="argument" roleId="tp2q.1172256416782" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="748086721413444310">

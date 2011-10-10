@@ -145,10 +145,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.generator.GeneratorManager</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.generator.TransientModelsComponent</implementation-class>
     </component>
   </project-components>

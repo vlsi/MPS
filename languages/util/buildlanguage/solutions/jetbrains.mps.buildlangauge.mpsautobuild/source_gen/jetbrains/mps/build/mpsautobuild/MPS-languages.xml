@@ -974,9 +974,9 @@
       <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/core/baseLanguage/baseLanguage/baseLanguage.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/classes_gen" />
       <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/utilModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/utilModels" />
-      <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/classes_gen" />
       <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/generator/java/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/java/templates" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -13148,7 +13148,7 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
         <library jar="jetbrains.mps.build.antsupport.jar" />
-        <library jar="/lib/java-diff-utils-1.2.jar" />
+        <library jar="/lib/diffutils-1.2.1.jar" />
         <library jar="/lib/bootstrap.jar" />
         <sources jar="jetbrains.mps.build.antsupport-src.jar" descriptor="jetbrains.mps.build.antsupport.msd" />
       </module>

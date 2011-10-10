@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.BootstrapScope;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;

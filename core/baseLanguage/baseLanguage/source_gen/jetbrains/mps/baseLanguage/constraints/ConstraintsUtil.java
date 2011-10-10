@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 
 public class ConstraintsUtil {
-  private static Set<String> javaKeywords = SetSequence.fromSetAndArray(new HashSet<String>(), new String[]{"abstract", "continue", "for", "new", "switch", "assert", "default", "if", "package", "synchronized", "boolean", "do", "goto", "private", "this", "break", "double", "implements", "protected", "throw", "byte", "else", "import", "public", "throws", "case", "enum", "instanceof", "return", "transient", "catch", "extends", "int", "short", "try", "char", "final", "interface", "static", "void", "class", "finally", "long", "strictfp", "volatile", "const", "float", "native", "super", "while"});
+  private static Set<String> javaKeywordsAndConstants = SetSequence.fromSetAndArray(new HashSet<String>(), new String[]{"abstract", "continue", "for", "new", "switch", "assert", "default", "if", "package", "synchronized", "boolean", "do", "goto", "private", "this", "break", "double", "implements", "protected", "throw", "byte", "else", "import", "public", "throws", "case", "enum", "instanceof", "return", "transient", "catch", "extends", "int", "short", "try", "char", "final", "interface", "static", "void", "class", "finally", "long", "strictfp", "volatile", "const", "float", "native", "super", "while", "true", "false", "null"});
 
   private ConstraintsUtil() {
   }
@@ -32,7 +32,7 @@ public class ConstraintsUtil {
     return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", true, false) != null);
   }
 
-  public static boolean isJavaKeyword(String s) {
-    return SetSequence.fromSet(javaKeywords).contains(s);
+  public static boolean isJavaReserved(String s) {
+    return SetSequence.fromSet(javaKeywordsAndConstants).contains(s);
   }
 }

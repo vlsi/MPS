@@ -8,9 +8,16 @@ import java.io.OutputStream;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Arrays;
 
 /*package*/ class SimpleMerger extends AbstractFileMerger {
   private static byte[] LINE_SEPARATOR = System.getProperty("line.separator").getBytes();
+  private static final String UTF_PANIC_MESSAGE = "Panic! UTF-8 is not supported!";
 
   /*package*/ SimpleMerger() {
   }
@@ -25,10 +32,27 @@ import java.io.IOException;
       localIS = new FileInputStream(localFile);
       latestIS = new FileInputStream(latestFile);
 
+      byte[] baseContent = ReadUtil.read(baseIS);
       byte[] localContent = ReadUtil.read(localIS);
+      byte[] latestContent = ReadUtil.read(latestIS);
       FileUtil.closeFileSafe(localIS);
 
       out = getResultStream(localFile);
+
+      String baseAsString = contentAsString(baseContent);
+      String localAsString = contentAsString(localContent);
+      String latestAsString = contentAsString(latestContent);
+
+      if (baseAsString.equals(localAsString)) {
+        out.write(latestContent);
+        return MERGED;
+      }
+      if (baseAsString.equals(latestAsString) || localAsString.equals(latestAsString)) {
+        out.write(localContent);
+        return MERGED;
+      }
+      // Make possible to load model id correctly when model is in conflicting state 
+      out.write(extractHeader(localContent));
 
       out.write(myConflictStart);
       out.write(LINE_SEPARATOR);
@@ -39,12 +63,12 @@ import java.io.IOException;
       out.write(LINE_SEPARATOR);
 
       // base 
-      out.write(ReadUtil.read(baseIS));
+      out.write(baseContent);
       out.write(mySeparator);
       out.write(LINE_SEPARATOR);
 
       // other 
-      out.write(ReadUtil.read(latestIS));
+      out.write(latestContent);
       out.write(myConflictEnd);
       out.write(LINE_SEPARATOR);
 
@@ -58,5 +82,36 @@ import java.io.IOException;
       FileUtil.closeFileSafe(latestIS);
       FileUtil.closeFileSafe(out);
     }
+  }
+
+  private static String contentAsString(byte[] bytes) {
+    try {
+      return new String(bytes, "UTF-8").replace("\r\n", "\n");
+    } catch (UnsupportedEncodingException e) {
+      throw new AssertionError(UTF_PANIC_MESSAGE);
+    }
+  }
+
+  private static byte[] extractHeader(byte[] xmlContent) {
+    try {
+      String header = new String(xmlContent, 0, 1024, "UTF-8");
+
+      // Pattern for finds text like _<persistence version="7"_ (without underscores) 
+      Matcher matcher = Pattern.compile("<" + ModelPersistence.PERSISTENCE + "\\s+" + ModelPersistence.PERSISTENCE_VERSION + "=\"\\d+\"").matcher(header);
+      if (matcher.find()) {
+        int end = matcher.end();
+        // Try to find _</persistence>_ or _/>_ (without underscores 
+        for (String possibleEnd : ListSequence.fromList(Arrays.asList("</" + ModelPersistence.PERSISTENCE + ">", "/>"))) {
+          int indexOf = header.indexOf(possibleEnd, end + 1);
+          if (indexOf != -1) {
+            header = header.substring(0, indexOf + possibleEnd.length()) + System.getProperty("line.separator");
+            return header.getBytes("UTF-8");
+          }
+        }
+      }
+    } catch (UnsupportedEncodingException e) {
+      throw new AssertionError(UTF_PANIC_MESSAGE);
+    }
+    return new byte[0];
   }
 }

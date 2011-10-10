@@ -28,7 +28,6 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectVersion;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -100,7 +99,7 @@ public class ProjectFactory {
           myCreatedSolution.save();
 
           if (myOptions.getCreateModel()) {
-            EditableSModelDescriptor model = myCreatedSolution.createModel(SModelFqName.fromString(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox"), myCreatedSolution.getSModelRoots().get(0));
+            EditableSModelDescriptor model = myCreatedSolution.createModel(SModelFqName.fromString(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox"), myCreatedSolution.getSModelRoots().get(0), null);
             model.getSModel().addLanguage(myCreatedLanguage.getModuleReference());
             model.save();
           }

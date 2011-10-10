@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
@@ -23,6 +22,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeD
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;

@@ -84,12 +84,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
           }
         });
         myAuxModule.loadNewModels();
-
-        myAuxModel.getSModel().runLoadingAction(new Runnable() {
-          public void run() {
-            createNodesToShow(myAuxModel);
-          }
-        });
+        createNodesToShow(myAuxModel);
       }
     });
   }
@@ -136,11 +131,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   public void updateState() {
     super.updateState();
     if (myDebugSession.getEvaluationProvider().canEvaluate()) {
-      myAuxModel.getSModel().runLoadingAction(new Runnable() {
-        public void run() {
-          createVars();
-        }
-      });
+      createVars();
     }
   }
 

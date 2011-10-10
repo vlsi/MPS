@@ -268,7 +268,6 @@ public class MergeContext {
   }
 
   public void restoreState(MergeContextState state) {
-    myResultModel.setLoading(true);
     MergeContextState stateCopy = new MergeContextState(state);
     ListSequence.fromList(SModelOperations.getRoots(myResultModel, null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
@@ -282,7 +281,6 @@ public class MergeContext {
         SModelOperations.addRootNode(myResultModel, r);
       }
     });
-    myResultModel.setLoading(false);
 
     myResolvedChanges = stateCopy.myResolvedChanges;
     myNodeCopier.setState(stateCopy.myIdReplacementCache, myResultModel);

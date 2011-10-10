@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -28,6 +27,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.IChangeListener;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
@@ -211,7 +211,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     return myViewToolbar;
   }
 
-  public abstract Project getProject();
+  public abstract com.intellij.openapi.project.Project getProject();
 
   class ViewToolbar extends JPanel {
     private PathOptionsToolbar myPathOptionsToolbar;

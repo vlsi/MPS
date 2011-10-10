@@ -279,10 +279,10 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
       return Arrays.asList(ModelCheckerIssue.CATEGORY_KIND_SEVERITY, ModelCheckerIssue.CATEGORY_KIND_ISSUE_TYPE);
     }
 
-    public void write(Element element, Project project) throws CantSaveSomethingException {
+    public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
     }
 
-    public void read(Element element, Project project) throws CantLoadSomethingException {
+    public void read(Element element, jetbrains.mps.project.Project project) throws CantLoadSomethingException {
     }
   }
 }

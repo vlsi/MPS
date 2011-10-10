@@ -24,7 +24,6 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -116,15 +115,10 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
 
     SModel model = result.getModel();
     if (result.getState() == ModelLoadingState.FULLY_LOADED) {
-      try {
-        model.setLoading(true);
-        boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
+      boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
 
-        if (needToSave && !dsm.getModelFile().isReadOnly()) {
-          SModelRepository.getInstance().markChanged(model);
-        }
-      } finally {
-        model.setLoading(false);
+      if (needToSave && !dsm.getModelFile().isReadOnly()) {
+        SModelRepository.getInstance().markChanged(model);
       }
     }
 

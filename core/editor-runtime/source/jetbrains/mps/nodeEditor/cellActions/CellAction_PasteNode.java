@@ -28,10 +28,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.ide.resolve.Resolver;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.SwingUtilities;
 import java.util.List;
@@ -69,8 +66,10 @@ public class CellAction_PasteNode extends EditorCellAction {
   public void execute(final EditorContext context) {
     LOG.assertInCommand();
     final EditorComponent editorComponent = context.getNodeEditorComponent();
-    final EditorCell selectedCell = getCellToPasteTo(editorComponent.getSelectedCell());
-    final SNode selectedNode = selectedCell.getSNode();
+    EditorCell pasteTargetCell = getCellToPasteTo(editorComponent.getSelectedCell());
+    final CellInfo pasteTargetCellInfo = pasteTargetCell.getCellInfo();
+    SNode selectedNode = pasteTargetCell.getSNode();
+    final SNodePointer selectedNodePointer = new SNodePointer(selectedNode);
     final SModel model = selectedNode.getModel();
 
     PasteNodeData data = CopyPasteUtil.getPasteNodeDataFromClipboard(model);
@@ -87,7 +86,11 @@ public class CellAction_PasteNode extends EditorCellAction {
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
+            SNode selectedNode = selectedNodePointer.getNode();
             assert !selectedNode.isDisposed();
+            EditorCell selectedCell = pasteTargetCellInfo.findCell(editorComponent);
+            assert selectedCell != null;
+
             List<SNode> pasteNodes = pasteNodeData.getNodes();
             Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 

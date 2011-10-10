@@ -19,11 +19,11 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ide.dialogs.BaseNodeDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.util.JSplitPaneWithoutBorders;
+import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 import jetbrains.mps.util.Computable;
 
 import javax.swing.AbstractAction;
@@ -56,20 +56,6 @@ public class
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myModel = myType.getModel();
-      }
-    });
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        if (!myType.isRegistered()) {
-          boolean wasLoading = myModel.isLoading();
-          try {
-            myModel.setLoading(true);
-            myWasRegistered = false;
-            myModel.addRoot(myType.getTopmostAncestor());
-          } finally {
-            myModel.setLoading(wasLoading);
-          }
-        }
       }
     });
     myError = error;
@@ -140,14 +126,8 @@ public class
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         if (!myWasRegistered) {
-          boolean wasLoading = myModel.isLoading();
-          try {
-            myModel.setLoading(true);
-            myModel.removeRoot(myType.getTopmostAncestor());
-            myWasRegistered = true;
-          } finally {
-            myModel.setLoading(wasLoading);
-          }
+          myModel.removeRoot(myType.getTopmostAncestor());
+          myWasRegistered = true;
         }
         MyBaseNodeDialog.super.dispose();
       }

@@ -28,7 +28,7 @@ import java.util.Collections;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.make.resources.IResource;
 import java.io.File;
@@ -168,7 +168,7 @@ public class GeneratorWorker extends MpsWorker {
     });
     return Sequence.fromIterable(new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor smd) {
-        return !(GeneratorManager.isDoNotGenerate(smd));
+        return GenerationFacade.canGenerate(smd);
       }
     })).resources(false)).select(new ISelector<IResource, IMResource>() {
       public IMResource select(IResource r) {
