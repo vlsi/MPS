@@ -41,7 +41,7 @@ public class ClasspathReader {
       for (sc = new Scanner(acp, "UTF-8"); sc.hasNextLine(); ) {
         String line = sc.nextLine().trim();
         if (line.startsWith(":")) {
-          skipMode = sTypes.contains(line.substring(1));
+          skipMode = !sTypes.contains(line.substring(1));
           continue;
         }
 
