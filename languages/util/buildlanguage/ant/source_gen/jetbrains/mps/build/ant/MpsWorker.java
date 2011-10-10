@@ -121,7 +121,7 @@ public abstract class MpsWorker {
         disposePlugins();
       }
     } else {
-      // <node> 
+      error("Could not find anything to generate.");
     }
     disposeProjects(go.getProjects());
     dispose();

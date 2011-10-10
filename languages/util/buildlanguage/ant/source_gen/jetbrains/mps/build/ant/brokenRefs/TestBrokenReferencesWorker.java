@@ -48,12 +48,8 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     project.init(projectFile, new ProjectDescriptor());
     MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess();
     collectModelsToGenerate(go);
-    if (go.hasAnythingToGenerate()) {
-      reload();
-      executeTask(project, go);
-    } else {
-      // <node> 
-    }
+    reload();
+    executeTask(project, go);
     dispose();
   }
 

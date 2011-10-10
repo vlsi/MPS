@@ -269,8 +269,8 @@ public class TestGenerationWorker extends MpsWorker {
       MPSProject project = createDummyProject();
       executeTask(project, go);
     } else {
-      // <node> 
-      // <node> 
+      error("Could not find anything to generate.");
+      myTestFailed = true;
     }
 
     cleanUp();
