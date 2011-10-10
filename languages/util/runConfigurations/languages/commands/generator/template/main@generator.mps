@@ -197,8 +197,8 @@
                           </node>
                         </node>
                       </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1715641077095602391">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.6129022259108623165" resolveInfo="getDistinctFieldParameters" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5879917636572465984">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.3754131050835964183" resolveInfo="getDistinctByNameAndTypeFieldParameters" />
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp2q.FindFirstOperation" typeId="tp2q.1225727723840" id="1715641077095602396">
@@ -213,16 +213,16 @@
                                     <link role="link" roleId="tp25.1138056516764" targetNodeId="rzqf.856705193941281758" />
                                   </node>
                                 </node>
-                                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1715641077095609291">
-                                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+                                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5879917636572465987">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.3754131050835964459" resolveInfo="getSetterLongName" />
                                 </node>
                               </node>
                               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1715641077095609273">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1715641077095609272">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1715641077095602399" resolveInfo="it" />
                                 </node>
-                                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1715641077095609277">
-                                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+                                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5879917636572465986">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.3754131050835964459" resolveInfo="getSetterLongName" />
                                 </node>
                               </node>
                             </node>

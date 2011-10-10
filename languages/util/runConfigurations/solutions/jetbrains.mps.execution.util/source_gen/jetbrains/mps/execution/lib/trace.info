@@ -51,10 +51,10 @@
     <nodeInfo nodeId="2792333437699382868" fileName="Java_Command.java" startLine="199" startPosition="11" endLine="200" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2792333437699382952" fileName="Java_Command.java" startLine="202" startPosition="41" endLine="203" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2792333437699382898" fileName="Java_Command.java" startLine="207" startPosition="41" endLine="208" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2792333437699382907" fileName="Java_Command.java" startLine="210" startPosition="28" endLine="211" endPosition="511" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2792333437699382907" fileName="Java_Command.java" startLine="210" startPosition="28" endLine="211" endPosition="530" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2792333437699382932" fileName="Java_Command.java" startLine="212" startPosition="41" endLine="213" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="2792333437699382865" fileName="Java_Command.java" startLine="214" startPosition="7" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8234001627573899333" fileName="Java_Command.java" startLine="216" startPosition="12" endLine="217" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8234001627573899333" fileName="Java_Command.java" startLine="216" startPosition="12" endLine="217" endPosition="325" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3445893456318120628" fileName="Java_Command.java" startLine="221" startPosition="83" endLine="222" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3445893456318120635" fileName="Java_Command.java" startLine="224" startPosition="25" endLine="225" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6129022259108656970" fileName="Java_Command.java" startLine="227" startPosition="7" endLine="228" endPosition="325" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -258,7 +258,7 @@
       <varInfo nodeId="2792333437699382929" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="2792333437699382931" fileName="Java_Command.java" startLine="212" startPosition="41" endLine="213" endPosition="98" />
-    <scopeInfo nodeId="8234001627573899332" fileName="Java_Command.java" startLine="216" startPosition="12" endLine="217" endPosition="306" />
+    <scopeInfo nodeId="8234001627573899332" fileName="Java_Command.java" startLine="216" startPosition="12" endLine="217" endPosition="325" />
     <scopeInfo nodeId="3445893456318120641" fileName="Java_Command.java" startLine="224" startPosition="25" endLine="225" endPosition="51" />
     <scopeInfo nodeId="3445893456318070362" fileName="Java_Command.java" startLine="231" startPosition="91" endLine="232" endPosition="439" />
     <scopeInfo nodeId="3445893456318120648" fileName="Java_Command.java" startLine="238" startPosition="25" endLine="239" endPosition="51" />
@@ -413,7 +413,7 @@
       <varInfo nodeId="3107334613900744311" varName="homes" />
       <varInfo nodeId="3107334613900744306" varName="systemJavaHome" />
     </scopeInfo>
-    <scopeInfo nodeId="2792333437699382867" fileName="Java_Command.java" startLine="199" startPosition="11" endLine="211" endPosition="511">
+    <scopeInfo nodeId="2792333437699382867" fileName="Java_Command.java" startLine="199" startPosition="11" endLine="211" endPosition="530">
       <varInfo nodeId="2792333437699382869" varName="parametersFile" />
       <varInfo nodeId="2792333437699382882" varName="classPathFile" />
       <varInfo nodeId="2792333437699382889" varName="classRunnerClassPath" />

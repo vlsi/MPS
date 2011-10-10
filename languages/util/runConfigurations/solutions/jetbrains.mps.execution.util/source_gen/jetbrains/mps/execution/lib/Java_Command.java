@@ -208,13 +208,13 @@ public class Java_Command {
             return new File(it);
           }
         }).toListSequence();
-        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_String).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classRunnerClassPath, File.pathSeparator))).append("jetbrains.mps.execution.lib.startup.ClassRunner").append(new KeyValueCommandPart("-" + ("c"), className)).append(new KeyValueCommandPart("-" + ("f"), parametersFile)).append(new KeyValueCommandPart("-" + ("p"), classPathFile)).build(myWorkingDirectory_File);
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_ProcessBuilderCommandPart).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classRunnerClassPath, File.pathSeparator))).append("jetbrains.mps.execution.lib.startup.ClassRunner").append(new KeyValueCommandPart("-" + ("c"), className)).append(new KeyValueCommandPart("-" + ("f"), parametersFile)).append(new KeyValueCommandPart("-" + ("p"), classPathFile)).build(myWorkingDirectory_File);
       } catch (FileNotFoundException e) {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
 
     } else {
-      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_String).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPath, File.pathSeparator))).append(className).append(programParameter).build(myWorkingDirectory_File);
+      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_ProcessBuilderCommandPart).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPath, File.pathSeparator))).append(className).append(programParameter).build(myWorkingDirectory_File);
     }
   }
 
