@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.ClasspathReader;
+import jetbrains.mps.ClasspathReader.ClassType;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.Callback;
 import jetbrains.mps.util.PathManager;
 import sun.misc.Launcher;
 
@@ -50,6 +53,8 @@ public class CommonPaths {
     addIfExists(result, "/core/baseLanguage/collections/runtime/classes");
     addIfExists(result, "/core/baseLanguage/collections/languages/trove/runtime/classes");
     addIfExists(result, "/core/baseLanguage/tuples/runtime/classes");
+    addIfExists(result, "/core/runtime/classes");
+
     addIfExists(result, "/core/baseLanguage/closures/runtime/classes");
     addIfExists(result, "/core/baseLanguage/collections/languages/trove/runtime/classes");
     addIfExists(result, "/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar");
@@ -62,8 +67,6 @@ public class CommonPaths {
     addIfExists(result, "/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar");
     addIfExists(result, "/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar");
     addIfExists(result, "/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar");
-    addIfExists(result, "/core/baseLanguage/tuples/runtime/classes");
-    addIfExists(result, "/core/runtime/classes");
     return itemToPath(result);
   }
 
@@ -206,24 +209,18 @@ public class CommonPaths {
     addIfExists(result, "/lib/ecj.jar");
   }
 
-  private static void addClasses(CompositeClassPathItem result, String homePath) {
-    File acp = new File(homePath + File.separator + "build" + File.separator + "idea.additional.classpath.txt");
-    if (!acp.exists()) return;
-
-    try {
-      Scanner sc;
-      for (sc = new Scanner(acp, "UTF-8"); sc.hasNextLine(); ) {
-        File dir = new File(homePath, sc.nextLine());
-        if (!dir.exists()) continue;
+  public static void addClasses(final CompositeClassPathItem result, final String homePath) {
+    ClasspathReader.addClasses(homePath, new Callback<String>() {
+      public void call(String param) {
+        File dir = new File(homePath, param);
+        if (!dir.exists()) return;
         try {
           result.add(ClassPathFactory.getInstance().createFromPath(dir.getAbsolutePath(), "Common paths"));
         } catch (IOException e) {
           LOG.error(e);
         }
       }
-      sc.close();
-    } catch (FileNotFoundException ignore) {
-    }
+    }, ClassType.values());
   }
 
   private static String libPath() {
