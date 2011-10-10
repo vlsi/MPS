@@ -37,7 +37,7 @@ public class CommonPaths {
 
   //--------paths-----------
 
-  public static List<String> getMPSPaths(ClassType type) {
+  public static List<String> getMPSPaths(ClassType ... type) {
     final CompositeClassPathItem result = new CompositeClassPathItem();
     ClasspathReader.addClasses(PathManager.getHomePath(), new Callback<String>() {
       public void call(String param) {
@@ -65,11 +65,6 @@ public class CommonPaths {
       return mpsJarPath;
     }
     return null;
-  }
-
-  @Deprecated
-  public static List<String> getMPSPaths() {
-    return itemToPath(getMPSClassPath());
   }
 
   //------classpaths : JDK--------
