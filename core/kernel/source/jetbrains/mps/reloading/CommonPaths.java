@@ -37,13 +37,18 @@ public class CommonPaths {
 
   //--------paths-----------
 
-  public static List<String> getMPSPaths(ClassType ... type) {
+  public static List<String> getMPSPaths(ClassType... types) {
     final CompositeClassPathItem result = new CompositeClassPathItem();
     ClasspathReader.addClasses(PathManager.getHomePath(), new Callback<String>() {
       public void call(String param) {
         addIfExists(result, File.separator + param);
       }
-    }, type);
+    }, types);
+    for (ClassType type : types) {
+      if (type == ClassType.WORKBENCH) {
+        addJars(result, new File(PathManager.getHomePath()));
+      }
+    }
     return itemToPath(result);
   }
 
