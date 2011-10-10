@@ -205,7 +205,7 @@ public class Classifier_Behavior {
     if (i < 0) {
       resolvedVar = reference;
       // todo method vars 
-    } else if (ListSequence.fromList(SLinkOperations.getTargets(coercedType, "parameter", true)).count() > 0) {
+    } else if (i < ListSequence.fromList(SLinkOperations.getTargets(coercedType, "parameter", true)).count()) {
       resolvedVar = SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(coercedType, "parameter", true)).getElement(i));
     } else {
       resolvedVar = TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091509920(decl);
