@@ -4,7 +4,7 @@
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/core/kernel/source">
+    <stubModelEntry path="${mps_home}/workbench/source">
       <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     </stubModelEntry>
     <stubModelEntry path="${mps_home}/lib/platform.jar">
