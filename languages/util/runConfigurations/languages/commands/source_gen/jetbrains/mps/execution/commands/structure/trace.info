@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Commands_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.Commands_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.StructureAspectDescriptor" />
   <root nodeId="1616228152992023913">
     <nodeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="15" startPosition="83" endLine="16" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1616228152992023913" fileName="CommandPartLengthOperation.java" startLine="16" startPosition="111" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -111,6 +111,70 @@
     <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
     <unitInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExpression.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression" />
+  </root>
+  <root nodeId="2459753140357918802">
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="15" startPosition="78" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="16" startPosition="106" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="18" startPosition="45" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="19" startPosition="64" endLine="20" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="22" startPosition="44" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="26" startPosition="39" endLine="27" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="30" startPosition="49" endLine="31" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="34" startPosition="28" endLine="35" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="38" startPosition="38" endLine="39" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="42" startPosition="37" endLine="43" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="46" startPosition="47" endLine="47" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="50" startPosition="41" endLine="51" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="54" startPosition="49" endLine="55" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="58" startPosition="48" endLine="59" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="62" startPosition="50" endLine="63" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="66" startPosition="69" endLine="67" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="70" startPosition="76" endLine="71" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="74" startPosition="62" endLine="75" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StartAndWaitOperation#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/execution/commands/structure/StartAndWaitOperation;" />
+    <nodeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/execution/commands/structure/StartAndWaitOperation;" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="22" startPosition="44" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="26" startPosition="39" endLine="27" endPosition="69" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="30" startPosition="49" endLine="31" endPosition="69" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="34" startPosition="28" endLine="35" endPosition="57" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="38" startPosition="38" endLine="39" endPosition="57" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="42" startPosition="37" endLine="43" endPosition="67" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="46" startPosition="47" endLine="47" endPosition="67" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="50" startPosition="41" endLine="51" endPosition="70" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="54" startPosition="49" endLine="55" endPosition="82" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="58" startPosition="48" endLine="59" endPosition="85" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="62" startPosition="50" endLine="63" endPosition="64" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="66" startPosition="69" endLine="67" endPosition="73" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="70" startPosition="76" endLine="71" endPosition="198" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="74" startPosition="62" endLine="75" endPosition="56" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <unitInfo nodeId="2459753140357918802" fileName="StartAndWaitOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.StartAndWaitOperation" />
   </root>
   <root nodeId="612376536074296995">
     <nodeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="10" startPosition="53" endLine="11" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

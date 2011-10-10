@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.execution.commands.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.execution.commands.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1810236057992810395">
     <nodeInfo nodeId="1810236057992810395" fileName="ProcessType_Constraints.java" startLine="14" startPosition="36" endLine="15" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1810236057992810395" fileName="ProcessType_Constraints.java" startLine="19" startPosition="82" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -56,6 +56,32 @@
     <scopeInfo nodeId="1810236057992810403" fileName="CommandProcessType_Constraints.java" startLine="19" startPosition="0" endLine="43" endPosition="0" />
     <unitInfo nodeId="1810236057992810403" fileName="CommandProcessType_Constraints.java" startLine="23" startPosition="32" endLine="40" endPosition="5" unitName="jetbrains.mps.execution.commands.constraints.CommandProcessType_Constraints$1" />
     <unitInfo nodeId="1810236057992810403" fileName="CommandProcessType_Constraints.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.constraints.CommandProcessType_Constraints" />
+  </root>
+  <root nodeId="2459753140357929086">
+    <nodeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="17" startPosition="82" endLine="18" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="20" startPosition="46" endLine="21" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="25" startPosition="43" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="30" startPosition="166" endLine="31" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="31" startPosition="102" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="33" startPosition="51" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="35" startPosition="5" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="36" startPosition="0" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2459753140357929089" fileName="StartAndWaitOperation_Constraints.java" startLine="40" startPosition="121" endLine="41" endPosition="478" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StartAndWaitOperation_Constraints#()V" />
+    <nodeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="32" startPosition="0" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/constraints/CanBeAChildContext;)Z" />
+    <nodeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <scopeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="20" startPosition="46" endLine="21" endPosition="78" />
+    <scopeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="25" startPosition="43" endLine="26" endPosition="16" />
+    <scopeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="33" startPosition="51" endLine="34" endPosition="67" />
+    <scopeInfo nodeId="2459753140357929088" fileName="StartAndWaitOperation_Constraints.java" startLine="40" startPosition="121" endLine="41" endPosition="478" />
+    <scopeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="3" />
+    <scopeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="30" startPosition="166" endLine="37" endPosition="18" />
+    <scopeInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
+    <unitInfo nodeId="2459753140357929086" fileName="StartAndWaitOperation_Constraints.java" startLine="17" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.constraints.StartAndWaitOperation_Constraints" />
   </root>
   <root nodeId="3445893456318182149">
     <nodeInfo nodeId="3445893456318182149" fileName="CommandBuilderExpression_Constraints.java" startLine="16" startPosition="49" endLine="17" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

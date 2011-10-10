@@ -26,11 +26,11 @@ import java.io.IOException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessEvent;
-import java.util.concurrent.CountDownLatch;
 import jetbrains.mps.execution.api.commands.OutputRedirector;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
+import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import junit.framework.Assert;
 
 @MPSLaunch
@@ -93,39 +93,30 @@ public class JavaCommand_Test extends BaseTransformationTest {
     public void checkProcess(ProcessHandler process, final String expectedSysErr) {
       final ProcessEvent[] failed = new ProcessEvent[1];
       final boolean[] printed = new boolean[1];
-      try {
-        // todo show progress window 
-        final CountDownLatch countDown = new CountDownLatch(1);
-        OutputRedirector.redirect(process, new ProcessAdapter() {
-          @Override
-          public void processTerminated(ProcessEvent event) {
-            countDown.countDown();
-          }
-
-          @Override
-          public void onTextAvailable(ProcessEvent event, Key key) {
-            if (ProcessOutputTypes.STDERR.equals(key)) {
-              if (neq_849b2c_a0a0a0b0a1a2a2a3a(event.getText(), expectedSysErr)) {
-                failed[0] = event;
-              } else {
-                printed[0] = true;
-              }
-            } else if (!(ProcessOutputTypes.SYSTEM.equals(key))) {
+      // todo show progress window 
+      OutputRedirector.redirect(process, new ProcessAdapter() {
+        @Override
+        public void onTextAvailable(ProcessEvent event, Key key) {
+          if (ProcessOutputTypes.STDERR.equals(key)) {
+            if (neq_849b2c_a0a0a0a0a1a3a3a(event.getText(), expectedSysErr)) {
               failed[0] = event;
+            } else {
+              printed[0] = true;
             }
+          } else if (!(ProcessOutputTypes.SYSTEM.equals(key))) {
+            failed[0] = event;
           }
-        });
-        process.startNotify();
-        countDown.await();
-        if (failed[0] != null) {
-          Assert.fail(failed[0].getText());
         }
-        if (!(printed[0])) {
-          Assert.fail("Did not print required message!");
-        }
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-        Assert.fail(e.getMessage());
+      });
+      int exitCode = ProcessHandlerBuilder.startAndWait(process);
+      if (failed[0] != null) {
+        Assert.fail(failed[0].getText());
+      }
+      if (!(printed[0])) {
+        Assert.fail("Did not print required message!");
+      }
+      if (exitCode != 0) {
+        Assert.fail("Exit with code " + exitCode);
       }
     }
 
@@ -136,7 +127,7 @@ public class JavaCommand_Test extends BaseTransformationTest {
       );
     }
 
-    private static boolean neq_849b2c_a0a0a0b0a1a2a2a3a(Object a, Object b) {
+    private static boolean neq_849b2c_a0a0a0a0a1a3a3a(Object a, Object b) {
       return !((a != null ?
         a.equals(b) :
         a == b

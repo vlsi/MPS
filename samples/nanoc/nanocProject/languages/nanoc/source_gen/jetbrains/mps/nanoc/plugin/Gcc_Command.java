@@ -7,6 +7,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.execution.ExecutionException;
+import org.apache.commons.lang.StringUtils;
 import java.io.File;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -40,7 +41,7 @@ public class Gcc_Command {
   }
 
   public ProcessHandler createProcess(SNode file) throws ExecutionException {
-    if (!(new File(myGccLocation_String).exists())) {
+    if (StringUtils.isEmpty(myGccLocation_String) || !(new File(myGccLocation_String).exists())) {
       throw new ExecutionException("Could not find gcc by path " + myGccLocation_String);
     }
 
@@ -49,6 +50,7 @@ public class Gcc_Command {
       throw new ExecutionException("Source file " + sourceFile + " does not exist. Can't compile it.");
     }
     IFile executableFile = Gcc_Command.getExecutableFile(file);
+    executableFile.getParent().mkdirs();
 
     // -xc -- specifies source language (c) 
     // -g -- save debug information 

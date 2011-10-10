@@ -21,10 +21,9 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.concurrent.CountDownLatch" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.OutputRedirector" />
+    <classNode dependClassName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nanoc.plugin.Gcc_Command" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -92,6 +91,7 @@
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.plugin.Gdb_Command" file="Gdb_Command.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />

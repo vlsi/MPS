@@ -16,6 +16,9 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.io.IOException;
 import com.intellij.execution.process.ProcessNotCreatedException;
 import com.intellij.execution.configurations.GeneralCommandLine;
+import java.util.concurrent.CountDownLatch;
+import com.intellij.execution.process.ProcessAdapter;
+import com.intellij.execution.process.ProcessEvent;
 
 public class ProcessHandlerBuilder {
   private final List<String> myCommandLine = ListSequence.fromList(new ArrayList<String>());
@@ -147,5 +150,23 @@ public class ProcessHandlerBuilder {
       ListSequence.fromList(result).addElement(sb.toString());
     }
     return result;
+  }
+
+  public static int startAndWait(ProcessHandler process) {
+    final CountDownLatch countDown = new CountDownLatch(1);
+    final int[] exitCode = new int[]{1};
+    OutputRedirector.redirect(process, new ProcessAdapter() {
+      @Override
+      public void processTerminated(ProcessEvent event) {
+        exitCode[0] = event.getExitCode();
+        countDown.countDown();
+      }
+    });
+    process.startNotify();
+    try {
+      countDown.await();
+    } catch (InterruptedException e) {
+    }
+    return exitCode[0];
   }
 }
