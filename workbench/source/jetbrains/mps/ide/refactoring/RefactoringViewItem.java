@@ -80,10 +80,12 @@ public abstract class RefactoringViewItem {
         return null;
       }
 
-      public void read(Element element, Project p) {
+      @Override
+      public void read(Element element, jetbrains.mps.project.Project p) {
       }
 
-      public void write(Element element, Project p) {
+      @Override
+      public void write(Element element, jetbrains.mps.project.Project p) {
       }
     };
     myButtonsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));

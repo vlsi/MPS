@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.ide.findusages.view.optionseditor;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions;
+import jetbrains.mps.project.Project;
 import org.jdom.Element;
 
 import java.lang.reflect.InvocationTargetException;

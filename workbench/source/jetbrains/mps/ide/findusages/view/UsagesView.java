@@ -203,7 +203,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
 
   //----SAVE/LOAD STUFF----
 
-  public void read(Element element, Project project) throws CantLoadSomethingException {
+  public void read(Element element, jetbrains.mps.project.Project project) throws CantLoadSomethingException {
     assert !myIsInitialized;
     myIsInitialized = true;
 
@@ -227,7 +227,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
     myTreeComponent.read(treeWrapperXML, project);
   }
 
-  public void write(Element element, Project project) throws CantSaveSomethingException {
+  public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
     Element optionsXML = new Element(BUTTONS);
     myButtonConfiguration.write(optionsXML, project);
     element.addContent(optionsXML);
@@ -267,7 +267,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
       myShowCloseButton = true;
     }
 
-    public ButtonConfiguration(Element optionsXML, Project project) {
+    public ButtonConfiguration(Element optionsXML, jetbrains.mps.project.Project project) {
       read(optionsXML, project);
     }
 
@@ -283,13 +283,13 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
       return myShowCloseButton;
     }
 
-    public void read(Element element, Project project) {
+    public void read(Element element, jetbrains.mps.project.Project project) {
       myShowRerunButton = Boolean.parseBoolean(element.getAttributeValue(RERUN));
       myShowRegenerateButton = Boolean.parseBoolean(element.getAttributeValue(REGENERATE));
       myShowCloseButton = Boolean.parseBoolean(element.getAttributeValue(CLOSE));
     }
 
-    public void write(Element element, Project project) {
+    public void write(Element element, jetbrains.mps.project.Project project) {
       element.setAttribute(RERUN, Boolean.toString(myShowRerunButton));
       element.setAttribute(REGENERATE, Boolean.toString(myShowRegenerateButton));
       element.setAttribute(CLOSE, Boolean.toString(myShowCloseButton));
