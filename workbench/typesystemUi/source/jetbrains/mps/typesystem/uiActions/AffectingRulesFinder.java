@@ -16,12 +16,12 @@
 
 package jetbrains.mps.typesystem.uiActions;
 
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.newTypesystem.NodeTypesComponent;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -37,7 +37,7 @@ import java.util.List;
 import java.util.Set;
 
 public class AffectingRulesFinder implements IFinder {
-  public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
+  public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SNode term = (SNode) query.getObjectHolder().getObject();
     SNode root = term.getContainingRoot();
 

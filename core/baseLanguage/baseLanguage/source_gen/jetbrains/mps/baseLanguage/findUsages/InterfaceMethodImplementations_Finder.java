@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -38,9 +38,9 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface") && SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.Interface", "method");
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
-    for (SNode implementor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
+    for (SNode implementor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, monitor))) {
       ListSequence.fromList(implementorsAndAncestorsList).addElement(implementor);
     }
     for (SNode classNode : ListSequence.fromList(implementorsAndAncestorsList).select(new ISelector<SNode, SNode>() {

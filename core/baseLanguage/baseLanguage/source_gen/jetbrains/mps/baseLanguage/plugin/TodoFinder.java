@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.findUsages.FindUsagesManager;
@@ -17,7 +17,7 @@ public class TodoFinder implements IFinder {
   public TodoFinder() {
   }
 
-  public SearchResults find(SearchQuery query, ProgressIndicator p) {
+  public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     List<SNode> nodes = FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart"), query.getScope());
     SearchResults<SNode> results = new SearchResults<SNode>();
     for (SNode node : nodes) {

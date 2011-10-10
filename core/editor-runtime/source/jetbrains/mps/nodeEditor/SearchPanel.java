@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseNode;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -28,6 +27,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.text.TextRenderUtil;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -99,7 +99,7 @@ public class SearchPanel extends AbstractSearchPanel {
       selectionStart = labelCell.getSelectionStart();
     }
     SearchEntry entryToSelect = null;
-    for (ListIterator<SearchEntry> it = mySearchEntries.listIterator(mySearchEntries.size()); it.hasPrevious() && entryToSelect == null;) {
+    for (ListIterator<SearchEntry> it = mySearchEntries.listIterator(mySearchEntries.size()); it.hasPrevious() && entryToSelect == null; ) {
       SearchEntry currentEntry = it.previous();
       if (currentEntry.getStartLabel().equals(selectedCell)) {
         while (entryToSelect == null) {
@@ -130,7 +130,7 @@ public class SearchPanel extends AbstractSearchPanel {
       selectionEnd = labelCell.getSelectionEnd();
     }
     SearchEntry entryToSelect = null;
-    for (ListIterator<SearchEntry> it = mySearchEntries.listIterator(); it.hasNext() && entryToSelect == null;) {
+    for (ListIterator<SearchEntry> it = mySearchEntries.listIterator(); it.hasNext() && entryToSelect == null; ) {
       SearchEntry currentEntry = it.next();
       if (currentEntry.getStartLabel().equals(selectedCell)) {
         while (entryToSelect == null) {
@@ -224,7 +224,7 @@ public class SearchPanel extends AbstractSearchPanel {
         // found text does not belong to any cell. Looking for next entry.
         continue;
       }
-      
+
       EditorCell_Label startCell = cells.get(index);
       assert startCell != null;
 
@@ -298,7 +298,8 @@ public class SearchPanel extends AbstractSearchPanel {
     });
     UsagesViewTool usagesViewTool = new UsagesViewTool(myEditor.getOperationContext().getIdeaProject());
     BaseNode baseNode = new BaseNode() {
-      public SearchResults doGetResults(SearchQuery query, ProgressIndicator indicator) {
+      public SearchResults doGetResults(SearchQuery query, @NotNull ProgressMonitor monitor) {
+        monitor.start("", 1);
         SearchResults<SNode> searchResults = new SearchResults<SNode>();
         for (SearchPanelEditorMessage message : searchMessages) {
           EditorCell cell = message.getCell(myEditor);
@@ -306,6 +307,7 @@ public class SearchPanel extends AbstractSearchPanel {
           SNode node = cell.getSNode();
           searchResults.getSearchResults().add(new SearchResult<SNode>(node, "Search Panel"));
         }
+        monitor.done();
         return searchResults;
       }
     };

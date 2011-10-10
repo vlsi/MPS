@@ -15,18 +15,24 @@
  */
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.annotations.NotNull;
 
 public class UnionNode extends BaseNode {
-  public SearchResults doGetResults(SearchQuery query, ProgressIndicator indicator) {
+  public SearchResults doGetResults(SearchQuery query, @NotNull ProgressMonitor monitor) {
     SearchResults results = new SearchResults();
-    for (BaseNode child : myChildren) {
-      if (indicator.isCanceled()) break;
-      SearchResults childResults = child.getResults(query, indicator);
-      results.getSearchResults().addAll(childResults.getSearchResults());
-      results.getSearchedNodes().addAll(childResults.getSearchedNodes());
+    monitor.start("", myChildren.size());
+    try {
+      for (BaseNode child : myChildren) {
+        if (monitor.isCanceled()) break;
+        SearchResults childResults = child.getResults(query, monitor.subTask(1));
+        results.getSearchResults().addAll(childResults.getSearchResults());
+        results.getSearchedNodes().addAll(childResults.getSearchedNodes());
+      }
+    } finally {
+      monitor.done();
     }
     return results;
   }

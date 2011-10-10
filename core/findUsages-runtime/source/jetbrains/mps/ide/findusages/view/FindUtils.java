@@ -29,6 +29,8 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
@@ -43,57 +45,83 @@ import java.util.List;
 public class FindUtils {
   private static final Logger LOG = Logger.getLogger(FindUtils.class);
 
+  public static SearchResults getSearchResults(@Nullable final ProgressIndicator monitor, final @NotNull SNode node, final IScope scope, final String... finderClassNames) {
+    return getSearchResults(new ProgressMonitorAdapter(monitor), node, scope, finderClassNames);
+  }
+
   @Deprecated
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final @NotNull SNode node, final IScope scope, final String... finderClassNames) {
+  public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final IScope scope, final String... finderClassNames) {
     List<GeneratedFinder> finders = new ArrayList<GeneratedFinder>(finderClassNames.length);
     for (String finderClassName : finderClassNames) {
       GeneratedFinder finder = getFinderByClassName(finderClassName);
       if (finder != null) finders.add(finder);
     }
 
-    return getSearchResults(indicator, new SearchQuery(node, scope), finders.toArray(new GeneratedFinder[0]));
+    return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new GeneratedFinder[0]));
   }
 
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final @NotNull SNode node, final IScope scope, final ModuleClassReference<GeneratedFinder>... finderClasses) {
+  public static SearchResults getSearchResults(@Nullable final ProgressIndicator monitor, final @NotNull SNode node, final IScope scope, final ModuleClassReference<GeneratedFinder>... finderClasses) {
+    return getSearchResults(new ProgressMonitorAdapter(monitor), node, scope, finderClasses);
+  }
+
+  public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final IScope scope, final ModuleClassReference<GeneratedFinder>... finderClasses) {
     List<GeneratedFinder> finders = new ArrayList<GeneratedFinder>(finderClasses.length);
     for (ModuleClassReference<GeneratedFinder> finderClass : finderClasses) {
       GeneratedFinder finder = getFinderByClass(finderClass);
       if (finder != null) finders.add(finder);
     }
 
-    return getSearchResults(indicator, new SearchQuery(node, scope), finders.toArray(new GeneratedFinder[0]));
+    return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new GeneratedFinder[0]));
   }
 
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final SearchQuery query, final IFinder... finders) {
+  public static SearchResults getSearchResults(@Nullable final ProgressMonitor indicator, final SearchQuery query, final IFinder... finders) {
     return getSearchResults(indicator, query, makeProvider(finders));
   }
 
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final SearchQuery query, final IResultProvider provider) {
+  @Deprecated
+  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final SearchQuery query, final IFinder... finders) {
+    return getSearchResults(new ProgressMonitorAdapter(indicator), query, finders);
+  }
+
+  public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final SearchQuery query, final IResultProvider provider) {
     final SearchResults[] results = new SearchResults[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        results[0] = provider.getResults(query, indicator);
+        results[0] = provider.getResults(query, monitor);
       }
     });
     return results[0];
   }
 
   @Deprecated
+  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final SearchQuery query, final IResultProvider provider) {
+    return getSearchResults(new ProgressMonitorAdapter(indicator), query, provider);
+  }
+
   public static List<SNode> executeFinder(String className, SNode node, IScope scope, ProgressIndicator indicator) {
+    return executeFinder(className, node, scope, new ProgressMonitorAdapter(indicator));
+  }
+
+  @Deprecated
+  public static List<SNode> executeFinder(String className, SNode node, IScope scope, ProgressMonitor monitor) {
     List<SNode> result = new ArrayList<SNode>();
     IInterfacedFinder finder = getFinderByClassName(className);
     if (finder == null) return result;
-    for (SearchResult<SNode> searchResult : finder.find(new SearchQuery(node, scope), indicator).getSearchResults()) {
+    for (SearchResult<SNode> searchResult : finder.find(new SearchQuery(node, scope), monitor).getSearchResults()) {
       result.add(searchResult.getObject());
     }
     return result;
   }
 
   public static List<SNode> executeFinder(ModuleClassReference<GeneratedFinder> finderClass, SNode node, IScope scope, ProgressIndicator indicator) {
+    return executeFinder(finderClass, node, scope, new ProgressMonitorAdapter(indicator));
+  }
+
+  public static List<SNode> executeFinder(ModuleClassReference<GeneratedFinder> finderClass, SNode node, IScope scope, ProgressMonitor monitor) {
     List<SNode> result = new ArrayList<SNode>();
     IInterfacedFinder finder = getFinderByClass(finderClass);
     if (finder == null) return result;
-    for (SearchResult<SNode> searchResult : finder.find(new SearchQuery(node, scope), indicator).getSearchResults()) {
+    for (SearchResult<SNode> searchResult : finder.find(new SearchQuery(node, scope), monitor).getSearchResults()) {
       result.add(searchResult.getObject());
     }
     return result;

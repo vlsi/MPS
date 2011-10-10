@@ -22,6 +22,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -115,7 +116,7 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               for (String finderClass : ListSequence.fromList(finderClasses)) {
-                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finderClass, ((SNode) MapSequence.fromMap(_params).get("classifierNode")), GlobalScope.getInstance(), p)));
+                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finderClass, ((SNode) MapSequence.fromMap(_params).get("classifierNode")), GlobalScope.getInstance(), new ProgressMonitorAdapter(p))));
               }
             }
           });

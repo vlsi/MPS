@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -46,7 +46,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     List<SNode> allAncestors = new ArrayList<SNode>();
     SNode method = node;
     boolean isStatic = SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
@@ -54,11 +54,11 @@ public class BaseMethod_Finder extends GeneratedFinder {
     SNode interfaceNode = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Interface", false, false);
     if (classNode != null) {
       ListSequence.fromList(allAncestors).addElement(classNode);
-      ListSequence.fromList(allAncestors).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", classNode, scope, indicator)));
-      ListSequence.fromList(allAncestors).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder", classNode, scope, indicator)));
+      ListSequence.fromList(allAncestors).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", classNode, scope, monitor)));
+      ListSequence.fromList(allAncestors).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder", classNode, scope, monitor)));
     } else if (interfaceNode != null) {
       ListSequence.fromList(allAncestors).addElement(interfaceNode);
-      ListSequence.fromList(allAncestors).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", interfaceNode, scope, indicator)));
+      ListSequence.fromList(allAncestors).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", interfaceNode, scope, monitor)));
     }
     Set<SNode> results = SetSequence.fromSet(new HashSet<SNode>());
     for (SNode ancestor : ListSequence.fromList(allAncestors)) {

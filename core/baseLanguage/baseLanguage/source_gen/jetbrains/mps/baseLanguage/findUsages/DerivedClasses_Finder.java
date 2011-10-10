@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,14 +31,14 @@ public class DerivedClasses_Finder extends GeneratedFinder {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     List<SNode> derived = new ArrayList<SNode>();
     ListSequence.fromList(derived).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     // 
     int passed = 0;
     while (ListSequence.fromList(derived).count() != passed) {
       SNode passingNode = ListSequence.fromList(derived).getElement(passed);
-      for (SNode classNode : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", passingNode, scope, indicator)) {
+      for (SNode classNode : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", passingNode, scope, monitor)) {
         ListSequence.fromList(derived).addElement(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       }
       if (passingNode != node) {

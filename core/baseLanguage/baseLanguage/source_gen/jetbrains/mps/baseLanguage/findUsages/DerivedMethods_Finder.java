@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.index.ClassifierSuccessorsFinder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -38,7 +38,7 @@ public class DerivedMethods_Finder extends GeneratedFinder {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
-  protected void doFind(SNode node, IScope scope, final List<SNode> _results, ProgressIndicator indicator) {
+  protected void doFind(SNode node, IScope scope, final List<SNode> _results, ProgressMonitor monitor) {
     SNode classifier = (SNode) SNodeOperations.getParent(node);
     final SNode instanceMethod = node;
     for (SNode derivedClassifier : ListSequence.fromList(ClassifierSuccessorsFinder.getDerivedClassifiers(classifier, scope))) {

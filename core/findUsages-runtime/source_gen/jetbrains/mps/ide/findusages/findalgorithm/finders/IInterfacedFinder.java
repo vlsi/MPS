@@ -5,7 +5,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 
 public interface IInterfacedFinder extends IFinder {
   public String getConcept();
@@ -15,5 +15,5 @@ public interface IInterfacedFinder extends IFinder {
   public String getLongDescription();
   public boolean canNavigate();
   public SNode getNodeToNavigate();
-  public SearchResults<SNode> find(SearchQuery query, ProgressIndicator indicator);
+  public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor);
 }

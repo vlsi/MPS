@@ -59,7 +59,7 @@ public class QueriesGenerated {
     return FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1212240333211(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_5140158946217876028(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return FinderDeclaration_Behavior.call_getGeneratedClassLongName_1213877240120(SLinkOperations.getTarget(_context.getNode(), "finder", false));
   }
 
@@ -121,11 +121,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "categorizeBlock", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1212240333229(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5140158946217876046(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "queryScope", true) == null;
   }
 
-  public static boolean ifMacro_Condition_1212240333248(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5140158946217876065(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.findUsages.structure.FindBlock", false, false) != null;
   }
 
@@ -169,11 +169,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "foundNode", true);
   }
 
-  public static SNode sourceNodeQuery_1212240333221(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_5140158946217876038(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "queryNode", true);
   }
 
-  public static SNode sourceNodeQuery_1212240333240(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_5140158946217876057(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "queryScope", true);
   }
 

@@ -82,7 +82,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
   private static SNodePointer templateNode_i5yf3w_a0a0a1a7a1a01a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "1206533661669");
   private static SNodePointer templateNode_i5yf3w_a0a0a1a4a1a7a1a01a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "1206533661670");
   private static SNodePointer templateNode_i5yf3w_a0a0a1a8a1a01a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "1207142236666");
-  private static SNodePointer templateNode_i5yf3w_a0a0a1a4a1a8a1a01a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "1207142261477");
+  private static SNodePointer templateNode_i5yf3w_a0a0a1a4a1a8a1a01a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "5140158946217876019");
   private static SNodePointer templateNode_i5yf3w_a0a0a1a9a1a01a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "1206533674591");
   private static SNodePointer copySrcMacro_i5yf3w_a0a0a1a01a1a01a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "1206533715311");
   private static SNodePointer ifMacroRef_i5yf3w_a0a0a1a11a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "1218978335314");
@@ -910,14 +910,14 @@ public class TemplateFinderClass implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a8a1a01a1a2);
               environment.nodeCopied(context, tnode55, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142236666");
-              tnode55.setProperty("name", "indicator");
+              tnode55.setProperty("name", "monitor");
 
               {
                 final SNode tnode56 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.ClassifierType", false);
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a8a1a01a1a2);
-                  environment.nodeCopied(context, tnode56, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142261477");
-                  tnode56.addReference(SReference.create("classifier", tnode56, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)"), SNodeId.fromString("~ProgressIndicator")));
+                  environment.nodeCopied(context, tnode56, "tpl/r:00000000-0000-4000-0000-011c8959035c/5140158946217876019");
+                  tnode56.addReference(SReference.create("classifier", tnode56, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(tnode56);

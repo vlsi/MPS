@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -37,14 +37,14 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null;
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     // search for straight usages & search for SUPER calls 
     // BUG IN BASE LANGUAGE -- AT THE TIME THIS THING DOES NOT FIND SUPER() CALLS 
-    for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator))) {
+    for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor))) {
       ListSequence.fromList(_results).addElement(nodeUsage);
     }
     // WORKAROUND - FIND SUPER() CALLS 
-    for (SNode subclassResult : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope, indicator))) {
+    for (SNode subclassResult : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope, monitor))) {
       for (SNode constructorNode : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(subclassResult, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true))) {
         for (SNode invocation : ListSequence.fromList(SNodeOperations.getDescendants(constructorNode, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

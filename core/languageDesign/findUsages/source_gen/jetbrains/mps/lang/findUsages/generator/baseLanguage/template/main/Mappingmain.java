@@ -335,7 +335,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                   try {
                     environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a3a2a0b0b0f0c0e4);
                     environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c8959035c/7222148688691894707");
-                    tnode5.addReference(SReference.create("baseMethodDeclaration", tnode5, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)"), SNodeId.fromString("~EmptyProgressIndicator.<init>()")));
+                    tnode5.addReference(SReference.create("baseMethodDeclaration", tnode5, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~EmptyProgressMonitor.<init>()")));
 
                   } finally {
                     environment.getTracer().pushOutputNode(tnode5);

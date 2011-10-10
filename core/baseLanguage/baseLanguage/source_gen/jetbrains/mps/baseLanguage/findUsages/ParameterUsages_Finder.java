@@ -8,11 +8,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class ParameterUsages_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ParameterUsages_Finder");
@@ -36,15 +36,15 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     return (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false) != null);
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     SNode nodeParentMethod = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false);
     // 
-    List<SNode> overridingMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, indicator);
+    List<SNode> overridingMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, monitor);
     ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
     // 
     for (SNode methodNode : ListSequence.fromList(overridingMethods)) {
       SNode parameterNode = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node));
-      for (SNode parameterUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", parameterNode, scope, indicator))) {
+      for (SNode parameterUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", parameterNode, scope, monitor))) {
         ListSequence.fromList(_results).addElement(parameterUsage);
       }
     }
@@ -53,7 +53,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     SNode nodeParentMethod = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false);
     // 
-    List<SNode> overridingMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, new EmptyProgressIndicator());
+    List<SNode> overridingMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, new EmptyProgressMonitor());
     ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
     // 
     for (SNode methodNode : ListSequence.fromList(overridingMethods)) {

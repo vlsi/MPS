@@ -6,7 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import javax.swing.Icon;
 import java.util.Collection;
@@ -24,7 +24,7 @@ public class ConstantFinder implements IFinder {
   public ConstantFinder() {
   }
 
-  public SearchResults<SNode> find(SearchQuery query, ProgressIndicator indicator) {
+  public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     return myResults;
   }
 

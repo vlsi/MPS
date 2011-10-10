@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -32,15 +32,15 @@ public class ImplementedInterfaces_Finder extends GeneratedFinder {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     List<SNode> result = new ArrayList<SNode>();
-    List<SNode> classNodes = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", node, scope, indicator);
+    List<SNode> classNodes = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", node, scope, monitor);
     ListSequence.fromList(classNodes).addElement(node);
     for (SNode classNode : ListSequence.fromList(classNodes)) {
       for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "implementedInterface", true))) {
         SNode interfaceNode = (SNode) SLinkOperations.getTarget(implementedInterface, "classifier", false);
         ListSequence.fromList(result).addElement(interfaceNode);
-        ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SNode>) FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", interfaceNode, scope, indicator)));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SNode>) FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", interfaceNode, scope, monitor)));
       }
     }
     for (SNode interfaceNode : ListSequence.fromList(result)) {

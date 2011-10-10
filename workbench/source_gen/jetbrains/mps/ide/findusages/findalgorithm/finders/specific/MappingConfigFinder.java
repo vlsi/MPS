@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class MappingConfigFinder implements IFinder {
     myNodeToFindUsages = nodeToFindUsages;
   }
 
-  public SearchResults<SNode> find(SearchQuery query, ProgressIndicator indicator) {
+  public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     List<SearchResult<SNode>> results = new ArrayList<SearchResult<SNode>>();
     List<SNode> mappingConfigs = (List<SNode>) GenerationFacade.getOwnMappings(myGenerator);
     List<SNode> nodesToCheck = new ArrayList<SNode>();

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
@@ -24,6 +23,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IScope;
@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 public class FinderNode extends BaseLeaf {
   private static final String FINDER = "finder";
@@ -61,23 +62,22 @@ public class FinderNode extends BaseLeaf {
     return "finder";
   }
 
-  public SearchResults doGetResults(final SearchQuery query, final ProgressIndicator indicator) {
-    indicator.setText(getTaskName() + " started");
-    //indicator.startLeafTask(getTaskName(), getTaskKind());
-    final SearchResults results = ModelAccess.instance().runReadAction(new Computable<SearchResults>() {
-      public SearchResults compute() {
-        try {
-          return myFinder.find(query, indicator);
-        } catch (Throwable t) {
-          LOG.error(t.getMessage(), t);
-          return new SearchResults();
+  public SearchResults doGetResults(final SearchQuery query, @NotNull final ProgressMonitor monitor) {
+    monitor.start(getTaskName(), 1);
+    try {
+      return ModelAccess.instance().runReadAction(new Computable<SearchResults>() {
+        public SearchResults compute() {
+          try {
+            return myFinder.find(query, monitor.subTask(1));
+          } catch (Throwable t) {
+            LOG.error(t.getMessage(), t);
+            return new SearchResults();
+          }
         }
-      }
-    });
-    //indicator.finishTask();
-    indicator.setText(getTaskName() + " finished");
-
-    return results;
+      });
+    } finally {
+      monitor.done();
+    }
   }
 
   public long getEstimatedTime(IScope scope) {

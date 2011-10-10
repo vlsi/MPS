@@ -14,7 +14,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import java.util.IdentityHashMap;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import java.util.Set;
@@ -33,41 +33,42 @@ public class MigrationScriptFinder implements IFinder {
     myOperationContext = context;
   }
 
-  public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
+  public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     myResults = new SearchResults<SNode>();
     IScope queryScope = query.getScope();
     List<BaseMigrationScript> scriptInstances = MigrationScriptUtil.getScriptInstances(myScripts, myOperationContext);
-    indicator.setText("Searching applicable nodes");
-    for (BaseMigrationScript scriptInstance : scriptInstances) {
-      if (indicator.isCanceled()) {
-        break;
-      }
-      List<AbstractMigrationRefactoring> refactorings = scriptInstance.getRefactorings();
-      for (AbstractMigrationRefactoring migrationRefactoring : refactorings) {
-        if (indicator.isCanceled()) {
+
+    monitor.start("Searching applicable nodes", scriptInstances.size());
+    try {
+      for (BaseMigrationScript scriptInstance : scriptInstances) {
+        if (monitor.isCanceled()) {
           break;
         }
-        indicator.setText2(scriptInstance.getName() + " [" + migrationRefactoring.getAdditionalInfo() + "]");
-        Set<SNode> instances = FindUsagesManager.getInstance().findInstances(MigrationScriptUtil.getApplicableConcept(migrationRefactoring), queryScope, null, false);
-        for (SNode instance : instances) {
-          if (MigrationScriptUtil.isApplicableRefactoring(instance, migrationRefactoring)) {
-            String category = TreeTextUtil.toHtml(scriptInstance.getName()) + " </b>[" + TreeTextUtil.toHtml(migrationRefactoring.getAdditionalInfo()) + "]<b>";
-            SearchResult<SNode> result = new SearchResult<SNode>(instance, category);
-            myMigrationBySearchResult.put(result, migrationRefactoring);
-            myResults.getSearchResults().add(result);
+        List<AbstractMigrationRefactoring> refactorings = scriptInstance.getRefactorings();
+        for (AbstractMigrationRefactoring migrationRefactoring : refactorings) {
+          if (monitor.isCanceled()) {
+            break;
+          }
+          monitor.step(scriptInstance.getName() + " [" + migrationRefactoring.getAdditionalInfo() + "]");
+          Set<SNode> instances = FindUsagesManager.getInstance().findInstances(MigrationScriptUtil.getApplicableConcept(migrationRefactoring), queryScope, null, false);
+          for (SNode instance : instances) {
+            if (MigrationScriptUtil.isApplicableRefactoring(instance, migrationRefactoring)) {
+              String category = TreeTextUtil.toHtml(scriptInstance.getName()) + " </b>[" + TreeTextUtil.toHtml(migrationRefactoring.getAdditionalInfo()) + "]<b>";
+              SearchResult<SNode> result = new SearchResult<SNode>(instance, category);
+              myMigrationBySearchResult.put(result, migrationRefactoring);
+              myResults.getSearchResults().add(result);
+            }
           }
         }
+        monitor.advance(1);
       }
+      if (myMigrationScriptsView != null) {
+        myMigrationScriptsView.searchResultsChanged();
+      }
+      return myResults;
+    } finally {
+      monitor.done();
     }
-    indicator.setText("Searching applicable nodes " + ((indicator.isCanceled() ?
-      "canceled" :
-      "finished"
-    )));
-    indicator.setText2("");
-    if (myMigrationScriptsView != null) {
-      myMigrationScriptsView.searchResultsChanged();
-    }
-    return myResults;
   }
 
   public AbstractMigrationRefactoring getRefactoring(SearchResult<SNode> searchResult) {

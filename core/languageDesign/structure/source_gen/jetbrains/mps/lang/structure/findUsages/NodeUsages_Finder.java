@@ -7,12 +7,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import java.util.Set;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class NodeUsages_Finder extends GeneratedFinder {
@@ -33,8 +32,8 @@ public class NodeUsages_Finder extends GeneratedFinder {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(CollectionUtil.set(node), scope, new ProgressMonitorAdapter(indicator), false);
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
+    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(CollectionUtil.set(node), scope, monitor, false);
     for (SReference reference : resRefs) {
       ListSequence.fromList(_results).addElement(reference.getSourceNode());
     }

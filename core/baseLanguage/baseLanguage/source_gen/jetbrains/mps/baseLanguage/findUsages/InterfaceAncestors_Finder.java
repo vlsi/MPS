@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 
 public class InterfaceAncestors_Finder extends GeneratedFinder {
@@ -34,7 +34,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
     return "jetbrains.mps.baseLanguage.structure.Interface";
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isEmpty()) {
       return;
     }
@@ -42,7 +42,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
     for (SNode ancestor : ListSequence.fromList(SLinkOperations.getTargets(current, "extendedInterface", true))) {
       SNode ancestorNode = (SNode) SLinkOperations.getTarget(ancestor, "classifier", false);
       ListSequence.fromList(_results).addElement(ancestorNode);
-      for (SNode ancestorAncestor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestorNode, scope, indicator))) {
+      for (SNode ancestorAncestor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestorNode, scope, monitor))) {
         ListSequence.fromList(_results).addElement(ancestorAncestor);
       }
     }
