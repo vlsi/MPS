@@ -20,7 +20,7 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -113,12 +113,12 @@ public class TextGen_Facet extends IFacet.Stub {
 
                 Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedFilesDelta(Sequence.fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
                   public boolean accept(SModelDescriptor smd) {
-                    return !(GeneratorManager.isDoNotGenerate(smd));
+                    return GenerationFacade.canGenerate(smd);
                   }
                 }), gres.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile());
                 Iterable<IDelta> retainedCachesDelta = RetainedUtil.retainedCachesDelta(Sequence.fromIterable(gres.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
                   public boolean accept(SModelDescriptor smd) {
-                    return !(GeneratorManager.isDoNotGenerate(smd));
+                    return GenerationFacade.canGenerate(smd);
                   }
                 }), gres.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile());
 

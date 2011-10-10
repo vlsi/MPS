@@ -19,7 +19,6 @@ import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
@@ -28,7 +27,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -124,8 +123,8 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
   private boolean isDoNotGenerate(SModelTreeNode node) {
     SModelDescriptor md = node.getSModelDescriptor();
-    if (md == null) return false;
-    return GeneratorManager.isDoNotGenerate(md);
+    if (!(md instanceof DefaultSModelDescriptor)) return false;
+    return ((DefaultSModelDescriptor) md).isDoNotGenerate();
   }
 
   private void updateNodeLater(final MPSTreeNode node, final String addText) {

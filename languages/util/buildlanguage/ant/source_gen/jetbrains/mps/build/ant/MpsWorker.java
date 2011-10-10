@@ -48,7 +48,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.GenerationFacade;
 import java.util.Collection;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
@@ -358,7 +358,7 @@ public abstract class MpsWorker {
   }
 
   private boolean includeModel(SModelDescriptor modelDescriptor) {
-    return SModelStereotype.isUserModel(modelDescriptor) && !((GeneratorManager.isDoNotGenerate(modelDescriptor)));
+    return SModelStereotype.isUserModel(modelDescriptor) && GenerationFacade.canGenerate(modelDescriptor);
   }
 
   protected void extractModels(Collection<SModelDescriptor> modelsList, IModule m) {
