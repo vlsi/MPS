@@ -362,7 +362,6 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.InvokeTextDiffAction" file="InvokeTextDiffAction.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.diff.DiffManager" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffRequest" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffTool" />
     <classNode dependClassName="java.lang.Object" />
@@ -377,6 +376,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.diff.DiffManager" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffRequest" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />

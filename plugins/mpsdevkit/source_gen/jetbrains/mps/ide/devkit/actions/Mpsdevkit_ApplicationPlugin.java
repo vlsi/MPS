@@ -15,6 +15,7 @@ import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.actions.GoToEditorPopupAddition_ActionGroup;
 import jetbrains.mps.ide.actions.Goto_ActionGroup;
 import jetbrains.mps.ide.actions.Analyze_ActionGroup;
+import jetbrains.mps.ide.actions.NamespaceNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
@@ -47,6 +48,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new NewAccessoryModel_Action());
     addAction(new NewDevKit_Action());
     addAction(new NewGenerator_Action());
+    addAction(new NewLanguage_Action());
     addAction(new PrintNodeID_Action());
     addAction(new ReloadAll_Action());
     addAction(new RenameLanguage_Action());
@@ -72,6 +74,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new LanguageNewCustomPartActions_ActionGroup());
     addGroup(new LanguageNewGenerator_ActionGroup());
     addGroup(new LanguageRefactoring_ActionGroup());
+    addGroup(new NamespaceNewActionsEx_ActionGroup());
     addGroup(new ProjectNewActionsEx_ActionGroup());
     addGroup(new RepositoryToolsGroup_ActionGroup());
     addGroup(new ShowNodeIn_ActionGroup());
@@ -94,6 +97,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(DevKitTools_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_devkitTools);
     insertGroupIntoAnother(EditorInternalEx_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_editor);
     insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
+    insertGroupIntoAnother(NamespaceNewActionsEx_ActionGroup.ID, NamespaceNewActions_ActionGroup.ID, null);
     insertGroupIntoAnother(TraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_trace);
     insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_showIn);
     insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_showIn);

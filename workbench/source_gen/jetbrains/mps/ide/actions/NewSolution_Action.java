@@ -18,16 +18,16 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class NewSolution_Action extends GeneratedAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(NewSolution_Action.class);
 
-  private String folder;
-
-  public NewSolution_Action(String folder_par) {
+  public NewSolution_Action() {
     super("Solution", "", ICON);
-    this.folder = folder_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -59,6 +59,7 @@ public class NewSolution_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("namespace", event.getData(MPSDataKeys.NAMESPACE));
     return true;
   }
 
@@ -73,7 +74,10 @@ public class NewSolution_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(s, NewSolution_Action.this.folder);
+          ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(s, (((String) MapSequence.fromMap(_params).get("namespace")) == null ?
+            "" :
+            ((String) MapSequence.fromMap(_params).get("namespace"))
+          ));
         }
       });
       ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
@@ -86,17 +90,14 @@ public class NewSolution_Action extends GeneratedAction {
     }
   }
 
-  @NotNull
-  public String getActionId() {
-    StringBuilder res = new StringBuilder();
-    res.append(super.getActionId());
-    res.append("#");
-    res.append(folder_State((String) this.folder));
-    res.append("!");
-    return res.toString();
-  }
-
-  public static String folder_State(String object) {
-    return object;
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(NewSolution_Action.class.getResourceAsStream("solution.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for NewSolution", e);
+      }
+      return null;
+    }
   }
 }

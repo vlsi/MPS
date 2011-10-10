@@ -17,16 +17,16 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import javax.swing.ImageIcon;
+import com.intellij.openapi.util.io.StreamUtil;
+import java.io.IOException;
 
 public class NewLanguage_Action extends GeneratedAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = getIcon();
   protected static Log log = LogFactory.getLog(NewLanguage_Action.class);
 
-  private String folder;
-
-  public NewLanguage_Action(String folder_par) {
+  public NewLanguage_Action() {
     super("Language", "", ICON);
-    this.folder = folder_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -58,6 +58,7 @@ public class NewLanguage_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("namespace", event.getData(MPSDataKeys.NAMESPACE));
     return true;
   }
 
@@ -70,7 +71,10 @@ public class NewLanguage_Action extends GeneratedAction {
       if (l == null) {
         return;
       }
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(l, NewLanguage_Action.this.folder);
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(l, (((String) MapSequence.fromMap(_params).get("namespace")) == null ?
+        "" :
+        ((String) MapSequence.fromMap(_params).get("namespace"))
+      ));
       ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
       projectPane.rebuildTree();
       projectPane.selectModule(l, false);
@@ -81,17 +85,14 @@ public class NewLanguage_Action extends GeneratedAction {
     }
   }
 
-  @NotNull
-  public String getActionId() {
-    StringBuilder res = new StringBuilder();
-    res.append(super.getActionId());
-    res.append("#");
-    res.append(folder_State((String) this.folder));
-    res.append("!");
-    return res.toString();
-  }
-
-  public static String folder_State(String object) {
-    return object;
+  private static Icon getIcon() {
+    try {
+      return new ImageIcon(StreamUtil.loadFromStream(NewLanguage_Action.class.getResourceAsStream("projectLanguage.png")));
+    } catch (IOException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Couldn't load icon for NewLanguage", e);
+      }
+      return null;
+    }
   }
 }

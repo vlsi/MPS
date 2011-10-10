@@ -66,6 +66,9 @@ public class MPSDataKeys extends PlatformDataKeys {
   @Description(description = "selected packages")
   public static final DataKey<List<String>> VIRTUAL_PACKAGES = DataKey.create("MPS_VirtualPackage_List");
 
+  @Description(description = "selected namespace")
+  public static final DataKey<String> NAMESPACE = DataKey.create("MPS_Namespace");
+
   @Description(description = "operation context")
   public static final DataKey<IOperationContext> OPERATION_CONTEXT = DataKey.create("MPS_IOperationContext");
   @Description(description = "editor context")

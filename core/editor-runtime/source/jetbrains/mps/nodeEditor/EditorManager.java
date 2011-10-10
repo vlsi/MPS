@@ -128,18 +128,26 @@ public class EditorManager {
     }
 
     EditorComponent editor = context.getNodeEditorComponent();
-    Set<SNode> attributeCell_DependOn = new HashSet<SNode>(editor.getNodesCellDependOn(attributeCell));
-    Set<SNodePointer> attributeCell_RefTargetsDependsOn = new HashSet<SNodePointer>(editor.getCopyOfRefTargetsCellDependsOn(attributeCell));
+    Set<SNode> newAttributeCell_DependOn = new HashSet<SNode>();
+    Set<SNode> attributeCell_DependOn = editor.getNodesCellDependOn(attributeCell);
+    if (attributeCell_DependOn != null) {
+      newAttributeCell_DependOn.addAll(attributeCell_DependOn);
+    }
+    Set<SNodePointer> newAttributeCell_RefTargetsDependsOn = new HashSet<SNodePointer>();
+    Set<SNodePointer> attributeCell_RefTargetsDependsOn = editor.getCopyOfRefTargetsCellDependsOn(attributeCell);
+    if (attributeCell_RefTargetsDependsOn != null) {
+      newAttributeCell_RefTargetsDependsOn.addAll(attributeCell_RefTargetsDependsOn);
+    }
 
     Set<SNode> cellWithRole_DependOn = editor.getNodesCellDependOn(cellWithRole);
     if (cellWithRole_DependOn != null) {
-      attributeCell_DependOn.addAll(cellWithRole_DependOn);
+      newAttributeCell_DependOn.addAll(cellWithRole_DependOn);
     }
     Set<SNodePointer> cellWithRole_RefTargetsDependsOn = editor.getCopyOfRefTargetsCellDependsOn(cellWithRole);
     if (cellWithRole_RefTargetsDependsOn != null) {
-      attributeCell_RefTargetsDependsOn.addAll(cellWithRole_RefTargetsDependsOn);
+      newAttributeCell_RefTargetsDependsOn.addAll(cellWithRole_RefTargetsDependsOn);
     }
-    editor.putCellAndNodesToDependOn(attributeCell, attributeCell_DependOn, attributeCell_RefTargetsDependsOn);
+    editor.putCellAndNodesToDependOn(attributeCell, newAttributeCell_DependOn, newAttributeCell_RefTargetsDependsOn);
 
     return attributeCell;
   }
