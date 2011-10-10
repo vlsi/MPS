@@ -102,6 +102,7 @@ import java.util.List;
 
 public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent {
   private static final Logger LOG = Logger.getLogger(EditorComponent.class);
+  private static final boolean TRACE_ENABLED = false;
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
   public static final Color CARET_ROW_COLOR = new Color(255, 255, 215);
@@ -1213,6 +1214,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void setRootCell(EditorCell rootCell) {
+    getEditorContext().pushTracerTask("setting root cell", true);
     Set<SNode> oldNodesToDependOn = myCellsToNodesToDependOnMap.get(myRootCell);
     Set<SNodePointer> oldRefTargetsToDependsOn = myCellsToRefTargetsToDependOnMap.get(myRootCell);
 
@@ -1244,6 +1246,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     revalidate();
     repaint();
+    getEditorContext().popTracerTask();
   }
 
   private Set<SModelDescriptor> getModelsAndPurgeOrphaned(Set<SNodePointer> nodePointers) {
@@ -1391,10 +1394,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void relayout() {
+    if (getEditorContext() != null) {
+      getEditorContext().pushTracerTask("Relayouting", true);
+    }
     doRelayout();
     revalidate();
     repaint();
     myMessagesGutter.repaint();
+    if (getEditorContext() != null) {
+      getEditorContext().popTracerTask();
+    }
   }
 
   public void revalidateAndRepaint() {
@@ -1541,13 +1550,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void rebuildEditorContent(final List<SModelEvent> events) {
+    //i.e. we are disposed. it's too late to rebuild
+    if (getEditorContext() == null) {
+      return;
+    }
+    getEditorContext().pushTracerTask("Rebuilding Editor Content", true);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        //i.e. we are disposed. it's too late to rebuild
-        if (getEditorContext() == null) {
-          return;
-        }
-
         if (getComponents().length > 0) {
           removeAll();
         }
@@ -1556,23 +1565,28 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           revertErrorCells(events);
         }
 
+        getEditorContext().pushTracerTask("Running swap editor cell action", true);
         runSwapCellsActions(new Runnable() {
           public void run() {
             setRootCell(createRootCell(events));
           }
         });
+        getEditorContext().popTracerTask();
 
         for (EditorCell_Component component : getCellTracker().getComponentCells()) {
           EditorComponent.this.add(component.getComponent());
         }
 
+        getEditorContext().pushTracerTask("Executing rebuild liteners", true);
         for (RebuildListener listener : myRebuildListeners) {
           listener.editorRebuilt(EditorComponent.this);
         }
+        getEditorContext().popTracerTask();
 
         updateMessages();
       }
     });
+    getEditorContext().popTracerTask();
   }
 
   private void fireEditorWillBeDisposed() {
@@ -2352,7 +2366,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public Set<SNodePointer> getCopyOfRefTargetsCellDependsOn(EditorCell cell) {
     Set<SNodePointer> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
     if (nodeProxies == null) return null;
-    return new HashSet<SNodePointer>(nodeProxies);
+    return Collections.unmodifiableSet(nodeProxies);
   }
 
   public boolean doesCellDependOnNode(EditorCell cell, SNode node) {
@@ -2436,9 +2450,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         memento = getEditorContext().createMemento();
       }
       action.run();
+      getEditorContext().pushTracerTask("retoring memento", true);
       if (getEditorContext() != null) {
         getEditorContext().setMemento(memento);
       }
+      getEditorContext().popTracerTask();
       myRecentlySelectedCellInfo = null;
     } finally {
       myCellSwapInProgress = false;
@@ -2509,66 +2525,80 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void handleEvents(List<SModelEvent> events) {
-    if (EventUtil.isDetachedOnlyChange(events)) {
-      return;
+    boolean rootTrace = !getEditorContext().isTracing() && TRACE_ENABLED;
+    if (rootTrace) {
+      getEditorContext().startTracing("========= Handling events =========");
+    } else {
+      getEditorContext().pushTracerTask("Hanlding events", true);
     }
-
-    SNode lastSelectedNode = getSelectedNode();
-
-    if (!EventUtil.isDramaticalChange(events)) {
-      if (EventUtil.isPropertyChange(events)) {
-        String propertyName = ((SModelPropertyEvent) events.get(0)).getPropertyName();
-        SNodePointer nodeProxy = new SNodePointer(((SModelPropertyEvent) events.get(0)).getNode());
-        Pair<SNodePointer, String> pair = new Pair<SNodePointer, String>(nodeProxy, propertyName);
-        Set<EditorCell_Property> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
-        Set<EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
-        Set<EditorCell> editorCellsDependentOnExistence = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
-        if (editorCellsDependentOnExistence != null) {
-          if (EventUtil.isPropertyAddedOrRemoved(events.get(0))) {
-            rebuildEditorContent(events);
-          } else {
-            for (EditorCell cell : editorCellsDependentOnExistence) {
-              cell.synchronizeViewWithModel();
-              fireCellSynchronized(cell);
-            }
-            if (editorCell_properties != null) {
-              for (EditorCell cell : editorCell_properties) {
-                cell.synchronizeViewWithModel();
-                fireCellSynchronized(cell);
-              }
-            }
-          }
-          relayout();
-          return;
-        }
-        if (editorCells != null) {
-          rebuildEditorContent(events);
-          relayout();
-          updateSelection(events, lastSelectedNode);
-        } else if (editorCell_properties != null) {
-          for (EditorCell_Property cell : editorCell_properties) {
-            cell.synchronizeViewWithModel();
-            fireCellSynchronized(cell);
-          }
-          revertErrorCells(events);
-        }
-      } else {
-        rebuildEditorContent(events);
-      }
-    } else {// "dramatical" change
-      rebuildEditorContent(events);
-
-      if (!hasFocus() && !myIntentionsSupport.isLightBulbVisible()) {
+    try {
+      if (EventUtil.isDetachedOnlyChange(events)) {
         return;
       }
 
-      revertErrorCells(events);
-      relayout();
-      updateSelection(events, lastSelectedNode);
-    }
+      SNode lastSelectedNode = getSelectedNode();
 
-    if (!myInsideOfCommand) {
-      relayout();
+      if (!EventUtil.isDramaticalChange(events)) {
+        if (EventUtil.isPropertyChange(events)) {
+          String propertyName = ((SModelPropertyEvent) events.get(0)).getPropertyName();
+          SNodePointer nodeProxy = new SNodePointer(((SModelPropertyEvent) events.get(0)).getNode());
+          Pair<SNodePointer, String> pair = new Pair<SNodePointer, String>(nodeProxy, propertyName);
+          Set<EditorCell_Property> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
+          Set<EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
+          Set<EditorCell> editorCellsDependentOnExistence = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
+          if (editorCellsDependentOnExistence != null) {
+            if (EventUtil.isPropertyAddedOrRemoved(events.get(0))) {
+              rebuildEditorContent(events);
+            } else {
+              for (EditorCell cell : editorCellsDependentOnExistence) {
+                cell.synchronizeViewWithModel();
+                fireCellSynchronized(cell);
+              }
+              if (editorCell_properties != null) {
+                for (EditorCell cell : editorCell_properties) {
+                  cell.synchronizeViewWithModel();
+                  fireCellSynchronized(cell);
+                }
+              }
+            }
+            relayout();
+            return;
+          }
+          if (editorCells != null) {
+            rebuildEditorContent(events);
+            relayout();
+            updateSelection(events, lastSelectedNode);
+          } else if (editorCell_properties != null) {
+            for (EditorCell_Property cell : editorCell_properties) {
+              cell.synchronizeViewWithModel();
+              fireCellSynchronized(cell);
+            }
+            revertErrorCells(events);
+          }
+        } else {
+          rebuildEditorContent(events);
+        }
+      } else {// "dramatical" change
+        rebuildEditorContent(events);
+
+        if (!hasFocus() && !myIntentionsSupport.isLightBulbVisible()) {
+          return;
+        }
+
+        revertErrorCells(events);
+        relayout();
+        updateSelection(events, lastSelectedNode);
+      }
+
+      if (!myInsideOfCommand) {
+        relayout();
+      }
+    } finally {
+      if (rootTrace) {
+        System.out.println(getEditorContext().stopTracing());
+      } else {
+        getEditorContext().popTracerTask();
+      }
     }
   }
 

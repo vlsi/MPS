@@ -63,34 +63,51 @@ public class EditorManager {
 
   private EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
     try {
+      context.pushTracerTask("Creating " + (isInspectorCell ? "inspector" : "root") + " cell", true);
       EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
       EditorCell rootCell = nodeEditorComponent.getRootCell();
-      ReferencedNodeContext refContext = ReferencedNodeContext.createNodeContext(node);
+      ReferencedNodeContext nodeRefContext = ReferencedNodeContext.createNodeContext(node);
       myMap.clear();
-      myMap.put(refContext, rootCell);
+      if (rootCell != null) {
+        myMap.putAll(getContextToCellMap(rootCell));
+      }
       myCreatingInspectedCell = isInspectorCell;
-      return createEditorCell(context, events, refContext);
+      return createEditorCell(context, events, nodeRefContext);
     } finally {
       myMap.clear();
+      context.popTracerTask();
     }
   }
 
-  private static Map<ReferencedNodeContext, EditorCell> findBigDescendantCellsAndTheirNodes(EditorCell cell) {
+  private static Map<ReferencedNodeContext, EditorCell> getContextToCellMap(EditorCell cell) {
+    Map<ReferencedNodeContext, EditorCell> result = new HashMap<ReferencedNodeContext, EditorCell>();
+    Object bigCellContext = cell.getUserObject(BIG_CELL_CONTEXT);
+    if (bigCellContext instanceof ReferencedNodeContext) {
+      ReferencedNodeContext refContext = (ReferencedNodeContext) bigCellContext;
+      result.put(refContext, cell);
+      // Don't go deeper if this cell represents normal node.
+      //
+      // Go deeper if this cell represents attribute node
+      // since we need to load mappings for all child attributes
+      // till the "main" node's cell and main node's cell itself.
+      if (!refContext.isNodeAttribute()) {
+        return result;
+      }
+    }
+    result.putAll(getContextToCellMapForChildren(cell));
+    return result;
+  }
+
+  private static Map<ReferencedNodeContext, EditorCell> getContextToCellMapForChildren(EditorCell cell) {
     Map<ReferencedNodeContext, EditorCell> result = new HashMap<ReferencedNodeContext, EditorCell>();
     if (cell instanceof EditorCell_Collection) {
       for (EditorCell childCell : ((EditorCell_Collection) cell)) {
-        Object bigCellContext = childCell.getUserObject(BIG_CELL_CONTEXT);
-        if (bigCellContext instanceof ReferencedNodeContext) {
-          ReferencedNodeContext refContext = (ReferencedNodeContext) bigCellContext;
-          result.put(refContext, childCell);
-        } else {
-          result.putAll(findBigDescendantCellsAndTheirNodes(childCell));
-        }
+        result.putAll(getContextToCellMap(childCell));
       }
     }
     return result;
   }
-  
+
   public EditorCell getCurrentAttributedPropertyCell() {
     return getCurrentAttributedCellWithRole(AttributeKind.Property.class);
   }
@@ -109,18 +126,32 @@ public class EditorManager {
     if (cellWithRole.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
       attributeCell.getStyle().set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
-    
+
+    EditorComponent editor = context.getNodeEditorComponent();
+    Set<SNode> attributeCell_DependOn = new HashSet<SNode>(editor.getNodesCellDependOn(attributeCell));
+    Set<SNodePointer> attributeCell_RefTargetsDependsOn = new HashSet<SNodePointer>(editor.getCopyOfRefTargetsCellDependsOn(attributeCell));
+
+    Set<SNode> cellWithRole_DependOn = editor.getNodesCellDependOn(cellWithRole);
+    if (cellWithRole_DependOn != null) {
+      attributeCell_DependOn.addAll(cellWithRole_DependOn);
+    }
+    Set<SNodePointer> cellWithRole_RefTargetsDependsOn = editor.getCopyOfRefTargetsCellDependsOn(cellWithRole);
+    if (cellWithRole_RefTargetsDependsOn != null) {
+      attributeCell_RefTargetsDependsOn.addAll(cellWithRole_RefTargetsDependsOn);
+    }
+    editor.putCellAndNodesToDependOn(attributeCell, attributeCell_DependOn, attributeCell_RefTargetsDependsOn);
+
     return attributeCell;
   }
 
-  /*package*/ EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context, SNode roleAttribute) {
+  /*package*/ EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context, SNode roleAttribute, List<SModelEvent> sModelEvents) {
     Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
     if (stack == null) {
       stack = new Stack<EditorCell>();
       myAttributedClassesToAttributedCellStacksMap.put(attributeKind, stack);
     }
     stack.push(cellWithRole);
-    EditorCell result = createEditorCell(context, null, ReferencedNodeContext.createNodeContext(roleAttribute));
+    EditorCell result = createEditorCell(context, sModelEvents, ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
     EditorCell cellWithRolePopped = stack.pop();
     LOG.assertLog(cellWithRolePopped == cellWithRole);
     return result;
@@ -144,53 +175,65 @@ public class EditorManager {
   }
 
   /*package*/ EditorCell createEditorCell(EditorContext context, List<SModelEvent> events, ReferencedNodeContext refContext) {
-    SNode node = refContext.getNode();
+    context.pushTracerTask("?" + refContext.toString(), true);
+    try {
+      SNode node = refContext.getNode();
 
-    if (areAttributesShown()) {
-      for (SNode attribute : AttributeOperations.getNodeAttributes(node)) {
-        assert attribute != null;
-        //if creating this cell for this attribute for the first time
-        if (!myAttributesStack.contains(attribute)) {
-          myAttributesStack.push(attribute);
-          EditorCell nodeCell = createEditorCell(context, events, refContext.contextWithOneMoreAttribute(attribute));
+      if (areAttributesShown()) {
+        for (SNode attribute : AttributeOperations.getNodeAttributes(node)) {
+          assert attribute != null;
+          // processing each attribute of current node just one time
+          // (creating cell tree for attributes & node recursively)
+          if (!myAttributesStack.contains(attribute)) {
+            myAttributesStack.push(attribute);
 
-          SNode poppedAttribute = myAttributesStack.pop();
-          LOG.assertLog(poppedAttribute == attribute);
-          return createNodeAttributeCell(context, attribute, nodeCell);
-        }
-      }
-    }
+            EditorCell nodeCell = createEditorCell(context, events, refContext);
 
-    EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
-    if (events != null) {
-      EditorCell oldCell = myMap.get(refContext);
-      myMap.putAll(findBigDescendantCellsAndTheirNodes(oldCell));
-      boolean nodeChanged = isNodeChanged(events, nodeEditorComponent, oldCell);
-
-      if (!nodeChanged) {
-        if (myMap.containsKey(refContext)) {
-          final Set<SNode> nodesOldCellDependsOn = nodeEditorComponent.getNodesCellDependOn(oldCell);
-          final Set<SNodePointer> refTargetsOldCellDependsOn = nodeEditorComponent.getCopyOfRefTargetsCellDependsOn(oldCell);
-          if (nodesOldCellDependsOn != null || refTargetsOldCellDependsOn != null) {
-            //voodoo for editor incremental rebuild support:
-            // add listen-nothing listener, fill it up,
-            // remove listener to report recorded nodes to parent listener
-            NodeReadAccessInEditorListener listensNothingListener = new NodeReadAccessInEditorListener();
-            NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listensNothingListener);
-            if (nodesOldCellDependsOn != null) listensNothingListener.addNodesToDependOn(nodesOldCellDependsOn);
-            if (refTargetsOldCellDependsOn != null)
-              listensNothingListener.addRefTargetsToDependOn(refTargetsOldCellDependsOn);
-            NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
-            //--voodoo
+            SNode poppedAttribute = myAttributesStack.pop();
+            LOG.assertLog(poppedAttribute == attribute);
+            return createNodeAttributeCell(context, attribute, nodeCell);
           }
-          return oldCell;
         }
       }
-      nodeEditorComponent.clearNodesCellDependsOn(oldCell, this);
+
+      EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+      if (events != null) {
+        EditorCell oldCell = myMap.get(refContext);
+        boolean nodeChanged = isNodeChanged(events, nodeEditorComponent, oldCell);
+
+        if (!nodeChanged) {
+          if (oldCell != null) {
+            final Set<SNode> nodesOldCellDependsOn = nodeEditorComponent.getNodesCellDependOn(oldCell);
+            final Set<SNodePointer> refTargetsOldCellDependsOn = nodeEditorComponent.getCopyOfRefTargetsCellDependsOn(oldCell);
+            if (nodesOldCellDependsOn != null || refTargetsOldCellDependsOn != null) {
+              // Node was not changed, we have oldCell so it will not be re-created.
+              //
+              // Now all the dependencies of this (old) Cell should be added to currently active
+              // NodeReadAccessInEditorListener, so will be reported as parent Cell dependencies.
+              //
+              // Same logic is implemented in NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener(), so
+              // we should duplicate it here to emulate proper update process for parent cell.
+              NodeReadAccessInEditorListener parentReadAccessListener = NodeReadAccessCasterInEditor.getReadAccessListener();
+              if (parentReadAccessListener != null) {
+                if (nodesOldCellDependsOn != null) {
+                  parentReadAccessListener.addNodesToDependOn(nodesOldCellDependsOn);
+                }
+                if (refTargetsOldCellDependsOn != null) {
+                  parentReadAccessListener.addRefTargetsToDependOn(refTargetsOldCellDependsOn);
+                }
+              }
+            }
+            return oldCell;
+          }
+        }
+        myMap.putAll(getContextToCellMapForChildren(oldCell));
+        nodeEditorComponent.clearNodesCellDependsOn(oldCell, this);
+      }
+
+      return createEditorCell_internal(context, myCreatingInspectedCell, refContext);
+    } finally {
+      context.popTracerTask();
     }
-
-
-    return createEditorCell_internal(context, myCreatingInspectedCell, refContext);
   }
 
   private boolean isNodeChanged(List<SModelEvent> events, EditorComponent nodeEditorComponent, EditorCell oldCell) {
@@ -218,45 +261,49 @@ public class EditorManager {
   }
 
   private EditorCell createEditorCell_internal(final EditorContext context, boolean isInspectorCell, ReferencedNodeContext refContext) {
-    final SNode node = refContext.getNode();
-
-    //reset creating inspected cell : we don't create not-root inspected cells
-    myCreatingInspectedCell = false;
-
-    INodeEditor editor = getEditor(context, node);
-    EditorComponent editorComponent = context.getNodeEditorComponent();
-    EditorCell nodeCell = null;
-    NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
+    context.pushTracerTask("+" + refContext.toString(), true);
     try {
-      //voodoo for editor incremental rebuild support
-      NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
-      nodeCell = isInspectorCell ? editor.createInspectedCell(context, node) : editor.createEditorCell(context, node);
-      //-voodoo
+      final SNode node = refContext.getNode();
 
-      if (SNodeEditorUtil.hasRightTransformHint(node)) {
-        nodeCell = addSideTransformHintCell(node, nodeCell, context, CellSide.RIGHT);
-        return nodeCell;
+      //reset creating inspected cell : we don't create not-root inspected cells
+      myCreatingInspectedCell = false;
+
+      INodeEditor editor = getEditor(context, node);
+      EditorComponent editorComponent = context.getNodeEditorComponent();
+      EditorCell nodeCell = null;
+      NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
+      try {
+        //voodoo for editor incremental rebuild support
+        NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
+        nodeCell = isInspectorCell ? editor.createInspectedCell(context, node) : editor.createEditorCell(context, node);
+        //-voodoo
+
+        if (SNodeEditorUtil.hasRightTransformHint(node)) {
+          nodeCell = addSideTransformHintCell(node, nodeCell, context, CellSide.RIGHT);
+          return nodeCell;
+        }
+
+        if (SNodeEditorUtil.hasLeftTransformHint(node)) {
+          nodeCell = addSideTransformHintCell(node, nodeCell, context, CellSide.LEFT);
+          return nodeCell;
+        }
+      } catch (Throwable e) {
+        LOG.error("Failed to create cell for node " + node.getDebugText(), e);
+        nodeCell = new EditorCell_Error(context, node, "!exception!:" + node.getDebugText());
+      } finally {
+        NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
+        if (nodeCell != null) {
+          nodeCell.putUserObject(BIG_CELL_CONTEXT, refContext);
+          editorComponent.registerAsBigCell(nodeCell, this);
+          addNodeDependenciesToEditor(nodeCell, nodeAccessListener, context);
+        }
       }
 
-      if (SNodeEditorUtil.hasLeftTransformHint(node)) {
-        nodeCell = addSideTransformHintCell(node, nodeCell, context, CellSide.LEFT);
-        return nodeCell;
-      }
-    } catch (Throwable e) {
-      LOG.error("Failed to create cell for node " + node.getDebugText(), e);
-      nodeCell = new EditorCell_Error(context, node, "!exception!:" + node.getDebugText());
+      assert nodeCell != null;
+      return nodeCell;
     } finally {
-      if (nodeCell != null) {
-        ReferencedNodeContext refContextWithoutAttributes = refContext.contextWihtNoAttributes();
-        nodeCell.putUserObject(BIG_CELL_CONTEXT, refContextWithoutAttributes);
-        editorComponent.registerAsBigCell(nodeCell, this);
-        addNodeDependenciesToEditor(nodeCell, nodeAccessListener, context);
-      }
-      NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
+      context.popTracerTask();
     }
-
-    assert nodeCell != null;
-    return nodeCell;
   }
 
   private void addNodeDependenciesToEditor(EditorCell cell, NodeReadAccessInEditorListener listener, EditorContext editorContext) {

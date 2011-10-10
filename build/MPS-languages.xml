@@ -13148,7 +13148,7 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
         <library jar="jetbrains.mps.build.antsupport.jar" />
-        <library jar="/lib/java-diff-utils-1.2.jar" />
+        <library jar="/lib/diffutils-1.2.1.jar" />
         <library jar="/lib/bootstrap.jar" />
         <sources jar="jetbrains.mps.build.antsupport-src.jar" descriptor="jetbrains.mps.build.antsupport.msd" />
       </module>
