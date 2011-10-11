@@ -59,6 +59,7 @@ import com.intellij.util.containers.Convertor;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.util.ui.EditorAdapter;
+import jetbrains.mps.util.annotation.Patch;
 import org.jdom.Attribute;
 import org.jdom.DataConversionException;
 import org.jdom.Element;
@@ -446,9 +447,16 @@ public void addMessageToConsoleWindow(final String message, final TextAttributes
     return hasExplicitMapping(vFile);
   }
 
+  @Patch
   public boolean hasExplicitMapping(final VirtualFile vFile) {
     final VcsDirectoryMapping mapping = myMappings.getMappingFor(vFile);
-    return mapping != null && ! mapping.isDefaultMapping();
+
+    // Original code
+    // return mapping != null && ! mapping.isDefaultMapping();
+
+    // MPS patch for IDEA-75414
+    return mapping != null;
+    // MPS patch end
   }
 
   public void setDirectoryMapping(final String path, final String activeVcsName) {
