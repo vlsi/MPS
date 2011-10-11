@@ -244,12 +244,12 @@ public class Inequalities {
       if (right == left) {
         continue;
       }
-      if (left == node && !TypesUtil.isVariable(right) && !LatticeUtil.isMeet(right)) {
+      if (left == node && !TypesUtil.canBeVariable(right)) {
         SNode type = myState.expand(right);
         rights.add(type);
         typesToBlocks.put(type, block);
       }
-      if (right == node && !TypesUtil.isVariable(left) && !LatticeUtil.isMeet(left)) {
+      if (right == node && !TypesUtil.canBeVariable(left)) {
         SNode type = myState.expand(left);
         lefts.add(type);
         typesToBlocks.put(type, block);
