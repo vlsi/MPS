@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 
 public class RenameMethod extends BaseRefactoring {
@@ -74,8 +75,8 @@ public class RenameMethod extends BaseRefactoring {
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SNode method = RenameUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
     return (((Boolean) refactoringContext.getParameter("refactorOverriding")) == null || !(((Boolean) refactoringContext.getParameter("refactorOverriding"))) ?
-      FindUtils.getSearchResults(new EmptyProgressIndicator(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder") :
-      FindUtils.getSearchResults(new EmptyProgressIndicator(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder")
+      FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder") :
+      FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder")
     );
   }
 

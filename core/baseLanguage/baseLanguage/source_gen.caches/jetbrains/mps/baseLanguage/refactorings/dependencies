@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature" file="ChangeMethodSignature.java">
-    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -12,6 +11,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
@@ -52,12 +52,12 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.paramchooser.mps.BaseChooserSettings" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal" file="MakeFieldFinal.java">
-    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal_Target" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
@@ -70,7 +70,6 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic" file="MakeFieldStatic.java">
-    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -87,6 +86,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
@@ -102,7 +102,6 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.refactorings.MoveStaticField" file="MoveStaticField.java">
-    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -112,6 +111,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.lang.core.refactorings.MoveNodes" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
@@ -135,7 +135,6 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.paramchooser.mps.BaseChooserSettings" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod" file="MoveStaticMethod.java">
-    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -145,6 +144,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.lang.core.refactorings.MoveNodes" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
@@ -185,6 +185,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.core.refactorings.Rename" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />

@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -50,7 +50,7 @@ public class MakeFieldStatic extends BaseRefactoring {
         } else {
           refactoringContext.setParameter("declaration", SNodeOperations.cast(Sequence.fromIterable(SNodeOperations.getReferences(node)).first().getTargetNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
         }
-        refactoringContext.setParameter("usages", FindUtils.getSearchResults(new EmptyProgressIndicator(), ((SNode) refactoringContext.getParameter("declaration")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder"));
+        refactoringContext.setParameter("usages", FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) refactoringContext.getParameter("declaration")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder"));
         refactoringContext.setParameter("hasExternalUsages", false);
         for (SearchResult<SNode> result : ListSequence.fromList(((SearchResults<SNode>) refactoringContext.getParameter("usages")).getSearchResults())) {
           if (SNodeOperations.getContainingRoot(result.getObject()) != SNodeOperations.getContainingRoot(((SNode) refactoringContext.getParameter("declaration")))) {

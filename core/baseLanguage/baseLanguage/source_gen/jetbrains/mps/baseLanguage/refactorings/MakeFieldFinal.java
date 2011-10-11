@@ -8,7 +8,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 
 public class MakeFieldFinal extends BaseRefactoring {
@@ -32,7 +32,7 @@ public class MakeFieldFinal extends BaseRefactoring {
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder");
+    return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder");
 
   }
 

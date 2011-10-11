@@ -11,7 +11,7 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticFieldRefact
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 
@@ -43,7 +43,7 @@ public class MoveStaticField extends BaseRefactoring {
       refactoringContext.setParameter("refactor", new MoveStaticFieldRefactoring(refactoringContext.getSelectedNode(), ((SNode) refactoringContext.getParameter("destination"))));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ((MoveStaticFieldRefactoring) refactoringContext.getParameter("refactor")).setUssages(FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder"));
+          ((MoveStaticFieldRefactoring) refactoringContext.getParameter("refactor")).setUssages(FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder"));
         }
       });
     }

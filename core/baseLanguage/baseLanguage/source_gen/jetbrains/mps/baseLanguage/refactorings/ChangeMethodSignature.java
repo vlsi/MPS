@@ -12,7 +12,7 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignature
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -55,7 +55,7 @@ public class ChangeMethodSignature extends BaseRefactoring {
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SearchResults<SNode> allResults = new SearchResults();
     for (ChangeMethodSignatureRefactoring ref : ListSequence.fromList(((List<ChangeMethodSignatureRefactoring>) refactoringContext.getParameter("myRefactorings")))) {
-      SearchResults<SNode> curResults = FindUtils.getSearchResults(new EmptyProgressIndicator(), ref.getDeclaration(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
+      SearchResults<SNode> curResults = FindUtils.getSearchResults(new EmptyProgressMonitor(), ref.getDeclaration(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
       List<SNode> usages = new ArrayList<SNode>();
       for (SearchResult<SNode> result : ListSequence.fromList(curResults.getSearchResults())) {
         ListSequence.fromList(usages).addElement(result.getObject());
