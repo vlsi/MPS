@@ -24,6 +24,7 @@ import jetbrains.mps.newTypesystem.relations.ComparableRelation;
 import jetbrains.mps.newTypesystem.relations.SubTypingRelation;
 import jetbrains.mps.newTypesystem.state.blocks.*;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.util.Pair;
 
@@ -303,12 +304,12 @@ public class Inequalities {
       if (right == left) {
         continue;
       }
-      if (left == node && !TypesUtil.isVariable(right)) {
+      if (left == node && !TypesUtil.isVariable(right) && !LatticeUtil.isMeet(right)) {
         SNode type = myState.expand(right);
         rights.add(type);
         typesToBlocks.put(type, block);
       }
-      if (right == node && !TypesUtil.isVariable(left)) {
+      if (right == node && !TypesUtil.isVariable(left) && !LatticeUtil.isMeet(left)) {
         SNode type = myState.expand(left);
         lefts.add(type);
         typesToBlocks.put(type, block);
