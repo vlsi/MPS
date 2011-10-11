@@ -634,7 +634,6 @@
   </target>
   <target name="pack.collections_trove.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     <mkdir dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime/collections_trove.runtime.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime/collections_trove.runtime.jar.jtmp/module.xml">
@@ -662,13 +661,12 @@
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" prefix="module" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-      <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/classes" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/lib/trove-2.1.0.jar" />
+      <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/classes_gen" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime/collections_trove.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime/collections_trove.runtime.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime/collections_trove.runtime.jar.jtmp" />
