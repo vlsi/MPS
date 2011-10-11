@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.project.MPSProject;
 import java.awt.Container;
 import javax.swing.JComponent;
 
@@ -21,7 +22,7 @@ public class TodoViewer_Tool extends GeneratedTool {
 
   public void init(Project project) {
     super.init(project);
-    TodoViewer_Tool.this.myComponent = new TodoViewer(project, TodoViewer_Tool.this);
+    TodoViewer_Tool.this.myComponent = new TodoViewer(project.getComponent(MPSProject.class), TodoViewer_Tool.this);
   }
 
   public void dispose() {

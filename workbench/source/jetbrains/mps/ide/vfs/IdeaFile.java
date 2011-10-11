@@ -312,6 +312,9 @@ class IdeaFile implements IFileEx {
         if (jarFile != null) {
           VirtualFile jarRootFile = jarFileSystem.getJarRootForLocalFile(jarFile);
           if (jarRootFile != null) {
+            // Workaround for IDEA-75359
+            IdeaFileSystemProvider.jarRootAccessed(jarRootFile);
+
             myVirtualFile = jarRootFile.findFileByRelativePath(entryPath);
           }
         }

@@ -5,7 +5,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
@@ -26,7 +26,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
   public LanguageConceptsUsagesFinder() {
   }
 
-  public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
+  public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults<SNode> searchResults = new SearchResults<SNode>();
     IHolder holder = query.getObjectHolder();
     assert holder instanceof ModuleHolder;
@@ -49,21 +49,27 @@ public class LanguageConceptsUsagesFinder implements IFinder {
       roots.add(root);
     }
     searchResults.getSearchedNodes().addAll(roots);
-    SearchResults<SModel> modelResults = FindUtils.getSearchResults(indicator, new SearchQuery(sModel, GlobalScopeMinusTransient.getInstance()), new ModelUsagesFinder());
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-    for (SearchResult<SModel> sModelSearchResult : modelResults.getSearchResults()) {
-      models.add(sModelSearchResult.getObject().getModelDescriptor());
-    }
-    IScope scope = new ModelsOnlyScope(models.toArray(new SModelDescriptor[models.size()]));
-    SearchResults results = new SearchResults();
-    for (SNode node : roots) {
-      if (indicator != null && indicator.isCanceled()) {
-        break;
+
+    monitor.start("", sModel.rootsCount() + 1);
+    try {
+      SearchResults<SModel> modelResults = FindUtils.getSearchResults(monitor.subTask(1), new SearchQuery(sModel, GlobalScopeMinusTransient.getInstance()), new ModelUsagesFinder());
+      List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+      for (SearchResult<SModel> sModelSearchResult : modelResults.getSearchResults()) {
+        models.add(sModelSearchResult.getObject().getModelDescriptor());
       }
-      results.addAll(FindUtils.getSearchResults(indicator, node, scope, "jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"));
-      results.removeDuplicates();
+      IScope scope = new ModelsOnlyScope(models.toArray(new SModelDescriptor[models.size()]));
+      SearchResults results = new SearchResults();
+      for (SNode node : roots) {
+        if (monitor != null && monitor.isCanceled()) {
+          break;
+        }
+        results.addAll(FindUtils.getSearchResults(monitor.subTask(1), node, scope, "jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"));
+        results.removeDuplicates();
+      }
+      searchResults.getSearchResults().addAll(results.getSearchResults());
+      return searchResults;
+    } finally {
+      monitor.done();
     }
-    searchResults.getSearchResults().addAll(results.getSearchResults());
-    return searchResults;
   }
 }

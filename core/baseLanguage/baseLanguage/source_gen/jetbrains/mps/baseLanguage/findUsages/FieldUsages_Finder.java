@@ -8,11 +8,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class FieldUsages_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder");
@@ -42,24 +42,29 @@ public class FieldUsages_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    List<SNode> fieldDeclarations = new ArrayList<SNode>();
-    ListSequence.fromList(fieldDeclarations).addElement(node);
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
-      ListSequence.fromList(fieldDeclarations).addSequence(ListSequence.fromList((List<SNode>) FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope, indicator)));
-    }
-    // 
-    for (SNode fieldDeclaration : ListSequence.fromList(fieldDeclarations)) {
-      for (SNode fieldUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", fieldDeclaration, scope, indicator))) {
-        ListSequence.fromList(_results).addElement(fieldUsage);
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
+    monitor.start(getDescription(), 2);
+    try {
+      List<SNode> fieldDeclarations = new ArrayList<SNode>();
+      ListSequence.fromList(fieldDeclarations).addElement(node);
+      if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
+        ListSequence.fromList(fieldDeclarations).addSequence(ListSequence.fromList((List<SNode>) FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope, monitor.subTask(1))));
       }
+      // 
+      for (SNode fieldDeclaration : ListSequence.fromList(fieldDeclarations)) {
+        for (SNode fieldUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", fieldDeclaration, scope, monitor.subTask(1)))) {
+          ListSequence.fromList(_results).addElement(fieldUsage);
+        }
+      }
+    } finally {
+      monitor.done();
     }
   }
 
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListSequence.fromList(_results).addElement(node);
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
-      for (SNode fieldNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope, new EmptyProgressIndicator()))) {
+      for (SNode fieldNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder", node, scope, new EmptyProgressMonitor()))) {
         ListSequence.fromList(_results).addElement(fieldNode);
       }
     }

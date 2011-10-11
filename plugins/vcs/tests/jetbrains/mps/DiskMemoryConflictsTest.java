@@ -15,7 +15,6 @@
  */
 package jetbrains.mps;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.TestDialog;
 import com.intellij.openapi.vfs.LocalFileSystem;
@@ -25,6 +24,7 @@ import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
@@ -67,10 +67,10 @@ public class DiskMemoryConflictsTest {
     final DiskModification[] startedDiskModification = new DiskModification[1];
     final VersionToChoose[] startedVersion = new VersionToChoose[1];
     final boolean result = TestMain.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, new ProjectRunnable() {
-      public boolean execute(final MPSProject project) {
+      public boolean execute(final Project project) {
         final boolean[] resultArr = new boolean[1];
         try {
-          myProject = project.getProject();
+          myProject = project;
           myModelDescriptor = (DefaultSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(MODEL_REFERENCE);
           myModule = (Solution) myModelDescriptor.getModule();
           ModelAccess.instance().runReadAction(new Runnable() {
@@ -127,7 +127,7 @@ public class DiskMemoryConflictsTest {
           }
         }
       }
-    }, myProject);
+    }, myProject.getComponent(MPSProject.class).getProject());
 
     waitEDT();
     return result[0];
@@ -242,7 +242,7 @@ public class DiskMemoryConflictsTest {
         public void run() {
           SModelRepository.getInstance().saveAll();
         }
-      }, myProject);
+      }, myProject.getComponent(MPSProject.class).getProject());
     } else {
       // reload conflict
       ModelAccess.instance().runWriteInEDT(new Runnable() {
@@ -310,7 +310,7 @@ public class DiskMemoryConflictsTest {
           myModelDescriptor.getSModel().addRoot(CopyUtil.copyAndPreserveId(myNodeBackup));
           myModelDescriptor.save();
         }
-      }, myProject);
+      }, myProject.getComponent(MPSProject.class).getProject());
       waitEDT();
     }
     checkInitialState();

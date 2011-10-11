@@ -20,10 +20,9 @@ import jetbrains.mps.ModelAssert;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.PathManager;
@@ -51,7 +50,7 @@ public class PersistenceTest extends BaseMPSTest {
   public void testPersistenceWriteRead() {
     boolean result = TestMain.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
       new ProjectRunnable() {
-        public boolean execute(final MPSProject project) {
+        public boolean execute(final Project project) {
           final File tempFile = new File(tempDir, "testModel");
           final IFile file = FileSystem.getInstance().getFileByPath(tempFile.getAbsolutePath());
           final boolean success[] = { true };
@@ -95,7 +94,7 @@ public class PersistenceTest extends BaseMPSTest {
       for (version[1] = version[0] + 1; version[1] <=  ModelPersistence.LAST_VERSION; ++version[1]) {
         boolean result = TestMain.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
           new ProjectRunnable() {
-            public boolean execute(final MPSProject project) {
+            public boolean execute(final Project project) {
 
               final DefaultSModelDescriptor testModel = ModelAccess.instance().runReadAction(new Computable<DefaultSModelDescriptor>() {
                 public DefaultSModelDescriptor compute() {

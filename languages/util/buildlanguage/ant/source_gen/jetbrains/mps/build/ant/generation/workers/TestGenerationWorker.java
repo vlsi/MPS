@@ -306,7 +306,7 @@ public class TestGenerationWorker extends MpsWorker {
           if (!(prj.getProjectDescriptor().getTestConfigurations().isEmpty())) {
             for (BaseTestConfiguration tconf : prj.getProjectDescriptor().getTestConfigurations()) {
               try {
-                result.value = Sequence.fromIterable(result.value).concat(ListSequence.fromList(tconf.getGenParams(prj.getProject(), true).getModelDescriptors()));
+                result.value = Sequence.fromIterable(result.value).concat(ListSequence.fromList(tconf.getGenParams(prj, true).getModelDescriptors()));
               } catch (IllegalGeneratorConfigurationException e) {
                 log("Error while reading configuration of project " + prj.getProject().getName(), e);
               }

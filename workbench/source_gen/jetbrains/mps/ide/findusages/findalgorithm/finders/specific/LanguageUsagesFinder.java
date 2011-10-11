@@ -5,7 +5,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
 import jetbrains.mps.project.IModule;
@@ -30,7 +30,7 @@ public class LanguageUsagesFinder implements IFinder {
   public LanguageUsagesFinder() {
   }
 
-  public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
+  public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
     IHolder objectHolder = query.getObjectHolder();
     if (!((objectHolder instanceof ModuleHolder))) {
@@ -43,7 +43,7 @@ public class LanguageUsagesFinder implements IFinder {
     }
     Language language = (Language) searchedModule;
     for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
-      if (indicator.isCanceled()) {
+      if (monitor.isCanceled()) {
         return searchResults;
       }
       if (module instanceof Solution) {

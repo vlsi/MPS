@@ -8,11 +8,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class AllMethodUsages_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder");
@@ -42,26 +42,31 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
     return true;
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    List<SNode> methodDeclarations;
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-        methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", node, scope, indicator);
-      } else {
-        methodDeclarations = new ArrayList<SNode>();
-      }
-    } else {
-      methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder", node, scope, indicator);
-    }
-    ListSequence.fromList(methodDeclarations).addElement(node);
-    // 
-    for (SNode methodDeclaration : methodDeclarations) {
-      for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", methodDeclaration, scope, indicator))) {
-        if (!(SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
-          continue;
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
+    monitor.start(getDescription(), 3);
+    try {
+      List<SNode> methodDeclarations;
+      if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
+        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+          methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", node, scope, monitor.subTask(1));
+        } else {
+          methodDeclarations = new ArrayList<SNode>();
         }
-        ListSequence.fromList(_results).addElement(nodeUsage);
+      } else {
+        methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder", node, scope, monitor.subTask(1));
       }
+      ListSequence.fromList(methodDeclarations).addElement(node);
+      // 
+      for (SNode methodDeclaration : methodDeclarations) {
+        for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", methodDeclaration, scope, monitor.subTask(1)))) {
+          if (!(SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
+            continue;
+          }
+          ListSequence.fromList(_results).addElement(nodeUsage);
+        }
+      }
+    } finally {
+      monitor.done();
     }
   }
 
@@ -69,11 +74,11 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
     List<SNode> methodDeclarations = new ArrayList<SNode>();
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-        ListSequence.fromList(methodDeclarations).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", node, scope, new EmptyProgressIndicator())));
+        ListSequence.fromList(methodDeclarations).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", node, scope, new EmptyProgressMonitor())));
       }
       ListSequence.fromList(methodDeclarations).addElement(node);
     } else {
-      ListSequence.fromList(methodDeclarations).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder", node, scope, new EmptyProgressIndicator())));
+      ListSequence.fromList(methodDeclarations).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder", node, scope, new EmptyProgressMonitor())));
     }
     // 
     for (SNode methodDeclaration : methodDeclarations) {

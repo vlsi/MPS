@@ -19,8 +19,8 @@ import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.progress.Progressive;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.smodel.ModelCommandExecutor;
+import jetbrains.mps.progress.ProgressMonitor;
 import java.io.File;
 
 public class NewSolutionDialogContentPane extends JPanel {
@@ -187,12 +187,11 @@ public class NewSolutionDialogContentPane extends JPanel {
     }
 
     myThis.getDialog().dispose();
-    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
-      public void run(ProgressIndicator indicator) {
-        indicator.setIndeterminate(true);
+    ModelAccess.instance().runWriteActionWithProgressSynchronously(new ModelCommandExecutor.RunnableWithProgress() {
+      public void run(ProgressMonitor monitor) {
         myThis.setResult(NewModuleUtil.createSolution(myThis.getSolutionName(), myThis.getSolutionPath(), myThis.getProject()));
       }
-    }, "Creating", false, myThis.getProject().getProject());
+    }, "Creating", false, myThis.getProject());
   }
 
   /*package*/ void onCancel() {

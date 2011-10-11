@@ -15,18 +15,19 @@
  */
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.filters.BaseFilter;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 public class FilterNode extends BaseNode {
   private static final String FILTER = "filter";
@@ -57,24 +58,27 @@ public class FilterNode extends BaseNode {
     return "filter";
   }
 
-  public SearchResults doGetResults(final SearchQuery query, final ProgressIndicator indicator) {
-    indicator.setText(getTaskName() + " started");
-    //indicator.startTask(getTaskName(), getTaskKind());
-    final SearchResults[] results = new SearchResults[1];
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SearchResults childRes = myChildren.get(0).getResults(query, indicator);
-        try {
-          results[0] = myFilter.filter(childRes);
-        } catch (Throwable t) {
-          LOG.error(t.getMessage(), t);
-          results[0] = childRes;
+  public SearchResults doGetResults(final SearchQuery query, @NotNull final ProgressMonitor monitor) {
+    monitor.start(getTaskName() + " started", 5);
+    try {
+      final SearchResults[] results = new SearchResults[1];
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          SearchResults childRes = myChildren.get(0).getResults(query, monitor.subTask(4));
+          monitor.advance(0);
+          try {
+            results[0] = myFilter.filter(childRes);
+            monitor.advance(1);
+          } catch (Throwable t) {
+            LOG.error(t.getMessage(), t);
+            results[0] = childRes;
+          }
         }
-      }
-    });
-    //indicator.finishTask(getTaskName());
-
-    return results[0];
+      });
+      return results[0];
+    } finally {
+      monitor.done();
+    }
   }
 
   public long getEstimatedTime(IScope scope) {

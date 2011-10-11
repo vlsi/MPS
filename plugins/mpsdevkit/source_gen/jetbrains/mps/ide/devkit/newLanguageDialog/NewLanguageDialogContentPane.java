@@ -23,8 +23,8 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.progress.Progressive;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.smodel.ModelCommandExecutor;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelFqName;
@@ -221,12 +221,11 @@ public class NewLanguageDialogContentPane extends JPanel {
     myThis.getDialog().dispose();
     final Wrappers._T<Language> language = new Wrappers._T<Language>(null);
     Project project = myThis.getProject().getProject();
-    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
-      public void run(ProgressIndicator indicator) {
-        indicator.setIndeterminate(true);
+    ModelAccess.instance().runWriteActionWithProgressSynchronously(new ModelCommandExecutor.RunnableWithProgress() {
+      public void run(ProgressMonitor monitor) {
         language.value = myThis.createNewLanguage();
       }
-    }, "Creating", false, project);
+    }, "Creating", false, project.getComponent(MPSProject.class));
     ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
       public void run() {
         if (!(language.value.getSModelRoots().isEmpty())) {

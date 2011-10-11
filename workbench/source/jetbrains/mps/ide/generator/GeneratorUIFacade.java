@@ -17,8 +17,6 @@ package jetbrains.mps.ide.generator;
 
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.extensions.ExtensionPointName;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.generator.*;
@@ -33,11 +31,12 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelCommandExecutor.RunnableWithProgress;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -192,8 +191,8 @@ public class GeneratorUIFacade {
 
     final boolean[] result = new boolean[]{false};
 
-    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
-      public void run(@NotNull ProgressIndicator progress) {
+    ModelAccess.instance().runWriteActionWithProgressSynchronously(new RunnableWithProgress() {
+      public void run(@NotNull ProgressMonitor monitor) {
         if (!saveTransientModels) {
           IGenerationTracer component = ideaProject.getComponent(IGenerationTracer.class);
           if (component != null) {
@@ -254,9 +253,9 @@ public class GeneratorUIFacade {
           .reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep())
           .create();
 
-        result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, new ProgressMonitorAdapter(progress), messages, options);
+        result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, monitor, messages, options);
       }
-    }, "Generation", true, invocationContext.getIdeaProject());
+    }, "Generation", true, invocationContext.getProject());
 
     return result[0];
   }

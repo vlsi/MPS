@@ -27,6 +27,7 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Point;
@@ -128,7 +129,7 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               for (String finder : ListSequence.fromList(finders)) {
-                SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finder, ((SNode) MapSequence.fromMap(_params).get("methodNode")), GlobalScope.getInstance(), p)));
+                SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finder, ((SNode) MapSequence.fromMap(_params).get("methodNode")), GlobalScope.getInstance(), new ProgressMonitorAdapter(p))));
               }
             }
           });

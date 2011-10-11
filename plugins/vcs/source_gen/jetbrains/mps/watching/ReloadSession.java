@@ -23,6 +23,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.smodel.descriptor.source.ReloadableSources;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.Generator;
@@ -121,7 +122,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         progressIndicator.setText("Reloading updated models... Please wait.");
-        ReloadableSources.getInstance().reload(progressIndicator);
+        ReloadableSources.getInstance().reload(new ProgressMonitorAdapter(progressIndicator));
       }
     });
   }

@@ -8,7 +8,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 
 public class ReloadableFinder implements IInterfacedFinder {
   private static final Logger LOG = Logger.getLogger(ReloadableFinder.class);
@@ -96,11 +96,11 @@ public class ReloadableFinder implements IInterfacedFinder {
     return finder.getNodeToNavigate();
   }
 
-  public SearchResults<SNode> find(SearchQuery query, ProgressIndicator indicator) {
+  public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     GeneratedFinder finder = getFinder();
     if (finder == null) {
       return new SearchResults();
     }
-    return finder.find(query, indicator);
+    return finder.find(query, monitor);
   }
 }

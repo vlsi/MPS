@@ -237,7 +237,7 @@ public class Solution extends AbstractModule {
   public BytecodeLocator getBytecodeLocator() {
     return new ModuleBytecodeLocator() {
       public byte[] find(String fqName) {
-        if (getModuleDescriptor().isDontLoadClasses()) return null;
+        if (!getModuleDescriptor().getCompileInMPS()) return null;
         return super.find(fqName);
       }
     };

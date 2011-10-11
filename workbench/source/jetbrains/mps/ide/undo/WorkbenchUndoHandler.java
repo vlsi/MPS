@@ -16,16 +16,15 @@
 package jetbrains.mps.ide.undo;
 
 import com.intellij.openapi.command.undo.UndoManager;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHandler;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -67,7 +66,7 @@ public class WorkbenchUndoHandler implements UndoHandler {
       myActions.clear();
       return;
     }
-    UndoManager undoManager = UndoManager.getInstance(project);
+    UndoManager undoManager = UndoManager.getInstance(ProjectHelper.toIdeaProject(project));
 
     undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(myActions));
     myActions = new LinkedList<SNodeUndoableAction>();

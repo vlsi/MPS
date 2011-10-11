@@ -23,10 +23,10 @@ import java.lang.reflect.Constructor;
 import java.util.Collection;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.LinkedHashMap;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import java.util.Collections;
@@ -172,11 +172,6 @@ public class RefactoringUtil {
     return true;
   }
 
-  @Deprecated
-  public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(MPSProject project, Language language) {
-    return RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project.getProject(), language);
-  }
-
   public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(Project project, Language language) {
     Set<Language> extendingLangs = MPSModuleRepository.getInstance().getAllExtendingLanguages(language);
     Map<IModule, List<SModel>> result = new LinkedHashMap<IModule, List<SModel>>(extendingLangs.size() + 1);
@@ -189,6 +184,11 @@ public class RefactoringUtil {
     return result;
   }
 
+  @Deprecated
+  public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(com.intellij.openapi.project.Project project, Language language) {
+    return RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project.getComponent(MPSProject.class), language);
+  }
+
   private static List<SModel> getLanguageModelsList(Project project, Language l) {
     ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
     languageConfig.setModuleRef(l.getModuleReference());
@@ -199,13 +199,14 @@ public class RefactoringUtil {
     }
   }
 
-  @Deprecated
-  public static Map<IModule, List<SModel>> getLanguageModels(MPSProject project, Language language) {
-    return RefactoringUtil.getLanguageModels(project.getProject(), language);
-  }
-
   public static Map<IModule, List<SModel>> getLanguageModels(Project project, Language language) {
     return Collections.<IModule,List<SModel>>singletonMap(language, RefactoringUtil.getLanguageModelsList(project, language));
+
+  }
+
+  @Deprecated
+  public static Map<IModule, List<SModel>> getLanguageModels(com.intellij.openapi.project.Project project, Language language) {
+    return RefactoringUtil.getLanguageModels(project.getComponent(MPSProject.class), language);
   }
 
   public static   enum Applicability {

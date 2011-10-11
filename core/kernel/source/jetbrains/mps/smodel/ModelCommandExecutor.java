@@ -16,8 +16,8 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.command.UndoConfirmationPolicy;
-import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -55,8 +55,12 @@ public interface ModelCommandExecutor {
 
   void writeFilesInEDT(@NotNull final Runnable action);
 
-  void runWriteActionWithProgressSynchronously(@NotNull Progressive process, String progressTitle, boolean canBeCanceled,
-                                               Project project);
+  public interface RunnableWithProgress {
+    void run(@NotNull ProgressMonitor monitor);
+  }
+
+  void runWriteActionWithProgressSynchronously(@NotNull RunnableWithProgress runnable, String progressTitle, boolean canBeCanceled,
+                                               jetbrains.mps.project.Project project);
 
   <T> T runWriteAction(Computable<T> c);
 

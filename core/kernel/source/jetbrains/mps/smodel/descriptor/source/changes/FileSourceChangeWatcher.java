@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.smodel.descriptor.source.changes;
 
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.SubProgressKind;
 import jetbrains.mps.smodel.descriptor.source.ReloadableSources;
 import jetbrains.mps.vfs.IFile;
 
@@ -44,13 +45,18 @@ public abstract class FileSourceChangeWatcher implements SourceChangeWatcher {
     }
   }
 
-  public void changed(ProgressIndicator progressIndicator) {
+  public void changed(ProgressMonitor monitor) {
     List<ChangeListener> listeners;
     synchronized (LOCK) {
       listeners = new ArrayList<ChangeListener>(myListeners);
     }
-    for (ChangeListener l : listeners) {
-      l.changed(progressIndicator);
+    monitor.start("", listeners.size());
+    try {
+      for (ChangeListener l : listeners) {
+        l.changed(monitor.subTask(1, SubProgressKind.AS_COMMENT));
+      }
+    } finally {
+      monitor.done();
     }
   }
 

@@ -22,6 +22,10 @@ import org.jetbrains.annotations.Nullable;
 public class ProjectOperationContext extends StandaloneMPSContext {
   private com.intellij.openapi.project.Project myProject;
 
+  private ProjectOperationContext(Project project) {
+    myProject = project.getComponent(MPSProject.class).getProject();
+  }
+
   private ProjectOperationContext(com.intellij.openapi.project.Project project) {
     myProject = project;
   }
@@ -57,6 +61,10 @@ public class ProjectOperationContext extends StandaloneMPSContext {
   }
 
   public static ProjectOperationContext get(com.intellij.openapi.project.Project project) {
+    return new ProjectOperationContext(project);
+  }
+
+  public static ProjectOperationContext get(Project project) {
     return new ProjectOperationContext(project);
   }
 }

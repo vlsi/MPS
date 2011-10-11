@@ -13,7 +13,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -67,9 +67,9 @@ public class SafeDeleteConcept extends BaseGeneratedRefactoring {
     refactoringContext.setParameter("nodeAspects", AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(refactoringContext.getSelectedNode()));
 
     SearchResults searchResults = new SearchResults();
-    searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
+    searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     for (SNode aspect : ListSequence.fromList(((List<SNode>) ((List) refactoringContext.getParameter("nodeAspects"))))) {
-      searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), aspect, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
+      searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressMonitor(), aspect, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     }
 
     List<SearchResult<SNode>> searchResultsList = searchResults.getSearchResults();

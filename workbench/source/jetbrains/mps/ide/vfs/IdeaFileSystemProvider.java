@@ -15,18 +15,27 @@
  */
 package jetbrains.mps.ide.vfs;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
+import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Set;
 
 /**
  * @author Evgeny Gerashchenko
  */
 public class IdeaFileSystemProvider implements FileSystemProvider {
   static final Logger LOG = Logger.getLogger(IdeaFileSystemProvider.class);
+
+  // Workaround for IDEA-75359
+  private static final Set<VirtualFile> ourJarRootsAccessedAtLeastOnce = new HashSet<VirtualFile>();
 
   @Override
   public IFile getFile(@NotNull String path) {
@@ -40,5 +49,21 @@ public class IdeaFileSystemProvider implements FileSystemProvider {
 
   public IFile getFile(@NotNull VirtualFile file) {
     return new IdeaFile(file);
+  }
+
+  // Workaround for IDEA-75359
+  static void jarRootAccessed(final VirtualFile jarRootFile) {
+    synchronized (ourJarRootsAccessedAtLeastOnce) {
+      if (!ourJarRootsAccessedAtLeastOnce.contains(jarRootFile)) {
+        ourJarRootsAccessedAtLeastOnce.add(jarRootFile);
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
+          public void run() {
+            ((NewVirtualFile) jarRootFile).markDirtyRecursively();
+            jarRootFile.refresh(false, true);
+          }
+        });
+      }
+    }
   }
 }

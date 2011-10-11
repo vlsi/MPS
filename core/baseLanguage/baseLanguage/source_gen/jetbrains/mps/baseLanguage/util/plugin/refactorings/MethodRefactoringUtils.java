@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -47,9 +48,9 @@ public class MethodRefactoringUtils {
       }
       SearchResults<SNode> searchResults;
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.Interface")) {
-        searchResults = FindUtils.getSearchResults(progressIndicator, method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder");
+        searchResults = FindUtils.getSearchResults(new ProgressMonitorAdapter(progressIndicator), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder");
       } else {
-        searchResults = FindUtils.getSearchResults(progressIndicator, method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder");
+        searchResults = FindUtils.getSearchResults(new ProgressMonitorAdapter(progressIndicator), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder");
       }
 
       for (SearchResult<SNode> result : ListSequence.fromList(searchResults.getSearchResults())) {
@@ -57,7 +58,7 @@ public class MethodRefactoringUtils {
       }
     }
     if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
-      SearchResults<SNode> searchResults = FindUtils.getSearchResults(progressIndicator, method, GlobalScope.getInstance(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
+      SearchResults<SNode> searchResults = FindUtils.getSearchResults(new ProgressMonitorAdapter(progressIndicator), method, GlobalScope.getInstance(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
       for (SearchResult<SNode> result : ListSequence.fromList(searchResults.getSearchResults())) {
         ListSequence.fromList(results).addElement(SNodeOperations.cast(result.getObject(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
       }
@@ -66,6 +67,6 @@ public class MethodRefactoringUtils {
   }
 
   public static SearchResults findMethodUsages(SNode method, ProgressIndicator progressIndicator) {
-    return FindUtils.getSearchResults(progressIndicator, method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
+    return FindUtils.getSearchResults(new ProgressMonitorAdapter(progressIndicator), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
   }
 }

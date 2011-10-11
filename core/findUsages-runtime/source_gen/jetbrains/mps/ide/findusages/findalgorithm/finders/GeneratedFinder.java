@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
@@ -54,7 +54,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     return true;
   }
 
-  protected abstract void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator);
+  protected abstract void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor);
 
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     _results.add(node);
@@ -64,7 +64,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     return "Uncategorized";
   }
 
-  public SearchResults<SNode> find(SearchQuery query, ProgressIndicator indicator) {
+  public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults<SNode> results = new SearchResults<SNode>();
     IHolder holder = query.getObjectHolder();
     assert holder instanceof NodeHolder;
@@ -76,7 +76,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
         results.getSearchedNodes().add(resnode);
       }
       List<SNode> res = new ArrayList<SNode>();
-      doFind(node, query.getScope(), res, indicator);
+      doFind(node, query.getScope(), res, monitor);
       for (SNode resnode : ListSequence.fromList(res).sort(new Comparator<SNode>() {
         public int compare(SNode a, SNode b) {
           return compareNodes(a, b);

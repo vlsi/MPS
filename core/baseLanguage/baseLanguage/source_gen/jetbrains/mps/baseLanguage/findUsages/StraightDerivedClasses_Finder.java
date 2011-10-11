@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -30,13 +30,18 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    for (SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator)) {
-      if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) {
-        ListSequence.fromList(_results).addElement(SNodeOperations.getParent(nodeUsage));
-      } else if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-        ListSequence.fromList(_results).addElement(nodeUsage);
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
+    monitor.start(getDescription(), 1);
+    try {
+      for (SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor.subTask(1))) {
+        if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) {
+          ListSequence.fromList(_results).addElement(SNodeOperations.getParent(nodeUsage));
+        } else if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+          ListSequence.fromList(_results).addElement(nodeUsage);
+        }
       }
+    } finally {
+      monitor.done();
     }
   }
 

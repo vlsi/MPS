@@ -15,62 +15,23 @@
  */
 package jetbrains.mps.runtime;
 
-import gnu.trove.THashMap;
-import jetbrains.mps.util.InternUtil;
-
-import java.util.Map;
-
 abstract class BaseClassLoader extends ClassLoader {
-  private Map<String, Class> myCache = new THashMap<String, Class>();
-
   protected BaseClassLoader() {
     super(BaseClassLoader.class.getClassLoader());
   }
 
-  protected abstract byte[] findClassBytes(String name);
+  protected abstract byte[] findInCurrent(String name);
 
-  protected Class loadAfterCurrent(String name) {
-    return null;
-  }
+  protected abstract Class findAfterCurrent(String name);
 
-  protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-    name = InternUtil.intern(name);
-    Class c = myCache.get(name);
-
-    if (myCache.containsKey(name) && c == null) {
-      throw new ClassNotFoundException("Classloader: " + this + "; Class: " + name);
+  protected Class<?> findClass(String name) throws ClassNotFoundException {
+    byte[] bytes = findInCurrent(name);
+    if (bytes != null) {
+      definePackageIfNecessary(name);
+      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
     }
 
-    if (c == null) {
-      byte[] bytes = findClassBytes(name);
-      if (bytes == null) {
-        c = loadAfterCurrent(name);
-        if (c == null) {
-          try {
-            c = getParent().loadClass(name);
-          } catch (ClassNotFoundException e) {
-            myCache.put(name, null);
-            throw e;
-          }
-        }
-        if (resolve) {
-          resolveClass(c);
-        }
-      } else {
-        definePackageIfNecessary(name);
-        c = defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
-      }
-      myCache.put(name, c);
-    }
-    if (resolve) {
-      resolveClass(c);
-    }
-
-    return c;
-  }
-
-  public void dispose() {
-    myCache.clear();
+    return findAfterCurrent(name);
   }
 
   private void definePackageIfNecessary(String name) {

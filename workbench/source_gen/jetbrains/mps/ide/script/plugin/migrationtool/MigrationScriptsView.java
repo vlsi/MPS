@@ -34,6 +34,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import javax.swing.JComponent;
@@ -154,7 +155,7 @@ public abstract class MigrationScriptsView {
           public void run(@NotNull final ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             IResultProvider provider = FindUtils.makeProvider(newFinder);
-            SearchResults results = FindUtils.getSearchResults(indicator, myQuery, provider);
+            SearchResults results = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), myQuery, provider);
             int newCount = results.getSearchResults().size();
             if (newCount > 0) {
               updateControls(false, new JLabel("done, but there " + ((newCount == 1 ?

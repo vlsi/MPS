@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -31,16 +31,21 @@ public class PropertyInstances_Finder extends GeneratedFinder {
     return "jetbrains.mps.lang.structure.structure.PropertyDeclaration";
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    String role = SPropertyOperations.getString(node, "name");
-    SNode conceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
-    if (!((conceptDeclaration == null))) {
-      for (SNode instance : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, indicator)) {
-        String property = instance.getProperty(role);
-        if (property != null && !(property.equals(""))) {
-          ListSequence.fromList(_results).addElement(instance);
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
+    monitor.start(getDescription(), 1);
+    try {
+      String role = SPropertyOperations.getString(node, "name");
+      SNode conceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
+      if (!((conceptDeclaration == null))) {
+        for (SNode instance : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, monitor.subTask(1))) {
+          String property = instance.getProperty(role);
+          if (property != null && !(property.equals(""))) {
+            ListSequence.fromList(_results).addElement(instance);
+          }
         }
       }
+    } finally {
+      monitor.done();
     }
   }
 

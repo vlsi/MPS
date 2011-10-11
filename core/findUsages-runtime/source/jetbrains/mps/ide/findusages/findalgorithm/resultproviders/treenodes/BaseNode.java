@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -24,9 +22,12 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IScope;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -80,12 +81,12 @@ public abstract class BaseNode implements IResultProvider {
 
   //----SEARCH STUFF----
 
-  public SearchResults getResults(SearchQuery query, @Nullable ProgressIndicator indicator) {
+  public SearchResults getResults(SearchQuery query, @Nullable ProgressMonitor monitor) {
 //    assert !ThreadUtils.isEventDispatchThread();
 
-    if (indicator == null) indicator = new EmptyProgressIndicator();
+    if (monitor == null) monitor = new EmptyProgressMonitor();
 
-    SearchResults results = doGetResults(query, indicator);
+    SearchResults results = doGetResults(query, monitor);
 
     //no null pointer exception will occur!!
     if (results.getSearchedNodes().contains(null)) {
@@ -112,7 +113,7 @@ public abstract class BaseNode implements IResultProvider {
     return results;
   }
 
-  public abstract SearchResults doGetResults(SearchQuery query, ProgressIndicator indicator);
+  public abstract SearchResults doGetResults(SearchQuery query, @NotNull ProgressMonitor monitor);
 
   public long getEstimatedTime(IScope scope) {
     long sumTime = 0;

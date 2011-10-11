@@ -7,11 +7,10 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
 
 public class ConceptInstances_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
@@ -31,10 +30,15 @@ public class ConceptInstances_Finder extends GeneratedFinder {
     return "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(node, scope, new ProgressMonitorAdapter(indicator), false));
-    for (SNode resNode : resNodes) {
-      ListSequence.fromList(_results).addElement(resNode);
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
+    monitor.start(getDescription(), 0);
+    try {
+      List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(node, scope, monitor, false));
+      for (SNode resNode : resNodes) {
+        ListSequence.fromList(_results).addElement(resNode);
+      }
+    } finally {
+      monitor.done();
     }
   }
 

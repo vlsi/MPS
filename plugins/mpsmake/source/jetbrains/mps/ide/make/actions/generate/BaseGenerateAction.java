@@ -25,6 +25,7 @@ import jetbrains.mps.ide.generator.GenerationCheckHelper;
 import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.ide.projectPane.ModuleChangingOperationContext;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
@@ -166,7 +167,7 @@ public abstract class BaseGenerateAction extends BaseAction {
         assert conf != null;
 
         try {
-          return conf.getGenParams(myProject, myRebuildAll);
+          return conf.getGenParams(myProject.getComponent(MPSProject.class), myRebuildAll);
         } catch (IllegalGeneratorConfigurationException e) {
           JOptionPane.showMessageDialog(myFrame, e.getMessage());
           return null;

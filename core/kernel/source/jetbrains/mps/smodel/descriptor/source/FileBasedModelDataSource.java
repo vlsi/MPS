@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.descriptor.source.changes.FileSourceChangeWatcher;
 import jetbrains.mps.smodel.descriptor.source.changes.SourceChangeWatcher;
 import jetbrains.mps.vfs.IFile;
@@ -34,8 +34,8 @@ public abstract class FileBasedModelDataSource implements ModelDataSource {
     return mySourceChangeWatcher;
   }
 
-  protected void sourcesSetChanged(){
-    mySourceChangeWatcher.changed(new EmptyProgressIndicator());
+  protected void sourcesSetChanged() {
+    mySourceChangeWatcher.changed(new EmptyProgressMonitor());
   }
 
   public abstract boolean containFile(IFile file);

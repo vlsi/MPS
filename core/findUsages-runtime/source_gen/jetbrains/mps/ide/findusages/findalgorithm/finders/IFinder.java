@@ -4,8 +4,8 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders;
 
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 
 public interface IFinder {
-  public SearchResults find(SearchQuery query, ProgressIndicator indicator);
+  public SearchResults find(SearchQuery query, ProgressMonitor monitor);
 }

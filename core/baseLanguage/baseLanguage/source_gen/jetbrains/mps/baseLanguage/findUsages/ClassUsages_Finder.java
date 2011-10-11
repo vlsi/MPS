@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -30,14 +30,19 @@ public class ClassUsages_Finder extends GeneratedFinder {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
 
-  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    for (SNode result : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator))) {
-      ListSequence.fromList(_results).addElement(result);
-    }
-    for (SNode constructor : ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true))) {
-      for (SNode result : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder", constructor, scope, indicator))) {
+  protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
+    monitor.start(getDescription(), 2);
+    try {
+      for (SNode result : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor.subTask(1)))) {
         ListSequence.fromList(_results).addElement(result);
       }
+      for (SNode constructor : ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true))) {
+        for (SNode result : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder", constructor, scope, monitor.subTask(1)))) {
+          ListSequence.fromList(_results).addElement(result);
+        }
+      }
+    } finally {
+      monitor.done();
     }
   }
 

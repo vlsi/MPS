@@ -14,9 +14,9 @@ import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -31,7 +31,7 @@ public class QueriesGenerated {
     return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).isNotEmpty() && Language.getModelAspect(model.getModelDescriptor()) == LanguageAspect.FIND_USAGES;
   }
 
-  public static Object propertyMacro_GetPropertyValue_7222148688691894761(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4192433084863763942(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return FinderDeclaration_Behavior.call_getGeneratedClassLongName_1213877240120(SLinkOperations.getTarget(_context.getNode(), "finder", false));
   }
 
@@ -55,11 +55,15 @@ public class QueriesGenerated {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "forConcept", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_7810572934689530075(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "findFunction", true), "body", true), "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression", false, new String[]{})).count();
+  }
+
   public static Object propertyMacro_GetPropertyValue_1197207280707(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1212240333211(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_5140158946217876028(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return FinderDeclaration_Behavior.call_getGeneratedClassLongName_1213877240120(SLinkOperations.getTarget(_context.getNode(), "finder", false));
   }
 
@@ -78,7 +82,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_7991477654791670213(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0m(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(_context.getNode(), "name"));
+        return eq_x583g4_a0a0a0a0a0a0a0n(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(_context.getNode(), "name"));
       }
     }).first().getId();
   }
@@ -93,11 +97,11 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_FinderConstructor");
   }
 
-  public static boolean ifMacro_Condition_7222148688691894695(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_4192433084863763888(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "progress", true) != null);
   }
 
-  public static boolean ifMacro_Condition_7222148688691894729(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_4192433084863763916(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "scope", true) != null);
   }
 
@@ -121,23 +125,23 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "categorizeBlock", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1212240333229(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5140158946217876046(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "queryScope", true) == null;
   }
 
-  public static boolean ifMacro_Condition_1212240333248(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_7810572934689511369(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.findUsages.structure.FindBlock", false, false) != null;
   }
 
-  public static SNode sourceNodeQuery_7222148688691894709(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4192433084863763900(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "progress", true);
   }
 
-  public static SNode sourceNodeQuery_7222148688691894719(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4192433084863763908(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "queryNode", true);
   }
 
-  public static SNode sourceNodeQuery_7222148688691894742(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4192433084863763927(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "scope", true);
   }
 
@@ -169,15 +173,15 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "foundNode", true);
   }
 
-  public static SNode sourceNodeQuery_1212240333221(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_5140158946217876038(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "queryNode", true);
   }
 
-  public static SNode sourceNodeQuery_1212240333240(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_5140158946217876057(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "queryScope", true);
   }
 
-  public static Iterable sourceNodesQuery_7222148688691894752(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_4192433084863763935(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "finder", true);
   }
 
@@ -197,7 +201,7 @@ public class QueriesGenerated {
     return new TemplateModelImpl(module);
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0m(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0n(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

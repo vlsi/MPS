@@ -34,6 +34,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -105,7 +106,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
         ProgressManager.getInstance().run(new Modal(getProject(), "Searching", true) {
           public void run(@NotNull final ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
-            searchResults[0] = FindUtils.getSearchResults(indicator, query, provider);
+            searchResults[0] = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), query, provider);
             isCancelled[0] = indicator.isCanceled();
           }
         });

@@ -20,7 +20,6 @@ import com.intellij.idea.IdeaTestApplication;
 import com.intellij.idea.LoggerFactory;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.vfs.LocalFileSystem;
@@ -101,7 +100,7 @@ public class TestMain {
     Logger.setThreshold("INFO");
     org.apache.log4j.BasicConfigurator.configure();
     TestMain.configureMPS();
-    final MPSProject project = loadProject(projectFile);
+    final Project project = loadProject(projectFile);
     pr.execute(project);
   }
 
@@ -192,7 +191,7 @@ public class TestMain {
     final String filePath = projectFile.getAbsolutePath();
 
     //this is a workaround for MPS-8840
-    final Project[] project = new Project[1];
+    final com.intellij.openapi.project.Project[] project = new com.intellij.openapi.project.Project[1];
 
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
@@ -237,21 +236,21 @@ public class TestMain {
     final MPSProject project = loadProject(projectFile);
     return testActionForLeaks(new Runnable() {
       public void run() {
-        new ProjectTester(project.getProject()).testProject();
+        new ProjectTester(project).testProject();
       }
     }, leakThreshold);
   }
 
 
-  private static ProjectScope getProjectScope(MPSProject project) {
-    return project.getProject().getComponent(ProjectScope.class);
+  private static ProjectScope getProjectScope(Project project) {
+    return project.getComponent(ProjectScope.class);
   }
 
-  public static SModelDescriptor getModel(MPSProject project, String modelName) {
+  public static SModelDescriptor getModel(Project project, String modelName) {
     return getProjectScope(project).getModelDescriptor(SModelReference.fromString(modelName));
   }
 
-  public static Language getLanguage(MPSProject project, String languageName) {
+  public static Language getLanguage(Project project, String languageName) {
     return getProjectScope(project).getLanguage(languageName);
   }
 
@@ -294,7 +293,7 @@ public class TestMain {
     final File destinationProjectDir = new File(PathManager.getHomePath(), "TEST_REFACTORING");
     return testOnProjectCopy(sourceProjectDir, destinationProjectDir, REFACTORING_PROJECT,
       new ProjectRunnable() {
-        public boolean execute(final MPSProject project) {
+        public boolean execute(final Project project) {
           final SModelDescriptor[] sandbox = new SModelDescriptor[]{null, null};
           final Language[] testLanguage = new Language[]{null, null};
           ModelAccess.instance().runWriteAction(new Runnable() {
@@ -309,7 +308,7 @@ public class TestMain {
             }
           });
 
-          return refactoringTester.testRefactoring(project.getProject(), sandbox[0], sandbox[1], testLanguage[0], testLanguage[1]);
+          return refactoringTester.testRefactoring(project, sandbox[0], sandbox[1], testLanguage[0], testLanguage[1]);
         }
       });
   }
@@ -401,7 +400,7 @@ public class TestMain {
     }
 
     final MPSProject project = loadProject(projectFile);
-    TestResult result = new ProjectTester(project.getProject(), isRunnable).testProject(configurations);
+    TestResult result = new ProjectTester(project, isRunnable).testProject(configurations);
 
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
@@ -486,7 +485,7 @@ public class TestMain {
   }
 
   public static interface ProjectRunnable {
-    boolean execute(MPSProject project);
+    boolean execute(Project project);
   }
 
   public static class ProjectTester {

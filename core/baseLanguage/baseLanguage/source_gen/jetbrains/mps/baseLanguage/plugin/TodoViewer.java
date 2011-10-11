@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import jetbrains.mps.ide.findusages.view.UsagesView;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -75,7 +75,8 @@ public class TodoViewer extends JPanel {
     assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
     removeAll();
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
-    myUsagesView = new UsagesView(myProject, viewOptions) {
+    com.intellij.openapi.project.Project project = getProject().getComponent(com.intellij.openapi.project.Project.class);
+    myUsagesView = new UsagesView(project, viewOptions) {
       public void close() {
         getTool().makeUnavailableLater();
       }
@@ -83,7 +84,7 @@ public class TodoViewer extends JPanel {
     add(myUsagesView.getComponent(), BorderLayout.CENTER);
     myUsagesView.setRunOptions(FindUtils.makeProvider(new TodoFinder()), new SearchQuery(myProject.getComponent(ProjectScope.class)), new UsagesView.ButtonConfiguration(true), new SearchResults());
     myUsagesView.setCustomNodeRepresentator(new TodoViewer.MyNodeRepresentator());
-    ProgressManager.getInstance().run(new Task.Modal(getProject(), "Searching", true) {
+    ProgressManager.getInstance().run(new Task.Modal(project, "Searching", true) {
       public void run(@NotNull final ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         myUsagesView.run(indicator);

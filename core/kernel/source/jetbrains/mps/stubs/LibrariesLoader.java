@@ -73,7 +73,6 @@ public class LibrariesLoader implements ApplicationComponent {
       descriptor.setNamespace(ss.getName());
 
       descriptor.setCompileInMPS(false);
-      descriptor.setDontLoadClasses(true);
 
       result.add(descriptor);
     }

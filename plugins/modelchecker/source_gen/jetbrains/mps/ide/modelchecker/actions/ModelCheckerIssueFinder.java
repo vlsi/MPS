@@ -6,9 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -25,8 +23,7 @@ public class ModelCheckerIssueFinder implements IFinder {
     return null;
   }
 
-  public SearchResults find(SearchQuery searchQuery, ProgressIndicator indicator) {
-    ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
+  public SearchResults find(SearchQuery searchQuery, ProgressMonitor monitor) {
     IHolder objectHolder = searchQuery.getObjectHolder();
     IOperationContext operationContext;
     List<SModelDescriptor> modelDescriptors;

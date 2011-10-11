@@ -5,7 +5,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
 import jetbrains.mps.smodel.SModel;
@@ -21,7 +21,7 @@ public class ModelUsagesFinder implements IFinder {
   public ModelUsagesFinder() {
   }
 
-  public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
+  public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
     IHolder holder = query.getObjectHolder();
     assert holder instanceof ModelHolder;
@@ -29,7 +29,7 @@ public class ModelUsagesFinder implements IFinder {
     searchResults.getSearchedNodes().add(model);
     SModelReference modelReference = model.getSModelReference();
     for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
-      if (indicator.isCanceled()) {
+      if (monitor.isCanceled()) {
         return searchResults;
       }
       if (!(SModelStereotype.isUserModel(modelDescriptor))) {

@@ -2667,9 +2667,14 @@
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mvw3.~ReloadableSources%dgetInstance()%cjetbrains%dmps%dsmodel%ddescriptor%dsource%dReloadableSources" resolveInfo="getInstance" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2896881808974525177">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mvw3.~ReloadableSources%dreload(com%dintellij%dopenapi%dprogress%dProgressIndicator)%cvoid" resolveInfo="reload" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2896881808974525178">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4707157387247361569" resolveInfo="progressIndicator" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mvw3.~ReloadableSources%dreload(jetbrains%dmps%dprogress%dProgressMonitor)%cvoid" resolveInfo="reload" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5224005651984319459">
+                      <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5224005651984321097">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k6pq.~ProgressMonitorAdapter%d&lt;init&gt;(com%dintellij%dopenapi%dprogress%dProgressIndicator)" resolveInfo="ProgressMonitorAdapter" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5224005651984321098">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4707157387247361569" resolveInfo="progressIndicator" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -6570,7 +6575,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4707157387247363140" resolveInfo="computable" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4707157387247363154">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8a0f.~Computable%dcompute()%cjava%dlang%dObject" resolveInfo="compute" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~Computable%dcompute()%cjava%dlang%dObject" resolveInfo="compute" />
                 </node>
               </node>
             </node>

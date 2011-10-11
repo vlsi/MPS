@@ -20,8 +20,8 @@ import org.jdesktop.beansbinding.Bindings;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.progress.Progressive;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.smodel.ModelCommandExecutor;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -191,9 +191,8 @@ public class NewLibDialogContentPane extends JPanel {
     }
 
     myThis.getDialog().dispose();
-    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
-      public void run(ProgressIndicator indicator) {
-        indicator.setIndeterminate(true);
+    ModelAccess.instance().runWriteActionWithProgressSynchronously(new ModelCommandExecutor.RunnableWithProgress() {
+      public void run(ProgressMonitor monitor) {
         myThis.setResult(NewModuleUtil.createModule(MPSExtentions.DOT_LIBRARY, myThis.getLibraryName(), myThis.getLibraryPath(), myThis.getProject(), new _FunctionTypes._return_P3_E0<Library, String, IFile, MPSProject>() {
           public Library invoke(String s, IFile f, MPSProject p) {
             return Library.createLibrary(s, f, p);
@@ -204,7 +203,7 @@ public class NewLibDialogContentPane extends JPanel {
         }));
         myThis.getResult();
       }
-    }, "Creating", false, myThis.getProject().getProject());
+    }, "Creating", false, myThis.getProject());
   }
 
   /*package*/ void onCancel() {

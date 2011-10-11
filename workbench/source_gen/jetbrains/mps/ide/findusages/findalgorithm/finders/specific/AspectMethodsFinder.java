@@ -6,7 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class AspectMethodsFinder implements IFinder {
   public AspectMethodsFinder() {
   }
 
-  public SearchResults<SNode> find(SearchQuery query, ProgressIndicator indicator) {
+  public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     final AspectMethodsFinder.AspectMethodQueryData data = (AspectMethodsFinder.AspectMethodQueryData) query.getObjectHolder().getObject();
     final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
     ModelAccess.instance().runReadAction(new Runnable() {
