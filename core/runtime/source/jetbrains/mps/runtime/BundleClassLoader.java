@@ -57,15 +57,6 @@ public class BundleClassLoader<T> extends BaseClassLoader {
     }
   }
 
-  protected Class loadBeforeCurrent(String name) {
-    Class fromParent = myBundle.getRuntimeEnvironment().loadFromParent(name, myBundle);
-    if (fromParent != null) {
-      return fromParent;
-    }
-
-    return null;
-  }
-
   protected Class loadAfterCurrent(String name) {
     RuntimeEnvironment<T> re = myBundle.getRuntimeEnvironment();
     for (T dep : re.getAllDependencies(myBundle)) {
