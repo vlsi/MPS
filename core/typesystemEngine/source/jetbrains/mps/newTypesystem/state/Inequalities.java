@@ -116,6 +116,8 @@ public class Inequalities {
     myInputsToOutputsInc.clear();
     myNodesToBlocksInc.clear();
     myNodesInc.clear();
+    mySolvableLeft.clear();
+    mySolvableRight.clear();
     for (RelationBlock inequality : inequalities) {
       onInequalityAdded(inequality);
     }
