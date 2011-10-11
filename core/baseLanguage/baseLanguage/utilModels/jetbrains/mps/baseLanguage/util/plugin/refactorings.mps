@@ -61,6 +61,7 @@
   <import index="vxft" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.messageTargets(MPS.Classpath/jetbrains.mps.nodeEditor.messageTargets@java_stub)" version="-1" />
   <import index="f6g4" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.project(MPS.Classpath/jetbrains.mps.ide.project@java_stub)" version="-1" />
   <import index="ff4b" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)" version="-1" />
+  <import index="k6pq" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.progress(MPS.Classpath/jetbrains.mps.progress@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
@@ -20970,7 +20971,7 @@
                       </node>
                       <node role="progress" roleId="tp3b.6366407517031970112" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3098450530629987569">
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3098450530629996629">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ff4b.~ProgressMonitorAdapter%d&lt;init&gt;(com%dintellij%dopenapi%dprogress%dProgressIndicator)" resolveInfo="ProgressMonitorAdapter" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k6pq.~ProgressMonitorAdapter%d&lt;init&gt;(com%dintellij%dopenapi%dprogress%dProgressIndicator)" resolveInfo="ProgressMonitorAdapter" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3098450530629996630">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399170918" resolveInfo="progressIndicator" />
                           </node>
@@ -21009,7 +21010,7 @@
                         </node>
                         <node role="progress" roleId="tp3b.6366407517031970112" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3098450530629996631">
                           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3098450530629996632">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ff4b.~ProgressMonitorAdapter%d&lt;init&gt;(com%dintellij%dopenapi%dprogress%dProgressIndicator)" resolveInfo="ProgressMonitorAdapter" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k6pq.~ProgressMonitorAdapter%d&lt;init&gt;(com%dintellij%dopenapi%dprogress%dProgressIndicator)" resolveInfo="ProgressMonitorAdapter" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3098450530629996633">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399170918" resolveInfo="progressIndicator" />
                             </node>
@@ -21087,7 +21088,7 @@
                   </node>
                   <node role="progress" roleId="tp3b.6366407517031970112" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3098450530629997096">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3098450530629997097">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ff4b.~ProgressMonitorAdapter%d&lt;init&gt;(com%dintellij%dopenapi%dprogress%dProgressIndicator)" resolveInfo="ProgressMonitorAdapter" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k6pq.~ProgressMonitorAdapter%d&lt;init&gt;(com%dintellij%dopenapi%dprogress%dProgressIndicator)" resolveInfo="ProgressMonitorAdapter" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3098450530629997098">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399170918" resolveInfo="progressIndicator" />
                       </node>
@@ -21167,7 +21168,7 @@
             </node>
             <node role="progress" roleId="tp3b.6366407517031970112" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3098450530629997099">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3098450530629997100">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ff4b.~ProgressMonitorAdapter%d&lt;init&gt;(com%dintellij%dopenapi%dprogress%dProgressIndicator)" resolveInfo="ProgressMonitorAdapter" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k6pq.~ProgressMonitorAdapter%d&lt;init&gt;(com%dintellij%dopenapi%dprogress%dProgressIndicator)" resolveInfo="ProgressMonitorAdapter" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3098450530629997101">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399171059" resolveInfo="progressIndicator" />
                 </node>
