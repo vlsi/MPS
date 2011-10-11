@@ -15,6 +15,9 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8128243960970299091">
       <property name="name" nameId="tpck.1169194664001" value="Main" />
     </node>
+    <node type="tpe3.BTestCase" typeId="tpe3.1171931851043" id="7120092006645143730">
+      <property name="testCaseName" nameId="tpe3.1171931851045" value="FailedBTestCase" />
+    </node>
   </roots>
   <root id="8128243960970299078">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8128243960970299079" />
@@ -79,6 +82,30 @@
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="8128243960970299111" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8128243960970299112">
         <property name="value" nameId="tpee.1070475926801" value="Live long and prosper!" />
+      </node>
+    </node>
+  </root>
+  <root id="7120092006645143730">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7120092006645143731" />
+    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7120092006645143732">
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7120092006645143733" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7120092006645143734" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7120092006645143735" />
+    </node>
+    <node role="testMethodList" roleId="tpe3.1171931851044" type="tpe3.TestMethodList" typeId="tpe3.1171931858461" id="7120092006645143736">
+      <node role="testMethod" roleId="tpe3.1171931858462" type="tpe3.TestMethod" typeId="tpe3.1171931690126" id="7120092006645143737">
+        <property name="methodName" nameId="tpe3.1171931690128" value="fail" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7120092006645143738" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7120092006645143739" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7120092006645143740">
+          <node role="statement" roleId="tpee.1068581517665" type="tpe3.Fail" typeId="tpe3.1172017222794" id="7120092006645143741">
+            <node role="message" roleId="tpe3.1172075534298" type="tpe3.Message" typeId="tpe3.1172073500303" id="7120092006645143742">
+              <node role="message" roleId="tpe3.1172073511101" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7120092006645143743">
+                <property name="value" nameId="tpee.1070475926801" value="fail!" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </root>

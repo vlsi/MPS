@@ -167,7 +167,7 @@ public class ProcessHandlerBuilder {
   }
 
   public static int startAndWait(ProcessHandler process) {
-    final int[] exitCode = new int[]{0};
+    final int[] exitCode = new int[]{-1};
     try {
       ProcessHandlerBuilder.startCountDown(process, exitCode).await();
     } catch (InterruptedException e) {
@@ -176,7 +176,7 @@ public class ProcessHandlerBuilder {
   }
 
   public static int startAndWait(ProcessHandler process, long timeout) {
-    final int[] exitCode = new int[]{0};
+    final int[] exitCode = new int[]{-1};
     try {
       ProcessHandlerBuilder.startCountDown(process, exitCode).await(timeout, TimeUnit.MILLISECONDS);
     } catch (InterruptedException e) {
