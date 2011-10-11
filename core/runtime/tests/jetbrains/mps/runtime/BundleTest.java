@@ -56,17 +56,6 @@ public class BundleTest {
   }
     
   @Test
-  public void loadFromParent() {
-    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
-    re.addLoadFromParent(A.class.getName());
-
-    RBundle<String> a = bundle("a", A.class);
-    re.add(a).init(a);
-
-    assertClassLoader(a.getClassLoader(), A.class.getName(), getClass().getClassLoader());
-  }
-
-  @Test
   public void transitiveDependency() {
     RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
     RBundle<String> a = bundle("a", A.class);
