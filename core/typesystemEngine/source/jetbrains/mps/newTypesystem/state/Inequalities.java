@@ -37,7 +37,6 @@ public class Inequalities {
   private Set<SNode> myNodesInc = new THashSet<SNode>();
   private Set<SNode> mySolvableLeft = new THashSet<SNode>();
   private Set<SNode> mySolvableRight = new THashSet<SNode>();
-  private Set<SNode> myUsedNodes = new HashSet<SNode>();
 
   private static final ComparableRelation comparableRelation = new ComparableRelation();
   private static final SubTypingRelation subTypingRelation = new SubTypingRelation();
@@ -76,10 +75,11 @@ public class Inequalities {
   private SNode getNodeWithNoInput(Set<SNode> unsorted, Set<SNode> used) {
     for (SNode node : unsorted) {
       if (used.containsAll(myInputsToOutputsInc.getBySecond(node))) {
+  //    if (inputsToOutputs.getBySecond(node).isEmpty()) {
         return node;
       }
     }
-    return null;
+    return unsorted.iterator().next();
   }
 
   public List<RelationBlock> getRelationsToSolve() {
@@ -214,74 +214,12 @@ public class Inequalities {
     return false;
   }
 
-  private boolean isIndependent(SNode node) {
-    return myUsedNodes.containsAll(myInputsToOutputsInc.getBySecond(node));
-  }
-
-  private SNode chooseWaitingVar(Set<SNode> solvable, boolean independent) {
-    for (Block block : myState.getBlocks(BlockKind.WHEN_CONCRETE)) {
-      SNode node = myState.getRepresentative(((WhenConcreteBlock) block).getArgument());
-      if (myUsedNodes.contains(node)) continue;
-      if (solvable.contains(node) && (!independent || isIndependent(node))) {
-        return node;
-      }
-    }
-    return null;
-  }
-
-  private SNode chooseSolvable(Set<SNode> solvable, boolean independent) {
-    for (SNode node : solvable) {
-      if (myUsedNodes.contains(node)) continue;
-      if (isIndependent(node)|| !independent) {
-        return node;
-      }
-    }
-    return null;
-  }
-
-  private SNode chooseVar() {
-    SNode var;
-    // 1. Independent, when concrete waiting, solvable right
-    var = chooseWaitingVar(mySolvableRight, true);
-    if (var!= null) return var;
-    // 2. Independent, when concrete waiting, solvable left
-    var = chooseWaitingVar(mySolvableLeft, true);
-    if (var!= null) return var;
-    // 3. Independent, solvable right
-    var = chooseSolvable(mySolvableRight, true);
-    if (var!= null) return var;
-    // 4. Independent, solvable left
-    var = chooseSolvable(mySolvableLeft, true);
-    if (var!= null) return var;
-    // 5. when concrete waiting, solvable right
-    var = chooseWaitingVar(mySolvableRight, false);
-    if (var!= null) return var;
-    // 6. when concrete waiting, solvable left
-    var = chooseWaitingVar(mySolvableLeft, false);
-    if (var!= null) return var;
-    var = chooseSolvable(mySolvableRight, false);
-    if (var!= null) return var;
-    var = chooseSolvable(mySolvableLeft, false);
-    return var;
-  }
-
-  private boolean chooseAndSolve() {
-    myUsedNodes.clear();
-    SNode var = chooseVar();
-    while (var != null) {
-      boolean result = solveRelationsForNode(var);
-      if (result) return result;
-      myUsedNodes.add(var);
-      var = chooseVar();
-    }
-    return false;
-  }
-
   private boolean iteration(List<RelationBlock> inequalities) {
     if (myNodesInc.size() == 0) {
       return false;
     }
-    if (chooseAndSolve()) return true;
+    if (chooseVarAndSolve(mySolvableRight)) return true;
+    if (chooseVarAndSolve(mySolvableLeft)) return true;
     if (lastChance(inequalities)) return true;
     return false;
   }
