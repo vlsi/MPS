@@ -72,7 +72,7 @@ public abstract class DiffModelTree extends MPSTree implements DataProvider {
     for (DiffModelTree.RootTreeNode rtn : ListSequence.fromList(myRootNodes)) {
       MPSTreeNode parentNode = modelNode;
       if (StringUtils.isNotEmpty(rtn.myVirtualPackage)) {
-        for (final String sub : Sequence.fromArray(rtn.myVirtualPackage.split("\\."))) {
+        for (final String sub : Sequence.fromIterable(Sequence.fromArray(rtn.myVirtualPackage.split("\\.")))) {
           Iterable<MPSTreeNode> children = (Iterable<MPSTreeNode>) parentNode;
           MPSTreeNode child = Sequence.fromIterable(children).findFirst(new IWhereFilter<MPSTreeNode>() {
             public boolean accept(MPSTreeNode c) {

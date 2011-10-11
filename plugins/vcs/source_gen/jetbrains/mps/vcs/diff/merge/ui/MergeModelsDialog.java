@@ -252,7 +252,7 @@ public class MergeModelsDialog extends BaseDialog {
   public void acceptVersionForSelectedRoots(boolean mine) {
     final List<ModelChange> changesToApply = ListSequence.fromList(new ArrayList<ModelChange>());
     final List<ModelChange> changesToExclude = ListSequence.fromList(new ArrayList<ModelChange>());
-    for (DiffModelTree.RootTreeNode rtn : Sequence.fromArray(myMergeTree.getSelectedNodes(DiffModelTree.RootTreeNode.class, null))) {
+    for (DiffModelTree.RootTreeNode rtn : Sequence.fromIterable(Sequence.fromArray(myMergeTree.getSelectedNodes(DiffModelTree.RootTreeNode.class, null)))) {
       SNodeId root = rtn.getRootId();
       List<ModelChange> changes = (root == null ?
         myMergeContext.getMetadataChanges() :

@@ -161,7 +161,7 @@ public class ScriptBuilder {
   }
 
   private Iterable<IFacet.Name> toposortByExtended(final Map<IFacet.Name, ScriptBuilder.FacetRefs> refs) {
-    for (IMapping<IFacet.Name, ScriptBuilder.FacetRefs> m : MapSequence.fromMap(refs).mappingsSet()) {
+    for (IMapping<IFacet.Name, ScriptBuilder.FacetRefs> m : SetSequence.fromSet(MapSequence.fromMap(refs).mappingsSet())) {
       IFacet fct = MapSequence.fromMap(facetsView).get(m.key());
       for (IFacet ex : ListSequence.fromList(m.value().extended)) {
         ListSequence.fromList(MapSequence.fromMap(refs).get(ex.getName()).extendedBy).addElement(fct);
