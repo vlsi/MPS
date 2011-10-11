@@ -21,8 +21,8 @@ import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.MPSExtentions;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.progress.Progressive;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.smodel.ModelCommandExecutor;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -193,9 +193,8 @@ public class NewDevKitDialogContentPane extends JPanel {
 
     myThis.getDialog().dispose();
     Project ideaProject = myThis.getProject().getProject();
-    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
-      public void run(ProgressIndicator indicator) {
-        indicator.setIndeterminate(true);
+    ModelAccess.instance().runWriteActionWithProgressSynchronously(new ModelCommandExecutor.RunnableWithProgress() {
+      public void run(ProgressMonitor indicator) {
         myThis.setResult(NewModuleUtil.createModule(MPSExtentions.DOT_DEVKIT, myThis.getDevkitName(), myThis.getDevkitDir(), myThis.getProject(), new _FunctionTypes._return_P3_E0<DevKit, String, IFile, MPSProject>() {
           public DevKit invoke(String s, IFile f, MPSProject p) {
             return DevKit.createDevkit(s, f, p);
@@ -205,7 +204,7 @@ public class NewDevKitDialogContentPane extends JPanel {
           }
         }));
       }
-    }, "Creating", false, ideaProject);
+    }, "Creating", false, ideaProject.getComponent(MPSProject.class));
   }
 
   /*package*/ void onCancel() {

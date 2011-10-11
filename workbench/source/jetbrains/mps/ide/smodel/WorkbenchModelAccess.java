@@ -23,12 +23,13 @@ import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.progress.util.ProgressWindow;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
@@ -223,9 +224,7 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  public void runWriteActionWithProgressSynchronously(@NotNull final Progressive process, final String progressTitle, final boolean canBeCanceled,
-                                                      final Project project) {
-
+  public void runWriteActionWithProgressSynchronously(@NotNull final RunnableWithProgress process, final String progressTitle, final boolean canBeCanceled, final jetbrains.mps.project.Project project) {
     if (!ApplicationManager.getApplication().isDispatchThread()) {
       throw new IllegalStateException("should be event dispatch thread");
     }
@@ -243,13 +242,13 @@ public class WorkbenchModelAccess extends ModelAccess {
               progressIndicator.pushState();
               getWriteLock().lock();
               try {
-                process.run(progressIndicator);
+                process.run(new ProgressMonitorAdapter(progressIndicator));
               } finally {
                 getWriteLock().unlock();
                 progressIndicator.popState();
               }
             }
-          }, progressTitle, canBeCanceled, project);
+          }, progressTitle, canBeCanceled, ProjectHelper.toIdeaProject(project));
         } finally {
           myDistributedLocksMode = false;
         }

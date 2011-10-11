@@ -26,9 +26,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.progress.Progressive;
+import jetbrains.mps.smodel.ModelCommandExecutor;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -152,13 +153,12 @@ public class NewGeneratorDialog extends BaseDialog {
     Project project = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     assert project != null;
     final Generator[] newGenerator = new Generator[]{null};
-    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
+    ModelAccess.instance().runWriteActionWithProgressSynchronously(new ModelCommandExecutor.RunnableWithProgress() {
       @Override
-      public void run(@NotNull ProgressIndicator indicator) {
-        indicator.setIndeterminate(true);
+      public void run(@NotNull ProgressMonitor indicator) {
         newGenerator[0] = createNewGenerator(mySourceLanguage, dir, name);
       }
-    }, "Creating", false, project);
+    }, "Creating", false, project.getComponent(MPSProject.class));
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         adjustTemplateModel(mySourceLanguage, newGenerator[0]);
