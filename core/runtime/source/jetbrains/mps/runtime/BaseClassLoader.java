@@ -24,7 +24,7 @@ abstract class BaseClassLoader extends ClassLoader {
 
   protected abstract Class findAfterCurrent(String name);
 
-  protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+  protected final synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     Class c = findLoadedClass(name);
     if (c == null) {
       c = findClass(name);
@@ -44,7 +44,7 @@ abstract class BaseClassLoader extends ClassLoader {
     return c;
   }
 
-  protected Class<?> findClass(String name) throws ClassNotFoundException {
+  protected final Class<?> findClass(String name) throws ClassNotFoundException {
     byte[] bytes = findInCurrent(name);
     if (bytes != null) {
       definePackageIfNecessary(name);
