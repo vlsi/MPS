@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -82,7 +83,7 @@ public class Diff_Facet extends IFacet.Stub {
               if (pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).fileToPath() != null) {
                 monitor.currentProgress().beginWork("Diffing", 100 * Sequence.fromIterable(input).count(), monitor.currentProgress().workLeft());
                 for (IResource resource : input) {
-                  TResource tgres = ((TResource) resource);
+                  final TResource tgres = ((TResource) resource);
                   String fqn = tgres.modelDescriptor().getSModelReference().getSModelFqName().getLongName();
                   monitor.currentProgress().advanceWork("Diffing", 1, fqn);
                   DeltaReconciler dr = new DeltaReconciler(tgres.delta());
@@ -96,11 +97,17 @@ public class Diff_Facet extends IFacet.Stub {
                   });
                   final Differ differ = new Differ(retainedPaths, pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).excludedFiles());
                   final StringBuilder errors = new StringBuilder();
+                  final String outRootPath = tgres.module().getOutputFor(tgres.modelDescriptor());
+
                   dr.visitAll(new FilesDelta.Visitor() {
                     @Override
                     public boolean acceptRoot(IFile root) {
-                      for (String diff : differ.diff(pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).fileToPath().invoke(root), root.getPath())) {
-                        errors.append("\n").append(diff);
+                      String rootPath = pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).fileToPath().invoke(root);
+                      if (outRootPath.startsWith(rootPath)) {
+                        IFile outDir = FileGenerationUtil.getDefaultOutputDir(tgres.modelDescriptor(), root);
+                        for (String diff : differ.diff(pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).fileToPath().invoke(outDir), outDir.getPath())) {
+                          errors.append("\n").append(diff);
+                        }
                       }
                       return true;
                     }
