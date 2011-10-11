@@ -24,6 +24,7 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
@@ -140,7 +141,7 @@ public class RenameLanguageDialog extends BaseDialog {
             languageConfig.setName("tmp");
 
             try {
-              return languageConfig.getGenParams(myProject, true);
+              return languageConfig.getGenParams(myProject.getComponent(MPSProject.class), true);
             } catch (IllegalGeneratorConfigurationException e) {
               return null;
             }

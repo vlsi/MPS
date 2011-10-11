@@ -18,7 +18,7 @@ package jetbrains.mps.packaged;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
@@ -46,7 +46,7 @@ public class PackagedLanguageTest {
   public void testPackagedLanguageLoading() {
     final boolean result = TestMain.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE,
       new ProjectRunnable() {
-        public boolean execute(final MPSProject project) {
+        public boolean execute(final Project project) {
           return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
             @Override
             public Boolean compute() {

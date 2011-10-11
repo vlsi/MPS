@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.project.structure.project.testconfigurations;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.MPSModuleRepository;

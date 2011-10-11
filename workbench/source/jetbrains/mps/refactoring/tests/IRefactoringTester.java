@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.refactoring.tests;
 
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
 

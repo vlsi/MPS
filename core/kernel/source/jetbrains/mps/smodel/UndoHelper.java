@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Computable;
 
 public class UndoHelper {

@@ -15,22 +15,21 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.changes.ChangeListener;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescriptor {
   @NotNull
   private final ModelDataSource mySource;
   private ChangeListener mySourceListener = new ChangeListener() {
-    public void changed(ProgressIndicator progressIndicator) {
+    public void changed(ProgressMonitor monitor) {
       if (!needsReloading()) return;
 
-      progressIndicator.setText2("Reloading " + getLongName());
-
+      monitor.start("Reloading " + getLongName(), 1);
       reloadFromDisk();
+      monitor.done();
     }
   };
 

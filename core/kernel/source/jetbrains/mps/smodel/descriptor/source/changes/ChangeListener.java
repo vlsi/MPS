@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.descriptor.source.changes;
 
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
 
 public interface ChangeListener {
-  void changed(ProgressIndicator progressIndicator);
+  void changed(ProgressMonitor monitor);
 }

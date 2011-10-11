@@ -29,6 +29,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -699,7 +700,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     assertLegalWrite();
     myCommandLevel--;
     if (myCommandLevel == 0) {
-      UndoHelper.getInstance().flushCommand(p);
+      UndoHelper.getInstance().flushCommand(p.getComponent(MPSProject.class));
       onCommandFinished();
     }
   }

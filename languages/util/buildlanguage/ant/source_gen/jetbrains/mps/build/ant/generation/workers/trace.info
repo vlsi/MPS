@@ -422,7 +422,7 @@
     <nodeInfo nodeId="3037398679707959932" fileName="TestGenerationWorker.java" startLine="297" startPosition="180" endLine="298" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3037398679707966202" fileName="TestGenerationWorker.java" startLine="298" startPosition="96" endLine="299" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7260781342054499980" fileName="TestGenerationWorker.java" startLine="303" startPosition="36" endLine="304" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7260781342054500063" fileName="TestGenerationWorker.java" startLine="308" startPosition="19" endLine="309" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7260781342054500063" fileName="TestGenerationWorker.java" startLine="308" startPosition="19" endLine="309" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7260781342054500085" fileName="TestGenerationWorker.java" startLine="310" startPosition="66" endLine="311" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7260781342054499970" fileName="TestGenerationWorker.java" startLine="314" startPosition="18" endLine="315" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3705898146943200105" fileName="TestGenerationWorker.java" startLine="319" startPosition="66" endLine="320" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -625,7 +625,7 @@
     <scopeInfo nodeId="4128185861943386011" fileName="TestGenerationWorker.java" startLine="286" startPosition="30" endLine="287" endPosition="58" />
     <scopeInfo nodeId="4128185861943386046" fileName="TestGenerationWorker.java" startLine="288" startPosition="16" endLine="289" endPosition="27" />
     <scopeInfo nodeId="7260781342054499898" fileName="TestGenerationWorker.java" startLine="303" startPosition="36" endLine="304" endPosition="115" />
-    <scopeInfo nodeId="7260781342054500034" fileName="TestGenerationWorker.java" startLine="308" startPosition="19" endLine="309" endPosition="163" />
+    <scopeInfo nodeId="7260781342054500034" fileName="TestGenerationWorker.java" startLine="308" startPosition="19" endLine="309" endPosition="150" />
     <scopeInfo nodeId="7260781342054500035" fileName="TestGenerationWorker.java" startLine="310" startPosition="0" endLine="311" endPosition="101">
       <varInfo nodeId="7260781342054500036" varName="e" />
     </scopeInfo>

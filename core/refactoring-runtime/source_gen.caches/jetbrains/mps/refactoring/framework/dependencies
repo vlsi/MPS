@@ -196,7 +196,6 @@
   </dependency>
   <dependency className="jetbrains.mps.refactoring.framework.RefactoringTarget" file="RefactoringTarget.java" />
   <dependency className="jetbrains.mps.refactoring.framework.RefactoringUtil" file="RefactoringUtil.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
@@ -222,6 +221,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring" />

@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public interface UndoHandler {
   public void addUndoableAction(SNodeUndoableAction action);

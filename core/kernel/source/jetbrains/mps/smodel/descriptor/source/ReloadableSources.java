@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
-import com.intellij.openapi.progress.ProgressIndicator;
 import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.descriptor.source.changes.FileSourceChangeWatcher;
 import jetbrains.mps.vfs.IFile;
 
@@ -63,15 +63,21 @@ public class ReloadableSources {
     }
   }
 
-  public void reload(ProgressIndicator progressIndicator) {
-    for (FileSourceChangeWatcher source : new ArrayList<FileSourceChangeWatcher>(myInvalidatedSources)) {
-      try {
-        source.changed(progressIndicator);
-      } catch (RuntimeException e) {
-        LOG.error("error on reloading model", e);
+  public void reload(ProgressMonitor monitor) {
+    final ArrayList<FileSourceChangeWatcher> fileSourceChangeWatchers = new ArrayList<FileSourceChangeWatcher>(myInvalidatedSources);
+    monitor.start("", fileSourceChangeWatchers.size());
+    try {
+      for (FileSourceChangeWatcher source : fileSourceChangeWatchers) {
+        try {
+          source.changed(monitor.subTask(1));
+        } catch (RuntimeException e) {
+          LOG.error("error on reloading model", e);
+        }
       }
+      myInvalidatedSources.clear();
+    } finally {
+      monitor.done();
     }
-    myInvalidatedSources.clear();
   }
 
   public boolean hasInvalidated() {
