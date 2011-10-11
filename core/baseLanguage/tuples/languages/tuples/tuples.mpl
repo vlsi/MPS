@@ -2,6 +2,9 @@
 <language namespace="jetbrains.mps.baseLanguage.tuples" uuid="a247e09e-2435-45ba-b8d2-07e93feba96a" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.baseLanguage.tuples" />
+    <modelRoot path="${mps_home}/core/baseLanguage/tuples/runtime/classes" namespacePrefix="">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </modelRoot>
   </models>
   <accessoryModels />
   <generators>
@@ -36,11 +39,6 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <stubModelEntries>
-    <stubModelEntry path="${mps_home}/core/baseLanguage/tuples/runtime/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</dependency>
@@ -48,6 +46,7 @@
     <dependency reexport="false">a150150e-46ee-4c9e-b080-08d136e4eefb(jetbrains.mps.baseLanguage.tuples#1238919486295)</dependency>
   </dependencies>
   <usedLanguages>
+    <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>
     <usedLanguage>fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77(jetbrains.mps.debug.customViewers)</usedLanguage>
     <usedLanguage>3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)</usedLanguage>
   </usedLanguages>
