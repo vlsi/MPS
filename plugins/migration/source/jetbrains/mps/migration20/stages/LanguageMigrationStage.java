@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.migration20.stages;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -26,9 +25,9 @@ import jetbrains.mps.ide.migration.actions.ScriptsFinder;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptFinder;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
@@ -61,7 +60,7 @@ public class LanguageMigrationStage implements MigrationStage {
     SearchQuery query = new SearchQuery(new ModulesOnlyScope(project.getComponent(MPSProject.class).getModulesWithGenerators()));
     MigrationScriptFinder finder = new MigrationScriptFinder(scripts, ProjectOperationContext.get(project));
     IResultProvider provider = FindUtils.makeProvider(finder);
-    SearchResults<SNode> results = FindUtils.getSearchResults(new EmptyProgressIndicator(), query, provider);
+    SearchResults<SNode> results = FindUtils.getSearchResults(new EmptyProgressMonitor(), query, provider);
 
     for (SearchResult<SNode> aliveIncludedResult : results.getAliveResults()) {
       SNode node = aliveIncludedResult.getObject();

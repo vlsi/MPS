@@ -151,7 +151,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "argument", false), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1212245181527(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4192433084863764062(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "finderDeclaration", false), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), "call_getGeneratedClassLongName_1213877240120", new Class[]{SNode.class}));
   }
 
@@ -462,11 +462,11 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "arguments", true)).isNotEmpty();
   }
 
-  public static boolean ifMacro_Condition_1212243788664(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_4192433084863764024(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "searchNode", true) == null;
   }
 
-  public static boolean ifMacro_Condition_1212243800827(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_4192433084863764043(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "searchScope", true) == null;
   }
 
@@ -650,11 +650,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "feature", true);
   }
 
-  public static SNode sourceNodeQuery_1212243848033(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4192433084863764035(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "searchNode", true);
   }
 
-  public static SNode sourceNodeQuery_1212243880040(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4192433084863764054(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "searchScope", true);
   }
 
@@ -834,7 +834,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "arguments", true);
   }
 
-  public static Iterable sourceNodesQuery_1212245202911(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_4192433084863764071(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "finders", true);
   }
 

@@ -38,6 +38,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
@@ -130,7 +131,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
 
   public void run(ProgressIndicator indicator) {
     assert myIsInitialized;
-    myLastResults = FindUtils.getSearchResults(indicator, mySearchQuery, myResultProvider);
+    myLastResults = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), mySearchQuery, myResultProvider);
     myLastResults.removeDuplicates();
     myTreeComponent.setContents(myLastResults);
   }

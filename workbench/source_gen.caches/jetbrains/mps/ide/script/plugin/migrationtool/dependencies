@@ -75,6 +75,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptFinder" />
     <classNode dependClassName="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -120,6 +121,7 @@
     <classNode dependClassName="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil" />
     <classNode dependClassName="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />

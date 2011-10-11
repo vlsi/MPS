@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.findusages.view;
 
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
@@ -30,7 +29,6 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
@@ -45,10 +43,6 @@ import java.util.List;
 public class FindUtils {
   private static final Logger LOG = Logger.getLogger(FindUtils.class);
 
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator monitor, final @NotNull SNode node, final IScope scope, final String... finderClassNames) {
-    return getSearchResults(new ProgressMonitorAdapter(monitor), node, scope, finderClassNames);
-  }
-
   @Deprecated
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final IScope scope, final String... finderClassNames) {
     List<GeneratedFinder> finders = new ArrayList<GeneratedFinder>(finderClassNames.length);
@@ -58,10 +52,6 @@ public class FindUtils {
     }
 
     return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new GeneratedFinder[0]));
-  }
-
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator monitor, final @NotNull SNode node, final IScope scope, final ModuleClassReference<GeneratedFinder>... finderClasses) {
-    return getSearchResults(new ProgressMonitorAdapter(monitor), node, scope, finderClasses);
   }
 
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final IScope scope, final ModuleClassReference<GeneratedFinder>... finderClasses) {
@@ -74,13 +64,8 @@ public class FindUtils {
     return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new GeneratedFinder[0]));
   }
 
-  public static SearchResults getSearchResults(@Nullable final ProgressMonitor indicator, final SearchQuery query, final IFinder... finders) {
-    return getSearchResults(indicator, query, makeProvider(finders));
-  }
-
-  @Deprecated
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final SearchQuery query, final IFinder... finders) {
-    return getSearchResults(new ProgressMonitorAdapter(indicator), query, finders);
+  public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final SearchQuery query, final IFinder... finders) {
+    return getSearchResults(monitor, query, makeProvider(finders));
   }
 
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final SearchQuery query, final IResultProvider provider) {
@@ -94,15 +79,6 @@ public class FindUtils {
   }
 
   @Deprecated
-  public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final SearchQuery query, final IResultProvider provider) {
-    return getSearchResults(new ProgressMonitorAdapter(indicator), query, provider);
-  }
-
-  public static List<SNode> executeFinder(String className, SNode node, IScope scope, ProgressIndicator indicator) {
-    return executeFinder(className, node, scope, new ProgressMonitorAdapter(indicator));
-  }
-
-  @Deprecated
   public static List<SNode> executeFinder(String className, SNode node, IScope scope, ProgressMonitor monitor) {
     List<SNode> result = new ArrayList<SNode>();
     IInterfacedFinder finder = getFinderByClassName(className);
@@ -111,10 +87,6 @@ public class FindUtils {
       result.add(searchResult.getObject());
     }
     return result;
-  }
-
-  public static List<SNode> executeFinder(ModuleClassReference<GeneratedFinder> finderClass, SNode node, IScope scope, ProgressIndicator indicator) {
-    return executeFinder(finderClass, node, scope, new ProgressMonitorAdapter(indicator));
   }
 
   public static List<SNode> executeFinder(ModuleClassReference<GeneratedFinder> finderClass, SNode node, IScope scope, ProgressMonitor monitor) {

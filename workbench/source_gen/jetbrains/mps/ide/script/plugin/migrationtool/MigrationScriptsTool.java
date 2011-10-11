@@ -22,6 +22,7 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.ui.content.Content;
@@ -63,7 +64,7 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
             final MigrationScriptFinder finder = new MigrationScriptFinder(myScripts, context);
             final IResultProvider provider = FindUtils.makeProvider(finder);
             final SearchQuery query = new SearchQuery(scope);
-            final SearchResults results = FindUtils.getSearchResults(indicator, query, provider);
+            final SearchResults results = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), query, provider);
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
                 if (results.getSearchResults().isEmpty()) {
