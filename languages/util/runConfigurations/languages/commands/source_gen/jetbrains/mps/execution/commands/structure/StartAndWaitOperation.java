@@ -5,6 +5,7 @@ package jetbrains.mps.execution.commands.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.Iterator;
 import jetbrains.mps.lang.core.structure.Attribute;
 import java.util.List;
@@ -17,6 +18,7 @@ public class StartAndWaitOperation extends BaseConcept implements IOperation {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String TIMEOUT = "timeout";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public StartAndWaitOperation(SNode node) {
@@ -45,6 +47,14 @@ public class StartAndWaitOperation extends BaseConcept implements IOperation {
 
   public void setVirtualPackage(String value) {
     this.setProperty(StartAndWaitOperation.VIRTUAL_PACKAGE, value);
+  }
+
+  public Expression getTimeout() {
+    return (Expression) this.getChild(Expression.class, StartAndWaitOperation.TIMEOUT);
+  }
+
+  public void setTimeout(Expression node) {
+    super.setChild(StartAndWaitOperation.TIMEOUT, node);
   }
 
   public int getSmodelAttributesCount() {

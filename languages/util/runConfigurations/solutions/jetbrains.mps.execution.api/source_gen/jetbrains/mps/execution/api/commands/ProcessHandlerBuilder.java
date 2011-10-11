@@ -19,6 +19,7 @@ import com.intellij.execution.configurations.GeneralCommandLine;
 import java.util.concurrent.CountDownLatch;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
+import java.util.concurrent.TimeUnit;
 
 public class ProcessHandlerBuilder {
   private final List<String> myCommandLine = ListSequence.fromList(new ArrayList<String>());
@@ -152,9 +153,8 @@ public class ProcessHandlerBuilder {
     return result;
   }
 
-  public static int startAndWait(ProcessHandler process) {
+  private static CountDownLatch startCountDown(ProcessHandler process, final int[] exitCode) {
     final CountDownLatch countDown = new CountDownLatch(1);
-    final int[] exitCode = new int[]{1};
     OutputRedirector.redirect(process, new ProcessAdapter() {
       @Override
       public void processTerminated(ProcessEvent event) {
@@ -163,10 +163,25 @@ public class ProcessHandlerBuilder {
       }
     });
     process.startNotify();
+    return countDown;
+  }
+
+  public static int startAndWait(ProcessHandler process) {
+    final int[] exitCode = new int[]{0};
     try {
-      countDown.await();
+      ProcessHandlerBuilder.startCountDown(process, exitCode).await();
     } catch (InterruptedException e) {
     }
     return exitCode[0];
+  }
+
+  public static int startAndWait(ProcessHandler process, long timeout) {
+    final int[] exitCode = new int[]{0};
+    try {
+      ProcessHandlerBuilder.startCountDown(process, exitCode).await(timeout, TimeUnit.MILLISECONDS);
+    } catch (InterruptedException e) {
+    }
+    return exitCode[0];
+
   }
 }

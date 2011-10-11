@@ -2,36 +2,35 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener" file="CheckTestStateListener.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ITestNodeWrapper" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestEvent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestStateListener" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateListener" />
   </dependency>
   <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test" file="JUnitCommand_Test.java">
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
-    <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ITestNodeWrapper" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.Junit_Command" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestEventsDispatcher" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunState" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestProcessListener" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.Junit_Command" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.OutputRedirector" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" />

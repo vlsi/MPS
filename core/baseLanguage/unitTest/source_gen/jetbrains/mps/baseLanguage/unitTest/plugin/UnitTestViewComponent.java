@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import javax.swing.JPanel;
 import com.intellij.openapi.Disposable;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import com.intellij.openapi.project.Project;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -48,6 +49,7 @@ import org.jetbrains.annotations.NonNls;
 import com.intellij.execution.Location;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSLocation;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 
 public class UnitTestViewComponent extends JPanel implements Disposable {
   private static final String SPLITTER_SIZE_PROPERTY = UnitTestViewComponent.class.getName() + ".splitter";

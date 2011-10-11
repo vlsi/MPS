@@ -7,7 +7,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.baseLanguage.unitTest.plugin.ITestNodeWrapper;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -18,16 +18,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.SimpleBTestCase_Test;
-import jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import java.util.List;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.baseLanguage.unitTest.plugin.Junit_Command;
-import jetbrains.mps.baseLanguage.unitTest.plugin.TestRunState;
-import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
-import jetbrains.mps.baseLanguage.unitTest.plugin.TestEventsDispatcher;
+import jetbrains.mps.baseLanguage.unitTest.execution.Junit_Command;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.execution.api.commands.OutputRedirector;
-import jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestProcessListener;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import junit.framework.Assert;
 import org.apache.commons.lang.StringUtils;
@@ -43,15 +42,13 @@ public class JUnitCommand_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startSimpleBTestCase() throws Exception {
-      // <node> 
-      System.err.println(CheckTestStateListener.class.getClassLoader());
       final Wrappers._T<ITestNodeWrapper> pointer = new Wrappers._T<ITestNodeWrapper>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           SModel model = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox", "tests")).getSModel();
           SNode mainNode = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.core.structure.INamedConcept")).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_16es9m_a0a0a0a0a0a1a0a0a0a3a0a(SPropertyOperations.getString(it, "name"), SimpleBTestCase_Test.class.getSimpleName());
+              return eq_16es9m_a0a0a0a0a0a1a0a0a0a1a0a(SPropertyOperations.getString(it, "name"), SimpleBTestCase_Test.class.getSimpleName());
             }
           });
           pointer.value = TestNodeWrapperFactory.tryToWrap(mainNode);
@@ -61,25 +58,22 @@ public class JUnitCommand_Test extends BaseTransformationTest {
       ProcessHandler process = new Junit_Command().createProcess(nodeWrappers);
       TestRunState runState = new TestRunState(nodeWrappers);
       CheckTestStateListener checkListener = new CheckTestStateListener(nodeWrappers, ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
-      System.err.println("Check classloader " + checkListener.getClass().getClassLoader());
-      try {
-        System.err.println("TestEvent classloader " + checkListener.getClass().getClassLoader().loadClass(TestEvent.class.getName()).getClassLoader());
-      } catch (ClassNotFoundException e) {
-      }
-      System.err.println("TestEvent classloader 2" + TestEvent.class.getClassLoader());
       runState.addListener(checkListener);
       TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
       OutputRedirector.redirect(process, new UnitTestProcessListener(eventsDispatcher));
-      int exitcode = ProcessHandlerBuilder.startAndWait(process);
-      if (exitcode != 0) {
+      // 5 minutes 
+      int exitcode = ProcessHandlerBuilder.startAndWait(process, 3000000);
+      if (exitcode > 0) {
         Assert.fail("Exit code is not 0 but " + exitcode);
+      } else if (exitcode < 0) {
+        Assert.fail("Process running too long.");
       }
       if (StringUtils.isNotEmpty(checkListener.getMessages())) {
         Assert.fail(checkListener.getMessages());
       }
     }
 
-    private static boolean eq_16es9m_a0a0a0a0a0a1a0a0a0a3a0a(Object a, Object b) {
+    private static boolean eq_16es9m_a0a0a0a0a0a1a0a0a0a1a0a(Object a, Object b) {
       return (a != null ?
         a.equals(b) :
         a == b

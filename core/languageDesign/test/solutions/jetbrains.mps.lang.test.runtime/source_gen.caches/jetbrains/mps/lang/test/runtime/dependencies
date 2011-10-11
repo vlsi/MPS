@@ -168,7 +168,7 @@
     <classNode dependClassName="org.junit.internal.builders.JUnit4Builder" />
     <classNode dependClassName="org.junit.runner.Request" />
     <classNode dependClassName="org.junit.runner.Runner" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.runtime.TestRunner" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestRunner" />
     <classNode extendsClassName="org.junit.internal.requests.ClassRequest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TypeSystemCheckUtil" file="TypeSystemCheckUtil.java">

@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 
 public class TestNameMap<C, M> {
   private Map<String, C> classToTestCase;

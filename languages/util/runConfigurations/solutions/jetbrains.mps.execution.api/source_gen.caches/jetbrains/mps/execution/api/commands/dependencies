@@ -80,6 +80,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.concurrent.CountDownLatch" />
+    <classNode dependClassName="java.util.concurrent.TimeUnit" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.CommandPart" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.DefaultProcessHandler" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.KeyValueCommandPart" />

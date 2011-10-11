@@ -4,7 +4,7 @@ package jetbrains.mps.lang.test.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunParameters;
 import jetbrains.mps.smodel.SNode;
 
 public abstract class NodeOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ITestMethod_BehaviorDescriptor {

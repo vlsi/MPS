@@ -11,6 +11,7 @@ import javax.swing.ButtonGroup;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import java.util.List;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import javax.swing.JRadioButton;
 import org.jdesktop.beansbinding.AutoBinding;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
