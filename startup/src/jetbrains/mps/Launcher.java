@@ -78,12 +78,15 @@ public class Launcher {
   }
 
   private static void addMPSBootstrapClassFolders(List<URL> classPath, String homePath, URL selfRootUrl) throws MalformedURLException {
+    //todo replace with ClassPathReader call, but don't add new module deps
     File acp = new File(homePath + File.separator + "build" + File.separator + "idea.additional.classpath.txt");
     if (acp.exists()) {
       try {
         Scanner sc;
         for (sc = new Scanner(acp, "UTF-8"); sc.hasNextLine();) {
-          File dir = new File(homePath, sc.nextLine());
+          String nl = sc.nextLine();
+          if (nl.startsWith(":")) continue;
+          File dir = new File(homePath, nl);
           if (dir.isDirectory()) {
             final URL url = dir.toURI().toURL();
             if (!selfRootUrl.equals(url)) {

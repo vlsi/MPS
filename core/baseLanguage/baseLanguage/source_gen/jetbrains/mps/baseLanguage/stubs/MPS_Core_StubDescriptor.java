@@ -13,6 +13,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.ClasspathReader;
 
 public class MPS_Core_StubDescriptor extends BaseLibStubDescriptor {
   public MPS_Core_StubDescriptor() {
@@ -25,6 +26,6 @@ public class MPS_Core_StubDescriptor extends BaseLibStubDescriptor {
   }
 
   public List<String> getPaths() {
-    return ListSequence.fromListWithValues(new ArrayList<String>(), CommonPaths.getMPSCorePaths());
+    return ListSequence.fromListWithValues(new ArrayList<String>(), CommonPaths.getMPSPaths(ClasspathReader.ClassType.CORE));
   }
 }
