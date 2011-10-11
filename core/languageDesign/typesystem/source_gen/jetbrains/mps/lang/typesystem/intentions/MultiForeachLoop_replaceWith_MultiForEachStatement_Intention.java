@@ -45,13 +45,13 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention extend
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    final List<SNode> mfps = ListSequence.fromList(SLinkOperations.getTargets(node, "loopVariable", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    final List<SNode> mfps = ListSequence.fromList(SLinkOperations.getTargets(node, "loopVariable", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode lv) {
         return new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.QuotationClass_5rn0la_a0a0a0a0a0a5().createNode(SPropertyOperations.getString(SLinkOperations.getTarget(lv, "variable", true), "name"), SNodeOperations.copyNode(SLinkOperations.getTarget(lv, "iterable", true)));
       }
     }).toListSequence();
     SNode mfs = SNodeOperations.replaceWithAnother(node, new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.QuotationClass_5rn0la_a1a0b0f().createNode(mfps, SNodeOperations.copyNode(SLinkOperations.getTarget(node, "body", true))));
-    final List<SNode> lvs = ListSequence.fromList(SLinkOperations.getTargets(node, "loopVariable", true)).<SNode>select(new ISelector<SNode, SNode>() {
+    final List<SNode> lvs = ListSequence.fromList(SLinkOperations.getTargets(node, "loopVariable", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode lv) {
         return SLinkOperations.getTarget(lv, "variable", true);
       }

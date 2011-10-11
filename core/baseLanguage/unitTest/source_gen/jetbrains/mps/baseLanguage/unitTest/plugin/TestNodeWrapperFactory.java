@@ -166,7 +166,7 @@ public enum TestNodeWrapperFactory {
 
   @Nullable
   public static ITestNodeWrapper tryToWrap(@NotNull SNode node) {
-    for (TestNodeWrapperFactory factory : Sequence.fromArray(TestNodeWrapperFactory.values())) {
+    for (TestNodeWrapperFactory factory : Sequence.fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values()))) {
       if (factory.canWrap(node)) {
         return factory.wrap(node);
       }

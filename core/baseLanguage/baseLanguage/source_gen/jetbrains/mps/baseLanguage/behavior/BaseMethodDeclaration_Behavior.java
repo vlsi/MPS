@@ -16,7 +16,6 @@ import java.lang.reflect.Method;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -122,7 +121,7 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static Class[] call_getParameterTypes_1213877350411(SNode thisNode, final IModule module) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).<Class>select(new ISelector<SNode, Class>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).select(new ISelector<SNode, Class>() {
       public Class select(SNode it) {
         return Type_Behavior.call_getClass_1213877337327(SLinkOperations.getTarget(it, "type", true), module);
       }
@@ -151,25 +150,21 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static boolean call_hasSameParameters_855369272314187138(SNode thisNode, SNode checked) {
-    boolean same = true;
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count(); i++) {
       String searchedParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).getElement(i), "type", true));
       String foundParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).getElement(i), "type", true));
       if (!(foundParamType.equals(searchedParamType))) {
-        same = false;
+        return false;
       }
     }
-    return same;
+    return true;
   }
 
   public static boolean call_hasSameSignature_1213877350435(SNode thisNode, SNode checked) {
-    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "name"))) {
+    if (neq_tq0gdw_a0a0q(SPropertyOperations.getString(thisNode, "name"), SPropertyOperations.getString(checked, "name"))) {
       return false;
     }
-    if (!(SPropertyOperations.getString(thisNode, "name").equals(SPropertyOperations.getString(checked, "name")))) {
-      return false;
-    }
-    if (!((int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).count())) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).count()) {
       return false;
     }
     if (SNodeOperations.isInstanceOf(checked, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
@@ -313,5 +308,12 @@ public class BaseMethodDeclaration_Behavior {
 
   public static List<SNode> callSuper_getScopeVariables_2496361171403550901(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550901);
+  }
+
+  private static boolean neq_tq0gdw_a0a0q(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
   }
 }
