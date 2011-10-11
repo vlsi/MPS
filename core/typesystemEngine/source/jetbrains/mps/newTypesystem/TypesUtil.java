@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
@@ -43,6 +44,10 @@ public class TypesUtil {
 
   public static boolean isVariable(SNode node) {
     return HUtil.isRuntimeTypeVariable(node);
+  }
+
+  public static boolean canBeVariable(SNode node) {
+    return isVariable(node) || LatticeUtil.isMeet(node) && hasVariablesInside(node);
   }
 
   public static boolean hasVariablesInside(SNode node) {
