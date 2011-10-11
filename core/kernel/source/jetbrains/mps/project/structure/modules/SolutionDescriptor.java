@@ -17,7 +17,6 @@ package jetbrains.mps.project.structure.modules;
 
 public class SolutionDescriptor extends ModuleDescriptor {
   private String myOutputPath;
-  private boolean myDontLoadClasses;
 
   public String getOutputPath() {
     return myOutputPath;
@@ -28,10 +27,9 @@ public class SolutionDescriptor extends ModuleDescriptor {
   }
 
   public boolean isDontLoadClasses() {
-    return myDontLoadClasses;
+    return !getCompileInMPS();
   }
 
   public void setDontLoadClasses(boolean dontLoadClasses) {
-    myDontLoadClasses = dontLoadClasses;
   }
 }
