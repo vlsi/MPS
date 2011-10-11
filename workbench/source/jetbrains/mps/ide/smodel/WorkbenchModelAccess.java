@@ -700,7 +700,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     assertLegalWrite();
     myCommandLevel--;
     if (myCommandLevel == 0) {
-      UndoHelper.getInstance().flushCommand(p.getComponent(MPSProject.class));
+      UndoHelper.getInstance().flushCommand(p != null ? p.getComponent(MPSProject.class) : null);
       onCommandFinished();
     }
   }
