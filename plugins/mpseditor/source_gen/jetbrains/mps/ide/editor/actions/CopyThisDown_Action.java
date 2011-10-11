@@ -74,7 +74,7 @@ public class CopyThisDown_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).count() == 1) {
+      if ((int) ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).count() == 1) {
         SNode nodeToCopy = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).first();
         while (SNodeOperations.getParent(nodeToCopy) != null) {
           SNode parent = SNodeOperations.getParent(nodeToCopy);

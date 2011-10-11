@@ -311,7 +311,7 @@ public class ConstraintsGraphProcessor {
     }
     int numShifts = 0;
     while (ListSequence.fromList(segments).count() > 4) {
-      if (ListSequence.fromList(rotations).getElement(0) == -1 && ListSequence.fromList(rotations).getElement(1) == 1 && ListSequence.fromList(rotations).getElement(2) == 1) {
+      if ((int) ListSequence.fromList(rotations).getElement(0) == -1 && (int) ListSequence.fromList(rotations).getElement(1) == 1 && (int) ListSequence.fromList(rotations).getElement(2) == 1) {
         connectPattern(segments, directions);
         for (int i = 0; i < 2; i++) {
           ListSequence.fromList(segments).removeElementAt(1);
@@ -331,7 +331,7 @@ public class ConstraintsGraphProcessor {
       }
     }
     if (ConstraintsGraphProcessor.DEBUG > 0) {
-      for (Integer rotation : ListSequence.fromList(rotations)) {
+      for (int rotation : ListSequence.fromList(rotations)) {
         if (rotation != 1) {
           throw new RuntimeException("bad face completion result!");
         }

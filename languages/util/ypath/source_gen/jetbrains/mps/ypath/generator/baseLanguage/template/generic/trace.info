@@ -4,12 +4,12 @@
   <root nodeId="1190373998785">
     <nodeInfo nodeId="9219030551129102613" fileName="QueriesGenerated.java" startLine="36" startPosition="152" endLine="37" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200062702427" fileName="QueriesGenerated.java" startLine="40" startPosition="146" endLine="41" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1199883103281" fileName="QueriesGenerated.java" startLine="44" startPosition="146" endLine="45" endPosition="530" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1199883103281" fileName="QueriesGenerated.java" startLine="44" startPosition="146" endLine="45" endPosition="536" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196100182333" fileName="QueriesGenerated.java" startLine="281" startPosition="144" endLine="282" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1199883269340" fileName="QueriesGenerated.java" startLine="285" startPosition="144" endLine="286" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="9219030551129101524" fileName="QueriesGenerated.java" startLine="36" startPosition="152" endLine="37" endPosition="97" />
     <scopeInfo nodeId="1196100060392" fileName="QueriesGenerated.java" startLine="40" startPosition="146" endLine="41" endPosition="95" />
-    <scopeInfo nodeId="1199882955497" fileName="QueriesGenerated.java" startLine="44" startPosition="146" endLine="45" endPosition="530" />
+    <scopeInfo nodeId="1199882955497" fileName="QueriesGenerated.java" startLine="44" startPosition="146" endLine="45" endPosition="536" />
     <scopeInfo nodeId="1196100177622" fileName="QueriesGenerated.java" startLine="281" startPosition="144" endLine="282" endPosition="77" />
     <scopeInfo nodeId="1199883266472" fileName="QueriesGenerated.java" startLine="285" startPosition="144" endLine="286" endPosition="226" />
   </root>

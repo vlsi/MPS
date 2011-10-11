@@ -1939,7 +1939,7 @@ public class QueriesGenerated {
     });
 
     String var = (String) _context.getTransientObject(Sequence.fromIterable(selected).first());
-    return Sequence.fromIterable(selected).count() == 1 && var.startsWith("tlist");
+    return (int) Sequence.fromIterable(selected).count() == 1 && var.startsWith("tlist");
   }
 
   public static boolean ifMacro_Condition_8961331321403162164(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1957,7 +1957,7 @@ public class QueriesGenerated {
       }
     });
 
-    return Sequence.fromIterable(selected).count() == 1;
+    return (int) Sequence.fromIterable(selected).count() == 1;
   }
 
   public static boolean ifMacro_Condition_8961331321403206165(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2048,7 +2048,7 @@ public class QueriesGenerated {
       }
     });
 
-    if (Sequence.fromIterable(selected).count() == 1) {
+    if ((int) Sequence.fromIterable(selected).count() == 1) {
       String varname = (String) _context.getTransientObject(SNodeOperations.getParent(Sequence.fromIterable(selected).first()));
       _context.putTransientObject(_context.getNode(), varname);
       return false;
@@ -2302,7 +2302,7 @@ public class QueriesGenerated {
       }
     });
 
-    if (Sequence.fromIterable(selected).count() == 1) {
+    if ((int) Sequence.fromIterable(selected).count() == 1) {
       String var = (String) _context.getTransientObject(SNodeOperations.getParent(Sequence.fromIterable(selected).first()));
       return var.startsWith("tlist");
     }
@@ -2324,7 +2324,7 @@ public class QueriesGenerated {
       }
     });
 
-    return Sequence.fromIterable(selected).count() == 1;
+    return (int) Sequence.fromIterable(selected).count() == 1;
   }
 
   public static boolean ifMacro_Condition_1368513600865828059(final IOperationContext operationContext, final IfMacroContext _context) {

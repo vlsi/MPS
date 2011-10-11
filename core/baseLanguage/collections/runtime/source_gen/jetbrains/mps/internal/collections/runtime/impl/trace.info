@@ -1,5 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="4611582986551925179">
+    <nodeInfo nodeId="4611582986551925226" fileName="OfTypeSequence.java" startLine="8" startPosition="96" endLine="9" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requestedType" />
+    <nodeInfo nodeId="4611582986551925305" fileName="OfTypeSequence.java" startLine="11" startPosition="62" endLine="12" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4611582986551925309" fileName="OfTypeSequence.java" startLine="12" startPosition="17" endLine="13" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551949526" fileName="OfTypeSequence.java" startLine="16" startPosition="33" endLine="17" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4611582986551925656" fileName="OfTypeSequence.java" startLine="20" startPosition="37" endLine="21" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4611582986551925587" fileName="OfTypeSequence.java" startLine="25" startPosition="42" endLine="26" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4611582986551925598" fileName="OfTypeSequence.java" startLine="27" startPosition="5" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4611582986551925324" fileName="OfTypeSequence.java" startLine="31" startPosition="55" endLine="32" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="inputIterator" />
+    <nodeInfo nodeId="4611582986551925329" fileName="OfTypeSequence.java" startLine="32" startPosition="45" endLine="33" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="hasNext" />
+    <nodeInfo nodeId="4611582986551925333" fileName="OfTypeSequence.java" startLine="33" startPosition="56" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="next" />
+    <nodeInfo nodeId="4611582986551925349" fileName="OfTypeSequence.java" startLine="40" startPosition="34" endLine="41" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551925353" fileName="OfTypeSequence.java" startLine="43" startPosition="30" endLine="44" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551925358" fileName="OfTypeSequence.java" startLine="45" startPosition="7" endLine="46" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4611582986551925371" fileName="OfTypeSequence.java" startLine="50" startPosition="34" endLine="51" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551925375" fileName="OfTypeSequence.java" startLine="53" startPosition="30" endLine="54" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551925386" fileName="OfTypeSequence.java" startLine="56" startPosition="33" endLine="57" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4611582986551925389" fileName="OfTypeSequence.java" startLine="58" startPosition="7" endLine="59" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4611582986551925397" fileName="OfTypeSequence.java" startLine="62" startPosition="26" endLine="63" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4611582986551925404" fileName="OfTypeSequence.java" startLine="66" startPosition="25" endLine="67" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551925416" fileName="OfTypeSequence.java" startLine="70" startPosition="31" endLine="71" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551925422" fileName="OfTypeSequence.java" startLine="71" startPosition="41" endLine="72" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551925665" fileName="OfTypeSequence.java" startLine="73" startPosition="39" endLine="74" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4611582986551931836" fileName="OfTypeSequence.java" startLine="75" startPosition="31" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4611582986551925450" fileName="OfTypeSequence.java" startLine="77" startPosition="9" endLine="78" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551925456" fileName="OfTypeSequence.java" startLine="78" startPosition="45" endLine="79" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551925462" fileName="OfTypeSequence.java" startLine="79" startPosition="30" endLine="80" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="4611582986551925467" fileName="OfTypeSequence.java" startLine="84" startPosition="27" endLine="85" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4611582986551925471" fileName="OfTypeSequence.java" startLine="85" startPosition="19" endLine="86" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551925477" fileName="OfTypeSequence.java" startLine="86" startPosition="23" endLine="87" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551925483" fileName="OfTypeSequence.java" startLine="87" startPosition="42" endLine="88" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4611582986551925336" fileName="OfTypeSequence.java" startLine="35" startPosition="0" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OfTypeIterator#()V" />
+    <nodeInfo nodeId="4611582986551925577" fileName="OfTypeSequence.java" startLine="24" startPosition="27" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4611582986551925344" fileName="OfTypeSequence.java" startLine="39" startPosition="30" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4611582986551925351" fileName="OfTypeSequence.java" startLine="42" startPosition="7" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4611582986551925366" fileName="OfTypeSequence.java" startLine="49" startPosition="21" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4611582986551925373" fileName="OfTypeSequence.java" startLine="52" startPosition="7" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4611582986551925380" fileName="OfTypeSequence.java" startLine="55" startPosition="7" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4611582986551926805" fileName="OfTypeSequence.java" startLine="74" startPosition="37" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4611582986551925181" fileName="OfTypeSequence.java" startLine="10" startPosition="0" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OfTypeSequence#(Ljava/lang/Iterable;Ljava/lang/Class;)V" />
+    <nodeInfo nodeId="4611582986551949509" fileName="OfTypeSequence.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="4611582986551925623" fileName="OfTypeSequence.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOfType#(null)Z" />
+    <nodeInfo nodeId="4611582986551925393" fileName="OfTypeSequence.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
+    <nodeInfo nodeId="4611582986551925400" fileName="OfTypeSequence.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="4611582986551925508" fileName="OfTypeSequence.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cast#(null)null" />
+    <nodeInfo nodeId="4611582986551925463" fileName="OfTypeSequence.java" startLine="83" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearNext#()null" />
+    <nodeInfo nodeId="4611582986551925428" fileName="OfTypeSequence.java" startLine="72" startPosition="23" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4611582986551925340" fileName="OfTypeSequence.java" startLine="38" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
+    <nodeInfo nodeId="4611582986551925362" fileName="OfTypeSequence.java" startLine="48" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
+    <nodeInfo nodeId="4611582986551925412" fileName="OfTypeSequence.java" startLine="69" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()V" />
+    <scopeInfo nodeId="4611582986551925339" fileName="OfTypeSequence.java" startLine="36" startPosition="30" endLine="36" endPosition="30" />
+    <scopeInfo nodeId="4611582986551949513" fileName="OfTypeSequence.java" startLine="16" startPosition="33" endLine="17" endPosition="47" />
+    <scopeInfo nodeId="4611582986551925626" fileName="OfTypeSequence.java" startLine="20" startPosition="37" endLine="21" endPosition="43" />
+    <scopeInfo nodeId="4611582986551925579" fileName="OfTypeSequence.java" startLine="25" startPosition="42" endLine="26" endPosition="39" />
+    <scopeInfo nodeId="4611582986551925348" fileName="OfTypeSequence.java" startLine="40" startPosition="34" endLine="41" endPosition="15" />
+    <scopeInfo nodeId="4611582986551925352" fileName="OfTypeSequence.java" startLine="43" startPosition="30" endLine="44" endPosition="21" />
+    <scopeInfo nodeId="4611582986551925370" fileName="OfTypeSequence.java" startLine="50" startPosition="34" endLine="51" endPosition="15" />
+    <scopeInfo nodeId="4611582986551925374" fileName="OfTypeSequence.java" startLine="53" startPosition="30" endLine="54" endPosition="21" />
+    <scopeInfo nodeId="4611582986551925385" fileName="OfTypeSequence.java" startLine="56" startPosition="33" endLine="57" endPosition="43" />
+    <scopeInfo nodeId="4611582986551925396" fileName="OfTypeSequence.java" startLine="62" startPosition="26" endLine="63" endPosition="48" />
+    <scopeInfo nodeId="4611582986551925403" fileName="OfTypeSequence.java" startLine="66" startPosition="25" endLine="67" endPosition="49" />
+    <scopeInfo nodeId="4611582986551926806" fileName="OfTypeSequence.java" startLine="75" startPosition="31" endLine="76" endPosition="19" />
+    <scopeInfo nodeId="4611582986551925184" fileName="OfTypeSequence.java" startLine="11" startPosition="62" endLine="13" endPosition="33" />
+    <scopeInfo nodeId="4611582986551925336" fileName="OfTypeSequence.java" startLine="35" startPosition="0" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="4611582986551925181" fileName="OfTypeSequence.java" startLine="10" startPosition="0" endLine="14" endPosition="3">
+      <varInfo nodeId="4611582986551925247" varName="input" />
+      <varInfo nodeId="4611582986551925270" varName="reqType" />
+    </scopeInfo>
+    <scopeInfo nodeId="4611582986551949509" fileName="OfTypeSequence.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="4611582986551925623" fileName="OfTypeSequence.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="4611582986551925649" varName="input" />
+    </scopeInfo>
+    <scopeInfo nodeId="4611582986551925511" fileName="OfTypeSequence.java" startLine="24" startPosition="27" endLine="28" endPosition="16" />
+    <scopeInfo nodeId="4611582986551925393" fileName="OfTypeSequence.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="4611582986551925400" fileName="OfTypeSequence.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="4611582986551925466" fileName="OfTypeSequence.java" startLine="84" startPosition="27" endLine="88" endPosition="17">
+      <varInfo nodeId="4611582986551925468" varName="tmp" />
+    </scopeInfo>
+    <scopeInfo nodeId="4611582986551925508" fileName="OfTypeSequence.java" startLine="23" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="4611582986551925564" varName="input" />
+    </scopeInfo>
+    <scopeInfo nodeId="4611582986551925343" fileName="OfTypeSequence.java" startLine="39" startPosition="30" endLine="46" endPosition="31" />
+    <scopeInfo nodeId="4611582986551925432" fileName="OfTypeSequence.java" startLine="73" startPosition="39" endLine="80" endPosition="14">
+      <varInfo nodeId="4611582986551925666" varName="tmp" />
+    </scopeInfo>
+    <scopeInfo nodeId="4611582986551925463" fileName="OfTypeSequence.java" startLine="83" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="4611582986551925340" fileName="OfTypeSequence.java" startLine="38" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="4611582986551925365" fileName="OfTypeSequence.java" startLine="49" startPosition="21" endLine="59" endPosition="30" />
+    <scopeInfo nodeId="4611582986551925415" fileName="OfTypeSequence.java" startLine="70" startPosition="31" endLine="81" endPosition="7" />
+    <scopeInfo nodeId="4611582986551925362" fileName="OfTypeSequence.java" startLine="48" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="4611582986551925412" fileName="OfTypeSequence.java" startLine="69" startPosition="0" endLine="83" endPosition="0" />
+    <unitInfo nodeId="4611582986551925320" fileName="OfTypeSequence.java" startLine="31" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.OfTypeSequence$OfTypeIterator" />
+    <unitInfo nodeId="4611582986551925179" fileName="OfTypeSequence.java" startLine="8" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.OfTypeSequence" />
+  </root>
   <root nodeId="6543581031674022257">
     <nodeInfo nodeId="6543581031674022262" fileName="NegateWhereFilter.java" startLine="8" startPosition="59" endLine="9" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="filter" />
     <nodeInfo nodeId="6543581031674022273" fileName="NegateWhereFilter.java" startLine="11" startPosition="95" endLine="12" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -17,7 +111,7 @@
     <unitInfo nodeId="6543581031674022257" fileName="NegateWhereFilter.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NegateWhereFilter" />
   </root>
   <root nodeId="6543581031674022292">
-    <nodeInfo nodeId="6543581031674022301" fileName="NullSetSequence.java" startLine="10" startPosition="92" endLine="11" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
+    <nodeInfo nodeId="6543581031674022301" fileName="NullSetSequence.java" startLine="10" startPosition="102" endLine="11" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
     <nodeInfo nodeId="6543581031674022310" fileName="NullSetSequence.java" startLine="11" startPosition="54" endLine="12" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="6543581031674022341" fileName="NullSetSequence.java" startLine="17" startPosition="27" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674022351" fileName="NullSetSequence.java" startLine="21" startPosition="52" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -36,7 +130,9 @@
     <nodeInfo nodeId="6543581031674022473" fileName="NullSetSequence.java" startLine="78" startPosition="31" endLine="79" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674022489" fileName="NullSetSequence.java" startLine="83" startPosition="52" endLine="84" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674022502" fileName="NullSetSequence.java" startLine="87" startPosition="25" endLine="88" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674022323" fileName="NullSetSequence.java" startLine="92" startPosition="51" endLine="93" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4611582986551239885" fileName="NullSetSequence.java" startLine="92" startPosition="43" endLine="93" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4611582986551239888" fileName="NullSetSequence.java" startLine="97" startPosition="43" endLine="98" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674022323" fileName="NullSetSequence.java" startLine="102" startPosition="51" endLine="103" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674022331" fileName="NullSetSequence.java" startLine="13" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NullSetSequence#()V" />
     <nodeInfo nodeId="6543581031674022353" fileName="NullSetSequence.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
     <nodeInfo nodeId="6543581031674022335" fileName="NullSetSequence.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(null)Z" />
@@ -56,7 +152,9 @@
     <nodeInfo nodeId="6543581031674022413" fileName="NullSetSequence.java" startLine="55" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toArray#([null)[null" />
     <nodeInfo nodeId="6543581031674022468" fileName="NullSetSequence.java" startLine="76" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toGenericArray#()[null" />
     <nodeInfo nodeId="6543581031674022481" fileName="NullSetSequence.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toGenericArray#(Ljava/lang/Class;)[null" />
-    <nodeInfo nodeId="6543581031674022317" fileName="NullSetSequence.java" startLine="90" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/internal/collections/runtime/impl/NullSetSequence;" />
+    <nodeInfo nodeId="4611582986551239851" fileName="NullSetSequence.java" startLine="90" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="asSynchronized#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
+    <nodeInfo nodeId="4611582986551239856" fileName="NullSetSequence.java" startLine="95" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="asUnmodifiable#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
+    <nodeInfo nodeId="6543581031674022317" fileName="NullSetSequence.java" startLine="100" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/internal/collections/runtime/impl/NullSetSequence;" />
     <scopeInfo nodeId="6543581031674022334" fileName="NullSetSequence.java" startLine="14" startPosition="31" endLine="14" endPosition="31" />
     <scopeInfo nodeId="6543581031674022356" fileName="NullSetSequence.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
     <scopeInfo nodeId="6543581031674022340" fileName="NullSetSequence.java" startLine="17" startPosition="27" endLine="18" endPosition="17" />
@@ -76,7 +174,9 @@
     <scopeInfo nodeId="6543581031674022472" fileName="NullSetSequence.java" startLine="78" startPosition="31" endLine="79" endPosition="29" />
     <scopeInfo nodeId="6543581031674022488" fileName="NullSetSequence.java" startLine="83" startPosition="52" endLine="84" endPosition="29" />
     <scopeInfo nodeId="6543581031674022501" fileName="NullSetSequence.java" startLine="87" startPosition="25" endLine="88" endPosition="16" />
-    <scopeInfo nodeId="6543581031674022322" fileName="NullSetSequence.java" startLine="92" startPosition="51" endLine="93" endPosition="41" />
+    <scopeInfo nodeId="4611582986551239855" fileName="NullSetSequence.java" startLine="92" startPosition="43" endLine="93" endPosition="16" />
+    <scopeInfo nodeId="4611582986551239860" fileName="NullSetSequence.java" startLine="97" startPosition="43" endLine="98" endPosition="16" />
+    <scopeInfo nodeId="6543581031674022322" fileName="NullSetSequence.java" startLine="102" startPosition="51" endLine="103" endPosition="41" />
     <scopeInfo nodeId="6543581031674022331" fileName="NullSetSequence.java" startLine="13" startPosition="0" endLine="15" endPosition="3" />
     <scopeInfo nodeId="6543581031674022353" fileName="NullSetSequence.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="6543581031674022335" fileName="NullSetSequence.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
@@ -122,8 +222,10 @@
     <scopeInfo nodeId="6543581031674022481" fileName="NullSetSequence.java" startLine="81" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="6543581031674022485" varName="runtimeClass" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674022317" fileName="NullSetSequence.java" startLine="90" startPosition="0" endLine="95" endPosition="0" />
-    <unitInfo nodeId="6543581031674022292" fileName="NullSetSequence.java" startLine="10" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullSetSequence" />
+    <scopeInfo nodeId="4611582986551239851" fileName="NullSetSequence.java" startLine="90" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="4611582986551239856" fileName="NullSetSequence.java" startLine="95" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="6543581031674022317" fileName="NullSetSequence.java" startLine="100" startPosition="0" endLine="105" endPosition="0" />
+    <unitInfo nodeId="6543581031674022292" fileName="NullSetSequence.java" startLine="10" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullSetSequence" />
   </root>
   <root nodeId="6543581031674022504">
     <nodeInfo nodeId="6543581031674022513" fileName="NullDequeSequence.java" startLine="11" startPosition="103" endLine="12" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
@@ -149,8 +251,8 @@
     <nodeInfo nodeId="6543581031674022692" fileName="NullDequeSequence.java" startLine="103" startPosition="68" endLine="104" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674022708" fileName="NullDequeSequence.java" startLine="108" startPosition="71" endLine="109" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674022723" fileName="NullDequeSequence.java" startLine="113" startPosition="107" endLine="114" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674022735" fileName="NullDequeSequence.java" startLine="118" startPosition="45" endLine="119" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674022746" fileName="NullDequeSequence.java" startLine="123" startPosition="45" endLine="124" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674022735" fileName="NullDequeSequence.java" startLine="118" startPosition="45" endLine="119" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674022746" fileName="NullDequeSequence.java" startLine="123" startPosition="45" endLine="124" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674022757" fileName="NullDequeSequence.java" startLine="127" startPosition="29" endLine="128" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674022526" fileName="NullDequeSequence.java" startLine="132" startPosition="53" endLine="133" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674022534" fileName="NullDequeSequence.java" startLine="13" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NullDequeSequence#()V" />
@@ -209,8 +311,8 @@
     <scopeInfo nodeId="6543581031674022691" fileName="NullDequeSequence.java" startLine="103" startPosition="68" endLine="104" endPosition="54" />
     <scopeInfo nodeId="6543581031674022707" fileName="NullDequeSequence.java" startLine="108" startPosition="71" endLine="109" endPosition="57" />
     <scopeInfo nodeId="6543581031674022722" fileName="NullDequeSequence.java" startLine="113" startPosition="107" endLine="114" endPosition="57" />
-    <scopeInfo nodeId="6543581031674022734" fileName="NullDequeSequence.java" startLine="118" startPosition="45" endLine="119" endPosition="54" />
-    <scopeInfo nodeId="6543581031674022745" fileName="NullDequeSequence.java" startLine="123" startPosition="45" endLine="124" endPosition="54" />
+    <scopeInfo nodeId="6543581031674022734" fileName="NullDequeSequence.java" startLine="118" startPosition="45" endLine="119" endPosition="16" />
+    <scopeInfo nodeId="6543581031674022745" fileName="NullDequeSequence.java" startLine="123" startPosition="45" endLine="124" endPosition="16" />
     <scopeInfo nodeId="6543581031674022756" fileName="NullDequeSequence.java" startLine="127" startPosition="29" endLine="128" endPosition="16" />
     <scopeInfo nodeId="6543581031674022525" fileName="NullDequeSequence.java" startLine="132" startPosition="53" endLine="133" endPosition="43" />
     <scopeInfo nodeId="6543581031674022534" fileName="NullDequeSequence.java" startLine="13" startPosition="0" endLine="15" endPosition="3" />
@@ -270,108 +372,113 @@
     <unitInfo nodeId="6543581031674022504" fileName="NullDequeSequence.java" startLine="11" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullDequeSequence" />
   </root>
   <root nodeId="6543581031674024631">
-    <nodeInfo nodeId="6543581031674024640" fileName="NullCollectionSequence.java" startLine="10" startPosition="122" endLine="11" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
-    <nodeInfo nodeId="6543581031674024659" fileName="NullCollectionSequence.java" startLine="16" startPosition="28" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024670" fileName="NullCollectionSequence.java" startLine="20" startPosition="73" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024678" fileName="NullCollectionSequence.java" startLine="24" startPosition="31" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024689" fileName="NullCollectionSequence.java" startLine="28" startPosition="76" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024699" fileName="NullCollectionSequence.java" startLine="32" startPosition="112" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024707" fileName="NullCollectionSequence.java" startLine="36" startPosition="27" endLine="37" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024717" fileName="NullCollectionSequence.java" startLine="40" startPosition="52" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024729" fileName="NullCollectionSequence.java" startLine="47" startPosition="37" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024738" fileName="NullCollectionSequence.java" startLine="51" startPosition="47" endLine="52" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024746" fileName="NullCollectionSequence.java" startLine="55" startPosition="35" endLine="56" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024755" fileName="NullCollectionSequence.java" startLine="59" startPosition="45" endLine="60" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024764" fileName="NullCollectionSequence.java" startLine="63" startPosition="45" endLine="64" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024771" fileName="NullCollectionSequence.java" startLine="67" startPosition="50" endLine="68" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024778" fileName="NullCollectionSequence.java" startLine="71" startPosition="50" endLine="72" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024784" fileName="NullCollectionSequence.java" startLine="75" startPosition="21" endLine="76" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024791" fileName="NullCollectionSequence.java" startLine="79" startPosition="29" endLine="80" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024802" fileName="NullCollectionSequence.java" startLine="84" startPosition="33" endLine="85" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674024649" fileName="NullCollectionSequence.java" startLine="12" startPosition="0" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NullCollectionSequence#()V" />
-    <nodeInfo nodeId="6543581031674024719" fileName="NullCollectionSequence.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
-    <nodeInfo nodeId="6543581031674024653" fileName="NullCollectionSequence.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addElement#(null)null" />
-    <nodeInfo nodeId="6543581031674024661" fileName="NullCollectionSequence.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSequence#(Ljetbrains/mps/internal/collections/runtime/ISequence;)Ljetbrains/mps/internal/collections/runtime/ICollectionSequence;" />
-    <nodeInfo nodeId="6543581031674024672" fileName="NullCollectionSequence.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeElement#(null)null" />
-    <nodeInfo nodeId="6543581031674024680" fileName="NullCollectionSequence.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeSequence#(Ljetbrains/mps/internal/collections/runtime/ISequence;)Ljetbrains/mps/internal/collections/runtime/ICollectionSequence;" />
-    <nodeInfo nodeId="6543581031674024691" fileName="NullCollectionSequence.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeWhere#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljetbrains/mps/internal/collections/runtime/ICollectionSequence;" />
-    <nodeInfo nodeId="6543581031674024701" fileName="NullCollectionSequence.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(null)Z" />
-    <nodeInfo nodeId="6543581031674024709" fileName="NullCollectionSequence.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAll#(Ljava/util/Collection;)Z" />
-    <nodeInfo nodeId="6543581031674024723" fileName="NullCollectionSequence.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6543581031674024731" fileName="NullCollectionSequence.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="containsAll#(Ljava/util/Collection;)Z" />
-    <nodeInfo nodeId="6543581031674024740" fileName="NullCollectionSequence.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6543581031674024748" fileName="NullCollectionSequence.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeAll#(Ljava/util/Collection;)Z" />
-    <nodeInfo nodeId="6543581031674024757" fileName="NullCollectionSequence.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="retainAll#(Ljava/util/Collection;)Z" />
-    <nodeInfo nodeId="6543581031674024766" fileName="NullCollectionSequence.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="asUnmodifiable#()Ljetbrains/mps/internal/collections/runtime/ICollectionSequence;" />
-    <nodeInfo nodeId="6543581031674024773" fileName="NullCollectionSequence.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="asSynchronized#()Ljetbrains/mps/internal/collections/runtime/ICollectionSequence;" />
-    <nodeInfo nodeId="6543581031674024780" fileName="NullCollectionSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
-    <nodeInfo nodeId="6543581031674024786" fileName="NullCollectionSequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toArray#()[Ljava/lang/Object;" />
-    <nodeInfo nodeId="6543581031674024793" fileName="NullCollectionSequence.java" startLine="82" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toArray#([null)[null" />
-    <scopeInfo nodeId="6543581031674024652" fileName="NullCollectionSequence.java" startLine="13" startPosition="38" endLine="13" endPosition="38" />
-    <scopeInfo nodeId="6543581031674024722" fileName="NullCollectionSequence.java" startLine="44" startPosition="23" endLine="44" endPosition="23" />
-    <scopeInfo nodeId="6543581031674024658" fileName="NullCollectionSequence.java" startLine="16" startPosition="28" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="6543581031674024669" fileName="NullCollectionSequence.java" startLine="20" startPosition="73" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="6543581031674024677" fileName="NullCollectionSequence.java" startLine="24" startPosition="31" endLine="25" endPosition="16" />
-    <scopeInfo nodeId="6543581031674024688" fileName="NullCollectionSequence.java" startLine="28" startPosition="76" endLine="29" endPosition="16" />
-    <scopeInfo nodeId="6543581031674024698" fileName="NullCollectionSequence.java" startLine="32" startPosition="112" endLine="33" endPosition="16" />
-    <scopeInfo nodeId="6543581031674024706" fileName="NullCollectionSequence.java" startLine="36" startPosition="27" endLine="37" endPosition="17" />
-    <scopeInfo nodeId="6543581031674024716" fileName="NullCollectionSequence.java" startLine="40" startPosition="52" endLine="41" endPosition="17" />
-    <scopeInfo nodeId="6543581031674024728" fileName="NullCollectionSequence.java" startLine="47" startPosition="37" endLine="48" endPosition="17" />
-    <scopeInfo nodeId="6543581031674024737" fileName="NullCollectionSequence.java" startLine="51" startPosition="47" endLine="52" endPosition="17" />
-    <scopeInfo nodeId="6543581031674024745" fileName="NullCollectionSequence.java" startLine="55" startPosition="35" endLine="56" endPosition="17" />
-    <scopeInfo nodeId="6543581031674024754" fileName="NullCollectionSequence.java" startLine="59" startPosition="45" endLine="60" endPosition="17" />
-    <scopeInfo nodeId="6543581031674024763" fileName="NullCollectionSequence.java" startLine="63" startPosition="45" endLine="64" endPosition="17" />
-    <scopeInfo nodeId="6543581031674024770" fileName="NullCollectionSequence.java" startLine="67" startPosition="50" endLine="68" endPosition="16" />
-    <scopeInfo nodeId="6543581031674024777" fileName="NullCollectionSequence.java" startLine="71" startPosition="50" endLine="72" endPosition="16" />
-    <scopeInfo nodeId="6543581031674024783" fileName="NullCollectionSequence.java" startLine="75" startPosition="21" endLine="76" endPosition="13" />
-    <scopeInfo nodeId="6543581031674024790" fileName="NullCollectionSequence.java" startLine="79" startPosition="29" endLine="80" endPosition="23" />
-    <scopeInfo nodeId="6543581031674024801" fileName="NullCollectionSequence.java" startLine="84" startPosition="33" endLine="85" endPosition="29" />
-    <scopeInfo nodeId="6543581031674024649" fileName="NullCollectionSequence.java" startLine="12" startPosition="0" endLine="14" endPosition="3" />
-    <scopeInfo nodeId="6543581031674024719" fileName="NullCollectionSequence.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6543581031674024653" fileName="NullCollectionSequence.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
+    <nodeInfo nodeId="6543581031674024640" fileName="NullCollectionSequence.java" startLine="10" startPosition="113" endLine="11" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
+    <nodeInfo nodeId="6256642990713378988" fileName="NullCollectionSequence.java" startLine="11" startPosition="56" endLine="12" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
+    <nodeInfo nodeId="6543581031674024659" fileName="NullCollectionSequence.java" startLine="17" startPosition="28" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024670" fileName="NullCollectionSequence.java" startLine="21" startPosition="73" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024678" fileName="NullCollectionSequence.java" startLine="25" startPosition="31" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024689" fileName="NullCollectionSequence.java" startLine="29" startPosition="76" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024699" fileName="NullCollectionSequence.java" startLine="33" startPosition="112" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024707" fileName="NullCollectionSequence.java" startLine="37" startPosition="27" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024717" fileName="NullCollectionSequence.java" startLine="41" startPosition="52" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024729" fileName="NullCollectionSequence.java" startLine="48" startPosition="37" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024738" fileName="NullCollectionSequence.java" startLine="52" startPosition="47" endLine="53" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024746" fileName="NullCollectionSequence.java" startLine="56" startPosition="35" endLine="57" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024755" fileName="NullCollectionSequence.java" startLine="60" startPosition="45" endLine="61" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024764" fileName="NullCollectionSequence.java" startLine="64" startPosition="45" endLine="65" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024771" fileName="NullCollectionSequence.java" startLine="68" startPosition="50" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024778" fileName="NullCollectionSequence.java" startLine="72" startPosition="50" endLine="73" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024784" fileName="NullCollectionSequence.java" startLine="76" startPosition="21" endLine="77" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024791" fileName="NullCollectionSequence.java" startLine="80" startPosition="29" endLine="81" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024802" fileName="NullCollectionSequence.java" startLine="85" startPosition="33" endLine="86" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6256642990713378576" fileName="NullCollectionSequence.java" startLine="90" startPosition="58" endLine="91" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674024649" fileName="NullCollectionSequence.java" startLine="13" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NullCollectionSequence#()V" />
+    <nodeInfo nodeId="6543581031674024719" fileName="NullCollectionSequence.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
+    <nodeInfo nodeId="6543581031674024653" fileName="NullCollectionSequence.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addElement#(null)null" />
+    <nodeInfo nodeId="6543581031674024661" fileName="NullCollectionSequence.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSequence#(Ljetbrains/mps/internal/collections/runtime/ISequence;)Ljetbrains/mps/internal/collections/runtime/ICollectionSequence;" />
+    <nodeInfo nodeId="6543581031674024672" fileName="NullCollectionSequence.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeElement#(null)null" />
+    <nodeInfo nodeId="6543581031674024680" fileName="NullCollectionSequence.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeSequence#(Ljetbrains/mps/internal/collections/runtime/ISequence;)Ljetbrains/mps/internal/collections/runtime/ICollectionSequence;" />
+    <nodeInfo nodeId="6543581031674024691" fileName="NullCollectionSequence.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeWhere#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljetbrains/mps/internal/collections/runtime/ICollectionSequence;" />
+    <nodeInfo nodeId="6543581031674024701" fileName="NullCollectionSequence.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(null)Z" />
+    <nodeInfo nodeId="6543581031674024709" fileName="NullCollectionSequence.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAll#(Ljava/util/Collection;)Z" />
+    <nodeInfo nodeId="6543581031674024723" fileName="NullCollectionSequence.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6543581031674024731" fileName="NullCollectionSequence.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="containsAll#(Ljava/util/Collection;)Z" />
+    <nodeInfo nodeId="6543581031674024740" fileName="NullCollectionSequence.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6543581031674024748" fileName="NullCollectionSequence.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeAll#(Ljava/util/Collection;)Z" />
+    <nodeInfo nodeId="6543581031674024757" fileName="NullCollectionSequence.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="retainAll#(Ljava/util/Collection;)Z" />
+    <nodeInfo nodeId="6543581031674024766" fileName="NullCollectionSequence.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="asUnmodifiable#()Ljetbrains/mps/internal/collections/runtime/ICollectionSequence;" />
+    <nodeInfo nodeId="6543581031674024773" fileName="NullCollectionSequence.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="asSynchronized#()Ljetbrains/mps/internal/collections/runtime/ICollectionSequence;" />
+    <nodeInfo nodeId="6543581031674024780" fileName="NullCollectionSequence.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
+    <nodeInfo nodeId="6543581031674024786" fileName="NullCollectionSequence.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toArray#()[Ljava/lang/Object;" />
+    <nodeInfo nodeId="6543581031674024793" fileName="NullCollectionSequence.java" startLine="83" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toArray#([null)[null" />
+    <nodeInfo nodeId="6256642990713378570" fileName="NullCollectionSequence.java" startLine="88" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/internal/collections/runtime/impl/NullCollectionSequence;" />
+    <scopeInfo nodeId="6543581031674024652" fileName="NullCollectionSequence.java" startLine="14" startPosition="38" endLine="14" endPosition="38" />
+    <scopeInfo nodeId="6543581031674024722" fileName="NullCollectionSequence.java" startLine="45" startPosition="23" endLine="45" endPosition="23" />
+    <scopeInfo nodeId="6543581031674024658" fileName="NullCollectionSequence.java" startLine="17" startPosition="28" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="6543581031674024669" fileName="NullCollectionSequence.java" startLine="21" startPosition="73" endLine="22" endPosition="16" />
+    <scopeInfo nodeId="6543581031674024677" fileName="NullCollectionSequence.java" startLine="25" startPosition="31" endLine="26" endPosition="16" />
+    <scopeInfo nodeId="6543581031674024688" fileName="NullCollectionSequence.java" startLine="29" startPosition="76" endLine="30" endPosition="16" />
+    <scopeInfo nodeId="6543581031674024698" fileName="NullCollectionSequence.java" startLine="33" startPosition="112" endLine="34" endPosition="16" />
+    <scopeInfo nodeId="6543581031674024706" fileName="NullCollectionSequence.java" startLine="37" startPosition="27" endLine="38" endPosition="17" />
+    <scopeInfo nodeId="6543581031674024716" fileName="NullCollectionSequence.java" startLine="41" startPosition="52" endLine="42" endPosition="17" />
+    <scopeInfo nodeId="6543581031674024728" fileName="NullCollectionSequence.java" startLine="48" startPosition="37" endLine="49" endPosition="17" />
+    <scopeInfo nodeId="6543581031674024737" fileName="NullCollectionSequence.java" startLine="52" startPosition="47" endLine="53" endPosition="17" />
+    <scopeInfo nodeId="6543581031674024745" fileName="NullCollectionSequence.java" startLine="56" startPosition="35" endLine="57" endPosition="17" />
+    <scopeInfo nodeId="6543581031674024754" fileName="NullCollectionSequence.java" startLine="60" startPosition="45" endLine="61" endPosition="17" />
+    <scopeInfo nodeId="6543581031674024763" fileName="NullCollectionSequence.java" startLine="64" startPosition="45" endLine="65" endPosition="17" />
+    <scopeInfo nodeId="6543581031674024770" fileName="NullCollectionSequence.java" startLine="68" startPosition="50" endLine="69" endPosition="16" />
+    <scopeInfo nodeId="6543581031674024777" fileName="NullCollectionSequence.java" startLine="72" startPosition="50" endLine="73" endPosition="16" />
+    <scopeInfo nodeId="6543581031674024783" fileName="NullCollectionSequence.java" startLine="76" startPosition="21" endLine="77" endPosition="13" />
+    <scopeInfo nodeId="6543581031674024790" fileName="NullCollectionSequence.java" startLine="80" startPosition="29" endLine="81" endPosition="23" />
+    <scopeInfo nodeId="6543581031674024801" fileName="NullCollectionSequence.java" startLine="85" startPosition="33" endLine="86" endPosition="29" />
+    <scopeInfo nodeId="6256642990713378575" fileName="NullCollectionSequence.java" startLine="90" startPosition="58" endLine="91" endPosition="71" />
+    <scopeInfo nodeId="6543581031674024649" fileName="NullCollectionSequence.java" startLine="13" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="6543581031674024719" fileName="NullCollectionSequence.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="6543581031674024653" fileName="NullCollectionSequence.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="6543581031674024656" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674024661" fileName="NullCollectionSequence.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="6543581031674024661" fileName="NullCollectionSequence.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="6543581031674024665" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674024672" fileName="NullCollectionSequence.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="6543581031674024672" fileName="NullCollectionSequence.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="6543581031674024675" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674024680" fileName="NullCollectionSequence.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="6543581031674024680" fileName="NullCollectionSequence.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="6543581031674024684" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674024691" fileName="NullCollectionSequence.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="6543581031674024691" fileName="NullCollectionSequence.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="6543581031674024695" varName="filter" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674024701" fileName="NullCollectionSequence.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="6543581031674024701" fileName="NullCollectionSequence.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="6543581031674024704" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674024709" fileName="NullCollectionSequence.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="6543581031674024709" fileName="NullCollectionSequence.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="6543581031674024712" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674024723" fileName="NullCollectionSequence.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="6543581031674024723" fileName="NullCollectionSequence.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="6543581031674024726" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674024731" fileName="NullCollectionSequence.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="6543581031674024731" fileName="NullCollectionSequence.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="6543581031674024734" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674024740" fileName="NullCollectionSequence.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="6543581031674024740" fileName="NullCollectionSequence.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="6543581031674024743" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674024748" fileName="NullCollectionSequence.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="6543581031674024748" fileName="NullCollectionSequence.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="6543581031674024751" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674024757" fileName="NullCollectionSequence.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="6543581031674024757" fileName="NullCollectionSequence.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="6543581031674024760" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674024766" fileName="NullCollectionSequence.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="6543581031674024773" fileName="NullCollectionSequence.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="6543581031674024780" fileName="NullCollectionSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="6543581031674024786" fileName="NullCollectionSequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="6543581031674024793" fileName="NullCollectionSequence.java" startLine="82" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="6543581031674024766" fileName="NullCollectionSequence.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="6543581031674024773" fileName="NullCollectionSequence.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="6543581031674024780" fileName="NullCollectionSequence.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="6543581031674024786" fileName="NullCollectionSequence.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="6543581031674024793" fileName="NullCollectionSequence.java" startLine="83" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="6543581031674024798" varName="a" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674024631" fileName="NullCollectionSequence.java" startLine="10" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullCollectionSequence" />
+    <scopeInfo nodeId="6256642990713378570" fileName="NullCollectionSequence.java" startLine="88" startPosition="0" endLine="93" endPosition="0" />
+    <unitInfo nodeId="6543581031674024631" fileName="NullCollectionSequence.java" startLine="10" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullCollectionSequence" />
   </root>
   <root nodeId="6543581031674024998">
     <nodeInfo nodeId="6543581031674025044" fileName="ConcatingSequence.java" startLine="10" startPosition="55" endLine="11" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="left" />
@@ -716,8 +823,8 @@
     <nodeInfo nodeId="6543581031674027173" fileName="NullListSequence.java" startLine="98" startPosition="57" endLine="99" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674027184" fileName="NullListSequence.java" startLine="102" startPosition="70" endLine="103" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674027194" fileName="NullListSequence.java" startLine="107" startPosition="106" endLine="108" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674027206" fileName="NullListSequence.java" startLine="112" startPosition="44" endLine="113" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674027217" fileName="NullListSequence.java" startLine="117" startPosition="44" endLine="118" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674027206" fileName="NullListSequence.java" startLine="112" startPosition="44" endLine="113" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674027217" fileName="NullListSequence.java" startLine="117" startPosition="44" endLine="118" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674027228" fileName="NullListSequence.java" startLine="121" startPosition="27" endLine="122" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674027235" fileName="NullListSequence.java" startLine="126" startPosition="31" endLine="127" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674027251" fileName="NullListSequence.java" startLine="131" startPosition="52" endLine="132" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -796,8 +903,8 @@
     <scopeInfo nodeId="6543581031674027172" fileName="NullListSequence.java" startLine="98" startPosition="57" endLine="99" endPosition="16" />
     <scopeInfo nodeId="6543581031674027183" fileName="NullListSequence.java" startLine="102" startPosition="70" endLine="103" endPosition="16" />
     <scopeInfo nodeId="6543581031674027193" fileName="NullListSequence.java" startLine="107" startPosition="106" endLine="108" endPosition="56" />
-    <scopeInfo nodeId="6543581031674027205" fileName="NullListSequence.java" startLine="112" startPosition="44" endLine="113" endPosition="53" />
-    <scopeInfo nodeId="6543581031674027216" fileName="NullListSequence.java" startLine="117" startPosition="44" endLine="118" endPosition="53" />
+    <scopeInfo nodeId="6543581031674027205" fileName="NullListSequence.java" startLine="112" startPosition="44" endLine="113" endPosition="16" />
+    <scopeInfo nodeId="6543581031674027216" fileName="NullListSequence.java" startLine="117" startPosition="44" endLine="118" endPosition="16" />
     <scopeInfo nodeId="6543581031674027227" fileName="NullListSequence.java" startLine="121" startPosition="27" endLine="122" endPosition="16" />
     <scopeInfo nodeId="6543581031674027234" fileName="NullListSequence.java" startLine="126" startPosition="31" endLine="127" endPosition="52" />
     <scopeInfo nodeId="6543581031674027250" fileName="NullListSequence.java" startLine="131" startPosition="52" endLine="132" endPosition="52" />
@@ -997,8 +1104,8 @@
     <nodeInfo nodeId="6543581031674027639" fileName="NullQueueSequence.java" startLine="28" startPosition="68" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674027650" fileName="NullQueueSequence.java" startLine="32" startPosition="71" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674027660" fileName="NullQueueSequence.java" startLine="37" startPosition="107" endLine="38" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674027672" fileName="NullQueueSequence.java" startLine="42" startPosition="45" endLine="43" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674027683" fileName="NullQueueSequence.java" startLine="47" startPosition="45" endLine="48" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674027672" fileName="NullQueueSequence.java" startLine="42" startPosition="45" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674027683" fileName="NullQueueSequence.java" startLine="47" startPosition="45" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674027694" fileName="NullQueueSequence.java" startLine="51" startPosition="29" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674027700" fileName="NullQueueSequence.java" startLine="55" startPosition="22" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674027708" fileName="NullQueueSequence.java" startLine="59" startPosition="29" endLine="60" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1029,8 +1136,8 @@
     <scopeInfo nodeId="6543581031674027638" fileName="NullQueueSequence.java" startLine="28" startPosition="68" endLine="29" endPosition="16" />
     <scopeInfo nodeId="6543581031674027649" fileName="NullQueueSequence.java" startLine="32" startPosition="71" endLine="33" endPosition="16" />
     <scopeInfo nodeId="6543581031674027659" fileName="NullQueueSequence.java" startLine="37" startPosition="107" endLine="38" endPosition="57" />
-    <scopeInfo nodeId="6543581031674027671" fileName="NullQueueSequence.java" startLine="42" startPosition="45" endLine="43" endPosition="54" />
-    <scopeInfo nodeId="6543581031674027682" fileName="NullQueueSequence.java" startLine="47" startPosition="45" endLine="48" endPosition="54" />
+    <scopeInfo nodeId="6543581031674027671" fileName="NullQueueSequence.java" startLine="42" startPosition="45" endLine="43" endPosition="16" />
+    <scopeInfo nodeId="6543581031674027682" fileName="NullQueueSequence.java" startLine="47" startPosition="45" endLine="48" endPosition="16" />
     <scopeInfo nodeId="6543581031674027693" fileName="NullQueueSequence.java" startLine="51" startPosition="29" endLine="52" endPosition="16" />
     <scopeInfo nodeId="6543581031674027699" fileName="NullQueueSequence.java" startLine="55" startPosition="22" endLine="56" endPosition="16" />
     <scopeInfo nodeId="6543581031674027707" fileName="NullQueueSequence.java" startLine="59" startPosition="29" endLine="60" endPosition="17" />
@@ -1942,7 +2049,9 @@
     <nodeInfo nodeId="6543581031674035990" fileName="NullSortedSetSequence.java" startLine="29" startPosition="72" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674036002" fileName="NullSortedSetSequence.java" startLine="34" startPosition="75" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674036011" fileName="NullSortedSetSequence.java" startLine="38" startPosition="45" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035940" fileName="NullSortedSetSequence.java" startLine="43" startPosition="57" endLine="44" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4611582986551239910" fileName="NullSortedSetSequence.java" startLine="43" startPosition="49" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4611582986551239913" fileName="NullSortedSetSequence.java" startLine="48" startPosition="49" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035940" fileName="NullSortedSetSequence.java" startLine="53" startPosition="57" endLine="54" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674035948" fileName="NullSortedSetSequence.java" startLine="12" startPosition="0" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NullSortedSetSequence#()V" />
     <nodeInfo nodeId="6543581031674035952" fileName="NullSortedSetSequence.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="headSet#(null)Ljetbrains/mps/internal/collections/runtime/ISortedSetSequence;" />
     <nodeInfo nodeId="6543581031674035961" fileName="NullSortedSetSequence.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="subSet#(nullnull)Ljetbrains/mps/internal/collections/runtime/ISortedSetSequence;" />
@@ -1950,7 +2059,9 @@
     <nodeInfo nodeId="6543581031674036005" fileName="NullSortedSetSequence.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="comparator#()Ljava/util/Comparator;" />
     <nodeInfo nodeId="6543581031674035981" fileName="NullSortedSetSequence.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSequence#(Ljetbrains/mps/internal/collections/runtime/ISequence;)Ljetbrains/mps/internal/collections/runtime/ISortedSetSequence;" />
     <nodeInfo nodeId="6543581031674035993" fileName="NullSortedSetSequence.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeSequence#(Ljetbrains/mps/internal/collections/runtime/ISequence;)Ljetbrains/mps/internal/collections/runtime/ISortedSetSequence;" />
-    <nodeInfo nodeId="6543581031674035934" fileName="NullSortedSetSequence.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/internal/collections/runtime/impl/NullSortedSetSequence;" />
+    <nodeInfo nodeId="4611582986551239894" fileName="NullSortedSetSequence.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="asUnmodifiable#()Ljetbrains/mps/internal/collections/runtime/ISortedSetSequence;" />
+    <nodeInfo nodeId="4611582986551239900" fileName="NullSortedSetSequence.java" startLine="46" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="asSynchronized#()Ljetbrains/mps/internal/collections/runtime/ISortedSetSequence;" />
+    <nodeInfo nodeId="6543581031674035934" fileName="NullSortedSetSequence.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/internal/collections/runtime/impl/NullSortedSetSequence;" />
     <scopeInfo nodeId="6543581031674035951" fileName="NullSortedSetSequence.java" startLine="13" startPosition="37" endLine="13" endPosition="37" />
     <scopeInfo nodeId="6543581031674035958" fileName="NullSortedSetSequence.java" startLine="16" startPosition="53" endLine="17" endPosition="16" />
     <scopeInfo nodeId="6543581031674035969" fileName="NullSortedSetSequence.java" startLine="20" startPosition="67" endLine="21" endPosition="16" />
@@ -1958,7 +2069,9 @@
     <scopeInfo nodeId="6543581031674035989" fileName="NullSortedSetSequence.java" startLine="29" startPosition="72" endLine="30" endPosition="16" />
     <scopeInfo nodeId="6543581031674036001" fileName="NullSortedSetSequence.java" startLine="34" startPosition="75" endLine="35" endPosition="16" />
     <scopeInfo nodeId="6543581031674036010" fileName="NullSortedSetSequence.java" startLine="38" startPosition="45" endLine="39" endPosition="16" />
-    <scopeInfo nodeId="6543581031674035939" fileName="NullSortedSetSequence.java" startLine="43" startPosition="57" endLine="44" endPosition="47" />
+    <scopeInfo nodeId="4611582986551239899" fileName="NullSortedSetSequence.java" startLine="43" startPosition="49" endLine="44" endPosition="16" />
+    <scopeInfo nodeId="4611582986551239905" fileName="NullSortedSetSequence.java" startLine="48" startPosition="49" endLine="49" endPosition="16" />
+    <scopeInfo nodeId="6543581031674035939" fileName="NullSortedSetSequence.java" startLine="53" startPosition="57" endLine="54" endPosition="47" />
     <scopeInfo nodeId="6543581031674035948" fileName="NullSortedSetSequence.java" startLine="12" startPosition="0" endLine="14" endPosition="3" />
     <scopeInfo nodeId="6543581031674035952" fileName="NullSortedSetSequence.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="6543581031674035956" varName="toElement" />
@@ -1977,8 +2090,10 @@
     <scopeInfo nodeId="6543581031674035993" fileName="NullSortedSetSequence.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="6543581031674035997" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035934" fileName="NullSortedSetSequence.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
-    <unitInfo nodeId="6543581031674035918" fileName="NullSortedSetSequence.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullSortedSetSequence" />
+    <scopeInfo nodeId="4611582986551239894" fileName="NullSortedSetSequence.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="4611582986551239900" fileName="NullSortedSetSequence.java" startLine="46" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="6543581031674035934" fileName="NullSortedSetSequence.java" startLine="51" startPosition="0" endLine="56" endPosition="0" />
+    <unitInfo nodeId="6543581031674035918" fileName="NullSortedSetSequence.java" startLine="10" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullSortedSetSequence" />
   </root>
   <root nodeId="6543581031674036136">
     <nodeInfo nodeId="6543581031674036149" fileName="NullSortedMapSequence.java" startLine="9" startPosition="125" endLine="10" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
@@ -2205,11 +2320,12 @@
     <nodeInfo nodeId="6543581031674036815" fileName="NullMapSequence.java" startLine="55" startPosition="21" endLine="56" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674036822" fileName="NullMapSequence.java" startLine="59" startPosition="33" endLine="60" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674036836" fileName="NullMapSequence.java" startLine="63" startPosition="80" endLine="64" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674036844" fileName="NullMapSequence.java" startLine="67" startPosition="27" endLine="68" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674036852" fileName="NullMapSequence.java" startLine="71" startPosition="28" endLine="72" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674036861" fileName="NullMapSequence.java" startLine="75" startPosition="46" endLine="76" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674036874" fileName="NullMapSequence.java" startLine="79" startPosition="53" endLine="80" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674036726" fileName="NullMapSequence.java" startLine="84" startPosition="57" endLine="85" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3452893138210588559" fileName="NullMapSequence.java" startLine="67" startPosition="37" endLine="68" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674036844" fileName="NullMapSequence.java" startLine="71" startPosition="27" endLine="72" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674036852" fileName="NullMapSequence.java" startLine="75" startPosition="28" endLine="76" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674036861" fileName="NullMapSequence.java" startLine="79" startPosition="46" endLine="80" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674036874" fileName="NullMapSequence.java" startLine="83" startPosition="53" endLine="84" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674036726" fileName="NullMapSequence.java" startLine="88" startPosition="57" endLine="89" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674036735" fileName="NullMapSequence.java" startLine="17" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NullMapSequence#()V" />
     <nodeInfo nodeId="6543581031674036739" fileName="NullMapSequence.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
     <nodeInfo nodeId="6543581031674036793" fileName="NullMapSequence.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putAll#(Ljava/util/Map;)V" />
@@ -2223,11 +2339,12 @@
     <nodeInfo nodeId="6543581031674036811" fileName="NullMapSequence.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
     <nodeInfo nodeId="6543581031674036817" fileName="NullMapSequence.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="values#()Ljava/util/Collection;" />
     <nodeInfo nodeId="6543581031674036824" fileName="NullMapSequence.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putAll#(Ljetbrains/mps/internal/collections/runtime/IMapSequence;)Ljetbrains/mps/internal/collections/runtime/IMapSequence;" />
-    <nodeInfo nodeId="6543581031674036838" fileName="NullMapSequence.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeKey#(null)null" />
-    <nodeInfo nodeId="6543581031674036846" fileName="NullMapSequence.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toMap#()Ljava/util/Map;" />
-    <nodeInfo nodeId="6543581031674036854" fileName="NullMapSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="6543581031674036867" fileName="NullMapSequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mappingsSet#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
-    <nodeInfo nodeId="6543581031674036718" fileName="NullMapSequence.java" startLine="82" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/internal/collections/runtime/impl/NullMapSequence;" />
+    <nodeInfo nodeId="3452893138210588551" fileName="NullMapSequence.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putValue#(nullnull)null" />
+    <nodeInfo nodeId="6543581031674036838" fileName="NullMapSequence.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeKey#(null)null" />
+    <nodeInfo nodeId="6543581031674036846" fileName="NullMapSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toMap#()Ljava/util/Map;" />
+    <nodeInfo nodeId="6543581031674036854" fileName="NullMapSequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="6543581031674036867" fileName="NullMapSequence.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mappingsSet#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
+    <nodeInfo nodeId="6543581031674036718" fileName="NullMapSequence.java" startLine="86" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/internal/collections/runtime/impl/NullMapSequence;" />
     <scopeInfo nodeId="6543581031674036738" fileName="NullMapSequence.java" startLine="18" startPosition="31" endLine="18" endPosition="31" />
     <scopeInfo nodeId="6543581031674036742" fileName="NullMapSequence.java" startLine="21" startPosition="23" endLine="21" endPosition="23" />
     <scopeInfo nodeId="6543581031674036802" fileName="NullMapSequence.java" startLine="48" startPosition="55" endLine="48" endPosition="55" />
@@ -2241,11 +2358,12 @@
     <scopeInfo nodeId="6543581031674036814" fileName="NullMapSequence.java" startLine="55" startPosition="21" endLine="56" endPosition="13" />
     <scopeInfo nodeId="6543581031674036821" fileName="NullMapSequence.java" startLine="59" startPosition="33" endLine="60" endPosition="34" />
     <scopeInfo nodeId="6543581031674036835" fileName="NullMapSequence.java" startLine="63" startPosition="80" endLine="64" endPosition="16" />
-    <scopeInfo nodeId="6543581031674036843" fileName="NullMapSequence.java" startLine="67" startPosition="27" endLine="68" endPosition="16" />
-    <scopeInfo nodeId="6543581031674036851" fileName="NullMapSequence.java" startLine="71" startPosition="28" endLine="72" endPosition="16" />
-    <scopeInfo nodeId="6543581031674036860" fileName="NullMapSequence.java" startLine="75" startPosition="46" endLine="76" endPosition="60" />
-    <scopeInfo nodeId="6543581031674036873" fileName="NullMapSequence.java" startLine="79" startPosition="53" endLine="80" endPosition="71" />
-    <scopeInfo nodeId="6543581031674036725" fileName="NullMapSequence.java" startLine="84" startPosition="57" endLine="85" endPosition="44" />
+    <scopeInfo nodeId="3452893138210588558" fileName="NullMapSequence.java" startLine="67" startPosition="37" endLine="68" endPosition="16" />
+    <scopeInfo nodeId="6543581031674036843" fileName="NullMapSequence.java" startLine="71" startPosition="27" endLine="72" endPosition="16" />
+    <scopeInfo nodeId="6543581031674036851" fileName="NullMapSequence.java" startLine="75" startPosition="28" endLine="76" endPosition="16" />
+    <scopeInfo nodeId="6543581031674036860" fileName="NullMapSequence.java" startLine="79" startPosition="46" endLine="80" endPosition="60" />
+    <scopeInfo nodeId="6543581031674036873" fileName="NullMapSequence.java" startLine="83" startPosition="53" endLine="84" endPosition="71" />
+    <scopeInfo nodeId="6543581031674036725" fileName="NullMapSequence.java" startLine="88" startPosition="57" endLine="89" endPosition="44" />
     <scopeInfo nodeId="6543581031674036735" fileName="NullMapSequence.java" startLine="17" startPosition="0" endLine="19" endPosition="3" />
     <scopeInfo nodeId="6543581031674036739" fileName="NullMapSequence.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="6543581031674036793" fileName="NullMapSequence.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
@@ -2274,14 +2392,18 @@
     <scopeInfo nodeId="6543581031674036824" fileName="NullMapSequence.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="6543581031674036829" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674036838" fileName="NullMapSequence.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="3452893138210588551" fileName="NullMapSequence.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="3452893138210588554" varName="value" />
+      <varInfo nodeId="3452893138210588552" varName="key" />
+    </scopeInfo>
+    <scopeInfo nodeId="6543581031674036838" fileName="NullMapSequence.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="6543581031674036841" varName="u" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674036846" fileName="NullMapSequence.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="6543581031674036854" fileName="NullMapSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="6543581031674036867" fileName="NullMapSequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="6543581031674036718" fileName="NullMapSequence.java" startLine="82" startPosition="0" endLine="87" endPosition="0" />
-    <unitInfo nodeId="6543581031674036695" fileName="NullMapSequence.java" startLine="15" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullMapSequence" />
+    <scopeInfo nodeId="6543581031674036846" fileName="NullMapSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="6543581031674036854" fileName="NullMapSequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="6543581031674036867" fileName="NullMapSequence.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="6543581031674036718" fileName="NullMapSequence.java" startLine="86" startPosition="0" endLine="91" endPosition="0" />
+    <unitInfo nodeId="6543581031674036695" fileName="NullMapSequence.java" startLine="15" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullMapSequence" />
   </root>
 </debugInfo>
 

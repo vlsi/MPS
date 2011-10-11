@@ -60,11 +60,11 @@ public class ArgumentReference_Constraints extends BaseConstraintsDescriptor {
                     return SNodeOperations.isInstanceOf(it, "jetbrains.mps.bash.structure.ArgumentReference");
                   }
                 });
-                return Sequence.fromIterable(argumentReferences).select(new ISelector<SNode, SNode>() {
+                return (int) Sequence.fromIterable(argumentReferences).select(new ISelector<SNode, SNode>() {
                   public SNode select(SNode it) {
                     return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.bash.structure.ArgumentReference"), "arg", false);
                   }
-                }).distinct().count() == Sequence.fromIterable(argumentReferences).count();
+                }).distinct().count() == (int) Sequence.fromIterable(argumentReferences).count();
               }
             };
           }

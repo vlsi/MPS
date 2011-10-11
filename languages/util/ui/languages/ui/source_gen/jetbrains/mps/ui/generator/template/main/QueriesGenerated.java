@@ -55,43 +55,43 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_2610651675187911095(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044204229(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044204328(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044227740(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044249654(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044249707(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_2459884175396123620(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044249760(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044249813(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_6991444902044315305(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).count() == 1;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).count() == 1;
   }
 
   public static boolean baseMappingRule_Condition_1251509410704218200(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

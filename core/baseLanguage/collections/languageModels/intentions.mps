@@ -29,6 +29,7 @@
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1193396656620">
       <property name="name" nameId="tpck.1169194664001" value="ConvertForEachStatementToForeachStatement" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="false" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="foreach" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp2q.1153943597977" resolveInfo="ForEachStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1206658014161">
@@ -57,6 +58,30 @@
     <node type="tp3j.SurroundWithIntentionDeclaration" typeId="tp3j.2522969319638198293" id="309173295241374789">
       <property name="name" nameId="tpck.1169194664001" value="IterateOverSequence" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="4863683935051453872">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveSetElementOperation_replace" />
+      <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="true" />
+      <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp2q.1226591481394" resolveInfo="RemoveSetElementOperation" />
+    </node>
+    <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="4863683935051469795">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
+      <property name="name" nameId="tpck.1169194664001" value="AddSetElementOperation_replace" />
+      <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="true" />
+      <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp2q.1226566855640" resolveInfo="AddSetElementOperation" />
+    </node>
+    <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="4863683935051516260">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
+      <property name="name" nameId="tpck.1169194664001" value="AddAllSetElementsOperation_replace" />
+      <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="true" />
+      <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp2q.1226592602759" resolveInfo="AddAllSetElementsOperation" />
+    </node>
+    <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="4863683935051516296">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveAllSetElementsOperation_replace" />
+      <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="true" />
+      <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp2q.1226593880804" resolveInfo="RemoveAllSetElementsOperation" />
     </node>
   </roots>
   <root id="1193396656620">
@@ -241,7 +266,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="1193397470227">
               <node role="linkTarget" roleId="tp25.1140725362529" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1193397770170">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1193397770168" resolveInfo="type" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1193397770168" resolveInfo="variableType" />
               </node>
             </node>
           </node>
@@ -833,6 +858,162 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="996015165232817074">
                   <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="996015165232817076">
                     <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tp2q.1226511727824" resolveInfo="SetType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="4863683935051453872">
+    <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="4863683935051453873">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4863683935051453874">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4863683935051468906">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4863683935051468907">
+            <property name="value" nameId="tpee.1070475926801" value="Replace Deprecated Operation" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" roleId="tp3j.2522969319638198291" type="tp3j.ExecuteBlock" typeId="tp3j.1192795911897" id="4863683935051453875">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4863683935051453876">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4863683935051468908">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4863683935051468910">
+            <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="4863683935051468909" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithAnotherOperation" typeId="tp25.1140131837776" id="4863683935051469775">
+              <node role="replacementNode" roleId="tp25.1140131861877" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4863683935051469777">
+                <node role="quotedNode" roleId="tp3r.1196350785114" type="tp2q.RemoveElementOperation" typeId="tp2q.1167380149909" id="4863683935051469779">
+                  <node role="argument" roleId="tp2q.1167380149910" type="tpee.Expression" typeId="tpee.1068431790191" id="4863683935051469780">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="4863683935051469781">
+                      <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4863683935051469789">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4863683935051469784">
+                          <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="4863683935051469783" />
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="4863683935051469788">
+                            <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.1226591501988" />
+                          </node>
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_CopyOperation" typeId="tp25.1144146199828" id="4863683935051469793" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="4863683935051469795">
+    <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="4863683935051469796">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4863683935051469797">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4863683935051469800">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4863683935051469801">
+            <property name="value" nameId="tpee.1070475926801" value="Replace Deprecated Operation" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" roleId="tp3j.2522969319638198291" type="tp3j.ExecuteBlock" typeId="tp3j.1192795911897" id="4863683935051469798">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4863683935051469799">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4863683935051469802">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4863683935051469803">
+            <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="4863683935051469804" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithAnotherOperation" typeId="tp25.1140131837776" id="4863683935051469805">
+              <node role="replacementNode" roleId="tp25.1140131861877" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4863683935051469806">
+                <node role="quotedNode" roleId="tp3r.1196350785114" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="4863683935051507334">
+                  <node role="argument" roleId="tp2q.1160612519549" type="tpee.Expression" typeId="tpee.1068431790191" id="4863683935051507335">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="4863683935051507336">
+                      <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4863683935051507344">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4863683935051507339">
+                          <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="4863683935051507338" />
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="4863683935051507343">
+                            <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.1226567214363" />
+                          </node>
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_CopyOperation" typeId="tp25.1144146199828" id="4863683935051507348" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="4863683935051516260">
+    <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="4863683935051516261">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4863683935051516262">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4863683935051516267">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4863683935051516268">
+            <property name="value" nameId="tpee.1070475926801" value="Replace Deprecated Operation" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" roleId="tp3j.2522969319638198291" type="tp3j.ExecuteBlock" typeId="tp3j.1192795911897" id="4863683935051516263">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4863683935051516264">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4863683935051516269">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4863683935051516271">
+            <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="4863683935051516270" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithAnotherOperation" typeId="tp25.1140131837776" id="4863683935051516275">
+              <node role="replacementNode" roleId="tp25.1140131861877" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4863683935051516277">
+                <node role="quotedNode" roleId="tp3r.1196350785114" type="tp2q.AddAllElementsOperation" typeId="tp2q.1160666733551" id="4863683935051516279">
+                  <node role="argument" roleId="tp2q.1160666822012" type="tpee.Expression" typeId="tpee.1068431790191" id="4863683935051516280">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="4863683935051516281">
+                      <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4863683935051516289">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4863683935051516284">
+                          <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="4863683935051516283" />
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="4863683935051516288">
+                            <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.1226592623721" />
+                          </node>
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_CopyOperation" typeId="tp25.1144146199828" id="4863683935051516293" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="4863683935051516296">
+    <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="4863683935051516297">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4863683935051516298">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4863683935051516301">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4863683935051516302">
+            <property name="value" nameId="tpee.1070475926801" value="Replace Deprecated Operation" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" roleId="tp3j.2522969319638198291" type="tp3j.ExecuteBlock" typeId="tp3j.1192795911897" id="4863683935051516299">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4863683935051516300">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4863683935051516303">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4863683935051516305">
+            <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="4863683935051516304" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithAnotherOperation" typeId="tp25.1140131837776" id="4863683935051516309">
+              <node role="replacementNode" roleId="tp25.1140131861877" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4863683935051516311">
+                <node role="quotedNode" roleId="tp3r.1196350785114" type="tp2q.RemoveAllElementsOperation" typeId="tp2q.1173946412755" id="4863683935051516313">
+                  <node role="argument" roleId="tp2q.1173946412756" type="tpee.Expression" typeId="tpee.1068431790191" id="4863683935051516314">
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="4863683935051516315">
+                      <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4863683935051516323">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4863683935051516318">
+                          <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="4863683935051516317" />
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="4863683935051516322">
+                            <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.1226593903142" />
+                          </node>
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_CopyOperation" typeId="tp25.1144146199828" id="4863683935051516327" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

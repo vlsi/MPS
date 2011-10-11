@@ -336,7 +336,7 @@ forEachInAllMethods:
           List<SNode> equalParmCountMethods = new ArrayList<SNode>();
           List<SNode> methods = MapSequence.fromMap(this.myMethodsByName).get(name);
           for (SNode method : methods) {
-            if ((SNodeOperations.getParent(currMethod) != SNodeOperations.getParent(method)) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == currMethodParmCount) {
+            if ((SNodeOperations.getParent(currMethod) != SNodeOperations.getParent(method)) && (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == currMethodParmCount) {
               equalParmCountMethods.add(method);
             }
           }

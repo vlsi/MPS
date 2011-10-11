@@ -32,7 +32,7 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
 
   public void applyRule(final SNode classifierType, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == 0 || ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count())) {
+    if (!((int) ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == 0 || (int) ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count())) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classifierType, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591081", null, errorTarget);
     }
@@ -60,7 +60,7 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeParameter, "primitive types not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591112", null, errorTarget);
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count()) {
+    if ((int) ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count()) {
       {
         SNode typeArgument;
         SNode typeVar;

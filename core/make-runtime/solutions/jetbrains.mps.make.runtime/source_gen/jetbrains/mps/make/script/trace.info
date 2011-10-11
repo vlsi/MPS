@@ -94,7 +94,7 @@
     <nodeInfo nodeId="1479818508463261692" fileName="ScriptBuilder.java" startLine="156" startPosition="68" endLine="157" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1479818508463261703" fileName="ScriptBuilder.java" startLine="157" startPosition="68" endLine="158" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1479818508463261714" fileName="ScriptBuilder.java" startLine="158" startPosition="68" endLine="159" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1479818508463261735" fileName="ScriptBuilder.java" startLine="164" startPosition="102" endLine="165" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1479818508463261735" fileName="ScriptBuilder.java" startLine="164" startPosition="123" endLine="165" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1479818508463261751" fileName="ScriptBuilder.java" startLine="166" startPosition="67" endLine="167" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1479818508463261787" fileName="ScriptBuilder.java" startLine="174" startPosition="47" endLine="175" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1479818508463261811" fileName="ScriptBuilder.java" startLine="183" startPosition="47" endLine="184" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -222,7 +222,7 @@
     <scopeInfo nodeId="1479818508463261555" fileName="ScriptBuilder.java" startLine="127" startPosition="141" endLine="131" endPosition="0" />
     <scopeInfo nodeId="1479818508463261618" fileName="ScriptBuilder.java" startLine="137" startPosition="67" endLine="141" endPosition="7" />
     <scopeInfo nodeId="1479818508463261654" fileName="ScriptBuilder.java" startLine="146" startPosition="139" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="1479818508463261734" fileName="ScriptBuilder.java" startLine="164" startPosition="102" endLine="168" endPosition="7">
+    <scopeInfo nodeId="1479818508463261734" fileName="ScriptBuilder.java" startLine="164" startPosition="123" endLine="168" endPosition="7">
       <varInfo nodeId="1479818508463261736" varName="fct" />
     </scopeInfo>
     <scopeInfo nodeId="1479818508463261785" fileName="ScriptBuilder.java" startLine="173" startPosition="127" endLine="177" endPosition="0" />

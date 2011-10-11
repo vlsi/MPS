@@ -146,7 +146,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
             return SModelStereotype.isUserModel(SNodeOperations.getModel(it));
           }
         });
-        if (Sequence.fromIterable(userClassifiers).count() == 1) {
+        if ((int) Sequence.fromIterable(userClassifiers).count() == 1) {
           return Sequence.fromIterable(userClassifiers).first();
         }
 

@@ -367,6 +367,8 @@
     <nodeInfo nodeId="1154036295581" fileName="Main_forEach_loop.java" startLine="68" startPosition="22" endLine="69" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="1154036304973" fileName="Main_forEach_loop.java" startLine="71" startPosition="25" endLine="72" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1154036289077" fileName="Main_forEach_loop.java" startLine="73" startPosition="7" endLine="74" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5402968907645726607" fileName="Main_forEach_loop.java" startLine="75" startPosition="5" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5402968907645726608" fileName="Main_forEach_loop.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6271134080412784024" fileName="Main_forEach_loop.java" startLine="10" startPosition="37" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Main_forEach_loop#()V" />
     <nodeInfo nodeId="1154036289059" fileName="Main_forEach_loop.java" startLine="67" startPosition="53" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1154036289069" fileName="Main_forEach_loop.java" startLine="70" startPosition="7" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -380,7 +382,7 @@
     <nodeInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="16" startPosition="43" endLine="61" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="15" startPosition="83" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1154036214585" fileName="Main_forEach_loop.java" startLine="14" startPosition="47" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1154036214582" fileName="Main_forEach_loop.java" startLine="13" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1154036214582" fileName="Main_forEach_loop.java" startLine="13" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="6271134080412784026" fileName="Main_forEach_loop.java" startLine="11" startPosition="35" endLine="11" endPosition="35" />
     <scopeInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="46" startPosition="27" endLine="46" endPosition="27" />
     <scopeInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="42" startPosition="27" endLine="43" endPosition="38" />
@@ -405,16 +407,16 @@
     <scopeInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="17" startPosition="40" endLine="61" endPosition="0" />
     <scopeInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="16" startPosition="43" endLine="61" endPosition="10" />
     <scopeInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="15" startPosition="83" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1154036214584" fileName="Main_forEach_loop.java" startLine="14" startPosition="47" endLine="75" endPosition="5">
+    <scopeInfo nodeId="1154036214584" fileName="Main_forEach_loop.java" startLine="14" startPosition="47" endLine="77" endPosition="0">
       <varInfo nodeId="1154036214586" varName="nums" />
     </scopeInfo>
-    <scopeInfo nodeId="1154036214582" fileName="Main_forEach_loop.java" startLine="13" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="1154036214582" fileName="Main_forEach_loop.java" startLine="13" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="1154036214665" varName="args" />
     </scopeInfo>
     <unitInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="19" startPosition="23" endLine="59" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_loop$3" />
     <unitInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="17" startPosition="19" endLine="61" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_loop$2" />
     <unitInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="15" startPosition="54" endLine="63" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_loop$1" />
-    <unitInfo nodeId="1154036214581" fileName="Main_forEach_loop.java" startLine="10" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_loop" />
+    <unitInfo nodeId="1154036214581" fileName="Main_forEach_loop.java" startLine="10" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_loop" />
   </root>
 </debugInfo>
 

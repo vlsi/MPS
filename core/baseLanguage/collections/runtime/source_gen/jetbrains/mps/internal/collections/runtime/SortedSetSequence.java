@@ -5,6 +5,7 @@ package jetbrains.mps.internal.collections.runtime;
 import java.util.SortedSet;
 import java.io.Serializable;
 import java.util.Comparator;
+import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.impl.NullSortedSetSequence;
 import java.util.TreeSet;
 import java.util.List;
@@ -52,6 +53,16 @@ public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSe
   @Override
   public ISortedSetSequence<T> removeSequence(ISequence<? extends T> seq) {
     return (ISortedSetSequence<T>) super.removeSequence(seq);
+  }
+
+  @Override
+  public ISortedSetSequence<T> asUnmodifiable() {
+    return new SortedSetSequence(Collections.unmodifiableSortedSet(getSet()));
+  }
+
+  @Override
+  public ISortedSetSequence<T> asSynchronized() {
+    return new SortedSetSequence(Collections.synchronizedSortedSet(getSet()));
   }
 
   @Override

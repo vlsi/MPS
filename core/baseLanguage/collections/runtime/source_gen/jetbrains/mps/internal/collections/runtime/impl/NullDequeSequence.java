@@ -116,12 +116,12 @@ public class NullDequeSequence<T> extends NullQueueSequence<T> implements IDeque
 
   @Override
   public IDequeSequence<T> asUnmodifiable() {
-    return (IDequeSequence<T>) super.asUnmodifiable();
+    return this;
   }
 
   @Override
   public IDequeSequence<T> asSynchronized() {
-    return (IDequeSequence<T>) super.asSynchronized();
+    return this;
   }
 
   public Deque<T> toDeque() {

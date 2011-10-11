@@ -7,11 +7,12 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.impl.NullSetSequence;
 import java.util.List;
 import java.util.Arrays;
 
-public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<T>, Serializable {
+public class SetSequence<T> extends CollectionSequence<T> implements ISetSequence<T>, Set<T>, Serializable {
   private static final long serialVersionUID = -5489490742621116508L;
 
   private Set<T> set;
@@ -22,10 +23,6 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
 
   protected SetSequence(SetSequence<T> other) {
     this.set = new HashSet<T>(other.set);
-  }
-
-  public boolean add(T e) {
-    return set.add(e);
   }
 
   public boolean addAll(Collection<? extends T> c) {
@@ -58,10 +55,6 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
 
   public Iterator<T> iterator() {
     return set.iterator();
-  }
-
-  public boolean remove(Object o) {
-    return set.remove(o);
   }
 
   public boolean removeAll(Collection<?> c) {
@@ -119,16 +112,6 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
     return super.union(that);
   }
 
-  public T addElement(T t) {
-    if (Sequence.IGNORE_NULL_VALUES) {
-      if (t == null) {
-        return null;
-      }
-    }
-    set.add(t);
-    return t;
-  }
-
   public ISetSequence<T> addSequence(ISequence<? extends T> seq) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (seq == null) {
@@ -144,13 +127,6 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
       set.add(t);
     }
     return this;
-  }
-
-  public T removeElement(T t) {
-    if (remove((Object) t)) {
-      return t;
-    }
-    return null;
   }
 
   public ISetSequence<T> removeSequence(ISequence<? extends T> seq) {
@@ -180,7 +156,21 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
     return set;
   }
 
+  @Override
+  public ISetSequence<T> asUnmodifiable() {
+    return new SetSequence(Collections.unmodifiableSet(getSet()));
+  }
+
+  @Override
+  public ISetSequence<T> asSynchronized() {
+    return new SetSequence(Collections.unmodifiableSet(getSet()));
+  }
+
   protected Set<T> getSet() {
+    return set;
+  }
+
+  protected Collection<T> getCollection() {
     return set;
   }
 

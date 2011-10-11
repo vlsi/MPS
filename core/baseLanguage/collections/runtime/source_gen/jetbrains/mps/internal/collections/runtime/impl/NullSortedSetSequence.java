@@ -39,6 +39,16 @@ public class NullSortedSetSequence<T> extends NullSetSequence<T> implements ISor
     return null;
   }
 
+  @Override
+  public ISortedSetSequence<T> asUnmodifiable() {
+    return this;
+  }
+
+  @Override
+  public ISortedSetSequence<T> asSynchronized() {
+    return this;
+  }
+
   @SuppressWarnings(value = "unchecked")
   public static <U> NullSortedSetSequence<U> instance() {
     return (NullSortedSetSequence<U>) INSTANCE;

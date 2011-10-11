@@ -98,7 +98,7 @@
     <nodeInfo nodeId="5521685164201558368" fileName="HTMLElement_Behavior.java" startLine="23" startPosition="0" endLine="24" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5521685164201558373" fileName="HTMLElement_Behavior.java" startLine="24" startPosition="30" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5521685164201558367" fileName="HTMLElement_Behavior.java" startLine="25" startPosition="19" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5521685164201377131" fileName="HTMLElement_Behavior.java" startLine="27" startPosition="52" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5521685164201377131" fileName="HTMLElement_Behavior.java" startLine="27" startPosition="58" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5521685164201377226" fileName="HTMLElement_Behavior.java" startLine="29" startPosition="170" endLine="30" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="439148907936414864" fileName="HTMLElement_Behavior.java" startLine="31" startPosition="7" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3633133276124368613" fileName="HTMLElement_Behavior.java" startLine="32" startPosition="43" endLine="33" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -152,7 +152,7 @@
     <scopeInfo nodeId="3633133276124307921" fileName="HTMLElement_Behavior.java" startLine="48" startPosition="111" endLine="51" endPosition="7" />
     <scopeInfo nodeId="3633133276124409277" fileName="HTMLElement_Behavior.java" startLine="63" startPosition="109" endLine="66" endPosition="9" />
     <scopeInfo nodeId="6612597108004626828" fileName="HTMLElement_Behavior.java" startLine="14" startPosition="35" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="439148907936340115" fileName="HTMLElement_Behavior.java" startLine="27" startPosition="52" endLine="34" endPosition="44">
+    <scopeInfo nodeId="439148907936340115" fileName="HTMLElement_Behavior.java" startLine="27" startPosition="58" endLine="34" endPosition="44">
       <varInfo nodeId="5521685164201377132" varName="prev" />
     </scopeInfo>
     <scopeInfo nodeId="3633133276124409250" fileName="HTMLElement_Behavior.java" startLine="53" startPosition="38" endLine="60" endPosition="86" />

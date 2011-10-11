@@ -322,5 +322,63 @@
     </scopeInfo>
     <unitInfo nodeId="7046856741208199003" fileName="BusinessObject.java" startLine="6" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.ui.sandbox.BusinessObject" />
   </root>
+  <root nodeId="7046856741208290890">
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="1" startPosition="0" endLine="1" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="2" startPosition="0" endLine="2" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="2" startPosition="2" endLine="2" endPosition="8" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="3" startPosition="0" endLine="3" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="3" startPosition="4" endLine="3" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="4" startPosition="0" endLine="4" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="4" startPosition="4" endLine="4" endPosition="101" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="5" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="5" startPosition="0" endLine="5" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="6" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="6" startPosition="0" endLine="6" endPosition="27" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="6" startPosition="27" endLine="6" endPosition="27" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="6" startPosition="27" endLine="6" endPosition="80" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="7" startPosition="0" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="7" startPosition="0" endLine="7" endPosition="72" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="8" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="8" startPosition="0" endLine="8" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="8" startPosition="16" endLine="8" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="8" startPosition="16" endLine="8" endPosition="51" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="9" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="9" startPosition="0" endLine="9" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="10" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="10" startPosition="0" endLine="10" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="11" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="11" startPosition="0" endLine="11" endPosition="39" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="12" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="12" startPosition="0" endLine="12" endPosition="34" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="13" startPosition="0" endLine="13" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="14" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="14" startPosition="0" endLine="14" endPosition="72" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="15" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="15" startPosition="0" endLine="15" endPosition="72" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="16" startPosition="0" endLine="16" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="1" startPosition="16" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="2" startPosition="8" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="3" startPosition="52" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="4" startPosition="101" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="5" startPosition="1" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="6" startPosition="80" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="7" startPosition="72" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="8" startPosition="51" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="9" startPosition="33" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="10" startPosition="37" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="11" startPosition="39" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="12" startPosition="34" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="13" startPosition="9" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="14" startPosition="72" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="15" startPosition="72" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="16" startPosition="9" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="1" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <unitInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="1" startPosition="0" endLine="17" endPosition="0" unitName="UIDemo.gwt.xml" />
+  </root>
 </debugInfo>
 

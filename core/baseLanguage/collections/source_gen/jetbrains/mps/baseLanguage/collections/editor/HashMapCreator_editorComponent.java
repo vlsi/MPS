@@ -68,15 +68,9 @@ public class HashMapCreator_editorComponent extends AbstractCellProvider {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_s4nv53_a1a(editorContext, node));
-    if (renderingCondition_s4nv53_a1b0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_s4nv53_b1a(editorContext, node));
-    }
-    if (renderingCondition_s4nv53_a2b0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_s4nv53_c1a(editorContext, node));
-    }
-    if (renderingCondition_s4nv53_a3b0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_s4nv53_d1a(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createRefNode_s4nv53_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_s4nv53_c1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_s4nv53_d1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_s4nv53_e1a(editorContext, node));
     return editorCell;
   }
@@ -236,18 +230,6 @@ public class HashMapCreator_editorComponent extends AbstractCellProvider {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_s4nv53_a1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "keyType", true) != null);
-  }
-
-  private static boolean renderingCondition_s4nv53_a2b0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "keyType", true) != null) && (SLinkOperations.getTarget(node, "valueType", true) != null);
-  }
-
-  private static boolean renderingCondition_s4nv53_a3b0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "valueType", true) != null);
   }
 
   private static boolean renderingCondition_s4nv53_a1a(SNode node, EditorContext editorContext, IScope scope) {

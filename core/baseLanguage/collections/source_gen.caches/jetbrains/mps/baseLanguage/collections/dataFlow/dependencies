@@ -118,6 +118,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.ForEachVariableReference_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.GetElementOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.GetIndexOfOperation_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.GetLastIndexOfOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.HashMapCreator_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.HeadListOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.HeadMapOperation_DataFlow" />
@@ -131,6 +132,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.MapInitializer_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.MapOperationExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.MapRemoveOperation_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.MultiForEachStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.PageOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.PushOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.PutAllOperation_DataFlow" />
@@ -141,6 +143,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.RemoveSetElementOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.SequenceCreator_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.SetElementOperation_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.SingleArgumentSequenceOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.SingletonSequenceCreator_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.SkipOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.SortOperation_DataFlow" />
@@ -183,6 +186,13 @@
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.dataFlow.GetIndexOfOperation_DataFlow" file="GetIndexOfOperation_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.dataFlow.GetLastIndexOfOperation_DataFlow" file="GetLastIndexOfOperation_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -280,6 +290,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.dataFlow.MultiForEachStatement_DataFlow" file="MultiForEachStatement_DataFlow.java">
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.dataFlow.PageOperation_DataFlow" file="PageOperation_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -344,6 +363,13 @@
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.dataFlow.SetElementOperation_DataFlow" file="SetElementOperation_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.dataFlow.SingleArgumentSequenceOperation_DataFlow" file="SingleArgumentSequenceOperation_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />

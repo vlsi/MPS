@@ -43,7 +43,7 @@ public class FunctionType_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.Interface")).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode ifc) {
-                return ListSequence.fromList(SLinkOperations.getTargets(ifc, "method", true)).count() == 1;
+                return (int) ListSequence.fromList(SLinkOperations.getTargets(ifc, "method", true)).count() == 1;
               }
             });
           }

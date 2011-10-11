@@ -7,9 +7,9 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Arrays;
-import junit.framework.Assert;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.ByteArrayInputStream;
@@ -24,6 +24,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 
 public class List_Test extends Util_Test {
   public void test_listCreator() throws Exception {
@@ -43,6 +45,14 @@ public class List_Test extends Util_Test {
       ListSequence.fromList(test).addElement(i);
     }
     this.assertIterableEquals(this.expect5(), test);
+  }
+
+  public void test_testAdd() throws Exception {
+    List<String> ls = ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b");
+    Assert.assertTrue(ListSequence.fromList(ls).add("c"));
+    Assert.assertTrue(ListSequence.fromList(ls).add("b"));
+    ListSequence.fromList(ls).removeElement("b");
+    Assert.assertTrue(ListSequence.fromList(ls).add("b"));
   }
 
   public void test_addAll() throws Exception {
@@ -76,6 +86,15 @@ public class List_Test extends Util_Test {
     Assert.assertTrue(ListSequence.fromList(test).isEmpty());
     Assert.assertSame(0, ListSequence.fromList(test).count());
     Assert.assertSame(0, ListSequence.fromList(test).count());
+  }
+
+  public void test_testRemove() throws Exception {
+    List<String> ls = ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b");
+    Assert.assertTrue(ListSequence.fromList(ls).remove("a"));
+    Assert.assertTrue(ListSequence.fromList(ls).remove("b"));
+    Assert.assertFalse(ListSequence.fromList(ls).remove("c"));
+    ListSequence.fromList(ls).addElement("b");
+    Assert.assertTrue(ListSequence.fromList(ls).remove("b"));
   }
 
   public void test_removeAll() throws Exception {
@@ -118,7 +137,7 @@ public class List_Test extends Util_Test {
     Assert.assertEquals(4, insElm);
     Assert.assertEquals(Arrays.asList(new Integer[]{1, 2, 3, 4, 5}), test);
     int setElm = ListSequence.fromList(test).setElement(2, 0);
-    Assert.assertEquals(3, setElm);
+    Assert.assertEquals(0, setElm);
   }
 
   public void test_elementAccess() throws Exception {
@@ -365,6 +384,56 @@ __switch__:
   public void test_linkedlist() throws Exception {
     Deque<Integer> ll = LinkedListSequence.fromLinkedList(new LinkedList<Integer>());
     Assert.assertTrue(LinkedListSequence.fromLinkedList(ll).isEmpty());
+  }
+
+  public void test_collection() throws Exception {
+    List<String> ls = ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b");
+    Collection<String> cs = ls;
+    Assert.assertEquals("a b", IterableUtils.join(Sequence.fromIterable(cs), " "));
+    ListSequence.fromList(ls).addElement("c");
+    Assert.assertEquals("a b c", IterableUtils.join(Sequence.fromIterable(cs), " "));
+  }
+
+  public void test_unmodifiable() throws Exception {
+    List<String> ls = ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b", "c");
+    ListSequence.fromList(ls).addElement("d");
+    ListSequence.fromList(ls).removeElement("b");
+    Assert.assertEquals("a c d", IterableUtils.join(ListSequence.fromList(ls), " "));
+    List<String> uls = ListSequence.fromList(ls).asUnmodifiable();
+    try {
+      ListSequence.fromList(uls).addElement("e");
+      Assert.fail();
+    } catch (UnsupportedOperationException e) {
+      // expected exception 
+    }
+    ListSequence.fromList(ls).removeElement("a");
+    Assert.assertEquals("c d", IterableUtils.join(ListSequence.fromList(uls), " "));
+    try {
+      ListSequence.fromList(uls).removeElement("c");
+      Assert.fail();
+    } catch (UnsupportedOperationException e) {
+      // expected exception 
+    }
+  }
+
+  public void test_primitiveValues() throws Exception {
+    List<Integer> listi = ListSequence.fromListAndArray(new ArrayList<Integer>(), 333, 444, 555);
+    Integer ttt = 333;
+    Integer ooo = 444;
+    Integer fff = 555;
+    Assert.assertTrue((int) ListSequence.fromList(listi).getElement(0) == ttt);
+    Assert.assertTrue(fff == (int) ListSequence.fromList(listi).getElement(2));
+    Assert.assertTrue((int) ListSequence.fromList(listi).addElement(444) == ooo);
+  }
+
+  public void test_opAssign() throws Exception {
+    List<Integer> listi = ListSequence.fromListAndArray(new ArrayList<Integer>(), 345, 543, 1111);
+    Assert.assertTrue(645 == (int) ListSequence.fromList(listi).setElement(0, ListSequence.fromList(listi).getElement(0) + (300)));
+    Assert.assertTrue(645 == (int) ListSequence.fromList(listi).getElement(0));
+    Assert.assertTrue((int) ListSequence.fromList(listi).setElement(1, ListSequence.fromList(listi).getElement(1) - (40)) == 503);
+    Assert.assertTrue((int) ListSequence.fromList(listi).getElement(1) == 503);
+    Assert.assertTrue(9999 == (int) ListSequence.fromList(listi).setElement(2, ListSequence.fromList(listi).getElement(2) * (9)));
+    Assert.assertTrue(9999 == (int) ListSequence.fromList(listi).getElement(2));
   }
 
   public List<Foo> mps5684helper() {

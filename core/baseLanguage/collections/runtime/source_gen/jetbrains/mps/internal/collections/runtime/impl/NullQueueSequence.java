@@ -40,12 +40,12 @@ public class NullQueueSequence<T> extends NullCollectionSequence<T> implements I
 
   @Override
   public IQueueSequence<T> asUnmodifiable() {
-    return (IQueueSequence<T>) super.asUnmodifiable();
+    return this;
   }
 
   @Override
   public IQueueSequence<T> asSynchronized() {
-    return (IQueueSequence<T>) super.asSynchronized();
+    return this;
   }
 
   public Queue<T> toQueue() {
