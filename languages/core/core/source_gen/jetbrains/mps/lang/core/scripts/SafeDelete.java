@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -47,7 +47,7 @@ public class SafeDelete extends BaseGeneratedRefactoring {
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    SearchResults<SNode> searchResults = FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
+    SearchResults<SNode> searchResults = FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
 
     List<SearchResult<SNode>> searchResultsList = searchResults.getSearchResults();
     List<SearchResult<SNode>> searchResultsCopy = ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), searchResultsList);

@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 
 public class MoveNodes extends BaseLoggableRefactoring {
@@ -121,7 +121,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SearchResults searchResults = new SearchResults();
     for (SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
-      searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
+      searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressMonitor(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     }
     return searchResults;
   }
