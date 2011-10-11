@@ -39,31 +39,36 @@ public class DerivedMethods_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, final List<SNode> _results, ProgressMonitor monitor) {
-    SNode classifier = (SNode) SNodeOperations.getParent(node);
-    final SNode instanceMethod = node;
-    for (SNode derivedClassifier : ListSequence.fromList(ClassifierSuccessorsFinder.getDerivedClassifiers(classifier, scope))) {
-      ListSequence.fromList(SLinkOperations.getTargets(derivedClassifier, "method", true)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(instanceMethod, it);
-        }
-      }).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode it) {
-          ListSequence.fromList(_results).addElement(it);
-        }
-      });
-      if (SNodeOperations.isInstanceOf(derivedClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
-        for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(derivedClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
-          ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "method", true)).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(instanceMethod, it);
-            }
-          }).visitAll(new IVisitor<SNode>() {
-            public void visit(SNode it) {
-              ListSequence.fromList(_results).addElement(it);
-            }
-          });
+    monitor.start(getDescription(), 0);
+    try {
+      SNode classifier = (SNode) SNodeOperations.getParent(node);
+      final SNode instanceMethod = node;
+      for (SNode derivedClassifier : ListSequence.fromList(ClassifierSuccessorsFinder.getDerivedClassifiers(classifier, scope))) {
+        ListSequence.fromList(SLinkOperations.getTargets(derivedClassifier, "method", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(instanceMethod, it);
+          }
+        }).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            ListSequence.fromList(_results).addElement(it);
+          }
+        });
+        if (SNodeOperations.isInstanceOf(derivedClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+          for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(derivedClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
+            ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "method", true)).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(instanceMethod, it);
+              }
+            }).visitAll(new IVisitor<SNode>() {
+              public void visit(SNode it) {
+                ListSequence.fromList(_results).addElement(it);
+              }
+            });
+          }
         }
       }
+    } finally {
+      monitor.done();
     }
   }
 }

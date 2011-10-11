@@ -33,9 +33,14 @@ public class NodeUsages_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(CollectionUtil.set(node), scope, monitor, false);
-    for (SReference reference : resRefs) {
-      ListSequence.fromList(_results).addElement(reference.getSourceNode());
+    monitor.start(getDescription(), 0);
+    try {
+      Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(CollectionUtil.set(node), scope, monitor, false);
+      for (SReference reference : resRefs) {
+        ListSequence.fromList(_results).addElement(reference.getSourceNode());
+      }
+    } finally {
+      monitor.done();
     }
   }
 

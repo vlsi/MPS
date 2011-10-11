@@ -36,12 +36,17 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor))) {
-      if (MethodCallAdapter.isMethodCall(nodeUsage)) {
-        if (new MethodCallAdapter(nodeUsage).getMethodDeclaration() == node) {
-          ListSequence.fromList(_results).addElement(nodeUsage);
+    monitor.start(getDescription(), 1);
+    try {
+      for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor.subTask(1)))) {
+        if (MethodCallAdapter.isMethodCall(nodeUsage)) {
+          if (new MethodCallAdapter(nodeUsage).getMethodDeclaration() == node) {
+            ListSequence.fromList(_results).addElement(nodeUsage);
+          }
         }
       }
+    } finally {
+      monitor.done();
     }
   }
 }

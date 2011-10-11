@@ -306,8 +306,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a4e);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c8959035c/4192433084863763885");
-        tnode1.addReference(SReference.create("classConcept", tnode1, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.findusages.view(MPS.Classpath/jetbrains.mps.ide.findusages.view@java_stub)"), SNodeId.fromString("~FindUtils")));
-        tnode1.addReference(SReference.create("baseMethodDeclaration", tnode1, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.findusages.view(MPS.Classpath/jetbrains.mps.ide.findusages.view@java_stub)"), SNodeId.fromString("~FindUtils.getSearchResults(jetbrains.mps.progress.ProgressMonitor,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope,java.lang.String...):jetbrains.mps.ide.findusages.model.SearchResults")));
+        tnode1.addReference(SReference.create("classConcept", tnode1, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.findusages.view(jetbrains.mps.ide.findusages.view@java_stub)"), SNodeId.fromString("~FindUtils")));
+        tnode1.addReference(SReference.create("baseMethodDeclaration", tnode1, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.findusages.view(jetbrains.mps.ide.findusages.view@java_stub)"), SNodeId.fromString("~FindUtils.getSearchResults(jetbrains.mps.progress.ProgressMonitor,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope,java.lang.String...):jetbrains.mps.ide.findusages.model.SearchResults")));
 
         {
           Collection<SNode> tlist2 = null;
@@ -395,8 +395,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
               try {
                 environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a0b0b0h0c0e4);
                 environment.nodeCopied(context, tnode11, "tpl/r:00000000-0000-4000-0000-011c8959035c/4192433084863763925");
-                tnode11.addReference(SReference.create("classConcept", tnode11, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)"), SNodeId.fromString("~GlobalScope")));
-                tnode11.addReference(SReference.create("baseMethodDeclaration", tnode11, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)"), SNodeId.fromString("~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope")));
+                tnode11.addReference(SReference.create("classConcept", tnode11, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)"), SNodeId.fromString("~GlobalScope")));
+                tnode11.addReference(SReference.create("baseMethodDeclaration", tnode11, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)"), SNodeId.fromString("~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope")));
 
               } finally {
                 environment.getTracer().pushOutputNode(tnode11);

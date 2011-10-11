@@ -43,25 +43,30 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    List<SNode> methodDeclarations;
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-        methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", node, scope, monitor);
-      } else {
-        methodDeclarations = new ArrayList<SNode>();
-      }
-    } else {
-      methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder", node, scope, monitor);
-    }
-    ListSequence.fromList(methodDeclarations).addElement(node);
-    // 
-    for (SNode methodDeclaration : methodDeclarations) {
-      for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", methodDeclaration, scope, monitor))) {
-        if (!(SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
-          continue;
+    monitor.start(getDescription(), 3);
+    try {
+      List<SNode> methodDeclarations;
+      if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
+        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+          methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", node, scope, monitor.subTask(1));
+        } else {
+          methodDeclarations = new ArrayList<SNode>();
         }
-        ListSequence.fromList(_results).addElement(nodeUsage);
+      } else {
+        methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder", node, scope, monitor.subTask(1));
       }
+      ListSequence.fromList(methodDeclarations).addElement(node);
+      // 
+      for (SNode methodDeclaration : methodDeclarations) {
+        for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", methodDeclaration, scope, monitor.subTask(1)))) {
+          if (!(SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
+            continue;
+          }
+          ListSequence.fromList(_results).addElement(nodeUsage);
+        }
+      }
+    } finally {
+      monitor.done();
     }
   }
 

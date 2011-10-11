@@ -31,13 +31,18 @@ public class ClassUsages_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    for (SNode result : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor))) {
-      ListSequence.fromList(_results).addElement(result);
-    }
-    for (SNode constructor : ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true))) {
-      for (SNode result : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder", constructor, scope, monitor))) {
+    monitor.start(getDescription(), 2);
+    try {
+      for (SNode result : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor.subTask(1)))) {
         ListSequence.fromList(_results).addElement(result);
       }
+      for (SNode constructor : ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true))) {
+        for (SNode result : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder", constructor, scope, monitor.subTask(1)))) {
+          ListSequence.fromList(_results).addElement(result);
+        }
+      }
+    } finally {
+      monitor.done();
     }
   }
 

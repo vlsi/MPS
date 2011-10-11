@@ -35,17 +35,22 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(nodes).addElement(node);
-    for (SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{}))) {
-      SetSequence.fromSet(nodes).addElement(child);
-    }
-    // 
-    Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, scope, monitor, false);
-    for (SReference reference : resRefs) {
-      if (!(SetSequence.fromSet(nodes).contains(reference.getSourceNode()))) {
-        ListSequence.fromList(_results).addElement(reference.getSourceNode());
+    monitor.start(getDescription(), 0);
+    try {
+      Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
+      SetSequence.fromSet(nodes).addElement(node);
+      for (SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{}))) {
+        SetSequence.fromSet(nodes).addElement(child);
       }
+      // 
+      Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, scope, monitor, false);
+      for (SReference reference : resRefs) {
+        if (!(SetSequence.fromSet(nodes).contains(reference.getSourceNode()))) {
+          ListSequence.fromList(_results).addElement(reference.getSourceNode());
+        }
+      }
+    } finally {
+      monitor.done();
     }
   }
 

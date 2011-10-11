@@ -45,18 +45,23 @@ public class OverridingFields_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    for (SNode classNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node), scope, monitor))) {
-      Iterable<SNode> fieldsOfSameKind;
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-        fieldsOfSameKind = SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true);
-      } else {
-        fieldsOfSameKind = SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true);
-      }
-      for (SNode field : Sequence.fromIterable(fieldsOfSameKind)) {
-        if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(node, "name")) && Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(field, "type", true)).equals(Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(node, "type", true)))) {
-          ListSequence.fromList(_results).addElement(field);
+    monitor.start(getDescription(), 1);
+    try {
+      for (SNode classNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node), scope, monitor.subTask(1)))) {
+        Iterable<SNode> fieldsOfSameKind;
+        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+          fieldsOfSameKind = SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true);
+        } else {
+          fieldsOfSameKind = SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true);
+        }
+        for (SNode field : Sequence.fromIterable(fieldsOfSameKind)) {
+          if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(node, "name")) && Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(field, "type", true)).equals(Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(node, "type", true)))) {
+            ListSequence.fromList(_results).addElement(field);
+          }
         }
       }
+    } finally {
+      monitor.done();
     }
   }
 

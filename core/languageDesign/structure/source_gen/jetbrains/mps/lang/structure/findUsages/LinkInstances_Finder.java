@@ -40,33 +40,38 @@ public class LinkInstances_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    // collect roles 
-    Set<String> roles = SetSequence.fromSet(new HashSet<String>());
-    SNode curNode = node;
-    do {
-      SetSequence.fromSet(roles).addElement(SPropertyOperations.getString(curNode, "role"));
-      curNode = SLinkOperations.getTarget(curNode, "specializedLink", false);
-    } while (curNode != null);
-    // find concept 
-    SNode conceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
-    if ((conceptDeclaration == null)) {
-      return;
-    }
-    boolean isChild = SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference");
-    // find instances and link examples 
-    for (SNode instance : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, monitor))) {
-      for (String role : SetSequence.fromSet(roles)) {
-        if (isChild) {
-          for (SNode child : ListSequence.fromList(instance.getChildren(role))) {
-            ListSequence.fromList(_results).addElement(child);
-          }
-        } else {
-          SNode referent = instance.getReferent(role);
-          if (referent != null) {
-            ListSequence.fromList(_results).addElement(referent);
+    monitor.start(getDescription(), 1);
+    try {
+      // collect roles 
+      Set<String> roles = SetSequence.fromSet(new HashSet<String>());
+      SNode curNode = node;
+      do {
+        SetSequence.fromSet(roles).addElement(SPropertyOperations.getString(curNode, "role"));
+        curNode = SLinkOperations.getTarget(curNode, "specializedLink", false);
+      } while (curNode != null);
+      // find concept 
+      SNode conceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
+      if ((conceptDeclaration == null)) {
+        return;
+      }
+      boolean isChild = SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference");
+      // find instances and link examples 
+      for (SNode instance : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, monitor.subTask(1)))) {
+        for (String role : SetSequence.fromSet(roles)) {
+          if (isChild) {
+            for (SNode child : ListSequence.fromList(instance.getChildren(role))) {
+              ListSequence.fromList(_results).addElement(child);
+            }
+          } else {
+            SNode referent = instance.getReferent(role);
+            if (referent != null) {
+              ListSequence.fromList(_results).addElement(referent);
+            }
           }
         }
       }
+    } finally {
+      monitor.done();
     }
   }
 

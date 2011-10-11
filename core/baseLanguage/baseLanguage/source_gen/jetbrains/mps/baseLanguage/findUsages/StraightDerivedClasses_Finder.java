@@ -31,12 +31,17 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    for (SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor)) {
-      if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) {
-        ListSequence.fromList(_results).addElement(SNodeOperations.getParent(nodeUsage));
-      } else if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-        ListSequence.fromList(_results).addElement(nodeUsage);
+    monitor.start(getDescription(), 1);
+    try {
+      for (SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor.subTask(1))) {
+        if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) {
+          ListSequence.fromList(_results).addElement(SNodeOperations.getParent(nodeUsage));
+        } else if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+          ListSequence.fromList(_results).addElement(nodeUsage);
+        }
       }
+    } finally {
+      monitor.done();
     }
   }
 

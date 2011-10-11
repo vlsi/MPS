@@ -39,20 +39,25 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
-    for (SNode implementor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, monitor))) {
-      ListSequence.fromList(implementorsAndAncestorsList).addElement(implementor);
-    }
-    for (SNode classNode : ListSequence.fromList(implementorsAndAncestorsList).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    monitor.start(getDescription(), 1);
+    try {
+      List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
+      for (SNode implementor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, monitor.subTask(1)))) {
+        ListSequence.fromList(implementorsAndAncestorsList).addElement(implementor);
       }
-    })) {
-      for (SNode sMethod : ListSequence.fromList(SLinkOperations.getTargets(classNode, "method", true))) {
-        if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(sMethod, node)) {
-          ListSequence.fromList(_results).addElement(sMethod);
+      for (SNode classNode : ListSequence.fromList(implementorsAndAncestorsList).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        }
+      })) {
+        for (SNode sMethod : ListSequence.fromList(SLinkOperations.getTargets(classNode, "method", true))) {
+          if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(sMethod, node)) {
+            ListSequence.fromList(_results).addElement(sMethod);
+          }
         }
       }
+    } finally {
+      monitor.done();
     }
   }
 

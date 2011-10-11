@@ -32,15 +32,20 @@ public class PropertyInstances_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    String role = SPropertyOperations.getString(node, "name");
-    SNode conceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
-    if (!((conceptDeclaration == null))) {
-      for (SNode instance : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, monitor)) {
-        String property = instance.getProperty(role);
-        if (property != null && !(property.equals(""))) {
-          ListSequence.fromList(_results).addElement(instance);
+    monitor.start(getDescription(), 1);
+    try {
+      String role = SPropertyOperations.getString(node, "name");
+      SNode conceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
+      if (!((conceptDeclaration == null))) {
+        for (SNode instance : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, monitor.subTask(1))) {
+          String property = instance.getProperty(role);
+          if (property != null && !(property.equals(""))) {
+            ListSequence.fromList(_results).addElement(instance);
+          }
         }
       }
+    } finally {
+      monitor.done();
     }
   }
 

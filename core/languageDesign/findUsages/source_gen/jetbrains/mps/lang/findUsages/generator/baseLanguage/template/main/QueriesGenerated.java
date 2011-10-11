@@ -14,9 +14,9 @@ import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -55,6 +55,10 @@ public class QueriesGenerated {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "forConcept", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_7810572934689530075(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "findFunction", true), "body", true), "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression", false, new String[]{})).count();
+  }
+
   public static Object propertyMacro_GetPropertyValue_1197207280707(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(_context.getNode());
   }
@@ -78,7 +82,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_7991477654791670213(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0m(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(_context.getNode(), "name"));
+        return eq_x583g4_a0a0a0a0a0a0a0n(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(_context.getNode(), "name"));
       }
     }).first().getId();
   }
@@ -125,7 +129,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "queryScope", true) == null;
   }
 
-  public static boolean ifMacro_Condition_5140158946217876065(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_7810572934689511369(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.findUsages.structure.FindBlock", false, false) != null;
   }
 
@@ -197,7 +201,7 @@ public class QueriesGenerated {
     return new TemplateModelImpl(module);
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0m(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0n(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

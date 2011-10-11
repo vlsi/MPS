@@ -32,19 +32,24 @@ public class DerivedClasses_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    List<SNode> derived = new ArrayList<SNode>();
-    ListSequence.fromList(derived).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-    // 
-    int passed = 0;
-    while (ListSequence.fromList(derived).count() != passed) {
-      SNode passingNode = ListSequence.fromList(derived).getElement(passed);
-      for (SNode classNode : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", passingNode, scope, monitor)) {
-        ListSequence.fromList(derived).addElement(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    monitor.start(getDescription(), 1);
+    try {
+      List<SNode> derived = new ArrayList<SNode>();
+      ListSequence.fromList(derived).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+      // 
+      int passed = 0;
+      while (ListSequence.fromList(derived).count() != passed) {
+        SNode passingNode = ListSequence.fromList(derived).getElement(passed);
+        for (SNode classNode : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", passingNode, scope, monitor.subTask(1))) {
+          ListSequence.fromList(derived).addElement(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        }
+        if (passingNode != node) {
+          ListSequence.fromList(_results).addElement(passingNode);
+        }
+        passed++;
       }
-      if (passingNode != node) {
-        ListSequence.fromList(_results).addElement(passingNode);
-      }
-      passed++;
+    } finally {
+      monitor.done();
     }
   }
 

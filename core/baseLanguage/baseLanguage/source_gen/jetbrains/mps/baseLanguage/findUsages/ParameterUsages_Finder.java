@@ -37,16 +37,21 @@ public class ParameterUsages_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    SNode nodeParentMethod = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false);
-    // 
-    List<SNode> overridingMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, monitor);
-    ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
-    // 
-    for (SNode methodNode : ListSequence.fromList(overridingMethods)) {
-      SNode parameterNode = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node));
-      for (SNode parameterUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", parameterNode, scope, monitor))) {
-        ListSequence.fromList(_results).addElement(parameterUsage);
+    monitor.start(getDescription(), 2);
+    try {
+      SNode nodeParentMethod = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false);
+      // 
+      List<SNode> overridingMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, monitor.subTask(1));
+      ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
+      // 
+      for (SNode methodNode : ListSequence.fromList(overridingMethods)) {
+        SNode parameterNode = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node));
+        for (SNode parameterUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", parameterNode, scope, monitor.subTask(1)))) {
+          ListSequence.fromList(_results).addElement(parameterUsage);
+        }
       }
+    } finally {
+      monitor.done();
     }
   }
 

@@ -43,11 +43,16 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    List<SNode> baseMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder", node, GlobalScope.getInstance(), monitor);
-    for (SNode method : ListSequence.fromList(baseMethods)) {
-      for (SNode usage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder", method, scope, monitor))) {
-        ListSequence.fromList(_results).addElement(usage);
+    monitor.start(getDescription(), 2);
+    try {
+      List<SNode> baseMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder", node, GlobalScope.getInstance(), monitor.subTask(1));
+      for (SNode method : ListSequence.fromList(baseMethods)) {
+        for (SNode usage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder", method, scope, monitor.subTask(1)))) {
+          ListSequence.fromList(_results).addElement(usage);
+        }
       }
+    } finally {
+      monitor.done();
     }
   }
 
