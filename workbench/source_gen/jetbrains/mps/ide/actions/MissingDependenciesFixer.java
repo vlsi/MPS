@@ -84,6 +84,7 @@ public class MissingDependenciesFixer {
         }
         if (wereChanges) {
           module.setModuleDescriptor(md, reload);
+          module.invalidateCaches();
           module.save();
         }
       }
