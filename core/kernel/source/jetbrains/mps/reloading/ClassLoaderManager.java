@@ -55,7 +55,7 @@ public class ClassLoaderManager implements ApplicationComponent {
   private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();
 
   private final Object myLock = new Object();
-  private RuntimeEnvironmentExt myRuntimeEnvironment;
+  private RuntimeEnvironment<ModuleReference> myRuntimeEnvironment;
   private MPSModuleRepository myRepository;
 
   public ClassLoaderManager(MPSModuleRepository repository) {
@@ -275,108 +275,8 @@ public class ClassLoaderManager implements ApplicationComponent {
 
   //---------------runtime environment------------------
 
-  private RuntimeEnvironmentExt createRuntimeEnvironment() {
-    return new RuntimeEnvironmentExt();
-  }
-
-  private class RuntimeEnvironmentExt extends RuntimeEnvironment<ModuleReference> {
-    private Set<String> myExcludedPackages;
-
-    RuntimeEnvironmentExt() {
-      reloadExcludedPackages();
-    }
-
-    @Override
-    public Class loadFromParent(String cls, RBundle<ModuleReference> bundle) {
-      IModule module = MPSModuleRepository.getInstance().getModule(bundle.getId());
-      if (module instanceof Solution) {
-        return null;
-      }
-      String pack = NameUtil.namespaceFromLongName(cls);
-      synchronized (this) {
-        if (myExcludedPackages.contains(pack)) {
-          return null;
-        }
-      }
-      return getFromParent(cls);
-    }
-
-    @Override
-    public RuntimeEnvironment reload(RBundle<ModuleReference>... rBundles) {
-      assertOnlyBootstrapLanguagesAreInClasspath();
-      RuntimeEnvironment result = super.reload(rBundles);
-      if (result instanceof RuntimeEnvironmentExt) {
-        ((RuntimeEnvironmentExt) result).reloadExcludedPackages();
-      }
-      return result;
-    }
-
-    private void assertOnlyBootstrapLanguagesAreInClasspath() {
-      Set<Language> bootstrapLanguages = LibraryInitializer.getInstance().getBootstrapModules(Language.class);
-      for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
-        if (bootstrapLanguages.contains(language)) {
-          continue;
-        }
-        SModelDescriptor descriptor = LanguageAspect.STRUCTURE.get(language);
-        if (descriptor == null) {
-          continue;
-        }
-        String fqName_language = descriptor.getLongName() + "." +
-          NameUtil.capitalize(NameUtil.shortNameFromLongName(language.getModuleFqName())) + "_Language";
-        try {
-          Class.forName(fqName_language);
-          LOG.error("Non-bootstrap language class is available in application classpath: " + fqName_language);
-        } catch (ClassNotFoundException e) {
-          //todo this can slow down startup process
-        }
-      }
-    }
-
-    private boolean isNotStubModel(SModelDescriptor modelDescriptor) {
-      return !SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
-    }
-
-    private synchronized void reloadExcludedPackages() {
-      myExcludedPackages = new HashSet();
-      Set<Language> bootstrapLanguages = LibraryInitializer.getInstance().getBootstrapModules(Language.class);
-      /**
-       * Iterating through all known bundles because we need to exclude following non-bootstrap modules available in
-       * application classpath:
-       * - jetbrains.mps.baseLanguage.builders
-       * - jetbrains.mps.xml
-       * - jetbrains.mps.xmlSchema
-       */
-      for (RBundle<ModuleReference> bundle : getBundles()) {
-        IModule module = MPSModuleRepository.getInstance().getModule(bundle.getId());
-        if (!(module instanceof Language)) {
-          continue;
-        }
-        Language l = (Language) module;
-        boolean bootstrapModule = bootstrapLanguages.contains(l);
-        for (LanguageAspect aspect : LanguageAspect.values()) {
-          if (bootstrapModule && aspect == LanguageAspect.STRUCTURE) {
-            // Always loading STRUCTURE aspects of bootstrap modules using "boot" classloader (classloader of this class)
-            continue;
-          }
-          SModelDescriptor modelDescriptor = aspect.get(l);
-          if (modelDescriptor != null) {
-            myExcludedPackages.add(modelDescriptor.getLongName());
-          }
-        }
-
-        for (SModelDescriptor model : l.getUtilModels()) {
-          myExcludedPackages.add(model.getLongName());
-        }
-
-        for (Generator generator : l.getGenerators()) {
-          for (SModelDescriptor templateModel : generator.getOwnModelDescriptors()) {
-            if (isNotStubModel(templateModel)) {
-              myExcludedPackages.add(templateModel.getLongName());
-            }
-          }
-        }
-      }
-    }
+  private RuntimeEnvironment createRuntimeEnvironment() {
+    return new RuntimeEnvironment();
   }
 }
                                           

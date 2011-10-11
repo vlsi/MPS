@@ -25,6 +25,8 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
   private final Object myLock = new Object();
 
+  //this is for debug purposes (heap dumps)
+  @SuppressWarnings({"UnusedDeclaration"})
   private boolean myDisposed;
   private RBundle<T> myBundle;
 
@@ -32,14 +34,7 @@ public class BundleClassLoader<T> extends BaseClassLoader {
     myBundle = bundle;
   }
 
-  protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-    checkDisposed();
-    return super.loadClass(name, resolve);
-  }
-
   public Class getClass(String fqName) {
-    checkDisposed();
-
     synchronized (myLock) {
       if (myClassesCache.containsKey(fqName)) {
         return myClassesCache.get(fqName);
@@ -57,16 +52,7 @@ public class BundleClassLoader<T> extends BaseClassLoader {
     }
   }
 
-  protected Class loadBeforeCurrent(String name) {
-    Class fromParent = myBundle.getRuntimeEnvironment().loadFromParent(name, myBundle);
-    if (fromParent != null) {
-      return fromParent;
-    }
-
-    return null;
-  }
-
-  protected Class loadAfterCurrent(String name) {
+  protected Class findAfterCurrent(String name) {
     RuntimeEnvironment<T> re = myBundle.getRuntimeEnvironment();
     for (T dep : re.getAllDependencies(myBundle)) {
       if (dep.equals(myBundle.getId())) continue;
@@ -82,7 +68,7 @@ public class BundleClassLoader<T> extends BaseClassLoader {
     return null;
   }
 
-  protected byte[] findClassBytes(String name) {
+  protected byte[] findInCurrent(String name) {
     byte[] bytes = myBundle.getLocator().find(name);
     if (bytes != null) {
       myBundle.classLoaded(name);
@@ -102,7 +88,6 @@ public class BundleClassLoader<T> extends BaseClassLoader {
     return null;
   }
 
-  @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
     ArrayList<URL> result = new ArrayList<URL>();
     RuntimeEnvironment<T> re = myBundle.getRuntimeEnvironment();
@@ -116,24 +101,8 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   }
 
   public void dispose() {
-    super.dispose();
     myClassesCache.clear();
     myDisposed = true;
-  }
-
-  private void checkDisposed() {
-    if (myDisposed) {
-//      throw new IllegalStateException("Attempt to load class from disposed class loader");
-    }
-  }
-
-  public boolean isDisposed() {
-    return myDisposed;
-  }
-
-  public RBundle getBundle() {
-    checkDisposed();
-    return myBundle;
   }
 
   public String toString() {
@@ -148,12 +117,10 @@ public class BundleClassLoader<T> extends BaseClassLoader {
       myIterator = iterable.iterator();
     }
 
-    @Override
     public boolean hasMoreElements() {
       return myIterator.hasNext();
     }
 
-    @Override
     public E nextElement() {
       return myIterator.next();
     }

@@ -26,43 +26,10 @@ public class RuntimeEnvironment<T> {
   private final Object myLock = new Object();
 
   private Map<T, RBundle<T>> myBundles = new HashMap<T, RBundle<T>>();
-  private Set<String> myLoadFromParentPrefixes = new InternAwareStringSet();
 
-  private Map<String, ClassHolder> myClassesFromParent = new ConcurrentHashMap<String, ClassHolder>();
   private Map<String, T> myLoadedClasses = new HashMap<String, T>();
 
   public RuntimeEnvironment() {
-  }
-
-  public RuntimeEnvironment<T> addLoadFromParent(String prefix) {
-    myLoadFromParentPrefixes.add(prefix);
-    return this;
-  }
-
-  public Class loadFromParent(String cls, RBundle<T> bundle) {
-    for (String prefix : myLoadFromParentPrefixes) {
-      if (cls.startsWith(prefix)) {
-        return getFromParent(cls);
-      }
-    }
-
-    return null;
-  }
-
-  protected Class getFromParent(String name) {
-    if (myClassesFromParent.containsKey(name)) {
-      return myClassesFromParent.get(name).myClass;
-    }
-
-    Class result = null;
-    try {
-      result = Class.forName(name);
-    } catch (ClassNotFoundException e) {
-      //it's ok
-    }
-
-    myClassesFromParent.put(InternUtil.intern(name), result != null ? new ClassHolder(result) : NULL_CLASS_HOLDER);
-    return result;
   }
 
   public RBundle<T> get(T id) {
