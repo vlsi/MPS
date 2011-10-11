@@ -25,11 +25,4 @@ public class SolutionDescriptor extends ModuleDescriptor {
   public void setOutputPath(String outputPath) {
     myOutputPath = outputPath;
   }
-
-  public boolean isDontLoadClasses() {
-    return !getCompileInMPS();
-  }
-
-  public void setDontLoadClasses(boolean dontLoadClasses) {
-  }
 }

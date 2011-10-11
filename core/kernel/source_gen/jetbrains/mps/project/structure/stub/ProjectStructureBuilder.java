@@ -90,7 +90,6 @@ public abstract class ProjectStructureBuilder {
     result.setId(SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
-    SPropertyOperations.set(result, "dontLoadClasses", "" + source.isDontLoadClasses());
     SPropertyOperations.set(result, "outputPath", source.getOutputPath());
     SPropertyOperations.set(result, "solutionPath", myFile.getPath());
     collectModels(result, source);

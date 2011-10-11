@@ -7,10 +7,8 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 
 public class SolutionProperties extends ModuleProperties {
   public static final String OUTPUT_PATH = "outputPath";
-  public static final String DONT_LOAD_CLASSPATH = "dontLoadClasses";
 
   private boolean myExternallyVisible;
-  private boolean myDontLoadClasses;
   private String myOutputPath;
 
   public SolutionProperties() {
@@ -22,14 +20,6 @@ public class SolutionProperties extends ModuleProperties {
 
   public void setExternallyVisible(boolean externallyVisible) {
     myExternallyVisible = externallyVisible;
-  }
-
-  public boolean isDontLoadClasses() {
-    return myDontLoadClasses;
-  }
-
-  public void setDontLoadClasses(boolean dontLoadClasses) {
-    myDontLoadClasses = dontLoadClasses;
   }
 
   public String getOutputPath() {
@@ -45,7 +35,6 @@ public class SolutionProperties extends ModuleProperties {
     assert descriptor instanceof SolutionDescriptor;
     super.loadFrom(descriptor);
     SolutionDescriptor d = (SolutionDescriptor) descriptor;
-    myDontLoadClasses = d.isDontLoadClasses();
     myOutputPath = d.getOutputPath();
   }
 
@@ -54,7 +43,6 @@ public class SolutionProperties extends ModuleProperties {
     assert descriptor instanceof SolutionDescriptor;
     super.saveTo(descriptor);
     SolutionDescriptor d = (SolutionDescriptor) descriptor;
-    d.setDontLoadClasses(myDontLoadClasses);
     d.setOutputPath(myOutputPath);
   }
 }

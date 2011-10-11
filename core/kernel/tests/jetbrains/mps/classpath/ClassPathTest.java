@@ -78,7 +78,7 @@ public class ClassPathTest extends BaseMPSTest {
       if (!path.getPath().endsWith(MPSExtentions.DOT_SOLUTION)) continue;
       IFile solutionFile = FileSystem.getInstance().getFileByPath(path.getPath());
       SolutionDescriptor solutionDescriptor = SolutionDescriptorPersistence.loadSolutionDescriptor(solutionFile);
-      assertTrue("Solution " + solutionDescriptor.getNamespace() + " is contained by core project, but has \"Don't load classes\" disabled", solutionDescriptor.isDontLoadClasses());
+      assertTrue("Solution " + solutionDescriptor.getNamespace() + " is contained by core project, but has \"Don't load classes\" disabled", !solutionDescriptor.getCompileInMPS());
     }
   }
 

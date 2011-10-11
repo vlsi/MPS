@@ -254,7 +254,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.InternalFlag" />
     <classNode dependClassName="jetbrains.mps.ide.properties.ModuleProperties" />
     <classNode dependClassName="jetbrains.mps.ide.properties.SolutionProperties" />
     <classNode dependClassName="jetbrains.mps.ide.properties.StandardComponents" />

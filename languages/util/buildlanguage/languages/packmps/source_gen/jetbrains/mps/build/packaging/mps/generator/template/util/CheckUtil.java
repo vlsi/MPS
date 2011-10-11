@@ -78,7 +78,7 @@ public class CheckUtil {
       if (solution.isStub()) {
         continue;
       }
-      if (!(solution.getModuleDescriptor().isDontLoadClasses())) {
+      if (solution.getModuleDescriptor().getCompileInMPS()) {
         continue;
       }
 
