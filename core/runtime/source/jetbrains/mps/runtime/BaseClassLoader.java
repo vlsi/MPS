@@ -18,6 +18,7 @@ package jetbrains.mps.runtime;
 import gnu.trove.THashMap;
 import jetbrains.mps.util.InternUtil;
 
+import java.security.ProtectionDomain;
 import java.util.Map;
 
 abstract class BaseClassLoader extends ClassLoader {
@@ -25,6 +26,10 @@ abstract class BaseClassLoader extends ClassLoader {
 
   protected BaseClassLoader() {
     super(BaseClassLoader.class.getClassLoader());
+  }
+
+  protected Class loadBeforeCurrent(String name) {
+    return null;
   }
 
   protected abstract byte[] findClassBytes(String name);
@@ -42,23 +47,27 @@ abstract class BaseClassLoader extends ClassLoader {
     }
 
     if (c == null) {
-      byte[] bytes = findClassBytes(name);
-      if (bytes == null) {
-        c = loadAfterCurrent(name);
-        if (c == null) {
-          try {
-            c = getParent().loadClass(name);
-          } catch (ClassNotFoundException e) {
-            myCache.put(name, null);
-            throw e;
+      c = loadBeforeCurrent(name);
+
+      if (c == null) {
+        byte[] bytes = findClassBytes(name);
+        if (bytes == null) {
+          c = loadAfterCurrent(name);
+          if (c == null) {
+            try {
+              c = getParent().loadClass(name);
+            } catch (ClassNotFoundException e) {
+              myCache.put(name, null);
+              throw e;
+            }
           }
+          if (resolve) {
+            resolveClass(c);
+          }
+        } else {
+          definePackageIfNecessary(name);
+          c = defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
         }
-        if (resolve) {
-          resolveClass(c);
-        }
-      } else {
-        definePackageIfNecessary(name);
-        c = defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
       }
       myCache.put(name, c);
     }
