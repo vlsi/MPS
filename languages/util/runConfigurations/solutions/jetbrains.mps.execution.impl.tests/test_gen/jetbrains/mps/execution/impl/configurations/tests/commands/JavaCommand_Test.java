@@ -101,11 +101,13 @@ public class JavaCommand_Test extends BaseTransformationTest {
           if (ProcessOutputTypes.STDERR.equals(key)) {
             if (neq_849b2c_a0a0a0a0a1a3a3a(event.getText(), expectedSysErr)) {
               failed[0] = event;
+              System.err.println(event.getText());
             } else {
               printed[0] = true;
             }
           } else if (!(ProcessOutputTypes.SYSTEM.equals(key))) {
             failed[0] = event;
+            System.err.println("Unknown event " + event.getText());
           }
         }
       });
