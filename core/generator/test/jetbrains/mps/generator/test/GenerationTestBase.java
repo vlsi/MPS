@@ -181,7 +181,7 @@ public class GenerationTestBase {
               public void run() {
                 r.run(descr);
               }
-            }, p.getProject());
+            }, p);
           }
         });
 

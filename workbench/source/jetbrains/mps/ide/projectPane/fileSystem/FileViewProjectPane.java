@@ -52,6 +52,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -208,7 +209,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
         public void run() {
           getTree().rebuildNow();
         }
-      }, myProject);
+      }, myProject.getComponent(MPSProject.class));
     } else {
       rebuildTreeLater();
     }

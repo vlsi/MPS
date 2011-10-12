@@ -24,13 +24,13 @@ import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.util.ProgressWindow;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -510,7 +510,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
     final boolean[] res = new boolean[]{false};
 
-    final Project project = p != null ? p : CurrentProjectAccessUtil.getProjectFromUI();
+    final Project project = p != null ? p : CurrentProjectAccessUtil.getMPSProjectFromUI();
 
     Runnable commandRunnable = new Runnable() {
       @Override
@@ -531,7 +531,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     };
 
     CommandProcessor.getInstance().executeCommand(
-      project,
+      ProjectHelper.toIdeaProject(project),
       new TryWriteActionRunnable(commandRunnable),
       "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 
@@ -547,7 +547,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
     final T[] res = (T[]) new Object[]{null};
 
-    final Project project = p != null ? p : CurrentProjectAccessUtil.getProjectFromUI();
+    final Project project = p != null ? p : CurrentProjectAccessUtil.getMPSProjectFromUI();
     Runnable commandRunnable = new Runnable() {
       @Override
       public void run() {
@@ -565,7 +565,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     };
 
     CommandProcessor.getInstance().executeCommand(
-      project,
+      ProjectHelper.toIdeaProject(project),
       new TryWriteActionRunnable(commandRunnable),
       "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 
@@ -575,21 +575,21 @@ public class WorkbenchModelAccess extends ModelAccess {
   @Override
   public void executeCommand(Runnable r, Project project) {
     if (project == null) {
-      project = CurrentProjectAccessUtil.getProjectFromUI();
+      project = CurrentProjectAccessUtil.getMPSProjectFromUI();
     }
-    CommandProcessor.getInstance().executeCommand(project, new CommandRunnable(r, project), "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new CommandRunnable(r, project), "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
   @Override
   @Deprecated
   public <T> T runWriteActionInCommand(Computable<T> c) {
-    return runWriteActionInCommand(c, CurrentProjectAccessUtil.getProjectFromUI());
+    return runWriteActionInCommand(c, CurrentProjectAccessUtil.getMPSProjectFromUI());
   }
 
   @Override
   public <T> T runWriteActionInCommand(Computable<T> c, Project project) {
     if (project == null) {
-      project = CurrentProjectAccessUtil.getProjectFromUI();
+      project = CurrentProjectAccessUtil.getMPSProjectFromUI();
     }
     return runWriteActionInCommand(c, null, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, project);
   }
@@ -597,7 +597,7 @@ public class WorkbenchModelAccess extends ModelAccess {
   @Override
   public <T> T runWriteActionInCommand(final Computable<T> c, String name, Object groupId, final UndoConfirmationPolicy policy, final Project project) {
     final Object[] result = new Object[1];
-    CommandProcessor.getInstance().executeCommand(project, new Runnable() {
+    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new Runnable() {
       public void run() {
         result[0] = new CommandComputable(c, project).compute();
       }
@@ -608,7 +608,7 @@ public class WorkbenchModelAccess extends ModelAccess {
   @Override
   @Deprecated
   public void runWriteActionInCommand(Runnable r) {
-    runWriteActionInCommand(r, CurrentProjectAccessUtil.getProjectFromUI());
+    runWriteActionInCommand(r, CurrentProjectAccessUtil.getMPSProjectFromUI());
   }
 
   @Override
@@ -618,7 +618,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public void runWriteActionInCommand(Runnable r, String name, Object groupId, UndoConfirmationPolicy policy, Project project) {
-    CommandProcessor.getInstance().executeCommand(project, new CommandRunnable(r, project), name, groupId, policy);
+    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new CommandRunnable(r, project), name, groupId, policy);
   }
 
   @Override

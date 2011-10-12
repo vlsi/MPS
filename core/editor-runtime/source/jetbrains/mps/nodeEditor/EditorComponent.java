@@ -2213,11 +2213,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private Project getCurrentProject() {
+  private jetbrains.mps.project.Project getCurrentProject() {
     if (getEditorContext() == null || getEditorContext().getOperationContext() == null) {
       return null;
     }
-    return getEditorContext().getOperationContext().getIdeaProject();
+    return getEditorContext().getOperationContext().getProject();
   }
 
   boolean isForcedFocusChangeEnabled() {
@@ -2800,7 +2800,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (getOperationContext() == null) {
       return;
     }
-    Project project = getOperationContext().getIdeaProject();
+    jetbrains.mps.project.Project project = getOperationContext().getProject();
     if (project == null) {
       return;
     }

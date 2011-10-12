@@ -17,7 +17,6 @@ package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.BreakpointManagerComponent.BreakpointManagerListener;
@@ -27,6 +26,7 @@ import jetbrains.mps.debugger.api.ui.icons.Icons;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -36,7 +36,8 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.event.*;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider {
   private static final String COMMAND_SHOW_NODE = "COMMAND_SHOW_NODE";
@@ -140,7 +141,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   }
 
   private void breakpointSelected(IBreakpoint breakpoint) {
-    if (myPropertiesEditorPanel != null){
+    if (myPropertiesEditorPanel != null) {
       myMainPanel.remove(myPropertiesEditorPanel);
     }
     if (breakpoint != null) {
@@ -186,7 +187,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     group.add(myShowNodeAction);
 
 
-    DefaultActionGroup addActionGroup = new DefaultActionGroup("Add Breakpoint", true){
+    DefaultActionGroup addActionGroup = new DefaultActionGroup("Add Breakpoint", true) {
       @Override
       public void update(AnActionEvent e) {
         super.update(e);
@@ -402,7 +403,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   }
 
   private void openNode(final IBreakpoint breakpoint, final boolean focus, final boolean select) {
-    final Project project = myContext.getIdeaProject();
+    final Project project = myContext.getProject();
     if (!(breakpoint instanceof ILocationBreakpoint)) return;
     ModelAccess.instance().executeCommand(new Runnable() {
       public void run() {

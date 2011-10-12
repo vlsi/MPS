@@ -148,6 +148,11 @@ public class MPSProject extends Project implements ProjectComponent, PersistentS
     }
   }
 
+  @Override
+  public boolean isDisposed() {
+    return super.isDisposed() || myProject.isDisposed();
+  }
+
   @NotNull
   public String toString() {
     return "MPSProject file: " + (myProjectFile == null ? "<none>" : myProjectFile.toString());

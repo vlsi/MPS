@@ -47,8 +47,10 @@ public abstract class Project implements MPSModuleOwner {
   private List<ModuleReference> myModules = new ArrayList<ModuleReference>();
   private String myErrors = null;
   private ProjectScope myScope = new ProjectScope();
+  private boolean isDisposed;
 
   public void init(final File projectFile, final ProjectDescriptor projectDescriptor) {
+    isDisposed = false;
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         myProjectFile = projectFile;
@@ -66,7 +68,11 @@ public abstract class Project implements MPSModuleOwner {
   }
 
   public void dispose() {
+    isDisposed = true;
+  }
 
+  public boolean isDisposed() {
+    return isDisposed;
   }
 
   public ProjectScope getScope() {

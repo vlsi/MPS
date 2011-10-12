@@ -23,7 +23,6 @@ import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
@@ -127,7 +126,7 @@ public class DiskMemoryConflictsTest {
           }
         }
       }
-    }, myProject.getComponent(MPSProject.class).getProject());
+    }, myProject);
 
     waitEDT();
     return result[0];
@@ -242,7 +241,7 @@ public class DiskMemoryConflictsTest {
         public void run() {
           SModelRepository.getInstance().saveAll();
         }
-      }, myProject.getComponent(MPSProject.class).getProject());
+      }, myProject);
     } else {
       // reload conflict
       ModelAccess.instance().runWriteInEDT(new Runnable() {
@@ -310,7 +309,7 @@ public class DiskMemoryConflictsTest {
           myModelDescriptor.getSModel().addRoot(CopyUtil.copyAndPreserveId(myNodeBackup));
           myModelDescriptor.save();
         }
-      }, myProject.getComponent(MPSProject.class).getProject());
+      }, myProject);
       waitEDT();
     }
     checkInitialState();
