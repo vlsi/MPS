@@ -136,7 +136,7 @@
     <nodeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="474" startPosition="31" endLine="475" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="478" startPosition="41" endLine="479" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="482" startPosition="59" endLine="483" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237197739527" fileName="MigrationToCollections_MigrationScript.java" startLine="486" startPosition="59" endLine="487" endPosition="449" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237197739527" fileName="MigrationToCollections_MigrationScript.java" startLine="486" startPosition="59" endLine="487" endPosition="455" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237197849558" fileName="MigrationToCollections_MigrationScript.java" startLine="490" startPosition="52" endLine="491" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1237198998287" fileName="MigrationToCollections_MigrationScript.java" startLine="491" startPosition="134" endLine="492" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237973503188" fileName="MigrationToCollections_MigrationScript.java" startLine="493" startPosition="107" endLine="494" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -145,7 +145,7 @@
     <nodeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="504" startPosition="31" endLine="505" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="508" startPosition="41" endLine="509" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="512" startPosition="59" endLine="513" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237197887133" fileName="MigrationToCollections_MigrationScript.java" startLine="516" startPosition="59" endLine="517" endPosition="447" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237197887133" fileName="MigrationToCollections_MigrationScript.java" startLine="516" startPosition="59" endLine="517" endPosition="453" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237197887117" fileName="MigrationToCollections_MigrationScript.java" startLine="520" startPosition="52" endLine="521" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1237198979918" fileName="MigrationToCollections_MigrationScript.java" startLine="521" startPosition="132" endLine="522" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237197887123" fileName="MigrationToCollections_MigrationScript.java" startLine="522" startPosition="151" endLine="523" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -193,7 +193,7 @@
     <nodeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="666" startPosition="31" endLine="667" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="670" startPosition="41" endLine="671" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="674" startPosition="59" endLine="675" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237403762491" fileName="MigrationToCollections_MigrationScript.java" startLine="678" startPosition="59" endLine="679" endPosition="447" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237403762491" fileName="MigrationToCollections_MigrationScript.java" startLine="678" startPosition="59" endLine="679" endPosition="453" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237403742309" fileName="MigrationToCollections_MigrationScript.java" startLine="682" startPosition="52" endLine="683" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1237403742315" fileName="MigrationToCollections_MigrationScript.java" startLine="683" startPosition="129" endLine="684" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238603055274" fileName="MigrationToCollections_MigrationScript.java" startLine="685" startPosition="107" endLine="686" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -202,7 +202,7 @@
     <nodeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="696" startPosition="31" endLine="697" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="700" startPosition="41" endLine="701" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="704" startPosition="59" endLine="705" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240233639868" fileName="MigrationToCollections_MigrationScript.java" startLine="708" startPosition="59" endLine="709" endPosition="454" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240233639868" fileName="MigrationToCollections_MigrationScript.java" startLine="708" startPosition="59" endLine="709" endPosition="460" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240233639826" fileName="MigrationToCollections_MigrationScript.java" startLine="712" startPosition="52" endLine="713" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240233639832" fileName="MigrationToCollections_MigrationScript.java" startLine="713" startPosition="135" endLine="714" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240233639844" fileName="MigrationToCollections_MigrationScript.java" startLine="715" startPosition="107" endLine="716" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -551,13 +551,13 @@
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="474" startPosition="31" endLine="475" endPosition="27" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="478" startPosition="41" endLine="479" endPosition="27" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="482" startPosition="59" endLine="483" endPosition="67" />
-    <scopeInfo nodeId="1237197737030" fileName="MigrationToCollections_MigrationScript.java" startLine="486" startPosition="59" endLine="487" endPosition="449" />
+    <scopeInfo nodeId="1237197737030" fileName="MigrationToCollections_MigrationScript.java" startLine="486" startPosition="59" endLine="487" endPosition="455" />
     <scopeInfo nodeId="1237973489600" fileName="MigrationToCollections_MigrationScript.java" startLine="493" startPosition="107" endLine="494" endPosition="177" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="499" startPosition="42" endLine="500" endPosition="21" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="504" startPosition="31" endLine="505" endPosition="28" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="508" startPosition="41" endLine="509" endPosition="28" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="512" startPosition="59" endLine="513" endPosition="67" />
-    <scopeInfo nodeId="1237197887132" fileName="MigrationToCollections_MigrationScript.java" startLine="516" startPosition="59" endLine="517" endPosition="447" />
+    <scopeInfo nodeId="1237197887132" fileName="MigrationToCollections_MigrationScript.java" startLine="516" startPosition="59" endLine="517" endPosition="453" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="526" startPosition="42" endLine="527" endPosition="21" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="531" startPosition="31" endLine="532" endPosition="30" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="535" startPosition="41" endLine="536" endPosition="30" />
@@ -587,13 +587,13 @@
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="666" startPosition="31" endLine="667" endPosition="35" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="670" startPosition="41" endLine="671" endPosition="35" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="674" startPosition="59" endLine="675" endPosition="67" />
-    <scopeInfo nodeId="1237403747747" fileName="MigrationToCollections_MigrationScript.java" startLine="678" startPosition="59" endLine="679" endPosition="447" />
+    <scopeInfo nodeId="1237403747747" fileName="MigrationToCollections_MigrationScript.java" startLine="678" startPosition="59" endLine="679" endPosition="453" />
     <scopeInfo nodeId="1238603055273" fileName="MigrationToCollections_MigrationScript.java" startLine="685" startPosition="107" endLine="686" endPosition="177" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="691" startPosition="42" endLine="692" endPosition="21" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="696" startPosition="31" endLine="697" endPosition="41" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="700" startPosition="41" endLine="701" endPosition="41" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="704" startPosition="59" endLine="705" endPosition="67" />
-    <scopeInfo nodeId="1240233639867" fileName="MigrationToCollections_MigrationScript.java" startLine="708" startPosition="59" endLine="709" endPosition="454" />
+    <scopeInfo nodeId="1240233639867" fileName="MigrationToCollections_MigrationScript.java" startLine="708" startPosition="59" endLine="709" endPosition="460" />
     <scopeInfo nodeId="1240233639843" fileName="MigrationToCollections_MigrationScript.java" startLine="715" startPosition="107" endLine="716" endPosition="177" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="721" startPosition="42" endLine="722" endPosition="21" />
     <scopeInfo nodeId="1236765926225" fileName="MigrationToCollections_MigrationScript.java" startLine="726" startPosition="31" endLine="727" endPosition="25" />
@@ -1154,7 +1154,7 @@
     <nodeInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="185" startPosition="31" endLine="186" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="189" startPosition="41" endLine="190" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="193" startPosition="59" endLine="194" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238591009603" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="197" startPosition="59" endLine="198" endPosition="447" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238591009603" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="197" startPosition="59" endLine="198" endPosition="459" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238591009561" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="201" startPosition="52" endLine="202" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238591009567" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="202" startPosition="129" endLine="203" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238591078056" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="203" startPosition="147" endLine="204" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1245,7 +1245,7 @@
     <scopeInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="185" startPosition="31" endLine="186" endPosition="25" />
     <scopeInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="189" startPosition="41" endLine="190" endPosition="25" />
     <scopeInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="193" startPosition="59" endLine="194" endPosition="67" />
-    <scopeInfo nodeId="1238591009602" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="197" startPosition="59" endLine="198" endPosition="447" />
+    <scopeInfo nodeId="1238591009602" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="197" startPosition="59" endLine="198" endPosition="459" />
     <scopeInfo nodeId="1238516564139" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="208" startPosition="42" endLine="209" endPosition="21" />
     <scopeInfo nodeId="1238585026901" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="123" startPosition="52" endLine="125" endPosition="57">
       <varInfo nodeId="1238585026903" varName="values" />

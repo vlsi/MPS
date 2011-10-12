@@ -2146,7 +2146,7 @@
     <nodeInfo nodeId="401697226377603546" fileName="CommentLine_Action.java" startLine="25" startPosition="34" endLine="26" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5700621532627848836" fileName="CommentLine_Action.java" startLine="30" startPosition="95" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="960503806838396144" fileName="CommentLine_Action.java" startLine="32" startPosition="5" endLine="33" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="960503806838396170" fileName="CommentLine_Action.java" startLine="34" startPosition="36" endLine="35" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="960503806838396170" fileName="CommentLine_Action.java" startLine="34" startPosition="36" endLine="35" endPosition="314" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="401697226377750839" fileName="CommentLine_Action.java" startLine="36" startPosition="5" endLine="37" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5700621532627848850" fileName="CommentLine_Action.java" startLine="38" startPosition="28" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="960503806838396188" fileName="CommentLine_Action.java" startLine="40" startPosition="5" endLine="41" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2199,7 +2199,7 @@
     <nodeInfo nodeId="401697226377603546" fileName="CommentLine_Action.java" startLine="75" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="401697226377603546" fileName="CommentLine_Action.java" startLine="62" startPosition="25" endLine="62" endPosition="25" />
     <scopeInfo nodeId="5700621532627840497" fileName="CommentLine_Action.java" startLine="30" startPosition="95" endLine="31" endPosition="19" />
-    <scopeInfo nodeId="960503806838396152" fileName="CommentLine_Action.java" startLine="34" startPosition="36" endLine="35" endPosition="308" />
+    <scopeInfo nodeId="960503806838396152" fileName="CommentLine_Action.java" startLine="34" startPosition="36" endLine="35" endPosition="314" />
     <scopeInfo nodeId="5700621532627848842" fileName="CommentLine_Action.java" startLine="38" startPosition="28" endLine="39" endPosition="19" />
     <scopeInfo nodeId="401697226377603546" fileName="CommentLine_Action.java" startLine="57" startPosition="53" endLine="58" endPosition="19" />
     <scopeInfo nodeId="401697226377603546" fileName="CommentLine_Action.java" startLine="66" startPosition="67" endLine="67" endPosition="19" />

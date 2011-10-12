@@ -61,7 +61,7 @@ public class OptionReference_Constraints extends BaseConstraintsDescriptor {
                     return SNodeOperations.isInstanceOf(it, "jetbrains.mps.bash.structure.OptionSetReference");
                   }
                 });
-                return Sequence.fromIterable(optionSetReferences).select(new ISelector<SNode, ISequence<SNode>>() {
+                return (int) Sequence.fromIterable(optionSetReferences).select(new ISelector<SNode, ISequence<SNode>>() {
                   public ISequence<SNode> select(SNode it) {
                     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.bash.structure.OptionSetReference"), "refToOptions", true)).where(new IWhereFilter<SNode>() {
                       public boolean accept(SNode it) {
@@ -73,7 +73,7 @@ public class OptionReference_Constraints extends BaseConstraintsDescriptor {
                       }
                     });
                   }
-                }).distinct().count() == Sequence.fromIterable(optionSetReferences).count();
+                }).distinct().count() == (int) Sequence.fromIterable(optionSetReferences).count();
               }
             };
           }

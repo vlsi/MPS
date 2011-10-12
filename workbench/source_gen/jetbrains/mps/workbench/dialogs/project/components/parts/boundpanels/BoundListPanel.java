@@ -14,6 +14,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
+import org.apache.commons.lang.StringUtils;
 import com.intellij.openapi.ui.Messages;
 
 public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
@@ -80,8 +81,13 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
 
     protected void doRemove(AnActionEvent e) {
       String errorMessage = BoundListPanel.this.removeSelectedWithCheck();
-      if (errorMessage.length() != 0) {
+      if (StringUtils.isEmpty(errorMessage)) {
+        return;
+      }
+      if (!(myAllowRemoveAnyway)) {
         Messages.showWarningDialog("<html>Can't remove " + errorMessage + ".</html>", "Error Removing Element");
+      } else if (Messages.showYesNoDialog("<html>Can't remove " + errorMessage + ".<br><br>Remove anyway?<br>This can result in broken models.</html>", "Error Removing Element", Messages.getWarningIcon()) == 0) {
+        BoundListPanel.this.removeSelected();
       }
     }
   }

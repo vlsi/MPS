@@ -64,6 +64,10 @@ public class NullMapSequence<U, V> extends NullSequence<IMapping<U, V>> implemen
     return this;
   }
 
+  public V putValue(U key, V value) {
+    return null;
+  }
+
   public V removeKey(U u) {
     return null;
   }

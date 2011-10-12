@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1204071206995">
     <nodeInfo nodeId="1204071322847" fileName="SmartClosureParameterTypeUtil.java" startLine="20" startPosition="114" endLine="21" endPosition="324" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206111352089" fileName="SmartClosureParameterTypeUtil.java" startLine="23" startPosition="7" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -788,6 +788,48 @@
     <scopeInfo nodeId="6356558317059569764" fileName="IContainerOperation_Constraints.java" startLine="8" startPosition="44" endLine="9" endPosition="82" />
     <scopeInfo nodeId="6356558317059569764" fileName="IContainerOperation_Constraints.java" startLine="7" startPosition="80" endLine="10" endPosition="3" />
     <unitInfo nodeId="6356558317059569764" fileName="IContainerOperation_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.IContainerOperation_Constraints" />
+  </root>
+  <root nodeId="8293956702609967572">
+    <nodeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="23" startPosition="90" endLine="24" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_n71ttm_a0a1a0a0a1a0b0a1a0" />
+    <nodeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="26" startPosition="54" endLine="27" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="31" startPosition="83" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8293956702609999754" fileName="MultiForEachVariableReference_Constraints.java" startLine="46" startPosition="59" endLine="47" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8293956702609999779" fileName="MultiForEachVariableReference_Constraints.java" startLine="50" startPosition="46" endLine="51" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="57" startPosition="61" endLine="58" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="62" startPosition="7" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MultiForEachVariableReference_Constraints#()V" />
+    <nodeInfo nodeId="8293956702609999752" fileName="MultiForEachVariableReference_Constraints.java" startLine="45" startPosition="224" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8293956702609999775" fileName="MultiForEachVariableReference_Constraints.java" startLine="49" startPosition="53" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="33" startPosition="89" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="55" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="8293956702609967577" fileName="MultiForEachVariableReference_Constraints.java" startLine="44" startPosition="142" endLine="53" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="42" startPosition="49" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="41" startPosition="56" endLine="60" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="38" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="32" startPosition="75" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="29" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="26" startPosition="54" endLine="27" endPosition="92" />
+    <scopeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" />
+    <scopeInfo nodeId="8293956702609999753" fileName="MultiForEachVariableReference_Constraints.java" startLine="46" startPosition="59" endLine="47" endPosition="72" />
+    <scopeInfo nodeId="8293956702609999776" fileName="MultiForEachVariableReference_Constraints.java" startLine="50" startPosition="46" endLine="51" endPosition="72" />
+    <scopeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="57" startPosition="61" endLine="58" endPosition="58" />
+    <scopeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
+    <scopeInfo nodeId="8293956702609999752" fileName="MultiForEachVariableReference_Constraints.java" startLine="45" startPosition="224" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="8293956702609999775" fileName="MultiForEachVariableReference_Constraints.java" startLine="49" startPosition="53" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="33" startPosition="89" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="55" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="8293956702609967576" fileName="MultiForEachVariableReference_Constraints.java" startLine="44" startPosition="142" endLine="53" endPosition="15" />
+    <scopeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="42" startPosition="49" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="41" startPosition="56" endLine="60" endPosition="10" />
+    <scopeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="38" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="31" startPosition="83" endLine="63" endPosition="22" />
+    <scopeInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="29" startPosition="0" endLine="65" endPosition="0" />
+    <unitInfo nodeId="8293956702609999752" fileName="MultiForEachVariableReference_Constraints.java" startLine="45" startPosition="194" endLine="49" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints$3" />
+    <unitInfo nodeId="8293956702609999775" fileName="MultiForEachVariableReference_Constraints.java" startLine="49" startPosition="26" endLine="53" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints$3" />
+    <unitInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="42" startPosition="19" endLine="60" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints$2" />
+    <unitInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="33" startPosition="35" endLine="62" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints$1" />
+    <unitInfo nodeId="8293956702609967572" fileName="MultiForEachVariableReference_Constraints.java" startLine="23" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.MultiForEachVariableReference_Constraints" />
   </root>
 </debugInfo>
 

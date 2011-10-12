@@ -328,9 +328,8 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
       public void reportFeedback(IFeedback fdbk) {
         if (delegateJobMon != null) {
           delegateJobMon.reportFeedback(fdbk);
-        } else {
-          mfs.reportFeedback(fdbk);
         }
+        mfs.reportFeedback(fdbk);
       }
     }
   }

@@ -26,6 +26,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", new ForEachVariableReference_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.GetElementOperation", new GetElementOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation", new GetIndexOfOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.GetLastIndexOfOperation", new GetLastIndexOfOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", new HashMapCreator_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.HeadListOperation", new HeadListOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation", new HeadMapOperation_DataFlow());
@@ -39,6 +40,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.MapInitializer", new MapInitializer_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression", new MapOperationExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation", new MapRemoveOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.MultiForEachStatement", new MultiForEachStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.PageOperation", new PageOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.PushOperation", new PushOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.PutAllOperation", new PutAllOperation_DataFlow());
@@ -49,6 +51,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation", new RemoveSetElementOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", new SequenceCreator_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SetElementOperation", new SetElementOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation", new SingleArgumentSequenceOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator", new SingletonSequenceCreator_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SkipOperation", new SkipOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SortOperation", new SortOperation_DataFlow());

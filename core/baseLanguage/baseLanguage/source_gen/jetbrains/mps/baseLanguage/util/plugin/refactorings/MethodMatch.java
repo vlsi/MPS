@@ -81,7 +81,7 @@ public class MethodMatch {
 
   private boolean checkParameter(SNode parameter) {
     List<SNode> nodes = MapSequence.fromMap(this.myParamsToNodes).get(parameter);
-    if (ListSequence.fromList(nodes).count() == 0) {
+    if ((int) ListSequence.fromList(nodes).count() == 0) {
       return true;
     }
     for (int i = 0; i < ListSequence.fromList(nodes).count() - 1; i++) {

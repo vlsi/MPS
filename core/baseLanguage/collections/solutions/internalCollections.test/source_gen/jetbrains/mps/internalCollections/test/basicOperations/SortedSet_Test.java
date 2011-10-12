@@ -10,6 +10,10 @@ import junit.framework.Assert;
 import java.util.Arrays;
 import java.util.Comparator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class SortedSet_Test extends Util_Test {
   public void test_order() throws Exception {
@@ -51,5 +55,35 @@ public class SortedSet_Test extends Util_Test {
     }));
     SortedSetSequence.fromSet(sset).addSequence(Sequence.fromIterable(Sequence.fromArray(new String[]{"b", "d", "c", "a"})));
     this.assertIterableEquals(Sequence.fromArray(new String[]{"d", "c", "b", "a"}), sset);
+  }
+
+  public void test_collection() throws Exception {
+    SortedSet<String> ts = SortedSetSequence.fromSetAndArray(new TreeSet<String>(), "a", "b");
+    Collection<String> cs = ts;
+    Assert.assertEquals("a b", IterableUtils.join(Sequence.fromIterable(cs), " "));
+    SortedSetSequence.fromSet(ts).addElement("c");
+    Assert.assertEquals("a b c", IterableUtils.join(Sequence.fromIterable(cs), " "));
+  }
+
+  public void test_unmodifiable() throws Exception {
+    SortedSet<String> ts = SortedSetSequence.fromSetAndArray(new TreeSet<String>(), "a", "b", "c");
+    SortedSetSequence.fromSet(ts).addElement("d");
+    SortedSetSequence.fromSet(ts).removeElement("b");
+    Assert.assertEquals("a c d", IterableUtils.join(SortedSetSequence.fromSet(ts), " "));
+    Set<String> uts = SortedSetSequence.fromSet(ts).asUnmodifiable();
+    try {
+      SetSequence.fromSet(uts).addElement("e");
+      Assert.fail();
+    } catch (UnsupportedOperationException e) {
+      // expected exception 
+    }
+    SortedSetSequence.fromSet(ts).removeElement("a");
+    Assert.assertEquals("c d", IterableUtils.join(SetSequence.fromSet(uts), " "));
+    try {
+      SetSequence.fromSet(uts).removeElement("c");
+      Assert.fail();
+    } catch (UnsupportedOperationException e) {
+      // expected exception 
+    }
   }
 }

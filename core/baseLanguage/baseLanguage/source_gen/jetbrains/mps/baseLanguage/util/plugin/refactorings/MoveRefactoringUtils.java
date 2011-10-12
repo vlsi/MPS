@@ -51,6 +51,6 @@ public class MoveRefactoringUtils {
   }
 
   public static boolean isReference(SNode node) {
-    return ListSequence.fromList(SNodeOperations.getChildren(node)).isEmpty() && Sequence.fromIterable(SNodeOperations.getReferences(node)).count() == 1;
+    return ListSequence.fromList(SNodeOperations.getChildren(node)).isEmpty() && (int) Sequence.fromIterable(SNodeOperations.getReferences(node)).count() == 1;
   }
 }

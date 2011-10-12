@@ -1008,7 +1008,7 @@
     <nodeInfo nodeId="1228615757308596556" fileName="IfEqualsNullAll.java" startLine="41" startPosition="30" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1259268621398138708" fileName="IfEqualsNullAll.java" startLine="55" startPosition="30" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4258402621852112799" fileName="IfEqualsNullAll.java" startLine="68" startPosition="28" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1228615757308596549" fileName="IfEqualsNullAll.java" startLine="40" startPosition="277" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1228615757308596549" fileName="IfEqualsNullAll.java" startLine="40" startPosition="283" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1259268621398138706" fileName="IfEqualsNullAll.java" startLine="54" startPosition="73" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4258402621852112786" fileName="IfEqualsNullAll.java" startLine="67" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1265678854311140235" fileName="IfEqualsNullAll.java" startLine="39" startPosition="5" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1037,10 +1037,10 @@
     <scopeInfo nodeId="1228615757308596550" fileName="IfEqualsNullAll.java" startLine="41" startPosition="30" endLine="51" endPosition="9" />
     <scopeInfo nodeId="1259268621398138707" fileName="IfEqualsNullAll.java" startLine="55" startPosition="30" endLine="65" endPosition="9" />
     <scopeInfo nodeId="4258402621852112787" fileName="IfEqualsNullAll.java" startLine="68" startPosition="28" endLine="78" endPosition="7" />
-    <scopeInfo nodeId="1228615757308596549" fileName="IfEqualsNullAll.java" startLine="40" startPosition="277" endLine="52" endPosition="7">
+    <scopeInfo nodeId="1228615757308596549" fileName="IfEqualsNullAll.java" startLine="40" startPosition="283" endLine="52" endPosition="7">
       <varInfo nodeId="1228615757308596552" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="1265678854311140236" fileName="IfEqualsNullAll.java" startLine="40" startPosition="277" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="1265678854311140236" fileName="IfEqualsNullAll.java" startLine="40" startPosition="283" endLine="52" endPosition="7" />
     <scopeInfo nodeId="1259268621398138705" fileName="IfEqualsNullAll.java" startLine="54" startPosition="73" endLine="66" endPosition="7" />
     <scopeInfo nodeId="1259268621398138706" fileName="IfEqualsNullAll.java" startLine="54" startPosition="73" endLine="66" endPosition="7">
       <varInfo nodeId="1259268621398138715" varName="var" />

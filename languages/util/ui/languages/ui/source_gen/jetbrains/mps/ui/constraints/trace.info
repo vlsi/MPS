@@ -538,7 +538,7 @@
     <nodeInfo nodeId="8381258131358737423" fileName="BeanPropertyView_Constraints.java" startLine="79" startPosition="37" endLine="80" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358737423" fileName="BeanPropertyView_Constraints.java" startLine="84" startPosition="56" endLine="85" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8381258131358762494" fileName="BeanPropertyView_Constraints.java" startLine="86" startPosition="9" endLine="87" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8381258131358797079" fileName="BeanPropertyView_Constraints.java" startLine="89" startPosition="303" endLine="90" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8381258131358797079" fileName="BeanPropertyView_Constraints.java" startLine="89" startPosition="309" endLine="90" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358762522" fileName="BeanPropertyView_Constraints.java" startLine="92" startPosition="11" endLine="93" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358737423" fileName="BeanPropertyView_Constraints.java" startLine="96" startPosition="7" endLine="97" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8381258131358737423" fileName="BeanPropertyView_Constraints.java" startLine="101" startPosition="83" endLine="102" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -608,7 +608,7 @@
     <scopeInfo nodeId="8381258131358737423" fileName="BeanPropertyView_Constraints.java" startLine="67" startPosition="37" endLine="68" endPosition="20" />
     <scopeInfo nodeId="8381258131358759660" fileName="BeanPropertyView_Constraints.java" startLine="73" startPosition="40" endLine="74" endPosition="74" />
     <scopeInfo nodeId="8381258131358737423" fileName="BeanPropertyView_Constraints.java" startLine="79" startPosition="37" endLine="80" endPosition="20" />
-    <scopeInfo nodeId="8381258131358762503" fileName="BeanPropertyView_Constraints.java" startLine="89" startPosition="303" endLine="90" endPosition="266" />
+    <scopeInfo nodeId="8381258131358762503" fileName="BeanPropertyView_Constraints.java" startLine="89" startPosition="309" endLine="90" endPosition="266" />
     <scopeInfo nodeId="8381258131358737423" fileName="BeanPropertyView_Constraints.java" startLine="105" startPosition="44" endLine="106" endPosition="20" />
     <scopeInfo nodeId="8381258131358737423" fileName="BeanPropertyView_Constraints.java" startLine="114" startPosition="44" endLine="115" endPosition="24" />
     <scopeInfo nodeId="8381258131359127467" fileName="BeanPropertyView_Constraints.java" startLine="121" startPosition="29" endLine="122" endPosition="26" />

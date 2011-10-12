@@ -228,7 +228,7 @@ public class MergeConflictsBuilder {
         return mvc;
       }
     }, ModelVersionChange.class);
-    if (MapSequence.fromMap(arranged._0()).count() == 1 && MapSequence.fromMap(arranged._1()).count() == 1) {
+    if ((int) MapSequence.fromMap(arranged._0()).count() == 1 && (int) MapSequence.fromMap(arranged._1()).count() == 1) {
       addConflict(SetSequence.fromSet(MapSequence.fromMap(arranged._0()).keySet()).first(), SetSequence.fromSet(MapSequence.fromMap(arranged._1()).keySet()).first());
     }
   }

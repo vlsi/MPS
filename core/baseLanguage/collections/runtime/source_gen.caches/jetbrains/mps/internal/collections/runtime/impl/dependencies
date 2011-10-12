@@ -167,12 +167,13 @@
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.NullSetSequence" file="NullSetSequence.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode extendsClassName="java.util.Set" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ISetSequence" />
-    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.NullSequence" />
+    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.NullCollectionSequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.NullSortedMapSequence" file="NullSortedMapSequence.java">
     <classNode dependClassName="java.lang.Object" />
@@ -191,6 +192,15 @@
     <classNode extendsClassName="java.util.SortedSet" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ISortedSetSequence" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.NullSetSequence" />
+  </dependency>
+  <dependency className="jetbrains.mps.internal.collections.runtime.impl.OfTypeSequence" file="OfTypeSequence.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.NoSuchElementException" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.HasNextState" />
+    <classNode extendsClassName="java.lang.Iterable" />
+    <classNode extendsClassName="java.util.Iterator" />
+    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.AbstractChainedSequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.PagingSequence" file="PagingSequence.java">
     <classNode dependClassName="java.lang.IllegalArgumentException" />

@@ -280,7 +280,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 
     @Override
     public boolean isLeaf() {
-      return ListSequence.fromList(myExtendedMessage).count() == 0;
+      return (int) ListSequence.fromList(myExtendedMessage).count() == 0;
     }
 
     @Override

@@ -560,7 +560,7 @@
     <nodeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="19" startPosition="99" endLine="20" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="22" startPosition="75" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082537205635903145" fileName="ExtensionMethodDeclaration_Actions.java" startLine="31" startPosition="101" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082537205635903145" fileName="ExtensionMethodDeclaration_Actions.java" startLine="31" startPosition="107" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="21" startPosition="0" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtensionMethodDeclaration_Actions_RIGHT_TRANSFORM#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1082537205635903121" fileName="ExtensionMethodDeclaration_Actions.java" startLine="30" startPosition="75" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="14" startPosition="49" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
@@ -569,7 +569,7 @@
     <scopeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="15" startPosition="95" endLine="16" endPosition="154" />
     <scopeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="22" startPosition="75" endLine="23" endPosition="25" />
     <scopeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
-    <scopeInfo nodeId="1082537205635903122" fileName="ExtensionMethodDeclaration_Actions.java" startLine="31" startPosition="101" endLine="32" endPosition="108" />
+    <scopeInfo nodeId="1082537205635903122" fileName="ExtensionMethodDeclaration_Actions.java" startLine="31" startPosition="107" endLine="32" endPosition="108" />
     <scopeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="21" startPosition="0" endLine="24" endPosition="5" />
     <scopeInfo nodeId="6513744873655832111" fileName="ExtensionMethodDeclaration_Actions.java" startLine="30" startPosition="75" endLine="33" endPosition="7" />
     <scopeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="14" startPosition="49" endLine="18" endPosition="0" />

@@ -55,7 +55,7 @@ public class ConvertToClosure_Intention extends BaseIntention implements Intenti
     }
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
       SNode parentInterface = SNodeOperations.cast(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
-      return ListSequence.fromList(SLinkOperations.getTargets(parentInterface, "method", true)).count() == 1;
+      return (int) ListSequence.fromList(SLinkOperations.getTargets(parentInterface, "method", true)).count() == 1;
     }
     return false;
   }

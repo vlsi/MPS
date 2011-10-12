@@ -104,7 +104,9 @@
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker" file="TestGenerationWorker.java">
+    <classNode dependClassName="java.io.BufferedOutputStream" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileOutputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -119,8 +121,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.reflect.Method" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
@@ -139,7 +141,10 @@
     <classNode dependClassName="jetbrains.mps.build.ant.generation.ConsoleMessageFormat" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.GenerateTask" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity" />
+    <classNode dependClassName="jetbrains.mps.build.ant.generation.unittest.ConsoleTestReporter" />
+    <classNode dependClassName="jetbrains.mps.build.ant.generation.unittest.ITestReporter" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.unittest.UnitTestListener" />
+    <classNode dependClassName="jetbrains.mps.build.ant.generation.unittest.XmlTestReporter" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.workers.BuildMakeService" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
@@ -177,6 +182,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsWorker" />
     <classNode extendsClassName="jetbrains.mps.build.ant.generation.unittest.UnitTestAdapter" />
