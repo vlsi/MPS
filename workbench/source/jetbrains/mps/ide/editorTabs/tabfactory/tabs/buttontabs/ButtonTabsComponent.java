@@ -43,6 +43,19 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     return myToolbar.getComponent(index);
   }
 
+  public EditorTabDescriptor getCurrentTabAspect() {
+    SNode currentAspect = getLastNode().getNode();
+    assert currentAspect != null;
+
+    for (final ButtonEditorTab bet : myRealTabs) {
+      EditorTabDescriptor d = bet.getDescriptor();
+      List<SNode> nodes = d.getNodes(myBaseNode.getNode());
+      if (nodes.contains(currentAspect)) return d;
+    }
+
+    throw new IllegalArgumentException("Node is not in any tab: " + currentAspect);
+  }
+
   protected void updateTabs() {
     myRealTabs.clear();
 
