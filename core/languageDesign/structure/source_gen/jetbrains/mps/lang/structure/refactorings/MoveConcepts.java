@@ -6,15 +6,18 @@ import jetbrains.mps.refactoring.framework.BaseLoggableRefactoring;
 import jetbrains.mps.lang.core.refactorings.MoveNodes;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.Map;
@@ -58,25 +61,32 @@ public class MoveConcepts extends BaseLoggableRefactoring {
   }
 
   public boolean init(final RefactoringContext refactoringContext) {
-    if (!(MoveConcepts.this.ask(refactoringContext, MPSChooserFactory.createModelChooser(refactoringContext, "targetModel", new MoveConcepts_targetModel_Settings(refactoringContext))))) {
-      return false;
-    }
-
-    final Wrappers._boolean result = new Wrappers._boolean(false);
+    final Wrappers._boolean canRefactor = new Wrappers._boolean(false);
+    final Wrappers._boolean hasGenerator = new Wrappers._boolean(false);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModel model = SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first());
-        for (SNode node : refactoringContext.getSelectedNodes()) {
-          if (SNodeOperations.getModel(node) != model) {
-            return;
-          }
-        }
-        result.value = true;
+        final SModel model = SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first());
         refactoringContext.setParameter("sourceModel", model.getModelDescriptor());
         refactoringContext.setParameter("sourceLanguage", Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("sourceModel"))));
+        canRefactor.value = ListSequence.fromList(refactoringContext.getSelectedNodes()).all(new IWhereFilter<SNode>() {
+          public boolean accept(SNode node) {
+            return SNodeOperations.getModel(node) == model;
+          }
+        });
+        hasGenerator.value = ListSequence.fromList(refactoringContext.getSelectedNodes()).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode node) {
+            return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(node)).isNotEmpty();
+          }
+        });
       }
     });
-    return result.value;
+    if (!(canRefactor.value)) {
+      return false;
+    }
+    if (hasGenerator.value) {
+      Messages.showWarningDialog("Generator fragments will not be moved.", "Move concepts");
+    }
+    return MoveConcepts.this.ask(refactoringContext, MPSChooserFactory.createModelChooser(refactoringContext, "targetModel", new MoveConcepts_targetModel_Settings(refactoringContext)));
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
